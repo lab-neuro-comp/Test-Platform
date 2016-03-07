@@ -159,5 +159,7 @@ namespace StroopTest
                 Close();
             }
         }
+
+        /* commit test */
     }
 }

@@ -93,6 +93,7 @@ namespace StroopTest
 
             try
             {
+                
                 programWrite.ProgramName = progName.Text;
                 programWrite.NumExpositions = Convert.ToInt32(numExpo.Value);
 
@@ -145,10 +146,10 @@ namespace StroopTest
                         programWrite.ExpositionType = "imgtxt";
                         break;
                 }
-
+                
                 if (openImgsList.Enabled) { programWrite.ImagesListFile = openImgsList.Text; }
                 else { programWrite.ImagesListFile = "falSe"; }
-
+                
 
                 if (fixPointCross.Checked)
                 {
@@ -160,7 +161,7 @@ namespace StroopTest
                     {
                         programWrite.FixPoint = "o";
                     }
-                    else
+                    if(!fixPointCross.Checked && !fixPointCircle.Checked)
                     {
                         programWrite.FixPoint = "falsE";
                     }
@@ -180,60 +181,25 @@ namespace StroopTest
                     programWrite.InstructionText = null;
                 }
 
-                /*
-                List<String> text = new List<String>();
-
+                string text =    programWrite.ProgramName + " " +
+                                 programWrite.NumExpositions.ToString() + " " +
+                                 programWrite.ExpositionTime.ToString() + " " +
+                                 programWrite.ExpositionRandom.ToString() + " " +
+                                 programWrite.IntervalTime.ToString() + " " +
+                                 programWrite.IntervalTimeRandom.ToString() + " " +
+                                 programWrite.WordsListFile + " " +
+                                 programWrite.ColorsListFile + " " +
+                                 programWrite.BackgroundColor.ToUpper() + " " +
+                                 programWrite.AudioCapture.ToString() + " " +
+                                 programWrite.SubtitleShow.ToString() + " " +
+                                 programWrite.SubtitlePlace.ToString() + " " +
+                                 programWrite.SubtitleColor.ToUpper() + " " +
+                                 programWrite.ExpositionType.ToLower() + " " +
+                                 programWrite.ImagesListFile + " " +
+                                 programWrite.FixPoint;
                 
-                text.Add(programWrite.ProgramName.ToLower());
-                text.Add(programWrite.NumExpositions.ToString());
-                text.Add(programWrite.ExpositionTime.ToString());
-                text.Add(programWrite.ExpositionRandom.ToString());
-                text.Add(programWrite.IntervalTime.ToString());
-                text.Add(programWrite.IntervalTimeRandom.ToString());
-                text.Add(programWrite.WordsListFile);
-                text.Add(programWrite.ColorsListFile);
-                text.Add(programWrite.BackgroundColor.ToUpper());
-                text.Add(programWrite.AudioCapture.ToString());
-                text.Add(programWrite.SubtitleShow.ToString());
-                text.Add(programWrite.SubtitlePlace.ToString());
-                text.Add(programWrite.SubtitleColor.ToUpper());
-                text.Add(programWrite.ImagesListFile);
-                text.Add(programWrite.FixPoint);
-                */
-
-                SaveFileDialog save = new SaveFileDialog();
-
-                save.InitialDirectory = path;
-                save.FileName = progName.Text.ToLower() + ".prg";
-                save.Filter = "Arquivo Programa (*.prg)|*.prg";
-                if (save.ShowDialog() == DialogResult.OK)
-                {
-                    using (StreamWriter prgWriter = new StreamWriter("test1.txt"))
-                    {
-                        prgWriter.Write(programWrite.ProgramName.ToLower());
-                        prgWriter.Write(programWrite.NumExpositions.ToString());
-                        prgWriter.Write(programWrite.ExpositionTime.ToString());
-                        prgWriter.Write(programWrite.ExpositionRandom.ToString());
-                        prgWriter.Write(programWrite.IntervalTime.ToString());
-                        prgWriter.Write(programWrite.IntervalTimeRandom.ToString());
-                        prgWriter.Write(programWrite.WordsListFile);
-                        prgWriter.Write(programWrite.ColorsListFile);
-                        prgWriter.Write(programWrite.BackgroundColor.ToUpper());
-                        prgWriter.Write(programWrite.AudioCapture.ToString());
-                        prgWriter.Write(programWrite.SubtitleShow.ToString());
-                        prgWriter.Write(programWrite.SubtitlePlace.ToString());
-                        prgWriter.Write(programWrite.SubtitleColor.ToUpper());
-                        prgWriter.Write(programWrite.ImagesListFile);
-                        prgWriter.Write(programWrite.FixPoint);
-
-                        MessageBox.Show("Details have been saved");
-                    }
-                    this.Close();
-                }
-                
-                //saveProgramFile(text, programWrite.InstructionText);
-                //var message = string.Join(Environment.NewLine, text);
-                //MessageBox.Show(message);
+                saveProgramFile(text, programWrite.InstructionText);
+                this.Close();
             }
             catch(Exception ex)
             {
@@ -245,9 +211,10 @@ namespace StroopTest
         {
             SaveFileDialog save = new SaveFileDialog();
 
-            save.InitialDirectory = path;
+            save.InitialDirectory = path + "/prg/";
             save.FileName = progName.Text.ToLower() + ".prg";
             save.Filter = "Arquivo Programa (*.prg)|*.prg";
+
             if (save.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter writer = new StreamWriter(save.OpenFile());
@@ -271,7 +238,7 @@ namespace StroopTest
             StroopProgram programOpened = new StroopProgram();
             string nameListFile = "error";
 
-            openFileDialog1.InitialDirectory = path + "/lst/";//"c:\\";
+            openFileDialog1.InitialDirectory = path + "/lst/";
             openFileDialog1.Filter = "Arquivos de lista (*.lst)|*.lst";
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;

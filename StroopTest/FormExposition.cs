@@ -11,9 +11,11 @@ using System.Windows.Forms;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Threading;
+
 /*// audio
 using NAudio.Wave;
 */// audio
+
 namespace StroopTest
 {
     public partial class FormExposition : Form
@@ -27,6 +29,7 @@ namespace StroopTest
 
         private string prgNametxt;
         private string usrNametxt;
+
         /*// audio
         private WaveIn waveSource = null; // entrada de áudio
         public WaveFileWriter waveFile = null; // arquivo salvar áudio
@@ -230,9 +233,11 @@ namespace StroopTest
                     
                     elapsedTime = 0; // zera tempo em milissegundos decorrido
                     i = 0; j = 0;
+
                     /*//audio
                     if (program.AudioCapture == true) { startRecordingAudio(program); } // inicia gravação áudio
                     *///audio
+
                     ongoingExposition = true; // flag Exposição em curso
                     await Task.Delay(program.IntervalTime, cts.Token);
 

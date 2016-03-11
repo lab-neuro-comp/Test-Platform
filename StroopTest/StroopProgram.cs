@@ -303,7 +303,7 @@ namespace StroopTest
             get { return fixPoint; }
             set
             {
-                if (value.ToLower() == "+" || value.ToLower() == "o" || value.ToLower() == "false") expositionType = value.ToLower();
+                if (value == "+" || value.ToLower() == "o" || value.ToLower() == "false") fixPoint = value.ToLower();
                 else throw new ArgumentException("Ponto de fixação deve ser representado por:\n'+' - ponto de fixação cruz\n'o' - ponto de fixação circulo\n'false' - se não houver ponto;");
             }
         }

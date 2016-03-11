@@ -34,7 +34,7 @@ namespace StroopTest
             if (!Directory.Exists(dataFolderPath + lstFolderName)) Directory.CreateDirectory(dataFolderPath + lstFolderName); // cria diretório para StroopTestFiles na inicialização do formulario
             if (!Directory.Exists(dataFolderPath + resultsFolderName)) Directory.CreateDirectory(dataFolderPath + resultsFolderName); // cria diretório para StroopTestFiles na inicialização do formulario
             if(!File.Exists(dataFolderPath + instructionsFileName)) { File.Create(dataFolderPath + "editableInstructions.txt").Dispose(); }
-
+            
             initializeDefaultProgram(); // inicializa programa padrão (cria arquivo programa padrão e listas de palavras e cores padrão)
 
             prgNameSL.Text = defaultPrgName;

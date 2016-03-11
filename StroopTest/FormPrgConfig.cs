@@ -180,8 +180,10 @@ namespace StroopTest
                     programWrite.InstructionText = null;
                 }
 
+                /*
                 List<String> text = new List<String>();
 
+                
                 text.Add(programWrite.ProgramName.ToLower());
                 text.Add(programWrite.NumExpositions.ToString());
                 text.Add(programWrite.ExpositionTime.ToString());
@@ -197,10 +199,41 @@ namespace StroopTest
                 text.Add(programWrite.SubtitleColor.ToUpper());
                 text.Add(programWrite.ImagesListFile);
                 text.Add(programWrite.FixPoint);
+                */
 
+                SaveFileDialog save = new SaveFileDialog();
+
+                save.InitialDirectory = path;
+                save.FileName = progName.Text.ToLower() + ".prg";
+                save.Filter = "Arquivo Programa (*.prg)|*.prg";
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    using (StreamWriter prgWriter = new StreamWriter("test1.txt"))
+                    {
+                        prgWriter.Write(programWrite.ProgramName.ToLower());
+                        prgWriter.Write(programWrite.NumExpositions.ToString());
+                        prgWriter.Write(programWrite.ExpositionTime.ToString());
+                        prgWriter.Write(programWrite.ExpositionRandom.ToString());
+                        prgWriter.Write(programWrite.IntervalTime.ToString());
+                        prgWriter.Write(programWrite.IntervalTimeRandom.ToString());
+                        prgWriter.Write(programWrite.WordsListFile);
+                        prgWriter.Write(programWrite.ColorsListFile);
+                        prgWriter.Write(programWrite.BackgroundColor.ToUpper());
+                        prgWriter.Write(programWrite.AudioCapture.ToString());
+                        prgWriter.Write(programWrite.SubtitleShow.ToString());
+                        prgWriter.Write(programWrite.SubtitlePlace.ToString());
+                        prgWriter.Write(programWrite.SubtitleColor.ToUpper());
+                        prgWriter.Write(programWrite.ImagesListFile);
+                        prgWriter.Write(programWrite.FixPoint);
+
+                        MessageBox.Show("Details have been saved");
+                    }
+                    this.Close();
+                }
+                
                 //saveProgramFile(text, programWrite.InstructionText);
-                var message = string.Join(Environment.NewLine, text);
-                MessageBox.Show(message);
+                //var message = string.Join(Environment.NewLine, text);
+                //MessageBox.Show(message);
             }
             catch(Exception ex)
             {

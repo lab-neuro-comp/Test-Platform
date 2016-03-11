@@ -14,16 +14,14 @@ namespace StroopTest
 {
     class StroopProgram
     {
-        private string defaultProgramFileText = "padrao 16 2000 true 1800 false words.lst colors.lst false false false 0 false txt false false";
+        private string defaultProgramFileText = "padrao 16 2000 true 1800 false words.lst colors.lst false true false 0 false txt false false";
         private string defaultWordsListName = "words.lst";
         private string defaultWordsListText = "amarelo azul verde vermelho";
         private string defaultColorsListName = "colors.lst";
         private string defaultColorsListText = "#F8E000 #007BB7 #7EC845 #D01C1F";
         private string headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor";
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
-        private string[] defaultInstructionText = { "Nesta tarefa surgirão palavras; cada uma delas colorida de forma aleatória",
-                                                    "Você deve dizer a cor em que a palavra está escrita",
-                                                    "Atenção: cada palavra  surgirá por um certo tempo; logo após ela desaparecerá",
+        private string[] defaultInstructionText = { "Nesta tarefa surgirão palavras, cada uma colorida de forma aleatória; Diga a cor em que a palavra está escrita; Cada palavra surgirá por um certo tempo e logo após ela desaparecerá",
                                                     "A tarefa vai começar agora"};
 
         private List<string> instructionText = new List<string>();

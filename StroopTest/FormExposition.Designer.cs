@@ -32,7 +32,6 @@
             this.wordLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.instructionLabel = new System.Windows.Forms.Label();
-            this.labelAudioOn = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,6 +39,7 @@
             // 
             this.wordLabel.BackColor = System.Drawing.Color.White;
             this.wordLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wordLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.wordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 160F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordLabel.Location = new System.Drawing.Point(0, 0);
             this.wordLabel.Name = "wordLabel";
@@ -72,30 +72,16 @@
             this.instructionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.instructionLabel.Visible = false;
             // 
-            // labelAudioOn
-            // 
-            this.labelAudioOn.AutoSize = true;
-            this.labelAudioOn.BackColor = System.Drawing.Color.White;
-            this.labelAudioOn.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelAudioOn.Location = new System.Drawing.Point(13, 13);
-            this.labelAudioOn.Name = "labelAudioOn";
-            this.labelAudioOn.Size = new System.Drawing.Size(111, 17);
-            this.labelAudioOn.TabIndex = 12;
-            this.labelAudioOn.Text = "Gravando Áudio";
-            this.labelAudioOn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelAudioOn.Visible = false;
-            // 
             // FormExposition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(715, 541);
-            this.Controls.Add(this.labelAudioOn);
             this.Controls.Add(this.wordLabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.instructionLabel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormExposition";
             this.Text = "StroopTest";
@@ -103,7 +89,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormExposition_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -112,7 +97,6 @@
         private System.Windows.Forms.Label wordLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label instructionLabel;
-        private System.Windows.Forms.Label labelAudioOn;
     }
 }
 

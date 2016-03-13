@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 /*// audio
 using NAudio.Wave;
@@ -121,7 +122,15 @@ namespace StroopTest
 
                 string[] labelText = program.readListFile(path + "/lst/" + program.WordsListFile); // vetor de strings recebem as listas de palavra e cor
                 string[] labelColor = program.readListFile(path + "/lst/" + program.ColorsListFile);
-                
+                foreach(string c in labelColor)
+                {
+                    if(!Regex.IsMatch(c, "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$"))
+                    {
+                        throw new Exception("A lista de cores '" + program.ColorsListFile + "' contém valores inválidos!\n" + c + " por exemplo não é um valor válido. A lista de cores deve conter apenas valores hexadecimais (ex: #000000)");
+                    }
+                }
+
+
                 await showInstructions(program, cts.Token); // Apresenta instruções se houver
 
                 while (true) // laço de repetição do programa até que o usuário decida não repetir mais o mesmo programa

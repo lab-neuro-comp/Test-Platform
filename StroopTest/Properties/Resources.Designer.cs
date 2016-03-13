@@ -61,6 +61,46 @@ namespace StroopTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrowDown {
+            get {
+                object obj = ResourceManager.GetObject("arrowDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrowLeft {
+            get {
+                object obj = ResourceManager.GetObject("arrowLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrowRight {
+            get {
+                object obj = ResourceManager.GetObject("arrowRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrowUp {
+            get {
+                object obj = ResourceManager.GetObject("arrowUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon icon1_StroopTest {
@@ -126,6 +166,16 @@ namespace StroopTest.Properties {
         internal static System.Drawing.Bitmap img5 {
             get {
                 object obj = ResourceManager.GetObject("img5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap noDirection {
+            get {
+                object obj = ResourceManager.GetObject("noDirection", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

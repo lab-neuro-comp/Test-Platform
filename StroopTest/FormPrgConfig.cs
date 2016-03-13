@@ -11,12 +11,17 @@ namespace StroopTest
         private string path;
         private string instrBoxText = "Escreva cada uma das intruções em linhas separadas.";
         StroopProgram programWrite;
+        private List<Button> subDirectionList;
+        private int subDirectionNumber = 0;
 
         public FormPrgConfig(string dataFolderPath)
         {
             path = dataFolderPath;
             InitializeComponent();
             chooseExpoType.SelectedIndex = 0;
+            subDirect1.BackColor = Color.LightGray;
+            subDirectionList = new List<Button>();
+            subDirectionList.Add(subDirect1); subDirectionList.Add(subDirect2); subDirectionList.Add(subDirect3); subDirectionList.Add(subDirect4); subDirectionList.Add(subDirect5);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -28,11 +33,11 @@ namespace StroopTest
         {
             if(showSubsOn.Checked)
             {
-                choosePositionSubs.Enabled = true; chooseColorSubs.Enabled = true; panel3.Enabled = true;
+                chooseColorSubs.Enabled = true; panel3.Enabled = true; // habilitar botões de posicao legenda
             }
             else
             {
-                choosePositionSubs.Enabled = false; chooseColorSubs.Enabled = false; panel3.Enabled = false;
+                chooseColorSubs.Enabled = false; panel3.Enabled = false;
             }
         }
 
@@ -109,14 +114,14 @@ namespace StroopTest
                 else
                 {
                     if (openWordList.Text == "error") { throw new Exception("Selecione o arquivo de lista de palavras!"); }
-                    programWrite.WordsListFile = "False";
+                    programWrite.WordsListFile = "false";
                 }
 
                 if (openColorsList.Enabled && openWordList.Text != "error") { programWrite.ColorsListFile = openColorsList.Text; }
                 else
                 {
                     if (openWordList.Text == "error") { throw new Exception("Selecione o arquivo de lista de cores!"); }
-                    programWrite.ColorsListFile = "fAlse";
+                    programWrite.ColorsListFile = "false";
                 }
 
                 programWrite.BackgroundColor = chooseBackGColor.Text;
@@ -125,13 +130,13 @@ namespace StroopTest
 
                 if(programWrite.SubtitleShow)
                 {
-                    programWrite.SubtitlePlace = 0;
+                    programWrite.SubtitlePlace = subDirectionNumber;
                     programWrite.SubtitleColor = chooseColorSubs.Text;
                 }
                 else
                 {
-                    programWrite.SubtitlePlace = 0;
-                    programWrite.SubtitleColor = "faLse";
+                    programWrite.SubtitlePlace = subDirectionNumber;
+                    programWrite.SubtitleColor = "false";
                 }
 
                 switch(chooseExpoType.SelectedIndex)
@@ -148,7 +153,7 @@ namespace StroopTest
                 }
                 
                 if (openImgsList.Enabled) { programWrite.ImagesListFile = openImgsList.Text; }
-                else { programWrite.ImagesListFile = "falSe"; }
+                else { programWrite.ImagesListFile = "false"; }
                 
 
                 if (fixPointCross.Checked)
@@ -163,7 +168,7 @@ namespace StroopTest
                     }
                     if(!fixPointCross.Checked && !fixPointCircle.Checked)
                     {
-                        programWrite.FixPoint = "falsE";
+                        programWrite.FixPoint = "false";
                     }
                 }
 
@@ -209,27 +214,19 @@ namespace StroopTest
 
         private void saveProgramFile(string programText, List<string> instructions)
         {
-            SaveFileDialog save = new SaveFileDialog();
-
-            save.InitialDirectory = path + "/prg/";
-            save.FileName = progName.Text.ToLower() + ".prg";
-            save.Filter = "Arquivo Programa (*.prg)|*.prg";
-
-            if (save.ShowDialog() == DialogResult.OK)
+            StreamWriter writer = new StreamWriter(path + "/prg/" + progName.Text + ".prg");
+            writer.WriteLine(programText);
+            if (instructions != null)
             {
-                StreamWriter writer = new StreamWriter(save.OpenFile());
-                writer.WriteLine(programText);
-                if(instructions != null)
+                for (int i = 0; i < instructions.Count; i++)
                 {
-                    for (int i = 0; i < instructions.Count; i++)
-                    {
-                        writer.WriteLine(instructions[i]);
-                    }
+                    writer.WriteLine(instructions[i]);
                 }
-                writer.Dispose();
-                writer.Close();
-                this.Close();
             }
+            writer.Dispose();
+            writer.Close();
+            MessageBox.Show("Programa salvo no diretório:\n" + path + "/prg/");
+            this.Close();
         }
 
         private string openListFile()
@@ -290,6 +287,57 @@ namespace StroopTest
         {
             if (fixPointCross.Checked && fixPointCircle.Checked)
                 fixPointCross.Checked = !fixPointCircle.Checked;
+        }
+
+        private void subDirect1_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
+            {
+                subDirectionList[i].BackColor = Color.Transparent;
+            }
+            subDirect1.BackColor = Color.LightGray;
+            subDirectionNumber = 1;
+        }
+
+        private void subDirect2_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
+            {
+                subDirectionList[i].BackColor = Color.Transparent;
+            }
+            subDirect2.BackColor = Color.LightGray;
+            subDirectionNumber = 2;
+        }
+
+        private void subDirect3_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
+            {
+                subDirectionList[i].BackColor = Color.Transparent;
+            }
+            subDirect3.BackColor = Color.LightGray;
+            subDirectionNumber = 3;
+        }
+
+        private void subDirect4_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
+            {
+                subDirectionList[i].BackColor = Color.Transparent;
+            }
+            subDirect4.BackColor = Color.LightGray;
+            subDirectionNumber = 4;
+
+        }
+
+        private void subDirect5_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
+            {
+                subDirectionList[i].BackColor = Color.Transparent;
+            }
+            subDirect5.BackColor = Color.LightGray;
+            subDirectionNumber = 5;
         }
     }
 }

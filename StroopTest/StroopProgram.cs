@@ -378,10 +378,7 @@ namespace StroopTest
             {
                 throw new FileNotFoundException("Arquivo programa: " + Path.GetFileName(filepath) + "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath) + "\n\n( " + ex.Message + " )");
             }
-            catch (FormatException ex)
-            {
-                throw new FormatException("Algum parâmetro no arquivo programa: " + Path.GetFileName(filepath) + " \ncontém valor inválido\n\n( " + ex.Message + " )");
-            }
+            
         }
         
         // escreve arquivo com programa padrão

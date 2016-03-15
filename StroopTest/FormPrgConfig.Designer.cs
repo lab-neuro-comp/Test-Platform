@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrgConfig));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.subDirect5 = new System.Windows.Forms.Button();
+            this.subDirect4 = new System.Windows.Forms.Button();
+            this.subDirect3 = new System.Windows.Forms.Button();
+            this.subDirect2 = new System.Windows.Forms.Button();
+            this.subDirect1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
@@ -39,7 +44,6 @@
             this.randIntervalOn = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.choosePositionSubs = new System.Windows.Forms.CheckBox();
             this.timeInterval = new System.Windows.Forms.NumericUpDown();
             this.timeExpo = new System.Windows.Forms.NumericUpDown();
             this.numExpo = new System.Windows.Forms.NumericUpDown();
@@ -80,6 +84,11 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.subDirect5);
+            this.panel1.Controls.Add(this.subDirect4);
+            this.panel1.Controls.Add(this.subDirect3);
+            this.panel1.Controls.Add(this.subDirect2);
+            this.panel1.Controls.Add(this.subDirect1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label13);
@@ -89,7 +98,6 @@
             this.panel1.Controls.Add(this.randIntervalOn);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.choosePositionSubs);
             this.panel1.Controls.Add(this.timeInterval);
             this.panel1.Controls.Add(this.timeExpo);
             this.panel1.Controls.Add(this.numExpo);
@@ -122,8 +130,79 @@
             this.panel1.Size = new System.Drawing.Size(628, 463);
             this.panel1.TabIndex = 0;
             // 
+            // subDirect5
+            // 
+            this.subDirect5.BackColor = System.Drawing.Color.LightGray;
+            this.subDirect5.BackgroundImage = global::StroopTest.Properties.Resources.arrowUp;
+            this.subDirect5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.subDirect5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.subDirect5.Location = new System.Drawing.Point(577, 144);
+            this.subDirect5.Name = "subDirect5";
+            this.subDirect5.Size = new System.Drawing.Size(18, 17);
+            this.subDirect5.TabIndex = 157;
+            this.subDirect5.TabStop = false;
+            this.subDirect5.UseVisualStyleBackColor = false;
+            this.subDirect5.Click += new System.EventHandler(this.subDirect5_Click);
+            // 
+            // subDirect4
+            // 
+            this.subDirect4.BackColor = System.Drawing.Color.LightGray;
+            this.subDirect4.BackgroundImage = global::StroopTest.Properties.Resources.arrowRight;
+            this.subDirect4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.subDirect4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.subDirect4.Location = new System.Drawing.Point(553, 144);
+            this.subDirect4.Name = "subDirect4";
+            this.subDirect4.Size = new System.Drawing.Size(18, 17);
+            this.subDirect4.TabIndex = 156;
+            this.subDirect4.TabStop = false;
+            this.subDirect4.UseVisualStyleBackColor = false;
+            this.subDirect4.Click += new System.EventHandler(this.subDirect4_Click);
+            // 
+            // subDirect3
+            // 
+            this.subDirect3.BackColor = System.Drawing.Color.LightGray;
+            this.subDirect3.BackgroundImage = global::StroopTest.Properties.Resources.arrowLeft;
+            this.subDirect3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.subDirect3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.subDirect3.Location = new System.Drawing.Point(529, 144);
+            this.subDirect3.Name = "subDirect3";
+            this.subDirect3.Size = new System.Drawing.Size(18, 17);
+            this.subDirect3.TabIndex = 155;
+            this.subDirect3.TabStop = false;
+            this.subDirect3.UseVisualStyleBackColor = false;
+            this.subDirect3.Click += new System.EventHandler(this.subDirect3_Click);
+            // 
+            // subDirect2
+            // 
+            this.subDirect2.BackColor = System.Drawing.Color.LightGray;
+            this.subDirect2.BackgroundImage = global::StroopTest.Properties.Resources.arrowDown;
+            this.subDirect2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.subDirect2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.subDirect2.Location = new System.Drawing.Point(505, 144);
+            this.subDirect2.Name = "subDirect2";
+            this.subDirect2.Size = new System.Drawing.Size(18, 17);
+            this.subDirect2.TabIndex = 154;
+            this.subDirect2.TabStop = false;
+            this.subDirect2.UseVisualStyleBackColor = false;
+            this.subDirect2.Click += new System.EventHandler(this.subDirect2_Click);
+            // 
+            // subDirect1
+            // 
+            this.subDirect1.BackColor = System.Drawing.Color.LightGray;
+            this.subDirect1.BackgroundImage = global::StroopTest.Properties.Resources.noDirection;
+            this.subDirect1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.subDirect1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.subDirect1.Location = new System.Drawing.Point(481, 144);
+            this.subDirect1.Name = "subDirect1";
+            this.subDirect1.Size = new System.Drawing.Size(18, 17);
+            this.subDirect1.TabIndex = 153;
+            this.subDirect1.TabStop = false;
+            this.subDirect1.UseVisualStyleBackColor = false;
+            this.subDirect1.Click += new System.EventHandler(this.subDirect1_Click);
+            // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.LightGray;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Enabled = false;
             this.panel3.Location = new System.Drawing.Point(481, 182);
@@ -155,6 +234,7 @@
             this.fixPointCircle.Name = "fixPointCircle";
             this.fixPointCircle.Size = new System.Drawing.Size(38, 21);
             this.fixPointCircle.TabIndex = 82;
+            this.fixPointCircle.TabStop = false;
             this.fixPointCircle.Text = "o";
             this.fixPointCircle.UseVisualStyleBackColor = true;
             this.fixPointCircle.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged_1);
@@ -166,6 +246,7 @@
             this.fixPointCross.Name = "fixPointCross";
             this.fixPointCross.Size = new System.Drawing.Size(38, 21);
             this.fixPointCross.TabIndex = 81;
+            this.fixPointCross.TabStop = false;
             this.fixPointCross.Text = "+";
             this.fixPointCross.UseVisualStyleBackColor = true;
             this.fixPointCross.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
@@ -186,6 +267,7 @@
             this.randIntervalOn.Name = "randIntervalOn";
             this.randIntervalOn.Size = new System.Drawing.Size(18, 17);
             this.randIntervalOn.TabIndex = 70;
+            this.randIntervalOn.TabStop = false;
             this.randIntervalOn.UseVisualStyleBackColor = true;
             // 
             // label6
@@ -209,16 +291,6 @@
             this.textBox2.TabStop = false;
             this.textBox2.Text = "Escreva cada uma das intruções em linhas separadas.";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
-            // 
-            // choosePositionSubs
-            // 
-            this.choosePositionSubs.AutoSize = true;
-            this.choosePositionSubs.Enabled = false;
-            this.choosePositionSubs.Location = new System.Drawing.Point(481, 145);
-            this.choosePositionSubs.Name = "choosePositionSubs";
-            this.choosePositionSubs.Size = new System.Drawing.Size(18, 17);
-            this.choosePositionSubs.TabIndex = 111;
-            this.choosePositionSubs.UseVisualStyleBackColor = true;
             // 
             // timeInterval
             // 
@@ -285,6 +357,7 @@
             this.chooseColorSubs.Name = "chooseColorSubs";
             this.chooseColorSubs.Size = new System.Drawing.Size(89, 23);
             this.chooseColorSubs.TabIndex = 112;
+            this.chooseColorSubs.TabStop = false;
             this.chooseColorSubs.Text = "escolher cor";
             this.chooseColorSubs.UseVisualStyleBackColor = true;
             this.chooseColorSubs.Click += new System.EventHandler(this.button11_Click);
@@ -357,6 +430,7 @@
             this.showSubsOn.Name = "showSubsOn";
             this.showSubsOn.Size = new System.Drawing.Size(18, 17);
             this.showSubsOn.TabIndex = 110;
+            this.showSubsOn.TabStop = false;
             this.showSubsOn.UseVisualStyleBackColor = true;
             this.showSubsOn.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
@@ -414,6 +488,7 @@
             this.randExpoOn.Name = "randExpoOn";
             this.randExpoOn.Size = new System.Drawing.Size(18, 17);
             this.randExpoOn.TabIndex = 50;
+            this.randExpoOn.TabStop = false;
             this.randExpoOn.UseVisualStyleBackColor = true;
             // 
             // label14
@@ -432,6 +507,7 @@
             this.captAudioOn.Name = "captAudioOn";
             this.captAudioOn.Size = new System.Drawing.Size(18, 17);
             this.captAudioOn.TabIndex = 100;
+            this.captAudioOn.TabStop = false;
             this.captAudioOn.UseVisualStyleBackColor = true;
             // 
             // progName
@@ -602,7 +678,6 @@
         private System.Windows.Forms.NumericUpDown numExpo;
         private System.Windows.Forms.NumericUpDown timeExpo;
         private System.Windows.Forms.NumericUpDown timeInterval;
-        private System.Windows.Forms.CheckBox choosePositionSubs;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label11;
@@ -612,5 +687,10 @@
         private System.Windows.Forms.CheckBox fixPointCross;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button subDirect5;
+        private System.Windows.Forms.Button subDirect4;
+        private System.Windows.Forms.Button subDirect3;
+        private System.Windows.Forms.Button subDirect2;
+        private System.Windows.Forms.Button subDirect1;
     }
 }

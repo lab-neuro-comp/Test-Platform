@@ -44,7 +44,7 @@ namespace StroopTest
             InitializeComponent();
             prgNametxt = prgName;
             usrNametxt = usrName;
-            
+
             startExpo();
         }
         
@@ -132,6 +132,7 @@ namespace StroopTest
 
 
                 await showInstructions(program, cts.Token); // Apresenta instruções se houver
+                showSubtitle(program);
 
                 while (true) // laço de repetição do programa até que o usuário decida não repetir mais o mesmo programa
                 {
@@ -235,7 +236,7 @@ namespace StroopTest
                 var randomNumbers = Enumerable.Range(0, imageDirs.Count()).OrderBy(x => rnd3.Next()).ToList(); // evita repetição no aleatorio de imagens
 
                 await showInstructions(program, cts.Token); // Apresenta instruções se houver
-
+                
                 while (true)
                 {
                     changeBackgroundColor(program, true); // muda cor de fundo se houver parametro
@@ -261,6 +262,19 @@ namespace StroopTest
                             {
                                 if (program.ExpositionRandom == true)
                                 {
+                                    /*
+                                    Bitmap image = new Bitmap(imageDirs[randomNumbers[i++]]);
+                                    Bitmap newImage = new Bitmap(image.Width, image.Height + 40);
+                                    using (Graphics g = Graphics.FromImage(newImage))
+                                    {
+                                        Rectangle rect = new Rectangle(0, 0, image.Width, image.Height);
+                                        g.DrawImageUnscaledAndClipped(image, rect);
+                                        g.FillRectangle(new SolidBrush(Color.Black), 0, image.Height, newImage.Width, 40);
+                                        Font font = new Font("Times New Roman", 22.0f);
+                                        PointF point = new PointF(0, image.Height);
+                                        g.DrawString("Watermark", font, Brushes.Red, point);
+                                    }
+                                    */
                                     pictureBox1.Image = Image.FromFile(imageDirs[randomNumbers[i++]]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
                                 }
                                 else
@@ -444,7 +458,41 @@ namespace StroopTest
             }
         }
         */// audio
-        
+
+        private void showSubtitle(StroopProgram program)
+        {
+            program.SubtitleShow = true;
+            program.SubtitlePlace = 3;
+            pictureBox1.Visible = true;
+
+            if(program.SubtitleShow == true)
+            {
+                subtitleLabel.Enabled = true;
+                subtitleLabel.Visible = true;
+                if(program.SubtitleColor.ToLower() != "false") subtitleLabel.ForeColor = ColorTranslator.FromHtml(program.SubtitleColor);
+                
+                switch (program.SubtitlePlace)
+                {
+                    case 1: //baixo
+                        subtitleLabel.Location = new Point(ClientSize.Width / 2 - subtitleLabel.Size.Width / 2, pictureBox1.Location.Y + pictureBox1.Height + 50);
+                        break;
+                    case 2: //esquerda
+                        subtitleLabel.Location = new Point(pictureBox1.Location.X - (subtitleLabel.Size.Width + 50), ClientSize.Height / 2 - subtitleLabel.Size.Height / 2);
+                        break;
+                    case 3: //direita
+                        subtitleLabel.Location = new Point(pictureBox1.Location.X + pictureBox1.Width + 50, ClientSize.Height / 2 - subtitleLabel.Size.Height / 2);
+                        break;
+                    case 4: // cima
+                        subtitleLabel.Location = new Point(ClientSize.Width / 2 - subtitleLabel.Size.Width / 2, pictureBox1.Location.Y - (subtitleLabel.Size.Height + 50));
+                        break;
+                    default: // centro
+                        subtitleLabel.Location = new Point(ClientSize.Width / 2 - subtitleLabel.Size.Width / 2, ClientSize.Height / 2 - subtitleLabel.Size.Height / 2);
+                        break;
+                }
+            }
+
+        }
+
         private async Task intervalOrFixPoint(StroopProgram program, CancellationToken token)
         {
             SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml("#D01C1F"));

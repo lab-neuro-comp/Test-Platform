@@ -239,7 +239,7 @@ namespace StroopTest
             get { return subtitlePlace; }
             set
             {
-                if (value >= 0 && value <= 5)
+                if (value >= 0 && value <= 4)
                 {
                     subtitlePlace = value;
                 }

@@ -32,13 +32,14 @@
             this.wordLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.instructionLabel = new System.Windows.Forms.Label();
+            this.subtitleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // wordLabel
             // 
-            this.wordLabel.BackColor = System.Drawing.Color.White;
-            this.wordLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wordLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.wordLabel.BackColor = System.Drawing.Color.Transparent;
             this.wordLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.wordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 160F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordLabel.Location = new System.Drawing.Point(0, 0);
@@ -52,6 +53,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.pictureBox1.Location = new System.Drawing.Point(124, 41);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(476, 454);
@@ -72,12 +74,26 @@
             this.instructionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.instructionLabel.Visible = false;
             // 
+            // subtitleLabel
+            // 
+            this.subtitleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.subtitleLabel.AutoSize = true;
+            this.subtitleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.subtitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtitleLabel.Location = new System.Drawing.Point(276, 456);
+            this.subtitleLabel.Name = "subtitleLabel";
+            this.subtitleLabel.Size = new System.Drawing.Size(133, 39);
+            this.subtitleLabel.TabIndex = 12;
+            this.subtitleLabel.Text = "subtitle";
+            this.subtitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormExposition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(715, 541);
+            this.Controls.Add(this.subtitleLabel);
             this.Controls.Add(this.wordLabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.instructionLabel);
@@ -89,6 +105,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormExposition_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -97,6 +114,7 @@
         private System.Windows.Forms.Label wordLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label instructionLabel;
+        private System.Windows.Forms.Label subtitleLabel;
     }
 }
 

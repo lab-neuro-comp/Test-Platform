@@ -19,9 +19,13 @@ namespace StroopTest
             path = dataFolderPath;
             InitializeComponent();
             chooseExpoType.SelectedIndex = 0;
-            subDirect1.BackColor = Color.LightGray;
             subDirectionList = new List<Button>();
             subDirectionList.Add(subDirect1); subDirectionList.Add(subDirect2); subDirectionList.Add(subDirect3); subDirectionList.Add(subDirect4); subDirectionList.Add(subDirect5);
+            for(int i = 0; i < subDirectionList.Count; i++)
+            {
+                subDirectionList[i].Enabled = false;
+                if (i > 0) subDirectionList[i].Visible = false;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -33,11 +37,22 @@ namespace StroopTest
         {
             if(showSubsOn.Checked)
             {
-                chooseColorSubs.Enabled = true; panel3.Enabled = true; // habilitar botões de posicao legenda
+                foreach (Button b in subDirectionList)
+                {
+                    b.Enabled = true;
+                    b.Visible = true;
+                }
+                chooseColorSubs.Enabled = true; panel3.Enabled = true; panel3.BackColor = Color.Transparent; subDirect1.BackColor = Color.Transparent; // habilitar botões de posicao legenda
             }
             else
             {
-                chooseColorSubs.Enabled = false; panel3.Enabled = false;
+                for (int i = 0; i < subDirectionList.Count; i++)
+                {
+                    subDirectionList[i].Enabled = false;
+                    subDirectionList[i].BackColor = Color.LightGray;
+                    if (i > 0) subDirectionList[i].Visible = false;
+                }
+                chooseColorSubs.Enabled = false; panel3.Enabled = false; panel3.BackColor = Color.LightGray;
             }
         }
 
@@ -214,7 +229,7 @@ namespace StroopTest
 
         private void saveProgramFile(string programText, List<string> instructions)
         {
-            StreamWriter writer = new StreamWriter(path + "/prg/" + progName.Text + ".prg");
+            StreamWriter writer = new StreamWriter(path + "prg/" + progName.Text + ".prg");
             writer.WriteLine(programText);
             if (instructions != null)
             {
@@ -293,9 +308,9 @@ namespace StroopTest
         {
             for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
             {
-                subDirectionList[i].BackColor = Color.Transparent;
+                subDirectionList[i].BackColor = Color.LightGray;
             }
-            subDirect1.BackColor = Color.LightGray;
+            subDirect1.BackColor = Color.Transparent;
             subDirectionNumber = 1;
         }
 
@@ -303,9 +318,9 @@ namespace StroopTest
         {
             for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
             {
-                subDirectionList[i].BackColor = Color.Transparent;
+                subDirectionList[i].BackColor = Color.LightGray;
             }
-            subDirect2.BackColor = Color.LightGray;
+            subDirect2.BackColor = Color.Transparent;
             subDirectionNumber = 2;
         }
 
@@ -313,9 +328,9 @@ namespace StroopTest
         {
             for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
             {
-                subDirectionList[i].BackColor = Color.Transparent;
+                subDirectionList[i].BackColor = Color.LightGray;
             }
-            subDirect3.BackColor = Color.LightGray;
+            subDirect3.BackColor = Color.Transparent;
             subDirectionNumber = 3;
         }
 
@@ -323,9 +338,9 @@ namespace StroopTest
         {
             for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
             {
-                subDirectionList[i].BackColor = Color.Transparent;
+                subDirectionList[i].BackColor = Color.LightGray;
             }
-            subDirect4.BackColor = Color.LightGray;
+            subDirect4.BackColor = Color.Transparent;
             subDirectionNumber = 4;
 
         }
@@ -334,9 +349,9 @@ namespace StroopTest
         {
             for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
             {
-                subDirectionList[i].BackColor = Color.Transparent;
+                subDirectionList[i].BackColor = Color.LightGray;
             }
-            subDirect5.BackColor = Color.LightGray;
+            subDirect5.BackColor = Color.Transparent;
             subDirectionNumber = 5;
         }
     }

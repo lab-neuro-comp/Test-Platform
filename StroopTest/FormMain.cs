@@ -160,6 +160,13 @@ namespace StroopTest
             }
         }
 
+        private void programaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormPrgConfig configureProgram = new FormPrgConfig(dataFolderPath);
+            try { configureProgram.ShowDialog(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
         /* commit test */
     }
 }

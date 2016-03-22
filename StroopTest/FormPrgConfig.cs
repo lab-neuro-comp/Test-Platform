@@ -107,17 +107,72 @@ namespace StroopTest
             openColorsList.Text = openListFile();
         }
 
+        private void editProgram(StroopProgram program)
+        {
+
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            StroopProgram programOpened = new StroopProgram();
+            string nameProgramFile = "error";
+
+            openFileDialog1.InitialDirectory = path + "/prg/";
+            openFileDialog1.Filter = "Arquivos de programa (*.prg)|*.prg";
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                nameProgramFile = Path.GetFileName(openFileDialog1.FileName);
+            
+            program.readProgramFile(nameProgramFile);
+            // ver se não tá com nome de programWrite!!
+
+            progName.Text = program.ProgramName;
+            numExpo.Value = program.NumExpositions;
+            timeExpo.Value = program.ExpositionTime;
+            if (program.ExpositionRandom) randExpoOn.Checked = true;
+            else randExpoOn.Checked = false;
+            timeInterval.Value = program.IntervalTime;
+            if (program.IntervalTimeRandom) randIntervalOn.Checked = true;
+            else randIntervalOn.Checked = false;
+            if(program.WordsListFile.ToLower() != "false")
+            {
+                openWordList.Enabled = true; openWordList.Text = program.WordsListFile;
+            }
+            else
+            {
+                openWordList.Enabled = false;
+            }
+            if (program.ColorsListFile.ToLower() != "false")
+            {
+                openColorsList.Enabled = true; openColorsList.Text = program.ColorsListFile;
+            }
+            else
+            {
+                openColorsList.Enabled = false;
+            }
+            chooseBackGColor.Text = program.BackgroundColor;
+            if (programWrite.AudioCapture) captAudioOn.Checked = true;
+            else captAudioOn.Checked = false;
+            if (programWrite.SubtitleShow) showSubsOn.Checked = true;
+            else showSubsOn.Checked = false;
+
+            if (programWrite.SubtitleShow)
+            {
+                subDirectionNumber = programWrite.SubtitlePlace; // ver issaqui
+                chooseColorSubs.Text = programWrite.SubtitleColor;
+            }
+            else
+            {
+                subDirectionNumber = programWrite.SubtitlePlace;
+                chooseColorSubs.Text = "false";
+            }
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             programWrite = new StroopProgram();
 
             try
             {
-                
-                programWrite.ProgramName = progName.Text;
-                programWrite.NumExpositions = Convert.ToInt32(numExpo.Value);
-
-
                 programWrite.ProgramName = progName.Text;
                 programWrite.NumExpositions = Convert.ToInt32(numExpo.Value);
                 programWrite.ExpositionTime = Convert.ToInt32(timeExpo.Value);

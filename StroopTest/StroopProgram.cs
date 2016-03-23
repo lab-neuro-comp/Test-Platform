@@ -14,7 +14,7 @@ namespace StroopTest
 {
     class StroopProgram
     {
-        private string defaultProgramFileText = "padrao 16 2000 true 1800 false words.lst colors.lst false true false 0 false txt false false";
+        private string defaultProgramFileText = "padrao 16 2000 true 1800 False words.lst colors.lst false true false 0 false txt false false";
         private string defaultWordsListName = "words.lst";
         private string defaultWordsListText = "amarelo azul verde vermelho";
         private string defaultColorsListName = "colors.lst";

@@ -52,14 +52,14 @@ namespace StroopTest
         
         private void programaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPrgConfig configureProgram = new FormPrgConfig(dataFolderPath);
+            FormPrgConfig configureProgram = new FormPrgConfig(dataFolderPath, false);
             try { configureProgram.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
         
         private void textoECoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLstConfig configureWordsList = new FormLstConfig(dataFolderPath);
+            FormLstConfig configureWordsList = new FormLstConfig(dataFolderPath, false);
             try { configureWordsList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -83,7 +83,7 @@ namespace StroopTest
 
         private void programaToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            FormDefine defineProgram = new FormDefine("Programa: ", dataFolderPath);
+            FormDefine defineProgram = new FormDefine("Programa: ", dataFolderPath + "/prg/", "prg");
             var result = defineProgram.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -94,7 +94,7 @@ namespace StroopTest
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormDefine defineUser = new FormDefine("Usuário: ", dataFolderPath);
+            FormDefine defineUser = new FormDefine("Usuário: ", dataFolderPath + "/prg/", "prg");
             var result = defineUser.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -105,7 +105,7 @@ namespace StroopTest
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            FormDefine defineProgram = new FormDefine("Programa: ", dataFolderPath);
+            FormDefine defineProgram = new FormDefine("Programa: ", dataFolderPath + "/prg/", "prg");
             var result = defineProgram.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -116,7 +116,7 @@ namespace StroopTest
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-            FormDefine defineUser = new FormDefine("Usuário: ", dataFolderPath);
+            FormDefine defineUser = new FormDefine("Usuário: ", dataFolderPath + "/prg/", "prg");
             var result = defineUser.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -162,8 +162,15 @@ namespace StroopTest
 
         private void programaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FormPrgConfig configureProgram = new FormPrgConfig(dataFolderPath);
+            FormPrgConfig configureProgram = new FormPrgConfig(dataFolderPath, true);
             try { configureProgram.ShowDialog(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+        
+        private void textoECoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormLstConfig configureWordsList = new FormLstConfig(dataFolderPath, true);
+            try { configureWordsList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 

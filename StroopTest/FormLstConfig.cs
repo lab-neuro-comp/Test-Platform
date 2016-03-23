@@ -10,11 +10,8 @@ namespace StroopTest
     {
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string path;
-        private bool onlyColorLst = false;
-        private bool onlyWordLst = false;
-        private bool colorWordLst = true;
 
-        public FormLstConfig(string dataFolderPath)
+        public FormLstConfig(string dataFolderPath, bool editModeOn)
         {
             path = dataFolderPath + "/lst/";
             InitializeComponent();
@@ -24,6 +21,57 @@ namespace StroopTest
 
             checkWords.Checked = true;
             checkColors.Checked = true;
+            if (editModeOn)
+            {
+                editList();
+            }
+        }
+
+        private void editList()
+        {
+            StroopProgram program = new StroopProgram();
+            FormDefine defineProgram = new FormDefine("Lista: ", path, "lst");
+            var result = defineProgram.ShowDialog();
+            string listName = "error";
+            string[] list;
+
+            try
+            {
+                if (result == DialogResult.OK)
+                {
+                    listName = defineProgram.ReturnValue;
+                }
+
+                if (listName != "error")
+                {
+                    list = program.readListFile(path + listName + ".lst");
+                    if (Regex.IsMatch(list[0], hexPattern))
+                    {
+                        checkColors.Checked = true;
+                        checkWords.Checked = false;
+                        for (int i = 0; i < list.Length; i++)
+                        {
+                            hexColorsList.Items.Add(list[i]);
+                            hexColorsList.Items[i].ForeColor = ColorTranslator.FromHtml(list[i]);
+                        }
+                    }
+                    else
+                    {
+                        checkColors.Checked = false;
+                        checkWords.Checked = true;
+                        for (int i = 0; i < list.Length; i++)
+                        {
+                            wordsColoredList.Items.Add(list[i]);
+                        }
+                    }
+                }
+                else Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Close();
+            }
         }
         
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -146,7 +194,7 @@ namespace StroopTest
             {
                 if(checkWords.Checked && checkColors.Checked && !String.IsNullOrEmpty(textWords.Text) && !String.IsNullOrEmpty(textHexColor.Text))
                 {
-                    if(wordsColoredList.Items.Count != hexColorsList.Items.Count)
+                    if(wordsColoredList.Items.Count != hexColorsList.Items.Count || hexColorsList.Items.Count != wordsColoredList.Items.Count)
                     {
                         wordsColoredList.Items.Clear();
                         hexColorsList.Items.Clear();

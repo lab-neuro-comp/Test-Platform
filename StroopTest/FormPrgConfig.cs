@@ -13,10 +13,12 @@ namespace StroopTest
         StroopProgram programWrite;
         private List<Button> subDirectionList;
         private int subDirectionNumber = 0;
+        private bool editMode;
 
-        public FormPrgConfig(string dataFolderPath)
+        public FormPrgConfig(string dataFolderPath, bool editModeOn)
         {
             path = dataFolderPath;
+            editMode = editModeOn;
             InitializeComponent();
             chooseExpoType.SelectedIndex = 0;
             subDirectionList = new List<Button>();
@@ -25,6 +27,10 @@ namespace StroopTest
             {
                 subDirectionList[i].Enabled = false;
                 if (i > 0) subDirectionList[i].Visible = false;
+            }
+            if(editModeOn == true)
+            {
+                editProgram();
             }
         }
 
@@ -107,64 +113,133 @@ namespace StroopTest
             openColorsList.Text = openListFile();
         }
 
-        private void editProgram(StroopProgram program)
+        private void editProgram()
         {
+            StroopProgram program = new StroopProgram();
 
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            StroopProgram programOpened = new StroopProgram();
-            string nameProgramFile = "error";
+            FormDefine defineProgram = new FormDefine("Programa: ", path + "/prg/", "prg");
+            var result = defineProgram.ShowDialog();
+            string programName = "error";
 
-            openFileDialog1.InitialDirectory = path + "/prg/";
-            openFileDialog1.Filter = "Arquivos de programa (*.prg)|*.prg";
-            openFileDialog1.RestoreDirectory = true;
+            try
+            {
+                if (result == DialogResult.OK)
+                {
+                    programName = defineProgram.ReturnValue;
+                }
 
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                nameProgramFile = Path.GetFileName(openFileDialog1.FileName);
-            
-            program.readProgramFile(nameProgramFile);
-            // ver se não tá com nome de programWrite!!
+                program.readProgramFile(path + "/prg/" + programName + ".prg");
 
-            progName.Text = program.ProgramName;
-            numExpo.Value = program.NumExpositions;
-            timeExpo.Value = program.ExpositionTime;
-            if (program.ExpositionRandom) randExpoOn.Checked = true;
-            else randExpoOn.Checked = false;
-            timeInterval.Value = program.IntervalTime;
-            if (program.IntervalTimeRandom) randIntervalOn.Checked = true;
-            else randIntervalOn.Checked = false;
-            if(program.WordsListFile.ToLower() != "false")
-            {
-                openWordList.Enabled = true; openWordList.Text = program.WordsListFile;
-            }
-            else
-            {
-                openWordList.Enabled = false;
-            }
-            if (program.ColorsListFile.ToLower() != "false")
-            {
-                openColorsList.Enabled = true; openColorsList.Text = program.ColorsListFile;
-            }
-            else
-            {
-                openColorsList.Enabled = false;
-            }
-            chooseBackGColor.Text = program.BackgroundColor;
-            if (programWrite.AudioCapture) captAudioOn.Checked = true;
-            else captAudioOn.Checked = false;
-            if (programWrite.SubtitleShow) showSubsOn.Checked = true;
-            else showSubsOn.Checked = false;
+                progName.Text = program.ProgramName;
+                numExpo.Value = program.NumExpositions;
+                timeExpo.Value = program.ExpositionTime;
+                if (program.ExpositionRandom) randExpoOn.Checked = true;
+                else randExpoOn.Checked = false;
+                timeInterval.Value = program.IntervalTime;
+                if (program.IntervalTimeRandom) randIntervalOn.Checked = true;
+                else randIntervalOn.Checked = false;
+                if (program.WordsListFile.ToLower() != "false")
+                {
+                    openWordList.Enabled = true; openWordList.Text = program.WordsListFile;
+                }
+                else
+                {
+                    openWordList.Enabled = false;
+                }
+                if (program.ColorsListFile.ToLower() != "false")
+                {
+                    openColorsList.Enabled = true; openColorsList.Text = program.ColorsListFile;
+                }
+                else
+                {
+                    openColorsList.Enabled = false;
+                }
+                if (program.BackgroundColor.ToLower() != "false")
+                {
+                    panel2.BackColor = ColorTranslator.FromHtml(chooseBackGColor.Text);
+                    chooseBackGColor.Text = program.BackgroundColor;
+                } else chooseBackGColor.Text = "#FFFFFF";
+                if (program.AudioCapture) captAudioOn.Checked = true;
+                else captAudioOn.Checked = false;
+                if (program.SubtitleShow) showSubsOn.Checked = true;
+                else showSubsOn.Checked = false;
 
-            if (programWrite.SubtitleShow)
-            {
-                subDirectionNumber = programWrite.SubtitlePlace; // ver issaqui
-                chooseColorSubs.Text = programWrite.SubtitleColor;
-            }
-            else
-            {
-                subDirectionNumber = programWrite.SubtitlePlace;
-                chooseColorSubs.Text = "false";
-            }
+                if (program.SubtitleShow)
+                {
+                    subDirectionNumber = program.SubtitlePlace;
+                    selectSubDirectionNumber(subDirectionNumber);
+                    if(program.SubtitleColor.ToLower() != "false")
+                    {
+                        chooseColorSubs.Text = program.SubtitleColor;
+                        panel2.BackColor = ColorTranslator.FromHtml(chooseColorSubs.Text);
+                    } else chooseColorSubs.Text = "escolher";
+                }
+                else
+                {
+                    for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
+                    {
+                        subDirectionList[i].Enabled = false;
+                    }
+                    subDirectionNumber = program.SubtitlePlace;
+                    chooseColorSubs.Text = "escolher";
+                }
 
+                switch (program.ExpositionType)
+                {
+                    case "txt":
+                        chooseExpoType.SelectedIndex = 0;
+                        break;
+                    case "img":
+                        chooseExpoType.SelectedIndex = 1;
+                        break;
+                    case "imgtxt":
+                        chooseExpoType.SelectedIndex = 2;
+                        break;
+                    default:
+                        chooseExpoType.SelectedIndex = 0;
+                        break;
+                }
+
+                if (program.ImagesListFile.ToLower() != "false") { openImgsList.Enabled = true; openImgsList.Text = program.ImagesListFile; }
+                else { openImgsList.Enabled = false; openImgsList.Text = "false"; }
+
+                if (program.FixPoint == "+")
+                {
+                    fixPointCross.Checked = true;
+                    fixPointCircle.Checked = false;
+                }
+                else
+                {
+                    if (program.FixPoint == "o")
+                    {
+                        fixPointCross.Checked = false;
+                        fixPointCircle.Checked = true;
+                    }
+                    else
+                    {
+                        fixPointCross.Checked = false;
+                        fixPointCircle.Checked = false;
+                    }
+                }
+                
+                if (program.InstructionText != null) // lê instrução se houver
+                {
+                    textBox2.Text = program.InstructionText[0];
+                    for (int i = 1; i < program.InstructionText.Count; i++)
+                    {
+                        textBox2.AppendText(Environment.NewLine + program.InstructionText[i]);
+                    }
+                }
+                else
+                {
+                    textBox2.Text = instrBoxText;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Close();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -225,7 +300,6 @@ namespace StroopTest
                 if (openImgsList.Enabled) { programWrite.ImagesListFile = openImgsList.Text; }
                 else { programWrite.ImagesListFile = "false"; }
                 
-
                 if (fixPointCross.Checked)
                 {
                     programWrite.FixPoint = "+";
@@ -272,6 +346,7 @@ namespace StroopTest
                                  programWrite.ExpositionType.ToLower() + " " +
                                  programWrite.ImagesListFile + " " +
                                  programWrite.FixPoint;
+
                 
                 saveProgramFile(text, programWrite.InstructionText);
                 this.Close();
@@ -307,8 +382,6 @@ namespace StroopTest
 
             openFileDialog1.InitialDirectory = path + "/lst/";
             openFileDialog1.Filter = "Arquivos de lista (*.lst)|*.lst";
-            openFileDialog1.FilterIndex = 2;
-            openFileDialog1.RestoreDirectory = true;
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 nameListFile = Path.GetFileName(openFileDialog1.FileName);
@@ -361,53 +434,45 @@ namespace StroopTest
 
         private void subDirect1_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
-            {
-                subDirectionList[i].BackColor = Color.LightGray;
-            }
-            subDirect1.BackColor = Color.Transparent;
-            subDirectionNumber = 1;
+            selectSubDirectionNumber(1);
         }
 
         private void subDirect2_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
-            {
-                subDirectionList[i].BackColor = Color.LightGray;
-            }
-            subDirect2.BackColor = Color.Transparent;
-            subDirectionNumber = 2;
+            selectSubDirectionNumber(2);
         }
 
         private void subDirect3_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
-            {
-                subDirectionList[i].BackColor = Color.LightGray;
-            }
-            subDirect3.BackColor = Color.Transparent;
-            subDirectionNumber = 3;
+            selectSubDirectionNumber(3);
         }
 
         private void subDirect4_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
-            {
-                subDirectionList[i].BackColor = Color.LightGray;
-            }
-            subDirect4.BackColor = Color.Transparent;
-            subDirectionNumber = 4;
-
+            selectSubDirectionNumber(4);
         }
 
         private void subDirect5_Click(object sender, EventArgs e)
+        {
+            selectSubDirectionNumber(5);
+        }
+
+        private void selectSubDirectionNumber(int number)
         {
             for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
             {
                 subDirectionList[i].BackColor = Color.LightGray;
             }
-            subDirect5.BackColor = Color.Transparent;
-            subDirectionNumber = 5;
+            subDirectionList[number - 1].BackColor = Color.Transparent;
+            subDirectionNumber = number;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string colorCode = pickColor();
+            button1.Text = colorCode;
+            panel4.BackColor = ColorTranslator.FromHtml(colorCode);
         }
     }
 }

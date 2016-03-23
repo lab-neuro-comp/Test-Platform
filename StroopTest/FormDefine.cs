@@ -16,14 +16,14 @@ namespace StroopTest
         public string ReturnValue { get; set; }
         public string[] filePaths;
 
-        public FormDefine(string defineTarget, string dataFolderPath)
+        public FormDefine(string defineTarget, string dataFolderPath, string fileType)
         {
             InitializeComponent();
             this.Text = "Definir " + defineTarget;
         
             if (Directory.Exists(dataFolderPath))
             {
-                filePaths = Directory.GetFiles(dataFolderPath, "*.prg", SearchOption.AllDirectories);
+                filePaths = Directory.GetFiles(dataFolderPath, ("*." + fileType), SearchOption.AllDirectories);
                 for (int i = 0; i < filePaths.Length; i++)
                 {
                     comboBox1.Items.Add(Path.GetFileNameWithoutExtension(filePaths[i]));

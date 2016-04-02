@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StroopTest
@@ -15,23 +8,42 @@ namespace StroopTest
     {
         public string ReturnValue { get; set; }
         public string[] filePaths;
+        private string type;
+        private string usrName;
 
         public FormDefine(string defineTarget, string dataFolderPath, string fileType)
         {
             InitializeComponent();
             this.Text = "Definir " + defineTarget;
-        
-            if (Directory.Exists(dataFolderPath))
+
+            type = fileType;
+
+            comboBox1.Enabled = false;
+            comboBox1.Visible = false;
+            textBox1.Enabled = false;
+            textBox1.Visible = false;
+
+            if (type == "prg" || type == "lst")
             {
-                filePaths = Directory.GetFiles(dataFolderPath, ("*." + fileType), SearchOption.AllDirectories);
-                for (int i = 0; i < filePaths.Length; i++)
+                comboBox1.Enabled = true;
+                comboBox1.Visible = true;
+                if (Directory.Exists(dataFolderPath))
                 {
-                    comboBox1.Items.Add(Path.GetFileNameWithoutExtension(filePaths[i]));
+                    filePaths = Directory.GetFiles(dataFolderPath, ("*." + fileType), SearchOption.AllDirectories);
+                    for (int i = 0; i < filePaths.Length; i++)
+                    {
+                        comboBox1.Items.Add(Path.GetFileNameWithoutExtension(filePaths[i]));
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("{0} é um diretório inválido!.", dataFolderPath);
                 }
             }
             else
             {
-                Console.WriteLine("{0} é um diretório inválido!.", dataFolderPath);
+                textBox1.Enabled = true;
+                textBox1.Visible = true;
             }
         }
         
@@ -44,10 +56,27 @@ namespace StroopTest
 
         private void button1_Click(object sender, EventArgs e)
         {
-            comboBox1.Items.Add(comboBox1.Text);
-            this.ReturnValue = comboBox1.Items[comboBox1.Items.Count-1].ToString();
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            try
+            {
+                if (type == "prg" || type == "lst")
+                {
+                    comboBox1.Items.Add(comboBox1.Text);
+                    this.ReturnValue = comboBox1.Items[comboBox1.Items.Count - 1].ToString();
+                }
+                else
+                {
+                    usrName = textBox1.Text.Replace(" ", "");
+                    this.ReturnValue = usrName;
+                    if (String.IsNullOrEmpty(textBox1.Text)) throw new Exception("A caixa de texto não pode estar vazia!") ;
+                }
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

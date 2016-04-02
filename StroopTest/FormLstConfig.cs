@@ -289,21 +289,20 @@ namespace StroopTest
                 {
                     throw new Exception("Nome do(s) arquivo(s) deve ser preenchido");
                 }
-
-                /*
-                SaveFileDialog saveColorsList = new SaveFileDialog();
-                saveColorsList.InitialDirectory = (Path.GetDirectoryName(Application.ExecutablePath) + "/data/lst/");
-                saveColorsList.Filter = "Lista de Cores (*.lst)|*.lst";
-
-                SaveFileDialog saveWordsList = new SaveFileDialog();
-                saveWordsList.InitialDirectory = (Path.GetDirectoryName(Application.ExecutablePath) + "/data/lst/");
-                saveWordsList.Filter = "Lista de Palavras (*.lst)|*.lst";
-                */
                 
                 if (/*saveColorsList.ShowDialog() == DialogResult.OK && */checkColors.Enabled) // lê instrução se houver
                 {
                     if(hexColorsList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + textBox1.Text + "_Colors.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
                     {
+                        if (File.Exists(path + textBox1.Text + "_Colors.lst"))
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobre-escrevê-la?", "Lista já existe", MessageBoxButtons.OKCancel);
+                            if (dialogResult == DialogResult.Cancel)
+                            {
+                                throw new Exception("Escrita em lista cancelada!");
+                            }
+                        }
+
                         StreamWriter writer1 = new StreamWriter(path + textBox1.Text + "_Colors.lst" /*saveColorsList.OpenFile()*/);
 
                         for (int i = 0; i < hexColorsList.Items.Count; i++)
@@ -311,7 +310,7 @@ namespace StroopTest
                             writer1.Write(hexColorsList.Items[i].Text + "\t");
                         }
 
-                        writer1.Dispose();
+                        //writer1.Dispose();
                         writer1.Close();
                         MessageBox.Show("A lista " + textBox1.Text + "_Colors.lst foi salva com sucesso.");
                     }
@@ -326,6 +325,15 @@ namespace StroopTest
                 {
                     if(wordsColoredList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + textBox1.Text + "_Words.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
                     {
+                        if (File.Exists(path + textBox1.Text + "_Words.lst"))
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobre-escrevê-la?", "Lista já existe", MessageBoxButtons.OKCancel);
+                            if (dialogResult == DialogResult.Cancel)
+                            {
+                                throw new Exception("Escrita em lista cancelada!");
+                            }
+                        }
+
                         StreamWriter writer2 = new StreamWriter(path + textBox1.Text + "_Words.lst" /*saveWordsList.OpenFile()*/);
 
                         for (int i = 0; i < wordsColoredList.Items.Count; i++)
@@ -333,7 +341,7 @@ namespace StroopTest
                             writer2.Write(wordsColoredList.Items[i].Text + "\t");
                         }
 
-                        writer2.Dispose();
+                        //writer2.Dispose();
                         writer2.Close();
                         MessageBox.Show("A lista " + textBox1.Text + "_Words.lst foi salva com sucesso.");
                     }

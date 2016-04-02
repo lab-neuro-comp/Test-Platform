@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StroopTest
@@ -94,7 +87,7 @@ namespace StroopTest
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormDefine defineUser = new FormDefine("Usuário: ", dataFolderPath + "/prg/", "prg");
+            FormDefine defineUser = new FormDefine("Usuário: ", dataFolderPath, "usr");
             var result = defineUser.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -116,7 +109,7 @@ namespace StroopTest
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-            FormDefine defineUser = new FormDefine("Usuário: ", dataFolderPath + "/prg/", "prg");
+            FormDefine defineUser = new FormDefine("Usuário: ", dataFolderPath, "usr");
             var result = defineUser.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -143,7 +136,7 @@ namespace StroopTest
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void initializeDefaultProgram() // inicializa programDefaulta padrão
+        private void initializeDefaultProgram() // inicializa programDefault padrão
         {
             programDefault.UserName = defaultPrgName;
             programDefault.ProgramName = defaultUsrName;
@@ -173,7 +166,5 @@ namespace StroopTest
             try { configureWordsList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-
-        /* commit test */
     }
 }

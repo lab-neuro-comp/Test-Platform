@@ -53,7 +53,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Location = new System.Drawing.Point(124, 41);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(476, 454);
@@ -79,6 +79,7 @@
             this.subtitleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.subtitleLabel.AutoSize = true;
             this.subtitleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.subtitleLabel.Enabled = false;
             this.subtitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtitleLabel.Location = new System.Drawing.Point(276, 456);
             this.subtitleLabel.Name = "subtitleLabel";
@@ -86,6 +87,7 @@
             this.subtitleLabel.TabIndex = 12;
             this.subtitleLabel.Text = "subtitle";
             this.subtitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.subtitleLabel.Visible = false;
             // 
             // FormExposition
             // 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace StroopTest
@@ -10,6 +11,7 @@ namespace StroopTest
     {
         private string path;
         private string instrBoxText = "Escreva cada uma das intruções em linhas separadas.";
+        private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         StroopProgram programWrite;
         private List<Button> subDirectionList;
         private int subDirectionNumber = 0;
@@ -116,8 +118,8 @@ namespace StroopTest
         private void editProgram()
         {
             StroopProgram program = new StroopProgram();
-
             FormDefine defineProgram = new FormDefine("Programa: ", path + "/prg/", "prg");
+
             var result = defineProgram.ShowDialog();
             string programName = "error";
 
@@ -126,114 +128,123 @@ namespace StroopTest
                 if (result == DialogResult.OK)
                 {
                     programName = defineProgram.ReturnValue;
-                }
 
-                program.readProgramFile(path + "/prg/" + programName + ".prg");
+                    program.readProgramFile(path + "/prg/" + programName + ".prg");
 
-                progName.Text = program.ProgramName;
-                numExpo.Value = program.NumExpositions;
-                timeExpo.Value = program.ExpositionTime;
-                if (program.ExpositionRandom) randExpoOn.Checked = true;
-                else randExpoOn.Checked = false;
-                timeInterval.Value = program.IntervalTime;
-                if (program.IntervalTimeRandom) randIntervalOn.Checked = true;
-                else randIntervalOn.Checked = false;
-                if (program.WordsListFile.ToLower() != "false")
-                {
-                    openWordList.Enabled = true; openWordList.Text = program.WordsListFile;
-                }
-                else
-                {
-                    openWordList.Enabled = false;
-                }
-                if (program.ColorsListFile.ToLower() != "false")
-                {
-                    openColorsList.Enabled = true; openColorsList.Text = program.ColorsListFile;
-                }
-                else
-                {
-                    openColorsList.Enabled = false;
-                }
-                if (program.BackgroundColor.ToLower() != "false")
-                {
-                    panel2.BackColor = ColorTranslator.FromHtml(chooseBackGColor.Text);
-                    chooseBackGColor.Text = program.BackgroundColor;
-                } else chooseBackGColor.Text = "#FFFFFF";
-                if (program.AudioCapture) captAudioOn.Checked = true;
-                else captAudioOn.Checked = false;
-                if (program.SubtitleShow) showSubsOn.Checked = true;
-                else showSubsOn.Checked = false;
-
-                if (program.SubtitleShow)
-                {
-                    subDirectionNumber = program.SubtitlePlace;
-                    selectSubDirectionNumber(subDirectionNumber);
-                    if(program.SubtitleColor.ToLower() != "false")
+                    progName.Text = program.ProgramName;
+                    numExpo.Value = program.NumExpositions;
+                    timeExpo.Value = program.ExpositionTime;
+                    if (program.ExpositionRandom) randExpoOn.Checked = true;
+                    else randExpoOn.Checked = false;
+                    timeInterval.Value = program.IntervalTime;
+                    if (program.IntervalTimeRandom) randIntervalOn.Checked = true;
+                    else randIntervalOn.Checked = false;
+                    if (program.WordsListFile.ToLower() != "false")
                     {
-                        chooseColorSubs.Text = program.SubtitleColor;
-                        panel2.BackColor = ColorTranslator.FromHtml(chooseColorSubs.Text);
-                    } else chooseColorSubs.Text = "escolher";
-                }
-                else
-                {
-                    for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
-                    {
-                        subDirectionList[i].Enabled = false;
-                    }
-                    subDirectionNumber = program.SubtitlePlace;
-                    chooseColorSubs.Text = "escolher";
-                }
-
-                switch (program.ExpositionType)
-                {
-                    case "txt":
-                        chooseExpoType.SelectedIndex = 0;
-                        break;
-                    case "img":
-                        chooseExpoType.SelectedIndex = 1;
-                        break;
-                    case "imgtxt":
-                        chooseExpoType.SelectedIndex = 2;
-                        break;
-                    default:
-                        chooseExpoType.SelectedIndex = 0;
-                        break;
-                }
-
-                if (program.ImagesListFile.ToLower() != "false") { openImgsList.Enabled = true; openImgsList.Text = program.ImagesListFile; }
-                else { openImgsList.Enabled = false; openImgsList.Text = "false"; }
-
-                if (program.FixPoint == "+")
-                {
-                    fixPointCross.Checked = true;
-                    fixPointCircle.Checked = false;
-                }
-                else
-                {
-                    if (program.FixPoint == "o")
-                    {
-                        fixPointCross.Checked = false;
-                        fixPointCircle.Checked = true;
+                        openWordList.Enabled = true; openWordList.Text = program.WordsListFile;
                     }
                     else
                     {
-                        fixPointCross.Checked = false;
+                        openWordList.Enabled = false;
+                    }
+                    if (program.ColorsListFile.ToLower() != "false")
+                    {
+                        openColorsList.Enabled = true; openColorsList.Text = program.ColorsListFile;
+                    }
+                    else
+                    {
+                        openColorsList.Enabled = false;
+                    }
+                    if (program.BackgroundColor.ToLower() != "false")
+                    {
+                        panel2.BackColor = ColorTranslator.FromHtml(chooseBackGColor.Text);
+                        chooseBackGColor.Text = program.BackgroundColor;
+                    }
+                    else chooseBackGColor.Text = "#FFFFFF";
+                    if (program.AudioCapture) captAudioOn.Checked = true;
+                    else captAudioOn.Checked = false;
+                    if (program.SubtitleShow) showSubsOn.Checked = true;
+                    else showSubsOn.Checked = false;
+
+                    if (program.SubtitleShow)
+                    {
+                        subDirectionNumber = program.SubtitlePlace;
+                        selectSubDirectionNumber(subDirectionNumber);
+                        if (program.SubtitleColor.ToLower() != "false")
+                        {
+                            chooseColorSubs.Text = program.SubtitleColor;
+                            panel2.BackColor = ColorTranslator.FromHtml(chooseColorSubs.Text);
+                        }
+                        else chooseColorSubs.Text = "escolher";
+                    }
+                    else
+                    {
+                        for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
+                        {
+                            subDirectionList[i].Enabled = false;
+                        }
+                        subDirectionNumber = program.SubtitlePlace;
+                        chooseColorSubs.Text = "escolher";
+                    }
+
+                    switch (program.ExpositionType)
+                    {
+                        case "txt":
+                            chooseExpoType.SelectedIndex = 0;
+                            break;
+                        case "img":
+                            chooseExpoType.SelectedIndex = 1;
+                            break;
+                        case "imgtxt":
+                            chooseExpoType.SelectedIndex = 2;
+                            break;
+                        default:
+                            chooseExpoType.SelectedIndex = 0;
+                            break;
+                    }
+
+                    if (program.ImagesListFile.ToLower() != "false") { openImgsList.Enabled = true; openImgsList.Text = program.ImagesListFile; }
+                    else { openImgsList.Enabled = false; openImgsList.Text = "false"; }
+
+                    if (program.FixPoint == "+")
+                    {
+                        fixPointCross.Checked = true;
                         fixPointCircle.Checked = false;
                     }
-                }
-                
-                if (program.InstructionText != null) // lê instrução se houver
-                {
-                    textBox2.Text = program.InstructionText[0];
-                    for (int i = 1; i < program.InstructionText.Count; i++)
+                    else
                     {
-                        textBox2.AppendText(Environment.NewLine + program.InstructionText[i]);
+                        if (program.FixPoint == "o")
+                        {
+                            fixPointCross.Checked = false;
+                            fixPointCircle.Checked = true;
+                        }
+                        else
+                        {
+                            fixPointCross.Checked = false;
+                            fixPointCircle.Checked = false;
+                        }
+                    }
+
+                    if (program.InstructionText != null) // lê instrução se houver
+                    {
+                        textBox2.ForeColor = Color.Black;
+                        textBox2.Text = program.InstructionText[0];
+                        for (int i = 1; i < program.InstructionText.Count; i++)
+                        {
+                            textBox2.AppendText(Environment.NewLine + program.InstructionText[i]);
+                        }
+                    }
+                    else
+                    {
+                        textBox2.Text = instrBoxText;
                     }
                 }
                 else
                 {
-                    textBox2.Text = instrBoxText;
+
+                    Close();
                 }
+                
             }
             catch (Exception ex)
             {
@@ -268,15 +279,18 @@ namespace StroopTest
                     if (openWordList.Text == "error") { throw new Exception("Selecione o arquivo de lista de cores!"); }
                     programWrite.ColorsListFile = "false";
                 }
+                
+                if (Regex.IsMatch(chooseBackGColor.Text, hexPattern)) programWrite.BackgroundColor = chooseBackGColor.Text;
+                else programWrite.BackgroundColor = "false";
 
-                programWrite.BackgroundColor = chooseBackGColor.Text;
                 programWrite.AudioCapture = captAudioOn.Checked;
                 programWrite.SubtitleShow = showSubsOn.Checked;
 
                 if(programWrite.SubtitleShow)
                 {
                     programWrite.SubtitlePlace = subDirectionNumber;
-                    programWrite.SubtitleColor = chooseColorSubs.Text;
+                    if (Regex.IsMatch(chooseColorSubs.Text, hexPattern)) programWrite.SubtitleColor = chooseColorSubs.Text;
+                    else programWrite.SubtitleColor = "false";
                 }
                 else
                 {
@@ -359,6 +373,15 @@ namespace StroopTest
 
         private void saveProgramFile(string programText, List<string> instructions)
         {
+            if (File.Exists(path + "prg/" + progName.Text + ".prg"))
+            {
+                DialogResult dialogResult = MessageBox.Show("O programa já existe, deseja sobre-escrevê-lo?", "Audio", MessageBoxButtons.OKCancel);
+                if (dialogResult == DialogResult.Cancel)
+                {
+                    throw new Exception("Escrita de programa cancelada!");
+                }
+            }
+
             StreamWriter writer = new StreamWriter(path + "prg/" + progName.Text + ".prg");
             writer.WriteLine(programText);
             if (instructions != null)
@@ -368,7 +391,7 @@ namespace StroopTest
                     writer.WriteLine(instructions[i]);
                 }
             }
-            writer.Dispose();
+            //writer.Dispose();
             writer.Close();
             MessageBox.Show("Programa salvo no diretório:\n" + path + "/prg/");
             this.Close();
@@ -376,6 +399,16 @@ namespace StroopTest
 
         private string openListFile()
         {
+            string progName = "error";
+
+            FormDefine defineProgram = new FormDefine("Lista: ", path + "/lst/", "lst");
+            var result = defineProgram.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                progName = defineProgram.ReturnValue + ".lst";
+            }
+
+            /*
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             StroopProgram programOpened = new StroopProgram();
             string nameListFile = "error";
@@ -385,8 +418,10 @@ namespace StroopTest
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 nameListFile = Path.GetFileName(openFileDialog1.FileName);
-
+            
             return nameListFile;
+            */
+            return progName;
         }
 
         string pickColor()

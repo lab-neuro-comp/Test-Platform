@@ -13,9 +13,9 @@ using System.Linq;
 using System.Threading;
 using System.Text.RegularExpressions;
 
-/*// audio
+// beginAudio
 using NAudio.Wave;
-*/// audio
+// endAudio
 
 namespace StroopTest
 {
@@ -23,20 +23,20 @@ namespace StroopTest
     {
         CancellationTokenSource cts;
         StroopProgram programInUse = new StroopProgram(); // programa em uso
-        
+        //AudioRecorder audioRecorder;
+
         private static int elapsedTime; // tempo decorrido
         private string path;// = (Path.GetDirectoryName(Application.ExecutablePath) + "/StroopTestFiles/"); // caminho diretório
         private int instrAwaitTime = 4000;
+        //private bool audioDllExists = false;
 
         private string prgNametxt;
         private string usrNametxt;
 
-        /*// audio
+        // beginAudio
         private WaveIn waveSource = null; // entrada de áudio
         public WaveFileWriter waveFile = null; // arquivo salvar áudio
-        */// audio
-
-        private bool ongoingExposition = false;
+        // endAudio
         
         public FormExposition(string prgName, string usrName, string dataFolderPath)
         {
@@ -45,6 +45,15 @@ namespace StroopTest
             prgNametxt = prgName;
             usrNametxt = usrName;
 
+            // beginAudio
+            /*
+            if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "/NAudio.dll")) {
+                audioDllExists = true;
+                audioRecorder = new AudioRecorder(usrNametxt, prgNametxt, dataFolderPath + "/data");
+            }
+            */
+            //endAudio
+
             startExpo();
         }
         
@@ -52,22 +61,23 @@ namespace StroopTest
         {
             try
             {
-                if (programInUse.AudioCapture == true)
-                {
-                    if (!File.Exists(path + "/NAudio.dll/"))
-                    {
-                        DialogResult dialogResult = MessageBox.Show("Não será possível gravar o áudio.\nO arquivo 'NAudio.dll' deve estar presente no mesmo diretório que o executável.'", "Audio", MessageBoxButtons.OKCancel);
-                        if (dialogResult == DialogResult.Cancel)
-                        {
-                            throw new Exception("O programa foi cancelado!");
-                        }
-                    }
-                }
-
                 programInUse.ProgramName = prgNametxt; // programa recebe nome do valor inserido na caixa de texto
                 if (!File.Exists(path + "/prg/" + programInUse.ProgramName + ".prg")) { throw new FileNotFoundException("Arquivo programa: " + programInUse.ProgramName + ".prg" + "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/")); } // confere existência do arquivo
                 programInUse.UserName = usrNametxt; // usuário recebe nome do valor inserido na caixa de texto
                 programInUse.readProgramFile(path + "/prg/" + programInUse.ProgramName + ".prg");
+
+                // beginAudio
+                /*
+                if (programInUse.AudioCapture == true && audioDllExists == false)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Não será possível gravar o áudio. Falha na leitura da de bibilioteca.\nDeseja continuar?", "Audio library error", MessageBoxButtons.OKCancel);
+                    if (dialogResult == DialogResult.Cancel)
+                    {
+                        throw new Exception("Programa cancelado!");
+                    }
+                }
+                */
+                // endAudio
                 
                 if (programInUse.ExpositionType == "txt")
                     await startWordExposition(programInUse);
@@ -132,20 +142,20 @@ namespace StroopTest
 
 
                 await showInstructions(program, cts.Token); // Apresenta instruções se houver
-                showSubtitle(program);
+                //showSubtitle(program);
 
                 while (true) // laço de repetição do programa até que o usuário decida não repetir mais o mesmo programa
                 {
                     int i = 0, j = 0; // zera contadores para apresentação não randômica
                     
                     changeBackgroundColor(program, true); // muda cor de fundo se houver parametro                    
-                    ongoingExposition = true; // flag Exposição em curso
                     elapsedTime = 0; // zera tempo em milissegundos decorrido
-                    /*
-                    // audio
+
+                    // beginAudio
                     if (program.AudioCapture == true) { startRecordingAudio(program); } // inicia gravação áudio
-                    */
-                    // audio
+                    //if (audioDllExists) { audioRecorder.startRecordingAudio(); } // inicia gravação áudio
+                    // endAudio
+
                     await Task.Delay(program.IntervalTime, cts.Token);
 
                     for (int counter = 1; counter <= program.NumExpositions; counter++) // inicia loop com exposições
@@ -182,9 +192,10 @@ namespace StroopTest
                     wordLabel.Visible = false;
                     await Task.Delay(program.IntervalTime, cts.Token);
 
-                    /*//audio
-                    if (program.AudioCapture == true) { stopRecordingAudio(); } // finaliza gravação áudio
-                    *///audio
+                    // beginAudio
+                    if (program.AudioCapture == true) { startRecordingAudio(program); } // inicia gravação áudio
+                    //if (audioDllExists) { audioRecorder.stopRecordingAudio(); } // finaliza gravação áudio
+                    // endAudio
                     changeBackgroundColor(program, false); // retorna à cor de fundo padrão
 
                     break;
@@ -195,7 +206,6 @@ namespace StroopTest
                     if (dialogResult == DialogResult.No) { break; } // se não deseja repetir quebra o laço
                     */
             }
-            ongoingExposition = false; // flag Exposição finalizada
                 Close(); // finaliza exposição após execução
             }
             catch(TaskCanceledException)
@@ -218,6 +228,7 @@ namespace StroopTest
 
             int i, j;
             string[] labelText = null;
+            this.BackColor = Color.White;
 
             try
             {
@@ -244,11 +255,11 @@ namespace StroopTest
                     elapsedTime = 0; // zera tempo em milissegundos decorrido
                     i = 0; j = 0;
 
-                    /*//audio
+                    // beginAudio
                     if (program.AudioCapture == true) { startRecordingAudio(program); } // inicia gravação áudio
-                    *///audio
+                    //if (audioDllExists) { audioRecorder.startRecordingAudio(); } // inicia gravação áudio
+                    // endAudio
 
-                    ongoingExposition = true; // flag Exposição em curso
                     await Task.Delay(program.IntervalTime, cts.Token);
 
                     if (program.ExpositionType == "imgtxt")
@@ -262,19 +273,6 @@ namespace StroopTest
                             {
                                 if (program.ExpositionRandom == true)
                                 {
-                                    /*
-                                    Bitmap image = new Bitmap(imageDirs[randomNumbers[i++]]);
-                                    Bitmap newImage = new Bitmap(image.Width, image.Height + 40);
-                                    using (Graphics g = Graphics.FromImage(newImage))
-                                    {
-                                        Rectangle rect = new Rectangle(0, 0, image.Width, image.Height);
-                                        g.DrawImageUnscaledAndClipped(image, rect);
-                                        g.FillRectangle(new SolidBrush(Color.Black), 0, image.Height, newImage.Width, 40);
-                                        Font font = new Font("Times New Roman", 22.0f);
-                                        PointF point = new PointF(0, image.Height);
-                                        g.DrawString("Watermark", font, Brushes.Red, point);
-                                    }
-                                    */
                                     pictureBox1.Image = Image.FromFile(imageDirs[randomNumbers[i++]]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
                                 }
                                 else
@@ -333,9 +331,10 @@ namespace StroopTest
                     pictureBox1.Visible = false; wordLabel.Visible = false;
                     await Task.Delay(program.IntervalTime, cts.Token);
 
-                    /*//audio
-                    if (program.AudioCapture == true) { stopRecordingAudio(); } // finaliza gravação áudio
-                    *///audio
+                    // beginAudio
+                    if (program.AudioCapture == true) { startRecordingAudio(program); } // inicia gravação áudio
+                    //if (audioDllExists) { audioRecorder.stopRecordingAudio(); } // finaliza gravação áudio
+                    // endAudio
 
                     changeBackgroundColor(program, false); // retorna à cor de fundo padrão
 
@@ -350,7 +349,6 @@ namespace StroopTest
                 pictureBox1.Dock = DockStyle.None;
                 wordLabel.Font = new Font("Microsoft Sans Serif", 160);
                 wordLabel.ForeColor = Color.Black;
-                ongoingExposition = false; // flag Exposição finalizada
                 Close();
             }
             catch (TaskCanceledException)
@@ -414,7 +412,7 @@ namespace StroopTest
             }
         }
 
-        /*// audio
+        // beginAudio
         private void startRecordingAudio(StroopProgram program)
         {
             string now = program.InitialDate.Day + "." + program.InitialDate.Month + "_" + DateTime.Now.Hour.ToString() + "h" + DateTime.Now.Minute.ToString() + "." + DateTime.Now.Second.ToString();
@@ -457,7 +455,7 @@ namespace StroopTest
                 waveFile = null;
             }
         }
-        */// audio
+        // endAudio
 
         private void showSubtitle(StroopProgram program)
         {
@@ -491,6 +489,21 @@ namespace StroopTest
                 }
             }
 
+        }
+
+        public void DrawString()
+        {
+            System.Drawing.Graphics formGraphics = this.CreateGraphics();
+            string drawString = "Sample Text";
+            System.Drawing.Font drawFont = new System.Drawing.Font("Arial", 16);
+            System.Drawing.SolidBrush drawBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Black);
+            float x = 150.0F;
+            float y = 50.0F;
+            System.Drawing.StringFormat drawFormat = new System.Drawing.StringFormat();
+            formGraphics.DrawString(drawString, drawFont, drawBrush, x, y, drawFormat);
+            drawFont.Dispose();
+            drawBrush.Dispose();
+            formGraphics.Dispose();
         }
 
         private async Task intervalOrFixPoint(StroopProgram program, CancellationToken token)

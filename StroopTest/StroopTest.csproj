@@ -108,6 +108,7 @@
     <Compile Include="AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
+    <Compile Include="AudioRecorder.cs" />
     <Compile Include="FormLstImgConfig.cs">
       <SubType>Form</SubType>
     </Compile>

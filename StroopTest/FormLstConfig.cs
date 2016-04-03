@@ -30,7 +30,7 @@ namespace StroopTest
         private void editList()
         {
             StroopProgram program = new StroopProgram();
-            FormDefine defineProgram = new FormDefine("Lista: ", path, "lst");
+            FormDefine defineProgram = new FormDefine("Editar Lista: ", path, "lst");
             var result = defineProgram.ShowDialog();
             string listName = "error";
             string[] list;

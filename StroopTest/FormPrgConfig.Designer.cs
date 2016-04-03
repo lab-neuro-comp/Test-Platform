@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrgConfig));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.subDirect5 = new System.Windows.Forms.Button();
@@ -76,7 +80,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeInterval)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeExpo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
@@ -86,6 +92,10 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.subDirect5);
@@ -131,8 +141,65 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(15, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(628, 463);
+            this.panel1.Size = new System.Drawing.Size(628, 502);
             this.panel1.TabIndex = 0;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Location = new System.Drawing.Point(481, 332);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(80, 22);
+            this.numericUpDown1.TabIndex = 163;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            160,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(481, 369);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(18, 17);
+            this.checkBox1.TabIndex = 162;
+            this.checkBox1.TabStop = false;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(354, 368);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(120, 17);
+            this.label20.TabIndex = 161;
+            this.label20.Text = "Expandir Imagem:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(364, 334);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(111, 17);
+            this.label19.TabIndex = 159;
+            this.label19.Text = "Tamanho Texto:";
             // 
             // panel4
             // 
@@ -298,7 +365,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 331);
+            this.label6.Location = new System.Drawing.Point(13, 397);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(166, 17);
             this.label6.TabIndex = 59;
@@ -308,7 +375,7 @@
             // 
             this.textBox2.AcceptsReturn = true;
             this.textBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox2.Location = new System.Drawing.Point(16, 351);
+            this.textBox2.Location = new System.Drawing.Point(16, 417);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -628,7 +695,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(15, 502);
+            this.button2.Location = new System.Drawing.Point(15, 541);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
@@ -639,7 +706,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.Location = new System.Drawing.Point(568, 502);
+            this.button3.Location = new System.Drawing.Point(568, 541);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 7;
@@ -647,11 +714,22 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // fontDialog1
+            // 
+            this.fontDialog1.AllowScriptChange = false;
+            this.fontDialog1.AllowSimulations = false;
+            this.fontDialog1.AllowVectorFonts = false;
+            this.fontDialog1.AllowVerticalFonts = false;
+            this.fontDialog1.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F);
+            this.fontDialog1.MinSize = 80;
+            this.fontDialog1.ScriptsOnly = true;
+            this.fontDialog1.ShowEffects = false;
+            // 
             // FormPrgConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 537);
+            this.ClientSize = new System.Drawing.Size(658, 576);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
@@ -663,6 +741,7 @@
             this.Text = "Configuração Programa";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeInterval)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeExpo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
@@ -720,5 +799,10 @@
         private System.Windows.Forms.Button subDirect1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

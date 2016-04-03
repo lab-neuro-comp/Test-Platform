@@ -14,7 +14,7 @@ namespace StroopTest
 {
     class StroopProgram
     {
-        private string defaultProgramFileText = "padrao 16 1000 true 1000 False words.lst colors.lst false true false 0 false txt false false";
+        private string defaultProgramFileText = "padrao 16 1000 true 1000 False words.lst colors.lst false true false 0 false txt false false 160 false";
         private string defaultWordsListName = "words.lst";
         private string defaultWordsListText = "amarelo azul verde vermelho";
         private string defaultColorsListName = "colors.lst";
@@ -44,6 +44,8 @@ namespace StroopTest
         private string expositionType;          // [13]  tipo de exposição txt e/ou img
         private string imagesListFile;          // [14]  lista com caminhos de imagens
         private string fixPoint;                // [15]  ponto de fixação - cruz / ponto / false
+        private string fontWordLabel;           // [16]  tamanho da palavra
+        private bool expandImage;               // [17]  expande imagem ajustando à tela
 
         // Definição gets 
         // Definição sets (e suas restrições)
@@ -308,6 +310,31 @@ namespace StroopTest
             }
         }
 
+        public string FontWordLabel
+        {
+            get { return fontWordLabel; }
+            set
+            {
+                if (value.All(char.IsDigit)) { fontWordLabel = value; }
+            }
+        }
+
+        public bool ExpandImage
+        {
+            get { return expandImage; }
+            set
+            {
+                if (value == true || value == false)
+                {
+                    expandImage = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Erro no Arquivo com Programa:\nExpansão de Imagem deve ser boleana (true or false)");
+                }
+            }
+        }
+
         // construtor classe StroopProgram
         public StroopProgram()
         {
@@ -326,8 +353,8 @@ namespace StroopTest
                 string[] config = line.Split();
                 tr.Close();
 
-                if(config.Length != 16)
-                    throw new FormatException("Arquivo programa deve ter 15 parâmetros\nexemplo - programa padrão:\n" + defaultProgramFileText);
+                if(config.Length != 18)
+                    throw new FormatException("Arquivo programa deve ter 17 parâmetros\nexemplo - programa padrão:\n" + defaultProgramFileText);
 
                 // atribuição de valores no arquivos às variáveis do programa:
                 // nomePrograma /NumExposições /TempoExposição /ExpAleatória /TempoIntervalo /TempoIntervAleatorio /ListaPalavras /ListaCores /CorFundo /CaptAudio /mostrarLegenda /lugarLegenda /corLegenda /tipoExposicao /listaImg / PontoFixacao
@@ -360,6 +387,10 @@ namespace StroopTest
                 this.ImagesListFile = config[14];
 
                 this.fixPoint = config[15];
+
+                this.fontWordLabel = config[16];
+
+                this.expandImage = Boolean.Parse(config[17]);
 
                 string[] linesInstruction = File.ReadAllLines(filepath);               
                 if (linesInstruction.Length > 1) // lê instrução se houver

@@ -11,10 +11,10 @@ namespace StroopTest
         private string type;
         private string usrName;
 
-        public FormDefine(string defineTarget, string dataFolderPath, string fileType)
+        public FormDefine(string formTitle, string dataFolderPath, string fileType)
         {
             InitializeComponent();
-            this.Text = "Definir " + defineTarget;
+            this.Text = formTitle;
 
             type = fileType;
 

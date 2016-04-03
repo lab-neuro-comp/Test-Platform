@@ -114,7 +114,6 @@ namespace StroopTest
             this.wordLabel.Name = "WordLabel";
             this.wordLabel.TextAlign = ContentAlignment.MiddleCenter;
             this.wordLabel.Dock = DockStyle.Fill;
-            this.wordLabel.Font = new Font("Myriad Pro", 160, FontStyle.Regular);
             this.wordLabel.AutoSize = false;
             this.Controls.Add(this.wordLabel);
             this.BackColor = Color.White;
@@ -132,7 +131,11 @@ namespace StroopTest
 
                 string[] labelText = program.readListFile(path + "/lst/" + program.WordsListFile); // vetor de strings recebem as listas de palavra e cor
                 string[] labelColor = program.readListFile(path + "/lst/" + program.ColorsListFile);
-                foreach(string c in labelColor)
+                var cvt = new FontConverter();
+                Font f = cvt.ConvertFromString("Myriad Pro; " + program.FontWordLabel + "pt") as Font;
+                this.wordLabel.Font = f;
+
+                foreach (string c in labelColor)
                 {
                     if(!Regex.IsMatch(c, "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$"))
                     {
@@ -233,8 +236,10 @@ namespace StroopTest
             try
             {
                 program.writeHeaderOutputFile(path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt"); // escreve cabeçalho arquivo de saída
-                pictureBox1.Dock = DockStyle.Fill;
-                wordLabel.Font = new Font("Myriad Pro", 80);
+                if (program.ExpandImage) { pictureBox1.Dock = DockStyle.Fill; }
+                var cvt = new FontConverter();
+                Font f = cvt.ConvertFromString("Myriad Pro; " + program.FontWordLabel + "pt") as Font;
+                this.wordLabel.Font = f;
                 wordLabel.ForeColor = Color.Red;
 
                 string[] imageDirs = program.readImgListFile(path + "/lst/" + program.ImagesListFile);

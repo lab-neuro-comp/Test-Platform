@@ -76,7 +76,7 @@ namespace StroopTest
 
         private void programaToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            FormDefine defineProgram = new FormDefine("Programa: ", dataFolderPath + "/prg/", "prg");
+            FormDefine defineProgram = new FormDefine("Definir Programa: ", dataFolderPath + "/prg/", "prg");
             var result = defineProgram.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -87,7 +87,7 @@ namespace StroopTest
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormDefine defineUser = new FormDefine("Usuário: ", dataFolderPath, "usr");
+            FormDefine defineUser = new FormDefine("Definir Usuário: ", dataFolderPath, "usr");
             var result = defineUser.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -98,7 +98,7 @@ namespace StroopTest
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            FormDefine defineProgram = new FormDefine("Programa: ", dataFolderPath + "/prg/", "prg");
+            FormDefine defineProgram = new FormDefine("Definir Programa: ", dataFolderPath + "/prg/", "prg");
             var result = defineProgram.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -109,7 +109,7 @@ namespace StroopTest
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-            FormDefine defineUser = new FormDefine("Usuário: ", dataFolderPath, "usr");
+            FormDefine defineUser = new FormDefine("Definir Usuário: ", dataFolderPath, "usr");
             var result = defineUser.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -165,6 +165,38 @@ namespace StroopTest
             FormLstConfig configureWordsList = new FormLstConfig(dataFolderPath, true);
             try { configureWordsList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void programaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FormDefine defineUser = new FormDefine("Excluir Programa: ", dataFolderPath + "/prg/", "prg");
+            var result = defineUser.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string excludeFilePath = dataFolderPath + "/prg/" + defineUser.ReturnValue + ".prg";
+                DialogResult dialogResult = MessageBox.Show("Deseja realmente excluir o programa " + defineUser.ReturnValue + ".prg?", "", MessageBoxButtons.YesNo); // pergunta se deseja repetir o programa
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    File.Delete(excludeFilePath);
+                }
+            }
+        }
+
+        private void listaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormDefine defineUser = new FormDefine("Excluir Lista: ", dataFolderPath + "/lst/", "lst");
+            var result = defineUser.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string excludeFilePath = dataFolderPath + "/lst/" + defineUser.ReturnValue + ".lst";
+                DialogResult dialogResult = MessageBox.Show("Deseja realmente excluir a lista " + defineUser.ReturnValue + ".lst?", "", MessageBoxButtons.YesNo); // pergunta se deseja repetir o programa
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    File.Delete(excludeFilePath);
+                }
+            }
         }
     }
 }

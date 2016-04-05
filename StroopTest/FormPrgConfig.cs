@@ -15,13 +15,12 @@ namespace StroopTest
         StroopProgram programWrite;
         private List<Button> subDirectionList;
         private int subDirectionNumber = 0;
-        private bool editMode;
         private string fontSize = "160";
+        private string editPrgName = "error";
 
-        public FormPrgConfig(string dataFolderPath, bool editModeOn)
+        public FormPrgConfig(string dataFolderPath, string prgName)
         {
             path = dataFolderPath;
-            editMode = editModeOn;
             InitializeComponent();
             chooseExpoType.SelectedIndex = 0;
             subDirectionList = new List<Button>();
@@ -31,12 +30,13 @@ namespace StroopTest
                 subDirectionList[i].Enabled = false;
                 if (i > 0) subDirectionList[i].Visible = false;
             }
-            if(editModeOn == true)
+            if(prgName != "false")
             {
+                editPrgName = prgName;
                 editProgram();
             }
         }
-
+        
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -125,19 +125,21 @@ namespace StroopTest
         private void editProgram()
         {
             StroopProgram program = new StroopProgram();
+
+            /*
             FormDefine defineProgram = new FormDefine("Editar Programa: ", path + "/prg/", "prg");
 
             var result = defineProgram.ShowDialog();
             string programName = "error";
-
+            */
             try
             {
+                /*
                 if (result == DialogResult.OK)
                 {
                     programName = defineProgram.ReturnValue;
-
-                    program.readProgramFile(path + "/prg/" + programName + ".prg");
-
+                    */
+                    program.readProgramFile(path + "/prg/" + editPrgName + ".prg");
                     progName.Text = program.ProgramName;
                     numExpo.Value = program.NumExpositions;
                     timeExpo.Value = program.ExpositionTime;
@@ -166,15 +168,19 @@ namespace StroopTest
                         openColorsList.Enabled = true;
                         openColorsList.Text = program.ColorsListFile;
                     }
-
+                    
                     if (program.BackgroundColor.ToLower() == "false")
                     {
-                        chooseBackGColor.Text = "#FFFFFF";
+                        panel2.BackColor = Color.White;
+                        chooseColorSubs.Text = "escolher cor1";
                     }
                     else
                     {
-                        panel2.BackColor = ColorTranslator.FromHtml(chooseBackGColor.Text);
-                        chooseBackGColor.Text = program.BackgroundColor;
+                        if((Regex.IsMatch(program.BackgroundColor, hexPattern)))
+                        {
+                            panel2.BackColor = ColorTranslator.FromHtml(program.BackgroundColor);
+                            chooseBackGColor.Text = program.BackgroundColor;
+                        }
                     }
 
                     if (program.AudioCapture) captAudioOn.Checked = true;
@@ -189,12 +195,16 @@ namespace StroopTest
                         selectSubDirectionNumber(subDirectionNumber);
                         if (program.SubtitleColor.ToLower() == "false")
                         {
-                            chooseColorSubs.Text = program.SubtitleColor;
-                            panel2.BackColor = ColorTranslator.FromHtml(chooseColorSubs.Text);
+                            panel3.BackColor = Color.White;
+                            chooseColorSubs.Text = "escolher cor2";
                         }
                         else
                         {
-                            chooseColorSubs.Text = "escolher cor";
+                            if ((Regex.IsMatch(program.SubtitleColor, hexPattern)))
+                            {
+                                panel3.BackColor = ColorTranslator.FromHtml(program.SubtitleColor);
+                                chooseBackGColor.Text = program.SubtitleColor;
+                            }
                         }
                     }
                     else
@@ -258,13 +268,12 @@ namespace StroopTest
                     {
                         textBox2.Text = instrBoxText;
                     }
-                }
-                else
-                {
 
-                    Close();
+                    numericUpDown1.Value = Convert.ToInt32(program.FontWordLabel);
+                    checkBox1.Checked = Convert.ToBoolean(program.ExpandImage);
+                /*
                 }
-                
+                */
             }
             catch (Exception ex)
             {
@@ -540,5 +549,6 @@ namespace StroopTest
         {
             fontSize = numericUpDown1.Value.ToString();
         }
+
     }
 }

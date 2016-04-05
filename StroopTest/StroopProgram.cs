@@ -14,10 +14,10 @@ namespace StroopTest
 {
     class StroopProgram
     {
-        private string defaultProgramFileText = "padrao 16 1000 true 1000 False words.lst colors.lst false true false 0 false txt false false 160 false";
-        private string defaultWordsListName = "words.lst";
+        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_Words.lst padrao_Colors.lst false false false 0 false txt false false 160 false";
+        private string defaultWordsListName = "padrao_Words.lst";
         private string defaultWordsListText = "amarelo azul verde vermelho";
-        private string defaultColorsListName = "colors.lst";
+        private string defaultColorsListName = "padrao_Colors.lst";
         private string defaultColorsListText = "#F8E000 #007BB7 #7EC845 #D01C1F";
         private string headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor";
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";

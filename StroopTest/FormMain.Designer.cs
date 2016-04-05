@@ -45,9 +45,6 @@
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textoECoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.imagensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exibirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.programasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +60,8 @@
             this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exibirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -200,28 +199,6 @@
             this.imagensToolStripMenuItem.Name = "imagensToolStripMenuItem";
             this.imagensToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.imagensToolStripMenuItem.Text = "Imagens";
-            // 
-            // exibirToolStripMenuItem
-            // 
-            this.exibirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.programasToolStripMenuItem,
-            this.listasToolStripMenuItem});
-            this.exibirToolStripMenuItem.Enabled = false;
-            this.exibirToolStripMenuItem.Name = "exibirToolStripMenuItem";
-            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
-            this.exibirToolStripMenuItem.Text = "Exibir";
-            // 
-            // programasToolStripMenuItem
-            // 
-            this.programasToolStripMenuItem.Name = "programasToolStripMenuItem";
-            this.programasToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
-            this.programasToolStripMenuItem.Text = "Programas";
-            // 
-            // listasToolStripMenuItem
-            // 
-            this.listasToolStripMenuItem.Name = "listasToolStripMenuItem";
-            this.listasToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
-            this.listasToolStripMenuItem.Text = "Usuários";
             // 
             // ajudaToolStripMenuItem
             // 
@@ -366,6 +343,21 @@
             this.listaToolStripMenuItem1.Text = "Lista";
             this.listaToolStripMenuItem1.Click += new System.EventHandler(this.listaToolStripMenuItem1_Click);
             // 
+            // exibirToolStripMenuItem
+            // 
+            this.exibirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dataToolStripMenuItem});
+            this.exibirToolStripMenuItem.Enabled = false;
+            this.exibirToolStripMenuItem.Name = "exibirToolStripMenuItem";
+            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
+            this.exibirToolStripMenuItem.Text = "Exibir";
+            // 
+            // dataToolStripMenuItem
+            // 
+            this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.dataToolStripMenuItem.Text = "Data";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -398,7 +390,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem iniciarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exibirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem1;
@@ -409,8 +400,6 @@
         private System.Windows.Forms.ToolStripMenuItem programaToolStripMenuItem1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripMenuItem programasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem programaToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem textoECoresToolStripMenuItem;
@@ -429,5 +418,7 @@
         private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem programaToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exibirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
     }
 }

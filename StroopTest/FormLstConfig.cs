@@ -10,8 +10,9 @@ namespace StroopTest
     {
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string path;
+        private string editLstName = "error";
 
-        public FormLstConfig(string dataFolderPath, bool editModeOn)
+        public FormLstConfig(string dataFolderPath, string lstName)
         {
             path = dataFolderPath + "/lst/";
             InitializeComponent();
@@ -21,8 +22,9 @@ namespace StroopTest
 
             checkWords.Checked = true;
             checkColors.Checked = true;
-            if (editModeOn)
+            if (lstName != "false")
             {
+                editLstName = lstName;
                 editList();
             }
         }
@@ -30,21 +32,19 @@ namespace StroopTest
         private void editList()
         {
             StroopProgram program = new StroopProgram();
-            FormDefine defineProgram = new FormDefine("Editar Lista: ", path, "lst");
-            var result = defineProgram.ShowDialog();
-            string listName = "error";
             string[] list;
 
             try
             {
-                if (result == DialogResult.OK)
-                {
-                    listName = defineProgram.ReturnValue;
-                }
+                string aux;
+                aux = editLstName.Replace("_Words", "");
+                aux = editLstName.Replace("_Colors", "");
 
-                if (listName != "error")
+                textBox1.Text = aux;
+
+                if (editLstName != "error")
                 {
-                    list = program.readListFile(path + listName + ".lst");
+                    list = program.readListFile(path + editLstName + ".lst");
                     if (Regex.IsMatch(list[0], hexPattern))
                     {
                         checkColors.Checked = true;
@@ -64,8 +64,8 @@ namespace StroopTest
                             wordsColoredList.Items.Add(list[i]);
                         }
                     }
+
                 }
-                else Close();
             }
             catch (Exception ex)
             {

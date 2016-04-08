@@ -296,10 +296,10 @@ namespace StroopTest
                     {
                         if (File.Exists(path + textBox1.Text + "_Colors.lst"))
                         {
-                            DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobre-escrevê-la?", "Lista já existe", MessageBoxButtons.OKCancel);
+                            DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
                             if (dialogResult == DialogResult.Cancel)
                             {
-                                throw new Exception("Escrita em lista cancelada!");
+                                throw new Exception("A lista não será salva!");
                             }
                         }
 
@@ -312,7 +312,7 @@ namespace StroopTest
 
                         //writer1.Dispose();
                         writer1.Close();
-                        MessageBox.Show("A lista " + textBox1.Text + "_Colors.lst foi salva com sucesso.");
+                        MessageBox.Show("A lista " + textBox1.Text + "_Words.lst foi salva com sucesso no diretório\n" + path);
                     }
                     else
                     {
@@ -327,10 +327,10 @@ namespace StroopTest
                     {
                         if (File.Exists(path + textBox1.Text + "_Words.lst"))
                         {
-                            DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobre-escrevê-la?", "Lista já existe", MessageBoxButtons.OKCancel);
+                            DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
                             if (dialogResult == DialogResult.Cancel)
                             {
-                                throw new Exception("Escrita em lista cancelada!");
+                                throw new Exception("A lista não será salva!");
                             }
                         }
 
@@ -343,7 +343,7 @@ namespace StroopTest
 
                         //writer2.Dispose();
                         writer2.Close();
-                        MessageBox.Show("A lista " + textBox1.Text + "_Words.lst foi salva com sucesso.");
+                        MessageBox.Show("A lista " + textBox1.Text + "_Words.lst foi salva com sucesso no diretório\n" + path);
                     }
                     else
                     {

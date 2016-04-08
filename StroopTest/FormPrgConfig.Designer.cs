@@ -451,7 +451,7 @@
             this.chooseColorSubs.Size = new System.Drawing.Size(89, 23);
             this.chooseColorSubs.TabIndex = 112;
             this.chooseColorSubs.TabStop = false;
-            this.chooseColorSubs.Text = "escolher cor";
+            this.chooseColorSubs.Text = "escolher cor2";
             this.chooseColorSubs.UseVisualStyleBackColor = true;
             this.chooseColorSubs.Click += new System.EventHandler(this.button11_Click);
             // 
@@ -559,7 +559,7 @@
             this.chooseBackGColor.Name = "chooseBackGColor";
             this.chooseBackGColor.Size = new System.Drawing.Size(89, 23);
             this.chooseBackGColor.TabIndex = 90;
-            this.chooseBackGColor.Text = "escolher cor";
+            this.chooseBackGColor.Text = "escolher cor1";
             this.chooseBackGColor.UseVisualStyleBackColor = true;
             this.chooseBackGColor.Click += new System.EventHandler(this.button8_Click);
             // 

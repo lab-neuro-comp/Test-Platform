@@ -122,7 +122,7 @@ namespace StroopTest
 
             Random rnd1 = new Random(DateTime.Now.Millisecond + 1); // cria duas randomizações a partir de sementes diferentes
             Random rnd2 = new Random(DateTime.Now.Millisecond + 2);
-
+            
             try
             {
                 program.writeHeaderOutputFile(path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt"); // escreve cabeçalho arquivo de saída
@@ -329,7 +329,9 @@ namespace StroopTest
                             writeLineOutput(program, Path.GetFileName(imageDirs[i].ToString()), "false", counter + 1);
                             i++;
                             await Task.Delay(program.ExpositionTime, cts.Token);
-                            
+
+                            //showSubtitle(program, counter);
+
                         }
                     }
                     
@@ -462,38 +464,46 @@ namespace StroopTest
         }
         // endAudio
 
-        private void showSubtitle(StroopProgram program)
+        private void showSubtitle(StroopProgram program, int index)
         {
-            program.SubtitleShow = true;
-            program.SubtitlePlace = 3;
-            pictureBox1.Visible = true;
+            program.SubtitlePlace = 0;
 
-            if(program.SubtitleShow == true)
+            string[] labelText = program.readListFile(path + "/lst/" + "padrao_Words.lst");
+            
+            pictureBox1.Paint += new PaintEventHandler((sender, e) =>
             {
-                subtitleLabel.Enabled = true;
-                subtitleLabel.Visible = true;
-                if(program.SubtitleColor.ToLower() != "false") subtitleLabel.ForeColor = ColorTranslator.FromHtml(program.SubtitleColor);
+                e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+
+                PointF locationToDraw = new PointF();
                 
+                SizeF textSize = e.Graphics.MeasureString(labelText[index], Font, 60);
+
                 switch (program.SubtitlePlace)
                 {
                     case 1: //baixo
-                        subtitleLabel.Location = new Point(ClientSize.Width / 2 - subtitleLabel.Size.Width / 2, pictureBox1.Location.Y + pictureBox1.Height + 50);
+                        locationToDraw.X = ClientSize.Width / 2 - textSize.Width / 2;
+                        locationToDraw.Y = pictureBox1.Location.Y + pictureBox1.Height + 50;
                         break;
                     case 2: //esquerda
-                        subtitleLabel.Location = new Point(pictureBox1.Location.X - (subtitleLabel.Size.Width + 50), ClientSize.Height / 2 - subtitleLabel.Size.Height / 2);
+                        locationToDraw.X = pictureBox1.Location.X - (textSize.Width + 50);
+                        locationToDraw.Y = ClientSize.Height / 2 - textSize.Height / 2;
                         break;
                     case 3: //direita
-                        subtitleLabel.Location = new Point(pictureBox1.Location.X + pictureBox1.Width + 50, ClientSize.Height / 2 - subtitleLabel.Size.Height / 2);
+                        locationToDraw.X = pictureBox1.Location.X + pictureBox1.Width + 50;
+                        locationToDraw.Y = ClientSize.Height / 2 - textSize.Height / 2;
                         break;
                     case 4: // cima
-                        subtitleLabel.Location = new Point(ClientSize.Width / 2 - subtitleLabel.Size.Width / 2, pictureBox1.Location.Y - (subtitleLabel.Size.Height + 50));
+                        locationToDraw.X = pictureBox1.Location.Y - (textSize.Height + 50);
+                        locationToDraw.Y = ClientSize.Width / 2 - textSize.Width / 2;
                         break;
                     default: // centro
-                        subtitleLabel.Location = new Point(ClientSize.Width / 2 - subtitleLabel.Size.Width / 2, ClientSize.Height / 2 - subtitleLabel.Size.Height / 2);
+                        locationToDraw.X = ClientSize.Width / 2 - textSize.Width / 2;
+                        locationToDraw.Y = ClientSize.Height / 2 - textSize.Height / 2;
                         break;
                 }
-            }
 
+                e.Graphics.DrawString(labelText[index], Font, Brushes.Black, locationToDraw);
+            });
         }
 
         public void DrawString()
@@ -504,7 +514,7 @@ namespace StroopTest
             System.Drawing.SolidBrush drawBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Black);
             float x = 150.0F;
             float y = 50.0F;
-            System.Drawing.StringFormat drawFormat = new System.Drawing.StringFormat();
+            StringFormat drawFormat = new System.Drawing.StringFormat();
             formGraphics.DrawString(drawString, drawFont, drawBrush, x, y, drawFormat);
             drawFont.Dispose();
             drawBrush.Dispose();

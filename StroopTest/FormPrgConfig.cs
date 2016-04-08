@@ -410,10 +410,10 @@ namespace StroopTest
         {
             if (File.Exists(path + "prg/" + progName.Text + ".prg"))
             {
-                DialogResult dialogResult = MessageBox.Show("O programa já existe, deseja sobre-escrevê-lo?", "Audio", MessageBoxButtons.OKCancel);
+                DialogResult dialogResult = MessageBox.Show("O programa já existe, deseja sobrescrevê-lo?", "", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.Cancel)
                 {
-                    throw new Exception("Escrita de programa cancelada!");
+                    throw new Exception("O programa não será salvo!");
                 }
             }
 
@@ -428,7 +428,7 @@ namespace StroopTest
             }
             //writer.Dispose();
             writer.Close();
-            MessageBox.Show("Programa salvo no diretório:\n" + path + "/prg/");
+            MessageBox.Show("O programa " + progName.Text + ".prg foi salvo com sucesso no diretório\n" + path + "prg/");
             this.Close();
         }
 

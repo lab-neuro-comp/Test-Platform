@@ -15,6 +15,7 @@ using System.Text.RegularExpressions;
 
 // beginAudio
 using NAudio.Wave;
+using System.Collections.Generic;
 // endAudio
 
 namespace StroopTest
@@ -32,6 +33,8 @@ namespace StroopTest
 
         private string prgNametxt;
         private string usrNametxt;
+
+        private List<string> outputContent;
 
         // beginAudio
         private WaveIn waveSource = null; // entrada de áudio
@@ -122,7 +125,19 @@ namespace StroopTest
 
             Random rnd1 = new Random(DateTime.Now.Millisecond + 1); // cria duas randomizações a partir de sementes diferentes
             Random rnd2 = new Random(DateTime.Now.Millisecond + 2);
+
+            var interval = Task.Run(async delegate
+            {
+                await Task.Delay(program.IntervalTime, cts.Token);
+            });
+
+            var exposition = Task.Run(async delegate
+            {
+                await Task.Delay(program.ExpositionTime, cts.Token);
+            });
             
+            outputContent = new List<string>();
+
             try
             {
                 program.writeHeaderOutputFile(path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt"); // escreve cabeçalho arquivo de saída
@@ -164,7 +179,8 @@ namespace StroopTest
                     for (int counter = 1; counter <= program.NumExpositions; counter++) // inicia loop com exposições
                     {
                         wordLabel.Visible = false; // intervalo
-                        await intervalOrFixPoint(program, cts.Token);
+                        await Task.Delay(program.IntervalTime, cts.Token);
+                        //await intervalOrFixPoint(program, cts.Token);
 
                         if (program.ExpositionRandom) // se for exposição aleatoria
                         {
@@ -185,9 +201,10 @@ namespace StroopTest
                         wordLabel.ForeColor = ColorTranslator.FromHtml(c1);
 
                         elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
+                        SendKeys.SendWait("s");
                         wordLabel.Visible = true;
 
-                        writeLineOutput(program, t1, c1, counter);
+                        writeLineOutput(program, t1, c1, counter, outputContent);
                         
                         await Task.Delay(program.ExpositionTime, cts.Token);
                     }
@@ -209,10 +226,12 @@ namespace StroopTest
                     if (dialogResult == DialogResult.No) { break; } // se não deseja repetir quebra o laço
                     */
             }
+                writeOutputToFile(program, outputContent);
                 Close(); // finaliza exposição após execução
             }
             catch(TaskCanceledException)
             {
+                writeOutputToFile(program, outputContent);
                 MessageBox.Show("A Exposição '" + program.ProgramName + "' foi cancelada!");
                 Close();
             }
@@ -232,7 +251,7 @@ namespace StroopTest
             int i, j;
             string[] labelText = null;
             this.BackColor = Color.White;
-
+            
             try
             {
                 program.writeHeaderOutputFile(path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt"); // escreve cabeçalho arquivo de saída
@@ -252,7 +271,9 @@ namespace StroopTest
                 var randomNumbers = Enumerable.Range(0, imageDirs.Count()).OrderBy(x => rnd3.Next()).ToList(); // evita repetição no aleatorio de imagens
 
                 await showInstructions(program, cts.Token); // Apresenta instruções se houver
-                
+
+                outputContent = new List<string>();
+
                 while (true)
                 {
                     changeBackgroundColor(program, true); // muda cor de fundo se houver parametro
@@ -266,7 +287,7 @@ namespace StroopTest
                     // endAudio
 
                     await Task.Delay(program.IntervalTime, cts.Token);
-
+                    
                     if (program.ExpositionType == "imgtxt")
                     {
                         for (int counter = 0; counter < imageDirs.Count(); counter++) // AQUI ver estinulo -> palavra ou imagem como um só e ter intervalo separado
@@ -285,7 +306,9 @@ namespace StroopTest
                                     if (i == imageDirs.Count()) { i = 0; }
                                     pictureBox1.Image = Image.FromFile(imageDirs[i]);
                                 }
+                                //elapsedTime = elapsedTimeExpo + elapsedTime;
                                 elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
+                                SendKeys.SendWait("s");
                                 pictureBox1.Visible = true;
                                 wordLabel.Visible = false;
                             }
@@ -297,11 +320,12 @@ namespace StroopTest
                                     wordLabel.Text = labelText[j++];
                                 }
                                 elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
+                                SendKeys.SendWait("s");
                                 pictureBox1.Visible = false;
                                 wordLabel.Visible = true;
                             }
 
-                            writeLineOutput(program, Path.GetFileName(imageDirs[i].ToString()), "false", counter + 1);
+                            writeLineOutput(program, Path.GetFileName(imageDirs[i].ToString()), "false", counter + 1, outputContent);
                             i++;
                             await Task.Delay(program.ExpositionTime, cts.Token);
                         }
@@ -324,9 +348,10 @@ namespace StroopTest
                             }
 
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
+                            SendKeys.SendWait("s");
                             pictureBox1.Visible = true;
-                           
-                            writeLineOutput(program, Path.GetFileName(imageDirs[i].ToString()), "false", counter + 1);
+
+                            writeLineOutput(program, Path.GetFileName(imageDirs[i].ToString()), "false", counter + 1, outputContent);
                             i++;
                             await Task.Delay(program.ExpositionTime, cts.Token);
 
@@ -356,10 +381,12 @@ namespace StroopTest
                 pictureBox1.Dock = DockStyle.None;
                 wordLabel.Font = new Font("Microsoft Sans Serif", 160);
                 wordLabel.ForeColor = Color.Black;
+                writeOutputToFile(program, outputContent);
                 Close();
             }
             catch (TaskCanceledException)
             {
+                writeOutputToFile(program, outputContent);
                 MessageBox.Show("A Exposição '" + program.ProgramName + "' foi cancelada!");
                 Close();
             }
@@ -386,9 +413,8 @@ namespace StroopTest
             }
         }
 
-        private void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter)
+        private void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter, List<string> output)
         {
-
             // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\testimulo\tlegenda\tposicaoLegenda\tpalavra\tcor
             var text = program.ProgramName + "\t" +
                             program.UserName + "\t" +
@@ -402,8 +428,15 @@ namespace StroopTest
                             nameStimulus + "\t" +
                             color;
 
-            program.writeAppendOutputFile((path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt"), text); // append linha no arquivo de saída
+            output.Add(text);
+        }
 
+        private void writeOutputToFile(StroopProgram program, List<string> output)
+        {
+            TextWriter tw = new StreamWriter(path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt");
+            foreach (string s in output)
+                tw.WriteLine(s);
+            tw.Close();
         }
 
         private void changeBackgroundColor(StroopProgram program, bool flag) // muda cor de fundo

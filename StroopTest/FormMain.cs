@@ -39,7 +39,10 @@ namespace StroopTest
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             FormExposition exposeProgram = new FormExposition(prgNameSL.Text, usrNameSL.Text, dataFolderPath);
-            try { exposeProgram.ShowDialog(); }
+            try {
+                SendKeys.SendWait("i");
+                exposeProgram.ShowDialog();
+            }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
         

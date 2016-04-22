@@ -45,7 +45,7 @@ namespace StroopTest
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
-
+            
             path = dataFolderPath;
             InitializeComponent();
             prgNametxt = prgName;
@@ -123,7 +123,7 @@ namespace StroopTest
             this.wordLabel.AutoSize = false;
             this.Controls.Add(this.wordLabel);
             this.BackColor = Color.White;
-            
+
             string t1 = null, c1 = null;
 
             Random rnd1 = new Random(DateTime.Now.Millisecond + 1); // cria duas randomizações a partir de sementes diferentes
@@ -199,9 +199,10 @@ namespace StroopTest
                             if (j == labelColor.Length - 1) { j = 0; }
                             else { j++; }
                         }
-
                         wordLabel.Text = t1;
                         wordLabel.ForeColor = ColorTranslator.FromHtml(c1);
+                        wordLabel.Left = (this.ClientSize.Width - wordLabel.Width) / 2;
+                        wordLabel.Top = (this.ClientSize.Height - wordLabel.Height) / 2;
 
                         elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                         SendKeys.SendWait("s");
@@ -265,6 +266,7 @@ namespace StroopTest
                 wordLabel.ForeColor = Color.Red;
 
                 string[] imageDirs = program.readImgListFile(path + "/lst/" + program.ImagesListFile);
+                string auxString = "";
 
                 if (program.WordsListFile.ToLower() != "false") { labelText = program.readListFile(path + "/lst/" + program.WordsListFile); }
                 
@@ -314,6 +316,7 @@ namespace StroopTest
                                 SendKeys.SendWait("s");
                                 pictureBox1.Visible = true;
                                 wordLabel.Visible = false;
+                                auxString = Path.GetFileName(imageDirs[i].ToString());
                             }
                             else
                             {
@@ -322,14 +325,19 @@ namespace StroopTest
                                     if (j == labelText.Count()) { j = 0; }
                                     wordLabel.Text = labelText[j];
                                     j++;
+
+                                    wordLabel.Left = (this.ClientSize.Width - wordLabel.Width) / 2;
+                                    wordLabel.Top = (this.ClientSize.Height - wordLabel.Height) / 2;
+
+                                    elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
+                                    SendKeys.SendWait("s");
+                                    pictureBox1.Visible = false;
+                                    wordLabel.Visible = true;
+                                    auxString = wordLabel.Text;
                                 }
-                                elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
-                                SendKeys.SendWait("s");
-                                pictureBox1.Visible = false;
-                                wordLabel.Visible = true;
                             }
                             
-                            writeLineOutput(program, Path.GetFileName(imageDirs[i].ToString()), "false", counter + 1, outputContent);
+                            writeLineOutput(program, auxString, "false", counter + 1, outputContent);
                             i++;
                             await Task.Delay(program.ExpositionTime, cts.Token);
                         }

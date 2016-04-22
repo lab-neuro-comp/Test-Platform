@@ -38,15 +38,18 @@
             // 
             // wordLabel
             // 
+            this.wordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.wordLabel.AutoEllipsis = true;
+            this.wordLabel.AutoSize = true;
             this.wordLabel.BackColor = System.Drawing.Color.Transparent;
-            this.wordLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wordLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.wordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 160F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wordLabel.Location = new System.Drawing.Point(0, 0);
+            this.wordLabel.Location = new System.Drawing.Point(5, 103);
             this.wordLabel.Margin = new System.Windows.Forms.Padding(0);
             this.wordLabel.Name = "wordLabel";
-            this.wordLabel.Size = new System.Drawing.Size(715, 541);
+            this.wordLabel.Size = new System.Drawing.Size(709, 302);
             this.wordLabel.TabIndex = 1;
             this.wordLabel.Text = "word";
             this.wordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

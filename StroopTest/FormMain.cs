@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -38,10 +39,28 @@ namespace StroopTest
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            Screen[] screens;
             FormExposition exposeProgram = new FormExposition(prgNameSL.Text, usrNameSL.Text, dataFolderPath);
-            try {
-                SendKeys.SendWait("i");
-                exposeProgram.ShowDialog();
+            
+            try
+            {
+                screens = Screen.AllScreens;
+
+                if (screens.Length == 2)
+                {
+                    //MessageBox.Show(screens[1].Bounds.Width.ToString() + " / " + screens[1].Bounds.Height + "\n" + screens[0].Bounds.Width.ToString() + " / " + screens[0].Bounds.Height);
+                    Rectangle r1 = screens[0].WorkingArea;
+                    exposeProgram.StartPosition = FormStartPosition.Manual;
+                    exposeProgram.Top = r1.Top;
+                    exposeProgram.Left = r1.Left;
+                    SendKeys.SendWait("i");
+                    exposeProgram.Show();
+                }
+                else
+                {
+                    SendKeys.SendWait("i");
+                    exposeProgram.ShowDialog();
+                }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

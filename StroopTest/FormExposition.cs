@@ -43,6 +43,9 @@ namespace StroopTest
         
         public FormExposition(string prgName, string usrName, string dataFolderPath)
         {
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.MaximizeBox = true;
+
             path = dataFolderPath;
             InitializeComponent();
             prgNametxt = prgName;
@@ -317,14 +320,15 @@ namespace StroopTest
                                 if (program.WordsListFile.ToLower() != "false") // se tiver palavras intercala elas com a imagem
                                 {
                                     if (j == labelText.Count()) { j = 0; }
-                                    wordLabel.Text = labelText[j++];
+                                    wordLabel.Text = labelText[j];
+                                    j++;
                                 }
                                 elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                                 SendKeys.SendWait("s");
                                 pictureBox1.Visible = false;
                                 wordLabel.Visible = true;
                             }
-
+                            
                             writeLineOutput(program, Path.GetFileName(imageDirs[i].ToString()), "false", counter + 1, outputContent);
                             i++;
                             await Task.Delay(program.ExpositionTime, cts.Token);

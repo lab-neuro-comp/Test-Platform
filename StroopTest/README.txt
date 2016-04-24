@@ -1,57 +1,45 @@
 ﻿StroopTest - Version 1.0 - 2015
-Laboratorio de Neurociencia e Comportamento
+Laboratorio de Neurociência e Comportamento
 Universidade de Brasilia
 
 ************************************************************************
 LEIA-ME
 ************************************************************************
 
-(1) A aplicao executa um teste Stroop a partir da leitura de um arquivo
-do tipo 'programa.pgr' contendo uma programacao para o teste. Tal 
-arquivo deve ser salvo em um novo diretorio 'StroopTestFiles' criado no
-diretorio do executavel;
+A aplicao apresenta uma diversas opções de edição e execução de testes,
+resultados e dados.
 
-(2) Cada programa tem como parametros nomes de arquivos contendo listas
-de estimulos e de cores ('words.lst', 'colors.lst'), tambem dispostos no
-diretorio 'Stroop';
+O modelo do programa é baseada em arquivos:
 
-(3) Tal Programa eh constituido de parametros(*) que devem ser escritos
-linearmente e separados por espacos;
+1) Arquivo "Programa" - contém comandos para execução de determinado teste (.prg);
 
-(4) Pode-se executar o 'Programa Padrao' - 'padrao.pgr' que eh sempre
-gerado. Ele eh configuracao padr‹o da aplicacao;
+2) Arquivo "Lista" - contém a lista de estímulos sequenciais de determinado tipo,
+					podendo ser lista de palavras, de imagens e de cores (.lst);
 
-(5) A saida eh dada em outro arquivo nomeado
-'nomeUsuario_nomePrograma.txt' e contem os valores gerados durante o
-teste.
+3) Arquivo Data - contém os resultados de um teste executado, sendo nomeado
+				 de acordo com o nome do programa + nome do usuário (.txt).
+				 Os resultados também podem estar dispostos em formato de
+				 áudio caso a gravação de áudio esteja ativada (.wav);
 
-************************************************************************
-Parametros da programacao do teste:
-************************************************************************
+Tais arquivos estão dispostos no diretório "/StroopTestFiles", criado
+juntamente ao executável do programa.
 
-[0]	nome do programa
-[1]	numero de exposicoes 
-[2]	tempo de exposicao (millisec)
-[3]	exposicao randomica (bool)
-[4]	tempo de intervalo (millisec)
-[5]	tempo de intervalo randomico (bool)
-[6]	lista de palavras
-[7]	lista de cores
-[8]	cor de fundo da tela
-[9]	captura de audio (bool)
-[10]	legenda
-[11]	localizacao da legenda
-[12]	cor da legenda
+Os arquivos 1) estão dispostos no subdiretório "/StroopTestFiles/prg",
+os arquivos 2) estão dispostos no subdiretório "/StroopTestFiles/lst",
+os arquivos 3) estão dispostos no subdiretório "/StroopTestFiles/data",
+
+A execução do programa é realizada a partir da interface inicial. Após
+a escolha do programa a ser excecutado e da definição do nome do usuário
+a exposição de estímulos é iniciada em uma janela separada da tela inicial.
+
+No caso de haver dois monitores disponíveis para o programa, o programa 
+faz a apresentação do teste em no segundo monitor. O teste é apresentado
+até o fim e não permite modificações do indivíduo que recebe o teste. 
+
 
 
 ************************************************************************
-Exemplo (Programa Padrao):
-
-padrao 16 2000 false 1800 false words.lst colors.lst false false false 0 false
-
-
-************************************************************************
-Codigo de cores basicas:
+Codigo de cores basicas Stroop:
 
 ************************************************************************
 

@@ -317,6 +317,7 @@ namespace StroopTest
                                 pictureBox1.Visible = true;
                                 wordLabel.Visible = false;
                                 auxString = Path.GetFileName(imageDirs[i].ToString());
+                                i++;
                             }
                             else
                             {
@@ -324,7 +325,6 @@ namespace StroopTest
                                 {
                                     if (j == labelText.Count()) { j = 0; }
                                     wordLabel.Text = labelText[j];
-                                    j++;
 
                                     wordLabel.Left = (this.ClientSize.Width - wordLabel.Width) / 2;
                                     wordLabel.Top = (this.ClientSize.Height - wordLabel.Height) / 2;
@@ -334,11 +334,11 @@ namespace StroopTest
                                     pictureBox1.Visible = false;
                                     wordLabel.Visible = true;
                                     auxString = wordLabel.Text;
+                                    j++;
                                 }
                             }
                             
                             writeLineOutput(program, auxString, "false", counter + 1, outputContent);
-                            i++;
                             await Task.Delay(program.ExpositionTime, cts.Token);
                         }
                     }
@@ -475,7 +475,7 @@ namespace StroopTest
             waveSource.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailable);
             waveSource.RecordingStopped += new EventHandler<StoppedEventArgs>(waveSource_RecordingStopped);
 
-            waveFile = new WaveFileWriter(path + "/audio_" + program.UserName + "_" + program.ProgramName + "_"+ now + ".wav", waveSource.WaveFormat);
+            waveFile = new WaveFileWriter(path + "/data" + "/audio_" + program.UserName + "_" + program.ProgramName + "_"+ now + ".wav", waveSource.WaveFormat);
 
             waveSource.StartRecording();
         } // inicia gravação de áudio

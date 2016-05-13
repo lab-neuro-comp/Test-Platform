@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrgConfig));
             this.panel1 = new System.Windows.Forms.Panel();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.expandImageOn = new System.Windows.Forms.CheckBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -93,7 +93,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.numericUpDown1);
-            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.expandImageOn);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.panel4);
@@ -172,16 +172,17 @@
             0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // checkBox1
+            // expandImageOn
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(481, 369);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1.TabIndex = 162;
-            this.checkBox1.TabStop = false;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.expandImageOn.AutoSize = true;
+            this.expandImageOn.Enabled = false;
+            this.expandImageOn.Location = new System.Drawing.Point(481, 369);
+            this.expandImageOn.Name = "expandImageOn";
+            this.expandImageOn.Size = new System.Drawing.Size(18, 17);
+            this.expandImageOn.TabIndex = 162;
+            this.expandImageOn.TabStop = false;
+            this.expandImageOn.UseVisualStyleBackColor = true;
+            this.expandImageOn.CheckedChanged += new System.EventHandler(this.expandImageOn_CheckedChanged);
             // 
             // label20
             // 
@@ -800,7 +801,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox expandImageOn;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;

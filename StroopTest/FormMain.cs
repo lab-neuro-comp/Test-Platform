@@ -37,32 +37,29 @@ namespace StroopTest
             dirPathSL.Text = dataFolderPath;
         }
 
+        private void FormMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.R)
+            {
+                beginTest();
+            }
+            if (e.Control && e.KeyCode == Keys.D)
+            {
+                defineProgram();
+            }
+            if (e.Control && e.KeyCode == Keys.U)
+            {
+                defineUser();
+            }
+            if (e.Control && e.KeyCode == Keys.N)
+            {
+                newProgram();
+            }
+        }
+
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            Screen[] screens;
-            FormExposition exposeProgram = new FormExposition(prgNameSL.Text, usrNameSL.Text, dataFolderPath);
-            
-            try
-            {
-                screens = Screen.AllScreens;
-
-                if (screens.Length == 2)
-                {
-                    //MessageBox.Show(screens[1].Bounds.Width.ToString() + " / " + screens[1].Bounds.Height + "\n" + screens[0].Bounds.Width.ToString() + " / " + screens[0].Bounds.Height);
-                    Rectangle r1 = screens[0].WorkingArea;
-                    exposeProgram.StartPosition = FormStartPosition.Manual;
-                    exposeProgram.Top = r1.Top;
-                    exposeProgram.Left = r1.Left;
-                    SendKeys.SendWait("i");
-                    exposeProgram.Show();
-                }
-                else
-                {
-                    SendKeys.SendWait("i");
-                    exposeProgram.ShowDialog();
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            beginTest();
         }
         
         private void programaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,63 +97,22 @@ namespace StroopTest
 
         private void programaToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                FormDefine defineProgram = new FormDefine("Definir Programa: ", dataFolderPath + "/prg/", "prg");
-                var result = defineProgram.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    string progName = defineProgram.ReturnValue;
-                    prgNameSL.Text = progName;
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-            
+            defineProgram();
         }
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                FormDefine defineUser = new FormDefine("Definir Usuário: ", dataFolderPath, "usr");
-                var result = defineUser.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    string userName = defineUser.ReturnValue;
-                    usrNameSL.Text = userName;
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            defineUser();
         }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                FormDefine defineProgram = new FormDefine("Definir Programa: ", dataFolderPath + "/prg/", "prg");
-                var result = defineProgram.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    string progName = defineProgram.ReturnValue;
-                    prgNameSL.Text = progName;
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            defineProgram();
         }
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                FormDefine defineUser = new FormDefine("Definir Usuário: ", dataFolderPath, "usr");
-                var result = defineUser.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    string userName = defineUser.ReturnValue;
-                    usrNameSL.Text = userName;
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            defineUser();
         }
 
         private void dirPathSL_Click(object sender, EventArgs e)
@@ -199,6 +155,7 @@ namespace StroopTest
             FormDefine defineProgram;
             DialogResult result;
             string editProgramName = "error";
+
             try
             {
                 defineProgram = new FormDefine("Editar Programa: ", dataFolderPath + "/prg/", "prg");
@@ -273,6 +230,76 @@ namespace StroopTest
                     }
                 }
             }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void iniciarTesteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            beginTest();
+        }
+
+        private void beginTest()
+        {
+            Screen[] screens;
+            FormExposition exposeProgram = new FormExposition(prgNameSL.Text, usrNameSL.Text, dataFolderPath);
+
+            try
+            {
+                screens = Screen.AllScreens;
+
+                if (screens.Length == 2)
+                {
+                    //MessageBox.Show(screens[1].Bounds.Width.ToString() + " / " + screens[1].Bounds.Height + "\n" + screens[0].Bounds.Width.ToString() + " / " + screens[0].Bounds.Height);
+                    Rectangle r1 = screens[0].WorkingArea;
+                    exposeProgram.StartPosition = FormStartPosition.Manual;
+                    exposeProgram.Top = r1.Top;
+                    exposeProgram.Left = r1.Left;
+                    SendKeys.SendWait("i");
+                    exposeProgram.Show();
+                }
+                else
+                {
+                    SendKeys.SendWait("i");
+                    exposeProgram.ShowDialog();
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void defineProgram()
+        {
+            FormDefine defineProgram = new FormDefine("Definir Programa: ", dataFolderPath + "/prg/", "prg");
+            try
+            {
+                var result = defineProgram.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    string progName = defineProgram.ReturnValue;
+                    prgNameSL.Text = progName;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void defineUser()
+        {
+            try
+            {
+                FormDefine defineUser = new FormDefine("Definir Usuário: ", dataFolderPath, "usr");
+                var result = defineUser.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    string userName = defineUser.ReturnValue;
+                    usrNameSL.Text = userName;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void newProgram()
+        {
+            FormPrgConfig configureProgram = new FormPrgConfig(dataFolderPath, "false");
+            try { configureProgram.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }

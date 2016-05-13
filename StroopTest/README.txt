@@ -6,7 +6,7 @@ Universidade de Brasilia
 LEIA-ME
 ************************************************************************
 
-A aplicao apresenta uma diversas opções de edição e execução de testes,
+A apliçao apresenta diversas opções de edição e execução de testes,
 resultados e dados.
 
 O modelo do programa é baseada em arquivos:

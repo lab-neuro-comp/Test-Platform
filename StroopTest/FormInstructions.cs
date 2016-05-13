@@ -17,7 +17,7 @@ namespace StroopTest
         {
             InitializeComponent();
 
-            string instructionsText = "Para utilizar o software, execute-o uma primeira vez.\nA partir da primeira execução será criado o diretório\n'StroopTestFiles'\nno mesmo diretório em que o programa executa.\nTal diretório contém os subdiretórios:\n'data' - com os resultados das execuções;\n'prg' - contém os arquivos .prg onde estão escitos os programas;\n'lst' - contém os arquivos .lst onde estão escritas as listas";
+            string instructionsText = "Execute um teste com o atalho 'Ctrl + R'\nDefina o programa do teste com o atalho 'Ctrl + D'\nPara utilizar o software, execute-o uma primeira vez.\nA partir da primeira execução será criado o diretório\n'StroopTestFiles'\nno mesmo diretório em que o programa executa.\nTal diretório contém os subdiretórios:\n'data' - com os resultados das execuções;\n'prg' - contém os arquivos .prg onde estão escitos os programas;\n'lst' - contém os arquivos .lst onde estão escritas as listas";
 
             if (new FileInfo(fileInstructionPath).Length != 0)
             {

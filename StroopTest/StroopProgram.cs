@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace StroopTest
@@ -46,12 +47,13 @@ namespace StroopTest
         private string fixPoint;                // [15]  ponto de fixação - cruz / ponto / false
         private string fontWordLabel;           // [16]  tamanho da palavra
         private bool expandImage;               // [17]  expande imagem ajustando à tela
+        public bool latinEncode = true;
 
         // Definição gets 
         // Definição sets (e suas restrições)
 
-            // Arrumar argument execptions para uma exeção diferente no caso que não seja nome do programa ou do usuario
-            // assim não vai dar bug de fechar programa na proxima fase (para teste -> entrar com "jabuti" como nome do programa no arquivo de entrada)
+        // Arrumar argument execptions para uma exeção diferente no caso que não seja nome do programa ou do usuario
+        // assim não vai dar bug de fechar programa na proxima fase (para teste -> entrar com "jabuti" como nome do programa no arquivo de entrada)
 
         public List<string> InstructionText
         {
@@ -335,6 +337,23 @@ namespace StroopTest
             }
         }
 
+
+        // decodifica texto
+        public string encodeLatinText(string text)
+        {
+            Encoding iso = Encoding.GetEncoding("ISO-8859-1");
+            Encoding utf8 = Encoding.UTF8;
+            byte[] utfBytes;
+            byte[] isoBytes;
+            string encodedStr = "";
+
+            utfBytes = utf8.GetBytes(text);
+            isoBytes = Encoding.Convert(utf8, iso, utfBytes);
+            encodedStr = iso.GetString(isoBytes);
+
+            return encodedStr;
+        }
+
         // construtor classe StroopProgram
         public StroopProgram()
         {
@@ -348,8 +367,12 @@ namespace StroopTest
             {
                 if (!File.Exists(filepath)) { throw new FileNotFoundException(); } // confere existência do arquivo
 
-                TextReader tr = new StreamReader(filepath);
+                TextReader tr = new StreamReader(filepath, Encoding.Default, true);
                 string line = tr.ReadLine();
+                if (latinEncode)
+                {
+                    line = encodeLatinText(line);
+                }
                 string[] config = line.Split();
                 tr.Close();
 
@@ -417,7 +440,7 @@ namespace StroopTest
         {
             try
             {
-                TextWriter tw = new StreamWriter(filepath);
+                TextWriter tw = new StreamWriter(filepath, false, Encoding.GetEncoding("ISO-8859-1"));
                 tw.WriteLine(defaultProgramFileText);
                 for(int i = 0; i < defaultInstructionText.Length; i++)
                 {
@@ -437,7 +460,7 @@ namespace StroopTest
         {
             try
             {
-                TextWriter tw = new StreamWriter(filepath + defaultWordsListName);
+                TextWriter tw = new StreamWriter(filepath + defaultWordsListName, false, Encoding.GetEncoding("ISO-8859-1"));
                 tw.WriteLine(defaultWordsListText);
                 tw.Close();
             }
@@ -452,7 +475,7 @@ namespace StroopTest
         {
             try
             {
-                TextWriter tw = new StreamWriter(filepath + defaultColorsListName);
+                TextWriter tw = new StreamWriter(filepath + defaultColorsListName, false, Encoding.GetEncoding("ISO-8859-1"));
                 tw.WriteLine(defaultColorsListText);
                 tw.Close();
             }
@@ -468,7 +491,7 @@ namespace StroopTest
             try
             {
                 if (!File.Exists(filepath)) { throw new FileNotFoundException(); }
-                TextReader tr = new StreamReader(filepath);
+                TextReader tr = new StreamReader(filepath, Encoding.Default, true);
                 List<string> wordsList = new List<string>();
                 string line;
                 string[] splitLine;
@@ -476,6 +499,10 @@ namespace StroopTest
                 while (tr.Peek() >= 0)
                 {
                     line = tr.ReadLine();
+                    if (latinEncode)
+                    {
+                        line = encodeLatinText(line);
+                    }
                     splitLine = line.Split();
                     for(int i = 0; i < splitLine.Count(); i++)
                     {
@@ -513,7 +540,7 @@ namespace StroopTest
         {
             try
             {
-                TextWriter tw = new StreamWriter(filepath);
+                TextWriter tw = new StreamWriter(filepath, false, Encoding.GetEncoding("ISO-8859-1"));
                 tw.WriteLine(headerOutputFileText);
                 tw.Close();
             }
@@ -538,4 +565,5 @@ namespace StroopTest
             }
         }
     }
+
 }

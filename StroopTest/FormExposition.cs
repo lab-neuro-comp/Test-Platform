@@ -39,7 +39,6 @@ namespace StroopTest
         // beginAudio
         private WaveIn waveSource = null; // entrada de áudio
         public WaveFileWriter waveFile = null; // arquivo salvar áudio
-        // endAudio
         
         public FormExposition(string prgName, string usrName, string dataFolderPath)
         {
@@ -62,7 +61,17 @@ namespace StroopTest
 
             startExpo();
         }
-        
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
         private async void startExpo() // clique do botão defini o programa a ser executado e inicia exposição
         {
             try
@@ -160,8 +169,7 @@ namespace StroopTest
                         throw new Exception("A lista de cores '" + program.ColorsListFile + "' contém valores inválidos!\n" + c + " por exemplo não é um valor válido. A lista de cores deve conter apenas valores hexadecimais (ex: #000000)");
                     }
                 }
-
-
+                
                 await showInstructions(program, cts.Token); // Apresenta instruções se houver
                 //showSubtitle(program);
 
@@ -424,7 +432,7 @@ namespace StroopTest
                 instructionLabel.Enabled = false; instructionLabel.Visible = false;
             }
         }
-
+        
         private void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter, List<string> output)
         {
             // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\testimulo\tlegenda\tposicaoLegenda\tpalavra\tcor
@@ -467,17 +475,21 @@ namespace StroopTest
         // beginAudio
         private void startRecordingAudio(StroopProgram program)
         {
-            string now = program.InitialDate.Day + "." + program.InitialDate.Month + "_" + DateTime.Now.Hour.ToString() + "h" + DateTime.Now.Minute.ToString() + "." + DateTime.Now.Second.ToString();
+            int waveInDevices = WaveIn.DeviceCount;
+            if(waveInDevices != 0)
+            {
+                string now = program.InitialDate.Day + "." + program.InitialDate.Month + "_" + DateTime.Now.Hour.ToString() + "h" + DateTime.Now.Minute.ToString() + "." + DateTime.Now.Second.ToString();
 
-            waveSource = new WaveIn();
-            waveSource.WaveFormat = new WaveFormat(44100, 1);
+                waveSource = new WaveIn();
+                waveSource.WaveFormat = new WaveFormat(44100, 1);
 
-            waveSource.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailable);
-            waveSource.RecordingStopped += new EventHandler<StoppedEventArgs>(waveSource_RecordingStopped);
+                waveSource.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailable);
+                waveSource.RecordingStopped += new EventHandler<StoppedEventArgs>(waveSource_RecordingStopped);
 
-            waveFile = new WaveFileWriter(path + "/data" + "/audio_" + program.UserName + "_" + program.ProgramName + "_"+ now + ".wav", waveSource.WaveFormat);
+                waveFile = new WaveFileWriter(path + "/data" + "/audio_" + program.UserName + "_" + program.ProgramName + "_" + now + ".wav", waveSource.WaveFormat);
 
-            waveSource.StartRecording();
+                waveSource.StartRecording();
+            }
         } // inicia gravação de áudio
 
         private void stopRecordingAudio()

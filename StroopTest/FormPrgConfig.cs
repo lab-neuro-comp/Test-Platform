@@ -36,7 +36,7 @@ namespace StroopTest
                 editProgram();
             }
         }
-        
+
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -52,6 +52,8 @@ namespace StroopTest
                     b.Visible = true;
                 }
                 chooseColorSubs.Enabled = true; panel3.Enabled = true; panel3.BackColor = Color.Transparent; subDirect1.BackColor = Color.Transparent; // habilitar botões de posicao legenda
+                expandImageOn.Enabled = false;
+                expandImageOn.Checked = false;
             }
             else
             {
@@ -62,6 +64,7 @@ namespace StroopTest
                     if (i > 0) subDirectionList[i].Visible = false;
                 }
                 chooseColorSubs.Enabled = false; panel3.Enabled = false; panel3.BackColor = Color.LightGray;
+                expandImageOn.Enabled = true;
             }
         }
 
@@ -74,21 +77,21 @@ namespace StroopTest
                     openColorsList.Enabled = true;
                     openImgsList.Enabled = false;
                     numericUpDown1.Enabled = true;
-                    checkBox1.Enabled = false;
+                    expandImageOn.Enabled = false;
                     break;
                 case 1:
                     openWordList.Enabled = false;
                     openColorsList.Enabled = false;
                     openImgsList.Enabled = true;
                     numericUpDown1.Enabled = false;
-                    checkBox1.Enabled = true;
+                    expandImageOn.Enabled = true;
                     break;
                 case 2:
                     openWordList.Enabled = true;
                     openColorsList.Enabled = false;
                     openImgsList.Enabled = true;
                     numericUpDown1.Enabled = true;
-                    checkBox1.Enabled = true;
+                    expandImageOn.Enabled = true;
                     break;
             }
         }
@@ -270,7 +273,7 @@ namespace StroopTest
                     }
 
                     numericUpDown1.Value = Convert.ToInt32(program.FontWordLabel);
-                    checkBox1.Checked = Convert.ToBoolean(program.ExpandImage);
+                    expandImageOn.Checked = Convert.ToBoolean(program.ExpandImage);
                 /*
                 }
                 */
@@ -374,7 +377,7 @@ namespace StroopTest
                 }
 
                 programWrite.FontWordLabel = numericUpDown1.Value.ToString();
-                programWrite.ExpandImage = checkBox1.Checked;
+                programWrite.ExpandImage = expandImageOn.Checked;
 
                 string text =    programWrite.ProgramName + " " +
                                  programWrite.NumExpositions.ToString() + " " +
@@ -550,5 +553,17 @@ namespace StroopTest
             fontSize = numericUpDown1.Value.ToString();
         }
 
+        private void expandImageOn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (expandImageOn.Checked)
+            {
+                showSubsOn.Enabled = false;
+                showSubsOn.Checked = false;
+            }
+            else
+            {
+                showSubsOn.Enabled = true;
+            }
+        }
     }
 }

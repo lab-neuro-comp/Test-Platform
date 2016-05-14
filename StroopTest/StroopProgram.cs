@@ -337,7 +337,6 @@ namespace StroopTest
             }
         }
 
-
         // decodifica texto
         public string encodeLatinText(string text)
         {
@@ -440,7 +439,7 @@ namespace StroopTest
         {
             try
             {
-                TextWriter tw = new StreamWriter(filepath, false, Encoding.GetEncoding("ISO-8859-1"));
+                TextWriter tw = new StreamWriter(filepath);
                 tw.WriteLine(defaultProgramFileText);
                 for(int i = 0; i < defaultInstructionText.Length; i++)
                 {
@@ -460,7 +459,7 @@ namespace StroopTest
         {
             try
             {
-                TextWriter tw = new StreamWriter(filepath + defaultWordsListName, false, Encoding.GetEncoding("ISO-8859-1"));
+                TextWriter tw = new StreamWriter(filepath + defaultWordsListName);
                 tw.WriteLine(defaultWordsListText);
                 tw.Close();
             }
@@ -475,7 +474,7 @@ namespace StroopTest
         {
             try
             {
-                TextWriter tw = new StreamWriter(filepath + defaultColorsListName, false, Encoding.GetEncoding("ISO-8859-1"));
+                TextWriter tw = new StreamWriter(filepath + defaultColorsListName);
                 tw.WriteLine(defaultColorsListText);
                 tw.Close();
             }
@@ -495,18 +494,16 @@ namespace StroopTest
                 List<string> wordsList = new List<string>();
                 string line;
                 string[] splitLine;
+                string aux;
 
                 while (tr.Peek() >= 0)
                 {
                     line = tr.ReadLine();
-                    if (latinEncode)
-                    {
-                        line = encodeLatinText(line);
-                    }
                     splitLine = line.Split();
                     for(int i = 0; i < splitLine.Count(); i++)
                     {
-                        wordsList.Add(splitLine[i]);
+                        aux = encodeLatinText(splitLine[i]);
+                        wordsList.Add(aux);
                     }
                 }
                 tr.Close();
@@ -540,7 +537,7 @@ namespace StroopTest
         {
             try
             {
-                TextWriter tw = new StreamWriter(filepath, false, Encoding.GetEncoding("ISO-8859-1"));
+                TextWriter tw = new StreamWriter(filepath);
                 tw.WriteLine(headerOutputFileText);
                 tw.Close();
             }

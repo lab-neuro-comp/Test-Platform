@@ -55,6 +55,10 @@ namespace StroopTest
             {
                 newProgram();
             }
+            if (e.Control && e.KeyCode == Keys.H)
+            {
+                showInstructions();
+            }
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -85,9 +89,7 @@ namespace StroopTest
 
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(dataFolderPath + instructionsFileName);
-            try { infoBox.Show(); }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            showInstructions();
         }
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -332,6 +334,13 @@ namespace StroopTest
                     }
                 }
             }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void showInstructions()
+        {
+            FormInstructions infoBox = new FormInstructions(dataFolderPath + instructionsFileName);
+            try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }

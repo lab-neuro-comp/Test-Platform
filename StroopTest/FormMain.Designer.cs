@@ -166,8 +166,8 @@
             // abrirToolStripMenuItem
             // 
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
-            this.abrirToolStripMenuItem.Text = "Sair";
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.abrirToolStripMenuItem.Text = "Sair                  Alt+F4";
             this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
@@ -261,8 +261,8 @@
             // sobreToolStripMenuItem
             // 
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
-            this.sobreToolStripMenuItem.Text = "Instruções";
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.sobreToolStripMenuItem.Text = "Instruções    Ctrl+H";
             this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
             // sobreToolStripMenuItem1

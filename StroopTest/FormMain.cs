@@ -39,23 +39,23 @@ namespace StroopTest
 
         private void FormMain_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Control && e.KeyCode == Keys.R)
+            if (e.Control && e.KeyCode == Keys.R) // Ctrl+R - roda teste
             {
                 beginTest();
             }
-            if (e.Control && e.KeyCode == Keys.D)
+            if (e.Control && e.KeyCode == Keys.D) // Ctrl+D - define programa
             {
                 defineProgram();
             }
-            if (e.Control && e.KeyCode == Keys.U)
+            if (e.Control && e.KeyCode == Keys.U) // Ctrl+U - define usuário
             {
                 defineUser();
             }
-            if (e.Control && e.KeyCode == Keys.N)
+            if (e.Control && e.KeyCode == Keys.N) // Ctrl+N - novo programa
             {
                 newProgram();
             }
-            if (e.Control && e.KeyCode == Keys.H)
+            if (e.Control && e.KeyCode == Keys.H) // Ctrl+H - intruções / ajuda
             {
                 showInstructions();
             }
@@ -307,7 +307,6 @@ namespace StroopTest
         private void dataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormShowData showData;
-            
             try
             {
                 showData = new FormShowData(dataFolderPath + "/data/");

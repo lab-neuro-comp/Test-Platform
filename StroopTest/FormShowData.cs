@@ -42,7 +42,6 @@ namespace StroopTest
             this.dataGridView1.DataSource = null;
             this.dataGridView1.Rows.Clear();
             string[] lines;
-            
             try
             {
                 lines = program.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
@@ -67,14 +66,16 @@ namespace StroopTest
             saveFileDialog1.Filter = "csv (*.csv)|*.csv";
             saveFileDialog1.FilterIndex = 2;
             saveFileDialog1.RestoreDirectory = true;
-            
+            String saveName = comboBox1.Text + ".csv";
+            saveFileDialog1.FileName = saveName;
+
             try
             {
                 if (comboBox1.SelectedIndex == -1)
                 {
                     throw new Exception("Selecione um arquivo de dados!");
                 }
-
+                
                 lines = program.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {

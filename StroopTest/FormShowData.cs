@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Copyright (c) 2016 All Rights Reserved
+ * Hugo Honda
+ */
+ 
+using System;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -20,10 +25,10 @@ namespace StroopTest
             string[] headers = program.HeaderOutputFile.Split('\t');
             foreach (var columnName in headers)
             {
-                dataGridView1.Columns.Add(columnName, columnName);
+                dataGridView1.Columns.Add(columnName, columnName); // Configura Cabeçalho na tabela
             }
 
-            if (Directory.Exists(dataFolderPath))
+            if (Directory.Exists(dataFolderPath)) // Preenche comboBox com arquivos do tipo .txt no diretório dado
             {
                 filePaths = Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
                 for (int i = 0; i < filePaths.Length; i++)
@@ -47,7 +52,7 @@ namespace StroopTest
                 lines = program.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
                 if (lines.Count() > 0)
                 {
-                    foreach (var cellValues in lines)
+                    foreach (var cellValues in lines) // Se o item selecionado muda, atualiza-se a tabela de dados de acordo com o selecionado
                     {
                         var cellArray = cellValues.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
                         if (cellArray.Length == dataGridView1.Columns.Count)
@@ -63,10 +68,10 @@ namespace StroopTest
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             string[] lines;
 
-            saveFileDialog1.Filter = "csv (*.csv)|*.csv";
+            saveFileDialog1.Filter = "csv (*.csv)|*.csv"; // salva em .csv
             saveFileDialog1.FilterIndex = 2;
             saveFileDialog1.RestoreDirectory = true;
-            String saveName = comboBox1.Text + ".csv";
+            String saveName = comboBox1.Text + ".csv"; // nome padrão igual ao do arquivo original
             saveFileDialog1.FileName = saveName;
 
             try
@@ -77,14 +82,14 @@ namespace StroopTest
                 }
                 
                 lines = program.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
                 {
                     using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
                     {
                         tw.WriteLine(program.HeaderOutputFile);
                         for (int i = 0; i < lines.Length; i++)
                         {
-                            tw.WriteLine(lines[i]);
+                            tw.WriteLine(lines[i]); // escreve linhas no novo arquivo
                         }
                         tw.Close();
                         MessageBox.Show("Arquivo exportado com sucesso!");

@@ -151,6 +151,12 @@
     <Compile Include="FormExposition.Designer.cs">
       <DependentUpon>FormExposition.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormShowData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShowData.Designer.cs">
+      <DependentUpon>FormShowData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormExposition.resx">
       <DependentUpon>FormExposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShowData.resx">
+      <DependentUpon>FormShowData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

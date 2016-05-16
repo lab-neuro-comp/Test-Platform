@@ -337,6 +337,11 @@ namespace StroopTest
             }
         }
 
+        public string HeaderOutputFile
+        {
+            get { return headerOutputFileText; }
+        }
+
         // decodifica texto
         public string encodeLatinText(string text)
         {
@@ -366,7 +371,7 @@ namespace StroopTest
             {
                 if (!File.Exists(filepath)) { throw new FileNotFoundException(); } // confere existência do arquivo
 
-                TextReader tr = new StreamReader(filepath, Encoding.Default, true);
+                StreamReader tr = new StreamReader(filepath, Encoding.Default, true);
                 string line = tr.ReadLine();
                 if (latinEncode)
                 {
@@ -529,6 +534,33 @@ namespace StroopTest
             catch (FileNotFoundException ex)
             {
                 throw new Exception("Arquivo lista (parâmetro): '" + Path.GetFileName(filepath) + "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath) + "\n\n( " + ex.Message + " )");
+            }
+        }
+
+        public string[] readDataFile(string filepath)
+        {
+            try
+            {
+                if (!File.Exists(filepath)) { throw new FileNotFoundException(); }
+                StreamReader tr = new StreamReader(filepath, Encoding.Default, true);
+                //string text = tr.ReadToEnd();
+
+                List<string> linesList = new List<string>();
+                string line;
+
+                while (tr.Peek() >= 0)
+                {
+                    line = tr.ReadLine();
+                    linesList.Add(line);
+                }
+
+
+                tr.Close();
+                return linesList.ToArray();
+            }
+            catch (FileNotFoundException ex)
+            {
+                throw new Exception("Arquivo Data: '" + Path.GetFileName(filepath) + "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath) + "\n\n( " + ex.Message + " )");
             }
         }
 

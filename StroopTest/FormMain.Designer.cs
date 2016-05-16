@@ -63,6 +63,7 @@
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.dadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -213,7 +214,8 @@
             // 
             this.excluirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.programaToolStripMenuItem3,
-            this.listaToolStripMenuItem1});
+            this.listaToolStripMenuItem1,
+            this.dadosToolStripMenuItem});
             this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
             this.excluirToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.excluirToolStripMenuItem.Text = "Excluir";
@@ -236,7 +238,6 @@
             // 
             this.exibirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dataToolStripMenuItem});
-            this.exibirToolStripMenuItem.Enabled = false;
             this.exibirToolStripMenuItem.Name = "exibirToolStripMenuItem";
             this.exibirToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.exibirToolStripMenuItem.Text = "Exibir";
@@ -244,8 +245,9 @@
             // dataToolStripMenuItem
             // 
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
-            this.dataToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
-            this.dataToolStripMenuItem.Text = "Data";
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.dataToolStripMenuItem.Text = "Dados";
+            this.dataToolStripMenuItem.Click += new System.EventHandler(this.dataToolStripMenuItem_Click);
             // 
             // ajudaToolStripMenuItem
             // 
@@ -368,6 +370,13 @@
     "rasília\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // dadosToolStripMenuItem
+            // 
+            this.dadosToolStripMenuItem.Name = "dadosToolStripMenuItem";
+            this.dadosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.dadosToolStripMenuItem.Text = "Dados";
+            this.dadosToolStripMenuItem.Click += new System.EventHandler(this.dadosToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -432,5 +441,6 @@
         private System.Windows.Forms.ToolStripMenuItem exibirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iniciarTesteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dadosToolStripMenuItem;
     }
 }

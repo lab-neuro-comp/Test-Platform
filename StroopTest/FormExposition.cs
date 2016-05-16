@@ -152,7 +152,7 @@ namespace StroopTest
 
             try
             {
-                program.writeHeaderOutputFile(path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt"); // escreve cabeçalho arquivo de saída
+                //program.writeHeaderOutputFile(path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt"); // escreve cabeçalho arquivo de saída
 
                 //Directory.GetFiles(path, "*.lst");
 
@@ -266,7 +266,7 @@ namespace StroopTest
             
             try
             {
-                program.writeHeaderOutputFile(path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt"); // escreve cabeçalho arquivo de saída
+                //program.writeHeaderOutputFile(path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt"); // escreve cabeçalho arquivo de saída
                 if (program.ExpandImage) { pictureBox1.Dock = DockStyle.Fill; }
                 var cvt = new FontConverter();
                 Font f = cvt.ConvertFromString("Myriad Pro; " + program.FontWordLabel + "pt") as Font;
@@ -435,11 +435,12 @@ namespace StroopTest
         
         private void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter, List<string> output)
         {
+            // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor
             // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\testimulo\tlegenda\tposicaoLegenda\tpalavra\tcor
             var text = program.ProgramName + "\t" +
-                            program.UserName + "\t" +
-                            program.InitialDate.Day + "/" + program.InitialDate.Month + "/" + program.InitialDate.Year + "\t" +
-                            DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString() + ":" + DateTime.Now.Millisecond.ToString() + "\t" +
+                       program.UserName + "\t" +
+                       program.InitialDate.Day + "/" + program.InitialDate.Month + "/" + program.InitialDate.Year + "\t" +
+                       DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString() + ":" + DateTime.Now.Millisecond.ToString() + "\t" +
                             elapsedTime.ToString() + "\t" +
                             counter + "\t" +
                             program.ExpositionType + "\t" +

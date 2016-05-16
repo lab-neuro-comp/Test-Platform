@@ -209,7 +209,6 @@ namespace StroopTest
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-            
         }
 
         private void listaToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -300,6 +299,39 @@ namespace StroopTest
         {
             FormPrgConfig configureProgram = new FormPrgConfig(dataFolderPath, "false");
             try { configureProgram.ShowDialog(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void dataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormShowData showData;
+            
+            try
+            {
+                showData = new FormShowData(dataFolderPath + "/data/");
+                showData.ShowDialog();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void dadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormDefine defineUser = new FormDefine("Excluir Arquivo de Dados: ", dataFolderPath + "/data/", "txt");
+                var result = defineUser.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    string excludeFilePath = dataFolderPath + "/data/" + defineUser.ReturnValue + ".txt";
+                    DialogResult dialogResult = MessageBox.Show("Deseja realmente excluir o arquivo de dados " + defineUser.ReturnValue + ".txt?", "", MessageBoxButtons.YesNo); // pergunta se deseja repetir o programa
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        File.Delete(excludeFilePath);
+                        MessageBox.Show(defineUser.ReturnValue + ".txt excluído com sucesso!");
+                    }
+                }
+            }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }

@@ -23,7 +23,7 @@ namespace StroopTest
             textBox1.Enabled = false;
             textBox1.Visible = false;
 
-            if (type == "prg" || type == "lst")
+            if (type == "prg" || type == "lst" || type == "txt")
             {
                 comboBox1.Enabled = true;
                 comboBox1.Visible = true;
@@ -68,7 +68,7 @@ namespace StroopTest
         {
             try
             {
-                if (type == "prg" || type == "lst")
+                if (type == "prg" || type == "lst" || type == "txt")
                 {
                     comboBox1.Items.Add(comboBox1.Text);
                     this.ReturnValue = comboBox1.Items[comboBox1.Items.Count - 1].ToString();

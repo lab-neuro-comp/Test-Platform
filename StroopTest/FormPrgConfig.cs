@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Copyright (c) 2016 All Rights Reserved
+ * Hugo Honda
+ */
+ 
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -121,6 +126,12 @@ namespace StroopTest
         }
 
         private void button14_Click(object sender, EventArgs e)
+        {
+            openAudioList.Text = openListFile();
+        }
+
+
+        private void button4_Click(object sender, EventArgs e)
         {
             openColorsList.Text = openListFile();
         }
@@ -362,6 +373,8 @@ namespace StroopTest
                     }
                 }
 
+                programWrite.AudioListFile = "false";
+
                 string textLines = "";
                 if (textBox2.Lines.Length > 0 && textBox2.Text != instrBoxText) // lê instrução se houver
                 {
@@ -396,7 +409,8 @@ namespace StroopTest
                                  programWrite.ImagesListFile + " " +
                                  programWrite.FixPoint + " " +
                                  programWrite.FontWordLabel + " " +
-                                 programWrite.ExpandImage
+                                 programWrite.ExpandImage + " " +
+                                 programWrite.AudioListFile
                                  ;
 
                 
@@ -565,5 +579,6 @@ namespace StroopTest
                 showSubsOn.Enabled = true;
             }
         }
+
     }
 }

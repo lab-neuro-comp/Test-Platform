@@ -1,7 +1,6 @@
 ﻿/*
- * Copyright (c) 2015 All Rights Reserved
- * Hugo Honda Ferreira
- * October 2015
+ * Copyright (c) 2016 All Rights Reserved
+ * Hugo Honda
  */
 
 using System;
@@ -24,41 +23,28 @@ namespace StroopTest
     {
         CancellationTokenSource cts;
         StroopProgram programInUse = new StroopProgram(); // programa em uso
-        //AudioRecorder audioRecorder;
-
+        
         private static int elapsedTime; // tempo decorrido
         private string path;// = (Path.GetDirectoryName(Application.ExecutablePath) + "/StroopTestFiles/"); // caminho diretório
         private int instrAwaitTime = 4000;
-        //private bool audioDllExists = false;
 
-        private string prgNametxt;
-        private string usrNametxt;
-
+        
         private List<string> outputContent;
 
         // beginAudio
         private WaveIn waveSource = null; // entrada de áudio
         public WaveFileWriter waveFile = null; // arquivo salvar áudio
+        // endAudio
         
         public FormExposition(string prgName, string usrName, string dataFolderPath)
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
-            
             path = dataFolderPath;
+            programInUse.ProgramName = prgName;
+            programInUse.UserName = usrName;
+
             InitializeComponent();
-            prgNametxt = prgName;
-            usrNametxt = usrName;
-
-            // beginAudio
-            /*
-            if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "/NAudio.dll")) {
-                audioDllExists = true;
-                audioRecorder = new AudioRecorder(usrNametxt, prgNametxt, dataFolderPath + "/data");
-            }
-            */
-            //endAudio
-
             startExpo();
         }
 
@@ -72,47 +58,33 @@ namespace StroopTest
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        private async void startExpo() // clique do botão defini o programa a ser executado e inicia exposição
+        /*
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"c:\mywavfile.wav");
+        player.Play();
+        */
+
+        private async void startExpo() // clique do botão define o programa a ser executado e inicia exposição
         {
+            cts = new CancellationTokenSource();
             try
             {
-                programInUse.ProgramName = prgNametxt; // programa recebe nome do valor inserido na caixa de texto
-                if (!File.Exists(path + "/prg/" + programInUse.ProgramName + ".prg")) { throw new FileNotFoundException("Arquivo programa: " + programInUse.ProgramName + ".prg" + "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/")); } // confere existência do arquivo
-                programInUse.UserName = usrNametxt; // usuário recebe nome do valor inserido na caixa de texto
+                if (!File.Exists(path + "/prg/" + programInUse.ProgramName + ".prg")) { throw new Exception("Arquivo programa: " + programInUse.ProgramName + ".prg" + "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/")); } // confere existência do arquivo
                 programInUse.readProgramFile(path + "/prg/" + programInUse.ProgramName + ".prg");
-
-                // beginAudio
-                /*
-                if (programInUse.AudioCapture == true && audioDllExists == false)
-                {
-                    DialogResult dialogResult = MessageBox.Show("Não será possível gravar o áudio. Falha na leitura da de bibilioteca.\nDeseja continuar?", "Audio library error", MessageBoxButtons.OKCancel);
-                    if (dialogResult == DialogResult.Cancel)
-                    {
-                        throw new Exception("Programa cancelado!");
-                    }
-                }
-                */
-                // endAudio
                 
-                if (programInUse.ExpositionType == "txt")
-                    await startWordExposition(programInUse);
-                else
+                switch (programInUse.ExpositionType)
                 {
-                    if (programInUse.ExpositionType == "imgtxt")
-                        await startImageExposition(programInUse);
-                    else if (programInUse.ExpositionType == "img")
-                        await startImageExposition(programInUse);
+                    case "txt":
+                        await startWordExposition(programInUse, cts);
+                        break;
+                    case "imgtxt":
+                        await startImageExposition(programInUse, cts);
+                        break;
+                    case "img":
+                        await startImageExposition(programInUse, cts);
+                        break;
+                    default:
+                        throw new Exception("Tipo de Exposição: " + programInUse.ExpositionType + " inválido!");
                 }
-            }
-            catch(FileNotFoundException ex)
-            {
-                MessageBox.Show(ex.Message);
-                Close();
-            }
-            catch (OperationCanceledException)
-            {
-                MessageBox.Show ("Programa cancelado.");
-                Close();
             }
             catch (Exception ex)
             {
@@ -121,10 +93,8 @@ namespace StroopTest
             }
         }
 
-        private async Task startWordExposition(StroopProgram program) // inicia exposição de palavra
+        private async Task startWordExposition(StroopProgram program, CancellationTokenSource cts) // inicia exposição de palavra
         {
-            cts = new CancellationTokenSource();
-
             this.wordLabel.Visible = false;
             this.wordLabel.Name = "WordLabel";
             this.wordLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -134,33 +104,28 @@ namespace StroopTest
             this.BackColor = Color.White;
 
             string t1 = null, c1 = null;
+            string outputFileName = "";
 
             Random rnd1 = new Random(DateTime.Now.Millisecond + 1); // cria duas randomizações a partir de sementes diferentes
             Random rnd2 = new Random(DateTime.Now.Millisecond + 2);
 
-            var interval = Task.Run(async delegate
-            {
-                await Task.Delay(program.IntervalTime, cts.Token);
-            });
+            var interval = Task.Run(async delegate{ await Task.Delay(program.IntervalTime, cts.Token); });
 
-            var exposition = Task.Run(async delegate
-            {
-                await Task.Delay(program.ExpositionTime, cts.Token);
-            });
+            var exposition = Task.Run(async delegate{ await Task.Delay(program.ExpositionTime, cts.Token); });
             
             outputContent = new List<string>();
 
             try
             {
                 //program.writeHeaderOutputFile(path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt"); // escreve cabeçalho arquivo de saída
+                outputFileName = path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt";
 
                 //Directory.GetFiles(path, "*.lst");
 
                 string[] labelText = program.readListFile(path + "/lst/" + program.WordsListFile); // vetor de strings recebem as listas de palavra e cor
                 string[] labelColor = program.readListFile(path + "/lst/" + program.ColorsListFile);
                 var cvt = new FontConverter();
-                Font f = cvt.ConvertFromString("Myriad Pro; " + program.FontWordLabel + "pt") as Font;
-                this.wordLabel.Font = f;
+                wordLabel.Font = cvt.ConvertFromString("Myriad Pro; " + program.FontWordLabel + "pt") as Font;
 
                 foreach (string c in labelColor)
                 {
@@ -181,8 +146,7 @@ namespace StroopTest
                     elapsedTime = 0; // zera tempo em milissegundos decorrido
 
                     // beginAudio
-                    if (program.AudioCapture == true) { startRecordingAudio(program); } // inicia gravação áudio
-                    //if (audioDllExists) { audioRecorder.startRecordingAudio(); } // inicia gravação áudio
+                    if (program.AudioCapture) { startRecordingAudio(program); } // inicia gravação áudio
                     // endAudio
 
                     await Task.Delay(program.IntervalTime, cts.Token);
@@ -225,55 +189,57 @@ namespace StroopTest
                     await Task.Delay(program.IntervalTime, cts.Token);
 
                     // beginAudio
-                    if (program.AudioCapture == true) { startRecordingAudio(program); } // inicia gravação áudio
-                    //if (audioDllExists) { audioRecorder.stopRecordingAudio(); } // finaliza gravação áudio
+                    if (program.AudioCapture) { startRecordingAudio(program); } // inicia gravação áudio
                     // endAudio
                     changeBackgroundColor(program, false); // retorna à cor de fundo padrão
 
                     break;
                     /*
                     DialogResult dialogResult = MessageBox.Show("Deseja repetir o teste?", "", MessageBoxButtons.YesNo); // pergunta se deseja repetir o programa
-
                     if (dialogResult == DialogResult.Yes) { MessageBox.Show("O teste será repetido!"); } // se deseja repetir o programa mantém o laço while
                     if (dialogResult == DialogResult.No) { break; } // se não deseja repetir quebra o laço
                     */
             }
-                writeOutputToFile(program, outputContent);
+                program.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
                 Close(); // finaliza exposição após execução
             }
             catch(TaskCanceledException)
             {
-                writeOutputToFile(program, outputContent);
-                MessageBox.Show("A Exposição '" + program.ProgramName + "' foi cancelada!");
-                Close();
+                program.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
+                throw new Exception("A Exposição '" + program.ProgramName + "' foi cancelada!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                Close();
+                throw new Exception(ex.Message);
             }
-
             cts = null;
         }
         
-        private async Task startImageExposition(StroopProgram program) // inicia exposição de imagem
+        private async Task startImageExposition(StroopProgram program, CancellationTokenSource cts) // inicia exposição de imagem
         {
-            cts = new CancellationTokenSource();
-
             int i, j;
-            string[] labelText = null;
+            string[] labelText = null, imageDirs = null, audioDirs = null;
+            string outputFileName = "";
             this.BackColor = Color.White;
             
             try
             {
                 //program.writeHeaderOutputFile(path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt"); // escreve cabeçalho arquivo de saída
+                outputFileName = path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt";
+
                 if (program.ExpandImage) { pictureBox1.Dock = DockStyle.Fill; }
                 var cvt = new FontConverter();
                 Font f = cvt.ConvertFromString("Myriad Pro; " + program.FontWordLabel + "pt") as Font;
                 this.wordLabel.Font = f;
                 wordLabel.ForeColor = Color.Red;
 
-                string[] imageDirs = program.readImgListFile(path + "/lst/" + program.ImagesListFile);
+                imageDirs = program.readDirListFile(path + "/lst/" + program.ImagesListFile);
+
+                if (program.AudioListFile != "false")
+                {
+                    audioDirs = program.readDirListFile(path + "/lst/" + program.AudioListFile);
+                }
+
                 string auxString = "";
 
                 if (program.WordsListFile.ToLower() != "false") { labelText = program.readListFile(path + "/lst/" + program.WordsListFile); }
@@ -295,8 +261,7 @@ namespace StroopTest
                     i = 0; j = 0;
 
                     // beginAudio
-                    if (program.AudioCapture == true) { startRecordingAudio(program); } // inicia gravação áudio
-                    //if (audioDllExists) { audioRecorder.startRecordingAudio(); } // inicia gravação áudio
+                    if (program.AudioCapture) { startRecordingAudio(program); } // inicia gravação áudio
                     // endAudio
 
                     await Task.Delay(program.IntervalTime, cts.Token);
@@ -376,7 +341,6 @@ namespace StroopTest
                             await Task.Delay(program.ExpositionTime, cts.Token);
 
                             //showSubtitle(program, counter);
-
                         }
                     }
                     
@@ -384,8 +348,7 @@ namespace StroopTest
                     await Task.Delay(program.IntervalTime, cts.Token);
 
                     // beginAudio
-                    if (program.AudioCapture == true) { startRecordingAudio(program); } // inicia gravação áudio
-                    //if (audioDllExists) { audioRecorder.stopRecordingAudio(); } // finaliza gravação áudio
+                    if (program.AudioCapture) { startRecordingAudio(program); } // inicia gravação áudio
                     // endAudio
 
                     changeBackgroundColor(program, false); // retorna à cor de fundo padrão
@@ -401,21 +364,18 @@ namespace StroopTest
                 pictureBox1.Dock = DockStyle.None;
                 wordLabel.Font = new Font("Microsoft Sans Serif", 160);
                 wordLabel.ForeColor = Color.Black;
-                writeOutputToFile(program, outputContent);
+                program.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
                 Close();
             }
             catch (TaskCanceledException)
             {
-                writeOutputToFile(program, outputContent);
-                MessageBox.Show("A Exposição '" + program.ProgramName + "' foi cancelada!");
-                Close();
+                program.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
+                throw new Exception("A Exposição '" + program.ProgramName + "' foi cancelada!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                Close();
+                throw new Exception(ex.Message);
             }
-
             cts = null;
         }
 
@@ -436,28 +396,18 @@ namespace StroopTest
         private void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter, List<string> output)
         {
             // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor
-            // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\testimulo\tlegenda\tposicaoLegenda\tpalavra\tcor
             var text = program.ProgramName + "\t" +
                        program.UserName + "\t" +
                        program.InitialDate.Day + "/" + program.InitialDate.Month + "/" + program.InitialDate.Year + "\t" +
                        DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString() + ":" + DateTime.Now.Millisecond.ToString() + "\t" +
-                            elapsedTime.ToString() + "\t" +
-                            counter + "\t" +
-                            program.ExpositionType + "\t" +
-                            program.SubtitleShow.ToString().ToLower() + "\t" +
-                            program.SubtitlePlace + "\t" +
-                            nameStimulus + "\t" +
-                            color;
-
+                       elapsedTime.ToString() + "\t" +
+                       counter + "\t" +
+                       program.ExpositionType + "\t" +
+                       program.SubtitleShow.ToString().ToLower() + "\t" +
+                       program.SubtitlePlace + "\t" +
+                       nameStimulus + "\t" +
+                       color;
             output.Add(text);
-        }
-
-        private void writeOutputToFile(StroopProgram program, List<string> output)
-        {
-            TextWriter tw = new StreamWriter(path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt");
-            foreach (string s in output)
-                tw.WriteLine(s);
-            tw.Close();
         }
 
         private void changeBackgroundColor(StroopProgram program, bool flag) // muda cor de fundo
@@ -566,13 +516,13 @@ namespace StroopTest
 
         public void DrawString()
         {
-            System.Drawing.Graphics formGraphics = this.CreateGraphics();
+            Graphics formGraphics = this.CreateGraphics();
             string drawString = "Sample Text";
-            System.Drawing.Font drawFont = new System.Drawing.Font("Arial", 16);
-            System.Drawing.SolidBrush drawBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Black);
+            Font drawFont = new Font("Arial", 16);
+            SolidBrush drawBrush = new SolidBrush(Color.Black);
             float x = 150.0F;
             float y = 50.0F;
-            StringFormat drawFormat = new System.Drawing.StringFormat();
+            StringFormat drawFormat = new StringFormat();
             formGraphics.DrawString(drawString, drawFont, drawBrush, x, y, drawFormat);
             drawFont.Dispose();
             drawBrush.Dispose();
@@ -581,42 +531,45 @@ namespace StroopTest
 
         private async Task intervalOrFixPoint(StroopProgram program, CancellationToken token)
         {
-            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml("#D01C1F"));
-
             try
             {
-                switch (program.FixPoint)
+                if (program.FixPoint != "+" && program.FixPoint != "o")
                 {
-                    case "false":
-                        await Task.Delay(program.IntervalTime);
-                        break;
-                    case "+":
-                        Graphics formGraphicsCross1 = this.CreateGraphics();
-                        Graphics formGraphicsCross2 = this.CreateGraphics();
-                        float xCross1 = ClientSize.Width / 2 - 25;
-                        float yCross1 = ClientSize.Height / 2 - 4;
-                        float xCross2 = ClientSize.Width / 2 - 4;
-                        float yCross2 = ClientSize.Height / 2 - 25;
-                        float widthCross = 2 * 25;
-                        float heightCross = 2 * 4;
-                        formGraphicsCross1.FillRectangle(myBrush, xCross1, yCross1, widthCross, heightCross);
-                        formGraphicsCross2.FillRectangle(myBrush, xCross2, yCross2, heightCross, widthCross);
-                        await Task.Delay(program.IntervalTime);
-                        formGraphicsCross1.Dispose();
-                        formGraphicsCross2.Dispose();
-                        break;
-                    case "o":
-                        Graphics formGraphicsEllipse = this.CreateGraphics();
-                        float xEllipse = ClientSize.Width / 2 - 25;
-                        float yEllipse = ClientSize.Height / 2 - 25;
-                        float widthEllipse = 2 * 25;
-                        float heightEllipse = 2 * 25;
-                        formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
-                        await Task.Delay(program.IntervalTime);
-                        formGraphicsEllipse.Dispose();
-                        break;
+                    await Task.Delay(program.IntervalTime);
                 }
-                myBrush.Dispose();
+                else
+                {
+                    SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml("#D01C1F"));
+                    switch (program.FixPoint)
+                    {
+                        case "+":
+                            Graphics formGraphicsCross1 = this.CreateGraphics();
+                            Graphics formGraphicsCross2 = this.CreateGraphics();
+                            float xCross1 = ClientSize.Width / 2 - 25;
+                            float yCross1 = ClientSize.Height / 2 - 4;
+                            float xCross2 = ClientSize.Width / 2 - 4;
+                            float yCross2 = ClientSize.Height / 2 - 25;
+                            float widthCross = 2 * 25;
+                            float heightCross = 2 * 4;
+                            formGraphicsCross1.FillRectangle(myBrush, xCross1, yCross1, widthCross, heightCross);
+                            formGraphicsCross2.FillRectangle(myBrush, xCross2, yCross2, heightCross, widthCross);
+                            await Task.Delay(program.IntervalTime);
+                            formGraphicsCross1.Dispose();
+                            formGraphicsCross2.Dispose();
+                            break;
+                        case "o":
+                            Graphics formGraphicsEllipse = this.CreateGraphics();
+                            float xEllipse = ClientSize.Width / 2 - 25;
+                            float yEllipse = ClientSize.Height / 2 - 25;
+                            float widthEllipse = 2 * 25;
+                            float heightEllipse = 2 * 25;
+                            formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
+                            await Task.Delay(program.IntervalTime);
+                            formGraphicsEllipse.Dispose();
+                            break;
+                    }
+                    myBrush.Dispose();
+                }
             }
             catch
             {

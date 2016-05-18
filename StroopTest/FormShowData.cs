@@ -68,11 +68,9 @@ namespace StroopTest
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             string[] lines;
 
-            saveFileDialog1.Filter = "csv (*.csv)|*.csv"; // salva em .csv
-            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.Filter = "Excel CSV (.csv)|*.csv"; // salva em .csvs
             saveFileDialog1.RestoreDirectory = true;
-            String saveName = comboBox1.Text + ".csv"; // nome padrão igual ao do arquivo original
-            saveFileDialog1.FileName = saveName;
+            saveFileDialog1.FileName = comboBox1.Text;
 
             try
             {

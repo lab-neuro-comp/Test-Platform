@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿/*
+ * Copyright (c) 2016 All Rights Reserved
+ * Hugo Honda
+ */
+
+using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Forms;
-using System.Windows.Media;
 
 namespace StroopTest
 {
@@ -65,5 +62,19 @@ namespace StroopTest
         {
             
         }
+
+        private void listItensFromFolder(string path)
+        {
+            DirectoryInfo d = new DirectoryInfo(@path);//Assuming Test is your Folder
+            //var filters = new String[] { "jpg", "jpeg", "png", "gif", "tiff", "bmp" };
+            //var files = GetFilesFrom(searchFolder, filters, false);
+            FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
+            string str = "";
+            foreach (FileInfo file in Files)
+            {
+                str = str + ", " + file.Name;
+            }
+        }
+
     }
 }

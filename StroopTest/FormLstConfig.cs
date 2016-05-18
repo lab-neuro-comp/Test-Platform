@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Copyright (c) 2016 All Rights Reserved
+ * Hugo Honda
+ */
+
+using System;
 using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;

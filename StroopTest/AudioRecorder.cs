@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Copyright (c) 2016 All Rights Reserved
+ * Hugo Honda
+ */
+
+using System;
 using NAudio.Wave;
 
 namespace StroopTest

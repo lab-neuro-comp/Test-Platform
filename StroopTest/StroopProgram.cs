@@ -1,7 +1,6 @@
 ﻿/*
- * Copyright (c) 2015 All Rights Reserved
- * Hugo Honda Ferreira
- * October 2015
+ * Copyright (c) 2016 All Rights Reserved
+ * Hugo Honda
  */
 
 using System;
@@ -15,7 +14,7 @@ namespace StroopTest
 {
     class StroopProgram
     {
-        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_Words.lst padrao_Colors.lst false false false 0 false txt false false 160 false";
+        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_Words.lst padrao_Colors.lst false false false 0 false txt false false 160 false false";
         private string defaultWordsListName = "padrao_Words.lst";
         private string defaultWordsListText = "amarelo azul verde vermelho";
         private string defaultColorsListName = "padrao_Colors.lst";
@@ -47,6 +46,7 @@ namespace StroopTest
         private string fixPoint;                // [15]  ponto de fixação - cruz / ponto / false
         private string fontWordLabel;           // [16]  tamanho da palavra
         private bool expandImage;               // [17]  expande imagem ajustando à tela
+        private string audioListFile = "false";          // [18]  lista com caminhos dos áudios
         public bool latinEncode = true;
 
         // Definição gets 
@@ -337,6 +337,22 @@ namespace StroopTest
             }
         }
 
+        public string AudioListFile
+        {
+            get { return audioListFile; }
+            set
+            {
+                if (value.Substring(value.Length - 4) == ".lst" || value.ToLower() == "false")
+                {
+                    audioListFile = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Erro no Arquivo com Programa:\nNome do arquivo " + value + " de lista deve ter terminação .lst");
+                }
+            }
+        }
+
         public string HeaderOutputFile
         {
             get { return headerOutputFileText; }
@@ -380,8 +396,8 @@ namespace StroopTest
                 string[] config = line.Split();
                 tr.Close();
 
-                if(config.Length != 18)
-                    throw new FormatException("Arquivo programa deve ter 17 parâmetros\nexemplo - programa padrão:\n" + defaultProgramFileText);
+                if(config.Length != 19)
+                    throw new FormatException("Arquivo programa deve ter 18 parâmetros\nexemplo - programa padrão:\n" + defaultProgramFileText);
 
                 // atribuição de valores no arquivos às variáveis do programa:
                 // nomePrograma /NumExposições /TempoExposição /ExpAleatória /TempoIntervalo /TempoIntervAleatorio /ListaPalavras /ListaCores /CorFundo /CaptAudio /mostrarLegenda /lugarLegenda /corLegenda /tipoExposicao /listaImg / PontoFixacao
@@ -418,6 +434,8 @@ namespace StroopTest
                 this.fontWordLabel = config[16];
 
                 this.expandImage = Boolean.Parse(config[17]);
+
+                this.AudioListFile = config[18];
 
                 string[] linesInstruction = File.ReadAllLines(filepath);               
                 if (linesInstruction.Length > 1) // lê instrução se houver
@@ -520,7 +538,7 @@ namespace StroopTest
             }
         }
 
-        public string[] readImgListFile(string filepath)
+        public string[] readDirListFile(string filepath)
         {
             try
             {
@@ -581,16 +599,17 @@ namespace StroopTest
         }
 
         // escreve linha a linha no arquivo de saída
-        public void writeAppendOutputFile(string filepath, string text)
+        public void writeOutputFile(string filepath, string outContent)
         {
             try
             {
-                File.AppendAllText(filepath, text + Environment.NewLine);
+                TextWriter tw = new StreamWriter(filepath);
+                tw.WriteLine(outContent);
+                tw.Close();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine("The file could not be written:");
-                Console.WriteLine(e.Message);
+                Console.WriteLine(ex.Message);
             }
         }
     }

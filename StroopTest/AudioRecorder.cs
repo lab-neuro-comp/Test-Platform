@@ -10,36 +10,35 @@ namespace StroopTest
 {
     class AudioRecorder
     {
-        private WaveIn waveSource = null;
-        public WaveFileWriter waveFile = null;
+        private WaveIn waveSource = null; // entrada de áudio
+        public WaveFileWriter waveFile = null; // arquivo salvar áudio
         private string path;
         private string user;
         private string program;
-
-        public AudioRecorder(string usrName, string prgName, string dataFolderPath)
+        
+        private void startRecordingAudio(StroopProgram program)
         {
-            path = dataFolderPath;
-            user = usrName;
-            program = prgName;
+            int waveInDevices = WaveIn.DeviceCount;
+            if (waveInDevices != 0)
+            {
+                string now = program.InitialDate.Day + "." + program.InitialDate.Month + "_" + DateTime.Now.Hour.ToString() + "h" + DateTime.Now.Minute.ToString() + "." + DateTime.Now.Second.ToString();
 
-            startRecordingAudio();
-        }
+                waveSource = new WaveIn();
+                waveSource.WaveFormat = new WaveFormat(44100, 1);
 
-        public void startRecordingAudio()
-        {
-            string now = DateTime.Now.ToString("h:mm:ss");
-            waveSource = new WaveIn();
-            waveSource.WaveFormat = new WaveFormat(44100, 1);
-            waveSource.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailable);
-            waveSource.RecordingStopped += new EventHandler<StoppedEventArgs>(waveSource_RecordingStopped);
-            waveFile = new WaveFileWriter(path + "/audio_" + user + "_" + program + "_" + now + ".wav", waveSource.WaveFormat);
-            waveSource.StartRecording();
-        }
+                waveSource.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailable);
+                waveSource.RecordingStopped += new EventHandler<StoppedEventArgs>(waveSource_RecordingStopped);
 
-        public void stopRecordingAudio()
+                waveFile = new WaveFileWriter(path + "/data" + "/audio_" + program.UserName + "_" + program.ProgramName + "_" + now + ".wav", waveSource.WaveFormat);
+
+                waveSource.StartRecording();
+            }
+        } // inicia gravação de áudio
+
+        private void stopRecordingAudio()
         {
             waveSource.StopRecording();
-        }
+        } // para gravação de áudio
 
         void waveSource_DataAvailable(object sender, WaveInEventArgs e)
         {
@@ -63,6 +62,6 @@ namespace StroopTest
                 waveFile = null;
             }
         }
-        
+
     }
 }

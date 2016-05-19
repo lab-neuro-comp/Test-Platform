@@ -359,7 +359,7 @@ namespace StroopTest
         }
 
         // decodifica texto
-        public string encodeLatinText(string text)
+        static public string encodeLatinText(string text)
         {
             Encoding iso = Encoding.GetEncoding("ISO-8859-1");
             Encoding utf8 = Encoding.UTF8;

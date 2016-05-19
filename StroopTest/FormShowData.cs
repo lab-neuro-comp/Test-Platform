@@ -49,7 +49,7 @@ namespace StroopTest
             string[] lines;
             try
             {
-                lines = program.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
+                lines = StroopProgram.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
                 if (lines.Count() > 0)
                 {
                     foreach (var cellValues in lines) // Se o item selecionado muda, atualiza-se a tabela de dados de acordo com o selecionado
@@ -79,7 +79,7 @@ namespace StroopTest
                     throw new Exception("Selecione um arquivo de dados!");
                 }
                 
-                lines = program.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
+                lines = StroopProgram.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
                 {
                     using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))

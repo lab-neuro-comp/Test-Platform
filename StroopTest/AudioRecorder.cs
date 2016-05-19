@@ -13,8 +13,6 @@ namespace StroopTest
         private WaveIn waveSource = null; // entrada de áudio
         public WaveFileWriter waveFile = null; // arquivo salvar áudio
         private string path;
-        private string user;
-        private string program;
         
         private void startRecordingAudio(StroopProgram program)
         {

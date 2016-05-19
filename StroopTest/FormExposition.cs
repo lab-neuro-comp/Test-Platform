@@ -200,12 +200,12 @@ namespace StroopTest
                     if (dialogResult == DialogResult.No) { break; } // se não deseja repetir quebra o laço
                     */
             }
-                program.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
+                StroopProgram.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
                 Close(); // finaliza exposição após execução
             }
             catch(TaskCanceledException)
             {
-                program.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
+                StroopProgram.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
                 throw new Exception("A Exposição '" + program.ProgramName + "' foi cancelada!");
             }
             catch (Exception ex)
@@ -233,11 +233,11 @@ namespace StroopTest
                 this.wordLabel.Font = f;
                 wordLabel.ForeColor = Color.Red;
 
-                imageDirs = program.readDirListFile(path + "/lst/" + program.ImagesListFile);
+                imageDirs = StroopProgram.readDirListFile(path + "/lst/" + program.ImagesListFile);
 
                 if (program.AudioListFile != "false")
                 {
-                    audioDirs = program.readDirListFile(path + "/lst/" + program.AudioListFile);
+                    audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile);
                 }
 
                 string auxString = "";
@@ -364,12 +364,12 @@ namespace StroopTest
                 pictureBox1.Dock = DockStyle.None;
                 wordLabel.Font = new Font("Microsoft Sans Serif", 160);
                 wordLabel.ForeColor = Color.Black;
-                program.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
+                StroopProgram.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
                 Close();
             }
             catch (TaskCanceledException)
             {
-                program.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
+                StroopProgram.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
                 throw new Exception("A Exposição '" + program.ProgramName + "' foi cancelada!");
             }
             catch (Exception ex)

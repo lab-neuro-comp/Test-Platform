@@ -517,7 +517,6 @@ namespace StroopTest
                 List<string> wordsList = new List<string>();
                 string line;
                 string[] splitLine;
-                string aux;
 
                 while (tr.Peek() >= 0)
                 {
@@ -525,8 +524,8 @@ namespace StroopTest
                     splitLine = line.Split();
                     for(int i = 0; i < splitLine.Count(); i++)
                     {
-                        aux = encodeLatinText(splitLine[i]);
-                        wordsList.Add(aux);
+                        //aux = encodeLatinText(splitLine[i]);
+                        wordsList.Add(splitLine[i]);
                     }
                 }
                 tr.Close();
@@ -538,7 +537,7 @@ namespace StroopTest
             }
         }
 
-        public string[] readDirListFile(string filepath)
+        static public string[] readDirListFile(string filepath)
         {
             try
             {
@@ -555,7 +554,7 @@ namespace StroopTest
             }
         }
 
-        public string[] readDataFile(string filepath)
+        static public string[] readDataFile(string filepath)
         {
             try
             {
@@ -599,7 +598,7 @@ namespace StroopTest
         }
 
         // escreve linha a linha no arquivo de saída
-        public void writeOutputFile(string filepath, string outContent)
+        static public void writeOutputFile(string filepath, string outContent)
         {
             try
             {

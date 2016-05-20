@@ -49,6 +49,7 @@
             this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exibirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,6 @@
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -96,7 +96,7 @@
             // iniciarTesteToolStripMenuItem
             // 
             this.iniciarTesteToolStripMenuItem.Name = "iniciarTesteToolStripMenuItem";
-            this.iniciarTesteToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
+            this.iniciarTesteToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.iniciarTesteToolStripMenuItem.Text = "Iniciar Teste    Ctrl+R";
             this.iniciarTesteToolStripMenuItem.Click += new System.EventHandler(this.iniciarTesteToolStripMenuItem_Click);
             // 
@@ -106,7 +106,7 @@
             this.programaToolStripMenuItem,
             this.listaDePalavrasToolStripMenuItem});
             this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            this.novoToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
+            this.novoToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.novoToolStripMenuItem.Text = "Novo";
             // 
             // programaToolStripMenuItem
@@ -134,9 +134,8 @@
             // 
             // imagemToolStripMenuItem
             // 
-            this.imagemToolStripMenuItem.Enabled = false;
             this.imagemToolStripMenuItem.Name = "imagemToolStripMenuItem";
-            this.imagemToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.imagemToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.imagemToolStripMenuItem.Text = "Imagens";
             this.imagemToolStripMenuItem.Click += new System.EventHandler(this.imagemToolStripMenuItem_Click);
             // 
@@ -146,7 +145,7 @@
             this.programaToolStripMenuItem2,
             this.usuárioToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(225, 26);
             this.toolStripMenuItem1.Text = "Definir";
             // 
             // programaToolStripMenuItem2
@@ -199,7 +198,7 @@
             // textoECoresToolStripMenuItem1
             // 
             this.textoECoresToolStripMenuItem1.Name = "textoECoresToolStripMenuItem1";
-            this.textoECoresToolStripMenuItem1.Size = new System.Drawing.Size(174, 26);
+            this.textoECoresToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.textoECoresToolStripMenuItem1.Text = "Texto e Cores";
             this.textoECoresToolStripMenuItem1.Click += new System.EventHandler(this.textoECoresToolStripMenuItem1_Click);
             // 
@@ -207,7 +206,7 @@
             // 
             this.imagensToolStripMenuItem.Enabled = false;
             this.imagensToolStripMenuItem.Name = "imagensToolStripMenuItem";
-            this.imagensToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.imagensToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.imagensToolStripMenuItem.Text = "Imagens";
             // 
             // excluirToolStripMenuItem
@@ -234,6 +233,13 @@
             this.listaToolStripMenuItem1.Text = "Lista";
             this.listaToolStripMenuItem1.Click += new System.EventHandler(this.listaToolStripMenuItem1_Click);
             // 
+            // dadosToolStripMenuItem
+            // 
+            this.dadosToolStripMenuItem.Name = "dadosToolStripMenuItem";
+            this.dadosToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.dadosToolStripMenuItem.Text = "Dados";
+            this.dadosToolStripMenuItem.Click += new System.EventHandler(this.dadosToolStripMenuItem_Click);
+            // 
             // exibirToolStripMenuItem
             // 
             this.exibirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -245,7 +251,7 @@
             // dataToolStripMenuItem
             // 
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
-            this.dataToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
             this.dataToolStripMenuItem.Text = "Dados";
             this.dataToolStripMenuItem.Click += new System.EventHandler(this.dataToolStripMenuItem_Click);
             // 
@@ -268,7 +274,7 @@
             // sobreToolStripMenuItem1
             // 
             this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(150, 26);
+            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(210, 26);
             this.sobreToolStripMenuItem1.Text = "Sobre";
             this.sobreToolStripMenuItem1.Click += new System.EventHandler(this.sobreToolStripMenuItem1_Click);
             // 
@@ -369,13 +375,6 @@
             this.label1.Text = "StroopTest - 2016\r\nLaboratório de Neurociência e Comportamento\r\nUniversidade de B" +
     "rasília\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // dadosToolStripMenuItem
-            // 
-            this.dadosToolStripMenuItem.Name = "dadosToolStripMenuItem";
-            this.dadosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.dadosToolStripMenuItem.Text = "Dados";
-            this.dadosToolStripMenuItem.Click += new System.EventHandler(this.dadosToolStripMenuItem_Click);
             // 
             // FormMain
             // 

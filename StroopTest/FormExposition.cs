@@ -24,11 +24,10 @@ namespace StroopTest
         CancellationTokenSource cts;
         StroopProgram programInUse = new StroopProgram(); // programa em uso
         
-        private static int elapsedTime; // tempo decorrido
+        private static float elapsedTime; // tempo decorrido
         private string path;// = (Path.GetDirectoryName(Application.ExecutablePath) + "/StroopTestFiles/"); // caminho diretório
         private int instrAwaitTime = 4000;
 
-        
         private List<string> outputContent;
 
         // beginAudio
@@ -65,7 +64,8 @@ namespace StroopTest
 
         private async void startExpo() // clique do botão define o programa a ser executado e inicia exposição
         {
-            cts = new CancellationTokenSource();
+            CancellationTokenSource cts = new CancellationTokenSource();
+
             try
             {
                 if (!File.Exists(path + "/prg/" + programInUse.ProgramName + ".prg")) { throw new Exception("Arquivo programa: " + programInUse.ProgramName + ".prg" + "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/")); } // confere existência do arquivo
@@ -95,11 +95,16 @@ namespace StroopTest
 
         private async Task startWordExposition(StroopProgram program, CancellationTokenSource cts) // inicia exposição de palavra
         {
-            this.wordLabel.Visible = false;
-            this.wordLabel.Name = "WordLabel";
-            this.wordLabel.TextAlign = ContentAlignment.MiddleCenter;
-            this.wordLabel.Dock = DockStyle.Fill;
-            this.wordLabel.AutoSize = false;
+            wordLabel.Visible = false;
+            wordLabel.Name = "error";
+            wordLabel.FlatStyle = FlatStyle.Flat;
+            wordLabel.Font = new Font("Microsoft Sans Serif", 160, FontStyle.Bold);
+            wordLabel.TextAlign = ContentAlignment.MiddleCenter;
+            wordLabel.AutoEllipsis = true;
+            wordLabel.Dock = DockStyle.Fill;
+
+            wordLabel.AutoSize = false;
+
             this.Controls.Add(this.wordLabel);
             this.BackColor = Color.White;
 
@@ -117,13 +122,11 @@ namespace StroopTest
 
             try
             {
-                //program.writeHeaderOutputFile(path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt"); // escreve cabeçalho arquivo de saída
                 outputFileName = path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt";
-
-                //Directory.GetFiles(path, "*.lst");
-
+                
                 string[] labelText = program.readListFile(path + "/lst/" + program.WordsListFile); // vetor de strings recebem as listas de palavra e cor
                 string[] labelColor = program.readListFile(path + "/lst/" + program.ColorsListFile);
+
                 var cvt = new FontConverter();
                 wordLabel.Font = cvt.ConvertFromString("Myriad Pro; " + program.FontWordLabel + "pt") as Font;
 
@@ -136,8 +139,7 @@ namespace StroopTest
                 }
                 
                 await showInstructions(program, cts.Token); // Apresenta instruções se houver
-                //showSubtitle(program);
-
+                
                 while (true) // laço de repetição do programa até que o usuário decida não repetir mais o mesmo programa
                 {
                     int i = 0, j = 0; // zera contadores para apresentação não randômica
@@ -180,7 +182,7 @@ namespace StroopTest
                         SendKeys.SendWait("s");
                         wordLabel.Visible = true;
 
-                        writeLineOutput(program, t1, c1, counter, outputContent);
+                        StroopProgram.writeLineOutput(program, t1, c1, counter, outputContent, elapsedTime);
                         
                         await Task.Delay(program.ExpositionTime, cts.Token);
                     }
@@ -221,12 +223,11 @@ namespace StroopTest
             string[] labelText = null, imageDirs = null, audioDirs = null;
             string outputFileName = "";
             this.BackColor = Color.White;
-            
+
             try
             {
-                //program.writeHeaderOutputFile(path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt"); // escreve cabeçalho arquivo de saída
                 outputFileName = path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt";
-
+                
                 if (program.ExpandImage) { pictureBox1.Dock = DockStyle.Fill; }
                 var cvt = new FontConverter();
                 Font f = cvt.ConvertFromString("Myriad Pro; " + program.FontWordLabel + "pt") as Font;
@@ -265,7 +266,7 @@ namespace StroopTest
                     // endAudio
 
                     await Task.Delay(program.IntervalTime, cts.Token);
-                    
+
                     if (program.ExpositionType == "imgtxt")
                     {
                         for (int counter = 0; counter < imageDirs.Count(); counter++) // AQUI ver estinulo -> palavra ou imagem como um só e ter intervalo separado
@@ -311,7 +312,7 @@ namespace StroopTest
                                 }
                             }
                             
-                            writeLineOutput(program, auxString, "false", counter + 1, outputContent);
+                            StroopProgram.writeLineOutput(program, auxString, "false", counter + 1, outputContent, elapsedTime);
                             await Task.Delay(program.ExpositionTime, cts.Token);
                         }
                     }
@@ -331,16 +332,17 @@ namespace StroopTest
                                 if (i == imageDirs.Count()) { i = 0; }
                                 pictureBox1.Image = Image.FromFile(imageDirs[i]);
                             }
-
+                            
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                             SendKeys.SendWait("s");
                             pictureBox1.Visible = true;
 
-                            writeLineOutput(program, Path.GetFileName(imageDirs[i].ToString()), "false", counter + 1, outputContent);
+                            StroopProgram.writeLineOutput(program, Path.GetFileName(imageDirs[i].ToString()), "false", counter + 1, outputContent, elapsedTime);
                             i++;
+                            
                             await Task.Delay(program.ExpositionTime, cts.Token);
-
-                            //showSubtitle(program, counter);
+                            //g = Graphics.FromImage(pictureBox1.Image);
+                            //showSubtitle(program, g, counter);
                         }
                     }
                     
@@ -378,6 +380,53 @@ namespace StroopTest
             }
             cts = null;
         }
+        
+        /*
+        private void showImageInPanel(StroopProgram program, Graphics g, int index)
+        {
+            if (program.ExpandImage)
+            {
+                program.SubtitlePlace = 0;
+            }
+
+            string[] labelText = program.readListFile(path + "/lst/" + "padrao_Words.lst");
+
+            panel1.Paint += new PaintEventHandler((sender, e) =>
+            {
+                e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+
+                PointF locationToDraw = new PointF();
+
+                SizeF textSize = e.Graphics.MeasureString(labelText[index], Font, 60);
+
+                switch (program.SubtitlePlace)
+                {
+                    case 1: //baixo
+                        locationToDraw.X = ClientSize.Width / 2 - textSize.Width / 2;
+                        locationToDraw.Y = panel1.Location.Y + panel1.Height + 50;
+                        break;
+                    case 2: //esquerda
+                        locationToDraw.X = panel1.Location.X - (textSize.Width + 50);
+                        locationToDraw.Y = ClientSize.Height / 2 - textSize.Height / 2;
+                        break;
+                    case 3: //direita
+                        locationToDraw.X = panel1.Location.X + panel1.Width + 50;
+                        locationToDraw.Y = ClientSize.Height / 2 - textSize.Height / 2;
+                        break;
+                    case 4: // cima
+                        locationToDraw.X = panel1.Location.Y - (textSize.Height + 50);
+                        locationToDraw.Y = ClientSize.Width / 2 - textSize.Width / 2;
+                        break;
+                    default: // centro
+                        locationToDraw.X = ClientSize.Width / 2 - textSize.Width / 2;
+                        locationToDraw.Y = ClientSize.Height / 2 - textSize.Height / 2;
+                        break;
+                }
+
+                e.Graphics.DrawString(labelText[index], Font, Brushes.Black, locationToDraw);
+            });
+        }
+        */
 
         private async Task showInstructions(StroopProgram program, CancellationToken token) // apresenta instruções
         {
@@ -391,23 +440,6 @@ namespace StroopTest
                 }
                 instructionLabel.Enabled = false; instructionLabel.Visible = false;
             }
-        }
-        
-        private void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter, List<string> output)
-        {
-            // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor
-            var text = program.ProgramName + "\t" +
-                       program.UserName + "\t" +
-                       program.InitialDate.Day + "/" + program.InitialDate.Month + "/" + program.InitialDate.Year + "\t" +
-                       DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString() + ":" + DateTime.Now.Millisecond.ToString() + "\t" +
-                       elapsedTime.ToString() + "\t" +
-                       counter + "\t" +
-                       program.ExpositionType + "\t" +
-                       program.SubtitleShow.ToString().ToLower() + "\t" +
-                       program.SubtitlePlace + "\t" +
-                       nameStimulus + "\t" +
-                       color;
-            output.Add(text);
         }
 
         private void changeBackgroundColor(StroopProgram program, bool flag) // muda cor de fundo
@@ -471,64 +503,7 @@ namespace StroopTest
             }
         }
         // endAudio
-
-        private void showSubtitle(StroopProgram program, int index)
-        {
-            program.SubtitlePlace = 0;
-
-            string[] labelText = program.readListFile(path + "/lst/" + "padrao_Words.lst");
-            
-            pictureBox1.Paint += new PaintEventHandler((sender, e) =>
-            {
-                e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-
-                PointF locationToDraw = new PointF();
-                
-                SizeF textSize = e.Graphics.MeasureString(labelText[index], Font, 60);
-
-                switch (program.SubtitlePlace)
-                {
-                    case 1: //baixo
-                        locationToDraw.X = ClientSize.Width / 2 - textSize.Width / 2;
-                        locationToDraw.Y = pictureBox1.Location.Y + pictureBox1.Height + 50;
-                        break;
-                    case 2: //esquerda
-                        locationToDraw.X = pictureBox1.Location.X - (textSize.Width + 50);
-                        locationToDraw.Y = ClientSize.Height / 2 - textSize.Height / 2;
-                        break;
-                    case 3: //direita
-                        locationToDraw.X = pictureBox1.Location.X + pictureBox1.Width + 50;
-                        locationToDraw.Y = ClientSize.Height / 2 - textSize.Height / 2;
-                        break;
-                    case 4: // cima
-                        locationToDraw.X = pictureBox1.Location.Y - (textSize.Height + 50);
-                        locationToDraw.Y = ClientSize.Width / 2 - textSize.Width / 2;
-                        break;
-                    default: // centro
-                        locationToDraw.X = ClientSize.Width / 2 - textSize.Width / 2;
-                        locationToDraw.Y = ClientSize.Height / 2 - textSize.Height / 2;
-                        break;
-                }
-
-                e.Graphics.DrawString(labelText[index], Font, Brushes.Black, locationToDraw);
-            });
-        }
-
-        public void DrawString()
-        {
-            Graphics formGraphics = this.CreateGraphics();
-            string drawString = "Sample Text";
-            Font drawFont = new Font("Arial", 16);
-            SolidBrush drawBrush = new SolidBrush(Color.Black);
-            float x = 150.0F;
-            float y = 50.0F;
-            StringFormat drawFormat = new StringFormat();
-            formGraphics.DrawString(drawString, drawFont, drawBrush, x, y, drawFormat);
-            drawFont.Dispose();
-            drawBrush.Dispose();
-            formGraphics.Dispose();
-        }
-
+        
         private async Task intervalOrFixPoint(StroopProgram program, CancellationToken token)
         {
             try

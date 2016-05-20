@@ -47,8 +47,7 @@ namespace StroopTest
         private string fontWordLabel;           // [16]  tamanho da palavra
         private bool expandImage;               // [17]  expande imagem ajustando à tela
         private string audioListFile = "false";          // [18]  lista com caminhos dos áudios
-        public bool latinEncode = true;
-
+        
         // Definição gets 
         // Definição sets (e suas restrições)
 
@@ -383,61 +382,47 @@ namespace StroopTest
         // lê arquivo com programa e retorna true para sucesso
         public void readProgramFile(string filepath)
         {
+            StreamReader tr;
+            string line;
+            string[] linesInstruction, config;
+
             try
             {
                 if (!File.Exists(filepath)) { throw new FileNotFoundException(); } // confere existência do arquivo
 
-                StreamReader tr = new StreamReader(filepath, Encoding.Default, true);
-                string line = tr.ReadLine();
-                if (latinEncode)
-                {
-                    line = encodeLatinText(line);
-                }
-                string[] config = line.Split();
+                tr = new StreamReader(filepath, Encoding.Default, true);
+                line = tr.ReadLine();
+                line = encodeLatinText(line);
+                config = line.Split();
                 tr.Close();
 
                 if(config.Length != 19)
-                    throw new FormatException("Arquivo programa deve ter 18 parâmetros\nexemplo - programa padrão:\n" + defaultProgramFileText);
+                    throw new FormatException("Arquivo programa deve ter 19 parâmetros\nexemplo - programa padrão:\n" + defaultProgramFileText);
 
                 // atribuição de valores no arquivos às variáveis do programa:
                 // nomePrograma /NumExposições /TempoExposição /ExpAleatória /TempoIntervalo /TempoIntervAleatorio /ListaPalavras /ListaCores /CorFundo /CaptAudio /mostrarLegenda /lugarLegenda /corLegenda /tipoExposicao /listaImg / PontoFixacao
-                this.ProgramName = config[0];
+                ProgramName = config[0];
                 if (Path.GetFileNameWithoutExtension(filepath) != (this.ProgramName)) { throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName + "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + "'.prg"); }
-                this.NumExpositions = Int32.Parse(config[1]);
-                this.ExpositionTime = Int32.Parse(config[2]); 
-                this.ExpositionRandom = Boolean.Parse(config[3]);
-                this.IntervalTime = Int32.Parse(config[4]);
-                this.IntervalTimeRandom = Boolean.Parse(config[5]);
-                this.WordsListFile = config[6];
-                this.ColorsListFile = config[7];
-                this.BackgroundColor = config[8];
-                this.AudioCapture = Boolean.Parse(config[9]);
-                this.SubtitleShow = Boolean.Parse(config[10]);
-                
-                if (this.SubtitleShow)
-                {
-                    this.SubtitlePlace = Int32.Parse(config[11]);
-                    this.SubtitleColor = config[12];
-                }
-                else // caso legenda esteja desativada, seta configurações padrao
-                {
-                    this.SubtitlePlace = 0;
-                    this.SubtitleColor = "false";
-                }
+                NumExpositions = Int32.Parse(config[1]);
+                ExpositionTime = Int32.Parse(config[2]); 
+                ExpositionRandom = Boolean.Parse(config[3]);
+                IntervalTime = Int32.Parse(config[4]);
+                IntervalTimeRandom = Boolean.Parse(config[5]);
+                WordsListFile = config[6];
+                ColorsListFile = config[7];
+                BackgroundColor = config[8];
+                AudioCapture = Boolean.Parse(config[9]);
+                SubtitleShow = Boolean.Parse(config[10]);
+                if (SubtitleShow) { SubtitlePlace = Int32.Parse(config[11]); SubtitleColor = config[12]; }
+                else { SubtitlePlace = 0; SubtitleColor = "false"; }
+                ExpositionType = config[13];
+                ImagesListFile = config[14];
+                fixPoint = config[15];
+                fontWordLabel = config[16];
+                expandImage = Boolean.Parse(config[17]);
+                AudioListFile = config[18];
 
-                this.ExpositionType = config[13];
-
-                this.ImagesListFile = config[14];
-
-                this.fixPoint = config[15];
-
-                this.fontWordLabel = config[16];
-
-                this.expandImage = Boolean.Parse(config[17]);
-
-                this.AudioListFile = config[18];
-
-                string[] linesInstruction = File.ReadAllLines(filepath);               
+                linesInstruction = File.ReadAllLines(filepath);               
                 if (linesInstruction.Length > 1) // lê instrução se houver
                 {
                     for (int i = 1; i < linesInstruction.Length; i++)
@@ -507,29 +492,25 @@ namespace StroopTest
             }
         }
         
-        // lê arquivo com lista e retorna esta lista
+        // lê palavras do arquivo e retorna vetor
         public string[] readListFile(string filepath)
         {
+            TextReader tr;
+            List<string> list;
+            string[] splitedLine;
+
             try
             {
-                if (!File.Exists(filepath)) { throw new FileNotFoundException(); }
-                TextReader tr = new StreamReader(filepath, Encoding.Default, true);
-                List<string> wordsList = new List<string>();
-                string line;
-                string[] splitLine;
-
+                if (!File.Exists(filepath)) { throw new FileNotFoundException(); } // checa se arquivo existe
+                tr = new StreamReader(filepath, Encoding.Default, true);
+                list = new List<string>(); // lista de palavras
                 while (tr.Peek() >= 0)
                 {
-                    line = tr.ReadLine();
-                    splitLine = line.Split();
-                    for(int i = 0; i < splitLine.Count(); i++)
-                    {
-                        //aux = encodeLatinText(splitLine[i]);
-                        wordsList.Add(splitLine[i]);
-                    }
+                    splitedLine = tr.ReadLine().Split();
+                    for(int i = 0; i < splitedLine.Count(); i++) { list.Add(splitedLine[i]); } // adiciona cada palavra como novo item a uma lista
                 }
                 tr.Close();
-                return wordsList.ToArray();
+                return list.ToArray(); // retorna palavras em vetor
             }
             catch (FileNotFoundException ex)
             {
@@ -537,16 +518,16 @@ namespace StroopTest
             }
         }
 
+        // lê diretórios do arquivo e retorna vetor
         static public string[] readDirListFile(string filepath)
         {
+            string[] imageDirs;
+
             try
             {
                 if (!File.Exists(filepath)) { throw new FileNotFoundException(); }
-
-                string[] imageDirs = File.ReadAllLines(filepath);
-                Console.WriteLine(imageDirs);
-
-                return imageDirs;
+                imageDirs = File.ReadAllLines(filepath);
+                return imageDirs; // retorna vetor com diretórios
             }
             catch (FileNotFoundException ex)
             {
@@ -554,49 +535,23 @@ namespace StroopTest
             }
         }
 
+        // lê dados do arquivo e retorna vetor
         static public string[] readDataFile(string filepath)
         {
+            string[] linesList;
+
             try
             {
                 if (!File.Exists(filepath)) { throw new FileNotFoundException(); }
-                StreamReader tr = new StreamReader(filepath, Encoding.Default, true);
-                //string text = tr.ReadToEnd();
-
-                List<string> linesList = new List<string>();
-                string line;
-
-                while (tr.Peek() >= 0)
-                {
-                    line = tr.ReadLine();
-                    linesList.Add(line);
-                }
-
-
-                tr.Close();
-                return linesList.ToArray();
+                linesList = File.ReadAllLines(filepath);
+                return linesList;
             }
             catch (FileNotFoundException ex)
             {
                 throw new Exception("Arquivo Data: '" + Path.GetFileName(filepath) + "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath) + "\n\n( " + ex.Message + " )");
             }
         }
-
-        // escreve cabeçalho no arquivo de saída
-        public void writeHeaderOutputFile(string filepath)
-        {
-            try
-            {
-                TextWriter tw = new StreamWriter(filepath);
-                tw.WriteLine(headerOutputFileText);
-                tw.Close();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("The file could not be written:");
-                Console.WriteLine(e.Message);
-            }
-        }
-
+        
         // escreve linha a linha no arquivo de saída
         static public void writeOutputFile(string filepath, string outContent)
         {
@@ -610,6 +565,23 @@ namespace StroopTest
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        static public void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter, List<string> output, float elapsedTime)
+        {
+            // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor
+            var text = program.ProgramName + "\t" +
+                       program.UserName + "\t" +
+                       program.InitialDate.Day + "/" + program.InitialDate.Month + "/" + program.InitialDate.Year + "\t" +
+                       DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString() + ":" + DateTime.Now.Millisecond.ToString() + "\t" +
+                       elapsedTime.ToString() + "\t" +
+                       counter + "\t" +
+                       program.ExpositionType + "\t" +
+                       program.SubtitleShow.ToString().ToLower() + "\t" +
+                       program.SubtitlePlace + "\t" +
+                       nameStimulus + "\t" +
+                       color;
+            output.Add(text);
         }
     }
 

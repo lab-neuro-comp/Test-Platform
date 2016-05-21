@@ -227,8 +227,9 @@ namespace StroopTest
             try
             {
                 outputFileName = path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt";
-                
+
                 if (program.ExpandImage) { pictureBox1.Dock = DockStyle.Fill; }
+                else { pictureBox1.Dock = DockStyle.None; }
                 var cvt = new FontConverter();
                 Font f = cvt.ConvertFromString("Myriad Pro; " + program.FontWordLabel + "pt") as Font;
                 this.wordLabel.Font = f;

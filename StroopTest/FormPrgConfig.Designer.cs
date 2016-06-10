@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrgConfig));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.openAudioList = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.expandImageOn = new System.Windows.Forms.CheckBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -80,9 +82,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.openAudioList = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeInterval)).BeginInit();
@@ -147,6 +146,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(628, 502);
             this.panel1.TabIndex = 0;
+            // 
+            // openAudioList
+            // 
+            this.openAudioList.Enabled = false;
+            this.openAudioList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openAudioList.Location = new System.Drawing.Point(481, 328);
+            this.openAudioList.Name = "openAudioList";
+            this.openAudioList.Size = new System.Drawing.Size(118, 23);
+            this.openAudioList.TabIndex = 165;
+            this.openAudioList.Text = "abrir";
+            this.openAudioList.UseVisualStyleBackColor = true;
+            this.openAudioList.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(368, 331);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(102, 17);
+            this.label21.TabIndex = 164;
+            this.label21.Text = "Lista de Audio:";
             // 
             // numericUpDown1
             // 
@@ -719,37 +739,6 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // fontDialog1
-            // 
-            this.fontDialog1.AllowScriptChange = false;
-            this.fontDialog1.AllowSimulations = false;
-            this.fontDialog1.AllowVectorFonts = false;
-            this.fontDialog1.AllowVerticalFonts = false;
-            this.fontDialog1.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F);
-            this.fontDialog1.MinSize = 80;
-            this.fontDialog1.ScriptsOnly = true;
-            this.fontDialog1.ShowEffects = false;
-            // 
-            // openAudioList
-            // 
-            this.openAudioList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openAudioList.Location = new System.Drawing.Point(481, 328);
-            this.openAudioList.Name = "openAudioList";
-            this.openAudioList.Size = new System.Drawing.Size(118, 23);
-            this.openAudioList.TabIndex = 165;
-            this.openAudioList.Text = "abrir";
-            this.openAudioList.UseVisualStyleBackColor = true;
-            this.openAudioList.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(368, 331);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(102, 17);
-            this.label21.TabIndex = 164;
-            this.label21.Text = "Lista de Audio:";
-            // 
             // FormPrgConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -827,7 +816,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.CheckBox expandImageOn;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button openAudioList;
         private System.Windows.Forms.Label label21;

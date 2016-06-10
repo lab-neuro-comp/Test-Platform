@@ -127,13 +127,13 @@ namespace StroopTest
 
         private void button14_Click(object sender, EventArgs e)
         {
-            openAudioList.Text = openListFile();
+            openImgsList.Text = openListFile();
         }
 
 
         private void button4_Click(object sender, EventArgs e)
         {
-            openColorsList.Text = openListFile();
+            //openAudioList.Text = openListFile();
         }
 
         private void editProgram()

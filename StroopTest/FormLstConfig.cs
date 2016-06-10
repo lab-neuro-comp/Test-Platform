@@ -27,25 +27,28 @@ namespace StroopTest
 
             checkWords.Checked = true;
             checkColors.Checked = true;
-            if (lstName != "false")
+
+            if (lstName.ToLower() != "false")
             {
                 editLstName = lstName;
-                editList();
+                editList(lstName);
             }
         }
 
-        private void editList()
+        private void editList(string lst)
         {
             StroopProgram program = new StroopProgram();
             string[] list;
 
             try
             {
-                string aux;
-                aux = editLstName.Replace("_Words", "");
-                aux = editLstName.Replace("_Colors", "");
+                wordsListName.Text = wordsListName.Text.Replace("_Words", "");
+                colorsListName.Text = colorsListName.Text.Replace("_Colors", "");
 
-                textBox1.Text = aux;
+                wordsListName.Text = lst + ".lst";
+                colorsListName.Text = lst + ".lst";
+
+                textBox1.Text = lst;
 
                 if (editLstName != "error")
                 {
@@ -215,12 +218,10 @@ namespace StroopTest
                 {
                     hexColorsList.Items.Add(textHexColor.Text);
                 }
-
                 foreach (ListViewItem lvw1 in hexColorsList.Items)
                 {
                     lvw1.ForeColor = ColorTranslator.FromHtml(lvw1.Text);
                 }
-
                 for (int i = 0; i < wordsColoredList.Items.Count; i++)
                 {
                     if(i < hexColorsList.Items.Count)
@@ -228,7 +229,6 @@ namespace StroopTest
                         wordsColoredList.Items[i].ForeColor = ColorTranslator.FromHtml(hexColorsList.Items[i].Text);
                     }
                 }
-                
             }
             else
             { 
@@ -380,6 +380,9 @@ namespace StroopTest
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            textBox1.Text = textBox1.Text.Replace("_Words", "");
+            textBox1.Text = textBox1.Text.Replace("_Colors", "");
+            
             wordsListName.Text = textBox1.Text + "_Words.lst";
             colorsListName.Text = textBox1.Text + "_Colors.lst";
         }

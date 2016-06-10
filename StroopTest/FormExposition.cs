@@ -39,11 +39,10 @@ namespace StroopTest
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
+            InitializeComponent();
             path = dataFolderPath;
             programInUse.ProgramName = prgName;
             programInUse.UserName = usrName;
-
-            InitializeComponent();
             startExpo();
         }
 
@@ -64,8 +63,6 @@ namespace StroopTest
 
         private async void startExpo() // clique do botão define o programa a ser executado e inicia exposição
         {
-            CancellationTokenSource cts = new CancellationTokenSource();
-
             try
             {
                 if (!File.Exists(path + "/prg/" + programInUse.ProgramName + ".prg")) { throw new Exception("Arquivo programa: " + programInUse.ProgramName + ".prg" + "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/")); } // confere existência do arquivo
@@ -74,13 +71,13 @@ namespace StroopTest
                 switch (programInUse.ExpositionType)
                 {
                     case "txt":
-                        await startWordExposition(programInUse, cts);
+                        await startWordExposition(programInUse);
                         break;
                     case "imgtxt":
-                        await startImageExposition(programInUse, cts);
+                        await startImageExposition(programInUse);
                         break;
                     case "img":
-                        await startImageExposition(programInUse, cts);
+                        await startImageExposition(programInUse);
                         break;
                     default:
                         throw new Exception("Tipo de Exposição: " + programInUse.ExpositionType + " inválido!");
@@ -93,8 +90,10 @@ namespace StroopTest
             }
         }
 
-        private async Task startWordExposition(StroopProgram program, CancellationTokenSource cts) // inicia exposição de palavra
+        private async Task startWordExposition(StroopProgram program) // inicia exposição de palavra
         {
+            cts = new CancellationTokenSource();
+
             wordLabel.Visible = false;
             wordLabel.Name = "error";
             wordLabel.FlatStyle = FlatStyle.Flat;
@@ -217,8 +216,9 @@ namespace StroopTest
             cts = null;
         }
         
-        private async Task startImageExposition(StroopProgram program, CancellationTokenSource cts) // inicia exposição de imagem
+        private async Task startImageExposition(StroopProgram program) // inicia exposição de imagem
         {
+            cts = new CancellationTokenSource();
             int i, j;
             string[] labelText = null, imageDirs = null, audioDirs = null;
             string outputFileName = "";
@@ -270,8 +270,9 @@ namespace StroopTest
 
                     if (program.ExpositionType == "imgtxt")
                     {
-                        for (int counter = 0; counter < imageDirs.Count(); counter++) // AQUI ver estinulo -> palavra ou imagem como um só e ter intervalo separado
+                        for (int counter = 0; counter < program.NumExpositions; counter++) // AQUI ver estinulo -> palavra ou imagem como um só e ter intervalo separado
                         {
+                            if (counter == imageDirs.Count()) { counter = 0; }
                             pictureBox1.Visible = false; wordLabel.Visible = false;
                             await intervalOrFixPoint(program, cts.Token);
 
@@ -319,8 +320,9 @@ namespace StroopTest
                     }
                     else
                     {
-                        for (int counter = 0; counter < imageDirs.Count(); counter++) // AQUI ver estinulo -> palavra ou imagem como um só e ter intervalo separado
+                        for (int counter = 0; counter < program.NumExpositions; counter++) // AQUI ver estinulo -> palavra ou imagem como um só e ter intervalo separado
                         {
+                            if (counter == imageDirs.Count()) { counter = 0; }
                             pictureBox1.Visible = false; wordLabel.Visible = false;
                             await intervalOrFixPoint(program, cts.Token);
 

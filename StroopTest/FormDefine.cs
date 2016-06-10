@@ -92,9 +92,5 @@ namespace StroopTest
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void FormDefine_FormClosing(object sender, FormClosingEventArgs e)
-        {
-        }
     }
 }

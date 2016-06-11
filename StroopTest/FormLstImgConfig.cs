@@ -35,7 +35,6 @@ namespace StroopTest
             openFileDialog1.Title = "Navegador Imagens";
 
             imgsList.ColorDepth = ColorDepth.Depth16Bit;
-
         }
 
         private void selectFiles(object sender, EventArgs e)
@@ -61,13 +60,14 @@ namespace StroopTest
                 
                 imgListView.Alignment = ListViewAlignment.Default;
                 imgsList.ImageSize = new Size(256, 256);
+                
                 imgListView.LargeImageList = imgsList;
 
                 for (int j = 0; j < this.imgsList.Images.Count; j++)
                 {
                     ListViewItem item = new ListViewItem();
                     item.ImageIndex = j;
-                    item.Text = "Texto que antecede esta Imagem";
+                    //item.Text = "Digite aqui texto antecede esta Imagem";
                     imgListView.Items.Add(item);
                 }
             }
@@ -96,7 +96,7 @@ namespace StroopTest
             {
                 if(string.IsNullOrWhiteSpace(textBox1.Text))
                 {
-                    throw new Exception("Nome do(s) arquivo(s) deve ser preenchido");
+                    throw new Exception("Nome do arquivo deve ser preenchido");
                 }
                 else
                 {
@@ -104,35 +104,38 @@ namespace StroopTest
                     {
                         if (File.Exists(path + textBox1.Text + ".lst"))
                         {
-                            DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
-                            if (dialogResult == DialogResult.Cancel)
+                            DialogResult d1 = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
+                            if (d1 == DialogResult.Cancel)
                             {
-                                throw new Exception("A lista não será salva!");
+                                throw new Exception("A lista de imagens não será salva!");
                             }
                         }
 
-                        StreamWriter wr = new StreamWriter(path + textBox1.Text + ".lst");
-
+                        StreamWriter w1 = new StreamWriter(path + textBox1.Text + ".lst");
                         for (int i = 0; i < imgsDirList.Count; i++)
                         {
-                            wr.WriteLine(imgsDirList[i]);
+                            w1.WriteLine(imgsDirList[i]);
                         }
+                        w1.Close();
                         
-                        wr.Close();
                         MessageBox.Show("A lista " + textBox1.Text + ".lst foi salva com sucesso no diretório\n" + path);
                     }
                     else
                     {
-                        throw new Exception("A lista de cores não foi salva!");
+                        throw new Exception("A lista de imagens não foi salva!");
                     }
                 }
-                
                 Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

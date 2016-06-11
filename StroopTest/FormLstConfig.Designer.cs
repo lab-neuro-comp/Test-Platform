@@ -74,7 +74,7 @@
             // buttonRemove
             // 
             this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRemove.Location = new System.Drawing.Point(12, 243);
+            this.buttonRemove.Location = new System.Drawing.Point(100, 243);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(82, 23);
             this.buttonRemove.TabIndex = 4;
@@ -86,7 +86,7 @@
             // buttonInsert
             // 
             this.buttonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInsert.Location = new System.Drawing.Point(100, 243);
+            this.buttonInsert.Location = new System.Drawing.Point(12, 243);
             this.buttonInsert.Name = "buttonInsert";
             this.buttonInsert.Size = new System.Drawing.Size(82, 23);
             this.buttonInsert.TabIndex = 3;

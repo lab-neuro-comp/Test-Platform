@@ -30,17 +30,20 @@ namespace StroopTest
 
         private List<string> outputContent;
 
+        private string outputDataPath;
+
         // beginAudio
         private WaveIn waveSource = null; // entrada de áudio
         public WaveFileWriter waveFile = null; // arquivo salvar áudio
         // endAudio
         
-        public FormExposition(string prgName, string usrName, string dataFolderPath)
+        public FormExposition(string prgName, string usrName, string defaultFolderPath)
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
             InitializeComponent();
-            path = dataFolderPath;
+            path = defaultFolderPath + "/StroopTestFiles/";
+            outputDataPath = defaultFolderPath + "/data/";
             programInUse.ProgramName = prgName;
             programInUse.UserName = usrName;
             startExpo();
@@ -121,7 +124,7 @@ namespace StroopTest
 
             try
             {
-                outputFileName = path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt";
+                outputFileName = outputDataPath + program.UserName + "_" + program.ProgramName + ".txt";
                 
                 string[] labelText = program.readListFile(path + "/lst/" + program.WordsListFile); // vetor de strings recebem as listas de palavra e cor
                 string[] labelColor = program.readListFile(path + "/lst/" + program.ColorsListFile);
@@ -226,7 +229,7 @@ namespace StroopTest
 
             try
             {
-                outputFileName = path + "/data/" + program.UserName + "_" + program.ProgramName + ".txt";
+                outputFileName = outputDataPath + program.UserName + "_" + program.ProgramName + ".txt";
 
                 if (program.ExpandImage) { pictureBox1.Dock = DockStyle.Fill; }
                 else { pictureBox1.Dock = DockStyle.None; }
@@ -472,7 +475,7 @@ namespace StroopTest
                 waveSource.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailable);
                 waveSource.RecordingStopped += new EventHandler<StoppedEventArgs>(waveSource_RecordingStopped);
 
-                waveFile = new WaveFileWriter(path + "/data" + "/audio_" + program.UserName + "_" + program.ProgramName + "_" + now + ".wav", waveSource.WaveFormat);
+                waveFile = new WaveFileWriter(outputDataPath + "/audio_" + program.UserName + "_" + program.ProgramName + "_" + now + ".wav", waveSource.WaveFormat);
 
                 waveSource.StartRecording();
             }

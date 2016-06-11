@@ -13,11 +13,11 @@ namespace StroopTest
     public partial class FormMain : Form
     {
         private FolderBrowserDialog folderBrowserDialog1;
-        private string dataFolderPath;
+        private string testFilesPath;
         private string prgFolderName = "/prg/";
         private string lstFolderName = "/lst/";
         private string resultsFolderName = "/data/";
-        public string defaultPath = (Path.GetDirectoryName(Application.ExecutablePath) + "/StroopTestFiles/");
+        public string defaultPath = (Path.GetDirectoryName(Application.ExecutablePath));
         private StroopProgram programDefault = new StroopProgram(); // programa padrão
         private string defaultPrgName = "padrao";
         private string defaultUsrName = "padrao";
@@ -26,20 +26,20 @@ namespace StroopTest
         public FormMain()
         {
             InitializeComponent();
-            dataFolderPath = defaultPath;
+            testFilesPath = defaultPath + "/StroopTestFiles/";
 
-            if(!Directory.Exists(dataFolderPath)) Directory.CreateDirectory(dataFolderPath); // cria diretório para StroopTestFiles na inicialização do formulario
-            if (!Directory.Exists(dataFolderPath + prgFolderName)) Directory.CreateDirectory(dataFolderPath + prgFolderName); // cria diretório para StroopTestFiles na inicialização do formulario
-            if (!Directory.Exists(dataFolderPath + lstFolderName)) Directory.CreateDirectory(dataFolderPath + lstFolderName); // cria diretório para StroopTestFiles na inicialização do formulario
-            if (!Directory.Exists(dataFolderPath + resultsFolderName)) Directory.CreateDirectory(dataFolderPath + resultsFolderName); // cria diretório para StroopTestFiles na inicialização do formulario
-            if(!File.Exists(dataFolderPath + instructionsFileName)) { File.Create(dataFolderPath + "editableInstructions.txt").Dispose(); }
+            if(!Directory.Exists(testFilesPath)) Directory.CreateDirectory(testFilesPath); // cria diretório para StroopTestFiles na inicialização do formulario
+            if (!Directory.Exists(testFilesPath + prgFolderName)) Directory.CreateDirectory(testFilesPath + prgFolderName); // cria diretório para StroopTestFiles na inicialização do formulario
+            if (!Directory.Exists(testFilesPath + lstFolderName)) Directory.CreateDirectory(testFilesPath + lstFolderName); // cria diretório para StroopTestFiles na inicialização do formulario
+            if (!Directory.Exists(defaultPath + resultsFolderName)) Directory.CreateDirectory(defaultPath + resultsFolderName); // cria diretório para StroopTestFiles na inicialização do formulario
+            if(!File.Exists(testFilesPath + instructionsFileName)) { File.Create(testFilesPath + "editableInstructions.txt").Dispose(); }
             
             initializeDefaultProgram(); // inicializa programa padrão (cria arquivo programa padrão e listas de palavras e cores padrão)
 
             prgNameSL.Text = defaultPrgName;
             usrNameSL.Text = defaultUsrName;
 
-            dirPathSL.Text = dataFolderPath;
+            dirPathSL.Text = testFilesPath;
         }
 
         private void FormMain_KeyDown(object sender, KeyEventArgs e)
@@ -73,14 +73,14 @@ namespace StroopTest
         
         private void programaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPrgConfig configureProgram = new FormPrgConfig(dataFolderPath, "false");
+            FormPrgConfig configureProgram = new FormPrgConfig(testFilesPath, "false");
             try { configureProgram.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
         
         private void textoECoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLstConfig configureWordsList = new FormLstConfig(dataFolderPath, "false");
+            FormLstConfig configureWordsList = new FormLstConfig(testFilesPath, "false");
             try { configureWordsList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -129,12 +129,12 @@ namespace StroopTest
             {
                 dirPathSL.Text = folderBrowserDialog1.SelectedPath;
             }
-            dataFolderPath = dirPathSL.Text;
+            testFilesPath = dirPathSL.Text;
         }
 
         private void imagemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLstImgConfig configureImagesList = new FormLstImgConfig(dataFolderPath);
+            FormLstImgConfig configureImagesList = new FormLstImgConfig(testFilesPath + "/lst/");
             try { configureImagesList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -145,9 +145,9 @@ namespace StroopTest
             programDefault.ProgramName = defaultUsrName;
             try
             {
-                programDefault.writeDefaultProgramFile(dataFolderPath + prgFolderName + programDefault.ProgramName + ".prg"); // ao inicializar formulario escreve arquivo programa padrao
-                programDefault.writeDefaultWordsList(dataFolderPath + lstFolderName); // escreve lista de palavras padrão
-                programDefault.writeDefaultColorsList(dataFolderPath + lstFolderName); // escreve lista de cores padrão 
+                programDefault.writeDefaultProgramFile(testFilesPath + prgFolderName + programDefault.ProgramName + ".prg"); // ao inicializar formulario escreve arquivo programa padrao
+                programDefault.writeDefaultWordsList(testFilesPath + lstFolderName); // escreve lista de palavras padrão
+                programDefault.writeDefaultColorsList(testFilesPath + lstFolderName); // escreve lista de cores padrão 
             }
             catch (Exception ex)
             {
@@ -165,12 +165,12 @@ namespace StroopTest
 
             try
             {
-                defineProgram = new FormDefine("Editar Programa: ", dataFolderPath + "/prg/", "prg");
+                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "/prg/", "prg");
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
                     editProgramName = defineProgram.ReturnValue;
-                    configureProgram = new FormPrgConfig(dataFolderPath, editProgramName);
+                    configureProgram = new FormPrgConfig(testFilesPath, editProgramName);
                     configureProgram.ShowDialog();
                 }
             }
@@ -185,12 +185,12 @@ namespace StroopTest
             string editListName = "error";
             try
             {
-                defineProgram = new FormDefine("Editar Lista: ", dataFolderPath, "lst");
+                defineProgram = new FormDefine("Editar Lista: ", testFilesPath, "lst");
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
                     editListName = defineProgram.ReturnValue;
-                    configureWordsList = new FormLstConfig(dataFolderPath, editListName);
+                    configureWordsList = new FormLstConfig(testFilesPath, editListName);
                     configureWordsList.ShowDialog();
                 }
             }
@@ -201,11 +201,11 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineUser = new FormDefine("Excluir Programa: ", dataFolderPath + "/prg/", "prg");
+                FormDefine defineUser = new FormDefine("Excluir Programa: ", testFilesPath + "/prg/", "prg");
                 var result = defineUser.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    string excludeFilePath = dataFolderPath + "/prg/" + defineUser.ReturnValue + ".prg";
+                    string excludeFilePath = testFilesPath + "/prg/" + defineUser.ReturnValue + ".prg";
                     DialogResult dialogResult = MessageBox.Show("Deseja realmente excluir o programa " + defineUser.ReturnValue + ".prg?", "", MessageBoxButtons.YesNo); // pergunta se deseja repetir o programa
 
                     if (dialogResult == DialogResult.Yes)
@@ -222,11 +222,11 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineUser = new FormDefine("Excluir Lista: ", dataFolderPath + "/lst/", "lst");
+                FormDefine defineUser = new FormDefine("Excluir Lista: ", testFilesPath + "/lst/", "lst");
                 var result = defineUser.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    string excludeFilePath = dataFolderPath + "/lst/" + defineUser.ReturnValue + ".lst";
+                    string excludeFilePath = testFilesPath + "/lst/" + defineUser.ReturnValue + ".lst";
                     DialogResult dialogResult = MessageBox.Show("Deseja realmente excluir a lista " + defineUser.ReturnValue + ".lst?", "", MessageBoxButtons.YesNo); // pergunta se deseja repetir o programa
 
                     if (dialogResult == DialogResult.Yes)
@@ -247,7 +247,7 @@ namespace StroopTest
         private void beginTest()
         {
             Screen[] screens;
-            FormExposition exposeProgram = new FormExposition(prgNameSL.Text, usrNameSL.Text, dataFolderPath);
+            FormExposition exposeProgram = new FormExposition(prgNameSL.Text, usrNameSL.Text, defaultPath);
 
             try
             {
@@ -274,7 +274,7 @@ namespace StroopTest
 
         private void defineProgram()
         {
-            FormDefine defineProgram = new FormDefine("Definir Programa: ", dataFolderPath + "/prg/", "prg");
+            FormDefine defineProgram = new FormDefine("Definir Programa: ", testFilesPath + "/prg/", "prg");
             try
             {
                 var result = defineProgram.ShowDialog();
@@ -291,7 +291,7 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineUser = new FormDefine("Definir Usuário: ", dataFolderPath, "usr");
+                FormDefine defineUser = new FormDefine("Definir Usuário: ", testFilesPath, "usr");
                 var result = defineUser.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -304,7 +304,7 @@ namespace StroopTest
 
         private void newProgram()
         {
-            FormPrgConfig configureProgram = new FormPrgConfig(dataFolderPath, "false");
+            FormPrgConfig configureProgram = new FormPrgConfig(testFilesPath, "false");
             try { configureProgram.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -314,7 +314,7 @@ namespace StroopTest
             FormShowData showData;
             try
             {
-                showData = new FormShowData(dataFolderPath + "/data/");
+                showData = new FormShowData(defaultPath + "/data/");
                 showData.ShowDialog();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -324,11 +324,11 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineUser = new FormDefine("Excluir Arquivo de Dados: ", dataFolderPath + "/data/", "txt");
+                FormDefine defineUser = new FormDefine("Excluir Arquivo de Dados: ", defaultPath + "/data/", "txt");
                 var result = defineUser.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    string excludeFilePath = dataFolderPath + "/data/" + defineUser.ReturnValue + ".txt";
+                    string excludeFilePath = defaultPath + "/data/" + defineUser.ReturnValue + ".txt";
                     DialogResult dialogResult = MessageBox.Show("Deseja realmente excluir o arquivo de dados " + defineUser.ReturnValue + ".txt?", "", MessageBoxButtons.YesNo); // pergunta se deseja repetir o programa
 
                     if (dialogResult == DialogResult.Yes)
@@ -343,7 +343,7 @@ namespace StroopTest
 
         private void showInstructions()
         {
-            FormInstructions infoBox = new FormInstructions(dataFolderPath + instructionsFileName);
+            FormInstructions infoBox = new FormInstructions(testFilesPath + instructionsFileName);
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

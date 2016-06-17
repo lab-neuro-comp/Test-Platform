@@ -73,24 +73,32 @@ namespace StroopTest
             }
         }
 
-        private void buttonRemove_Click(object sender, EventArgs e)
+        private void buttonRemove_Click(object sender, EventArgs e) // remove os itens selecionados
         {
-            while (imgListView.SelectedItems.Count > 0)
+            try
             {
-                ListViewItem item = imgListView.SelectedItems[0];
+                while (imgListView.SelectedItems.Count > 0) // para a lista de itens selecionados
+                {
+                    ListViewItem item = imgListView.SelectedItems[0]; // item recebe o primeiro da lista
 
-                for (int i = item.Index + 1; i < imgListView.Items.Count; i++) { imgListView.Items[i].ImageIndex--; } // Ajuste de índices
+                    for (int i = item.Index + 1; i < imgListView.Items.Count; i++) { imgListView.Items[i].ImageIndex--; } // ajuste dos índices
 
-                imgListView.Items.Remove(item);
+                    imgListView.Items.Remove(item); // remove item da ListView
 
-                Image img = imgsList.Images[item.ImageIndex];
-                imgsList.Images.RemoveAt(item.ImageIndex);
-                imgsDirList.RemoveAt(item.ImageIndex);
-                img.Dispose();
+                    Image img = imgsList.Images[item.ImageIndex];
+                    img.Dispose();
+                    
+                    imgsList.Images.RemoveAt(item.ImageIndex); // remove item da ImagesList
+                    imgsDirList.RemoveAt(item.ImageIndex); // remove diretorio do item na lista de diretorios
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // Salva
         {
             try
             {

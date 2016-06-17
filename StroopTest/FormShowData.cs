@@ -2,10 +2,12 @@
  * Copyright (c) 2016 All Rights Reserved
  * Hugo Honda
  */
- 
+
 using System;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace StroopTest
@@ -14,6 +16,7 @@ namespace StroopTest
     {
         private StroopProgram program = new StroopProgram();
         private string path;
+        private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
 
         public FormShowData(string dataFolderPath)
         {
@@ -46,18 +49,32 @@ namespace StroopTest
         {
             this.dataGridView1.DataSource = null;
             this.dataGridView1.Rows.Clear();
+            DataGridCell cell = new DataGridCell();
             string[] lines;
             try
             {
                 lines = StroopProgram.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
                 if (lines.Count() > 0)
                 {
+                    for(int i = 0; i < lines.Count(); i++)
+                    {
+                        string[] cellArray = lines[i].Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+
+                        if (cellArray.Length == dataGridView1.Columns.Count) { dataGridView1.Rows.Add(cellArray); }
+                        
+                        if (Regex.IsMatch(cellArray[cellArray.Length - 1], hexPattern))
+                        {
+                            dataGridView1.Rows[i].Cells[dataGridView1.Columns.Count - 1].Style.BackColor = ColorTranslator.FromHtml(cellArray[cellArray.Length - 1]);
+                        }
+                    }
+                    /*
                     foreach (var cellValues in lines) // Se o item selecionado muda, atualiza-se a tabela de dados de acordo com o selecionado
                     {
                         var cellArray = cellValues.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
                         if (cellArray.Length == dataGridView1.Columns.Count)
                             dataGridView1.Rows.Add(cellArray);
                     }
+                    */
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

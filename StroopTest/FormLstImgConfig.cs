@@ -39,8 +39,7 @@ namespace StroopTest
 
         private void selectFiles(object sender, EventArgs e)
         {
-            DialogResult dr = this.openFileDialog1.ShowDialog();
-            if (dr == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 imgListView.Clear();
 
@@ -54,10 +53,10 @@ namespace StroopTest
                     catch (Exception ex)
                     {
                         MessageBox.Show("Não pode apresentar a imagem: " + file.Substring(file.LastIndexOf('\\'))
-                            + ". Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n" + ex.Message);
+                                        + ". Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n" + ex.Message);
                     }
                 }
-                
+
                 imgListView.Alignment = ListViewAlignment.Default;
                 imgsList.ImageSize = new Size(256, 256);
                 
@@ -67,7 +66,6 @@ namespace StroopTest
                 {
                     ListViewItem item = new ListViewItem();
                     item.ImageIndex = j;
-                    //item.Text = "Digite aqui texto antecede esta Imagem";
                     imgListView.Items.Add(item);
                 }
             }

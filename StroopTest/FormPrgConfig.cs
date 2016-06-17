@@ -58,12 +58,14 @@ namespace StroopTest
                     b.Enabled = true;
                     b.Visible = true;
                 }
+                openSubtitleList.Visible = true; openSubtitleList.Enabled = true;
                 chooseColorSubs.Enabled = true; panel3.Enabled = true; panel3.BackColor = Color.Transparent; subDirect1.BackColor = Color.Transparent; // habilitar botões de posicao legenda
                 expandImageOn.Enabled = false;
                 expandImageOn.Checked = false;
             }
             else
             {
+                openSubtitleList.Visible = false; openSubtitleList.Enabled = false;
                 for (int i = 0; i < subDirectionList.Count; i++)
                 {
                     subDirectionList[i].Enabled = false;
@@ -305,17 +307,17 @@ namespace StroopTest
                 switch (expoType)
                 {
                     case 0:
-                        if (openWordList.Text != "error") { programWrite.WordsListFile = openWordList.Text; }
+                        if (openWordList.Text != "error" && openWordList.Text != "abrir") { programWrite.WordsListFile = openWordList.Text; }
                         else { throw new Exception("Selecione o arquivo de lista de palavras!"); }
-                        if (openColorsList.Text != "error") { programWrite.ColorsListFile = openColorsList.Text; }
+                        if (openColorsList.Text != "error" && openColorsList.Text != "abrir") { programWrite.ColorsListFile = openColorsList.Text; }
                         else { throw new Exception("Selecione o arquivo de lista de cores!"); }
                         break;
                     case 1:
-                        if (openImgsList.Text != "error") { programWrite.ImagesListFile = openImgsList.Text; }
+                        if (openImgsList.Text != "error" && openImgsList.Text != "abrir") { programWrite.ImagesListFile = openImgsList.Text; }
                         else { throw new Exception("Selecione o arquivo de lista de imagens!"); }
                         break;
                     case 2:
-                        if (openWordList.Text != "error" || openImgsList.Text != "error") { programWrite.WordsListFile = openWordList.Text; programWrite.ImagesListFile = openImgsList.Text; }
+                        if (openWordList.Text != "error" && openImgsList.Text != "error") { programWrite.WordsListFile = openWordList.Text; programWrite.ImagesListFile = openImgsList.Text; }
                         else { throw new Exception("Selecione o arquivo de lista de palavras / imagens!"); }
                         break;
                 }

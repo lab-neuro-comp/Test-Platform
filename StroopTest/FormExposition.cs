@@ -158,8 +158,7 @@ namespace StroopTest
                     for (int counter = 1; counter <= program.NumExpositions; counter++) // inicia loop com exposições
                     {
                         wordLabel.Visible = false; // intervalo
-                        await Task.Delay(program.IntervalTime, cts.Token);
-                        //await intervalOrFixPoint(program, cts.Token);
+                        await intervalOrFixPoint(program, cts.Token);
 
                         if (program.ExpositionRandom) // se for exposição aleatoria
                         {
@@ -283,7 +282,14 @@ namespace StroopTest
                             {
                                 if (program.ExpositionRandom == true)
                                 {
-                                    pictureBox1.Image = Image.FromFile(imageDirs[randomNumbers[i++]]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
+                                    if(imageDirs.Count() <= program.NumExpositions)
+                                    {
+                                        pictureBox1.Image = Image.FromFile(imageDirs[randomNumbers[i++]]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
+                                    }
+                                    else
+                                    {
+                                        pictureBox1.Image = Image.FromFile(imageDirs[rnd.Next(imageDirs.Length)]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
+                                    }
                                 }
                                 else
                                 {
@@ -331,7 +337,14 @@ namespace StroopTest
 
                             if (program.ExpositionRandom == true)
                             {
-                                pictureBox1.Image = Image.FromFile(imageDirs[randomNumbers[i++]]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
+                                if (imageDirs.Count() <= program.NumExpositions)
+                                {
+                                    pictureBox1.Image = Image.FromFile(imageDirs[randomNumbers[i++]]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
+                                }
+                                else
+                                {
+                                    pictureBox1.Image = Image.FromFile(imageDirs[rnd.Next(imageDirs.Length)]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
+                                }
                             }
                             else
                             {

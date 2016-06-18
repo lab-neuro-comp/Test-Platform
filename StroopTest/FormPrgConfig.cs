@@ -566,6 +566,5 @@ namespace StroopTest
                 showSubsOn.Enabled = true;
             }
         }
-        
     }
 }

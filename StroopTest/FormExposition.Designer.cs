@@ -81,13 +81,14 @@
             // 
             // subtitleLabel
             // 
+            this.subtitleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.subtitleLabel.AutoSize = true;
             this.subtitleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.subtitleLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.subtitleLabel.Enabled = false;
             this.subtitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subtitleLabel.Location = new System.Drawing.Point(0, 421);
+            this.subtitleLabel.Location = new System.Drawing.Point(124, 375);
             this.subtitleLabel.Name = "subtitleLabel";
-            this.subtitleLabel.Size = new System.Drawing.Size(715, 120);
+            this.subtitleLabel.Size = new System.Drawing.Size(252, 76);
             this.subtitleLabel.TabIndex = 12;
             this.subtitleLabel.Text = "subtitle";
             this.subtitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

@@ -332,7 +332,9 @@ namespace StroopTest
                                     j++;
                                 }
                             }
-                            
+
+
+                            subtitleLabel.Location = new Point((ClientSize.Width / 2 - subtitleLabel.Width / 2), pictureBox1.Bottom + 50);
                             StroopProgram.writeLineOutput(program, auxString, "false", counter + 1, outputContent, elapsedTime);
                             await Task.Delay(program.ExpositionTime, cts.Token);
                         }
@@ -380,7 +382,9 @@ namespace StroopTest
 
                             StroopProgram.writeLineOutput(program, Path.GetFileName(imageDirs[i].ToString()), "false", counter + 1, outputContent, elapsedTime);
                             i++;
-                            
+
+
+                            subtitleLabel.Location = new Point((ClientSize.Width / 2 - subtitleLabel.Width / 2), pictureBox1.Bottom + 50);
                             await Task.Delay(program.ExpositionTime, cts.Token);
                             //g = Graphics.FromImage(pictureBox1.Image);
                             //showSubtitle(program, g, counter);

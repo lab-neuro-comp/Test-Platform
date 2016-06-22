@@ -451,9 +451,9 @@ namespace StroopTest
                 else { SubtitlePlace = 0; SubtitleColor = "false"; }
                 ExpositionType = config[13];
                 ImagesListFile = config[14];
-                fixPoint = config[15];
-                fontWordLabel = config[16];
-                expandImage = Boolean.Parse(config[17]);
+                FixPoint = config[15];
+                FontWordLabel = config[16];
+                ExpandImage = Boolean.Parse(config[17]);
                 AudioListFile = config[18];
                 SubtitlesListFile = config[19];
                 

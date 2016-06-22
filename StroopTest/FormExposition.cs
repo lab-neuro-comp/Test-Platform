@@ -226,6 +226,8 @@ namespace StroopTest
             string outputFileName = "";
             this.BackColor = Color.White;
 
+
+
             try
             {
                 outputFileName = outputDataPath + program.UserName + "_" + program.ProgramName + ".txt";
@@ -239,7 +241,12 @@ namespace StroopTest
 
                 imageDirs = StroopProgram.readDirListFile(path + "/lst/" + program.ImagesListFile);
 
-                if (program.SubtitleShow) { subtitlesArray = program.readListFile(path + "/lst/" + program.SubtitlesListFile); }
+                if (program.SubtitleShow)
+                {
+                    subtitlesArray = program.readListFile(path + "/lst/" + program.SubtitlesListFile);
+                    subtitleLabel.ForeColor = ColorTranslator.FromHtml(program.SubtitleColor);
+                    subtitleLabel.Enabled = true;
+                }
 
                 if (program.AudioListFile != "false") { audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile); }
 
@@ -485,8 +492,7 @@ namespace StroopTest
         {
             if (flag && program.BackgroundColor.ToLower() != "false")
             { 
-                    Color c1 = ColorTranslator.FromHtml(program.BackgroundColor);
-                    this.BackColor = c1;
+                    this.BackColor = ColorTranslator.FromHtml(program.BackgroundColor);
             }
             else
             {

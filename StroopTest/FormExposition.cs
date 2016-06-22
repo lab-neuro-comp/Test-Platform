@@ -221,8 +221,8 @@ namespace StroopTest
         private async Task startImageExposition(StroopProgram program) // inicia exposição de imagem
         {
             cts = new CancellationTokenSource();
-            int i, j;
-            string[] labelText = null, imageDirs = null, audioDirs = null;
+            int i, j, k;
+            string[] labelText = null, imageDirs = null, audioDirs = null, subtitlesArray = null;
             string outputFileName = "";
             this.BackColor = Color.White;
 
@@ -239,10 +239,9 @@ namespace StroopTest
 
                 imageDirs = StroopProgram.readDirListFile(path + "/lst/" + program.ImagesListFile);
 
-                if (program.AudioListFile != "false")
-                {
-                    audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile);
-                }
+                if (program.SubtitleShow) { subtitlesArray = program.readListFile(path + "/lst/" + program.SubtitlesListFile); }
+
+                if (program.AudioListFile != "false") { audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile); }
 
                 string auxString = "";
 
@@ -262,7 +261,7 @@ namespace StroopTest
                     changeBackgroundColor(program, true); // muda cor de fundo se houver parametro
                     
                     elapsedTime = 0; // zera tempo em milissegundos decorrido
-                    i = 0; j = 0;
+                    i = 0; j = 0; k = 0;
 
                     // beginAudio
                     if (program.AudioCapture) { startRecordingAudio(program); } // inicia gravação áudio
@@ -276,6 +275,10 @@ namespace StroopTest
                         {
                             if (counter == imageDirs.Count()) { counter = 0; }
                             pictureBox1.Visible = false; wordLabel.Visible = false;
+                            if (program.SubtitleShow)
+                            {
+                                subtitleLabel.Visible = false;
+                            }
                             await intervalOrFixPoint(program, cts.Token);
 
                             if (counter % 2 == 0)
@@ -333,6 +336,10 @@ namespace StroopTest
                         {
                             if (counter == imageDirs.Count()) { counter = 0; }
                             pictureBox1.Visible = false; wordLabel.Visible = false;
+                            if (program.SubtitleShow)
+                            {
+                                subtitleLabel.Visible = false;
+                            }
                             await intervalOrFixPoint(program, cts.Token);
 
                             if (program.ExpositionRandom == true)
@@ -356,6 +363,14 @@ namespace StroopTest
                             SendKeys.SendWait("s");
                             pictureBox1.Visible = true;
 
+                            if (program.SubtitleShow)
+                            {
+                                subtitleLabel.Visible = true;
+                                subtitleLabel.Text = subtitlesArray[k];
+                                if (k == (subtitlesArray.Count() - 1)) k = 0;
+                                else k++;
+                            }
+
                             StroopProgram.writeLineOutput(program, Path.GetFileName(imageDirs[i].ToString()), "false", counter + 1, outputContent, elapsedTime);
                             i++;
                             
@@ -366,6 +381,11 @@ namespace StroopTest
                     }
                     
                     pictureBox1.Visible = false; wordLabel.Visible = false;
+                    if (program.SubtitleShow)
+                    {
+                        subtitleLabel.Visible = false;
+                    }
+
                     await Task.Delay(program.IntervalTime, cts.Token);
 
                     // beginAudio

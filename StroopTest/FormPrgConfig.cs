@@ -51,7 +51,12 @@ namespace StroopTest
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            if(showSubsOn.Checked)
+            subtitlesCheckConfig();
+        }
+
+        private void subtitlesCheckConfig()
+        {
+            if (showSubsOn.Checked)
             {
                 foreach (Button b in subDirectionList)
                 {
@@ -59,9 +64,11 @@ namespace StroopTest
                     b.Visible = true;
                 }
                 openSubtitleList.Visible = true; openSubtitleList.Enabled = true;
-                chooseColorSubs.Enabled = true; panel3.Enabled = true; panel3.BackColor = Color.Transparent; subDirect1.BackColor = Color.Transparent; // habilitar botões de posicao legenda
+                chooseColorSubs.Enabled = true; chooseColorSubs.Visible = true;
+                panelSubColor.Enabled = true; panelSubColor.BackColor = Color.Transparent; subDirect1.BackColor = Color.Transparent; // habilitar botões de posicao legenda
                 expandImageOn.Enabled = false;
                 expandImageOn.Checked = false;
+
             }
             else
             {
@@ -72,10 +79,12 @@ namespace StroopTest
                     subDirectionList[i].BackColor = Color.LightGray;
                     if (i > 0) subDirectionList[i].Visible = false;
                 }
-                chooseColorSubs.Enabled = false; panel3.Enabled = false; panel3.BackColor = Color.LightGray;
+                chooseColorSubs.Enabled = false; chooseColorSubs.Visible = false;
+                panelSubColor.Enabled = false; panelSubColor.BackColor = Color.LightGray;
                 expandImageOn.Enabled = true;
             }
         }
+
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -89,6 +98,8 @@ namespace StroopTest
                     openImgsList.Enabled = false;
                     numericUpDown1.Enabled = true;
                     expandImageOn.Enabled = false;
+                    showSubsOn.Enabled = false;
+                    showSubsOn.Checked = false;
                     break;
                 case 1:
                     openWordList.Enabled = false;
@@ -96,6 +107,7 @@ namespace StroopTest
                     openImgsList.Enabled = true;
                     numericUpDown1.Enabled = false;
                     expandImageOn.Enabled = true;
+                    showSubsOn.Enabled = true;
                     break;
                 case 2:
                     openWordList.Enabled = true;
@@ -103,6 +115,7 @@ namespace StroopTest
                     openImgsList.Enabled = true;
                     numericUpDown1.Enabled = true;
                     expandImageOn.Enabled = true;
+                    showSubsOn.Enabled = true;
                     break;
             }
         }
@@ -111,14 +124,14 @@ namespace StroopTest
         {
             string colorCode = pickColor();
             chooseBackGColor.Text = colorCode;
-            panel2.BackColor = ColorTranslator.FromHtml(colorCode);
+            panelBGColor.BackColor = ColorTranslator.FromHtml(colorCode);
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             string colorCode = pickColor();
             chooseColorSubs.Text = colorCode;
-            panel3.BackColor = ColorTranslator.FromHtml(colorCode);
+            panelSubColor.BackColor = ColorTranslator.FromHtml(colorCode);
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -135,19 +148,25 @@ namespace StroopTest
         {
             openImgsList.Text = openListFile();
         }
-
-
+        
         private void button4_Click(object sender, EventArgs e)
         {
             //openAudioList.Text = openListFile();
+        }
+        
+        private void openSubtitleList_Click(object sender, EventArgs e)
+        {
+            openSubtitleList.Text = openListFile();
         }
 
         private void editProgram()
         {
             StroopProgram program = new StroopProgram();
+
             try
             {
                 program.readProgramFile(path + "/prg/" + editPrgName + ".prg");
+
                 progName.Text = program.ProgramName;
                 numExpo.Value = program.NumExpositions;
                 timeExpo.Value = program.ExpositionTime;
@@ -156,7 +175,6 @@ namespace StroopTest
                 timeInterval.Value = program.IntervalTime;
                 if (program.IntervalTimeRandom) randIntervalOn.Checked = true;
                 else randIntervalOn.Checked = false;
-
                 if (program.WordsListFile.ToLower() == "false")
                 {
                     openWordList.Enabled = false;
@@ -179,24 +197,68 @@ namespace StroopTest
 
                 if (program.BackgroundColor.ToLower() == "false")
                 {
-                    panel2.BackColor = Color.White;
-                    chooseColorSubs.Text = "escolher cor1";
+                    panelBGColor.BackColor = Color.White;
+                    chooseColorSubs.Text = "escolher cor";
                 }
                 else
                 {
                     if ((Regex.IsMatch(program.BackgroundColor, hexPattern)))
                     {
-                        panel2.BackColor = ColorTranslator.FromHtml(program.BackgroundColor);
                         chooseBackGColor.Text = program.BackgroundColor;
+                        panelBGColor.BackColor = ColorTranslator.FromHtml(program.BackgroundColor);
                     }
                 }
 
                 if (program.AudioCapture) captAudioOn.Checked = true;
                 else captAudioOn.Checked = false;
+                
+                if (program.SubtitleShow)
+                {
+                    showSubsOn.Checked = true;
+                    
+                    subDirectionNumber = program.SubtitlePlace;
+                    if(program.SubtitlesListFile.ToLower() != "false")
+                    {
+                        openSubtitleList.Text = program.SubtitlesListFile;
+                    }
+                    else
+                    {
+                        openSubtitleList.Text = "abrir";
+                    }
+                    if (Regex.IsMatch(program.SubtitleColor, hexPattern))
+                    {
+                        chooseColorSubs.Text = program.SubtitleColor;
+                        panelSubColor.Enabled = true;
+                        panelSubColor.BackColor = ColorTranslator.FromHtml(program.SubtitleColor);
+                    }
+                    else
+                    {
+                        chooseColorSubs.Text = "escolher cor";
+                        panelSubColor.BackColor = Color.White;
+                    }
+                    
+                    for (int j = 0; j < subDirectionList.Count; j++)
+                    {
+                        subDirectionList[j].Enabled = true;
+                        subDirectionList[j].Visible = true;
+                    }
+                    subDirectionNumber = program.SubtitlePlace;
 
-                if (program.SubtitleShow) showSubsOn.Checked = true;
-                else showSubsOn.Checked = false;
+                    subtitlesCheckConfig();
+                }
+                else
+                {
+                    showSubsOn.Checked = false;
+                    for (int k = 0; k < subDirectionList.Count; k++)
+                    {
+                        subDirectionList[k].Enabled = false;
+                        subDirectionList[k].Visible = false;
+                    }
 
+                    subtitlesCheckConfig();
+                }
+
+                /*
                 if (program.SubtitleShow)
                 {
                     subDirectionNumber = program.SubtitlePlace;
@@ -204,7 +266,7 @@ namespace StroopTest
                     if (program.SubtitleColor.ToLower() == "false")
                     {
                         panel3.BackColor = Color.White;
-                        chooseColorSubs.Text = "escolher cor2";
+                        chooseColorSubs.Text = "escolher cor";
                     }
                     else
                     {
@@ -213,6 +275,15 @@ namespace StroopTest
                             panel3.BackColor = ColorTranslator.FromHtml(program.SubtitleColor);
                             chooseBackGColor.Text = program.SubtitleColor;
                         }
+                    }
+                    /*
+                    if(program.SubtitlesListFile.ToLower() == "false")
+                    {
+                        openSubtitleList.Text = "abrir";
+                    }
+                    else
+                    {
+                        openSubtitleList.Text = program.SubtitlesListFile;
                     }
                 }
                 else
@@ -223,7 +294,8 @@ namespace StroopTest
                     }
                     subDirectionNumber = program.SubtitlePlace;
                     chooseColorSubs.Text = "escolher cor";
-                }
+                }*/
+                
 
                 switch (program.ExpositionType)
                 {
@@ -333,6 +405,8 @@ namespace StroopTest
                     programWrite.SubtitlePlace = subDirectionNumber;
                     if (Regex.IsMatch(chooseColorSubs.Text, hexPattern)) programWrite.SubtitleColor = chooseColorSubs.Text;
                     else programWrite.SubtitleColor = "false";
+
+                    programWrite.SubtitlesListFile = openSubtitleList.Text;
                 }
                 else
                 {
@@ -373,6 +447,7 @@ namespace StroopTest
                 }
 
                 programWrite.AudioListFile = "false";
+                
 
                 string textLines = "";
                 if (textBox2.Lines.Length > 0 && textBox2.Text != instrBoxText) // lê instrução se houver
@@ -409,7 +484,8 @@ namespace StroopTest
                                  programWrite.FixPoint + " " +
                                  programWrite.FontWordLabel + " " +
                                  programWrite.ExpandImage + " " +
-                                 programWrite.AudioListFile
+                                 programWrite.AudioListFile + " " +
+                                 programWrite.SubtitlesListFile
                                  ;
 
                 
@@ -546,7 +622,7 @@ namespace StroopTest
         {
             string colorCode = pickColor();
             button1.Text = colorCode;
-            panel4.BackColor = ColorTranslator.FromHtml(colorCode);
+            panelFixPointColor.BackColor = ColorTranslator.FromHtml(colorCode);
         }
         
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -566,5 +642,6 @@ namespace StroopTest
                 showSubsOn.Enabled = true;
             }
         }
+
     }
 }

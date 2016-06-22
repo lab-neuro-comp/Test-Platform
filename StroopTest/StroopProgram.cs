@@ -14,7 +14,7 @@ namespace StroopTest
 {
     class StroopProgram
     {
-        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_Words.lst padrao_Colors.lst false false false 0 false txt false false 160 false false";
+        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_Words.lst padrao_Colors.lst false false false 0 false txt false false 160 false false false";
         private string defaultWordsListName = "padrao_Words.lst";
         private string defaultWordsListText = "amarelo azul verde vermelho";
         private string defaultColorsListName = "padrao_Colors.lst";
@@ -47,7 +47,8 @@ namespace StroopTest
         private string fontWordLabel;           // [16]  tamanho da palavra
         private bool expandImage;               // [17]  expande imagem ajustando à tela
         private string audioListFile = "false";          // [18]  lista com caminhos dos áudios
-        
+        private string subtitlesListFile = "false";       // [19]  lista de legendas
+
         // Definição gets 
         // Definição sets (e suas restrições)
 
@@ -357,6 +358,22 @@ namespace StroopTest
             get { return headerOutputFileText; }
         }
 
+        public string SubtitlesListFile
+        {
+            get { return subtitlesListFile; }
+            set
+            {
+                if (value.Substring(value.Length - 4) == ".lst" || value.ToLower() == "false")
+                {
+                    subtitlesListFile = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Erro no Arquivo com Programa:\nNome do arquivo " + value + " de lista deve ter terminação .lst");
+                }
+            }
+        }
+
         // decodifica texto
         static public string encodeLatinText(string text)
         {
@@ -395,9 +412,9 @@ namespace StroopTest
                 line = encodeLatinText(line);
                 config = line.Split();
                 tr.Close();
-
-                if(config.Length != 19)
-                    throw new FormatException("Arquivo programa deve ter 19 parâmetros\nexemplo - programa padrão:\n" + defaultProgramFileText);
+                
+                if(config.Length != 20)
+                    throw new FormatException("Arquivo programa deve ter 20 parâmetros\nexemplo - programa padrão:\n" + defaultProgramFileText);
 
                 // atribuição de valores no arquivos às variáveis do programa:
                 // nomePrograma /NumExposições /TempoExposição /ExpAleatória /TempoIntervalo /TempoIntervAleatorio /ListaPalavras /ListaCores /CorFundo /CaptAudio /mostrarLegenda /lugarLegenda /corLegenda /tipoExposicao /listaImg / PontoFixacao
@@ -421,7 +438,8 @@ namespace StroopTest
                 fontWordLabel = config[16];
                 expandImage = Boolean.Parse(config[17]);
                 AudioListFile = config[18];
-
+                SubtitlesListFile = config[19];
+                
                 linesInstruction = File.ReadAllLines(filepath);               
                 if (linesInstruction.Length > 1) // lê instrução se houver
                 {
@@ -434,6 +452,7 @@ namespace StroopTest
                 {
                     this.InstructionText = null;
                 }
+
             }
             catch (FileNotFoundException ex)
             {

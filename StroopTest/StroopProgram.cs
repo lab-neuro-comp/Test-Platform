@@ -48,6 +48,7 @@ namespace StroopTest
         private bool expandImage;               // [17]  expande imagem ajustando à tela
         private string audioListFile = "false";          // [18]  lista com caminhos dos áudios
         private string subtitlesListFile = "false";       // [19]  lista de legendas
+        private string fixPointColor = "#D01C1F";
 
         // Definição gets 
         // Definição sets (e suas restrições)
@@ -370,6 +371,22 @@ namespace StroopTest
                 else
                 {
                     throw new ArgumentException("Erro no Arquivo com Programa:\nNome do arquivo " + value + " de lista deve ter terminação .lst");
+                }
+            }
+        }
+
+        public string FixPointColor
+        {
+            get { return fixPointColor; }
+            set
+            {
+                if (Regex.IsMatch(value, hexPattern) || value.ToLower() == "false")
+                {
+                    fixPointColor = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Erro no Arquivo com Programa:\nCor do ponto de fixação deve ser 'false' ou um código hexadecimal de cor");
                 }
             }
         }

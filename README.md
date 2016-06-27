@@ -5,8 +5,7 @@
 **University of Brasilia Behavioral and Neuroscience Laboratory**
 
 developer: **Hugo Honda Ferreira**
-
-========
+============
 ##Description
 
 StroopTest is a project developed inside University of Brasilia

@@ -10,7 +10,7 @@ developer: **Hugo Honda Ferreira**
 ##Description
 
 StroopTest is a project developed inside University of Brasilia
-Behavioral and Neuroscience Laboratory. Written in C# as a part of a
+Behavioral and Neuroscience Laboratory. Is projected to be open source and distributed for free. Written in C# as a part of a
 computerized neuropsychological testing platform, 
 for assessment of executive function. Connects traditional
 neuropsychological tests with new technologies. The product offers

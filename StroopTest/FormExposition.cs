@@ -15,7 +15,7 @@ using System.Text.RegularExpressions;
 // beginAudio
 using NAudio.Wave;
 using System.Collections.Generic;
-// endAudio
+// endAudio 
 
 namespace StroopTest
 {
@@ -224,10 +224,9 @@ namespace StroopTest
             int i, j, k;
             string[] labelText = null, imageDirs = null, audioDirs = null, subtitlesArray = null;
             string outputFileName = "";
+            string auxString = "";
             this.BackColor = Color.White;
-
-
-
+            
             try
             {
                 outputFileName = outputDataPath + program.UserName + "_" + program.ProgramName + ".txt";
@@ -249,9 +248,7 @@ namespace StroopTest
                 }
 
                 if (program.AudioListFile != "false") { audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile); }
-
-                string auxString = "";
-
+                
                 if (program.WordsListFile.ToLower() != "false") { labelText = program.readListFile(path + "/lst/" + program.WordsListFile); }
                 
                 Random rnd = new Random(DateTime.Now.Millisecond + 1);
@@ -278,69 +275,68 @@ namespace StroopTest
 
                     if (program.ExpositionType == "imgtxt")
                     {
-                        for (int counter = 0; counter < program.NumExpositions; counter++) // AQUI ver estinulo -> palavra ou imagem como um só e ter intervalo separado
+                        for (int counter = 0; counter < program.NumExpositions; counter++) // AQUI ver estimulo -> palavra ou imagem como um só e ter intervalo separado
                         {
-                            if (counter == imageDirs.Count()) { counter = 0; }
                             pictureBox1.Visible = false; wordLabel.Visible = false;
-                            if (program.SubtitleShow)
-                            {
-                                subtitleLabel.Visible = false;
-                            }
+                            if (counter == imageDirs.Count()) { counter = 0; }
+                            if (program.SubtitleShow) {subtitleLabel.Visible = false;}
                             await intervalOrFixPoint(program, cts.Token);
 
-                            if (counter % 2 == 0)
+                            if (program.ExpositionRandom == true)
                             {
-                                if (program.ExpositionRandom == true)
+                                if (imageDirs.Count() <= program.NumExpositions)
                                 {
-                                    if(imageDirs.Count() <= program.NumExpositions)
-                                    {
-                                        pictureBox1.Image = Image.FromFile(imageDirs[randomNumbers[i++]]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
-                                    }
-                                    else
-                                    {
-                                        pictureBox1.Image = Image.FromFile(imageDirs[rnd.Next(imageDirs.Length)]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
-                                    }
+                                    pictureBox1.Image = Image.FromFile(imageDirs[randomNumbers[i++]]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
                                 }
                                 else
                                 {
-                                    if (i == imageDirs.Count()) { i = 0; }
-                                    pictureBox1.Image = Image.FromFile(imageDirs[i]);
+                                    pictureBox1.Image = Image.FromFile(imageDirs[rnd.Next(imageDirs.Length)]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
                                 }
-                                //elapsedTime = elapsedTimeExpo + elapsedTime;
-                                elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
-                                SendKeys.SendWait("s");
-                                pictureBox1.Visible = true;
-                                wordLabel.Visible = false;
-                                auxString = Path.GetFileName(imageDirs[i].ToString());
-                                i++;
                             }
                             else
                             {
-                                if (program.WordsListFile.ToLower() != "false") // se tiver palavras intercala elas com a imagem
-                                {
-                                    if (j == labelText.Count()) { j = 0; }
-                                    wordLabel.Text = labelText[j];
-
-                                    wordLabel.Left = (this.ClientSize.Width - wordLabel.Width) / 2;
-                                    wordLabel.Top = (this.ClientSize.Height - wordLabel.Height) / 2;
-
-                                    elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
-                                    SendKeys.SendWait("s");
-                                    pictureBox1.Visible = false;
-                                    wordLabel.Visible = true;
-                                    auxString = wordLabel.Text;
-                                    j++;
-                                }
+                                if (i == imageDirs.Count()) { i = 0; }
+                                pictureBox1.Image = Image.FromFile(imageDirs[i]);
                             }
-
-
-                            subtitleLabel.Location = new Point((ClientSize.Width / 2 - subtitleLabel.Width / 2), pictureBox1.Bottom + 50);
+                            //elapsedTime = elapsedTimeExpo + elapsedTime;
+                            elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
+                            SendKeys.SendWait("s");
+                            pictureBox1.Visible = true;
+                            wordLabel.Visible = false;
+                            auxString = Path.GetFileName(imageDirs[i].ToString());
+                            i++;
+                            
                             StroopProgram.writeLineOutput(program, auxString, "false", counter + 1, outputContent, elapsedTime);
                             await Task.Delay(program.ExpositionTime, cts.Token);
+
+                            pictureBox1.Visible = false;
+                            wordLabel.Visible = false;
+
+                            await Task.Delay(program.IntervalTime, cts.Token);
+
+                            if (program.WordsListFile.ToLower() != "false") // se tiver palavras intercala elas com a imagem
+                            {
+                                if (j == labelText.Count()) { j = 0; }
+                                wordLabel.Text = labelText[j];
+
+                                wordLabel.Left = (this.ClientSize.Width - wordLabel.Width) / 2;
+                                wordLabel.Top = (this.ClientSize.Height - wordLabel.Height) / 2;
+
+                                elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
+                                SendKeys.SendWait("s");
+                                pictureBox1.Visible = false;
+                                wordLabel.Visible = true;
+                                auxString = wordLabel.Text;
+                                j++;
+
+                                StroopProgram.writeLineOutput(program, auxString, "false", counter, outputContent, elapsedTime);
+                                await Task.Delay(program.ExpositionTime, cts.Token);
+                            }
                         }
                     }
                     else
                     {
+                        
                         for (int counter = 0; counter < program.NumExpositions; counter++) // AQUI ver estinulo -> palavra ou imagem como um só e ter intervalo separado
                         {
                             if (counter == imageDirs.Count()) { counter = 0; }
@@ -386,8 +382,6 @@ namespace StroopTest
 
                             subtitleLabel.Location = new Point((ClientSize.Width / 2 - subtitleLabel.Width / 2), pictureBox1.Bottom + 50);
                             await Task.Delay(program.ExpositionTime, cts.Token);
-                            //g = Graphics.FromImage(pictureBox1.Image);
-                            //showSubtitle(program, g, counter);
                         }
                     }
                     
@@ -486,7 +480,7 @@ namespace StroopTest
                 for (int i = 0; i < program.InstructionText.Count; i++)
                 {
                     instructionLabel.Text = program.InstructionText[i];
-                    await Task.Delay(instrAwaitTime);
+                    await Task.Delay(StroopProgram.instructionAwaitTime);
                 }
                 instructionLabel.Enabled = false; instructionLabel.Visible = false;
             }

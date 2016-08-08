@@ -21,8 +21,11 @@ namespace StroopTest
         private string defaultColorsListText = "#F8E000 #007BB7 #7EC845 #D01C1F";
         private string headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor";
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
-        private string[] defaultInstructionText = { "Nesta tarefa surgirão palavras, cada uma colorida de forma aleatória; Diga a cor em que a palavra está escrita; Cada palavra surgirá por um certo tempo e logo após ela desaparecerá",
+        private string[] defaultInstructionText = { "Serão apresentadas palavras coloridas de forma aleatória. Palavras surgirão rapidamente e em seguida desaparecerão",
+                                                    "Diga a cor em que a palavra está escrita",
                                                     "A tarefa vai começar agora"};
+
+        public static int instructionAwaitTime = 4000;
 
         private List<string> instructionText = new List<string>();
 
@@ -55,6 +58,7 @@ namespace StroopTest
 
         // Arrumar argument execptions para uma exeção diferente no caso que não seja nome do programa ou do usuario
         // assim não vai dar bug de fechar programa na proxima fase (para teste -> entrar com "jabuti" como nome do programa no arquivo de entrada)
+
 
         public List<string> InstructionText
         {

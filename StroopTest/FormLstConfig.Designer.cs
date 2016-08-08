@@ -50,9 +50,10 @@
             // 
             // buttonColorPallette
             // 
-            this.buttonColorPallette.Location = new System.Drawing.Point(12, 214);
+            this.buttonColorPallette.Location = new System.Drawing.Point(9, 174);
+            this.buttonColorPallette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonColorPallette.Name = "buttonColorPallette";
-            this.buttonColorPallette.Size = new System.Drawing.Size(170, 23);
+            this.buttonColorPallette.Size = new System.Drawing.Size(128, 19);
             this.buttonColorPallette.TabIndex = 3;
             this.buttonColorPallette.Text = "paleta de cores";
             this.buttonColorPallette.UseVisualStyleBackColor = true;
@@ -63,10 +64,11 @@
             this.textHexColor.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.textHexColor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textHexColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHexColor.Location = new System.Drawing.Point(12, 165);
+            this.textHexColor.Location = new System.Drawing.Point(9, 134);
+            this.textHexColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textHexColor.MaxLength = 7;
             this.textHexColor.Name = "textHexColor";
-            this.textHexColor.Size = new System.Drawing.Size(170, 45);
+            this.textHexColor.Size = new System.Drawing.Size(128, 38);
             this.textHexColor.TabIndex = 2;
             this.textHexColor.Text = "#000000";
             this.textHexColor.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -74,9 +76,10 @@
             // buttonRemove
             // 
             this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRemove.Location = new System.Drawing.Point(100, 243);
+            this.buttonRemove.Location = new System.Drawing.Point(75, 197);
+            this.buttonRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(82, 23);
+            this.buttonRemove.Size = new System.Drawing.Size(62, 19);
             this.buttonRemove.TabIndex = 4;
             this.buttonRemove.TabStop = false;
             this.buttonRemove.Text = "-";
@@ -86,9 +89,10 @@
             // buttonInsert
             // 
             this.buttonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInsert.Location = new System.Drawing.Point(12, 243);
+            this.buttonInsert.Location = new System.Drawing.Point(9, 197);
+            this.buttonInsert.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonInsert.Name = "buttonInsert";
-            this.buttonInsert.Size = new System.Drawing.Size(82, 23);
+            this.buttonInsert.Size = new System.Drawing.Size(62, 19);
             this.buttonInsert.TabIndex = 3;
             this.buttonInsert.TabStop = false;
             this.buttonInsert.Text = "+";
@@ -97,11 +101,15 @@
             // 
             // hexColorsList
             // 
+            this.hexColorsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.hexColorsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hexColorsList.LabelEdit = true;
-            this.hexColorsList.Location = new System.Drawing.Point(206, 32);
+            this.hexColorsList.Location = new System.Drawing.Point(154, 26);
+            this.hexColorsList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.hexColorsList.Name = "hexColorsList";
-            this.hexColorsList.Size = new System.Drawing.Size(267, 504);
+            this.hexColorsList.Size = new System.Drawing.Size(201, 410);
             this.hexColorsList.TabIndex = 17;
             this.hexColorsList.TabStop = false;
             this.hexColorsList.TileSize = new System.Drawing.Size(200, 60);
@@ -113,17 +121,19 @@
             // 
             this.textWords.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.textWords.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textWords.Location = new System.Drawing.Point(12, 114);
+            this.textWords.Location = new System.Drawing.Point(9, 93);
+            this.textWords.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textWords.Name = "textWords";
-            this.textWords.Size = new System.Drawing.Size(170, 45);
+            this.textWords.Size = new System.Drawing.Size(128, 38);
             this.textWords.TabIndex = 1;
             // 
             // checkWords
             // 
             this.checkWords.AutoSize = true;
-            this.checkWords.Location = new System.Drawing.Point(12, 60);
+            this.checkWords.Location = new System.Drawing.Point(9, 49);
+            this.checkWords.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkWords.Name = "checkWords";
-            this.checkWords.Size = new System.Drawing.Size(139, 21);
+            this.checkWords.Size = new System.Drawing.Size(107, 17);
             this.checkWords.TabIndex = 20;
             this.checkWords.TabStop = false;
             this.checkWords.Text = "Lista de Palavras";
@@ -133,9 +143,10 @@
             // checkColors
             // 
             this.checkColors.AutoSize = true;
-            this.checkColors.Location = new System.Drawing.Point(12, 87);
+            this.checkColors.Location = new System.Drawing.Point(9, 71);
+            this.checkColors.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkColors.Name = "checkColors";
-            this.checkColors.Size = new System.Drawing.Size(121, 21);
+            this.checkColors.Size = new System.Drawing.Size(93, 17);
             this.checkColors.TabIndex = 21;
             this.checkColors.TabStop = false;
             this.checkColors.Text = "Lista de Cores";
@@ -144,12 +155,16 @@
             // 
             // wordsColoredList
             // 
+            this.wordsColoredList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.wordsColoredList.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordsColoredList.FullRowSelect = true;
             this.wordsColoredList.LabelEdit = true;
-            this.wordsColoredList.Location = new System.Drawing.Point(479, 32);
+            this.wordsColoredList.Location = new System.Drawing.Point(359, 26);
+            this.wordsColoredList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.wordsColoredList.Name = "wordsColoredList";
-            this.wordsColoredList.Size = new System.Drawing.Size(267, 504);
+            this.wordsColoredList.Size = new System.Drawing.Size(201, 410);
             this.wordsColoredList.TabIndex = 22;
             this.wordsColoredList.TabStop = false;
             this.wordsColoredList.TileSize = new System.Drawing.Size(200, 60);
@@ -159,9 +174,10 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.Location = new System.Drawing.Point(107, 539);
+            this.button3.Location = new System.Drawing.Point(80, 438);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(56, 19);
             this.button3.TabIndex = 24;
             this.button3.TabStop = false;
             this.button3.Text = "Cancelar";
@@ -171,9 +187,10 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(12, 540);
+            this.button2.Location = new System.Drawing.Point(9, 439);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(56, 19);
             this.button2.TabIndex = 5;
             this.button2.TabStop = false;
             this.button2.Text = "Salvar";
@@ -182,67 +199,85 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(366, 539);
+            this.label1.Location = new System.Drawing.Point(274, 438);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 17);
+            this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 25;
             this.label1.Text = "Lista Cores Hex";
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Location = new System.Drawing.Point(649, 539);
+            this.label2.Location = new System.Drawing.Point(487, 438);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 17);
+            this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 26;
             this.label2.Text = "Lista Palavras";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 32);
+            this.textBox1.Location = new System.Drawing.Point(9, 26);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 22);
+            this.textBox1.Size = new System.Drawing.Size(128, 20);
             this.textBox1.TabIndex = 27;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 12);
+            this.label3.Location = new System.Drawing.Point(7, 10);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 17);
+            this.label3.Size = new System.Drawing.Size(74, 13);
             this.label3.TabIndex = 28;
             this.label3.Text = "Nome Lista(s):";
             // 
             // wordsListName
             // 
+            this.wordsListName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.wordsListName.AutoSize = true;
             this.wordsListName.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.wordsListName.Location = new System.Drawing.Point(476, 12);
+            this.wordsListName.Location = new System.Drawing.Point(357, 10);
+            this.wordsListName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.wordsListName.Name = "wordsListName";
-            this.wordsListName.Size = new System.Drawing.Size(128, 17);
+            this.wordsListName.Size = new System.Drawing.Size(96, 13);
             this.wordsListName.TabIndex = 29;
             this.wordsListName.Text = "nomeListaPalavras";
             // 
             // colorsListName
             // 
+            this.colorsListName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.colorsListName.AutoSize = true;
             this.colorsListName.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.colorsListName.Location = new System.Drawing.Point(203, 12);
+            this.colorsListName.Location = new System.Drawing.Point(152, 10);
+            this.colorsListName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.colorsListName.Name = "colorsListName";
-            this.colorsListName.Size = new System.Drawing.Size(110, 17);
+            this.colorsListName.Size = new System.Drawing.Size(82, 13);
             this.colorsListName.TabIndex = 30;
             this.colorsListName.Text = "nomeListaCores";
             // 
             // FormLstConfig
             // 
             this.AcceptButton = this.buttonInsert;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 575);
+            this.ClientSize = new System.Drawing.Size(572, 467);
             this.Controls.Add(this.colorsListName);
             this.Controls.Add(this.wordsListName);
             this.Controls.Add(this.label3);
@@ -260,8 +295,10 @@
             this.Controls.Add(this.buttonRemove);
             this.Controls.Add(this.textHexColor);
             this.Controls.Add(this.buttonColorPallette);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
             this.Name = "FormLstConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);

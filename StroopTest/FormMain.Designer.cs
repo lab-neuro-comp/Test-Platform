@@ -64,6 +64,7 @@
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.inUseMsgLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +79,8 @@
             this.ajudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(970, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(728, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -90,13 +92,13 @@
             this.toolStripMenuItem1,
             this.abrirToolStripMenuItem});
             this.iniciarToolStripMenuItem.Name = "iniciarToolStripMenuItem";
-            this.iniciarToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.iniciarToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.iniciarToolStripMenuItem.Text = "Arquivo";
             // 
             // iniciarTesteToolStripMenuItem
             // 
             this.iniciarTesteToolStripMenuItem.Name = "iniciarTesteToolStripMenuItem";
-            this.iniciarTesteToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.iniciarTesteToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.iniciarTesteToolStripMenuItem.Text = "Iniciar Teste    Ctrl+R";
             this.iniciarTesteToolStripMenuItem.Click += new System.EventHandler(this.iniciarTesteToolStripMenuItem_Click);
             // 
@@ -106,13 +108,13 @@
             this.programaToolStripMenuItem,
             this.listaDePalavrasToolStripMenuItem});
             this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            this.novoToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.novoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.novoToolStripMenuItem.Text = "Novo";
             // 
             // programaToolStripMenuItem
             // 
             this.programaToolStripMenuItem.Name = "programaToolStripMenuItem";
-            this.programaToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.programaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.programaToolStripMenuItem.Text = "Programa    Ctrl+N";
             this.programaToolStripMenuItem.Click += new System.EventHandler(this.programaToolStripMenuItem_Click);
             // 
@@ -122,20 +124,20 @@
             this.textoECoresToolStripMenuItem,
             this.imagemToolStripMenuItem});
             this.listaDePalavrasToolStripMenuItem.Name = "listaDePalavrasToolStripMenuItem";
-            this.listaDePalavrasToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.listaDePalavrasToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.listaDePalavrasToolStripMenuItem.Text = "Lista de Estímulos";
             // 
             // textoECoresToolStripMenuItem
             // 
             this.textoECoresToolStripMenuItem.Name = "textoECoresToolStripMenuItem";
-            this.textoECoresToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.textoECoresToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.textoECoresToolStripMenuItem.Text = "Texto e Cores";
             this.textoECoresToolStripMenuItem.Click += new System.EventHandler(this.textoECoresToolStripMenuItem_Click);
             // 
             // imagemToolStripMenuItem
             // 
             this.imagemToolStripMenuItem.Name = "imagemToolStripMenuItem";
-            this.imagemToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.imagemToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.imagemToolStripMenuItem.Text = "Imagens";
             this.imagemToolStripMenuItem.Click += new System.EventHandler(this.imagemToolStripMenuItem_Click);
             // 
@@ -145,27 +147,27 @@
             this.programaToolStripMenuItem2,
             this.usuárioToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(225, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(183, 22);
             this.toolStripMenuItem1.Text = "Definir";
             // 
             // programaToolStripMenuItem2
             // 
             this.programaToolStripMenuItem2.Name = "programaToolStripMenuItem2";
-            this.programaToolStripMenuItem2.Size = new System.Drawing.Size(209, 26);
+            this.programaToolStripMenuItem2.Size = new System.Drawing.Size(173, 22);
             this.programaToolStripMenuItem2.Text = "Programa    Ctrl+D";
             this.programaToolStripMenuItem2.Click += new System.EventHandler(this.programaToolStripMenuItem2_Click);
             // 
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.usuárioToolStripMenuItem.Text = "Usuário        Ctrl+U";
             this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem_Click);
             // 
             // abrirToolStripMenuItem
             // 
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.abrirToolStripMenuItem.Text = "Sair                  Alt+F4";
             this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
             // 
@@ -176,13 +178,13 @@
             this.listaToolStripMenuItem,
             this.excluirToolStripMenuItem});
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
             // programaToolStripMenuItem1
             // 
             this.programaToolStripMenuItem1.Name = "programaToolStripMenuItem1";
-            this.programaToolStripMenuItem1.Size = new System.Drawing.Size(202, 26);
+            this.programaToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
             this.programaToolStripMenuItem1.Text = "Programa";
             this.programaToolStripMenuItem1.Click += new System.EventHandler(this.programaToolStripMenuItem1_Click);
             // 
@@ -192,13 +194,13 @@
             this.textoECoresToolStripMenuItem1,
             this.imagensToolStripMenuItem});
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            this.listaToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.listaToolStripMenuItem.Text = "Lista de Estímulos";
             // 
             // textoECoresToolStripMenuItem1
             // 
             this.textoECoresToolStripMenuItem1.Name = "textoECoresToolStripMenuItem1";
-            this.textoECoresToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.textoECoresToolStripMenuItem1.Size = new System.Drawing.Size(145, 22);
             this.textoECoresToolStripMenuItem1.Text = "Texto e Cores";
             this.textoECoresToolStripMenuItem1.Click += new System.EventHandler(this.textoECoresToolStripMenuItem1_Click);
             // 
@@ -206,7 +208,7 @@
             // 
             this.imagensToolStripMenuItem.Enabled = false;
             this.imagensToolStripMenuItem.Name = "imagensToolStripMenuItem";
-            this.imagensToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.imagensToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.imagensToolStripMenuItem.Text = "Imagens";
             // 
             // excluirToolStripMenuItem
@@ -216,27 +218,27 @@
             this.listaToolStripMenuItem1,
             this.dadosToolStripMenuItem});
             this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
-            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.excluirToolStripMenuItem.Text = "Excluir";
             // 
             // programaToolStripMenuItem3
             // 
             this.programaToolStripMenuItem3.Name = "programaToolStripMenuItem3";
-            this.programaToolStripMenuItem3.Size = new System.Drawing.Size(149, 26);
+            this.programaToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
             this.programaToolStripMenuItem3.Text = "Programa";
             this.programaToolStripMenuItem3.Click += new System.EventHandler(this.programaToolStripMenuItem3_Click);
             // 
             // listaToolStripMenuItem1
             // 
             this.listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
-            this.listaToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
+            this.listaToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.listaToolStripMenuItem1.Text = "Lista";
             this.listaToolStripMenuItem1.Click += new System.EventHandler(this.listaToolStripMenuItem1_Click);
             // 
             // dadosToolStripMenuItem
             // 
             this.dadosToolStripMenuItem.Name = "dadosToolStripMenuItem";
-            this.dadosToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.dadosToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.dadosToolStripMenuItem.Text = "Dados";
             this.dadosToolStripMenuItem.Click += new System.EventHandler(this.dadosToolStripMenuItem_Click);
             // 
@@ -245,13 +247,13 @@
             this.exibirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dataToolStripMenuItem});
             this.exibirToolStripMenuItem.Name = "exibirToolStripMenuItem";
-            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
+            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.exibirToolStripMenuItem.Text = "Exibir";
             // 
             // dataToolStripMenuItem
             // 
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
-            this.dataToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.dataToolStripMenuItem.Text = "Dados";
             this.dataToolStripMenuItem.Click += new System.EventHandler(this.dataToolStripMenuItem_Click);
             // 
@@ -261,20 +263,20 @@
             this.sobreToolStripMenuItem,
             this.sobreToolStripMenuItem1});
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
-            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.ajudaToolStripMenuItem.Text = "Ajuda";
             // 
             // sobreToolStripMenuItem
             // 
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.sobreToolStripMenuItem.Text = "Instruções    Ctrl+H";
             this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
             // sobreToolStripMenuItem1
             // 
             this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(210, 26);
+            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
             this.sobreToolStripMenuItem1.Text = "Sobre";
             this.sobreToolStripMenuItem1.Click += new System.EventHandler(this.sobreToolStripMenuItem1_Click);
             // 
@@ -290,9 +292,9 @@
             this.usrNameSL,
             this.toolStripLabel5,
             this.dirPathSL});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(970, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(728, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
@@ -304,7 +306,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(92, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(74, 22);
             this.toolStripButton1.Text = "Iniciar Teste";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -313,7 +315,7 @@
             this.toolStripLabel3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(77, 24);
+            this.toolStripLabel3.Size = new System.Drawing.Size(62, 22);
             this.toolStripLabel3.Text = "Programa:";
             // 
             // prgNameSL
@@ -322,7 +324,7 @@
             this.prgNameSL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.prgNameSL.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.prgNameSL.Name = "prgNameSL";
-            this.prgNameSL.Size = new System.Drawing.Size(57, 24);
+            this.prgNameSL.Size = new System.Drawing.Size(44, 22);
             this.prgNameSL.Text = "padrao";
             this.prgNameSL.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
@@ -331,7 +333,7 @@
             this.toolStripLabel4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripLabel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(62, 24);
+            this.toolStripLabel4.Size = new System.Drawing.Size(50, 22);
             this.toolStripLabel4.Text = "Usuário:";
             // 
             // usrNameSL
@@ -340,7 +342,7 @@
             this.usrNameSL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.usrNameSL.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.usrNameSL.Name = "usrNameSL";
-            this.usrNameSL.Size = new System.Drawing.Size(57, 24);
+            this.usrNameSL.Size = new System.Drawing.Size(44, 22);
             this.usrNameSL.Text = "padrao";
             this.usrNameSL.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
@@ -349,7 +351,7 @@
             this.toolStripLabel5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripLabel5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(72, 24);
+            this.toolStripLabel5.Size = new System.Drawing.Size(56, 22);
             this.toolStripLabel5.Text = "Diretório:";
             // 
             // dirPathSL
@@ -358,7 +360,7 @@
             this.dirPathSL.Enabled = false;
             this.dirPathSL.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.dirPathSL.Name = "dirPathSL";
-            this.dirPathSL.Size = new System.Drawing.Size(97, 24);
+            this.dirPathSL.Size = new System.Drawing.Size(78, 22);
             this.dirPathSL.Text = "directoryPath";
             this.dirPathSL.Click += new System.EventHandler(this.dirPathSL_Click);
             // 
@@ -368,20 +370,34 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(734, 553);
+            this.label1.Location = new System.Drawing.Point(550, 449);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 39);
+            this.label1.Size = new System.Drawing.Size(163, 27);
             this.label1.TabIndex = 6;
             this.label1.Text = "StroopTest - 2016\r\nLaboratório de Neurociência e Comportamento\r\nUniversidade de B" +
     "rasília\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // inUseMsgLabel
+            // 
+            this.inUseMsgLabel.AutoSize = true;
+            this.inUseMsgLabel.ForeColor = System.Drawing.Color.OrangeRed;
+            this.inUseMsgLabel.Location = new System.Drawing.Point(12, 49);
+            this.inUseMsgLabel.Name = "inUseMsgLabel";
+            this.inUseMsgLabel.Size = new System.Drawing.Size(35, 13);
+            this.inUseMsgLabel.TabIndex = 7;
+            this.inUseMsgLabel.Text = "in use";
+            this.inUseMsgLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.inUseMsgLabel.Visible = false;
+            // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(970, 601);
+            this.ClientSize = new System.Drawing.Size(728, 494);
+            this.Controls.Add(this.inUseMsgLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -389,7 +405,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(494, 646);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(374, 532);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StroopTest";
@@ -441,5 +458,6 @@
         private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iniciarTesteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dadosToolStripMenuItem;
+        private System.Windows.Forms.Label inUseMsgLabel;
     }
 }

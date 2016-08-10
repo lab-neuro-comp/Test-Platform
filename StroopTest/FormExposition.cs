@@ -183,7 +183,7 @@ namespace StroopTest
                         SendKeys.SendWait("s");
                         wordLabel.Visible = true;
 
-                        StroopProgram.writeLineOutput(program, t1, c1, counter, outputContent, elapsedTime);
+                        StroopProgram.writeLineOutput(program, t1, c1, counter, outputContent, elapsedTime, program.ExpositionType);
                         
                         await Task.Delay(program.ExpositionTime, cts.Token);
                     }
@@ -272,19 +272,19 @@ namespace StroopTest
                     // endAudio
 
                     await Task.Delay(program.IntervalTime, cts.Token);
-
+               
                     if (program.ExpositionType == "imgtxt")
                     {
                         for (int counter = 0; counter < program.NumExpositions; counter++) // AQUI ver estimulo -> palavra ou imagem como um só e ter intervalo separado
                         {
                             pictureBox1.Visible = false; wordLabel.Visible = false;
-                            if (counter == imageDirs.Count()) { counter = 0; }
+                            //if (counter == imageDirs.Count()) { counter = 0; }
                             if (program.SubtitleShow) {subtitleLabel.Visible = false;}
                             await intervalOrFixPoint(program, cts.Token);
 
                             if (program.ExpositionRandom == true)
                             {
-                                if (imageDirs.Count() <= program.NumExpositions)
+                                if (imageDirs.Count() == program.NumExpositions)
                                 {
                                     pictureBox1.Image = Image.FromFile(imageDirs[randomNumbers[i++]]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
                                 }
@@ -306,7 +306,7 @@ namespace StroopTest
                             auxString = Path.GetFileName(imageDirs[i].ToString());
                             i++;
                             
-                            StroopProgram.writeLineOutput(program, auxString, "false", counter + 1, outputContent, elapsedTime);
+                            StroopProgram.writeLineOutput(program, auxString, "false", counter + 1, outputContent, elapsedTime, "img");
                             await Task.Delay(program.ExpositionTime, cts.Token);
 
                             pictureBox1.Visible = false;
@@ -329,29 +329,25 @@ namespace StroopTest
                                 auxString = wordLabel.Text;
                                 j++;
 
-                                StroopProgram.writeLineOutput(program, auxString, "false", counter, outputContent, elapsedTime);
+                                StroopProgram.writeLineOutput(program, auxString, "false", counter + 1, outputContent, elapsedTime, "txt");
                                 await Task.Delay(program.ExpositionTime, cts.Token);
                             }
                         }
                     }
                     else
                     {
-                        
+                        int imgCounter = 0;
                         for (int counter = 0; counter < program.NumExpositions; counter++) // AQUI ver estinulo -> palavra ou imagem como um só e ter intervalo separado
                         {
-                            if (counter == imageDirs.Count()) { counter = 0; }
                             pictureBox1.Visible = false; wordLabel.Visible = false;
-                            if (program.SubtitleShow)
-                            {
-                                subtitleLabel.Visible = false;
-                            }
                             await intervalOrFixPoint(program, cts.Token);
 
                             if (program.ExpositionRandom == true)
                             {
-                                if (imageDirs.Count() <= program.NumExpositions)
+                                if (imageDirs.Count() == program.NumExpositions)
                                 {
-                                    pictureBox1.Image = Image.FromFile(imageDirs[randomNumbers[i++]]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
+                                    if (imgCounter != program.NumExpositions) { imgCounter++; }
+                                    pictureBox1.Image = Image.FromFile(imageDirs[randomNumbers[imgCounter]]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
                                 }
                                 else
                                 {
@@ -360,8 +356,8 @@ namespace StroopTest
                             }
                             else
                             {
-                                if (i == imageDirs.Count()) { i = 0; }
-                                pictureBox1.Image = Image.FromFile(imageDirs[i]);
+                                if (imgCounter == imageDirs.Count()) { imgCounter = 0; }
+                                pictureBox1.Image = Image.FromFile(imageDirs[imgCounter]);
                             }
                             
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
@@ -376,9 +372,8 @@ namespace StroopTest
                                 else k++;
                             }
 
-                            StroopProgram.writeLineOutput(program, Path.GetFileName(imageDirs[i].ToString()), "false", counter + 1, outputContent, elapsedTime);
-                            i++;
-
+                            StroopProgram.writeLineOutput(program, Path.GetFileName(imageDirs[imgCounter].ToString()), "false", counter + 1, outputContent, elapsedTime, program.ExpositionType);
+                            imgCounter++;
 
                             subtitleLabel.Location = new Point((ClientSize.Width / 2 - subtitleLabel.Width / 2), pictureBox1.Bottom + 50);
                             await Task.Delay(program.ExpositionTime, cts.Token);

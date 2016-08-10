@@ -607,7 +607,7 @@ namespace StroopTest
             }
         }
 
-        static public void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter, List<string> output, float elapsedTime)
+        static public void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter, List<string> output, float elapsedTime, string expoType)
         {
             // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor
             var text = program.ProgramName + "\t" +
@@ -616,7 +616,7 @@ namespace StroopTest
                        DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString() + ":" + DateTime.Now.Millisecond.ToString() + "\t" +
                        elapsedTime.ToString() + "\t" +
                        counter + "\t" +
-                       program.ExpositionType + "\t" +
+                       expoType + "\t" +
                        program.SubtitleShow.ToString().ToLower() + "\t" +
                        program.SubtitlePlace + "\t" +
                        nameStimulus + "\t" +

@@ -30,32 +30,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrgConfig));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.openAudioList = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.captAudioOn = new System.Windows.Forms.CheckBox();
+            this.helpButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.fixPointTypeLabel = new System.Windows.Forms.Label();
             this.fixPointCross = new System.Windows.Forms.CheckBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.fixPointColorLabel = new System.Windows.Forms.Label();
             this.fixPointCircle = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panelFixPointColor = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.audioListCheck = new System.Windows.Forms.CheckBox();
+            this.expandImgLabel = new System.Windows.Forms.Label();
+            this.captAudioLabel = new System.Windows.Forms.Label();
+            this.captAudioOn = new System.Windows.Forms.CheckBox();
             this.expandImageOn = new System.Windows.Forms.CheckBox();
             this.panelBGColor = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.bgColorLabel = new System.Windows.Forms.Label();
             this.chooseBackGColor = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button2 = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.subActivationLabel = new System.Windows.Forms.Label();
+            this.subColorLabel = new System.Windows.Forms.Label();
+            this.subLocationLabel = new System.Windows.Forms.Label();
             this.showSubsOn = new System.Windows.Forms.CheckBox();
             this.openSubtitleList = new System.Windows.Forms.Button();
             this.chooseColorSubs = new System.Windows.Forms.Button();
@@ -66,36 +62,40 @@
             this.subDirect4 = new System.Windows.Forms.Button();
             this.subDirect5 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.intervTimeLabel = new System.Windows.Forms.Label();
             this.timeInterval = new System.Windows.Forms.NumericUpDown();
             this.randIntervalOn = new System.Windows.Forms.CheckBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.rdmIntevLabel = new System.Windows.Forms.Label();
             this.timeExpo = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
+            this.expoTimeLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.listWordsLabel = new System.Windows.Forms.Label();
+            this.listAudioLabel = new System.Windows.Forms.Label();
+            this.openAudioList = new System.Windows.Forms.Button();
+            this.listColorsLabel = new System.Windows.Forms.Label();
+            this.listImagesLabel = new System.Windows.Forms.Label();
             this.openWordList = new System.Windows.Forms.Button();
             this.openColorsList = new System.Windows.Forms.Button();
             this.openImgsList = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.expoTypeLabel = new System.Windows.Forms.Label();
             this.chooseExpoType = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.expoNumberLabel = new System.Windows.Forms.Label();
             this.numExpo = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtSizeLabel = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.randExpoOn = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.instructionsLabel = new System.Windows.Forms.Label();
             this.progName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.prgNameLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timeInterval)).BeginInit();
@@ -103,136 +103,77 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.groupBox7);
+            this.panel1.Controls.Add(this.helpButton);
             this.panel1.Controls.Add(this.groupBox6);
             this.panel1.Controls.Add(this.groupBox5);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.saveButton);
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.instructionsLabel);
             this.panel1.Controls.Add(this.progName);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(11, 27);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Controls.Add(this.prgNameLabel);
+            this.panel1.Location = new System.Drawing.Point(11, 11);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(646, 367);
+            this.panel1.Size = new System.Drawing.Size(730, 335);
             this.panel1.TabIndex = 0;
             // 
-            // groupBox7
+            // helpButton
             // 
-            this.groupBox7.Controls.Add(this.checkBox1);
-            this.groupBox7.Controls.Add(this.label21);
-            this.groupBox7.Controls.Add(this.openAudioList);
-            this.groupBox7.Controls.Add(this.label15);
-            this.groupBox7.Controls.Add(this.captAudioOn);
-            this.groupBox7.Location = new System.Drawing.Point(417, 34);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox7.Size = new System.Drawing.Size(207, 115);
-            this.groupBox7.TabIndex = 174;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Áudio";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(106, 63);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 61;
-            this.checkBox1.TabStop = false;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(13, 61);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(88, 26);
-            this.label21.TabIndex = 164;
-            this.label21.Text = "Reproduzir Áudio\r\ndurante expo:";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // openAudioList
-            // 
-            this.openAudioList.Enabled = false;
-            this.openAudioList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openAudioList.Location = new System.Drawing.Point(125, 60);
-            this.openAudioList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.openAudioList.Name = "openAudioList";
-            this.openAudioList.Size = new System.Drawing.Size(67, 19);
-            this.openAudioList.TabIndex = 62;
-            this.openAudioList.Text = "abrir";
-            this.openAudioList.UseVisualStyleBackColor = true;
-            this.openAudioList.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(24, 24);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(77, 26);
-            this.label15.TabIndex = 52;
-            this.label15.Text = "Capturar Áudio\r\ndurante expo:";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // captAudioOn
-            // 
-            this.captAudioOn.AutoSize = true;
-            this.captAudioOn.Location = new System.Drawing.Point(106, 29);
-            this.captAudioOn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.captAudioOn.Name = "captAudioOn";
-            this.captAudioOn.Size = new System.Drawing.Size(15, 14);
-            this.captAudioOn.TabIndex = 60;
-            this.captAudioOn.TabStop = false;
-            this.captAudioOn.UseVisualStyleBackColor = true;
+            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.helpButton.BackgroundImage = global::StroopTest.Properties.Resources.helpButton;
+            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.helpButton.Location = new System.Drawing.Point(656, 9);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(2);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(26, 26);
+            this.helpButton.TabIndex = 174;
+            this.helpButton.TabStop = false;
+            this.helpButton.UseVisualStyleBackColor = false;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.label13);
+            this.groupBox6.Controls.Add(this.fixPointTypeLabel);
             this.groupBox6.Controls.Add(this.fixPointCross);
-            this.groupBox6.Controls.Add(this.label22);
+            this.groupBox6.Controls.Add(this.fixPointColorLabel);
             this.groupBox6.Controls.Add(this.fixPointCircle);
             this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.panelFixPointColor);
-            this.groupBox6.Location = new System.Drawing.Point(242, 154);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Location = new System.Drawing.Point(289, 135);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox6.Size = new System.Drawing.Size(166, 74);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox6.Size = new System.Drawing.Size(190, 79);
             this.groupBox6.TabIndex = 173;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Ponto Fixação";
+            this.groupBox6.Text = "Ponto de Fixação";
             // 
-            // label13
+            // fixPointTypeLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(35, 24);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(31, 13);
-            this.label13.TabIndex = 64;
-            this.label13.Text = "Tipo:";
+            this.fixPointTypeLabel.AutoSize = true;
+            this.fixPointTypeLabel.Location = new System.Drawing.Point(35, 24);
+            this.fixPointTypeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fixPointTypeLabel.Name = "fixPointTypeLabel";
+            this.fixPointTypeLabel.Size = new System.Drawing.Size(31, 13);
+            this.fixPointTypeLabel.TabIndex = 64;
+            this.fixPointTypeLabel.Text = "Tipo:";
             // 
             // fixPointCross
             // 
             this.fixPointCross.AutoSize = true;
             this.fixPointCross.Location = new System.Drawing.Point(70, 23);
-            this.fixPointCross.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fixPointCross.Margin = new System.Windows.Forms.Padding(2);
             this.fixPointCross.Name = "fixPointCross";
             this.fixPointCross.Size = new System.Drawing.Size(32, 17);
             this.fixPointCross.TabIndex = 50;
@@ -241,21 +182,21 @@
             this.fixPointCross.UseVisualStyleBackColor = true;
             this.fixPointCross.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // label22
+            // fixPointColorLabel
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(10, 49);
-            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(57, 13);
-            this.label22.TabIndex = 171;
-            this.label22.Text = "Cor Ponto:";
+            this.fixPointColorLabel.AutoSize = true;
+            this.fixPointColorLabel.Location = new System.Drawing.Point(10, 49);
+            this.fixPointColorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fixPointColorLabel.Name = "fixPointColorLabel";
+            this.fixPointColorLabel.Size = new System.Drawing.Size(57, 13);
+            this.fixPointColorLabel.TabIndex = 171;
+            this.fixPointColorLabel.Text = "Cor Ponto:";
             // 
             // fixPointCircle
             // 
             this.fixPointCircle.AutoSize = true;
             this.fixPointCircle.Location = new System.Drawing.Point(103, 23);
-            this.fixPointCircle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fixPointCircle.Margin = new System.Windows.Forms.Padding(2);
             this.fixPointCircle.Name = "fixPointCircle";
             this.fixPointCircle.Size = new System.Drawing.Size(32, 17);
             this.fixPointCircle.TabIndex = 51;
@@ -268,9 +209,9 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(88, 46);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 19);
+            this.button1.Size = new System.Drawing.Size(89, 19);
             this.button1.TabIndex = 52;
             this.button1.TabStop = false;
             this.button1.Text = "escolher";
@@ -282,45 +223,82 @@
             this.panelFixPointColor.BackColor = System.Drawing.Color.White;
             this.panelFixPointColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelFixPointColor.Location = new System.Drawing.Point(70, 49);
-            this.panelFixPointColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelFixPointColor.Margin = new System.Windows.Forms.Padding(2);
             this.panelFixPointColor.Name = "panelFixPointColor";
             this.panelFixPointColor.Size = new System.Drawing.Size(14, 14);
             this.panelFixPointColor.TabIndex = 153;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.label20);
+            this.groupBox5.Controls.Add(this.audioListCheck);
+            this.groupBox5.Controls.Add(this.expandImgLabel);
+            this.groupBox5.Controls.Add(this.captAudioLabel);
+            this.groupBox5.Controls.Add(this.captAudioOn);
             this.groupBox5.Controls.Add(this.expandImageOn);
             this.groupBox5.Controls.Add(this.panelBGColor);
-            this.groupBox5.Controls.Add(this.label10);
+            this.groupBox5.Controls.Add(this.bgColorLabel);
             this.groupBox5.Controls.Add(this.chooseBackGColor);
-            this.groupBox5.Controls.Add(this.label19);
-            this.groupBox5.Controls.Add(this.numericUpDown1);
-            this.groupBox5.Location = new System.Drawing.Point(418, 257);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Location = new System.Drawing.Point(483, 146);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox5.Size = new System.Drawing.Size(207, 96);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox5.Size = new System.Drawing.Size(233, 97);
             this.groupBox5.TabIndex = 172;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Outros";
             // 
-            // label20
+            // audioListCheck
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(11, 72);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(91, 13);
-            this.label20.TabIndex = 161;
-            this.label20.Text = "Expandir Imagem:";
+            this.audioListCheck.AutoSize = true;
+            this.audioListCheck.Location = new System.Drawing.Point(130, 20);
+            this.audioListCheck.Margin = new System.Windows.Forms.Padding(2);
+            this.audioListCheck.Name = "audioListCheck";
+            this.audioListCheck.Size = new System.Drawing.Size(15, 14);
+            this.audioListCheck.TabIndex = 61;
+            this.audioListCheck.TabStop = false;
+            this.audioListCheck.UseVisualStyleBackColor = true;
+            this.audioListCheck.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // expandImgLabel
+            // 
+            this.expandImgLabel.AutoSize = true;
+            this.expandImgLabel.Location = new System.Drawing.Point(11, 72);
+            this.expandImgLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.expandImgLabel.Name = "expandImgLabel";
+            this.expandImgLabel.Size = new System.Drawing.Size(91, 13);
+            this.expandImgLabel.TabIndex = 161;
+            this.expandImgLabel.Text = "Expandir Imagem:";
+            // 
+            // captAudioLabel
+            // 
+            this.captAudioLabel.AutoSize = true;
+            this.captAudioLabel.Location = new System.Drawing.Point(29, 15);
+            this.captAudioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.captAudioLabel.Name = "captAudioLabel";
+            this.captAudioLabel.Size = new System.Drawing.Size(77, 26);
+            this.captAudioLabel.TabIndex = 52;
+            this.captAudioLabel.Text = "Capturar Áudio\r\ndurante expo:";
+            this.captAudioLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // captAudioOn
+            // 
+            this.captAudioOn.AutoSize = true;
+            this.captAudioOn.Checked = true;
+            this.captAudioOn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.captAudioOn.Location = new System.Drawing.Point(111, 20);
+            this.captAudioOn.Margin = new System.Windows.Forms.Padding(2);
+            this.captAudioOn.Name = "captAudioOn";
+            this.captAudioOn.Size = new System.Drawing.Size(15, 14);
+            this.captAudioOn.TabIndex = 60;
+            this.captAudioOn.TabStop = false;
+            this.captAudioOn.UseVisualStyleBackColor = true;
             // 
             // expandImageOn
             // 
             this.expandImageOn.AutoSize = true;
             this.expandImageOn.Enabled = false;
             this.expandImageOn.Location = new System.Drawing.Point(106, 72);
-            this.expandImageOn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.expandImageOn.Margin = new System.Windows.Forms.Padding(2);
             this.expandImageOn.Name = "expandImageOn";
             this.expandImageOn.Size = new System.Drawing.Size(15, 14);
             this.expandImageOn.TabIndex = 83;
@@ -332,26 +310,26 @@
             // 
             this.panelBGColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBGColor.Location = new System.Drawing.Point(106, 49);
-            this.panelBGColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelBGColor.Margin = new System.Windows.Forms.Padding(2);
             this.panelBGColor.Name = "panelBGColor";
             this.panelBGColor.Size = new System.Drawing.Size(14, 14);
             this.panelBGColor.TabIndex = 151;
             // 
-            // label10
+            // bgColorLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(28, 49);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 13);
-            this.label10.TabIndex = 42;
-            this.label10.Text = "Cor de Fundo:";
+            this.bgColorLabel.AutoSize = true;
+            this.bgColorLabel.Location = new System.Drawing.Point(28, 49);
+            this.bgColorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bgColorLabel.Name = "bgColorLabel";
+            this.bgColorLabel.Size = new System.Drawing.Size(74, 13);
+            this.bgColorLabel.TabIndex = 42;
+            this.bgColorLabel.Text = "Cor de Fundo:";
             // 
             // chooseBackGColor
             // 
             this.chooseBackGColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chooseBackGColor.Location = new System.Drawing.Point(125, 46);
-            this.chooseBackGColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chooseBackGColor.Margin = new System.Windows.Forms.Padding(2);
             this.chooseBackGColor.Name = "chooseBackGColor";
             this.chooseBackGColor.Size = new System.Drawing.Size(67, 19);
             this.chooseBackGColor.TabIndex = 81;
@@ -359,64 +337,25 @@
             this.chooseBackGColor.UseVisualStyleBackColor = true;
             this.chooseBackGColor.Click += new System.EventHandler(this.button8_Click);
             // 
-            // label19
+            // saveButton
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(19, 25);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(85, 13);
-            this.label19.TabIndex = 159;
-            this.label19.Text = "Tamanho Texto:";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Location = new System.Drawing.Point(106, 24);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(60, 20);
-            this.numericUpDown1.TabIndex = 80;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            160,
-            0,
-            0,
-            0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.BackgroundImage = global::StroopTest.Properties.Resources.save;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(592, 9);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(26, 26);
-            this.button2.TabIndex = 6;
-            this.button2.TabStop = false;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.saveButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.saveButton.BackgroundImage = global::StroopTest.Properties.Resources.save;
+            this.saveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.saveButton.Location = new System.Drawing.Point(686, 9);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(2);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(26, 26);
+            this.saveButton.TabIndex = 6;
+            this.saveButton.TabStop = false;
+            this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label17);
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Controls.Add(this.subActivationLabel);
+            this.groupBox4.Controls.Add(this.subColorLabel);
+            this.groupBox4.Controls.Add(this.subLocationLabel);
             this.groupBox4.Controls.Add(this.showSubsOn);
             this.groupBox4.Controls.Add(this.openSubtitleList);
             this.groupBox4.Controls.Add(this.chooseColorSubs);
@@ -426,50 +365,50 @@
             this.groupBox4.Controls.Add(this.subDirect3);
             this.groupBox4.Controls.Add(this.subDirect4);
             this.groupBox4.Controls.Add(this.subDirect5);
-            this.groupBox4.Location = new System.Drawing.Point(418, 154);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Location = new System.Drawing.Point(483, 35);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox4.Size = new System.Drawing.Size(207, 98);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Size = new System.Drawing.Size(233, 107);
             this.groupBox4.TabIndex = 170;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Legenda";
             // 
-            // label17
+            // subActivationLabel
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(23, 25);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(37, 13);
-            this.label17.TabIndex = 53;
-            this.label17.Text = "Ativar:";
+            this.subActivationLabel.AutoSize = true;
+            this.subActivationLabel.Location = new System.Drawing.Point(23, 25);
+            this.subActivationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.subActivationLabel.Name = "subActivationLabel";
+            this.subActivationLabel.Size = new System.Drawing.Size(37, 13);
+            this.subActivationLabel.TabIndex = 53;
+            this.subActivationLabel.Text = "Ativar:";
             // 
-            // label14
+            // subColorLabel
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(34, 73);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(26, 13);
-            this.label14.TabIndex = 55;
-            this.label14.Text = "Cor:";
+            this.subColorLabel.AutoSize = true;
+            this.subColorLabel.Location = new System.Drawing.Point(34, 73);
+            this.subColorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.subColorLabel.Name = "subColorLabel";
+            this.subColorLabel.Size = new System.Drawing.Size(26, 13);
+            this.subColorLabel.TabIndex = 55;
+            this.subColorLabel.Text = "Cor:";
             // 
-            // label18
+            // subLocationLabel
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(13, 50);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(48, 13);
-            this.label18.TabIndex = 54;
-            this.label18.Text = "Posição:";
+            this.subLocationLabel.AutoSize = true;
+            this.subLocationLabel.Location = new System.Drawing.Point(13, 50);
+            this.subLocationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.subLocationLabel.Name = "subLocationLabel";
+            this.subLocationLabel.Size = new System.Drawing.Size(48, 13);
+            this.subLocationLabel.TabIndex = 54;
+            this.subLocationLabel.Text = "Posição:";
             // 
             // showSubsOn
             // 
             this.showSubsOn.AutoSize = true;
             this.showSubsOn.Location = new System.Drawing.Point(64, 25);
-            this.showSubsOn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.showSubsOn.Margin = new System.Windows.Forms.Padding(2);
             this.showSubsOn.Name = "showSubsOn";
             this.showSubsOn.Size = new System.Drawing.Size(15, 14);
             this.showSubsOn.TabIndex = 70;
@@ -482,7 +421,7 @@
             this.openSubtitleList.Enabled = false;
             this.openSubtitleList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openSubtitleList.Location = new System.Drawing.Point(82, 22);
-            this.openSubtitleList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.openSubtitleList.Margin = new System.Windows.Forms.Padding(2);
             this.openSubtitleList.Name = "openSubtitleList";
             this.openSubtitleList.Size = new System.Drawing.Size(110, 19);
             this.openSubtitleList.TabIndex = 71;
@@ -496,12 +435,12 @@
             this.chooseColorSubs.Enabled = false;
             this.chooseColorSubs.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chooseColorSubs.Location = new System.Drawing.Point(86, 71);
-            this.chooseColorSubs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chooseColorSubs.Margin = new System.Windows.Forms.Padding(2);
             this.chooseColorSubs.Name = "chooseColorSubs";
             this.chooseColorSubs.Size = new System.Drawing.Size(106, 19);
             this.chooseColorSubs.TabIndex = 73;
             this.chooseColorSubs.TabStop = false;
-            this.chooseColorSubs.Text = "escolher cor";
+            this.chooseColorSubs.Text = "escolher";
             this.chooseColorSubs.UseVisualStyleBackColor = true;
             this.chooseColorSubs.Visible = false;
             this.chooseColorSubs.Click += new System.EventHandler(this.button11_Click);
@@ -512,7 +451,7 @@
             this.panelSubColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSubColor.Enabled = false;
             this.panelSubColor.Location = new System.Drawing.Point(64, 73);
-            this.panelSubColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelSubColor.Margin = new System.Windows.Forms.Padding(2);
             this.panelSubColor.Name = "panelSubColor";
             this.panelSubColor.Size = new System.Drawing.Size(14, 14);
             this.panelSubColor.TabIndex = 152;
@@ -524,7 +463,7 @@
             this.subDirect1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.subDirect1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.subDirect1.Location = new System.Drawing.Point(64, 49);
-            this.subDirect1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.subDirect1.Margin = new System.Windows.Forms.Padding(2);
             this.subDirect1.Name = "subDirect1";
             this.subDirect1.Size = new System.Drawing.Size(14, 14);
             this.subDirect1.TabIndex = 72;
@@ -539,7 +478,7 @@
             this.subDirect2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.subDirect2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.subDirect2.Location = new System.Drawing.Point(92, 49);
-            this.subDirect2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.subDirect2.Margin = new System.Windows.Forms.Padding(2);
             this.subDirect2.Name = "subDirect2";
             this.subDirect2.Size = new System.Drawing.Size(14, 14);
             this.subDirect2.TabIndex = 154;
@@ -554,7 +493,7 @@
             this.subDirect3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.subDirect3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.subDirect3.Location = new System.Drawing.Point(119, 49);
-            this.subDirect3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.subDirect3.Margin = new System.Windows.Forms.Padding(2);
             this.subDirect3.Name = "subDirect3";
             this.subDirect3.Size = new System.Drawing.Size(14, 14);
             this.subDirect3.TabIndex = 155;
@@ -569,7 +508,7 @@
             this.subDirect4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.subDirect4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.subDirect4.Location = new System.Drawing.Point(147, 49);
-            this.subDirect4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.subDirect4.Margin = new System.Windows.Forms.Padding(2);
             this.subDirect4.Name = "subDirect4";
             this.subDirect4.Size = new System.Drawing.Size(14, 14);
             this.subDirect4.TabIndex = 156;
@@ -584,7 +523,7 @@
             this.subDirect5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.subDirect5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.subDirect5.Location = new System.Drawing.Point(175, 49);
-            this.subDirect5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.subDirect5.Margin = new System.Windows.Forms.Padding(2);
             this.subDirect5.Name = "subDirect5";
             this.subDirect5.Size = new System.Drawing.Size(14, 14);
             this.subDirect5.TabIndex = 157;
@@ -594,30 +533,30 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.intervTimeLabel);
             this.groupBox3.Controls.Add(this.timeInterval);
             this.groupBox3.Controls.Add(this.randIntervalOn);
-            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.rdmIntevLabel);
             this.groupBox3.Controls.Add(this.timeExpo);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(242, 34);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Controls.Add(this.expoTimeLabel);
+            this.groupBox3.Location = new System.Drawing.Point(289, 35);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox3.Size = new System.Drawing.Size(166, 115);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(190, 96);
             this.groupBox3.TabIndex = 169;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tempo";
             // 
-            // label5
+            // intervTimeLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(40, 50);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "Intervalo:";
+            this.intervTimeLabel.AutoSize = true;
+            this.intervTimeLabel.Location = new System.Drawing.Point(62, 47);
+            this.intervTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.intervTimeLabel.Name = "intervTimeLabel";
+            this.intervTimeLabel.Size = new System.Drawing.Size(51, 13);
+            this.intervTimeLabel.TabIndex = 38;
+            this.intervTimeLabel.Text = "Intervalo:";
             // 
             // timeInterval
             // 
@@ -627,8 +566,8 @@
             0,
             0,
             0});
-            this.timeInterval.Location = new System.Drawing.Point(94, 50);
-            this.timeInterval.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.timeInterval.Location = new System.Drawing.Point(117, 45);
+            this.timeInterval.Margin = new System.Windows.Forms.Padding(2);
             this.timeInterval.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -641,24 +580,24 @@
             // randIntervalOn
             // 
             this.randIntervalOn.AutoSize = true;
-            this.randIntervalOn.Location = new System.Drawing.Point(94, 75);
-            this.randIntervalOn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.randIntervalOn.Location = new System.Drawing.Point(162, 74);
+            this.randIntervalOn.Margin = new System.Windows.Forms.Padding(2);
             this.randIntervalOn.Name = "randIntervalOn";
             this.randIntervalOn.Size = new System.Drawing.Size(15, 14);
             this.randIntervalOn.TabIndex = 42;
             this.randIntervalOn.TabStop = false;
             this.randIntervalOn.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // rdmIntevLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 74);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 26);
-            this.label11.TabIndex = 61;
-            this.label11.Text = "Tempo Intervalo\r\nAleatório:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.rdmIntevLabel.AutoSize = true;
+            this.rdmIntevLabel.Location = new System.Drawing.Point(12, 74);
+            this.rdmIntevLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.rdmIntevLabel.Name = "rdmIntevLabel";
+            this.rdmIntevLabel.Size = new System.Drawing.Size(146, 13);
+            this.rdmIntevLabel.TabIndex = 61;
+            this.rdmIntevLabel.Text = "Tempo de Intervalo Aleatório:";
+            this.rdmIntevLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // timeExpo
             // 
@@ -667,8 +606,8 @@
             0,
             0,
             0});
-            this.timeExpo.Location = new System.Drawing.Point(94, 25);
-            this.timeExpo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.timeExpo.Location = new System.Drawing.Point(117, 17);
+            this.timeExpo.Margin = new System.Windows.Forms.Padding(2);
             this.timeExpo.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -678,68 +617,94 @@
             this.timeExpo.Size = new System.Drawing.Size(60, 20);
             this.timeExpo.TabIndex = 40;
             // 
-            // label3
+            // expoTimeLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 27);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "Exposição:";
+            this.expoTimeLabel.AutoSize = true;
+            this.expoTimeLabel.Location = new System.Drawing.Point(54, 19);
+            this.expoTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.expoTimeLabel.Name = "expoTimeLabel";
+            this.expoTimeLabel.Size = new System.Drawing.Size(59, 13);
+            this.expoTimeLabel.TabIndex = 36;
+            this.expoTimeLabel.Text = "Exposição:";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.listWordsLabel);
+            this.groupBox2.Controls.Add(this.listAudioLabel);
+            this.groupBox2.Controls.Add(this.openAudioList);
+            this.groupBox2.Controls.Add(this.listColorsLabel);
+            this.groupBox2.Controls.Add(this.listImagesLabel);
             this.groupBox2.Controls.Add(this.openWordList);
             this.groupBox2.Controls.Add(this.openColorsList);
             this.groupBox2.Controls.Add(this.openImgsList);
-            this.groupBox2.Location = new System.Drawing.Point(10, 126);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(11, 193);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(222, 102);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(274, 128);
             this.groupBox2.TabIndex = 168;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listas";
             // 
-            // label8
+            // listWordsLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 25);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 13);
-            this.label8.TabIndex = 40;
-            this.label8.Text = "Palavras:";
+            this.listWordsLabel.AutoSize = true;
+            this.listWordsLabel.Location = new System.Drawing.Point(67, 20);
+            this.listWordsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.listWordsLabel.Name = "listWordsLabel";
+            this.listWordsLabel.Size = new System.Drawing.Size(51, 13);
+            this.listWordsLabel.TabIndex = 40;
+            this.listWordsLabel.Text = "Palavras:";
             // 
-            // label9
+            // listAudioLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(20, 50);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 13);
-            this.label9.TabIndex = 41;
-            this.label9.Text = "Cores:";
+            this.listAudioLabel.AutoSize = true;
+            this.listAudioLabel.Location = new System.Drawing.Point(80, 101);
+            this.listAudioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.listAudioLabel.Name = "listAudioLabel";
+            this.listAudioLabel.Size = new System.Drawing.Size(37, 13);
+            this.listAudioLabel.TabIndex = 164;
+            this.listAudioLabel.Text = "Áudio:";
+            this.listAudioLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label16
+            // openAudioList
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(8, 76);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(50, 13);
-            this.label16.TabIndex = 57;
-            this.label16.Text = "Imagens:";
+            this.openAudioList.Enabled = false;
+            this.openAudioList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openAudioList.Location = new System.Drawing.Point(121, 98);
+            this.openAudioList.Margin = new System.Windows.Forms.Padding(2);
+            this.openAudioList.Name = "openAudioList";
+            this.openAudioList.Size = new System.Drawing.Size(140, 19);
+            this.openAudioList.TabIndex = 62;
+            this.openAudioList.Text = "abrir";
+            this.openAudioList.UseVisualStyleBackColor = true;
+            this.openAudioList.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // listColorsLabel
+            // 
+            this.listColorsLabel.AutoSize = true;
+            this.listColorsLabel.Location = new System.Drawing.Point(80, 47);
+            this.listColorsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.listColorsLabel.Name = "listColorsLabel";
+            this.listColorsLabel.Size = new System.Drawing.Size(37, 13);
+            this.listColorsLabel.TabIndex = 41;
+            this.listColorsLabel.Text = "Cores:";
+            // 
+            // listImagesLabel
+            // 
+            this.listImagesLabel.AutoSize = true;
+            this.listImagesLabel.Location = new System.Drawing.Point(67, 74);
+            this.listImagesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.listImagesLabel.Name = "listImagesLabel";
+            this.listImagesLabel.Size = new System.Drawing.Size(50, 13);
+            this.listImagesLabel.TabIndex = 57;
+            this.listImagesLabel.Text = "Imagens:";
             // 
             // openWordList
             // 
             this.openWordList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openWordList.Location = new System.Drawing.Point(62, 23);
-            this.openWordList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.openWordList.Location = new System.Drawing.Point(122, 17);
+            this.openWordList.Margin = new System.Windows.Forms.Padding(2);
             this.openWordList.Name = "openWordList";
             this.openWordList.Size = new System.Drawing.Size(140, 19);
             this.openWordList.TabIndex = 30;
@@ -750,8 +715,8 @@
             // openColorsList
             // 
             this.openColorsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openColorsList.Location = new System.Drawing.Point(61, 47);
-            this.openColorsList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.openColorsList.Location = new System.Drawing.Point(121, 44);
+            this.openColorsList.Margin = new System.Windows.Forms.Padding(2);
             this.openColorsList.Name = "openColorsList";
             this.openColorsList.Size = new System.Drawing.Size(140, 19);
             this.openColorsList.TabIndex = 31;
@@ -763,8 +728,8 @@
             // 
             this.openImgsList.Enabled = false;
             this.openImgsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openImgsList.Location = new System.Drawing.Point(61, 72);
-            this.openImgsList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.openImgsList.Location = new System.Drawing.Point(121, 71);
+            this.openImgsList.Margin = new System.Windows.Forms.Padding(2);
             this.openImgsList.Name = "openImgsList";
             this.openImgsList.Size = new System.Drawing.Size(140, 19);
             this.openImgsList.TabIndex = 32;
@@ -776,12 +741,12 @@
             // 
             this.textBox2.AcceptsReturn = true;
             this.textBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox2.Location = new System.Drawing.Point(10, 246);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Location = new System.Drawing.Point(289, 247);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(396, 107);
+            this.textBox2.Size = new System.Drawing.Size(427, 74);
             this.textBox2.TabIndex = 150;
             this.textBox2.TabStop = false;
             this.textBox2.Text = "Escreva cada uma das intruções em linhas separadas.";
@@ -789,30 +754,65 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.expoTypeLabel);
             this.groupBox1.Controls.Add(this.chooseExpoType);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.expoNumberLabel);
             this.groupBox1.Controls.Add(this.numExpo);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtSizeLabel);
+            this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.randExpoOn);
             this.groupBox1.Location = new System.Drawing.Point(10, 34);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(222, 87);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(275, 155);
             this.groupBox1.TabIndex = 167;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Exposição";
             // 
-            // label12
+            // panel2
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(27, 27);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(31, 13);
-            this.label12.TabIndex = 56;
-            this.label12.Text = "Tipo:";
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(123, 127);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(14, 14);
+            this.panel2.TabIndex = 162;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(39, 127);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.TabIndex = 160;
+            this.label1.Text = "Cor da Palavra:";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(142, 124);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(121, 19);
+            this.button3.TabIndex = 161;
+            this.button3.Text = "escolher";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // expoTypeLabel
+            // 
+            this.expoTypeLabel.AutoSize = true;
+            this.expoTypeLabel.Location = new System.Drawing.Point(29, 20);
+            this.expoTypeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.expoTypeLabel.Name = "expoTypeLabel";
+            this.expoTypeLabel.Size = new System.Drawing.Size(90, 13);
+            this.expoTypeLabel.TabIndex = 56;
+            this.expoTypeLabel.Text = "Tipo de Estímulo:";
             // 
             // chooseExpoType
             // 
@@ -823,28 +823,28 @@
             "Palavra",
             "Imagem",
             "Imagem com Palavra"});
-            this.chooseExpoType.Location = new System.Drawing.Point(62, 24);
-            this.chooseExpoType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chooseExpoType.Location = new System.Drawing.Point(123, 17);
+            this.chooseExpoType.Margin = new System.Windows.Forms.Padding(2);
             this.chooseExpoType.Name = "chooseExpoType";
             this.chooseExpoType.Size = new System.Drawing.Size(140, 21);
             this.chooseExpoType.TabIndex = 20;
             this.chooseExpoType.Tag = "";
             this.chooseExpoType.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // label2
+            // expoNumberLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 51);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Número:";
+            this.expoNumberLabel.AutoSize = true;
+            this.expoNumberLabel.Location = new System.Drawing.Point(8, 48);
+            this.expoNumberLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.expoNumberLabel.Name = "expoNumberLabel";
+            this.expoNumberLabel.Size = new System.Drawing.Size(111, 13);
+            this.expoNumberLabel.TabIndex = 35;
+            this.expoNumberLabel.Text = "Número de Estímulos:";
             // 
             // numExpo
             // 
-            this.numExpo.Location = new System.Drawing.Point(62, 50);
-            this.numExpo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numExpo.Location = new System.Drawing.Point(123, 46);
+            this.numExpo.Margin = new System.Windows.Forms.Padding(2);
             this.numExpo.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -867,89 +867,114 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(132, 50);
+            this.label4.Location = new System.Drawing.Point(34, 74);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 26);
+            this.label4.Size = new System.Drawing.Size(85, 13);
             this.label4.TabIndex = 37;
-            this.label4.Text = "Ordem\r\nAleatória:";
+            this.label4.Text = "Ordem Aleatória:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // txtSizeLabel
+            // 
+            this.txtSizeLabel.AutoSize = true;
+            this.txtSizeLabel.Location = new System.Drawing.Point(10, 98);
+            this.txtSizeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtSizeLabel.Name = "txtSizeLabel";
+            this.txtSizeLabel.Size = new System.Drawing.Size(109, 13);
+            this.txtSizeLabel.TabIndex = 159;
+            this.txtSizeLabel.Text = "Tamanho da Palavra:";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Location = new System.Drawing.Point(123, 96);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(60, 20);
+            this.numericUpDown1.TabIndex = 80;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            160,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // randExpoOn
             // 
             this.randExpoOn.AutoSize = true;
             this.randExpoOn.Checked = true;
             this.randExpoOn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.randExpoOn.Location = new System.Drawing.Point(188, 53);
-            this.randExpoOn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.randExpoOn.Location = new System.Drawing.Point(123, 74);
+            this.randExpoOn.Margin = new System.Windows.Forms.Padding(2);
             this.randExpoOn.Name = "randExpoOn";
             this.randExpoOn.Size = new System.Drawing.Size(15, 14);
             this.randExpoOn.TabIndex = 22;
             this.randExpoOn.TabStop = false;
             this.randExpoOn.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // instructionsLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(10, 230);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(221, 13);
-            this.label6.TabIndex = 59;
-            this.label6.Text = "Instruções para o usuário - uma linha por tela:";
+            this.instructionsLabel.AutoSize = true;
+            this.instructionsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.instructionsLabel.Location = new System.Drawing.Point(294, 218);
+            this.instructionsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.instructionsLabel.Name = "instructionsLabel";
+            this.instructionsLabel.Size = new System.Drawing.Size(129, 26);
+            this.instructionsLabel.TabIndex = 59;
+            this.instructionsLabel.Text = "Instruções para o usuário,\r\numa linha por tela:";
             // 
             // progName
             // 
-            this.progName.Location = new System.Drawing.Point(100, 13);
-            this.progName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.progName.Location = new System.Drawing.Point(115, 13);
+            this.progName.Margin = new System.Windows.Forms.Padding(2);
             this.progName.MaxLength = 300;
             this.progName.Name = "progName";
-            this.progName.Size = new System.Drawing.Size(132, 20);
+            this.progName.Size = new System.Drawing.Size(170, 20);
             this.progName.TabIndex = 10;
             // 
-            // label1
+            // prgNameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Nome Programa:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 7);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 13);
-            this.label7.TabIndex = 64;
-            this.label7.Text = "Parâmetros";
+            this.prgNameLabel.AutoSize = true;
+            this.prgNameLabel.Location = new System.Drawing.Point(10, 15);
+            this.prgNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.prgNameLabel.Name = "prgNameLabel";
+            this.prgNameLabel.Size = new System.Drawing.Size(101, 13);
+            this.prgNameLabel.TabIndex = 34;
+            this.prgNameLabel.Text = "Nome de Programa:";
             // 
             // FormPrgConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 404);
-            this.Controls.Add(this.label7);
+            this.ClientSize = new System.Drawing.Size(751, 356);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPrgConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuração Programa";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -961,8 +986,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -970,26 +995,25 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox progName;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label expoTypeLabel;
+        private System.Windows.Forms.Label subColorLabel;
+        private System.Windows.Forms.Label captAudioLabel;
+        private System.Windows.Forms.Label listImagesLabel;
+        private System.Windows.Forms.Label subActivationLabel;
+        private System.Windows.Forms.Label subLocationLabel;
+        private System.Windows.Forms.Label bgColorLabel;
+        private System.Windows.Forms.Label listWordsLabel;
+        private System.Windows.Forms.Label intervTimeLabel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label prgNameLabel;
+        private System.Windows.Forms.Label expoNumberLabel;
+        private System.Windows.Forms.Label expoTimeLabel;
         private System.Windows.Forms.Button chooseBackGColor;
         private System.Windows.Forms.CheckBox captAudioOn;
         private System.Windows.Forms.CheckBox randExpoOn;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label listColorsLabel;
         private System.Windows.Forms.ComboBox chooseExpoType;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.CheckBox showSubsOn;
         private System.Windows.Forms.Button openImgsList;
         private System.Windows.Forms.Button openColorsList;
@@ -998,11 +1022,11 @@
         private System.Windows.Forms.NumericUpDown numExpo;
         private System.Windows.Forms.NumericUpDown timeExpo;
         private System.Windows.Forms.NumericUpDown timeInterval;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label instructionsLabel;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label rdmIntevLabel;
         private System.Windows.Forms.CheckBox randIntervalOn;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label fixPointTypeLabel;
         private System.Windows.Forms.CheckBox fixPointCircle;
         private System.Windows.Forms.CheckBox fixPointCross;
         private System.Windows.Forms.Panel panelSubColor;
@@ -1014,21 +1038,24 @@
         private System.Windows.Forms.Button subDirect1;
         private System.Windows.Forms.Panel panelFixPointColor;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label txtSizeLabel;
         private System.Windows.Forms.CheckBox expandImageOn;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label expandImgLabel;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button openAudioList;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label listAudioLabel;
         private System.Windows.Forms.Button openSubtitleList;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label fixPointColorLabel;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox audioListCheck;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button helpButton;
     }
 }

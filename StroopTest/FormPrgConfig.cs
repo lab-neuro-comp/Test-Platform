@@ -32,7 +32,10 @@ namespace StroopTest
             chooseExpoType.SelectedIndex = 0;
             subDirectionList = new List<Button>();
             subDirectionList.Add(subDirect1); subDirectionList.Add(subDirect2); subDirectionList.Add(subDirect3); subDirectionList.Add(subDirect4); subDirectionList.Add(subDirect5);
-            for(int i = 0; i < subDirectionList.Count; i++)
+
+            toolTipsConfig();
+
+            for (int i = 0; i < subDirectionList.Count; i++)
             {
                 subDirectionList[i].Enabled = false;
                 if (i > 0) subDirectionList[i].Visible = false;
@@ -42,6 +45,26 @@ namespace StroopTest
                 editPrgName = prgName;
                 editProgram();
             }
+        }
+
+        private void toolTipsConfig()
+        {
+
+            var helpToolTip = new ToolTip();
+
+            helpToolTip.ToolTipIcon = ToolTipIcon.Info;
+            helpToolTip.IsBalloon = true;
+            helpToolTip.ShowAlways = true;
+            
+            helpToolTip.SetToolTip(prgNameLabel, "Nome do Arquivo onde o programa será salvo");
+            helpToolTip.SetToolTip(expoTypeLabel, "Tipo de Estímulo: Texto; Imagem; Imagem e Texto; Texto e Áudio; Imagem e Áudio");
+            helpToolTip.SetToolTip(expoNumberLabel , "Número de Estímulos (quantidade de estímulos a serem expostos)");
+            helpToolTip.SetToolTip(listWordsLabel , "Arquivo de Lista de palavras (um estímulo palavra por linha, arquivo .lst)");
+            helpToolTip.SetToolTip(listColorsLabel, "Arquivo de Lista de cores (um código hexadecimal de cor por linha, arquivo .lst)");
+            helpToolTip.SetToolTip(listImagesLabel, "Arquivo de Lista de imagens (um caminho de imagem por linha, arquivo .lst)");
+            helpToolTip.SetToolTip(expoTimeLabel, "Tempo de exposição para cada estímulo (quanto tempo uma palavra, imagem permanece exposta)");
+            helpToolTip.SetToolTip(intervTimeLabel, "Tempo de intervalo entre estímulos (quanto tempo de pausa faz-se entre duas exposições de estímulo)");
+            helpToolTip.SetToolTip(fixPointTypeLabel, "Tipo de ponto de fixação: cruz ou círculo (ponto de fixação surge durante o intervalo)");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -151,7 +174,7 @@ namespace StroopTest
         
         private void button4_Click(object sender, EventArgs e)
         {
-            //openAudioList.Text = openListFile();
+            openAudioList.Text = openListFile();
         }
         
         private void openSubtitleList_Click(object sender, EventArgs e)
@@ -258,45 +281,6 @@ namespace StroopTest
                     subtitlesCheckConfig();
                 }
 
-                /*
-                if (program.SubtitleShow)
-                {
-                    subDirectionNumber = program.SubtitlePlace;
-                    selectSubDirectionNumber(subDirectionNumber);
-                    if (program.SubtitleColor.ToLower() == "false")
-                    {
-                        panel3.BackColor = Color.White;
-                        chooseColorSubs.Text = "escolher cor";
-                    }
-                    else
-                    {
-                        if ((Regex.IsMatch(program.SubtitleColor, hexPattern)))
-                        {
-                            panel3.BackColor = ColorTranslator.FromHtml(program.SubtitleColor);
-                            chooseBackGColor.Text = program.SubtitleColor;
-                        }
-                    }
-                    /*
-                    if(program.SubtitlesListFile.ToLower() == "false")
-                    {
-                        openSubtitleList.Text = "abrir";
-                    }
-                    else
-                    {
-                        openSubtitleList.Text = program.SubtitlesListFile;
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i < subDirectionList.Count; i++)
-                    {
-                        subDirectionList[i].Enabled = false;
-                    }
-                    subDirectionNumber = program.SubtitlePlace;
-                    chooseColorSubs.Text = "escolher cor";
-                }*/
-                
-
                 switch (program.ExpositionType)
                 {
                     case "txt":
@@ -313,9 +297,9 @@ namespace StroopTest
                         break;
                 }
 
-                if (program.ImagesListFile.ToLower() != "false") { openImgsList.Enabled = true; openImgsList.Text = program.ImagesListFile; }
+                if (program.ImagesListFile.ToLower() != "false") { audioListCheck.Checked = true; openImgsList.Enabled = true; openImgsList.Text = program.ImagesListFile; }
                 else { openImgsList.Enabled = false; openImgsList.Text = "false"; }
-
+                
                 if (program.FixPoint == "+")
                 {
                     fixPointCross.Checked = true;
@@ -334,6 +318,9 @@ namespace StroopTest
                         fixPointCircle.Checked = false;
                     }
                 }
+
+                if (program.AudioListFile.ToLower() != "false") { openAudioList.Enabled = true; openAudioList.Text = program.AudioListFile; }
+                else { openAudioList.Enabled = false; openAudioList.Text = "false"; }
 
                 if (program.InstructionText != null) // lê instrução se houver
                 {
@@ -445,9 +432,9 @@ namespace StroopTest
                         programWrite.FixPoint = "false";
                     }
                 }
-
-                programWrite.AudioListFile = "false";
                 
+                if (audioListCheck.Checked) { openAudioList.Enabled = true; programWrite.AudioListFile = openAudioList.Text; }
+                else { openAudioList.Enabled = false; programWrite.AudioListFile = "false"; }
 
                 string textLines = "";
                 if (textBox2.Lines.Length > 0 && textBox2.Text != instrBoxText) // lê instrução se houver
@@ -643,5 +630,21 @@ namespace StroopTest
             }
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (audioListCheck.Checked)
+            {
+                openAudioList.Enabled = true;
+            }
+            else
+            {
+                openAudioList.Enabled = false;
+            }
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

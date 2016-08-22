@@ -49,7 +49,6 @@ namespace StroopTest
         {
             this.dataGridView1.DataSource = null;
             this.dataGridView1.Rows.Clear();
-            DataGridCell cell = new DataGridCell();
             string[] lines;
             try
             {

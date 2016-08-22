@@ -266,6 +266,7 @@ namespace StroopTest
                     
                     elapsedTime = 0; // zera tempo em milissegundos decorrido
                     i = 0; j = 0; k = 0;
+                    var audioCounter = 0;
 
                     // beginAudio
                     if (program.AudioCapture) { startRecordingAudio(program); } // inicia gravação áudio
@@ -299,6 +300,16 @@ namespace StroopTest
                                 pictureBox1.Image = Image.FromFile(imageDirs[i]);
                             }
                             //elapsedTime = elapsedTimeExpo + elapsedTime;
+
+                            /*
+                                if (program.AudioListFile.ToLower() != "false")
+                                {
+                                    if (audioCounter == audioDirs.Length) { audioCounter = 0; }
+                                    var player = new System.Media.SoundPlayer(audioDirs[audioCounter]);//@"C:\Users\hugoPC\Source\Repos\StroopTest\StroopTest\bin\Debug\StroopTestFiles\medoAudio.wav");
+                                    player.Play();
+                                }
+                                */
+
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                             SendKeys.SendWait("s");
                             pictureBox1.Visible = true;
@@ -321,7 +332,7 @@ namespace StroopTest
 
                                 wordLabel.Left = (this.ClientSize.Width - wordLabel.Width) / 2;
                                 wordLabel.Top = (this.ClientSize.Height - wordLabel.Height) / 2;
-
+                                
                                 elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                                 SendKeys.SendWait("s");
                                 pictureBox1.Visible = false;
@@ -359,7 +370,19 @@ namespace StroopTest
                                 if (imgCounter == imageDirs.Count()) { imgCounter = 0; }
                                 pictureBox1.Image = Image.FromFile(imageDirs[imgCounter]);
                             }
+
+                            /*
+                            var player = new System.Media.SoundPlayer(@"C:\Users\hugoPC\Source\Repos\StroopTest\StroopTest\bin\Debug\StroopTestFiles\medoAudio.wav");
+                            player.Play();
+                            */
                             
+                            if (program.AudioListFile.ToLower() != "false")
+                            {
+                                if (audioCounter == audioDirs.Length) { audioCounter = 0; }
+                                var player = new System.Media.SoundPlayer(audioDirs[audioCounter]);//@"C:\Users\hugoPC\Source\Repos\StroopTest\StroopTest\bin\Debug\StroopTestFiles\medoAudio.wav");
+                                player.Play();
+                            }
+
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                             SendKeys.SendWait("s");
                             pictureBox1.Visible = true;
@@ -375,7 +398,7 @@ namespace StroopTest
                             StroopProgram.writeLineOutput(program, Path.GetFileName(imageDirs[imgCounter].ToString()), "false", counter + 1, outputContent, elapsedTime, program.ExpositionType);
                             imgCounter++;
 
-                            subtitleLabel.Location = new Point((ClientSize.Width / 2 - subtitleLabel.Width / 2), pictureBox1.Bottom + 50);
+                            //subtitleLabel.Location = new Point((ClientSize.Width / 2 - subtitleLabel.Width / 2), pictureBox1.Bottom + 50);
                             await Task.Delay(program.ExpositionTime, cts.Token);
                         }
                     }

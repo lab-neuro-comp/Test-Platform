@@ -22,6 +22,8 @@ namespace StroopTest
         private string defaultPrgName = "padrao";
         private string defaultUsrName = "padrao";
         private string instructionsFileName = "editableInstructions.txt";
+        private string prgConfigHelpFileName = "prgConfigHelp.txt";
+        private string instructionsText = "Execute um teste com o atalho 'Ctrl + R'\nDefina o programa do teste com o atalho 'Ctrl + D'\nPara utilizar o software, execute-o uma primeira vez.\nA partir da primeira execução será criado o diretório\n'StroopTestFiles'\nno mesmo diretório em que o programa executa.\nTal diretório contém os subdiretórios:\n'data' - com os resultados das execuções;\n'prg' - contém os arquivos .prg onde estão escitos os programas;\n'lst' - contém os arquivos .lst onde estão escritas as listas";
 
         public FormMain()
         {
@@ -33,7 +35,7 @@ namespace StroopTest
             if (!Directory.Exists(testFilesPath + lstFolderName)) Directory.CreateDirectory(testFilesPath + lstFolderName); // cria diretório para StroopTestFiles na inicialização do formulario
             if (!Directory.Exists(defaultPath + resultsFolderName)) Directory.CreateDirectory(defaultPath + resultsFolderName); // cria diretório para StroopTestFiles na inicialização do formulario
             if(!File.Exists(testFilesPath + instructionsFileName)) { File.Create(testFilesPath + "editableInstructions.txt").Dispose(); }
-            
+            if (!File.Exists(testFilesPath + prgConfigHelpFileName)) { File.Create(testFilesPath + prgConfigHelpFileName).Dispose(); }
             initializeDefaultProgram(); // inicializa programa padrão (cria arquivo programa padrão e listas de palavras e cores padrão)
 
             prgNameSL.Text = defaultPrgName;
@@ -343,7 +345,7 @@ namespace StroopTest
 
         private void showInstructions()
         {
-            FormInstructions infoBox = new FormInstructions(testFilesPath + instructionsFileName);
+            FormInstructions infoBox = new FormInstructions((testFilesPath + instructionsFileName), instructionsText);
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

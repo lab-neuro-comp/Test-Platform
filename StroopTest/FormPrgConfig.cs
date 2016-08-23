@@ -23,7 +23,28 @@ namespace StroopTest
         private string fontSize = "160";
         private string editPrgName = "error";
         private int expoType = 0;
-
+        private string prgConfigInstructionsText = "\n- Nome do Arquivo onde o programa será salvo\n" +
+                                                 "\n- Tipo de Estímulo: Texto; Imagem; Imagem e Texto; Texto e Áudio; Imagem e Áudio\n" +
+                                                 "\n- Aleatoriedade na apresentação; as exposições ocorrerão de forma aleatória\n" +
+                                                 "\n- Número de Estímulos (quantidade de estímulos a serem expostos)\n" +
+                                                 "\n- Dimensão da letra em estímulos do tipo texto\n" +
+                                                 "\n- Cor das palavras que serão revezadas com imagens (Imagem com Palavra)\n" +
+                                                 "\n- Arquivo de Lista de palavras (um estímulo palavra por linha, arquivo .lst)\n" +
+                                                 "\n- Arquivo de Lista de cores (um código hexadecimal de cor por linha, arquivo .lst)\n" +
+                                                 "\n- Arquivo de Lista de imagens (um caminho de imagem por linha, arquivo .lst)\n" +
+                                                 "\n- Arquivo de Lista de áudio (um caminho de arquivos de áudi por linha, arquivo .lst)\n" +
+                                                 "\n- Tempo de exposição para cada estímulo (quanto tempo uma palavra, imagem permanece exposta)\n" +
+                                                 "\n- Tempo de intervalo entre estímulos (quanto tempo de pausa faz-se entre duas exposições de estímulo)\n" +
+                                                 "\n- Aleatoriedade no tempo de intervalo entre estímulos\n" +
+                                                 "\n- Tipo de ponto de fixação: cruz ou círculo (ponto de fixação surge durante o intervalo)\n" +
+                                                 "\n- Cor do ponto de fixação\n" +
+                                                 "\n- Ativa legenda para estímulos do tipo imagem - selecione uma lista com as legendas\n" +
+                                                 "\n- Posicionamento da legenda em relação aos estímulos\n" +
+                                                 "\n- Cor da legenda apresentada\n" +
+                                                 "\n- Ativa captura de áudio durante a execução do teste\n" +
+                                                 "\n- Cor de fundo durante a apresentação dos estímulos\n" +
+                                                 "\n- Expande estímulos de imagem até as bordas da tela - não pode ocorrer simultaneamente à apresentação de legenda\n" +
+                                                 "\n- Instruções apresentadas no início do programa - será apresentada um tela para cada linha escrita abaixo\n";
 
         public FormPrgConfig(string dataFolderPath, string prgName)
         {
@@ -35,12 +56,12 @@ namespace StroopTest
 
             toolTipsConfig();
 
-            for (int i = 0; i < subDirectionList.Count; i++)
+            foreach (Button b in subDirectionList)
             {
-                subDirectionList[i].Enabled = false;
-                if (i > 0) subDirectionList[i].Visible = false;
+                b.Enabled = false;
+                b.BackColor = Color.LightGray;
             }
-            if(prgName != "false")
+            if (prgName != "false")
             {
                 editPrgName = prgName;
                 editProgram();
@@ -58,13 +79,29 @@ namespace StroopTest
             
             helpToolTip.SetToolTip(prgNameLabel, "Nome do Arquivo onde o programa será salvo");
             helpToolTip.SetToolTip(expoTypeLabel, "Tipo de Estímulo: Texto; Imagem; Imagem e Texto; Texto e Áudio; Imagem e Áudio");
+            helpToolTip.SetToolTip(rdmExpoLabel , "Aleatoriedade na apresentação; as exposições ocorrerão de forma aleatória");
             helpToolTip.SetToolTip(expoNumberLabel , "Número de Estímulos (quantidade de estímulos a serem expostos)");
+            helpToolTip.SetToolTip(wordSizeLabel, "Dimensão da letra em estímulos do tipo texto");
+            helpToolTip.SetToolTip(wordColorLabel, "Cor das palavras que serão revezadas com imagens (Imagem com Palavra)");
             helpToolTip.SetToolTip(listWordsLabel , "Arquivo de Lista de palavras (um estímulo palavra por linha, arquivo .lst)");
             helpToolTip.SetToolTip(listColorsLabel, "Arquivo de Lista de cores (um código hexadecimal de cor por linha, arquivo .lst)");
             helpToolTip.SetToolTip(listImagesLabel, "Arquivo de Lista de imagens (um caminho de imagem por linha, arquivo .lst)");
+            helpToolTip.SetToolTip(listAudioLabel, "Arquivo de Lista de áudio (um caminho de arquivos de áudi por linha, arquivo .lst)");
             helpToolTip.SetToolTip(expoTimeLabel, "Tempo de exposição para cada estímulo (quanto tempo uma palavra, imagem permanece exposta)");
             helpToolTip.SetToolTip(intervTimeLabel, "Tempo de intervalo entre estímulos (quanto tempo de pausa faz-se entre duas exposições de estímulo)");
+            helpToolTip.SetToolTip(rdmIntervLabel, "Aleatoriedade no tempo de intervalo entre estímulos");
             helpToolTip.SetToolTip(fixPointTypeLabel, "Tipo de ponto de fixação: cruz ou círculo (ponto de fixação surge durante o intervalo)");
+            helpToolTip.SetToolTip(fixPointColorLabel, "Cor do ponto de fixação");
+            helpToolTip.SetToolTip(subActivationLabel, "Ativa legenda para estímulos do tipo imagem - selecione uma lista com as legendas");
+            helpToolTip.SetToolTip(subLocationLabel , "Posicionamento da legenda em relação aos estímulos");
+            helpToolTip.SetToolTip(subColorLabel, "Cor da legenda apresentada");
+            helpToolTip.SetToolTip(captAudioLabel , "Ativa captura de áudio durante a execução do teste");
+            helpToolTip.SetToolTip(bgColorLabel, "Cor de fundo durante a apresentação dos estímulos");
+            helpToolTip.SetToolTip(expandImgLabel, "Expande estímulos de imagem até as bordas da tela - não pode ocorrer simultaneamente à apresentação de legenda");
+            helpToolTip.SetToolTip(instructionsLabel, "Instruções apresentadas no início do programa - será apresentada um tela para cada linha escrita abaixo");
+
+            helpToolTip.SetToolTip(saveButton, "Salva o programa configurado");
+            helpToolTip.SetToolTip(helpButton, "Ajuda");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -84,11 +121,16 @@ namespace StroopTest
                 foreach (Button b in subDirectionList)
                 {
                     b.Enabled = true;
-                    b.Visible = true;
+                    b.BackColor = Color.Transparent;
                 }
-                openSubtitleList.Visible = true; openSubtitleList.Enabled = true;
-                chooseColorSubs.Enabled = true; chooseColorSubs.Visible = true;
-                panelSubColor.Enabled = true; panelSubColor.BackColor = Color.Transparent; subDirect1.BackColor = Color.Transparent; // habilitar botões de posicao legenda
+                openSubtitleList.Enabled = true;
+                chooseColorSubs.Enabled = true;
+
+                panelSubColor.Enabled = true;
+
+                panelSubColor.BackColor = Color.Transparent;
+                subDirect1.BackColor = Color.Transparent; // habilitar botões de posicao legenda
+
                 expandImageOn.Enabled = false;
                 expandImageOn.Checked = false;
 
@@ -96,13 +138,12 @@ namespace StroopTest
             else
             {
                 openSubtitleList.Visible = false; openSubtitleList.Enabled = false;
-                for (int i = 0; i < subDirectionList.Count; i++)
+                foreach (Button b in subDirectionList)
                 {
-                    subDirectionList[i].Enabled = false;
-                    subDirectionList[i].BackColor = Color.LightGray;
-                    if (i > 0) subDirectionList[i].Visible = false;
+                    b.Enabled = false;
+                    b.BackColor = Color.LightGray;
                 }
-                chooseColorSubs.Enabled = false; chooseColorSubs.Visible = false;
+                chooseColorSubs.Enabled = false;;
                 panelSubColor.Enabled = false; panelSubColor.BackColor = Color.LightGray;
                 expandImageOn.Enabled = true;
             }
@@ -644,7 +685,21 @@ namespace StroopTest
 
         private void helpButton_Click(object sender, EventArgs e)
         {
+            showPrgConfigInstructions();
+        }
 
+        private void showPrgConfigInstructions()
+        {
+            FormInstructions infoBox = new FormInstructions((path + "prgConfigHelp.txt"), prgConfigInstructionsText);
+            try { infoBox.Show(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            string colorCode = pickColor();
+            panelWordColor.Text = colorCode;
+            panelWordColor.BackColor = ColorTranslator.FromHtml(colorCode);
         }
     }
 }

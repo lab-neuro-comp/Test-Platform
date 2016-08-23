@@ -65,7 +65,7 @@
             this.intervTimeLabel = new System.Windows.Forms.Label();
             this.timeInterval = new System.Windows.Forms.NumericUpDown();
             this.randIntervalOn = new System.Windows.Forms.CheckBox();
-            this.rdmIntevLabel = new System.Windows.Forms.Label();
+            this.rdmIntervLabel = new System.Windows.Forms.Label();
             this.timeExpo = new System.Windows.Forms.NumericUpDown();
             this.expoTimeLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -79,15 +79,15 @@
             this.openImgsList = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.panelWordColor = new System.Windows.Forms.Panel();
+            this.wordColorLabel = new System.Windows.Forms.Label();
+            this.wordColorButton = new System.Windows.Forms.Button();
             this.expoTypeLabel = new System.Windows.Forms.Label();
             this.chooseExpoType = new System.Windows.Forms.ComboBox();
             this.expoNumberLabel = new System.Windows.Forms.Label();
             this.numExpo = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtSizeLabel = new System.Windows.Forms.Label();
+            this.rdmExpoLabel = new System.Windows.Forms.Label();
+            this.wordSizeLabel = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.randExpoOn = new System.Windows.Forms.CheckBox();
             this.instructionsLabel = new System.Windows.Forms.Label();
@@ -150,11 +150,11 @@
             this.groupBox6.Controls.Add(this.fixPointCircle);
             this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.panelFixPointColor);
-            this.groupBox6.Location = new System.Drawing.Point(289, 135);
+            this.groupBox6.Location = new System.Drawing.Point(302, 146);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox6.Size = new System.Drawing.Size(190, 79);
+            this.groupBox6.Size = new System.Drawing.Size(190, 80);
             this.groupBox6.TabIndex = 173;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Ponto de Fixação";
@@ -162,7 +162,7 @@
             // fixPointTypeLabel
             // 
             this.fixPointTypeLabel.AutoSize = true;
-            this.fixPointTypeLabel.Location = new System.Drawing.Point(35, 24);
+            this.fixPointTypeLabel.Location = new System.Drawing.Point(35, 21);
             this.fixPointTypeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fixPointTypeLabel.Name = "fixPointTypeLabel";
             this.fixPointTypeLabel.Size = new System.Drawing.Size(31, 13);
@@ -172,7 +172,7 @@
             // fixPointCross
             // 
             this.fixPointCross.AutoSize = true;
-            this.fixPointCross.Location = new System.Drawing.Point(70, 23);
+            this.fixPointCross.Location = new System.Drawing.Point(70, 20);
             this.fixPointCross.Margin = new System.Windows.Forms.Padding(2);
             this.fixPointCross.Name = "fixPointCross";
             this.fixPointCross.Size = new System.Drawing.Size(32, 17);
@@ -185,7 +185,7 @@
             // fixPointColorLabel
             // 
             this.fixPointColorLabel.AutoSize = true;
-            this.fixPointColorLabel.Location = new System.Drawing.Point(10, 49);
+            this.fixPointColorLabel.Location = new System.Drawing.Point(10, 48);
             this.fixPointColorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fixPointColorLabel.Name = "fixPointColorLabel";
             this.fixPointColorLabel.Size = new System.Drawing.Size(57, 13);
@@ -195,7 +195,7 @@
             // fixPointCircle
             // 
             this.fixPointCircle.AutoSize = true;
-            this.fixPointCircle.Location = new System.Drawing.Point(103, 23);
+            this.fixPointCircle.Location = new System.Drawing.Point(103, 20);
             this.fixPointCircle.Margin = new System.Windows.Forms.Padding(2);
             this.fixPointCircle.Name = "fixPointCircle";
             this.fixPointCircle.Size = new System.Drawing.Size(32, 17);
@@ -208,7 +208,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(88, 46);
+            this.button1.Location = new System.Drawing.Point(88, 45);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 19);
@@ -222,7 +222,7 @@
             // 
             this.panelFixPointColor.BackColor = System.Drawing.Color.White;
             this.panelFixPointColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFixPointColor.Location = new System.Drawing.Point(70, 49);
+            this.panelFixPointColor.Location = new System.Drawing.Point(70, 48);
             this.panelFixPointColor.Margin = new System.Windows.Forms.Padding(2);
             this.panelFixPointColor.Name = "panelFixPointColor";
             this.panelFixPointColor.Size = new System.Drawing.Size(14, 14);
@@ -238,11 +238,11 @@
             this.groupBox5.Controls.Add(this.panelBGColor);
             this.groupBox5.Controls.Add(this.bgColorLabel);
             this.groupBox5.Controls.Add(this.chooseBackGColor);
-            this.groupBox5.Location = new System.Drawing.Point(483, 146);
+            this.groupBox5.Location = new System.Drawing.Point(514, 146);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(233, 97);
+            this.groupBox5.Size = new System.Drawing.Size(202, 97);
             this.groupBox5.TabIndex = 172;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Outros";
@@ -365,11 +365,11 @@
             this.groupBox4.Controls.Add(this.subDirect3);
             this.groupBox4.Controls.Add(this.subDirect4);
             this.groupBox4.Controls.Add(this.subDirect5);
-            this.groupBox4.Location = new System.Drawing.Point(483, 35);
+            this.groupBox4.Location = new System.Drawing.Point(514, 35);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(233, 107);
+            this.groupBox4.Size = new System.Drawing.Size(202, 107);
             this.groupBox4.TabIndex = 170;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Legenda";
@@ -427,7 +427,6 @@
             this.openSubtitleList.TabIndex = 71;
             this.openSubtitleList.Text = "abrir";
             this.openSubtitleList.UseVisualStyleBackColor = true;
-            this.openSubtitleList.Visible = false;
             this.openSubtitleList.Click += new System.EventHandler(this.openSubtitleList_Click);
             // 
             // chooseColorSubs
@@ -442,7 +441,6 @@
             this.chooseColorSubs.TabStop = false;
             this.chooseColorSubs.Text = "escolher";
             this.chooseColorSubs.UseVisualStyleBackColor = true;
-            this.chooseColorSubs.Visible = false;
             this.chooseColorSubs.Click += new System.EventHandler(this.button11_Click);
             // 
             // panelSubColor
@@ -536,14 +534,14 @@
             this.groupBox3.Controls.Add(this.intervTimeLabel);
             this.groupBox3.Controls.Add(this.timeInterval);
             this.groupBox3.Controls.Add(this.randIntervalOn);
-            this.groupBox3.Controls.Add(this.rdmIntevLabel);
+            this.groupBox3.Controls.Add(this.rdmIntervLabel);
             this.groupBox3.Controls.Add(this.timeExpo);
             this.groupBox3.Controls.Add(this.expoTimeLabel);
-            this.groupBox3.Location = new System.Drawing.Point(289, 35);
+            this.groupBox3.Location = new System.Drawing.Point(302, 35);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(190, 96);
+            this.groupBox3.Size = new System.Drawing.Size(190, 107);
             this.groupBox3.TabIndex = 169;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tempo";
@@ -580,7 +578,7 @@
             // randIntervalOn
             // 
             this.randIntervalOn.AutoSize = true;
-            this.randIntervalOn.Location = new System.Drawing.Point(162, 74);
+            this.randIntervalOn.Location = new System.Drawing.Point(162, 75);
             this.randIntervalOn.Margin = new System.Windows.Forms.Padding(2);
             this.randIntervalOn.Name = "randIntervalOn";
             this.randIntervalOn.Size = new System.Drawing.Size(15, 14);
@@ -588,16 +586,16 @@
             this.randIntervalOn.TabStop = false;
             this.randIntervalOn.UseVisualStyleBackColor = true;
             // 
-            // rdmIntevLabel
+            // rdmIntervLabel
             // 
-            this.rdmIntevLabel.AutoSize = true;
-            this.rdmIntevLabel.Location = new System.Drawing.Point(12, 74);
-            this.rdmIntevLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.rdmIntevLabel.Name = "rdmIntevLabel";
-            this.rdmIntevLabel.Size = new System.Drawing.Size(146, 13);
-            this.rdmIntevLabel.TabIndex = 61;
-            this.rdmIntevLabel.Text = "Tempo de Intervalo Aleatório:";
-            this.rdmIntevLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.rdmIntervLabel.AutoSize = true;
+            this.rdmIntervLabel.Location = new System.Drawing.Point(12, 75);
+            this.rdmIntervLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.rdmIntervLabel.Name = "rdmIntervLabel";
+            this.rdmIntervLabel.Size = new System.Drawing.Size(146, 13);
+            this.rdmIntervLabel.TabIndex = 61;
+            this.rdmIntervLabel.Text = "Tempo de Intervalo Aleatório:";
+            this.rdmIntervLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // timeExpo
             // 
@@ -754,15 +752,15 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.panel2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.panelWordColor);
+            this.groupBox1.Controls.Add(this.wordColorLabel);
+            this.groupBox1.Controls.Add(this.wordColorButton);
             this.groupBox1.Controls.Add(this.expoTypeLabel);
             this.groupBox1.Controls.Add(this.chooseExpoType);
             this.groupBox1.Controls.Add(this.expoNumberLabel);
             this.groupBox1.Controls.Add(this.numExpo);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtSizeLabel);
+            this.groupBox1.Controls.Add(this.rdmExpoLabel);
+            this.groupBox1.Controls.Add(this.wordSizeLabel);
             this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.randExpoOn);
             this.groupBox1.Location = new System.Drawing.Point(10, 34);
@@ -774,35 +772,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Exposição";
             // 
-            // panel2
+            // panelWordColor
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(123, 127);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(14, 14);
-            this.panel2.TabIndex = 162;
+            this.panelWordColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelWordColor.Location = new System.Drawing.Point(123, 127);
+            this.panelWordColor.Margin = new System.Windows.Forms.Padding(2);
+            this.panelWordColor.Name = "panelWordColor";
+            this.panelWordColor.Size = new System.Drawing.Size(14, 14);
+            this.panelWordColor.TabIndex = 162;
             // 
-            // label1
+            // wordColorLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 127);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
-            this.label1.TabIndex = 160;
-            this.label1.Text = "Cor da Palavra:";
+            this.wordColorLabel.AutoSize = true;
+            this.wordColorLabel.Location = new System.Drawing.Point(39, 127);
+            this.wordColorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.wordColorLabel.Name = "wordColorLabel";
+            this.wordColorLabel.Size = new System.Drawing.Size(80, 13);
+            this.wordColorLabel.TabIndex = 160;
+            this.wordColorLabel.Text = "Cor da Palavra:";
             // 
-            // button3
+            // wordColorButton
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(142, 124);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 19);
-            this.button3.TabIndex = 161;
-            this.button3.Text = "escolher";
-            this.button3.UseVisualStyleBackColor = true;
+            this.wordColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wordColorButton.Location = new System.Drawing.Point(142, 124);
+            this.wordColorButton.Margin = new System.Windows.Forms.Padding(2);
+            this.wordColorButton.Name = "wordColorButton";
+            this.wordColorButton.Size = new System.Drawing.Size(121, 19);
+            this.wordColorButton.TabIndex = 161;
+            this.wordColorButton.Text = "escolher";
+            this.wordColorButton.UseVisualStyleBackColor = true;
+            this.wordColorButton.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // expoTypeLabel
             // 
@@ -864,26 +863,26 @@
             0,
             0});
             // 
-            // label4
+            // rdmExpoLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 74);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 13);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "Ordem Aleatória:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.rdmExpoLabel.AutoSize = true;
+            this.rdmExpoLabel.Location = new System.Drawing.Point(34, 74);
+            this.rdmExpoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.rdmExpoLabel.Name = "rdmExpoLabel";
+            this.rdmExpoLabel.Size = new System.Drawing.Size(85, 13);
+            this.rdmExpoLabel.TabIndex = 37;
+            this.rdmExpoLabel.Text = "Ordem Aleatória:";
+            this.rdmExpoLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtSizeLabel
+            // wordSizeLabel
             // 
-            this.txtSizeLabel.AutoSize = true;
-            this.txtSizeLabel.Location = new System.Drawing.Point(10, 98);
-            this.txtSizeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtSizeLabel.Name = "txtSizeLabel";
-            this.txtSizeLabel.Size = new System.Drawing.Size(109, 13);
-            this.txtSizeLabel.TabIndex = 159;
-            this.txtSizeLabel.Text = "Tamanho da Palavra:";
+            this.wordSizeLabel.AutoSize = true;
+            this.wordSizeLabel.Location = new System.Drawing.Point(10, 100);
+            this.wordSizeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.wordSizeLabel.Name = "wordSizeLabel";
+            this.wordSizeLabel.Size = new System.Drawing.Size(109, 13);
+            this.wordSizeLabel.TabIndex = 159;
+            this.wordSizeLabel.Text = "Tamanho da Palavra:";
             // 
             // numericUpDown1
             // 
@@ -931,12 +930,12 @@
             // 
             this.instructionsLabel.AutoSize = true;
             this.instructionsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.instructionsLabel.Location = new System.Drawing.Point(294, 218);
+            this.instructionsLabel.Location = new System.Drawing.Point(289, 230);
             this.instructionsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.instructionsLabel.Name = "instructionsLabel";
-            this.instructionsLabel.Size = new System.Drawing.Size(129, 26);
+            this.instructionsLabel.Size = new System.Drawing.Size(59, 13);
             this.instructionsLabel.TabIndex = 59;
-            this.instructionsLabel.Text = "Instruções para o usuário,\r\numa linha por tela:";
+            this.instructionsLabel.Text = "Instruções:";
             // 
             // progName
             // 
@@ -1004,7 +1003,7 @@
         private System.Windows.Forms.Label bgColorLabel;
         private System.Windows.Forms.Label listWordsLabel;
         private System.Windows.Forms.Label intervTimeLabel;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label rdmExpoLabel;
         private System.Windows.Forms.Label prgNameLabel;
         private System.Windows.Forms.Label expoNumberLabel;
         private System.Windows.Forms.Label expoTimeLabel;
@@ -1024,7 +1023,7 @@
         private System.Windows.Forms.NumericUpDown timeInterval;
         private System.Windows.Forms.Label instructionsLabel;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label rdmIntevLabel;
+        private System.Windows.Forms.Label rdmIntervLabel;
         private System.Windows.Forms.CheckBox randIntervalOn;
         private System.Windows.Forms.Label fixPointTypeLabel;
         private System.Windows.Forms.CheckBox fixPointCircle;
@@ -1038,7 +1037,7 @@
         private System.Windows.Forms.Button subDirect1;
         private System.Windows.Forms.Panel panelFixPointColor;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label txtSizeLabel;
+        private System.Windows.Forms.Label wordSizeLabel;
         private System.Windows.Forms.CheckBox expandImageOn;
         private System.Windows.Forms.Label expandImgLabel;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
@@ -1053,9 +1052,9 @@
         private System.Windows.Forms.Label fixPointColorLabel;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.CheckBox audioListCheck;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panelWordColor;
+        private System.Windows.Forms.Label wordColorLabel;
+        private System.Windows.Forms.Button wordColorButton;
         private System.Windows.Forms.Button helpButton;
     }
 }

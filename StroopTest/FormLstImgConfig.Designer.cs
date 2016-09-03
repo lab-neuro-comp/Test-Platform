@@ -45,9 +45,10 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Location = new System.Drawing.Point(312, 540);
+            this.label2.Location = new System.Drawing.Point(234, 439);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
+            this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 37;
             this.label2.Text = "Lista Imagens";
             // 
@@ -55,9 +56,10 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.Location = new System.Drawing.Point(109, 540);
+            this.button3.Location = new System.Drawing.Point(82, 439);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(56, 19);
             this.button3.TabIndex = 36;
             this.button3.TabStop = false;
             this.button3.Text = "Cancelar";
@@ -68,9 +70,10 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(12, 540);
+            this.button2.Location = new System.Drawing.Point(9, 439);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(56, 19);
             this.button2.TabIndex = 32;
             this.button2.TabStop = false;
             this.button2.Text = "Salvar";
@@ -80,9 +83,10 @@
             // buttonInsert
             // 
             this.buttonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInsert.Location = new System.Drawing.Point(12, 57);
+            this.buttonInsert.Location = new System.Drawing.Point(9, 46);
+            this.buttonInsert.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonInsert.Name = "buttonInsert";
-            this.buttonInsert.Size = new System.Drawing.Size(85, 23);
+            this.buttonInsert.Size = new System.Drawing.Size(64, 19);
             this.buttonInsert.TabIndex = 29;
             this.buttonInsert.TabStop = false;
             this.buttonInsert.Text = "+";
@@ -92,9 +96,10 @@
             // buttonRemove
             // 
             this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRemove.Location = new System.Drawing.Point(103, 57);
+            this.buttonRemove.Location = new System.Drawing.Point(77, 46);
+            this.buttonRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(85, 23);
+            this.buttonRemove.Size = new System.Drawing.Size(64, 19);
             this.buttonRemove.TabIndex = 31;
             this.buttonRemove.TabStop = false;
             this.buttonRemove.Text = "-";
@@ -107,10 +112,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.imgListView.LabelEdit = true;
-            this.imgListView.Location = new System.Drawing.Point(12, 86);
+            this.imgListView.Location = new System.Drawing.Point(9, 70);
+            this.imgListView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.imgListView.Name = "imgListView";
             this.imgListView.ShowItemToolTips = true;
-            this.imgListView.Size = new System.Drawing.Size(395, 448);
+            this.imgListView.Size = new System.Drawing.Size(297, 365);
             this.imgListView.TabIndex = 38;
             this.imgListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -120,25 +126,27 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 29);
+            this.textBox1.Location = new System.Drawing.Point(9, 24);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 22);
+            this.textBox1.Size = new System.Drawing.Size(128, 20);
             this.textBox1.TabIndex = 39;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 9);
+            this.label3.Location = new System.Drawing.Point(7, 7);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 17);
+            this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 40;
-            this.label3.Text = "Nome Lista(s):";
+            this.label3.Text = "Nome da Lista:";
             // 
             // FormLstImgConfig
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 575);
+            this.ClientSize = new System.Drawing.Size(314, 467);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.imgListView);
@@ -148,8 +156,10 @@
             this.Controls.Add(this.buttonInsert);
             this.Controls.Add(this.buttonRemove);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormLstImgConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Lista de Imagens";
             this.Load += new System.EventHandler(this.FormLstImgConfig_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

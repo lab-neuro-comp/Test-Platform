@@ -70,7 +70,17 @@ namespace StroopTest
             {
                 if (!File.Exists(path + "/prg/" + programInUse.ProgramName + ".prg")) { throw new Exception("Arquivo programa: " + programInUse.ProgramName + ".prg" + "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/")); } // confere existência do arquivo
                 programInUse.readProgramFile(path + "/prg/" + programInUse.ProgramName + ".prg");
-                
+
+                var cvt = new FontConverter();
+                wordLabel.Font = cvt.ConvertFromString("Microsoft Sans Serif; " + programInUse.FontWordLabel + "pt") as Font;
+                wordLabel.Visible = false;
+                wordLabel.Name = "error";
+                wordLabel.FlatStyle = FlatStyle.Flat;
+                wordLabel.TextAlign = ContentAlignment.MiddleCenter;
+                wordLabel.AutoEllipsis = true;
+                wordLabel.Dock = DockStyle.Fill;
+                wordLabel.AutoSize = false;
+
                 switch (programInUse.ExpositionType)
                 {
                     case "txt":
@@ -96,42 +106,31 @@ namespace StroopTest
         private async Task startWordExposition(StroopProgram program) // inicia exposição de palavra
         {
             cts = new CancellationTokenSource();
+            
+            Controls.Add(this.wordLabel);
+            BackColor = Color.White;
 
-            wordLabel.Visible = false;
-            wordLabel.Name = "error";
-            wordLabel.FlatStyle = FlatStyle.Flat;
-            wordLabel.Font = new Font("Microsoft Sans Serif", 160, FontStyle.Bold);
-            wordLabel.TextAlign = ContentAlignment.MiddleCenter;
-            wordLabel.AutoEllipsis = true;
-            wordLabel.Dock = DockStyle.Fill;
-
-            wordLabel.AutoSize = false;
-
-            this.Controls.Add(this.wordLabel);
-            this.BackColor = Color.White;
-
-            string t1 = null, c1 = null;
+            string textCurrent = null, colorCurrent = null;
+            int textArrayCounter = 0, colorArrayCounter = 0;
             string outputFileName = "";
 
-            Random rnd1 = new Random(DateTime.Now.Millisecond + 1); // cria duas randomizações a partir de sementes diferentes
-            Random rnd2 = new Random(DateTime.Now.Millisecond + 2);
-
             var interval = Task.Run(async delegate{ await Task.Delay(program.IntervalTime, cts.Token); });
-
             var exposition = Task.Run(async delegate{ await Task.Delay(program.ExpositionTime, cts.Token); });
-            
             outputContent = new List<string>();
 
             try
             {
                 outputFileName = outputDataPath + program.UserName + "_" + program.ProgramName + ".txt";
-                
+
+                // Define vetor de estímulos a ser apresentado
                 string[] labelText = program.readListFile(path + "/lst/" + program.WordsListFile); // vetor de strings recebem as listas de palavra e cor
                 string[] labelColor = program.readListFile(path + "/lst/" + program.ColorsListFile);
-
-                var cvt = new FontConverter();
-                wordLabel.Font = cvt.ConvertFromString("Myriad Pro; " + program.FontWordLabel + "pt") as Font;
-
+                if (program.ExpositionRandom) // se exposição aleatória, randomiza itens de acordo com o numero de estimulos
+                {
+                    labelText = shuffleArray(labelText, program.NumExpositions, 1);
+                    labelColor = shuffleArray(labelColor, program.NumExpositions, 5);
+                }
+                
                 foreach (string c in labelColor)
                 {
                     if(!Regex.IsMatch(c, "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$"))
@@ -144,8 +143,9 @@ namespace StroopTest
                 
                 while (true) // laço de repetição do programa até que o usuário decida não repetir mais o mesmo programa
                 {
-                    int i = 0, j = 0; // zera contadores para apresentação não randômica
-                    
+                    textArrayCounter = 0; // zera contadores para apresentação não randômica
+                    colorArrayCounter = 0;
+
                     changeBackgroundColor(program, true); // muda cor de fundo se houver parametro                    
                     elapsedTime = 0; // zera tempo em milissegundos decorrido
 
@@ -160,22 +160,17 @@ namespace StroopTest
                         wordLabel.Visible = false; // intervalo
                         await intervalOrFixPoint(program, cts.Token);
 
-                        if (program.ExpositionRandom) // se for exposição aleatoria
-                        {
-                            t1 = labelText[rnd1.Next(labelText.Length)]; // randomiza listas
-                            c1 = labelColor[rnd2.Next(labelColor.Length)];
-                        }
-                        else // se for exposição sequencial
-                        {
-                            t1 = labelText[i];
-                            c1 = labelColor[j];
-                            if(i == labelText.Length - 1) { i = 0; }
-                            else { i++; }
-                            if (j == labelColor.Length - 1) { j = 0; }
-                            else { j++; }
-                        }
-                        wordLabel.Text = t1;
-                        wordLabel.ForeColor = ColorTranslator.FromHtml(c1);
+                        if (textArrayCounter == labelText.Length) { textArrayCounter = 0; }
+                        if (colorArrayCounter == labelText.Length) { textArrayCounter = 0; }
+
+                        textCurrent = labelText[textArrayCounter];
+                        colorCurrent = labelColor[colorArrayCounter];
+
+                        textArrayCounter++;
+                        colorArrayCounter++;
+
+                        wordLabel.Text = textCurrent;
+                        wordLabel.ForeColor = ColorTranslator.FromHtml(colorCurrent);
                         wordLabel.Left = (this.ClientSize.Width - wordLabel.Width) / 2;
                         wordLabel.Top = (this.ClientSize.Height - wordLabel.Height) / 2;
 
@@ -183,7 +178,7 @@ namespace StroopTest
                         SendKeys.SendWait("s");
                         wordLabel.Visible = true;
 
-                        StroopProgram.writeLineOutput(program, t1, c1, counter, outputContent, elapsedTime, program.ExpositionType);
+                        StroopProgram.writeLineOutput(program, textCurrent, colorCurrent, counter, outputContent, elapsedTime, program.ExpositionType);
                         
                         await Task.Delay(program.ExpositionTime, cts.Token);
                     }
@@ -221,25 +216,29 @@ namespace StroopTest
         private async Task startImageExposition(StroopProgram program) // inicia exposição de imagem
         {
             cts = new CancellationTokenSource();
-            int i, j, k;
+            int j, k;
+            int arrayCounter = 0;
             string[] labelText = null, imageDirs = null, audioDirs = null, subtitlesArray = null;
             string outputFileName = "";
-            string auxString = "";
+            string actualImagePath = "";
             this.BackColor = Color.White;
-            
+
             try
             {
-                outputFileName = outputDataPath + program.UserName + "_" + program.ProgramName + ".txt";
-
-                if (program.ExpandImage) { pictureBox1.Dock = DockStyle.Fill; }
-                else { pictureBox1.Dock = DockStyle.None; }
-                var cvt = new FontConverter();
-                Font f = cvt.ConvertFromString("Myriad Pro; " + program.FontWordLabel + "pt") as Font;
-                this.wordLabel.Font = f;
                 wordLabel.ForeColor = Color.Red;
 
-                imageDirs = StroopProgram.readDirListFile(path + "/lst/" + program.ImagesListFile);
+                outputFileName = outputDataPath + program.UserName + "_" + program.ProgramName + ".txt";
+                
+                if (program.ExpandImage) { pictureBox1.Dock = DockStyle.Fill; }
+                else { pictureBox1.Dock = DockStyle.None; }
 
+                // Define vetor de estímulos a ser apresentado
+                imageDirs = StroopProgram.readDirListFile(path + "/lst/" + program.ImagesListFile); // auxiliar recebe o vetor original
+                if (program.ExpositionRandom) // se exposição aleatória, randomiza itens de acordo com o numero de estimulos
+                {
+                    imageDirs = shuffleArray(imageDirs, program.NumExpositions, 3);
+                }
+                
                 if (program.SubtitleShow)
                 {
                     subtitlesArray = program.readListFile(path + "/lst/" + program.SubtitlesListFile);
@@ -248,24 +247,20 @@ namespace StroopTest
                 }
 
                 if (program.AudioListFile != "false") { audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile); }
-                
                 if (program.WordsListFile.ToLower() != "false") { labelText = program.readListFile(path + "/lst/" + program.WordsListFile); }
                 
-                Random rnd = new Random(DateTime.Now.Millisecond + 1);
-                Random rnd2 = new Random(DateTime.Now.Millisecond + 2);
-                Random rnd3 = new Random(DateTime.Now.Millisecond + 3);
-                var randomNumbers = Enumerable.Range(0, imageDirs.Count()).OrderBy(x => rnd3.Next()).ToList(); // evita repetição no aleatorio de imagens
-
                 await showInstructions(program, cts.Token); // Apresenta instruções se houver
 
                 outputContent = new List<string>();
-
+                
                 while (true)
                 {
                     changeBackgroundColor(program, true); // muda cor de fundo se houver parametro
-                    
+                    pictureBox1.BackColor = BackColor;
+
                     elapsedTime = 0; // zera tempo em milissegundos decorrido
-                    i = 0; j = 0; k = 0;
+                    j = 0; k = 0;
+                    arrayCounter = 0;
                     var audioCounter = 0;
 
                     // beginAudio
@@ -279,28 +274,12 @@ namespace StroopTest
                         for (int counter = 0; counter < program.NumExpositions; counter++) // AQUI ver estimulo -> palavra ou imagem como um só e ter intervalo separado
                         {
                             pictureBox1.Visible = false; wordLabel.Visible = false;
-                            //if (counter == imageDirs.Count()) { counter = 0; }
                             if (program.SubtitleShow) {subtitleLabel.Visible = false;}
                             await intervalOrFixPoint(program, cts.Token);
 
-                            if (program.ExpositionRandom == true)
-                            {
-                                if (imageDirs.Count() == program.NumExpositions)
-                                {
-                                    pictureBox1.Image = Image.FromFile(imageDirs[randomNumbers[i++]]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
-                                }
-                                else
-                                {
-                                    pictureBox1.Image = Image.FromFile(imageDirs[rnd.Next(imageDirs.Length)]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
-                                }
-                            }
-                            else
-                            {
-                                if (i == imageDirs.Count()) { i = 0; }
-                                pictureBox1.Image = Image.FromFile(imageDirs[i]);
-                            }
-                            //elapsedTime = elapsedTimeExpo + elapsedTime;
-
+                            if (arrayCounter == imageDirs.Count()) { arrayCounter = 0; }
+                            pictureBox1.Image = Image.FromFile(imageDirs[arrayCounter]);
+                            
                             /*
                                 if (program.AudioListFile.ToLower() != "false")
                                 {
@@ -308,16 +287,16 @@ namespace StroopTest
                                     var player = new System.Media.SoundPlayer(audioDirs[audioCounter]);//@"C:\Users\hugoPC\Source\Repos\StroopTest\StroopTest\bin\Debug\StroopTestFiles\medoAudio.wav");
                                     player.Play();
                                 }
-                                */
+                            */
 
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                             SendKeys.SendWait("s");
                             pictureBox1.Visible = true;
                             wordLabel.Visible = false;
-                            auxString = Path.GetFileName(imageDirs[i].ToString());
-                            i++;
+                            actualImagePath = Path.GetFileName(imageDirs[arrayCounter].ToString());
+                            arrayCounter++;
                             
-                            StroopProgram.writeLineOutput(program, auxString, "false", counter + 1, outputContent, elapsedTime, "img");
+                            StroopProgram.writeLineOutput(program, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "img");
                             await Task.Delay(program.ExpositionTime, cts.Token);
 
                             pictureBox1.Visible = false;
@@ -337,10 +316,10 @@ namespace StroopTest
                                 SendKeys.SendWait("s");
                                 pictureBox1.Visible = false;
                                 wordLabel.Visible = true;
-                                auxString = wordLabel.Text;
+                                actualImagePath = wordLabel.Text;
                                 j++;
 
-                                StroopProgram.writeLineOutput(program, auxString, "false", counter + 1, outputContent, elapsedTime, "txt");
+                                StroopProgram.writeLineOutput(program, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "txt");
                                 await Task.Delay(program.ExpositionTime, cts.Token);
                             }
                         }
@@ -353,23 +332,9 @@ namespace StroopTest
                             pictureBox1.Visible = false; wordLabel.Visible = false;
                             await intervalOrFixPoint(program, cts.Token);
 
-                            if (program.ExpositionRandom == true)
-                            {
-                                if (imageDirs.Count() == program.NumExpositions)
-                                {
-                                    if (imgCounter != program.NumExpositions) { imgCounter++; }
-                                    pictureBox1.Image = Image.FromFile(imageDirs[randomNumbers[imgCounter]]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
-                                }
-                                else
-                                {
-                                    pictureBox1.Image = Image.FromFile(imageDirs[rnd.Next(imageDirs.Length)]); // aleatorio que não repete imagens se numero de estimulos for = numero de apresentacoes
-                                }
-                            }
-                            else
-                            {
-                                if (imgCounter == imageDirs.Count()) { imgCounter = 0; }
-                                pictureBox1.Image = Image.FromFile(imageDirs[imgCounter]);
-                            }
+
+                            if (imgCounter == imageDirs.Count()) { imgCounter = 0; }
+                            pictureBox1.Image = Image.FromFile(imageDirs[imgCounter]);
 
                             /*
                             var player = new System.Media.SoundPlayer(@"C:\Users\hugoPC\Source\Repos\StroopTest\StroopTest\bin\Debug\StroopTestFiles\medoAudio.wav");
@@ -397,7 +362,7 @@ namespace StroopTest
 
                             StroopProgram.writeLineOutput(program, Path.GetFileName(imageDirs[imgCounter].ToString()), "false", counter + 1, outputContent, elapsedTime, program.ExpositionType);
                             imgCounter++;
-
+                            
                             //subtitleLabel.Location = new Point((ClientSize.Width / 2 - subtitleLabel.Width / 2), pictureBox1.Bottom + 50);
                             await Task.Delay(program.ExpositionTime, cts.Token);
                         }
@@ -442,7 +407,7 @@ namespace StroopTest
             }
             cts = null;
         }
-        
+
         /*
         private void showImageInPanel(StroopProgram program, Graphics g, int index)
         {
@@ -489,6 +454,31 @@ namespace StroopTest
             });
         }
         */
+
+        private string[] shuffleArray(string[] array, int expectedLength, int rndSeed) // randomiza Vetor - parâmetros: vetor / tamanho esperado do vetor randomizado
+        {
+            List<string> randomArray = new List<string>();
+            Random rnd = new Random(DateTime.Now.Millisecond + expectedLength + rndSeed);
+            try
+            {
+                if (expectedLength == array.Count()) // se pretende-se manter o mesmo tamanho do vetor, não há repetições
+                {
+                    randomArray = array.OrderBy(x => rnd.Next()).ToList();
+                }
+                else
+                {
+                    for (int i = 0; i < expectedLength; i++) // se não o vetor aleatório será preenchido com valores aleatórios do original, podendo haver repetições
+                    {
+                        randomArray.Add(array[rnd.Next(array.Length)]);
+                    }
+                }
+                return randomArray.ToArray();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Falha na randomização da lista de estímulos:\n" + ex.Message);
+            }
+        }
 
         private async Task showInstructions(StroopProgram program, CancellationToken token) // apresenta instruções
         {
@@ -569,13 +559,27 @@ namespace StroopTest
         {
             try
             {
-                if (program.FixPoint != "+" && program.FixPoint != "o")
+                int intervalTime = 400;
+
+                if (program.IntervalTimeRandom && program.IntervalTime > 400)
                 {
-                    await Task.Delay(program.IntervalTime);
+                    Random random = new Random();
+                    intervalTime = random.Next(400, program.IntervalTime);
                 }
                 else
                 {
-                    SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml("#D01C1F"));
+                    intervalTime = program.IntervalTime;
+                }
+
+                if (program.FixPoint != "+" && program.FixPoint != "o")
+                {
+                    await Task.Delay(intervalTime);
+                }
+                else
+                {
+                    program.FixPointColor = "#D01C1F";
+                    if (program.FixPointColor == "false") { program.FixPointColor = "#D01C1F"; }
+                    SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(program.FixPointColor));
                     switch (program.FixPoint)
                     {
                         case "+":
@@ -589,7 +593,7 @@ namespace StroopTest
                             float heightCross = 2 * 4;
                             formGraphicsCross1.FillRectangle(myBrush, xCross1, yCross1, widthCross, heightCross);
                             formGraphicsCross2.FillRectangle(myBrush, xCross2, yCross2, heightCross, widthCross);
-                            await Task.Delay(program.IntervalTime);
+                            await Task.Delay(intervalTime);
                             formGraphicsCross1.Dispose();
                             formGraphicsCross2.Dispose();
                             break;
@@ -600,7 +604,7 @@ namespace StroopTest
                             float widthEllipse = 2 * 25;
                             float heightEllipse = 2 * 25;
                             formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
-                            await Task.Delay(program.IntervalTime);
+                            await Task.Delay(intervalTime);
                             formGraphicsEllipse.Dispose();
                             break;
                     }

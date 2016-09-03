@@ -293,7 +293,7 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineUser = new FormDefine("Definir Usuário: ", testFilesPath, "usr");
+                FormDefine defineUser = new FormDefine("Definir Participante: ", testFilesPath, "usr");
                 var result = defineUser.ShowDialog();
                 if (result == DialogResult.OK)
                 {

@@ -76,6 +76,9 @@ namespace StroopTest
             helpToolTip.ToolTipIcon = ToolTipIcon.Info;
             helpToolTip.IsBalloon = true;
             helpToolTip.ShowAlways = true;
+
+
+            // colocar em lista e deixar dinâmico
             
             helpToolTip.SetToolTip(prgNameLabel, "Nome do Arquivo onde o programa será salvo");
             helpToolTip.SetToolTip(expoTypeLabel, "Tipo de Estímulo: Texto; Imagem; Imagem e Texto; Texto e Áudio; Imagem e Áudio");
@@ -187,7 +190,7 @@ namespace StroopTest
         private void button8_Click(object sender, EventArgs e)
         {
             string colorCode = pickColor();
-            chooseBackGColor.Text = colorCode;
+            bgColorButton.Text = colorCode;
             panelBGColor.BackColor = ColorTranslator.FromHtml(colorCode);
         }
 
@@ -262,16 +265,33 @@ namespace StroopTest
                 if (program.BackgroundColor.ToLower() == "false")
                 {
                     panelBGColor.BackColor = Color.White;
-                    chooseColorSubs.Text = "escolher cor";
+                    bgColorButton.Text = "escolher cor";
                 }
                 else
                 {
                     if ((Regex.IsMatch(program.BackgroundColor, hexPattern)))
                     {
-                        chooseBackGColor.Text = program.BackgroundColor;
+                        bgColorButton.Text = program.BackgroundColor;
                         panelBGColor.BackColor = ColorTranslator.FromHtml(program.BackgroundColor);
                     }
                 }
+                /*
+                if (program.FixPointColor.ToLower() == "false")
+                {
+                    panelFixPointColor.BackColor = ColorTranslator.FromHtml("#D01C1F");
+                    fixPointColor.Text = "#D01C1F";
+                }
+                else
+                {
+                    if ((Regex.IsMatch(program.FixPointColor, hexPattern)))
+                    {
+                        fixPointColor.Text = program.FixPointColor;
+                        panelFixPointColor.BackColor = ColorTranslator.FromHtml(program.FixPointColor);
+                    }
+                    else { throw new Exception("Deu errado no match"); }
+                }
+                */
+
 
                 if (program.AudioCapture) captAudioOn.Checked = true;
                 else captAudioOn.Checked = false;
@@ -338,7 +358,7 @@ namespace StroopTest
                         break;
                 }
 
-                if (program.ImagesListFile.ToLower() != "false") { audioListCheck.Checked = true; openImgsList.Enabled = true; openImgsList.Text = program.ImagesListFile; }
+                if (program.ImagesListFile.ToLower() != "false") { openImgsList.Enabled = true; openImgsList.Text = program.ImagesListFile; }
                 else { openImgsList.Enabled = false; openImgsList.Text = "false"; }
                 
                 if (program.FixPoint == "+")
@@ -422,7 +442,7 @@ namespace StroopTest
                         break;
                 }
 
-                if (Regex.IsMatch(chooseBackGColor.Text, hexPattern)) { programWrite.BackgroundColor = chooseBackGColor.Text; }
+                if (Regex.IsMatch(bgColorButton.Text, hexPattern)) { programWrite.BackgroundColor = bgColorButton.Text; }
                 else programWrite.BackgroundColor = "false";
 
                 programWrite.AudioCapture = captAudioOn.Checked;
@@ -474,9 +494,10 @@ namespace StroopTest
                     }
                 }
                 
+                /*
                 if (audioListCheck.Checked) { openAudioList.Enabled = true; programWrite.AudioListFile = openAudioList.Text; }
                 else { openAudioList.Enabled = false; programWrite.AudioListFile = "false"; }
-
+                */
                 string textLines = "";
                 if (textBox2.Lines.Length > 0 && textBox2.Text != instrBoxText) // lê instrução se houver
                 {
@@ -594,8 +615,6 @@ namespace StroopTest
         private void textBox2_Click(object sender, EventArgs e)
         {
             textBox2.ForeColor = Color.Black;
-            if(textBox2.Text == "Escreva cada uma das intruções em linhas separadas.")
-                textBox2.Text = "";
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -649,7 +668,7 @@ namespace StroopTest
         private void button1_Click(object sender, EventArgs e)
         {
             string colorCode = pickColor();
-            button1.Text = colorCode;
+            fixPointColor.Text = colorCode;
             panelFixPointColor.BackColor = ColorTranslator.FromHtml(colorCode);
         }
         
@@ -671,18 +690,6 @@ namespace StroopTest
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (audioListCheck.Checked)
-            {
-                openAudioList.Enabled = true;
-            }
-            else
-            {
-                openAudioList.Enabled = false;
-            }
-        }
-
         private void helpButton_Click(object sender, EventArgs e)
         {
             showPrgConfigInstructions();
@@ -700,6 +707,11 @@ namespace StroopTest
             string colorCode = pickColor();
             panelWordColor.Text = colorCode;
             panelWordColor.BackColor = ColorTranslator.FromHtml(colorCode);
+        }
+
+        private void FormPrgConfig_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

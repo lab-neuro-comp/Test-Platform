@@ -51,7 +51,8 @@ namespace StroopTest
         private bool expandImage;               // [17]  expande imagem ajustando à tela
         private string audioListFile = "false";          // [18]  lista com caminhos dos áudios
         private string subtitlesListFile = "false";       // [19]  lista de legendas
-        private string fixPointColor = "#D01C1F";
+        private string fixPointColor;
+        private bool rotateImage = false;
 
         // Definição gets 
         // Definição sets (e suas restrições)
@@ -395,6 +396,22 @@ namespace StroopTest
             }
         }
 
+        public bool RotateImage
+        {
+            get { return RotateImage;  }
+            set
+            {
+                if (value == true || value == false)
+                {
+                    rotateImage = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Erro no Arquivo com Programa:\nRotacao de Imagem deve ser boleana (true or false)");
+                }
+            }
+        }
+
         // decodifica texto
         static public string encodeLatinText(string text)
         {
@@ -422,7 +439,9 @@ namespace StroopTest
         {
             StreamReader tr;
             string line;
-            string[] linesInstruction, config;
+            string[] linesInstruction;
+            List<string> config = new List<string>();
+            List<string> defaultConfig = new List<string>();
 
             try
             {
@@ -431,14 +450,36 @@ namespace StroopTest
                 tr = new StreamReader(filepath, Encoding.Default, true);
                 line = tr.ReadLine();
                 line = encodeLatinText(line);
-                config = line.Split();
+                config = line.Split().ToList();
+                defaultConfig = defaultProgramFileText.Split().ToList();
                 tr.Close();
-                
-                if(config.Length != 20)
-                    throw new FormatException("Arquivo programa deve ter 20 parâmetros\nexemplo - programa padrão:\n" + defaultProgramFileText);
 
+                /*
+                if(config.Length != 20)
+                {
+                    for (int i = (config.Length - 1); i < 20; i++)
+                    {
+                        line += (" " + defaultConfig[i]);
+                    }
+                }
+
+                config = line.Split();
+                */
+                
+                if (config.Count() != 20)
+                {
+                    for(int i = (config.Count - 1); i < 20; i++)
+                    {
+                        config.Add(defaultConfig[i]);
+                    }
+                }
+                
+                
+                //if(config.Count() != 20) throw new FormatException("Arquivo programa deve ter 20 parâmetros\nexemplo - programa padrão:\n" + defaultProgramFileText);
+                
                 // atribuição de valores no arquivos às variáveis do programa:
                 // nomePrograma /NumExposições /TempoExposição /ExpAleatória /TempoIntervalo /TempoIntervAleatorio /ListaPalavras /ListaCores /CorFundo /CaptAudio /mostrarLegenda /lugarLegenda /corLegenda /tipoExposicao /listaImg / PontoFixacao
+                
                 ProgramName = config[0];
                 if (Path.GetFileNameWithoutExtension(filepath) != (this.ProgramName)) { throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName + "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + "'.prg"); }
                 NumExpositions = Int32.Parse(config[1]);
@@ -606,7 +647,6 @@ namespace StroopTest
                 Console.WriteLine(ex.Message);
             }
         }
-
         static public void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter, List<string> output, float elapsedTime, string expoType)
         {
             // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor
@@ -624,5 +664,4 @@ namespace StroopTest
             output.Add(text);
         }
     }
-
 }

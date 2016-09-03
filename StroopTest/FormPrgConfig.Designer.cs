@@ -32,21 +32,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.helpButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.fixPointTypeLabel = new System.Windows.Forms.Label();
             this.fixPointCross = new System.Windows.Forms.CheckBox();
             this.fixPointColorLabel = new System.Windows.Forms.Label();
             this.fixPointCircle = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.fixPointColor = new System.Windows.Forms.Button();
             this.panelFixPointColor = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.audioListCheck = new System.Windows.Forms.CheckBox();
             this.expandImgLabel = new System.Windows.Forms.Label();
             this.captAudioLabel = new System.Windows.Forms.Label();
             this.captAudioOn = new System.Windows.Forms.CheckBox();
             this.expandImageOn = new System.Windows.Forms.CheckBox();
             this.panelBGColor = new System.Windows.Forms.Panel();
             this.bgColorLabel = new System.Windows.Forms.Label();
-            this.chooseBackGColor = new System.Windows.Forms.Button();
+            this.bgColorButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.subActivationLabel = new System.Windows.Forms.Label();
@@ -125,7 +126,7 @@
             this.panel1.Location = new System.Drawing.Point(11, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(730, 335);
+            this.panel1.Size = new System.Drawing.Size(730, 372);
             this.panel1.TabIndex = 0;
             // 
             // helpButton
@@ -144,13 +145,15 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.panel3);
+            this.groupBox6.Controls.Add(this.panel2);
             this.groupBox6.Controls.Add(this.fixPointTypeLabel);
             this.groupBox6.Controls.Add(this.fixPointCross);
             this.groupBox6.Controls.Add(this.fixPointColorLabel);
             this.groupBox6.Controls.Add(this.fixPointCircle);
-            this.groupBox6.Controls.Add(this.button1);
+            this.groupBox6.Controls.Add(this.fixPointColor);
             this.groupBox6.Controls.Add(this.panelFixPointColor);
-            this.groupBox6.Location = new System.Drawing.Point(302, 146);
+            this.groupBox6.Location = new System.Drawing.Point(303, 146);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
@@ -159,10 +162,32 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Ponto de Fixação";
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImage = global::StroopTest.Properties.Resources.cross;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Location = new System.Drawing.Point(96, 20);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(13, 13);
+            this.panel3.TabIndex = 155;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::StroopTest.Properties.Resources.circle;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(133, 22);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 10);
+            this.panel2.TabIndex = 154;
+            // 
             // fixPointTypeLabel
             // 
             this.fixPointTypeLabel.AutoSize = true;
-            this.fixPointTypeLabel.Location = new System.Drawing.Point(35, 21);
+            this.fixPointTypeLabel.Location = new System.Drawing.Point(45, 21);
             this.fixPointTypeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fixPointTypeLabel.Name = "fixPointTypeLabel";
             this.fixPointTypeLabel.Size = new System.Drawing.Size(31, 13);
@@ -172,57 +197,55 @@
             // fixPointCross
             // 
             this.fixPointCross.AutoSize = true;
-            this.fixPointCross.Location = new System.Drawing.Point(70, 20);
+            this.fixPointCross.Location = new System.Drawing.Point(78, 20);
             this.fixPointCross.Margin = new System.Windows.Forms.Padding(2);
             this.fixPointCross.Name = "fixPointCross";
-            this.fixPointCross.Size = new System.Drawing.Size(32, 17);
+            this.fixPointCross.Size = new System.Drawing.Size(15, 14);
             this.fixPointCross.TabIndex = 50;
             this.fixPointCross.TabStop = false;
-            this.fixPointCross.Text = "+";
             this.fixPointCross.UseVisualStyleBackColor = true;
             this.fixPointCross.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // fixPointColorLabel
             // 
             this.fixPointColorLabel.AutoSize = true;
-            this.fixPointColorLabel.Location = new System.Drawing.Point(10, 48);
+            this.fixPointColorLabel.Location = new System.Drawing.Point(4, 48);
             this.fixPointColorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fixPointColorLabel.Name = "fixPointColorLabel";
-            this.fixPointColorLabel.Size = new System.Drawing.Size(57, 13);
+            this.fixPointColorLabel.Size = new System.Drawing.Size(72, 13);
             this.fixPointColorLabel.TabIndex = 171;
-            this.fixPointColorLabel.Text = "Cor Ponto:";
+            this.fixPointColorLabel.Text = "Cor do Ponto:";
             // 
             // fixPointCircle
             // 
             this.fixPointCircle.AutoSize = true;
-            this.fixPointCircle.Location = new System.Drawing.Point(103, 20);
+            this.fixPointCircle.Location = new System.Drawing.Point(114, 20);
             this.fixPointCircle.Margin = new System.Windows.Forms.Padding(2);
             this.fixPointCircle.Name = "fixPointCircle";
-            this.fixPointCircle.Size = new System.Drawing.Size(32, 17);
+            this.fixPointCircle.Size = new System.Drawing.Size(15, 14);
             this.fixPointCircle.TabIndex = 51;
             this.fixPointCircle.TabStop = false;
-            this.fixPointCircle.Text = "o";
             this.fixPointCircle.UseVisualStyleBackColor = true;
             this.fixPointCircle.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged_1);
             // 
-            // button1
+            // fixPointColor
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(88, 45);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 19);
-            this.button1.TabIndex = 52;
-            this.button1.TabStop = false;
-            this.button1.Text = "escolher";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.fixPointColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fixPointColor.Location = new System.Drawing.Point(95, 45);
+            this.fixPointColor.Margin = new System.Windows.Forms.Padding(2);
+            this.fixPointColor.Name = "fixPointColor";
+            this.fixPointColor.Size = new System.Drawing.Size(89, 19);
+            this.fixPointColor.TabIndex = 52;
+            this.fixPointColor.TabStop = false;
+            this.fixPointColor.Text = "escolher";
+            this.fixPointColor.UseVisualStyleBackColor = true;
+            this.fixPointColor.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelFixPointColor
             // 
             this.panelFixPointColor.BackColor = System.Drawing.Color.White;
             this.panelFixPointColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFixPointColor.Location = new System.Drawing.Point(70, 48);
+            this.panelFixPointColor.Location = new System.Drawing.Point(77, 48);
             this.panelFixPointColor.Margin = new System.Windows.Forms.Padding(2);
             this.panelFixPointColor.Name = "panelFixPointColor";
             this.panelFixPointColor.Size = new System.Drawing.Size(14, 14);
@@ -230,39 +253,24 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.audioListCheck);
-            this.groupBox5.Controls.Add(this.expandImgLabel);
             this.groupBox5.Controls.Add(this.captAudioLabel);
             this.groupBox5.Controls.Add(this.captAudioOn);
-            this.groupBox5.Controls.Add(this.expandImageOn);
             this.groupBox5.Controls.Add(this.panelBGColor);
             this.groupBox5.Controls.Add(this.bgColorLabel);
-            this.groupBox5.Controls.Add(this.chooseBackGColor);
+            this.groupBox5.Controls.Add(this.bgColorButton);
             this.groupBox5.Location = new System.Drawing.Point(514, 146);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(202, 97);
+            this.groupBox5.Size = new System.Drawing.Size(202, 80);
             this.groupBox5.TabIndex = 172;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Outros";
             // 
-            // audioListCheck
-            // 
-            this.audioListCheck.AutoSize = true;
-            this.audioListCheck.Location = new System.Drawing.Point(130, 20);
-            this.audioListCheck.Margin = new System.Windows.Forms.Padding(2);
-            this.audioListCheck.Name = "audioListCheck";
-            this.audioListCheck.Size = new System.Drawing.Size(15, 14);
-            this.audioListCheck.TabIndex = 61;
-            this.audioListCheck.TabStop = false;
-            this.audioListCheck.UseVisualStyleBackColor = true;
-            this.audioListCheck.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // expandImgLabel
             // 
             this.expandImgLabel.AutoSize = true;
-            this.expandImgLabel.Location = new System.Drawing.Point(11, 72);
+            this.expandImgLabel.Location = new System.Drawing.Point(27, 155);
             this.expandImgLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.expandImgLabel.Name = "expandImgLabel";
             this.expandImgLabel.Size = new System.Drawing.Size(91, 13);
@@ -272,12 +280,12 @@
             // captAudioLabel
             // 
             this.captAudioLabel.AutoSize = true;
-            this.captAudioLabel.Location = new System.Drawing.Point(29, 15);
+            this.captAudioLabel.Location = new System.Drawing.Point(5, 15);
             this.captAudioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.captAudioLabel.Name = "captAudioLabel";
-            this.captAudioLabel.Size = new System.Drawing.Size(77, 26);
+            this.captAudioLabel.Size = new System.Drawing.Size(97, 26);
             this.captAudioLabel.TabIndex = 52;
-            this.captAudioLabel.Text = "Capturar Áudio\r\ndurante expo:";
+            this.captAudioLabel.Text = "Capturar áudio\r\ndurante exposição:";
             this.captAudioLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // captAudioOn
@@ -285,7 +293,7 @@
             this.captAudioOn.AutoSize = true;
             this.captAudioOn.Checked = true;
             this.captAudioOn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.captAudioOn.Location = new System.Drawing.Point(111, 20);
+            this.captAudioOn.Location = new System.Drawing.Point(106, 28);
             this.captAudioOn.Margin = new System.Windows.Forms.Padding(2);
             this.captAudioOn.Name = "captAudioOn";
             this.captAudioOn.Size = new System.Drawing.Size(15, 14);
@@ -297,7 +305,7 @@
             // 
             this.expandImageOn.AutoSize = true;
             this.expandImageOn.Enabled = false;
-            this.expandImageOn.Location = new System.Drawing.Point(106, 72);
+            this.expandImageOn.Location = new System.Drawing.Point(122, 155);
             this.expandImageOn.Margin = new System.Windows.Forms.Padding(2);
             this.expandImageOn.Name = "expandImageOn";
             this.expandImageOn.Size = new System.Drawing.Size(15, 14);
@@ -309,7 +317,7 @@
             // panelBGColor
             // 
             this.panelBGColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBGColor.Location = new System.Drawing.Point(106, 49);
+            this.panelBGColor.Location = new System.Drawing.Point(106, 51);
             this.panelBGColor.Margin = new System.Windows.Forms.Padding(2);
             this.panelBGColor.Name = "panelBGColor";
             this.panelBGColor.Size = new System.Drawing.Size(14, 14);
@@ -318,24 +326,24 @@
             // bgColorLabel
             // 
             this.bgColorLabel.AutoSize = true;
-            this.bgColorLabel.Location = new System.Drawing.Point(28, 49);
+            this.bgColorLabel.Location = new System.Drawing.Point(28, 51);
             this.bgColorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bgColorLabel.Name = "bgColorLabel";
             this.bgColorLabel.Size = new System.Drawing.Size(74, 13);
             this.bgColorLabel.TabIndex = 42;
             this.bgColorLabel.Text = "Cor de Fundo:";
             // 
-            // chooseBackGColor
+            // bgColorButton
             // 
-            this.chooseBackGColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chooseBackGColor.Location = new System.Drawing.Point(125, 46);
-            this.chooseBackGColor.Margin = new System.Windows.Forms.Padding(2);
-            this.chooseBackGColor.Name = "chooseBackGColor";
-            this.chooseBackGColor.Size = new System.Drawing.Size(67, 19);
-            this.chooseBackGColor.TabIndex = 81;
-            this.chooseBackGColor.Text = "escolher cor1";
-            this.chooseBackGColor.UseVisualStyleBackColor = true;
-            this.chooseBackGColor.Click += new System.EventHandler(this.button8_Click);
+            this.bgColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bgColorButton.Location = new System.Drawing.Point(125, 48);
+            this.bgColorButton.Margin = new System.Windows.Forms.Padding(2);
+            this.bgColorButton.Name = "bgColorButton";
+            this.bgColorButton.Size = new System.Drawing.Size(67, 19);
+            this.bgColorButton.TabIndex = 81;
+            this.bgColorButton.Text = "escolher cor1";
+            this.bgColorButton.UseVisualStyleBackColor = true;
+            this.bgColorButton.Click += new System.EventHandler(this.button8_Click);
             // 
             // saveButton
             // 
@@ -537,7 +545,7 @@
             this.groupBox3.Controls.Add(this.rdmIntervLabel);
             this.groupBox3.Controls.Add(this.timeExpo);
             this.groupBox3.Controls.Add(this.expoTimeLabel);
-            this.groupBox3.Location = new System.Drawing.Point(302, 35);
+            this.groupBox3.Location = new System.Drawing.Point(303, 35);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -635,7 +643,7 @@
             this.groupBox2.Controls.Add(this.openWordList);
             this.groupBox2.Controls.Add(this.openColorsList);
             this.groupBox2.Controls.Add(this.openImgsList);
-            this.groupBox2.Location = new System.Drawing.Point(11, 193);
+            this.groupBox2.Location = new System.Drawing.Point(10, 230);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -657,12 +665,12 @@
             // listAudioLabel
             // 
             this.listAudioLabel.AutoSize = true;
-            this.listAudioLabel.Location = new System.Drawing.Point(80, 101);
+            this.listAudioLabel.Location = new System.Drawing.Point(75, 101);
             this.listAudioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.listAudioLabel.Name = "listAudioLabel";
-            this.listAudioLabel.Size = new System.Drawing.Size(37, 13);
+            this.listAudioLabel.Size = new System.Drawing.Size(42, 13);
             this.listAudioLabel.TabIndex = 164;
-            this.listAudioLabel.Text = "Áudio:";
+            this.listAudioLabel.Text = "Áudios:";
             this.listAudioLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // openAudioList
@@ -739,21 +747,22 @@
             // 
             this.textBox2.AcceptsReturn = true;
             this.textBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox2.Location = new System.Drawing.Point(289, 247);
+            this.textBox2.Location = new System.Drawing.Point(302, 246);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(427, 74);
+            this.textBox2.Size = new System.Drawing.Size(414, 111);
             this.textBox2.TabIndex = 150;
             this.textBox2.TabStop = false;
-            this.textBox2.Text = "Escreva cada uma das intruções em linhas separadas.";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.expandImgLabel);
             this.groupBox1.Controls.Add(this.panelWordColor);
             this.groupBox1.Controls.Add(this.wordColorLabel);
+            this.groupBox1.Controls.Add(this.expandImageOn);
             this.groupBox1.Controls.Add(this.wordColorButton);
             this.groupBox1.Controls.Add(this.expoTypeLabel);
             this.groupBox1.Controls.Add(this.chooseExpoType);
@@ -767,7 +776,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(275, 155);
+            this.groupBox1.Size = new System.Drawing.Size(275, 192);
             this.groupBox1.TabIndex = 167;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Exposição";
@@ -775,6 +784,7 @@
             // panelWordColor
             // 
             this.panelWordColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelWordColor.Enabled = false;
             this.panelWordColor.Location = new System.Drawing.Point(123, 127);
             this.panelWordColor.Margin = new System.Windows.Forms.Padding(2);
             this.panelWordColor.Name = "panelWordColor";
@@ -784,6 +794,7 @@
             // wordColorLabel
             // 
             this.wordColorLabel.AutoSize = true;
+            this.wordColorLabel.Enabled = false;
             this.wordColorLabel.Location = new System.Drawing.Point(39, 127);
             this.wordColorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.wordColorLabel.Name = "wordColorLabel";
@@ -793,6 +804,7 @@
             // 
             // wordColorButton
             // 
+            this.wordColorButton.Enabled = false;
             this.wordColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordColorButton.Location = new System.Drawing.Point(142, 124);
             this.wordColorButton.Margin = new System.Windows.Forms.Padding(2);
@@ -821,7 +833,9 @@
             this.chooseExpoType.Items.AddRange(new object[] {
             "Palavra",
             "Imagem",
-            "Imagem com Palavra"});
+            "Imagem com Palavra",
+            "Áudio com Palavra*",
+            "Áudio com Imagem*"});
             this.chooseExpoType.Location = new System.Drawing.Point(123, 17);
             this.chooseExpoType.Margin = new System.Windows.Forms.Padding(2);
             this.chooseExpoType.Name = "chooseExpoType";
@@ -833,12 +847,12 @@
             // expoNumberLabel
             // 
             this.expoNumberLabel.AutoSize = true;
-            this.expoNumberLabel.Location = new System.Drawing.Point(8, 48);
+            this.expoNumberLabel.Location = new System.Drawing.Point(2, 48);
             this.expoNumberLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.expoNumberLabel.Name = "expoNumberLabel";
-            this.expoNumberLabel.Size = new System.Drawing.Size(111, 13);
+            this.expoNumberLabel.Size = new System.Drawing.Size(115, 13);
             this.expoNumberLabel.TabIndex = 35;
-            this.expoNumberLabel.Text = "Número de Estímulos:";
+            this.expoNumberLabel.Text = "Número de Tentativas:";
             // 
             // numExpo
             // 
@@ -930,7 +944,7 @@
             // 
             this.instructionsLabel.AutoSize = true;
             this.instructionsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.instructionsLabel.Location = new System.Drawing.Point(289, 230);
+            this.instructionsLabel.Location = new System.Drawing.Point(304, 230);
             this.instructionsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.instructionsLabel.Name = "instructionsLabel";
             this.instructionsLabel.Size = new System.Drawing.Size(59, 13);
@@ -954,20 +968,21 @@
             this.prgNameLabel.Name = "prgNameLabel";
             this.prgNameLabel.Size = new System.Drawing.Size(101, 13);
             this.prgNameLabel.TabIndex = 34;
-            this.prgNameLabel.Text = "Nome de Programa:";
+            this.prgNameLabel.Text = "Nome do Programa:";
             // 
             // FormPrgConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(751, 356);
+            this.ClientSize = new System.Drawing.Size(754, 402);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPrgConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Configuração Programa";
+            this.Text = "Programa";
+            this.Load += new System.EventHandler(this.FormPrgConfig_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -1007,7 +1022,7 @@
         private System.Windows.Forms.Label prgNameLabel;
         private System.Windows.Forms.Label expoNumberLabel;
         private System.Windows.Forms.Label expoTimeLabel;
-        private System.Windows.Forms.Button chooseBackGColor;
+        private System.Windows.Forms.Button bgColorButton;
         private System.Windows.Forms.CheckBox captAudioOn;
         private System.Windows.Forms.CheckBox randExpoOn;
         private System.Windows.Forms.Label listColorsLabel;
@@ -1036,7 +1051,7 @@
         private System.Windows.Forms.Button subDirect2;
         private System.Windows.Forms.Button subDirect1;
         private System.Windows.Forms.Panel panelFixPointColor;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button fixPointColor;
         private System.Windows.Forms.Label wordSizeLabel;
         private System.Windows.Forms.CheckBox expandImageOn;
         private System.Windows.Forms.Label expandImgLabel;
@@ -1051,10 +1066,11 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label fixPointColorLabel;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.CheckBox audioListCheck;
         private System.Windows.Forms.Panel panelWordColor;
         private System.Windows.Forms.Label wordColorLabel;
         private System.Windows.Forms.Button wordColorButton;
         private System.Windows.Forms.Button helpButton;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
     }
 }

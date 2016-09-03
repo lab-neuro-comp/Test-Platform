@@ -105,8 +105,8 @@
             // novoToolStripMenuItem
             // 
             this.novoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.programaToolStripMenuItem,
-            this.listaDePalavrasToolStripMenuItem});
+            this.listaDePalavrasToolStripMenuItem,
+            this.programaToolStripMenuItem});
             this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
             this.novoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.novoToolStripMenuItem.Text = "Novo";
@@ -130,14 +130,14 @@
             // textoECoresToolStripMenuItem
             // 
             this.textoECoresToolStripMenuItem.Name = "textoECoresToolStripMenuItem";
-            this.textoECoresToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.textoECoresToolStripMenuItem.Text = "Texto e Cores";
+            this.textoECoresToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.textoECoresToolStripMenuItem.Text = "Palavras e Cores";
             this.textoECoresToolStripMenuItem.Click += new System.EventHandler(this.textoECoresToolStripMenuItem_Click);
             // 
             // imagemToolStripMenuItem
             // 
             this.imagemToolStripMenuItem.Name = "imagemToolStripMenuItem";
-            this.imagemToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.imagemToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.imagemToolStripMenuItem.Text = "Imagens";
             this.imagemToolStripMenuItem.Click += new System.EventHandler(this.imagemToolStripMenuItem_Click);
             // 
@@ -153,15 +153,15 @@
             // programaToolStripMenuItem2
             // 
             this.programaToolStripMenuItem2.Name = "programaToolStripMenuItem2";
-            this.programaToolStripMenuItem2.Size = new System.Drawing.Size(173, 22);
+            this.programaToolStripMenuItem2.Size = new System.Drawing.Size(196, 22);
             this.programaToolStripMenuItem2.Text = "Programa    Ctrl+D";
             this.programaToolStripMenuItem2.Click += new System.EventHandler(this.programaToolStripMenuItem2_Click);
             // 
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.usuárioToolStripMenuItem.Text = "Usuário        Ctrl+U";
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.usuárioToolStripMenuItem.Text = "Participante        Ctrl+U";
             this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem_Click);
             // 
             // abrirToolStripMenuItem
@@ -174,8 +174,8 @@
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.programaToolStripMenuItem1,
             this.listaToolStripMenuItem,
+            this.programaToolStripMenuItem1,
             this.excluirToolStripMenuItem});
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
@@ -200,8 +200,8 @@
             // textoECoresToolStripMenuItem1
             // 
             this.textoECoresToolStripMenuItem1.Name = "textoECoresToolStripMenuItem1";
-            this.textoECoresToolStripMenuItem1.Size = new System.Drawing.Size(145, 22);
-            this.textoECoresToolStripMenuItem1.Text = "Texto e Cores";
+            this.textoECoresToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
+            this.textoECoresToolStripMenuItem1.Text = "Palavras e Cores";
             this.textoECoresToolStripMenuItem1.Click += new System.EventHandler(this.textoECoresToolStripMenuItem1_Click);
             // 
             // imagensToolStripMenuItem
@@ -214,8 +214,8 @@
             // excluirToolStripMenuItem
             // 
             this.excluirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.programaToolStripMenuItem3,
             this.listaToolStripMenuItem1,
+            this.programaToolStripMenuItem3,
             this.dadosToolStripMenuItem});
             this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
             this.excluirToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
@@ -333,8 +333,8 @@
             this.toolStripLabel4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripLabel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(50, 22);
-            this.toolStripLabel4.Text = "Usuário:";
+            this.toolStripLabel4.Size = new System.Drawing.Size(73, 22);
+            this.toolStripLabel4.Text = "Participante:";
             // 
             // usrNameSL
             // 
@@ -405,7 +405,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(374, 532);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

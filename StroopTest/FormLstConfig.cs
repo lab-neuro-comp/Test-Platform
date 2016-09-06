@@ -19,11 +19,11 @@ namespace StroopTest
 
         public FormLstConfig(string dataFolderPath, string lstName)
         {
-            path = dataFolderPath + "/lst/";
             InitializeComponent();
+            path = dataFolderPath + "/lst/";
 
-            wordsListName.Text = "_Words.lst";
-            colorsListName.Text = "_Colors.lst";
+            wordsListLabel.Text = "_Words.lst";
+            colorsListLabel.Text = "_Colors.lst";
 
             checkWords.Checked = true;
             checkColors.Checked = true;
@@ -42,11 +42,11 @@ namespace StroopTest
 
             try
             {
-                wordsListName.Text = wordsListName.Text.Replace("_Words", "");
-                colorsListName.Text = colorsListName.Text.Replace("_Colors", "");
+                wordsListLabel.Text = wordsListLabel.Text.Replace("_Words", "");
+                colorsListLabel.Text = colorsListLabel.Text.Replace("_Colors", "");
 
-                wordsListName.Text = lst + ".lst";
-                colorsListName.Text = lst + ".lst";
+                wordsListLabel.Text = lst + ".lst";
+                colorsListLabel.Text = lst + ".lst";
 
                 textBox1.Text = lst;
 
@@ -88,7 +88,7 @@ namespace StroopTest
             {
                 textWords.Enabled = true;
                 wordsColoredList.Enabled = true;
-                wordsListName.Enabled = true;
+                wordsListLabel.Enabled = true;
                 wordsColoredList.Items.Clear();
             }
             else
@@ -98,12 +98,12 @@ namespace StroopTest
                     textHexColor.Enabled = true;
                     hexColorsList.Enabled = true;
                     checkColors.Checked = true;
-                    colorsListName.Enabled = true;
+                    colorsListLabel.Enabled = true;
                 }
                 textWords.Enabled = false;
                 textWords.Text = "";
                 wordsColoredList.Enabled = false;
-                wordsListName.Enabled = false;
+                wordsListLabel.Enabled = false;
                 wordsColoredList.Items.Clear();
             }
         }
@@ -383,8 +383,8 @@ namespace StroopTest
             textBox1.Text = textBox1.Text.Replace("_Words", "");
             textBox1.Text = textBox1.Text.Replace("_Colors", "");
             
-            wordsListName.Text = textBox1.Text + "_Words.lst";
-            colorsListName.Text = textBox1.Text + "_Colors.lst";
+            wordsListLabel.Text = textBox1.Text + "_Words.lst";
+            colorsListLabel.Text = textBox1.Text + "_Colors.lst";
         }
     }
     

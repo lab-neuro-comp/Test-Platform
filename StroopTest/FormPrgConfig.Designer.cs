@@ -41,10 +41,8 @@
             this.fixPointColor = new System.Windows.Forms.Button();
             this.panelFixPointColor = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.expandImgLabel = new System.Windows.Forms.Label();
             this.captAudioLabel = new System.Windows.Forms.Label();
             this.captAudioOn = new System.Windows.Forms.CheckBox();
-            this.expandImageOn = new System.Windows.Forms.CheckBox();
             this.panelBGColor = new System.Windows.Forms.Panel();
             this.bgColorLabel = new System.Windows.Forms.Label();
             this.bgColorButton = new System.Windows.Forms.Button();
@@ -77,11 +75,13 @@
             this.listImagesLabel = new System.Windows.Forms.Label();
             this.openWordList = new System.Windows.Forms.Button();
             this.openColorsList = new System.Windows.Forms.Button();
-            this.openImgsList = new System.Windows.Forms.Button();
+            this.openImageList = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.expandImgLabel = new System.Windows.Forms.Label();
             this.panelWordColor = new System.Windows.Forms.Panel();
             this.wordColorLabel = new System.Windows.Forms.Label();
+            this.expandImageOn = new System.Windows.Forms.CheckBox();
             this.wordColorButton = new System.Windows.Forms.Button();
             this.expoTypeLabel = new System.Windows.Forms.Label();
             this.chooseExpoType = new System.Windows.Forms.ComboBox();
@@ -89,7 +89,7 @@
             this.numExpo = new System.Windows.Forms.NumericUpDown();
             this.rdmExpoLabel = new System.Windows.Forms.Label();
             this.wordSizeLabel = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.wordSizeNumeric = new System.Windows.Forms.NumericUpDown();
             this.randExpoOn = new System.Windows.Forms.CheckBox();
             this.instructionsLabel = new System.Windows.Forms.Label();
             this.progName = new System.Windows.Forms.TextBox();
@@ -104,7 +104,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wordSizeNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -114,7 +114,6 @@
             this.panel1.Controls.Add(this.helpButton);
             this.panel1.Controls.Add(this.groupBox6);
             this.panel1.Controls.Add(this.groupBox5);
-            this.panel1.Controls.Add(this.saveButton);
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
@@ -134,12 +133,11 @@
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.helpButton.BackgroundImage = global::StroopTest.Properties.Resources.helpButton;
             this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.helpButton.Location = new System.Drawing.Point(656, 9);
+            this.helpButton.Location = new System.Drawing.Point(689, 9);
             this.helpButton.Margin = new System.Windows.Forms.Padding(2);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(26, 26);
-            this.helpButton.TabIndex = 174;
-            this.helpButton.TabStop = false;
+            this.helpButton.TabIndex = 81;
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
@@ -158,7 +156,7 @@
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox6.Size = new System.Drawing.Size(190, 80);
-            this.groupBox6.TabIndex = 173;
+            this.groupBox6.TabIndex = 40;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Ponto de Fixação";
             // 
@@ -201,7 +199,7 @@
             this.fixPointCross.Margin = new System.Windows.Forms.Padding(2);
             this.fixPointCross.Name = "fixPointCross";
             this.fixPointCross.Size = new System.Drawing.Size(15, 14);
-            this.fixPointCross.TabIndex = 50;
+            this.fixPointCross.TabIndex = 40;
             this.fixPointCross.TabStop = false;
             this.fixPointCross.UseVisualStyleBackColor = true;
             this.fixPointCross.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
@@ -223,7 +221,7 @@
             this.fixPointCircle.Margin = new System.Windows.Forms.Padding(2);
             this.fixPointCircle.Name = "fixPointCircle";
             this.fixPointCircle.Size = new System.Drawing.Size(15, 14);
-            this.fixPointCircle.TabIndex = 51;
+            this.fixPointCircle.TabIndex = 41;
             this.fixPointCircle.TabStop = false;
             this.fixPointCircle.UseVisualStyleBackColor = true;
             this.fixPointCircle.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged_1);
@@ -235,8 +233,7 @@
             this.fixPointColor.Margin = new System.Windows.Forms.Padding(2);
             this.fixPointColor.Name = "fixPointColor";
             this.fixPointColor.Size = new System.Drawing.Size(89, 19);
-            this.fixPointColor.TabIndex = 52;
-            this.fixPointColor.TabStop = false;
+            this.fixPointColor.TabIndex = 42;
             this.fixPointColor.Text = "escolher";
             this.fixPointColor.UseVisualStyleBackColor = true;
             this.fixPointColor.Click += new System.EventHandler(this.button1_Click);
@@ -263,19 +260,9 @@
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(202, 80);
-            this.groupBox5.TabIndex = 172;
+            this.groupBox5.TabIndex = 60;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Outros";
-            // 
-            // expandImgLabel
-            // 
-            this.expandImgLabel.AutoSize = true;
-            this.expandImgLabel.Location = new System.Drawing.Point(27, 155);
-            this.expandImgLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.expandImgLabel.Name = "expandImgLabel";
-            this.expandImgLabel.Size = new System.Drawing.Size(91, 13);
-            this.expandImgLabel.TabIndex = 161;
-            this.expandImgLabel.Text = "Expandir Imagem:";
             // 
             // captAudioLabel
             // 
@@ -300,19 +287,6 @@
             this.captAudioOn.TabIndex = 60;
             this.captAudioOn.TabStop = false;
             this.captAudioOn.UseVisualStyleBackColor = true;
-            // 
-            // expandImageOn
-            // 
-            this.expandImageOn.AutoSize = true;
-            this.expandImageOn.Enabled = false;
-            this.expandImageOn.Location = new System.Drawing.Point(122, 155);
-            this.expandImageOn.Margin = new System.Windows.Forms.Padding(2);
-            this.expandImageOn.Name = "expandImageOn";
-            this.expandImageOn.Size = new System.Drawing.Size(15, 14);
-            this.expandImageOn.TabIndex = 83;
-            this.expandImageOn.TabStop = false;
-            this.expandImageOn.UseVisualStyleBackColor = true;
-            this.expandImageOn.CheckedChanged += new System.EventHandler(this.expandImageOn_CheckedChanged);
             // 
             // panelBGColor
             // 
@@ -340,24 +314,23 @@
             this.bgColorButton.Margin = new System.Windows.Forms.Padding(2);
             this.bgColorButton.Name = "bgColorButton";
             this.bgColorButton.Size = new System.Drawing.Size(67, 19);
-            this.bgColorButton.TabIndex = 81;
+            this.bgColorButton.TabIndex = 61;
             this.bgColorButton.Text = "escolher cor1";
             this.bgColorButton.UseVisualStyleBackColor = true;
-            this.bgColorButton.Click += new System.EventHandler(this.button8_Click);
+            this.bgColorButton.Click += new System.EventHandler(this.chooseBGColor);
             // 
             // saveButton
             // 
             this.saveButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.saveButton.BackgroundImage = global::StroopTest.Properties.Resources.save;
             this.saveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.saveButton.Location = new System.Drawing.Point(686, 9);
+            this.saveButton.Location = new System.Drawing.Point(668, 389);
             this.saveButton.Margin = new System.Windows.Forms.Padding(2);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(26, 26);
-            this.saveButton.TabIndex = 6;
-            this.saveButton.TabStop = false;
+            this.saveButton.Size = new System.Drawing.Size(73, 26);
+            this.saveButton.TabIndex = 80;
+            this.saveButton.Text = "Salvar";
             this.saveButton.UseVisualStyleBackColor = false;
-            this.saveButton.Click += new System.EventHandler(this.button2_Click);
+            this.saveButton.Click += new System.EventHandler(this.configureNewProgram);
             // 
             // groupBox4
             // 
@@ -378,7 +351,7 @@
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(202, 107);
-            this.groupBox4.TabIndex = 170;
+            this.groupBox4.TabIndex = 50;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Legenda";
             // 
@@ -432,10 +405,10 @@
             this.openSubtitleList.Margin = new System.Windows.Forms.Padding(2);
             this.openSubtitleList.Name = "openSubtitleList";
             this.openSubtitleList.Size = new System.Drawing.Size(110, 19);
-            this.openSubtitleList.TabIndex = 71;
+            this.openSubtitleList.TabIndex = 50;
             this.openSubtitleList.Text = "abrir";
             this.openSubtitleList.UseVisualStyleBackColor = true;
-            this.openSubtitleList.Click += new System.EventHandler(this.openSubtitleList_Click);
+            this.openSubtitleList.Click += new System.EventHandler(this.openSubsList_Click);
             // 
             // chooseColorSubs
             // 
@@ -445,11 +418,10 @@
             this.chooseColorSubs.Margin = new System.Windows.Forms.Padding(2);
             this.chooseColorSubs.Name = "chooseColorSubs";
             this.chooseColorSubs.Size = new System.Drawing.Size(106, 19);
-            this.chooseColorSubs.TabIndex = 73;
-            this.chooseColorSubs.TabStop = false;
+            this.chooseColorSubs.TabIndex = 51;
             this.chooseColorSubs.Text = "escolher";
             this.chooseColorSubs.UseVisualStyleBackColor = true;
-            this.chooseColorSubs.Click += new System.EventHandler(this.button11_Click);
+            this.chooseColorSubs.Click += new System.EventHandler(this.chooseSubsColor);
             // 
             // panelSubColor
             // 
@@ -550,19 +522,19 @@
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(190, 107);
-            this.groupBox3.TabIndex = 169;
+            this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tempo";
             // 
             // intervTimeLabel
             // 
             this.intervTimeLabel.AutoSize = true;
-            this.intervTimeLabel.Location = new System.Drawing.Point(62, 47);
+            this.intervTimeLabel.Location = new System.Drawing.Point(42, 47);
             this.intervTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.intervTimeLabel.Name = "intervTimeLabel";
-            this.intervTimeLabel.Size = new System.Drawing.Size(51, 13);
+            this.intervTimeLabel.Size = new System.Drawing.Size(73, 13);
             this.intervTimeLabel.TabIndex = 38;
-            this.intervTimeLabel.Text = "Intervalo:";
+            this.intervTimeLabel.Text = "Intervalo (ms):";
             // 
             // timeInterval
             // 
@@ -581,7 +553,7 @@
             0});
             this.timeInterval.Name = "timeInterval";
             this.timeInterval.Size = new System.Drawing.Size(60, 20);
-            this.timeInterval.TabIndex = 41;
+            this.timeInterval.TabIndex = 31;
             // 
             // randIntervalOn
             // 
@@ -590,8 +562,7 @@
             this.randIntervalOn.Margin = new System.Windows.Forms.Padding(2);
             this.randIntervalOn.Name = "randIntervalOn";
             this.randIntervalOn.Size = new System.Drawing.Size(15, 14);
-            this.randIntervalOn.TabIndex = 42;
-            this.randIntervalOn.TabStop = false;
+            this.randIntervalOn.TabIndex = 32;
             this.randIntervalOn.UseVisualStyleBackColor = true;
             // 
             // rdmIntervLabel
@@ -600,9 +571,9 @@
             this.rdmIntervLabel.Location = new System.Drawing.Point(12, 75);
             this.rdmIntervLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.rdmIntervLabel.Name = "rdmIntervLabel";
-            this.rdmIntervLabel.Size = new System.Drawing.Size(146, 13);
+            this.rdmIntervLabel.Size = new System.Drawing.Size(143, 13);
             this.rdmIntervLabel.TabIndex = 61;
-            this.rdmIntervLabel.Text = "Tempo de Intervalo Aleatório:";
+            this.rdmIntervLabel.Text = "Tempo de Intervalo Variável:";
             this.rdmIntervLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // timeExpo
@@ -621,17 +592,17 @@
             0});
             this.timeExpo.Name = "timeExpo";
             this.timeExpo.Size = new System.Drawing.Size(60, 20);
-            this.timeExpo.TabIndex = 40;
+            this.timeExpo.TabIndex = 30;
             // 
             // expoTimeLabel
             // 
             this.expoTimeLabel.AutoSize = true;
-            this.expoTimeLabel.Location = new System.Drawing.Point(54, 19);
+            this.expoTimeLabel.Location = new System.Drawing.Point(34, 19);
             this.expoTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.expoTimeLabel.Name = "expoTimeLabel";
-            this.expoTimeLabel.Size = new System.Drawing.Size(59, 13);
+            this.expoTimeLabel.Size = new System.Drawing.Size(81, 13);
             this.expoTimeLabel.TabIndex = 36;
-            this.expoTimeLabel.Text = "Exposição:";
+            this.expoTimeLabel.Text = "Exposição (ms):";
             // 
             // groupBox2
             // 
@@ -642,13 +613,13 @@
             this.groupBox2.Controls.Add(this.listImagesLabel);
             this.groupBox2.Controls.Add(this.openWordList);
             this.groupBox2.Controls.Add(this.openColorsList);
-            this.groupBox2.Controls.Add(this.openImgsList);
+            this.groupBox2.Controls.Add(this.openImageList);
             this.groupBox2.Location = new System.Drawing.Point(10, 230);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(274, 128);
-            this.groupBox2.TabIndex = 168;
+            this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listas";
             // 
@@ -681,10 +652,10 @@
             this.openAudioList.Margin = new System.Windows.Forms.Padding(2);
             this.openAudioList.Name = "openAudioList";
             this.openAudioList.Size = new System.Drawing.Size(140, 19);
-            this.openAudioList.TabIndex = 62;
+            this.openAudioList.TabIndex = 23;
             this.openAudioList.Text = "abrir";
             this.openAudioList.UseVisualStyleBackColor = true;
-            this.openAudioList.Click += new System.EventHandler(this.button4_Click);
+            this.openAudioList.Click += new System.EventHandler(this.openAudioList_Click);
             // 
             // listColorsLabel
             // 
@@ -713,10 +684,10 @@
             this.openWordList.Margin = new System.Windows.Forms.Padding(2);
             this.openWordList.Name = "openWordList";
             this.openWordList.Size = new System.Drawing.Size(140, 19);
-            this.openWordList.TabIndex = 30;
+            this.openWordList.TabIndex = 20;
             this.openWordList.Text = "abrir";
             this.openWordList.UseVisualStyleBackColor = true;
-            this.openWordList.Click += new System.EventHandler(this.button12_Click);
+            this.openWordList.Click += new System.EventHandler(this.openWordsList_Click);
             // 
             // openColorsList
             // 
@@ -725,23 +696,23 @@
             this.openColorsList.Margin = new System.Windows.Forms.Padding(2);
             this.openColorsList.Name = "openColorsList";
             this.openColorsList.Size = new System.Drawing.Size(140, 19);
-            this.openColorsList.TabIndex = 31;
+            this.openColorsList.TabIndex = 21;
             this.openColorsList.Text = "abrir";
             this.openColorsList.UseVisualStyleBackColor = true;
-            this.openColorsList.Click += new System.EventHandler(this.button13_Click);
+            this.openColorsList.Click += new System.EventHandler(this.openColorsList_Click);
             // 
-            // openImgsList
+            // openImageList
             // 
-            this.openImgsList.Enabled = false;
-            this.openImgsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openImgsList.Location = new System.Drawing.Point(121, 71);
-            this.openImgsList.Margin = new System.Windows.Forms.Padding(2);
-            this.openImgsList.Name = "openImgsList";
-            this.openImgsList.Size = new System.Drawing.Size(140, 19);
-            this.openImgsList.TabIndex = 32;
-            this.openImgsList.Text = "abrir";
-            this.openImgsList.UseVisualStyleBackColor = true;
-            this.openImgsList.Click += new System.EventHandler(this.button14_Click);
+            this.openImageList.Enabled = false;
+            this.openImageList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openImageList.Location = new System.Drawing.Point(121, 71);
+            this.openImageList.Margin = new System.Windows.Forms.Padding(2);
+            this.openImageList.Name = "openImageList";
+            this.openImageList.Size = new System.Drawing.Size(140, 19);
+            this.openImageList.TabIndex = 22;
+            this.openImageList.Text = "abrir";
+            this.openImageList.UseVisualStyleBackColor = true;
+            this.openImageList.Click += new System.EventHandler(this.openImagesList_Click);
             // 
             // textBox2
             // 
@@ -753,8 +724,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox2.Size = new System.Drawing.Size(414, 111);
-            this.textBox2.TabIndex = 150;
-            this.textBox2.TabStop = false;
+            this.textBox2.TabIndex = 70;
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // groupBox1
@@ -770,16 +740,26 @@
             this.groupBox1.Controls.Add(this.numExpo);
             this.groupBox1.Controls.Add(this.rdmExpoLabel);
             this.groupBox1.Controls.Add(this.wordSizeLabel);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.wordSizeNumeric);
             this.groupBox1.Controls.Add(this.randExpoOn);
             this.groupBox1.Location = new System.Drawing.Point(10, 34);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(275, 192);
-            this.groupBox1.TabIndex = 167;
+            this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Exposição";
+            // 
+            // expandImgLabel
+            // 
+            this.expandImgLabel.AutoSize = true;
+            this.expandImgLabel.Location = new System.Drawing.Point(27, 155);
+            this.expandImgLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.expandImgLabel.Name = "expandImgLabel";
+            this.expandImgLabel.Size = new System.Drawing.Size(91, 13);
+            this.expandImgLabel.TabIndex = 161;
+            this.expandImgLabel.Text = "Expandir Imagem:";
             // 
             // panelWordColor
             // 
@@ -802,6 +782,19 @@
             this.wordColorLabel.TabIndex = 160;
             this.wordColorLabel.Text = "Cor da Palavra:";
             // 
+            // expandImageOn
+            // 
+            this.expandImageOn.AutoSize = true;
+            this.expandImageOn.Enabled = false;
+            this.expandImageOn.Location = new System.Drawing.Point(122, 155);
+            this.expandImageOn.Margin = new System.Windows.Forms.Padding(2);
+            this.expandImageOn.Name = "expandImageOn";
+            this.expandImageOn.Size = new System.Drawing.Size(15, 14);
+            this.expandImageOn.TabIndex = 14;
+            this.expandImageOn.TabStop = false;
+            this.expandImageOn.UseVisualStyleBackColor = true;
+            this.expandImageOn.CheckedChanged += new System.EventHandler(this.expandImageOn_CheckedChanged);
+            // 
             // wordColorButton
             // 
             this.wordColorButton.Enabled = false;
@@ -810,7 +803,7 @@
             this.wordColorButton.Margin = new System.Windows.Forms.Padding(2);
             this.wordColorButton.Name = "wordColorButton";
             this.wordColorButton.Size = new System.Drawing.Size(121, 19);
-            this.wordColorButton.TabIndex = 161;
+            this.wordColorButton.TabIndex = 13;
             this.wordColorButton.Text = "escolher";
             this.wordColorButton.UseVisualStyleBackColor = true;
             this.wordColorButton.Click += new System.EventHandler(this.button3_Click_1);
@@ -833,16 +826,16 @@
             this.chooseExpoType.Items.AddRange(new object[] {
             "Palavra",
             "Imagem",
-            "Imagem com Palavra",
-            "Áudio com Palavra*",
-            "Áudio com Imagem*"});
+            "Palavra e Imagem",
+            "Palavra com Áudio",
+            "Imagem com Áudio"});
             this.chooseExpoType.Location = new System.Drawing.Point(123, 17);
             this.chooseExpoType.Margin = new System.Windows.Forms.Padding(2);
             this.chooseExpoType.Name = "chooseExpoType";
             this.chooseExpoType.Size = new System.Drawing.Size(140, 21);
-            this.chooseExpoType.TabIndex = 20;
+            this.chooseExpoType.TabIndex = 10;
             this.chooseExpoType.Tag = "";
-            this.chooseExpoType.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.chooseExpoType.SelectedIndexChanged += new System.EventHandler(this.chooseExpositionTypeComboBox);
             // 
             // expoNumberLabel
             // 
@@ -870,7 +863,7 @@
             0});
             this.numExpo.Name = "numExpo";
             this.numExpo.Size = new System.Drawing.Size(60, 20);
-            this.numExpo.TabIndex = 21;
+            this.numExpo.TabIndex = 11;
             this.numExpo.Value = new decimal(new int[] {
             1,
             0,
@@ -898,34 +891,34 @@
             this.wordSizeLabel.TabIndex = 159;
             this.wordSizeLabel.Text = "Tamanho da Palavra:";
             // 
-            // numericUpDown1
+            // wordSizeNumeric
             // 
-            this.numericUpDown1.Increment = new decimal(new int[] {
+            this.wordSizeNumeric.Increment = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown1.Location = new System.Drawing.Point(123, 96);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.wordSizeNumeric.Location = new System.Drawing.Point(123, 96);
+            this.wordSizeNumeric.Margin = new System.Windows.Forms.Padding(2);
+            this.wordSizeNumeric.Maximum = new decimal(new int[] {
             300,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.wordSizeNumeric.Minimum = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(60, 20);
-            this.numericUpDown1.TabIndex = 80;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.wordSizeNumeric.Name = "wordSizeNumeric";
+            this.wordSizeNumeric.Size = new System.Drawing.Size(60, 20);
+            this.wordSizeNumeric.TabIndex = 13;
+            this.wordSizeNumeric.Value = new decimal(new int[] {
             160,
             0,
             0,
             0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.wordSizeNumeric.ValueChanged += new System.EventHandler(this.wordSizeNumeric_ValueChanged);
             // 
             // randExpoOn
             // 
@@ -936,8 +929,7 @@
             this.randExpoOn.Margin = new System.Windows.Forms.Padding(2);
             this.randExpoOn.Name = "randExpoOn";
             this.randExpoOn.Size = new System.Drawing.Size(15, 14);
-            this.randExpoOn.TabIndex = 22;
-            this.randExpoOn.TabStop = false;
+            this.randExpoOn.TabIndex = 12;
             this.randExpoOn.UseVisualStyleBackColor = true;
             // 
             // instructionsLabel
@@ -958,7 +950,7 @@
             this.progName.MaxLength = 300;
             this.progName.Name = "progName";
             this.progName.Size = new System.Drawing.Size(170, 20);
-            this.progName.TabIndex = 10;
+            this.progName.TabIndex = 1;
             // 
             // prgNameLabel
             // 
@@ -974,15 +966,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 402);
+            this.ClientSize = new System.Drawing.Size(754, 426);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.saveButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPrgConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Programa";
-            this.Load += new System.EventHandler(this.FormPrgConfig_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -1000,7 +992,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wordSizeNumeric)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1029,7 +1021,7 @@
         private System.Windows.Forms.ComboBox chooseExpoType;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.CheckBox showSubsOn;
-        private System.Windows.Forms.Button openImgsList;
+        private System.Windows.Forms.Button openImageList;
         private System.Windows.Forms.Button openColorsList;
         private System.Windows.Forms.Button openWordList;
         private System.Windows.Forms.Button chooseColorSubs;
@@ -1055,7 +1047,7 @@
         private System.Windows.Forms.Label wordSizeLabel;
         private System.Windows.Forms.CheckBox expandImageOn;
         private System.Windows.Forms.Label expandImgLabel;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown wordSizeNumeric;
         private System.Windows.Forms.Button openAudioList;
         private System.Windows.Forms.Label listAudioLabel;
         private System.Windows.Forms.Button openSubtitleList;

@@ -19,16 +19,19 @@ namespace StroopTest
         private string defaultWordsListText = "amarelo azul verde vermelho";
         private string defaultColorsListName = "padrao_Colors.lst";
         private string defaultColorsListText = "#F8E000 #007BB7 #7EC845 #D01C1F";
-        private string headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor";
+        private string headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio";
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string[] defaultInstructionText = { "Serão apresentadas palavras coloridas de forma aleatória. Palavras surgirão rapidamente e em seguida desaparecerão",
                                                     "Diga a cor em que a palavra está escrita",
                                                     "A tarefa vai começar agora"};
+        private bool needsEditionFlag;
+
 
         public static int instructionAwaitTime = 4000;
 
         private List<string> instructionText = new List<string>();
 
+        private DateTime initialDate;           // data inicial
         private string userName;                // nome do usuário do programa
         private string programName;             // [0]   nome do programa
         private int numExpositions;             // [1]*  numero de exposicoes 
@@ -43,16 +46,19 @@ namespace StroopTest
         private bool subtitleShow;              // [10]* com legenda
         private int subtitlePlace;              // [11]* localizacao da legenda
         private string subtitleColor;           // [12]  cor da legenda
-        private DateTime initialDate;           //       data inicial
-        private string expositionType;          // [13]  tipo de exposição txt e/ou img
+        private string expositionType;          // [13]  tipo de exposição txt e/ou img (ADICIONAR PALVRA C/ AUDIO; PAR DE IMG; IMG C/ AUDIO)
         private string imagesListFile;          // [14]  lista com caminhos de imagens
         private string fixPoint;                // [15]  ponto de fixação - cruz / ponto / false
-        private string fontWordLabel;           // [16]  tamanho da palavra
-        private bool expandImage;               // [17]  expande imagem ajustando à tela
-        private string audioListFile = "false";          // [18]  lista com caminhos dos áudios
-        private string subtitlesListFile = "false";       // [19]  lista de legendas
-        private string fixPointColor;
-        private bool rotateImage = false;
+        private string fontWordLabel;           // [16]  tamanho da fonte - 160
+        private bool expandImage;               // [17]  expande imagem ajustando à tela - false
+        private string audioListFile;           // [18]  lista com caminhos dos áudios - ler se é do tipo audio [13]
+        private string subtitlesListFile = "false";       // [19]  lista de legendas - ler se com legenda está ativado [10]
+
+        private string fixPointColor = "false";           // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
+        private int delayTime;                  // [21]  tempo de atraso = intervalo se não for definido
+        private bool rotateImage = false;               // [22]  rotacionar imagem (90, 180, 270, 360)
+
+
 
         // Definição gets 
         // Definição sets (e suas restrições)
@@ -287,8 +293,8 @@ namespace StroopTest
             get { return expositionType; }
             set
             {
-                if (value.ToLower() == "txt" || value.ToLower() == "img" || value.ToLower() == "imgtxt") expositionType = value.ToLower();
-                else throw new ArgumentException("Nome do programa deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'MeuPrograma'");
+                if (value.ToLower() == "txt" || value.ToLower() == "img" || value.ToLower() == "imgtxt" || value.ToLower() == "txtaud" || value.ToLower() == "imgaud") expositionType = value.ToLower();
+                else throw new ArgumentException("Tipo de exposição deve ser do tipo 'txt', 'img', 'imgtxt', 'txtaud' ou 'imgaud'");
             }
         }
 
@@ -398,7 +404,7 @@ namespace StroopTest
 
         public bool RotateImage
         {
-            get { return RotateImage;  }
+            get { return rotateImage;  }
             set
             {
                 if (value == true || value == false)
@@ -410,6 +416,11 @@ namespace StroopTest
                     throw new ArgumentException("Erro no Arquivo com Programa:\nRotacao de Imagem deve ser boleana (true or false)");
                 }
             }
+        }
+
+        public bool NeedsEdition
+        {
+            get { return needsEditionFlag; }
         }
 
         // decodifica texto
@@ -454,6 +465,8 @@ namespace StroopTest
                 defaultConfig = defaultProgramFileText.Split().ToList();
                 tr.Close();
 
+                Console.WriteLine(config[0]);
+
                 /*
                 if(config.Length != 20)
                 {
@@ -465,21 +478,28 @@ namespace StroopTest
 
                 config = line.Split();
                 */
-                
-                if (config.Count() != 20)
+                needsEditionFlag = false;
+                if (config.Count() < 20  && config.Count() > 15)
                 {
-                    for(int i = (config.Count - 1); i < 20; i++)
+                    needsEditionFlag = true;
+                    for (int i = config.Count(); i < 20; i++)
                     {
                         config.Add(defaultConfig[i]);
                     }
                 }
                 
-                
+                /*
+                var message1 = string.Join(" ", config);
+                var message2 = string.Join(" ", defaultConfig);
+
+                throw new Exception(message1 + "\n\n\n" + message2);
+                */
+
                 //if(config.Count() != 20) throw new FormatException("Arquivo programa deve ter 20 parâmetros\nexemplo - programa padrão:\n" + defaultProgramFileText);
-                
+
                 // atribuição de valores no arquivos às variáveis do programa:
                 // nomePrograma /NumExposições /TempoExposição /ExpAleatória /TempoIntervalo /TempoIntervAleatorio /ListaPalavras /ListaCores /CorFundo /CaptAudio /mostrarLegenda /lugarLegenda /corLegenda /tipoExposicao /listaImg / PontoFixacao
-                
+
                 ProgramName = config[0];
                 if (Path.GetFileNameWithoutExtension(filepath) != (this.ProgramName)) { throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName + "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + "'.prg"); }
                 NumExpositions = Int32.Parse(config[1]);
@@ -492,9 +512,10 @@ namespace StroopTest
                 BackgroundColor = config[8];
                 AudioCapture = Boolean.Parse(config[9]);
                 SubtitleShow = Boolean.Parse(config[10]);
+
                 if (SubtitleShow) { SubtitlePlace = Int32.Parse(config[11]); SubtitleColor = config[12]; }
                 else { SubtitlePlace = 0; SubtitleColor = "false"; }
-                ExpositionType = config[13];
+                ExpositionType = config[13]; // aqui
                 ImagesListFile = config[14];
                 FixPoint = config[15];
                 FontWordLabel = config[16];
@@ -647,7 +668,7 @@ namespace StroopTest
                 Console.WriteLine(ex.Message);
             }
         }
-        static public void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter, List<string> output, float elapsedTime, string expoType)
+        static public void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter, List<string> output, float elapsedTime, string expoType, string audioName)
         {
             // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor
             var text = program.ProgramName + "\t" +
@@ -660,7 +681,8 @@ namespace StroopTest
                        program.SubtitleShow.ToString().ToLower() + "\t" +
                        program.SubtitlePlace + "\t" +
                        nameStimulus + "\t" +
-                       color;
+                       color + "\t" +
+                       audioName;
             output.Add(text);
         }
     }

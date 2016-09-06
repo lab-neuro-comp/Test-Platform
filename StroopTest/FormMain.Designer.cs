@@ -33,22 +33,22 @@
             this.iniciarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iniciarTesteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.programaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDePalavrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textoECoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.programaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.programaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.programaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textoECoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.imagensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.programaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.programaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.programaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.dadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exibirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,9 +57,9 @@
             this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.defineProgramButton = new System.Windows.Forms.ToolStripButton();
             this.prgNameSL = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.defineUserButton = new System.Windows.Forms.ToolStripButton();
             this.usrNameSL = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
@@ -111,13 +111,6 @@
             this.novoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.novoToolStripMenuItem.Text = "Novo";
             // 
-            // programaToolStripMenuItem
-            // 
-            this.programaToolStripMenuItem.Name = "programaToolStripMenuItem";
-            this.programaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.programaToolStripMenuItem.Text = "Programa    Ctrl+N";
-            this.programaToolStripMenuItem.Click += new System.EventHandler(this.programaToolStripMenuItem_Click);
-            // 
             // listaDePalavrasToolStripMenuItem
             // 
             this.listaDePalavrasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -140,6 +133,13 @@
             this.imagemToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.imagemToolStripMenuItem.Text = "Imagens";
             this.imagemToolStripMenuItem.Click += new System.EventHandler(this.imagemToolStripMenuItem_Click);
+            // 
+            // programaToolStripMenuItem
+            // 
+            this.programaToolStripMenuItem.Name = "programaToolStripMenuItem";
+            this.programaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.programaToolStripMenuItem.Text = "Programa    Ctrl+N";
+            this.programaToolStripMenuItem.Click += new System.EventHandler(this.programaToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -181,13 +181,6 @@
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
-            // programaToolStripMenuItem1
-            // 
-            this.programaToolStripMenuItem1.Name = "programaToolStripMenuItem1";
-            this.programaToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
-            this.programaToolStripMenuItem1.Text = "Programa";
-            this.programaToolStripMenuItem1.Click += new System.EventHandler(this.programaToolStripMenuItem1_Click);
-            // 
             // listaToolStripMenuItem
             // 
             this.listaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -208,8 +201,15 @@
             // 
             this.imagensToolStripMenuItem.Enabled = false;
             this.imagensToolStripMenuItem.Name = "imagensToolStripMenuItem";
-            this.imagensToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.imagensToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.imagensToolStripMenuItem.Text = "Imagens";
+            // 
+            // programaToolStripMenuItem1
+            // 
+            this.programaToolStripMenuItem1.Name = "programaToolStripMenuItem1";
+            this.programaToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.programaToolStripMenuItem1.Text = "Programa";
+            this.programaToolStripMenuItem1.Click += new System.EventHandler(this.programaToolStripMenuItem1_Click);
             // 
             // excluirToolStripMenuItem
             // 
@@ -221,19 +221,19 @@
             this.excluirToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.excluirToolStripMenuItem.Text = "Excluir";
             // 
-            // programaToolStripMenuItem3
-            // 
-            this.programaToolStripMenuItem3.Name = "programaToolStripMenuItem3";
-            this.programaToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
-            this.programaToolStripMenuItem3.Text = "Programa";
-            this.programaToolStripMenuItem3.Click += new System.EventHandler(this.programaToolStripMenuItem3_Click);
-            // 
             // listaToolStripMenuItem1
             // 
             this.listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
             this.listaToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.listaToolStripMenuItem1.Text = "Lista";
             this.listaToolStripMenuItem1.Click += new System.EventHandler(this.listaToolStripMenuItem1_Click);
+            // 
+            // programaToolStripMenuItem3
+            // 
+            this.programaToolStripMenuItem3.Name = "programaToolStripMenuItem3";
+            this.programaToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
+            this.programaToolStripMenuItem3.Text = "Programa";
+            this.programaToolStripMenuItem3.Click += new System.EventHandler(this.programaToolStripMenuItem3_Click);
             // 
             // dadosToolStripMenuItem
             // 
@@ -286,14 +286,15 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
-            this.toolStripLabel3,
+            this.defineProgramButton,
             this.prgNameSL,
-            this.toolStripLabel4,
+            this.defineUserButton,
             this.usrNameSL,
             this.toolStripLabel5,
             this.dirPathSL});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
             this.toolStrip1.Size = new System.Drawing.Size(728, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
@@ -303,48 +304,51 @@
             // 
             this.toolStripButton1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(74, 22);
             this.toolStripButton1.Text = "Iniciar Teste";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // toolStripLabel3
+            // defineProgramButton
             // 
-            this.toolStripLabel3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(62, 22);
-            this.toolStripLabel3.Text = "Programa:";
+            this.defineProgramButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.defineProgramButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.defineProgramButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.defineProgramButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.defineProgramButton.Name = "defineProgramButton";
+            this.defineProgramButton.Size = new System.Drawing.Size(66, 22);
+            this.defineProgramButton.Text = "Programa:";
+            this.defineProgramButton.Click += new System.EventHandler(this.defineProgramButton_Click);
             // 
             // prgNameSL
             // 
-            this.prgNameSL.BackColor = System.Drawing.SystemColors.Control;
+            this.prgNameSL.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.prgNameSL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.prgNameSL.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.prgNameSL.Name = "prgNameSL";
             this.prgNameSL.Size = new System.Drawing.Size(44, 22);
             this.prgNameSL.Text = "padrao";
-            this.prgNameSL.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
-            // toolStripLabel4
+            // defineUserButton
             // 
-            this.toolStripLabel4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripLabel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(73, 22);
-            this.toolStripLabel4.Text = "Participante:";
+            this.defineUserButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.defineUserButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.defineUserButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.defineUserButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.defineUserButton.Name = "defineUserButton";
+            this.defineUserButton.Size = new System.Drawing.Size(74, 22);
+            this.defineUserButton.Text = "Participante";
+            this.defineUserButton.Click += new System.EventHandler(this.defineUserButton_Click);
             // 
             // usrNameSL
             // 
-            this.usrNameSL.BackColor = System.Drawing.SystemColors.Control;
+            this.usrNameSL.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.usrNameSL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.usrNameSL.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.usrNameSL.Name = "usrNameSL";
             this.usrNameSL.Size = new System.Drawing.Size(44, 22);
             this.usrNameSL.Text = "padrao";
-            this.usrNameSL.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
             // toolStripLabel5
             // 
@@ -353,6 +357,7 @@
             this.toolStripLabel5.Name = "toolStripLabel5";
             this.toolStripLabel5.Size = new System.Drawing.Size(56, 22);
             this.toolStripLabel5.Text = "Diretório:";
+            this.toolStripLabel5.Visible = false;
             // 
             // dirPathSL
             // 
@@ -362,6 +367,7 @@
             this.dirPathSL.Name = "dirPathSL";
             this.dirPathSL.Size = new System.Drawing.Size(78, 22);
             this.dirPathSL.Text = "directoryPath";
+            this.dirPathSL.Visible = false;
             this.dirPathSL.Click += new System.EventHandler(this.dirPathSL_Click);
             // 
             // label1
@@ -445,8 +451,6 @@
         private System.Windows.Forms.ToolStripLabel prgNameSL;
         private System.Windows.Forms.ToolStripLabel usrNameSL;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
         private System.Windows.Forms.ToolStripLabel dirPathSL;
         private System.Windows.Forms.ToolStripMenuItem textoECoresToolStripMenuItem1;
@@ -459,5 +463,7 @@
         private System.Windows.Forms.ToolStripMenuItem iniciarTesteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dadosToolStripMenuItem;
         private System.Windows.Forms.Label inUseMsgLabel;
+        private System.Windows.Forms.ToolStripButton defineProgramButton;
+        private System.Windows.Forms.ToolStripButton defineUserButton;
     }
 }

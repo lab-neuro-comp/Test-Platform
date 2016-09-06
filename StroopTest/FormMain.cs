@@ -113,17 +113,7 @@ namespace StroopTest
         {
             defineUser();
         }
-
-        private void toolStripLabel1_Click(object sender, EventArgs e)
-        {
-            defineProgram();
-        }
-
-        private void toolStripLabel2_Click(object sender, EventArgs e)
-        {
-            defineUser();
-        }
-
+        
         private void dirPathSL_Click(object sender, EventArgs e)
         {
             this.folderBrowserDialog1 = new FolderBrowserDialog();
@@ -164,7 +154,7 @@ namespace StroopTest
             FormDefine defineProgram;
             DialogResult result;
             string editProgramName = "error";
-
+            
             try
             {
                 defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "/prg/", "prg");
@@ -348,6 +338,16 @@ namespace StroopTest
             FormInstructions infoBox = new FormInstructions((testFilesPath + instructionsFileName), instructionsText);
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void defineProgramButton_Click(object sender, EventArgs e)
+        {
+            defineProgram();
+        }
+
+        private void defineUserButton_Click(object sender, EventArgs e)
+        {
+            defineUser();
         }
     }
 }

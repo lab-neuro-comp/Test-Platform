@@ -44,8 +44,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.wordsListName = new System.Windows.Forms.Label();
-            this.colorsListName = new System.Windows.Forms.Label();
+            this.wordsListLabel = new System.Windows.Forms.Label();
+            this.colorsListLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonColorPallette
@@ -227,7 +227,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 26);
+            this.textBox1.Location = new System.Drawing.Point(9, 27);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(128, 20);
@@ -244,33 +244,33 @@
             this.label3.TabIndex = 28;
             this.label3.Text = "Nome da Lista:";
             // 
-            // wordsListName
+            // wordsListLabel
             // 
-            this.wordsListName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.wordsListLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.wordsListName.AutoSize = true;
-            this.wordsListName.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.wordsListName.Location = new System.Drawing.Point(357, 10);
-            this.wordsListName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.wordsListName.Name = "wordsListName";
-            this.wordsListName.Size = new System.Drawing.Size(96, 13);
-            this.wordsListName.TabIndex = 29;
-            this.wordsListName.Text = "nomeListaPalavras";
+            this.wordsListLabel.AutoSize = true;
+            this.wordsListLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.wordsListLabel.Location = new System.Drawing.Point(357, 10);
+            this.wordsListLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.wordsListLabel.Name = "wordsListLabel";
+            this.wordsListLabel.Size = new System.Drawing.Size(96, 13);
+            this.wordsListLabel.TabIndex = 29;
+            this.wordsListLabel.Text = "nomeListaPalavras";
             // 
-            // colorsListName
+            // colorsListLabel
             // 
-            this.colorsListName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.colorsListLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.colorsListName.AutoSize = true;
-            this.colorsListName.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.colorsListName.Location = new System.Drawing.Point(152, 10);
-            this.colorsListName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.colorsListName.Name = "colorsListName";
-            this.colorsListName.Size = new System.Drawing.Size(82, 13);
-            this.colorsListName.TabIndex = 30;
-            this.colorsListName.Text = "nomeListaCores";
+            this.colorsListLabel.AutoSize = true;
+            this.colorsListLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.colorsListLabel.Location = new System.Drawing.Point(152, 10);
+            this.colorsListLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.colorsListLabel.Name = "colorsListLabel";
+            this.colorsListLabel.Size = new System.Drawing.Size(82, 13);
+            this.colorsListLabel.TabIndex = 30;
+            this.colorsListLabel.Text = "nomeListaCores";
             // 
             // FormLstConfig
             // 
@@ -278,8 +278,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 467);
-            this.Controls.Add(this.colorsListName);
-            this.Controls.Add(this.wordsListName);
+            this.Controls.Add(this.colorsListLabel);
+            this.Controls.Add(this.wordsListLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -323,7 +323,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label wordsListName;
-        private System.Windows.Forms.Label colorsListName;
+        private System.Windows.Forms.Label wordsListLabel;
+        private System.Windows.Forms.Label colorsListLabel;
     }
 }

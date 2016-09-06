@@ -15,7 +15,7 @@ namespace StroopTest
     public partial class FormPrgConfig : Form
     {
         private string path;
-        private string instrBoxText = "Escreva cada uma das intruções em linhas separadas.";
+        private string instructionBoxText = "Escreva cada uma das intruções em linhas separadas.";
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         StroopProgram programWrite;
         private List<Button> subDirectionList;
@@ -48,8 +48,8 @@ namespace StroopTest
 
         public FormPrgConfig(string dataFolderPath, string prgName)
         {
-            path = dataFolderPath;
             InitializeComponent();
+            path = dataFolderPath;
             chooseExpoType.SelectedIndex = 0;
             subDirectionList = new List<Button>();
             subDirectionList.Add(subDirect1); subDirectionList.Add(subDirect2); subDirectionList.Add(subDirect3); subDirectionList.Add(subDirect4); subDirectionList.Add(subDirect5);
@@ -79,30 +79,29 @@ namespace StroopTest
 
 
             // colocar em lista e deixar dinâmico
-            
-            helpToolTip.SetToolTip(prgNameLabel, "Nome do Arquivo onde o programa será salvo");
-            helpToolTip.SetToolTip(expoTypeLabel, "Tipo de Estímulo: Texto; Imagem; Imagem e Texto; Texto e Áudio; Imagem e Áudio");
-            helpToolTip.SetToolTip(rdmExpoLabel , "Aleatoriedade na apresentação; as exposições ocorrerão de forma aleatória");
-            helpToolTip.SetToolTip(expoNumberLabel , "Número de Estímulos (quantidade de estímulos a serem expostos)");
-            helpToolTip.SetToolTip(wordSizeLabel, "Dimensão da letra em estímulos do tipo texto");
-            helpToolTip.SetToolTip(wordColorLabel, "Cor das palavras que serão revezadas com imagens (Imagem com Palavra)");
-            helpToolTip.SetToolTip(listWordsLabel , "Arquivo de Lista de palavras (um estímulo palavra por linha, arquivo .lst)");
-            helpToolTip.SetToolTip(listColorsLabel, "Arquivo de Lista de cores (um código hexadecimal de cor por linha, arquivo .lst)");
-            helpToolTip.SetToolTip(listImagesLabel, "Arquivo de Lista de imagens (um caminho de imagem por linha, arquivo .lst)");
-            helpToolTip.SetToolTip(listAudioLabel, "Arquivo de Lista de áudio (um caminho de arquivos de áudi por linha, arquivo .lst)");
-            helpToolTip.SetToolTip(expoTimeLabel, "Tempo de exposição para cada estímulo (quanto tempo uma palavra, imagem permanece exposta)");
-            helpToolTip.SetToolTip(intervTimeLabel, "Tempo de intervalo entre estímulos (quanto tempo de pausa faz-se entre duas exposições de estímulo)");
-            helpToolTip.SetToolTip(rdmIntervLabel, "Aleatoriedade no tempo de intervalo entre estímulos");
-            helpToolTip.SetToolTip(fixPointTypeLabel, "Tipo de ponto de fixação: cruz ou círculo (ponto de fixação surge durante o intervalo)");
-            helpToolTip.SetToolTip(fixPointColorLabel, "Cor do ponto de fixação");
-            helpToolTip.SetToolTip(subActivationLabel, "Ativa legenda para estímulos do tipo imagem - selecione uma lista com as legendas");
-            helpToolTip.SetToolTip(subLocationLabel , "Posicionamento da legenda em relação aos estímulos");
-            helpToolTip.SetToolTip(subColorLabel, "Cor da legenda apresentada");
-            helpToolTip.SetToolTip(captAudioLabel , "Ativa captura de áudio durante a execução do teste");
-            helpToolTip.SetToolTip(bgColorLabel, "Cor de fundo durante a apresentação dos estímulos");
-            helpToolTip.SetToolTip(expandImgLabel, "Expande estímulos de imagem até as bordas da tela - não pode ocorrer simultaneamente à apresentação de legenda");
-            helpToolTip.SetToolTip(instructionsLabel, "Instruções apresentadas no início do programa - será apresentada um tela para cada linha escrita abaixo");
 
+            helpToolTip.SetToolTip(prgNameLabel, "Nome do esquema de apresentação de estímulos");
+            helpToolTip.SetToolTip(expoTypeLabel, "Categoria dos estímulos do programa");
+            helpToolTip.SetToolTip(rdmExpoLabel, "Exposição dos estímulos em ordem aleatória em relação à lista");
+            helpToolTip.SetToolTip(expoNumberLabel, "Número de vezes em que os estímulos serão expostos");
+            helpToolTip.SetToolTip(wordSizeLabel, "Tamanho da fonte do texto, para exposição do tipo Palavra, Palavra com áudio, Imagem e palavra");
+            helpToolTip.SetToolTip(wordColorLabel, "Cor da palavra, para exposição do tipo Imagem e Palavra");
+            helpToolTip.SetToolTip(listWordsLabel, "Arquivo de Lista de palavras");
+            helpToolTip.SetToolTip(listColorsLabel, "Arquivo de Lista de cores");
+            helpToolTip.SetToolTip(listImagesLabel, "Arquivo de Lista de imagens");
+            helpToolTip.SetToolTip(listAudioLabel, "Arquivo de Lista de áudio");
+            helpToolTip.SetToolTip(expoTimeLabel, "Duração da exposição de cada estímulo");
+            helpToolTip.SetToolTip(intervTimeLabel, "Tempo entre as tentativas");
+            helpToolTip.SetToolTip(rdmIntervLabel, "Variação do tempo entre as tentativas");
+            helpToolTip.SetToolTip(fixPointTypeLabel, "Tipo de ponto de fixação: cruz ou ponto");
+            helpToolTip.SetToolTip(fixPointColorLabel, "Cor do ponto de fixação");
+            helpToolTip.SetToolTip(subActivationLabel, "Ativa legenda para estímulos do tipo imagem");
+            helpToolTip.SetToolTip(subLocationLabel, "Posicionamento da legenda em relação aos estímulos");
+            helpToolTip.SetToolTip(subColorLabel, "Cor da legenda apresentada");
+            helpToolTip.SetToolTip(captAudioLabel, "Ativa captura de áudio durante a execução do teste");
+            helpToolTip.SetToolTip(bgColorLabel, "Cor de fundo durante a apresentação dos estímulos");
+            helpToolTip.SetToolTip(expandImgLabel, "Expande a imagem até as bordas da tela");
+            helpToolTip.SetToolTip(instructionsLabel, "Instruções apresentadas no início do programa - será apresentada um tela para cada linha escrita abaixo");
             helpToolTip.SetToolTip(saveButton, "Salva o programa configurado");
             helpToolTip.SetToolTip(helpButton, "Ajuda");
         }
@@ -153,7 +152,7 @@ namespace StroopTest
         }
 
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void chooseExpositionTypeComboBox(object sender, EventArgs e)
         {
             expoType = chooseExpoType.SelectedIndex;
 
@@ -162,8 +161,9 @@ namespace StroopTest
                 case 0:
                     openWordList.Enabled = true;
                     openColorsList.Enabled = true;
-                    openImgsList.Enabled = false;
-                    numericUpDown1.Enabled = true;
+                    openImageList.Enabled = false;
+                    openAudioList.Enabled = false;
+                    wordSizeNumeric.Enabled = true;
                     expandImageOn.Enabled = false;
                     showSubsOn.Enabled = false;
                     showSubsOn.Checked = false;
@@ -171,60 +171,82 @@ namespace StroopTest
                 case 1:
                     openWordList.Enabled = false;
                     openColorsList.Enabled = false;
-                    openImgsList.Enabled = true;
-                    numericUpDown1.Enabled = false;
+                    openImageList.Enabled = true;
+                    openAudioList.Enabled = false;
+                    wordSizeNumeric.Enabled = false;
                     expandImageOn.Enabled = true;
                     showSubsOn.Enabled = true;
                     break;
                 case 2:
                     openWordList.Enabled = true;
                     openColorsList.Enabled = false;
-                    openImgsList.Enabled = true;
-                    numericUpDown1.Enabled = true;
+                    openImageList.Enabled = true;
+                    openAudioList.Enabled = false;
+                    wordSizeNumeric.Enabled = true;
+                    expandImageOn.Enabled = true;
+                    showSubsOn.Enabled = true;
+                    break;
+                case 3: // Palavra com Áudio
+                    openWordList.Enabled = true;
+                    openColorsList.Enabled = true;
+                    openImageList.Enabled = false;
+                    openAudioList.Enabled = true;
+                    wordSizeNumeric.Enabled = true;
+                    expandImageOn.Enabled = false;
+                    showSubsOn.Enabled = false;
+                    showSubsOn.Checked = false;
+                    break;
+                case 4: // Imagem com Áudio
+                    openWordList.Enabled = false;
+                    openColorsList.Enabled = false;
+                    openImageList.Enabled = true;
+                    openAudioList.Enabled = true;
+                    wordSizeNumeric.Enabled = false;
                     expandImageOn.Enabled = true;
                     showSubsOn.Enabled = true;
                     break;
             }
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void chooseBGColor(object sender, EventArgs e)
         {
             string colorCode = pickColor();
             bgColorButton.Text = colorCode;
             panelBGColor.BackColor = ColorTranslator.FromHtml(colorCode);
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void chooseSubsColor(object sender, EventArgs e)
         {
             string colorCode = pickColor();
             chooseColorSubs.Text = colorCode;
             panelSubColor.BackColor = ColorTranslator.FromHtml(colorCode);
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void openWordsList_Click(object sender, EventArgs e)
         {
             openWordList.Text = openListFile();
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void openColorsList_Click(object sender, EventArgs e)
         {
             openColorsList.Text = openListFile();
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void openImagesList_Click(object sender, EventArgs e)
         {
-            openImgsList.Text = openListFile();
+            openImageList.Text = openListFile();
         }
         
-        private void button4_Click(object sender, EventArgs e)
+        private void openAudioList_Click(object sender, EventArgs e)
         {
             openAudioList.Text = openListFile();
         }
         
-        private void openSubtitleList_Click(object sender, EventArgs e)
+        private void openSubsList_Click(object sender, EventArgs e)
         {
             openSubtitleList.Text = openListFile();
         }
+        
 
         private void editProgram()
         {
@@ -237,31 +259,25 @@ namespace StroopTest
                 progName.Text = program.ProgramName;
                 numExpo.Value = program.NumExpositions;
                 timeExpo.Value = program.ExpositionTime;
-                if (program.ExpositionRandom) randExpoOn.Checked = true;
-                else randExpoOn.Checked = false;
+                randExpoOn.Checked = program.ExpositionRandom;
                 timeInterval.Value = program.IntervalTime;
-                if (program.IntervalTimeRandom) randIntervalOn.Checked = true;
-                else randIntervalOn.Checked = false;
-                if (program.WordsListFile.ToLower() == "false")
-                {
-                    openWordList.Enabled = false;
-                }
-                else
-                {
-                    openWordList.Enabled = true;
-                    openWordList.Text = program.WordsListFile;
-                }
+                randIntervalOn.Checked = program.IntervalTimeRandom;
+                captAudioOn.Checked = program.AudioCapture;
+                wordSizeNumeric.Value = Convert.ToInt32(program.FontWordLabel);
+                expandImageOn.Checked = program.ExpandImage;
 
-                if (program.ColorsListFile.ToLower() == "false")
-                {
-                    openColorsList.Enabled = false;
-                }
-                else
-                {
-                    openColorsList.Enabled = true;
-                    openColorsList.Text = program.ColorsListFile;
-                }
+                if (program.WordsListFile.ToLower() == "false") { openWordList.Enabled = false; }
+                else { openWordList.Enabled = true; openWordList.Text = program.WordsListFile; }
 
+                if (program.ColorsListFile.ToLower() == "false") { openColorsList.Enabled = false; }
+                else { openColorsList.Enabled = true; openColorsList.Text = program.ColorsListFile; }
+
+                if (program.ImagesListFile.ToLower() == "false") { openImageList.Enabled = false; }
+                else { openImageList.Enabled = true; openImageList.Text = program.ImagesListFile; }
+
+                if (program.AudioListFile.ToLower() == "false") { openAudioList.Enabled = false; }
+                else { openAudioList.Enabled = true; openAudioList.Text = program.AudioListFile; }
+                
                 if (program.BackgroundColor.ToLower() == "false")
                 {
                     panelBGColor.BackColor = Color.White;
@@ -291,10 +307,6 @@ namespace StroopTest
                     else { throw new Exception("Deu errado no match"); }
                 }
                 */
-
-
-                if (program.AudioCapture) captAudioOn.Checked = true;
-                else captAudioOn.Checked = false;
                 
                 if (program.SubtitleShow)
                 {
@@ -304,10 +316,6 @@ namespace StroopTest
                     if(program.SubtitlesListFile.ToLower() != "false")
                     {
                         openSubtitleList.Text = program.SubtitlesListFile;
-                    }
-                    else
-                    {
-                        openSubtitleList.Text = "abrir";
                     }
                     if (Regex.IsMatch(program.SubtitleColor, hexPattern))
                     {
@@ -342,25 +350,8 @@ namespace StroopTest
                     subtitlesCheckConfig();
                 }
 
-                switch (program.ExpositionType)
-                {
-                    case "txt":
-                        chooseExpoType.SelectedIndex = 0;
-                        break;
-                    case "img":
-                        chooseExpoType.SelectedIndex = 1;
-                        break;
-                    case "imgtxt":
-                        chooseExpoType.SelectedIndex = 2;
-                        break;
-                    default:
-                        chooseExpoType.SelectedIndex = 0;
-                        break;
-                }
-
-                if (program.ImagesListFile.ToLower() != "false") { openImgsList.Enabled = true; openImgsList.Text = program.ImagesListFile; }
-                else { openImgsList.Enabled = false; openImgsList.Text = "false"; }
                 
+
                 if (program.FixPoint == "+")
                 {
                     fixPointCross.Checked = true;
@@ -379,10 +370,7 @@ namespace StroopTest
                         fixPointCircle.Checked = false;
                     }
                 }
-
-                if (program.AudioListFile.ToLower() != "false") { openAudioList.Enabled = true; openAudioList.Text = program.AudioListFile; }
-                else { openAudioList.Enabled = false; openAudioList.Text = "false"; }
-
+                
                 if (program.InstructionText != null) // lê instrução se houver
                 {
                     textBox2.ForeColor = Color.Black;
@@ -394,11 +382,48 @@ namespace StroopTest
                 }
                 else
                 {
-                    textBox2.Text = instrBoxText;
+                    textBox2.Text = instructionBoxText;
                 }
 
-                numericUpDown1.Value = Convert.ToInt32(program.FontWordLabel);
-                expandImageOn.Checked = Convert.ToBoolean(program.ExpandImage);
+                switch (program.ExpositionType)
+                {
+                    case "txt":
+                        chooseExpoType.SelectedIndex = 0;
+                        openWordList.Enabled = true;
+                        openColorsList.Enabled = true;
+                        openImageList.Enabled = false;
+                        openAudioList.Enabled = false;
+                        break;
+                    case "img":
+                        chooseExpoType.SelectedIndex = 1;
+                        openWordList.Enabled = false;
+                        openColorsList.Enabled = false;
+                        openImageList.Enabled = true;
+                        openAudioList.Enabled = false;
+                        break;
+                    case "imgtxt":
+                        chooseExpoType.SelectedIndex = 2;
+                        openWordList.Enabled = true;
+                        openColorsList.Enabled = false;
+                        openImageList.Enabled = true;
+                        openAudioList.Enabled = false;
+                        break;
+                    case "txtaud":
+                        chooseExpoType.SelectedIndex = 3;
+                        openWordList.Enabled = true;
+                        openColorsList.Enabled = true;
+                        openImageList.Enabled = false;
+                        openAudioList.Enabled = true;
+                        break;
+                    case "imgaud":
+                        chooseExpoType.SelectedIndex = 4;
+                        openWordList.Enabled = false;
+                        openColorsList.Enabled = false;
+                        openImageList.Enabled = true;
+                        openAudioList.Enabled = true;
+                        break;
+                }
+
             }
             catch (Exception ex)
             {
@@ -407,7 +432,7 @@ namespace StroopTest
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void configureNewProgram(object sender, EventArgs e)
         {
             programWrite = new StroopProgram();
             try
@@ -433,12 +458,20 @@ namespace StroopTest
                         else { throw new Exception("Selecione o arquivo de lista de cores!"); }
                         break;
                     case 1:
-                        if (openImgsList.Text != "error" && openImgsList.Text != "abrir") { programWrite.ImagesListFile = openImgsList.Text; }
+                        if (openImageList.Text != "error" && openImageList.Text != "abrir") { programWrite.ImagesListFile = openImageList.Text; }
                         else { throw new Exception("Selecione o arquivo de lista de imagens!"); }
                         break;
                     case 2:
-                        if (openWordList.Text != "error" && openImgsList.Text != "error") { programWrite.WordsListFile = openWordList.Text; programWrite.ImagesListFile = openImgsList.Text; }
+                        if (openWordList.Text != "error" && openImageList.Text != "error") { programWrite.WordsListFile = openWordList.Text; programWrite.ImagesListFile = openImageList.Text; }
                         else { throw new Exception("Selecione o arquivo de lista de palavras / imagens!"); }
+                        break;
+                    case 3:
+                        if (openWordList.Text != "error" && openAudioList.Text != "error" && openColorsList.Text != "error") { programWrite.WordsListFile = openWordList.Text; programWrite.AudioListFile = openAudioList.Text; programWrite.ColorsListFile = openColorsList.Text; }
+                        else { throw new Exception("Selecione o arquivo de lista de palavras / cor / audio!"); }
+                        break;
+                    case 4:
+                        if (openImageList.Text != "error" && openAudioList.Text != "error") { programWrite.ImagesListFile = openImageList.Text; programWrite.AudioListFile = openAudioList.Text; }
+                        else { throw new Exception("Selecione o arquivo de lista de imagens / audio!"); }
                         break;
                 }
 
@@ -473,9 +506,15 @@ namespace StroopTest
                     case 2:
                         programWrite.ExpositionType = "imgtxt";
                         break;
+                    case 3:
+                        programWrite.ExpositionType = "txtaud";
+                        break;
+                    case 4:
+                        programWrite.ExpositionType = "imgaud";
+                        break;
                 }
                 
-                if (openImgsList.Enabled) { programWrite.ImagesListFile = openImgsList.Text; }
+                if (openImageList.Enabled) { programWrite.ImagesListFile = openImageList.Text; }
                 else { programWrite.ImagesListFile = "false"; }
                 
                 if (fixPointCross.Checked)
@@ -493,13 +532,12 @@ namespace StroopTest
                         programWrite.FixPoint = "false";
                     }
                 }
+
+                if (openAudioList.Enabled) { programWrite.AudioListFile = openAudioList.Text; }
+                else { programWrite.AudioListFile = "false"; }
                 
-                /*
-                if (audioListCheck.Checked) { openAudioList.Enabled = true; programWrite.AudioListFile = openAudioList.Text; }
-                else { openAudioList.Enabled = false; programWrite.AudioListFile = "false"; }
-                */
                 string textLines = "";
-                if (textBox2.Lines.Length > 0 && textBox2.Text != instrBoxText) // lê instrução se houver
+                if (textBox2.Lines.Length > 0 && textBox2.Text != instructionBoxText) // lê instrução se houver
                 {
                     for (int i = 0; i < textBox2.Lines.Length; i++)
                     {
@@ -512,7 +550,7 @@ namespace StroopTest
                     programWrite.InstructionText = null;
                 }
 
-                programWrite.FontWordLabel = numericUpDown1.Value.ToString();
+                programWrite.FontWordLabel = wordSizeNumeric.Value.ToString();
                 programWrite.ExpandImage = expandImageOn.Checked;
 
                 string text =    programWrite.ProgramName + " " +
@@ -560,16 +598,15 @@ namespace StroopTest
 
             StreamWriter writer = new StreamWriter(path + "prg/" + progName.Text + ".prg");
             writer.WriteLine(programText);
-            if (instructions != null)
+            if (instructions != null && instructions[0] != instructionBoxText)
             {
                 for (int i = 0; i < instructions.Count; i++)
                 {
                     writer.WriteLine(instructions[i]);
                 }
             }
-            //writer.Dispose();
             writer.Close();
-            MessageBox.Show("O programa " + progName.Text + ".prg foi salvo com sucesso no diretório\n" + path + "prg/");
+            MessageBox.Show("O programa " + progName.Text + ".prg foi salvo com sucesso!");
             this.Close();
         }
 
@@ -614,6 +651,10 @@ namespace StroopTest
 
         private void textBox2_Click(object sender, EventArgs e)
         {
+            if(textBox2.Text == instructionBoxText)
+            {
+                textBox2.Text = "";
+            }
             textBox2.ForeColor = Color.Black;
         }
 
@@ -672,9 +713,9 @@ namespace StroopTest
             panelFixPointColor.BackColor = ColorTranslator.FromHtml(colorCode);
         }
         
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void wordSizeNumeric_ValueChanged(object sender, EventArgs e)
         {
-            fontSize = numericUpDown1.Value.ToString();
+            fontSize = wordSizeNumeric.Value.ToString();
         }
 
         private void expandImageOn_CheckedChanged(object sender, EventArgs e)
@@ -707,11 +748,6 @@ namespace StroopTest
             string colorCode = pickColor();
             panelWordColor.Text = colorCode;
             panelWordColor.BackColor = ColorTranslator.FromHtml(colorCode);
-        }
-
-        private void FormPrgConfig_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

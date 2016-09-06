@@ -52,7 +52,7 @@ namespace StroopTest
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Não pode apresentar a imagem: " + file.Substring(file.LastIndexOf('\\'))
+                        MessageBox.Show("Não pode apresentar a imagem: " + file.Substring(file.LastIndexOf('/'))
                                         + ". Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n" + ex.Message);
                     }
                 }

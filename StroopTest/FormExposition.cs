@@ -161,7 +161,14 @@ namespace StroopTest
                 labelText = program.readListFile(path + "/lst/" + program.WordsListFile); // vetor de strings recebem as listas de palavra e cor
                 labelColor = program.readListFile(path + "/lst/" + program.ColorsListFile);
                 
-                if (program.AudioListFile != "false") { audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile); }
+                if (program.AudioListFile != "false")
+                {
+                    audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile);
+                    if (program.ExpositionRandom)
+                    {
+                        audioDirs = shuffleArray(audioDirs, program.NumExpositions, 6);
+                    }
+                }
 
                 if (program.ExpositionRandom) // se exposição aleatória, randomiza itens de acordo com o numero de estimulos
                 {
@@ -297,7 +304,14 @@ namespace StroopTest
                     subtitleLabel.Enabled = true;
                 }
 
-                if (program.AudioListFile != "false") { audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile); }
+                if (program.AudioListFile != "false")
+                {
+                    audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile);
+                    if (program.ExpositionRandom)
+                    {
+                        audioDirs = shuffleArray(audioDirs, program.NumExpositions, 6);
+                    }
+                }
                 if (program.WordsListFile.ToLower() != "false") { labelText = program.readListFile(path + "/lst/" + program.WordsListFile); }
                 
                 await showInstructions(program, cts.Token); // Apresenta instruções se houver

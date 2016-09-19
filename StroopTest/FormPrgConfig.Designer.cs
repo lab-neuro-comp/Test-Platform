@@ -46,20 +46,19 @@
             this.panelBGColor = new System.Windows.Forms.Panel();
             this.bgColorLabel = new System.Windows.Forms.Label();
             this.bgColorButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.subActivationLabel = new System.Windows.Forms.Label();
+            this.activateSubsLabel = new System.Windows.Forms.Label();
             this.subColorLabel = new System.Windows.Forms.Label();
             this.subLocationLabel = new System.Windows.Forms.Label();
-            this.showSubsOn = new System.Windows.Forms.CheckBox();
-            this.openSubtitleList = new System.Windows.Forms.Button();
+            this.activateSubsCheck = new System.Windows.Forms.CheckBox();
+            this.openSubsListButton = new System.Windows.Forms.Button();
             this.chooseColorSubs = new System.Windows.Forms.Button();
             this.panelSubColor = new System.Windows.Forms.Panel();
-            this.subDirect1 = new System.Windows.Forms.Button();
-            this.subDirect2 = new System.Windows.Forms.Button();
-            this.subDirect3 = new System.Windows.Forms.Button();
-            this.subDirect4 = new System.Windows.Forms.Button();
-            this.subDirect5 = new System.Windows.Forms.Button();
+            this.subsCenterButton = new System.Windows.Forms.Button();
+            this.subsDownButton = new System.Windows.Forms.Button();
+            this.subsLeftButton = new System.Windows.Forms.Button();
+            this.subsRightButton = new System.Windows.Forms.Button();
+            this.subsUpButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.intervTimeLabel = new System.Windows.Forms.Label();
             this.timeInterval = new System.Windows.Forms.NumericUpDown();
@@ -70,16 +69,16 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listWordsLabel = new System.Windows.Forms.Label();
             this.listAudioLabel = new System.Windows.Forms.Label();
-            this.openAudioList = new System.Windows.Forms.Button();
+            this.openAudioListButton = new System.Windows.Forms.Button();
             this.listColorsLabel = new System.Windows.Forms.Label();
             this.listImagesLabel = new System.Windows.Forms.Label();
-            this.openWordList = new System.Windows.Forms.Button();
-            this.openColorsList = new System.Windows.Forms.Button();
-            this.openImageList = new System.Windows.Forms.Button();
+            this.openWordListButton = new System.Windows.Forms.Button();
+            this.openColorsListButton = new System.Windows.Forms.Button();
+            this.openImageListButton = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.expandImgLabel = new System.Windows.Forms.Label();
-            this.panelWordColor = new System.Windows.Forms.Panel();
+            this.wordColorPanel = new System.Windows.Forms.Panel();
             this.wordColorLabel = new System.Windows.Forms.Label();
             this.expandImageOn = new System.Windows.Forms.CheckBox();
             this.wordColorButton = new System.Windows.Forms.Button();
@@ -92,8 +91,9 @@
             this.wordSizeNumeric = new System.Windows.Forms.NumericUpDown();
             this.randExpoOn = new System.Windows.Forms.CheckBox();
             this.instructionsLabel = new System.Windows.Forms.Label();
-            this.progName = new System.Windows.Forms.TextBox();
+            this.prgNameTextBox = new System.Windows.Forms.TextBox();
             this.prgNameLabel = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -120,7 +120,7 @@
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.instructionsLabel);
-            this.panel1.Controls.Add(this.progName);
+            this.panel1.Controls.Add(this.prgNameTextBox);
             this.panel1.Controls.Add(this.prgNameLabel);
             this.panel1.Location = new System.Drawing.Point(11, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
@@ -315,37 +315,24 @@
             this.bgColorButton.Name = "bgColorButton";
             this.bgColorButton.Size = new System.Drawing.Size(67, 19);
             this.bgColorButton.TabIndex = 61;
-            this.bgColorButton.Text = "escolher cor1";
+            this.bgColorButton.Text = "escolher";
             this.bgColorButton.UseVisualStyleBackColor = true;
             this.bgColorButton.Click += new System.EventHandler(this.chooseBGColor);
             // 
-            // saveButton
-            // 
-            this.saveButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.saveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.saveButton.Location = new System.Drawing.Point(668, 389);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(2);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(73, 26);
-            this.saveButton.TabIndex = 80;
-            this.saveButton.Text = "Salvar";
-            this.saveButton.UseVisualStyleBackColor = false;
-            this.saveButton.Click += new System.EventHandler(this.configureNewProgram);
-            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.subActivationLabel);
+            this.groupBox4.Controls.Add(this.activateSubsLabel);
             this.groupBox4.Controls.Add(this.subColorLabel);
             this.groupBox4.Controls.Add(this.subLocationLabel);
-            this.groupBox4.Controls.Add(this.showSubsOn);
-            this.groupBox4.Controls.Add(this.openSubtitleList);
+            this.groupBox4.Controls.Add(this.activateSubsCheck);
+            this.groupBox4.Controls.Add(this.openSubsListButton);
             this.groupBox4.Controls.Add(this.chooseColorSubs);
             this.groupBox4.Controls.Add(this.panelSubColor);
-            this.groupBox4.Controls.Add(this.subDirect1);
-            this.groupBox4.Controls.Add(this.subDirect2);
-            this.groupBox4.Controls.Add(this.subDirect3);
-            this.groupBox4.Controls.Add(this.subDirect4);
-            this.groupBox4.Controls.Add(this.subDirect5);
+            this.groupBox4.Controls.Add(this.subsCenterButton);
+            this.groupBox4.Controls.Add(this.subsDownButton);
+            this.groupBox4.Controls.Add(this.subsLeftButton);
+            this.groupBox4.Controls.Add(this.subsRightButton);
+            this.groupBox4.Controls.Add(this.subsUpButton);
             this.groupBox4.Location = new System.Drawing.Point(514, 35);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
@@ -355,15 +342,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Legenda";
             // 
-            // subActivationLabel
+            // activateSubsLabel
             // 
-            this.subActivationLabel.AutoSize = true;
-            this.subActivationLabel.Location = new System.Drawing.Point(23, 25);
-            this.subActivationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.subActivationLabel.Name = "subActivationLabel";
-            this.subActivationLabel.Size = new System.Drawing.Size(37, 13);
-            this.subActivationLabel.TabIndex = 53;
-            this.subActivationLabel.Text = "Ativar:";
+            this.activateSubsLabel.AutoSize = true;
+            this.activateSubsLabel.Location = new System.Drawing.Point(23, 25);
+            this.activateSubsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.activateSubsLabel.Name = "activateSubsLabel";
+            this.activateSubsLabel.Size = new System.Drawing.Size(37, 13);
+            this.activateSubsLabel.TabIndex = 53;
+            this.activateSubsLabel.Text = "Ativar:";
             // 
             // subColorLabel
             // 
@@ -385,30 +372,30 @@
             this.subLocationLabel.TabIndex = 54;
             this.subLocationLabel.Text = "Posição:";
             // 
-            // showSubsOn
+            // activateSubsCheck
             // 
-            this.showSubsOn.AutoSize = true;
-            this.showSubsOn.Location = new System.Drawing.Point(64, 25);
-            this.showSubsOn.Margin = new System.Windows.Forms.Padding(2);
-            this.showSubsOn.Name = "showSubsOn";
-            this.showSubsOn.Size = new System.Drawing.Size(15, 14);
-            this.showSubsOn.TabIndex = 70;
-            this.showSubsOn.TabStop = false;
-            this.showSubsOn.UseVisualStyleBackColor = true;
-            this.showSubsOn.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.activateSubsCheck.AutoSize = true;
+            this.activateSubsCheck.Location = new System.Drawing.Point(64, 25);
+            this.activateSubsCheck.Margin = new System.Windows.Forms.Padding(2);
+            this.activateSubsCheck.Name = "activateSubsCheck";
+            this.activateSubsCheck.Size = new System.Drawing.Size(15, 14);
+            this.activateSubsCheck.TabIndex = 70;
+            this.activateSubsCheck.TabStop = false;
+            this.activateSubsCheck.UseVisualStyleBackColor = true;
+            this.activateSubsCheck.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // openSubtitleList
+            // openSubsListButton
             // 
-            this.openSubtitleList.Enabled = false;
-            this.openSubtitleList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openSubtitleList.Location = new System.Drawing.Point(82, 22);
-            this.openSubtitleList.Margin = new System.Windows.Forms.Padding(2);
-            this.openSubtitleList.Name = "openSubtitleList";
-            this.openSubtitleList.Size = new System.Drawing.Size(110, 19);
-            this.openSubtitleList.TabIndex = 50;
-            this.openSubtitleList.Text = "abrir";
-            this.openSubtitleList.UseVisualStyleBackColor = true;
-            this.openSubtitleList.Click += new System.EventHandler(this.openSubsList_Click);
+            this.openSubsListButton.Enabled = false;
+            this.openSubsListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openSubsListButton.Location = new System.Drawing.Point(82, 22);
+            this.openSubsListButton.Margin = new System.Windows.Forms.Padding(2);
+            this.openSubsListButton.Name = "openSubsListButton";
+            this.openSubsListButton.Size = new System.Drawing.Size(110, 19);
+            this.openSubsListButton.TabIndex = 50;
+            this.openSubsListButton.Text = "abrir lista";
+            this.openSubsListButton.UseVisualStyleBackColor = true;
+            this.openSubsListButton.Click += new System.EventHandler(this.openSubsList_Click);
             // 
             // chooseColorSubs
             // 
@@ -434,80 +421,80 @@
             this.panelSubColor.Size = new System.Drawing.Size(14, 14);
             this.panelSubColor.TabIndex = 152;
             // 
-            // subDirect1
+            // subsCenterButton
             // 
-            this.subDirect1.BackColor = System.Drawing.Color.LightGray;
-            this.subDirect1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subDirect1.BackgroundImage")));
-            this.subDirect1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.subDirect1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subDirect1.Location = new System.Drawing.Point(64, 49);
-            this.subDirect1.Margin = new System.Windows.Forms.Padding(2);
-            this.subDirect1.Name = "subDirect1";
-            this.subDirect1.Size = new System.Drawing.Size(14, 14);
-            this.subDirect1.TabIndex = 72;
-            this.subDirect1.TabStop = false;
-            this.subDirect1.UseVisualStyleBackColor = false;
-            this.subDirect1.Click += new System.EventHandler(this.subDirect1_Click);
+            this.subsCenterButton.BackColor = System.Drawing.Color.LightGray;
+            this.subsCenterButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subsCenterButton.BackgroundImage")));
+            this.subsCenterButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.subsCenterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.subsCenterButton.Location = new System.Drawing.Point(64, 49);
+            this.subsCenterButton.Margin = new System.Windows.Forms.Padding(2);
+            this.subsCenterButton.Name = "subsCenterButton";
+            this.subsCenterButton.Size = new System.Drawing.Size(14, 14);
+            this.subsCenterButton.TabIndex = 72;
+            this.subsCenterButton.TabStop = false;
+            this.subsCenterButton.UseVisualStyleBackColor = false;
+            this.subsCenterButton.Click += new System.EventHandler(this.subDirect1_Click);
             // 
-            // subDirect2
+            // subsDownButton
             // 
-            this.subDirect2.BackColor = System.Drawing.Color.LightGray;
-            this.subDirect2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subDirect2.BackgroundImage")));
-            this.subDirect2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.subDirect2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subDirect2.Location = new System.Drawing.Point(92, 49);
-            this.subDirect2.Margin = new System.Windows.Forms.Padding(2);
-            this.subDirect2.Name = "subDirect2";
-            this.subDirect2.Size = new System.Drawing.Size(14, 14);
-            this.subDirect2.TabIndex = 154;
-            this.subDirect2.TabStop = false;
-            this.subDirect2.UseVisualStyleBackColor = false;
-            this.subDirect2.Click += new System.EventHandler(this.subDirect2_Click);
+            this.subsDownButton.BackColor = System.Drawing.Color.LightGray;
+            this.subsDownButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subsDownButton.BackgroundImage")));
+            this.subsDownButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.subsDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.subsDownButton.Location = new System.Drawing.Point(92, 49);
+            this.subsDownButton.Margin = new System.Windows.Forms.Padding(2);
+            this.subsDownButton.Name = "subsDownButton";
+            this.subsDownButton.Size = new System.Drawing.Size(14, 14);
+            this.subsDownButton.TabIndex = 154;
+            this.subsDownButton.TabStop = false;
+            this.subsDownButton.UseVisualStyleBackColor = false;
+            this.subsDownButton.Click += new System.EventHandler(this.subDirect2_Click);
             // 
-            // subDirect3
+            // subsLeftButton
             // 
-            this.subDirect3.BackColor = System.Drawing.Color.LightGray;
-            this.subDirect3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subDirect3.BackgroundImage")));
-            this.subDirect3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.subDirect3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subDirect3.Location = new System.Drawing.Point(119, 49);
-            this.subDirect3.Margin = new System.Windows.Forms.Padding(2);
-            this.subDirect3.Name = "subDirect3";
-            this.subDirect3.Size = new System.Drawing.Size(14, 14);
-            this.subDirect3.TabIndex = 155;
-            this.subDirect3.TabStop = false;
-            this.subDirect3.UseVisualStyleBackColor = false;
-            this.subDirect3.Click += new System.EventHandler(this.subDirect3_Click);
+            this.subsLeftButton.BackColor = System.Drawing.Color.LightGray;
+            this.subsLeftButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subsLeftButton.BackgroundImage")));
+            this.subsLeftButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.subsLeftButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.subsLeftButton.Location = new System.Drawing.Point(119, 49);
+            this.subsLeftButton.Margin = new System.Windows.Forms.Padding(2);
+            this.subsLeftButton.Name = "subsLeftButton";
+            this.subsLeftButton.Size = new System.Drawing.Size(14, 14);
+            this.subsLeftButton.TabIndex = 155;
+            this.subsLeftButton.TabStop = false;
+            this.subsLeftButton.UseVisualStyleBackColor = false;
+            this.subsLeftButton.Click += new System.EventHandler(this.subDirect3_Click);
             // 
-            // subDirect4
+            // subsRightButton
             // 
-            this.subDirect4.BackColor = System.Drawing.Color.LightGray;
-            this.subDirect4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subDirect4.BackgroundImage")));
-            this.subDirect4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.subDirect4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subDirect4.Location = new System.Drawing.Point(147, 49);
-            this.subDirect4.Margin = new System.Windows.Forms.Padding(2);
-            this.subDirect4.Name = "subDirect4";
-            this.subDirect4.Size = new System.Drawing.Size(14, 14);
-            this.subDirect4.TabIndex = 156;
-            this.subDirect4.TabStop = false;
-            this.subDirect4.UseVisualStyleBackColor = false;
-            this.subDirect4.Click += new System.EventHandler(this.subDirect4_Click);
+            this.subsRightButton.BackColor = System.Drawing.Color.LightGray;
+            this.subsRightButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subsRightButton.BackgroundImage")));
+            this.subsRightButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.subsRightButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.subsRightButton.Location = new System.Drawing.Point(147, 49);
+            this.subsRightButton.Margin = new System.Windows.Forms.Padding(2);
+            this.subsRightButton.Name = "subsRightButton";
+            this.subsRightButton.Size = new System.Drawing.Size(14, 14);
+            this.subsRightButton.TabIndex = 156;
+            this.subsRightButton.TabStop = false;
+            this.subsRightButton.UseVisualStyleBackColor = false;
+            this.subsRightButton.Click += new System.EventHandler(this.subDirect4_Click);
             // 
-            // subDirect5
+            // subsUpButton
             // 
-            this.subDirect5.BackColor = System.Drawing.Color.LightGray;
-            this.subDirect5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subDirect5.BackgroundImage")));
-            this.subDirect5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.subDirect5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subDirect5.Location = new System.Drawing.Point(175, 49);
-            this.subDirect5.Margin = new System.Windows.Forms.Padding(2);
-            this.subDirect5.Name = "subDirect5";
-            this.subDirect5.Size = new System.Drawing.Size(14, 14);
-            this.subDirect5.TabIndex = 157;
-            this.subDirect5.TabStop = false;
-            this.subDirect5.UseVisualStyleBackColor = false;
-            this.subDirect5.Click += new System.EventHandler(this.subDirect5_Click);
+            this.subsUpButton.BackColor = System.Drawing.Color.LightGray;
+            this.subsUpButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subsUpButton.BackgroundImage")));
+            this.subsUpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.subsUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.subsUpButton.Location = new System.Drawing.Point(175, 49);
+            this.subsUpButton.Margin = new System.Windows.Forms.Padding(2);
+            this.subsUpButton.Name = "subsUpButton";
+            this.subsUpButton.Size = new System.Drawing.Size(14, 14);
+            this.subsUpButton.TabIndex = 157;
+            this.subsUpButton.TabStop = false;
+            this.subsUpButton.UseVisualStyleBackColor = false;
+            this.subsUpButton.Click += new System.EventHandler(this.subDirect5_Click);
             // 
             // groupBox3
             // 
@@ -608,12 +595,12 @@
             // 
             this.groupBox2.Controls.Add(this.listWordsLabel);
             this.groupBox2.Controls.Add(this.listAudioLabel);
-            this.groupBox2.Controls.Add(this.openAudioList);
+            this.groupBox2.Controls.Add(this.openAudioListButton);
             this.groupBox2.Controls.Add(this.listColorsLabel);
             this.groupBox2.Controls.Add(this.listImagesLabel);
-            this.groupBox2.Controls.Add(this.openWordList);
-            this.groupBox2.Controls.Add(this.openColorsList);
-            this.groupBox2.Controls.Add(this.openImageList);
+            this.groupBox2.Controls.Add(this.openWordListButton);
+            this.groupBox2.Controls.Add(this.openColorsListButton);
+            this.groupBox2.Controls.Add(this.openImageListButton);
             this.groupBox2.Location = new System.Drawing.Point(10, 230);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
@@ -644,18 +631,18 @@
             this.listAudioLabel.Text = "Áudios:";
             this.listAudioLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // openAudioList
+            // openAudioListButton
             // 
-            this.openAudioList.Enabled = false;
-            this.openAudioList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openAudioList.Location = new System.Drawing.Point(121, 98);
-            this.openAudioList.Margin = new System.Windows.Forms.Padding(2);
-            this.openAudioList.Name = "openAudioList";
-            this.openAudioList.Size = new System.Drawing.Size(140, 19);
-            this.openAudioList.TabIndex = 23;
-            this.openAudioList.Text = "abrir";
-            this.openAudioList.UseVisualStyleBackColor = true;
-            this.openAudioList.Click += new System.EventHandler(this.openAudioList_Click);
+            this.openAudioListButton.Enabled = false;
+            this.openAudioListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openAudioListButton.Location = new System.Drawing.Point(121, 98);
+            this.openAudioListButton.Margin = new System.Windows.Forms.Padding(2);
+            this.openAudioListButton.Name = "openAudioListButton";
+            this.openAudioListButton.Size = new System.Drawing.Size(140, 19);
+            this.openAudioListButton.TabIndex = 23;
+            this.openAudioListButton.Text = "abrir";
+            this.openAudioListButton.UseVisualStyleBackColor = true;
+            this.openAudioListButton.Click += new System.EventHandler(this.openAudioList_Click);
             // 
             // listColorsLabel
             // 
@@ -677,42 +664,42 @@
             this.listImagesLabel.TabIndex = 57;
             this.listImagesLabel.Text = "Imagens:";
             // 
-            // openWordList
+            // openWordListButton
             // 
-            this.openWordList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openWordList.Location = new System.Drawing.Point(122, 17);
-            this.openWordList.Margin = new System.Windows.Forms.Padding(2);
-            this.openWordList.Name = "openWordList";
-            this.openWordList.Size = new System.Drawing.Size(140, 19);
-            this.openWordList.TabIndex = 20;
-            this.openWordList.Text = "abrir";
-            this.openWordList.UseVisualStyleBackColor = true;
-            this.openWordList.Click += new System.EventHandler(this.openWordsList_Click);
+            this.openWordListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openWordListButton.Location = new System.Drawing.Point(122, 17);
+            this.openWordListButton.Margin = new System.Windows.Forms.Padding(2);
+            this.openWordListButton.Name = "openWordListButton";
+            this.openWordListButton.Size = new System.Drawing.Size(140, 19);
+            this.openWordListButton.TabIndex = 20;
+            this.openWordListButton.Text = "abrir";
+            this.openWordListButton.UseVisualStyleBackColor = true;
+            this.openWordListButton.Click += new System.EventHandler(this.openWordsList_Click);
             // 
-            // openColorsList
+            // openColorsListButton
             // 
-            this.openColorsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openColorsList.Location = new System.Drawing.Point(121, 44);
-            this.openColorsList.Margin = new System.Windows.Forms.Padding(2);
-            this.openColorsList.Name = "openColorsList";
-            this.openColorsList.Size = new System.Drawing.Size(140, 19);
-            this.openColorsList.TabIndex = 21;
-            this.openColorsList.Text = "abrir";
-            this.openColorsList.UseVisualStyleBackColor = true;
-            this.openColorsList.Click += new System.EventHandler(this.openColorsList_Click);
+            this.openColorsListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openColorsListButton.Location = new System.Drawing.Point(121, 44);
+            this.openColorsListButton.Margin = new System.Windows.Forms.Padding(2);
+            this.openColorsListButton.Name = "openColorsListButton";
+            this.openColorsListButton.Size = new System.Drawing.Size(140, 19);
+            this.openColorsListButton.TabIndex = 21;
+            this.openColorsListButton.Text = "abrir";
+            this.openColorsListButton.UseVisualStyleBackColor = true;
+            this.openColorsListButton.Click += new System.EventHandler(this.openColorsList_Click);
             // 
-            // openImageList
+            // openImageListButton
             // 
-            this.openImageList.Enabled = false;
-            this.openImageList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openImageList.Location = new System.Drawing.Point(121, 71);
-            this.openImageList.Margin = new System.Windows.Forms.Padding(2);
-            this.openImageList.Name = "openImageList";
-            this.openImageList.Size = new System.Drawing.Size(140, 19);
-            this.openImageList.TabIndex = 22;
-            this.openImageList.Text = "abrir";
-            this.openImageList.UseVisualStyleBackColor = true;
-            this.openImageList.Click += new System.EventHandler(this.openImagesList_Click);
+            this.openImageListButton.Enabled = false;
+            this.openImageListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openImageListButton.Location = new System.Drawing.Point(121, 71);
+            this.openImageListButton.Margin = new System.Windows.Forms.Padding(2);
+            this.openImageListButton.Name = "openImageListButton";
+            this.openImageListButton.Size = new System.Drawing.Size(140, 19);
+            this.openImageListButton.TabIndex = 22;
+            this.openImageListButton.Text = "abrir";
+            this.openImageListButton.UseVisualStyleBackColor = true;
+            this.openImageListButton.Click += new System.EventHandler(this.openImagesList_Click);
             // 
             // textBox2
             // 
@@ -730,7 +717,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.expandImgLabel);
-            this.groupBox1.Controls.Add(this.panelWordColor);
+            this.groupBox1.Controls.Add(this.wordColorPanel);
             this.groupBox1.Controls.Add(this.wordColorLabel);
             this.groupBox1.Controls.Add(this.expandImageOn);
             this.groupBox1.Controls.Add(this.wordColorButton);
@@ -761,15 +748,15 @@
             this.expandImgLabel.TabIndex = 161;
             this.expandImgLabel.Text = "Expandir Imagem:";
             // 
-            // panelWordColor
+            // wordColorPanel
             // 
-            this.panelWordColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelWordColor.Enabled = false;
-            this.panelWordColor.Location = new System.Drawing.Point(123, 127);
-            this.panelWordColor.Margin = new System.Windows.Forms.Padding(2);
-            this.panelWordColor.Name = "panelWordColor";
-            this.panelWordColor.Size = new System.Drawing.Size(14, 14);
-            this.panelWordColor.TabIndex = 162;
+            this.wordColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.wordColorPanel.Enabled = false;
+            this.wordColorPanel.Location = new System.Drawing.Point(123, 127);
+            this.wordColorPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.wordColorPanel.Name = "wordColorPanel";
+            this.wordColorPanel.Size = new System.Drawing.Size(14, 14);
+            this.wordColorPanel.TabIndex = 162;
             // 
             // wordColorLabel
             // 
@@ -943,14 +930,14 @@
             this.instructionsLabel.TabIndex = 59;
             this.instructionsLabel.Text = "Instruções:";
             // 
-            // progName
+            // prgNameTextBox
             // 
-            this.progName.Location = new System.Drawing.Point(115, 13);
-            this.progName.Margin = new System.Windows.Forms.Padding(2);
-            this.progName.MaxLength = 300;
-            this.progName.Name = "progName";
-            this.progName.Size = new System.Drawing.Size(170, 20);
-            this.progName.TabIndex = 1;
+            this.prgNameTextBox.Location = new System.Drawing.Point(115, 13);
+            this.prgNameTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.prgNameTextBox.MaxLength = 300;
+            this.prgNameTextBox.Name = "prgNameTextBox";
+            this.prgNameTextBox.Size = new System.Drawing.Size(170, 20);
+            this.prgNameTextBox.TabIndex = 1;
             // 
             // prgNameLabel
             // 
@@ -961,6 +948,19 @@
             this.prgNameLabel.Size = new System.Drawing.Size(101, 13);
             this.prgNameLabel.TabIndex = 34;
             this.prgNameLabel.Text = "Nome do Programa:";
+            // 
+            // saveButton
+            // 
+            this.saveButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.saveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.saveButton.Location = new System.Drawing.Point(668, 389);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(2);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(73, 26);
+            this.saveButton.TabIndex = 80;
+            this.saveButton.Text = "Salvar";
+            this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.configureNewProgram);
             // 
             // FormPrgConfig
             // 
@@ -1000,12 +1000,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox progName;
+        private System.Windows.Forms.TextBox prgNameTextBox;
         private System.Windows.Forms.Label expoTypeLabel;
         private System.Windows.Forms.Label subColorLabel;
         private System.Windows.Forms.Label captAudioLabel;
         private System.Windows.Forms.Label listImagesLabel;
-        private System.Windows.Forms.Label subActivationLabel;
+        private System.Windows.Forms.Label activateSubsLabel;
         private System.Windows.Forms.Label subLocationLabel;
         private System.Windows.Forms.Label bgColorLabel;
         private System.Windows.Forms.Label listWordsLabel;
@@ -1020,10 +1020,10 @@
         private System.Windows.Forms.Label listColorsLabel;
         private System.Windows.Forms.ComboBox chooseExpoType;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.CheckBox showSubsOn;
-        private System.Windows.Forms.Button openImageList;
-        private System.Windows.Forms.Button openColorsList;
-        private System.Windows.Forms.Button openWordList;
+        private System.Windows.Forms.CheckBox activateSubsCheck;
+        private System.Windows.Forms.Button openImageListButton;
+        private System.Windows.Forms.Button openColorsListButton;
+        private System.Windows.Forms.Button openWordListButton;
         private System.Windows.Forms.Button chooseColorSubs;
         private System.Windows.Forms.NumericUpDown numExpo;
         private System.Windows.Forms.NumericUpDown timeExpo;
@@ -1037,20 +1037,20 @@
         private System.Windows.Forms.CheckBox fixPointCross;
         private System.Windows.Forms.Panel panelSubColor;
         private System.Windows.Forms.Panel panelBGColor;
-        private System.Windows.Forms.Button subDirect5;
-        private System.Windows.Forms.Button subDirect4;
-        private System.Windows.Forms.Button subDirect3;
-        private System.Windows.Forms.Button subDirect2;
-        private System.Windows.Forms.Button subDirect1;
+        private System.Windows.Forms.Button subsUpButton;
+        private System.Windows.Forms.Button subsRightButton;
+        private System.Windows.Forms.Button subsLeftButton;
+        private System.Windows.Forms.Button subsDownButton;
+        private System.Windows.Forms.Button subsCenterButton;
         private System.Windows.Forms.Panel panelFixPointColor;
         private System.Windows.Forms.Button fixPointColor;
         private System.Windows.Forms.Label wordSizeLabel;
         private System.Windows.Forms.CheckBox expandImageOn;
         private System.Windows.Forms.Label expandImgLabel;
         private System.Windows.Forms.NumericUpDown wordSizeNumeric;
-        private System.Windows.Forms.Button openAudioList;
+        private System.Windows.Forms.Button openAudioListButton;
         private System.Windows.Forms.Label listAudioLabel;
-        private System.Windows.Forms.Button openSubtitleList;
+        private System.Windows.Forms.Button openSubsListButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -1058,7 +1058,7 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label fixPointColorLabel;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Panel panelWordColor;
+        private System.Windows.Forms.Panel wordColorPanel;
         private System.Windows.Forms.Label wordColorLabel;
         private System.Windows.Forms.Button wordColorButton;
         private System.Windows.Forms.Button helpButton;

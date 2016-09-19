@@ -4,6 +4,7 @@
  */
 
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -238,28 +239,35 @@ namespace StroopTest
 
         private void beginTest()
         {
-            Screen[] screens;
+            Screen[] screens = Screen.AllScreens;
             FormExposition exposeProgram = new FormExposition(prgNameSL.Text, usrNameSL.Text, defaultPath);
 
             try
             {
-                screens = Screen.AllScreens;
 
-                if (screens.Length == 2)
+                Rectangle r1 = new Rectangle();
+                
+                /*
+                for (int i = 0; i < screens.Length; i++)
+                {
+                    MessageBox.Show(i + "\n" +screens[i].DeviceName + "\n" + screens[i].Bounds.ToString() + "\n" + screens[i].WorkingArea.ToString() + "\n****\n");
+                }
+                */
+                if (screens.Length > 1)
                 {
                     //MessageBox.Show(screens[1].Bounds.Width.ToString() + " / " + screens[1].Bounds.Height + "\n" + screens[0].Bounds.Width.ToString() + " / " + screens[0].Bounds.Height);
-                    Rectangle r1 = screens[0].WorkingArea;
+                    Rectangle bounds = screens[1].Bounds;
+                    exposeProgram.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
                     exposeProgram.StartPosition = FormStartPosition.Manual;
-                    exposeProgram.Top = r1.Top;
-                    exposeProgram.Left = r1.Left;
-                    SendKeys.SendWait("i");
-                    exposeProgram.Show();
+                    //exposeProgram.Show();
+                    /*
+                        r1 = screens[0].WorkingArea;
+                        exposeProgram.StartPosition = FormStartPosition.Manual;
+                        exposeProgram.Top = r1.Top;
+                        exposeProgram.Left = r1.Left;*/
                 }
-                else
-                {
-                    SendKeys.SendWait("i");
-                    exposeProgram.ShowDialog();
-                }
+                SendKeys.SendWait("i");
+                exposeProgram.ShowDialog();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

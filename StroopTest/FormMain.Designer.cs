@@ -64,7 +64,6 @@
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.inUseMsgLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -385,25 +384,12 @@
     "rasília\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // inUseMsgLabel
-            // 
-            this.inUseMsgLabel.AutoSize = true;
-            this.inUseMsgLabel.ForeColor = System.Drawing.Color.OrangeRed;
-            this.inUseMsgLabel.Location = new System.Drawing.Point(12, 49);
-            this.inUseMsgLabel.Name = "inUseMsgLabel";
-            this.inUseMsgLabel.Size = new System.Drawing.Size(35, 13);
-            this.inUseMsgLabel.TabIndex = 7;
-            this.inUseMsgLabel.Text = "in use";
-            this.inUseMsgLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.inUseMsgLabel.Visible = false;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(728, 494);
-            this.Controls.Add(this.inUseMsgLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -462,7 +448,6 @@
         private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iniciarTesteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dadosToolStripMenuItem;
-        private System.Windows.Forms.Label inUseMsgLabel;
         private System.Windows.Forms.ToolStripButton defineProgramButton;
         private System.Windows.Forms.ToolStripButton defineUserButton;
     }

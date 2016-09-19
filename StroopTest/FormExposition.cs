@@ -7,9 +7,9 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
-using System.Threading;
 using System.Text.RegularExpressions;
 
 // beginAudio
@@ -83,7 +83,7 @@ namespace StroopTest
                 }
 
                 var cvt = new FontConverter();
-                wordLabel.Font = cvt.ConvertFromString("Microsoft Sans Serif; " + programInUse.FontWordLabel + "pt") as Font;
+                wordLabel.Font = cvt.ConvertFromString(wordLabel.Font.FontFamily + ";" + programInUse.FontWordLabel + "pt") as Font;
                 wordLabel.Visible = false;
                 wordLabel.Name = "error";
                 wordLabel.FlatStyle = FlatStyle.Flat;
@@ -447,7 +447,7 @@ namespace StroopTest
                     */
                 }
                 pictureBox1.Dock = DockStyle.None;
-                wordLabel.Font = new Font("Microsoft Sans Serif", 160);
+                wordLabel.Font = new Font(wordLabel.Font.FontFamily, 160);
                 wordLabel.ForeColor = Color.Black;
                 StroopProgram.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
                 Close();

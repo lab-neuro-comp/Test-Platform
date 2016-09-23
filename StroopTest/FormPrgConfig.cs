@@ -53,11 +53,8 @@ namespace StroopTest
 
             toolTipsConfig();
 
-            foreach (Button b in subDirectionList)
-            {
-                b.Enabled = false;
-                b.BackColor = Color.LightGray;
-            }
+            enableSubsItens(false);
+            
             if (prgName != "false")
             {
                 editPrgName = prgName;
@@ -110,9 +107,12 @@ namespace StroopTest
 
         private void activateSubtitles_CheckedChanged(object sender, EventArgs e)
         {
-            subtitlesCheckConfig();
-        }
+            if (expandImgCheck.Checked && activateSubsCheck.Checked)
+                expandImgCheck.Checked = !activateSubsCheck.Checked;
 
+            enableSubsItens(activateSubsCheck.Checked);
+        }
+        /*
         private void subtitlesCheckConfig()
         {
             if (activateSubsCheck.Checked)
@@ -147,7 +147,7 @@ namespace StroopTest
                 expandImgCheck.Enabled = true;
             }
         }
-        
+        */
         private void chooseExpositionTypeComboBox(object sender, EventArgs e)
         {
             configurePrgItens(chooseExpoType.SelectedIndex);
@@ -157,32 +157,6 @@ namespace StroopTest
         {
             numExpo.Enabled = true; numExpoLabel.Enabled = true;
             rndExpoLabel.Enabled = true; rndExpoCheck.Enabled = true;
-
-            //box3
-            expoTimeLabel.Enabled = true; expoTime.Enabled = true;
-            intervalTimeLabel.Enabled = true; intervalTime.Enabled = true;
-            rndExpoLabel.Enabled = true; rndExpoCheck.Enabled = true;
-
-            //box4
-            fixPointTypeLabel.Enabled = true; fixPointCross.Enabled = true; fixPointCircle.Enabled = true;
-            fixPointColorLabel.Enabled = true; fixPointColorPanel.Enabled = true; fixPointColorButton.Enabled = true;
-
-            //box5
-            activateSubsLabel.Enabled = true; activateSubsCheck.Enabled = true; activateSubsButton.Enabled = true;
-            subLocationLabel.Enabled = true;
-            foreach (Button button in subDirectionList)
-            {
-                button.Enabled = true;
-                button.BackColor = Color.LightGray;
-            }
-            subColorLabel.Enabled = true; subColorPanel.Enabled = true; subColorButton.Enabled = true;
-
-            //box6
-            audioCaptureLabel.Enabled = true; audioCaptureCheck.Enabled = true;
-            bgColorLabel.Enabled = true; bgColorPanel.Enabled = true; bgColorButton.Enabled = true;
-
-            //instructionsBox
-            instructionsLabel.Enabled = true; instructionsBox.Enabled = true;
 
             switch (expoType)
             {
@@ -197,7 +171,7 @@ namespace StroopTest
                     colorListLabel.Enabled = true; openColorListButton.Enabled = true;
                     imgListLabel.Enabled = false; openImgListButton.Enabled = false;
                     audioListLabel.Enabled = false; openAudioListButton.Enabled = false;
-
+                    
                     break;
                 case 1: // img
                     //box1
@@ -210,7 +184,7 @@ namespace StroopTest
                     colorListLabel.Enabled = false; openColorListButton.Enabled = false;
                     imgListLabel.Enabled = true; openImgListButton.Enabled = true;
                     audioListLabel.Enabled = false; openAudioListButton.Enabled = false;
-
+                    
                     break;
                 case 2: // imgtxt
                     //box1
@@ -223,7 +197,7 @@ namespace StroopTest
                     colorListLabel.Enabled = false; openColorListButton.Enabled = false;
                     imgListLabel.Enabled = true; openImgListButton.Enabled = true;
                     audioListLabel.Enabled = false; openAudioListButton.Enabled = false;
-
+                    
                     break;
                 case 3: // txtaud
                     //box1
@@ -236,7 +210,7 @@ namespace StroopTest
                     colorListLabel.Enabled = true; openColorListButton.Enabled = true;
                     imgListLabel.Enabled = false; openImgListButton.Enabled = false;
                     audioListLabel.Enabled = true; openAudioListButton.Enabled = true;
-
+                    
                     break;
                 case 4: // imgaud
                     //box1
@@ -249,9 +223,47 @@ namespace StroopTest
                     colorListLabel.Enabled = false; openColorListButton.Enabled = false;
                     imgListLabel.Enabled = true; openImgListButton.Enabled = true;
                     audioListLabel.Enabled = true; openAudioListButton.Enabled = true;
-
+                    
                     break;
             }
+
+            //box3
+            expoTimeLabel.Enabled = true; expoTime.Enabled = true;
+            intervalTimeLabel.Enabled = true; intervalTime.Enabled = true;
+            rndExpoLabel.Enabled = true; rndExpoCheck.Enabled = true;
+
+            //box4
+            fixPointTypeLabel.Enabled = true; fixPointCross.Enabled = true; fixPointCircle.Enabled = true;
+            fixPointColorLabel.Enabled = true; fixPointColorPanel.Enabled = true; fixPointColorButton.Enabled = true;
+
+            //box5
+            activateSubsLabel.Enabled = true; activateSubsCheck.Enabled = true;
+            bool subsEnabledBool = true;
+            if (expandImgCheck.Enabled) { subsEnabledBool = !expandImgCheck.Checked; }
+            enableSubsItens(subsEnabledBool);
+
+            //box6
+            bgColorLabel.Enabled = true; bgColorPanel.Enabled = true; bgColorButton.Enabled = true;
+            bool audioCaptureBool = !openAudioListButton.Enabled;
+            audioCaptureLabel.Enabled = audioCaptureBool; audioCaptureCheck.Enabled = audioCaptureBool; audioCaptureCheck.Checked = audioCaptureBool;
+            
+            //instructionsBox
+            instructionsLabel.Enabled = true; instructionsBox.Enabled = true;
+        }
+
+        private void enableSubsItens (bool subsEnabledBool)
+        {
+            activateSubsButton.Enabled = subsEnabledBool;
+            subLocationLabel.Enabled = subsEnabledBool;
+            foreach (Button button in subDirectionList)
+            {
+                subDirectionNumber = 0;
+                button.Enabled = subsEnabledBool;
+                if (subsEnabledBool) button.BackColor = Color.LightGray;
+                else button.BackColor = Color.White;
+            }
+            subColorLabel.Enabled = subsEnabledBool; subColorPanel.Enabled = subsEnabledBool; subColorButton.Enabled = subsEnabledBool;
+
         }
 
         private void chooseBGColor(object sender, EventArgs e)
@@ -347,7 +359,6 @@ namespace StroopTest
             }
             subDirectionList[number - 1].BackColor = Color.Transparent;
             subDirectionNumber = number;
-
         }
 
         private void chooseFixPointColor_Click(object sender, EventArgs e)
@@ -364,15 +375,10 @@ namespace StroopTest
 
         private void expandImageOn_CheckedChanged(object sender, EventArgs e)
         {
-            if (expandImgCheck.Checked)
-            {
-                activateSubsCheck.Enabled = false;
-                activateSubsCheck.Checked = false;
-            }
-            else
-            {
-                activateSubsCheck.Enabled = true;
-            }
+            if (expandImgCheck.Checked && activateSubsCheck.Checked)
+                activateSubsCheck.Checked = !expandImgCheck.Checked;
+
+            enableSubsItens(activateSubsCheck.Checked);
         }
 
         private void helpButton_Click(object sender, EventArgs e)
@@ -421,15 +427,15 @@ namespace StroopTest
                         else { throw new Exception("Selecione o arquivo de lista de imagens!"); }
                         break;
                     case 2: //txtimg
-                        if (openWordListButton.Text != "error" && openImgListButton.Text != "error") { programWrite.WordsListFile = openWordListButton.Text; programWrite.ImagesListFile = openImgListButton.Text; }
+                        if (openWordListButton.Text != "abrir" && openImgListButton.Text != "abrir") { programWrite.WordsListFile = openWordListButton.Text; programWrite.ImagesListFile = openImgListButton.Text; }
                         else { throw new Exception("Selecione o arquivo de lista de palavras / imagens!"); }
                         break;
                     case 3: //txtaud
-                        if (openWordListButton.Text != "error" && openAudioListButton.Text != "error" && openColorListButton.Text != "error") { programWrite.WordsListFile = openWordListButton.Text; programWrite.AudioListFile = openAudioListButton.Text; programWrite.ColorsListFile = openColorListButton.Text; }
+                        if (openWordListButton.Text != "abrir" && openAudioListButton.Text != "abrir" && openColorListButton.Text != "abrir") { programWrite.WordsListFile = openWordListButton.Text; programWrite.AudioListFile = openAudioListButton.Text; programWrite.ColorsListFile = openColorListButton.Text; }
                         else { throw new Exception("Selecione o arquivo de lista de palavras / cor / audio!"); }
                         break;
                     case 4: //imgaud
-                        if (openImgListButton.Text != "error" && openAudioListButton.Text != "error") { programWrite.ImagesListFile = openImgListButton.Text; programWrite.AudioListFile = openAudioListButton.Text; }
+                        if (openImgListButton.Text != "abrir" && openAudioListButton.Text != "abrir") { programWrite.ImagesListFile = openImgListButton.Text; programWrite.AudioListFile = openAudioListButton.Text; }
                         else { throw new Exception("Selecione o arquivo de lista de imagens / audio!"); }
                         break;
                 }
@@ -580,7 +586,7 @@ namespace StroopTest
                 if (program.BackgroundColor.ToLower() == "false")
                 {
                     bgColorPanel.BackColor = Color.White;
-                    bgColorButton.Text = "escolher cor";
+                    bgColorButton.Text = "escolher";
                 }
                 else
                 {
@@ -610,7 +616,8 @@ namespace StroopTest
                 if (program.SubtitleShow)
                 {
                     activateSubsCheck.Checked = true;
-                    
+                    enableSubsItens(true);
+
                     subDirectionNumber = program.SubtitlePlace;
                     if(program.SubtitlesListFile.ToLower() != "false")
                     {
@@ -619,38 +626,23 @@ namespace StroopTest
                     if (Regex.IsMatch(program.SubtitleColor, hexPattern))
                     {
                         subColorButton.Text = program.SubtitleColor;
-                        subColorPanel.Enabled = true;
                         subColorPanel.BackColor = ColorTranslator.FromHtml(program.SubtitleColor);
                     }
                     else
                     {
-                        subColorButton.Text = "escolher cor";
+                        subColorButton.Text = "escolher";
                         subColorPanel.BackColor = Color.White;
                     }
-                    
-                    for (int j = 0; j < subDirectionList.Count; j++)
-                    {
-                        subDirectionList[j].Enabled = true;
-                        subDirectionList[j].Visible = true;
-                    }
+
                     subDirectionNumber = program.SubtitlePlace;
 
-                    subtitlesCheckConfig();
                 }
                 else
                 {
                     activateSubsCheck.Checked = false;
-                    for (int k = 0; k < subDirectionList.Count; k++)
-                    {
-                        subDirectionList[k].Enabled = false;
-                        subDirectionList[k].Visible = false;
-                    }
-
-                    subtitlesCheckConfig();
+                    enableSubsItens(false);
                 }
-
                 
-
                 if (program.FixPoint == "+")
                 {
                     fixPointCross.Checked = true;

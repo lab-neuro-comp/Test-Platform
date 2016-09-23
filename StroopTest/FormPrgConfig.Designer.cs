@@ -412,10 +412,10 @@
             // 
             // subColorPanel
             // 
-            this.subColorPanel.BackColor = System.Drawing.Color.LightGray;
+            this.subColorPanel.BackColor = System.Drawing.Color.White;
             this.subColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.subColorPanel.Enabled = false;
-            this.subColorPanel.Location = new System.Drawing.Point(64, 73);
+            this.subColorPanel.Location = new System.Drawing.Point(63, 73);
             this.subColorPanel.Margin = new System.Windows.Forms.Padding(2);
             this.subColorPanel.Name = "subColorPanel";
             this.subColorPanel.Size = new System.Drawing.Size(14, 14);

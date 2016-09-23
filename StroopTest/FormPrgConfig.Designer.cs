@@ -38,12 +38,12 @@
             this.fixPointCross = new System.Windows.Forms.CheckBox();
             this.fixPointColorLabel = new System.Windows.Forms.Label();
             this.fixPointCircle = new System.Windows.Forms.CheckBox();
-            this.fixPointColor = new System.Windows.Forms.Button();
-            this.panelFixPointColor = new System.Windows.Forms.Panel();
+            this.fixPointColorButton = new System.Windows.Forms.Button();
+            this.fixPointColorPanel = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.captAudioLabel = new System.Windows.Forms.Label();
-            this.captAudioOn = new System.Windows.Forms.CheckBox();
-            this.panelBGColor = new System.Windows.Forms.Panel();
+            this.audioCaptureLabel = new System.Windows.Forms.Label();
+            this.audioCaptureCheck = new System.Windows.Forms.CheckBox();
+            this.bgColorPanel = new System.Windows.Forms.Panel();
             this.bgColorLabel = new System.Windows.Forms.Label();
             this.bgColorButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -51,45 +51,45 @@
             this.subColorLabel = new System.Windows.Forms.Label();
             this.subLocationLabel = new System.Windows.Forms.Label();
             this.activateSubsCheck = new System.Windows.Forms.CheckBox();
-            this.openSubsListButton = new System.Windows.Forms.Button();
-            this.chooseColorSubs = new System.Windows.Forms.Button();
-            this.panelSubColor = new System.Windows.Forms.Panel();
+            this.activateSubsButton = new System.Windows.Forms.Button();
+            this.subColorButton = new System.Windows.Forms.Button();
+            this.subColorPanel = new System.Windows.Forms.Panel();
             this.subsCenterButton = new System.Windows.Forms.Button();
             this.subsDownButton = new System.Windows.Forms.Button();
             this.subsLeftButton = new System.Windows.Forms.Button();
             this.subsRightButton = new System.Windows.Forms.Button();
             this.subsUpButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.intervTimeLabel = new System.Windows.Forms.Label();
-            this.timeInterval = new System.Windows.Forms.NumericUpDown();
-            this.randIntervalOn = new System.Windows.Forms.CheckBox();
-            this.rdmIntervLabel = new System.Windows.Forms.Label();
-            this.timeExpo = new System.Windows.Forms.NumericUpDown();
+            this.intervalTimeLabel = new System.Windows.Forms.Label();
+            this.intervalTime = new System.Windows.Forms.NumericUpDown();
+            this.rndIntervalCheck = new System.Windows.Forms.CheckBox();
+            this.rndIntervalLabel = new System.Windows.Forms.Label();
+            this.expoTime = new System.Windows.Forms.NumericUpDown();
             this.expoTimeLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listWordsLabel = new System.Windows.Forms.Label();
-            this.listAudioLabel = new System.Windows.Forms.Label();
+            this.wordListLabel = new System.Windows.Forms.Label();
+            this.audioListLabel = new System.Windows.Forms.Label();
             this.openAudioListButton = new System.Windows.Forms.Button();
-            this.listColorsLabel = new System.Windows.Forms.Label();
-            this.listImagesLabel = new System.Windows.Forms.Label();
+            this.colorListLabel = new System.Windows.Forms.Label();
+            this.imgListLabel = new System.Windows.Forms.Label();
             this.openWordListButton = new System.Windows.Forms.Button();
-            this.openColorsListButton = new System.Windows.Forms.Button();
-            this.openImageListButton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.openColorListButton = new System.Windows.Forms.Button();
+            this.openImgListButton = new System.Windows.Forms.Button();
+            this.instructionsBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.expandImgLabel = new System.Windows.Forms.Label();
             this.wordColorPanel = new System.Windows.Forms.Panel();
             this.wordColorLabel = new System.Windows.Forms.Label();
-            this.expandImageOn = new System.Windows.Forms.CheckBox();
+            this.expandImgCheck = new System.Windows.Forms.CheckBox();
             this.wordColorButton = new System.Windows.Forms.Button();
             this.expoTypeLabel = new System.Windows.Forms.Label();
             this.chooseExpoType = new System.Windows.Forms.ComboBox();
-            this.expoNumberLabel = new System.Windows.Forms.Label();
+            this.numExpoLabel = new System.Windows.Forms.Label();
             this.numExpo = new System.Windows.Forms.NumericUpDown();
-            this.rdmExpoLabel = new System.Windows.Forms.Label();
+            this.rndExpoLabel = new System.Windows.Forms.Label();
             this.wordSizeLabel = new System.Windows.Forms.Label();
             this.wordSizeNumeric = new System.Windows.Forms.NumericUpDown();
-            this.randExpoOn = new System.Windows.Forms.CheckBox();
+            this.rndExpoCheck = new System.Windows.Forms.CheckBox();
             this.instructionsLabel = new System.Windows.Forms.Label();
             this.prgNameTextBox = new System.Windows.Forms.TextBox();
             this.prgNameLabel = new System.Windows.Forms.Label();
@@ -99,8 +99,8 @@
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.timeInterval)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeExpo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expoTime)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
@@ -117,7 +117,7 @@
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.instructionsBox);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.instructionsLabel);
             this.panel1.Controls.Add(this.prgNameTextBox);
@@ -149,8 +149,8 @@
             this.groupBox6.Controls.Add(this.fixPointCross);
             this.groupBox6.Controls.Add(this.fixPointColorLabel);
             this.groupBox6.Controls.Add(this.fixPointCircle);
-            this.groupBox6.Controls.Add(this.fixPointColor);
-            this.groupBox6.Controls.Add(this.panelFixPointColor);
+            this.groupBox6.Controls.Add(this.fixPointColorButton);
+            this.groupBox6.Controls.Add(this.fixPointColorPanel);
             this.groupBox6.Location = new System.Drawing.Point(303, 146);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
@@ -224,35 +224,35 @@
             this.fixPointCircle.TabIndex = 41;
             this.fixPointCircle.TabStop = false;
             this.fixPointCircle.UseVisualStyleBackColor = true;
-            this.fixPointCircle.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged_1);
+            this.fixPointCircle.CheckedChanged += new System.EventHandler(this.chooseFixPointType_CheckedChanged);
             // 
-            // fixPointColor
+            // fixPointColorButton
             // 
-            this.fixPointColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fixPointColor.Location = new System.Drawing.Point(95, 45);
-            this.fixPointColor.Margin = new System.Windows.Forms.Padding(2);
-            this.fixPointColor.Name = "fixPointColor";
-            this.fixPointColor.Size = new System.Drawing.Size(89, 19);
-            this.fixPointColor.TabIndex = 42;
-            this.fixPointColor.Text = "escolher";
-            this.fixPointColor.UseVisualStyleBackColor = true;
-            this.fixPointColor.Click += new System.EventHandler(this.button1_Click);
+            this.fixPointColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fixPointColorButton.Location = new System.Drawing.Point(95, 45);
+            this.fixPointColorButton.Margin = new System.Windows.Forms.Padding(2);
+            this.fixPointColorButton.Name = "fixPointColorButton";
+            this.fixPointColorButton.Size = new System.Drawing.Size(89, 19);
+            this.fixPointColorButton.TabIndex = 42;
+            this.fixPointColorButton.Text = "escolher";
+            this.fixPointColorButton.UseVisualStyleBackColor = true;
+            this.fixPointColorButton.Click += new System.EventHandler(this.chooseFixPointColor_Click);
             // 
-            // panelFixPointColor
+            // fixPointColorPanel
             // 
-            this.panelFixPointColor.BackColor = System.Drawing.Color.White;
-            this.panelFixPointColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFixPointColor.Location = new System.Drawing.Point(77, 48);
-            this.panelFixPointColor.Margin = new System.Windows.Forms.Padding(2);
-            this.panelFixPointColor.Name = "panelFixPointColor";
-            this.panelFixPointColor.Size = new System.Drawing.Size(14, 14);
-            this.panelFixPointColor.TabIndex = 153;
+            this.fixPointColorPanel.BackColor = System.Drawing.Color.White;
+            this.fixPointColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fixPointColorPanel.Location = new System.Drawing.Point(77, 48);
+            this.fixPointColorPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.fixPointColorPanel.Name = "fixPointColorPanel";
+            this.fixPointColorPanel.Size = new System.Drawing.Size(14, 14);
+            this.fixPointColorPanel.TabIndex = 153;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.captAudioLabel);
-            this.groupBox5.Controls.Add(this.captAudioOn);
-            this.groupBox5.Controls.Add(this.panelBGColor);
+            this.groupBox5.Controls.Add(this.audioCaptureLabel);
+            this.groupBox5.Controls.Add(this.audioCaptureCheck);
+            this.groupBox5.Controls.Add(this.bgColorPanel);
             this.groupBox5.Controls.Add(this.bgColorLabel);
             this.groupBox5.Controls.Add(this.bgColorButton);
             this.groupBox5.Location = new System.Drawing.Point(514, 146);
@@ -264,38 +264,38 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Outros";
             // 
-            // captAudioLabel
+            // audioCaptureLabel
             // 
-            this.captAudioLabel.AutoSize = true;
-            this.captAudioLabel.Location = new System.Drawing.Point(5, 15);
-            this.captAudioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.captAudioLabel.Name = "captAudioLabel";
-            this.captAudioLabel.Size = new System.Drawing.Size(97, 26);
-            this.captAudioLabel.TabIndex = 52;
-            this.captAudioLabel.Text = "Capturar áudio\r\ndurante exposição:";
-            this.captAudioLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.audioCaptureLabel.AutoSize = true;
+            this.audioCaptureLabel.Location = new System.Drawing.Point(5, 15);
+            this.audioCaptureLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.audioCaptureLabel.Name = "audioCaptureLabel";
+            this.audioCaptureLabel.Size = new System.Drawing.Size(97, 26);
+            this.audioCaptureLabel.TabIndex = 52;
+            this.audioCaptureLabel.Text = "Capturar áudio\r\ndurante exposição:";
+            this.audioCaptureLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // captAudioOn
+            // audioCaptureCheck
             // 
-            this.captAudioOn.AutoSize = true;
-            this.captAudioOn.Checked = true;
-            this.captAudioOn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.captAudioOn.Location = new System.Drawing.Point(106, 28);
-            this.captAudioOn.Margin = new System.Windows.Forms.Padding(2);
-            this.captAudioOn.Name = "captAudioOn";
-            this.captAudioOn.Size = new System.Drawing.Size(15, 14);
-            this.captAudioOn.TabIndex = 60;
-            this.captAudioOn.TabStop = false;
-            this.captAudioOn.UseVisualStyleBackColor = true;
+            this.audioCaptureCheck.AutoSize = true;
+            this.audioCaptureCheck.Checked = true;
+            this.audioCaptureCheck.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.audioCaptureCheck.Location = new System.Drawing.Point(106, 28);
+            this.audioCaptureCheck.Margin = new System.Windows.Forms.Padding(2);
+            this.audioCaptureCheck.Name = "audioCaptureCheck";
+            this.audioCaptureCheck.Size = new System.Drawing.Size(15, 14);
+            this.audioCaptureCheck.TabIndex = 60;
+            this.audioCaptureCheck.TabStop = false;
+            this.audioCaptureCheck.UseVisualStyleBackColor = true;
             // 
-            // panelBGColor
+            // bgColorPanel
             // 
-            this.panelBGColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBGColor.Location = new System.Drawing.Point(106, 51);
-            this.panelBGColor.Margin = new System.Windows.Forms.Padding(2);
-            this.panelBGColor.Name = "panelBGColor";
-            this.panelBGColor.Size = new System.Drawing.Size(14, 14);
-            this.panelBGColor.TabIndex = 151;
+            this.bgColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bgColorPanel.Location = new System.Drawing.Point(106, 51);
+            this.bgColorPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.bgColorPanel.Name = "bgColorPanel";
+            this.bgColorPanel.Size = new System.Drawing.Size(14, 14);
+            this.bgColorPanel.TabIndex = 151;
             // 
             // bgColorLabel
             // 
@@ -325,9 +325,9 @@
             this.groupBox4.Controls.Add(this.subColorLabel);
             this.groupBox4.Controls.Add(this.subLocationLabel);
             this.groupBox4.Controls.Add(this.activateSubsCheck);
-            this.groupBox4.Controls.Add(this.openSubsListButton);
-            this.groupBox4.Controls.Add(this.chooseColorSubs);
-            this.groupBox4.Controls.Add(this.panelSubColor);
+            this.groupBox4.Controls.Add(this.activateSubsButton);
+            this.groupBox4.Controls.Add(this.subColorButton);
+            this.groupBox4.Controls.Add(this.subColorPanel);
             this.groupBox4.Controls.Add(this.subsCenterButton);
             this.groupBox4.Controls.Add(this.subsDownButton);
             this.groupBox4.Controls.Add(this.subsLeftButton);
@@ -382,44 +382,44 @@
             this.activateSubsCheck.TabIndex = 70;
             this.activateSubsCheck.TabStop = false;
             this.activateSubsCheck.UseVisualStyleBackColor = true;
-            this.activateSubsCheck.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.activateSubsCheck.CheckedChanged += new System.EventHandler(this.activateSubtitles_CheckedChanged);
             // 
-            // openSubsListButton
+            // activateSubsButton
             // 
-            this.openSubsListButton.Enabled = false;
-            this.openSubsListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openSubsListButton.Location = new System.Drawing.Point(82, 22);
-            this.openSubsListButton.Margin = new System.Windows.Forms.Padding(2);
-            this.openSubsListButton.Name = "openSubsListButton";
-            this.openSubsListButton.Size = new System.Drawing.Size(110, 19);
-            this.openSubsListButton.TabIndex = 50;
-            this.openSubsListButton.Text = "abrir lista";
-            this.openSubsListButton.UseVisualStyleBackColor = true;
-            this.openSubsListButton.Click += new System.EventHandler(this.openSubsList_Click);
+            this.activateSubsButton.Enabled = false;
+            this.activateSubsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activateSubsButton.Location = new System.Drawing.Point(82, 22);
+            this.activateSubsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.activateSubsButton.Name = "activateSubsButton";
+            this.activateSubsButton.Size = new System.Drawing.Size(110, 19);
+            this.activateSubsButton.TabIndex = 50;
+            this.activateSubsButton.Text = "abrir";
+            this.activateSubsButton.UseVisualStyleBackColor = true;
+            this.activateSubsButton.Click += new System.EventHandler(this.openSubsList_Click);
             // 
-            // chooseColorSubs
+            // subColorButton
             // 
-            this.chooseColorSubs.Enabled = false;
-            this.chooseColorSubs.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chooseColorSubs.Location = new System.Drawing.Point(86, 71);
-            this.chooseColorSubs.Margin = new System.Windows.Forms.Padding(2);
-            this.chooseColorSubs.Name = "chooseColorSubs";
-            this.chooseColorSubs.Size = new System.Drawing.Size(106, 19);
-            this.chooseColorSubs.TabIndex = 51;
-            this.chooseColorSubs.Text = "escolher";
-            this.chooseColorSubs.UseVisualStyleBackColor = true;
-            this.chooseColorSubs.Click += new System.EventHandler(this.chooseSubsColor);
+            this.subColorButton.Enabled = false;
+            this.subColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subColorButton.Location = new System.Drawing.Point(86, 71);
+            this.subColorButton.Margin = new System.Windows.Forms.Padding(2);
+            this.subColorButton.Name = "subColorButton";
+            this.subColorButton.Size = new System.Drawing.Size(106, 19);
+            this.subColorButton.TabIndex = 51;
+            this.subColorButton.Text = "escolher";
+            this.subColorButton.UseVisualStyleBackColor = true;
+            this.subColorButton.Click += new System.EventHandler(this.chooseSubsColor);
             // 
-            // panelSubColor
+            // subColorPanel
             // 
-            this.panelSubColor.BackColor = System.Drawing.Color.LightGray;
-            this.panelSubColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSubColor.Enabled = false;
-            this.panelSubColor.Location = new System.Drawing.Point(64, 73);
-            this.panelSubColor.Margin = new System.Windows.Forms.Padding(2);
-            this.panelSubColor.Name = "panelSubColor";
-            this.panelSubColor.Size = new System.Drawing.Size(14, 14);
-            this.panelSubColor.TabIndex = 152;
+            this.subColorPanel.BackColor = System.Drawing.Color.LightGray;
+            this.subColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.subColorPanel.Enabled = false;
+            this.subColorPanel.Location = new System.Drawing.Point(64, 73);
+            this.subColorPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.subColorPanel.Name = "subColorPanel";
+            this.subColorPanel.Size = new System.Drawing.Size(14, 14);
+            this.subColorPanel.TabIndex = 152;
             // 
             // subsCenterButton
             // 
@@ -498,11 +498,11 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.intervTimeLabel);
-            this.groupBox3.Controls.Add(this.timeInterval);
-            this.groupBox3.Controls.Add(this.randIntervalOn);
-            this.groupBox3.Controls.Add(this.rdmIntervLabel);
-            this.groupBox3.Controls.Add(this.timeExpo);
+            this.groupBox3.Controls.Add(this.intervalTimeLabel);
+            this.groupBox3.Controls.Add(this.intervalTime);
+            this.groupBox3.Controls.Add(this.rndIntervalCheck);
+            this.groupBox3.Controls.Add(this.rndIntervalLabel);
+            this.groupBox3.Controls.Add(this.expoTime);
             this.groupBox3.Controls.Add(this.expoTimeLabel);
             this.groupBox3.Location = new System.Drawing.Point(303, 35);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
@@ -513,73 +513,73 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tempo";
             // 
-            // intervTimeLabel
+            // intervalTimeLabel
             // 
-            this.intervTimeLabel.AutoSize = true;
-            this.intervTimeLabel.Location = new System.Drawing.Point(42, 47);
-            this.intervTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.intervTimeLabel.Name = "intervTimeLabel";
-            this.intervTimeLabel.Size = new System.Drawing.Size(73, 13);
-            this.intervTimeLabel.TabIndex = 38;
-            this.intervTimeLabel.Text = "Intervalo (ms):";
+            this.intervalTimeLabel.AutoSize = true;
+            this.intervalTimeLabel.Location = new System.Drawing.Point(42, 47);
+            this.intervalTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.intervalTimeLabel.Name = "intervalTimeLabel";
+            this.intervalTimeLabel.Size = new System.Drawing.Size(73, 13);
+            this.intervalTimeLabel.TabIndex = 38;
+            this.intervalTimeLabel.Text = "Intervalo (ms):";
             // 
-            // timeInterval
+            // intervalTime
             // 
-            this.timeInterval.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.timeInterval.Increment = new decimal(new int[] {
+            this.intervalTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.intervalTime.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.timeInterval.Location = new System.Drawing.Point(117, 45);
-            this.timeInterval.Margin = new System.Windows.Forms.Padding(2);
-            this.timeInterval.Maximum = new decimal(new int[] {
+            this.intervalTime.Location = new System.Drawing.Point(117, 45);
+            this.intervalTime.Margin = new System.Windows.Forms.Padding(2);
+            this.intervalTime.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.timeInterval.Name = "timeInterval";
-            this.timeInterval.Size = new System.Drawing.Size(60, 20);
-            this.timeInterval.TabIndex = 31;
+            this.intervalTime.Name = "intervalTime";
+            this.intervalTime.Size = new System.Drawing.Size(60, 20);
+            this.intervalTime.TabIndex = 31;
             // 
-            // randIntervalOn
+            // rndIntervalCheck
             // 
-            this.randIntervalOn.AutoSize = true;
-            this.randIntervalOn.Location = new System.Drawing.Point(162, 75);
-            this.randIntervalOn.Margin = new System.Windows.Forms.Padding(2);
-            this.randIntervalOn.Name = "randIntervalOn";
-            this.randIntervalOn.Size = new System.Drawing.Size(15, 14);
-            this.randIntervalOn.TabIndex = 32;
-            this.randIntervalOn.UseVisualStyleBackColor = true;
+            this.rndIntervalCheck.AutoSize = true;
+            this.rndIntervalCheck.Location = new System.Drawing.Point(162, 75);
+            this.rndIntervalCheck.Margin = new System.Windows.Forms.Padding(2);
+            this.rndIntervalCheck.Name = "rndIntervalCheck";
+            this.rndIntervalCheck.Size = new System.Drawing.Size(15, 14);
+            this.rndIntervalCheck.TabIndex = 32;
+            this.rndIntervalCheck.UseVisualStyleBackColor = true;
             // 
-            // rdmIntervLabel
+            // rndIntervalLabel
             // 
-            this.rdmIntervLabel.AutoSize = true;
-            this.rdmIntervLabel.Location = new System.Drawing.Point(12, 75);
-            this.rdmIntervLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.rdmIntervLabel.Name = "rdmIntervLabel";
-            this.rdmIntervLabel.Size = new System.Drawing.Size(143, 13);
-            this.rdmIntervLabel.TabIndex = 61;
-            this.rdmIntervLabel.Text = "Tempo de Intervalo Variável:";
-            this.rdmIntervLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.rndIntervalLabel.AutoSize = true;
+            this.rndIntervalLabel.Location = new System.Drawing.Point(12, 75);
+            this.rndIntervalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.rndIntervalLabel.Name = "rndIntervalLabel";
+            this.rndIntervalLabel.Size = new System.Drawing.Size(143, 13);
+            this.rndIntervalLabel.TabIndex = 61;
+            this.rndIntervalLabel.Text = "Tempo de Intervalo Variável:";
+            this.rndIntervalLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // timeExpo
+            // expoTime
             // 
-            this.timeExpo.Increment = new decimal(new int[] {
+            this.expoTime.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.timeExpo.Location = new System.Drawing.Point(117, 17);
-            this.timeExpo.Margin = new System.Windows.Forms.Padding(2);
-            this.timeExpo.Maximum = new decimal(new int[] {
+            this.expoTime.Location = new System.Drawing.Point(117, 17);
+            this.expoTime.Margin = new System.Windows.Forms.Padding(2);
+            this.expoTime.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.timeExpo.Name = "timeExpo";
-            this.timeExpo.Size = new System.Drawing.Size(60, 20);
-            this.timeExpo.TabIndex = 30;
+            this.expoTime.Name = "expoTime";
+            this.expoTime.Size = new System.Drawing.Size(60, 20);
+            this.expoTime.TabIndex = 30;
             // 
             // expoTimeLabel
             // 
@@ -593,14 +593,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listWordsLabel);
-            this.groupBox2.Controls.Add(this.listAudioLabel);
+            this.groupBox2.Controls.Add(this.wordListLabel);
+            this.groupBox2.Controls.Add(this.audioListLabel);
             this.groupBox2.Controls.Add(this.openAudioListButton);
-            this.groupBox2.Controls.Add(this.listColorsLabel);
-            this.groupBox2.Controls.Add(this.listImagesLabel);
+            this.groupBox2.Controls.Add(this.colorListLabel);
+            this.groupBox2.Controls.Add(this.imgListLabel);
             this.groupBox2.Controls.Add(this.openWordListButton);
-            this.groupBox2.Controls.Add(this.openColorsListButton);
-            this.groupBox2.Controls.Add(this.openImageListButton);
+            this.groupBox2.Controls.Add(this.openColorListButton);
+            this.groupBox2.Controls.Add(this.openImgListButton);
             this.groupBox2.Location = new System.Drawing.Point(10, 230);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
@@ -610,26 +610,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listas";
             // 
-            // listWordsLabel
+            // wordListLabel
             // 
-            this.listWordsLabel.AutoSize = true;
-            this.listWordsLabel.Location = new System.Drawing.Point(67, 20);
-            this.listWordsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.listWordsLabel.Name = "listWordsLabel";
-            this.listWordsLabel.Size = new System.Drawing.Size(51, 13);
-            this.listWordsLabel.TabIndex = 40;
-            this.listWordsLabel.Text = "Palavras:";
+            this.wordListLabel.AutoSize = true;
+            this.wordListLabel.Location = new System.Drawing.Point(67, 20);
+            this.wordListLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.wordListLabel.Name = "wordListLabel";
+            this.wordListLabel.Size = new System.Drawing.Size(51, 13);
+            this.wordListLabel.TabIndex = 40;
+            this.wordListLabel.Text = "Palavras:";
             // 
-            // listAudioLabel
+            // audioListLabel
             // 
-            this.listAudioLabel.AutoSize = true;
-            this.listAudioLabel.Location = new System.Drawing.Point(75, 101);
-            this.listAudioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.listAudioLabel.Name = "listAudioLabel";
-            this.listAudioLabel.Size = new System.Drawing.Size(42, 13);
-            this.listAudioLabel.TabIndex = 164;
-            this.listAudioLabel.Text = "Áudios:";
-            this.listAudioLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.audioListLabel.AutoSize = true;
+            this.audioListLabel.Location = new System.Drawing.Point(75, 101);
+            this.audioListLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.audioListLabel.Name = "audioListLabel";
+            this.audioListLabel.Size = new System.Drawing.Size(42, 13);
+            this.audioListLabel.TabIndex = 164;
+            this.audioListLabel.Text = "Áudios:";
+            this.audioListLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // openAudioListButton
             // 
@@ -644,25 +644,25 @@
             this.openAudioListButton.UseVisualStyleBackColor = true;
             this.openAudioListButton.Click += new System.EventHandler(this.openAudioList_Click);
             // 
-            // listColorsLabel
+            // colorListLabel
             // 
-            this.listColorsLabel.AutoSize = true;
-            this.listColorsLabel.Location = new System.Drawing.Point(80, 47);
-            this.listColorsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.listColorsLabel.Name = "listColorsLabel";
-            this.listColorsLabel.Size = new System.Drawing.Size(37, 13);
-            this.listColorsLabel.TabIndex = 41;
-            this.listColorsLabel.Text = "Cores:";
+            this.colorListLabel.AutoSize = true;
+            this.colorListLabel.Location = new System.Drawing.Point(80, 47);
+            this.colorListLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.colorListLabel.Name = "colorListLabel";
+            this.colorListLabel.Size = new System.Drawing.Size(37, 13);
+            this.colorListLabel.TabIndex = 41;
+            this.colorListLabel.Text = "Cores:";
             // 
-            // listImagesLabel
+            // imgListLabel
             // 
-            this.listImagesLabel.AutoSize = true;
-            this.listImagesLabel.Location = new System.Drawing.Point(67, 74);
-            this.listImagesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.listImagesLabel.Name = "listImagesLabel";
-            this.listImagesLabel.Size = new System.Drawing.Size(50, 13);
-            this.listImagesLabel.TabIndex = 57;
-            this.listImagesLabel.Text = "Imagens:";
+            this.imgListLabel.AutoSize = true;
+            this.imgListLabel.Location = new System.Drawing.Point(67, 74);
+            this.imgListLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.imgListLabel.Name = "imgListLabel";
+            this.imgListLabel.Size = new System.Drawing.Size(50, 13);
+            this.imgListLabel.TabIndex = 57;
+            this.imgListLabel.Text = "Imagens:";
             // 
             // openWordListButton
             // 
@@ -676,59 +676,59 @@
             this.openWordListButton.UseVisualStyleBackColor = true;
             this.openWordListButton.Click += new System.EventHandler(this.openWordsList_Click);
             // 
-            // openColorsListButton
+            // openColorListButton
             // 
-            this.openColorsListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openColorsListButton.Location = new System.Drawing.Point(121, 44);
-            this.openColorsListButton.Margin = new System.Windows.Forms.Padding(2);
-            this.openColorsListButton.Name = "openColorsListButton";
-            this.openColorsListButton.Size = new System.Drawing.Size(140, 19);
-            this.openColorsListButton.TabIndex = 21;
-            this.openColorsListButton.Text = "abrir";
-            this.openColorsListButton.UseVisualStyleBackColor = true;
-            this.openColorsListButton.Click += new System.EventHandler(this.openColorsList_Click);
+            this.openColorListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openColorListButton.Location = new System.Drawing.Point(121, 44);
+            this.openColorListButton.Margin = new System.Windows.Forms.Padding(2);
+            this.openColorListButton.Name = "openColorListButton";
+            this.openColorListButton.Size = new System.Drawing.Size(140, 19);
+            this.openColorListButton.TabIndex = 21;
+            this.openColorListButton.Text = "abrir";
+            this.openColorListButton.UseVisualStyleBackColor = true;
+            this.openColorListButton.Click += new System.EventHandler(this.openColorsList_Click);
             // 
-            // openImageListButton
+            // openImgListButton
             // 
-            this.openImageListButton.Enabled = false;
-            this.openImageListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openImageListButton.Location = new System.Drawing.Point(121, 71);
-            this.openImageListButton.Margin = new System.Windows.Forms.Padding(2);
-            this.openImageListButton.Name = "openImageListButton";
-            this.openImageListButton.Size = new System.Drawing.Size(140, 19);
-            this.openImageListButton.TabIndex = 22;
-            this.openImageListButton.Text = "abrir";
-            this.openImageListButton.UseVisualStyleBackColor = true;
-            this.openImageListButton.Click += new System.EventHandler(this.openImagesList_Click);
+            this.openImgListButton.Enabled = false;
+            this.openImgListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openImgListButton.Location = new System.Drawing.Point(121, 71);
+            this.openImgListButton.Margin = new System.Windows.Forms.Padding(2);
+            this.openImgListButton.Name = "openImgListButton";
+            this.openImgListButton.Size = new System.Drawing.Size(140, 19);
+            this.openImgListButton.TabIndex = 22;
+            this.openImgListButton.Text = "abrir";
+            this.openImgListButton.UseVisualStyleBackColor = true;
+            this.openImgListButton.Click += new System.EventHandler(this.openImagesList_Click);
             // 
-            // textBox2
+            // instructionsBox
             // 
-            this.textBox2.AcceptsReturn = true;
-            this.textBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox2.Location = new System.Drawing.Point(302, 246);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(414, 111);
-            this.textBox2.TabIndex = 70;
-            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
+            this.instructionsBox.AcceptsReturn = true;
+            this.instructionsBox.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.instructionsBox.Location = new System.Drawing.Point(302, 246);
+            this.instructionsBox.Margin = new System.Windows.Forms.Padding(2);
+            this.instructionsBox.Multiline = true;
+            this.instructionsBox.Name = "instructionsBox";
+            this.instructionsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.instructionsBox.Size = new System.Drawing.Size(414, 111);
+            this.instructionsBox.TabIndex = 70;
+            this.instructionsBox.Click += new System.EventHandler(this.writeInstructionsBox_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.expandImgLabel);
             this.groupBox1.Controls.Add(this.wordColorPanel);
             this.groupBox1.Controls.Add(this.wordColorLabel);
-            this.groupBox1.Controls.Add(this.expandImageOn);
+            this.groupBox1.Controls.Add(this.expandImgCheck);
             this.groupBox1.Controls.Add(this.wordColorButton);
             this.groupBox1.Controls.Add(this.expoTypeLabel);
             this.groupBox1.Controls.Add(this.chooseExpoType);
-            this.groupBox1.Controls.Add(this.expoNumberLabel);
+            this.groupBox1.Controls.Add(this.numExpoLabel);
             this.groupBox1.Controls.Add(this.numExpo);
-            this.groupBox1.Controls.Add(this.rdmExpoLabel);
+            this.groupBox1.Controls.Add(this.rndExpoLabel);
             this.groupBox1.Controls.Add(this.wordSizeLabel);
             this.groupBox1.Controls.Add(this.wordSizeNumeric);
-            this.groupBox1.Controls.Add(this.randExpoOn);
+            this.groupBox1.Controls.Add(this.rndExpoCheck);
             this.groupBox1.Location = new System.Drawing.Point(10, 34);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
@@ -769,18 +769,18 @@
             this.wordColorLabel.TabIndex = 160;
             this.wordColorLabel.Text = "Cor da Palavra:";
             // 
-            // expandImageOn
+            // expandImgCheck
             // 
-            this.expandImageOn.AutoSize = true;
-            this.expandImageOn.Enabled = false;
-            this.expandImageOn.Location = new System.Drawing.Point(122, 155);
-            this.expandImageOn.Margin = new System.Windows.Forms.Padding(2);
-            this.expandImageOn.Name = "expandImageOn";
-            this.expandImageOn.Size = new System.Drawing.Size(15, 14);
-            this.expandImageOn.TabIndex = 14;
-            this.expandImageOn.TabStop = false;
-            this.expandImageOn.UseVisualStyleBackColor = true;
-            this.expandImageOn.CheckedChanged += new System.EventHandler(this.expandImageOn_CheckedChanged);
+            this.expandImgCheck.AutoSize = true;
+            this.expandImgCheck.Enabled = false;
+            this.expandImgCheck.Location = new System.Drawing.Point(122, 155);
+            this.expandImgCheck.Margin = new System.Windows.Forms.Padding(2);
+            this.expandImgCheck.Name = "expandImgCheck";
+            this.expandImgCheck.Size = new System.Drawing.Size(15, 14);
+            this.expandImgCheck.TabIndex = 14;
+            this.expandImgCheck.TabStop = false;
+            this.expandImgCheck.UseVisualStyleBackColor = true;
+            this.expandImgCheck.CheckedChanged += new System.EventHandler(this.expandImageOn_CheckedChanged);
             // 
             // wordColorButton
             // 
@@ -793,7 +793,7 @@
             this.wordColorButton.TabIndex = 13;
             this.wordColorButton.Text = "escolher";
             this.wordColorButton.UseVisualStyleBackColor = true;
-            this.wordColorButton.Click += new System.EventHandler(this.button3_Click_1);
+            this.wordColorButton.Click += new System.EventHandler(this.chooseWordColor_Click_1);
             // 
             // expoTypeLabel
             // 
@@ -824,15 +824,15 @@
             this.chooseExpoType.Tag = "";
             this.chooseExpoType.SelectedIndexChanged += new System.EventHandler(this.chooseExpositionTypeComboBox);
             // 
-            // expoNumberLabel
+            // numExpoLabel
             // 
-            this.expoNumberLabel.AutoSize = true;
-            this.expoNumberLabel.Location = new System.Drawing.Point(2, 48);
-            this.expoNumberLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.expoNumberLabel.Name = "expoNumberLabel";
-            this.expoNumberLabel.Size = new System.Drawing.Size(115, 13);
-            this.expoNumberLabel.TabIndex = 35;
-            this.expoNumberLabel.Text = "Número de Tentativas:";
+            this.numExpoLabel.AutoSize = true;
+            this.numExpoLabel.Location = new System.Drawing.Point(2, 48);
+            this.numExpoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.numExpoLabel.Name = "numExpoLabel";
+            this.numExpoLabel.Size = new System.Drawing.Size(115, 13);
+            this.numExpoLabel.TabIndex = 35;
+            this.numExpoLabel.Text = "Número de Tentativas:";
             // 
             // numExpo
             // 
@@ -857,16 +857,16 @@
             0,
             0});
             // 
-            // rdmExpoLabel
+            // rndExpoLabel
             // 
-            this.rdmExpoLabel.AutoSize = true;
-            this.rdmExpoLabel.Location = new System.Drawing.Point(34, 74);
-            this.rdmExpoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.rdmExpoLabel.Name = "rdmExpoLabel";
-            this.rdmExpoLabel.Size = new System.Drawing.Size(85, 13);
-            this.rdmExpoLabel.TabIndex = 37;
-            this.rdmExpoLabel.Text = "Ordem Aleatória:";
-            this.rdmExpoLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.rndExpoLabel.AutoSize = true;
+            this.rndExpoLabel.Location = new System.Drawing.Point(34, 74);
+            this.rndExpoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.rndExpoLabel.Name = "rndExpoLabel";
+            this.rndExpoLabel.Size = new System.Drawing.Size(85, 13);
+            this.rndExpoLabel.TabIndex = 37;
+            this.rndExpoLabel.Text = "Ordem Aleatória:";
+            this.rndExpoLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // wordSizeLabel
             // 
@@ -907,17 +907,17 @@
             0});
             this.wordSizeNumeric.ValueChanged += new System.EventHandler(this.wordSizeNumeric_ValueChanged);
             // 
-            // randExpoOn
+            // rndExpoCheck
             // 
-            this.randExpoOn.AutoSize = true;
-            this.randExpoOn.Checked = true;
-            this.randExpoOn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.randExpoOn.Location = new System.Drawing.Point(123, 74);
-            this.randExpoOn.Margin = new System.Windows.Forms.Padding(2);
-            this.randExpoOn.Name = "randExpoOn";
-            this.randExpoOn.Size = new System.Drawing.Size(15, 14);
-            this.randExpoOn.TabIndex = 12;
-            this.randExpoOn.UseVisualStyleBackColor = true;
+            this.rndExpoCheck.AutoSize = true;
+            this.rndExpoCheck.Checked = true;
+            this.rndExpoCheck.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.rndExpoCheck.Location = new System.Drawing.Point(123, 74);
+            this.rndExpoCheck.Margin = new System.Windows.Forms.Padding(2);
+            this.rndExpoCheck.Name = "rndExpoCheck";
+            this.rndExpoCheck.Size = new System.Drawing.Size(15, 14);
+            this.rndExpoCheck.TabIndex = 12;
+            this.rndExpoCheck.UseVisualStyleBackColor = true;
             // 
             // instructionsLabel
             // 
@@ -985,8 +985,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.timeInterval)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeExpo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expoTime)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1003,54 +1003,54 @@
         private System.Windows.Forms.TextBox prgNameTextBox;
         private System.Windows.Forms.Label expoTypeLabel;
         private System.Windows.Forms.Label subColorLabel;
-        private System.Windows.Forms.Label captAudioLabel;
-        private System.Windows.Forms.Label listImagesLabel;
+        private System.Windows.Forms.Label audioCaptureLabel;
+        private System.Windows.Forms.Label imgListLabel;
         private System.Windows.Forms.Label activateSubsLabel;
         private System.Windows.Forms.Label subLocationLabel;
         private System.Windows.Forms.Label bgColorLabel;
-        private System.Windows.Forms.Label listWordsLabel;
-        private System.Windows.Forms.Label intervTimeLabel;
-        private System.Windows.Forms.Label rdmExpoLabel;
+        private System.Windows.Forms.Label wordListLabel;
+        private System.Windows.Forms.Label intervalTimeLabel;
+        private System.Windows.Forms.Label rndExpoLabel;
         private System.Windows.Forms.Label prgNameLabel;
-        private System.Windows.Forms.Label expoNumberLabel;
+        private System.Windows.Forms.Label numExpoLabel;
         private System.Windows.Forms.Label expoTimeLabel;
         private System.Windows.Forms.Button bgColorButton;
-        private System.Windows.Forms.CheckBox captAudioOn;
-        private System.Windows.Forms.CheckBox randExpoOn;
-        private System.Windows.Forms.Label listColorsLabel;
+        private System.Windows.Forms.CheckBox audioCaptureCheck;
+        private System.Windows.Forms.CheckBox rndExpoCheck;
+        private System.Windows.Forms.Label colorListLabel;
         private System.Windows.Forms.ComboBox chooseExpoType;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.CheckBox activateSubsCheck;
-        private System.Windows.Forms.Button openImageListButton;
-        private System.Windows.Forms.Button openColorsListButton;
+        private System.Windows.Forms.Button openImgListButton;
+        private System.Windows.Forms.Button openColorListButton;
         private System.Windows.Forms.Button openWordListButton;
-        private System.Windows.Forms.Button chooseColorSubs;
+        private System.Windows.Forms.Button subColorButton;
         private System.Windows.Forms.NumericUpDown numExpo;
-        private System.Windows.Forms.NumericUpDown timeExpo;
-        private System.Windows.Forms.NumericUpDown timeInterval;
+        private System.Windows.Forms.NumericUpDown expoTime;
+        private System.Windows.Forms.NumericUpDown intervalTime;
         private System.Windows.Forms.Label instructionsLabel;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label rdmIntervLabel;
-        private System.Windows.Forms.CheckBox randIntervalOn;
+        private System.Windows.Forms.TextBox instructionsBox;
+        private System.Windows.Forms.Label rndIntervalLabel;
+        private System.Windows.Forms.CheckBox rndIntervalCheck;
         private System.Windows.Forms.Label fixPointTypeLabel;
         private System.Windows.Forms.CheckBox fixPointCircle;
         private System.Windows.Forms.CheckBox fixPointCross;
-        private System.Windows.Forms.Panel panelSubColor;
-        private System.Windows.Forms.Panel panelBGColor;
+        private System.Windows.Forms.Panel subColorPanel;
+        private System.Windows.Forms.Panel bgColorPanel;
         private System.Windows.Forms.Button subsUpButton;
         private System.Windows.Forms.Button subsRightButton;
         private System.Windows.Forms.Button subsLeftButton;
         private System.Windows.Forms.Button subsDownButton;
         private System.Windows.Forms.Button subsCenterButton;
-        private System.Windows.Forms.Panel panelFixPointColor;
-        private System.Windows.Forms.Button fixPointColor;
+        private System.Windows.Forms.Panel fixPointColorPanel;
+        private System.Windows.Forms.Button fixPointColorButton;
         private System.Windows.Forms.Label wordSizeLabel;
-        private System.Windows.Forms.CheckBox expandImageOn;
+        private System.Windows.Forms.CheckBox expandImgCheck;
         private System.Windows.Forms.Label expandImgLabel;
         private System.Windows.Forms.NumericUpDown wordSizeNumeric;
         private System.Windows.Forms.Button openAudioListButton;
-        private System.Windows.Forms.Label listAudioLabel;
-        private System.Windows.Forms.Button openSubsListButton;
+        private System.Windows.Forms.Label audioListLabel;
+        private System.Windows.Forms.Button activateSubsButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;

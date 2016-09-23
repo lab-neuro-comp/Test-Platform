@@ -195,7 +195,7 @@ namespace StroopTest
                     elapsedTime = 0; // zera tempo em milissegundos decorrido
 
                     // beginAudio
-                    if (program.AudioCapture) { startRecordingAudio(program); } // inicia gravação áudio
+                    if (program.AudioCapture && program.ExpositionType != "txtaud") { startRecordingAudio(program); } // inicia gravação áudio
                     // endAudio
 
                     await Task.Delay(program.IntervalTime, cts.Token);
@@ -330,7 +330,7 @@ namespace StroopTest
                     var audioCounter = 0;
 
                     // beginAudio
-                    if (program.AudioCapture) { startRecordingAudio(program); } // inicia gravação áudio
+                    if (program.AudioCapture && program.ExpositionType != "txtaud") { startRecordingAudio(program); } // inicia gravação áudio
                     // endAudio
 
                     await Task.Delay(program.IntervalTime, cts.Token);
@@ -575,7 +575,7 @@ namespace StroopTest
 
                 waveSource.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailable);
                 waveSource.RecordingStopped += new EventHandler<StoppedEventArgs>(waveSource_RecordingStopped);
-
+                
                 waveFile = new WaveFileWriter(outputDataPath + "/audio_" + program.UserName + "_" + program.ProgramName + "_" + now + ".wav", waveSource.WaveFormat);
 
                 waveSource.StartRecording();
@@ -589,17 +589,16 @@ namespace StroopTest
 
         void waveSource_DataAvailable(object sender, WaveInEventArgs e)
         {
-            if (waveFile != null)
-            {
-                waveFile.Write(e.Buffer, 0, e.BytesRecorded);
-                waveFile.Flush();
-            }
+            if (waveFile == null) return;
+            waveFile.Write(e.Buffer, 0, e.BytesRecorded);
+            waveFile.Flush();
         } 
 
         void waveSource_RecordingStopped(object sender, StoppedEventArgs e)
         {
             if (waveSource != null)
             {
+                waveSource.StopRecording();
                 waveSource.Dispose();
                 waveSource = null;
             }

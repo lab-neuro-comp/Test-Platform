@@ -70,6 +70,7 @@ namespace StroopTest
 
         private async void startExpo() // clique do botão define o programa a ser executado e inicia exposição
         {
+            
             try
             {
                 if (!File.Exists(path + "/prg/" + programInUse.ProgramName + ".prg")) { throw new Exception("Arquivo programa: " + programInUse.ProgramName + ".prg" + "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/")); } // confere existência do arquivo
@@ -279,7 +280,7 @@ namespace StroopTest
             
 
             //audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile); // auxiliar recebe o vetor original
-
+            
             try
             {
                 wordLabel.ForeColor = Color.Red;
@@ -300,8 +301,16 @@ namespace StroopTest
                 if (program.SubtitleShow)
                 {
                     subtitlesArray = program.readListFile(path + "/lst/" + program.SubtitlesListFile);
-                    subtitleLabel.ForeColor = ColorTranslator.FromHtml(program.SubtitleColor);
+                    if(program.SubtitleColor.ToLower() != "false")
+                    {
+                        subtitleLabel.ForeColor = ColorTranslator.FromHtml(program.SubtitleColor);
+                    } else
+                    {
+                        subtitleLabel.ForeColor = Color.Black;
+                    }
                     subtitleLabel.Enabled = true;
+                    subtitleLabel.Left = (this.ClientSize.Width - subtitleLabel.Width) / 2; // centraliza label da palavra
+                    subtitleLabel.Top = (pictureBox1.Bottom + 50);
                 }
 
                 if (program.AudioListFile != "false")
@@ -353,7 +362,16 @@ namespace StroopTest
                             wordLabel.Visible = false;
                             actualImagePath = Path.GetFileName(imageDirs[arrayCounter].ToString());
                             arrayCounter++;
-                            
+
+                            if (program.SubtitleShow)
+                            {
+                                subtitleLabel.Visible = true;
+                                subtitleLabel.Text = subtitlesArray[k];
+                                defineSubPosition(program.SubtitlePlace);
+                                if (k == (subtitlesArray.Count() - 1)) k = 0;
+                                else k++;
+                            }
+
                             StroopProgram.writeLineOutput(program, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "img", audioDetail);
                             await Task.Delay(program.ExpositionTime, cts.Token);
 
@@ -388,6 +406,7 @@ namespace StroopTest
                         for (int counter = 0; counter < program.NumExpositions; counter++) // AQUI ver estinulo -> palavra ou imagem como um só e ter intervalo separado
                         {
                             pictureBox1.Visible = false; wordLabel.Visible = false;
+                            if (program.SubtitleShow) { subtitleLabel.Visible = false; }
                             await intervalOrFixPoint(program, cts.Token);
 
 
@@ -406,12 +425,14 @@ namespace StroopTest
                             
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                             SendKeys.SendWait("s");
+
                             pictureBox1.Visible = true;
 
                             if (program.SubtitleShow)
                             {
                                 subtitleLabel.Visible = true;
                                 subtitleLabel.Text = subtitlesArray[k];
+                                defineSubPosition(program.SubtitlePlace);
                                 if (k == (subtitlesArray.Count() - 1)) k = 0;
                                 else k++;
                             }
@@ -462,6 +483,34 @@ namespace StroopTest
                 throw new Exception(ex.Message);
             }
             cts = null;
+        }
+
+        private void defineSubPosition(int subtitleLocation)
+        {
+            switch (subtitleLocation)
+            {
+                case 1: //baixo
+                    subtitleLabel.Left = (this.ClientSize.Width - subtitleLabel.Width) / 2;
+                    subtitleLabel.Top = (pictureBox1.Bottom + 50);
+                    break;
+                case 2: //esquerda
+                    subtitleLabel.Left = (pictureBox1.Left - (subtitleLabel.Width + 50));
+                    subtitleLabel.Top = (this.ClientSize.Height - subtitleLabel.Height) / 2;
+                    break;
+                case 3: //direita
+                    subtitleLabel.Left = (pictureBox1.Left + pictureBox1.Width + 50);
+                    subtitleLabel.Top = (this.ClientSize.Height - subtitleLabel.Height) / 2;
+                    break;
+                case 4: // cima
+                    subtitleLabel.Left = (this.ClientSize.Width - subtitleLabel.Width) / 2;
+                    subtitleLabel.Top = (pictureBox1.Top - (subtitleLabel.Height + 50));
+                    break;
+                default: // centro
+                    subtitleLabel.Left = (this.ClientSize.Width - subtitleLabel.Width) / 2;
+                    subtitleLabel.Top = (this.ClientSize.Height - subtitleLabel.Height) / 2;
+                    break;
+            }
+
         }
 
         /*

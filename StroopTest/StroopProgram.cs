@@ -52,7 +52,7 @@ namespace StroopTest
         private string fontWordLabel;           // [16]  tamanho da fonte - 160
         private bool expandImage;               // [17]  expande imagem ajustando à tela - false
         private string audioListFile;           // [18]  lista com caminhos dos áudios - ler se é do tipo audio [13]
-        private string subtitlesListFile = "false";       // [19]  lista de legendas - ler se com legenda está ativado [10]
+        private string subtitlesListFile;       // [19]  lista de legendas - ler se com legenda está ativado [10]
 
         private string fixPointColor = "false";           // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
         private int delayTime;                  // [21]  tempo de atraso = intervalo se não for definido
@@ -255,7 +255,7 @@ namespace StroopTest
             get { return subtitlePlace; }
             set
             {
-                if (value >= 0 && value <= 4)
+                if (value > 0 && value <= 5)
                 {
                     subtitlePlace = value;
                 }

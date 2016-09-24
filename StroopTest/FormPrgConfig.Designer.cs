@@ -427,14 +427,14 @@
             this.subsCenterButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subsCenterButton.BackgroundImage")));
             this.subsCenterButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.subsCenterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subsCenterButton.Location = new System.Drawing.Point(64, 49);
+            this.subsCenterButton.Location = new System.Drawing.Point(173, 49);
             this.subsCenterButton.Margin = new System.Windows.Forms.Padding(2);
             this.subsCenterButton.Name = "subsCenterButton";
             this.subsCenterButton.Size = new System.Drawing.Size(14, 14);
             this.subsCenterButton.TabIndex = 72;
             this.subsCenterButton.TabStop = false;
             this.subsCenterButton.UseVisualStyleBackColor = false;
-            this.subsCenterButton.Click += new System.EventHandler(this.subDirect1_Click);
+            this.subsCenterButton.Click += new System.EventHandler(this.subLocationCenter_Click);
             // 
             // subsDownButton
             // 
@@ -442,14 +442,14 @@
             this.subsDownButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subsDownButton.BackgroundImage")));
             this.subsDownButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.subsDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subsDownButton.Location = new System.Drawing.Point(92, 49);
+            this.subsDownButton.Location = new System.Drawing.Point(64, 49);
             this.subsDownButton.Margin = new System.Windows.Forms.Padding(2);
             this.subsDownButton.Name = "subsDownButton";
             this.subsDownButton.Size = new System.Drawing.Size(14, 14);
             this.subsDownButton.TabIndex = 154;
             this.subsDownButton.TabStop = false;
             this.subsDownButton.UseVisualStyleBackColor = false;
-            this.subsDownButton.Click += new System.EventHandler(this.subDirect2_Click);
+            this.subsDownButton.Click += new System.EventHandler(this.subLocationDown_Click);
             // 
             // subsLeftButton
             // 
@@ -457,14 +457,14 @@
             this.subsLeftButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subsLeftButton.BackgroundImage")));
             this.subsLeftButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.subsLeftButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subsLeftButton.Location = new System.Drawing.Point(119, 49);
+            this.subsLeftButton.Location = new System.Drawing.Point(91, 49);
             this.subsLeftButton.Margin = new System.Windows.Forms.Padding(2);
             this.subsLeftButton.Name = "subsLeftButton";
             this.subsLeftButton.Size = new System.Drawing.Size(14, 14);
             this.subsLeftButton.TabIndex = 155;
             this.subsLeftButton.TabStop = false;
             this.subsLeftButton.UseVisualStyleBackColor = false;
-            this.subsLeftButton.Click += new System.EventHandler(this.subDirect3_Click);
+            this.subsLeftButton.Click += new System.EventHandler(this.subLocationLeft_Click);
             // 
             // subsRightButton
             // 
@@ -472,14 +472,14 @@
             this.subsRightButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subsRightButton.BackgroundImage")));
             this.subsRightButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.subsRightButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subsRightButton.Location = new System.Drawing.Point(147, 49);
+            this.subsRightButton.Location = new System.Drawing.Point(119, 49);
             this.subsRightButton.Margin = new System.Windows.Forms.Padding(2);
             this.subsRightButton.Name = "subsRightButton";
             this.subsRightButton.Size = new System.Drawing.Size(14, 14);
             this.subsRightButton.TabIndex = 156;
             this.subsRightButton.TabStop = false;
             this.subsRightButton.UseVisualStyleBackColor = false;
-            this.subsRightButton.Click += new System.EventHandler(this.subDirect4_Click);
+            this.subsRightButton.Click += new System.EventHandler(this.subLocationRight_Click);
             // 
             // subsUpButton
             // 
@@ -487,14 +487,14 @@
             this.subsUpButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subsUpButton.BackgroundImage")));
             this.subsUpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.subsUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subsUpButton.Location = new System.Drawing.Point(175, 49);
+            this.subsUpButton.Location = new System.Drawing.Point(147, 49);
             this.subsUpButton.Margin = new System.Windows.Forms.Padding(2);
             this.subsUpButton.Name = "subsUpButton";
             this.subsUpButton.Size = new System.Drawing.Size(14, 14);
             this.subsUpButton.TabIndex = 157;
             this.subsUpButton.TabStop = false;
             this.subsUpButton.UseVisualStyleBackColor = false;
-            this.subsUpButton.Click += new System.EventHandler(this.subDirect5_Click);
+            this.subsUpButton.Click += new System.EventHandler(this.subLocationUp_Click);
             // 
             // groupBox3
             // 

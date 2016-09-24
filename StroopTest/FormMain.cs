@@ -241,7 +241,7 @@ namespace StroopTest
         {
             Screen[] screens = Screen.AllScreens;
             FormExposition exposeProgram = new FormExposition(prgNameSL.Text, usrNameSL.Text, defaultPath);
-
+            
             try
             {
 

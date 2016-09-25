@@ -104,57 +104,9 @@ namespace StroopTest
 
         private void closeForm_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
-
-        private void activateSubtitles_CheckedChanged(object sender, EventArgs e)
-        {
-            if (expandImgCheck.Checked && activateSubsCheck.Checked)
-                expandImgCheck.Checked = !activateSubsCheck.Checked;
-
-            enableSubsItens(activateSubsCheck.Checked);
-        }
-        /*
-        private void subtitlesCheckConfig()
-        {
-            if (activateSubsCheck.Checked)
-            {
-                foreach (Button b in subDirectionList)
-                {
-                    b.Enabled = true;
-                    b.BackColor = Color.Transparent;
-                }
-                activateSubsButton.Enabled = true;
-                subColorButton.Enabled = true;
-
-                subColorPanel.Enabled = true;
-
-                subColorPanel.BackColor = Color.Transparent;
-                subsCenterButton.BackColor = Color.Transparent; // habilitar botões de posicao legenda
-
-                expandImgCheck.Enabled = false;
-                expandImgCheck.Checked = false;
-
-            }
-            else
-            {
-                activateSubsButton.Visible = false; activateSubsButton.Enabled = false;
-                foreach (Button b in subDirectionList)
-                {
-                    b.Enabled = false;
-                    b.BackColor = Color.LightGray;
-                }
-                subColorButton.Enabled = false;;
-                subColorPanel.Enabled = false; subColorPanel.BackColor = Color.LightGray;
-                expandImgCheck.Enabled = true;
-            }
-        }
-        */
-        private void chooseExpositionTypeComboBox(object sender, EventArgs e)
-        {
-            configurePrgItens(chooseExpoType.SelectedIndex);
-        }
-
+        
         private void configurePrgItens(int expoType)
         {
             numExpo.Enabled = true; numExpoLabel.Enabled = true;
@@ -252,33 +204,34 @@ namespace StroopTest
             instructionsLabel.Enabled = true; instructionsBox.Enabled = true;
         }
 
-        private void enableSubsItens (bool subsEnabledBool)
+        //BOX1
+
+        private void chooseExpositionTypeComboBox(object sender, EventArgs e)
         {
-            activateSubsButton.Enabled = subsEnabledBool;
-            subLocationLabel.Enabled = subsEnabledBool;
-            foreach (Button button in subDirectionList)
-            {
-                subDirectionNumber = 1;
-                button.Enabled = subsEnabledBool;
-                if (subsEnabledBool) button.BackColor = Color.LightGray;
-                else button.BackColor = Color.White;
-            }
-            subColorLabel.Enabled = subsEnabledBool; subColorPanel.Enabled = subsEnabledBool; subColorButton.Enabled = subsEnabledBool;
+            configurePrgItens(chooseExpoType.SelectedIndex);
         }
 
-        private void chooseBGColor(object sender, EventArgs e)
+        private void chooseWordColor_Click(object sender, EventArgs e)
         {
             string colorCode = pickColor();
-            bgColorButton.Text = colorCode;
-            bgColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
+            wordColorButton.Text = colorCode;
+            wordColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
         }
 
-        private void chooseSubsColor(object sender, EventArgs e)
+        private void expandImageOn_CheckedChanged(object sender, EventArgs e)
         {
-            string colorCode = pickColor();
-            subColorButton.Text = colorCode;
-            subColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
+            if (expandImgCheck.Checked && activateSubsCheck.Checked)
+                activateSubsCheck.Checked = !expandImgCheck.Checked;
+
+            enableSubsItens(activateSubsCheck.Checked);
         }
+
+        private void wordSizeNumeric_ValueChanged(object sender, EventArgs e)
+        {
+            fontSize = wordSizeNumeric.Value.ToString();
+        }
+
+        //BOX2
 
         private void openWordsList_Click(object sender, EventArgs e)
         {
@@ -294,25 +247,13 @@ namespace StroopTest
         {
             openImgListButton.Text = openListFile();
         }
-        
+
         private void openAudioList_Click(object sender, EventArgs e)
         {
             openAudioListButton.Text = openListFile();
         }
         
-        private void openSubsList_Click(object sender, EventArgs e)
-        {
-            activateSubsButton.Text = openListFile();
-        }
-
-        private void writeInstructionsBox_Click(object sender, EventArgs e)
-        {
-            if (instructionsBox.Text == instructionBoxText)
-            {
-                instructionsBox.Text = "";
-            }
-            instructionsBox.ForeColor = Color.Black;
-        }
+        //BOX4
 
         private void checkFixPointCross_CheckedChanged(object sender, EventArgs e)
         {
@@ -340,6 +281,41 @@ namespace StroopTest
             }
         }
 
+        private void chooseFixPointColor_Click(object sender, EventArgs e)
+        {
+            string colorCode = pickColor();
+            fixPointColorButton.Text = colorCode;
+            fixPointColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
+        }
+
+        //BOX5
+
+        private void activateSubtitles_CheckedChanged(object sender, EventArgs e)
+        {
+            if (expandImgCheck.Checked && activateSubsCheck.Checked)
+                expandImgCheck.Checked = !activateSubsCheck.Checked;
+
+            enableSubsItens(activateSubsCheck.Checked);
+        }
+
+        private void enableSubsItens (bool subsEnabledBool)
+        {
+            activateSubsButton.Enabled = subsEnabledBool;
+            subLocationLabel.Enabled = subsEnabledBool;
+            foreach (Button button in subDirectionList)
+            {
+                subDirectionNumber = 1;
+                button.Enabled = subsEnabledBool;
+                if (subsEnabledBool) button.BackColor = Color.LightGray;
+                else button.BackColor = Color.White;
+            }
+            subColorLabel.Enabled = subsEnabledBool; subColorPanel.Enabled = subsEnabledBool; subColorButton.Enabled = subsEnabledBool;
+        }
+
+        private void openSubsList_Click(object sender, EventArgs e)
+        {
+            activateSubsButton.Text = openListFile();
+        }
 
         private void subLocationDown_Click(object sender, EventArgs e)
         {
@@ -360,7 +336,7 @@ namespace StroopTest
         {
             selectSubDirectionNumber(4);
         }
-        
+
         private void subLocationCenter_Click(object sender, EventArgs e)
         {
             selectSubDirectionNumber(5);
@@ -372,29 +348,80 @@ namespace StroopTest
             {
                 subDirectionList[i].BackColor = Color.LightGray;
             }
-            subDirectionList[number-1].BackColor = Color.Transparent;
+            subDirectionList[number - 1].BackColor = Color.Transparent;
             subDirectionNumber = number;
         }
 
-        private void chooseFixPointColor_Click(object sender, EventArgs e)
+        private void chooseSubsColor(object sender, EventArgs e)
         {
             string colorCode = pickColor();
-            fixPointColorButton.Text = colorCode;
-            fixPointColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
+            subColorButton.Text = colorCode;
+            subColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
         }
 
-        private void wordSizeNumeric_ValueChanged(object sender, EventArgs e)
+        //BOX6
+
+        private void chooseBGColor(object sender, EventArgs e)
         {
-            fontSize = wordSizeNumeric.Value.ToString();
+            string colorCode = pickColor();
+            bgColorButton.Text = colorCode;
+            bgColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
         }
 
-        private void expandImageOn_CheckedChanged(object sender, EventArgs e)
+        //BOX7
+        
+        private void writeInstructionsBox_Click(object sender, EventArgs e)
         {
-            if (expandImgCheck.Checked && activateSubsCheck.Checked)
-                activateSubsCheck.Checked = !expandImgCheck.Checked;
-
-            enableSubsItens(activateSubsCheck.Checked);
+            if (instructionsBox.Text == instructionBoxText)
+            {
+                instructionsBox.Text = "";
+            }
+            instructionsBox.ForeColor = Color.Black;
         }
+
+        //AUX FUNCTIONS
+
+
+        private string openListFile()
+        {
+            string progName = "abrir";
+
+            FormDefine defineProgram = new FormDefine("Lista: ", path + "/lst/", "lst");
+            var result = defineProgram.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                progName = defineProgram.ReturnValue + ".lst";
+            }
+
+            return progName;
+        }
+
+        private string pickColor()
+        {
+            ColorDialog MyDialog = new ColorDialog();
+            Color colorPicked = new Color();
+
+            MyDialog.CustomColors = new int[] {
+                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#F8E000")),
+                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#007BB7")),
+                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#7EC845")),
+                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#D01C1F"))
+                                      };
+            colorPicked = this.BackColor;
+
+            string hexColor = "#FFFFFF";
+
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+            {
+                colorPicked = MyDialog.Color;
+                hexColor = "#" + colorPicked.R.ToString("X2") + colorPicked.G.ToString("X2") + colorPicked.B.ToString("X2");
+            }
+
+            return hexColor;
+        }
+
+        //WINDOW ITENS
 
         private void helpButton_Click(object sender, EventArgs e)
         {
@@ -408,12 +435,7 @@ namespace StroopTest
             catch (Exception ex) { throw new Exception(ex.Message);/*MessageBox.Show(ex.Message);*/ }
         }
 
-        private void chooseWordColor_Click_1(object sender, EventArgs e)
-        {
-            string colorCode = pickColor();
-            wordColorButton.Text = colorCode;
-            wordColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
-        }
+        //SAVE
 
         private void configureNewProgram(object sender, EventArgs e)
         {
@@ -754,8 +776,9 @@ namespace StroopTest
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);/*MessageBox.Show(ex.Message);*/
-                //Close();
+                MessageBox.Show(ex.Message);
+                Dispose();
+                Close();
             }
         }
         
@@ -783,44 +806,6 @@ namespace StroopTest
             MessageBox.Show("O programa " + prgNameTextBox.Text + ".prg foi salvo com sucesso!");
             this.Close();
         }
-
-        private string openListFile()
-        {
-            string progName = "abrir";
-
-            FormDefine defineProgram = new FormDefine("Lista: ", path + "/lst/", "lst");
-            var result = defineProgram.ShowDialog();
-
-            if (result == DialogResult.OK)
-            {
-                progName = defineProgram.ReturnValue + ".lst";
-            }
-
-            return progName;
-        }
-
-        string pickColor()
-        {
-            ColorDialog MyDialog = new ColorDialog();
-            Color colorPicked = new Color();
-
-            MyDialog.CustomColors = new int[] {
-                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#F8E000")),
-                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#007BB7")),
-                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#7EC845")),
-                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#D01C1F"))
-                                      };
-            colorPicked = this.BackColor;
-
-            string hexColor = "#FFFFFF";
-
-            if (MyDialog.ShowDialog() == DialogResult.OK)
-            {
-                colorPicked = MyDialog.Color;
-                hexColor = "#" + colorPicked.R.ToString("X2") + colorPicked.G.ToString("X2") + colorPicked.B.ToString("X2");
-            }
-                
-            return  hexColor;
-        }
+       
     }
 }

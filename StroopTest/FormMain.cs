@@ -151,11 +151,10 @@ namespace StroopTest
 
         private void programaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FormPrgConfig configureProgram;
             FormDefine defineProgram;
             DialogResult result;
             string editProgramName = "error";
-            
+
             try
             {
                 defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "/prg/", "prg");
@@ -163,10 +162,16 @@ namespace StroopTest
                 if (result == DialogResult.OK)
                 {
                     editProgramName = defineProgram.ReturnValue;
-                    configureProgram = new FormPrgConfig(testFilesPath, editProgramName);
-                    configureProgram.ShowDialog();
+                    FormPrgConfig configureProgram = new FormPrgConfig(testFilesPath, editProgramName);
+                    if (!configureProgram.IsDisposed) configureProgram.ShowDialog();
+                    else { configureProgram.Close(); }
                 }
             }
+            /*
+            catch (ObjectDisposedException ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }*/
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
         

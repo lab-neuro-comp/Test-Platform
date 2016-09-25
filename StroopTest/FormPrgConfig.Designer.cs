@@ -793,7 +793,7 @@
             this.wordColorButton.TabIndex = 13;
             this.wordColorButton.Text = "escolher";
             this.wordColorButton.UseVisualStyleBackColor = true;
-            this.wordColorButton.Click += new System.EventHandler(this.chooseWordColor_Click_1);
+            this.wordColorButton.Click += new System.EventHandler(this.chooseWordColor_Click);
             // 
             // expoTypeLabel
             // 

@@ -26,8 +26,7 @@ namespace StroopTest
         StroopProgram programInUse = new StroopProgram(); // programa em uso
         
         private static float elapsedTime; // tempo decorrido
-        private string path;// = (Path.GetDirectoryName(Application.ExecutablePath) + "/StroopTestFiles/"); // caminho diretório
-        private int instrAwaitTime = 4000;
+        private string path; // = (Path.GetDirectoryName(Application.ExecutablePath) + "/StroopTestFiles/"); // caminho diretório
 
         private List<string> outputContent;
 
@@ -63,14 +62,8 @@ namespace StroopTest
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        /*
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"c:\mywavfile.wav");
-        player.Play();
-        */
-
         private async void startExpo() // clique do botão define o programa a ser executado e inicia exposição
         {
-            
             try
             {
                 if (!File.Exists(path + "/prg/" + programInUse.ProgramName + ".prg")) { throw new Exception("Arquivo programa: " + programInUse.ProgramName + ".prg" + "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/")); } // confere existência do arquivo
@@ -681,9 +674,9 @@ namespace StroopTest
                 }
                 else
                 {
-                    program.FixPointColor = "#D01C1F";
                     if (program.FixPointColor == "false") { program.FixPointColor = "#D01C1F"; }
                     SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(program.FixPointColor));
+
                     switch (program.FixPoint)
                     {
                         case "+":

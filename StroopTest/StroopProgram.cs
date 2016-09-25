@@ -25,8 +25,7 @@ namespace StroopTest
                                                     "Diga a cor em que a palavra está escrita",
                                                     "A tarefa vai começar agora"};
         private bool needsEditionFlag;
-
-
+        
         public static int instructionAwaitTime = 4000;
 
         private List<string> instructionText = new List<string>();
@@ -54,7 +53,7 @@ namespace StroopTest
         private string audioListFile;           // [18]  lista com caminhos dos áudios - ler se é do tipo audio [13]
         private string subtitlesListFile;       // [19]  lista de legendas - ler se com legenda está ativado [10]
 
-        private string fixPointColor = "false";           // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
+        private string fixPointColor = "false"; // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
         private int delayTime;                  // [21]  tempo de atraso = intervalo se não for definido
         private bool rotateImage = false;               // [22]  rotacionar imagem (90, 180, 270, 360)
 
@@ -175,9 +174,12 @@ namespace StroopTest
             get { return wordsListFile; }
             set
             {
-                if (value.Substring(value.Length - 4) == ".lst" || value.ToLower() == "false")
+                if(value.Length > 4)
                 {
-                    wordsListFile = value;
+                    if (value.Substring(value.Length - 4) == ".lst" || value.ToLower() == "false")
+                    {
+                        wordsListFile = value;
+                    }
                 }
                 else
                 {
@@ -261,7 +263,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nPosição da legenda deve ser maior um número entre 0 e 5");
+                    throw new ArgumentException("Erro no Arquivo com Programa:\nPosição da legenda é " + value + " deve ser um número de 1 a 5");
                 }
             }
         }
@@ -487,6 +489,7 @@ namespace StroopTest
                         config.Add(defaultConfig[i]);
                     }
                 }
+
                 
                 /*
                 var message1 = string.Join(" ", config);
@@ -514,7 +517,7 @@ namespace StroopTest
                 SubtitleShow = Boolean.Parse(config[10]);
 
                 if (SubtitleShow) { SubtitlePlace = Int32.Parse(config[11]); SubtitleColor = config[12]; }
-                else { SubtitlePlace = 0; SubtitleColor = "false"; }
+                else { SubtitlePlace = 1; SubtitleColor = "false"; }
                 ExpositionType = config[13]; // aqui
                 ImagesListFile = config[14];
                 FixPoint = config[15];

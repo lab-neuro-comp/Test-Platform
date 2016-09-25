@@ -244,9 +244,6 @@ namespace StroopTest
             
             try
             {
-
-                Rectangle r1 = new Rectangle();
-                
                 /*
                 for (int i = 0; i < screens.Length; i++)
                 {

@@ -202,7 +202,7 @@
             this.fixPointCross.TabIndex = 40;
             this.fixPointCross.TabStop = false;
             this.fixPointCross.UseVisualStyleBackColor = true;
-            this.fixPointCross.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.fixPointCross.CheckedChanged += new System.EventHandler(this.checkFixPointCross_CheckedChanged);
             // 
             // fixPointColorLabel
             // 
@@ -224,7 +224,7 @@
             this.fixPointCircle.TabIndex = 41;
             this.fixPointCircle.TabStop = false;
             this.fixPointCircle.UseVisualStyleBackColor = true;
-            this.fixPointCircle.CheckedChanged += new System.EventHandler(this.chooseFixPointType_CheckedChanged);
+            this.fixPointCircle.CheckedChanged += new System.EventHandler(this.checkFixPointCircle_CheckedChanged);
             // 
             // fixPointColorButton
             // 

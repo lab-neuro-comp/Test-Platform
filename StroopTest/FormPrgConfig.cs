@@ -18,7 +18,7 @@ namespace StroopTest
         private string instructionBoxText = "Escreva cada uma das intruções em linhas separadas.";
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private List<Button> subDirectionList = new List<Button>();
-        private int subDirectionNumber = 0;
+        private int subDirectionNumber = 1;
         private string fontSize = "160";
         private string editPrgName = "error";
         private string prgConfigInstructionsText = "\n- Nome do Arquivo onde o programa será salvo\n" +
@@ -236,7 +236,8 @@ namespace StroopTest
 
             //box4
             fixPointTypeLabel.Enabled = true; fixPointCross.Enabled = true; fixPointCircle.Enabled = true;
-            fixPointColorLabel.Enabled = true; fixPointColorPanel.Enabled = true; fixPointColorButton.Enabled = true;
+            fixPointColorLabel.Enabled = false; fixPointColorPanel.Enabled = false; fixPointColorButton.Enabled = false;
+            chooseFixPointType();
 
             //box5
             activateSubsLabel.Enabled = true; activateSubsCheck.Enabled = true;
@@ -257,7 +258,7 @@ namespace StroopTest
             subLocationLabel.Enabled = subsEnabledBool;
             foreach (Button button in subDirectionList)
             {
-                subDirectionNumber = 0;
+                subDirectionNumber = 1;
                 button.Enabled = subsEnabledBool;
                 if (subsEnabledBool) button.BackColor = Color.LightGray;
                 else button.BackColor = Color.White;
@@ -313,16 +314,30 @@ namespace StroopTest
             instructionsBox.ForeColor = Color.Black;
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void checkFixPointCross_CheckedChanged(object sender, EventArgs e)
         {
             if (fixPointCross.Checked && fixPointCircle.Checked)
                 fixPointCircle.Checked = !fixPointCross.Checked;
+            chooseFixPointType();
         }
 
-        private void chooseFixPointType_CheckedChanged(object sender, EventArgs e)
+        private void checkFixPointCircle_CheckedChanged(object sender, EventArgs e)
         {
             if (fixPointCross.Checked && fixPointCircle.Checked)
                 fixPointCross.Checked = !fixPointCircle.Checked;
+            chooseFixPointType();
+        }
+
+        private void chooseFixPointType()
+        {
+            if (fixPointCross.Checked || fixPointCircle.Checked)
+            {
+                fixPointColorLabel.Enabled = true; fixPointColorPanel.Enabled = true; fixPointColorButton.Enabled = true;
+            }
+            if (!fixPointCross.Checked && !fixPointCircle.Checked)
+            {
+                fixPointColorLabel.Enabled = false; fixPointColorPanel.Enabled = false; fixPointColorButton.Enabled = false;
+            }
         }
 
 
@@ -411,7 +426,6 @@ namespace StroopTest
                 programWrite.NumExpositions = Convert.ToInt32(numExpo.Value);
                 programWrite.ExpositionRandom = rndExpoCheck.Checked;
                 programWrite.FontWordLabel = wordSizeNumeric.Value.ToString();
-
                 programWrite.ExpositionTime = Convert.ToInt32(expoTime.Value);
                 programWrite.IntervalTime = Convert.ToInt32(intervalTime.Value);
                 programWrite.IntervalTimeRandom = rndIntervalCheck.Checked;
@@ -463,9 +477,10 @@ namespace StroopTest
                 programWrite.AudioCapture = audioCaptureCheck.Checked;
                 programWrite.SubtitleShow = activateSubsCheck.Checked;
 
+                programWrite.SubtitlePlace = subDirectionNumber;
+
                 if (activateSubsCheck.Checked)
                 {
-                    programWrite.SubtitlePlace = subDirectionNumber;
                     if (Regex.IsMatch(subColorButton.Text, hexPattern)) programWrite.SubtitleColor = subColorButton.Text;
                     else programWrite.SubtitleColor = "false";
 
@@ -473,9 +488,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    programWrite.SubtitlePlace = subDirectionNumber;
                     programWrite.SubtitleColor = "false";
-
                     programWrite.SubtitlesListFile = "false";
                 }
 
@@ -500,7 +513,7 @@ namespace StroopTest
 
                 if (openImgListButton.Enabled) { programWrite.ImagesListFile = openImgListButton.Text; }
                 else { programWrite.ImagesListFile = "false"; }
-
+                
                 if (fixPointCross.Checked)
                 {
                     programWrite.FixPoint = "+";
@@ -516,6 +529,9 @@ namespace StroopTest
                         programWrite.FixPoint = "false";
                     }
                 }
+
+                if (Regex.IsMatch(fixPointColorButton.Text, hexPattern)) programWrite.FixPointColor = fixPointColorButton.Text;
+                else programWrite.SubtitleColor = "false";
 
                 if (openAudioListButton.Enabled) { programWrite.AudioListFile = openAudioListButton.Text; }
                 else { programWrite.AudioListFile = "false"; }
@@ -565,7 +581,7 @@ namespace StroopTest
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message)/*MessageBox.Show(ex.Message);*/;
+                MessageBox.Show(ex.Message);;
             }
         }
 
@@ -618,7 +634,7 @@ namespace StroopTest
                 /*
                 if (program.FixPointColor.ToLower() == "false")
                 {
-                    panelFixPointColor.BackColor = ColorTranslator.FromHtml("#D01C1F");
+                    panelFixPointColorPanel.BackColor = ColorTranslator.FromHtml("#D01C1F");
                     fixPointColor.Text = "#D01C1F";
                 }
                 else
@@ -626,7 +642,7 @@ namespace StroopTest
                     if ((Regex.IsMatch(program.FixPointColor, hexPattern)))
                     {
                         fixPointColor.Text = program.FixPointColor;
-                        panelFixPointColor.BackColor = ColorTranslator.FromHtml(program.FixPointColor);
+                        panelFixPointColorPanel.BackColor = ColorTranslator.FromHtml(program.FixPointColor);
                     }
                     else { throw new Exception("Deu errado no match"); }
                 }
@@ -680,7 +696,8 @@ namespace StroopTest
                         fixPointCircle.Checked = false;
                     }
                 }
-                
+                chooseFixPointType();
+
                 if (program.InstructionText != null) // lê instrução se houver
                 {
                     instructionsBox.ForeColor = Color.Black;
@@ -738,7 +755,7 @@ namespace StroopTest
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);/*MessageBox.Show(ex.Message);*/
-                Close();
+                //Close();
             }
         }
         

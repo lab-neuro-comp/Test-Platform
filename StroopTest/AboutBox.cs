@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace StroopTest
 {
-    partial class AboutBox1 : Form
+    partial class AboutBox : Form
     {
         private string direitosProduto = "© 2016 - Universidade de Brasília";
         private string nomeEmpresa = "Laboratório de Neurociências e Comportamento";
         private string descrição = "StroopTest faz parte de uma plataforma de testes neuropsicológicos computadorizados para avaliação de funções executivas. O produto tem a proposta oferecer soluções inovando tecnologicamente de forma prática e dinâmica. Destinado a pesquisadores, alunos e usuários comuns. Developer: hugohon - Hugo Honda Ferreira; 2016";
 
 
-        public AboutBox1()
+        public AboutBox()
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);

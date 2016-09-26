@@ -69,5 +69,10 @@ namespace StroopTest
         {
             Close();
         }
+
+        private void imgPathListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

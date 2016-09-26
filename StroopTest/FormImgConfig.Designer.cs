@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormImgConfig));
             this.imgPathListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,13 +55,14 @@
             this.columnHeader3});
             this.imgPathListView.FullRowSelect = true;
             this.imgPathListView.GridLines = true;
-            this.imgPathListView.Location = new System.Drawing.Point(12, 245);
+            this.imgPathListView.Location = new System.Drawing.Point(12, 222);
             this.imgPathListView.MultiSelect = false;
             this.imgPathListView.Name = "imgPathListView";
-            this.imgPathListView.Size = new System.Drawing.Size(640, 228);
+            this.imgPathListView.Size = new System.Drawing.Size(640, 251);
             this.imgPathListView.TabIndex = 0;
             this.imgPathListView.UseCompatibleStateImageBehavior = false;
             this.imgPathListView.View = System.Windows.Forms.View.Details;
+            this.imgPathListView.SelectedIndexChanged += new System.EventHandler(this.imgPathListView_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -80,7 +82,7 @@
             // btnOpen
             // 
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOpen.Location = new System.Drawing.Point(274, 114);
+            this.btnOpen.Location = new System.Drawing.Point(274, 193);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(134, 23);
             this.btnOpen.TabIndex = 1;
@@ -101,7 +103,7 @@
             // labelFN
             // 
             this.labelFN.AutoSize = true;
-            this.labelFN.Location = new System.Drawing.Point(12, 219);
+            this.labelFN.Location = new System.Drawing.Point(274, 12);
             this.labelFN.Name = "labelFN";
             this.labelFN.Size = new System.Drawing.Size(92, 13);
             this.labelFN.TabIndex = 5;
@@ -110,7 +112,7 @@
             // labelFilename
             // 
             this.labelFilename.AutoSize = true;
-            this.labelFilename.Location = new System.Drawing.Point(110, 219);
+            this.labelFilename.Location = new System.Drawing.Point(372, 12);
             this.labelFilename.Name = "labelFilename";
             this.labelFilename.Size = new System.Drawing.Size(13, 13);
             this.labelFilename.TabIndex = 5;
@@ -119,7 +121,7 @@
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(274, 143);
+            this.button1.Location = new System.Drawing.Point(414, 193);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 23);
             this.button1.TabIndex = 6;
@@ -128,6 +130,7 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelButton.Location = new System.Drawing.Point(577, 479);
             this.cancelButton.Name = "cancelButton";
@@ -139,8 +142,9 @@
             // 
             // saveButton
             // 
+            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(496, 479);
+            this.saveButton.Location = new System.Drawing.Point(12, 479);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 33;
@@ -161,8 +165,9 @@
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.imgPathListView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormImgConfig";
-            this.Text = "FormImgConfig";
+            this.Text = "Lista de Imagens";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

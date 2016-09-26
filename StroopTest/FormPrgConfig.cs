@@ -98,7 +98,6 @@ namespace StroopTest
             helpToolTip.SetToolTip(bgColorLabel, "Cor de fundo durante a apresentação dos estímulos");
             helpToolTip.SetToolTip(expandImgLabel, "Expande a imagem até as bordas da tela");
             helpToolTip.SetToolTip(instructionsLabel, "Instruções apresentadas no início do programa - será apresentada um tela para cada linha escrita abaixo");
-            helpToolTip.SetToolTip(saveButton1, "Salva o programa configurado");
             helpToolTip.SetToolTip(helpButton, "Ajuda");
         }
 

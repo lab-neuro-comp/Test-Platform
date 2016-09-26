@@ -90,7 +90,7 @@ namespace StroopTest
 
         private void sobreToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AboutBox1 aboutWindow = new AboutBox1();
+            AboutBox aboutWindow = new AboutBox();
             try { aboutWindow.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

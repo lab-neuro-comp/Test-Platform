@@ -17,11 +17,33 @@ namespace StroopTest
         private string path;
         private string editLstName = "error";
 
+        private string testFileName(string fileName)
+        {
+            string finalName = "";
+
+            if (!fileName.Contains("_Words") && !fileName.Contains("_words"))
+            {
+                finalName = fileName+ "_Words.lst";
+            }
+            else
+            {
+                if (!fileName.Contains("_Colors") && !fileName.Contains("_colors"))
+                {
+                    finalName = fileName + "_Colors.lst";
+                }
+            }
+            
+
+
+
+            return finalName;
+        }
+
         public FormLstConfig(string dataFolderPath, string lstName)
         {
             InitializeComponent();
             path = dataFolderPath + "/lst/";
-
+            
             wordsListLabel.Text = "_Words.lst";
             colorsListLabel.Text = "_Colors.lst";
 
@@ -35,20 +57,34 @@ namespace StroopTest
             }
         }
 
+        private void listNameBox_TextChanged(object sender, EventArgs e)
+        {
+            wordsListLabel.Text = listNameTextBox.Text + "_Words.lst";
+            colorsListLabel.Text = listNameTextBox.Text + "_Colors.lst";
+        }
+
         private void editList(string lst)
         {
             StroopProgram program = new StroopProgram();
             string[] list;
 
+            MessageBox.Show(lst);
+
             try
             {
-                wordsListLabel.Text = wordsListLabel.Text.Replace("_Words", "");
-                colorsListLabel.Text = colorsListLabel.Text.Replace("_Colors", "");
+                if (!wordsListLabel.Text.Contains("_Words") && !wordsListLabel.Text.Contains("_words"))
+                {
+                    wordsListLabel.Text = listNameTextBox.Text + "_Words.lst";
+                }
+
+                if (!colorsListLabel.Text.Contains("_Colors") && !colorsListLabel.Text.Contains("_colors")) {
+                    colorsListLabel.Text = colorsListLabel.Text + "_Colors.lst";
+                }
 
                 wordsListLabel.Text = lst + ".lst";
                 colorsListLabel.Text = lst + ".lst";
 
-                textBox1.Text = lst;
+                listNameTextBox.Text = lst;
 
                 if (editLstName != "error")
                 {
@@ -82,50 +118,50 @@ namespace StroopTest
             }
         }
         
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void wordsCheck_CheckedChanged(object sender, EventArgs e)
         {
             if (checkWords.Checked)
             {
-                textWords.Enabled = true;
+                wordTextBox.Enabled = true;
                 wordsColoredList.Enabled = true;
                 wordsListLabel.Enabled = true;
                 wordsColoredList.Items.Clear();
             }
             else
             {
-                if (!textHexColor.Enabled)
+                if (!hexColorTextBox.Enabled)
                 {
-                    textHexColor.Enabled = true;
+                    hexColorTextBox.Enabled = true;
                     hexColorsList.Enabled = true;
                     checkColors.Checked = true;
                     colorsListLabel.Enabled = true;
                 }
-                textWords.Enabled = false;
-                textWords.Text = "";
+                wordTextBox.Enabled = false;
+                wordTextBox.Text = "";
                 wordsColoredList.Enabled = false;
                 wordsListLabel.Enabled = false;
                 wordsColoredList.Items.Clear();
             }
         }
         
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void colorsCheck_CheckedChanged(object sender, EventArgs e)
         {
             if (checkColors.Checked)
             {
-                textHexColor.Enabled = true;
-                textHexColor.Text = "#000000";
+                hexColorTextBox.Enabled = true;
+                hexColorTextBox.Text = "#000000";
                 hexColorsList.Enabled = true;
                 wordsColoredList.Items.Clear();
             }
             else
             {
-                if (!textWords.Enabled)
+                if (!wordTextBox.Enabled)
                 {
-                    textWords.Enabled = true;
+                    wordTextBox.Enabled = true;
                     wordsColoredList.Enabled = true;
                     checkWords.Checked = true;
                 }
-                textHexColor.Enabled = false;
+                hexColorTextBox.Enabled = false;
                 hexColorsList.Enabled = false;
                 hexColorsList.Items.Clear();
             }
@@ -137,8 +173,8 @@ namespace StroopTest
             string colorCode = pickColor();
             if (colorCode != null)
             {
-                textHexColor.ForeColor = ColorTranslator.FromHtml(colorCode);
-                textHexColor.Text = colorCode;
+                hexColorTextBox.ForeColor = ColorTranslator.FromHtml(colorCode);
+                hexColorTextBox.Text = colorCode;
             }
         }
 
@@ -162,7 +198,7 @@ namespace StroopTest
             return hexColor;
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void colorTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -179,13 +215,13 @@ namespace StroopTest
                 }
 
 
-                if (Regex.IsMatch(textHexColor.Text, hexPattern) && textHexColor.TextLength == 7)
+                if (Regex.IsMatch(hexColorTextBox.Text, hexPattern) && hexColorTextBox.TextLength == 7)
                 {
-                    textHexColor.ForeColor = ColorTranslator.FromHtml(textHexColor.Text);
+                    hexColorTextBox.ForeColor = ColorTranslator.FromHtml(hexColorTextBox.Text);
                 }
                 else
                 {
-                    textHexColor.ForeColor = Color.Black;
+                    hexColorTextBox.ForeColor = Color.Black;
                 }
             }
             catch(Exception ex)
@@ -198,25 +234,25 @@ namespace StroopTest
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(Regex.IsMatch(textHexColor.Text, hexPattern) && textHexColor.TextLength == 7)
+            if(Regex.IsMatch(hexColorTextBox.Text, hexPattern) && hexColorTextBox.TextLength == 7)
             {
-                if(checkWords.Checked && checkColors.Checked && !String.IsNullOrEmpty(textWords.Text) && !String.IsNullOrEmpty(textHexColor.Text))
+                if(checkWords.Checked && checkColors.Checked && !String.IsNullOrEmpty(wordTextBox.Text) && !String.IsNullOrEmpty(hexColorTextBox.Text))
                 {
                     if(wordsColoredList.Items.Count != hexColorsList.Items.Count || hexColorsList.Items.Count != wordsColoredList.Items.Count)
                     {
                         wordsColoredList.Items.Clear();
                         hexColorsList.Items.Clear();
                     }
-                    wordsColoredList.Items.Add(textWords.Text);
-                    hexColorsList.Items.Add(textHexColor.Text);
+                    wordsColoredList.Items.Add(wordTextBox.Text);
+                    hexColorsList.Items.Add(hexColorTextBox.Text);
                 }
-                if(checkWords.Checked && !checkColors.Checked && !String.IsNullOrEmpty(textWords.Text))
+                if(checkWords.Checked && !checkColors.Checked && !String.IsNullOrEmpty(wordTextBox.Text))
                 {
-                    wordsColoredList.Items.Add(textWords.Text);
+                    wordsColoredList.Items.Add(wordTextBox.Text);
                 }
-                if (checkColors.Checked && !checkWords.Checked && !String.IsNullOrEmpty(textHexColor.Text))
+                if (checkColors.Checked && !checkWords.Checked && !String.IsNullOrEmpty(hexColorTextBox.Text))
                 {
-                    hexColorsList.Items.Add(textHexColor.Text);
+                    hexColorsList.Items.Add(hexColorTextBox.Text);
                 }
                 foreach (ListViewItem lvw1 in hexColorsList.Items)
                 {
@@ -290,16 +326,16 @@ namespace StroopTest
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(textBox1.Text))
+                if (string.IsNullOrWhiteSpace(listNameTextBox.Text))
                 {
                     throw new Exception("Nome do(s) arquivo(s) deve ser preenchido");
                 }
                 
                 if (/*saveColorsList.ShowDialog() == DialogResult.OK && */checkColors.Enabled) // lê instrução se houver
                 {
-                    if(hexColorsList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + textBox1.Text + "_Colors.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
+                    if(hexColorsList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + listNameTextBox.Text + "_Colors.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
                     {
-                        if (File.Exists(path + textBox1.Text + "_Colors.lst"))
+                        if (File.Exists(path + listNameTextBox.Text + "_Colors.lst"))
                         {
                             DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
                             if (dialogResult == DialogResult.Cancel)
@@ -308,7 +344,7 @@ namespace StroopTest
                             }
                         }
 
-                        StreamWriter writer1 = new StreamWriter(path + textBox1.Text + "_Colors.lst" /*saveColorsList.OpenFile()*/);
+                        StreamWriter writer1 = new StreamWriter(path + listNameTextBox.Text + "_Colors.lst" /*saveColorsList.OpenFile()*/);
 
                         for (int i = 0; i < hexColorsList.Items.Count; i++)
                         {
@@ -317,7 +353,7 @@ namespace StroopTest
 
                         //writer1.Dispose();
                         writer1.Close();
-                        MessageBox.Show("A lista " + textBox1.Text + "_Words.lst foi salva com sucesso no diretório\n" + path);
+                        MessageBox.Show("A lista " + listNameTextBox.Text + "_Words.lst foi salva com sucesso no diretório\n" + path);
                     }
                     else
                     {
@@ -328,9 +364,9 @@ namespace StroopTest
 
                 if (/*saveWordsList.ShowDialog() == DialogResult.OK && */ checkWords.Enabled) // lê instrução se houver
                 {
-                    if(wordsColoredList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + textBox1.Text + "_Words.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
+                    if(wordsColoredList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + listNameTextBox.Text + "_Words.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
                     {
-                        if (File.Exists(path + textBox1.Text + "_Words.lst"))
+                        if (File.Exists(path + listNameTextBox.Text + "_Words.lst"))
                         {
                             DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
                             if (dialogResult == DialogResult.Cancel)
@@ -339,7 +375,7 @@ namespace StroopTest
                             }
                         }
 
-                        StreamWriter writer2 = new StreamWriter(path + textBox1.Text + "_Words.lst" /*saveWordsList.OpenFile()*/);
+                        StreamWriter writer2 = new StreamWriter(path + listNameTextBox.Text + "_Words.lst" /*saveWordsList.OpenFile()*/);
 
                         for (int i = 0; i < wordsColoredList.Items.Count; i++)
                         {
@@ -348,7 +384,7 @@ namespace StroopTest
 
                         //writer2.Dispose();
                         writer2.Close();
-                        MessageBox.Show("A lista " + textBox1.Text + "_Words.lst foi salva com sucesso no diretório\n" + path);
+                        MessageBox.Show("A lista " + listNameTextBox.Text + "_Words.lst foi salva com sucesso no diretório\n" + path);
                     }
                     else
                     {
@@ -364,27 +400,19 @@ namespace StroopTest
             }
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void hexColorsList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
 
-            if (!Regex.IsMatch(textHexColor.Text, hexPattern) || !(textHexColor.TextLength == 7))
+            if (!Regex.IsMatch(hexColorTextBox.Text, hexPattern) || !(hexColorTextBox.TextLength == 7))
             {
 
             }
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        
+        private void cancelButton_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text.Replace("_Words", "");
-            textBox1.Text = textBox1.Text.Replace("_Colors", "");
-            
-            wordsListLabel.Text = textBox1.Text + "_Words.lst";
-            colorsListLabel.Text = textBox1.Text + "_Colors.lst";
+            this.Close();
         }
     }
     

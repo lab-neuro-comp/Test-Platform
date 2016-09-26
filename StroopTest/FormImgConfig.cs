@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,15 +13,23 @@ namespace StroopTest
 {
     public partial class FormImgConfig : Form
     {
-        public FormImgConfig()
+        private List<string> pathList = new List<string>();
+        private ImageList imgsList = new ImageList();
+        private string path;
+
+        public FormImgConfig(string imagesFolderPath)
         {
             InitializeComponent();
+            path = imagesFolderPath;
+            
+            imgPathListView.AllowDrop = true;
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
+            openImagesDirectory();
         }
-
+        
         private void btnSave_Click(object sender, EventArgs e)
         {
 
@@ -29,6 +38,31 @@ namespace StroopTest
         private void btnCancel_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void openImagesDirectory()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                foreach (string file in openFileDialog.FileNames)
+                {
+                    try
+                    {
+                        pathList.Add(Path.GetFullPath(file));
+                        var listViewItem = new ListViewItem(new[] {Path.GetFileNameWithoutExtension(file), Path.GetFullPath(file)});
+                        imgPathListView.Items.Add(listViewItem);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Não pode apresentar a imagem: " + file.Substring(file.LastIndexOf('/'))
+                                        + ". Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n" + ex.Message);
+                    }
+                }
+            }
         }
     }
 }

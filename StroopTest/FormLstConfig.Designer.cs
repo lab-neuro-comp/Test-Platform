@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLstConfig));
             this.buttonColorPallette = new System.Windows.Forms.Button();
-            this.textHexColor = new System.Windows.Forms.TextBox();
+            this.hexColorTextBox = new System.Windows.Forms.TextBox();
             this.buttonRemove = new System.Windows.Forms.Button();
             this.buttonInsert = new System.Windows.Forms.Button();
             this.hexColorsList = new System.Windows.Forms.ListView();
-            this.textWords = new System.Windows.Forms.TextBox();
+            this.wordTextBox = new System.Windows.Forms.TextBox();
             this.checkWords = new System.Windows.Forms.CheckBox();
             this.checkColors = new System.Windows.Forms.CheckBox();
             this.wordsColoredList = new System.Windows.Forms.ListView();
@@ -42,8 +42,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.listNameTextBox = new System.Windows.Forms.TextBox();
+            this.listNameLabel = new System.Windows.Forms.Label();
             this.wordsListLabel = new System.Windows.Forms.Label();
             this.colorsListLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -59,19 +59,19 @@
             this.buttonColorPallette.UseVisualStyleBackColor = true;
             this.buttonColorPallette.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textHexColor
+            // hexColorTextBox
             // 
-            this.textHexColor.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textHexColor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textHexColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHexColor.Location = new System.Drawing.Point(9, 136);
-            this.textHexColor.Margin = new System.Windows.Forms.Padding(2);
-            this.textHexColor.MaxLength = 7;
-            this.textHexColor.Name = "textHexColor";
-            this.textHexColor.Size = new System.Drawing.Size(128, 38);
-            this.textHexColor.TabIndex = 2;
-            this.textHexColor.Text = "#000000";
-            this.textHexColor.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.hexColorTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.hexColorTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.hexColorTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexColorTextBox.Location = new System.Drawing.Point(9, 136);
+            this.hexColorTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.hexColorTextBox.MaxLength = 7;
+            this.hexColorTextBox.Name = "hexColorTextBox";
+            this.hexColorTextBox.Size = new System.Drawing.Size(128, 38);
+            this.hexColorTextBox.TabIndex = 2;
+            this.hexColorTextBox.Text = "#000000";
+            this.hexColorTextBox.TextChanged += new System.EventHandler(this.colorTextBox_TextChanged);
             // 
             // buttonRemove
             // 
@@ -101,31 +101,33 @@
             // 
             // hexColorsList
             // 
+            this.hexColorsList.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
             this.hexColorsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.hexColorsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexColorsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexColorsList.FullRowSelect = true;
             this.hexColorsList.LabelEdit = true;
             this.hexColorsList.Location = new System.Drawing.Point(154, 26);
             this.hexColorsList.Margin = new System.Windows.Forms.Padding(2);
             this.hexColorsList.Name = "hexColorsList";
-            this.hexColorsList.Size = new System.Drawing.Size(201, 410);
+            this.hexColorsList.Size = new System.Drawing.Size(160, 400);
             this.hexColorsList.TabIndex = 17;
             this.hexColorsList.TabStop = false;
-            this.hexColorsList.TileSize = new System.Drawing.Size(200, 60);
+            this.hexColorsList.TileSize = new System.Drawing.Size(120, 40);
             this.hexColorsList.UseCompatibleStateImageBehavior = false;
             this.hexColorsList.View = System.Windows.Forms.View.Tile;
             this.hexColorsList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.hexColorsList_ItemSelectionChanged);
             // 
-            // textWords
+            // wordTextBox
             // 
-            this.textWords.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textWords.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textWords.Location = new System.Drawing.Point(9, 73);
-            this.textWords.Margin = new System.Windows.Forms.Padding(2);
-            this.textWords.Name = "textWords";
-            this.textWords.Size = new System.Drawing.Size(128, 38);
-            this.textWords.TabIndex = 1;
+            this.wordTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.wordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wordTextBox.Location = new System.Drawing.Point(9, 73);
+            this.wordTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.wordTextBox.Name = "wordTextBox";
+            this.wordTextBox.Size = new System.Drawing.Size(128, 38);
+            this.wordTextBox.TabIndex = 1;
             // 
             // checkWords
             // 
@@ -138,7 +140,7 @@
             this.checkWords.TabStop = false;
             this.checkWords.Text = "Lista de Palavras";
             this.checkWords.UseVisualStyleBackColor = true;
-            this.checkWords.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkWords.CheckedChanged += new System.EventHandler(this.wordsCheck_CheckedChanged);
             // 
             // checkColors
             // 
@@ -151,23 +153,21 @@
             this.checkColors.TabStop = false;
             this.checkColors.Text = "Lista de Cores";
             this.checkColors.UseVisualStyleBackColor = true;
-            this.checkColors.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.checkColors.CheckedChanged += new System.EventHandler(this.colorsCheck_CheckedChanged);
             // 
             // wordsColoredList
             // 
-            this.wordsColoredList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.wordsColoredList.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wordsColoredList.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
+            this.wordsColoredList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordsColoredList.FullRowSelect = true;
             this.wordsColoredList.LabelEdit = true;
-            this.wordsColoredList.Location = new System.Drawing.Point(359, 26);
+            this.wordsColoredList.Location = new System.Drawing.Point(318, 26);
             this.wordsColoredList.Margin = new System.Windows.Forms.Padding(2);
             this.wordsColoredList.Name = "wordsColoredList";
-            this.wordsColoredList.Size = new System.Drawing.Size(201, 410);
+            this.wordsColoredList.Size = new System.Drawing.Size(160, 400);
             this.wordsColoredList.TabIndex = 22;
             this.wordsColoredList.TabStop = false;
-            this.wordsColoredList.TileSize = new System.Drawing.Size(200, 60);
+            this.wordsColoredList.TileSize = new System.Drawing.Size(120, 40);
             this.wordsColoredList.UseCompatibleStateImageBehavior = false;
             this.wordsColoredList.View = System.Windows.Forms.View.Tile;
             // 
@@ -182,7 +182,7 @@
             this.button3.TabStop = false;
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            this.button3.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // button2
             // 
@@ -204,7 +204,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(278, 438);
+            this.label1.Location = new System.Drawing.Point(240, 428);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
@@ -213,36 +213,33 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Location = new System.Drawing.Point(469, 438);
+            this.label2.Location = new System.Drawing.Point(394, 428);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 26;
             this.label2.Text = "Lista de Palavras";
             // 
-            // textBox1
+            // listNameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 27);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 20);
-            this.textBox1.TabIndex = 27;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.listNameTextBox.Location = new System.Drawing.Point(9, 27);
+            this.listNameTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.listNameTextBox.Name = "listNameTextBox";
+            this.listNameTextBox.Size = new System.Drawing.Size(128, 20);
+            this.listNameTextBox.TabIndex = 27;
+            this.listNameTextBox.TextChanged += new System.EventHandler(this.listNameBox_TextChanged);
             // 
-            // label3
+            // listNameLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 10);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 13);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Nome da Lista:";
+            this.listNameLabel.AutoSize = true;
+            this.listNameLabel.Location = new System.Drawing.Point(9, 10);
+            this.listNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.listNameLabel.Name = "listNameLabel";
+            this.listNameLabel.Size = new System.Drawing.Size(78, 13);
+            this.listNameLabel.TabIndex = 28;
+            this.listNameLabel.Text = "Nome da Lista:";
             // 
             // wordsListLabel
             // 
@@ -251,7 +248,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.wordsListLabel.AutoSize = true;
             this.wordsListLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.wordsListLabel.Location = new System.Drawing.Point(357, 10);
+            this.wordsListLabel.Location = new System.Drawing.Point(316, 10);
             this.wordsListLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.wordsListLabel.Name = "wordsListLabel";
             this.wordsListLabel.Size = new System.Drawing.Size(96, 13);
@@ -277,11 +274,11 @@
             this.AcceptButton = this.buttonInsert;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 467);
+            this.ClientSize = new System.Drawing.Size(490, 463);
             this.Controls.Add(this.colorsListLabel);
             this.Controls.Add(this.wordsListLabel);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.listNameLabel);
+            this.Controls.Add(this.listNameTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
@@ -289,11 +286,11 @@
             this.Controls.Add(this.wordsColoredList);
             this.Controls.Add(this.checkColors);
             this.Controls.Add(this.checkWords);
-            this.Controls.Add(this.textWords);
+            this.Controls.Add(this.wordTextBox);
             this.Controls.Add(this.hexColorsList);
             this.Controls.Add(this.buttonInsert);
             this.Controls.Add(this.buttonRemove);
-            this.Controls.Add(this.textHexColor);
+            this.Controls.Add(this.hexColorTextBox);
             this.Controls.Add(this.buttonColorPallette);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -309,11 +306,11 @@
 
         #endregion
         private System.Windows.Forms.Button buttonColorPallette;
-        private System.Windows.Forms.TextBox textHexColor;
+        private System.Windows.Forms.TextBox hexColorTextBox;
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.Button buttonInsert;
         private System.Windows.Forms.ListView hexColorsList;
-        private System.Windows.Forms.TextBox textWords;
+        private System.Windows.Forms.TextBox wordTextBox;
         private System.Windows.Forms.CheckBox checkWords;
         private System.Windows.Forms.CheckBox checkColors;
         private System.Windows.Forms.ListView wordsColoredList;
@@ -321,8 +318,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox listNameTextBox;
+        private System.Windows.Forms.Label listNameLabel;
         private System.Windows.Forms.Label wordsListLabel;
         private System.Windows.Forms.Label colorsListLabel;
     }

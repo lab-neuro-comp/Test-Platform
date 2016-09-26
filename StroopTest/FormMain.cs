@@ -127,7 +127,7 @@ namespace StroopTest
 
         private void imagemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLstImgConfig configureImagesList = new FormLstImgConfig(testFilesPath + "/lst/");
+            FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/");
             try { configureImagesList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -189,7 +189,8 @@ namespace StroopTest
                 {
                     editListName = defineProgram.ReturnValue;
                     configureWordsList = new FormLstConfig(testFilesPath, editListName);
-                    configureWordsList.ShowDialog();
+                    if (!configureWordsList.IsDisposed) configureWordsList.ShowDialog();
+                    else { configureWordsList.Close(); }
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

@@ -14,13 +14,14 @@ namespace StroopTest
 {
     class StroopProgram
     {
-        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_Words.lst padrao_Colors.lst false false false 0 false txt false false 160 false false false";
+        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_Words.lst padrao_Colors.lst false false false 1 false txt false false 160 false false false";
         private string defaultWordsListName = "padrao_Words.lst";
         private string defaultWordsListText = "amarelo azul verde vermelho";
         private string defaultColorsListName = "padrao_Colors.lst";
         private string defaultColorsListText = "#F8E000 #007BB7 #7EC845 #D01C1F";
         private string headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio";
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
+        private string errorExMsg = "Arquivo de Programa - parâmetro inválido.";
         private string[] defaultInstructionText = { "Serão apresentadas palavras coloridas de forma aleatória. Palavras surgirão rapidamente e em seguida desaparecerão",
                                                     "Diga a cor em que a palavra está escrita",
                                                     "A tarefa vai começar agora"};
@@ -101,7 +102,7 @@ namespace StroopTest
             set
             {
                 if (value > 0) numExpositions = value;
-                else throw new ArgumentException("Erro no Arquivo com Programa:\nNumero de exposições deve ser maior que zero");
+                else throw new ArgumentException(errorExMsg + "\nNumero de exposições deve ser maior que zero");
             }
         }
 
@@ -116,7 +117,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nTempo de exposição deve ser maior que zero (em milissegundos)");
+                    throw new ArgumentException(errorExMsg + "\nTempo de exposição deve ser maior que zero (em milissegundos)");
                 }
             }
         }
@@ -132,7 +133,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nExposicao Randômica deve ser boleana (true or false)");
+                    throw new ArgumentException(errorExMsg + "\nExposicao Randômica deve ser boleana (true or false)");
                 }
             }
         }
@@ -148,7 +149,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nTempo de intervalo deve ser maior que zero (em milissegundos)");
+                    throw new ArgumentException(errorExMsg + "\nTempo de intervalo deve ser maior que zero (em milissegundos)");
                 }
             }
         }
@@ -164,7 +165,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nTempo de intervalo randômico deve ser boleana (true or false)");
+                    throw new ArgumentException(errorExMsg + "\nTempo de intervalo randômico deve ser boleana (true or false)");
                 }
             }
         }
@@ -183,7 +184,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nNome do arquivo " + value + " de lista deve ter terminação .lst");
+                    throw new ArgumentException(errorExMsg + "\nNome do arquivo " + value + " de lista deve ter terminação .lst");
                 }
             }
         }
@@ -199,7 +200,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nNome do arquivo" + value + " de lista deve ter terminação .lst");
+                    throw new ArgumentException(errorExMsg + "\nNome do arquivo" + value + " de lista deve ter terminação .lst");
                 }
             }
         }
@@ -215,7 +216,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nCor de Fundo deve ser 'false' ou um código hexadecimal de cor");
+                    throw new ArgumentException(errorExMsg + "\nCor de Fundo deve ser 'false' ou um código hexadecimal de cor");
                 }
             }
         }
@@ -231,7 +232,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nCaptura de audio deve ser boleana (true or false)");
+                    throw new ArgumentException(errorExMsg + "\nCaptura de audio deve ser boleana (true or false)");
                 }
             }
         }
@@ -247,7 +248,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nApresentação de legenda deve ser boleana (true or false)");
+                    throw new ArgumentException(errorExMsg + "\nApresentação de legenda deve ser boleana (true or false)");
                 }
             }
         }
@@ -263,7 +264,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nPosição da legenda é " + value + " deve ser um número de 1 a 5");
+                    throw new ArgumentException(errorExMsg + "\nPosição da legenda " + value + " deve ser um número de 1 a 5");
                 }
             }
         }
@@ -279,7 +280,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nCor da Legenda deve ser 'false' ou um código hexadecimal de cor");
+                    throw new ArgumentException(errorExMsg + "\nCor da Legenda deve ser 'false' ou um código hexadecimal de cor");
                 }
             }
         }
@@ -311,7 +312,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nNome do arquivo " + value + " de lista deve ter terminação .lst");
+                    throw new ArgumentException(errorExMsg + "\nNome do arquivo " + value + " de lista deve ter terminação .lst");
                 }
             }
         }
@@ -346,7 +347,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nExpansão de Imagem deve ser boleana (true or false)");
+                    throw new ArgumentException(errorExMsg + "\nExpansão de Imagem deve ser boleana (true or false)");
                 }
             }
         }
@@ -362,7 +363,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nNome do arquivo " + value + " de lista deve ter terminação .lst");
+                    throw new ArgumentException(errorExMsg + "\nNome do arquivo " + value + " de lista deve ter terminação .lst");
                 }
             }
         }
@@ -383,7 +384,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nNome do arquivo " + value + " de lista deve ter terminação .lst");
+                    throw new ArgumentException(errorExMsg + "\nNome do arquivo " + value + " de lista deve ter terminação .lst");
                 }
             }
         }
@@ -399,7 +400,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nCor do ponto de fixação deve ser 'false' ou um código hexadecimal de cor");
+                    throw new ArgumentException(errorExMsg + "\nCor do ponto de fixação deve ser 'false' ou um código hexadecimal de cor");
                 }
             }
         }
@@ -415,7 +416,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    throw new ArgumentException("Erro no Arquivo com Programa:\nRotacao de Imagem deve ser boleana (true or false)");
+                    throw new ArgumentException(errorExMsg + "\nRotacao de Imagem deve ser boleana (true or false)");
                 }
             }
         }

@@ -72,7 +72,7 @@ namespace StroopTest
 
         private void imgPathListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //pictureBox.Image = Image.FromFile();
         }
     }
 }

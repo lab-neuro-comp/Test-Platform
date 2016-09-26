@@ -508,6 +508,10 @@ namespace StroopTest
                     if (openSubsListButton.Text != "abrir") { programWrite.SubtitlesListFile = openSubsListButton.Text; }
                     else { throw new Exception("Selecione o arquivo de lista de palavras!"); }
                 }
+                else
+                {
+                    programWrite.SubtitlesListFile = "false";
+                }
 
                 switch (chooseExpoType.SelectedIndex)
                 {

@@ -365,7 +365,7 @@ namespace StroopTest
                             if (program.SubtitleShow) {subtitleLabel.Visible = false;}
                             await intervalOrFixPoint(program, cts.Token);
 
-                            if (arrayCounter == imageDirs.Count()-1) { arrayCounter = 0; }
+                            if (arrayCounter == imageDirs.Count()) { arrayCounter = 0; }
                             imgPictureBox.Image = Image.FromFile(imageDirs[arrayCounter]);
                             
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
@@ -430,7 +430,7 @@ namespace StroopTest
                             await intervalOrFixPoint(program, cts.Token);
 
 
-                            if (imgCounter == imageDirs.Count()-1) { imgCounter = 0; }
+                            if (imgCounter == imageDirs.Count()) { imgCounter = 0; }
                             imgPictureBox.Image = Image.FromFile(imageDirs[imgCounter]);
                             
                             

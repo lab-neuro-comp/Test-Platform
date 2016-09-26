@@ -127,8 +127,8 @@ namespace StroopTest
 
         private void imagemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLstImgConfig configureImagesList = new FormLstImgConfig(testFilesPath + "/lst/");
-            /*FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/");*/
+            /*FormLstImgConfig configureImagesList = new FormLstImgConfig(testFilesPath + "/lst/");*/
+            FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/");
             try { configureImagesList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

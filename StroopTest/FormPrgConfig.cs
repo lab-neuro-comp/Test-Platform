@@ -299,7 +299,7 @@ namespace StroopTest
 
         private void enableSubsItens (bool subsEnabledBool)
         {
-            activateSubsButton.Enabled = subsEnabledBool;
+            openSubsListButton.Enabled = subsEnabledBool;
             subLocationLabel.Enabled = subsEnabledBool;
             foreach (Button button in subDirectionList)
             {
@@ -313,7 +313,7 @@ namespace StroopTest
 
         private void openSubsList_Click(object sender, EventArgs e)
         {
-            activateSubsButton.Text = openListFile();
+            openSubsListButton.Text = openListFile();
         }
 
         private void subLocationDown_Click(object sender, EventArgs e)
@@ -500,17 +500,13 @@ namespace StroopTest
 
                 programWrite.SubtitlePlace = subDirectionNumber;
 
+                if (Regex.IsMatch(subColorButton.Text, hexPattern)) { programWrite.SubtitleColor = subColorButton.Text; }
+                else programWrite.SubtitleColor = "false";
+                
                 if (activateSubsCheck.Checked)
                 {
-                    if (Regex.IsMatch(subColorButton.Text, hexPattern)) programWrite.SubtitleColor = subColorButton.Text;
-                    else programWrite.SubtitleColor = "false";
-
-                    programWrite.SubtitlesListFile = activateSubsButton.Text;
-                }
-                else
-                {
-                    programWrite.SubtitleColor = "false";
-                    programWrite.SubtitlesListFile = "false";
+                    if (openSubsListButton.Text != "abrir") { programWrite.SubtitlesListFile = openSubsListButton.Text; }
+                    else { throw new Exception("Selecione o arquivo de lista de palavras!"); }
                 }
 
                 switch (chooseExpoType.SelectedIndex)
@@ -552,7 +548,7 @@ namespace StroopTest
                 }
 
                 if (Regex.IsMatch(fixPointColorButton.Text, hexPattern)) programWrite.FixPointColor = fixPointColorButton.Text;
-                else programWrite.SubtitleColor = "false";
+                else programWrite.FixPointColor = "false";
 
                 if (openAudioListButton.Enabled) { programWrite.AudioListFile = openAudioListButton.Text; }
                 else { programWrite.AudioListFile = "false"; }
@@ -595,8 +591,7 @@ namespace StroopTest
                                  programWrite.AudioListFile + " " +
                                  programWrite.SubtitlesListFile
                                  ;
-
-
+                
                 saveProgramFile(text, programWrite.InstructionText);
                 this.Close();
             }
@@ -677,7 +672,7 @@ namespace StroopTest
                     subDirectionNumber = program.SubtitlePlace;
                     if(program.SubtitlesListFile.ToLower() != "false")
                     {
-                        activateSubsButton.Text = program.SubtitlesListFile;
+                        openSubsListButton.Text = program.SubtitlesListFile;
                     }
                     if (Regex.IsMatch(program.SubtitleColor, hexPattern))
                     {

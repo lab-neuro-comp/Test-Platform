@@ -40,7 +40,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
+            this.imgPathDataGridView = new System.Windows.Forms.DataGridView();
+            this.fileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thumbnailColumn = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPathDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // imgPathListView
@@ -55,10 +60,10 @@
             this.columnHeader3});
             this.imgPathListView.FullRowSelect = true;
             this.imgPathListView.GridLines = true;
-            this.imgPathListView.Location = new System.Drawing.Point(12, 225);
+            this.imgPathListView.Location = new System.Drawing.Point(12, 429);
             this.imgPathListView.MultiSelect = false;
             this.imgPathListView.Name = "imgPathListView";
-            this.imgPathListView.Size = new System.Drawing.Size(640, 251);
+            this.imgPathListView.Size = new System.Drawing.Size(640, 47);
             this.imgPathListView.TabIndex = 0;
             this.imgPathListView.UseCompatibleStateImageBehavior = false;
             this.imgPathListView.View = System.Windows.Forms.View.Details;
@@ -138,6 +143,7 @@
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelButton.Location = new System.Drawing.Point(577, 482);
             this.cancelButton.Name = "cancelButton";
@@ -158,12 +164,49 @@
             this.saveButton.Text = "salvar";
             this.saveButton.UseVisualStyleBackColor = true;
             // 
+            // imgPathDataGridView
+            // 
+            this.imgPathDataGridView.AllowUserToOrderColumns = true;
+            this.imgPathDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.imgPathDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.imgPathDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fileNameColumn,
+            this.filePathColumn,
+            this.thumbnailColumn});
+            this.imgPathDataGridView.Location = new System.Drawing.Point(12, 234);
+            this.imgPathDataGridView.Name = "imgPathDataGridView";
+            this.imgPathDataGridView.ReadOnly = true;
+            this.imgPathDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.imgPathDataGridView.Size = new System.Drawing.Size(640, 178);
+            this.imgPathDataGridView.TabIndex = 35;
+            // 
+            // fileNameColumn
+            // 
+            this.fileNameColumn.HeaderText = "Nome do Arquivo";
+            this.fileNameColumn.Name = "fileNameColumn";
+            this.fileNameColumn.ReadOnly = true;
+            // 
+            // filePathColumn
+            // 
+            this.filePathColumn.HeaderText = "Caminho";
+            this.filePathColumn.Name = "filePathColumn";
+            this.filePathColumn.ReadOnly = true;
+            // 
+            // thumbnailColumn
+            // 
+            this.thumbnailColumn.HeaderText = "Imagem";
+            this.thumbnailColumn.Name = "thumbnailColumn";
+            this.thumbnailColumn.ReadOnly = true;
+            // 
             // FormImgConfig
             // 
+            this.AcceptButton = this.saveButton;
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(664, 512);
+            this.Controls.Add(this.imgPathDataGridView);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.button1);
@@ -177,6 +220,7 @@
             this.Name = "FormImgConfig";
             this.Text = "Lista de Imagens";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPathDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +239,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.DataGridView imgPathDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fileNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filePathColumn;
+        private System.Windows.Forms.DataGridViewImageColumn thumbnailColumn;
     }
 }

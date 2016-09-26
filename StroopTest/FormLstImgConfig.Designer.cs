@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLstImgConfig));
-            this.label2 = new System.Windows.Forms.Label();
             this.buttonInsert = new System.Windows.Forms.Button();
             this.buttonRemove = new System.Windows.Forms.Button();
             this.imgListView = new System.Windows.Forms.ListView();
@@ -39,18 +38,6 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Location = new System.Drawing.Point(234, 394);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Lista Imagens";
             // 
             // buttonInsert
             // 
@@ -90,7 +77,7 @@
             this.imgListView.Margin = new System.Windows.Forms.Padding(2);
             this.imgListView.Name = "imgListView";
             this.imgListView.ShowItemToolTips = true;
-            this.imgListView.Size = new System.Drawing.Size(297, 322);
+            this.imgListView.Size = new System.Drawing.Size(297, 335);
             this.imgListView.TabIndex = 38;
             this.imgListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -119,6 +106,7 @@
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelButton.Location = new System.Drawing.Point(231, 410);
             this.cancelButton.Name = "cancelButton";
@@ -142,15 +130,16 @@
             // 
             // FormLstImgConfig
             // 
+            this.AcceptButton = this.saveButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(314, 440);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.imgListView);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonInsert);
             this.Controls.Add(this.buttonRemove);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -165,8 +154,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonInsert;
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.ListView imgListView;

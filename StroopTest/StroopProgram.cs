@@ -56,8 +56,8 @@ namespace StroopTest
 
         private string fixPointColor = "false"; // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
         private int delayTime;                  // [21]  tempo de atraso = intervalo se não for definido
-        private bool rotateImage = false;               // [22]  rotacionar imagem (90, 180, 270, 360)
-
+        private bool rotateImage = false;       // [22]  rotacionar imagem (90, 180, 270, 360)
+        private bool rndSubtitlePlace;          // [23]  localizacão da legenda aleatória
 
 
         // Definição gets 
@@ -405,6 +405,39 @@ namespace StroopTest
             }
         }
 
+        public int DelayTime
+        {
+            get { return delayTime; }
+            set
+            {
+                if (value > 0)
+                {
+                    delayTime = value;
+                }
+                else
+                {
+                    throw new ArgumentException(errorExMsg + "\nTempo de atraso deve ser maior que zero (em milissegundos)");
+                }
+            }
+        }
+        /*
+        public bool ExpositionRandom
+        {
+            get { return expositionRandom; }
+            set
+            {
+                if (value == true || value == false)
+                {
+                    expositionRandom = value;
+                }
+                else
+                {
+                    throw new ArgumentException(errorExMsg + "\nExposicao Randômica deve ser boleana (true or false)");
+                }
+            }
+        }*/
+
+
         public bool RotateImage
         {
             get { return rotateImage;  }
@@ -663,15 +696,25 @@ namespace StroopTest
         {
             try
             {
-                TextWriter tw = new StreamWriter(filepath);
-                tw.WriteLine(outContent);
-                tw.Close();
+                StreamWriter sw;
+                if (!File.Exists(filepath))
+                {
+                    sw = File.CreateText(filepath);
+                    sw.WriteLine(outContent);
+                }
+                else
+                {
+                    sw = File.AppendText(filepath);
+                    sw.WriteLine(outContent);
+                }
+                sw.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
         }
+
         static public void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter, List<string> output, float elapsedTime, string expoType, string audioName)
         {
             // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor
@@ -687,7 +730,7 @@ namespace StroopTest
                        nameStimulus + "\t" +
                        color + "\t" +
                        audioName;
-            output.Add(text);
+                       output.Add(text);
         }
     }
 }

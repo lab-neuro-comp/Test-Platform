@@ -141,8 +141,8 @@ namespace StroopTest
             var exposition = Task.Run(async delegate{ await Task.Delay(program.ExpositionTime, cts.Token); });
             outputContent = new List<string>();
 
-            string[] labelText = null, labelColor = null, audioDirs = null;
-            int audioCounter = 0;
+            string[] labelText = null, labelColor = null, audioDirs = null, subtitlesArray = null;
+            int audioCounter = 0, k = 0;
 
             string audioDetail = "false";
 
@@ -196,6 +196,7 @@ namespace StroopTest
 
                     for (int counter = 1; counter <= program.NumExpositions; counter++) // inicia loop com exposições
                     {
+                        subtitleLabel.Visible = false;
                         wordLabel.Visible = false; // intervalo
                         await intervalOrFixPoint(program, cts.Token);
 
@@ -224,6 +225,23 @@ namespace StroopTest
                         elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                         SendKeys.SendWait("s");
                         wordLabel.Visible = true;
+
+                        if (program.SubtitleShow)
+                        {
+                            if (program.SubtitleColor.ToLower() != "false")
+                            {
+                                subtitleLabel.ForeColor = ColorTranslator.FromHtml(program.SubtitleColor);
+                            }
+                            else
+                            {
+                                subtitleLabel.ForeColor = Color.Black;
+                            }
+                            subtitleLabel.Text = subtitlesArray[k];
+                            defineSubPosition(program.SubtitlePlace);
+                            subtitleLabel.Visible = true;
+                            if (k == (subtitlesArray.Count() - 1)) k = 0;
+                            else k++;
+                        }
 
                         StroopProgram.writeLineOutput(program, textCurrent, colorCurrent, counter, outputContent, elapsedTime, program.ExpositionType, Path.GetFileNameWithoutExtension(audioDetail));
                         
@@ -280,8 +298,8 @@ namespace StroopTest
 
                 outputFileName = outputDataPath + program.UserName + "_" + program.ProgramName + ".txt";
                 
-                if (program.ExpandImage) { pictureBox1.Dock = DockStyle.Fill; }
-                else { pictureBox1.Dock = DockStyle.None; }
+                if (program.ExpandImage) { imgPictureBox.Dock = DockStyle.Fill; }
+                else { imgPictureBox.Dock = DockStyle.None; }
 
                 // Define vetor de estímulos a ser apresentado
                 //audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile); // auxiliar recebe o vetor original
@@ -303,8 +321,9 @@ namespace StroopTest
                     }
                     subtitleLabel.Enabled = true;
                     subtitleLabel.Left = (this.ClientSize.Width - subtitleLabel.Width) / 2; // centraliza label da palavra
-                    subtitleLabel.Top = (pictureBox1.Bottom + 50);
+                    subtitleLabel.Top = (imgPictureBox.Bottom + 50);
                 }
+
 
                 if (program.AudioListFile != "false")
                 {
@@ -324,7 +343,7 @@ namespace StroopTest
                 {
 
                     changeBackgroundColor(program, true); // muda cor de fundo se houver parametro
-                    pictureBox1.BackColor = BackColor;
+                    imgPictureBox.BackColor = BackColor;
 
                     elapsedTime = 0; // zera tempo em milissegundos decorrido
                     j = 0; k = 0;
@@ -342,25 +361,33 @@ namespace StroopTest
                     {
                         for (int counter = 0; counter < program.NumExpositions; counter++) // AQUI ver estimulo -> palavra ou imagem como um só e ter intervalo separado
                         {
-                            pictureBox1.Visible = false; wordLabel.Visible = false;
+                            imgPictureBox.Visible = false; wordLabel.Visible = false;
                             if (program.SubtitleShow) {subtitleLabel.Visible = false;}
                             await intervalOrFixPoint(program, cts.Token);
 
                             if (arrayCounter == imageDirs.Count()-1) { arrayCounter = 0; }
-                            pictureBox1.Image = Image.FromFile(imageDirs[arrayCounter]);
+                            imgPictureBox.Image = Image.FromFile(imageDirs[arrayCounter]);
                             
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                             SendKeys.SendWait("s");
-                            pictureBox1.Visible = true;
+                            imgPictureBox.Visible = true;
                             wordLabel.Visible = false;
                             actualImagePath = Path.GetFileName(imageDirs[arrayCounter].ToString());
                             arrayCounter++;
 
                             if (program.SubtitleShow)
                             {
-                                subtitleLabel.Visible = true;
+                                if (program.SubtitleColor.ToLower() != "false")
+                                {
+                                    subtitleLabel.ForeColor = ColorTranslator.FromHtml(program.SubtitleColor);
+                                }
+                                else
+                                {
+                                    subtitleLabel.ForeColor = Color.Black;
+                                }
                                 subtitleLabel.Text = subtitlesArray[k];
                                 defineSubPosition(program.SubtitlePlace);
+                                subtitleLabel.Visible = true;
                                 if (k == (subtitlesArray.Count() - 1)) k = 0;
                                 else k++;
                             }
@@ -368,7 +395,7 @@ namespace StroopTest
                             StroopProgram.writeLineOutput(program, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "img", audioDetail);
                             await Task.Delay(program.ExpositionTime, cts.Token);
 
-                            pictureBox1.Visible = false;
+                            imgPictureBox.Visible = false;
                             wordLabel.Visible = false;
 
                             await Task.Delay(program.IntervalTime, cts.Token);
@@ -383,7 +410,7 @@ namespace StroopTest
                                 
                                 elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                                 SendKeys.SendWait("s");
-                                pictureBox1.Visible = false;
+                                imgPictureBox.Visible = false;
                                 wordLabel.Visible = true;
                                 actualImagePath = wordLabel.Text;
                                 j++;
@@ -398,13 +425,13 @@ namespace StroopTest
                         int imgCounter = 0;
                         for (int counter = 0; counter < program.NumExpositions; counter++) // AQUI ver estinulo -> palavra ou imagem como um só e ter intervalo separado
                         {
-                            pictureBox1.Visible = false; wordLabel.Visible = false;
+                            imgPictureBox.Visible = false; wordLabel.Visible = false;
                             if (program.SubtitleShow) { subtitleLabel.Visible = false; }
                             await intervalOrFixPoint(program, cts.Token);
 
 
                             if (imgCounter == imageDirs.Count()-1) { imgCounter = 0; }
-                            pictureBox1.Image = Image.FromFile(imageDirs[imgCounter]);
+                            imgPictureBox.Image = Image.FromFile(imageDirs[imgCounter]);
                             
                             
                             if (program.AudioListFile.ToLower() != "false" && program.ExpositionType == "imgaud")
@@ -419,13 +446,21 @@ namespace StroopTest
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                             SendKeys.SendWait("s");
 
-                            pictureBox1.Visible = true;
+                            imgPictureBox.Visible = true;
 
                             if (program.SubtitleShow)
                             {
-                                subtitleLabel.Visible = true;
+                                if (program.SubtitleColor.ToLower() != "false")
+                                {
+                                    subtitleLabel.ForeColor = ColorTranslator.FromHtml(program.SubtitleColor);
+                                }
+                                else
+                                {
+                                    subtitleLabel.ForeColor = Color.Black;
+                                }
                                 subtitleLabel.Text = subtitlesArray[k];
                                 defineSubPosition(program.SubtitlePlace);
+                                subtitleLabel.Visible = true;
                                 if (k == (subtitlesArray.Count() - 1)) k = 0;
                                 else k++;
                             }
@@ -438,7 +473,7 @@ namespace StroopTest
                         }
                     }
                     
-                    pictureBox1.Visible = false; wordLabel.Visible = false;
+                    imgPictureBox.Visible = false; wordLabel.Visible = false;
                     if (program.SubtitleShow)
                     {
                         subtitleLabel.Visible = false;
@@ -460,7 +495,7 @@ namespace StroopTest
                     if (dialogResult == DialogResult.No) { break; } // se não deseja repetir quebra o laço
                     */
                 }
-                pictureBox1.Dock = DockStyle.None;
+                imgPictureBox.Dock = DockStyle.None;
                 wordLabel.Font = new Font(wordLabel.Font.FontFamily, 160);
                 wordLabel.ForeColor = Color.Black;
                 StroopProgram.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
@@ -484,19 +519,19 @@ namespace StroopTest
             {
                 case 1: //baixo
                     subtitleLabel.Left = (this.ClientSize.Width - subtitleLabel.Width) / 2;
-                    subtitleLabel.Top = (pictureBox1.Bottom + 50);
+                    subtitleLabel.Top = (imgPictureBox.Bottom + 50);
                     break;
                 case 2: //esquerda
-                    subtitleLabel.Left = (pictureBox1.Left - (subtitleLabel.Width + 50));
+                    subtitleLabel.Left = (imgPictureBox.Left - (subtitleLabel.Width + 50));
                     subtitleLabel.Top = (this.ClientSize.Height - subtitleLabel.Height) / 2;
                     break;
                 case 3: //direita
-                    subtitleLabel.Left = (pictureBox1.Left + pictureBox1.Width + 50);
+                    subtitleLabel.Left = (imgPictureBox.Left + imgPictureBox.Width + 50);
                     subtitleLabel.Top = (this.ClientSize.Height - subtitleLabel.Height) / 2;
                     break;
                 case 4: // cima
                     subtitleLabel.Left = (this.ClientSize.Width - subtitleLabel.Width) / 2;
-                    subtitleLabel.Top = (pictureBox1.Top - (subtitleLabel.Height + 50));
+                    subtitleLabel.Top = (imgPictureBox.Top - (subtitleLabel.Height + 50));
                     break;
                 default: // centro
                     subtitleLabel.Left = (this.ClientSize.Width - subtitleLabel.Width) / 2;

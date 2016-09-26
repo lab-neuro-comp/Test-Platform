@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormExposition));
             this.wordLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgPictureBox = new System.Windows.Forms.PictureBox();
             this.instructionLabel = new System.Windows.Forms.Label();
             this.subtitleLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // wordLabel
@@ -55,18 +55,18 @@
             this.wordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.wordLabel.Visible = false;
             // 
-            // pictureBox1
+            // imgPictureBox
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(93, 33);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(357, 369);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
+            this.imgPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgPictureBox.BackColor = System.Drawing.Color.White;
+            this.imgPictureBox.Location = new System.Drawing.Point(93, 33);
+            this.imgPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.imgPictureBox.Name = "imgPictureBox";
+            this.imgPictureBox.Size = new System.Drawing.Size(357, 369);
+            this.imgPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgPictureBox.TabIndex = 10;
+            this.imgPictureBox.TabStop = false;
+            this.imgPictureBox.Visible = false;
             // 
             // instructionLabel
             // 
@@ -105,7 +105,7 @@
             this.ClientSize = new System.Drawing.Size(536, 440);
             this.Controls.Add(this.subtitleLabel);
             this.Controls.Add(this.wordLabel);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imgPictureBox);
             this.Controls.Add(this.instructionLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -116,7 +116,7 @@
             this.Text = "StroopTest";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormExposition_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,7 +125,7 @@
         #endregion
 
         private System.Windows.Forms.Label wordLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgPictureBox;
         private System.Windows.Forms.Label instructionLabel;
         private System.Windows.Forms.Label subtitleLabel;
     }

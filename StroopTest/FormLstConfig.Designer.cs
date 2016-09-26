@@ -105,10 +105,13 @@
             // hexColorsList
             // 
             this.hexColorsList.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
+            this.hexColorsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.hexColorsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hexColorsList.FullRowSelect = true;
             this.hexColorsList.LabelEdit = true;
-            this.hexColorsList.Location = new System.Drawing.Point(154, 26);
+            this.hexColorsList.Location = new System.Drawing.Point(150, 26);
             this.hexColorsList.Margin = new System.Windows.Forms.Padding(2);
             this.hexColorsList.Name = "hexColorsList";
             this.hexColorsList.Size = new System.Drawing.Size(160, 400);
@@ -160,10 +163,13 @@
             // wordsColoredList
             // 
             this.wordsColoredList.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
+            this.wordsColoredList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.wordsColoredList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordsColoredList.FullRowSelect = true;
             this.wordsColoredList.LabelEdit = true;
-            this.wordsColoredList.Location = new System.Drawing.Point(318, 26);
+            this.wordsColoredList.Location = new System.Drawing.Point(314, 26);
             this.wordsColoredList.Margin = new System.Windows.Forms.Padding(2);
             this.wordsColoredList.Name = "wordsColoredList";
             this.wordsColoredList.Size = new System.Drawing.Size(160, 400);
@@ -180,7 +186,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(240, 428);
+            this.label1.Location = new System.Drawing.Point(233, 428);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
@@ -189,9 +195,12 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Location = new System.Drawing.Point(394, 428);
+            this.label2.Location = new System.Drawing.Point(387, 428);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 13);
@@ -249,7 +258,7 @@
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(12, 454);
+            this.saveButton.Location = new System.Drawing.Point(12, 457);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 31;
@@ -260,8 +269,9 @@
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(407, 454);
+            this.cancelButton.Location = new System.Drawing.Point(401, 457);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 32;
@@ -271,10 +281,11 @@
             // 
             // FormLstConfig
             // 
-            this.AcceptButton = this.buttonInsert;
+            this.AcceptButton = this.saveButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 489);
+            this.CancelButton = this.cancelButton;
+            this.ClientSize = new System.Drawing.Size(484, 492);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.colorsListLabel);
@@ -292,7 +303,7 @@
             this.Controls.Add(this.buttonRemove);
             this.Controls.Add(this.hexColorTextBox);
             this.Controls.Add(this.buttonColorPallette);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;

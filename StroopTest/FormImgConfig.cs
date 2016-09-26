@@ -53,14 +53,25 @@ namespace StroopTest
                     try
                     {
                         pathList.Add(Path.GetFullPath(file));
+                        /*
                         var listViewItem = new ListViewItem(new[] {Path.GetFileNameWithoutExtension(file), Path.GetFullPath(file)});
-                        imgPathListView.Items.Add(listViewItem);
+                        imgPathListView.Items.Add(listViewItem);*/
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Não pode apresentar a imagem: " + file.Substring(file.LastIndexOf('/'))
                                         + ". Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n" + ex.Message);
                     }
+
+                    DataTable dt = new DataTable();
+                    dt.Columns.Add("values");
+                    /*
+                    foreach (string items in description)
+                    {
+                        DataRow row = dt.NewRow();
+                        dt.Rows.Add(items);
+                    }
+                    this.dataGridView2.DataSource = dt;*/
                 }
             }
         }

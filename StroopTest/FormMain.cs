@@ -49,7 +49,7 @@ namespace StroopTest
         {
             if (e.Control && e.KeyCode == Keys.R) // Ctrl+R - roda teste
             {
-                beginTest();
+                beginTest(prgNameSL.Text);
             }
             if (e.Control && e.KeyCode == Keys.D) // Ctrl+D - define programa
             {
@@ -71,7 +71,7 @@ namespace StroopTest
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            beginTest();
+            beginTest(prgNameSL.Text);
         }
         
         private void programaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -127,7 +127,8 @@ namespace StroopTest
 
         private void imagemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/");
+            FormLstImgConfig configureImagesList = new FormLstImgConfig(testFilesPath + "/lst/");
+            /*FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/");*/
             try { configureImagesList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -240,34 +241,28 @@ namespace StroopTest
 
         private void iniciarTesteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            beginTest();
+            beginTest(prgNameSL.Text);
         }
 
-        private void beginTest()
+        private void beginTest(string programName)
         {
             Screen[] screens = Screen.AllScreens;
-            FormExposition exposeProgram = new FormExposition(prgNameSL.Text, usrNameSL.Text, defaultPath);
-            
+            FormExposition exposeProgram = new FormExposition(programName, usrNameSL.Text, defaultPath);
+            Rectangle bounds = new Rectangle();
             try
             {
-                /*
-                for (int i = 0; i < screens.Length; i++)
+                if (screens.Length == 2)
                 {
-                    MessageBox.Show(i + "\n" +screens[i].DeviceName + "\n" + screens[i].Bounds.ToString() + "\n" + screens[i].WorkingArea.ToString() + "\n****\n");
-                }
-                */
-                if (screens.Length > 1)
-                {
-                    //MessageBox.Show(screens[1].Bounds.Width.ToString() + " / " + screens[1].Bounds.Height + "\n" + screens[0].Bounds.Width.ToString() + " / " + screens[0].Bounds.Height);
-                    Rectangle bounds = screens[1].Bounds;
+                    if(screens[0] == Screen.FromControl(this))
+                    {
+                        bounds = screens[1].Bounds;
+                    }
+                    else
+                    {
+                        bounds = screens[0].Bounds;
+                    }
                     exposeProgram.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
                     exposeProgram.StartPosition = FormStartPosition.Manual;
-                    //exposeProgram.Show();
-                    /*
-                        r1 = screens[0].WorkingArea;
-                        exposeProgram.StartPosition = FormStartPosition.Manual;
-                        exposeProgram.Top = r1.Top;
-                        exposeProgram.Left = r1.Left;*/
                 }
                 SendKeys.SendWait("i");
                 exposeProgram.ShowDialog();

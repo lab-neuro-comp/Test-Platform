@@ -51,7 +51,7 @@
             this.subColorLabel = new System.Windows.Forms.Label();
             this.subLocationLabel = new System.Windows.Forms.Label();
             this.activateSubsCheck = new System.Windows.Forms.CheckBox();
-            this.activateSubsButton = new System.Windows.Forms.Button();
+            this.openSubsListButton = new System.Windows.Forms.Button();
             this.subColorButton = new System.Windows.Forms.Button();
             this.subColorPanel = new System.Windows.Forms.Panel();
             this.subsCenterButton = new System.Windows.Forms.Button();
@@ -326,7 +326,7 @@
             this.groupBox4.Controls.Add(this.subColorLabel);
             this.groupBox4.Controls.Add(this.subLocationLabel);
             this.groupBox4.Controls.Add(this.activateSubsCheck);
-            this.groupBox4.Controls.Add(this.activateSubsButton);
+            this.groupBox4.Controls.Add(this.openSubsListButton);
             this.groupBox4.Controls.Add(this.subColorButton);
             this.groupBox4.Controls.Add(this.subColorPanel);
             this.groupBox4.Controls.Add(this.subsCenterButton);
@@ -385,18 +385,18 @@
             this.activateSubsCheck.UseVisualStyleBackColor = true;
             this.activateSubsCheck.CheckedChanged += new System.EventHandler(this.activateSubtitles_CheckedChanged);
             // 
-            // activateSubsButton
+            // openSubsListButton
             // 
-            this.activateSubsButton.Enabled = false;
-            this.activateSubsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.activateSubsButton.Location = new System.Drawing.Point(82, 22);
-            this.activateSubsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.activateSubsButton.Name = "activateSubsButton";
-            this.activateSubsButton.Size = new System.Drawing.Size(110, 19);
-            this.activateSubsButton.TabIndex = 50;
-            this.activateSubsButton.Text = "abrir";
-            this.activateSubsButton.UseVisualStyleBackColor = true;
-            this.activateSubsButton.Click += new System.EventHandler(this.openSubsList_Click);
+            this.openSubsListButton.Enabled = false;
+            this.openSubsListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openSubsListButton.Location = new System.Drawing.Point(82, 22);
+            this.openSubsListButton.Margin = new System.Windows.Forms.Padding(2);
+            this.openSubsListButton.Name = "openSubsListButton";
+            this.openSubsListButton.Size = new System.Drawing.Size(110, 19);
+            this.openSubsListButton.TabIndex = 50;
+            this.openSubsListButton.Text = "abrir";
+            this.openSubsListButton.UseVisualStyleBackColor = true;
+            this.openSubsListButton.Click += new System.EventHandler(this.openSubsList_Click);
             // 
             // subColorButton
             // 
@@ -953,6 +953,7 @@
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelButton.Location = new System.Drawing.Point(666, 391);
             this.cancelButton.Name = "cancelButton";
@@ -976,8 +977,10 @@
             // 
             // FormPrgConfig
             // 
+            this.AcceptButton = this.saveButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(754, 426);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
@@ -1062,7 +1065,7 @@
         private System.Windows.Forms.NumericUpDown wordSizeNumeric;
         private System.Windows.Forms.Button openAudioListButton;
         private System.Windows.Forms.Label audioListLabel;
-        private System.Windows.Forms.Button activateSubsButton;
+        private System.Windows.Forms.Button openSubsListButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;

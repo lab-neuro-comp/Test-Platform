@@ -38,18 +38,19 @@
             this.checkWords = new System.Windows.Forms.CheckBox();
             this.checkColors = new System.Windows.Forms.CheckBox();
             this.wordsColoredList = new System.Windows.Forms.ListView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listNameTextBox = new System.Windows.Forms.TextBox();
             this.listNameLabel = new System.Windows.Forms.Label();
             this.wordsListLabel = new System.Windows.Forms.Label();
             this.colorsListLabel = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonColorPallette
             // 
+            this.buttonColorPallette.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonColorPallette.Location = new System.Drawing.Point(9, 176);
             this.buttonColorPallette.Margin = new System.Windows.Forms.Padding(2);
             this.buttonColorPallette.Name = "buttonColorPallette";
@@ -75,6 +76,7 @@
             // 
             // buttonRemove
             // 
+            this.buttonRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRemove.Location = new System.Drawing.Point(75, 199);
             this.buttonRemove.Margin = new System.Windows.Forms.Padding(2);
@@ -88,6 +90,7 @@
             // 
             // buttonInsert
             // 
+            this.buttonInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInsert.Location = new System.Drawing.Point(9, 199);
             this.buttonInsert.Margin = new System.Windows.Forms.Padding(2);
@@ -132,10 +135,11 @@
             // checkWords
             // 
             this.checkWords.AutoSize = true;
+            this.checkWords.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkWords.Location = new System.Drawing.Point(9, 52);
             this.checkWords.Margin = new System.Windows.Forms.Padding(2);
             this.checkWords.Name = "checkWords";
-            this.checkWords.Size = new System.Drawing.Size(107, 17);
+            this.checkWords.Size = new System.Drawing.Size(105, 17);
             this.checkWords.TabIndex = 20;
             this.checkWords.TabStop = false;
             this.checkWords.Text = "Lista de Palavras";
@@ -145,10 +149,11 @@
             // checkColors
             // 
             this.checkColors.AutoSize = true;
+            this.checkColors.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkColors.Location = new System.Drawing.Point(9, 115);
             this.checkColors.Margin = new System.Windows.Forms.Padding(2);
             this.checkColors.Name = "checkColors";
-            this.checkColors.Size = new System.Drawing.Size(93, 17);
+            this.checkColors.Size = new System.Drawing.Size(91, 17);
             this.checkColors.TabIndex = 21;
             this.checkColors.TabStop = false;
             this.checkColors.Text = "Lista de Cores";
@@ -170,32 +175,6 @@
             this.wordsColoredList.TileSize = new System.Drawing.Size(120, 40);
             this.wordsColoredList.UseCompatibleStateImageBehavior = false;
             this.wordsColoredList.View = System.Windows.Forms.View.Tile;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.Location = new System.Drawing.Point(80, 438);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(57, 19);
-            this.button3.TabIndex = 24;
-            this.button3.TabStop = false;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(9, 437);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 19);
-            this.button2.TabIndex = 5;
-            this.button2.TabStop = false;
-            this.button2.Text = "Salvar";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // label1
             // 
@@ -269,20 +248,42 @@
             this.colorsListLabel.TabIndex = 30;
             this.colorsListLabel.Text = "nomeListaCores";
             // 
+            // saveButton
+            // 
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.saveButton.Location = new System.Drawing.Point(9, 428);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.TabIndex = 31;
+            this.saveButton.Text = "salvar";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cancelButton.Location = new System.Drawing.Point(90, 428);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 32;
+            this.cancelButton.Text = "cancelar";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click_1);
+            // 
             // FormLstConfig
             // 
             this.AcceptButton = this.buttonInsert;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 463);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.colorsListLabel);
             this.Controls.Add(this.wordsListLabel);
             this.Controls.Add(this.listNameLabel);
             this.Controls.Add(this.listNameTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.wordsColoredList);
             this.Controls.Add(this.checkColors);
             this.Controls.Add(this.checkWords);
@@ -314,13 +315,13 @@
         private System.Windows.Forms.CheckBox checkWords;
         private System.Windows.Forms.CheckBox checkColors;
         private System.Windows.Forms.ListView wordsColoredList;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox listNameTextBox;
         private System.Windows.Forms.Label listNameLabel;
         private System.Windows.Forms.Label wordsListLabel;
         private System.Windows.Forms.Label colorsListLabel;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button cancelButton;
     }
 }

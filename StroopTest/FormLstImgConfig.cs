@@ -95,12 +95,13 @@ namespace StroopTest
                 MessageBox.Show(ex.Message);
             }
         }
+        
 
-        private void button2_Click(object sender, EventArgs e) // Salva
+        private void saveButton_Click(object sender, EventArgs e)
         {
             try
             {
-                if(string.IsNullOrWhiteSpace(textBox1.Text))
+                if (string.IsNullOrWhiteSpace(textBox1.Text))
                 {
                     throw new Exception("Nome do arquivo deve ser preenchido");
                 }
@@ -123,7 +124,7 @@ namespace StroopTest
                             w1.WriteLine(imgsDirList[i]);
                         }
                         w1.Close();
-                        
+
                         MessageBox.Show("A lista " + textBox1.Text + ".lst foi salva com sucesso no diretório\n" + path);
                     }
                     else
@@ -139,7 +140,7 @@ namespace StroopTest
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
             Close();
         }

@@ -62,14 +62,7 @@ namespace StroopTest
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.ReturnValue = "padrao";
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void saveButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -82,15 +75,22 @@ namespace StroopTest
                 {
                     usrName = textBox1.Text.Replace(" ", "");
                     this.ReturnValue = usrName;
-                    if (String.IsNullOrEmpty(textBox1.Text)) throw new Exception("A caixa de texto não pode estar vazia!") ;
+                    if (String.IsNullOrEmpty(textBox1.Text)) throw new Exception("A caixa de texto não pode estar vazia!");
                 }
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.ReturnValue = "padrao";
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

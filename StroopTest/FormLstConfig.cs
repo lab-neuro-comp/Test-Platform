@@ -322,7 +322,16 @@ namespace StroopTest
             }
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void hexColorsList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+
+            if (!Regex.IsMatch(hexColorTextBox.Text, hexPattern) || !(hexColorTextBox.TextLength == 7))
+            {
+
+            }
+        }
+        
+        private void saveButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -330,10 +339,10 @@ namespace StroopTest
                 {
                     throw new Exception("Nome do(s) arquivo(s) deve ser preenchido");
                 }
-                
+
                 if (/*saveColorsList.ShowDialog() == DialogResult.OK && */checkColors.Enabled) // lê instrução se houver
                 {
-                    if(hexColorsList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + listNameTextBox.Text + "_Colors.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
+                    if (hexColorsList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + listNameTextBox.Text + "_Colors.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
                     {
                         if (File.Exists(path + listNameTextBox.Text + "_Colors.lst"))
                         {
@@ -351,7 +360,6 @@ namespace StroopTest
                             writer1.Write(hexColorsList.Items[i].Text + "\t");
                         }
 
-                        //writer1.Dispose();
                         writer1.Close();
                         MessageBox.Show("A lista " + listNameTextBox.Text + "_Words.lst foi salva com sucesso no diretório\n" + path);
                     }
@@ -359,12 +367,12 @@ namespace StroopTest
                     {
                         throw new Exception("A lista de cores não foi salva!");
                     }
-                    
+
                 }
 
                 if (/*saveWordsList.ShowDialog() == DialogResult.OK && */ checkWords.Enabled) // lê instrução se houver
                 {
-                    if(wordsColoredList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + listNameTextBox.Text + "_Words.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
+                    if (wordsColoredList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + listNameTextBox.Text + "_Words.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
                     {
                         if (File.Exists(path + listNameTextBox.Text + "_Words.lst"))
                         {
@@ -391,7 +399,7 @@ namespace StroopTest
                         throw new Exception("A lista de palavras não foi salva!");
                     }
                 }
-                
+
                 Close();
             }
             catch (Exception ex)
@@ -400,19 +408,9 @@ namespace StroopTest
             }
         }
 
-
-        private void hexColorsList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        private void cancelButton_Click_1(object sender, EventArgs e)
         {
-
-            if (!Regex.IsMatch(hexColorTextBox.Text, hexPattern) || !(hexColorTextBox.TextLength == 7))
-            {
-
-            }
-        }
-        
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            Close();
         }
     }
     

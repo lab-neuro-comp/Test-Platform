@@ -98,7 +98,7 @@ namespace StroopTest
             helpToolTip.SetToolTip(bgColorLabel, "Cor de fundo durante a apresentação dos estímulos");
             helpToolTip.SetToolTip(expandImgLabel, "Expande a imagem até as bordas da tela");
             helpToolTip.SetToolTip(instructionsLabel, "Instruções apresentadas no início do programa - será apresentada um tela para cada linha escrita abaixo");
-            helpToolTip.SetToolTip(saveButton, "Salva o programa configurado");
+            helpToolTip.SetToolTip(saveButton1, "Salva o programa configurado");
             helpToolTip.SetToolTip(helpButton, "Ajuda");
         }
 
@@ -437,7 +437,7 @@ namespace StroopTest
 
         //SAVE
 
-        private void configureNewProgram(object sender, EventArgs e)
+        private void configureNewProgram()
         {
 
             StroopProgram programWrite = new StroopProgram();
@@ -806,6 +806,15 @@ namespace StroopTest
             MessageBox.Show("O programa " + prgNameTextBox.Text + ".prg foi salvo com sucesso!");
             this.Close();
         }
-       
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            configureNewProgram();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

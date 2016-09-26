@@ -79,6 +79,7 @@
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(404, 10);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";

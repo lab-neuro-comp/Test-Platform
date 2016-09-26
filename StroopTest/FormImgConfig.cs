@@ -64,5 +64,10 @@ namespace StroopTest
                 }
             }
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -21,8 +21,9 @@ namespace StroopTest
         {
             InitializeComponent();
             path = imagesFolderPath;
-            
-            imgPathListView.AllowDrop = true;
+
+            imgPathDataGridView.AllowDrop = true;
+            imgPathDataGridView.RowTemplate.MinimumHeight = 120;
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -39,8 +40,12 @@ namespace StroopTest
         {
 
         }
-
-
+        
+        private void imgPathDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            pictureBox.Image = Image.FromFile(imgPathDataGridView.CurrentRow.Cells[2].Value.ToString());
+        }
+        
         private void openImagesDirectory()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -53,26 +58,22 @@ namespace StroopTest
                     try
                     {
                         pathList.Add(Path.GetFullPath(file));
-                        /*
-                        var listViewItem = new ListViewItem(new[] {Path.GetFileNameWithoutExtension(file), Path.GetFullPath(file)});
-                        imgPathListView.Items.Add(listViewItem);*/
+                        Image image = Image.FromFile(Path.GetFullPath(file));
+                        imgPathDataGridView.Rows.Add(Path.GetFileNameWithoutExtension(file), image, Path.GetFullPath(file));
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Não pode apresentar a imagem: " + file.Substring(file.LastIndexOf('/'))
                                         + ". Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n" + ex.Message);
                     }
-
-                    DataTable dt = new DataTable();
-                    dt.Columns.Add("values");
-                    /*
-                    foreach (string items in description)
-                    {
-                        DataRow row = dt.NewRow();
-                        dt.Rows.Add(items);
-                    }
-                    this.dataGridView2.DataSource = dt;*/
                 }
+            }
+
+            for (int i = 0; i < imgPathDataGridView.Columns.Count; i++)
+            if (imgPathDataGridView.Columns[i] is DataGridViewImageColumn)
+            {
+                ((DataGridViewImageColumn)imgPathDataGridView.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                break;
             }
         }
 
@@ -81,9 +82,12 @@ namespace StroopTest
             Close();
         }
 
-        private void imgPathListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void deleteRow_Click(object sender, EventArgs e)
         {
-            //pictureBox.Image = Image.FromFile();
+            foreach (DataGridViewRow item in this.imgPathDataGridView.SelectedRows)
+            {
+                imgPathDataGridView.Rows.RemoveAt(item.Index);
+            }
         }
     }
 }

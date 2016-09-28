@@ -44,7 +44,7 @@
             this.wordLabel.AutoEllipsis = true;
             this.wordLabel.BackColor = System.Drawing.Color.Transparent;
             this.wordLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.wordLabel.Font = new System.Drawing.Font("Arial", 150F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 160F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordLabel.Location = new System.Drawing.Point(6, 129);
             this.wordLabel.Margin = new System.Windows.Forms.Padding(0);
             this.wordLabel.Name = "wordLabel";

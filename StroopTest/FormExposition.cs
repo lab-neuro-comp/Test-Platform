@@ -85,8 +85,8 @@ namespace StroopTest
                 wordLabel.Dock = DockStyle.Fill;
                 wordLabel.AutoSize = false;
                 wordLabel.Font = new Font(wordLabel.Font.FontFamily, Single.Parse(programInUse.FontWordLabel));
-//                wordLabel.Font = cvt.ConvertFromString(wordLabel.Font.FontFamily + ";" + programInUse.FontWordLabel + "pt") as Font;
-                MessageBox.Show(wordLabel.Font.ToString());
+                // wordLabel.Font = cvt.ConvertFromString(wordLabel.Font.FontFamily + ";" + programInUse.FontWordLabel + "pt") as Font;
+                //MessageBox.Show(wordLabel.Font.ToString());
 
                 switch (programInUse.ExpositionType)
                 {

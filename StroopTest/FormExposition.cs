@@ -77,7 +77,6 @@ namespace StroopTest
                 }
 
                 var cvt = new FontConverter();
-                wordLabel.Font = cvt.ConvertFromString(wordLabel.Font.FontFamily + ";" + programInUse.FontWordLabel + "pt") as Font;
                 wordLabel.Visible = false;
                 wordLabel.Name = "error";
                 wordLabel.FlatStyle = FlatStyle.Flat;
@@ -85,6 +84,9 @@ namespace StroopTest
                 wordLabel.AutoEllipsis = true;
                 wordLabel.Dock = DockStyle.Fill;
                 wordLabel.AutoSize = false;
+                wordLabel.Font = new Font(wordLabel.Font.FontFamily, Single.Parse(programInUse.FontWordLabel));
+//                wordLabel.Font = cvt.ConvertFromString(wordLabel.Font.FontFamily + ";" + programInUse.FontWordLabel + "pt") as Font;
+                MessageBox.Show(wordLabel.Font.ToString());
 
                 switch (programInUse.ExpositionType)
                 {
@@ -207,7 +209,6 @@ namespace StroopTest
                         else textArrayCounter++;
                         if (colorArrayCounter == labelColor.Count()-1) { colorArrayCounter = 0; }
                         else colorArrayCounter++;
-
                         wordLabel.Text = textCurrent;
                         wordLabel.ForeColor = ColorTranslator.FromHtml(colorCurrent);
                         wordLabel.Left = (this.ClientSize.Width - wordLabel.Width) / 2; // centraliza label da palavra

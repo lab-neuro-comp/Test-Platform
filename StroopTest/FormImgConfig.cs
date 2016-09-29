@@ -163,21 +163,33 @@ namespace StroopTest
         private void saveButton_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            string[] lines;
 
-            saveFileDialog1.Filter = "Excel CSV (.csv)|*.csv"; // salva em .csvs
+            saveFileDialog1.Filter = "List (.lst)|*.lst"; // salva em .lst
             saveFileDialog1.RestoreDirectory = true;
             
             try
             {
-                if (!string.IsNullOrWhiteSpace(imgListNameTextBox.Text))
-                {
-                    saveFileDialog1.FileName = imgListNameTextBox.Text;
-                }
-                else
+                if (string.IsNullOrWhiteSpace(imgListNameTextBox.Text))
                 {
                     throw new Exception("Preencha o campo com o nome do arquivo!");
                 }
+
+                if (File.Exists(path + imgListNameTextBox.Text + ".lst"))
+                {
+                    DialogResult dr = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
+                    if (dr == DialogResult.Cancel)
+                    {
+                        throw new Exception("A lista de imagens não será salva!");
+                    }
+                }
+
+                StreamWriter w1 = new StreamWriter(path + imgListNameTextBox.Text + ".lst");
+                for (int i = 0; i < imgPathDataGridView.RowCount; i++)
+                {
+                    w1.WriteLine(imgPathDataGridView.Rows[i].Cells[2].Value.ToString());
+                }
+                w1.Close();
+                MessageBox.Show("A lista " + imgListNameTextBox.Text + ".lst foi salva com sucesso no diretório\n" + path);
                 
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

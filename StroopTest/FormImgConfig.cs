@@ -40,12 +40,65 @@ namespace StroopTest
         {
 
         }
-        
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            DataGridView dgv = imgPathDataGridView;
+            try
+            {
+                int totalRows = dgv.Rows.Count;
+                // get index of the row for the selected cell
+                int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
+                if (rowIndex == 0)
+                    return;
+                // get index of the column for the selected cell
+                int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
+                DataGridViewRow selectedRow = dgv.Rows[rowIndex];
+                dgv.Rows.Remove(selectedRow);
+                dgv.Rows.Insert(rowIndex - 1, selectedRow);
+                dgv.ClearSelection();
+                dgv.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
+                pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells[2].Value.ToString());
+            }
+            catch { }
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            DataGridView dgv = imgPathDataGridView;
+            try
+            {
+                int totalRows = dgv.Rows.Count;
+                // get index of the row for the selected cell
+                int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
+                if (rowIndex == totalRows - 1)
+                    return;
+                // get index of the column for the selected cell
+                int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
+                DataGridViewRow selectedRow = dgv.Rows[rowIndex];
+                dgv.Rows.Remove(selectedRow);
+                dgv.Rows.Insert(rowIndex + 1, selectedRow);
+                dgv.ClearSelection();
+                dgv.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
+                pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells[2].Value.ToString());
+            }
+            catch { }
+        }
+
         private void imgPathDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            pictureBox.Image = Image.FromFile(imgPathDataGridView.CurrentRow.Cells[2].Value.ToString());
+            selectedImageIntoPictureBox();
         }
-        
+
+        private void imgPathDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            selectedImageIntoPictureBox();
+        }
+
+        private void imgPathDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            selectedImageIntoPictureBox();
+        }
         private void openImagesDirectory()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -75,6 +128,8 @@ namespace StroopTest
                 ((DataGridViewImageColumn)imgPathDataGridView.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
                 break;
             }
+
+            selectedImageIntoPictureBox();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -84,10 +139,48 @@ namespace StroopTest
 
         private void deleteRow_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow item in this.imgPathDataGridView.SelectedRows)
+            if (imgPathDataGridView.RowCount > 1)
             {
-                imgPathDataGridView.Rows.RemoveAt(item.Index);
+                foreach (DataGridViewRow item in this.imgPathDataGridView.SelectedRows)
+                {
+                    imgPathDataGridView.Rows.RemoveAt(item.Index);
+                }
             }
+            else
+            {
+                imgPathDataGridView.Rows.Clear();
+                imgPathDataGridView.Refresh();
+                pictureBox.Image = null;
+                pictureBox.Refresh();
+            }
+        }
+
+        private void selectedImageIntoPictureBox()
+        {
+            pictureBox.Image = Image.FromFile(imgPathDataGridView.CurrentRow.Cells[2].Value.ToString());
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            string[] lines;
+
+            saveFileDialog1.Filter = "Excel CSV (.csv)|*.csv"; // salva em .csvs
+            saveFileDialog1.RestoreDirectory = true;
+            
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(imgListNameTextBox.Text))
+                {
+                    saveFileDialog1.FileName = imgListNameTextBox.Text;
+                }
+                else
+                {
+                    throw new Exception("Preencha o campo com o nome do arquivo!");
+                }
+                
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }

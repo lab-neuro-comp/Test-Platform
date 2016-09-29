@@ -30,17 +30,91 @@ namespace StroopTest
         {
             openImagesDirectory();
         }
+
+        private void openImagesDirectory()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = true;
+            openFileDialog.Filter = "Images (*.BMP;*.JPG;*.JPEG;*.GIF;*.PNG)|*.BMP;*.JPG;*.JPeG;*.GIF;*.PNG|" + "All files (*.*)|*.*";
+
+            try
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    foreach (string file in openFileDialog.FileNames)
+                    {
+                        try
+                        {
+                            pathList.Add(Path.GetFullPath(file));
+                            Image image = Image.FromFile(Path.GetFullPath(file));
+                            imgPathDataGridView.Rows.Add(Path.GetFileNameWithoutExtension(file), image, Path.GetFullPath(file));
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception ("Não pode apresentar a imagem: " + file.Substring(file.LastIndexOf('/'))
+                                            + ". Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n" + ex.Message);
+                        }
+                    }
+                }
+
+                for (int i = 0; i < imgPathDataGridView.Columns.Count; i++)
+                    if (imgPathDataGridView.Columns[i] is DataGridViewImageColumn)
+                    {
+                        ((DataGridViewImageColumn)imgPathDataGridView.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                        break;
+                    }
+
+                selectedImageIntoPictureBox();
+            }
+            catch (NullReferenceException)
+            {
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+
+        private void deleteRow_Click(object sender, EventArgs e)
+        {
+            if (imgPathDataGridView.RowCount > 1)
+            {
+                foreach (DataGridViewRow item in this.imgPathDataGridView.SelectedRows)
+                {
+                    imgPathDataGridView.Rows.RemoveAt(item.Index);
+                }
+            }
+            else
+            {
+                imgPathDataGridView.Rows.Clear();
+                imgPathDataGridView.Refresh();
+                pictureBox.Image = null;
+                pictureBox.Refresh();
+            }
+        }
+
+        private void imgPathDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedImageIntoPictureBox();
+        }
+
+        private void imgPathDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            selectedImageIntoPictureBox();
+        }
+
+        private void imgPathDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            selectedImageIntoPictureBox();
+        }
+
+        private void selectedImageIntoPictureBox()
+        {
+            pictureBox.Image = Image.FromFile(imgPathDataGridView.CurrentRow.Cells[2].Value.ToString());
+        }
         
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnUp_Click(object sender, EventArgs e)
         {
             DataGridView dgv = imgPathDataGridView;
@@ -84,89 +158,14 @@ namespace StroopTest
             }
             catch { }
         }
-
-        private void imgPathDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            selectedImageIntoPictureBox();
-        }
-
-        private void imgPathDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            selectedImageIntoPictureBox();
-        }
-
-        private void imgPathDataGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            selectedImageIntoPictureBox();
-        }
-        private void openImagesDirectory()
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Multiselect = true;
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                foreach (string file in openFileDialog.FileNames)
-                {
-                    try
-                    {
-                        pathList.Add(Path.GetFullPath(file));
-                        Image image = Image.FromFile(Path.GetFullPath(file));
-                        imgPathDataGridView.Rows.Add(Path.GetFileNameWithoutExtension(file), image, Path.GetFullPath(file));
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Não pode apresentar a imagem: " + file.Substring(file.LastIndexOf('/'))
-                                        + ". Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n" + ex.Message);
-                    }
-                }
-            }
-
-            for (int i = 0; i < imgPathDataGridView.Columns.Count; i++)
-            if (imgPathDataGridView.Columns[i] is DataGridViewImageColumn)
-            {
-                ((DataGridViewImageColumn)imgPathDataGridView.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
-                break;
-            }
-
-            selectedImageIntoPictureBox();
-        }
-
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void deleteRow_Click(object sender, EventArgs e)
-        {
-            if (imgPathDataGridView.RowCount > 1)
-            {
-                foreach (DataGridViewRow item in this.imgPathDataGridView.SelectedRows)
-                {
-                    imgPathDataGridView.Rows.RemoveAt(item.Index);
-                }
-            }
-            else
-            {
-                imgPathDataGridView.Rows.Clear();
-                imgPathDataGridView.Refresh();
-                pictureBox.Image = null;
-                pictureBox.Refresh();
-            }
-        }
-
-        private void selectedImageIntoPictureBox()
-        {
-            pictureBox.Image = Image.FromFile(imgPathDataGridView.CurrentRow.Cells[2].Value.ToString());
-        }
-
+        
         private void saveButton_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
             saveFileDialog1.Filter = "List (.lst)|*.lst"; // salva em .lst
             saveFileDialog1.RestoreDirectory = true;
-            
+
             try
             {
                 if (string.IsNullOrWhiteSpace(imgListNameTextBox.Text))
@@ -190,9 +189,14 @@ namespace StroopTest
                 }
                 w1.Close();
                 MessageBox.Show("A lista " + imgListNameTextBox.Text + ".lst foi salva com sucesso no diretório\n" + path);
-                
+
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

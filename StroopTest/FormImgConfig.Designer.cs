@@ -55,7 +55,7 @@
             this.btnOpen.Location = new System.Drawing.Point(325, 127);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(136, 23);
-            this.btnOpen.TabIndex = 1;
+            this.btnOpen.TabIndex = 20;
             this.btnOpen.Text = "Abrir";
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
@@ -76,7 +76,7 @@
             this.button1.Location = new System.Drawing.Point(325, 169);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 23);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 21;
             this.button1.Text = "Apagar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.deleteRow_Click);
@@ -89,7 +89,7 @@
             this.cancelButton.Location = new System.Drawing.Point(386, 515);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 34;
+            this.cancelButton.TabIndex = 31;
             this.cancelButton.Text = "cancelar";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -101,7 +101,7 @@
             this.saveButton.Location = new System.Drawing.Point(22, 515);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
-            this.saveButton.TabIndex = 33;
+            this.saveButton.TabIndex = 30;
             this.saveButton.Text = "salvar";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -110,6 +110,7 @@
             // 
             this.imgPathDataGridView.AllowUserToAddRows = false;
             this.imgPathDataGridView.AllowUserToOrderColumns = true;
+            this.imgPathDataGridView.AllowUserToResizeRows = false;
             this.imgPathDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -126,10 +127,11 @@
             this.imgPathDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.imgPathDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.imgPathDataGridView.Size = new System.Drawing.Size(439, 237);
-            this.imgPathDataGridView.TabIndex = 35;
+            this.imgPathDataGridView.TabIndex = 10;
             this.imgPathDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.imgPathDataGridView_CellContentClick);
             this.imgPathDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.imgPathDataGridView_CellMouseClick);
             this.imgPathDataGridView.SelectionChanged += new System.EventHandler(this.imgPathDataGridView_SelectionChanged);
+            this.imgPathDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.imgPathDataGridView_KeyDown);
             // 
             // fileNameColumn
             // 
@@ -163,7 +165,7 @@
             this.moveUpButton.Location = new System.Drawing.Point(325, 211);
             this.moveUpButton.Name = "moveUpButton";
             this.moveUpButton.Size = new System.Drawing.Size(136, 23);
-            this.moveUpButton.TabIndex = 36;
+            this.moveUpButton.TabIndex = 22;
             this.moveUpButton.Text = "Acima";
             this.moveUpButton.UseVisualStyleBackColor = true;
             this.moveUpButton.Click += new System.EventHandler(this.btnUp_Click);
@@ -174,7 +176,7 @@
             this.moveDownButton.Location = new System.Drawing.Point(325, 240);
             this.moveDownButton.Name = "moveDownButton";
             this.moveDownButton.Size = new System.Drawing.Size(136, 23);
-            this.moveDownButton.TabIndex = 37;
+            this.moveDownButton.TabIndex = 23;
             this.moveDownButton.Text = "Abaixo";
             this.moveDownButton.UseVisualStyleBackColor = true;
             this.moveDownButton.Click += new System.EventHandler(this.btnDown_Click);
@@ -211,7 +213,7 @@
             this.imgListNameTextBox.Location = new System.Drawing.Point(325, 28);
             this.imgListNameTextBox.Name = "imgListNameTextBox";
             this.imgListNameTextBox.Size = new System.Drawing.Size(136, 20);
-            this.imgListNameTextBox.TabIndex = 41;
+            this.imgListNameTextBox.TabIndex = 19;
             // 
             // imgListNameLabel
             // 
@@ -220,7 +222,7 @@
             this.imgListNameLabel.Name = "imgListNameLabel";
             this.imgListNameLabel.Size = new System.Drawing.Size(136, 13);
             this.imgListNameLabel.TabIndex = 42;
-            this.imgListNameLabel.Text = "Nome de Lista de Imagens:";
+            this.imgListNameLabel.Text = "Nome da Lista de Imagens:";
             // 
             // FormImgConfig
             // 
@@ -246,7 +248,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(450, 550);
             this.Name = "FormImgConfig";
-            this.Text = "Lista de Imagens";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Lista - Imagens";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPathDataGridView)).EndInit();
             this.ResumeLayout(false);

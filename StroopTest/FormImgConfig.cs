@@ -16,14 +16,25 @@ namespace StroopTest
         private List<string> pathList = new List<string>();
         private ImageList imgsList = new ImageList();
         private string path;
+        private bool firstOpenFlag = true;
 
-        public FormImgConfig(string imagesFolderPath)
+        public FormImgConfig(string imagesFolderPath, string imgListEdit)
         {
             InitializeComponent();
             path = imagesFolderPath;
 
             imgPathDataGridView.AllowDrop = true;
             imgPathDataGridView.RowTemplate.MinimumHeight = 120;
+            if (imgListEdit != "false")
+            {
+                insertListForEdition();
+            }
+        }
+
+        private void insertListForEdition()
+        {
+            Close();
+            throw new NotImplementedException();
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -36,7 +47,6 @@ namespace StroopTest
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Multiselect = true;
             openFileDialog.Filter = "Images (*.BMP;*.JPG;*.JPEG;*.GIF;*.PNG)|*.BMP;*.JPG;*.JPeG;*.GIF;*.PNG|" + "All files (*.*)|*.*";
-
             try
             {
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -65,6 +75,8 @@ namespace StroopTest
                     }
 
                 selectedImageIntoPictureBox();
+                if (firstOpenFlag) { WindowState = FormWindowState.Maximized; firstOpenFlag = false; }
+                
             }
             catch (NullReferenceException)
             {
@@ -120,21 +132,26 @@ namespace StroopTest
             DataGridView dgv = imgPathDataGridView;
             try
             {
-                int totalRows = dgv.Rows.Count;
-                // get index of the row for the selected cell
-                int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
-                if (rowIndex == 0)
-                    return;
-                // get index of the column for the selected cell
-                int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
-                DataGridViewRow selectedRow = dgv.Rows[rowIndex];
-                dgv.Rows.Remove(selectedRow);
-                dgv.Rows.Insert(rowIndex - 1, selectedRow);
-                dgv.ClearSelection();
-                dgv.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
-                pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells[2].Value.ToString());
+                moveRowUp(dgv);
             }
             catch { }
+        }
+
+        private void moveRowUp(DataGridView dgv)
+        {
+            int totalRows = dgv.Rows.Count;
+            // get index of the row for the selected cell
+            int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
+            if (rowIndex == 0)
+                return;
+            // get index of the column for the selected cell
+            int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
+            DataGridViewRow selectedRow = dgv.Rows[rowIndex];
+            dgv.Rows.Remove(selectedRow);
+            dgv.Rows.Insert(rowIndex - 1, selectedRow);
+            dgv.ClearSelection();
+            dgv.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
+            pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells[2].Value.ToString());
         }
 
         private void btnDown_Click(object sender, EventArgs e)
@@ -142,21 +159,26 @@ namespace StroopTest
             DataGridView dgv = imgPathDataGridView;
             try
             {
-                int totalRows = dgv.Rows.Count;
-                // get index of the row for the selected cell
-                int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
-                if (rowIndex == totalRows - 1)
-                    return;
-                // get index of the column for the selected cell
-                int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
-                DataGridViewRow selectedRow = dgv.Rows[rowIndex];
-                dgv.Rows.Remove(selectedRow);
-                dgv.Rows.Insert(rowIndex + 1, selectedRow);
-                dgv.ClearSelection();
-                dgv.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
-                pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells[2].Value.ToString());
+                moveRowDown(dgv);
             }
             catch { }
+        }
+
+        private void moveRowDown(DataGridView dgv)
+        {
+            int totalRows = dgv.Rows.Count;
+            // get index of the row for the selected cell
+            int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
+            if (rowIndex == totalRows - 1)
+                return;
+            // get index of the column for the selected cell
+            int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
+            DataGridViewRow selectedRow = dgv.Rows[rowIndex];
+            dgv.Rows.Remove(selectedRow);
+            dgv.Rows.Insert(rowIndex + 1, selectedRow);
+            dgv.ClearSelection();
+            dgv.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
+            pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells[2].Value.ToString());
         }
         
         private void saveButton_Click(object sender, EventArgs e)
@@ -197,6 +219,28 @@ namespace StroopTest
         private void cancelButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void imgPathDataGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Left)
+            {
+                DataGridView dgv = imgPathDataGridView;
+                try
+                {
+                    moveRowUp(dgv);
+                }
+                catch { }
+            }
+            if (e.Control && e.KeyCode == Keys.Right)
+            {
+                DataGridView dgv = imgPathDataGridView;
+                try
+                {
+                    moveRowDown(dgv);
+                }
+                catch { }
+            }
         }
     }
 }

@@ -146,8 +146,16 @@ namespace StroopTest
         
         private void saveButton_Click(object sender, EventArgs e)
         {
-            DataGridView dgv = imgPathDataGridView;
-            DGVManipulation.saveColumnToListFile(dgv, 2, path, imgListNameTextBox.Text + "_img");
+            try
+            {
+                if (string.IsNullOrWhiteSpace(imgListNameTextBox.Text))
+                {
+                    throw new Exception("Preencha o campo com o nome do arquivo!");
+                }
+                DataGridView dgv = imgPathDataGridView;
+                DGVManipulation.saveColumnToListFile(dgv, 2, path, imgListNameTextBox.Text + "_img");
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

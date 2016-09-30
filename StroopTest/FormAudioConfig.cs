@@ -84,8 +84,16 @@ namespace StroopTest
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            DataGridView dgv = audioPathDataGridView;
-            DGVManipulation.saveColumnToListFile(dgv, 1, path, audioListNameTextBox.Text + "_aud");
+            try
+            {
+                if (string.IsNullOrWhiteSpace(audioListNameTextBox.Text))
+                {
+                    throw new Exception("Preencha o campo com o nome do arquivo!");
+                }
+                DataGridView dgv = audioPathDataGridView;
+                DGVManipulation.saveColumnToListFile(dgv, 1, path, audioListNameTextBox.Text + "_aud");
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void audioPathDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

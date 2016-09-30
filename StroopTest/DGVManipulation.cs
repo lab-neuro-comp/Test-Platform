@@ -65,12 +65,7 @@ namespace StroopTest
             {
                 saveFileDialog1.Filter = "List (.lst)|*.lst"; // salva em .lst
                 saveFileDialog1.RestoreDirectory = true;
-
-                if (string.IsNullOrWhiteSpace(filename))
-                {
-                    throw new Exception("Preencha o campo com o nome do arquivo!");
-                }
-
+                
                 if (File.Exists(path + filename + ".lst"))
                 {
                     DialogResult dr = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);

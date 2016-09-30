@@ -52,7 +52,7 @@
             // btnOpen
             // 
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOpen.Location = new System.Drawing.Point(325, 127);
+            this.btnOpen.Location = new System.Drawing.Point(19, 71);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(136, 23);
             this.btnOpen.TabIndex = 20;
@@ -63,7 +63,7 @@
             // pictureBox
             // 
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox.Location = new System.Drawing.Point(22, 12);
+            this.pictureBox.Location = new System.Drawing.Point(168, 12);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(297, 251);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -73,11 +73,11 @@
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(325, 169);
+            this.button1.Location = new System.Drawing.Point(19, 113);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 23);
             this.button1.TabIndex = 21;
-            this.button1.Text = "Apagar";
+            this.button1.Text = "Apagar (Delete)";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.deleteRow_Click);
             // 
@@ -120,7 +120,7 @@
             this.fileNameColumn,
             this.thumbnailColumn,
             this.filePathColumn});
-            this.imgPathDataGridView.Location = new System.Drawing.Point(22, 269);
+            this.imgPathDataGridView.Location = new System.Drawing.Point(22, 272);
             this.imgPathDataGridView.MultiSelect = false;
             this.imgPathDataGridView.Name = "imgPathDataGridView";
             this.imgPathDataGridView.ReadOnly = true;
@@ -162,29 +162,29 @@
             // moveUpButton
             // 
             this.moveUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.moveUpButton.Location = new System.Drawing.Point(325, 211);
+            this.moveUpButton.Location = new System.Drawing.Point(19, 155);
             this.moveUpButton.Name = "moveUpButton";
             this.moveUpButton.Size = new System.Drawing.Size(136, 23);
             this.moveUpButton.TabIndex = 22;
-            this.moveUpButton.Text = "Acima";
+            this.moveUpButton.Text = "Acima (Ctrl + ->)";
             this.moveUpButton.UseVisualStyleBackColor = true;
             this.moveUpButton.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // moveDownButton
             // 
             this.moveDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.moveDownButton.Location = new System.Drawing.Point(325, 240);
+            this.moveDownButton.Location = new System.Drawing.Point(19, 184);
             this.moveDownButton.Name = "moveDownButton";
             this.moveDownButton.Size = new System.Drawing.Size(136, 23);
             this.moveDownButton.TabIndex = 23;
-            this.moveDownButton.Text = "Abaixo";
+            this.moveDownButton.Text = "Abaixo (Ctrl + <-)";
             this.moveDownButton.UseVisualStyleBackColor = true;
             this.moveDownButton.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // moveRowLabel
             // 
             this.moveRowLabel.AutoSize = true;
-            this.moveRowLabel.Location = new System.Drawing.Point(325, 195);
+            this.moveRowLabel.Location = new System.Drawing.Point(19, 139);
             this.moveRowLabel.Name = "moveRowLabel";
             this.moveRowLabel.Size = new System.Drawing.Size(62, 13);
             this.moveRowLabel.TabIndex = 38;
@@ -193,7 +193,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(325, 111);
+            this.label1.Location = new System.Drawing.Point(19, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 39;
@@ -202,7 +202,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(325, 153);
+            this.label2.Location = new System.Drawing.Point(19, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 40;
@@ -210,7 +210,7 @@
             // 
             // imgListNameTextBox
             // 
-            this.imgListNameTextBox.Location = new System.Drawing.Point(325, 28);
+            this.imgListNameTextBox.Location = new System.Drawing.Point(19, 28);
             this.imgListNameTextBox.Name = "imgListNameTextBox";
             this.imgListNameTextBox.Size = new System.Drawing.Size(136, 20);
             this.imgListNameTextBox.TabIndex = 19;
@@ -218,7 +218,7 @@
             // imgListNameLabel
             // 
             this.imgListNameLabel.AutoSize = true;
-            this.imgListNameLabel.Location = new System.Drawing.Point(325, 12);
+            this.imgListNameLabel.Location = new System.Drawing.Point(19, 12);
             this.imgListNameLabel.Name = "imgListNameLabel";
             this.imgListNameLabel.Size = new System.Drawing.Size(136, 13);
             this.imgListNameLabel.TabIndex = 42;

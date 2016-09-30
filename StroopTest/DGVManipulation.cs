@@ -86,5 +86,13 @@ namespace StroopTest
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+
+        internal static void closeFormListNotEmpty(DataGridView dgv)
+        {
+            if (dgv.RowCount != 0)
+            {
+                throw new Exception("A lista não será salva!");
+            }
+        }
     }
 }

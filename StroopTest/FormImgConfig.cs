@@ -33,7 +33,6 @@ namespace StroopTest
 
         private void insertListForEdition()
         {
-            Close();
             throw new NotImplementedException();
         }
 
@@ -42,6 +41,7 @@ namespace StroopTest
             openImagesDirectory();
         }
 
+        // opens directory with images to be choosen by the list creator
         private void openImagesDirectory()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -88,7 +88,7 @@ namespace StroopTest
 
         }
 
-
+        // delete button click - deletes row from not empty dgv; refresh view
         private void deleteRow_Click(object sender, EventArgs e)
         {
             DataGridView dgv = imgPathDataGridView;
@@ -115,11 +115,13 @@ namespace StroopTest
             selectedImageIntoPictureBox();
         }
 
+        // pictureBox receives clicked rows img
         private void selectedImageIntoPictureBox()
         {
             pictureBox.Image = Image.FromFile(imgPathDataGridView.CurrentRow.Cells[2].Value.ToString());
         }
         
+        // button up click - moves selected row Upper
         private void btnUp_Click(object sender, EventArgs e)
         {
             DataGridView dgv = imgPathDataGridView;
@@ -131,8 +133,7 @@ namespace StroopTest
             catch { }
         }
 
-        
-
+        // button up click - moves selected row Down
         private void btnDown_Click(object sender, EventArgs e)
         {
             DataGridView dgv = imgPathDataGridView;
@@ -143,7 +144,8 @@ namespace StroopTest
             }
             catch { }
         }
-        
+
+        // saves list into .lst file inside lst directory
         private void saveButton_Click(object sender, EventArgs e)
         {
             try
@@ -160,7 +162,16 @@ namespace StroopTest
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            Close();
+            DataGridView dgv = imgPathDataGridView;
+            try
+            {
+                DGVManipulation.closeFormListNotEmpty(dgv);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Close();
+            }
         }
 
         private void imgPathDataGridView_KeyDown(object sender, KeyEventArgs e)

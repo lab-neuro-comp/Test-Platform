@@ -79,7 +79,16 @@ namespace StroopTest
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            Close();
+            DataGridView dgv = audioPathDataGridView;
+            try
+            {
+                DGVManipulation.closeFormListNotEmpty(dgv);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Close();
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)

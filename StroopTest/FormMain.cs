@@ -127,8 +127,7 @@ namespace StroopTest
 
         private void imagemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*FormLstImgConfig configureImagesList = new FormLstImgConfig(testFilesPath + "/lst/");*/
-            FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/");
+            FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/", "false");
             try { configureImagesList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -354,6 +353,20 @@ namespace StroopTest
         private void defineUserButton_Click(object sender, EventArgs e)
         {
             defineUser();
+        }
+
+        private void imagensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/", "false");
+            try { configureImagesList.ShowDialog(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void audioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/lst/");
+            try { configureAudioList.ShowDialog(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }

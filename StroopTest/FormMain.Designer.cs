@@ -64,6 +64,7 @@
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.audioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -114,7 +115,8 @@
             // 
             this.listaDePalavrasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.textoECoresToolStripMenuItem,
-            this.imagemToolStripMenuItem});
+            this.imagemToolStripMenuItem,
+            this.audioToolStripMenuItem});
             this.listaDePalavrasToolStripMenuItem.Name = "listaDePalavrasToolStripMenuItem";
             this.listaDePalavrasToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.listaDePalavrasToolStripMenuItem.Text = "Lista de Estímulos";
@@ -198,10 +200,10 @@
             // 
             // imagensToolStripMenuItem
             // 
-            this.imagensToolStripMenuItem.Enabled = false;
             this.imagensToolStripMenuItem.Name = "imagensToolStripMenuItem";
             this.imagensToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.imagensToolStripMenuItem.Text = "Imagens";
+            this.imagensToolStripMenuItem.Click += new System.EventHandler(this.imagensToolStripMenuItem_Click);
             // 
             // programaToolStripMenuItem1
             // 
@@ -384,6 +386,13 @@
     "rasília\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // audioToolStripMenuItem
+            // 
+            this.audioToolStripMenuItem.Name = "audioToolStripMenuItem";
+            this.audioToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.audioToolStripMenuItem.Text = "Audio";
+            this.audioToolStripMenuItem.Click += new System.EventHandler(this.audioToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,5 +459,6 @@
         private System.Windows.Forms.ToolStripMenuItem dadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton defineProgramButton;
         private System.Windows.Forms.ToolStripButton defineUserButton;
+        private System.Windows.Forms.ToolStripMenuItem audioToolStripMenuItem;
     }
 }

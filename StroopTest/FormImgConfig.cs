@@ -91,20 +91,13 @@ namespace StroopTest
 
         private void deleteRow_Click(object sender, EventArgs e)
         {
-            if (imgPathDataGridView.RowCount > 1)
+            DataGridView dgv = imgPathDataGridView;
+            if(dgv.RowCount == 1)
             {
-                foreach (DataGridViewRow item in this.imgPathDataGridView.SelectedRows)
-                {
-                    imgPathDataGridView.Rows.RemoveAt(item.Index);
-                }
-            }
-            else
-            {
-                imgPathDataGridView.Rows.Clear();
-                imgPathDataGridView.Refresh();
                 pictureBox.Image = null;
                 pictureBox.Refresh();
             }
+            DGVManipulation.deleteDGVRow(dgv);
         }
 
         private void imgPathDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -132,88 +125,29 @@ namespace StroopTest
             DataGridView dgv = imgPathDataGridView;
             try
             {
-                moveRowUp(dgv);
+                DGVManipulation.moveDGVRowUp(dgv);
+                pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells[2].Value.ToString());
             }
             catch { }
         }
 
-        private void moveRowUp(DataGridView dgv)
-        {
-            int totalRows = dgv.Rows.Count;
-            // get index of the row for the selected cell
-            int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
-            if (rowIndex == 0)
-                return;
-            // get index of the column for the selected cell
-            int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
-            DataGridViewRow selectedRow = dgv.Rows[rowIndex];
-            dgv.Rows.Remove(selectedRow);
-            dgv.Rows.Insert(rowIndex - 1, selectedRow);
-            dgv.ClearSelection();
-            dgv.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
-            pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells[2].Value.ToString());
-        }
+        
 
         private void btnDown_Click(object sender, EventArgs e)
         {
             DataGridView dgv = imgPathDataGridView;
             try
             {
-                moveRowDown(dgv);
+                DGVManipulation.moveDGVRowDown(dgv);
+                pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells[2].Value.ToString());
             }
             catch { }
-        }
-
-        private void moveRowDown(DataGridView dgv)
-        {
-            int totalRows = dgv.Rows.Count;
-            // get index of the row for the selected cell
-            int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
-            if (rowIndex == totalRows - 1)
-                return;
-            // get index of the column for the selected cell
-            int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
-            DataGridViewRow selectedRow = dgv.Rows[rowIndex];
-            dgv.Rows.Remove(selectedRow);
-            dgv.Rows.Insert(rowIndex + 1, selectedRow);
-            dgv.ClearSelection();
-            dgv.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
-            pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells[2].Value.ToString());
         }
         
         private void saveButton_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-
-            saveFileDialog1.Filter = "List (.lst)|*.lst"; // salva em .lst
-            saveFileDialog1.RestoreDirectory = true;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(imgListNameTextBox.Text))
-                {
-                    throw new Exception("Preencha o campo com o nome do arquivo!");
-                }
-
-                if (File.Exists(path + imgListNameTextBox.Text + ".lst"))
-                {
-                    DialogResult dr = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
-                    if (dr == DialogResult.Cancel)
-                    {
-                        throw new Exception("A lista de imagens não será salva!");
-                    }
-                }
-
-                StreamWriter w1 = new StreamWriter(path + imgListNameTextBox.Text + ".lst");
-                for (int i = 0; i < imgPathDataGridView.RowCount; i++)
-                {
-                    w1.WriteLine(imgPathDataGridView.Rows[i].Cells[2].Value.ToString());
-                }
-                w1.Close();
-                MessageBox.Show("A lista " + imgListNameTextBox.Text + ".lst foi salva com sucesso no diretório\n" + path);
-
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            DataGridView dgv = imgPathDataGridView;
+            DGVManipulation.saveColumnToListFile(dgv, 2, path, imgListNameTextBox.Text + "_img");
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -228,7 +162,7 @@ namespace StroopTest
                 DataGridView dgv = imgPathDataGridView;
                 try
                 {
-                    moveRowUp(dgv);
+                    DGVManipulation.moveDGVRowUp(dgv);
                 }
                 catch { }
             }
@@ -237,7 +171,7 @@ namespace StroopTest
                 DataGridView dgv = imgPathDataGridView;
                 try
                 {
-                    moveRowDown(dgv);
+                    DGVManipulation.moveDGVRowDown(dgv);
                 }
                 catch { }
             }

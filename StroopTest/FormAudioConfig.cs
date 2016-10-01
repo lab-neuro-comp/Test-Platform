@@ -120,5 +120,26 @@ namespace StroopTest
             Player.SoundLocation = audioPathDataGridView.CurrentRow.Cells[1].Value.ToString();
             Player.Play();
         }
+
+        private void audioPathDataGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            DataGridView dgv = audioPathDataGridView;
+            if (e.Control && e.KeyCode == Keys.Left)
+            {
+                try
+                {
+                    DGVManipulation.moveDGVRowUp(dgv);
+                }
+                catch { }
+            }
+            if (e.Control && e.KeyCode == Keys.Right)
+            {
+                try
+                {
+                    DGVManipulation.moveDGVRowDown(dgv);
+                }
+                catch { }
+            }
+        }
     }
 }

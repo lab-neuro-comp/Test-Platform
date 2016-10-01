@@ -135,6 +135,7 @@
             this.audioPathDataGridView.Size = new System.Drawing.Size(459, 345);
             this.audioPathDataGridView.TabIndex = 44;
             this.audioPathDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.audioPathDataGridView_CellContentDoubleClick);
+            this.audioPathDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.audioPathDataGridView_KeyDown);
             // 
             // fileNameColumn
             // 

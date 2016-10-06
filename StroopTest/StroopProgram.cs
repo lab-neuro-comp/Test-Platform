@@ -26,47 +26,40 @@ namespace StroopTest
                                                     "Diga a cor em que a palavra está escrita",
                                                     "A tarefa vai começar agora"};
         private bool needsEditionFlag;
-        
-        public static int instructionAwaitTime = 4000;
+        public static int instructionAwaitTime = 4000; // default await time for each frame of instruction shown before the test
+        private int minRandomTime = 400; // minimum random value that a random interval time can be
 
         private List<string> instructionText = new List<string>();
 
-        private DateTime initialDate;           // data inicial
-        private string userName;                // nome do usuário do programa
-        private string programName;             // [0]   nome do programa
-        private int numExpositions;             // [1]*  numero de exposicoes 
-        private int expositionTime;             // [2]*  tempo de exposicao (millisec)
-        private bool expositionRandom;          // [3]*  exposicao randomica (bool)
-        private int intervalTime;               // [4]*  tempo de intervalo (millisec)
-        private bool intervalTimeRandom;        // [5]*  tempo de intervalo randomico (bool)
-        private string wordsListFile;           // [6]   lista de palavras
-        private string colorsListFile;          // [7]   lista de cores
-        private string backgroundColor;         // [8]   cor de fundo da tela
-        private bool audioCapture;              // [9]*  captura de audio (bool)
-        private bool subtitleShow;              // [10]* com legenda
-        private int subtitlePlace;              // [11]* localizacao da legenda
-        private string subtitleColor;           // [12]  cor da legenda
-        private string expositionType;          // [13]  tipo de exposição txt e/ou img (ADICIONAR PALVRA C/ AUDIO; PAR DE IMG; IMG C/ AUDIO)
-        private string imagesListFile;          // [14]  lista com caminhos de imagens
-        private string fixPoint;                // [15]  ponto de fixação - cruz / ponto / false
-        private string fontWordLabel;           // [16]  tamanho da fonte - 160
-        private bool expandImage;               // [17]  expande imagem ajustando à tela - false
-        private string audioListFile;           // [18]  lista com caminhos dos áudios - ler se é do tipo audio [13]
-        private string subtitlesListFile;       // [19]  lista de legendas - ler se com legenda está ativado [10]
+        private DateTime initialDate;           // test execution date
+        private string userName;                // tested person name
+        private string programName;             // [0]   program name
+        private int numExpositions;             // [1]*  number of expositions to be shown 
+        private int expositionTime;             // [2]*  duration time of each exposition (millisec)
+        private bool expositionRandom;          // [3]*  is exposition random
+        private int intervalTime;               // [4]*  duration time for interval between expositions (millisec)
+        private bool intervalTimeRandom;        // [5]*  is interval time random - rnd num between defined intervalTime and minRandomTime (bool)
+        private string wordsListFile;           // [6]   words list file name (.lst)
+        private string colorsListFile;          // [7]   colors list file name (.lst)
+        private string backgroundColor;         // [8]   background color during exposition (hex)
+        private bool audioCapture;              // [9]*  is audio capture activated
+        private bool subtitleShow;              // [10]* subtitles activated
+        private int subtitlePlace;              // [11]* subtitles place in screen (left, right, up and down the exposition stimulus)
+        private string subtitleColor;           // [12]  subtitles color
+        private string expositionType;          // [13]  exposition type
+        private string imagesListFile;          // [14]  images path list file name (.lst)
+        private string fixPoint;                // [15]  fixation point shown during interval time - cross / circle - false = deactivated
+        private string fontWordLabel;           // [16]  wordLabel size - 160 default
+        private bool expandImage;               // [17]  expands image adjusting it to the screen - if true, subtitles false
+        private string audioListFile;           // [18]  audio list file name (.lst) - if it is and audio exposition type [13]
+        private string subtitlesListFile;       // [19]  subtitles list file name (.lst) - if subtitles are activated [10]
 
         private string fixPointColor = "false"; // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
         private int delayTime;                  // [21]  tempo de atraso = intervalo se não for definido
         private bool rotateImage = false;       // [22]  rotacionar imagem (90, 180, 270, 360)
         private bool rndSubtitlePlace;          // [23]  localizacão da legenda aleatória
 
-
-        // Definição gets 
-        // Definição sets (e suas restrições)
-
-        // Arrumar argument execptions para uma exeção diferente no caso que não seja nome do programa ou do usuario
-        // assim não vai dar bug de fechar programa na proxima fase (para teste -> entrar com "jabuti" como nome do programa no arquivo de entrada)
-
-
+        
         public List<string> InstructionText
         {
             get { return instructionText; }
@@ -83,7 +76,7 @@ namespace StroopTest
             {
                 if (value.All(Char.IsLetterOrDigit) && !String.IsNullOrEmpty(value)) userName = value;
                 else throw new ArgumentException("Nome do usuario deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'JoaoSilva'");
-            }       
+            }   // user name has only alphanumeric elements, without spaces
         }
 
         public string ProgramName
@@ -93,7 +86,7 @@ namespace StroopTest
             {
                 if (value.All(Char.IsLetterOrDigit) && !String.IsNullOrEmpty(value)) programName = value;
                 else throw new ArgumentException("Nome do programa deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'MeuPrograma'");
-            }
+            }   // program name has only alphanumeric elements, without spaces
         }
 
         public int NumExpositions
@@ -103,7 +96,7 @@ namespace StroopTest
             {
                 if (value > 0) numExpositions = value;
                 else throw new ArgumentException(errorExMsg + "\nNumero de exposições deve ser maior que zero");
-            }
+            }   // number of expositions must be greater than zero
         }
 
         public int ExpositionTime
@@ -118,7 +111,7 @@ namespace StroopTest
                 else
                 {
                     throw new ArgumentException(errorExMsg + "\nTempo de exposição deve ser maior que zero (em milissegundos)");
-                }
+                }   // exposition time must be greater than zero
             }
         }
 
@@ -127,7 +120,7 @@ namespace StroopTest
             get { return expositionRandom; }
             set
             {
-                if (value == true || value == false)
+                if (value == true || value == false)    // checks boolean
                 {
                     expositionRandom = value;
                 }
@@ -150,7 +143,7 @@ namespace StroopTest
                 else
                 {
                     throw new ArgumentException(errorExMsg + "\nTempo de intervalo deve ser maior que zero (em milissegundos)");
-                }
+                }   // interval time must be greater than zero
             }
         }
 
@@ -185,7 +178,7 @@ namespace StroopTest
                 else
                 {
                     throw new ArgumentException(errorExMsg + "\nNome do arquivo " + value + " de lista deve ter terminação .lst");
-                }
+                }   // list files must have (.lst) termination or be "false" to indicate that theres no list defined
             }
         }
 
@@ -201,7 +194,7 @@ namespace StroopTest
                 else
                 {
                     throw new ArgumentException(errorExMsg + "\nNome do arquivo" + value + " de lista deve ter terminação .lst");
-                }
+                }   // list files must have (.lst) termination or be "false" to indicate that theres no list defined
             }
         }
 
@@ -217,7 +210,7 @@ namespace StroopTest
                 else
                 {
                     throw new ArgumentException(errorExMsg + "\nCor de Fundo deve ser 'false' ou um código hexadecimal de cor");
-                }
+                }   // colors must match with the hexadecimal pattern for color codes or be "false" to indicate that theres no color defined
             }
         }
 
@@ -265,7 +258,7 @@ namespace StroopTest
                 else
                 {
                     throw new ArgumentException(errorExMsg + "\nPosição da legenda " + value + " deve ser um número de 1 a 5");
-                }
+                }   // each number indicates a position
             }
         }
 
@@ -281,7 +274,7 @@ namespace StroopTest
                 else
                 {
                     throw new ArgumentException(errorExMsg + "\nCor da Legenda deve ser 'false' ou um código hexadecimal de cor");
-                }
+                }   // colors must match with the hexadecimal pattern for color codes or be "false" to indicate that theres no color defined
             }
         }
 
@@ -420,23 +413,6 @@ namespace StroopTest
                 }
             }
         }
-        /*
-        public bool ExpositionRandom
-        {
-            get { return expositionRandom; }
-            set
-            {
-                if (value == true || value == false)
-                {
-                    expositionRandom = value;
-                }
-                else
-                {
-                    throw new ArgumentException(errorExMsg + "\nExposicao Randômica deve ser boleana (true or false)");
-                }
-            }
-        }*/
-
 
         public bool RotateImage
         {
@@ -503,17 +479,6 @@ namespace StroopTest
 
                 Console.WriteLine(config[0]);
 
-                /*
-                if(config.Length != 20)
-                {
-                    for (int i = (config.Length - 1); i < 20; i++)
-                    {
-                        line += (" " + defaultConfig[i]);
-                    }
-                }
-
-                config = line.Split();
-                */
                 needsEditionFlag = false;
                 if (config.Count() < 20  && config.Count() > 15)
                 {
@@ -523,20 +488,7 @@ namespace StroopTest
                         config.Add(defaultConfig[i]);
                     }
                 }
-
                 
-                /*
-                var message1 = string.Join(" ", config);
-                var message2 = string.Join(" ", defaultConfig);
-
-                throw new Exception(message1 + "\n\n\n" + message2);
-                */
-
-                //if(config.Count() != 20) throw new FormatException("Arquivo programa deve ter 20 parâmetros\nexemplo - programa padrão:\n" + defaultProgramFileText);
-
-                // atribuição de valores no arquivos às variáveis do programa:
-                // nomePrograma /NumExposições /TempoExposição /ExpAleatória /TempoIntervalo /TempoIntervAleatorio /ListaPalavras /ListaCores /CorFundo /CaptAudio /mostrarLegenda /lugarLegenda /corLegenda /tipoExposicao /listaImg / PontoFixacao
-
                 ProgramName = config[0];
                 if (Path.GetFileNameWithoutExtension(filepath) != (this.ProgramName)) { throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName + "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + "'.prg"); }
                 NumExpositions = Int32.Parse(config[1]);

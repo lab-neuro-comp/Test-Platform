@@ -14,7 +14,7 @@ namespace StroopTest
 {
     class StroopProgram
     {
-        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_Words.lst padrao_Colors.lst false false false 1 false txt false false 160 false false false";
+        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_Words.lst padrao_Colors.lst false false false 1 false txt false false 160 false false false false 0 false false";
         private string defaultWordsListName = "padrao_Words.lst";
         private string defaultWordsListText = "amarelo azul verde vermelho";
         private string defaultColorsListName = "padrao_Colors.lst";
@@ -251,7 +251,7 @@ namespace StroopTest
             get { return subtitlePlace; }
             set
             {
-                if (value > 0 && value <= 5)
+                if (value > 0 && value <= 6)
                 {
                     subtitlePlace = value;
                 }
@@ -403,14 +403,7 @@ namespace StroopTest
             get { return delayTime; }
             set
             {
-                if (value > 0)
-                {
-                    delayTime = value;
-                }
-                else
-                {
-                    throw new ArgumentException(errorExMsg + "\nTempo de atraso deve ser maior que zero (em milissegundos)");
-                }
+                delayTime = value;
             }
         }
 
@@ -426,6 +419,22 @@ namespace StroopTest
                 else
                 {
                     throw new ArgumentException(errorExMsg + "\nRotacao de Imagem deve ser boleana (true or false)");
+                }
+            }
+        }
+
+        public bool RndSubtitlePlace
+        {
+            get { return rndSubtitlePlace; }
+            set
+            {
+                if (value == true || value == false)
+                {
+                    rndSubtitlePlace = value;
+                }
+                else
+                {
+                    throw new ArgumentException(errorExMsg + "\nPosição Aleátória deve ser boleana (true or false)");
                 }
             }
         }
@@ -480,10 +489,10 @@ namespace StroopTest
                 Console.WriteLine(config[0]);
 
                 needsEditionFlag = false;
-                if (config.Count() < 20  && config.Count() > 15)
+                if (config.Count() < defaultConfig.Count() && config.Count() > 15)
                 {
                     needsEditionFlag = true;
-                    for (int i = config.Count(); i < 20; i++)
+                    for (int i = config.Count(); i < defaultConfig.Count(); i++)
                     {
                         config.Add(defaultConfig[i]);
                     }
@@ -512,6 +521,11 @@ namespace StroopTest
                 AudioListFile = config[18];
                 SubtitlesListFile = config[19];
                 
+                FixPointColor = config[20];
+                DelayTime = Int32.Parse(config[21]);
+                RotateImage = Boolean.Parse(config[22]);
+                RndSubtitlePlace = Boolean.Parse(config[23]);
+
                 linesInstruction = File.ReadAllLines(filepath);               
                 if (linesInstruction.Length > 1) // lê instrução se houver
                 {

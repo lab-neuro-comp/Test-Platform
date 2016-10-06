@@ -54,6 +54,8 @@ namespace StroopTest
             subDirectionList.Add(subsRightButton);
             subDirectionList.Add(subsUpButton);
             subDirectionList.Add(subsCenterButton);
+            subDirectionList.Add(subsRndButton);
+            enableSubsItens(false);
 
             toolTipsConfig();
             
@@ -341,13 +343,18 @@ namespace StroopTest
             selectSubDirectionNumber(5);
         }
 
+        private void subLocationRnd_Click(object sender, EventArgs e)
+        {
+            selectSubDirectionNumber(6);
+        }
+
         private void selectSubDirectionNumber(int number)
         {
             for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
             {
                 subDirectionList[i].BackColor = Color.LightGray;
             }
-            subDirectionList[number - 1].BackColor = Color.Transparent;
+            subDirectionList[number-1].BackColor = Color.Transparent;
             subDirectionNumber = number;
         }
 
@@ -491,6 +498,13 @@ namespace StroopTest
                         else { throw new Exception("Selecione o arquivo de lista de audio!"); }
                         break;
                 }
+
+                /*
+                FixPointColor = config[20];
+                DelayTime = Int32.Parse(config[21]);
+                RotateImage = Boolean.Parse(config[22]);
+                RndSubtitlePlace = Boolean.Parse(config[23]);
+                */
 
                 if (Regex.IsMatch(bgColorButton.Text, hexPattern)) { programWrite.BackgroundColor = bgColorButton.Text; }
                 else programWrite.BackgroundColor = "false";

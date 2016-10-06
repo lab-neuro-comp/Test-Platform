@@ -41,12 +41,15 @@
             this.fixPointColorButton = new System.Windows.Forms.Button();
             this.fixPointColorPanel = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.audioCaptureLabel = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.audioCaptureCheck = new System.Windows.Forms.CheckBox();
             this.bgColorPanel = new System.Windows.Forms.Panel();
             this.bgColorLabel = new System.Windows.Forms.Label();
             this.bgColorButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.subsRndButton = new System.Windows.Forms.Button();
             this.activateSubsLabel = new System.Windows.Forms.Label();
             this.subColorLabel = new System.Windows.Forms.Label();
             this.subLocationLabel = new System.Windows.Forms.Label();
@@ -60,6 +63,8 @@
             this.subsRightButton = new System.Windows.Forms.Button();
             this.subsUpButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.delayTimeLabel = new System.Windows.Forms.Label();
+            this.delayTime = new System.Windows.Forms.NumericUpDown();
             this.intervalTimeLabel = new System.Windows.Forms.Label();
             this.intervalTime = new System.Windows.Forms.NumericUpDown();
             this.rndIntervalCheck = new System.Windows.Forms.CheckBox();
@@ -100,6 +105,7 @@
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.delayTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expoTime)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -126,7 +132,7 @@
             this.panel1.Location = new System.Drawing.Point(11, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(730, 372);
+            this.panel1.Size = new System.Drawing.Size(738, 507);
             this.panel1.TabIndex = 0;
             // 
             // helpButton
@@ -134,7 +140,7 @@
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.helpButton.BackgroundImage = global::StroopTest.Properties.Resources.helpButton;
             this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(689, 9);
+            this.helpButton.Location = new System.Drawing.Point(699, 9);
             this.helpButton.Margin = new System.Windows.Forms.Padding(2);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(26, 26);
@@ -152,11 +158,11 @@
             this.groupBox6.Controls.Add(this.fixPointCircle);
             this.groupBox6.Controls.Add(this.fixPointColorButton);
             this.groupBox6.Controls.Add(this.fixPointColorPanel);
-            this.groupBox6.Location = new System.Drawing.Point(303, 146);
+            this.groupBox6.Location = new System.Drawing.Point(303, 274);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox6.Size = new System.Drawing.Size(190, 80);
+            this.groupBox6.Size = new System.Drawing.Size(202, 84);
             this.groupBox6.TabIndex = 40;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Ponto de Fixação";
@@ -166,7 +172,7 @@
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = global::StroopTest.Properties.Resources.cross;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(96, 20);
+            this.panel3.Location = new System.Drawing.Point(82, 29);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(13, 13);
@@ -177,7 +183,7 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = global::StroopTest.Properties.Resources.circle;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(133, 22);
+            this.panel2.Location = new System.Drawing.Point(120, 31);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(10, 10);
@@ -186,7 +192,7 @@
             // fixPointTypeLabel
             // 
             this.fixPointTypeLabel.AutoSize = true;
-            this.fixPointTypeLabel.Location = new System.Drawing.Point(45, 21);
+            this.fixPointTypeLabel.Location = new System.Drawing.Point(27, 28);
             this.fixPointTypeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fixPointTypeLabel.Name = "fixPointTypeLabel";
             this.fixPointTypeLabel.Size = new System.Drawing.Size(31, 13);
@@ -196,7 +202,7 @@
             // fixPointCross
             // 
             this.fixPointCross.AutoSize = true;
-            this.fixPointCross.Location = new System.Drawing.Point(78, 20);
+            this.fixPointCross.Location = new System.Drawing.Point(62, 28);
             this.fixPointCross.Margin = new System.Windows.Forms.Padding(2);
             this.fixPointCross.Name = "fixPointCross";
             this.fixPointCross.Size = new System.Drawing.Size(15, 14);
@@ -208,17 +214,17 @@
             // fixPointColorLabel
             // 
             this.fixPointColorLabel.AutoSize = true;
-            this.fixPointColorLabel.Location = new System.Drawing.Point(4, 48);
+            this.fixPointColorLabel.Location = new System.Drawing.Point(21, 47);
             this.fixPointColorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fixPointColorLabel.Name = "fixPointColorLabel";
-            this.fixPointColorLabel.Size = new System.Drawing.Size(72, 13);
+            this.fixPointColorLabel.Size = new System.Drawing.Size(38, 26);
             this.fixPointColorLabel.TabIndex = 171;
-            this.fixPointColorLabel.Text = "Cor do Ponto:";
+            this.fixPointColorLabel.Text = "Cor do\r\nPonto:";
             // 
             // fixPointCircle
             // 
             this.fixPointCircle.AutoSize = true;
-            this.fixPointCircle.Location = new System.Drawing.Point(114, 20);
+            this.fixPointCircle.Location = new System.Drawing.Point(100, 29);
             this.fixPointCircle.Margin = new System.Windows.Forms.Padding(2);
             this.fixPointCircle.Name = "fixPointCircle";
             this.fixPointCircle.Size = new System.Drawing.Size(15, 14);
@@ -230,10 +236,10 @@
             // fixPointColorButton
             // 
             this.fixPointColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fixPointColorButton.Location = new System.Drawing.Point(95, 45);
+            this.fixPointColorButton.Location = new System.Drawing.Point(81, 51);
             this.fixPointColorButton.Margin = new System.Windows.Forms.Padding(2);
             this.fixPointColorButton.Name = "fixPointColorButton";
-            this.fixPointColorButton.Size = new System.Drawing.Size(89, 19);
+            this.fixPointColorButton.Size = new System.Drawing.Size(111, 19);
             this.fixPointColorButton.TabIndex = 42;
             this.fixPointColorButton.Text = "escolher";
             this.fixPointColorButton.UseVisualStyleBackColor = true;
@@ -243,7 +249,7 @@
             // 
             this.fixPointColorPanel.BackColor = System.Drawing.Color.White;
             this.fixPointColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fixPointColorPanel.Location = new System.Drawing.Point(77, 48);
+            this.fixPointColorPanel.Location = new System.Drawing.Point(63, 54);
             this.fixPointColorPanel.Margin = new System.Windows.Forms.Padding(2);
             this.fixPointColorPanel.Name = "fixPointColorPanel";
             this.fixPointColorPanel.Size = new System.Drawing.Size(14, 14);
@@ -251,19 +257,31 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Controls.Add(this.audioCaptureLabel);
+            this.groupBox5.Controls.Add(this.comboBox1);
             this.groupBox5.Controls.Add(this.audioCaptureCheck);
             this.groupBox5.Controls.Add(this.bgColorPanel);
             this.groupBox5.Controls.Add(this.bgColorLabel);
             this.groupBox5.Controls.Add(this.bgColorButton);
-            this.groupBox5.Location = new System.Drawing.Point(514, 146);
+            this.groupBox5.Location = new System.Drawing.Point(523, 34);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(202, 80);
+            this.groupBox5.Size = new System.Drawing.Size(202, 123);
             this.groupBox5.TabIndex = 60;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Outros";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(28, 77);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 164;
+            this.label1.Text = "Girar Imagem:";
             // 
             // audioCaptureLabel
             // 
@@ -275,6 +293,26 @@
             this.audioCaptureLabel.TabIndex = 52;
             this.audioCaptureLabel.Text = "Capturar áudio\r\ndurante exposição:";
             this.audioCaptureLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "45°",
+            "90°",
+            "135°",
+            "180°",
+            "-135°",
+            "-90°",
+            "-45°"});
+            this.comboBox1.Location = new System.Drawing.Point(106, 74);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(86, 21);
+            this.comboBox1.TabIndex = 163;
+            this.comboBox1.Tag = "";
             // 
             // audioCaptureCheck
             // 
@@ -322,6 +360,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.subsRndButton);
             this.groupBox4.Controls.Add(this.activateSubsLabel);
             this.groupBox4.Controls.Add(this.subColorLabel);
             this.groupBox4.Controls.Add(this.subLocationLabel);
@@ -334,14 +373,29 @@
             this.groupBox4.Controls.Add(this.subsLeftButton);
             this.groupBox4.Controls.Add(this.subsRightButton);
             this.groupBox4.Controls.Add(this.subsUpButton);
-            this.groupBox4.Location = new System.Drawing.Point(514, 35);
+            this.groupBox4.Location = new System.Drawing.Point(303, 161);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(202, 107);
+            this.groupBox4.Size = new System.Drawing.Size(202, 102);
             this.groupBox4.TabIndex = 50;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Legenda";
+            // 
+            // subsRndButton
+            // 
+            this.subsRndButton.BackColor = System.Drawing.Color.LightGray;
+            this.subsRndButton.BackgroundImage = global::StroopTest.Properties.Resources.random;
+            this.subsRndButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.subsRndButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.subsRndButton.Location = new System.Drawing.Point(174, 49);
+            this.subsRndButton.Margin = new System.Windows.Forms.Padding(2);
+            this.subsRndButton.Name = "subsRndButton";
+            this.subsRndButton.Size = new System.Drawing.Size(14, 14);
+            this.subsRndButton.TabIndex = 158;
+            this.subsRndButton.TabStop = false;
+            this.subsRndButton.UseVisualStyleBackColor = false;
+            this.subsRndButton.Click += new System.EventHandler(this.subLocationRnd_Click);
             // 
             // activateSubsLabel
             // 
@@ -402,10 +456,10 @@
             // 
             this.subColorButton.Enabled = false;
             this.subColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subColorButton.Location = new System.Drawing.Point(86, 71);
+            this.subColorButton.Location = new System.Drawing.Point(81, 70);
             this.subColorButton.Margin = new System.Windows.Forms.Padding(2);
             this.subColorButton.Name = "subColorButton";
-            this.subColorButton.Size = new System.Drawing.Size(106, 19);
+            this.subColorButton.Size = new System.Drawing.Size(111, 19);
             this.subColorButton.TabIndex = 51;
             this.subColorButton.Text = "escolher";
             this.subColorButton.UseVisualStyleBackColor = true;
@@ -416,7 +470,7 @@
             this.subColorPanel.BackColor = System.Drawing.Color.White;
             this.subColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.subColorPanel.Enabled = false;
-            this.subColorPanel.Location = new System.Drawing.Point(63, 73);
+            this.subColorPanel.Location = new System.Drawing.Point(63, 72);
             this.subColorPanel.Margin = new System.Windows.Forms.Padding(2);
             this.subColorPanel.Name = "subColorPanel";
             this.subColorPanel.Size = new System.Drawing.Size(14, 14);
@@ -428,7 +482,7 @@
             this.subsCenterButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subsCenterButton.BackgroundImage")));
             this.subsCenterButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.subsCenterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subsCenterButton.Location = new System.Drawing.Point(173, 49);
+            this.subsCenterButton.Location = new System.Drawing.Point(152, 49);
             this.subsCenterButton.Margin = new System.Windows.Forms.Padding(2);
             this.subsCenterButton.Name = "subsCenterButton";
             this.subsCenterButton.Size = new System.Drawing.Size(14, 14);
@@ -458,7 +512,7 @@
             this.subsLeftButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subsLeftButton.BackgroundImage")));
             this.subsLeftButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.subsLeftButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subsLeftButton.Location = new System.Drawing.Point(91, 49);
+            this.subsLeftButton.Location = new System.Drawing.Point(86, 49);
             this.subsLeftButton.Margin = new System.Windows.Forms.Padding(2);
             this.subsLeftButton.Name = "subsLeftButton";
             this.subsLeftButton.Size = new System.Drawing.Size(14, 14);
@@ -473,7 +527,7 @@
             this.subsRightButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subsRightButton.BackgroundImage")));
             this.subsRightButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.subsRightButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subsRightButton.Location = new System.Drawing.Point(119, 49);
+            this.subsRightButton.Location = new System.Drawing.Point(108, 49);
             this.subsRightButton.Margin = new System.Windows.Forms.Padding(2);
             this.subsRightButton.Name = "subsRightButton";
             this.subsRightButton.Size = new System.Drawing.Size(14, 14);
@@ -488,7 +542,7 @@
             this.subsUpButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("subsUpButton.BackgroundImage")));
             this.subsUpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.subsUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subsUpButton.Location = new System.Drawing.Point(147, 49);
+            this.subsUpButton.Location = new System.Drawing.Point(130, 49);
             this.subsUpButton.Margin = new System.Windows.Forms.Padding(2);
             this.subsUpButton.Name = "subsUpButton";
             this.subsUpButton.Size = new System.Drawing.Size(14, 14);
@@ -499,20 +553,52 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.delayTimeLabel);
+            this.groupBox3.Controls.Add(this.delayTime);
             this.groupBox3.Controls.Add(this.intervalTimeLabel);
             this.groupBox3.Controls.Add(this.intervalTime);
             this.groupBox3.Controls.Add(this.rndIntervalCheck);
             this.groupBox3.Controls.Add(this.rndIntervalLabel);
             this.groupBox3.Controls.Add(this.expoTime);
             this.groupBox3.Controls.Add(this.expoTimeLabel);
-            this.groupBox3.Location = new System.Drawing.Point(303, 35);
+            this.groupBox3.Location = new System.Drawing.Point(303, 34);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(190, 107);
+            this.groupBox3.Size = new System.Drawing.Size(202, 123);
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tempo";
+            // 
+            // delayTimeLabel
+            // 
+            this.delayTimeLabel.AutoSize = true;
+            this.delayTimeLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.delayTimeLabel.Location = new System.Drawing.Point(51, 73);
+            this.delayTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.delayTimeLabel.Name = "delayTimeLabel";
+            this.delayTimeLabel.Size = new System.Drawing.Size(62, 13);
+            this.delayTimeLabel.TabIndex = 63;
+            this.delayTimeLabel.Text = "Atraso (ms):";
+            // 
+            // delayTime
+            // 
+            this.delayTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.delayTime.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.delayTime.Location = new System.Drawing.Point(117, 71);
+            this.delayTime.Margin = new System.Windows.Forms.Padding(2);
+            this.delayTime.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.delayTime.Name = "delayTime";
+            this.delayTime.Size = new System.Drawing.Size(60, 20);
+            this.delayTime.TabIndex = 62;
             // 
             // intervalTimeLabel
             // 
@@ -546,7 +632,7 @@
             // rndIntervalCheck
             // 
             this.rndIntervalCheck.AutoSize = true;
-            this.rndIntervalCheck.Location = new System.Drawing.Point(162, 75);
+            this.rndIntervalCheck.Location = new System.Drawing.Point(163, 99);
             this.rndIntervalCheck.Margin = new System.Windows.Forms.Padding(2);
             this.rndIntervalCheck.Name = "rndIntervalCheck";
             this.rndIntervalCheck.Size = new System.Drawing.Size(15, 14);
@@ -556,7 +642,7 @@
             // rndIntervalLabel
             // 
             this.rndIntervalLabel.AutoSize = true;
-            this.rndIntervalLabel.Location = new System.Drawing.Point(12, 75);
+            this.rndIntervalLabel.Location = new System.Drawing.Point(13, 99);
             this.rndIntervalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.rndIntervalLabel.Name = "rndIntervalLabel";
             this.rndIntervalLabel.Size = new System.Drawing.Size(143, 13);
@@ -706,12 +792,12 @@
             // 
             this.instructionsBox.AcceptsReturn = true;
             this.instructionsBox.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.instructionsBox.Location = new System.Drawing.Point(302, 246);
+            this.instructionsBox.Location = new System.Drawing.Point(10, 379);
             this.instructionsBox.Margin = new System.Windows.Forms.Padding(2);
             this.instructionsBox.Multiline = true;
             this.instructionsBox.Name = "instructionsBox";
             this.instructionsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.instructionsBox.Size = new System.Drawing.Size(414, 111);
+            this.instructionsBox.Size = new System.Drawing.Size(715, 111);
             this.instructionsBox.TabIndex = 70;
             this.instructionsBox.Click += new System.EventHandler(this.writeInstructionsBox_Click);
             // 
@@ -924,7 +1010,7 @@
             // 
             this.instructionsLabel.AutoSize = true;
             this.instructionsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.instructionsLabel.Location = new System.Drawing.Point(304, 230);
+            this.instructionsLabel.Location = new System.Drawing.Point(12, 364);
             this.instructionsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.instructionsLabel.Name = "instructionsLabel";
             this.instructionsLabel.Size = new System.Drawing.Size(59, 13);
@@ -955,7 +1041,7 @@
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(666, 391);
+            this.cancelButton.Location = new System.Drawing.Point(674, 528);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 83;
@@ -967,7 +1053,7 @@
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(11, 391);
+            this.saveButton.Location = new System.Drawing.Point(11, 528);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 82;
@@ -981,7 +1067,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(754, 426);
+            this.ClientSize = new System.Drawing.Size(762, 563);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.panel1);
@@ -1001,6 +1087,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.delayTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.expoTime)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -1081,5 +1168,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Label delayTimeLabel;
+        private System.Windows.Forms.NumericUpDown delayTime;
+        private System.Windows.Forms.Button subsRndButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

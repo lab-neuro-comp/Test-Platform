@@ -244,6 +244,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\subtitlePosition\random.png" />
     <None Include="Resources\save.png" />
     <None Include="Resources\subtitlePosition\noDirection.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

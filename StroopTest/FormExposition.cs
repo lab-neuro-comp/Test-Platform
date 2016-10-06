@@ -23,22 +23,18 @@ namespace StroopTest
     public partial class FormExposition : Form
     {
         CancellationTokenSource cts;
-        StroopProgram programInUse = new StroopProgram(); // programa em uso
-        
-        private static float elapsedTime; // tempo decorrido
-        private string path; // = (Path.GetDirectoryName(Application.ExecutablePath) + "/StroopTestFiles/"); // caminho diretório
-
-        private List<string> outputContent;
-
-        private string outputDataPath;
+        StroopProgram programInUse = new StroopProgram(); // program in current use
+        private static float elapsedTime; // elapsed time during each item exposition
+        private string path; // global program path
+        private List<string> outputContent; // output file content
+        private string outputDataPath; // output file Path
 
         // beginAudio
-        private WaveIn waveSource = null; // entrada de áudio
-        public WaveFileWriter waveFile = null; // arquivo salvar áudio
+        private WaveIn waveSource = null; // audio input
+        public WaveFileWriter waveFile = null; // writer audio file
         // endAudio
-
-        //playAudio
-        private SoundPlayer Player = new SoundPlayer();
+        
+        private SoundPlayer Player = new SoundPlayer(); // audio playes
 
         public FormExposition(string prgName, string usrName, string defaultFolderPath)
         {
@@ -62,31 +58,29 @@ namespace StroopTest
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        private async void startExpo() // clique do botão define o programa a ser executado e inicia exposição
+        private async void startExpo() // starts Exposition
         {
             try
             {
                 if (!File.Exists(path + "/prg/" + programInUse.ProgramName + ".prg")) { throw new Exception("Arquivo programa: " + programInUse.ProgramName + ".prg" + "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/")); } // confere existência do arquivo
-                programInUse.readProgramFile(path + "/prg/" + programInUse.ProgramName + ".prg");
+                programInUse.readProgramFile(path + "/prg/" + programInUse.ProgramName + ".prg"); // reads program into programInUse
 
-                if (programInUse.NeedsEdition)
+                if (programInUse.NeedsEdition) // if program is incomplete
                 {
                     MessageBox.Show("O programa contém parâmetros incorretos e/ou está incompleto!\nCorrija o programa na interface a seguir.");
-                    repairProgram(programInUse, path);
-                    programInUse.readProgramFile(path + "/prg/" + programInUse.ProgramName + ".prg");
+                    repairProgram(programInUse, path); // opens prgConfig for program edition
+                    programInUse.readProgramFile(path + "/prg/" + programInUse.ProgramName + ".prg"); // reads new program
                 }
 
-                var cvt = new FontConverter();
-                wordLabel.Visible = false;
                 wordLabel.Name = "error";
+                wordLabel.Visible = false;
                 wordLabel.FlatStyle = FlatStyle.Flat;
                 wordLabel.TextAlign = ContentAlignment.MiddleCenter;
                 wordLabel.AutoEllipsis = true;
                 wordLabel.Dock = DockStyle.Fill;
                 wordLabel.AutoSize = false;
                 wordLabel.Font = new Font(wordLabel.Font.FontFamily, Single.Parse(programInUse.FontWordLabel));
-                // wordLabel.Font = cvt.ConvertFromString(wordLabel.Font.FontFamily + ";" + programInUse.FontWordLabel + "pt") as Font;
-                //MessageBox.Show(wordLabel.Font.ToString());
+                BackColor = Color.White;
 
                 switch (programInUse.ExpositionType)
                 {
@@ -119,87 +113,64 @@ namespace StroopTest
         private void repairProgram(StroopProgram program, string path)
         {
             FormPrgConfig configureProgram;
-
             try
             {
-                    configureProgram = new FormPrgConfig(path, "/" + programInUse.ProgramName);
-                    configureProgram.ShowDialog();
+                configureProgram = new FormPrgConfig(path, "/" + programInUse.ProgramName);
+                configureProgram.ShowDialog();
             }
             catch (Exception ex) { throw new Exception("Edição não pode ser feita " + ex.Message); }
         }
 
-        private async Task startWordExposition(StroopProgram program) // inicia exposição de palavra
+        private async Task startWordExposition(StroopProgram program) // starts colored words exposition - classic Stroop
         {
             cts = new CancellationTokenSource();
-            
-            Controls.Add(this.wordLabel);
-            BackColor = Color.White;
+            string textCurrent = null, colorCurrent = null, outputFileName = null; string audioDetail = "false";
+            string[] labelText = null, labelColor = null, audioDirs = null, subtitlesArray = null;
+            int textArrayCounter = 0, colorArrayCounter = 0, audioCounter = 0, subtitleCounter = 0;
+            List<string> outputContent = new List<string>();
 
-            string textCurrent = null, colorCurrent = null;
-            int textArrayCounter = 0, colorArrayCounter = 0;
-            string outputFileName = "";
-            
             var interval = Task.Run(async delegate{ await Task.Delay(program.IntervalTime, cts.Token); });
             var exposition = Task.Run(async delegate{ await Task.Delay(program.ExpositionTime, cts.Token); });
-            outputContent = new List<string>();
-
-            string[] labelText = null, labelColor = null, audioDirs = null, subtitlesArray = null;
-            int audioCounter = 0, k = 0;
-
-            string audioDetail = "false";
-
+            
             try
             {
-                outputFileName = outputDataPath + program.UserName + "_" + program.ProgramName + ".txt";
-
-                // Define vetor de estímulos a ser apresentado
-
-                labelText = program.readListFile(path + "/lst/" + program.WordsListFile); // vetor de strings recebem as listas de palavra e cor
-                labelColor = program.readListFile(path + "/lst/" + program.ColorsListFile);
-                
-                if (program.AudioListFile != "false")
-                {
-                    audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile);
-                    if (program.ExpositionRandom)
-                    {
-                        audioDirs = shuffleArray(audioDirs, program.NumExpositions, 6);
-                    }
-                }
-
-                if (program.ExpositionRandom) // se exposição aleatória, randomiza itens de acordo com o numero de estimulos
+                outputFileName = outputDataPath + program.UserName + "_" + program.ProgramName + ".txt"; // defines outputFileName
+                // reading list files:
+                labelText = program.readListFile(path + "/lst/" + program.WordsListFile); // string array receives wordsList itens from list file
+                labelColor = program.readListFile(path + "/lst/" + program.ColorsListFile); // string array receives colorsList itens from list file
+                if (program.ExpositionRandom) // if the presentation is random, shuffles arrays
                 {
                     labelText = shuffleArray(labelText, program.NumExpositions, 1);
                     labelColor = shuffleArray(labelColor, program.NumExpositions, 5);
                 }
-                
-                foreach (string c in labelColor)
+                if (program.AudioListFile != "false") // if there is an audioFile to be played, string array receives audioList itens from list file
+                {
+                    audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile);
+                    if (program.ExpositionRandom) { audioDirs = shuffleArray(audioDirs, program.NumExpositions, 6); } // if the presentation is random, shuffles array
+                }
+                foreach (string c in labelColor) // tests if colors list contains only hexadecimal color codes
                 {
                     if(!Regex.IsMatch(c, "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$"))
                     {
                         throw new Exception("A lista de cores '" + program.ColorsListFile + "' contém valores inválidos!\n" + c + " por exemplo não é um valor válido. A lista de cores deve conter apenas valores hexadecimais (ex: #000000)");
                     }
                 }
+                // presenting test instructions:
+                await showInstructions(program, cts.Token);
                 
-                await showInstructions(program, cts.Token); // Apresenta instruções se houver
-                
-                while (true) // laço de repetição do programa até que o usuário decida não repetir mais o mesmo programa
+                while (true)
                 {
-                    textArrayCounter = 0; // zera contadores
+                    textArrayCounter = 0; // counters to zero
                     colorArrayCounter = 0;
-
-                    changeBackgroundColor(program, true); // muda cor de fundo se houver parametro                    
-                    elapsedTime = 0; // zera tempo em milissegundos decorrido
-
-                    // beginAudio
-                    if (program.AudioCapture && program.ExpositionType != "txtaud") { startRecordingAudio(program); } // inicia gravação áudio
-                    // endAudio
-
-                    await Task.Delay(program.IntervalTime, cts.Token);
-
-                    for (int counter = 1; counter <= program.NumExpositions; counter++) // inicia loop com exposições
+                    elapsedTime = 0; // elapsed time to zero
+                    changeBackgroundColor(program, true); // changes background color, if there is one defined
+                    if (program.AudioCapture && program.ExpositionType != "txtaud") { startRecordingAudio(program); } // starts audio recording
+                    await Task.Delay(program.IntervalTime, cts.Token); // first interval before exposition begins
+                    // exposition loop:
+                    for (int counter = 1; counter <= program.NumExpositions; counter++) 
                     {
                         subtitleLabel.Visible = false;
-                        wordLabel.Visible = false; // intervalo
+                        wordLabel.Visible = false;
                         await intervalOrFixPoint(program, cts.Token);
 
                         textCurrent = labelText[textArrayCounter];
@@ -237,11 +208,11 @@ namespace StroopTest
                             {
                                 subtitleLabel.ForeColor = Color.Black;
                             }
-                            subtitleLabel.Text = subtitlesArray[k];
+                            subtitleLabel.Text = subtitlesArray[subtitleCounter];
                             defineSubPosition(program.SubtitlePlace);
                             subtitleLabel.Visible = true;
-                            if (k == (subtitlesArray.Count() - 1)) k = 0;
-                            else k++;
+                            if (subtitleCounter == (subtitlesArray.Count() - 1)) subtitleCounter = 0;
+                            else subtitleCounter++;
                         }
 
                         StroopProgram.writeLineOutput(program, textCurrent, colorCurrent, counter, outputContent, elapsedTime, program.ExpositionType, Path.GetFileNameWithoutExtension(audioDetail));
@@ -541,54 +512,7 @@ namespace StroopTest
             }
 
         }
-
-        /*
-        private void showImageInPanel(StroopProgram program, Graphics g, int index)
-        {
-            if (program.ExpandImage)
-            {
-                program.SubtitlePlace = 0;
-            }
-
-            string[] labelText = program.readListFile(path + "/lst/" + "padrao_Words.lst");
-
-            panel1.Paint += new PaintEventHandler((sender, e) =>
-            {
-                e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-
-                PointF locationToDraw = new PointF();
-
-                SizeF textSize = e.Graphics.MeasureString(labelText[index], Font, 60);
-
-                switch (program.SubtitlePlace)
-                {
-                    case 1: //baixo
-                        locationToDraw.X = ClientSize.Width / 2 - textSize.Width / 2;
-                        locationToDraw.Y = panel1.Location.Y + panel1.Height + 50;
-                        break;
-                    case 2: //esquerda
-                        locationToDraw.X = panel1.Location.X - (textSize.Width + 50);
-                        locationToDraw.Y = ClientSize.Height / 2 - textSize.Height / 2;
-                        break;
-                    case 3: //direita
-                        locationToDraw.X = panel1.Location.X + panel1.Width + 50;
-                        locationToDraw.Y = ClientSize.Height / 2 - textSize.Height / 2;
-                        break;
-                    case 4: // cima
-                        locationToDraw.X = panel1.Location.Y - (textSize.Height + 50);
-                        locationToDraw.Y = ClientSize.Width / 2 - textSize.Width / 2;
-                        break;
-                    default: // centro
-                        locationToDraw.X = ClientSize.Width / 2 - textSize.Width / 2;
-                        locationToDraw.Y = ClientSize.Height / 2 - textSize.Height / 2;
-                        break;
-                }
-
-                e.Graphics.DrawString(labelText[index], Font, Brushes.Black, locationToDraw);
-            });
-        }
-        */
-
+        
         private string[] shuffleArray(string[] array, int expectedLength, int rndSeed) // randomiza Vetor - parâmetros: vetor / tamanho esperado do vetor randomizado
         {
             List<string> randomArray = new List<string>();
@@ -692,9 +616,8 @@ namespace StroopTest
         {
             try
             {
-                int intervalTime = 400;
-
-                if (program.IntervalTimeRandom && program.IntervalTime > 400)
+                int intervalTime = 400; // minimal rnd interval time
+                if (program.IntervalTimeRandom && program.IntervalTime > 400) // if rnd interval active, it will be a value between 400 and the defined interval time
                 {
                     Random random = new Random();
                     intervalTime = random.Next(400, program.IntervalTime);
@@ -704,18 +627,18 @@ namespace StroopTest
                     intervalTime = program.IntervalTime;
                 }
 
-                if (program.FixPoint != "+" && program.FixPoint != "o")
+                if (program.FixPoint != "+" && program.FixPoint != "o") // if there is no fixPoint determination, executes normal intervalTime
                 {
                     await Task.Delay(intervalTime);
                 }
-                else
+                else // if it uses fixPoint
                 {
                     if (program.FixPointColor == "false") { program.FixPointColor = "#D01C1F"; }
                     SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(program.FixPointColor));
 
                     switch (program.FixPoint)
                     {
-                        case "+":
+                        case "+": // cross fixPoint
                             Graphics formGraphicsCross1 = this.CreateGraphics();
                             Graphics formGraphicsCross2 = this.CreateGraphics();
                             float xCross1 = ClientSize.Width / 2 - 25;
@@ -730,7 +653,7 @@ namespace StroopTest
                             formGraphicsCross1.Dispose();
                             formGraphicsCross2.Dispose();
                             break;
-                        case "o":
+                        case "o": // circle fixPoint
                             Graphics formGraphicsEllipse = this.CreateGraphics();
                             float xEllipse = ClientSize.Width / 2 - 25;
                             float yEllipse = ClientSize.Height / 2 - 25;
@@ -744,9 +667,10 @@ namespace StroopTest
                     myBrush.Dispose();
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                this.Close();
+                MessageBox.Show(ex.Message);
+                Close();
             }
         }
         

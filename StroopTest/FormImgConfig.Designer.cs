@@ -130,6 +130,7 @@
             this.imgPathDataGridView.TabIndex = 10;
             this.imgPathDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.imgPathDataGridView_CellContentClick);
             this.imgPathDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.imgPathDataGridView_CellMouseClick);
+            this.imgPathDataGridView.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.imgPathDataGridView_CellStateChanged);
             this.imgPathDataGridView.SelectionChanged += new System.EventHandler(this.imgPathDataGridView_SelectionChanged);
             this.imgPathDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.imgPathDataGridView_KeyDown);
             // 

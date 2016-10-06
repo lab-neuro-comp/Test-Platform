@@ -92,11 +92,6 @@ namespace StroopTest
         private void deleteRow_Click(object sender, EventArgs e)
         {
             DataGridView dgv = imgPathDataGridView;
-            if(dgv.RowCount == 1)
-            {
-                pictureBox.Image = null;
-                pictureBox.Refresh();
-            }
             DGVManipulation.deleteDGVRow(dgv);
         }
 
@@ -193,6 +188,16 @@ namespace StroopTest
                     DGVManipulation.moveDGVRowDown(dgv);
                 }
                 catch { }
+            }
+        }
+
+        private void imgPathDataGridView_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            DataGridView dgv = imgPathDataGridView;
+            if (dgv.RowCount <= 1)
+            {
+                pictureBox.Image = null;
+                pictureBox.Refresh();
             }
         }
     }

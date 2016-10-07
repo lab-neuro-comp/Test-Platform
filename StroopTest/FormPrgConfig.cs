@@ -607,9 +607,13 @@ namespace StroopTest
                                  programWrite.FontWordLabel + " " +
                                  programWrite.ExpandImage + " " +
                                  programWrite.AudioListFile + " " +
-                                 programWrite.SubtitlesListFile
+                                 programWrite.SubtitlesListFile + " " +
+                                 programWrite.FixPointColor + " " +
+                                 programWrite.DelayTime + " " +
+                                 programWrite.RotateImage + " " +
+                                 programWrite.RndSubtitlePlace
                                  ;
-                
+
                 saveProgramFile(text, programWrite.InstructionText);
                 this.Close();
             }

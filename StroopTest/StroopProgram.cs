@@ -14,7 +14,7 @@ namespace StroopTest
 {
     class StroopProgram
     {
-        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_Words.lst padrao_Colors.lst false false false 1 false txt false false 160 false false false false 0 false false";
+        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_Words.lst padrao_Colors.lst false false false 1 false txt false false 160 false false false false 0 0 false";
         private string defaultWordsListName = "padrao_Words.lst";
         private string defaultWordsListText = "amarelo azul verde vermelho";
         private string defaultColorsListName = "padrao_Colors.lst";
@@ -56,7 +56,7 @@ namespace StroopTest
 
         private string fixPointColor = "false"; // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
         private int delayTime;                  // [21]  tempo de atraso = intervalo se não for definido
-        private bool rotateImage = false;       // [22]  rotacionar imagem (90, 180, 270, 360)
+        private int rotateImage;                // [22]  rotacionar imagem (90, 180, 270, 360)
         private bool rndSubtitlePlace;          // [23]  localizacão da legenda aleatória
 
         
@@ -407,19 +407,12 @@ namespace StroopTest
             }
         }
 
-        public bool RotateImage
+        public int RotateImage
         {
             get { return rotateImage;  }
             set
             {
-                if (value == true || value == false)
-                {
-                    rotateImage = value;
-                }
-                else
-                {
-                    throw new ArgumentException(errorExMsg + "\nRotacao de Imagem deve ser boleana (true or false)");
-                }
+                rotateImage = value;
             }
         }
 
@@ -523,7 +516,7 @@ namespace StroopTest
                 
                 FixPointColor = config[20];
                 DelayTime = Int32.Parse(config[21]);
-                RotateImage = Boolean.Parse(config[22]);
+                RotateImage = Int32.Parse(config[22]);
                 RndSubtitlePlace = Boolean.Parse(config[23]);
 
                 linesInstruction = File.ReadAllLines(filepath);               

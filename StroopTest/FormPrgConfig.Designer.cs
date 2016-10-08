@@ -43,7 +43,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.audioCaptureLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.rotateImgComboBox = new System.Windows.Forms.ComboBox();
             this.audioCaptureCheck = new System.Windows.Forms.CheckBox();
             this.bgColorPanel = new System.Windows.Forms.Panel();
             this.bgColorLabel = new System.Windows.Forms.Label();
@@ -132,7 +132,7 @@
             this.panel1.Location = new System.Drawing.Point(11, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(738, 507);
+            this.panel1.Size = new System.Drawing.Size(520, 584);
             this.panel1.TabIndex = 0;
             // 
             // helpButton
@@ -140,7 +140,7 @@
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.helpButton.BackgroundImage = global::StroopTest.Properties.Resources.helpButton;
             this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(699, 9);
+            this.helpButton.Location = new System.Drawing.Point(479, 9);
             this.helpButton.Margin = new System.Windows.Forms.Padding(2);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(26, 26);
@@ -259,16 +259,16 @@
             // 
             this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Controls.Add(this.audioCaptureLabel);
-            this.groupBox5.Controls.Add(this.comboBox1);
+            this.groupBox5.Controls.Add(this.rotateImgComboBox);
             this.groupBox5.Controls.Add(this.audioCaptureCheck);
             this.groupBox5.Controls.Add(this.bgColorPanel);
             this.groupBox5.Controls.Add(this.bgColorLabel);
             this.groupBox5.Controls.Add(this.bgColorButton);
-            this.groupBox5.Location = new System.Drawing.Point(523, 34);
+            this.groupBox5.Location = new System.Drawing.Point(10, 362);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(202, 123);
+            this.groupBox5.Size = new System.Drawing.Size(495, 78);
             this.groupBox5.TabIndex = 60;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Outros";
@@ -276,7 +276,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 77);
+            this.label1.Location = new System.Drawing.Point(297, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
@@ -294,12 +294,13 @@
             this.audioCaptureLabel.Text = "Capturar áudio\r\ndurante exposição:";
             this.audioCaptureLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // comboBox1
+            // rotateImgComboBox
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.rotateImgComboBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.rotateImgComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.rotateImgComboBox.FormattingEnabled = true;
+            this.rotateImgComboBox.Items.AddRange(new object[] {
+            "-",
             "45°",
             "90°",
             "135°",
@@ -307,12 +308,12 @@
             "-135°",
             "-90°",
             "-45°"});
-            this.comboBox1.Location = new System.Drawing.Point(106, 74);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(86, 21);
-            this.comboBox1.TabIndex = 163;
-            this.comboBox1.Tag = "";
+            this.rotateImgComboBox.Location = new System.Drawing.Point(375, 15);
+            this.rotateImgComboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.rotateImgComboBox.Name = "rotateImgComboBox";
+            this.rotateImgComboBox.Size = new System.Drawing.Size(110, 21);
+            this.rotateImgComboBox.TabIndex = 163;
+            this.rotateImgComboBox.Tag = "";
             // 
             // audioCaptureCheck
             // 
@@ -330,7 +331,7 @@
             // bgColorPanel
             // 
             this.bgColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bgColorPanel.Location = new System.Drawing.Point(106, 51);
+            this.bgColorPanel.Location = new System.Drawing.Point(104, 52);
             this.bgColorPanel.Margin = new System.Windows.Forms.Padding(2);
             this.bgColorPanel.Name = "bgColorPanel";
             this.bgColorPanel.Size = new System.Drawing.Size(14, 14);
@@ -339,7 +340,7 @@
             // bgColorLabel
             // 
             this.bgColorLabel.AutoSize = true;
-            this.bgColorLabel.Location = new System.Drawing.Point(28, 51);
+            this.bgColorLabel.Location = new System.Drawing.Point(26, 52);
             this.bgColorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bgColorLabel.Name = "bgColorLabel";
             this.bgColorLabel.Size = new System.Drawing.Size(74, 13);
@@ -349,10 +350,10 @@
             // bgColorButton
             // 
             this.bgColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bgColorButton.Location = new System.Drawing.Point(125, 48);
+            this.bgColorButton.Location = new System.Drawing.Point(123, 49);
             this.bgColorButton.Margin = new System.Windows.Forms.Padding(2);
             this.bgColorButton.Name = "bgColorButton";
-            this.bgColorButton.Size = new System.Drawing.Size(67, 19);
+            this.bgColorButton.Size = new System.Drawing.Size(138, 19);
             this.bgColorButton.TabIndex = 61;
             this.bgColorButton.Text = "escolher";
             this.bgColorButton.UseVisualStyleBackColor = true;
@@ -792,12 +793,12 @@
             // 
             this.instructionsBox.AcceptsReturn = true;
             this.instructionsBox.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.instructionsBox.Location = new System.Drawing.Point(10, 379);
+            this.instructionsBox.Location = new System.Drawing.Point(10, 459);
             this.instructionsBox.Margin = new System.Windows.Forms.Padding(2);
             this.instructionsBox.Multiline = true;
             this.instructionsBox.Name = "instructionsBox";
             this.instructionsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.instructionsBox.Size = new System.Drawing.Size(715, 111);
+            this.instructionsBox.Size = new System.Drawing.Size(495, 111);
             this.instructionsBox.TabIndex = 70;
             this.instructionsBox.Click += new System.EventHandler(this.writeInstructionsBox_Click);
             // 
@@ -1010,7 +1011,7 @@
             // 
             this.instructionsLabel.AutoSize = true;
             this.instructionsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.instructionsLabel.Location = new System.Drawing.Point(12, 364);
+            this.instructionsLabel.Location = new System.Drawing.Point(12, 444);
             this.instructionsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.instructionsLabel.Name = "instructionsLabel";
             this.instructionsLabel.Size = new System.Drawing.Size(59, 13);
@@ -1041,7 +1042,7 @@
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(674, 528);
+            this.cancelButton.Location = new System.Drawing.Point(456, 603);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 83;
@@ -1053,7 +1054,7 @@
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(11, 528);
+            this.saveButton.Location = new System.Drawing.Point(11, 603);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 82;
@@ -1067,7 +1068,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(762, 563);
+            this.ClientSize = new System.Drawing.Size(544, 638);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.panel1);
@@ -1172,6 +1173,6 @@
         private System.Windows.Forms.NumericUpDown delayTime;
         private System.Windows.Forms.Button subsRndButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox rotateImgComboBox;
     }
 }

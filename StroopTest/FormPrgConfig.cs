@@ -498,14 +498,6 @@ namespace StroopTest
                         else { throw new Exception("Selecione o arquivo de lista de audio!"); }
                         break;
                 }
-
-                /*
-                FixPointColor = config[20];
-                DelayTime = Int32.Parse(config[21]);
-                RotateImage = Boolean.Parse(config[22]);
-                RndSubtitlePlace = Boolean.Parse(config[23]);
-                */
-
                 if (Regex.IsMatch(bgColorButton.Text, hexPattern)) { programWrite.BackgroundColor = bgColorButton.Text; }
                 else programWrite.BackgroundColor = "false";
 
@@ -564,13 +556,43 @@ namespace StroopTest
                         programWrite.FixPoint = "false";
                     }
                 }
+                
+                if (openAudioListButton.Enabled) { programWrite.AudioListFile = openAudioListButton.Text; }
+                else { programWrite.AudioListFile = "false"; }
 
                 if (Regex.IsMatch(fixPointColorButton.Text, hexPattern)) programWrite.FixPointColor = fixPointColorButton.Text;
                 else programWrite.FixPointColor = "false";
 
-                if (openAudioListButton.Enabled) { programWrite.AudioListFile = openAudioListButton.Text; }
-                else { programWrite.AudioListFile = "false"; }
+                programWrite.DelayTime = Convert.ToInt32(delayTime.Value);
 
+                switch (rotateImgComboBox.SelectedIndex)
+                {
+                    case 0:
+                        programWrite.RotateImage  = 0;
+                        break;
+                    case 1:
+                        programWrite.RotateImage = 45;
+                        break;
+                    case 2:
+                        programWrite.RotateImage = 90;
+                        break;
+                    case 3:
+                        programWrite.RotateImage = 135;
+                        break;
+                    case 4:
+                        programWrite.RotateImage = 180;
+                        break;
+                    case 5:
+                        programWrite.RotateImage = 225;
+                        break;
+                    case 6:
+                        programWrite.RotateImage = 270;
+                        break;
+                    case 7:
+                        programWrite.RotateImage = 315;
+                        break;
+                }
+                
                 string textLines = "";
                 if (instructionsBox.Lines.Length > 0 && instructionsBox.Text != instructionBoxText) // lê instrução se houver
                 {
@@ -669,23 +691,87 @@ namespace StroopTest
                         bgColorPanel.BackColor = ColorTranslator.FromHtml(program.BackgroundColor);
                     }
                 }
-                /*
+                
                 if (program.FixPointColor.ToLower() == "false")
                 {
-                    panelFixPointColorPanel.BackColor = ColorTranslator.FromHtml("#D01C1F");
-                    fixPointColor.Text = "#D01C1F";
+                    fixPointColorPanel.BackColor = ColorTranslator.FromHtml("#D01C1F");
+                    fixPointColorButton.Text = "#D01C1F";
                 }
                 else
                 {
                     if ((Regex.IsMatch(program.FixPointColor, hexPattern)))
                     {
-                        fixPointColor.Text = program.FixPointColor;
-                        panelFixPointColorPanel.BackColor = ColorTranslator.FromHtml(program.FixPointColor);
+                        fixPointColorButton.Text = program.FixPointColor;
+                        fixPointColorPanel.BackColor = ColorTranslator.FromHtml(program.FixPointColor);
                     }
                     else { throw new Exception("Deu errado no match"); }
                 }
-                */
+
+
+                delayTime.Value = program.DelayTime;
+
+                switch (program.RotateImage)
+                {
+                    case 45:
+                        rotateImgComboBox.SelectedIndex = 1;
+                        break;
+                    case 90:
+                        rotateImgComboBox.SelectedIndex = 2;
+                        break;
+                    case 135:
+                        rotateImgComboBox.SelectedIndex = 3;
+                        break;
+                    case 180:
+                        rotateImgComboBox.SelectedIndex = 4;
+                        break;
+                    case 225:
+                        rotateImgComboBox.SelectedIndex = 5;
+                        break;
+                    case 270:
+                        rotateImgComboBox.SelectedIndex = 6;
+                        break;
+                    case 315:
+                        rotateImgComboBox.SelectedIndex = 7;
+                        break;
+                    default:
+                        rotateImgComboBox.SelectedIndex = 0;
+                        break;
+                }
+
+                /*
                 
+                programWrite.DelayTime = Convert.ToInt32(delayTime.Value);
+
+                switch (rotateImgComboBox.SelectedIndex)
+                {
+                    case 0:
+                        programWrite.RotateImage  = 0;
+                        break;
+                    case 1:
+                        programWrite.RotateImage = 45;
+                        break;
+                    case 2:
+                        programWrite.RotateImage = 90;
+                        break;
+                    case 3:
+                        programWrite.RotateImage = 135;
+                        break;
+                    case 4:
+                        programWrite.RotateImage = 180;
+                        break;
+                    case 5:
+                        programWrite.RotateImage = 225;
+                        break;
+                    case 6:
+                        programWrite.RotateImage = 270;
+                        break;
+                    case 7:
+                        programWrite.RotateImage = 315;
+                        break;
+                }
+                */
+
+
                 if (program.SubtitleShow)
                 {
                     activateSubsCheck.Checked = true;

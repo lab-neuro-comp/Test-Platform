@@ -49,12 +49,12 @@ namespace StroopTest
             InitializeComponent();
             path = dataFolderPath;
             chooseExpoType.SelectedIndex = 0;
+            rotateImgComboBox.SelectedIndex = 0;
             subDirectionList.Add(subsDownButton);
             subDirectionList.Add(subsLeftButton);
             subDirectionList.Add(subsRightButton);
             subDirectionList.Add(subsUpButton);
             subDirectionList.Add(subsCenterButton);
-            subDirectionList.Add(subsRndButton);
             enableSubsItens(false);
 
             toolTipsConfig();
@@ -301,6 +301,7 @@ namespace StroopTest
 
         private void enableSubsItens (bool subsEnabledBool)
         {
+            
             openSubsListButton.Enabled = subsEnabledBool;
             subLocationLabel.Enabled = subsEnabledBool;
             foreach (Button button in subDirectionList)
@@ -311,6 +312,13 @@ namespace StroopTest
                 else button.BackColor = Color.White;
             }
             subColorLabel.Enabled = subsEnabledBool; subColorPanel.Enabled = subsEnabledBool; subColorButton.Enabled = subsEnabledBool;
+            subsRndCheckBox.Enabled = subsEnabledBool;
+
+            if (subsEnabledBool == false)
+            {
+                subsRndCheckBox.Enabled = false;
+                subsRndCheckBox.Checked = false;
+            }
         }
 
         private void openSubsList_Click(object sender, EventArgs e)
@@ -342,12 +350,7 @@ namespace StroopTest
         {
             selectSubDirectionNumber(5);
         }
-
-        private void subLocationRnd_Click(object sender, EventArgs e)
-        {
-            selectSubDirectionNumber(6);
-        }
-
+        
         private void selectSubDirectionNumber(int number)
         {
             for (int i = 0; i < subDirectionList.Count; i++) // Loop with for.
@@ -653,9 +656,7 @@ namespace StroopTest
             try
             {
                 program.readProgramFile(path + "/prg/" + editPrgName + ".prg");
-
-
-
+                
                 prgNameTextBox.Text = program.ProgramName;
                 numExpo.Value = program.NumExpositions;
                 expoTime.Value = program.ExpositionTime;
@@ -737,48 +738,14 @@ namespace StroopTest
                         rotateImgComboBox.SelectedIndex = 0;
                         break;
                 }
-
-                /*
                 
-                programWrite.DelayTime = Convert.ToInt32(delayTime.Value);
-
-                switch (rotateImgComboBox.SelectedIndex)
-                {
-                    case 0:
-                        programWrite.RotateImage  = 0;
-                        break;
-                    case 1:
-                        programWrite.RotateImage = 45;
-                        break;
-                    case 2:
-                        programWrite.RotateImage = 90;
-                        break;
-                    case 3:
-                        programWrite.RotateImage = 135;
-                        break;
-                    case 4:
-                        programWrite.RotateImage = 180;
-                        break;
-                    case 5:
-                        programWrite.RotateImage = 225;
-                        break;
-                    case 6:
-                        programWrite.RotateImage = 270;
-                        break;
-                    case 7:
-                        programWrite.RotateImage = 315;
-                        break;
-                }
-                */
-
-
                 if (program.SubtitleShow)
                 {
                     activateSubsCheck.Checked = true;
                     enableSubsItens(true);
-
-                    subDirectionNumber = program.SubtitlePlace;
-                    if(program.SubtitlesListFile.ToLower() != "false")
+                    selectSubDirectionNumber(program.SubtitlePlace);
+                    
+                    if (program.SubtitlesListFile.ToLower() != "false")
                     {
                         openSubsListButton.Text = program.SubtitlesListFile;
                     }
@@ -792,9 +759,6 @@ namespace StroopTest
                         subColorButton.Text = "escolher";
                         subColorPanel.BackColor = Color.White;
                     }
-
-                    subDirectionNumber = program.SubtitlePlace;
-
                 }
                 else
                 {
@@ -917,6 +881,11 @@ namespace StroopTest
         private void cancelButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void subsRndCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

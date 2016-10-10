@@ -49,7 +49,6 @@
             this.bgColorLabel = new System.Windows.Forms.Label();
             this.bgColorButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.subsRndButton = new System.Windows.Forms.Button();
             this.activateSubsLabel = new System.Windows.Forms.Label();
             this.subColorLabel = new System.Windows.Forms.Label();
             this.subLocationLabel = new System.Windows.Forms.Label();
@@ -100,6 +99,7 @@
             this.prgNameLabel = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
+            this.subsRndCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -158,7 +158,7 @@
             this.groupBox6.Controls.Add(this.fixPointCircle);
             this.groupBox6.Controls.Add(this.fixPointColorButton);
             this.groupBox6.Controls.Add(this.fixPointColorPanel);
-            this.groupBox6.Location = new System.Drawing.Point(303, 274);
+            this.groupBox6.Location = new System.Drawing.Point(303, 304);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
@@ -268,7 +268,7 @@
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(495, 78);
+            this.groupBox5.Size = new System.Drawing.Size(275, 78);
             this.groupBox5.TabIndex = 60;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Outros";
@@ -276,7 +276,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(297, 18);
+            this.label1.Location = new System.Drawing.Point(127, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
@@ -308,11 +308,11 @@
             "-135°",
             "-90°",
             "-45°"});
-            this.rotateImgComboBox.Location = new System.Drawing.Point(375, 15);
+            this.rotateImgComboBox.Location = new System.Drawing.Point(203, 15);
             this.rotateImgComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.rotateImgComboBox.Name = "rotateImgComboBox";
-            this.rotateImgComboBox.Size = new System.Drawing.Size(110, 21);
-            this.rotateImgComboBox.TabIndex = 163;
+            this.rotateImgComboBox.Size = new System.Drawing.Size(58, 21);
+            this.rotateImgComboBox.TabIndex = 25;
             this.rotateImgComboBox.Tag = "";
             // 
             // audioCaptureCheck
@@ -320,11 +320,11 @@
             this.audioCaptureCheck.AutoSize = true;
             this.audioCaptureCheck.Checked = true;
             this.audioCaptureCheck.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.audioCaptureCheck.Location = new System.Drawing.Point(106, 28);
+            this.audioCaptureCheck.Location = new System.Drawing.Point(106, 17);
             this.audioCaptureCheck.Margin = new System.Windows.Forms.Padding(2);
             this.audioCaptureCheck.Name = "audioCaptureCheck";
             this.audioCaptureCheck.Size = new System.Drawing.Size(15, 14);
-            this.audioCaptureCheck.TabIndex = 60;
+            this.audioCaptureCheck.TabIndex = 24;
             this.audioCaptureCheck.TabStop = false;
             this.audioCaptureCheck.UseVisualStyleBackColor = true;
             // 
@@ -354,14 +354,14 @@
             this.bgColorButton.Margin = new System.Windows.Forms.Padding(2);
             this.bgColorButton.Name = "bgColorButton";
             this.bgColorButton.Size = new System.Drawing.Size(138, 19);
-            this.bgColorButton.TabIndex = 61;
+            this.bgColorButton.TabIndex = 26;
             this.bgColorButton.Text = "escolher";
             this.bgColorButton.UseVisualStyleBackColor = true;
             this.bgColorButton.Click += new System.EventHandler(this.chooseBGColor);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.subsRndButton);
+            this.groupBox4.Controls.Add(this.subsRndCheckBox);
             this.groupBox4.Controls.Add(this.activateSubsLabel);
             this.groupBox4.Controls.Add(this.subColorLabel);
             this.groupBox4.Controls.Add(this.subLocationLabel);
@@ -378,25 +378,10 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(202, 102);
+            this.groupBox4.Size = new System.Drawing.Size(202, 139);
             this.groupBox4.TabIndex = 50;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Legenda";
-            // 
-            // subsRndButton
-            // 
-            this.subsRndButton.BackColor = System.Drawing.Color.LightGray;
-            this.subsRndButton.BackgroundImage = global::StroopTest.Properties.Resources.random;
-            this.subsRndButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.subsRndButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subsRndButton.Location = new System.Drawing.Point(174, 49);
-            this.subsRndButton.Margin = new System.Windows.Forms.Padding(2);
-            this.subsRndButton.Name = "subsRndButton";
-            this.subsRndButton.Size = new System.Drawing.Size(14, 14);
-            this.subsRndButton.TabIndex = 158;
-            this.subsRndButton.TabStop = false;
-            this.subsRndButton.UseVisualStyleBackColor = false;
-            this.subsRndButton.Click += new System.EventHandler(this.subLocationRnd_Click);
             // 
             // activateSubsLabel
             // 
@@ -411,7 +396,7 @@
             // subColorLabel
             // 
             this.subColorLabel.AutoSize = true;
-            this.subColorLabel.Location = new System.Drawing.Point(34, 73);
+            this.subColorLabel.Location = new System.Drawing.Point(34, 96);
             this.subColorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.subColorLabel.Name = "subColorLabel";
             this.subColorLabel.Size = new System.Drawing.Size(26, 13);
@@ -457,7 +442,7 @@
             // 
             this.subColorButton.Enabled = false;
             this.subColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subColorButton.Location = new System.Drawing.Point(81, 70);
+            this.subColorButton.Location = new System.Drawing.Point(81, 93);
             this.subColorButton.Margin = new System.Windows.Forms.Padding(2);
             this.subColorButton.Name = "subColorButton";
             this.subColorButton.Size = new System.Drawing.Size(111, 19);
@@ -471,7 +456,7 @@
             this.subColorPanel.BackColor = System.Drawing.Color.White;
             this.subColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.subColorPanel.Enabled = false;
-            this.subColorPanel.Location = new System.Drawing.Point(63, 72);
+            this.subColorPanel.Location = new System.Drawing.Point(63, 95);
             this.subColorPanel.Margin = new System.Windows.Forms.Padding(2);
             this.subColorPanel.Name = "subColorPanel";
             this.subColorPanel.Size = new System.Drawing.Size(14, 14);
@@ -901,7 +886,7 @@
             this.chooseExpoType.Items.AddRange(new object[] {
             "Palavra",
             "Imagem",
-            "Palavra e Imagem",
+            "Imagem e Palavra",
             "Palavra com Áudio",
             "Imagem com Áudio"});
             this.chooseExpoType.Location = new System.Drawing.Point(123, 17);
@@ -1062,6 +1047,19 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // subsRndCheckBox
+            // 
+            this.subsRndCheckBox.AutoSize = true;
+            this.subsRndCheckBox.Location = new System.Drawing.Point(64, 72);
+            this.subsRndCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.subsRndCheckBox.Name = "subsRndCheckBox";
+            this.subsRndCheckBox.Size = new System.Drawing.Size(106, 17);
+            this.subsRndCheckBox.TabIndex = 160;
+            this.subsRndCheckBox.TabStop = false;
+            this.subsRndCheckBox.Text = "posição aleatória";
+            this.subsRndCheckBox.UseVisualStyleBackColor = true;
+            this.subsRndCheckBox.CheckedChanged += new System.EventHandler(this.subsRndCheckBox_CheckedChanged);
+            // 
             // FormPrgConfig
             // 
             this.AcceptButton = this.saveButton;
@@ -1171,8 +1169,8 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label delayTimeLabel;
         private System.Windows.Forms.NumericUpDown delayTime;
-        private System.Windows.Forms.Button subsRndButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox rotateImgComboBox;
+        private System.Windows.Forms.CheckBox subsRndCheckBox;
     }
 }

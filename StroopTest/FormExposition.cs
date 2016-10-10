@@ -260,10 +260,7 @@ namespace StroopTest
             string actualImagePath = "";
             this.BackColor = Color.White;
             string audioDetail = "false";
-            
-
             //audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile); // auxiliar recebe o vetor original
-            
             try
             {
                 wordLabel.ForeColor = Color.Red;
@@ -273,8 +270,6 @@ namespace StroopTest
                 if (program.ExpandImage) { imgPictureBox.Dock = DockStyle.Fill; }
                 else { imgPictureBox.Dock = DockStyle.None; }
 
-                // Define vetor de estímulos a ser apresentado
-                //audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile); // auxiliar recebe o vetor original
                 imageDirs = StroopProgram.readDirListFile(path + "/lst/" + program.ImagesListFile); // auxiliar recebe o vetor original
                 if (program.ExpositionRandom) // se exposição aleatória, randomiza itens de acordo com o numero de estimulos
                 {
@@ -334,7 +329,7 @@ namespace StroopTest
                         for (int counter = 0; counter < program.NumExpositions; counter++) // AQUI ver estimulo -> palavra ou imagem como um só e ter intervalo separado
                         {
                             imgPictureBox.Visible = false; wordLabel.Visible = false;
-                            if (program.SubtitleShow) {subtitleLabel.Visible = false;}
+                            if (program.SubtitleShow) { subtitleLabel.Visible = false; }
                             await intervalOrFixPoint(program, cts.Token);
 
                             if (arrayCounter == imageDirs.Count()) { arrayCounter = 0; }
@@ -366,9 +361,11 @@ namespace StroopTest
 
                             StroopProgram.writeLineOutput(program, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "img", audioDetail);
                             await Task.Delay(program.ExpositionTime, cts.Token);
-
+                            
                             imgPictureBox.Visible = false;
                             wordLabel.Visible = false;
+
+                            await Task.Delay(program.DelayTime, cts.Token);
 
                             await Task.Delay(program.IntervalTime, cts.Token);
 

@@ -507,11 +507,11 @@ namespace StroopTest
                 programWrite.AudioCapture = audioCaptureCheck.Checked;
                 programWrite.SubtitleShow = activateSubsCheck.Checked;
 
-                programWrite.SubtitlePlace = subDirectionNumber;
-
                 if (Regex.IsMatch(subColorButton.Text, hexPattern)) { programWrite.SubtitleColor = subColorButton.Text; }
                 else programWrite.SubtitleColor = "false";
-                
+
+                programWrite.SubtitlePlace = subDirectionNumber;
+
                 if (activateSubsCheck.Checked)
                 {
                     if (openSubsListButton.Text != "abrir") { programWrite.SubtitlesListFile = openSubsListButton.Text; }
@@ -739,33 +739,6 @@ namespace StroopTest
                         break;
                 }
                 
-                if (program.SubtitleShow)
-                {
-                    activateSubsCheck.Checked = true;
-                    enableSubsItens(true);
-                    selectSubDirectionNumber(program.SubtitlePlace);
-                    
-                    if (program.SubtitlesListFile.ToLower() != "false")
-                    {
-                        openSubsListButton.Text = program.SubtitlesListFile;
-                    }
-                    if (Regex.IsMatch(program.SubtitleColor, hexPattern))
-                    {
-                        subColorButton.Text = program.SubtitleColor;
-                        subColorPanel.BackColor = ColorTranslator.FromHtml(program.SubtitleColor);
-                    }
-                    else
-                    {
-                        subColorButton.Text = "escolher";
-                        subColorPanel.BackColor = Color.White;
-                    }
-                }
-                else
-                {
-                    activateSubsCheck.Checked = false;
-                    enableSubsItens(false);
-                }
-                
                 if (program.FixPoint == "+")
                 {
                     fixPointCross.Checked = true;
@@ -839,6 +812,29 @@ namespace StroopTest
                         break;
                 }
 
+                if (program.SubtitleShow)
+                {
+                    activateSubsCheck.Checked = true;
+                    enableSubsItens(true);
+                    selectSubDirectionNumber(program.SubtitlePlace);
+                    if (program.SubtitlesListFile.ToLower() != "false") { openSubsListButton.Text = program.SubtitlesListFile; }
+
+                    if (Regex.IsMatch(program.SubtitleColor, hexPattern))
+                    {
+                        subColorButton.Text = program.SubtitleColor;
+                        subColorPanel.BackColor = ColorTranslator.FromHtml(program.SubtitleColor);
+                    }
+                    else
+                    {
+                        subColorButton.Text = "escolher";
+                        subColorPanel.BackColor = Color.White;
+                    }
+                }
+                else
+                {
+                    activateSubsCheck.Checked = false;
+                    enableSubsItens(false);
+                }
             }
             catch (Exception ex)
             {

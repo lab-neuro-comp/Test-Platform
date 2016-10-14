@@ -41,7 +41,7 @@ namespace StroopTest
             }
             else
             {
-                Console.WriteLine("{0} é um diretório inválido!.", dataFolderPath);
+                Console.WriteLine("{0} é um caminho inválido!.", dataFolderPath);
             }
         }
         

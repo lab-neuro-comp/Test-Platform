@@ -865,7 +865,6 @@ namespace StroopTest
                 }
             }
             writer.Close();
-            MessageBox.Show("O programa " + prgNameTextBox.Text + ".prg foi salvo com sucesso!");
             this.Close();
         }
 

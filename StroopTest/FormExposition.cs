@@ -367,8 +367,6 @@ namespace StroopTest
 
                             await Task.Delay(program.DelayTime, cts.Token);
 
-                            await Task.Delay(program.IntervalTime, cts.Token);
-
                             if (program.WordsListFile.ToLower() != "false") // se tiver palavras intercala elas com a imagem
                             {
                                 if (j == labelText.Count()-1) { j = 0; }
@@ -387,6 +385,8 @@ namespace StroopTest
                                 StroopProgram.writeLineOutput(program, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "txt", audioDetail);
                                 await Task.Delay(program.ExpositionTime, cts.Token);
                             }
+
+                            await Task.Delay(program.IntervalTime, cts.Token);
                         }
                     }
                     else
@@ -630,7 +630,6 @@ namespace StroopTest
                 }
                 else // if it uses fixPoint
                 {
-                    if (program.FixPointColor == "false") { program.FixPointColor = "#D01C1F"; }
                     SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(program.FixPointColor));
 
                     switch (program.FixPoint)

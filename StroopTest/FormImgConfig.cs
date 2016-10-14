@@ -33,7 +33,7 @@ namespace StroopTest
 
         private void insertListForEdition()
         {
-            throw new NotImplementedException();
+
         }
 
         private void btnOpen_Click(object sender, EventArgs e)

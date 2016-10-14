@@ -49,6 +49,7 @@
             this.bgColorLabel = new System.Windows.Forms.Label();
             this.bgColorButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.subsRndCheckBox = new System.Windows.Forms.CheckBox();
             this.activateSubsLabel = new System.Windows.Forms.Label();
             this.subColorLabel = new System.Windows.Forms.Label();
             this.subLocationLabel = new System.Windows.Forms.Label();
@@ -99,7 +100,6 @@
             this.prgNameLabel = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
-            this.subsRndCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -382,6 +382,19 @@
             this.groupBox4.TabIndex = 50;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Legenda";
+            // 
+            // subsRndCheckBox
+            // 
+            this.subsRndCheckBox.AutoSize = true;
+            this.subsRndCheckBox.Location = new System.Drawing.Point(64, 72);
+            this.subsRndCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.subsRndCheckBox.Name = "subsRndCheckBox";
+            this.subsRndCheckBox.Size = new System.Drawing.Size(66, 17);
+            this.subsRndCheckBox.TabIndex = 160;
+            this.subsRndCheckBox.TabStop = false;
+            this.subsRndCheckBox.Text = "aleatória";
+            this.subsRndCheckBox.UseVisualStyleBackColor = true;
+            this.subsRndCheckBox.CheckedChanged += new System.EventHandler(this.subsRndCheckBox_CheckedChanged);
             // 
             // activateSubsLabel
             // 
@@ -1046,19 +1059,6 @@
             this.saveButton.Text = "salvar";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // subsRndCheckBox
-            // 
-            this.subsRndCheckBox.AutoSize = true;
-            this.subsRndCheckBox.Location = new System.Drawing.Point(64, 72);
-            this.subsRndCheckBox.Margin = new System.Windows.Forms.Padding(2);
-            this.subsRndCheckBox.Name = "subsRndCheckBox";
-            this.subsRndCheckBox.Size = new System.Drawing.Size(106, 17);
-            this.subsRndCheckBox.TabIndex = 160;
-            this.subsRndCheckBox.TabStop = false;
-            this.subsRndCheckBox.Text = "posição aleatória";
-            this.subsRndCheckBox.UseVisualStyleBackColor = true;
-            this.subsRndCheckBox.CheckedChanged += new System.EventHandler(this.subsRndCheckBox_CheckedChanged);
             // 
             // FormPrgConfig
             // 

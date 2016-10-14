@@ -125,7 +125,7 @@ namespace StroopTest
                         }
                         w1.Close();
 
-                        MessageBox.Show("A lista " + textBox1.Text + ".lst foi salva com sucesso no diretório\n" + path);
+                        MessageBox.Show("A lista " + textBox1.Text + ".lst foi salva com sucesso");
                     }
                     else
                     {

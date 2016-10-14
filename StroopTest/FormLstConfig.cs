@@ -361,7 +361,7 @@ namespace StroopTest
                         }
 
                         writer1.Close();
-                        MessageBox.Show("A lista " + listNameTextBox.Text + "_Words.lst foi salva com sucesso no diretório\n" + path);
+                        MessageBox.Show("A lista " + listNameTextBox.Text + "_Words.lst foi salva com sucesso");
                     }
                     else
                     {
@@ -392,7 +392,7 @@ namespace StroopTest
 
                         //writer2.Dispose();
                         writer2.Close();
-                        MessageBox.Show("A lista " + listNameTextBox.Text + "_Words.lst foi salva com sucesso no diretório\n" + path);
+                        MessageBox.Show("A lista " + listNameTextBox.Text + "_Words.lst foi salva com sucesso");
                     }
                     else
                     {

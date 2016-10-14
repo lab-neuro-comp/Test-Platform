@@ -14,11 +14,12 @@ namespace StroopTest
 {
     class StroopProgram
     {
-        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_Words.lst padrao_Colors.lst false false false 1 false txt false false 160 false false false false 0 0 false";
+        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_Words.lst padrao_Colors.lst false false false 1 false txt false false 160 false false false false 0 0 false false";
         private string defaultWordsListName = "padrao_Words.lst";
         private string defaultWordsListText = "amarelo azul verde vermelho";
         private string defaultColorsListName = "padrao_Colors.lst";
         private string defaultColorsListText = "#F8E000 #007BB7 #7EC845 #D01C1F";
+        private string defaultRedColor = "#D01C1F";
         private string headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio";
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string errorExMsg = "Arquivo de Programa - parâmetro inválido.";
@@ -58,8 +59,9 @@ namespace StroopTest
         private int delayTime;                  // [21]  tempo de atraso = intervalo se não for definido
         private int rotateImage;                // [22]  rotacionar imagem (90, 180, 270, 360)
         private bool rndSubtitlePlace;          // [23]  localizacão da legenda aleatória
+        private string wordColor;     // [24]  cor da palavra apresentada em palavraimg
 
-        
+
         public List<string> InstructionText
         {
             get { return instructionText; }
@@ -389,7 +391,8 @@ namespace StroopTest
             {
                 if (Regex.IsMatch(value, hexPattern) || value.ToLower() == "false")
                 {
-                    fixPointColor = value;
+                    if (value.ToLower() == "false") { wordColor = defaultRedColor; }
+                    else { fixPointColor = value; }
                 }
                 else
                 {
@@ -428,6 +431,23 @@ namespace StroopTest
                 else
                 {
                     throw new ArgumentException(errorExMsg + "\nPosição Aleátória deve ser boleana (true or false)");
+                }
+            }
+        }
+
+        public string WordColor
+        {
+            get { return wordColor; }
+            set
+            {
+                if (Regex.IsMatch(value, hexPattern) || value.ToLower() == "false")
+                {
+                    if (value.ToLower() == "false") { wordColor = defaultRedColor; }
+                    else { wordColor = value; }
+                }
+                else
+                {
+                    throw new ArgumentException(errorExMsg + "\nCor do ponto da palavra deve ser 'false' ou um código hexadecimal de cor");
                 }
             }
         }

@@ -81,7 +81,7 @@ namespace StroopTest
                     w1.WriteLine(dgv.Rows[i].Cells[column].Value.ToString());
                 }
                 w1.Close();
-                MessageBox.Show("A lista " + filename + ".lst foi salva com sucesso no diretório\n" + path);
+                MessageBox.Show("A lista " + filename + ".lst foi salva com sucesso");
 
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

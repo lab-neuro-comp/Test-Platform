@@ -357,9 +357,26 @@ namespace StroopTest
 
         private void imagensToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/", "false");
-            try { configureImagesList.ShowDialog(); }
+            /*
+            FormImgConfig configureImagesList;
+            FormDefine defineProgram = new FormDefine("Editar Lista: ", testFilesPath, "lst");
+            DialogResult result;
+            string editListName = "error";
+
+            try
+            {
+                configureImagesList.ShowDialog();
+                result = defineProgram.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    editListName = defineProgram.ReturnValue;
+                    configureImagesList = new FormImgConfig(testFilesPath + "/lst/", editListName);
+                    if (!configureWordsList.IsDisposed) configureWordsList.ShowDialog();
+                    else { configureWordsList.Close(); }
+                }
+            }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+            */
         }
 
         private void audioToolStripMenuItem_Click(object sender, EventArgs e)

@@ -25,13 +25,9 @@ namespace StroopTest
                 }
             }
 
-                webBrowser1.DocumentText =
-                "<html><body>Please enter your name:<br/>" +
-                "<input type='text' name='userName'/><br/>" +
-                "<a href='http://www.microsoft.com'>continue</a>" +
-                 "</body></html>";
+            webBrowser1.DocumentText = instructionsText;
 
-            richTextBox1.Text = instructionsText;
+            //richTextBox1.Text = instructionsText;
         }
         
     }

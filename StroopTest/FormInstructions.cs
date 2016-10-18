@@ -3,6 +3,7 @@
  * Hugo Honda
  */
 
+using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -13,7 +14,7 @@ namespace StroopTest
         public FormInstructions(string fileInstructionPath, string instructionsText)
         {
             InitializeComponent();
-            
+
             if (new FileInfo(fileInstructionPath).Length != 0)
             {
                 string[] lines = File.ReadAllLines(fileInstructionPath);
@@ -23,8 +24,15 @@ namespace StroopTest
                     instructionsText = instructionsText + "\n" + line;
                 }
             }
-            
+
+                webBrowser1.DocumentText =
+                "<html><body>Please enter your name:<br/>" +
+                "<input type='text' name='userName'/><br/>" +
+                "<a href='http://www.microsoft.com'>continue</a>" +
+                 "</body></html>";
+
             richTextBox1.Text = instructionsText;
         }
+        
     }
 }

@@ -37,14 +37,14 @@
             this.moveDownButton = new System.Windows.Forms.Button();
             this.moveUpButton = new System.Windows.Forms.Button();
             this.audioPathDataGridView = new System.Windows.Forms.DataGridView();
-            this.fileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.filePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.openButton = new System.Windows.Forms.Button();
             this.playAudioButton = new System.Windows.Forms.Button();
             this.playAudioLabel = new System.Windows.Forms.Label();
+            this.fileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.audioPathDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,23 +137,6 @@
             this.audioPathDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.audioPathDataGridView_CellContentDoubleClick);
             this.audioPathDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.audioPathDataGridView_KeyDown);
             // 
-            // fileNameColumn
-            // 
-            this.fileNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.fileNameColumn.FillWeight = 187.013F;
-            this.fileNameColumn.HeaderText = "Nome do Arquivo";
-            this.fileNameColumn.Name = "fileNameColumn";
-            this.fileNameColumn.ReadOnly = true;
-            this.fileNameColumn.Width = 120;
-            // 
-            // filePathColumn
-            // 
-            this.filePathColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.filePathColumn.FillWeight = 12.98701F;
-            this.filePathColumn.HeaderText = "Caminho";
-            this.filePathColumn.Name = "filePathColumn";
-            this.filePathColumn.ReadOnly = true;
-            // 
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -221,6 +204,23 @@
             this.playAudioLabel.TabIndex = 57;
             this.playAudioLabel.Text = "Reproduzir Áudio:";
             // 
+            // fileNameColumn
+            // 
+            this.fileNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.fileNameColumn.FillWeight = 187.013F;
+            this.fileNameColumn.HeaderText = "Nome do Arquivo";
+            this.fileNameColumn.Name = "fileNameColumn";
+            this.fileNameColumn.ReadOnly = true;
+            this.fileNameColumn.Width = 120;
+            // 
+            // filePathColumn
+            // 
+            this.filePathColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.filePathColumn.FillWeight = 12.98701F;
+            this.filePathColumn.HeaderText = "Localização";
+            this.filePathColumn.Name = "filePathColumn";
+            this.filePathColumn.ReadOnly = true;
+            // 
             // FormAudioConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,9 +264,9 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button openButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fileNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn filePathColumn;
         private System.Windows.Forms.Button playAudioButton;
         private System.Windows.Forms.Label playAudioLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fileNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filePathColumn;
     }
 }

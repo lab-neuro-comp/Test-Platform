@@ -35,9 +35,6 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.imgPathDataGridView = new System.Windows.Forms.DataGridView();
-            this.fileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thumbnailColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.filePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moveUpButton = new System.Windows.Forms.Button();
             this.moveDownButton = new System.Windows.Forms.Button();
             this.moveRowLabel = new System.Windows.Forms.Label();
@@ -45,6 +42,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.imgListNameTextBox = new System.Windows.Forms.TextBox();
             this.imgListNameLabel = new System.Windows.Forms.Label();
+            this.fileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thumbnailColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.filePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPathDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -134,32 +134,6 @@
             this.imgPathDataGridView.SelectionChanged += new System.EventHandler(this.imgPathDataGridView_SelectionChanged);
             this.imgPathDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.imgPathDataGridView_KeyDown);
             // 
-            // fileNameColumn
-            // 
-            this.fileNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.fileNameColumn.FillWeight = 187.013F;
-            this.fileNameColumn.HeaderText = "Nome do Arquivo";
-            this.fileNameColumn.Name = "fileNameColumn";
-            this.fileNameColumn.ReadOnly = true;
-            this.fileNameColumn.Width = 120;
-            // 
-            // thumbnailColumn
-            // 
-            this.thumbnailColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.thumbnailColumn.HeaderText = "Imagem";
-            this.thumbnailColumn.Name = "thumbnailColumn";
-            this.thumbnailColumn.ReadOnly = true;
-            this.thumbnailColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.thumbnailColumn.Width = 120;
-            // 
-            // filePathColumn
-            // 
-            this.filePathColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.filePathColumn.FillWeight = 12.98701F;
-            this.filePathColumn.HeaderText = "Caminho";
-            this.filePathColumn.Name = "filePathColumn";
-            this.filePathColumn.ReadOnly = true;
-            // 
             // moveUpButton
             // 
             this.moveUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -225,6 +199,32 @@
             this.imgListNameLabel.TabIndex = 42;
             this.imgListNameLabel.Text = "Nome da Lista:";
             // 
+            // fileNameColumn
+            // 
+            this.fileNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.fileNameColumn.FillWeight = 187.013F;
+            this.fileNameColumn.HeaderText = "Nome do Arquivo";
+            this.fileNameColumn.Name = "fileNameColumn";
+            this.fileNameColumn.ReadOnly = true;
+            this.fileNameColumn.Width = 120;
+            // 
+            // thumbnailColumn
+            // 
+            this.thumbnailColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.thumbnailColumn.HeaderText = "Imagem";
+            this.thumbnailColumn.Name = "thumbnailColumn";
+            this.thumbnailColumn.ReadOnly = true;
+            this.thumbnailColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.thumbnailColumn.Width = 120;
+            // 
+            // filePathColumn
+            // 
+            this.filePathColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.filePathColumn.FillWeight = 12.98701F;
+            this.filePathColumn.HeaderText = "Localização";
+            this.filePathColumn.Name = "filePathColumn";
+            this.filePathColumn.ReadOnly = true;
+            // 
             // FormImgConfig
             // 
             this.AcceptButton = this.saveButton;
@@ -265,9 +265,6 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.DataGridView imgPathDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fileNameColumn;
-        private System.Windows.Forms.DataGridViewImageColumn thumbnailColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn filePathColumn;
         private System.Windows.Forms.Button moveUpButton;
         private System.Windows.Forms.Button moveDownButton;
         private System.Windows.Forms.Label moveRowLabel;
@@ -275,5 +272,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox imgListNameTextBox;
         private System.Windows.Forms.Label imgListNameLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fileNameColumn;
+        private System.Windows.Forms.DataGridViewImageColumn thumbnailColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filePathColumn;
     }
 }

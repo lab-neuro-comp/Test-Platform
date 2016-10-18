@@ -227,21 +227,21 @@
             this.listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
             this.listaToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.listaToolStripMenuItem1.Text = "Lista";
-            this.listaToolStripMenuItem1.Click += new System.EventHandler(this.listaToolStripMenuItem1_Click);
+            this.listaToolStripMenuItem1.Click += new System.EventHandler(this.deleteListFile_ToolStrip_Click);
             // 
             // programaToolStripMenuItem3
             // 
             this.programaToolStripMenuItem3.Name = "programaToolStripMenuItem3";
             this.programaToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
             this.programaToolStripMenuItem3.Text = "Programa";
-            this.programaToolStripMenuItem3.Click += new System.EventHandler(this.programaToolStripMenuItem3_Click);
+            this.programaToolStripMenuItem3.Click += new System.EventHandler(this.deleteProgramFile_ToolStrip_Click);
             // 
             // dadosToolStripMenuItem
             // 
             this.dadosToolStripMenuItem.Name = "dadosToolStripMenuItem";
             this.dadosToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.dadosToolStripMenuItem.Text = "Dados";
-            this.dadosToolStripMenuItem.Click += new System.EventHandler(this.dadosToolStripMenuItem_Click);
+            this.dadosToolStripMenuItem.Click += new System.EventHandler(this.deleteDataFile_ToolStrip_Click);
             // 
             // exibirToolStripMenuItem
             // 

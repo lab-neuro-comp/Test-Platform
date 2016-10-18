@@ -36,6 +36,7 @@
             this.listaDePalavrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textoECoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.audioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.programaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +65,8 @@
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.audioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarAjudapdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -134,6 +136,13 @@
             this.imagemToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.imagemToolStripMenuItem.Text = "Imagens";
             this.imagemToolStripMenuItem.Click += new System.EventHandler(this.imagemToolStripMenuItem_Click);
+            // 
+            // audioToolStripMenuItem
+            // 
+            this.audioToolStripMenuItem.Name = "audioToolStripMenuItem";
+            this.audioToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.audioToolStripMenuItem.Text = "Audio";
+            this.audioToolStripMenuItem.Click += new System.EventHandler(this.audioToolStripMenuItem_Click);
             // 
             // programaToolStripMenuItem
             // 
@@ -262,6 +271,8 @@
             // 
             this.ajudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sobreToolStripMenuItem,
+            this.visualizarAjudapdfToolStripMenuItem,
+            this.informaToolStripMenuItem,
             this.sobreToolStripMenuItem1});
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
             this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
@@ -270,14 +281,14 @@
             // sobreToolStripMenuItem
             // 
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.sobreToolStripMenuItem.Text = "Instruções    Ctrl+H";
             this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
             // sobreToolStripMenuItem1
             // 
             this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
+            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
             this.sobreToolStripMenuItem1.Text = "Sobre";
             this.sobreToolStripMenuItem1.Click += new System.EventHandler(this.sobreToolStripMenuItem1_Click);
             // 
@@ -386,12 +397,18 @@
     "rasília\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // audioToolStripMenuItem
+            // informaToolStripMenuItem
             // 
-            this.audioToolStripMenuItem.Name = "audioToolStripMenuItem";
-            this.audioToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.audioToolStripMenuItem.Text = "Audio";
-            this.audioToolStripMenuItem.Click += new System.EventHandler(this.audioToolStripMenuItem_Click);
+            this.informaToolStripMenuItem.Name = "informaToolStripMenuItem";
+            this.informaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.informaToolStripMenuItem.Text = "Informações Técnicas";
+            this.informaToolStripMenuItem.Click += new System.EventHandler(this.techInfoButto_ToolStrip_Click);
+            // 
+            // visualizarAjudapdfToolStripMenuItem
+            // 
+            this.visualizarAjudapdfToolStripMenuItem.Name = "visualizarAjudapdfToolStripMenuItem";
+            this.visualizarAjudapdfToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.visualizarAjudapdfToolStripMenuItem.Text = "Visualizar Ajuda (.pdf)";
             // 
             // FormMain
             // 
@@ -460,5 +477,7 @@
         private System.Windows.Forms.ToolStripButton defineProgramButton;
         private System.Windows.Forms.ToolStripButton defineUserButton;
         private System.Windows.Forms.ToolStripMenuItem audioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizarAjudapdfToolStripMenuItem;
     }
 }

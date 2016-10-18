@@ -217,15 +217,15 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineUser = new FormDefine("Excluir: ", originPath, fileType);
-                var result = defineUser.ShowDialog();
+                FormDefine defineFilePath = new FormDefine("Excluir: ", originPath, fileType);
+                var result = defineFilePath.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Deseja realmente excluir " + defineUser.ReturnValue + "?", "", MessageBoxButtons.YesNo); // pergunta se deseja repetir o programa
+                    DialogResult dialogResult = MessageBox.Show("Deseja realmente excluir " + defineFilePath.ReturnValue + "?", "", MessageBoxButtons.YesNo); // pergunta se deseja repetir o programa
                     if (dialogResult == DialogResult.Yes)
                     {
-                        File.Move(originPath + defineUser.ReturnValue + "." + fileType, backupPath + "backup_" + defineUser.ReturnValue + "." + fileType);
-                        MessageBox.Show(defineUser.ReturnValue + ".lst excluída com sucesso!");
+                        File.Move(originPath + defineFilePath.ReturnValue + "." + fileType, backupPath + "backup_" + defineFilePath.ReturnValue + "." + fileType);
+                        MessageBox.Show(defineFilePath.ReturnValue + ".lst excluída com sucesso!");
                     }
                 }
             }
@@ -357,6 +357,11 @@ namespace StroopTest
             FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/lst/");
             try { configureAudioList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void techInfoButto_ToolStrip_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

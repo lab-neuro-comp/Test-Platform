@@ -36,6 +36,34 @@ namespace StroopTest
 
         }
 
+        private void openImgList()
+        {
+            FormDefine defineFilePath = new FormDefine("Lista de Imagens: ", path, "lst");
+            var result = defineFilePath.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string[] filePaths = Directory.GetFiles(result.ToString());
+                foreach (string file in filePaths)
+                {
+                    try
+                    {
+                        pathList.Add(Path.GetFullPath(file));
+                        Image image = Image.FromFile(Path.GetFullPath(file));
+                        imgPathDataGridView.Rows.Add(Path.GetFileNameWithoutExtension(file), image, Path.GetFullPath(file));
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Não pode apresentar a imagem: " + file.Substring(file.LastIndexOf('/'))
+                                        + ". Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n" + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                Close();
+            }
+        }
+
         private void btnOpen_Click(object sender, EventArgs e)
         {
             openImagesDirectory();

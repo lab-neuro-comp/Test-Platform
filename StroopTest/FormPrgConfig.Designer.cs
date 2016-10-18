@@ -257,9 +257,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Controls.Add(this.audioCaptureLabel);
-            this.groupBox5.Controls.Add(this.rotateImgComboBox);
             this.groupBox5.Controls.Add(this.audioCaptureCheck);
             this.groupBox5.Controls.Add(this.bgColorPanel);
             this.groupBox5.Controls.Add(this.bgColorLabel);
@@ -276,12 +274,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(127, 15);
+            this.label1.Location = new System.Drawing.Point(154, 155);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.Size = new System.Drawing.Size(47, 26);
             this.label1.TabIndex = 164;
-            this.label1.Text = "Girar Imagem:";
+            this.label1.Text = "Girar\r\nImagem:";
             // 
             // audioCaptureLabel
             // 
@@ -289,9 +287,9 @@
             this.audioCaptureLabel.Location = new System.Drawing.Point(5, 15);
             this.audioCaptureLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.audioCaptureLabel.Name = "audioCaptureLabel";
-            this.audioCaptureLabel.Size = new System.Drawing.Size(97, 26);
+            this.audioCaptureLabel.Size = new System.Drawing.Size(96, 26);
             this.audioCaptureLabel.TabIndex = 52;
-            this.audioCaptureLabel.Text = "Capturar áudio\r\ndurante exposição:";
+            this.audioCaptureLabel.Text = "Capturar áudio\r\ndurante execução:";
             this.audioCaptureLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // rotateImgComboBox
@@ -308,7 +306,7 @@
             "-135°",
             "-90°",
             "-45°"});
-            this.rotateImgComboBox.Location = new System.Drawing.Point(203, 15);
+            this.rotateImgComboBox.Location = new System.Drawing.Point(205, 155);
             this.rotateImgComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.rotateImgComboBox.Name = "rotateImgComboBox";
             this.rotateImgComboBox.Size = new System.Drawing.Size(58, 21);
@@ -802,8 +800,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.expandImgLabel);
             this.groupBox1.Controls.Add(this.wordColorPanel);
+            this.groupBox1.Controls.Add(this.rotateImgComboBox);
             this.groupBox1.Controls.Add(this.wordColorLabel);
             this.groupBox1.Controls.Add(this.expandImgCheck);
             this.groupBox1.Controls.Add(this.wordColorButton);

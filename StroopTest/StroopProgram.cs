@@ -55,11 +55,11 @@ namespace StroopTest
         private string audioListFile;           // [18]  audio list file name (.lst) - if it is and audio exposition type [13]
         private string subtitlesListFile;       // [19]  subtitles list file name (.lst) - if subtitles are activated [10]
 
-        private string fixPointColor = "false"; // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
+        private string fixPointColor;           // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
         private int delayTime;                  // [21]  tempo de atraso = intervalo se não for definido
         private int rotateImage;                // [22]  rotacionar imagem (90, 180, 270, 360)
         private bool rndSubtitlePlace;          // [23]  localizacão da legenda aleatória
-        private string wordColor;     // [24]  cor da palavra apresentada em palavraimg
+        private string wordColor;               // [24]  cor da palavra apresentada em palavraimg
 
 
         public List<string> InstructionText
@@ -442,8 +442,8 @@ namespace StroopTest
             {
                 if (Regex.IsMatch(value, hexPattern) || value.ToLower() == "false")
                 {
+                    wordColor = value;
                     if (value.ToLower() == "false") { wordColor = defaultRedColor; }
-                    else { wordColor = value; }
                 }
                 else
                 {
@@ -538,6 +538,7 @@ namespace StroopTest
                 DelayTime = Int32.Parse(config[21]);
                 RotateImage = Int32.Parse(config[22]);
                 RndSubtitlePlace = Boolean.Parse(config[23]);
+                WordColor = config[24];
 
                 linesInstruction = File.ReadAllLines(filepath);               
                 if (linesInstruction.Length > 1) // lê instrução se houver

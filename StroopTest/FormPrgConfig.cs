@@ -595,7 +595,9 @@ namespace StroopTest
                         programWrite.RotateImage = 315;
                         break;
                 }
-                
+
+                programWrite.WordColor = wordColorButton.Text;
+
                 string textLines = "";
                 if (instructionsBox.Lines.Length > 0 && instructionsBox.Text != instructionBoxText) // lê instrução se houver
                 {
@@ -636,7 +638,8 @@ namespace StroopTest
                                  programWrite.FixPointColor + " " +
                                  programWrite.DelayTime + " " +
                                  programWrite.RotateImage + " " +
-                                 programWrite.RndSubtitlePlace
+                                 programWrite.RndSubtitlePlace + " " +
+                                 programWrite.WordColor
                                  ;
 
                 saveProgramFile(text, programWrite.InstructionText);
@@ -835,6 +838,9 @@ namespace StroopTest
                     activateSubsCheck.Checked = false;
                     enableSubsItens(false);
                 }
+                
+                wordColorButton.Text = program.WordColor;
+                wordColorPanel.BackColor = ColorTranslator.FromHtml(program.WordColor);
             }
             catch (Exception ex)
             {

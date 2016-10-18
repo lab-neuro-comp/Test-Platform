@@ -16,6 +16,7 @@ using System.Text.RegularExpressions;
 using NAudio.Wave;
 using System.Collections.Generic;
 using System.Media;
+using System.Drawing.Drawing2D;
 // endAudio 
 
 namespace StroopTest
@@ -249,6 +250,20 @@ namespace StroopTest
             }
             cts = null;
         }
+
+        public static Image RotateImage(string imgPath, float rotationAngle)
+        {
+            Image img = Image.FromFile(imgPath);
+            Bitmap bmp = new Bitmap(img.Width, img.Height);
+            Graphics gfx = Graphics.FromImage(bmp);
+            gfx.TranslateTransform((float)bmp.Width / 2, (float)bmp.Height / 2);
+            gfx.RotateTransform(rotationAngle);
+            gfx.TranslateTransform(-(float)bmp.Width / 2, -(float)bmp.Height / 2);
+            gfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            gfx.DrawImage(img, new Point(0, 0));
+            gfx.Dispose();
+            return bmp;
+        }
         
         private async Task startImageExposition(StroopProgram program) // inicia exposição de imagem
         {
@@ -274,6 +289,10 @@ namespace StroopTest
                 if (program.ExpositionRandom) // se exposição aleatória, randomiza itens de acordo com o numero de estimulos
                 {
                     imageDirs = shuffleArray(imageDirs, program.NumExpositions, 3);
+                }
+                foreach (string item in imageDirs)
+                {
+
                 }
                 
                 if (program.SubtitleShow)
@@ -333,8 +352,9 @@ namespace StroopTest
                             await intervalOrFixPoint(program, cts.Token);
 
                             if (arrayCounter == imageDirs.Count()) { arrayCounter = 0; }
-                            imgPictureBox.Image = Image.FromFile(imageDirs[arrayCounter]);
-                            
+                            if(program.RotateImage != 0) { imgPictureBox.Image = RotateImage(imageDirs[arrayCounter], program.RotateImage); }
+                            else { imgPictureBox.Image = Image.FromFile(imageDirs[arrayCounter]); }
+
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                             SendKeys.SendWait("s");
                             imgPictureBox.Visible = true;
@@ -378,6 +398,7 @@ namespace StroopTest
                                 elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                                 SendKeys.SendWait("s");
                                 imgPictureBox.Visible = false;
+                                wordLabel.ForeColor = ColorTranslator.FromHtml(program.WordColor);
                                 wordLabel.Visible = true;
                                 actualImagePath = wordLabel.Text;
                                 j++;
@@ -400,9 +421,9 @@ namespace StroopTest
 
 
                             if (imgCounter == imageDirs.Count()) { imgCounter = 0; }
-                            imgPictureBox.Image = Image.FromFile(imageDirs[imgCounter]);
-                            
-                            
+                            if (program.RotateImage != 0) { imgPictureBox.Image = RotateImage(imageDirs[arrayCounter], program.RotateImage); }
+                            else { imgPictureBox.Image = Image.FromFile(imageDirs[arrayCounter]); }
+
                             if (program.AudioListFile.ToLower() != "false" && program.ExpositionType == "imgaud")
                             {
                                 if (audioCounter == audioDirs.Length) { audioCounter = 0; }

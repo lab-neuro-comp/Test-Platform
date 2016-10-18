@@ -196,9 +196,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(19, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 39;
-            this.label1.Text = "Diretório:";
+            this.label1.Text = "Imagens:";
             // 
             // label2
             // 
@@ -221,9 +221,9 @@
             this.imgListNameLabel.AutoSize = true;
             this.imgListNameLabel.Location = new System.Drawing.Point(19, 12);
             this.imgListNameLabel.Name = "imgListNameLabel";
-            this.imgListNameLabel.Size = new System.Drawing.Size(136, 13);
+            this.imgListNameLabel.Size = new System.Drawing.Size(78, 13);
             this.imgListNameLabel.TabIndex = 42;
-            this.imgListNameLabel.Text = "Nome da Lista de Imagens:";
+            this.imgListNameLabel.Text = "Nome da Lista:";
             // 
             // FormImgConfig
             // 

@@ -53,9 +53,9 @@
             this.audioListNameLabel.AutoSize = true;
             this.audioListNameLabel.Location = new System.Drawing.Point(10, 27);
             this.audioListNameLabel.Name = "audioListNameLabel";
-            this.audioListNameLabel.Size = new System.Drawing.Size(123, 13);
+            this.audioListNameLabel.Size = new System.Drawing.Size(78, 13);
             this.audioListNameLabel.TabIndex = 55;
-            this.audioListNameLabel.Text = "Nome da Lista de Audio:";
+            this.audioListNameLabel.Text = "Nome da Lista:";
             // 
             // audioListNameTextBox
             // 
@@ -78,9 +78,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 53;
-            this.label1.Text = "Diretório:";
+            this.label1.Text = "Áudios:";
             // 
             // moveRowLabel
             // 

@@ -26,7 +26,7 @@ namespace StroopTest
         private string instructionsFileName = "editableInstructions.txt";
         private string prgConfigHelpFileName = "prgConfigHelp.txt";
         private string instructionsText = "O participante deve ser orientado para execução de forma clara e uniforme entre os experimentares e o grupo de participantes.<br><br>Para o Stroop clássico as instruções básicas praticadas são:<br>'Nesta tarefa você deve falar o nome da cor em que as palavras estão pintadas.'<br>ou<br>'Nesta tarefa você deve ler a palavra apresentada na tela.'";
-
+        
         public FormMain()
         {
             InitializeComponent();
@@ -330,26 +330,9 @@ namespace StroopTest
 
         private void imagensToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*
-            FormImgConfig configureImagesList;
-            FormDefine defineProgram = new FormDefine("Editar Lista: ", testFilesPath, "lst");
-            DialogResult result;
-            string editListName = "error";
-
-            try
-            {
-                configureImagesList.ShowDialog();
-                result = defineProgram.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    editListName = defineProgram.ReturnValue;
-                    configureImagesList = new FormImgConfig(testFilesPath + "/lst/", editListName);
-                    if (!configureWordsList.IsDisposed) configureWordsList.ShowDialog();
-                    else { configureWordsList.Close(); }
-                }
-            }
+            FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/", "");
+            try { configureImagesList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-            */
         }
 
         private void audioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -362,6 +345,11 @@ namespace StroopTest
         private void techInfoButto_ToolStrip_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void visualizarAjudapdfToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

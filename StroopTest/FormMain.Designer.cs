@@ -55,9 +55,11 @@
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarAjudapdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.beginTestMainButton = new System.Windows.Forms.ToolStripButton();
             this.defineProgramButton = new System.Windows.Forms.ToolStripButton();
             this.prgNameSL = new System.Windows.Forms.ToolStripLabel();
             this.defineUserButton = new System.Windows.Forms.ToolStripButton();
@@ -65,8 +67,6 @@
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.informaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visualizarAjudapdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -285,6 +285,20 @@
             this.sobreToolStripMenuItem.Text = "Instruções    Ctrl+H";
             this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
+            // visualizarAjudapdfToolStripMenuItem
+            // 
+            this.visualizarAjudapdfToolStripMenuItem.Name = "visualizarAjudapdfToolStripMenuItem";
+            this.visualizarAjudapdfToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.visualizarAjudapdfToolStripMenuItem.Text = "Visualizar Ajuda (.pdf)";
+            this.visualizarAjudapdfToolStripMenuItem.Click += new System.EventHandler(this.visualizarAjudapdfToolStripMenuItem_Click);
+            // 
+            // informaToolStripMenuItem
+            // 
+            this.informaToolStripMenuItem.Name = "informaToolStripMenuItem";
+            this.informaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.informaToolStripMenuItem.Text = "Informações Técnicas";
+            this.informaToolStripMenuItem.Click += new System.EventHandler(this.techInfoButto_ToolStrip_Click);
+            // 
             // sobreToolStripMenuItem1
             // 
             this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
@@ -297,7 +311,7 @@
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.beginTestMainButton,
             this.defineProgramButton,
             this.prgNameSL,
             this.defineUserButton,
@@ -312,15 +326,15 @@
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
             // 
-            // toolStripButton1
+            // beginTestMainButton
             // 
-            this.toolStripButton1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(74, 22);
-            this.toolStripButton1.Text = "Iniciar Teste";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.beginTestMainButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.beginTestMainButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.beginTestMainButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.beginTestMainButton.Name = "beginTestMainButton";
+            this.beginTestMainButton.Size = new System.Drawing.Size(74, 22);
+            this.beginTestMainButton.Text = "Iniciar Teste";
+            this.beginTestMainButton.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // defineProgramButton
             // 
@@ -397,19 +411,6 @@
     "rasília\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // informaToolStripMenuItem
-            // 
-            this.informaToolStripMenuItem.Name = "informaToolStripMenuItem";
-            this.informaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.informaToolStripMenuItem.Text = "Informações Técnicas";
-            this.informaToolStripMenuItem.Click += new System.EventHandler(this.techInfoButto_ToolStrip_Click);
-            // 
-            // visualizarAjudapdfToolStripMenuItem
-            // 
-            this.visualizarAjudapdfToolStripMenuItem.Name = "visualizarAjudapdfToolStripMenuItem";
-            this.visualizarAjudapdfToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.visualizarAjudapdfToolStripMenuItem.Text = "Visualizar Ajuda (.pdf)";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -453,7 +454,7 @@
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem programaToolStripMenuItem1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton beginTestMainButton;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem programaToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem textoECoresToolStripMenuItem;

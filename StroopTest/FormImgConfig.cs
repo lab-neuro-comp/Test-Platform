@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StroopTest
 {
     public partial class FormImgConfig : Form
     {
-        private List<string> pathList = new List<string>();
         private ImageList imgsList = new ImageList();
         private string path;
         private bool firstOpenFlag = true;
@@ -21,49 +14,41 @@ namespace StroopTest
         public FormImgConfig(string imagesFolderPath, string imgListEdit)
         {
             InitializeComponent();
-            path = imagesFolderPath;
-
             imgPathDataGridView.AllowDrop = true;
             imgPathDataGridView.RowTemplate.MinimumHeight = 120;
+
+            path = imagesFolderPath;
             if (imgListEdit != "false")
             {
-                insertListForEdition();
+                firstOpenFlag = true;
+                openImgList();
             }
-        }
-
-        private void insertListForEdition()
-        {
-
         }
 
         private void openImgList()
         {
-            FormDefine defineFilePath = new FormDefine("Lista de Imagens: ", path, "lst");
-            var result = defineFilePath.ShowDialog();
-            if (result == DialogResult.OK)
+            try
             {
-                string[] filePaths = Directory.GetFiles(result.ToString());
-                foreach (string file in filePaths)
+                FormDefine defineFilePath = defineFilePath = new FormDefine("Lista de Imagens: ", path, "lst");
+                var result = defineFilePath.ShowDialog();
+                
+                if (result == DialogResult.OK)
                 {
-                    try
-                    {
-                        pathList.Add(Path.GetFullPath(file));
-                        Image image = Image.FromFile(Path.GetFullPath(file));
-                        imgPathDataGridView.Rows.Add(Path.GetFileNameWithoutExtension(file), image, Path.GetFullPath(file));
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("Não pode apresentar a imagem: " + file.Substring(file.LastIndexOf('/'))
-                                        + ". Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n" + ex.Message);
-                    }
+                    string dir = defineFilePath.ReturnValue;
+                    imgListNameTextBox.Text = dir.Remove(dir.Length - 4);
+
+                    string[] filePaths = StroopProgram.readDirListFile(path + "/" + dir + ".lst");
+                    readImagesIntoDGV(filePaths, imgPathDataGridView);
+
+                    if (firstOpenFlag) { WindowState = FormWindowState.Maximized; firstOpenFlag = false; }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                Close();
+                MessageBox.Show(ex.Message);
             }
         }
-
+        
         private void btnOpen_Click(object sender, EventArgs e)
         {
             openImagesDirectory();
@@ -72,48 +57,43 @@ namespace StroopTest
         // opens directory with images to be choosen by the list creator
         private void openImagesDirectory()
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Multiselect = true;
-            openFileDialog.Filter = "Images (*.BMP;*.JPG;*.JPEG;*.GIF;*.PNG)|*.BMP;*.JPG;*.JPeG;*.GIF;*.PNG|" + "All files (*.*)|*.*";
             try
             {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Multiselect = true;
+                openFileDialog.Filter = "Images (*.BMP;*.JPG;*.JPEG;*.GIF;*.PNG)|*.BMP;*.JPG;*.JPeG;*.GIF;*.PNG|" + "All files (*.*)|*.*";
+                string[] filePaths = openFileDialog.FileNames;
+
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    foreach (string file in openFileDialog.FileNames)
-                    {
-                        try
-                        {
-                            pathList.Add(Path.GetFullPath(file));
-                            Image image = Image.FromFile(Path.GetFullPath(file));
-                            imgPathDataGridView.Rows.Add(Path.GetFileNameWithoutExtension(file), image, Path.GetFullPath(file));
-                        }
-                        catch (Exception ex)
-                        {
-                            throw new Exception ("Não pode apresentar a imagem: " + file.Substring(file.LastIndexOf('/'))
-                                            + ". Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n" + ex.Message);
-                        }
-                    }
+                    readImagesIntoDGV(filePaths, imgPathDataGridView);
+                    selectedImageIntoPictureBox();
+                    if (firstOpenFlag) { WindowState = FormWindowState.Maximized; firstOpenFlag = false; }
                 }
-
-                for (int i = 0; i < imgPathDataGridView.Columns.Count; i++)
-                    if (imgPathDataGridView.Columns[i] is DataGridViewImageColumn)
-                    {
-                        ((DataGridViewImageColumn)imgPathDataGridView.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
-                        break;
-                    }
-
-                selectedImageIntoPictureBox();
-                if (firstOpenFlag) { WindowState = FormWindowState.Maximized; firstOpenFlag = false; }
-                
             }
             catch (NullReferenceException)
             {
+            }
+            catch (FileLoadException ex)
+            {
+                throw new Exception("Não pode apresentar a imagem. Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n" + ex.Message);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void readImagesIntoDGV(string[] directory, DataGridView imagesDataGridView)
+        {
+            DataGridView dgv = imagesDataGridView;
+            foreach (string file in directory)
+            {
+                Image image = Image.FromFile(file);
+                dgv.Rows.Add(Path.GetFileNameWithoutExtension(file), image, file);
+                ((DataGridViewImageColumn)dgv.Columns[1]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+            }
         }
 
         // delete button click - deletes row from not empty dgv; refresh view
@@ -179,6 +159,7 @@ namespace StroopTest
                 }
                 DataGridView dgv = imgPathDataGridView;
                 DGVManipulation.saveColumnToListFile(dgv, 2, path, imgListNameTextBox.Text + "_img");
+                Close();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

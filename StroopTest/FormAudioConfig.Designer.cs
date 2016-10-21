@@ -37,14 +37,16 @@
             this.moveDownButton = new System.Windows.Forms.Button();
             this.moveUpButton = new System.Windows.Forms.Button();
             this.audioPathDataGridView = new System.Windows.Forms.DataGridView();
+            this.fileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.openButton = new System.Windows.Forms.Button();
             this.playAudioButton = new System.Windows.Forms.Button();
             this.playAudioLabel = new System.Windows.Forms.Label();
-            this.fileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.filePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberFilesLabel = new System.Windows.Forms.Label();
+            this.numberFiles = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.audioPathDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,6 +139,23 @@
             this.audioPathDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.audioPathDataGridView_CellContentDoubleClick);
             this.audioPathDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.audioPathDataGridView_KeyDown);
             // 
+            // fileNameColumn
+            // 
+            this.fileNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.fileNameColumn.FillWeight = 187.013F;
+            this.fileNameColumn.HeaderText = "Nome do Arquivo";
+            this.fileNameColumn.Name = "fileNameColumn";
+            this.fileNameColumn.ReadOnly = true;
+            this.fileNameColumn.Width = 120;
+            // 
+            // filePathColumn
+            // 
+            this.filePathColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.filePathColumn.FillWeight = 12.98701F;
+            this.filePathColumn.HeaderText = "Localização";
+            this.filePathColumn.Name = "filePathColumn";
+            this.filePathColumn.ReadOnly = true;
+            // 
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -204,28 +223,31 @@
             this.playAudioLabel.TabIndex = 57;
             this.playAudioLabel.Text = "Reproduzir Áudio:";
             // 
-            // fileNameColumn
+            // numberFilesLabel
             // 
-            this.fileNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.fileNameColumn.FillWeight = 187.013F;
-            this.fileNameColumn.HeaderText = "Nome do Arquivo";
-            this.fileNameColumn.Name = "fileNameColumn";
-            this.fileNameColumn.ReadOnly = true;
-            this.fileNameColumn.Width = 120;
+            this.numberFilesLabel.AutoSize = true;
+            this.numberFilesLabel.Location = new System.Drawing.Point(168, 378);
+            this.numberFilesLabel.Name = "numberFilesLabel";
+            this.numberFilesLabel.Size = new System.Drawing.Size(91, 13);
+            this.numberFilesLabel.TabIndex = 58;
+            this.numberFilesLabel.Text = "Arquivos na Lista:";
             // 
-            // filePathColumn
+            // numberFiles
             // 
-            this.filePathColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.filePathColumn.FillWeight = 12.98701F;
-            this.filePathColumn.HeaderText = "Localização";
-            this.filePathColumn.Name = "filePathColumn";
-            this.filePathColumn.ReadOnly = true;
+            this.numberFiles.AutoSize = true;
+            this.numberFiles.Location = new System.Drawing.Point(265, 378);
+            this.numberFiles.Name = "numberFiles";
+            this.numberFiles.Size = new System.Drawing.Size(13, 13);
+            this.numberFiles.TabIndex = 59;
+            this.numberFiles.Text = "0";
             // 
             // FormAudioConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 413);
+            this.Controls.Add(this.numberFiles);
+            this.Controls.Add(this.numberFilesLabel);
             this.Controls.Add(this.playAudioLabel);
             this.Controls.Add(this.playAudioButton);
             this.Controls.Add(this.audioListNameLabel);
@@ -268,5 +290,7 @@
         private System.Windows.Forms.Label playAudioLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn fileNameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn filePathColumn;
+        private System.Windows.Forms.Label numberFilesLabel;
+        private System.Windows.Forms.Label numberFiles;
     }
 }

@@ -1,29 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StroopTest
 {
     public partial class FormAudioConfig : Form
     {
-        private List<string> pathList = new List<string>();
         private string path;
         private SoundPlayer Player = new SoundPlayer();
 
-        public FormAudioConfig(string audioFolderPath)
+        public FormAudioConfig(string audioFolderPath, bool editList)
         {
             InitializeComponent();
             path = audioFolderPath;
+            
+            if (editList)
+            {
+                openFilesForEdition();
+            }
         }
 
+        private void openFilesForEdition()
+        {
+            try
+            {
+                FormDefine defineFilePath = new FormDefine("Listas de Audio: ", path, "lst");
+                var result = defineFilePath.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    string dir = defineFilePath.ReturnValue;
+                    audioListNameTextBox.Text = dir.Remove(dir.Length - 6); // removes the _img identification from file while editing (when its saved it is always added again)
+
+                    string[] filePaths = StroopProgram.readDirListFile(path + "/" + dir + ".lst");
+                    readAudioIntoDGV(filePaths, audioPathDataGridView);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
         private void openButton_Click(object sender, EventArgs e)
         {
             openAudioDirectory();
@@ -38,19 +57,8 @@ namespace StroopTest
             {
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    foreach (string file in openFileDialog.FileNames)
-                    {
-                        try
-                        {
-                            pathList.Add(Path.GetFullPath(file));
-                            audioPathDataGridView.Rows.Add(Path.GetFileNameWithoutExtension(file), Path.GetFullPath(file));
-                        }
-                        catch (Exception ex)
-                        {
-                            throw new Exception("Não pode reproduzir audio: " + file.Substring(file.LastIndexOf('/'))
-                                            + ". Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n" + ex.Message);
-                        }
-                    }
+                    string[] fileNames = openFileDialog.FileNames;
+                    readAudioIntoDGV(fileNames, audioPathDataGridView);
                 }
             }
             catch (Exception ex)
@@ -59,10 +67,28 @@ namespace StroopTest
             }
         }
 
+        private void readAudioIntoDGV(string[] fileNames, DataGridView audioDataGridView)
+        {
+            DataGridView dgv = audioDataGridView;
+            try
+            {
+                foreach (string file in fileNames)
+                {
+                    audioPathDataGridView.Rows.Add(Path.GetFileNameWithoutExtension(file), Path.GetFullPath(file));
+                    numberFiles.Text = audioPathDataGridView.RowCount.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         private void deleteButton_Click(object sender, EventArgs e)
         {
             DataGridView dgv = audioPathDataGridView;
             DGVManipulation.deleteDGVRow(dgv);
+            numberFiles.Text = audioPathDataGridView.RowCount.ToString();
         }
 
         private void moveUpButton_Click(object sender, EventArgs e)
@@ -100,11 +126,12 @@ namespace StroopTest
                     throw new Exception("Preencha o campo com o nome do arquivo!");
                 }
                 DataGridView dgv = audioPathDataGridView;
-                DGVManipulation.saveColumnToListFile(dgv, 1, path, audioListNameTextBox.Text + "_aud");
+                DGVManipulation.saveColumnToListFile(dgv, 1, path, audioListNameTextBox.Text + "_audio");
+                Close();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-
+        
         private void audioPathDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             playCurrentAudio();

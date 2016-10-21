@@ -62,10 +62,10 @@ namespace StroopTest
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.Multiselect = true;
                 openFileDialog.Filter = "Images (*.BMP;*.JPG;*.JPEG;*.GIF;*.PNG)|*.BMP;*.JPG;*.JPeG;*.GIF;*.PNG|" + "All files (*.*)|*.*";
-                string[] filePaths = openFileDialog.FileNames;
-
+                
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
+                    string[] filePaths = openFileDialog.FileNames;
                     readImagesIntoDGV(filePaths, imgPathDataGridView);
                     selectedImageIntoPictureBox();
                     if (firstOpenFlag) { WindowState = FormWindowState.Maximized; firstOpenFlag = false; }
@@ -95,6 +95,7 @@ namespace StroopTest
                     Image image = Image.FromFile(file);
                     dgv.Rows.Add(Path.GetFileNameWithoutExtension(file), image, file);
                     ((DataGridViewImageColumn)dgv.Columns[1]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    numberFiles.Text = imgPathDataGridView.RowCount.ToString();
                 }
             }
             catch(Exception ex)
@@ -108,6 +109,12 @@ namespace StroopTest
         {
             DataGridView dgv = imgPathDataGridView;
             DGVManipulation.deleteDGVRow(dgv);
+            numberFiles.Text = imgPathDataGridView.RowCount.ToString();
+            if(imgPathDataGridView.RowCount == 0)
+            {
+                pictureBox.Image = null;
+                pictureBox.Refresh();
+            }
         }
 
         private void imgPathDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -35,6 +35,9 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.imgPathDataGridView = new System.Windows.Forms.DataGridView();
+            this.fileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thumbnailColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.filePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moveUpButton = new System.Windows.Forms.Button();
             this.moveDownButton = new System.Windows.Forms.Button();
             this.moveRowLabel = new System.Windows.Forms.Label();
@@ -42,9 +45,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.imgListNameTextBox = new System.Windows.Forms.TextBox();
             this.imgListNameLabel = new System.Windows.Forms.Label();
-            this.fileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thumbnailColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.filePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberFilesLabel = new System.Windows.Forms.Label();
+            this.numberFiles = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPathDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -134,6 +136,32 @@
             this.imgPathDataGridView.SelectionChanged += new System.EventHandler(this.imgPathDataGridView_SelectionChanged);
             this.imgPathDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.imgPathDataGridView_KeyDown);
             // 
+            // fileNameColumn
+            // 
+            this.fileNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.fileNameColumn.FillWeight = 187.013F;
+            this.fileNameColumn.HeaderText = "Nome do Arquivo";
+            this.fileNameColumn.Name = "fileNameColumn";
+            this.fileNameColumn.ReadOnly = true;
+            this.fileNameColumn.Width = 120;
+            // 
+            // thumbnailColumn
+            // 
+            this.thumbnailColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.thumbnailColumn.HeaderText = "Imagem";
+            this.thumbnailColumn.Name = "thumbnailColumn";
+            this.thumbnailColumn.ReadOnly = true;
+            this.thumbnailColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.thumbnailColumn.Width = 120;
+            // 
+            // filePathColumn
+            // 
+            this.filePathColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.filePathColumn.FillWeight = 12.98701F;
+            this.filePathColumn.HeaderText = "Localização";
+            this.filePathColumn.Name = "filePathColumn";
+            this.filePathColumn.ReadOnly = true;
+            // 
             // moveUpButton
             // 
             this.moveUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -199,31 +227,23 @@
             this.imgListNameLabel.TabIndex = 42;
             this.imgListNameLabel.Text = "Nome da Lista:";
             // 
-            // fileNameColumn
+            // numberFilesLabel
             // 
-            this.fileNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.fileNameColumn.FillWeight = 187.013F;
-            this.fileNameColumn.HeaderText = "Nome do Arquivo";
-            this.fileNameColumn.Name = "fileNameColumn";
-            this.fileNameColumn.ReadOnly = true;
-            this.fileNameColumn.Width = 120;
+            this.numberFilesLabel.AutoSize = true;
+            this.numberFilesLabel.Location = new System.Drawing.Point(22, 249);
+            this.numberFilesLabel.Name = "numberFilesLabel";
+            this.numberFilesLabel.Size = new System.Drawing.Size(88, 13);
+            this.numberFilesLabel.TabIndex = 43;
+            this.numberFilesLabel.Text = "Arquivos na Lista";
             // 
-            // thumbnailColumn
+            // numberFiles
             // 
-            this.thumbnailColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.thumbnailColumn.HeaderText = "Imagem";
-            this.thumbnailColumn.Name = "thumbnailColumn";
-            this.thumbnailColumn.ReadOnly = true;
-            this.thumbnailColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.thumbnailColumn.Width = 120;
-            // 
-            // filePathColumn
-            // 
-            this.filePathColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.filePathColumn.FillWeight = 12.98701F;
-            this.filePathColumn.HeaderText = "Localização";
-            this.filePathColumn.Name = "filePathColumn";
-            this.filePathColumn.ReadOnly = true;
+            this.numberFiles.AutoSize = true;
+            this.numberFiles.Location = new System.Drawing.Point(116, 249);
+            this.numberFiles.Name = "numberFiles";
+            this.numberFiles.Size = new System.Drawing.Size(13, 13);
+            this.numberFiles.TabIndex = 44;
+            this.numberFiles.Text = "0";
             // 
             // FormImgConfig
             // 
@@ -233,6 +253,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(484, 547);
+            this.Controls.Add(this.numberFiles);
+            this.Controls.Add(this.numberFilesLabel);
             this.Controls.Add(this.imgListNameLabel);
             this.Controls.Add(this.imgListNameTextBox);
             this.Controls.Add(this.label2);
@@ -275,5 +297,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fileNameColumn;
         private System.Windows.Forms.DataGridViewImageColumn thumbnailColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn filePathColumn;
+        private System.Windows.Forms.Label numberFilesLabel;
+        private System.Windows.Forms.Label numberFiles;
     }
 }

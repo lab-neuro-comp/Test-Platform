@@ -391,7 +391,7 @@ namespace StroopTest
             {
                 if (Regex.IsMatch(value, hexPattern) || value.ToLower() == "false")
                 {
-                    if (value.ToLower() == "false") { wordColor = defaultRedColor; }
+                    if (value.ToLower() == "false") { fixPointColor = defaultRedColor; }
                     else { fixPointColor = value; }
                 }
                 else

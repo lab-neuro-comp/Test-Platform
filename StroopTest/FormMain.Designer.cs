@@ -67,6 +67,7 @@
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.áudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -195,7 +196,8 @@
             // 
             this.listaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.textoECoresToolStripMenuItem1,
-            this.imagensToolStripMenuItem});
+            this.imagensToolStripMenuItem,
+            this.áudioToolStripMenuItem});
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
             this.listaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.listaToolStripMenuItem.Text = "Lista de Estímulos";
@@ -411,6 +413,13 @@
     "rasília\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // áudioToolStripMenuItem
+            // 
+            this.áudioToolStripMenuItem.Name = "áudioToolStripMenuItem";
+            this.áudioToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.áudioToolStripMenuItem.Text = "Áudio";
+            this.áudioToolStripMenuItem.Click += new System.EventHandler(this.áudioToolStripMenuItem_Click_1);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,5 +489,6 @@
         private System.Windows.Forms.ToolStripMenuItem audioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualizarAjudapdfToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem áudioToolStripMenuItem;
     }
 }

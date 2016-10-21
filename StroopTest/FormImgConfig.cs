@@ -35,7 +35,7 @@ namespace StroopTest
                 if (result == DialogResult.OK)
                 {
                     string dir = defineFilePath.ReturnValue;
-                    imgListNameTextBox.Text = dir.Remove(dir.Length - 4);
+                    imgListNameTextBox.Text = dir.Remove(dir.Length - 6); // removes the _img identification from file while editing (when its saved it is always added again)
 
                     string[] filePaths = StroopProgram.readDirListFile(path + "/" + dir + ".lst");
                     readImagesIntoDGV(filePaths, imgPathDataGridView);
@@ -48,7 +48,7 @@ namespace StroopTest
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
         private void btnOpen_Click(object sender, EventArgs e)
         {
             openImagesDirectory();
@@ -88,11 +88,18 @@ namespace StroopTest
         private void readImagesIntoDGV(string[] directory, DataGridView imagesDataGridView)
         {
             DataGridView dgv = imagesDataGridView;
-            foreach (string file in directory)
+            try
             {
-                Image image = Image.FromFile(file);
-                dgv.Rows.Add(Path.GetFileNameWithoutExtension(file), image, file);
-                ((DataGridViewImageColumn)dgv.Columns[1]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                foreach (string file in directory)
+                {
+                    Image image = Image.FromFile(file);
+                    dgv.Rows.Add(Path.GetFileNameWithoutExtension(file), image, file);
+                    ((DataGridViewImageColumn)dgv.Columns[1]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
         }
 
@@ -158,7 +165,7 @@ namespace StroopTest
                     throw new Exception("Preencha o campo com o nome do arquivo!");
                 }
                 DataGridView dgv = imgPathDataGridView;
-                DGVManipulation.saveColumnToListFile(dgv, 2, path, imgListNameTextBox.Text + "_img");
+                DGVManipulation.saveColumnToListFile(dgv, 2, path, imgListNameTextBox.Text + "_image");
                 Close();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

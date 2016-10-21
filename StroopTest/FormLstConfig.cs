@@ -27,9 +27,9 @@ namespace StroopTest
             }
             else
             {
-                if (!fileName.Contains("_Colors") && !fileName.Contains("_colors"))
+                if (!fileName.Contains("_Color") && !fileName.Contains("_color"))
                 {
-                    finalName = fileName + "_Colors.lst";
+                    finalName = fileName + "_Color.lst";
                 }
             }
             
@@ -45,7 +45,7 @@ namespace StroopTest
             path = dataFolderPath + "/lst/";
             
             wordsListLabel.Text = "_Words.lst";
-            colorsListLabel.Text = "_Colors.lst";
+            colorsListLabel.Text = "_Color.lst";
 
             checkWords.Checked = true;
             checkColors.Checked = true;
@@ -60,16 +60,14 @@ namespace StroopTest
         private void listNameBox_TextChanged(object sender, EventArgs e)
         {
             wordsListLabel.Text = listNameTextBox.Text + "_Words.lst";
-            colorsListLabel.Text = listNameTextBox.Text + "_Colors.lst";
+            colorsListLabel.Text = listNameTextBox.Text + "_Color.lst";
         }
 
         private void editList(string lst)
         {
             StroopProgram program = new StroopProgram();
             string[] list;
-
-            MessageBox.Show(lst);
-
+            
             try
             {
                 if (!wordsListLabel.Text.Contains("_Words") && !wordsListLabel.Text.Contains("_words"))
@@ -77,8 +75,8 @@ namespace StroopTest
                     wordsListLabel.Text = listNameTextBox.Text + "_Words.lst";
                 }
 
-                if (!colorsListLabel.Text.Contains("_Colors") && !colorsListLabel.Text.Contains("_colors")) {
-                    colorsListLabel.Text = colorsListLabel.Text + "_Colors.lst";
+                if (!colorsListLabel.Text.Contains("_Color") && !colorsListLabel.Text.Contains("_color")) {
+                    colorsListLabel.Text = colorsListLabel.Text + "_Color.lst";
                 }
 
                 wordsListLabel.Text = lst + ".lst";
@@ -342,9 +340,9 @@ namespace StroopTest
 
                 if (/*saveColorsList.ShowDialog() == DialogResult.OK && */checkColors.Enabled) // lê instrução se houver
                 {
-                    if (hexColorsList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + listNameTextBox.Text + "_Colors.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
+                    if (hexColorsList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + listNameTextBox.Text + "_Color.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
                     {
-                        if (File.Exists(path + listNameTextBox.Text + "_Colors.lst"))
+                        if (File.Exists(path + listNameTextBox.Text + "_Color.lst"))
                         {
                             DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
                             if (dialogResult == DialogResult.Cancel)
@@ -353,7 +351,7 @@ namespace StroopTest
                             }
                         }
 
-                        StreamWriter writer1 = new StreamWriter(path + listNameTextBox.Text + "_Colors.lst" /*saveColorsList.OpenFile()*/);
+                        StreamWriter writer1 = new StreamWriter(path + listNameTextBox.Text + "_Color.lst" /*saveColorsList.OpenFile()*/);
 
                         for (int i = 0; i < hexColorsList.Items.Count; i++)
                         {

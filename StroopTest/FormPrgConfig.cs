@@ -505,23 +505,18 @@ namespace StroopTest
                 else programWrite.BackgroundColor = "false";
 
                 programWrite.AudioCapture = audioCaptureCheck.Checked;
+
                 programWrite.SubtitleShow = activateSubsCheck.Checked;
-
-                if (Regex.IsMatch(subColorButton.Text, hexPattern)) { programWrite.SubtitleColor = subColorButton.Text; }
-                else programWrite.SubtitleColor = "false";
-
-                programWrite.SubtitlePlace = subDirectionNumber;
+                programWrite.SubtitleColor = "false";
+                programWrite.SubtitlesListFile = "false";
 
                 if (activateSubsCheck.Checked)
                 {
+                    if (Regex.IsMatch(subColorButton.Text, hexPattern)) { programWrite.SubtitleColor = subColorButton.Text; }
                     if (openSubsListButton.Text != "abrir") { programWrite.SubtitlesListFile = openSubsListButton.Text; }
-                    else { throw new Exception("Selecione o arquivo de lista de palavras!"); }
+                    programWrite.SubtitlePlace = subDirectionNumber;
                 }
-                else
-                {
-                    programWrite.SubtitlesListFile = "false";
-                }
-
+                
                 switch (chooseExpoType.SelectedIndex)
                 {
                     case 0:
@@ -543,29 +538,24 @@ namespace StroopTest
 
                 if (openImgListButton.Enabled) { programWrite.ImagesListFile = openImgListButton.Text; }
                 else { programWrite.ImagesListFile = "false"; }
-                
+
+
+                programWrite.FixPoint = "false";
+                programWrite.FixPointColor = "false";
+
                 if (fixPointCross.Checked)
                 {
                     programWrite.FixPoint = "+";
                 }
-                else
+                if (fixPointCircle.Checked)
                 {
-                    if (fixPointCircle.Checked)
-                    {
-                        programWrite.FixPoint = "o";
-                    }
-                    if (!fixPointCross.Checked && !fixPointCircle.Checked)
-                    {
-                        programWrite.FixPoint = "false";
-                    }
+                    programWrite.FixPoint = "o";
                 }
-                
+                if (Regex.IsMatch(fixPointColorButton.Text, hexPattern)) { programWrite.FixPointColor = fixPointColorButton.Text; }
+
                 if (openAudioListButton.Enabled) { programWrite.AudioListFile = openAudioListButton.Text; }
                 else { programWrite.AudioListFile = "false"; }
-
-                if (Regex.IsMatch(fixPointColorButton.Text, hexPattern)) programWrite.FixPointColor = fixPointColorButton.Text;
-                else programWrite.FixPointColor = "false";
-
+                
                 programWrite.DelayTime = Convert.ToInt32(delayTime.Value);
 
                 switch (rotateImgComboBox.SelectedIndex)
@@ -614,7 +604,7 @@ namespace StroopTest
 
                 programWrite.FontWordLabel = wordSizeNumeric.Value.ToString();
                 programWrite.ExpandImage = expandImgCheck.Checked;
-
+                
                 string text = programWrite.ProgramName + " " +
                                  programWrite.NumExpositions.ToString() + " " +
                                  programWrite.ExpositionTime.ToString() + " " +
@@ -821,6 +811,7 @@ namespace StroopTest
                     enableSubsItens(true);
                     selectSubDirectionNumber(program.SubtitlePlace);
                     if (program.SubtitlesListFile.ToLower() != "false") { openSubsListButton.Text = program.SubtitlesListFile; }
+                    else { openSubsListButton.Text = "escolher"; }
 
                     if (Regex.IsMatch(program.SubtitleColor, hexPattern))
                     {

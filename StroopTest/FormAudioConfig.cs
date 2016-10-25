@@ -14,7 +14,7 @@ namespace StroopTest
         {
             InitializeComponent();
             path = audioFolderPath;
-            
+
             if (editList)
             {
                 openFilesForEdition();
@@ -34,7 +34,8 @@ namespace StroopTest
                     audioListNameTextBox.Text = dir.Remove(dir.Length - 6); // removes the _img identification from file while editing (when its saved it is always added again)
 
                     string[] filePaths = StroopProgram.readDirListFile(path + "/" + dir + ".lst");
-                    readAudioIntoDGV(filePaths, audioPathDataGridView);
+                    DGVManipulation.readStringListIntoDGV(filePaths, audioPathDataGridView);
+                    numberFiles.Text = audioPathDataGridView.RowCount.ToString();
                 }
             }
             catch (Exception ex)
@@ -58,7 +59,8 @@ namespace StroopTest
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string[] fileNames = openFileDialog.FileNames;
-                    readAudioIntoDGV(fileNames, audioPathDataGridView);
+                    DGVManipulation.readStringListIntoDGV(fileNames, audioPathDataGridView);
+                    numberFiles.Text = audioPathDataGridView.RowCount.ToString();
                 }
             }
             catch (Exception ex)
@@ -66,24 +68,7 @@ namespace StroopTest
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void readAudioIntoDGV(string[] fileNames, DataGridView audioDataGridView)
-        {
-            DataGridView dgv = audioDataGridView;
-            try
-            {
-                foreach (string file in fileNames)
-                {
-                    audioPathDataGridView.Rows.Add(Path.GetFileNameWithoutExtension(file), Path.GetFullPath(file));
-                    numberFiles.Text = audioPathDataGridView.RowCount.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
+        
         private void deleteButton_Click(object sender, EventArgs e)
         {
             DataGridView dgv = audioPathDataGridView;

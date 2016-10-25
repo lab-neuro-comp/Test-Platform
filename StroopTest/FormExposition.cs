@@ -137,8 +137,8 @@ namespace StroopTest
             {
                 outputFileName = outputDataPath + program.UserName + "_" + program.ProgramName + ".txt"; // defines outputFileName
                 // reading list files:
-                labelText = program.readListFile(path + "/lst/" + program.WordsListFile); // string array receives wordsList itens from list file
-                labelColor = program.readListFile(path + "/lst/" + program.ColorsListFile); // string array receives colorsList itens from list file
+                labelText = StroopProgram.readListFile(path + "/lst/" + program.WordsListFile); // string array receives wordsList itens from list file
+                labelColor = StroopProgram.readListFile(path + "/lst/" + program.ColorsListFile); // string array receives colorsList itens from list file
                 if (program.ExpositionRandom) // if the presentation is random, shuffles arrays
                 {
                     labelText = shuffleArray(labelText, program.NumExpositions, 1);
@@ -297,7 +297,7 @@ namespace StroopTest
                 
                 if (program.SubtitleShow)
                 {
-                    subtitlesArray = program.readListFile(path + "/lst/" + program.SubtitlesListFile);
+                    subtitlesArray = StroopProgram.readListFile(path + "/lst/" + program.SubtitlesListFile);
                     if(program.SubtitleColor.ToLower() != "false")
                     {
                         subtitleLabel.ForeColor = ColorTranslator.FromHtml(program.SubtitleColor);
@@ -319,7 +319,7 @@ namespace StroopTest
                         audioDirs = shuffleArray(audioDirs, program.NumExpositions, 6);
                     }
                 }
-                if (program.WordsListFile.ToLower() != "false") { labelText = program.readListFile(path + "/lst/" + program.WordsListFile); }
+                if (program.WordsListFile.ToLower() != "false") { labelText = StroopProgram.readListFile(path + "/lst/" + program.WordsListFile); }
                 
                 await showInstructions(program, cts.Token); // Apresenta instruções se houver
 

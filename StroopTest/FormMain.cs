@@ -85,7 +85,7 @@ namespace StroopTest
         
         private void textoECoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLstConfig configureWordsList = new FormLstConfig(testFilesPath, "false");
+            FormWordColorConfig configureWordsList = new FormWordColorConfig(testFilesPath + "/lst/", false);
             try { configureWordsList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -179,22 +179,8 @@ namespace StroopTest
         
         private void textoECoresToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FormLstConfig configureWordsList;
-            FormDefine defineProgram;
-            DialogResult result;
-            string editListName = "error";
-            try
-            {
-                defineProgram = new FormDefine("Editar Lista: ", testFilesPath, "lst");
-                result = defineProgram.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    editListName = defineProgram.ReturnValue;
-                    configureWordsList = new FormLstConfig(testFilesPath, editListName);
-                    if (!configureWordsList.IsDisposed) configureWordsList.ShowDialog();
-                    else { configureWordsList.Close(); }
-                }
-            }
+            FormWordColorConfig configureWordsList = new FormWordColorConfig(testFilesPath + "/lst/", true);
+            try { configureWordsList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 

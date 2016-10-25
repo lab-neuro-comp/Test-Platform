@@ -15,74 +15,92 @@ namespace StroopTest
     {
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string path;
-        private string editLstName = "error";
-
-        private string testFileName(string fileName)
-        {
-            string finalName = "";
-
-            if (!fileName.Contains("_Words") && !fileName.Contains("_words"))
-            {
-                finalName = fileName+ "_Words.lst";
-            }
-            else
-            {
-                if (!fileName.Contains("_Color") && !fileName.Contains("_color"))
-                {
-                    finalName = fileName + "_Color.lst";
-                }
-            }
-            
-
-
-
-            return finalName;
-        }
+        private string appendType = "";
 
         public FormLstConfig(string dataFolderPath, string lstName)
         {
             InitializeComponent();
             path = dataFolderPath + "/lst/";
             
-            wordsListLabel.Text = "_Words.lst";
-            colorsListLabel.Text = "_Color.lst";
+            wordsListLabel.Text = "_words.lst";
+            colorsListLabel.Text = "_color.lst";
 
             checkWords.Checked = true;
             checkColors.Checked = true;
 
             if (lstName.ToLower() != "false")
             {
-                editLstName = lstName;
                 editList(lstName);
             }
         }
-
+        
         private void listNameBox_TextChanged(object sender, EventArgs e)
         {
-            wordsListLabel.Text = listNameTextBox.Text + "_Words.lst";
-            colorsListLabel.Text = listNameTextBox.Text + "_Color.lst";
+            wordsListLabel.Text = listNameTextBox.Text + "_words.lst";
+            colorsListLabel.Text = listNameTextBox.Text + "_color.lst";
         }
 
-        private void editList(string lst)
+        private void editList(string fileName)
         {
             StroopProgram program = new StroopProgram();
-            string[] list;
-            
+            string wordsFilePath = "", colorsFilePath = "";
+            string[] list = null, wordsArray = null, colorsArray = null;
+
             try
             {
-                if (!wordsListLabel.Text.Contains("_Words") && !wordsListLabel.Text.Contains("_words"))
+                //MessageBox.Show(fileName);
+                /*
+                var typeOfList = fileName.Substring(fileName.Length - 6, fileName.Length);
+                switch (typeOfList.ToLower())
                 {
-                    wordsListLabel.Text = listNameTextBox.Text + "_Words.lst";
+                    case "_words":
+                        fileName = fileName.Remove(fileName.Length - 6);
+                        break;
+                    case "_color":
+                        fileName = fileName.Remove(fileName.Length - 6);
+                        break;
+                    default:
+                        break;
+                }
+                */
+                fileName = fileName.Remove(fileName.Length - 6);
+
+                wordsFilePath = path + fileName + "_words.lst";
+                colorsFilePath = path + fileName + "_colors.lst";
+
+                listNameTextBox.Text = fileName;
+
+                checkWords.Checked = false;
+                checkColors.Checked = false;
+
+                if (File.Exists(wordsFilePath))
+                {
+                    wordsArray = StroopProgram.readListFile(wordsFilePath);
+                    checkWords.Checked = true;
+                    foreach (string item in wordsArray) { wordsColoredList.Items.Add(item); }
+                }
+                if (File.Exists(colorsFilePath))
+                {
+                    colorsArray = StroopProgram.readListFile(colorsFilePath);
+                    checkColors.Checked = true;
+                    for (int i = 0; i < colorsArray.Length; i++)
+                    {
+                        if (Regex.IsMatch(colorsArray[i], hexPattern))
+                        {
+                            hexColorsList.Items.Add(colorsArray[i]);
+                            hexColorsList.Items[i].ForeColor = ColorTranslator.FromHtml(colorsArray[i]);
+                            if (File.Exists(wordsFilePath)) { wordsColoredList.Items[i].ForeColor = ColorTranslator.FromHtml(colorsArray[i]); }
+                        }
+                    }
                 }
 
-                if (!colorsListLabel.Text.Contains("_Color") && !colorsListLabel.Text.Contains("_color")) {
-                    colorsListLabel.Text = colorsListLabel.Text + "_Color.lst";
-                }
-
-                wordsListLabel.Text = lst + ".lst";
-                colorsListLabel.Text = lst + ".lst";
-
-                listNameTextBox.Text = lst;
+                /*
+                wordsListLabel.Text = testFileName(lst) + "_Words";
+                colorsListLabel.Text = testFileName(lst) + "_Color";
+                listNameTextBox.Text = testFileName(lst);
+                
+                wordsArray = program.readListFile(path + appendType + ".lst");
+                list = program.readListFile(path + appendType + ".lst");
 
                 if (editLstName != "error")
                 {
@@ -107,7 +125,7 @@ namespace StroopTest
                         }
                     }
 
-                }
+                }*/
             }
             catch (Exception ex)
             {
@@ -359,7 +377,7 @@ namespace StroopTest
                         }
 
                         writer1.Close();
-                        MessageBox.Show("A lista " + listNameTextBox.Text + "_Words.lst foi salva com sucesso");
+                        MessageBox.Show("A lista " + listNameTextBox.Text + " foi salva com sucesso");
                     }
                     else
                     {
@@ -370,9 +388,9 @@ namespace StroopTest
 
                 if (/*saveWordsList.ShowDialog() == DialogResult.OK && */ checkWords.Enabled) // lê instrução se houver
                 {
-                    if (wordsColoredList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + listNameTextBox.Text + "_Words.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
+                    if (wordsColoredList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + listNameTextBox.Text + "_words.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
                     {
-                        if (File.Exists(path + listNameTextBox.Text + "_Words.lst"))
+                        if (File.Exists(path + listNameTextBox.Text + "_words.lst"))
                         {
                             DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
                             if (dialogResult == DialogResult.Cancel)
@@ -381,7 +399,7 @@ namespace StroopTest
                             }
                         }
 
-                        StreamWriter writer2 = new StreamWriter(path + listNameTextBox.Text + "_Words.lst" /*saveWordsList.OpenFile()*/);
+                        StreamWriter writer2 = new StreamWriter(path + listNameTextBox.Text + "_words.lst" /*saveWordsList.OpenFile()*/);
 
                         for (int i = 0; i < wordsColoredList.Items.Count; i++)
                         {
@@ -390,7 +408,7 @@ namespace StroopTest
 
                         //writer2.Dispose();
                         writer2.Close();
-                        MessageBox.Show("A lista " + listNameTextBox.Text + "_Words.lst foi salva com sucesso");
+                        MessageBox.Show("A lista " + listNameTextBox.Text + "_words.lst foi salva com sucesso");
                     }
                     else
                     {

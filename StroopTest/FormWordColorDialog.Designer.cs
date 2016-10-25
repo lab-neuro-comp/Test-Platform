@@ -30,9 +30,9 @@
         {
             this.wordTextBox = new System.Windows.Forms.TextBox();
             this.hexColorTextBox = new System.Windows.Forms.TextBox();
-            this.defineWordLabel = new System.Windows.Forms.Label();
-            this.defineColorLabel = new System.Windows.Forms.Label();
-            this.addItemButton = new System.Windows.Forms.Button();
+            this.wordInputLabel = new System.Windows.Forms.Label();
+            this.colorInputLabel = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -40,7 +40,7 @@
             // 
             this.wordTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.wordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wordTextBox.Location = new System.Drawing.Point(93, 11);
+            this.wordTextBox.Location = new System.Drawing.Point(11, 29);
             this.wordTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.wordTextBox.Name = "wordTextBox";
             this.wordTextBox.Size = new System.Drawing.Size(128, 38);
@@ -51,7 +51,7 @@
             this.hexColorTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.hexColorTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.hexColorTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hexColorTextBox.Location = new System.Drawing.Point(298, 11);
+            this.hexColorTextBox.Location = new System.Drawing.Point(155, 29);
             this.hexColorTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.hexColorTextBox.MaxLength = 7;
             this.hexColorTextBox.Name = "hexColorTextBox";
@@ -59,64 +59,64 @@
             this.hexColorTextBox.TabIndex = 4;
             this.hexColorTextBox.Text = "#000000";
             this.hexColorTextBox.Click += new System.EventHandler(this.hexColorTextBox_Click);
+            this.hexColorTextBox.TextChanged += new System.EventHandler(this.hexColorTextBox_TextChanged);
             // 
-            // defineWordLabel
+            // wordInputLabel
             // 
-            this.defineWordLabel.AutoSize = true;
-            this.defineWordLabel.Location = new System.Drawing.Point(11, 23);
-            this.defineWordLabel.Name = "defineWordLabel";
-            this.defineWordLabel.Size = new System.Drawing.Size(75, 13);
-            this.defineWordLabel.TabIndex = 5;
-            this.defineWordLabel.Text = "Nova Palavra:";
+            this.wordInputLabel.AutoSize = true;
+            this.wordInputLabel.Location = new System.Drawing.Point(11, 11);
+            this.wordInputLabel.Name = "wordInputLabel";
+            this.wordInputLabel.Size = new System.Drawing.Size(46, 13);
+            this.wordInputLabel.TabIndex = 5;
+            this.wordInputLabel.Text = "Palavra:";
             // 
-            // defineColorLabel
+            // colorInputLabel
             // 
-            this.defineColorLabel.AutoSize = true;
-            this.defineColorLabel.Location = new System.Drawing.Point(236, 23);
-            this.defineColorLabel.Name = "defineColorLabel";
-            this.defineColorLabel.Size = new System.Drawing.Size(55, 13);
-            this.defineColorLabel.TabIndex = 6;
-            this.defineColorLabel.Text = "Nova Cor:";
+            this.colorInputLabel.AutoSize = true;
+            this.colorInputLabel.Location = new System.Drawing.Point(158, 11);
+            this.colorInputLabel.Name = "colorInputLabel";
+            this.colorInputLabel.Size = new System.Drawing.Size(77, 13);
+            this.colorInputLabel.TabIndex = 6;
+            this.colorInputLabel.Text = "Código da Cor:";
             // 
-            // addItemButton
+            // saveButton
             // 
-            this.addItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addItemButton.Location = new System.Drawing.Point(14, 65);
-            this.addItemButton.Name = "addItemButton";
-            this.addItemButton.Size = new System.Drawing.Size(75, 23);
-            this.addItemButton.TabIndex = 7;
-            this.addItemButton.Text = "Adicionar";
-            this.addItemButton.UseVisualStyleBackColor = true;
-            this.addItemButton.Click += new System.EventHandler(this.addItemButton_Click);
+            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.saveButton.Location = new System.Drawing.Point(11, 78);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.TabIndex = 33;
+            this.saveButton.Text = "salvar";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelButton.Location = new System.Drawing.Point(354, 65);
+            this.cancelButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cancelButton.Location = new System.Drawing.Point(208, 78);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 8;
-            this.cancelButton.Text = "Cancelar";
+            this.cancelButton.TabIndex = 35;
+            this.cancelButton.Text = "cancelar";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // FormWordColorDialog
             // 
-            this.AcceptButton = this.addItemButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(441, 100);
+            this.ClientSize = new System.Drawing.Size(294, 117);
             this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.addItemButton);
-            this.Controls.Add(this.defineColorLabel);
-            this.Controls.Add(this.defineWordLabel);
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.colorInputLabel);
+            this.Controls.Add(this.wordInputLabel);
             this.Controls.Add(this.wordTextBox);
             this.Controls.Add(this.hexColorTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormWordColorDialog";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FormWordColorDialog";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,9 +126,9 @@
 
         private System.Windows.Forms.TextBox wordTextBox;
         private System.Windows.Forms.TextBox hexColorTextBox;
-        private System.Windows.Forms.Label defineWordLabel;
-        private System.Windows.Forms.Label defineColorLabel;
-        private System.Windows.Forms.Button addItemButton;
+        private System.Windows.Forms.Label wordInputLabel;
+        private System.Windows.Forms.Label colorInputLabel;
+        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
     }
 }

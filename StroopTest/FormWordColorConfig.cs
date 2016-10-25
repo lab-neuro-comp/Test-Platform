@@ -277,7 +277,7 @@ namespace StroopTest
         {
             try
             {
-                if (index == 0)
+                if (index == list.Count-1)
                     return;
                 string item = list[index];
                 list.RemoveAt(index);

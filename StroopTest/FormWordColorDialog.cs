@@ -1,5 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StroopTest
@@ -7,6 +14,7 @@ namespace StroopTest
     public partial class FormWordColorDialog : Form
     {
         public string ReturnValue { get; set; }
+        private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
 
         public FormWordColorDialog()
         {
@@ -16,8 +24,11 @@ namespace StroopTest
         private void hexColorTextBox_Click(object sender, EventArgs e)
         {
             string colorCode = pickColor();
-            hexColorTextBox.ForeColor = ColorTranslator.FromHtml(colorCode);
-            hexColorTextBox.Text = colorCode;
+            if (colorCode != null)
+            {
+                hexColorTextBox.ForeColor = ColorTranslator.FromHtml(colorCode);
+                hexColorTextBox.Text = colorCode;
+            }
         }
 
         private string pickColor()
@@ -31,7 +42,7 @@ namespace StroopTest
                                         ColorTranslator.ToOle(ColorTranslator.FromHtml("#D01C1F"))
                                       };
             colorPicked = this.BackColor;
-            string hexColor = "#000000";
+            string hexColor = null;
             if (MyDialog.ShowDialog() == DialogResult.OK)
             {
                 colorPicked = MyDialog.Color;
@@ -40,24 +51,58 @@ namespace StroopTest
             return hexColor;
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            this.ReturnValue = "";
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
-
-        private void addItemButton_Click(object sender, EventArgs e)
+        private void saveButton_Click(object sender, EventArgs e)
         {
             try
             {
                 if (string.IsNullOrWhiteSpace(wordTextBox.Text))
                 {
-                    throw new Exception("Campo palavra deve ser preenchido!");
+                    throw new Exception("Preencha os campos!");
                 }
-                this.ReturnValue = wordTextBox.Text + " " + hexColorTextBox.Text;
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+
+                ReturnValue = wordTextBox.Text + " " + hexColorTextBox.Text;
+                DialogResult = DialogResult.OK;
+
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
+        }
+
+        private void hexColorTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var box = (TextBox)sender;
+                if (box.Text.Length <= 1)
+                {
+                    box.Text = "#";
+                    box.SelectionStart = 1;
+                }
+
+                if (box.Text.Length == 7 && !Regex.IsMatch(box.Text, hexPattern))
+                {
+                    throw new Exception("O código de cor deve estar em formato hexadecimal.\nEx: #000000");
+                }
+
+
+                if (Regex.IsMatch(hexColorTextBox.Text, hexPattern) && hexColorTextBox.TextLength == 7)
+                {
+                    hexColorTextBox.ForeColor = ColorTranslator.FromHtml(hexColorTextBox.Text);
+                }
+                else
+                {
+                    hexColorTextBox.ForeColor = Color.Black;
+                }
             }
             catch (Exception ex)
             {

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StroopTest
@@ -85,6 +81,21 @@ namespace StroopTest
 
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        internal static void readStringListIntoDGV(string[] fileNames, DataGridView dataGridView)
+        {
+            try
+            {
+                foreach (string file in fileNames)
+                {
+                    dataGridView.Rows.Add(Path.GetFileNameWithoutExtension(file), Path.GetFullPath(file));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         internal static void closeFormListNotEmpty(DataGridView dgv)

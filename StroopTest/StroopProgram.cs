@@ -14,10 +14,10 @@ namespace StroopTest
 {
     class StroopProgram
     {
-        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false false false 1 false txt false false 160 false false false false 0 0 false false";
-        private string defaultWordsListName = "padrao_words.lst";
-        private string defaultColorsListName = "padrao_color.lst";
+        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_Words.lst padrao_Colors.lst false false false 1 false txt false false 160 false false false false 0 0 false false";
+        private string defaultWordsListName = "padrao_Words.lst";
         private string defaultWordsListText = "amarelo azul verde vermelho";
+        private string defaultColorsListName = "padrao_Colors.lst";
         private string defaultColorsListText = "#F8E000 #007BB7 #7EC845 #D01C1F";
         private string defaultRedColor = "#D01C1F";
         private string headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio";
@@ -610,9 +610,9 @@ namespace StroopTest
                 throw new Exception("Arquivo '" + defaultColorsListName + "' não foi escrito\n\n( " + ex.Message + " )");
             }
         }
-        
+
         // lê palavras do arquivo e retorna vetor
-        static public string[] readListFile(string filepath)
+        static internal string[] readListFile(string filepath)
         {
             TextReader tr;
             List<string> list;

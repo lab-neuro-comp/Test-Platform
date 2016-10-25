@@ -61,7 +61,7 @@ namespace StroopTest
 
                         if (cellArray.Length == dataGridView1.Columns.Count) { dataGridView1.Rows.Add(cellArray); }
                         
-                        if (Regex.IsMatch(cellArray[cellArray.Length - 2], hexPattern))
+                        if (Regex.IsMatch(cellArray[cellArray.Length - 1], hexPattern))
                         {
                             dataGridView1.Rows[i].Cells[dataGridView1.Columns.Count - 1].Style.BackColor = ColorTranslator.FromHtml(cellArray[cellArray.Length - 1]);
                         }

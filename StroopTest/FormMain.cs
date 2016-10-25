@@ -85,8 +85,8 @@ namespace StroopTest
         
         private void textoECoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormWordColorConfig configureWordsList = new FormWordColorConfig(testFilesPath + "/lst/", false);
-            try { configureWordsList.ShowDialog(); }
+            FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/lst/", false);
+            try { configureList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
@@ -179,8 +179,8 @@ namespace StroopTest
         
         private void textoECoresToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FormWordColorConfig configureWordsList = new FormWordColorConfig(testFilesPath + "/lst/", true);
-            try { configureWordsList.ShowDialog(); }
+            FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/lst/", true);
+            try { configureList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 

@@ -14,7 +14,7 @@ namespace StroopTest
         {
             InitializeComponent();
             path = audioFolderPath;
-
+            
             if (editList)
             {
                 openFilesForEdition();

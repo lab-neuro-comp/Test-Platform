@@ -47,6 +47,7 @@
             this.playAudioLabel = new System.Windows.Forms.Label();
             this.numberFilesLabel = new System.Windows.Forms.Label();
             this.numberFiles = new System.Windows.Forms.Label();
+            this.helpButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.audioPathDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,13 +129,13 @@
             this.audioPathDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fileNameColumn,
             this.filePathColumn});
-            this.audioPathDataGridView.Location = new System.Drawing.Point(165, 27);
+            this.audioPathDataGridView.Location = new System.Drawing.Point(165, 43);
             this.audioPathDataGridView.MultiSelect = false;
             this.audioPathDataGridView.Name = "audioPathDataGridView";
             this.audioPathDataGridView.ReadOnly = true;
             this.audioPathDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.audioPathDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.audioPathDataGridView.Size = new System.Drawing.Size(459, 345);
+            this.audioPathDataGridView.Size = new System.Drawing.Size(459, 329);
             this.audioPathDataGridView.TabIndex = 44;
             this.audioPathDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.audioPathDataGridView_CellContentDoubleClick);
             this.audioPathDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.audioPathDataGridView_KeyDown);
@@ -241,11 +242,25 @@
             this.numberFiles.TabIndex = 59;
             this.numberFiles.Text = "0";
             // 
+            // helpButton
+            // 
+            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.helpButton.BackgroundImage = global::StroopTest.Properties.Resources.helpButton;
+            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.helpButton.Location = new System.Drawing.Point(598, 11);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(2);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(26, 26);
+            this.helpButton.TabIndex = 82;
+            this.helpButton.UseVisualStyleBackColor = false;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+            // 
             // FormAudioConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 413);
+            this.Controls.Add(this.helpButton);
             this.Controls.Add(this.numberFiles);
             this.Controls.Add(this.numberFilesLabel);
             this.Controls.Add(this.playAudioLabel);
@@ -292,5 +307,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn filePathColumn;
         private System.Windows.Forms.Label numberFilesLabel;
         private System.Windows.Forms.Label numberFiles;
+        private System.Windows.Forms.Button helpButton;
     }
 }

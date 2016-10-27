@@ -17,6 +17,7 @@ namespace StroopTest
         private StroopProgram program = new StroopProgram();
         private string path;
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
+        private string instructionsText = "<h1>Ajuda</h1>";
 
         public FormShowData(string dataFolderPath)
         {
@@ -110,6 +111,13 @@ namespace StroopTest
                     }
                 }
             }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            FormInstructions infoBox = new FormInstructions(instructionsText);
+            try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }

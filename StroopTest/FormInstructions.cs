@@ -11,10 +11,15 @@ namespace StroopTest
 {
     public partial class FormInstructions : Form
     {
-        public FormInstructions(string fileInstructionPath, string instructionsText)
+        public FormInstructions(string instructionsText)
         {
             InitializeComponent();
+            webBrowser1.DocumentText = instructionsText;
+        }
 
+        public FormInstructions(string instructionsText, string fileInstructionPath)
+        {
+            InitializeComponent();
             if (new FileInfo(fileInstructionPath).Length != 0)
             {
                 string[] lines = File.ReadAllLines(fileInstructionPath);
@@ -24,10 +29,7 @@ namespace StroopTest
                     instructionsText = instructionsText + "\n" + line;
                 }
             }
-
             webBrowser1.DocumentText = instructionsText;
-
-            //richTextBox1.Text = instructionsText;
         }
         
     }

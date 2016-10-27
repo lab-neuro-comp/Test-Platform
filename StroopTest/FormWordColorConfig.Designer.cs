@@ -47,6 +47,7 @@
             this.numberItensLabel = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
+            this.helpButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.wordsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,12 +73,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.wordsDataGridView.Location = new System.Drawing.Point(151, 38);
+            this.wordsDataGridView.Location = new System.Drawing.Point(151, 42);
             this.wordsDataGridView.Name = "wordsDataGridView";
             this.wordsDataGridView.ReadOnly = true;
             this.wordsDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.wordsDataGridView.RowHeadersVisible = false;
-            this.wordsDataGridView.Size = new System.Drawing.Size(315, 426);
+            this.wordsDataGridView.Size = new System.Drawing.Size(343, 422);
             this.wordsDataGridView.TabIndex = 0;
             // 
             // Column1
@@ -132,7 +133,7 @@
             // newItemButton
             // 
             this.newItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.newItemButton.Location = new System.Drawing.Point(9, 38);
+            this.newItemButton.Location = new System.Drawing.Point(9, 42);
             this.newItemButton.Name = "newItemButton";
             this.newItemButton.Size = new System.Drawing.Size(136, 23);
             this.newItemButton.TabIndex = 10;
@@ -214,7 +215,7 @@
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(391, 472);
+            this.cancelButton.Location = new System.Drawing.Point(419, 472);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 63;
@@ -234,12 +235,26 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // helpButton
+            // 
+            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.helpButton.BackgroundImage = global::StroopTest.Properties.Resources.helpButton;
+            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.helpButton.Location = new System.Drawing.Point(467, 11);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(2);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(26, 26);
+            this.helpButton.TabIndex = 82;
+            this.helpButton.UseVisualStyleBackColor = false;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+            // 
             // FormWordColorConfig
             // 
             this.AcceptButton = this.newItemButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 507);
+            this.ClientSize = new System.Drawing.Size(506, 507);
+            this.Controls.Add(this.helpButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.numberItens);
@@ -283,5 +298,6 @@
         private System.Windows.Forms.Label numberItensLabel;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button helpButton;
     }
 }

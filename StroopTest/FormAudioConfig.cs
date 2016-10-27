@@ -9,6 +9,7 @@ namespace StroopTest
     {
         private string path;
         private SoundPlayer Player = new SoundPlayer();
+        private string instructionsText = "<h1>Ajuda</h1>";
 
         public FormAudioConfig(string audioFolderPath, bool editList)
         {
@@ -152,6 +153,13 @@ namespace StroopTest
                 }
                 catch { }
             }
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            FormInstructions infoBox = new FormInstructions(instructionsText);
+            try { infoBox.Show(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }

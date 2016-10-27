@@ -439,7 +439,7 @@ namespace StroopTest
 
         private void showPrgConfigInstructions()
         {
-            FormInstructions infoBox = new FormInstructions((path + "prgConfigHelp.txt"), prgConfigInstructionsText);
+            FormInstructions infoBox = new FormInstructions(prgConfigInstructionsText);
             try { infoBox.Show(); }
             catch (Exception ex) { throw new Exception(ex.Message);/*MessageBox.Show(ex.Message);*/ }
         }

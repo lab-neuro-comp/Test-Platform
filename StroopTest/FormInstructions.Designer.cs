@@ -51,7 +51,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormInstructions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Instruções";
+            this.Text = "Ajuda";
             this.ResumeLayout(false);
 
         }

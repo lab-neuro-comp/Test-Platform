@@ -299,7 +299,7 @@ namespace StroopTest
         
         private void showInstructions()
         {
-            FormInstructions infoBox = new FormInstructions((testFilesPath + instructionsFileName), instructionsText);
+            FormInstructions infoBox = new FormInstructions(instructionsText, (testFilesPath + instructionsFileName));
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

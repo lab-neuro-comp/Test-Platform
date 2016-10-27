@@ -358,9 +358,9 @@ namespace StroopTest
 
                 if (/*saveColorsList.ShowDialog() == DialogResult.OK && */checkColors.Enabled) // lê instrução se houver
                 {
-                    if (hexColorsList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + listNameTextBox.Text + "_Color.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
+                    if (hexColorsList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + listNameTextBox.Text + "_color.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
                     {
-                        if (File.Exists(path + listNameTextBox.Text + "_Color.lst"))
+                        if (File.Exists(path + listNameTextBox.Text + "_color.lst"))
                         {
                             DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
                             if (dialogResult == DialogResult.Cancel)
@@ -369,7 +369,7 @@ namespace StroopTest
                             }
                         }
 
-                        StreamWriter writer1 = new StreamWriter(path + listNameTextBox.Text + "_Color.lst" /*saveColorsList.OpenFile()*/);
+                        StreamWriter writer1 = new StreamWriter(path + listNameTextBox.Text + "_color.lst" /*saveColorsList.OpenFile()*/);
 
                         for (int i = 0; i < hexColorsList.Items.Count; i++)
                         {

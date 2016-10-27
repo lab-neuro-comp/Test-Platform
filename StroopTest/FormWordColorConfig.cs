@@ -13,6 +13,7 @@ namespace StroopTest
         List<string> wordsList = new List<string>(), colorsList = new List<string>();
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string path;
+        private string instructionsText = "<h1>Ajuda</h1>";
 
         public FormWordColorConfig(string listsPath, bool editFile)
         {
@@ -347,6 +348,13 @@ namespace StroopTest
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            FormInstructions infoBox = new FormInstructions(instructionsText);
+            try { infoBox.Show(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

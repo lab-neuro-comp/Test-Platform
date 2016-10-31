@@ -10,6 +10,7 @@ namespace StroopTest
         private ImageList imgsList = new ImageList();
         private string path;
         private bool firstOpenFlag = true;
+        private string instructionsText = HelpData.ImageConfigInstructions;
 
         public FormImgConfig(string imagesFolderPath, string imgListEdit)
         {
@@ -222,6 +223,13 @@ namespace StroopTest
                 pictureBox.Image = null;
                 pictureBox.Refresh();
             }
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            FormInstructions infoBox = new FormInstructions(instructionsText);
+            try { infoBox.Show(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }

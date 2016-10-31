@@ -47,6 +47,7 @@
             this.imgListNameLabel = new System.Windows.Forms.Label();
             this.numberFilesLabel = new System.Windows.Forms.Label();
             this.numberFiles = new System.Windows.Forms.Label();
+            this.helpButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPathDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +55,7 @@
             // btnOpen
             // 
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOpen.Location = new System.Drawing.Point(19, 71);
+            this.btnOpen.Location = new System.Drawing.Point(19, 87);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(136, 23);
             this.btnOpen.TabIndex = 20;
@@ -65,9 +66,9 @@
             // pictureBox
             // 
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox.Location = new System.Drawing.Point(168, 12);
+            this.pictureBox.Location = new System.Drawing.Point(171, 42);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(297, 251);
+            this.pictureBox.Size = new System.Drawing.Size(279, 220);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 4;
             this.pictureBox.TabStop = false;
@@ -75,7 +76,7 @@
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(19, 113);
+            this.button1.Location = new System.Drawing.Point(19, 129);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 23);
             this.button1.TabIndex = 21;
@@ -88,7 +89,7 @@
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(390, 515);
+            this.cancelButton.Location = new System.Drawing.Point(375, 515);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 31;
@@ -128,7 +129,7 @@
             this.imgPathDataGridView.ReadOnly = true;
             this.imgPathDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.imgPathDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.imgPathDataGridView.Size = new System.Drawing.Size(443, 237);
+            this.imgPathDataGridView.Size = new System.Drawing.Size(428, 237);
             this.imgPathDataGridView.TabIndex = 10;
             this.imgPathDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.imgPathDataGridView_CellContentClick);
             this.imgPathDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.imgPathDataGridView_CellMouseClick);
@@ -165,7 +166,7 @@
             // moveUpButton
             // 
             this.moveUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.moveUpButton.Location = new System.Drawing.Point(19, 155);
+            this.moveUpButton.Location = new System.Drawing.Point(19, 171);
             this.moveUpButton.Name = "moveUpButton";
             this.moveUpButton.Size = new System.Drawing.Size(136, 23);
             this.moveUpButton.TabIndex = 22;
@@ -176,7 +177,7 @@
             // moveDownButton
             // 
             this.moveDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.moveDownButton.Location = new System.Drawing.Point(19, 184);
+            this.moveDownButton.Location = new System.Drawing.Point(19, 200);
             this.moveDownButton.Name = "moveDownButton";
             this.moveDownButton.Size = new System.Drawing.Size(136, 23);
             this.moveDownButton.TabIndex = 23;
@@ -187,7 +188,7 @@
             // moveRowLabel
             // 
             this.moveRowLabel.AutoSize = true;
-            this.moveRowLabel.Location = new System.Drawing.Point(19, 139);
+            this.moveRowLabel.Location = new System.Drawing.Point(19, 155);
             this.moveRowLabel.Name = "moveRowLabel";
             this.moveRowLabel.Size = new System.Drawing.Size(62, 13);
             this.moveRowLabel.TabIndex = 38;
@@ -196,7 +197,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 55);
+            this.label1.Location = new System.Drawing.Point(19, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 39;
@@ -205,7 +206,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 97);
+            this.label2.Location = new System.Drawing.Point(19, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 40;
@@ -213,7 +214,7 @@
             // 
             // imgListNameTextBox
             // 
-            this.imgListNameTextBox.Location = new System.Drawing.Point(19, 28);
+            this.imgListNameTextBox.Location = new System.Drawing.Point(19, 44);
             this.imgListNameTextBox.Name = "imgListNameTextBox";
             this.imgListNameTextBox.Size = new System.Drawing.Size(136, 20);
             this.imgListNameTextBox.TabIndex = 19;
@@ -221,7 +222,7 @@
             // imgListNameLabel
             // 
             this.imgListNameLabel.AutoSize = true;
-            this.imgListNameLabel.Location = new System.Drawing.Point(19, 12);
+            this.imgListNameLabel.Location = new System.Drawing.Point(19, 28);
             this.imgListNameLabel.Name = "imgListNameLabel";
             this.imgListNameLabel.Size = new System.Drawing.Size(78, 13);
             this.imgListNameLabel.TabIndex = 42;
@@ -245,6 +246,19 @@
             this.numberFiles.TabIndex = 44;
             this.numberFiles.Text = "0";
             // 
+            // helpButton
+            // 
+            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.helpButton.BackgroundImage = global::StroopTest.Properties.Resources.helpButton;
+            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.helpButton.Location = new System.Drawing.Point(424, 11);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(2);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(26, 26);
+            this.helpButton.TabIndex = 82;
+            this.helpButton.UseVisualStyleBackColor = false;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+            // 
             // FormImgConfig
             // 
             this.AcceptButton = this.saveButton;
@@ -252,7 +266,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(484, 547);
+            this.ClientSize = new System.Drawing.Size(469, 547);
+            this.Controls.Add(this.helpButton);
             this.Controls.Add(this.numberFiles);
             this.Controls.Add(this.numberFilesLabel);
             this.Controls.Add(this.imgListNameLabel);
@@ -299,5 +314,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn filePathColumn;
         private System.Windows.Forms.Label numberFilesLabel;
         private System.Windows.Forms.Label numberFiles;
+        private System.Windows.Forms.Button helpButton;
     }
 }

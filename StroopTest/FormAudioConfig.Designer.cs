@@ -134,6 +134,7 @@
             this.audioPathDataGridView.Name = "audioPathDataGridView";
             this.audioPathDataGridView.ReadOnly = true;
             this.audioPathDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.audioPathDataGridView.RowHeadersVisible = false;
             this.audioPathDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.audioPathDataGridView.Size = new System.Drawing.Size(459, 329);
             this.audioPathDataGridView.TabIndex = 44;

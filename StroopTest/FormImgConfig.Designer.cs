@@ -128,6 +128,7 @@
             this.imgPathDataGridView.Name = "imgPathDataGridView";
             this.imgPathDataGridView.ReadOnly = true;
             this.imgPathDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.imgPathDataGridView.RowHeadersVisible = false;
             this.imgPathDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.imgPathDataGridView.Size = new System.Drawing.Size(428, 237);
             this.imgPathDataGridView.TabIndex = 10;

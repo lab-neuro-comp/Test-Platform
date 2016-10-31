@@ -17,8 +17,7 @@ namespace StroopTest
         private StroopProgram program = new StroopProgram();
         private string path;
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
-        private string instructionsText = "<h1>Ajuda</h1>";
-
+        private string instructionsText = HelpData.ShowDataInstructions;
         public FormShowData(string dataFolderPath)
         {
             InitializeComponent();
@@ -50,31 +49,26 @@ namespace StroopTest
         {
             this.dataGridView1.DataSource = null;
             this.dataGridView1.Rows.Clear();
-            string[] lines;
+            string[] line;
             try
             {
-                lines = StroopProgram.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
-                if (lines.Count() > 0)
+                line = StroopProgram.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
+                if (line.Count() > 0)
                 {
-                    for(int i = 0; i < lines.Count(); i++)
+                    for(int i = 0; i < line.Count(); i++)
                     {
-                        string[] cellArray = lines[i].Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
-
-                        if (cellArray.Length == dataGridView1.Columns.Count) { dataGridView1.Rows.Add(cellArray); }
-                        
-                        if (Regex.IsMatch(cellArray[cellArray.Length - 1], hexPattern))
-                        {
-                            dataGridView1.Rows[i].Cells[dataGridView1.Columns.Count - 1].Style.BackColor = ColorTranslator.FromHtml(cellArray[cellArray.Length - 1]);
+                        string[] cellArray = line[i].Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                        if (cellArray.Length == dataGridView1.Columns.Count) {
+                            dataGridView1.Rows.Add(cellArray);
+                            for (int j = 0; j < cellArray.Length; j++)
+                            {
+                                if (Regex.IsMatch(cellArray[j], hexPattern))
+                                {
+                                    dataGridView1.Rows[i].Cells[j].Style.BackColor = ColorTranslator.FromHtml(cellArray[j]);
+                                }
+                            }
                         }
                     }
-                    /*
-                    foreach (var cellValues in lines) // Se o item selecionado muda, atualiza-se a tabela de dados de acordo com o selecionado
-                    {
-                        var cellArray = cellValues.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                        if (cellArray.Length == dataGridView1.Columns.Count)
-                            dataGridView1.Rows.Add(cellArray);
-                    }
-                    */
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

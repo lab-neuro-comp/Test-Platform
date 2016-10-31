@@ -217,7 +217,7 @@ namespace StroopTest
                             else subtitleCounter++;
                         }
 
-                        StroopProgram.writeLineOutput(program, textCurrent, colorCurrent, counter, outputContent, elapsedTime, program.ExpositionType, Path.GetFileNameWithoutExtension(audioDetail));
+                        StroopProgram.writeLineOutput(program, textCurrent, colorCurrent, counter, outputContent, elapsedTime, program.ExpositionType, audioDetail);
                         
                         await Task.Delay(program.ExpositionTime, cts.Token);
                     }

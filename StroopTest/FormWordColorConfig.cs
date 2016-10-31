@@ -13,7 +13,7 @@ namespace StroopTest
         List<string> wordsList = new List<string>(), colorsList = new List<string>();
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string path;
-        private string instructionsText = "<h1>Ajuda</h1>";
+        private string instructionsText = HelpData.WordColorConfigInstructions;
 
         public FormWordColorConfig(string listsPath, bool editFile)
         {
@@ -69,6 +69,11 @@ namespace StroopTest
                     }
                     checkTypeOfList();
                     numberItens.Text = wordsDataGridView.RowCount.ToString();
+                }
+                else
+                {
+                    wordsListCheckBox.Checked = true;
+                    colorsListCheckBox.Checked = true;
                 }
 
             }

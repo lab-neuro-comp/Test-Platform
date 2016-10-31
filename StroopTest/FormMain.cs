@@ -4,8 +4,6 @@
  */
 
 using System;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -169,11 +167,6 @@ namespace StroopTest
                     else { configureProgram.Close(); }
                 }
             }
-            /*
-            catch (ObjectDisposedException ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }*/
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
         
@@ -225,28 +218,75 @@ namespace StroopTest
 
         private void beginTest(string programName)
         {
-            Screen[] screens = Screen.AllScreens;
-            FormExposition exposeProgram = new FormExposition(programName, usrNameSL.Text, defaultPath);
-            Rectangle bounds = new Rectangle();
             try
             {
-                if (screens.Length == 2)
+                Screen[] sc;
+                sc = Screen.AllScreens;
+                int showOnMonitor = 0;
+
+                if (sc.Length > 1)
                 {
-                    if(screens[0] == Screen.FromControl(this))
+                    if (sc[0].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 1; }
+                    if (sc[1].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 0; }
+                }
+
+                FormExposition f = new FormExposition(programName, usrNameSL.Text, defaultPath);
+                f.StartPosition = FormStartPosition.Manual;
+                f.Location = Screen.AllScreens[showOnMonitor].WorkingArea.Location;
+                SendKeys.SendWait("i");
+                f.Show();
+
+                /*
+                Screen[] screens = Screen.AllScreens;
+                FormExposition exposeProgram = new FormExposition(programName, usrNameSL.Text, defaultPath);
+                Rectangle boundsRectangle = new Rectangle();
+                exposeProgram.StartPosition = FormStartPosition.Manual;
+
+                if (screens.Length > 1)
+                {
+                    if (screens[0] == Screen.FromControl(this))
                     {
-                        bounds = screens[1].Bounds;
+                        boundsRectangle = screens[1].Bounds;
                     }
                     else
                     {
-                        bounds = screens[0].Bounds;
+                        boundsRectangle = screens[0].Bounds;
                     }
-                    exposeProgram.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
-                    exposeProgram.StartPosition = FormStartPosition.Manual;
+                    exposeProgram.SetBounds(boundsRectangle.X, boundsRectangle.Y, boundsRectangle.Width, boundsRectangle.Height);
                 }
                 SendKeys.SendWait("i");
-                exposeProgram.ShowDialog();
+                exposeProgram.Show();
+                */
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void showOnMonitor(string programName)
+        {
+            Screen[] sc;
+            sc = Screen.AllScreens;
+            int showOnMonitor = 0;
+
+            if(sc.Length != 1)
+            {
+                for (int i = 0; i < sc.Length; i++)
+                {
+                    if (sc[i] == Screen.FromControl(this))
+                    {
+                        showOnMonitor = i + 1;
+                    }
+                }
+            }
+            
+            FormExposition f = new FormExposition(programName, usrNameSL.Text, defaultPath);
+
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.Left = sc[showOnMonitor].Bounds.Left;
+            f.Top = sc[showOnMonitor].Bounds.Top;
+            f.StartPosition = FormStartPosition.Manual;
+
+            SendKeys.SendWait("i");
+            f.Show();
         }
 
         private void defineProgram()

@@ -21,28 +21,7 @@ namespace StroopTest
         private int subDirectionNumber = 1;
         private string fontSize = "160";
         private string editPrgName = "error";
-        private string prgConfigInstructionsText = "\n- Nome do Arquivo onde o programa será salvo\n" +
-                                                 "\n- Tipo de Estímulo: Texto; Imagem; Imagem e Texto; Texto e Áudio; Imagem e Áudio\n" +
-                                                 "\n- Aleatoriedade na apresentação; as exposições ocorrerão de forma aleatória\n" +
-                                                 "\n- Número de Estímulos (quantidade de estímulos a serem expostos)\n" +
-                                                 "\n- Dimensão da letra em estímulos do tipo texto\n" +
-                                                 "\n- Cor das palavras que serão revezadas com imagens (Imagem com Palavra)\n" +
-                                                 "\n- Arquivo de Lista de palavras (um estímulo palavra por linha, arquivo .lst)\n" +
-                                                 "\n- Arquivo de Lista de cores (um código hexadecimal de cor por linha, arquivo .lst)\n" +
-                                                 "\n- Arquivo de Lista de imagens (um caminho de imagem por linha, arquivo .lst)\n" +
-                                                 "\n- Arquivo de Lista de áudio (um caminho de arquivos de áudi por linha, arquivo .lst)\n" +
-                                                 "\n- Tempo de exposição para cada estímulo (quanto tempo uma palavra, imagem permanece exposta)\n" +
-                                                 "\n- Tempo de intervalo entre estímulos (quanto tempo de pausa faz-se entre duas exposições de estímulo)\n" +
-                                                 "\n- Aleatoriedade no tempo de intervalo entre estímulos\n" +
-                                                 "\n- Tipo de ponto de fixação: cruz ou círculo (ponto de fixação surge durante o intervalo)\n" +
-                                                 "\n- Cor do ponto de fixação\n" +
-                                                 "\n- Ativa legenda para estímulos do tipo imagem - selecione uma lista com as legendas\n" +
-                                                 "\n- Posicionamento da legenda em relação aos estímulos\n" +
-                                                 "\n- Cor da legenda apresentada\n" +
-                                                 "\n- Ativa captura de áudio durante a execução do teste\n" +
-                                                 "\n- Cor de fundo durante a apresentação dos estímulos\n" +
-                                                 "\n- Expande estímulos de imagem até as bordas da tela - não pode ocorrer simultaneamente à apresentação de legenda\n" +
-                                                 "\n- Instruções apresentadas no início do programa - será apresentada um tela para cada linha escrita abaixo\n";
+        private string instructionsText = HelpData.ProgramConfigInstructions;
 
         public FormPrgConfig(string dataFolderPath, string prgName)
         {
@@ -434,16 +413,11 @@ namespace StroopTest
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            showPrgConfigInstructions();
-        }
-
-        private void showPrgConfigInstructions()
-        {
-            FormInstructions infoBox = new FormInstructions(prgConfigInstructionsText);
+            FormInstructions infoBox = new FormInstructions(instructionsText);
             try { infoBox.Show(); }
-            catch (Exception ex) { throw new Exception(ex.Message);/*MessageBox.Show(ex.Message);*/ }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
-
+        
         //SAVE
 
         private void configureNewProgram()

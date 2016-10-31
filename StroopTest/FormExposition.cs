@@ -41,6 +41,7 @@ namespace StroopTest
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
+            this.StartPosition = FormStartPosition.Manual;
             InitializeComponent();
             path = defaultFolderPath + "/StroopTestFiles/";
             outputDataPath = defaultFolderPath + "/data/";
@@ -290,11 +291,7 @@ namespace StroopTest
                 {
                     imageDirs = shuffleArray(imageDirs, program.NumExpositions, 3);
                 }
-                foreach (string item in imageDirs)
-                {
 
-                }
-                
                 if (program.SubtitleShow)
                 {
                     subtitlesArray = StroopProgram.readListFile(path + "/lst/" + program.SubtitlesListFile);
@@ -338,7 +335,7 @@ namespace StroopTest
 
                     // beginAudio
                     if (program.AudioCapture && program.ExpositionType != "txtaud") { startRecordingAudio(program); } // inicia gravação áudio
-                    // endAudio
+                                                                                                                      // endAudio
 
                     await Task.Delay(program.IntervalTime, cts.Token);
                     
@@ -412,7 +409,6 @@ namespace StroopTest
                     }
                     else
                     {
-                        int imgCounter = 0;
                         for (int counter = 0; counter < program.NumExpositions; counter++) // AQUI ver estinulo -> palavra ou imagem como um só e ter intervalo separado
                         {
                             imgPictureBox.Visible = false; wordLabel.Visible = false;
@@ -420,7 +416,7 @@ namespace StroopTest
                             await intervalOrFixPoint(program, cts.Token);
 
 
-                            if (imgCounter == imageDirs.Count()) { imgCounter = 0; }
+                            if (arrayCounter == imageDirs.Count()) { arrayCounter = 0; }
                             if (program.RotateImage != 0) { imgPictureBox.Image = RotateImage(imageDirs[arrayCounter], program.RotateImage); }
                             else { imgPictureBox.Image = Image.FromFile(imageDirs[arrayCounter]); }
 
@@ -455,10 +451,9 @@ namespace StroopTest
                                 else k++;
                             }
 
-                            StroopProgram.writeLineOutput(program, Path.GetFileName(imageDirs[imgCounter].ToString()), "false", counter + 1, outputContent, elapsedTime, program.ExpositionType, Path.GetFileNameWithoutExtension(audioDetail));
-                            imgCounter++;
+                            StroopProgram.writeLineOutput(program, Path.GetFileName(imageDirs[arrayCounter].ToString()), "false", counter + 1, outputContent, elapsedTime, program.ExpositionType, Path.GetFileNameWithoutExtension(audioDetail));
+                            arrayCounter++;
                             
-                            //subtitleLabel.Location = new Point((ClientSize.Width / 2 - subtitleLabel.Width / 2), pictureBox1.Bottom + 50);
                             await Task.Delay(program.ExpositionTime, cts.Token);
                         }
                     }

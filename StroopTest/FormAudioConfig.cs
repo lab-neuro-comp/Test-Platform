@@ -9,7 +9,7 @@ namespace StroopTest
     {
         private string path;
         private SoundPlayer Player = new SoundPlayer();
-        private string instructionsText = "<h1>Ajuda</h1>";
+        private string instructionsText = HelpData.AudioConfigInstructions;
 
         public FormAudioConfig(string audioFolderPath, bool editList)
         {

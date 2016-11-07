@@ -15,7 +15,7 @@ namespace StroopTest
         public string[] filePaths;
         private string type;
         private string usrName;
-
+        
         public FormDefine(string formTitle, string dataFolderPath, string fileType)
         {
             InitializeComponent();

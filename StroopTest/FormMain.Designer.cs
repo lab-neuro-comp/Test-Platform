@@ -46,6 +46,7 @@
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textoECoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.imagensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.áudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,7 +68,6 @@
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.áudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -216,6 +216,13 @@
             this.imagensToolStripMenuItem.Text = "Imagens";
             this.imagensToolStripMenuItem.Click += new System.EventHandler(this.imagensToolStripMenuItem_Click);
             // 
+            // áudioToolStripMenuItem
+            // 
+            this.áudioToolStripMenuItem.Name = "áudioToolStripMenuItem";
+            this.áudioToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.áudioToolStripMenuItem.Text = "Áudio";
+            this.áudioToolStripMenuItem.Click += new System.EventHandler(this.áudioToolStripMenuItem_Click_1);
+            // 
             // programaToolStripMenuItem1
             // 
             this.programaToolStripMenuItem1.Name = "programaToolStripMenuItem1";
@@ -265,7 +272,7 @@
             // dataToolStripMenuItem
             // 
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
-            this.dataToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dataToolStripMenuItem.Text = "Dados";
             this.dataToolStripMenuItem.Click += new System.EventHandler(this.dataToolStripMenuItem_Click);
             // 
@@ -291,7 +298,7 @@
             // 
             this.visualizarAjudapdfToolStripMenuItem.Name = "visualizarAjudapdfToolStripMenuItem";
             this.visualizarAjudapdfToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.visualizarAjudapdfToolStripMenuItem.Text = "Visualizar Ajuda (.pdf)";
+            this.visualizarAjudapdfToolStripMenuItem.Text = "Visualizar Ajuda";
             this.visualizarAjudapdfToolStripMenuItem.Click += new System.EventHandler(this.visualizarAjudapdfToolStripMenuItem_Click);
             // 
             // informaToolStripMenuItem
@@ -412,13 +419,6 @@
             this.label1.Text = "StroopTest - 2016\r\nLaboratório de Neurociência e Comportamento\r\nUniversidade de B" +
     "rasília\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // áudioToolStripMenuItem
-            // 
-            this.áudioToolStripMenuItem.Name = "áudioToolStripMenuItem";
-            this.áudioToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.áudioToolStripMenuItem.Text = "Áudio";
-            this.áudioToolStripMenuItem.Click += new System.EventHandler(this.áudioToolStripMenuItem_Click_1);
             // 
             // FormMain
             // 

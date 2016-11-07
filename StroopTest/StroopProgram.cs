@@ -14,7 +14,7 @@ namespace StroopTest
 {
     class StroopProgram
     {
-        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false false false 1 false txt false false 160 false false false false 0 0 false false";
+        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false";
         private string defaultWordsListName = "padrao_words.lst";
         private string defaultWordsListText = "amarelo azul verde vermelho";
         private string defaultColorsListName = "padrao_color.lst";
@@ -710,6 +710,7 @@ namespace StroopTest
                        nameStimulus + "\t" +
                        color + "\t" +
                        audioName;
+            
                        output.Add(text);
         }
     }

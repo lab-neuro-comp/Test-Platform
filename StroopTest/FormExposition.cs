@@ -25,17 +25,17 @@ namespace StroopTest
     {
         CancellationTokenSource cts;
         StroopProgram programInUse = new StroopProgram(); // program in current use
-        private static float elapsedTime; // elapsed time during each item exposition
-        private string path; // global program path
-        private List<string> outputContent; // output file content
-        private string outputDataPath; // output file Path
+        private static float elapsedTime;                // elapsed time during each item exposition
+        private string path;                            // global program path
+        private List<string> outputContent;            // output file content
+        private string outputDataPath;                // output file Path
 
         // beginAudio
-        private WaveIn waveSource = null; // audio input
+        private WaveIn waveSource = null;       // audio input
         public WaveFileWriter waveFile = null; // writer audio file
         // endAudio
         
-        private SoundPlayer Player = new SoundPlayer(); // audio playes
+        private SoundPlayer Player = new SoundPlayer(); // audio player
 
         public FormExposition(string prgName, string usrName, string defaultFolderPath)
         {
@@ -159,6 +159,7 @@ namespace StroopTest
                 }
                 // presenting test instructions:
                 await showInstructions(program, cts.Token);
+                string printCount = "";
                 
                 while (true)
                 {
@@ -166,15 +167,24 @@ namespace StroopTest
                     colorArrayCounter = 0;
                     elapsedTime = 0; // elapsed time to zero
                     changeBackgroundColor(program, true); // changes background color, if there is one defined
-                    if (program.AudioCapture && program.ExpositionType != "txtaud") { startRecordingAudio(program); } // starts audio recording
                     await Task.Delay(program.IntervalTime, cts.Token); // first interval before exposition begins
+                    if (program.AudioCapture && program.ExpositionType != "txtaud") { startRecordingAudio(program); } // starts audio recording
                     // exposition loop:
                     for (int counter = 1; counter <= program.NumExpositions; counter++) 
                     {
+                        if (counter < 10)// contador p/ arquivo de audio
+                        {
+                            printCount = "0" + counter.ToString();
+                        }
+                        else
+                        {
+                            printCount = counter.ToString();
+                        }
+
                         subtitleLabel.Visible = false;
                         wordLabel.Visible = false;
                         await intervalOrFixPoint(program, cts.Token);
-
+                        
                         textCurrent = labelText[textArrayCounter];
                         colorCurrent = labelColor[colorArrayCounter];
                         
@@ -221,12 +231,11 @@ namespace StroopTest
                         
                         await Task.Delay(program.ExpositionTime, cts.Token);
                     }
-                    
+
                     wordLabel.Visible = false;
                     await Task.Delay(program.IntervalTime, cts.Token);
-
                     // beginAudio
-                    if (program.AudioCapture) { startRecordingAudio(program); } // inicia gravação áudio
+                    if (program.AudioCapture && program.ExpositionType != "txtaud") { stopRecordingAudio(); } // para gravação áudio
                     // endAudio
                     changeBackgroundColor(program, false); // retorna à cor de fundo padrão
 
@@ -243,6 +252,7 @@ namespace StroopTest
             catch(TaskCanceledException)
             {
                 StroopProgram.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
+                if (program.AudioCapture) { stopRecordingAudio(); }
                 throw new Exception("A Exposição '" + program.ProgramName + "' foi cancelada!");
             }
             catch (Exception ex)
@@ -274,11 +284,10 @@ namespace StroopTest
             string[] labelText = null, imageDirs = null, audioDirs = null, subtitlesArray = null;
             string outputFileName = "";
             string actualImagePath = "";
-            this.BackColor = Color.White;
             string audioDetail = "false";
-            //audioDirs = StroopProgram.readDirListFile(path + "/lst/" + program.AudioListFile); // auxiliar recebe o vetor original
             try
             {
+                BackColor = Color.White;
                 wordLabel.ForeColor = Color.Red;
 
                 outputFileName = outputDataPath + program.UserName + "_" + program.ProgramName + ".txt";
@@ -332,18 +341,26 @@ namespace StroopTest
                     j = 0; k = 0;
                     arrayCounter = 0;
                     var audioCounter = 0;
-
-                    // beginAudio
-                    if (program.AudioCapture && program.ExpositionType != "txtaud") { startRecordingAudio(program); } // inicia gravação áudio
-                                                                                                                      // endAudio
-
-                    await Task.Delay(program.IntervalTime, cts.Token);
                     
+                    await Task.Delay(program.IntervalTime, cts.Token);
+                    string printCount = "";
+                    // beginAudio
+                    if (program.AudioCapture) { startRecordingAudio(program); } // inicia gravação áudio
+                    // endAudio
 
                     if (program.ExpositionType == "imgtxt")
                     {
                         for (int counter = 0; counter < program.NumExpositions; counter++) // AQUI ver estimulo -> palavra ou imagem como um só e ter intervalo separado
                         {
+                            if(counter < 10)// contador p/ arquivo de audio
+                            {
+                                printCount = "0" + counter.ToString();
+                            }else
+                            {
+                                printCount = counter.ToString();
+                            }
+                            
+
                             imgPictureBox.Visible = false; wordLabel.Visible = false;
                             if (program.SubtitleShow) { subtitleLabel.Visible = false; }
                             await intervalOrFixPoint(program, cts.Token);
@@ -453,7 +470,6 @@ namespace StroopTest
 
                             StroopProgram.writeLineOutput(program, Path.GetFileName(imageDirs[arrayCounter].ToString()), "false", counter + 1, outputContent, elapsedTime, program.ExpositionType, Path.GetFileNameWithoutExtension(audioDetail));
                             arrayCounter++;
-                            
                             await Task.Delay(program.ExpositionTime, cts.Token);
                         }
                     }
@@ -465,11 +481,9 @@ namespace StroopTest
                     }
 
                     await Task.Delay(program.IntervalTime, cts.Token);
-
                     // beginAudio
-                    if (program.AudioCapture) { startRecordingAudio(program); } // inicia gravação áudio
+                    if (program.AudioCapture) { stopRecordingAudio(); } // para gravação áudio
                     // endAudio
-
                     changeBackgroundColor(program, false); // retorna à cor de fundo padrão
 
                     break;
@@ -489,6 +503,7 @@ namespace StroopTest
             catch (TaskCanceledException)
             {
                 StroopProgram.writeOutputFile(outputFileName, string.Join("\n", outputContent.ToArray()));
+                if (program.AudioCapture) { stopRecordingAudio(); }
                 throw new Exception("A Exposição '" + program.ProgramName + "' foi cancelada!");
             }
             catch (Exception ex)
@@ -582,7 +597,7 @@ namespace StroopTest
         {
             int waveInDevices = WaveIn.DeviceCount;
             if(waveInDevices != 0)
-            {
+            {   
                 string now = program.InitialDate.Day + "." + program.InitialDate.Month + "_" + DateTime.Now.Hour.ToString() + "h" + DateTime.Now.Minute.ToString() + "." + DateTime.Now.Second.ToString();
 
                 waveSource = new WaveIn();
@@ -595,11 +610,18 @@ namespace StroopTest
 
                 waveSource.StartRecording();
             }
+            else
+            {
+                MessageBox.Show("Dispositivos para gravação de áudio não foram detectados.\nO áudio não será gravado!");
+            }
         } // inicia gravação de áudio
 
         private void stopRecordingAudio()
         {
-            waveSource.StopRecording();
+            if (waveSource != null)
+            {
+                waveSource.StopRecording();
+            }
         } // para gravação de áudio
 
         void waveSource_DataAvailable(object sender, WaveInEventArgs e)

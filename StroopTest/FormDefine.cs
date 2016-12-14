@@ -40,7 +40,6 @@ namespace StroopTest
                     for (int i = 0; i < filePaths.Length; i++)
                     {
                         option = Path.GetFileNameWithoutExtension(filePaths[i]).Split('_');
-                        Console.WriteLine(option[1]);
                         if (isType)
                         {
                             if (itemType.Contains(option[1]))

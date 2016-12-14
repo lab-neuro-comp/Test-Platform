@@ -379,7 +379,7 @@ namespace StroopTest
 
             if (result == DialogResult.OK)
             {
-                progName = defineProgram.ReturnValue + ".lst";
+                progName = defineProgram.ReturnValue + itemType +".lst";
             }
 
             return progName;
@@ -525,11 +525,18 @@ namespace StroopTest
                 {
                     programWrite.FixPoint = "o";
                 }
-                if (Regex.IsMatch(fixPointColorButton.Text, hexPattern)) { programWrite.FixPointColor = fixPointColorButton.Text; }
+                if (Regex.IsMatch(fixPointColorButton.Text, hexPattern))
+                {
+                    programWrite.FixPointColor = fixPointColorButton.Text;
+                }
 
+                if (Regex.IsMatch(wordColorButton.Text, hexPattern))
+                    programWrite.WordColor = wordColorButton.Text;
+                else
+                    programWrite.WordColor = "false";
                 if (openAudioListButton.Enabled) { programWrite.AudioListFile = openAudioListButton.Text; }
                 else { programWrite.AudioListFile = "false"; }
-                
+
                 programWrite.DelayTime = Convert.ToInt32(delayTime.Value);
 
                 switch (rotateImgComboBox.SelectedIndex)
@@ -560,7 +567,6 @@ namespace StroopTest
                         break;
                 }
 
-                programWrite.WordColor = wordColorButton.Text;
 
                 string textLines = "";
                 if (instructionsBox.Lines.Length > 0 && instructionsBox.Text != instructionBoxText) // lê instrução se houver
@@ -578,7 +584,7 @@ namespace StroopTest
 
                 programWrite.FontWordLabel = wordSizeNumeric.Value.ToString();
                 programWrite.ExpandImage = expandImgCheck.Checked;
-                
+
                 string text = programWrite.ProgramName + " " +
                                  programWrite.NumExpositions.ToString() + " " +
                                  programWrite.ExpositionTime.ToString() + " " +

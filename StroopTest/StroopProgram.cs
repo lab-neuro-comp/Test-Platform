@@ -389,10 +389,10 @@ namespace StroopTest
             get { return fixPointColor; }
             set
             {
-                if (Regex.IsMatch(value, hexPattern) || value.ToLower() == "false")
+                if (Regex.IsMatch(value, hexPattern) || value.Equals("false"))
                 {
-                    if (value.ToLower() == "false") { fixPointColor = defaultRedColor; }
-                    else { fixPointColor = value; }
+                    fixPointColor = value;
+                    if (fixPointColor.ToLower().Equals("false")) { fixPointColor = defaultRedColor; }
                 }
                 else
                 {
@@ -440,10 +440,10 @@ namespace StroopTest
             get { return wordColor; }
             set
             {
-                if (Regex.IsMatch(value, hexPattern) || value.ToLower() == "false")
+                if (Regex.IsMatch(value, hexPattern) || value.ToLower().Equals("false"))
                 {
                     wordColor = value;
-                    if (value.ToLower() == "false") { wordColor = defaultRedColor; }
+                    if (value.ToLower().Equals("false")) { wordColor = defaultRedColor; }
                 }
                 else
                 {

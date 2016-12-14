@@ -24,7 +24,8 @@ namespace StroopTest
         private string instructionsFileName = "editableInstructions.txt";
         private string prgConfigHelpFileName = "prgConfigHelp.txt";
         private string instructionsText = "O participante deve ser orientado para execução de forma clara e uniforme entre os experimentares e o grupo de participantes.<br><br>Para o Stroop clássico as instruções básicas praticadas são:<br>'Nesta tarefa você deve falar o nome da cor em que as palavras estão pintadas.'<br>ou<br>'Nesta tarefa você deve ler a palavra apresentada na tela.'";
-        
+        private string techText = HelpData.TechnicalInformations;
+
         public FormMain()
         {
             InitializeComponent();
@@ -318,7 +319,9 @@ namespace StroopTest
 
         private void techInfoButto_ToolStrip_Click(object sender, EventArgs e)
         {
-
+            FormInstructions infoBox = new FormInstructions(techText);
+            try { infoBox.Show(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void visualizarAjudapdfToolStripMenuItem_Click(object sender, EventArgs e)

@@ -157,7 +157,7 @@ namespace StroopTest
 
             try
             {
-                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "/prg/", "prg");
+                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "/prg/", "prg","program");
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -196,7 +196,7 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine("Excluir: ", originPath, fileType);
+                FormDefine defineFilePath = new FormDefine("Excluir: ", originPath, fileType, "all");
                 var result = defineFilePath.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -239,7 +239,7 @@ namespace StroopTest
         
         private void defineProgram()
         {
-            FormDefine defineProgram = new FormDefine("Definir Programa: ", testFilesPath + "/prg/", "prg");
+            FormDefine defineProgram = new FormDefine("Definir Programa: ", testFilesPath + "/prg/", "prg", "program");
             try
             {
                 var result = defineProgram.ShowDialog();
@@ -256,7 +256,7 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineUser = new FormDefine("Definir Participante: ", testFilesPath, "usr");
+                FormDefine defineUser = new FormDefine("Definir Participante: ", testFilesPath, "usr", "user");
                 var result = defineUser.ShowDialog();
                 if (result == DialogResult.OK)
                 {

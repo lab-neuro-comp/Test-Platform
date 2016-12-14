@@ -37,7 +37,7 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine("Listas de Palavras: ", filePath, "lst");
+                FormDefine defineFilePath = new FormDefine("Listas de Palavras: ", filePath, "lst", "_words");
                 var result = defineFilePath.ShowDialog();
 
                 if (result == DialogResult.OK)

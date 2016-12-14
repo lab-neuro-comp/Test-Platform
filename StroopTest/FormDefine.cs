@@ -16,18 +16,20 @@ namespace StroopTest
         private string type;
         private string usrName;
         
-        public FormDefine(string formTitle, string dataFolderPath, string fileType)
+        public FormDefine(string formTitle, string dataFolderPath, string fileType, string itemType)
         {
             InitializeComponent();
             this.Text = formTitle;
-
+            string[] option;
+            string[] itemTypes = { "image", "audio", "words", "color" };
+            bool isType = false;
             type = fileType;
-
             comboBox1.Enabled = false;
             comboBox1.Visible = false;
             textBox1.Enabled = false;
             textBox1.Visible = false;
-
+            if (itemType.Contains(itemTypes[0]) || itemType.Contains(itemTypes[1]) || itemType.Contains(itemTypes[2]) || itemType.Contains(itemTypes[3]))
+                isType = true;
             if (type == "prg" || type == "lst" || type == "txt")
             {
                 comboBox1.Enabled = true;
@@ -37,7 +39,16 @@ namespace StroopTest
                     filePaths = Directory.GetFiles(dataFolderPath, ("*." + fileType), SearchOption.AllDirectories);
                     for (int i = 0; i < filePaths.Length; i++)
                     {
-                        comboBox1.Items.Add(Path.GetFileNameWithoutExtension(filePaths[i]));
+                        option = Path.GetFileNameWithoutExtension(filePaths[i]).Split('_');
+                        Console.WriteLine(option[1]);
+                        if (isType)
+                        {
+                            if (itemType.Contains(option[1]))
+                                comboBox1.Items.Add(option[0]);
+                        }
+                        else
+                            comboBox1.Items.Add(option[0]);
+
                     }
                 }
                 else

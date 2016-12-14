@@ -215,22 +215,22 @@ namespace StroopTest
 
         private void openWordsList_Click(object sender, EventArgs e)
         {
-            openWordListButton.Text = openListFile();
+            openWordListButton.Text = openListFile("_words");
         }
 
         private void openColorsList_Click(object sender, EventArgs e)
         {
-            openColorListButton.Text = openListFile();
+            openColorListButton.Text = openListFile("_color");
         }
 
         private void openImagesList_Click(object sender, EventArgs e)
         {
-            openImgListButton.Text = openListFile();
+            openImgListButton.Text = openListFile("_image");
         }
 
         private void openAudioList_Click(object sender, EventArgs e)
         {
-            openAudioListButton.Text = openListFile();
+            openAudioListButton.Text = openListFile("_audio");
         }
         
         //BOX4
@@ -302,7 +302,7 @@ namespace StroopTest
 
         private void openSubsList_Click(object sender, EventArgs e)
         {
-            openSubsListButton.Text = openListFile();
+            openSubsListButton.Text = openListFile("all");
         }
 
         private void subLocationDown_Click(object sender, EventArgs e)
@@ -370,11 +370,11 @@ namespace StroopTest
         //AUX FUNCTIONS
 
 
-        private string openListFile()
+        private string openListFile(string itemType)
         {
             string progName = "abrir";
 
-            FormDefine defineProgram = new FormDefine("Lista: ", path + "/lst/", "lst");
+            FormDefine defineProgram = new FormDefine("Lista: ", path + "/lst/", "lst", itemType);
             var result = defineProgram.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -611,7 +611,7 @@ namespace StroopTest
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);;
+                MessageBox.Show(ex.Message);
             }
         }
 

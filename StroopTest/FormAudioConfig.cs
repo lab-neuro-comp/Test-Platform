@@ -25,7 +25,7 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine("Listas de Audio: ", path, "lst");
+                FormDefine defineFilePath = new FormDefine("Listas de Audio: ", path, "lst","_audio");
                 var result = defineFilePath.ShowDialog();
 
                 if (result == DialogResult.OK)

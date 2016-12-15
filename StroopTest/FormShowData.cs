@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Media;
 
 namespace StroopTest
 {
@@ -16,6 +17,7 @@ namespace StroopTest
     {
         private StroopProgram program = new StroopProgram();
         private string path;
+        private SoundPlayer Player = new SoundPlayer();
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string instructionsText = HelpData.ShowDataInstructions;
         public FormShowData(string dataFolderPath)
@@ -114,5 +116,25 @@ namespace StroopTest
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+        private void playCurrentAudio()
+        {
+            string[] filePath;
+            string program, user, date,hour,new_hour,new_date,archive_name;
+            program = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            user = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            date = dataGridView1.CurrentRow.Cells[2].Value.ToString().Trim();
+            new_date = date[0].ToString() + date[1].ToString() + "."+ date[3].ToString() + date[4].ToString();
+            hour = dataGridView1.CurrentRow.Cells[3].Value.ToString().Trim();
+            new_hour = hour[0].ToString() + hour[1].ToString() + "h" + hour[3].ToString() + hour[4].ToString() + "." + hour[6].ToString() + hour[7].ToString();
+            archive_name = "audio_"+user+"_"+program + "_" + new_date + "_" + new_hour+".wav";
+            filePath = Directory.GetFiles(path, archive_name, SearchOption.AllDirectories);
+            Player.SoundLocation = filePath[0];
+            Player.Play();
+        }
+        private void audiobutton_Click(object sender, EventArgs e)
+        {
+            playCurrentAudio();
+        }
+
     }
 }

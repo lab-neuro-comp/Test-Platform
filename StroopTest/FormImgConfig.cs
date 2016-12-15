@@ -30,7 +30,7 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineFilePath = defineFilePath = new FormDefine("Lista de Imagens: ", path, "lst");
+                FormDefine defineFilePath = defineFilePath = new FormDefine("Lista de Imagens: ", path, "lst","_image");
                 var result = defineFilePath.ShowDialog();
                 
                 if (result == DialogResult.OK)

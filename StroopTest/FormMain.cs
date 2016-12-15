@@ -24,7 +24,9 @@ namespace StroopTest
         private string instructionsFileName = "editableInstructions.txt";
         private string prgConfigHelpFileName = "prgConfigHelp.txt";
         private string instructionsText = "O participante deve ser orientado para execução de forma clara e uniforme entre os experimentares e o grupo de participantes.<br><br>Para o Stroop clássico as instruções básicas praticadas são:<br>'Nesta tarefa você deve falar o nome da cor em que as palavras estão pintadas.'<br>ou<br>'Nesta tarefa você deve ler a palavra apresentada na tela.'";
-        
+        private string techText = HelpData.TechnicalInformations;
+        private string helpText = HelpData.VisualizeHelp;
+
         public FormMain()
         {
             InitializeComponent();
@@ -157,7 +159,7 @@ namespace StroopTest
 
             try
             {
-                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "/prg/", "prg");
+                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "/prg/", "prg","program");
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -196,7 +198,7 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine("Excluir: ", originPath, fileType);
+                FormDefine defineFilePath = new FormDefine("Excluir: ", originPath, fileType, "all");
                 var result = defineFilePath.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -239,7 +241,7 @@ namespace StroopTest
         
         private void defineProgram()
         {
-            FormDefine defineProgram = new FormDefine("Definir Programa: ", testFilesPath + "/prg/", "prg");
+            FormDefine defineProgram = new FormDefine("Definir Programa: ", testFilesPath + "/prg/", "prg", "program");
             try
             {
                 var result = defineProgram.ShowDialog();
@@ -256,7 +258,7 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineUser = new FormDefine("Definir Participante: ", testFilesPath, "usr");
+                FormDefine defineUser = new FormDefine("Definir Participante: ", testFilesPath, "usr", "user");
                 var result = defineUser.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -318,12 +320,17 @@ namespace StroopTest
 
         private void techInfoButto_ToolStrip_Click(object sender, EventArgs e)
         {
-
+            FormInstructions infoBox = new FormInstructions(techText);
+            try { infoBox.Show(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void visualizarAjudapdfToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            FormInstructions infoBox = new FormInstructions(helpText);
+            try { infoBox.Show(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
         }
         
         private void áudioToolStripMenuItem_Click_1(object sender, EventArgs e)

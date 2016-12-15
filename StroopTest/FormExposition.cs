@@ -29,7 +29,9 @@ namespace StroopTest
         private string path;                            // global program path
         private List<string> outputContent;            // output file content
         private string outputDataPath;                // output file Path
-
+        private string hour = DateTime.Now.Hour.ToString("00");
+        private string minutes = DateTime.Now.Minute.ToString("00");
+        private string seconds = DateTime.Now.Second.ToString("00");
         // beginAudio
         private WaveIn waveSource = null;       // audio input
         public WaveFileWriter waveFile = null; // writer audio file
@@ -227,7 +229,7 @@ namespace StroopTest
                             else subtitleCounter++;
                         }
 
-                        StroopProgram.writeLineOutput(program, textCurrent, colorCurrent, counter, outputContent, elapsedTime, program.ExpositionType, audioDetail);
+                        StroopProgram.writeLineOutput(program, textCurrent, colorCurrent, counter, outputContent, elapsedTime, program.ExpositionType, audioDetail, hour, minutes, seconds);
                         
                         await Task.Delay(program.ExpositionTime, cts.Token);
                     }
@@ -393,7 +395,8 @@ namespace StroopTest
                                 else k++;
                             }
 
-                            StroopProgram.writeLineOutput(program, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "img", audioDetail);
+                            StroopProgram.writeLineOutput(program, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "img", audioDetail, hour, minutes, seconds);
+                            
                             await Task.Delay(program.ExpositionTime, cts.Token);
                             
                             imgPictureBox.Visible = false;
@@ -417,7 +420,8 @@ namespace StroopTest
                                 actualImagePath = wordLabel.Text;
                                 j++;
 
-                                StroopProgram.writeLineOutput(program, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "txt", audioDetail);
+                                StroopProgram.writeLineOutput(program, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "txt", audioDetail, hour, minutes, seconds);
+                                
                                 await Task.Delay(program.ExpositionTime, cts.Token);
                             }
 
@@ -468,7 +472,8 @@ namespace StroopTest
                                 else k++;
                             }
 
-                            StroopProgram.writeLineOutput(program, Path.GetFileName(imageDirs[arrayCounter].ToString()), "false", counter + 1, outputContent, elapsedTime, program.ExpositionType, Path.GetFileNameWithoutExtension(audioDetail));
+                            StroopProgram.writeLineOutput(program, Path.GetFileName(imageDirs[arrayCounter].ToString()), "false", counter + 1, outputContent, elapsedTime, program.ExpositionType, Path.GetFileNameWithoutExtension(audioDetail), hour, minutes, seconds);
+                            
                             arrayCounter++;
                             await Task.Delay(program.ExpositionTime, cts.Token);
                         }
@@ -597,8 +602,8 @@ namespace StroopTest
         {
             int waveInDevices = WaveIn.DeviceCount;
             if(waveInDevices != 0)
-            {   
-                string now = program.InitialDate.Day + "." + program.InitialDate.Month + "_" + DateTime.Now.Hour.ToString() + "h" + DateTime.Now.Minute.ToString() + "." + DateTime.Now.Second.ToString();
+            {
+                string now = program.InitialDate.Day + "." + program.InitialDate.Month + "_" + hour + "h" + minutes + "." + seconds;
 
                 waveSource = new WaveIn();
                 waveSource.WaveFormat = new WaveFormat(44100, 1);

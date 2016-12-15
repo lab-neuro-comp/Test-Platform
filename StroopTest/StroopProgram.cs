@@ -695,13 +695,15 @@ namespace StroopTest
             }
         }
 
-        static public void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter, List<string> output, float elapsedTime, string expoType, string audioName)
+        static public void writeLineOutput(StroopProgram program, string nameStimulus, string color, int counter, 
+                                           List<string> output, float elapsedTime, string expoType, string audioName,
+                                           string hour, string minute, string second)
         {
             // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor
             var text = program.ProgramName + "\t" +
                        program.UserName + "\t" +
                        program.InitialDate.Day + "/" + program.InitialDate.Month + "/" + program.InitialDate.Year + "\t" +
-                       DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString() + ":" + DateTime.Now.Millisecond.ToString() + "\t" +
+                       hour + ":" + minute + ":" + second + ":" + DateTime.Now.Millisecond.ToString() + "\t" +
                        elapsedTime.ToString() + "\t" +
                        counter + "\t" +
                        expoType + "\t" +

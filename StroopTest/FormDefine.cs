@@ -16,7 +16,7 @@ namespace StroopTest
         private string type;
         private string usrName;
         
-        public FormDefine(string formTitle, string dataFolderPath, string fileType, string itemType)
+        public FormDefine(string formTitle, string dataFolderPath, string fileType, string itemType, bool sufix)
         {
             InitializeComponent();
             this.Text = formTitle;
@@ -42,8 +42,10 @@ namespace StroopTest
                         option = Path.GetFileNameWithoutExtension(filePaths[i]).Split('_');
                         if (isType)
                         {
-                            if (itemType.Contains(option[1]))
+                            if (itemType.Contains(option[1]) && !sufix)
                                 comboBox1.Items.Add(option[0]);
+                            else if (itemType.Contains(option[1]) && sufix)
+                                comboBox1.Items.Add(option[0]+'_'+option[1]);
                         }
                         else
                             comboBox1.Items.Add(option[0]);

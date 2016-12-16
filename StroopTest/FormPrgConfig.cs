@@ -374,7 +374,7 @@ namespace StroopTest
         {
             string progName = "abrir";
 
-            FormDefine defineProgram = new FormDefine("Lista: ", path + "/lst/", "lst", itemType);
+            FormDefine defineProgram = new FormDefine("Lista: ", path + "/lst/", "lst", itemType, false);
             var result = defineProgram.ShowDialog();
 
             if (result == DialogResult.OK)

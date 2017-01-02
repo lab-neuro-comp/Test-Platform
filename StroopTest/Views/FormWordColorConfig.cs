@@ -5,6 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using StroopTest.Models;
+using StroopTest.Views;
+using StroopTest.Controllers;
 
 namespace StroopTest
 {

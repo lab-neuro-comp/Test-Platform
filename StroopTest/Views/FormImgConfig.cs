@@ -2,6 +2,9 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using StroopTest.Models;
+using StroopTest.Views;
+using StroopTest.Controllers;
 
 namespace StroopTest
 {

@@ -17,6 +17,7 @@ using NAudio.Wave;
 using System.Collections.Generic;
 using System.Media;
 using System.Drawing.Drawing2D;
+using StroopTest.Models;
 // endAudio 
 
 namespace StroopTest

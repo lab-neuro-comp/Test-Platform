@@ -6,6 +6,8 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
+using StroopTest.Models;
+using StroopTest.Views;
 
 namespace StroopTest
 {

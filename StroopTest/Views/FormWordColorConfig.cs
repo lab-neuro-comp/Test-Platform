@@ -298,21 +298,14 @@ namespace StroopTest
             }
         }
 
-        private void saveListFile(List<string> list, string filePath, string fileName, string fileType)
+        private void saveListFile(List<string> list, string filePath, string fileName, string fileType, string type)
         {
-            string type = "";
-            if(fileType == "_words.lst")
-            {
-                type = "de Palavras";
-            }
-            if (fileType == "_color.lst")
-            {
-                type = "de Cores";
-            }
-
+            string file;
+            StrList strlist;
             if (list.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + type + " '" + fileName + "' ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK))
             {
-                if (File.Exists(filePath + fileName + fileType))
+                strlist = ListController.createList(list, fileName);
+                if (strlist.Exists(filePath + fileName + fileType))
                 {
                     DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
                     if (dialogResult == DialogResult.Cancel)
@@ -320,13 +313,9 @@ namespace StroopTest
                         throw new Exception("A lista não será salva!");
                     }
                 }
-                StreamWriter wr = new StreamWriter(filePath + fileName + fileType);
-                foreach (string item in list)
-                {
-                    wr.Write(item + "\t");
-                }
-                wr.Close();
-                MessageBox.Show("A lista '" + fileName + "' foi salva com sucesso");
+                file = filePath + fileName + fileType;
+                if(strlist.Save(file))
+                    MessageBox.Show("A lista '" + fileName + "' foi salva com sucesso");
             }
             else
             {
@@ -344,11 +333,11 @@ namespace StroopTest
                 }
                 if (wordsListCheckBox.Checked)
                 {
-                    saveListFile(wordsList, path, listNameTextBox.Text, "_words" + ".lst");
+                    saveListFile(wordsList, path, listNameTextBox.Text, "_words" + ".lst", "de Palavras");
                 }
                 if (colorsListCheckBox.Checked)
                 {
-                    saveListFile(colorsList, path, listNameTextBox.Text, "_color" + ".lst");
+                    saveListFile(colorsList, path, listNameTextBox.Text, "_color" + ".lst", "de Cores");
                 }
                 Close();
             }

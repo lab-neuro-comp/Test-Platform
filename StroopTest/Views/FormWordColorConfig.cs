@@ -298,11 +298,11 @@ namespace StroopTest
             }
         }
 
-        private void saveListFile(List<string> list, string filePath, string fileName, string fileType, string type)
+        private bool saveListFile(List<string> list, string filePath, string fileName, string fileType, string type)
         {
             string file;
             StrList strlist;
-            if (list.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + type + " '" + fileName + "' ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK))
+            if ((MessageBox.Show("Deseja salvar o arquivo " + type + " '" + fileName + "' ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK))
             {
                 strlist = ListController.createList(list, fileName);
                 if (strlist.Exists(filePath + fileName + fileType))
@@ -310,41 +310,55 @@ namespace StroopTest
                     DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
                     if (dialogResult == DialogResult.Cancel)
                     {
-                        throw new Exception("A lista não será salva!");
+                        MessageBox.Show("A lista não será salva!");
+                        return false;
                     }
                 }
                 file = filePath + fileName + fileType;
-                if(strlist.Save(file))
+                if (strlist.Save(file))
+                {
                     MessageBox.Show("A lista '" + fileName + "' foi salva com sucesso");
+                    
+                }
+                return true;
             }
             else
             {
-                throw new Exception("A lista não foi salva!");
+                return false;
             }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            try
+            ErrorProvider errorProvider = new ErrorProvider();
+            bool valid = true;
+            if (string.IsNullOrWhiteSpace(listNameTextBox.Text))
             {
-                if (string.IsNullOrWhiteSpace(listNameTextBox.Text))
-                {
-                    throw new Exception("Nome do arquivo deve ser preenchido");
-                }
+                errorProvider.SetError(listNameTextBox, "O nome da lista não deve ficar em branco");
+                valid = false;
+            }
+            else
+            {
+                errorProvider.Clear();
+                valid = true;
+            }
+            if (wordsList.Count == 0)
+            {
+                labelEmpty.Text = "A lista não possui \n nenhum item!";
+                valid = false;
+            }
+            if (valid)
+            {
                 if (wordsListCheckBox.Checked)
-                {
-                    saveListFile(wordsList, path, listNameTextBox.Text, "_words" + ".lst", "de Palavras");
-                }
+                     valid = saveListFile(wordsList, path, listNameTextBox.Text, "_words" + ".lst", "de Palavras");
                 if (colorsListCheckBox.Checked)
-                {
-                    saveListFile(colorsList, path, listNameTextBox.Text, "_color" + ".lst", "de Cores");
-                }
+                     valid = saveListFile(colorsList, path, listNameTextBox.Text, "_color" + ".lst", "de Cores");
+             }
+            if (valid)
                 Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            else
+                    MessageBox.Show("Lista não cadastrada");
+            
         }
 
         private void helpButton_Click(object sender, EventArgs e)

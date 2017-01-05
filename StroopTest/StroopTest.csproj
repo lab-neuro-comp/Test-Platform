@@ -108,6 +108,7 @@
     <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Models\Experiment.cs" />
     <Compile Include="Models\StrList.cs" />
+    <Compile Include="Models\Validations.cs" />
     <Compile Include="Views\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>

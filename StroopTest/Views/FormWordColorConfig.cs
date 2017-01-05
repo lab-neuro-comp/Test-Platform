@@ -357,7 +357,7 @@ namespace StroopTest
             if (valid)
                 Close();
             else
-                    MessageBox.Show("Lista não cadastrada");
+                MessageBox.Show("Lista não cadastrada");
             
         }
 

@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using StroopTest.Models;
 using StroopTest.Views;
@@ -16,14 +15,13 @@ namespace StroopTest
 {
     public partial class FormPrgConfig : Form
     {
-        private string path;
-        private string instructionBoxText = "Escreva cada uma das intruções em linhas separadas.";
-        private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
+        private String path;
+        private String instructionBoxText = "Escreva cada uma das intruções em linhas separadas.";
         private List<Button> subDirectionList = new List<Button>();
-        private int subDirectionNumber = 1;
-        private string fontSize = "160";
-        private string editPrgName = "error";
-        private string instructionsText = HelpData.ProgramConfigInstructions;
+        private Int32 subDirectionNumber = 1;
+        private String fontSize = "160";
+        private String editPrgName = "error";
+        private String instructionsText = HelpData.ProgramConfigInstructions;
 
         public FormPrgConfig(string dataFolderPath, string prgName)
         {
@@ -477,7 +475,7 @@ namespace StroopTest
                         else { throw new Exception("Selecione o arquivo de lista de audio!"); }
                         break;
                 }
-                if (Regex.IsMatch(bgColorButton.Text, hexPattern)) { programWrite.BackgroundColor = bgColorButton.Text; }
+                if (Validations.isHexPattern(bgColorButton.Text)) { programWrite.BackgroundColor = bgColorButton.Text; }
                 else programWrite.BackgroundColor = "false";
 
                 programWrite.AudioCapture = audioCaptureCheck.Checked;
@@ -488,7 +486,7 @@ namespace StroopTest
 
                 if (activateSubsCheck.Checked)
                 {
-                    if (Regex.IsMatch(subColorButton.Text, hexPattern)) { programWrite.SubtitleColor = subColorButton.Text; }
+                    if (Validations.isHexPattern(subColorButton.Text)) { programWrite.SubtitleColor = subColorButton.Text; }
                     if (openSubsListButton.Text != "abrir") { programWrite.SubtitlesListFile = openSubsListButton.Text; }
                     programWrite.SubtitlePlace = subDirectionNumber;
                 }
@@ -527,12 +525,12 @@ namespace StroopTest
                 {
                     programWrite.FixPoint = "o";
                 }
-                if (Regex.IsMatch(fixPointColorButton.Text, hexPattern))
+                if (Validations.isHexPattern(fixPointColorButton.Text))
                 {
                     programWrite.FixPointColor = fixPointColorButton.Text;
                 }
 
-                if (Regex.IsMatch(wordColorButton.Text, hexPattern))
+                if (Validations.isHexPattern(wordColorButton.Text))
                     programWrite.WordColor = wordColorButton.Text;
                 else
                     programWrite.WordColor = "false";
@@ -661,7 +659,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    if ((Regex.IsMatch(program.BackgroundColor, hexPattern)))
+                    if ((Validations.isHexPattern(program.BackgroundColor)))
                     {
                         bgColorButton.Text = program.BackgroundColor;
                         bgColorPanel.BackColor = ColorTranslator.FromHtml(program.BackgroundColor);
@@ -675,7 +673,7 @@ namespace StroopTest
                 }
                 else
                 {
-                    if ((Regex.IsMatch(program.FixPointColor, hexPattern)))
+                    if ((Validations.isHexPattern(program.FixPointColor)))
                     {
                         fixPointColorButton.Text = program.FixPointColor;
                         fixPointColorPanel.BackColor = ColorTranslator.FromHtml(program.FixPointColor);
@@ -795,7 +793,7 @@ namespace StroopTest
                     if (program.SubtitlesListFile.ToLower() != "false") { openSubsListButton.Text = program.SubtitlesListFile; }
                     else { openSubsListButton.Text = "escolher"; }
 
-                    if (Regex.IsMatch(program.SubtitleColor, hexPattern))
+                    if (Validations.isHexPattern(program.SubtitleColor))
                     {
                         subColorButton.Text = program.SubtitleColor;
                         subColorPanel.BackColor = ColorTranslator.FromHtml(program.SubtitleColor);

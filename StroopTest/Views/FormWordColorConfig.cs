@@ -305,7 +305,7 @@ namespace StroopTest
             if ((MessageBox.Show("Deseja salvar o arquivo " + type + " '" + fileName + "' ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK))
             {
                 strlist = ListController.createList(list, fileName);
-                if (strlist.Exists(filePath + fileName + fileType))
+                if (strlist.exists(filePath + fileName + fileType))
                 {
                     DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
                     if (dialogResult == DialogResult.Cancel)
@@ -315,7 +315,7 @@ namespace StroopTest
                     }
                 }
                 file = filePath + fileName + fileType;
-                if (strlist.Save(file))
+                if (strlist.save(file))
                 {
                     MessageBox.Show("A lista '" + fileName + "' foi salva com sucesso");
                     

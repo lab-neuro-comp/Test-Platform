@@ -14,6 +14,8 @@ namespace StroopTest.Models
             this.listContent = list;
             this.listName = name;
         }
+
+
         public List<string> ListContent
         {
             get { return listContent; }
@@ -32,7 +34,7 @@ namespace StroopTest.Models
             }
         }
  
-        public Boolean Save(string filePath)
+        public bool save(string filePath)
         {
             StreamWriter wr = new StreamWriter(filePath);
             foreach (string item in listContent)
@@ -43,7 +45,7 @@ namespace StroopTest.Models
             return true;
         }
 
-        public Boolean Exists(string path)
+        public bool exists(string path)
         {
             if (File.Exists(path))
                 return true;

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 
-namespace StroopTest
+namespace StroopTest.Controllers
 {
     class DGVManipulation
     {

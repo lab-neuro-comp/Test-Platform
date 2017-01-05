@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Media;
 using System.Windows.Forms;
+using StroopTest.Models;
+using StroopTest.Views;
+using StroopTest.Controllers;
 
 namespace StroopTest
 {
@@ -25,7 +28,7 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine("Listas de Audio: ", path, "lst","_audio");
+                FormDefine defineFilePath = new FormDefine("Listas de Audio: ", path, "lst","_audio", true);
                 var result = defineFilePath.ShowDialog();
 
                 if (result == DialogResult.OK)

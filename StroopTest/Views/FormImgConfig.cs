@@ -2,6 +2,9 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using StroopTest.Models;
+using StroopTest.Views;
+using StroopTest.Controllers;
 
 namespace StroopTest
 {
@@ -30,7 +33,7 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineFilePath = defineFilePath = new FormDefine("Lista de Imagens: ", path, "lst","_image");
+                FormDefine defineFilePath = defineFilePath = new FormDefine("Lista de Imagens: ", path, "lst","_image",true);
                 var result = defineFilePath.ShowDialog();
                 
                 if (result == DialogResult.OK)

@@ -48,6 +48,7 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.helpButton = new System.Windows.Forms.Button();
+            this.labelEmpty = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.wordsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,12 +74,13 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.wordsDataGridView.Location = new System.Drawing.Point(151, 42);
+            this.wordsDataGridView.Location = new System.Drawing.Point(201, 52);
+            this.wordsDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.wordsDataGridView.Name = "wordsDataGridView";
             this.wordsDataGridView.ReadOnly = true;
             this.wordsDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.wordsDataGridView.RowHeadersVisible = false;
-            this.wordsDataGridView.Size = new System.Drawing.Size(343, 422);
+            this.wordsDataGridView.Size = new System.Drawing.Size(457, 519);
             this.wordsDataGridView.TabIndex = 0;
             // 
             // Column1
@@ -94,26 +96,29 @@
             // 
             // listNameTextBox
             // 
-            this.listNameTextBox.Location = new System.Drawing.Point(90, 12);
+            this.listNameTextBox.Location = new System.Drawing.Point(120, 15);
+            this.listNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listNameTextBox.Name = "listNameTextBox";
-            this.listNameTextBox.Size = new System.Drawing.Size(136, 20);
+            this.listNameTextBox.Size = new System.Drawing.Size(180, 22);
             this.listNameTextBox.TabIndex = 5;
             // 
             // listNameLabel
             // 
             this.listNameLabel.AutoSize = true;
-            this.listNameLabel.Location = new System.Drawing.Point(6, 15);
+            this.listNameLabel.Location = new System.Drawing.Point(8, 18);
+            this.listNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.listNameLabel.Name = "listNameLabel";
-            this.listNameLabel.Size = new System.Drawing.Size(78, 13);
+            this.listNameLabel.Size = new System.Drawing.Size(103, 17);
             this.listNameLabel.TabIndex = 6;
             this.listNameLabel.Text = "Nome da Lista:";
             // 
             // wordsListCheckBox
             // 
             this.wordsListCheckBox.AutoSize = true;
-            this.wordsListCheckBox.Location = new System.Drawing.Point(245, 14);
+            this.wordsListCheckBox.Location = new System.Drawing.Point(327, 17);
+            this.wordsListCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.wordsListCheckBox.Name = "wordsListCheckBox";
-            this.wordsListCheckBox.Size = new System.Drawing.Size(107, 17);
+            this.wordsListCheckBox.Size = new System.Drawing.Size(139, 21);
             this.wordsListCheckBox.TabIndex = 7;
             this.wordsListCheckBox.Text = "Lista de Palavras";
             this.wordsListCheckBox.UseVisualStyleBackColor = true;
@@ -122,9 +127,10 @@
             // colorsListCheckBox
             // 
             this.colorsListCheckBox.AutoSize = true;
-            this.colorsListCheckBox.Location = new System.Drawing.Point(369, 14);
+            this.colorsListCheckBox.Location = new System.Drawing.Point(492, 17);
+            this.colorsListCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.colorsListCheckBox.Name = "colorsListCheckBox";
-            this.colorsListCheckBox.Size = new System.Drawing.Size(93, 17);
+            this.colorsListCheckBox.Size = new System.Drawing.Size(121, 21);
             this.colorsListCheckBox.TabIndex = 9;
             this.colorsListCheckBox.Text = "Lista de Cores";
             this.colorsListCheckBox.UseVisualStyleBackColor = true;
@@ -133,9 +139,10 @@
             // newItemButton
             // 
             this.newItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.newItemButton.Location = new System.Drawing.Point(9, 42);
+            this.newItemButton.Location = new System.Drawing.Point(12, 52);
+            this.newItemButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.newItemButton.Name = "newItemButton";
-            this.newItemButton.Size = new System.Drawing.Size(136, 23);
+            this.newItemButton.Size = new System.Drawing.Size(181, 28);
             this.newItemButton.TabIndex = 10;
             this.newItemButton.Text = "Novo Item";
             this.newItemButton.UseVisualStyleBackColor = true;
@@ -144,27 +151,30 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 68);
+            this.label2.Location = new System.Drawing.Point(12, 84);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(88, 17);
             this.label2.TabIndex = 59;
             this.label2.Text = "Apagar Item:";
             // 
             // moveRowLabel
             // 
             this.moveRowLabel.AutoSize = true;
-            this.moveRowLabel.Location = new System.Drawing.Point(9, 110);
+            this.moveRowLabel.Location = new System.Drawing.Point(12, 135);
+            this.moveRowLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.moveRowLabel.Name = "moveRowLabel";
-            this.moveRowLabel.Size = new System.Drawing.Size(62, 13);
+            this.moveRowLabel.Size = new System.Drawing.Size(81, 17);
             this.moveRowLabel.TabIndex = 58;
             this.moveRowLabel.Text = "Mover item:";
             // 
             // moveDownButton
             // 
             this.moveDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.moveDownButton.Location = new System.Drawing.Point(9, 155);
+            this.moveDownButton.Location = new System.Drawing.Point(12, 191);
+            this.moveDownButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.moveDownButton.Name = "moveDownButton";
-            this.moveDownButton.Size = new System.Drawing.Size(136, 23);
+            this.moveDownButton.Size = new System.Drawing.Size(181, 28);
             this.moveDownButton.TabIndex = 57;
             this.moveDownButton.Text = "Abaixo";
             this.moveDownButton.UseVisualStyleBackColor = true;
@@ -173,9 +183,10 @@
             // moveUpButton
             // 
             this.moveUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.moveUpButton.Location = new System.Drawing.Point(9, 126);
+            this.moveUpButton.Location = new System.Drawing.Point(12, 155);
+            this.moveUpButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.moveUpButton.Name = "moveUpButton";
-            this.moveUpButton.Size = new System.Drawing.Size(136, 23);
+            this.moveUpButton.Size = new System.Drawing.Size(181, 28);
             this.moveUpButton.TabIndex = 56;
             this.moveUpButton.Text = "Acima";
             this.moveUpButton.UseVisualStyleBackColor = true;
@@ -184,9 +195,10 @@
             // deleteButton
             // 
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.deleteButton.Location = new System.Drawing.Point(9, 84);
+            this.deleteButton.Location = new System.Drawing.Point(12, 103);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(136, 23);
+            this.deleteButton.Size = new System.Drawing.Size(181, 28);
             this.deleteButton.TabIndex = 55;
             this.deleteButton.Text = "Apagar";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -195,18 +207,20 @@
             // numberItens
             // 
             this.numberItens.AutoSize = true;
-            this.numberItens.Location = new System.Drawing.Point(130, 190);
+            this.numberItens.Location = new System.Drawing.Point(173, 234);
+            this.numberItens.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numberItens.Name = "numberItens";
-            this.numberItens.Size = new System.Drawing.Size(13, 13);
+            this.numberItens.Size = new System.Drawing.Size(16, 17);
             this.numberItens.TabIndex = 61;
             this.numberItens.Text = "0";
             // 
             // numberItensLabel
             // 
             this.numberItensLabel.AutoSize = true;
-            this.numberItensLabel.Location = new System.Drawing.Point(51, 190);
+            this.numberItensLabel.Location = new System.Drawing.Point(16, 234);
+            this.numberItensLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numberItensLabel.Name = "numberItensLabel";
-            this.numberItensLabel.Size = new System.Drawing.Size(73, 13);
+            this.numberItensLabel.Size = new System.Drawing.Size(96, 17);
             this.numberItensLabel.TabIndex = 60;
             this.numberItensLabel.Text = "Itens na Lista:";
             // 
@@ -215,9 +229,10 @@
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(419, 472);
+            this.cancelButton.Location = new System.Drawing.Point(559, 581);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 63;
             this.cancelButton.Text = "cancelar";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -227,9 +242,10 @@
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(12, 472);
+            this.saveButton.Location = new System.Drawing.Point(16, 581);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.Size = new System.Drawing.Size(100, 28);
             this.saveButton.TabIndex = 62;
             this.saveButton.Text = "salvar";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -240,20 +256,31 @@
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.helpButton.BackgroundImage = global::StroopTest.Properties.Resources.helpButton;
             this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(467, 11);
-            this.helpButton.Margin = new System.Windows.Forms.Padding(2);
+            this.helpButton.Location = new System.Drawing.Point(623, 14);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(26, 26);
+            this.helpButton.Size = new System.Drawing.Size(35, 32);
             this.helpButton.TabIndex = 82;
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
+            // labelEmpty
+            // 
+            this.labelEmpty.AutoSize = true;
+            this.labelEmpty.ForeColor = System.Drawing.Color.Red;
+            this.labelEmpty.Location = new System.Drawing.Point(6, 267);
+            this.labelEmpty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEmpty.Name = "labelEmpty";
+            this.labelEmpty.Size = new System.Drawing.Size(0, 17);
+            this.labelEmpty.TabIndex = 83;
+            // 
             // FormWordColorConfig
             // 
             this.AcceptButton = this.newItemButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 507);
+            this.ClientSize = new System.Drawing.Size(675, 624);
+            this.Controls.Add(this.labelEmpty);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
@@ -271,6 +298,7 @@
             this.Controls.Add(this.listNameTextBox);
             this.Controls.Add(this.wordsDataGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormWordColorConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista - Palavras e Cores";
@@ -299,5 +327,6 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button helpButton;
+        private System.Windows.Forms.Label labelEmpty;
     }
 }

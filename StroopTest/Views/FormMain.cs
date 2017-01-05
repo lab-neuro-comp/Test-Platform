@@ -6,6 +6,8 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
+using StroopTest.Models;
+using StroopTest.Views;
 
 namespace StroopTest
 {
@@ -71,48 +73,48 @@ namespace StroopTest
             }
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void beginTestMainButton_Click(object sender, EventArgs e)
         {
             beginTest(prgNameSL.Text);
         }
         
-        private void programaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormPrgConfig configureProgram = new FormPrgConfig(testFilesPath, "false");
             try { configureProgram.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
         
-        private void textoECoresToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newTextColorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/lst/", false);
             try { configureList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void sobreToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutBox aboutWindow = new AboutBox();
             try { aboutWindow.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        private void instructionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showInstructions();
         }
 
-        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void programaToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void defineProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
             defineProgram();
         }
 
-        private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newParticipantToolStripMenuItem_Click(object sender, EventArgs e)
         {
             defineUser();
         }
@@ -127,7 +129,7 @@ namespace StroopTest
             testFilesPath = dirPathSL.Text;
         }
 
-        private void imagemToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/", "false");
             try { configureImagesList.ShowDialog(); }
@@ -151,7 +153,7 @@ namespace StroopTest
             }
         }
 
-        private void programaToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void editProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormDefine defineProgram;
             DialogResult result;
@@ -159,7 +161,7 @@ namespace StroopTest
 
             try
             {
-                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "/prg/", "prg","program");
+                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "/prg/", "prg","program", false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -172,7 +174,7 @@ namespace StroopTest
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
         
-        private void textoECoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void editTextColorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/lst/", true);
             try { configureList.ShowDialog(); }
@@ -198,7 +200,7 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine("Excluir: ", originPath, fileType, "all");
+                FormDefine defineFilePath = new FormDefine("Excluir: ", originPath, fileType, "_image_words_color_audio", true);
                 var result = defineFilePath.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -213,7 +215,7 @@ namespace StroopTest
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void iniciarTesteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void startTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             beginTest(prgNameSL.Text);
         }
@@ -241,7 +243,7 @@ namespace StroopTest
         
         private void defineProgram()
         {
-            FormDefine defineProgram = new FormDefine("Definir Programa: ", testFilesPath + "/prg/", "prg", "program");
+            FormDefine defineProgram = new FormDefine("Definir Programa: ", testFilesPath + "/prg/", "prg", "program", false);
             try
             {
                 var result = defineProgram.ShowDialog();
@@ -258,7 +260,7 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineUser = new FormDefine("Definir Participante: ", testFilesPath, "usr", "user");
+                FormDefine defineUser = new FormDefine("Definir Participante: ", testFilesPath, "usr", "user",false);
                 var result = defineUser.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -304,7 +306,7 @@ namespace StroopTest
             defineUser();
         }
 
-        private void imagensToolStripMenuItem_Click(object sender, EventArgs e)
+        private void editImagesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/", "");
             try { configureImagesList.ShowDialog(); }
@@ -325,7 +327,7 @@ namespace StroopTest
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void visualizarAjudapdfToolStripMenuItem_Click(object sender, EventArgs e)
+        private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormInstructions infoBox = new FormInstructions(helpText);
             try { infoBox.Show(); }
@@ -333,11 +335,13 @@ namespace StroopTest
 
         }
         
-        private void áudioToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void editAudioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/lst/", true);
             try { configureAudioList.ShowDialog(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+
+        
     }
 }

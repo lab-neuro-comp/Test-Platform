@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using StroopTest.Models;
 
 namespace StroopTest
 {

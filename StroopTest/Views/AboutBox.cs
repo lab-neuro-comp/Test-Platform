@@ -7,7 +7,8 @@ using System;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace StroopTest
+
+namespace StroopTest.Views
 {
     partial class AboutBox : Form
     {

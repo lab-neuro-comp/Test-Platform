@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace StroopTest.Models
@@ -96,6 +93,13 @@ namespace StroopTest.Models
         public static bool isFixPointValid(string value)
         {
             if (value == "+" || value.ToLower() == "o" || value.ToLower() == "false")
+                return true;
+            return false;
+        }
+
+        public static bool isColorLengthValid(int value)
+        {
+            if (value == 7)
                 return true;
             return false;
         }

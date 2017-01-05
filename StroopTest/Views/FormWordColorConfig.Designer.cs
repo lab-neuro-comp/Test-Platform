@@ -38,7 +38,7 @@
             this.wordsListCheckBox = new System.Windows.Forms.CheckBox();
             this.colorsListCheckBox = new System.Windows.Forms.CheckBox();
             this.newItemButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.deleteItemLabel = new System.Windows.Forms.Label();
             this.moveRowLabel = new System.Windows.Forms.Label();
             this.moveDownButton = new System.Windows.Forms.Button();
             this.moveUpButton = new System.Windows.Forms.Button();
@@ -75,7 +75,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.wordsDataGridView.Location = new System.Drawing.Point(201, 52);
-            this.wordsDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.wordsDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.wordsDataGridView.Name = "wordsDataGridView";
             this.wordsDataGridView.ReadOnly = true;
             this.wordsDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -97,7 +97,7 @@
             // listNameTextBox
             // 
             this.listNameTextBox.Location = new System.Drawing.Point(120, 15);
-            this.listNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.listNameTextBox.Name = "listNameTextBox";
             this.listNameTextBox.Size = new System.Drawing.Size(180, 22);
             this.listNameTextBox.TabIndex = 5;
@@ -116,7 +116,7 @@
             // 
             this.wordsListCheckBox.AutoSize = true;
             this.wordsListCheckBox.Location = new System.Drawing.Point(327, 17);
-            this.wordsListCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.wordsListCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.wordsListCheckBox.Name = "wordsListCheckBox";
             this.wordsListCheckBox.Size = new System.Drawing.Size(139, 21);
             this.wordsListCheckBox.TabIndex = 7;
@@ -128,7 +128,7 @@
             // 
             this.colorsListCheckBox.AutoSize = true;
             this.colorsListCheckBox.Location = new System.Drawing.Point(492, 17);
-            this.colorsListCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.colorsListCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.colorsListCheckBox.Name = "colorsListCheckBox";
             this.colorsListCheckBox.Size = new System.Drawing.Size(121, 21);
             this.colorsListCheckBox.TabIndex = 9;
@@ -140,7 +140,7 @@
             // 
             this.newItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newItemButton.Location = new System.Drawing.Point(12, 52);
-            this.newItemButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.newItemButton.Margin = new System.Windows.Forms.Padding(4);
             this.newItemButton.Name = "newItemButton";
             this.newItemButton.Size = new System.Drawing.Size(181, 28);
             this.newItemButton.TabIndex = 10;
@@ -148,15 +148,15 @@
             this.newItemButton.UseVisualStyleBackColor = true;
             this.newItemButton.Click += new System.EventHandler(this.newItemButton_Click);
             // 
-            // label2
+            // deleteItemLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 84);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 17);
-            this.label2.TabIndex = 59;
-            this.label2.Text = "Apagar Item:";
+            this.deleteItemLabel.AutoSize = true;
+            this.deleteItemLabel.Location = new System.Drawing.Point(12, 84);
+            this.deleteItemLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.deleteItemLabel.Name = "deleteItemLabel";
+            this.deleteItemLabel.Size = new System.Drawing.Size(88, 17);
+            this.deleteItemLabel.TabIndex = 59;
+            this.deleteItemLabel.Text = "Apagar Item:";
             // 
             // moveRowLabel
             // 
@@ -172,7 +172,7 @@
             // 
             this.moveDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.moveDownButton.Location = new System.Drawing.Point(12, 191);
-            this.moveDownButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.moveDownButton.Margin = new System.Windows.Forms.Padding(4);
             this.moveDownButton.Name = "moveDownButton";
             this.moveDownButton.Size = new System.Drawing.Size(181, 28);
             this.moveDownButton.TabIndex = 57;
@@ -184,7 +184,7 @@
             // 
             this.moveUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.moveUpButton.Location = new System.Drawing.Point(12, 155);
-            this.moveUpButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.moveUpButton.Margin = new System.Windows.Forms.Padding(4);
             this.moveUpButton.Name = "moveUpButton";
             this.moveUpButton.Size = new System.Drawing.Size(181, 28);
             this.moveUpButton.TabIndex = 56;
@@ -196,7 +196,7 @@
             // 
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.deleteButton.Location = new System.Drawing.Point(12, 103);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(181, 28);
             this.deleteButton.TabIndex = 55;
@@ -230,7 +230,7 @@
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelButton.Location = new System.Drawing.Point(559, 581);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 63;
@@ -243,7 +243,7 @@
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.saveButton.Location = new System.Drawing.Point(16, 581);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 28);
             this.saveButton.TabIndex = 62;
@@ -286,7 +286,7 @@
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.numberItens);
             this.Controls.Add(this.numberItensLabel);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.deleteItemLabel);
             this.Controls.Add(this.moveRowLabel);
             this.Controls.Add(this.moveDownButton);
             this.Controls.Add(this.moveUpButton);
@@ -298,7 +298,7 @@
             this.Controls.Add(this.listNameTextBox);
             this.Controls.Add(this.wordsDataGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormWordColorConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista - Palavras e Cores";
@@ -317,7 +317,7 @@
         private System.Windows.Forms.CheckBox colorsListCheckBox;
         private System.Windows.Forms.Button newItemButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label deleteItemLabel;
         private System.Windows.Forms.Label moveRowLabel;
         private System.Windows.Forms.Button moveDownButton;
         private System.Windows.Forms.Button moveUpButton;

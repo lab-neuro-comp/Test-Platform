@@ -277,7 +277,35 @@ namespace StroopTest.Models
                 }   // colors must match with the hexadecimal pattern for color codes or be "false" to indicate that theres no color defined
             }
         }
-
+        public string data()
+        {
+            string data = this.ProgramName + " " +
+                 this.NumExpositions.ToString() + " " +
+                 this.ExpositionTime.ToString() + " " +
+                 this.ExpositionRandom.ToString() + " " +
+                 this.IntervalTime.ToString() + " " +
+                 this.IntervalTimeRandom.ToString() + " " +
+                 this.WordsListFile + " " +
+                 this.ColorsListFile + " " +
+                 this.BackgroundColor.ToUpper() + " " +
+                 this.AudioCapture.ToString() + " " +
+                 this.SubtitleShow.ToString() + " " +
+                 this.SubtitlePlace.ToString() + " " +
+                 this.SubtitleColor.ToUpper() + " " +
+                 this.ExpositionType.ToLower() + " " +
+                 this.ImagesListFile + " " +
+                 this.FixPoint + " " +
+                 this.FontWordLabel + " " +
+                 this.ExpandImage + " " +
+                 this.AudioListFile + " " +
+                 this.SubtitlesListFile + " " +
+                 this.FixPointColor + " " +
+                 this.DelayTime + " " +
+                 this.RotateImage + " " +
+                 this.RndSubtitlePlace + " " +
+                 this.WordColor;
+            return data;
+        }
         public DateTime InitialDate
         {
             get { return initialDate; }

@@ -585,34 +585,9 @@ namespace StroopTest
                 programWrite.FontWordLabel = wordSizeNumeric.Value.ToString();
                 programWrite.ExpandImage = expandImgCheck.Checked;
 
-                string text = programWrite.ProgramName + " " +
-                                 programWrite.NumExpositions.ToString() + " " +
-                                 programWrite.ExpositionTime.ToString() + " " +
-                                 programWrite.ExpositionRandom.ToString() + " " +
-                                 programWrite.IntervalTime.ToString() + " " +
-                                 programWrite.IntervalTimeRandom.ToString() + " " +
-                                 programWrite.WordsListFile + " " +
-                                 programWrite.ColorsListFile + " " +
-                                 programWrite.BackgroundColor.ToUpper() + " " +
-                                 programWrite.AudioCapture.ToString() + " " +
-                                 programWrite.SubtitleShow.ToString() + " " +
-                                 programWrite.SubtitlePlace.ToString() + " " +
-                                 programWrite.SubtitleColor.ToUpper() + " " +
-                                 programWrite.ExpositionType.ToLower() + " " +
-                                 programWrite.ImagesListFile + " " +
-                                 programWrite.FixPoint + " " +
-                                 programWrite.FontWordLabel + " " +
-                                 programWrite.ExpandImage + " " +
-                                 programWrite.AudioListFile + " " +
-                                 programWrite.SubtitlesListFile + " " +
-                                 programWrite.FixPointColor + " " +
-                                 programWrite.DelayTime + " " +
-                                 programWrite.RotateImage + " " +
-                                 programWrite.RndSubtitlePlace + " " +
-                                 programWrite.WordColor
-                                 ;
 
-                saveProgramFile(text, programWrite.InstructionText);
+
+                saveProgramFile(programWrite.data(), programWrite.InstructionText);
                 this.Close();
             }
             catch (Exception ex)
@@ -847,11 +822,77 @@ namespace StroopTest
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            configureNewProgram();
+            if(!this.ValidateChildren(ValidationConstraints.Enabled))
+                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+            else
+                configureNewProgram();
+        }
+
+        private void prgNameTextBox_Validating(object sender,
+                 System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidProgramName(prgNameTextBox.Text, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider.SetError(prgNameTextBox, errorMsg);
+            }
+        }
+
+        private void prgNameTextBox_Validated(object sender, System.EventArgs e)
+        {
+            errorProvider.SetError(prgNameTextBox, "");
+        }
+
+        public bool ValidProgramName(string pgrName, out string errorMessage)
+        {
+            if (pgrName.Length == 0)
+            {
+                errorMessage = "O nome do programa deve ser preenchido.";
+                return false;
+            }
+            if (!Validations.isAlphanumeric(pgrName))
+            {
+                errorMessage = "Nome do programa deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'MeuPrograma'";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void expoTimeNumericUpDown_Validating(object sender,
+         System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidExpoTime(Convert.ToInt32(this.expoTime.Value), out errorMsg))
+            {
+                e.Cancel = true; 
+                this.expoTimeErrorProvider.SetError(this.expoTime, errorMsg);
+            }
+        }
+
+        private void expoTimeNumericUpDown_Validated(object sender, System.EventArgs e)
+        {
+            // If all conditions have been met, clear the ErrorProvider of errors.
+            expoTimeErrorProvider.SetError(expoTime, "");
+        }
+
+        public bool ValidExpoTime(int expoTime, out string errorMessage)
+        {
+            if (!Validations.isExpositionTimeValid(expoTime))
+            {
+                errorMessage = "O tempo de exposição deve ser maior do que zero.";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            AutoValidate = AutoValidate.Disable;
             Close();
         }
 

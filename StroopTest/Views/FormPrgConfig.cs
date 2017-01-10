@@ -426,12 +426,13 @@ namespace StroopTest
             StroopProgram programWrite = new StroopProgram();
             programWrite.ProgramName = prgNameTextBox.Text;
             programWrite.ExpositionTime = Convert.ToInt32(expoTime.Value);
+            programWrite.NumExpositions = Convert.ToInt32(numExpo.Value);
+            programWrite.ExpositionRandom = rndExpoCheck.Checked;
+            programWrite.FontWordLabel = wordSizeNumeric.Value.ToString();
             try
-            {
+            {    
                 
-                programWrite.NumExpositions = Convert.ToInt32(numExpo.Value);
-                programWrite.ExpositionRandom = rndExpoCheck.Checked;
-                programWrite.FontWordLabel = wordSizeNumeric.Value.ToString();                
+                    
                 programWrite.IntervalTime = Convert.ToInt32(intervalTime.Value);
                 programWrite.IntervalTimeRandom = rndIntervalCheck.Checked;
                 
@@ -883,6 +884,65 @@ namespace StroopTest
             if (!Validations.isExpositionTimeValid(expoTime))
             {
                 errorMessage = "O tempo de exposição deve ser maior do que zero.";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+
+        private void intervalTime_Validating(object sender,
+                                                      System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidIntervalTime(Convert.ToInt32(this.intervalTime.Value), out errorMsg))
+            {
+                e.Cancel = true;
+                this.expoTimeErrorProvider.SetError(this.intervalTime, errorMsg);
+            }
+        }
+
+        private void intervalTime_Validated(object sender, System.EventArgs e)
+        {
+            // If all conditions have been met, clear the ErrorProvider of errors.
+            expoTimeErrorProvider.SetError(intervalTime, "");
+        }
+
+        public bool ValidIntervalTime(int intervalTime, out string errorMessage)
+        {
+            if (!Validations.isIntervalTimeValid(intervalTime))
+            {
+                errorMessage = "Tempo de intervalo deve ser maior que zero (em milissegundos)";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void numExpo_Validating(object sender,
+         System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidnumExpo(Convert.ToInt32(this.numExpo.Value), out errorMsg))
+            {
+                e.Cancel = true;
+                this.expoTimeErrorProvider.SetError(this.numExpo, errorMsg);
+            }
+        }
+
+        private void numExpo_Validated(object sender, System.EventArgs e)
+        {
+            // If all conditions have been met, clear the ErrorProvider of errors.
+            expoTimeErrorProvider.SetError(numExpo, "");
+        }
+
+        public bool ValidnumExpo(int numExpo, out string errorMessage)
+        {
+            if (!Validations.isExpositionTimeValid(numExpo))
+            {
+                errorMessage = "O número de exposições deve ser maior do que zero.";
                 return false;
             }
 

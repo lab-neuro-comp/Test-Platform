@@ -590,6 +590,8 @@
             this.intervalTime.Name = "intervalTime";
             this.intervalTime.Size = new System.Drawing.Size(80, 22);
             this.intervalTime.TabIndex = 31;
+            this.intervalTime.Validating += new System.ComponentModel.CancelEventHandler(this.intervalTime_Validating);
+            this.intervalTime.Validated += new System.EventHandler(this.intervalTime_Validated);
             // 
             // rndIntervalCheck
             // 
@@ -929,6 +931,8 @@
             0,
             0,
             0});
+            this.numExpo.Validating += new System.ComponentModel.CancelEventHandler(this.numExpo_Validating);
+            this.numExpo.Validated += new System.EventHandler(this.numExpo_Validated);
             // 
             // rndExpoLabel
             // 

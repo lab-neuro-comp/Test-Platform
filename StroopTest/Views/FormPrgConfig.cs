@@ -424,55 +424,62 @@ namespace StroopTest
         {
 
             StroopProgram programWrite = new StroopProgram();
-
             try
-            {
-                programWrite.ProgramName = prgNameTextBox.Text;
-                programWrite.NumExpositions = Convert.ToInt32(numExpo.Value);
-                programWrite.ExpositionRandom = rndExpoCheck.Checked;
-                programWrite.FontWordLabel = wordSizeNumeric.Value.ToString();
-                programWrite.ExpositionTime = Convert.ToInt32(expoTime.Value);
-                programWrite.IntervalTime = Convert.ToInt32(intervalTime.Value);
-                programWrite.IntervalTimeRandom = rndIntervalCheck.Checked;
-                
+            {               
                 switch (chooseExpoType.SelectedIndex)
                 {
                     case 0: //txt
-                        if (openWordListButton.Text != "abrir") { programWrite.WordsListFile = openWordListButton.Text; }
-                        else { throw new Exception("Selecione o arquivo de lista de palavras!"); }
-                        if (openColorListButton.Text != "abrir") { programWrite.ColorsListFile = openColorListButton.Text; }
-                        else { throw new Exception("Selecione o arquivo de lista de cores!"); }
-                        programWrite.ImagesListFile = "false"; programWrite.AudioListFile = "false";
+                        if (openWordListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de palavras!"); }
+                        else if (openColorListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de cores!"); }
+                        else {
+                            programWrite.setTxtType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), 
+                                                                      Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked, 
+                                                                      wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
+                                                                      rndIntervalCheck.Checked, openWordListButton.Text, 
+                                                                      openColorListButton.Text);
+                        }
                         break;
                     case 1: //img
-                        programWrite.WordsListFile = "false"; programWrite.ColorsListFile = "false";
-                        if (openImgListButton.Text != "abrir") { programWrite.ImagesListFile = openImgListButton.Text; }
+                        if (openImgListButton.Text != "abrir") {
+                            programWrite.setImageType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
+                                                                      Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
+                                                                      wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
+                                                                      rndIntervalCheck.Checked, openImgListButton.Text);
+                        }
                         else { throw new Exception("Selecione o arquivo de lista de imagens!"); }
-                        programWrite.AudioListFile = "false";
                         break;
                     case 2: //txtimg
-                        programWrite.ColorsListFile = "false";
-                        if (openWordListButton.Text != "abrir") { programWrite.WordsListFile = openWordListButton.Text; }
-                        else { throw new Exception("Selecione o arquivo de lista de palavras!"); }
-                        if (openImgListButton.Text != "abrir") { programWrite.ImagesListFile = openImgListButton.Text; }
-                        else { throw new Exception("Selecione o arquivo de lista de imagens!"); }
-                        programWrite.AudioListFile = "false";
+                        if (openWordListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de palavras!");  }
+                        if (openImgListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de imagens!"); }
+                        else {
+                            programWrite.setImgTxtType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
+                                                                      Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
+                                                                      wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
+                                                                      openWordListButton.Text , openImgListButton.Text, rndIntervalCheck.Checked);
+                        }
                         break;
                     case 3: //txtaud
-                        if (openWordListButton.Text != "abrir") { programWrite.WordsListFile = openWordListButton.Text; }
-                        else { throw new Exception("Selecione o arquivo de lista de palavras!"); }
-                        if (openColorListButton.Text != "abrir") { programWrite.ColorsListFile = openColorListButton.Text; }
-                        else { throw new Exception("Selecione o arquivo de lista de cores!"); }
-                        programWrite.ImagesListFile = "false";
-                        if (openAudioListButton.Text != "abrir") { programWrite.AudioListFile = openAudioListButton.Text; }
-                        else { throw new Exception("Selecione o arquivo de lista de audio!"); }
+                        if (openWordListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de palavras!");  }
+                        if (openColorListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de cores!"); }
+                        if (openAudioListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de audio!"); }
+                        else {
+                            programWrite.setTxtAudType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
+                                                                      Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
+                                                                      wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
+                                                                      rndIntervalCheck.Checked, openWordListButton.Text, 
+                                                                      openColorListButton.Text, openAudioListButton.Text);
+                        }
                         break;
                     case 4: //imgaud
-                        programWrite.WordsListFile = "false"; programWrite.ColorsListFile = "false";
-                        if (openImgListButton.Text != "abrir") { programWrite.ImagesListFile = openImgListButton.Text; }
-                        else { throw new Exception("Selecione o arquivo de lista de imagens!"); }
-                        if (openAudioListButton.Text != "abrir") { programWrite.AudioListFile = openAudioListButton.Text; }
-                        else { throw new Exception("Selecione o arquivo de lista de audio!"); }
+                        if (openImgListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de imagens!");  }
+                        if (openAudioListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de audio!"); }
+                        else {
+                            programWrite.setImgAudioType(openImgListButton.Text, openAudioListButton.Text, prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
+                                          Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
+                                          wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
+                                          rndIntervalCheck.Checked);
+                        }
+                        
                         break;
                 }
                 if (Validations.isHexPattern(bgColorButton.Text)) { programWrite.BackgroundColor = bgColorButton.Text; }
@@ -868,14 +875,14 @@ namespace StroopTest
             if (!ValidExpoTime(Convert.ToInt32(this.expoTime.Value), out errorMsg))
             {
                 e.Cancel = true; 
-                this.expoTimeErrorProvider.SetError(this.expoTime, errorMsg);
+                this.errorProvider1.SetError(this.expoTime, errorMsg);
             }
         }
 
         private void expoTimeNumericUpDown_Validated(object sender, System.EventArgs e)
         {
             // If all conditions have been met, clear the ErrorProvider of errors.
-            expoTimeErrorProvider.SetError(expoTime, "");
+            errorProvider1.SetError(expoTime, "");
         }
 
         public bool ValidExpoTime(int expoTime, out string errorMessage)
@@ -883,6 +890,65 @@ namespace StroopTest
             if (!Validations.isExpositionTimeValid(expoTime))
             {
                 errorMessage = "O tempo de exposição deve ser maior do que zero.";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+
+        private void intervalTime_Validating(object sender,
+                                                      System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidIntervalTime(Convert.ToInt32(this.intervalTime.Value), out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.intervalTime, errorMsg);
+            }
+        }
+
+        private void intervalTime_Validated(object sender, System.EventArgs e)
+        {
+            // If all conditions have been met, clear the ErrorProvider of errors.
+            errorProvider1.SetError(intervalTime, "");
+        }
+
+        public bool ValidIntervalTime(int intervalTime, out string errorMessage)
+        {
+            if (!Validations.isIntervalTimeValid(intervalTime))
+            {
+                errorMessage = "Tempo de intervalo deve ser maior que zero (em milissegundos)";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void numExpo_Validating(object sender,
+         System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidnumExpo(Convert.ToInt32(this.numExpo.Value), out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.numExpo, errorMsg);
+            }
+        }
+
+        private void numExpo_Validated(object sender, System.EventArgs e)
+        {
+            // If all conditions have been met, clear the ErrorProvider of errors.
+            errorProvider1.SetError(numExpo, "");
+        }
+
+        public bool ValidnumExpo(int numExpo, out string errorMessage)
+        {
+            if (!Validations.isExpositionTimeValid(numExpo))
+            {
+                errorMessage = "O número de exposições deve ser maior do que zero.";
                 return false;
             }
 

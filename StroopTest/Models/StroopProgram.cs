@@ -59,7 +59,95 @@ namespace StroopTest.Models
         private Boolean rndSubtitlePlace;          // [23]  localizacão da legenda aleatória
         private String wordColor;               // [24]  cor da palavra apresentada em palavraimg
 
+        public StroopProgram()
+        {
+            this.InitialDate = DateTime.Now; // seta Data inicial como o momento da inicialização
+        }
 
+        // set values for type txt
+        public void setTxtType(string programName, int expoTime, int numExpo, bool expoRandom, string wordSize, int intervalTime,
+                             bool intervalRandom, string wordList, string colorList)
+        {
+            this.ProgramName = programName;
+            this.ExpositionTime = expoTime;
+            this.NumExpositions = numExpo;
+            this.ExpositionRandom = expoRandom;
+            this.FontWordLabel = wordSize;
+            this.IntervalTime = intervalTime;
+            this.IntervalTimeRandom = intervalRandom;
+            this.WordsListFile = wordList;
+            this.ColorsListFile = colorList;
+            this.ImagesListFile = "false";
+            this.AudioListFile = "false";
+        }
+
+        // set values for type image
+        public void setImageType(string programName, int expoTime, int numExpo, bool expoRandom, string wordSize, int intervalTime,
+                             bool intervalRandom, string imageList)
+        {
+            this.ProgramName = programName;
+            this.ExpositionTime = expoTime;
+            this.NumExpositions = numExpo;
+            this.ExpositionRandom = expoRandom;
+            this.FontWordLabel = wordSize;
+            this.IntervalTime = intervalTime;
+            this.IntervalTimeRandom = intervalRandom;
+            this.ImagesListFile = imageList;
+            this.WordsListFile = "false";
+            this.ColorsListFile = "false";
+            this.AudioListFile = "false";
+        }
+
+        // set values for type imgtxt
+        public void setImgTxtType(string programName, int expoTime, int numExpo, bool expoRandom, string wordSize, int intervalTime,
+                             string wordList, string imageList, bool intervalRandom)
+        {
+            this.ProgramName = programName;
+            this.ExpositionTime = expoTime;
+            this.NumExpositions = numExpo;
+            this.ExpositionRandom = expoRandom;
+            this.FontWordLabel = wordSize;
+            this.IntervalTime = intervalTime;
+            this.IntervalTimeRandom = intervalRandom;
+            this.ImagesListFile = imageList;
+            this.WordsListFile = wordList;
+            this.AudioListFile = "false";
+            this.ColorsListFile = "false";
+        }
+
+        // set values for type txtaud
+        public void setTxtAudType(string programName, int expoTime, int numExpo, bool expoRandom, string wordSize, int intervalTime,
+                             bool intervalRandom, string wordList, string colorList, string audioList)
+        {
+            this.ProgramName = programName;
+            this.ExpositionTime = expoTime;
+            this.NumExpositions = numExpo;
+            this.ExpositionRandom = expoRandom;
+            this.FontWordLabel = wordSize;
+            this.IntervalTime = intervalTime;
+            this.IntervalTimeRandom = intervalRandom;
+            this.ImagesListFile = "false";
+            this.WordsListFile = wordList;
+            this.ColorsListFile = colorList;
+            this.AudioListFile = audioList;
+        }
+
+        // set values for type imgaud
+        public void setImgAudioType(string imageList, string audioList,string programName, int expoTime, int numExpo, bool expoRandom, string wordSize, int intervalTime,
+                             bool intervalRandom)
+        {
+            this.ProgramName = programName;
+            this.ExpositionTime = expoTime;
+            this.NumExpositions = numExpo;
+            this.ExpositionRandom = expoRandom;
+            this.FontWordLabel = wordSize;
+            this.IntervalTime = intervalTime;
+            this.IntervalTimeRandom = intervalRandom;
+            this.WordsListFile = "false";
+            this.ColorsListFile = "false";
+            this.AudioListFile = audioList;
+            this.ImagesListFile = audioList;
+        }
         public List<string> InstructionText
         {
             get { return instructionText; }
@@ -499,11 +587,7 @@ namespace StroopTest.Models
             return encodedStr;
         }
 
-        // construtor classe StroopProgram
-        public StroopProgram()
-        {
-            this.InitialDate = DateTime.Now; // seta Data inicial como o momento da inicialização
-        }
+
 
         // lê arquivo com programa e retorna true para sucesso
         public void readProgramFile(string filepath)

@@ -424,14 +424,14 @@ namespace StroopTest
         {
 
             StroopProgram programWrite = new StroopProgram();
-
+            programWrite.ProgramName = prgNameTextBox.Text;
+            programWrite.ExpositionTime = Convert.ToInt32(expoTime.Value);
             try
             {
-                programWrite.ProgramName = prgNameTextBox.Text;
+                
                 programWrite.NumExpositions = Convert.ToInt32(numExpo.Value);
                 programWrite.ExpositionRandom = rndExpoCheck.Checked;
-                programWrite.FontWordLabel = wordSizeNumeric.Value.ToString();
-                programWrite.ExpositionTime = Convert.ToInt32(expoTime.Value);
+                programWrite.FontWordLabel = wordSizeNumeric.Value.ToString();                
                 programWrite.IntervalTime = Convert.ToInt32(intervalTime.Value);
                 programWrite.IntervalTimeRandom = rndIntervalCheck.Checked;
                 

@@ -102,7 +102,7 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.expoTimeErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -116,7 +116,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wordSizeNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expoTimeErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -1057,10 +1057,10 @@
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
-            // expoTimeErrorProvider
+            // errorProvider1
             // 
-            this.expoTimeErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.expoTimeErrorProvider.ContainerControl = this;
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormPrgConfig
             // 
@@ -1098,7 +1098,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wordSizeNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expoTimeErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1177,6 +1177,6 @@
         private System.Windows.Forms.ComboBox rotateImgComboBox;
         private System.Windows.Forms.CheckBox subsRndCheckBox;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private System.Windows.Forms.ErrorProvider expoTimeErrorProvider;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

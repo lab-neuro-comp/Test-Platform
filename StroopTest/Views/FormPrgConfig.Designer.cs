@@ -692,6 +692,8 @@
             this.openAudioListButton.Text = "abrir";
             this.openAudioListButton.UseVisualStyleBackColor = true;
             this.openAudioListButton.Click += new System.EventHandler(this.openAudioList_Click);
+            this.openAudioListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openAudioListButton_Validating);
+            this.openAudioListButton.Validated += new System.EventHandler(this.openAudioListButton_Validated);
             // 
             // colorListLabel
             // 
@@ -722,6 +724,8 @@
             this.openWordListButton.Text = "abrir";
             this.openWordListButton.UseVisualStyleBackColor = true;
             this.openWordListButton.Click += new System.EventHandler(this.openWordsList_Click);
+            this.openWordListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openWordList_Validating);
+            this.openWordListButton.Validated += new System.EventHandler(this.openWordList_Validated);
             // 
             // openColorListButton
             // 
@@ -734,6 +738,8 @@
             this.openColorListButton.Text = "abrir";
             this.openColorListButton.UseVisualStyleBackColor = true;
             this.openColorListButton.Click += new System.EventHandler(this.openColorsList_Click);
+            this.openColorListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openColorListButton_Validating);
+            this.openColorListButton.Validated += new System.EventHandler(this.openColorListButton_Validated);
             // 
             // openImgListButton
             // 
@@ -747,6 +753,8 @@
             this.openImgListButton.Text = "abrir";
             this.openImgListButton.UseVisualStyleBackColor = true;
             this.openImgListButton.Click += new System.EventHandler(this.openImagesList_Click);
+            this.openImgListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openImgListButton_Validating);
+            this.openImgListButton.Validated += new System.EventHandler(this.openImgListButton_Validated);
             // 
             // instructionsBox
             // 
@@ -1031,7 +1039,7 @@
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelButton.Location = new System.Drawing.Point(608, 742);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 83;
@@ -1044,7 +1052,7 @@
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.saveButton.Location = new System.Drawing.Point(15, 742);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 28);
             this.saveButton.TabIndex = 82;

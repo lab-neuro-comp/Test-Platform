@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace StroopTest.Models
 {
@@ -100,6 +101,19 @@ namespace StroopTest.Models
         public static bool isColorLengthValid(int value)
         {
             if (value == 7)
+                return true;
+            return false;
+        }
+        public static bool isLengthValid(int value)
+        {
+            if (value <= 10)
+                return false;
+            return true;
+        }
+
+        public static bool isExpoEnabled(Button value)
+        {
+            if (value.Enabled)
                 return true;
             return false;
         }

@@ -95,6 +95,7 @@ namespace StroopTest
             switch (expoType)
             {
                 case 0: // txt
+                    errorProvider1.Clear();
                     //box1
                     wordSizeLabel.Enabled = true; wordSizeNumeric.Enabled = true;
                     wordColorLabel.Enabled = false; wordColorPanel.Enabled = false; wordColorButton.Enabled = false;
@@ -108,11 +109,12 @@ namespace StroopTest
                     
                     break;
                 case 1: // img
+                    errorProvider1.Clear();
                     //box1
                     wordSizeLabel.Enabled = false; wordSizeNumeric.Enabled = false;
                     wordColorLabel.Enabled = false; wordColorPanel.Enabled = false; wordColorButton.Enabled = false;
                     wordSizeLabel.Enabled = false; wordSizeNumeric.Enabled = false;
-                    expandImgLabel.Enabled = true; expandImgCheck.Enabled = true;
+                    expandImgLabel.Enabled = true; expandImgCheck.Enabled = true; 
                     //box2
                     wordListLabel.Enabled = false; openWordListButton.Enabled = false;
                     colorListLabel.Enabled = false; openColorListButton.Enabled = false;
@@ -121,6 +123,7 @@ namespace StroopTest
                     
                     break;
                 case 2: // imgtxt
+                    errorProvider1.Clear();
                     //box1
                     wordSizeLabel.Enabled = true; wordSizeNumeric.Enabled = true;
                     wordColorLabel.Enabled = true; wordColorPanel.Enabled = true; wordColorButton.Enabled = true;
@@ -134,6 +137,7 @@ namespace StroopTest
                     
                     break;
                 case 3: // txtaud
+                    errorProvider1.Clear();
                     //box1
                     wordSizeLabel.Enabled = true; wordSizeNumeric.Enabled = true;
                     wordColorLabel.Enabled = false; wordColorPanel.Enabled = false; wordColorButton.Enabled = false;
@@ -147,13 +151,14 @@ namespace StroopTest
                     
                     break;
                 case 4: // imgaud
+                    errorProvider1.Clear();
                     //box1
                     wordSizeLabel.Enabled = false; wordSizeNumeric.Enabled = false;
                     wordColorLabel.Enabled = false; wordColorPanel.Enabled = false; wordColorButton.Enabled = false;
                     wordSizeLabel.Enabled = false; wordSizeNumeric.Enabled = false;
                     expandImgLabel.Enabled = true; expandImgCheck.Enabled = true;
                     //box2
-                    wordListLabel.Enabled = false; openWordListButton.Enabled = false;
+                    wordListLabel.Enabled = false; openWordListButton.Enabled = false; 
                     colorListLabel.Enabled = false; openColorListButton.Enabled = false;
                     imgListLabel.Enabled = true; openImgListButton.Enabled = true;
                     audioListLabel.Enabled = true; openAudioListButton.Enabled = true;
@@ -429,67 +434,48 @@ namespace StroopTest
                 switch (chooseExpoType.SelectedIndex)
                 {
                     case 0: //txt
-                        if (openWordListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de palavras!"); }
-                        else if (openColorListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de cores!"); }
-                        else {
                             programWrite.setTxtType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), 
                                                                       Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked, 
                                                                       wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
                                                                       rndIntervalCheck.Checked, openWordListButton.Text, 
                                                                       openColorListButton.Text);
-                        }
+                           
                         break;
                     case 1: //img
-                        if (openImgListButton.Text != "abrir") {
                             programWrite.setImageType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
                                                                       Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
                                                                       wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
                                                                       rndIntervalCheck.Checked, openImgListButton.Text);
-                        }
-                        else { throw new Exception("Selecione o arquivo de lista de imagens!"); }
+                        
                         break;
                     case 2: //txtimg
-                        if (openWordListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de palavras!");  }
-                        if (openImgListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de imagens!"); }
-                        else {
                             programWrite.setImgTxtType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
                                                                       Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
                                                                       wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
                                                                       openWordListButton.Text , openImgListButton.Text, rndIntervalCheck.Checked);
-                        }
+                        
                         break;
                     case 3: //txtaud
-                        if (openWordListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de palavras!");  }
-                        if (openColorListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de cores!"); }
-                        if (openAudioListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de audio!"); }
-                        else {
                             programWrite.setTxtAudType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
                                                                       Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
                                                                       wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
                                                                       rndIntervalCheck.Checked, openWordListButton.Text, 
                                                                       openColorListButton.Text, openAudioListButton.Text);
-                        }
+                        
                         break;
                     case 4: //imgaud
-                        if (openImgListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de imagens!");  }
-                        if (openAudioListButton.Text == "abrir") { throw new Exception("Selecione o arquivo de lista de audio!"); }
-                        else {
                             programWrite.setImgAudioType(openImgListButton.Text, openAudioListButton.Text, prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
                                           Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
                                           wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
                                           rndIntervalCheck.Checked);
-                        }
+                        
                         
                         break;
                 }
                 if (Validations.isHexPattern(bgColorButton.Text)) { programWrite.BackgroundColor = bgColorButton.Text; }
-                else programWrite.BackgroundColor = "false";
 
                 programWrite.AudioCapture = audioCaptureCheck.Checked;
-
                 programWrite.SubtitleShow = activateSubsCheck.Checked;
-                programWrite.SubtitleColor = "false";
-                programWrite.SubtitlesListFile = "false";
 
                 if (activateSubsCheck.Checked)
                 {
@@ -497,33 +483,6 @@ namespace StroopTest
                     if (openSubsListButton.Text != "abrir") { programWrite.SubtitlesListFile = openSubsListButton.Text; }
                     programWrite.SubtitlePlace = subDirectionNumber;
                 }
-                
-                switch (chooseExpoType.SelectedIndex)
-                {
-                    case 0:
-                        programWrite.ExpositionType = "txt";
-                        break;
-                    case 1:
-                        programWrite.ExpositionType = "img";
-                        break;
-                    case 2:
-                        programWrite.ExpositionType = "imgtxt";
-                        break;
-                    case 3:
-                        programWrite.ExpositionType = "txtaud";
-                        break;
-                    case 4:
-                        programWrite.ExpositionType = "imgaud";
-                        break;
-                }
-
-                if (openImgListButton.Enabled) { programWrite.ImagesListFile = openImgListButton.Text; }
-                else { programWrite.ImagesListFile = "false"; }
-
-
-                programWrite.FixPoint = "false";
-                programWrite.FixPointColor = "false";
-
                 if (fixPointCross.Checked)
                 {
                     programWrite.FixPoint = "+";
@@ -541,8 +500,6 @@ namespace StroopTest
                     programWrite.WordColor = wordColorButton.Text;
                 else
                     programWrite.WordColor = "false";
-                if (openAudioListButton.Enabled) { programWrite.AudioListFile = openAudioListButton.Text; }
-                else { programWrite.AudioListFile = "false"; }
 
                 programWrite.DelayTime = Convert.ToInt32(delayTime.Value);
 
@@ -588,12 +545,8 @@ namespace StroopTest
                 {
                     programWrite.InstructionText = null;
                 }
-
                 programWrite.FontWordLabel = wordSizeNumeric.Value.ToString();
                 programWrite.ExpandImage = expandImgCheck.Checked;
-
-
-
                 saveProgramFile(programWrite.data(), programWrite.InstructionText);
                 this.Close();
             }
@@ -949,6 +902,122 @@ namespace StroopTest
             if (!Validations.isExpositionTimeValid(numExpo))
             {
                 errorMessage = "O número de exposições deve ser maior do que zero.";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+
+        private void openWordList_Validating(object sender,
+         System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidopenWordList(openWordListButton.Text.Length, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.openWordListButton, errorMsg);
+            }
+        }
+
+        private void openWordList_Validated(object sender, System.EventArgs e)
+        {
+            errorProvider1.SetError(this.openWordListButton, "");
+        }
+
+        public bool ValidopenWordList(int length, out string errorMessage)
+        {
+            if (Validations.isExpoEnabled(openWordListButton) && !Validations.isLengthValid(length))
+            {
+                Console.WriteLine(Validations.isExpoEnabled(openWordListButton));
+                errorMessage = "Selecione o arquivo de lista de palavras!";
+                return false;
+            }
+            Validations.isExpoEnabled(openWordListButton);
+            errorMessage = "";
+            return true;
+        }
+
+        private void openColorListButton_Validating(object sender,
+                                             System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidopenColorListButton(openColorListButton.Text.Length, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.openColorListButton, errorMsg);
+            }
+        }
+
+        private void openColorListButton_Validated(object sender, System.EventArgs e)
+        {
+            errorProvider1.SetError(this.openColorListButton, "");
+        }
+
+        public bool ValidopenColorListButton(int length, out string errorMessage)
+        {
+            if (Validations.isExpoEnabled(openColorListButton) && !Validations.isLengthValid(length))
+            {
+                errorMessage = "Selecione o arquivo de lista de cores!";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void openImgListButton_Validating(object sender,
+                                             System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidopenImgListButton(openImgListButton.Text.Length, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.openImgListButton, errorMsg);
+            }
+        }
+
+        private void openImgListButton_Validated(object sender, System.EventArgs e)
+        {
+            errorProvider1.SetError(this.openImgListButton, "");
+        }
+
+        public bool ValidopenImgListButton(int length, out string errorMessage)
+        {
+            if (Validations.isExpoEnabled(openImgListButton) && !Validations.isLengthValid(length))
+            {
+                errorMessage = "Selecione o arquivo de lista de imagem!";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+
+
+        private void openAudioListButton_Validating(object sender,
+                                             System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidopenAudioListButton(openAudioListButton.Text.Length, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.openAudioListButton, errorMsg);
+            }
+        }
+
+        private void openAudioListButton_Validated(object sender, System.EventArgs e)
+        {
+            errorProvider1.SetError(this.openAudioListButton, "");
+        }
+
+        public bool ValidopenAudioListButton(int length, out string errorMessage)
+        {
+            if (Validations.isExpoEnabled(openAudioListButton) && !Validations.isLengthValid(length))
+            {
+                errorMessage = "Selecione o arquivo de lista de audio!";
                 return false;
             }
 

@@ -7,21 +7,22 @@ using System;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace StroopTest
+
+namespace StroopTest.Views
 {
     partial class AboutBox : Form
     {
-        private string direitosProduto = "© 2016 - Universidade de Brasília";
-        private string nomeEmpresa = "Laboratório de Neurociências e Comportamento";
-        private string descrição = "StroopTest faz parte de uma plataforma de testes neuropsicológicos computadorizados para avaliação de funções executivas. O produto tem a proposta oferecer soluções inovando tecnologicamente de forma prática e dinâmica. Destinado a pesquisadores, alunos e usuários comuns. Developer: hugohon - Hugo Honda Ferreira; 2016";
+        private String direitosProduto = "© 2016 - Universidade de Brasília";
+        private String nomeEmpresa = "Laboratório de Neurociências e Comportamento";
+        private String descrição = "StroopTest faz parte de uma plataforma de testes neuropsicológicos computadorizados para avaliação de funções executivas. O produto tem a proposta oferecer soluções inovando tecnologicamente de forma prática e dinâmica. Destinado a pesquisadores, alunos e usuários comuns. Developer: hugohon - Hugo Honda Ferreira; 2016";
 
 
         public AboutBox()
         {
             InitializeComponent();
-            this.Text = String.Format("About {0}", AssemblyTitle);
+            this.Text = string.Format("About {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            this.labelVersion.Text = string.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = direitosProduto; // AssemblyCopyright;
             this.labelCompanyName.Text = nomeEmpresa; //AssemblyCompany;
             this.textBoxDescription.Text = descrição; //AssemblyDescription;

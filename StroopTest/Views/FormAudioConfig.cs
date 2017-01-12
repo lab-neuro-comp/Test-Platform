@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Media;
 using System.Windows.Forms;
+using StroopTest.Models;
+using StroopTest.Views;
+using StroopTest.Controllers;
 
 namespace StroopTest
 {

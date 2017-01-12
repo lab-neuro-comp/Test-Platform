@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Media;
+using StroopTest.Models;
+using StroopTest.Views;
 
 namespace StroopTest
 {

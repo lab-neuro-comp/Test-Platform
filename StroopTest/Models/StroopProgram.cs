@@ -8,60 +8,181 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 
-namespace StroopTest
+namespace StroopTest.Models
 {
     class StroopProgram
     {
-        private string defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false";
-        private string defaultWordsListName = "padrao_words.lst";
-        private string defaultWordsListText = "amarelo azul verde vermelho";
-        private string defaultColorsListName = "padrao_color.lst";
-        private string defaultColorsListText = "#F8E000 #007BB7 #7EC845 #D01C1F";
-        private string defaultRedColor = "#D01C1F";
-        private string headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio";
-        private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
-        private string errorExMsg = "Arquivo de Programa - parâmetro inválido.";
-        private string[] defaultInstructionText = { "Serão apresentadas palavras coloridas de forma aleatória. Palavras surgirão rapidamente e em seguida desaparecerão",
+        private String defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false";
+        private String defaultWordsListName = "padrao_words.lst";
+        private String defaultWordsListText = "amarelo azul verde vermelho";
+        private String defaultColorsListName = "padrao_color.lst";
+        private String defaultColorsListText = "#F8E000 #007BB7 #7EC845 #D01C1F";
+        private String defaultRedColor = "#D01C1F";
+        private String headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio";
+        private String errorExMsg = "Arquivo de Programa - parâmetro inválido.";
+        private String[] defaultInstructionText = { "Serão apresentadas palavras coloridas de forma aleatória. Palavras surgirão rapidamente e em seguida desaparecerão",
                                                     "Diga a cor em que a palavra está escrita",
                                                     "A tarefa vai começar agora"};
-        private bool needsEditionFlag;
-        public static int instructionAwaitTime = 4000; // default await time for each frame of instruction shown before the test
-        private int minRandomTime = 400; // minimum random value that a random interval time can be
+        private Boolean needsEditionFlag;
+        public static Int32 instructionAwaitTime = 4000; // default await time for each frame of instruction shown before the test
+        private Int32 minRandomTime = 400; // minimum random value that a random interval time can be
 
         private List<string> instructionText = new List<string>();
 
         private DateTime initialDate;           // test execution date
-        private string userName;                // tested person name
-        private string programName;             // [0]   program name
-        private int numExpositions;             // [1]*  number of expositions to be shown 
-        private int expositionTime;             // [2]*  duration time of each exposition (millisec)
-        private bool expositionRandom;          // [3]*  is exposition random
-        private int intervalTime;               // [4]*  duration time for interval between expositions (millisec)
-        private bool intervalTimeRandom;        // [5]*  is interval time random - rnd num between defined intervalTime and minRandomTime (bool)
-        private string wordsListFile;           // [6]   words list file name (.lst)
-        private string colorsListFile;          // [7]   colors list file name (.lst)
-        private string backgroundColor;         // [8]   background color during exposition (hex)
-        private bool audioCapture;              // [9]*  is audio capture activated
-        private bool subtitleShow;              // [10]* subtitles activated
-        private int subtitlePlace;              // [11]* subtitles place in screen (left, right, up and down the exposition stimulus)
-        private string subtitleColor;           // [12]  subtitles color
-        private string expositionType;          // [13]  exposition type
-        private string imagesListFile;          // [14]  images path list file name (.lst)
-        private string fixPoint;                // [15]  fixation point shown during interval time - cross / circle - false = deactivated
-        private string fontWordLabel;           // [16]  wordLabel size - 160 default
-        private bool expandImage;               // [17]  expands image adjusting it to the screen - if true, subtitles false
-        private string audioListFile;           // [18]  audio list file name (.lst) - if it is and audio exposition type [13]
-        private string subtitlesListFile;       // [19]  subtitles list file name (.lst) - if subtitles are activated [10]
+        private String userName;                // tested person name
+        private String programName;             // [0]   program name
+        private Int32 numExpositions;             // [1]*  number of expositions to be shown 
+        private Int32 expositionTime;             // [2]*  duration time of each exposition (millisec)
+        private Boolean expositionRandom;          // [3]*  is exposition random
+        private Int32 intervalTime;               // [4]*  duration time for interval between expositions (millisec)
+        private Boolean intervalTimeRandom;        // [5]*  is interval time random - rnd num between defined intervalTime and minRandomTime (bool)
+        private String wordsListFile;           // [6]   words list file name (.lst)
+        private String colorsListFile;          // [7]   colors list file name (.lst)
+        private String backgroundColor;         // [8]   background color during exposition (hex)
+        private Boolean audioCapture;              // [9]*  is audio capture activated
+        private Boolean subtitleShow;              // [10]* subtitles activated
+        private Int32 subtitlePlace;              // [11]* subtitles place in screen (left, right, up and down the exposition stimulus)
+        private String subtitleColor;           // [12]  subtitles color
+        private String expositionType;          // [13]  exposition type
+        private String imagesListFile;          // [14]  images path list file name (.lst)
+        private String fixPoint;                // [15]  fixation point shown during interval time - cross / circle - false = deactivated
+        private String fontWordLabel;           // [16]  wordLabel size - 160 default
+        private Boolean expandImage;               // [17]  expands image adjusting it to the screen - if true, subtitles false
+        private String audioListFile;           // [18]  audio list file name (.lst) - if it is and audio exposition type [13]
+        private String subtitlesListFile;       // [19]  subtitles list file name (.lst) - if subtitles are activated [10]
 
-        private string fixPointColor;           // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
-        private int delayTime;                  // [21]  tempo de atraso = intervalo se não for definido
-        private int rotateImage;                // [22]  rotacionar imagem (90, 180, 270, 360)
-        private bool rndSubtitlePlace;          // [23]  localizacão da legenda aleatória
-        private string wordColor;               // [24]  cor da palavra apresentada em palavraimg
+        private String fixPointColor;           // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
+        private Int32 delayTime;                  // [21]  tempo de atraso = intervalo se não for definido
+        private Int32 rotateImage;                // [22]  rotacionar imagem (90, 180, 270, 360)
+        private Boolean rndSubtitlePlace;          // [23]  localizacão da legenda aleatória
+        private String wordColor;               // [24]  cor da palavra apresentada em palavraimg
 
+        public StroopProgram()
+        {
+            this.InitialDate = DateTime.Now; // seta Data inicial como o momento da inicialização
+        }
 
+        // set values for type txt
+        public void setTxtType(string programName, int expoTime, int numExpo, bool expoRandom, string wordSize, int intervalTime,
+                             bool intervalRandom, string wordList, string colorList)
+        {
+            this.ProgramName = programName;
+            this.ExpositionTime = expoTime;
+            this.NumExpositions = numExpo;
+            this.ExpositionRandom = expoRandom;
+            this.FontWordLabel = wordSize;
+            this.IntervalTime = intervalTime;
+            this.IntervalTimeRandom = intervalRandom;
+            this.WordsListFile = wordList;
+            this.ColorsListFile = colorList;
+            this.ImagesListFile = "false";
+            this.AudioListFile = "false";
+            this.ExpositionType = "txt";
+            this.SubtitleColor = "false";
+            this.SubtitlesListFile = "false";
+            this.BackgroundColor = "false";
+            this.FixPoint = "false";
+            this.FixPointColor = "false";
+
+        }
+
+        // set values for type image
+        public void setImageType(string programName, int expoTime, int numExpo, bool expoRandom, string wordSize, int intervalTime,
+                             bool intervalRandom, string imageList)
+        {
+            this.ProgramName = programName;
+            this.ExpositionTime = expoTime;
+            this.NumExpositions = numExpo;
+            this.ExpositionRandom = expoRandom;
+            this.FontWordLabel = wordSize;
+            this.IntervalTime = intervalTime;
+            this.IntervalTimeRandom = intervalRandom;
+            this.ImagesListFile = imageList;
+            this.WordsListFile = "false";
+            this.ColorsListFile = "false";
+            this.AudioListFile = "false";
+            this.ExpositionType = "img";
+            this.SubtitleColor = "false";
+            this.SubtitlesListFile = "false";
+            this.BackgroundColor = "false";
+            this.FixPoint = "false";
+            this.FixPointColor = "false";
+
+        }
+
+        // set values for type imgtxt
+        public void setImgTxtType(string programName, int expoTime, int numExpo, bool expoRandom, string wordSize, int intervalTime,
+                             string wordList, string imageList, bool intervalRandom)
+        {
+            this.ProgramName = programName;
+            this.ExpositionTime = expoTime;
+            this.NumExpositions = numExpo;
+            this.ExpositionRandom = expoRandom;
+            this.FontWordLabel = wordSize;
+            this.IntervalTime = intervalTime;
+            this.IntervalTimeRandom = intervalRandom;
+            this.ImagesListFile = imageList;
+            this.WordsListFile = wordList;
+            this.AudioListFile = "false";
+            this.ColorsListFile = "false";
+            this.ExpositionType = "imgtxt";
+            this.SubtitleColor = "false";
+            this.SubtitlesListFile = "false";
+            this.BackgroundColor = "false";
+            this.FixPoint = "false";
+            this.FixPointColor = "false";
+
+        }
+
+        // set values for type txtaud
+        public void setTxtAudType(string programName, int expoTime, int numExpo, bool expoRandom, string wordSize, int intervalTime,
+                             bool intervalRandom, string wordList, string colorList, string audioList)
+        {
+            this.ProgramName = programName;
+            this.ExpositionTime = expoTime;
+            this.NumExpositions = numExpo;
+            this.ExpositionRandom = expoRandom;
+            this.FontWordLabel = wordSize;
+            this.IntervalTime = intervalTime;
+            this.IntervalTimeRandom = intervalRandom;
+            this.ImagesListFile = "false";
+            this.WordsListFile = wordList;
+            this.ColorsListFile = colorList;
+            this.AudioListFile = audioList;
+            this.ExpositionType = "txtaud";
+            this.SubtitleColor = "false";
+            this.SubtitlesListFile = "false";
+            this.BackgroundColor = "false";
+            this.FixPoint = "false";
+            this.FixPointColor = "false";
+
+        }
+
+        // set values for type imgaud
+        public void setImgAudioType(string imageList, string audioList,string programName, int expoTime, int numExpo, bool expoRandom, string wordSize, int intervalTime,
+                             bool intervalRandom)
+        {
+            this.ProgramName = programName;
+            this.ExpositionTime = expoTime;
+            this.NumExpositions = numExpo;
+            this.ExpositionRandom = expoRandom;
+            this.FontWordLabel = wordSize;
+            this.IntervalTime = intervalTime;
+            this.IntervalTimeRandom = intervalRandom;
+            this.WordsListFile = "false";
+            this.ColorsListFile = "false";
+            this.AudioListFile = audioList;
+            this.ImagesListFile = imageList;
+            this.ExpositionType = "imgaud";
+            this.SubtitleColor = "false";
+            this.SubtitlesListFile = "false";
+            this.BackgroundColor = "false";
+            this.FixPoint = "false";
+            this.FixPointColor = "false";
+
+        }
         public List<string> InstructionText
         {
             get { return instructionText; }
@@ -76,7 +197,7 @@ namespace StroopTest
             get { return userName; }
             set
             {
-                if (value.All(Char.IsLetterOrDigit) && !String.IsNullOrEmpty(value)) userName = value;
+                if (Validations.isAlphanumeric(value)) userName = value;
                 else throw new ArgumentException("Nome do usuario deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'JoaoSilva'");
             }   // user name has only alphanumeric elements, without spaces
         }
@@ -86,7 +207,7 @@ namespace StroopTest
             get { return programName; }
             set
             {
-                if (value.All(Char.IsLetterOrDigit) && !String.IsNullOrEmpty(value)) programName = value;
+                if (Validations.isAlphanumeric(value)) programName = value;
                 else throw new ArgumentException("Nome do programa deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'MeuPrograma'");
             }   // program name has only alphanumeric elements, without spaces
         }
@@ -96,7 +217,7 @@ namespace StroopTest
             get { return numExpositions; }
             set
             {
-                if (value > 0) numExpositions = value;
+                if (Validations.isNumExpositionsValid(value)) numExpositions = value;
                 else throw new ArgumentException(errorExMsg + "\nNumero de exposições deve ser maior que zero");
             }   // number of expositions must be greater than zero
         }
@@ -106,7 +227,7 @@ namespace StroopTest
             get { return expositionTime; }
             set
             {
-                if (value > 0)
+                if (Validations.isExpositionTimeValid(value))
                 {
                     expositionTime = value;
                 }
@@ -122,7 +243,7 @@ namespace StroopTest
             get { return expositionRandom; }
             set
             {
-                if (value == true || value == false)    // checks boolean
+                if (Validations.isBoolean(value))    // checks boolean
                 {
                     expositionRandom = value;
                 }
@@ -138,7 +259,7 @@ namespace StroopTest
             get { return intervalTime; }
             set
             {
-                if (value > 0)
+                if (Validations.isIntervalTimeValid(value))
                 {
                     intervalTime = value;
                 }
@@ -154,7 +275,7 @@ namespace StroopTest
             get { return intervalTimeRandom; }
             set
             {
-                if (value == true || value == false)
+                if (Validations.isBoolean(value))
                 {
                     intervalTimeRandom = value;
                 }
@@ -172,7 +293,7 @@ namespace StroopTest
             {
                 if(value.Length > 4)
                 {
-                    if (value.Substring(value.Length - 4) == ".lst" || value.ToLower() == "false")
+                    if (Validations.isListValid(value))
                     {
                         wordsListFile = value;
                     }
@@ -189,7 +310,7 @@ namespace StroopTest
             get { return colorsListFile; }
             set
             {
-                if (value.Substring(value.Length - 4) == ".lst" || value.ToLower() == "false")
+                if (Validations.isListValid(value))
                 {
                     colorsListFile = value;
                 }
@@ -205,7 +326,7 @@ namespace StroopTest
             get { return backgroundColor; }
             set
             {
-                if (Regex.IsMatch(value, hexPattern) || value.ToLower() == "false")
+                if (Validations.isColorValid(value))
                 {
                     backgroundColor = value;
                 }
@@ -221,7 +342,7 @@ namespace StroopTest
             get { return audioCapture; }
             set
             {
-                if (value == true || value == false)
+                if (Validations.isBoolean(value))
                 {
                     audioCapture = value;
                 }
@@ -237,7 +358,7 @@ namespace StroopTest
             get { return subtitleShow; }
             set
             {
-                if (value == true || value == false)
+                if (Validations.isBoolean(value))
                 {
                     subtitleShow = value;
                 }
@@ -253,7 +374,7 @@ namespace StroopTest
             get { return subtitlePlace; }
             set
             {
-                if (value > 0 && value <= 6)
+                if (Validations.isSubtitlePlaceValid(value))
                 {
                     subtitlePlace = value;
                 }
@@ -269,7 +390,7 @@ namespace StroopTest
             get { return subtitleColor; }
             set
             {
-                if (Regex.IsMatch(value, hexPattern) || value.ToLower() == "false")
+                if (Validations.isColorValid(value))
                 {
                     subtitleColor = value;
                 }
@@ -279,7 +400,35 @@ namespace StroopTest
                 }   // colors must match with the hexadecimal pattern for color codes or be "false" to indicate that theres no color defined
             }
         }
-
+        public string data()
+        {
+            string data = this.ProgramName + " " +
+                 this.NumExpositions.ToString() + " " +
+                 this.ExpositionTime.ToString() + " " +
+                 this.ExpositionRandom.ToString() + " " +
+                 this.IntervalTime.ToString() + " " +
+                 this.IntervalTimeRandom.ToString() + " " +
+                 this.WordsListFile + " " +
+                 this.ColorsListFile + " " +
+                 this.BackgroundColor.ToUpper() + " " +
+                 this.AudioCapture.ToString() + " " +
+                 this.SubtitleShow.ToString() + " " +
+                 this.SubtitlePlace.ToString() + " " +
+                 this.SubtitleColor.ToUpper() + " " +
+                 this.ExpositionType.ToLower() + " " +
+                 this.ImagesListFile + " " +
+                 this.FixPoint + " " +
+                 this.FontWordLabel + " " +
+                 this.ExpandImage + " " +
+                 this.AudioListFile + " " +
+                 this.SubtitlesListFile + " " +
+                 this.FixPointColor + " " +
+                 this.DelayTime + " " +
+                 this.RotateImage + " " +
+                 this.RndSubtitlePlace + " " +
+                 this.WordColor;
+            return data;
+        }
         public DateTime InitialDate
         {
             get { return initialDate; }
@@ -291,7 +440,7 @@ namespace StroopTest
             get { return expositionType; }
             set
             {
-                if (value.ToLower() == "txt" || value.ToLower() == "img" || value.ToLower() == "imgtxt" || value.ToLower() == "txtaud" || value.ToLower() == "imgaud") expositionType = value.ToLower();
+                if (Validations.isExpoTypeValid(value)) expositionType = value.ToLower();
                 else throw new ArgumentException("Tipo de exposição deve ser do tipo 'txt', 'img', 'imgtxt', 'txtaud' ou 'imgaud'");
             }
         }
@@ -301,7 +450,7 @@ namespace StroopTest
             get { return imagesListFile; }
             set
             {
-                if (value.Substring(value.Length - 4) == ".lst" || value.ToLower() == "false")
+                if (Validations.isListValid(value))
                 {
                     imagesListFile = value;
                 }
@@ -317,7 +466,7 @@ namespace StroopTest
             get { return fixPoint; }
             set
             {
-                if (value == "+" || value.ToLower() == "o" || value.ToLower() == "false") fixPoint = value.ToLower();
+                if (Validations.isFixPointValid(value)) fixPoint = value.ToLower();
                 else throw new ArgumentException("Ponto de fixação deve ser representado por:\n'+' - ponto de fixação cruz\n'o' - ponto de fixação circulo\n'false' - se não houver ponto;");
             }
         }
@@ -327,7 +476,7 @@ namespace StroopTest
             get { return fontWordLabel; }
             set
             {
-                if (value.All(char.IsDigit)) { fontWordLabel = value; }
+                if (Validations.isDigit(value)) { fontWordLabel = value; }
             }
         }
 
@@ -336,7 +485,7 @@ namespace StroopTest
             get { return expandImage; }
             set
             {
-                if (value == true || value == false)
+                if (Validations.isBoolean(value))
                 {
                     expandImage = value;
                 }
@@ -352,7 +501,7 @@ namespace StroopTest
             get { return audioListFile; }
             set
             {
-                if (value.Substring(value.Length - 4) == ".lst" || value.ToLower() == "false")
+                if (Validations.isListValid(value))
                 {
                     audioListFile = value;
                 }
@@ -373,7 +522,7 @@ namespace StroopTest
             get { return subtitlesListFile; }
             set
             {
-                if (value.Substring(value.Length - 4) == ".lst" || value.ToLower() == "false")
+                if (Validations.isListValid(value))
                 {
                     subtitlesListFile = value;
                 }
@@ -389,7 +538,7 @@ namespace StroopTest
             get { return fixPointColor; }
             set
             {
-                if (Regex.IsMatch(value, hexPattern) || value.Equals("false"))
+                if (Validations.isColorValid(value))
                 {
                     fixPointColor = value;
                     if (fixPointColor.ToLower().Equals("false")) { fixPointColor = defaultRedColor; }
@@ -424,7 +573,7 @@ namespace StroopTest
             get { return rndSubtitlePlace; }
             set
             {
-                if (value == true || value == false)
+                if (Validations.isBoolean(value))
                 {
                     rndSubtitlePlace = value;
                 }
@@ -440,7 +589,7 @@ namespace StroopTest
             get { return wordColor; }
             set
             {
-                if (Regex.IsMatch(value, hexPattern) || value.ToLower().Equals("false"))
+                if (Validations.isColorValid(value))
                 {
                     wordColor = value;
                     if (value.ToLower().Equals("false")) { wordColor = defaultRedColor; }
@@ -473,11 +622,7 @@ namespace StroopTest
             return encodedStr;
         }
 
-        // construtor classe StroopProgram
-        public StroopProgram()
-        {
-            this.InitialDate = DateTime.Now; // seta Data inicial como o momento da inicialização
-        }
+
 
         // lê arquivo com programa e retorna true para sucesso
         public void readProgramFile(string filepath)

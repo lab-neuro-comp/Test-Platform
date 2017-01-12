@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using StroopTest.Models;
 
 namespace StroopTest
 {
     public partial class FormWordColorDialog : Form
     {
         public string ReturnValue { get; set; }
-        private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
 
         public FormWordColorDialog()
         {
@@ -89,13 +82,13 @@ namespace StroopTest
                     box.SelectionStart = 1;
                 }
 
-                if (box.Text.Length == 7 && !Regex.IsMatch(box.Text, hexPattern))
+                if (Validations.isColorLengthValid(box.Text.Length) && !Validations.isHexPattern(box.Text))
                 {
                     throw new Exception("O código de cor deve estar em formato hexadecimal.\nEx: #000000");
                 }
 
 
-                if (Regex.IsMatch(hexColorTextBox.Text, hexPattern) && hexColorTextBox.TextLength == 7)
+                if (Validations.isHexPattern(hexColorTextBox.Text) && Validations.isColorLengthValid(hexColorTextBox.TextLength))
                 {
                     hexColorTextBox.ForeColor = ColorTranslator.FromHtml(hexColorTextBox.Text);
                 }

@@ -79,6 +79,13 @@ namespace StroopTest.Models
             this.ColorsListFile = colorList;
             this.ImagesListFile = "false";
             this.AudioListFile = "false";
+            this.ExpositionType = "txt";
+            this.SubtitleColor = "false";
+            this.SubtitlesListFile = "false";
+            this.BackgroundColor = "false";
+            this.FixPoint = "false";
+            this.FixPointColor = "false";
+
         }
 
         // set values for type image
@@ -96,6 +103,13 @@ namespace StroopTest.Models
             this.WordsListFile = "false";
             this.ColorsListFile = "false";
             this.AudioListFile = "false";
+            this.ExpositionType = "img";
+            this.SubtitleColor = "false";
+            this.SubtitlesListFile = "false";
+            this.BackgroundColor = "false";
+            this.FixPoint = "false";
+            this.FixPointColor = "false";
+
         }
 
         // set values for type imgtxt
@@ -113,6 +127,13 @@ namespace StroopTest.Models
             this.WordsListFile = wordList;
             this.AudioListFile = "false";
             this.ColorsListFile = "false";
+            this.ExpositionType = "imgtxt";
+            this.SubtitleColor = "false";
+            this.SubtitlesListFile = "false";
+            this.BackgroundColor = "false";
+            this.FixPoint = "false";
+            this.FixPointColor = "false";
+
         }
 
         // set values for type txtaud
@@ -130,6 +151,13 @@ namespace StroopTest.Models
             this.WordsListFile = wordList;
             this.ColorsListFile = colorList;
             this.AudioListFile = audioList;
+            this.ExpositionType = "txtaud";
+            this.SubtitleColor = "false";
+            this.SubtitlesListFile = "false";
+            this.BackgroundColor = "false";
+            this.FixPoint = "false";
+            this.FixPointColor = "false";
+
         }
 
         // set values for type imgaud
@@ -146,7 +174,14 @@ namespace StroopTest.Models
             this.WordsListFile = "false";
             this.ColorsListFile = "false";
             this.AudioListFile = audioList;
-            this.ImagesListFile = audioList;
+            this.ImagesListFile = imageList;
+            this.ExpositionType = "imgaud";
+            this.SubtitleColor = "false";
+            this.SubtitlesListFile = "false";
+            this.BackgroundColor = "false";
+            this.FixPoint = "false";
+            this.FixPointColor = "false";
+
         }
         public List<string> InstructionText
         {

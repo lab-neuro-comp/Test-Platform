@@ -342,6 +342,15 @@ namespace StroopTest
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        
+        private void displayAudiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormShowAudio showAudio;
+            try
+            {
+                showAudio = new FormShowAudio(defaultPath + "/data/");
+                showAudio.ShowDialog();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
     }
 }

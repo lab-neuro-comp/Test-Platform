@@ -283,15 +283,16 @@
             // displayDataToolStripMenuItem
             // 
             this.displayDataToolStripMenuItem.Name = "displayDataToolStripMenuItem";
-            this.displayDataToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
+            this.displayDataToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.displayDataToolStripMenuItem.Text = "Dados";
             this.displayDataToolStripMenuItem.Click += new System.EventHandler(this.dataToolStripMenuItem_Click);
             // 
             // displayAudiosToolStripMenuItem
             // 
             this.displayAudiosToolStripMenuItem.Name = "displayAudiosToolStripMenuItem";
-            this.displayAudiosToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
+            this.displayAudiosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.displayAudiosToolStripMenuItem.Text = "Áudios";
+            this.displayAudiosToolStripMenuItem.Click += new System.EventHandler(this.displayAudiosToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 

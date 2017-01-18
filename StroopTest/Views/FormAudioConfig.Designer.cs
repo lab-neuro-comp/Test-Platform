@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAudioConfig));
             this.audioListNameLabel = new System.Windows.Forms.Label();
             this.audioListNameTextBox = new System.Windows.Forms.TextBox();
@@ -47,7 +48,9 @@
             this.numberFilesLabel = new System.Windows.Forms.Label();
             this.numberFiles = new System.Windows.Forms.Label();
             this.helpButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.audioPathDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // audioListNameLabel
@@ -63,10 +66,12 @@
             // audioListNameTextBox
             // 
             this.audioListNameTextBox.Location = new System.Drawing.Point(16, 31);
-            this.audioListNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.audioListNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.audioListNameTextBox.Name = "audioListNameTextBox";
             this.audioListNameTextBox.Size = new System.Drawing.Size(180, 22);
             this.audioListNameTextBox.TabIndex = 45;
+            this.audioListNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.audioListNameTextBox_Validating);
+            this.audioListNameTextBox.Validated += new System.EventHandler(this.audioListNameTextBox_Validated);
             // 
             // deleteItemlabel
             // 
@@ -102,7 +107,7 @@
             // 
             this.moveDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.moveDownButton.Location = new System.Drawing.Point(16, 223);
-            this.moveDownButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.moveDownButton.Margin = new System.Windows.Forms.Padding(4);
             this.moveDownButton.Name = "moveDownButton";
             this.moveDownButton.Size = new System.Drawing.Size(181, 28);
             this.moveDownButton.TabIndex = 49;
@@ -114,7 +119,7 @@
             // 
             this.moveUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.moveUpButton.Location = new System.Drawing.Point(16, 187);
-            this.moveUpButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.moveUpButton.Margin = new System.Windows.Forms.Padding(4);
             this.moveUpButton.Name = "moveUpButton";
             this.moveUpButton.Size = new System.Drawing.Size(181, 28);
             this.moveUpButton.TabIndex = 48;
@@ -136,7 +141,7 @@
             this.fileNameColumn,
             this.filePathColumn});
             this.audioPathDataGridView.Location = new System.Drawing.Point(220, 64);
-            this.audioPathDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.audioPathDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.audioPathDataGridView.MultiSelect = false;
             this.audioPathDataGridView.Name = "audioPathDataGridView";
             this.audioPathDataGridView.ReadOnly = true;
@@ -168,10 +173,11 @@
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelButton.Location = new System.Drawing.Point(729, 465);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 51;
@@ -184,7 +190,7 @@
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.saveButton.Location = new System.Drawing.Point(13, 465);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 28);
             this.saveButton.TabIndex = 50;
@@ -196,7 +202,7 @@
             // 
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.deleteButton.Location = new System.Drawing.Point(16, 135);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(181, 28);
             this.deleteButton.TabIndex = 47;
@@ -208,7 +214,7 @@
             // 
             this.openButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.openButton.Location = new System.Drawing.Point(16, 84);
-            this.openButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.openButton.Margin = new System.Windows.Forms.Padding(4);
             this.openButton.Name = "openButton";
             this.openButton.Size = new System.Drawing.Size(181, 28);
             this.openButton.TabIndex = 46;
@@ -220,7 +226,7 @@
             // 
             this.playAudioButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.playAudioButton.Location = new System.Drawing.Point(16, 274);
-            this.playAudioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playAudioButton.Margin = new System.Windows.Forms.Padding(4);
             this.playAudioButton.Name = "playAudioButton";
             this.playAudioButton.Size = new System.Drawing.Size(181, 28);
             this.playAudioButton.TabIndex = 56;
@@ -261,6 +267,11 @@
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormAudioConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -283,11 +294,12 @@
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.openButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAudioConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista - Áudios";
             ((System.ComponentModel.ISupportInitialize)(this.audioPathDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,5 +325,6 @@
         private System.Windows.Forms.Label numberFilesLabel;
         private System.Windows.Forms.Label numberFiles;
         private System.Windows.Forms.Button helpButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -12,13 +12,13 @@ using System.Threading.Tasks;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-// beginAudio
+
 using NAudio.Wave;
 using System.Collections.Generic;
 using System.Media;
 using System.Drawing.Drawing2D;
 using StroopTest.Models;
-// endAudio 
+
 
 namespace StroopTest
 {

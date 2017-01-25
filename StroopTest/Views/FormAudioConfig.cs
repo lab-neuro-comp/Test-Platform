@@ -10,14 +10,14 @@ namespace StroopTest
     public partial class FormAudioConfig : Form
     {
         private string path;
-        private SoundPlayer Player = new SoundPlayer();
+        private SoundPlayer player = new SoundPlayer();
         private string instructionsText = HelpData.AudioConfigInstructions;
 
         public FormAudioConfig(string audioFolderPath, bool editList)
         {
             InitializeComponent();
             path = audioFolderPath;
-            
+
             if (editList)
             {
                 openFilesForEdition();
@@ -28,13 +28,13 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine("Listas de Audio: ", path, "lst","_audio", true);
+                FormDefine defineFilePath = new FormDefine("Listas de Audio: ", path, "lst", "_audio", true);
                 var result = defineFilePath.ShowDialog();
 
                 if (result == DialogResult.OK)
                 {
                     string dir = defineFilePath.ReturnValue;
-                    audioListNameTextBox.Text = dir.Remove(dir.Length - 6); // removes the _img identification from file while editing (when its saved it is always added again)
+                    audioListNameTextBox.Text = dir.Remove(dir.Length - 6); // removes the _audio identification from file while editing (when its saved it is always added again)
 
                     string[] filePaths = StroopProgram.readDirListFile(path + "/" + dir + ".lst");
                     DGVManipulation.readStringListIntoDGV(filePaths, audioPathDataGridView);
@@ -46,7 +46,7 @@ namespace StroopTest
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
         private void openButton_Click(object sender, EventArgs e)
         {
             openAudioDirectory();
@@ -71,7 +71,7 @@ namespace StroopTest
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
         private void deleteButton_Click(object sender, EventArgs e)
         {
             DataGridView dgv = audioPathDataGridView;
@@ -93,12 +93,13 @@ namespace StroopTest
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            AutoValidate = AutoValidate.Disable;
             DataGridView dgv = audioPathDataGridView;
             try
             {
                 DGVManipulation.closeFormListNotEmpty(dgv);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 Close();
@@ -109,17 +110,18 @@ namespace StroopTest
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(audioListNameTextBox.Text))
+                if (!this.ValidateChildren(ValidationConstraints.Enabled))
+                    MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+                else
                 {
-                    throw new Exception("Preencha o campo com o nome do arquivo!");
+                    DataGridView dgv = audioPathDataGridView;
+                    DGVManipulation.saveColumnToListFile(dgv, 1, path, audioListNameTextBox.Text + "_audio");
+                    Close();
                 }
-                DataGridView dgv = audioPathDataGridView;
-                DGVManipulation.saveColumnToListFile(dgv, 1, path, audioListNameTextBox.Text + "_audio");
-                Close();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-        
+
         private void audioPathDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             playCurrentAudio();
@@ -132,8 +134,8 @@ namespace StroopTest
 
         private void playCurrentAudio()
         {
-            Player.SoundLocation = audioPathDataGridView.CurrentRow.Cells[1].Value.ToString();
-            Player.Play();
+            player.SoundLocation = audioPathDataGridView.CurrentRow.Cells[1].Value.ToString();
+            player.Play();
         }
 
         private void audioPathDataGridView_KeyDown(object sender, KeyEventArgs e)
@@ -162,6 +164,33 @@ namespace StroopTest
             FormInstructions infoBox = new FormInstructions(instructionsText);
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void audioListNameTextBox_Validating(object sender,
+                System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidAudioListName(audioListNameTextBox.Text, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(audioListNameTextBox, errorMsg);
+            }
+        }
+
+        private void audioListNameTextBox_Validated(object sender, System.EventArgs e)
+        {
+            errorProvider1.SetError(audioListNameTextBox, "");
+        }
+
+        public bool ValidAudioListName(string listName, out string errorMessage)
+        {
+            if (Validations.isEmpty(listName))
+            {
+                errorMessage = "O nome da lista deve ser preenchido.";
+                return false;
+            }
+            errorMessage = "";
+            return true;
         }
     }
 }

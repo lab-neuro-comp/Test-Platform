@@ -84,6 +84,16 @@ namespace StroopTest.Models
             return false;
         }
 
+        public static bool allHexPattern(string[] value)
+        {
+            foreach (string c in value) // tests if colors list contains only hexadecimal color codes
+            {
+                if (!Regex.IsMatch(c, hexPattern))
+                    return false;
+            }
+            return true;
+        }
+
         public static bool isExpoTypeValid(string value)
         {
             if (value.ToLower() == "txt" || value.ToLower() == "img" || value.ToLower() == "imgtxt" || value.ToLower() == "txtaud" || value.ToLower() == "imgaud")

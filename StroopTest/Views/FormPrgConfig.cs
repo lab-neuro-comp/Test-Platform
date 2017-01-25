@@ -307,7 +307,7 @@ namespace StroopTest
 
         private void openSubsList_Click(object sender, EventArgs e)
         {
-            openSubsListButton.Text = openListFile("all");
+            openSubsListButton.Text = openListFile("_words");
         }
 
         private void subLocationDown_Click(object sender, EventArgs e)

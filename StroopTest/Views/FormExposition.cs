@@ -112,6 +112,8 @@ namespace StroopTest
         private void configWordLabel()
         {
             wordLabel.Name = "error";
+            wordLabel.Left = (this.ClientSize.Width - wordLabel.Width) / 2;
+            wordLabel.Top = (this.ClientSize.Height - wordLabel.Height) / 2;
             wordLabel.Visible = false;
             wordLabel.FlatStyle = FlatStyle.Flat;
             wordLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -206,8 +208,6 @@ namespace StroopTest
                         else colorArrayCounter++;
                         wordLabel.Text = textCurrent;
                         wordLabel.ForeColor = ColorTranslator.FromHtml(colorCurrent);
-                        wordLabel.Left = (this.ClientSize.Width - wordLabel.Width) / 2; // centraliza label da palavra
-                        wordLabel.Top = (this.ClientSize.Height - wordLabel.Height) / 2;
                         
                         if (programInUse.AudioListFile.ToLower() != "false" && programInUse.ExpositionType == "txtaud") // reproduz audio
                         {
@@ -220,17 +220,18 @@ namespace StroopTest
 
                         elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                         SendKeys.SendWait("s");
-                        wordLabel.Visible = true;
                         if (programInUse.SubtitleShow)
                         {
                             subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
                         }
+                        wordLabel.Visible = true;
+                        
+
 
                         StroopProgram.writeLineOutput(programInUse, textCurrent, colorCurrent, counter, outputContent, elapsedTime, programInUse.ExpositionType, audioDetail, hour, minutes, seconds);
                         
                         await Task.Delay(programInUse.ExpositionTime, cts.Token);
                     }
-
                     wordLabel.Visible = false;
                     await Task.Delay(programInUse.IntervalTime, cts.Token);
                     // beginAudio
@@ -380,8 +381,6 @@ namespace StroopTest
                                 if (j == labelText.Count()-1) { j = 0; }
                                 wordLabel.Text = labelText[j];
 
-                                wordLabel.Left = (this.ClientSize.Width - wordLabel.Width) / 2;
-                                wordLabel.Top = (this.ClientSize.Height - wordLabel.Height) / 2;
                                 
                                 elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
                                 SendKeys.SendWait("s");

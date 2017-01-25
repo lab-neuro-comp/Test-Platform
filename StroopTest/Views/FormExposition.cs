@@ -233,6 +233,7 @@ namespace StroopTest
                         await Task.Delay(programInUse.ExpositionTime, cts.Token);
                     }
                     wordLabel.Visible = false;
+                    subtitleLabel.Visible = false;
                     await Task.Delay(programInUse.IntervalTime, cts.Token);
                     // beginAudio
                     if (programInUse.AudioCapture && programInUse.ExpositionType != "txtaud") { stopRecordingAudio(); } // para gravação áudio
@@ -443,11 +444,10 @@ namespace StroopTest
                         }
                     }
                     
-                    imgPictureBox.Visible = false; wordLabel.Visible = false;
-                    if (programInUse.SubtitleShow)
-                    {
-                        subtitleLabel.Visible = false;
-                    }
+                    imgPictureBox.Visible = false;
+                    wordLabel.Visible = false;
+                    subtitleLabel.Visible = false;
+                    
 
                     await Task.Delay(programInUse.IntervalTime, cts.Token);
                     // beginAudio

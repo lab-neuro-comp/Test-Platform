@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormWordColorConfig));
@@ -49,7 +50,9 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.helpButton = new System.Windows.Forms.Button();
             this.labelEmpty = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.wordsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // wordsDataGridView
@@ -82,6 +85,8 @@
             this.wordsDataGridView.RowHeadersVisible = false;
             this.wordsDataGridView.Size = new System.Drawing.Size(457, 519);
             this.wordsDataGridView.TabIndex = 0;
+            this.wordsDataGridView.Validating += new System.ComponentModel.CancelEventHandler(this.listLength_Validating);
+            this.wordsDataGridView.Validated += new System.EventHandler(this.listLength_Validated);
             // 
             // Column1
             // 
@@ -101,6 +106,8 @@
             this.listNameTextBox.Name = "listNameTextBox";
             this.listNameTextBox.Size = new System.Drawing.Size(180, 22);
             this.listNameTextBox.TabIndex = 5;
+            this.listNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.listName_Validating);
+            this.listNameTextBox.Validated += new System.EventHandler(this.listName_Validated);
             // 
             // listNameLabel
             // 
@@ -138,6 +145,7 @@
             // 
             // newItemButton
             // 
+            this.newItemButton.CausesValidation = false;
             this.newItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newItemButton.Location = new System.Drawing.Point(12, 52);
             this.newItemButton.Margin = new System.Windows.Forms.Padding(4);
@@ -227,6 +235,7 @@
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelButton.Location = new System.Drawing.Point(559, 581);
@@ -274,6 +283,10 @@
             this.labelEmpty.Size = new System.Drawing.Size(0, 17);
             this.labelEmpty.TabIndex = 83;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormWordColorConfig
             // 
             this.AcceptButton = this.newItemButton;
@@ -303,6 +316,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista - Palavras e Cores";
             ((System.ComponentModel.ISupportInitialize)(this.wordsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,5 +342,6 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.Label labelEmpty;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -254,7 +254,6 @@ namespace StroopTest
             {
                 StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
                 if (programInUse.AudioCapture) { stopRecordingAudio(); }
-                MessageBox.Show("A Exposição '" + programInUse.ProgramName + "' foi cancelada!");
             }
             catch (Exception ex)
             {
@@ -473,7 +472,6 @@ namespace StroopTest
             {
                 StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
                 if (programInUse.AudioCapture) { stopRecordingAudio(); }
-                throw new Exception("A Exposição '" + programInUse.ProgramName + "' foi cancelada!");
             }
             catch (Exception ex)
             {

@@ -49,6 +49,7 @@
             this.numberFiles = new System.Windows.Forms.Label();
             this.helpButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labelEmpty = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.audioPathDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -152,6 +153,8 @@
             this.audioPathDataGridView.TabIndex = 44;
             this.audioPathDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.audioPathDataGridView_CellContentDoubleClick);
             this.audioPathDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.audioPathDataGridView_KeyDown);
+            this.audioPathDataGridView.Validating += new System.ComponentModel.CancelEventHandler(this.listLength_Validating);
+            this.audioPathDataGridView.Validated += new System.EventHandler(this.listLength_Validated);
             // 
             // fileNameColumn
             // 
@@ -212,6 +215,7 @@
             // 
             // openButton
             // 
+            this.openButton.CausesValidation = false;
             this.openButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.openButton.Location = new System.Drawing.Point(16, 84);
             this.openButton.Margin = new System.Windows.Forms.Padding(4);
@@ -272,11 +276,23 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // labelEmpty
+            // 
+            this.labelEmpty.AutoSize = true;
+            this.labelEmpty.ForeColor = System.Drawing.Color.Red;
+            this.labelEmpty.Location = new System.Drawing.Point(20, 329);
+            this.labelEmpty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEmpty.Name = "labelEmpty";
+            this.labelEmpty.Size = new System.Drawing.Size(77, 17);
+            this.labelEmpty.TabIndex = 83;
+            this.labelEmpty.Text = "labelEmpty";
+            // 
             // FormAudioConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 508);
+            this.Controls.Add(this.labelEmpty);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.numberFiles);
             this.Controls.Add(this.numberFilesLabel);
@@ -326,5 +342,6 @@
         private System.Windows.Forms.Label numberFiles;
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label labelEmpty;
     }
 }

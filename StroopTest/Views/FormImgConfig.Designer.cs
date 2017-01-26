@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormImgConfig));
             this.btnOpen = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -48,15 +49,19 @@
             this.numberFilesLabel = new System.Windows.Forms.Label();
             this.numberFiles = new System.Windows.Forms.Label();
             this.helpButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labelEmpty = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPathDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOpen
             // 
+            this.btnOpen.CausesValidation = false;
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOpen.Location = new System.Drawing.Point(25, 107);
-            this.btnOpen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(181, 28);
             this.btnOpen.TabIndex = 20;
@@ -68,7 +73,7 @@
             // 
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox.Location = new System.Drawing.Point(228, 52);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(371, 270);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -79,7 +84,7 @@
             // 
             this.deleteItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.deleteItemButton.Location = new System.Drawing.Point(25, 159);
-            this.deleteItemButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteItemButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteItemButton.Name = "deleteItemButton";
             this.deleteItemButton.Size = new System.Drawing.Size(181, 28);
             this.deleteItemButton.TabIndex = 21;
@@ -90,10 +95,11 @@
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelButton.Location = new System.Drawing.Point(500, 634);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 31;
@@ -106,7 +112,7 @@
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.saveButton.Location = new System.Drawing.Point(29, 634);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 28);
             this.saveButton.TabIndex = 30;
@@ -129,7 +135,7 @@
             this.thumbnailColumn,
             this.filePathColumn});
             this.imgPathDataGridView.Location = new System.Drawing.Point(29, 335);
-            this.imgPathDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgPathDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.imgPathDataGridView.MultiSelect = false;
             this.imgPathDataGridView.Name = "imgPathDataGridView";
             this.imgPathDataGridView.ReadOnly = true;
@@ -143,6 +149,8 @@
             this.imgPathDataGridView.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.imgPathDataGridView_CellStateChanged);
             this.imgPathDataGridView.SelectionChanged += new System.EventHandler(this.imgPathDataGridView_SelectionChanged);
             this.imgPathDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.imgPathDataGridView_KeyDown);
+            this.imgPathDataGridView.Validating += new System.ComponentModel.CancelEventHandler(this.listLength_Validating);
+            this.imgPathDataGridView.Validated += new System.EventHandler(this.listLength_Validated);
             // 
             // fileNameColumn
             // 
@@ -174,7 +182,7 @@
             // 
             this.moveUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.moveUpButton.Location = new System.Drawing.Point(25, 210);
-            this.moveUpButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.moveUpButton.Margin = new System.Windows.Forms.Padding(4);
             this.moveUpButton.Name = "moveUpButton";
             this.moveUpButton.Size = new System.Drawing.Size(181, 28);
             this.moveUpButton.TabIndex = 22;
@@ -186,7 +194,7 @@
             // 
             this.moveDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.moveDownButton.Location = new System.Drawing.Point(25, 246);
-            this.moveDownButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.moveDownButton.Margin = new System.Windows.Forms.Padding(4);
             this.moveDownButton.Name = "moveDownButton";
             this.moveDownButton.Size = new System.Drawing.Size(181, 28);
             this.moveDownButton.TabIndex = 23;
@@ -227,10 +235,12 @@
             // imgListNameTextBox
             // 
             this.imgListNameTextBox.Location = new System.Drawing.Point(25, 54);
-            this.imgListNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgListNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.imgListNameTextBox.Name = "imgListNameTextBox";
             this.imgListNameTextBox.Size = new System.Drawing.Size(180, 22);
             this.imgListNameTextBox.TabIndex = 19;
+            this.imgListNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.listName_Validating);
+            this.imgListNameTextBox.Validated += new System.EventHandler(this.listName_Validated);
             // 
             // imgListNameLabel
             // 
@@ -275,6 +285,20 @@
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // labelEmpty
+            // 
+            this.labelEmpty.AutoSize = true;
+            this.labelEmpty.ForeColor = System.Drawing.Color.Red;
+            this.labelEmpty.Location = new System.Drawing.Point(28, 287);
+            this.labelEmpty.Name = "labelEmpty";
+            this.labelEmpty.Size = new System.Drawing.Size(77, 17);
+            this.labelEmpty.TabIndex = 83;
+            this.labelEmpty.Text = "labelEmpty";
+            // 
             // FormImgConfig
             // 
             this.AcceptButton = this.saveButton;
@@ -283,6 +307,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(625, 673);
+            this.Controls.Add(this.labelEmpty);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.numberFiles);
             this.Controls.Add(this.numberFilesLabel);
@@ -300,13 +325,14 @@
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.btnOpen);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(594, 666);
             this.Name = "FormImgConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista - Imagens";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPathDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,5 +358,7 @@
         private System.Windows.Forms.Label numberFilesLabel;
         private System.Windows.Forms.Label numberFiles;
         private System.Windows.Forms.Button helpButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label labelEmpty;
     }
 }

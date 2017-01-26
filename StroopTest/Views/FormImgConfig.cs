@@ -20,7 +20,7 @@ namespace StroopTest
             InitializeComponent();
             imgPathDataGridView.AllowDrop = true;
             imgPathDataGridView.RowTemplate.MinimumHeight = 120;
-
+            labelEmpty.Visible = false;
             path = imagesFolderPath;
             if (imgListEdit != "false")
             {
@@ -169,22 +169,24 @@ namespace StroopTest
         // saves list into .lst file inside lst directory
         private void saveButton_Click(object sender, EventArgs e)
         {
-            try
+            if (!this.ValidateChildren(ValidationConstraints.Enabled))
+                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+            else
             {
-                if (string.IsNullOrWhiteSpace(imgListNameTextBox.Text))
+                try
                 {
-                    throw new Exception("Preencha o campo com o nome do arquivo!");
+                    DataGridView dgv = imgPathDataGridView;
+                    DGVManipulation.saveColumnToListFile(dgv, 2, path, imgListNameTextBox.Text + "_image");
+                    Close();
                 }
-                DataGridView dgv = imgPathDataGridView;
-                DGVManipulation.saveColumnToListFile(dgv, 2, path, imgListNameTextBox.Text + "_image");
-                Close();
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
             DataGridView dgv = imgPathDataGridView;
+            AutoValidate = AutoValidate.Disable;
             try
             {
                 DGVManipulation.closeFormListNotEmpty(dgv);
@@ -225,6 +227,63 @@ namespace StroopTest
             {
                 pictureBox.Image = null;
                 pictureBox.Refresh();
+            }
+        }
+
+        private void listName_Validating(object sender,
+                             System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidListName(imgListNameTextBox.Text, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.imgListNameTextBox, errorMsg);
+            }
+        }
+
+        private void listName_Validated(object sender, System.EventArgs e)
+        {
+            errorProvider1.SetError(this.imgListNameTextBox, "");
+        }
+
+        public bool ValidListName(string name, out string errorMessage)
+        {
+            if (Validations.isEmpty(name))
+            {
+                errorMessage = "O nome da lista deve ser preenchido";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void listLength_Validated(object sender, System.EventArgs e)
+        {
+            labelEmpty.Visible = false;
+        }
+
+        public bool ValidListLength(int number, out string errorMessage)
+        {
+            if (number == 0)
+            {
+                errorMessage = "A lista não possui \n nenhum item!";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void listLength_Validating(object sender,
+                             System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidListLength(imgPathDataGridView.RowCount, out errorMsg))
+            {
+                e.Cancel = true;
+                labelEmpty.Text = errorMsg;
+                labelEmpty.Visible = true;
             }
         }
 

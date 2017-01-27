@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormWordColorConfig));
             this.wordsDataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +50,9 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.helpButton = new System.Windows.Forms.Button();
             this.labelEmpty = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.wordsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // wordsDataGridView
@@ -66,14 +69,14 @@
             this.wordsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.wordsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.wordsDataGridView.Location = new System.Drawing.Point(201, 52);
             this.wordsDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.wordsDataGridView.Name = "wordsDataGridView";
@@ -82,13 +85,15 @@
             this.wordsDataGridView.RowHeadersVisible = false;
             this.wordsDataGridView.Size = new System.Drawing.Size(457, 519);
             this.wordsDataGridView.TabIndex = 0;
+            this.wordsDataGridView.Validating += new System.ComponentModel.CancelEventHandler(this.listLength_Validating);
+            this.wordsDataGridView.Validated += new System.EventHandler(this.listLength_Validated);
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column1.HeaderText = "Lista de Estímulos";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -101,6 +106,8 @@
             this.listNameTextBox.Name = "listNameTextBox";
             this.listNameTextBox.Size = new System.Drawing.Size(180, 22);
             this.listNameTextBox.TabIndex = 5;
+            this.listNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.listName_Validating);
+            this.listNameTextBox.Validated += new System.EventHandler(this.listName_Validated);
             // 
             // listNameLabel
             // 
@@ -138,6 +145,7 @@
             // 
             // newItemButton
             // 
+            this.newItemButton.CausesValidation = false;
             this.newItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newItemButton.Location = new System.Drawing.Point(12, 52);
             this.newItemButton.Margin = new System.Windows.Forms.Padding(4);
@@ -227,6 +235,7 @@
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelButton.Location = new System.Drawing.Point(559, 581);
@@ -274,11 +283,17 @@
             this.labelEmpty.Size = new System.Drawing.Size(0, 17);
             this.labelEmpty.TabIndex = 83;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormWordColorConfig
             // 
             this.AcceptButton = this.newItemButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.ClientSize = new System.Drawing.Size(675, 624);
             this.Controls.Add(this.labelEmpty);
             this.Controls.Add(this.helpButton);
@@ -303,6 +318,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista - Palavras e Cores";
             ((System.ComponentModel.ISupportInitialize)(this.wordsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,5 +344,6 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.Label labelEmpty;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

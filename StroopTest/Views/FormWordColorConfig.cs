@@ -252,6 +252,8 @@ namespace StroopTest
 
         private void moveUpButton_Click(object sender, EventArgs e)
         {
+            if (wordsDataGridView.RowCount == 0)
+                return;
             DGVManipulation.moveDGVRowUp(wordsDataGridView);
             int rowIndex = wordsDataGridView.SelectedCells[0].OwningRow.Index;
             moveUpItem(wordsList, rowIndex);
@@ -276,6 +278,8 @@ namespace StroopTest
 
         private void moveDownButton_Click(object sender, EventArgs e)
         {
+            if (wordsDataGridView.RowCount == 0)
+                return;
             DGVManipulation.moveDGVRowDown(wordsDataGridView);
             int rowIndex = wordsDataGridView.SelectedCells[0].OwningRow.Index;
             moveDownItem(wordsList, rowIndex);
@@ -310,7 +314,7 @@ namespace StroopTest
                     DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
                     if (dialogResult == DialogResult.Cancel)
                     {
-                        MessageBox.Show("A lista não será salva!");
+                        MessageBox.Show("A lista não será salva");
                         return false;
                     }
                 }
@@ -330,35 +334,77 @@ namespace StroopTest
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            ErrorProvider errorProvider = new ErrorProvider();
             bool valid = true;
-            if (string.IsNullOrWhiteSpace(listNameTextBox.Text))
-            {
-                errorProvider.SetError(listNameTextBox, "O nome da lista não deve ficar em branco");
-                valid = false;
-            }
+            if (!this.ValidateChildren(ValidationConstraints.Enabled))
+                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
             else
-            {
-                errorProvider.Clear();
-                valid = true;
-            }
-            if (wordsList.Count == 0)
-            {
-                labelEmpty.Text = "A lista não possui \n nenhum item!";
-                valid = false;
-            }
-            if (valid)
             {
                 if (wordsListCheckBox.Checked)
-                     valid = saveListFile(wordsList, path, listNameTextBox.Text, "_words" + ".lst", "de Palavras");
+                    valid = saveListFile(wordsList, path, listNameTextBox.Text, "_words" + ".lst", "de Palavras");
                 if (colorsListCheckBox.Checked)
-                     valid = saveListFile(colorsList, path, listNameTextBox.Text, "_color" + ".lst", "de Cores");
-             }
-            if (valid)
-                Close();
-            else
-                MessageBox.Show("Lista não cadastrada");
-            
+                    valid = saveListFile(colorsList, path, listNameTextBox.Text, "_color" + ".lst", "de Cores");                
+                if (valid)
+                    Close();
+                else
+                    MessageBox.Show("Lista não cadastrada");
+            }
+        }
+
+        private void listName_Validating(object sender,
+                                     System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidListName(listNameTextBox.Text, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.listNameTextBox, errorMsg);
+            }
+        }
+
+        private void listName_Validated(object sender, System.EventArgs e)
+        {
+            errorProvider1.SetError(this.listNameTextBox, "");
+        }
+
+        public bool ValidListName(string name, out string errorMessage)
+        {
+            if (Validations.isEmpty(name))
+            {
+                errorMessage = "O nome da lista deve ser preenchido";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void listLength_Validated(object sender, System.EventArgs e)
+        {
+            labelEmpty.Visible = false;
+        }
+
+        public bool ValidListLength(int number, out string errorMessage)
+        {
+            if (number == 0)
+            {
+                errorMessage = "A lista não possui \n nenhum item!";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void listLength_Validating(object sender,
+                             System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidListLength(wordsDataGridView.RowCount, out errorMsg))
+            {
+                e.Cancel = true;
+                labelEmpty.Text = errorMsg;
+                labelEmpty.Visible = true;
+            }
         }
 
         private void helpButton_Click(object sender, EventArgs e)
@@ -370,7 +416,7 @@ namespace StroopTest
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("A lista não será salva!");
+            AutoValidate = AutoValidate.Disable;
             Close();
         }
     }

@@ -35,6 +35,7 @@
             this.helpButton = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.recordingLabel = new System.Windows.Forms.Label();
+            this.currentElapsedTimeDisplay = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // stopRecordingButton
@@ -98,11 +99,22 @@
             this.recordingLabel.TabIndex = 83;
             this.recordingLabel.Text = "Gravando";
             // 
+            // currentElapsedTimeDisplay
+            // 
+            this.currentElapsedTimeDisplay.AutoSize = true;
+            this.currentElapsedTimeDisplay.ForeColor = System.Drawing.Color.Red;
+            this.currentElapsedTimeDisplay.Location = new System.Drawing.Point(67, 44);
+            this.currentElapsedTimeDisplay.Name = "currentElapsedTimeDisplay";
+            this.currentElapsedTimeDisplay.Size = new System.Drawing.Size(24, 17);
+            this.currentElapsedTimeDisplay.TabIndex = 85;
+            this.currentElapsedTimeDisplay.Text = "00";
+            // 
             // FormNewAudio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(290, 307);
+            this.Controls.Add(this.currentElapsedTimeDisplay);
             this.Controls.Add(this.recordingLabel);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.stopRecordingButton);
@@ -125,5 +137,6 @@
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.Label recordingLabel;
+        private System.Windows.Forms.Label currentElapsedTimeDisplay;
     }
 }

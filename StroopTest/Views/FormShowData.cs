@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Media;
 using StroopTest.Models;
 using StroopTest.Views;
+using StroopTest.Controllers;
 
 namespace StroopTest
 {
@@ -19,9 +20,9 @@ namespace StroopTest
     {
         private StroopProgram program = new StroopProgram();
         private string path;
-        private SoundPlayer Player = new SoundPlayer();
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string instructionsText = HelpData.ShowDataInstructions;
+        private SoundPlayer player = new SoundPlayer();
         public FormShowData(string dataFolderPath)
         {
             InitializeComponent();
@@ -54,8 +55,11 @@ namespace StroopTest
             this.dataGridView1.DataSource = null;
             this.dataGridView1.Rows.Clear();
             string[] line;
+            string[] filePaths = null;
             try
             {
+                dataGridView1.Rows.Clear();
+                dataGridView1.Refresh();
                 line = StroopProgram.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
                 if (line.Count() > 0)
                 {
@@ -74,11 +78,18 @@ namespace StroopTest
                         }
                     }
                 }
+                if (Directory.Exists(path)) // Preenche dgv com arquivos do tipo .wav no diretório dado que possua o padrao da comboBox
+                {
+                    audioPathDataGridView.Rows.Clear();
+                    audioPathDataGridView.Refresh();
+                    filePaths = Directory.GetFiles(path, "audio_" + comboBox1.SelectedItem.ToString()+"*", SearchOption.AllDirectories);
+                    DGVManipulation.readStringListIntoDGV(filePaths, audioPathDataGridView);
+                }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void exportCVSButton_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             string[] lines;
@@ -118,25 +129,31 @@ namespace StroopTest
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-        private void playCurrentAudio()
-        {
-            string[] filePath;
-            string program, user, date,hour,new_hour,new_date,archive_name;
-            program = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            user = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            date = dataGridView1.CurrentRow.Cells[2].Value.ToString().Trim();
-            new_date = date[0].ToString() + date[1].ToString() + "."+ date[3].ToString() + date[4].ToString();
-            hour = dataGridView1.CurrentRow.Cells[3].Value.ToString().Trim();
-            new_hour = hour[0].ToString() + hour[1].ToString() + "h" + hour[3].ToString() + hour[4].ToString() + "." + hour[6].ToString() + hour[7].ToString();
-            archive_name = "audio_"+user+"_"+program + "_" + new_date + "_" + new_hour+".wav";
-            filePath = Directory.GetFiles(path, archive_name, SearchOption.AllDirectories);
-            Player.SoundLocation = filePath[0];
-            Player.Play();
-        }
-        private void audiobutton_Click(object sender, EventArgs e)
+
+        private void audioPathDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             playCurrentAudio();
         }
 
+        private void playAudioButton_Click(object sender, EventArgs e)
+        {
+            playCurrentAudio();
+        }
+
+        private void playCurrentAudio()
+        {
+            player.SoundLocation = audioPathDataGridView.CurrentRow.Cells[1].Value.ToString();
+            player.Play();
+        }
+
+        private void stopAudio_Click(object sender, EventArgs e)
+        {
+            player.Stop();
+        }
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            player.Stop();
+            Close();
+        }
     }
 }

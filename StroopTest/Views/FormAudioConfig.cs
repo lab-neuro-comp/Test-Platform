@@ -17,7 +17,7 @@ namespace StroopTest
         {
             InitializeComponent();
             path = audioFolderPath;
-
+            labelEmpty.Visible = false;
             if (editList)
             {
                 openFilesForEdition();
@@ -192,5 +192,35 @@ namespace StroopTest
             errorMessage = "";
             return true;
         }
+
+        private void listLength_Validated(object sender, System.EventArgs e)
+        {
+            labelEmpty.Visible = false;
+        }
+
+        public bool ValidListLength(int number, out string errorMessage)
+        {
+            if (number == 0)
+            {
+                errorMessage = "A lista não possui \n nenhum item!";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void listLength_Validating(object sender,
+                             System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidListLength(audioPathDataGridView.RowCount, out errorMsg))
+            {
+                e.Cancel = true;
+                labelEmpty.Text = errorMsg;
+                labelEmpty.Visible = true;
+            }
+        }
+
     }
 }

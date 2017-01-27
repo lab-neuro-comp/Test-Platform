@@ -34,8 +34,15 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.csvExportButton = new System.Windows.Forms.Button();
             this.helpButton = new System.Windows.Forms.Button();
-            this.audiobutton = new System.Windows.Forms.Button();
+            this.audioPathDataGridView = new System.Windows.Forms.DataGridView();
+            this.fileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.stopAudio = new System.Windows.Forms.Button();
+            this.playAudioButton = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.audioPathDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +62,7 @@
             this.comboBox1.Location = new System.Drawing.Point(325, 16);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(680, 24);
+            this.comboBox1.Size = new System.Drawing.Size(719, 24);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -79,7 +86,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(878, 433);
+            this.dataGridView1.Size = new System.Drawing.Size(917, 238);
             this.dataGridView1.TabIndex = 3;
             // 
             // csvExportButton
@@ -92,7 +99,7 @@
             this.csvExportButton.TabIndex = 4;
             this.csvExportButton.Text = "Exportar como .cvs";
             this.csvExportButton.UseVisualStyleBackColor = true;
-            this.csvExportButton.Click += new System.EventHandler(this.button1_Click);
+            this.csvExportButton.Click += new System.EventHandler(this.exportCVSButton_Click);
             // 
             // helpButton
             // 
@@ -100,7 +107,7 @@
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.helpButton.BackgroundImage = global::StroopTest.Properties.Resources.helpButton;
             this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(1035, 14);
+            this.helpButton.Location = new System.Drawing.Point(1074, 14);
             this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(35, 32);
@@ -108,23 +115,105 @@
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
-            // audiobutton
+            // audioPathDataGridView
             // 
-            this.audiobutton.Location = new System.Drawing.Point(6, 94);
-            this.audiobutton.Name = "audiobutton";
-            this.audiobutton.Size = new System.Drawing.Size(182, 28);
-            this.audiobutton.TabIndex = 83;
-            this.audiobutton.Text = "Reproduzir Aúdio";
-            this.audiobutton.UseVisualStyleBackColor = true;
-            this.audiobutton.Click += new System.EventHandler(this.audiobutton_Click);
+            this.audioPathDataGridView.AllowUserToAddRows = false;
+            this.audioPathDataGridView.AllowUserToOrderColumns = true;
+            this.audioPathDataGridView.AllowUserToResizeRows = false;
+            this.audioPathDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.audioPathDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.audioPathDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.audioPathDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fileNameColumn,
+            this.filePathColumn});
+            this.audioPathDataGridView.Location = new System.Drawing.Point(194, 324);
+            this.audioPathDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.audioPathDataGridView.MultiSelect = false;
+            this.audioPathDataGridView.Name = "audioPathDataGridView";
+            this.audioPathDataGridView.ReadOnly = true;
+            this.audioPathDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.audioPathDataGridView.RowHeadersVisible = false;
+            this.audioPathDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.audioPathDataGridView.Size = new System.Drawing.Size(915, 238);
+            this.audioPathDataGridView.TabIndex = 84;
+            // 
+            // fileNameColumn
+            // 
+            this.fileNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.fileNameColumn.FillWeight = 187.013F;
+            this.fileNameColumn.HeaderText = "Nome do Arquivo";
+            this.fileNameColumn.Name = "fileNameColumn";
+            this.fileNameColumn.ReadOnly = true;
+            this.fileNameColumn.Width = 340;
+            // 
+            // filePathColumn
+            // 
+            this.filePathColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.filePathColumn.FillWeight = 12.98701F;
+            this.filePathColumn.HeaderText = "Localização";
+            this.filePathColumn.Name = "filePathColumn";
+            this.filePathColumn.ReadOnly = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(191, 298);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 17);
+            this.label2.TabIndex = 85;
+            this.label2.Text = "Arquivos de Aúdio:";
+            // 
+            // stopAudio
+            // 
+            this.stopAudio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.stopAudio.Location = new System.Drawing.Point(6, 360);
+            this.stopAudio.Margin = new System.Windows.Forms.Padding(4);
+            this.stopAudio.Name = "stopAudio";
+            this.stopAudio.Size = new System.Drawing.Size(181, 28);
+            this.stopAudio.TabIndex = 87;
+            this.stopAudio.Text = "Parar Reprodução";
+            this.stopAudio.UseVisualStyleBackColor = true;
+            this.stopAudio.Click += new System.EventHandler(this.stopAudio_Click);
+            // 
+            // playAudioButton
+            // 
+            this.playAudioButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.playAudioButton.Location = new System.Drawing.Point(6, 324);
+            this.playAudioButton.Margin = new System.Windows.Forms.Padding(4);
+            this.playAudioButton.Name = "playAudioButton";
+            this.playAudioButton.Size = new System.Drawing.Size(181, 28);
+            this.playAudioButton.TabIndex = 86;
+            this.playAudioButton.Text = "Reproduzir Áudio";
+            this.playAudioButton.UseVisualStyleBackColor = true;
+            this.playAudioButton.Click += new System.EventHandler(this.playAudioButton_Click);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.closeButton.Location = new System.Drawing.Point(6, 534);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(4);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(100, 28);
+            this.closeButton.TabIndex = 88;
+            this.closeButton.Text = "fechar";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // FormShowData
             // 
             this.AcceptButton = this.csvExportButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 496);
-            this.Controls.Add(this.audiobutton);
+            this.ClientSize = new System.Drawing.Size(1123, 575);
+            this.Controls.Add(this.closeButton);
+            this.Controls.Add(this.stopAudio);
+            this.Controls.Add(this.playAudioButton);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.audioPathDataGridView);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.csvExportButton);
             this.Controls.Add(this.dataGridView1);
@@ -136,6 +225,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dados";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.audioPathDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,6 +237,12 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button csvExportButton;
         private System.Windows.Forms.Button helpButton;
-        private System.Windows.Forms.Button audiobutton;
+        private System.Windows.Forms.DataGridView audioPathDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fileNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filePathColumn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button stopAudio;
+        private System.Windows.Forms.Button playAudioButton;
+        private System.Windows.Forms.Button closeButton;
     }
 }

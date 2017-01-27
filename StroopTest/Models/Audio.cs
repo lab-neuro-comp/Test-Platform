@@ -22,7 +22,6 @@ namespace StroopTest.Models
         }
         public bool saveRecording(string path)
         {
-            mciSendString("pause audio", null, 0, 0);
             mciSendString("save audio " + path, null, 0, 0);
             mciSendString("close audio", null, 0, 0);
             return true;

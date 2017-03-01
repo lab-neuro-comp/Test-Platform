@@ -143,8 +143,8 @@ namespace StroopTest
             try
             {
                 programDefault.writeDefaultProgramFile(testFilesPath + prgFolderName + programDefault.ProgramName + ".prg"); // ao inicializar formulario escreve arquivo programa padrao
-                programDefault.writeDefaultWordsList(testFilesPath + lstFolderName); // escreve lista de palavras padrão
-                programDefault.writeDefaultColorsList(testFilesPath + lstFolderName); // escreve lista de cores padrão 
+                StrList.writeDefaultWordsList(testFilesPath + lstFolderName); // escreve lista de palavras padrão
+                StrList.writeDefaultColorsList(testFilesPath + lstFolderName); // escreve lista de cores padrão 
             }
             catch (Exception ex)
             {

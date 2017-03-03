@@ -150,8 +150,8 @@ namespace StroopTest
             try
             {
                 // reading list files:
-                labelText = StroopProgram.readListFile(path + "/lst/" + programInUse.WordsListFile); // string array receives wordsList itens from list file
-                labelColor = StroopProgram.readListFile(path + "/lst/" + programInUse.ColorsListFile); // string array receives colorsList itens from list file
+                labelText = StrList.readListFile(path + "/lst/" + programInUse.WordsListFile); // string array receives wordsList itens from list file
+                labelColor = StrList.readListFile(path + "/lst/" + programInUse.ColorsListFile); // string array receives colorsList itens from list file
                 subtitlesArray = configureSubtitle();
                 if (programInUse.ExpositionRandom) // if the presentation is random, shuffles arrays
                 {
@@ -310,7 +310,7 @@ namespace StroopTest
                         audioDirs = ExpositionController.shuffleArray(audioDirs, programInUse.NumExpositions, 6);
                     }
                 }
-                if (programInUse.WordsListFile.ToLower() != "false") { labelText = StroopProgram.readListFile(path + "/lst/" + programInUse.WordsListFile); }
+                if (programInUse.WordsListFile.ToLower() != "false") { labelText = StrList.readListFile(path + "/lst/" + programInUse.WordsListFile); }
                 
                 await showInstructions(programInUse, cts.Token); // Apresenta instruções se houver
 
@@ -540,7 +540,7 @@ namespace StroopTest
             string[] subtitlesArray = null;
             if (programInUse.SubtitleShow)
             {
-                subtitlesArray = StroopProgram.readListFile(path + "/lst/" + programInUse.SubtitlesListFile);
+                subtitlesArray = StrList.readListFile(path + "/lst/" + programInUse.SubtitlesListFile);
                 if (programInUse.SubtitleColor.ToLower() != "false")
                 {
                     subtitleLabel.ForeColor = ColorTranslator.FromHtml(programInUse.SubtitleColor);

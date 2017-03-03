@@ -14,10 +14,6 @@ namespace StroopTest.Models
     class StroopProgram
     {
         private String defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false";
-        private String defaultWordsListName = "padrao_words.lst";
-        private String defaultWordsListText = "amarelo azul verde vermelho";
-        private String defaultColorsListName = "padrao_color.lst";
-        private String defaultColorsListText = "#F8E000 #007BB7 #7EC845 #D01C1F";
         private String defaultRedColor = "#D01C1F";
         private String headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio";
         private String errorExMsg = "Arquivo de Programa - parâmetro inválido.";
@@ -726,61 +722,7 @@ namespace StroopTest.Models
             }
         }
 
-        // escreve arquivo com lista de palavras padrão
-        public void writeDefaultWordsList(string filepath)
-        {
-            try
-            {
-                TextWriter tw = new StreamWriter(filepath + defaultWordsListName);
-                tw.WriteLine(defaultWordsListText);
-                tw.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Arquivo '" + defaultWordsListName + "' não foi escrito\n\n( " + ex.Message + " )");
-            }
-        }
-        
-        // escreve arquivo com lista de cores padrão
-        public void writeDefaultColorsList(string filepath)
-        {
-            try
-            {
-                TextWriter tw = new StreamWriter(filepath + defaultColorsListName);
-                tw.WriteLine(defaultColorsListText);
-                tw.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Arquivo '" + defaultColorsListName + "' não foi escrito\n\n( " + ex.Message + " )");
-            }
-        }
 
-        // lê palavras do arquivo e retorna vetor
-        static internal string[] readListFile(string filepath)
-        {
-            TextReader tr;
-            List<string> list;
-            string[] splitedLine;
-
-            try
-            {
-                if (!File.Exists(filepath)) { throw new FileNotFoundException(); } // checa se arquivo existe
-                tr = new StreamReader(filepath, Encoding.Default, true);
-                list = new List<string>(); // lista de palavras
-                while (tr.Peek() >= 0)
-                {
-                    splitedLine = tr.ReadLine().Split();
-                    for(int i = 0; i < splitedLine.Count(); i++) { list.Add(splitedLine[i]); } // adiciona cada palavra como novo item a uma lista
-                }
-                tr.Close();
-                return list.ToArray(); // retorna palavras em vetor
-            }
-            catch (FileNotFoundException ex)
-            {
-                throw new Exception("Arquivo lista (parâmetro): '" + Path.GetFileName(filepath) + "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath) + "\n\n( " + ex.Message + " )");
-            }
-        }
 
         // lê diretórios do arquivo e retorna vetor
         static public string[] readDirListFile(string filepath)

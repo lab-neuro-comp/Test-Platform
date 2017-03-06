@@ -489,11 +489,11 @@ namespace StroopTest
                     subtitleLabel.Top = (imgPictureBox.Bottom + 50);
                     break;
                 case 2: //esquerda
-                    subtitleLabel.Left = (imgPictureBox.Left - (subtitleLabel.Width + 50));
+                    subtitleLabel.Left = (imgPictureBox.Left - (subtitleLabel.Width + 150));
                     subtitleLabel.Top = (this.ClientSize.Height - subtitleLabel.Height) / 2;
                     break;
                 case 3: //direita
-                    subtitleLabel.Left = (imgPictureBox.Left + imgPictureBox.Width + 50);
+                    subtitleLabel.Left = (imgPictureBox.Left + imgPictureBox.Width + 150);
                     subtitleLabel.Top = (this.ClientSize.Height - subtitleLabel.Height) / 2;
                     break;
                 case 4: // cima
@@ -557,8 +557,10 @@ namespace StroopTest
         }
         private int showSubtitle(int subtitleCounter, string[] subtitlesArray)
         {
-
+            Random random = new Random();
             subtitleLabel.Text = subtitlesArray[subtitleCounter];
+            if (programInUse.RndSubtitlePlace)
+                programInUse.SubtitlePlace = random.Next(1,4);
             defineSubPosition(programInUse.SubtitlePlace);
             subtitleLabel.Visible = true;
             if (subtitleCounter == (subtitlesArray.Count() - 1)) subtitleCounter = 0;

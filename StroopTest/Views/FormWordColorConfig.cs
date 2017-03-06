@@ -54,7 +54,7 @@ namespace StroopTest
                     
                     if (File.Exists(wFile))
                     {
-                        string[] wordsArray = StroopProgram.readListFile(wFile);
+                        string[] wordsArray = StrList.readListFile(wFile);
                         foreach(string word in wordsArray)
                         {
                             wordsList.Add(word);
@@ -63,7 +63,7 @@ namespace StroopTest
                     }
                     if (File.Exists(cFile))
                     {
-                        string[] colorsArray = StroopProgram.readListFile(cFile);
+                        string[] colorsArray = StrList.readListFile(cFile);
                         foreach(string color in colorsArray)
                         {
                             colorsList.Add(color);

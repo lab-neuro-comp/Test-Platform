@@ -43,9 +43,10 @@ namespace StroopTest.Models
         public bool save(string filePath)
         {
             StreamWriter wr = new StreamWriter(filePath);
-            foreach (string item in listContent)
+            wr.Write(listContent[0]);
+            foreach (string item in listContent.Skip(0))
             {
-                wr.Write(item + "\t");
+                wr.Write("\t" + item);
             }
             wr.Close();
             return true;

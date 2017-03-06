@@ -502,7 +502,6 @@ namespace StroopTest
                     programWrite.WordColor = "false";
 
                 programWrite.DelayTime = Convert.ToInt32(delayTime.Value);
-
                 switch (rotateImgComboBox.SelectedIndex)
                 {
                     case 0:
@@ -545,6 +544,8 @@ namespace StroopTest
                 {
                     programWrite.InstructionText = null;
                 }
+                programWrite.RndSubtitlePlace = subsRndCheckBox.Checked;
+                Console.Write(subsRndCheckBox.Checked);
                 programWrite.FontWordLabel = wordSizeNumeric.Value.ToString();
                 programWrite.ExpandImage = expandImgCheck.Checked;
                 saveProgramFile(programWrite.data(), programWrite.InstructionText);
@@ -574,6 +575,7 @@ namespace StroopTest
                 audioCaptureCheck.Checked = program.AudioCapture;
                 wordSizeNumeric.Value = Convert.ToInt32(program.FontWordLabel);
                 expandImgCheck.Checked = program.ExpandImage;
+                subsRndCheckBox.Checked = program.RndSubtitlePlace;
 
                 if (program.WordsListFile.ToLower() == "false") { openWordListButton.Enabled = false; }
                 else { openWordListButton.Enabled = true; openWordListButton.Text = program.WordsListFile; }
@@ -777,6 +779,7 @@ namespace StroopTest
                 }
             }
             writer.Close();
+            MessageBox.Show("O programa foi salvo com sucesso");
             this.Close();
         }
 

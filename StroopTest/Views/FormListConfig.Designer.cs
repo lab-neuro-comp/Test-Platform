@@ -1,6 +1,6 @@
 ﻿namespace StroopTest
 {
-    partial class FormLstConfig
+    partial class FormListConfig
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLstConfig));
+            this.components = new System.ComponentModel.Container();
             this.buttonColorPallette = new System.Windows.Forms.Button();
             this.hexColorTextBox = new System.Windows.Forms.TextBox();
             this.buttonRemove = new System.Windows.Forms.Button();
@@ -46,6 +46,9 @@
             this.colorsListLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.helpButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonColorPallette
@@ -105,13 +108,12 @@
             // hexColorsList
             // 
             this.hexColorsList.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
-            this.hexColorsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.hexColorsList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.hexColorsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hexColorsList.FullRowSelect = true;
             this.hexColorsList.LabelEdit = true;
-            this.hexColorsList.Location = new System.Drawing.Point(200, 32);
+            this.hexColorsList.Location = new System.Drawing.Point(213, 32);
             this.hexColorsList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hexColorsList.Name = "hexColorsList";
             this.hexColorsList.Size = new System.Drawing.Size(212, 491);
@@ -163,13 +165,13 @@
             // wordsColoredList
             // 
             this.wordsColoredList.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
-            this.wordsColoredList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.wordsColoredList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.wordsColoredList.AutoArrange = false;
             this.wordsColoredList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordsColoredList.FullRowSelect = true;
             this.wordsColoredList.LabelEdit = true;
-            this.wordsColoredList.Location = new System.Drawing.Point(419, 32);
+            this.wordsColoredList.Location = new System.Drawing.Point(432, 32);
             this.wordsColoredList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wordsColoredList.Name = "wordsColoredList";
             this.wordsColoredList.Size = new System.Drawing.Size(212, 491);
@@ -213,6 +215,8 @@
             this.listNameTextBox.Size = new System.Drawing.Size(169, 22);
             this.listNameTextBox.TabIndex = 27;
             this.listNameTextBox.TextChanged += new System.EventHandler(this.listNameBox_TextChanged);
+            this.listNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.listName_Validating);
+            this.listNameTextBox.Validated += new System.EventHandler(this.listName_Validated);
             // 
             // listNameLabel
             // 
@@ -230,7 +234,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.wordsListLabel.AutoSize = true;
             this.wordsListLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.wordsListLabel.Location = new System.Drawing.Point(421, 12);
+            this.wordsListLabel.Location = new System.Drawing.Point(434, 12);
             this.wordsListLabel.Name = "wordsListLabel";
             this.wordsListLabel.Size = new System.Drawing.Size(128, 17);
             this.wordsListLabel.TabIndex = 29;
@@ -243,7 +247,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.colorsListLabel.AutoSize = true;
             this.colorsListLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.colorsListLabel.Location = new System.Drawing.Point(203, 12);
+            this.colorsListLabel.Location = new System.Drawing.Point(216, 12);
             this.colorsListLabel.Name = "colorsListLabel";
             this.colorsListLabel.Size = new System.Drawing.Size(110, 17);
             this.colorsListLabel.TabIndex = 30;
@@ -254,7 +258,7 @@
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.saveButton.Location = new System.Drawing.Point(16, 562);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 28);
             this.saveButton.TabIndex = 31;
@@ -265,10 +269,11 @@
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(535, 562);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelButton.Location = new System.Drawing.Point(591, 562);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 32;
@@ -276,13 +281,33 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click_1);
             // 
-            // FormLstConfig
+            // helpButton
+            // 
+            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.helpButton.BackgroundImage = global::StroopTest.Properties.Resources.helpButton;
+            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.helpButton.Location = new System.Drawing.Point(656, 12);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(35, 32);
+            this.helpButton.TabIndex = 83;
+            this.helpButton.UseVisualStyleBackColor = false;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // FormListConfig
             // 
             this.AcceptButton = this.saveButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(645, 606);
+            this.ClientSize = new System.Drawing.Size(701, 606);
+            this.Controls.Add(this.helpButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.colorsListLabel);
@@ -301,12 +326,12 @@
             this.Controls.Add(this.hexColorTextBox);
             this.Controls.Add(this.buttonColorPallette);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.Name = "FormLstConfig";
+            this.Name = "FormListConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listas - Palavras e Cores";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,5 +355,7 @@
         private System.Windows.Forms.Label colorsListLabel;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button helpButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -48,6 +48,7 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.helpButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labelEmpty = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +62,7 @@
             this.buttonColorPallette.TabIndex = 3;
             this.buttonColorPallette.Text = " cores";
             this.buttonColorPallette.UseVisualStyleBackColor = true;
-            this.buttonColorPallette.Click += new System.EventHandler(this.button2_Click);
+            this.buttonColorPallette.Click += new System.EventHandler(this.buttonColors_Click);
             // 
             // hexColorTextBox
             // 
@@ -76,6 +77,8 @@
             this.hexColorTextBox.TabIndex = 2;
             this.hexColorTextBox.Text = "#000000";
             this.hexColorTextBox.TextChanged += new System.EventHandler(this.colorTextBox_TextChanged);
+            this.hexColorTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.colorName_Validating);
+            this.hexColorTextBox.Validated += new System.EventHandler(this.colorName_Validated);
             // 
             // buttonRemove
             // 
@@ -89,7 +92,7 @@
             this.buttonRemove.TabStop = false;
             this.buttonRemove.Text = "-";
             this.buttonRemove.UseVisualStyleBackColor = true;
-            this.buttonRemove.Click += new System.EventHandler(this.button1_Click);
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // buttonInsert
             // 
@@ -103,7 +106,9 @@
             this.buttonInsert.TabStop = false;
             this.buttonInsert.Text = "+";
             this.buttonInsert.UseVisualStyleBackColor = true;
-            this.buttonInsert.Click += new System.EventHandler(this.button3_Click);
+            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
+            this.buttonInsert.Validating += new System.ComponentModel.CancelEventHandler(this.colorName_Validating);
+            this.buttonInsert.Validated += new System.EventHandler(this.colorName_Validated);
             // 
             // hexColorsList
             // 
@@ -122,7 +127,8 @@
             this.hexColorsList.TileSize = new System.Drawing.Size(120, 40);
             this.hexColorsList.UseCompatibleStateImageBehavior = false;
             this.hexColorsList.View = System.Windows.Forms.View.Tile;
-            this.hexColorsList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.hexColorsList_ItemSelectionChanged);
+            this.hexColorsList.Validating += new System.ComponentModel.CancelEventHandler(this.hexColorList_Validating);
+            this.hexColorsList.Validated += new System.EventHandler(this.listLength_Validated);
             // 
             // wordTextBox
             // 
@@ -180,6 +186,8 @@
             this.wordsColoredList.TileSize = new System.Drawing.Size(120, 40);
             this.wordsColoredList.UseCompatibleStateImageBehavior = false;
             this.wordsColoredList.View = System.Windows.Forms.View.Tile;
+            this.wordsColoredList.Validating += new System.ComponentModel.CancelEventHandler(this.wordList_Validating);
+            this.wordsColoredList.Validated += new System.EventHandler(this.listLength_Validated);
             // 
             // colorListLabel
             // 
@@ -299,6 +307,17 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // labelEmpty
+            // 
+            this.labelEmpty.AutoSize = true;
+            this.labelEmpty.ForeColor = System.Drawing.Color.Red;
+            this.labelEmpty.Location = new System.Drawing.Point(9, 299);
+            this.labelEmpty.Name = "labelEmpty";
+            this.labelEmpty.Size = new System.Drawing.Size(77, 17);
+            this.labelEmpty.TabIndex = 84;
+            this.labelEmpty.Text = "labelEmpty";
+            this.labelEmpty.Visible = false;
+            // 
             // FormListConfig
             // 
             this.AcceptButton = this.saveButton;
@@ -307,6 +326,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(701, 606);
+            this.Controls.Add(this.labelEmpty);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
@@ -357,5 +377,6 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label labelEmpty;
     }
 }

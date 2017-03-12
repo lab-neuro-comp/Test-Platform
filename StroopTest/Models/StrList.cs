@@ -91,6 +91,11 @@ namespace StroopTest.Models
             }
         }
 
+        public StrList readListIntoStrList(string filepath, string listName)
+        {
+            return new StrList(new List<string>(readListFile(filepath)), listName);
+        }
+
         // lê palavras do arquivo e retorna vetor
         static internal string[] readListFile(string filepath)
         {

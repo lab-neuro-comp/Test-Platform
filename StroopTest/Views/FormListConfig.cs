@@ -6,18 +6,17 @@
 using System;
 using System.Drawing;
 using System.IO;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using StroopTest.Models;
 using StroopTest.Controllers;
 using System.Collections.Generic;
 using StroopTest.Views;
+using System.Linq;
 
 namespace StroopTest
 {
     public partial class FormListConfig : Form
     {
-        private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string path;
         private string instructionsText = HelpData.WordColorConfigInstructions;
 
@@ -89,7 +88,7 @@ namespace StroopTest
                     checkColors.Checked = true;
                     for (int i = 0; i < colorsArray.Length; i++)
                     {
-                        if (Regex.IsMatch(colorsArray[i], hexPattern))
+                        if (Validations.isHexPattern(colorsArray[i]))
                         {
                             hexColorsList.Items.Add(colorsArray[i]);
                             hexColorsList.Items[i].ForeColor = ColorTranslator.FromHtml(colorsArray[i]);
@@ -188,7 +187,7 @@ namespace StroopTest
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonColors_Click(object sender, EventArgs e)
         {
             string colorCode = pickColor();
             if (colorCode != null)
@@ -220,42 +219,24 @@ namespace StroopTest
 
         private void colorTextBox_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
                 var box = (TextBox)sender;
-                if (box.Text.Length <= 1)
-                {
-                    box.Text = "#";
-                    box.SelectionStart = 1;
-                }
-
-                if (box.Text.Length == 7 && !Regex.IsMatch(box.Text, hexPattern))
-                {
-                    throw new Exception("O código de cor deve estar em formato hexadecimal.\nEx: #000000");
-                }
-
-
-                if (Regex.IsMatch(hexColorTextBox.Text, hexPattern) && hexColorTextBox.TextLength == 7)
-                {
-                    hexColorTextBox.ForeColor = ColorTranslator.FromHtml(hexColorTextBox.Text);
-                }
-                else
-                {
-                    hexColorTextBox.ForeColor = Color.Black;
-                }
-            }
-            catch (Exception ex)
+            if (box.Text.Length <= 1)
             {
-                MessageBox.Show(ex.Message);
+                box.Text = "#";
+                box.SelectionStart = 1;
             }
-
-
+            else if(hexColorTextBox.TextLength == 7) { 
+                hexColorTextBox.ForeColor = ColorTranslator.FromHtml(hexColorTextBox.Text);
+            }
+            else
+            {
+                hexColorTextBox.ForeColor = Color.Black;
+            }
+            
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonInsert_Click(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(hexColorTextBox.Text, hexPattern) && hexColorTextBox.TextLength == 7)
-            {
                 if (checkWords.Checked && checkColors.Checked && !String.IsNullOrEmpty(wordTextBox.Text) && !String.IsNullOrEmpty(hexColorTextBox.Text))
                 {
                     if (wordsColoredList.Items.Count != hexColorsList.Items.Count || hexColorsList.Items.Count != wordsColoredList.Items.Count)
@@ -285,14 +266,9 @@ namespace StroopTest
                         wordsColoredList.Items[i].ForeColor = ColorTranslator.FromHtml(hexColorsList.Items[i].Text);
                     }
                 }
-            }
-            else
-            {
-                MessageBox.Show("A cor deve estar no formato hexadecimal padrão;\nExemplo: #000000");
-            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonRemove_Click(object sender, EventArgs e)
         {
             if (checkWords.Checked && checkColors.Checked)
             {
@@ -342,15 +318,6 @@ namespace StroopTest
             }
         }
 
-        private void hexColorsList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
-        {
-
-            if (!Regex.IsMatch(hexColorTextBox.Text, hexPattern) || !(hexColorTextBox.TextLength == 7))
-            {
-
-            }
-        }
-
 
         private bool saveListFile(List<string> list, string filePath, string fileName, string fileType, string type)
         {
@@ -384,81 +351,30 @@ namespace StroopTest
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            List<string> colorList = hexColorsList.Items.Cast<ListViewItem>()
+                                 .Select(item => item.Text)
+                                 .ToList();
+            List<string> wordList = wordsColoredList.Items.Cast<ListViewItem>()
+                                 .Select(item => item.Text)
+                                 .ToList();
             bool valid = true;
             if (!this.ValidateChildren(ValidationConstraints.Enabled))
-                MessageBox.Show("Algum campo não foi preenchido de forma correta."); valid = false;
-            if (valid)
-            {
-                try
+                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+            else { 
+                if (checkColors.Checked) 
                 {
-                    if (/*saveColorsList.ShowDialog() == DialogResult.OK && */checkColors.Enabled) // lê instrução se houver
-                    {
-                        if (hexColorsList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + listNameTextBox.Text + "_color.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
-                        {
-                            if (File.Exists(path + listNameTextBox.Text + "_color.lst"))
-                            {
-                                DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
-                                if (dialogResult == DialogResult.Cancel)
-                                {
-                                    throw new Exception("A lista não será salva!");
-                                }
-                            }
+                    valid = saveListFile(colorList, path, listNameTextBox.Text, "_color" + ".lst", "de Cores");
+                }
 
-                            StreamWriter writer1 = new StreamWriter(path + listNameTextBox.Text + "_color.lst" /*saveColorsList.OpenFile()*/);
-
-                            for (int i = 0; i < hexColorsList.Items.Count; i++)
-                            {
-                                writer1.Write(hexColorsList.Items[i].Text + "\t");
-                            }
-
-                            writer1.Close();
-                            MessageBox.Show("A lista " + listNameTextBox.Text + " foi salva com sucesso");
-                        }
-                        else
-                        {
-                            throw new Exception("A lista de cores não foi salva!");
-                        }
-
-                    }
-
-                    if (/*saveWordsList.ShowDialog() == DialogResult.OK && */ checkWords.Enabled) // lê instrução se houver
-                    {
-                        if (wordsColoredList.Items.Count > 0 && (MessageBox.Show("Deseja salvar o arquivo " + listNameTextBox.Text + "_words.lst?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.OK))
-                        {
-                            if (File.Exists(path + listNameTextBox.Text + "_words.lst"))
-                            {
-                                DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
-                                if (dialogResult == DialogResult.Cancel)
-                                {
-                                    throw new Exception("A lista não será salva!");
-                                }
-                            }
-
-                            StreamWriter writer2 = new StreamWriter(path + listNameTextBox.Text + "_words.lst" /*saveWordsList.OpenFile()*/);
-
-                            for (int i = 0; i < wordsColoredList.Items.Count; i++)
-                            {
-                                writer2.Write(wordsColoredList.Items[i].Text + "\t");
-                            }
-
-                            //writer2.Dispose();
-                            writer2.Close();
-                            MessageBox.Show("A lista " + listNameTextBox.Text + "_words.lst foi salva com sucesso");
-                        }
-                        else
-                        {
-                            throw new Exception("A lista de palavras não foi salva!");
-                        }
-                    }
-
+                if (checkWords.Checked) 
+                {
+                    valid = saveListFile(wordList, path, listNameTextBox.Text, "_words" + ".lst", "de Palavras");
+                }
                     Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                
             }
         }
+
         private void listName_Validating(object sender,
                              System.ComponentModel.CancelEventArgs e)
         {
@@ -487,6 +403,75 @@ namespace StroopTest
             return true;
         }
 
+        private void colorName_Validating(object sender,
+                     System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidColorName(hexColorTextBox.Text, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.hexColorTextBox, errorMsg);
+            }
+        }
+
+        private void colorName_Validated(object sender, System.EventArgs e)
+        {
+            errorProvider1.SetError(this.hexColorTextBox, "");
+        }
+
+        public bool ValidColorName(string name, out string errorMessage)
+        {
+            if (!Validations.isEmpty(name) && !(Validations.isHexPattern(name) && hexColorTextBox.TextLength == 7))
+            {
+                errorMessage = "O código de cor deve estar em formato hexadecimal.\nEx: #000000";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+
+        private void listLength_Validated(object sender, System.EventArgs e)
+        {
+            labelEmpty.Visible = false;
+        }
+
+        public bool ValidListLength(int number, out string errorMessage)
+        {
+            if (number == 0)
+            {
+                errorMessage = "A lista não possui \n nenhum item!";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void hexColorList_Validating(object sender,
+                             System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (checkColors.Checked && !ValidListLength(hexColorsList.Items.Count, out errorMsg))
+            {
+                e.Cancel = true;
+                labelEmpty.Text = errorMsg;
+                labelEmpty.Visible = true;
+            }
+        }
+
+        private void wordList_Validating(object sender,
+                     System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (checkWords.Checked && !ValidListLength(wordsColoredList.Items.Count, out errorMsg))
+            {
+                e.Cancel = true;
+                labelEmpty.Text = errorMsg;
+                labelEmpty.Visible = true;
+            }
+        }
         private void cancelButton_Click_1(object sender, EventArgs e)
         {
             AutoValidate = AutoValidate.Disable;

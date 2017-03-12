@@ -1,24 +1,20 @@
-#StroopTest
+#TestPlatform
 
-**StroopTest - Version 1.0 - 2015**
+**TestPlatform - Version 0.0.1 - 2017**
 
 **University of Brasilia Behavioral and Neuroscience Laboratory**
 
-developer: **Hugo Honda Ferreira**
+developers: **Hugo Honda Ferreira   Fabíola Malta Fleury**    
 
 ============
 ##Description
 
-StroopTest is a project developed inside University of Brasilia
-Behavioral and Neuroscience Laboratory. Is projected to be open source and distributed for free. Written in C# as a part of a
-computerized neuropsychological testing platform, 
-for assessment of executive function. Connects traditional
-neuropsychological tests with new technologies. The product offers
-innovating solutions. Aimed at researchers, teachers, university
-students and ordinary users.
+TestPlatform is a project developed inside University of Brasilia
+Behavioral and Neuroscience Laboratory. It continuous the work initialized by https://github.com/lab-neuro-comp/StroopTest, and it will include another kind of tests such as Reaction Test.
 
 ============
 ##Notes
-StroopTest is result of a long time thinking about exactly what makes a great software experience for researches and university students. The whole plattform is being developed and StroopTest is just a part of it. In the future it will be offered also a mobile option. The pourpose is to offer a practical and dinamic solution for neuropsychological tests.
 
-**If you would like to get more involved, send an email [here](mailto:hugohondaf@gmail.com?Subject=StroopTest%20Git)**
+TestPlatform can be used by downloading .exe and NAAudio.dll, there will be a direct link to them soon.
+
+**If you would like to get more involved, send an email [here](mailto:neurociencias.unb@gmail.com?Subject=Test-Platform%20Git)**

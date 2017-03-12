@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StroopTest", "StroopTest\StroopTest.csproj", "{1D508C2F-AB5F-4DF9-B0A5-377F0FF31319}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlatform", "StroopTest\TestPlatform.csproj", "{1D508C2F-AB5F-4DF9-B0A5-377F0FF31319}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StroopUnitTestProject", "StroopUnitTestProject\StroopUnitTestProject.csproj", "{5282A7FD-3FCE-4499-824D-F79B364C565C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlatformUnitTests", "StroopUnitTestProject\TestPlatformUnitTests.csproj", "{5282A7FD-3FCE-4499-824D-F79B364C565C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

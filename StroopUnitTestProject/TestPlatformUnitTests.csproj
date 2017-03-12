@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StroopTest\StroopTest.csproj">
+    <ProjectReference Include="..\StroopTest\TestPlatform.csproj">
       <Project>{1d508c2f-ab5f-4df9-b0a5-377f0ff31319}</Project>
-      <Name>StroopTest</Name>
+      <Name>TestPlatform</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

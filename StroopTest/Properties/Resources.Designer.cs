@@ -131,12 +131,42 @@ namespace StroopTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_StroopTest {
+            get {
+                object obj = ResourceManager.GetObject("icon_StroopTest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon icon1_StroopTest {
             get {
                 object obj = ResourceManager.GetObject("icon1_StroopTest", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon2_ReactionTest {
+            get {
+                object obj = ResourceManager.GetObject("icon2_ReactionTest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon2_ReactionTest1 {
+            get {
+                object obj = ResourceManager.GetObject("icon2_ReactionTest1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

@@ -70,6 +70,12 @@
             this.directoryToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
             this.waterMarkLabel = new System.Windows.Forms.Label();
+            this.experimentButton = new System.Windows.Forms.Button();
+            this.resultButton = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.experimentControl1 = new StroopTest.Views.ExperimentControl();
             this.mainMenuStrip.SuspendLayout();
             this.testToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -438,12 +444,99 @@
     "rasília\r\n";
             this.waterMarkLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // experimentButton
+            // 
+            this.experimentButton.BackColor = System.Drawing.Color.Transparent;
+            this.experimentButton.FlatAppearance.BorderSize = 0;
+            this.experimentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.experimentButton.Image = global::StroopTest.Properties.Resources.icon2_ReactionTest;
+            this.experimentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.experimentButton.Location = new System.Drawing.Point(0, 58);
+            this.experimentButton.Name = "experimentButton";
+            this.experimentButton.Size = new System.Drawing.Size(163, 32);
+            this.experimentButton.TabIndex = 23;
+            this.experimentButton.Text = "Experimento";
+            this.experimentButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.experimentButton.UseVisualStyleBackColor = false;
+            this.experimentButton.Click += new System.EventHandler(this.experimentButton_Click);
+            // 
+            // resultButton
+            // 
+            this.resultButton.FlatAppearance.BorderSize = 0;
+            this.resultButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resultButton.Image = global::StroopTest.Properties.Resources.icon2_ReactionTest;
+            this.resultButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.resultButton.Location = new System.Drawing.Point(0, 242);
+            this.resultButton.Name = "resultButton";
+            this.resultButton.Size = new System.Drawing.Size(163, 32);
+            this.resultButton.TabIndex = 22;
+            this.resultButton.Text = "Resultados";
+            this.resultButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.resultButton.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = global::StroopTest.Properties.Resources.icon2_ReactionTest;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 104);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(163, 32);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "Lista";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = global::StroopTest.Properties.Resources.icon2_ReactionTest;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(0, 196);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(163, 32);
+            this.button4.TabIndex = 20;
+            this.button4.Text = "ReactionTest";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Image = global::StroopTest.Properties.Resources.icon_StroopTest;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(0, 150);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(163, 32);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "StroopTest";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // experimentControl1
+            // 
+            this.experimentControl1.BackColor = System.Drawing.Color.LightGray;
+            this.experimentControl1.Location = new System.Drawing.Point(160, 58);
+            this.experimentControl1.Name = "experimentControl1";
+            this.experimentControl1.Size = new System.Drawing.Size(260, 548);
+            this.experimentControl1.TabIndex = 24;
+            this.experimentControl1.Visible = false;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(971, 608);
+            this.Controls.Add(this.experimentControl1);
+            this.Controls.Add(this.experimentButton);
+            this.Controls.Add(this.resultButton);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.waterMarkLabel);
             this.Controls.Add(this.testToolStrip);
             this.Controls.Add(this.mainMenuStrip);
@@ -510,5 +603,11 @@
         private System.Windows.Forms.ToolStripMenuItem editAudioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newAudioToolStripMenu;
         private System.Windows.Forms.ToolStripMenuItem displayAudiosToolStripMenuItem;
+        private System.Windows.Forms.Button experimentButton;
+        private System.Windows.Forms.Button resultButton;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private Views.ExperimentControl experimentControl1;
     }
 }

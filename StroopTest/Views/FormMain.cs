@@ -8,6 +8,7 @@ using System.IO;
 using System.Windows.Forms;
 using StroopTest.Models;
 using StroopTest.Views;
+using System.Drawing;
 
 namespace StroopTest
 {
@@ -362,6 +363,21 @@ namespace StroopTest
                 newAudio.ShowDialog();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void experimentButton_Click(object sender, EventArgs e)
+        {
+            if (experimentButton.BackColor.Equals(Color.Transparent))
+            {
+                experimentButton.BackColor = Color.LightGray;
+                experimentControl1.Visible = true;
+
+            }
+            else
+            {
+                experimentControl1.Visible = false;
+                experimentButton.BackColor = Color.Transparent;
+            }
         }
     }
 }

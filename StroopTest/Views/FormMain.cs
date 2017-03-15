@@ -29,6 +29,7 @@ namespace StroopTest
         private string instructionsText = "O participante deve ser orientado para execução de forma clara e uniforme entre os experimentares e o grupo de participantes.<br><br>Para o Stroop clássico as instruções básicas praticadas são:<br>'Nesta tarefa você deve falar o nome da cor em que as palavras estão pintadas.'<br>ou<br>'Nesta tarefa você deve ler a palavra apresentada na tela.'";
         private string techText = HelpData.TechnicalInformations;
         private string helpText = HelpData.VisualizeHelp;
+        private Control currentPanelContent;
 
         public FormMain()
         {
@@ -365,18 +366,29 @@ namespace StroopTest
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void experimentButton_Click(object sender, EventArgs e)
+        private void experimentButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (experimentButton.BackColor.Equals(Color.Transparent))
+            if (experimentButton.Checked)
             {
-                experimentButton.BackColor = Color.LightGray;
-                experimentControl1.Visible = true;
-
+                if(currentPanelContent != null)
+                {
+                    Controls.Remove(currentPanelContent);
+                }
             }
-            else
+        }
+
+        private void buttonStroop_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            if (buttonStroop.Checked)
             {
-                experimentControl1.Visible = false;
-                experimentButton.BackColor = Color.Transparent;
+                if (currentPanelContent != null)
+                {
+                    Controls.Remove(currentPanelContent);
+                }
+                StroopControl stroopControl = new StroopControl();
+                this.Controls.Add(stroopControl);
+                currentPanelContent = stroopControl;
             }
         }
     }

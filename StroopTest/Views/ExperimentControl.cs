@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace StroopTest.Views
 {
-    public partial class ExperimentControl : UserControl
+    public partial class ExperimentControl : DefaultUserControl
     {
         public ExperimentControl()
         {

@@ -15,38 +15,49 @@ namespace StroopTest
     public partial class FormMain : Form
     {
         private FolderBrowserDialog folderBrowserDialog1;
-        private string testFilesPath;
-        private string prgFolderName = "/prg/";
-        private string lstFolderName = "/lst/";
-        private string resultsFolderName = "/data/";
-        private string backupFolderName = "/backup/";
-        public string defaultPath = (Path.GetDirectoryName(Application.ExecutablePath));
-        private StroopProgram programDefault = new StroopProgram(); // programa padrão
-        private string defaultPrgName = "padrao";
-        private string defaultUsrName = "padrao";
-        private string instructionsFileName = "editableInstructions.txt";
-        private string prgConfigHelpFileName = "prgConfigHelp.txt";
-        private string instructionsText = "O participante deve ser orientado para execução de forma clara e uniforme entre os experimentares e o grupo de participantes.<br><br>Para o Stroop clássico as instruções básicas praticadas são:<br>'Nesta tarefa você deve falar o nome da cor em que as palavras estão pintadas.'<br>ou<br>'Nesta tarefa você deve ler a palavra apresentada na tela.'";
-        private string techText = HelpData.TechnicalInformations;
-        private string helpText = HelpData.VisualizeHelp;
-        private Control currentPanelContent;
+        
+        /*
+         * Valores constantes do programa
+         * */
+        private static string PGRFOLDERNAME = "/prg/";
+        private static string LSTFOLDERNAME = "/lst/";
+        private static string RESULTSFOLDERNAME = "/data/";
+        private static string BACKUPFOLDERNAME = "/backup/";
+        private static string DEFAULTPGRNAME = "padrao";
+        private static string DEFAULTUSERNAME = "padrao";
+        private static string INSTRUCTIONSFILENAME = "editableInstructions.txt";
+        private static string PGRCONFIGHELPFILENAME = "prgConfigHelp.txt";
+        private static string INSTRUCTIONSTEXT = "O participante deve ser orientado para execução de forma clara e uniforme entre os experimentares e o grupo de participantes.<br><br>Para o Stroop clássico as instruções básicas praticadas são:<br>'Nesta tarefa você deve falar o nome da cor em que as palavras estão pintadas.'<br>ou<br>'Nesta tarefa você deve ler a palavra apresentada na tela.'";
+        private static string TECHTEXT = HelpData.TechnicalInformations;
+        private static string HELPTEXT = HelpData.VisualizeHelp;
+        private static Point LOCATION = new Point(160, 58);
 
+        /* Variaveis
+         */
+        private StroopProgram programDefault = new StroopProgram();
+        private Control currentPanelContent; //guarda o painel do segundo menu que esta renderizado no momento da execução
+        private string testFilesPath;
+        public string defaultPath = (Path.GetDirectoryName(Application.ExecutablePath));
+
+        /**
+         * Metodo construtor do formulario, cria os diretorios necessarios para o programa caso nao existam
+         * */
         public FormMain()
         {
             InitializeComponent();
             testFilesPath = defaultPath + "/StroopTestFiles/";
 
-            if(!Directory.Exists(testFilesPath)) Directory.CreateDirectory(testFilesPath); // cria diretório para StroopTestFiles na inicialização do formulario
-            if (!Directory.Exists(testFilesPath + prgFolderName)) Directory.CreateDirectory(testFilesPath + prgFolderName); // cria diretório para StroopTestFiles na inicialização do formulario
-            if (!Directory.Exists(testFilesPath + lstFolderName)) Directory.CreateDirectory(testFilesPath + lstFolderName); // cria diretório para StroopTestFiles na inicialização do formulario
-            if (!Directory.Exists(defaultPath + resultsFolderName)) Directory.CreateDirectory(defaultPath + resultsFolderName); // cria diretório para StroopTestFiles na inicialização do formulario
-            if (!Directory.Exists(defaultPath + backupFolderName)) Directory.CreateDirectory(defaultPath + backupFolderName); // cria diretório de backup p/ onde vão os arquivos excluidos
-            if (!File.Exists(testFilesPath + instructionsFileName)) { File.Create(testFilesPath + "editableInstructions.txt").Dispose(); }
-            if (!File.Exists(testFilesPath + prgConfigHelpFileName)) { File.Create(testFilesPath + prgConfigHelpFileName).Dispose(); }
+            if(!Directory.Exists(testFilesPath)) Directory.CreateDirectory(testFilesPath); 
+            if (!Directory.Exists(testFilesPath + PGRFOLDERNAME)) Directory.CreateDirectory(testFilesPath + PGRFOLDERNAME); 
+            if (!Directory.Exists(testFilesPath + LSTFOLDERNAME)) Directory.CreateDirectory(testFilesPath + LSTFOLDERNAME); 
+            if (!Directory.Exists(defaultPath + RESULTSFOLDERNAME)) Directory.CreateDirectory(defaultPath + RESULTSFOLDERNAME); 
+            if (!Directory.Exists(defaultPath + BACKUPFOLDERNAME)) Directory.CreateDirectory(defaultPath + BACKUPFOLDERNAME); 
+            if (!File.Exists(testFilesPath + INSTRUCTIONSFILENAME)) { File.Create(testFilesPath + "editableInstructions.txt").Dispose(); }
+            if (!File.Exists(testFilesPath + PGRCONFIGHELPFILENAME)) { File.Create(testFilesPath + PGRCONFIGHELPFILENAME).Dispose(); }
             initializeDefaultProgram(); // inicializa programa padrão (cria arquivo programa padrão e listas de palavras e cores padrão)
 
-            prgNameSL.Text = defaultPrgName;
-            usrNameSL.Text = defaultUsrName;
+            prgNameSL.Text = DEFAULTPGRNAME;
+            usrNameSL.Text = DEFAULTUSERNAME;
 
             dirPathSL.Text = testFilesPath;
         }
@@ -140,13 +151,13 @@ namespace StroopTest
 
         private void initializeDefaultProgram() // inicializa programDefault padrão
         {
-            programDefault.UserName = defaultPrgName;
-            programDefault.ProgramName = defaultUsrName;
+            programDefault.UserName = DEFAULTPGRNAME;
+            programDefault.ProgramName = DEFAULTUSERNAME;
             try
             {
-                programDefault.writeDefaultProgramFile(testFilesPath + prgFolderName + programDefault.ProgramName + ".prg"); // ao inicializar formulario escreve arquivo programa padrao
-                StrList.writeDefaultWordsList(testFilesPath + lstFolderName); // escreve lista de palavras padrão
-                StrList.writeDefaultColorsList(testFilesPath + lstFolderName); // escreve lista de cores padrão 
+                programDefault.writeDefaultProgramFile(testFilesPath + PGRFOLDERNAME + programDefault.ProgramName + ".prg"); // ao inicializar formulario escreve arquivo programa padrao
+                StrList.writeDefaultWordsList(testFilesPath + LSTFOLDERNAME); // escreve lista de palavras padrão
+                StrList.writeDefaultColorsList(testFilesPath + LSTFOLDERNAME); // escreve lista de cores padrão 
             }
             catch (Exception ex)
             {
@@ -185,17 +196,17 @@ namespace StroopTest
 
         private void deleteDataFile_ToolStrip_Click(object sender, EventArgs e)
         {
-            moveFileToBackup(defaultPath + resultsFolderName, defaultPath + backupFolderName, "txt");
+            moveFileToBackup(defaultPath + RESULTSFOLDERNAME, defaultPath + BACKUPFOLDERNAME, "txt");
         }
 
         private void deleteProgramFile_ToolStrip_Click(object sender, EventArgs e)
         {
-            moveFileToBackup(testFilesPath + prgFolderName, defaultPath + backupFolderName, "prg");
+            moveFileToBackup(testFilesPath + PGRFOLDERNAME, defaultPath + BACKUPFOLDERNAME, "prg");
         }
 
         private void deleteListFile_ToolStrip_Click(object sender, EventArgs e)
         {
-            moveFileToBackup(testFilesPath + lstFolderName, defaultPath + backupFolderName, "lst");
+            moveFileToBackup(testFilesPath + LSTFOLDERNAME, defaultPath + BACKUPFOLDERNAME, "lst");
         }
 
         private void moveFileToBackup (string originPath, string backupPath, string fileType)
@@ -293,7 +304,7 @@ namespace StroopTest
         
         private void showInstructions()
         {
-            FormInstructions infoBox = new FormInstructions(instructionsText, (testFilesPath + instructionsFileName));
+            FormInstructions infoBox = new FormInstructions(INSTRUCTIONSTEXT, (testFilesPath + INSTRUCTIONSFILENAME));
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -324,14 +335,14 @@ namespace StroopTest
 
         private void techInfoButto_ToolStrip_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(techText);
+            FormInstructions infoBox = new FormInstructions(TECHTEXT);
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(helpText);
+            FormInstructions infoBox = new FormInstructions(HELPTEXT);
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
@@ -387,6 +398,7 @@ namespace StroopTest
                     Controls.Remove(currentPanelContent);
                 }
                 StroopControl stroopControl = new StroopControl();
+                stroopControl.Location = LOCATION;
                 this.Controls.Add(stroopControl);
                 currentPanelContent = stroopControl;
             }

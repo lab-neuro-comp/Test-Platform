@@ -15,8 +15,7 @@ namespace StroopTest.Views
         public DefaultUserControl()
         {
             BackColor = Color.LightGray;
-            Location = new Point(160, 58);
-            Name = "experimentControl1";
+            Location = new Point(153, 58);
             Size = new Size(260, 548);
             TabIndex = 24;
             InitializeComponent();

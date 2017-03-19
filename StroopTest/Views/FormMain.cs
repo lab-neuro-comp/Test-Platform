@@ -30,7 +30,6 @@ namespace StroopTest
         private static string INSTRUCTIONSTEXT = "O participante deve ser orientado para execução de forma clara e uniforme entre os experimentares e o grupo de participantes.<br><br>Para o Stroop clássico as instruções básicas praticadas são:<br>'Nesta tarefa você deve falar o nome da cor em que as palavras estão pintadas.'<br>ou<br>'Nesta tarefa você deve ler a palavra apresentada na tela.'";
         private static string TECHTEXT = HelpData.TechnicalInformations;
         private static string HELPTEXT = HelpData.VisualizeHelp;
-        private static Point LOCATION = new Point(160, 58);
 
         /* Variaveis
          */
@@ -93,9 +92,9 @@ namespace StroopTest
         
         private void newProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPrgConfig configureProgram = new FormPrgConfig(testFilesPath, "false");
-            try { configureProgram.ShowDialog(); }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            FormPrgConfig configureProgram = new FormPrgConfig();
+            configureProgram.Path = testFilesPath;
+            this.Controls.Add(configureProgram);
         }
         
         private void newTextColorsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,9 +178,10 @@ namespace StroopTest
                 if (result == DialogResult.OK)
                 {
                     editProgramName = defineProgram.ReturnValue;
-                    FormPrgConfig configureProgram = new FormPrgConfig(testFilesPath, editProgramName);
-                    if (!configureProgram.IsDisposed) configureProgram.ShowDialog();
-                    else { configureProgram.Close(); }
+                    FormPrgConfig configureProgram = new FormPrgConfig();
+                    configureProgram.Path = testFilesPath;
+                    configureProgram.PrgName = editProgramName;
+                    this.Controls.Add(configureProgram);
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -286,9 +286,10 @@ namespace StroopTest
 
         private void newProgram()
         {
-            FormPrgConfig configureProgram = new FormPrgConfig(testFilesPath, "false");
-            try { configureProgram.ShowDialog(); }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+            FormPrgConfig configureProgram = new FormPrgConfig();
+            configureProgram.Path = testFilesPath;
+            this.Controls.Add(configureProgram);
         }
 
         private void dataToolStripMenuItem_Click(object sender, EventArgs e)
@@ -398,9 +399,29 @@ namespace StroopTest
                     Controls.Remove(currentPanelContent);
                 }
                 StroopControl stroopControl = new StroopControl();
-                stroopControl.Location = LOCATION;
+                stroopControl.TestFilesPath = testFilesPath;
                 this.Controls.Add(stroopControl);
                 currentPanelContent = stroopControl;
+            }
+        }
+
+        protected override void OnControlAdded(ControlEventArgs e)
+        {
+            base.OnControlAdded(e);
+            if (e.Control.GetType() == typeof(FormPrgConfig))
+            {
+                int count = 0;
+                foreach (Control c in Controls)
+                {
+                    if (c is FormPrgConfig)
+                    {
+                        count++;
+                    }
+                }
+                if (count > 1)
+                {
+                    Controls.Remove(e.Control);
+                }
             }
         }
     }

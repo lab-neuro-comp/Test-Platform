@@ -69,7 +69,6 @@
             this.usrNameSL = new System.Windows.Forms.ToolStripLabel();
             this.directoryToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
-            this.waterMarkLabel = new System.Windows.Forms.Label();
             this.experimentButton = new System.Windows.Forms.RadioButton();
             this.resultButton = new System.Windows.Forms.RadioButton();
             this.buttonList = new System.Windows.Forms.RadioButton();
@@ -93,7 +92,7 @@
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
             this.mainMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.mainMenuStrip.Size = new System.Drawing.Size(971, 28);
+            this.mainMenuStrip.Size = new System.Drawing.Size(1149, 28);
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "menuStrip1";
             // 
@@ -357,7 +356,7 @@
             this.testToolStrip.Location = new System.Drawing.Point(0, 28);
             this.testToolStrip.Name = "testToolStrip";
             this.testToolStrip.Padding = new System.Windows.Forms.Padding(0);
-            this.testToolStrip.Size = new System.Drawing.Size(971, 27);
+            this.testToolStrip.Size = new System.Drawing.Size(1149, 27);
             this.testToolStrip.TabIndex = 1;
             this.testToolStrip.Text = "toolStrip1";
             this.testToolStrip.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
@@ -431,20 +430,6 @@
             this.dirPathSL.Text = "directoryPath";
             this.dirPathSL.Visible = false;
             this.dirPathSL.Click += new System.EventHandler(this.dirPathSL_Click);
-            // 
-            // waterMarkLabel
-            // 
-            this.waterMarkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.waterMarkLabel.AutoSize = true;
-            this.waterMarkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.waterMarkLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.waterMarkLabel.Location = new System.Drawing.Point(733, 553);
-            this.waterMarkLabel.Name = "waterMarkLabel";
-            this.waterMarkLabel.Size = new System.Drawing.Size(224, 39);
-            this.waterMarkLabel.TabIndex = 6;
-            this.waterMarkLabel.Text = "StroopTest - 2016\r\nLaboratório de Neurociência e Comportamento\r\nUniversidade de B" +
-    "rasília\r\n";
-            this.waterMarkLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // experimentButton
             // 
@@ -557,11 +542,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(971, 608);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.waterMarkLabel);
+            this.ClientSize = new System.Drawing.Size(1149, 840);
             this.Controls.Add(this.testToolStrip);
             this.Controls.Add(this.mainMenuStrip);
+            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -571,7 +555,6 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StroopTest";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
@@ -606,7 +589,6 @@
         private System.Windows.Forms.ToolStripMenuItem editListsToolStripMenuItem;
         private System.Windows.Forms.ToolStripLabel prgNameSL;
         private System.Windows.Forms.ToolStripLabel usrNameSL;
-        private System.Windows.Forms.Label waterMarkLabel;
         private System.Windows.Forms.ToolStripLabel directoryToolStripLabel;
         private System.Windows.Forms.ToolStripLabel dirPathSL;
         private System.Windows.Forms.ToolStripMenuItem editTextColorsToolStripMenuItem;

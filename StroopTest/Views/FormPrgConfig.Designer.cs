@@ -362,7 +362,6 @@
             this.subsRndCheckBox.TabStop = false;
             this.subsRndCheckBox.Text = "aleatória";
             this.subsRndCheckBox.UseVisualStyleBackColor = true;
-            this.subsRndCheckBox.CheckedChanged += new System.EventHandler(this.subsRndCheckBox_CheckedChanged);
             // 
             // activateSubsLabel
             // 
@@ -1072,21 +1071,15 @@
             // 
             // FormPrgConfig
             // 
-            this.AcceptButton = this.saveButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(725, 785);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormPrgConfig";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Programa";
+            this.Size = new System.Drawing.Size(725, 785);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox6.ResumeLayout(false);

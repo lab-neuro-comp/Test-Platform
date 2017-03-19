@@ -13,7 +13,7 @@ using StroopTest.Views;
 
 namespace StroopTest
 {
-    public partial class FormPrgConfig : Form
+    public partial class FormPrgConfig : UserControl
     {
         private String path;
         private String instructionBoxText = "Escreva cada uma das intruções em linhas separadas.";
@@ -22,11 +22,27 @@ namespace StroopTest
         private String fontSize = "160";
         private String editPrgName = "error";
         private String instructionsText = HelpData.ProgramConfigInstructions;
+        private String prgName = "false";
 
-        public FormPrgConfig(string dataFolderPath, string prgName)
+        public string Path
+        {
+            set
+            {
+                path = value;
+            }
+        }
+
+        public string PrgName
+        {
+            set
+            {
+                prgName = value;
+            }
+        }
+
+        public FormPrgConfig()
         {
             InitializeComponent();
-            path = dataFolderPath;
             chooseExpoType.SelectedIndex = 0;
             rotateImgComboBox.SelectedIndex = 0;
             subDirectionList.Add(subsDownButton);
@@ -35,6 +51,7 @@ namespace StroopTest
             subDirectionList.Add(subsUpButton);
             subDirectionList.Add(subsCenterButton);
             enableSubsItens(false);
+            Location = new Point(320, 38);
 
             toolTipsConfig();
             
@@ -43,6 +60,21 @@ namespace StroopTest
                 editPrgName = prgName;
                 editProgram();
             }
+        }
+
+
+        protected override void OnLoad(EventArgs e)
+        {
+
+            if (prgName != "false")
+            {
+                editPrgName = prgName;
+                editProgram();
+            }
+            if (Validations.isEmpty(path)){
+                throw new ArgumentException("O caminho do arquivo deve ser especificado.");
+            }
+            base.OnLoad(e);
         }
 
         private void toolTipsConfig()
@@ -82,10 +114,7 @@ namespace StroopTest
             helpToolTip.SetToolTip(helpButton, "Ajuda");
         }
 
-        private void closeForm_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+ 
         
         private void configurePrgItens(int expoType)
         {
@@ -545,11 +574,10 @@ namespace StroopTest
                     programWrite.InstructionText = null;
                 }
                 programWrite.RndSubtitlePlace = subsRndCheckBox.Checked;
-                Console.Write(subsRndCheckBox.Checked);
                 programWrite.FontWordLabel = wordSizeNumeric.Value.ToString();
                 programWrite.ExpandImage = expandImgCheck.Checked;
                 saveProgramFile(programWrite.data(), programWrite.InstructionText);
-                this.Close();
+
             }
             catch (Exception ex)
             {
@@ -754,7 +782,7 @@ namespace StroopTest
             {
                 MessageBox.Show(ex.Message);
                 Dispose();
-                Close();
+                this.Parent.Controls.Remove(this);
             }
         }
         
@@ -780,7 +808,7 @@ namespace StroopTest
             }
             writer.Close();
             MessageBox.Show("O programa foi salvo com sucesso");
-            this.Close();
+            this.Parent.Controls.Remove(this);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -1031,12 +1059,28 @@ namespace StroopTest
         private void cancelButton_Click(object sender, EventArgs e)
         {
             AutoValidate = AutoValidate.Disable;
-            Close();
+            this.Parent.Controls.Remove(this);
         }
 
-        private void subsRndCheckBox_CheckedChanged(object sender, EventArgs e)
+        protected override void OnControlAdded(ControlEventArgs e)
         {
-
+            base.OnControlAdded(e);
+            if (e.Control.GetType() == typeof(FormPrgConfig))
+            {
+                int count = 0;
+                foreach (Control control in Controls)
+                {
+                    if (control is FormPrgConfig)
+                    {
+                        count++;
+                    }
+                }
+                if (count > 1)
+                {
+                    Controls.Remove(e.Control);
+                }
+            }
         }
+        
     }
 }

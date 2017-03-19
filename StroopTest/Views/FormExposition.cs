@@ -127,11 +127,13 @@ namespace StroopTest
 
         private void repairProgram()
         {
-            FormPrgConfig configureProgram;
             try
             {
-                configureProgram = new FormPrgConfig(path, "/" + programInUse.ProgramName);
-                configureProgram.ShowDialog();
+
+                FormPrgConfig configureProgram = new FormPrgConfig();
+                configureProgram.Path = path;
+                configureProgram.PrgName = "/" + programInUse.ProgramName;
+                this.Controls.Add(configureProgram);
             }
             catch (Exception ex) { throw new Exception("Edição não pode ser feita " + ex.Message); }
         }

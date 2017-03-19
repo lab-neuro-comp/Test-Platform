@@ -23,7 +23,7 @@ namespace StroopTest.Views
         protected override void OnLoad(EventArgs e)
         {
            
-            Location = new Point(121, 49);
+            Location = new Point(190, 49);
             this.BringToFront();
             base.OnLoad(e);
         }

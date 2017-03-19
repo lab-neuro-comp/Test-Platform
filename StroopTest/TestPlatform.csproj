@@ -180,7 +180,7 @@
       <DependentUpon>FormDefine.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormPrgConfig.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\FormPrgConfig.Designer.cs">
       <DependentUpon>FormPrgConfig.cs</DependentUpon>
@@ -304,6 +304,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icon_import.png" />
+    <None Include="Resources\icon_export.png" />
     <None Include="Resources\icon_results.png" />
     <None Include="Resources\icon_execute.png" />
     <None Include="Resources\icon_list.png" />

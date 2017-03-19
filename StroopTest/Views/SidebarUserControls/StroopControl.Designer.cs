@@ -59,6 +59,7 @@
             this.editStroopButton.Text = "Editar Programa";
             this.editStroopButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.editStroopButton.UseVisualStyleBackColor = true;
+            this.editStroopButton.CheckedChanged += new System.EventHandler(this.editStroopButton_CheckedChanged);
             // 
             // deleteStroopButton
             // 

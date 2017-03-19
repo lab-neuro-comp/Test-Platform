@@ -8,7 +8,7 @@ using System.IO;
 using System.Windows.Forms;
 using StroopTest.Models;
 using StroopTest.Views;
-using System.Drawing;
+using StroopTest.Views.SidebarControls;
 
 namespace StroopTest
 {
@@ -386,6 +386,10 @@ namespace StroopTest
                 {
                     Controls.Remove(currentPanelContent);
                 }
+
+                ExperimentControl experimentControl = new ExperimentControl();
+                this.Controls.Add(experimentControl);
+                currentPanelContent = experimentControl;
             }
         }
 
@@ -402,6 +406,53 @@ namespace StroopTest
                 stroopControl.TestFilesPath = testFilesPath;
                 this.Controls.Add(stroopControl);
                 currentPanelContent = stroopControl;
+            }
+        }
+
+        private void buttonList_CheckedChanged(object sender, EventArgs e)
+        {
+            if (buttonList.Checked)
+            {
+                if (currentPanelContent != null)
+                {
+                    Controls.Remove(currentPanelContent);
+                }
+                ListUserControl listControl = new ListUserControl();
+                this.Controls.Add(listControl);
+                currentPanelContent = listControl;
+            }
+        }
+
+        private void resultButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (resultButton.Checked)
+            {
+                if (currentPanelContent != null)
+                {
+                    Controls.Remove(currentPanelContent);
+                }
+            }
+        }
+
+        private void recordingButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (recordingButton.Checked)
+            {
+                if (currentPanelContent != null)
+                {
+                    Controls.Remove(currentPanelContent);
+                }
+            }
+        }
+
+        private void executeButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (executeButton.Checked)
+            {
+                if (currentPanelContent != null)
+                {
+                    Controls.Remove(currentPanelContent);
+                }
             }
         }
 
@@ -424,5 +475,7 @@ namespace StroopTest
                 }
             }
         }
+
+
     }
 }

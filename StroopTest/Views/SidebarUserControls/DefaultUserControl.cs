@@ -14,12 +14,20 @@ namespace StroopTest.Views
     {
         public DefaultUserControl()
         {
-            BackColor = Color.LightGray;
-            Location = new Point(153, 58);
+            BackColor = Color.White;
             Size = new Size(260, 548);
             TabIndex = 24;
             InitializeComponent();
         }
+
+        protected override void OnLoad(EventArgs e)
+        {
+
+            Location = new Point(190, 49);
+            this.BringToFront();
+            base.OnLoad(e);
+        }
+
 
         private void DefaultUserControl_Load(object sender, EventArgs e)
         {

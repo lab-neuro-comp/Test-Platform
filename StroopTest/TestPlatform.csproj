@@ -150,7 +150,7 @@
       <DependentUpon>FormListConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormNewAudio.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\FormNewAudio.Designer.cs">
       <DependentUpon>FormNewAudio.cs</DependentUpon>
@@ -313,6 +313,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\stopButton.png" />
     <None Include="Resources\icon_audio.png" />
     <None Include="Resources\icon_import.png" />
     <None Include="Resources\icon_export.png" />

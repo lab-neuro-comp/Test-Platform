@@ -19,7 +19,7 @@ namespace StroopTest
             InitializeComponent();
             path = audioFolderPath;
             labelEmpty.Visible = false;
-            Location = new Point(450, 50);
+            Location = new Point(400, 50);
             if (editList)
             {
                 openFilesForEdition();
@@ -96,16 +96,16 @@ namespace StroopTest
         private void cancelButton_Click(object sender, EventArgs e)
         {
             AutoValidate = AutoValidate.Disable;
-            this.Parent.Controls.Remove(this);
             DataGridView dgv = audioPathDataGridView;
             try
             {
                 DGVManipulation.closeFormListNotEmpty(dgv);
+                this.Parent.Controls.Remove(this);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
                 this.Parent.Controls.Remove(this);
+                MessageBox.Show(ex.Message);
             }
         }
 

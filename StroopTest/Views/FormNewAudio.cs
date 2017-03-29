@@ -2,10 +2,11 @@
 using System.Windows.Forms;
 using StroopTest.Models;
 using StroopTest.Views;
+using System.Drawing;
 
 namespace StroopTest
 {
-    public partial class FormNewAudio : Form
+    public partial class FormNewAudio : UserControl
     {
         private string instructionsText = HelpData.NewAudioInstructions;
         Audio audioRecorder = new Audio();
@@ -23,7 +24,7 @@ namespace StroopTest
             timer.Interval = 1;
             timer.Tick += new EventHandler(timer_Tick);
             currentElapsedTimeDisplay.Visible = false;
-
+            Location = new Point(400, 38);
         }
         void timer_Tick(object sender, EventArgs e)
         {
@@ -77,7 +78,7 @@ namespace StroopTest
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Parent.Controls.Remove(this);
         }
     }
 }

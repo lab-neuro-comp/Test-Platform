@@ -63,6 +63,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStrip = new System.Windows.Forms.ToolStrip();
             this.beginTestMainButton = new System.Windows.Forms.ToolStripButton();
+            this.typeStripButton = new System.Windows.Forms.ToolStripButton();
             this.defineProgramButton = new System.Windows.Forms.ToolStripButton();
             this.prgNameSL = new System.Windows.Forms.ToolStripLabel();
             this.defineUserButton = new System.Windows.Forms.ToolStripButton();
@@ -154,7 +155,7 @@
             // 
             this.newAudioToolStripMenuItem.Name = "newAudioToolStripMenuItem";
             this.newAudioToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
-            this.newAudioToolStripMenuItem.Text = "Audio";
+            this.newAudioToolStripMenuItem.Text = "Áudios";
             this.newAudioToolStripMenuItem.Click += new System.EventHandler(this.audioToolStripMenuItem_Click);
             // 
             // newProgramToolStripMenuItem
@@ -240,7 +241,7 @@
             // 
             this.editAudioToolStripMenuItem.Name = "editAudioToolStripMenuItem";
             this.editAudioToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
-            this.editAudioToolStripMenuItem.Text = "Áudio";
+            this.editAudioToolStripMenuItem.Text = "Áudios";
             this.editAudioToolStripMenuItem.Click += new System.EventHandler(this.editAudioToolStripMenuItem_Click);
             // 
             // editProgramToolStripMenuItem
@@ -349,6 +350,7 @@
             this.testToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.testToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.beginTestMainButton,
+            this.typeStripButton,
             this.defineProgramButton,
             this.prgNameSL,
             this.defineUserButton,
@@ -373,6 +375,16 @@
             this.beginTestMainButton.Text = "Iniciar Teste";
             this.beginTestMainButton.Click += new System.EventHandler(this.beginTestMainButton_Click);
             // 
+            // typeStripButton
+            // 
+            this.typeStripButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.typeStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.typeStripButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.typeStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.typeStripButton.Name = "typeStripButton";
+            this.typeStripButton.Size = new System.Drawing.Size(43, 24);
+            this.typeStripButton.Text = "Tipo";
+            // 
             // defineProgramButton
             // 
             this.defineProgramButton.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -380,8 +392,8 @@
             this.defineProgramButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.defineProgramButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.defineProgramButton.Name = "defineProgramButton";
-            this.defineProgramButton.Size = new System.Drawing.Size(81, 24);
-            this.defineProgramButton.Text = "Programa:";
+            this.defineProgramButton.Size = new System.Drawing.Size(78, 24);
+            this.defineProgramButton.Text = "Programa";
             this.defineProgramButton.Click += new System.EventHandler(this.defineProgramButton_Click);
             // 
             // prgNameSL
@@ -449,7 +461,7 @@
             this.experimentButton.Text = " Experimento";
             this.experimentButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.experimentButton.UseVisualStyleBackColor = false;
-            this.experimentButton.CheckedChanged += new System.EventHandler(this.experimentButton_CheckedChanged);
+            this.experimentButton.Click += new System.EventHandler(this.experimentButton_CheckedChanged);
             // 
             // resultButton
             // 
@@ -466,7 +478,7 @@
             this.resultButton.Text = " Resultados";
             this.resultButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.resultButton.UseVisualStyleBackColor = true;
-            this.resultButton.CheckedChanged += new System.EventHandler(this.resultButton_CheckedChanged);
+            this.resultButton.Click += new System.EventHandler(this.resultButton_CheckedChanged);
             // 
             // buttonList
             // 
@@ -483,7 +495,7 @@
             this.buttonList.Text = " Lista";
             this.buttonList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonList.UseVisualStyleBackColor = true;
-            this.buttonList.CheckedChanged += new System.EventHandler(this.buttonList_CheckedChanged);
+            this.buttonList.Click += new System.EventHandler(this.buttonList_CheckedChanged);
             // 
             // buttonReaction
             // 
@@ -516,7 +528,7 @@
             this.buttonStroop.Text = " StroopTest";
             this.buttonStroop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonStroop.UseVisualStyleBackColor = true;
-            this.buttonStroop.CheckedChanged += new System.EventHandler(this.buttonStroop_CheckedChanged);
+            this.buttonStroop.Click += new System.EventHandler(this.buttonStroop_CheckedChanged);
             // 
             // panel1
             // 
@@ -580,7 +592,7 @@
             this.executeButton.Text = " Executar";
             this.executeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.executeButton.UseVisualStyleBackColor = true;
-            this.executeButton.CheckedChanged += new System.EventHandler(this.executeButton_CheckedChanged);
+            this.executeButton.Click += new System.EventHandler(this.executeButton_CheckedChanged);
             // 
             // FormMain
             // 
@@ -662,5 +674,6 @@
         private System.Windows.Forms.RadioButton executeButton;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.ToolStripButton typeStripButton;
     }
 }

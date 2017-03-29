@@ -379,7 +379,7 @@ namespace StroopTest
             try
             {
                 newAudio = new FormNewAudio();
-                newAudio.ShowDialog();
+                this.Controls.Add(newAudio);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -424,6 +424,7 @@ namespace StroopTest
                     Controls.Remove(currentPanelContent);
                 }
                 ListUserControl listControl = new ListUserControl();
+                listControl.TestFilesPath = testFilesPath;
                 this.Controls.Add(listControl);
                 currentPanelContent = listControl;
             }
@@ -455,17 +456,17 @@ namespace StroopTest
         protected override void OnControlAdded(ControlEventArgs e)
         {
             base.OnControlAdded(e);
-            if (e.Control.GetType() == typeof(FormPrgConfig))
+            if (e.Control.GetType().BaseType == typeof(UserControl))
             {
                 int count = 0;
                 foreach (Control c in Controls)
                 {
-                    if (c is FormPrgConfig)
+                    if (c is UserControl)
                     {
                         count++;
                     }
                 }
-                if (count > 1)
+                if (count > 2)
                 {
                     Controls.Remove(e.Control);
                 }

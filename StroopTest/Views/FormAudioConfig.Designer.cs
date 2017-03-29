@@ -56,7 +56,7 @@
             // audioListNameLabel
             // 
             this.audioListNameLabel.AutoSize = true;
-            this.audioListNameLabel.Location = new System.Drawing.Point(158, 38);
+            this.audioListNameLabel.Location = new System.Drawing.Point(159, 37);
             this.audioListNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.audioListNameLabel.Name = "audioListNameLabel";
             this.audioListNameLabel.Size = new System.Drawing.Size(103, 17);
@@ -65,10 +65,10 @@
             // 
             // audioListNameTextBox
             // 
-            this.audioListNameTextBox.Location = new System.Drawing.Point(158, 58);
+            this.audioListNameTextBox.Location = new System.Drawing.Point(159, 58);
             this.audioListNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.audioListNameTextBox.Name = "audioListNameTextBox";
-            this.audioListNameTextBox.Size = new System.Drawing.Size(495, 22);
+            this.audioListNameTextBox.Size = new System.Drawing.Size(554, 22);
             this.audioListNameTextBox.TabIndex = 45;
             this.audioListNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.audioListNameTextBox_Validating);
             this.audioListNameTextBox.Validated += new System.EventHandler(this.audioListNameTextBox_Validated);
@@ -137,7 +137,7 @@
             this.audioPathDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fileNameColumn,
             this.filePathColumn});
-            this.audioPathDataGridView.Location = new System.Drawing.Point(161, 91);
+            this.audioPathDataGridView.Location = new System.Drawing.Point(162, 91);
             this.audioPathDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.audioPathDataGridView.MultiSelect = false;
             this.audioPathDataGridView.Name = "audioPathDataGridView";
@@ -145,7 +145,7 @@
             this.audioPathDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.audioPathDataGridView.RowHeadersVisible = false;
             this.audioPathDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.audioPathDataGridView.Size = new System.Drawing.Size(492, 582);
+            this.audioPathDataGridView.Size = new System.Drawing.Size(551, 582);
             this.audioPathDataGridView.TabIndex = 44;
             this.audioPathDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.audioPathDataGridView_CellContentDoubleClick);
             this.audioPathDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.audioPathDataGridView_KeyDown);
@@ -186,7 +186,7 @@
             // saveButton
             // 
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(553, 716);
+            this.saveButton.Location = new System.Drawing.Point(613, 716);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 28);
@@ -257,7 +257,7 @@
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
             this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(618, 2);
+            this.helpButton.Location = new System.Drawing.Point(678, 2);
             this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(35, 32);
@@ -305,7 +305,7 @@
             this.Controls.Add(this.openButton);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAudioConfig";
-            this.Size = new System.Drawing.Size(666, 754);
+            this.Size = new System.Drawing.Size(725, 785);
             ((System.ComponentModel.ISupportInitialize)(this.audioPathDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

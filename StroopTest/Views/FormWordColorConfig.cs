@@ -11,7 +11,7 @@ using StroopTest.Controllers;
 
 namespace StroopTest
 {
-    public partial class FormWordColorConfig : Form
+    public partial class FormWordColorConfig : UserControl
     {
         List<string> wordsList = new List<string>(), colorsList = new List<string>();
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
@@ -22,6 +22,7 @@ namespace StroopTest
         {
             path = listsPath;
             InitializeComponent();
+            Location = new Point(400, 38);
             if (editFile)
             {
                 openFilesForEdition(listsPath);
@@ -344,7 +345,7 @@ namespace StroopTest
                 if (colorsListCheckBox.Checked)
                     valid = saveListFile(colorsList, path, listNameTextBox.Text, "_color" + ".lst", "de Cores");                
                 if (valid)
-                    Close();
+                    this.Parent.Controls.Remove(this);
                 else
                     MessageBox.Show("Lista não cadastrada");
             }
@@ -417,7 +418,7 @@ namespace StroopTest
         private void cancelButton_Click(object sender, EventArgs e)
         {
             AutoValidate = AutoValidate.Disable;
-            Close();
+            this.Parent.Controls.Remove(this);
         }
     }
 }

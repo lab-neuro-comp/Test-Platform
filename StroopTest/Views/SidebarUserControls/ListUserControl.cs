@@ -77,10 +77,55 @@ namespace StroopTest.Views.SidebarControls
         {
             if (backAudioButton.Checked)
             {
-                audioButton.Location = new Point(-3, 81);
+                audioButton.Location = new Point(-3, 65);
                 audioPanel.Visible = false;
                 colorWordButton.Visible = true;
                 imageButton.Visible = true;
+            }
+        }
+
+        private void colorWordButton_Click(object sender, EventArgs e)
+        {
+            if (colorWordButton.Checked)
+            {
+                audioButton.Visible = false;
+                imageButton.Visible = false;
+                wordColorPanel.Visible = true;
+            }
+
+        }
+
+        private void backWordColorButton_CheckedChanged(object sender, EventArgs e)
+        {
+            audioButton.Visible = true;
+            imageButton.Visible = true;
+            wordColorPanel.Visible = false;
+
+        }
+
+        private void newWordColorButton_Click(object sender, EventArgs e)
+        {
+            if (newWordColorButton.Checked)
+            {
+                FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/lst/", false);
+                try
+                {
+                    Parent.Controls.Add(configureList);
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+            }
+        }
+
+        private void editWordColorButton_Click(object sender, EventArgs e)
+        {
+            if (editWordColorButton.Checked)
+            {
+                FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/lst/", true);
+                try
+                {
+                    Parent.Controls.Add(configureList);
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }
     }

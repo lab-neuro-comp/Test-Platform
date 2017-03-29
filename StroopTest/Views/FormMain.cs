@@ -100,7 +100,10 @@ namespace StroopTest
         private void newTextColorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/lst/", false);
-            try { configureList.ShowDialog(); }
+            try
+            {
+                this.Controls.Add(configureList);
+            }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
@@ -190,7 +193,10 @@ namespace StroopTest
         private void editTextColorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/lst/", true);
-            try { configureList.ShowDialog(); }
+            try
+            {
+                this.Controls.Add(configureList);
+            }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 

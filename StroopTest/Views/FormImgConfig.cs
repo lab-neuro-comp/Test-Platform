@@ -8,11 +8,10 @@ using StroopTest.Controllers;
 
 namespace StroopTest
 {
-    public partial class FormImgConfig : Form
+    public partial class FormImgConfig : UserControl
     {
         private ImageList imgsList = new ImageList();
         private string path;
-        private bool firstOpenFlag = true;
         private string instructionsText = HelpData.ImageConfigInstructions;
 
         public FormImgConfig(string imagesFolderPath, string imgListEdit)
@@ -20,11 +19,11 @@ namespace StroopTest
             InitializeComponent();
             imgPathDataGridView.AllowDrop = true;
             imgPathDataGridView.RowTemplate.MinimumHeight = 120;
+            Location = new Point(400, 38);
             labelEmpty.Visible = false;
             path = imagesFolderPath;
             if (imgListEdit != "false")
             {
-                firstOpenFlag = true;
                 openImgList();
             }
         }
@@ -43,8 +42,7 @@ namespace StroopTest
 
                     string[] filePaths = StroopProgram.readDirListFile(path + "/" + dir + ".lst");
                     readImagesIntoDGV(filePaths, imgPathDataGridView);
-
-                    if (firstOpenFlag) { WindowState = FormWindowState.Maximized; firstOpenFlag = false; }
+                    
                 }
             }
             catch (Exception ex)
@@ -72,7 +70,6 @@ namespace StroopTest
                     string[] filePaths = openFileDialog.FileNames;
                     readImagesIntoDGV(filePaths, imgPathDataGridView);
                     selectedImageIntoPictureBox();
-                    if (firstOpenFlag) { WindowState = FormWindowState.Maximized; firstOpenFlag = false; }
                 }
             }
             catch (NullReferenceException)
@@ -177,7 +174,7 @@ namespace StroopTest
                 {
                     DataGridView dgv = imgPathDataGridView;
                     DGVManipulation.saveColumnToListFile(dgv, 2, path, imgListNameTextBox.Text + "_image");
-                    Close();
+                    this.Parent.Controls.Remove(this);
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
@@ -190,11 +187,12 @@ namespace StroopTest
             try
             {
                 DGVManipulation.closeFormListNotEmpty(dgv);
+                this.Parent.Controls.Remove(this);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Close();
+                this.Parent.Controls.Remove(this);
             }
         }
 

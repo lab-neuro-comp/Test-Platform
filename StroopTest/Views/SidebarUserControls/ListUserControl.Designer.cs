@@ -32,24 +32,24 @@
             this.colorWordButton = new System.Windows.Forms.RadioButton();
             this.audioButton = new System.Windows.Forms.RadioButton();
             this.audioPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.wordColorPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.newWordColorButton = new System.Windows.Forms.RadioButton();
-            this.editWordColorButton = new System.Windows.Forms.RadioButton();
-            this.deleteWordColorButton = new System.Windows.Forms.RadioButton();
-            this.backWordColorButton = new System.Windows.Forms.RadioButton();
             this.recordAudioButton = new System.Windows.Forms.RadioButton();
             this.newAudioListButton = new System.Windows.Forms.RadioButton();
             this.editAudioListButton = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.backAudioButton = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.wordColorPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.newWordColorButton = new System.Windows.Forms.RadioButton();
+            this.editWordColorButton = new System.Windows.Forms.RadioButton();
+            this.deleteWordColorButton = new System.Windows.Forms.RadioButton();
+            this.backWordColorButton = new System.Windows.Forms.RadioButton();
+            this.imagePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.newImageListButton = new System.Windows.Forms.RadioButton();
+            this.editImageListButton = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.backImageButton = new System.Windows.Forms.RadioButton();
             this.audioPanel.SuspendLayout();
             this.wordColorPanel.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.imagePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageButton
@@ -64,6 +64,7 @@
             this.imageButton.Text = "Imagens";
             this.imageButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.imageButton.UseVisualStyleBackColor = true;
+            this.imageButton.Click += new System.EventHandler(this.imageButton_Click);
             // 
             // colorWordButton
             // 
@@ -102,76 +103,9 @@
             this.audioPanel.Controls.Add(this.backAudioButton);
             this.audioPanel.Location = new System.Drawing.Point(0, 42);
             this.audioPanel.Name = "audioPanel";
-            this.audioPanel.Size = new System.Drawing.Size(267, 366);
+            this.audioPanel.Size = new System.Drawing.Size(267, 215);
             this.audioPanel.TabIndex = 4;
             this.audioPanel.Visible = false;
-            // 
-            // wordColorPanel
-            // 
-            this.wordColorPanel.Controls.Add(this.newWordColorButton);
-            this.wordColorPanel.Controls.Add(this.editWordColorButton);
-            this.wordColorPanel.Controls.Add(this.deleteWordColorButton);
-            this.wordColorPanel.Controls.Add(this.backWordColorButton);
-            this.wordColorPanel.Location = new System.Drawing.Point(0, 42);
-            this.wordColorPanel.Name = "wordColorPanel";
-            this.wordColorPanel.Size = new System.Drawing.Size(260, 156);
-            this.wordColorPanel.TabIndex = 7;
-            this.wordColorPanel.Visible = false;
-            // 
-            // newWordColorButton
-            // 
-            this.newWordColorButton.Appearance = System.Windows.Forms.Appearance.Button;
-            this.newWordColorButton.FlatAppearance.BorderSize = 0;
-            this.newWordColorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.newWordColorButton.Location = new System.Drawing.Point(3, 3);
-            this.newWordColorButton.Name = "newWordColorButton";
-            this.newWordColorButton.Size = new System.Drawing.Size(260, 33);
-            this.newWordColorButton.TabIndex = 3;
-            this.newWordColorButton.Text = "Nova Lista";
-            this.newWordColorButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.newWordColorButton.UseVisualStyleBackColor = true;
-            this.newWordColorButton.Click += new System.EventHandler(this.newWordColorButton_Click);
-            // 
-            // editWordColorButton
-            // 
-            this.editWordColorButton.Appearance = System.Windows.Forms.Appearance.Button;
-            this.editWordColorButton.FlatAppearance.BorderSize = 0;
-            this.editWordColorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editWordColorButton.Location = new System.Drawing.Point(3, 42);
-            this.editWordColorButton.Name = "editWordColorButton";
-            this.editWordColorButton.Size = new System.Drawing.Size(260, 33);
-            this.editWordColorButton.TabIndex = 4;
-            this.editWordColorButton.Text = "Editar Lista";
-            this.editWordColorButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.editWordColorButton.UseVisualStyleBackColor = true;
-            this.editWordColorButton.Click += new System.EventHandler(this.editWordColorButton_Click);
-            // 
-            // deleteWordColorButton
-            // 
-            this.deleteWordColorButton.Appearance = System.Windows.Forms.Appearance.Button;
-            this.deleteWordColorButton.FlatAppearance.BorderSize = 0;
-            this.deleteWordColorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteWordColorButton.Location = new System.Drawing.Point(3, 81);
-            this.deleteWordColorButton.Name = "deleteWordColorButton";
-            this.deleteWordColorButton.Size = new System.Drawing.Size(260, 33);
-            this.deleteWordColorButton.TabIndex = 5;
-            this.deleteWordColorButton.Text = "Excluir Lista";
-            this.deleteWordColorButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.deleteWordColorButton.UseVisualStyleBackColor = true;
-            // 
-            // backWordColorButton
-            // 
-            this.backWordColorButton.Appearance = System.Windows.Forms.Appearance.Button;
-            this.backWordColorButton.FlatAppearance.BorderSize = 0;
-            this.backWordColorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backWordColorButton.Location = new System.Drawing.Point(3, 120);
-            this.backWordColorButton.Name = "backWordColorButton";
-            this.backWordColorButton.Size = new System.Drawing.Size(260, 33);
-            this.backWordColorButton.TabIndex = 6;
-            this.backWordColorButton.Text = "Voltar";
-            this.backWordColorButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.backWordColorButton.UseVisualStyleBackColor = true;
-            this.backWordColorButton.Click += new System.EventHandler(this.backWordColorButton_CheckedChanged);
             // 
             // recordAudioButton
             // 
@@ -242,43 +176,112 @@
             this.backAudioButton.UseVisualStyleBackColor = true;
             this.backAudioButton.Click += new System.EventHandler(this.backAudioButton_CheckedChanged);
             // 
-            // flowLayoutPanel1
+            // wordColorPanel
             // 
-            this.flowLayoutPanel1.Controls.Add(this.radioButton1);
-            this.flowLayoutPanel1.Controls.Add(this.radioButton2);
-            this.flowLayoutPanel1.Controls.Add(this.radioButton3);
-            this.flowLayoutPanel1.Controls.Add(this.radioButton5);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 372);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(260, 156);
-            this.flowLayoutPanel1.TabIndex = 8;
-            this.flowLayoutPanel1.Visible = false;
+            this.wordColorPanel.Controls.Add(this.newWordColorButton);
+            this.wordColorPanel.Controls.Add(this.editWordColorButton);
+            this.wordColorPanel.Controls.Add(this.deleteWordColorButton);
+            this.wordColorPanel.Controls.Add(this.backWordColorButton);
+            this.wordColorPanel.Location = new System.Drawing.Point(0, 42);
+            this.wordColorPanel.Name = "wordColorPanel";
+            this.wordColorPanel.Size = new System.Drawing.Size(260, 156);
+            this.wordColorPanel.TabIndex = 7;
+            this.wordColorPanel.Visible = false;
             // 
-            // radioButton1
+            // newWordColorButton
             // 
-            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton1.FlatAppearance.BorderSize = 0;
-            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton1.Location = new System.Drawing.Point(3, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(260, 33);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.Text = "Nova Lista";
-            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.newWordColorButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.newWordColorButton.FlatAppearance.BorderSize = 0;
+            this.newWordColorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newWordColorButton.Location = new System.Drawing.Point(3, 3);
+            this.newWordColorButton.Name = "newWordColorButton";
+            this.newWordColorButton.Size = new System.Drawing.Size(260, 33);
+            this.newWordColorButton.TabIndex = 3;
+            this.newWordColorButton.Text = "Nova Lista";
+            this.newWordColorButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.newWordColorButton.UseVisualStyleBackColor = true;
+            this.newWordColorButton.Click += new System.EventHandler(this.newWordColorButton_Click);
             // 
-            // radioButton2
+            // editWordColorButton
             // 
-            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton2.FlatAppearance.BorderSize = 0;
-            this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton2.Location = new System.Drawing.Point(3, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(260, 33);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.Text = "Editar Lista";
-            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.editWordColorButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.editWordColorButton.FlatAppearance.BorderSize = 0;
+            this.editWordColorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editWordColorButton.Location = new System.Drawing.Point(3, 42);
+            this.editWordColorButton.Name = "editWordColorButton";
+            this.editWordColorButton.Size = new System.Drawing.Size(260, 33);
+            this.editWordColorButton.TabIndex = 4;
+            this.editWordColorButton.Text = "Editar Lista";
+            this.editWordColorButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.editWordColorButton.UseVisualStyleBackColor = true;
+            this.editWordColorButton.Click += new System.EventHandler(this.editWordColorButton_Click);
+            // 
+            // deleteWordColorButton
+            // 
+            this.deleteWordColorButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.deleteWordColorButton.FlatAppearance.BorderSize = 0;
+            this.deleteWordColorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteWordColorButton.Location = new System.Drawing.Point(3, 81);
+            this.deleteWordColorButton.Name = "deleteWordColorButton";
+            this.deleteWordColorButton.Size = new System.Drawing.Size(260, 33);
+            this.deleteWordColorButton.TabIndex = 5;
+            this.deleteWordColorButton.Text = "Excluir Lista";
+            this.deleteWordColorButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.deleteWordColorButton.UseVisualStyleBackColor = true;
+            // 
+            // backWordColorButton
+            // 
+            this.backWordColorButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.backWordColorButton.FlatAppearance.BorderSize = 0;
+            this.backWordColorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backWordColorButton.Location = new System.Drawing.Point(3, 120);
+            this.backWordColorButton.Name = "backWordColorButton";
+            this.backWordColorButton.Size = new System.Drawing.Size(260, 33);
+            this.backWordColorButton.TabIndex = 6;
+            this.backWordColorButton.Text = "Voltar";
+            this.backWordColorButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.backWordColorButton.UseVisualStyleBackColor = true;
+            this.backWordColorButton.Click += new System.EventHandler(this.backWordColorButton_CheckedChanged);
+            // 
+            // imagePanel
+            // 
+            this.imagePanel.Controls.Add(this.newImageListButton);
+            this.imagePanel.Controls.Add(this.editImageListButton);
+            this.imagePanel.Controls.Add(this.radioButton3);
+            this.imagePanel.Controls.Add(this.backImageButton);
+            this.imagePanel.Location = new System.Drawing.Point(0, 39);
+            this.imagePanel.Name = "imagePanel";
+            this.imagePanel.Size = new System.Drawing.Size(260, 156);
+            this.imagePanel.TabIndex = 8;
+            this.imagePanel.Visible = false;
+            // 
+            // newImageListButton
+            // 
+            this.newImageListButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.newImageListButton.FlatAppearance.BorderSize = 0;
+            this.newImageListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newImageListButton.Location = new System.Drawing.Point(3, 3);
+            this.newImageListButton.Name = "newImageListButton";
+            this.newImageListButton.Size = new System.Drawing.Size(260, 33);
+            this.newImageListButton.TabIndex = 3;
+            this.newImageListButton.Text = "Nova Lista";
+            this.newImageListButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.newImageListButton.UseVisualStyleBackColor = true;
+            this.newImageListButton.Click += new System.EventHandler(this.newImageListButton_Click);
+            // 
+            // editImageListButton
+            // 
+            this.editImageListButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.editImageListButton.FlatAppearance.BorderSize = 0;
+            this.editImageListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editImageListButton.Location = new System.Drawing.Point(3, 42);
+            this.editImageListButton.Name = "editImageListButton";
+            this.editImageListButton.Size = new System.Drawing.Size(260, 33);
+            this.editImageListButton.TabIndex = 4;
+            this.editImageListButton.Text = "Editar Lista";
+            this.editImageListButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.editImageListButton.UseVisualStyleBackColor = true;
+            this.editImageListButton.Click += new System.EventHandler(this.editImageListButton_Click);
             // 
             // radioButton3
             // 
@@ -293,33 +296,34 @@
             this.radioButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // backImageButton
             // 
-            this.radioButton5.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton5.FlatAppearance.BorderSize = 0;
-            this.radioButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton5.Location = new System.Drawing.Point(3, 120);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(260, 33);
-            this.radioButton5.TabIndex = 6;
-            this.radioButton5.Text = "Voltar";
-            this.radioButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.backImageButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.backImageButton.FlatAppearance.BorderSize = 0;
+            this.backImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backImageButton.Location = new System.Drawing.Point(3, 120);
+            this.backImageButton.Name = "backImageButton";
+            this.backImageButton.Size = new System.Drawing.Size(260, 33);
+            this.backImageButton.TabIndex = 6;
+            this.backImageButton.Text = "Voltar";
+            this.backImageButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.backImageButton.UseVisualStyleBackColor = true;
+            this.backImageButton.Click += new System.EventHandler(this.backImageButton_Click);
             // 
             // ListUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.wordColorPanel);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.audioButton);
             this.Controls.Add(this.imageButton);
             this.Controls.Add(this.colorWordButton);
             this.Controls.Add(this.audioPanel);
+            this.Controls.Add(this.wordColorPanel);
+            this.Controls.Add(this.imagePanel);
             this.Name = "ListUserControl";
             this.audioPanel.ResumeLayout(false);
             this.wordColorPanel.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.imagePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -340,10 +344,10 @@
         private System.Windows.Forms.RadioButton editWordColorButton;
         private System.Windows.Forms.RadioButton deleteWordColorButton;
         private System.Windows.Forms.RadioButton backWordColorButton;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.FlowLayoutPanel imagePanel;
+        private System.Windows.Forms.RadioButton newImageListButton;
+        private System.Windows.Forms.RadioButton editImageListButton;
         private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton backImageButton;
     }
 }

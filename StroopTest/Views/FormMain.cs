@@ -147,7 +147,10 @@ namespace StroopTest
         private void newImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/", "false");
-            try { configureImagesList.ShowDialog(); }
+            try
+            {
+                this.Controls.Add(configureImagesList);
+            }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
@@ -329,7 +332,7 @@ namespace StroopTest
         private void editImagesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/", "");
-            try { configureImagesList.ShowDialog(); }
+            try { this.Controls.Add(configureImagesList); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 

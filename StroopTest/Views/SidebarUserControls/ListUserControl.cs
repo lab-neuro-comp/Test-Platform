@@ -128,5 +128,52 @@ namespace StroopTest.Views.SidebarControls
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }
+
+        private void imageButton_Click(object sender, EventArgs e)
+        {
+            if (imageButton.Checked)
+            {
+                colorWordButton.Visible = false;
+                audioButton.Visible = false;
+                imageButton.Location = new Point(-3, 3);
+                imagePanel.Visible = true;
+            }
+
+        }
+
+        private void newImageListButton_Click(object sender, EventArgs e)
+        {
+            if (newImageListButton.Checked)
+            {
+                FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/", "false");
+                try
+                {
+                    Parent.Controls.Add(configureImagesList);
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+            }
+        }
+
+        private void editImageListButton_Click(object sender, EventArgs e)
+        {
+            if (editImageListButton.Checked)
+            {
+                FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/", "");
+                try { Parent.Controls.Add(configureImagesList); }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+            }
+        }
+
+        private void backImageButton_Click(object sender, EventArgs e)
+        {
+            if (backImageButton.Checked)
+            {
+                imageButton.Location = new Point(-3, 32);
+                imagePanel.Visible = false;
+                colorWordButton.Visible = true;
+                audioButton.Visible = true;
+
+            }
+        }
     }
 }

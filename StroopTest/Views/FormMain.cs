@@ -447,6 +447,13 @@ namespace StroopTest
                 {
                     Controls.Remove(currentPanelContent);
                 }
+                FormShowData showData;
+                try
+                {
+                    showData = new FormShowData(defaultPath + "/data/");
+                    showData.ShowDialog();
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }
 

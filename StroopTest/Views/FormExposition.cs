@@ -230,7 +230,7 @@ namespace StroopTest
                         
 
 
-                        StroopProgram.writeLineOutput(programInUse, textCurrent, colorCurrent, counter, outputContent, elapsedTime, programInUse.ExpositionType, audioDetail, hour, minutes, seconds);
+                        StroopProgram.writeLineOutputResult(programInUse, textCurrent, colorCurrent, counter, outputContent, elapsedTime, programInUse.ExpositionType, audioDetail, hour, minutes, seconds);
                         
                         await Task.Delay(programInUse.ExpositionTime, cts.Token);
                     }
@@ -369,7 +369,7 @@ namespace StroopTest
                             arrayCounter++;
 
 
-                            StroopProgram.writeLineOutput(programInUse, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "img", audioDetail, hour, minutes, seconds);
+                            StroopProgram.writeLineOutputResult(programInUse, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "img", audioDetail, hour, minutes, seconds);
                             
                             await Task.Delay(programInUse.ExpositionTime, cts.Token);
                             
@@ -397,7 +397,7 @@ namespace StroopTest
                                 actualImagePath = wordLabel.Text;
                                 j++;
 
-                                StroopProgram.writeLineOutput(programInUse, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "txt", audioDetail, hour, minutes, seconds);
+                                StroopProgram.writeLineOutputResult(programInUse, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "txt", audioDetail, hour, minutes, seconds);
                                 
                                 await Task.Delay(programInUse.ExpositionTime, cts.Token);
                             }
@@ -438,7 +438,7 @@ namespace StroopTest
                                 subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
                             }
 
-                            StroopProgram.writeLineOutput(programInUse, Path.GetFileName(imageDirs[arrayCounter].ToString()), "false", counter + 1, outputContent, elapsedTime, programInUse.ExpositionType, Path.GetFileNameWithoutExtension(audioDetail), hour, minutes, seconds);
+                            StroopProgram.writeLineOutputResult(programInUse, Path.GetFileName(imageDirs[arrayCounter].ToString()), "false", counter + 1, outputContent, elapsedTime, programInUse.ExpositionType, Path.GetFileNameWithoutExtension(audioDetail), hour, minutes, seconds);
                             
                             arrayCounter++;
                             await Task.Delay(programInUse.ExpositionTime, cts.Token);

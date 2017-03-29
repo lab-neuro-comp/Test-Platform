@@ -4,10 +4,11 @@ using System.Windows.Forms;
 using StroopTest.Models;
 using StroopTest.Views;
 using StroopTest.Controllers;
+using System.Drawing;
 
 namespace StroopTest
 {
-    public partial class FormAudioConfig : Form
+    public partial class FormAudioConfig : UserControl
     {
         private string path;
         private SoundPlayer player = new SoundPlayer();
@@ -18,6 +19,7 @@ namespace StroopTest
             InitializeComponent();
             path = audioFolderPath;
             labelEmpty.Visible = false;
+            Location = new Point(450, 50);
             if (editList)
             {
                 openFilesForEdition();
@@ -94,6 +96,7 @@ namespace StroopTest
         private void cancelButton_Click(object sender, EventArgs e)
         {
             AutoValidate = AutoValidate.Disable;
+            this.Parent.Controls.Remove(this);
             DataGridView dgv = audioPathDataGridView;
             try
             {
@@ -102,7 +105,7 @@ namespace StroopTest
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Close();
+                this.Parent.Controls.Remove(this);
             }
         }
 
@@ -116,7 +119,7 @@ namespace StroopTest
                 {
                     DataGridView dgv = audioPathDataGridView;
                     DGVManipulation.saveColumnToListFile(dgv, 1, path, audioListNameTextBox.Text + "_audio");
-                    Close();
+                    this.Parent.Controls.Remove(this);
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

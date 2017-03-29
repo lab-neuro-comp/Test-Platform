@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAudioConfig));
             this.audioListNameLabel = new System.Windows.Forms.Label();
             this.audioListNameTextBox = new System.Windows.Forms.TextBox();
             this.deleteItemlabel = new System.Windows.Forms.Label();
@@ -57,7 +56,7 @@
             // audioListNameLabel
             // 
             this.audioListNameLabel.AutoSize = true;
-            this.audioListNameLabel.Location = new System.Drawing.Point(16, 11);
+            this.audioListNameLabel.Location = new System.Drawing.Point(158, 38);
             this.audioListNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.audioListNameLabel.Name = "audioListNameLabel";
             this.audioListNameLabel.Size = new System.Drawing.Size(103, 17);
@@ -66,10 +65,10 @@
             // 
             // audioListNameTextBox
             // 
-            this.audioListNameTextBox.Location = new System.Drawing.Point(16, 31);
+            this.audioListNameTextBox.Location = new System.Drawing.Point(158, 58);
             this.audioListNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.audioListNameTextBox.Name = "audioListNameTextBox";
-            this.audioListNameTextBox.Size = new System.Drawing.Size(180, 22);
+            this.audioListNameTextBox.Size = new System.Drawing.Size(495, 22);
             this.audioListNameTextBox.TabIndex = 45;
             this.audioListNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.audioListNameTextBox_Validating);
             this.audioListNameTextBox.Validated += new System.EventHandler(this.audioListNameTextBox_Validated);
@@ -77,7 +76,7 @@
             // deleteItemlabel
             // 
             this.deleteItemlabel.AutoSize = true;
-            this.deleteItemlabel.Location = new System.Drawing.Point(16, 116);
+            this.deleteItemlabel.Location = new System.Drawing.Point(13, 143);
             this.deleteItemlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.deleteItemlabel.Name = "deleteItemlabel";
             this.deleteItemlabel.Size = new System.Drawing.Size(88, 17);
@@ -87,7 +86,7 @@
             // audioLabel
             // 
             this.audioLabel.AutoSize = true;
-            this.audioLabel.Location = new System.Drawing.Point(16, 64);
+            this.audioLabel.Location = new System.Drawing.Point(13, 91);
             this.audioLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.audioLabel.Name = "audioLabel";
             this.audioLabel.Size = new System.Drawing.Size(55, 17);
@@ -97,7 +96,7 @@
             // moveRowLabel
             // 
             this.moveRowLabel.AutoSize = true;
-            this.moveRowLabel.Location = new System.Drawing.Point(16, 167);
+            this.moveRowLabel.Location = new System.Drawing.Point(13, 194);
             this.moveRowLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.moveRowLabel.Name = "moveRowLabel";
             this.moveRowLabel.Size = new System.Drawing.Size(81, 17);
@@ -107,10 +106,10 @@
             // moveDownButton
             // 
             this.moveDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.moveDownButton.Location = new System.Drawing.Point(16, 223);
+            this.moveDownButton.Location = new System.Drawing.Point(13, 250);
             this.moveDownButton.Margin = new System.Windows.Forms.Padding(4);
             this.moveDownButton.Name = "moveDownButton";
-            this.moveDownButton.Size = new System.Drawing.Size(181, 28);
+            this.moveDownButton.Size = new System.Drawing.Size(137, 28);
             this.moveDownButton.TabIndex = 49;
             this.moveDownButton.Text = "Abaixo";
             this.moveDownButton.UseVisualStyleBackColor = true;
@@ -119,10 +118,10 @@
             // moveUpButton
             // 
             this.moveUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.moveUpButton.Location = new System.Drawing.Point(16, 187);
+            this.moveUpButton.Location = new System.Drawing.Point(13, 214);
             this.moveUpButton.Margin = new System.Windows.Forms.Padding(4);
             this.moveUpButton.Name = "moveUpButton";
-            this.moveUpButton.Size = new System.Drawing.Size(181, 28);
+            this.moveUpButton.Size = new System.Drawing.Size(137, 28);
             this.moveUpButton.TabIndex = 48;
             this.moveUpButton.Text = "Acima";
             this.moveUpButton.UseVisualStyleBackColor = true;
@@ -133,15 +132,12 @@
             this.audioPathDataGridView.AllowUserToAddRows = false;
             this.audioPathDataGridView.AllowUserToOrderColumns = true;
             this.audioPathDataGridView.AllowUserToResizeRows = false;
-            this.audioPathDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.audioPathDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.audioPathDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.audioPathDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fileNameColumn,
             this.filePathColumn});
-            this.audioPathDataGridView.Location = new System.Drawing.Point(220, 64);
+            this.audioPathDataGridView.Location = new System.Drawing.Point(161, 91);
             this.audioPathDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.audioPathDataGridView.MultiSelect = false;
             this.audioPathDataGridView.Name = "audioPathDataGridView";
@@ -149,7 +145,7 @@
             this.audioPathDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.audioPathDataGridView.RowHeadersVisible = false;
             this.audioPathDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.audioPathDataGridView.Size = new System.Drawing.Size(612, 394);
+            this.audioPathDataGridView.Size = new System.Drawing.Size(492, 582);
             this.audioPathDataGridView.TabIndex = 44;
             this.audioPathDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.audioPathDataGridView_CellContentDoubleClick);
             this.audioPathDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.audioPathDataGridView_KeyDown);
@@ -175,11 +171,10 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(729, 465);
+            this.cancelButton.Location = new System.Drawing.Point(13, 716);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 28);
@@ -190,9 +185,8 @@
             // 
             // saveButton
             // 
-            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(13, 465);
+            this.saveButton.Location = new System.Drawing.Point(553, 716);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 28);
@@ -204,10 +198,10 @@
             // deleteButton
             // 
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.deleteButton.Location = new System.Drawing.Point(16, 135);
+            this.deleteButton.Location = new System.Drawing.Point(13, 162);
             this.deleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(181, 28);
+            this.deleteButton.Size = new System.Drawing.Size(137, 28);
             this.deleteButton.TabIndex = 47;
             this.deleteButton.Text = "Apagar";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -217,10 +211,10 @@
             // 
             this.openButton.CausesValidation = false;
             this.openButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.openButton.Location = new System.Drawing.Point(16, 84);
+            this.openButton.Location = new System.Drawing.Point(13, 111);
             this.openButton.Margin = new System.Windows.Forms.Padding(4);
             this.openButton.Name = "openButton";
-            this.openButton.Size = new System.Drawing.Size(181, 28);
+            this.openButton.Size = new System.Drawing.Size(137, 28);
             this.openButton.TabIndex = 46;
             this.openButton.Text = "Abrir";
             this.openButton.UseVisualStyleBackColor = true;
@@ -229,10 +223,10 @@
             // playAudioButton
             // 
             this.playAudioButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.playAudioButton.Location = new System.Drawing.Point(16, 274);
+            this.playAudioButton.Location = new System.Drawing.Point(13, 301);
             this.playAudioButton.Margin = new System.Windows.Forms.Padding(4);
             this.playAudioButton.Name = "playAudioButton";
-            this.playAudioButton.Size = new System.Drawing.Size(181, 28);
+            this.playAudioButton.Size = new System.Drawing.Size(137, 28);
             this.playAudioButton.TabIndex = 56;
             this.playAudioButton.Text = "Reproduzir Áudio";
             this.playAudioButton.UseVisualStyleBackColor = true;
@@ -241,7 +235,7 @@
             // numberFilesLabel
             // 
             this.numberFilesLabel.AutoSize = true;
-            this.numberFilesLabel.Location = new System.Drawing.Point(224, 465);
+            this.numberFilesLabel.Location = new System.Drawing.Point(506, 677);
             this.numberFilesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numberFilesLabel.Name = "numberFilesLabel";
             this.numberFilesLabel.Size = new System.Drawing.Size(121, 17);
@@ -251,7 +245,7 @@
             // numberFiles
             // 
             this.numberFiles.AutoSize = true;
-            this.numberFiles.Location = new System.Drawing.Point(353, 465);
+            this.numberFiles.Location = new System.Drawing.Point(635, 675);
             this.numberFiles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numberFiles.Name = "numberFiles";
             this.numberFiles.Size = new System.Drawing.Size(16, 17);
@@ -263,7 +257,7 @@
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.helpButton.BackgroundImage = global::StroopTest.Properties.Resources.helpButton;
             this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(797, 14);
+            this.helpButton.Location = new System.Drawing.Point(618, 2);
             this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(35, 32);
@@ -280,7 +274,7 @@
             // 
             this.labelEmpty.AutoSize = true;
             this.labelEmpty.ForeColor = System.Drawing.Color.Red;
-            this.labelEmpty.Location = new System.Drawing.Point(20, 329);
+            this.labelEmpty.Location = new System.Drawing.Point(17, 356);
             this.labelEmpty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEmpty.Name = "labelEmpty";
             this.labelEmpty.Size = new System.Drawing.Size(77, 17);
@@ -292,7 +286,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.ClientSize = new System.Drawing.Size(845, 508);
             this.Controls.Add(this.labelEmpty);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.numberFiles);
@@ -310,11 +303,9 @@
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.openButton);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAudioConfig";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lista - Áudios";
+            this.Size = new System.Drawing.Size(666, 754);
             ((System.ComponentModel.ISupportInitialize)(this.audioPathDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

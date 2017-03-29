@@ -330,7 +330,10 @@ namespace StroopTest
         private void audioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/lst/", false);
-            try { configureAudioList.ShowDialog(); }
+            try
+            {
+                this.Controls.Add(configureAudioList);
+            }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
@@ -352,7 +355,10 @@ namespace StroopTest
         private void editAudioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/lst/", true);
-            try { configureAudioList.ShowDialog(); }
+            try
+            {
+                this.Controls.Add(configureAudioList);
+            }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 

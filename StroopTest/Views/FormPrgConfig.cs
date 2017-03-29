@@ -576,7 +576,7 @@ namespace StroopTest
                 programWrite.RndSubtitlePlace = subsRndCheckBox.Checked;
                 programWrite.FontWordLabel = wordSizeNumeric.Value.ToString();
                 programWrite.ExpandImage = expandImgCheck.Checked;
-                saveProgramFile(programWrite.data(), programWrite.InstructionText);
+                saveProgramFile(programWrite);
 
             }
             catch (Exception ex)
@@ -786,7 +786,7 @@ namespace StroopTest
             }
         }
         
-        private void saveProgramFile(string programText, List<string> instructions)
+        private void saveProgramFile(StroopProgram newProgram)
         {
             if (File.Exists(path + "prg/" + prgNameTextBox.Text + ".prg"))
             {
@@ -796,18 +796,10 @@ namespace StroopTest
                     throw new Exception("O programa não será salvo!");
                 }
             }
-
-            StreamWriter writer = new StreamWriter(path + "prg/" + prgNameTextBox.Text + ".prg");
-            writer.WriteLine(programText);
-            if (instructions != null && instructions[0] != instructionBoxText)
+            if (newProgram.saveProgramFile(path, instructionBoxText))
             {
-                for (int i = 0; i < instructions.Count; i++)
-                {
-                    writer.WriteLine(instructions[i]);
-                }
+                MessageBox.Show("O programa foi salvo com sucesso");
             }
-            writer.Close();
-            MessageBox.Show("O programa foi salvo com sucesso");
             this.Parent.Controls.Remove(this);
         }
 

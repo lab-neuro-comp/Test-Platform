@@ -175,6 +175,20 @@ namespace TestPlatform.Models
 
         }
 
+        public bool saveProgramFile(string path, string instructionBoxText)
+        {
+            StreamWriter writer = new StreamWriter(path + "prg/" + ProgramName + ".tr");
+            writer.WriteLine(data());
+            if (InstructionText != null && InstructionText[0] != instructionBoxText)
+            {
+                for (int i = 0; i < InstructionText.Count; i++)
+                {
+                    writer.WriteLine(InstructionText[i]);
+                }
+            }
+            writer.Close();
+            return true;
+        }
 
         static public void writeLineOutput(ReactionProgram program, string nameStimulus, string color, int counter,
                                    List<string> output, float elapsedTime, string expoType, string audioName,

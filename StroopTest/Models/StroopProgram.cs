@@ -456,6 +456,21 @@ namespace StroopTest.Models
             }
             
         }
+
+        public bool saveProgramFile(string path, string instructionBoxText)
+        {
+            StreamWriter writer = new StreamWriter(path + "prg/" + ProgramName + ".prg");
+            writer.WriteLine(data());
+            if (InstructionText != null && InstructionText[0] != instructionBoxText)
+            {
+                for (int i = 0; i < InstructionText.Count; i++)
+                {
+                    writer.WriteLine(InstructionText[i]);
+                }
+            }
+            writer.Close();
+            return true;
+        }
         
         // escreve arquivo com programa padrão
         public void writeDefaultProgramFile(string filepath) // escreve 

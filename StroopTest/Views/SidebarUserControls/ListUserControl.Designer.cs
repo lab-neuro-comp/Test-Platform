@@ -68,19 +68,18 @@
             this.audioButton.Name = "audioButton";
             this.audioButton.Size = new System.Drawing.Size(260, 33);
             this.audioButton.TabIndex = 3;
-            this.audioButton.Text = "Aúdio";
+            this.audioButton.Text = "Aúdios";
             this.audioButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.audioButton.UseVisualStyleBackColor = true;
             // 
-            // ListControl
+            // ListUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.audioButton);
             this.Controls.Add(this.imageButton);
             this.Controls.Add(this.colorWordButton);
-            this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "ListControl";
+            this.Name = "ListUserControl";
             this.ResumeLayout(false);
 
         }

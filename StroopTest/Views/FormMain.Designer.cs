@@ -75,7 +75,6 @@
             this.buttonReaction = new System.Windows.Forms.RadioButton();
             this.buttonStroop = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.recordingButton = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.executeButton = new System.Windows.Forms.RadioButton();
@@ -441,9 +440,9 @@
             this.experimentButton.FlatAppearance.BorderSize = 0;
             this.experimentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.experimentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.experimentButton.Image = global::StroopTest.Properties.Resources.icon_experiment;
+            this.experimentButton.Image = global::TestPlatform.Properties.Resources.icon_experiment;
             this.experimentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.experimentButton.Location = new System.Drawing.Point(0, 0);
+            this.experimentButton.Location = new System.Drawing.Point(0, 123);
             this.experimentButton.Name = "experimentButton";
             this.experimentButton.Size = new System.Drawing.Size(260, 32);
             this.experimentButton.TabIndex = 23;
@@ -458,9 +457,9 @@
             this.resultButton.FlatAppearance.BorderSize = 0;
             this.resultButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resultButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultButton.Image = global::StroopTest.Properties.Resources.icon_results;
+            this.resultButton.Image = global::TestPlatform.Properties.Resources.icon_results;
             this.resultButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.resultButton.Location = new System.Drawing.Point(0, 164);
+            this.resultButton.Location = new System.Drawing.Point(0, 203);
             this.resultButton.Name = "resultButton";
             this.resultButton.Size = new System.Drawing.Size(260, 32);
             this.resultButton.TabIndex = 22;
@@ -475,9 +474,9 @@
             this.buttonList.FlatAppearance.BorderSize = 0;
             this.buttonList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonList.Image = global::StroopTest.Properties.Resources.icon_list;
+            this.buttonList.Image = global::TestPlatform.Properties.Resources.icon_list;
             this.buttonList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonList.Location = new System.Drawing.Point(0, 41);
+            this.buttonList.Location = new System.Drawing.Point(0, 3);
             this.buttonList.Name = "buttonList";
             this.buttonList.Size = new System.Drawing.Size(260, 32);
             this.buttonList.TabIndex = 21;
@@ -492,9 +491,9 @@
             this.buttonReaction.FlatAppearance.BorderSize = 0;
             this.buttonReaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReaction.Image = global::StroopTest.Properties.Resources.icon2_ReactionTest;
+            this.buttonReaction.Image = global::TestPlatform.Properties.Resources.icon2_ReactionTest;
             this.buttonReaction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonReaction.Location = new System.Drawing.Point(0, 123);
+            this.buttonReaction.Location = new System.Drawing.Point(0, 83);
             this.buttonReaction.Name = "buttonReaction";
             this.buttonReaction.Size = new System.Drawing.Size(260, 32);
             this.buttonReaction.TabIndex = 20;
@@ -508,9 +507,9 @@
             this.buttonStroop.FlatAppearance.BorderSize = 0;
             this.buttonStroop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStroop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStroop.Image = global::StroopTest.Properties.Resources.icon_StroopTest;
+            this.buttonStroop.Image = global::TestPlatform.Properties.Resources.icon_StroopTest;
             this.buttonStroop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonStroop.Location = new System.Drawing.Point(0, 82);
+            this.buttonStroop.Location = new System.Drawing.Point(0, 43);
             this.buttonStroop.Name = "buttonStroop";
             this.buttonStroop.Size = new System.Drawing.Size(260, 32);
             this.buttonStroop.TabIndex = 19;
@@ -521,12 +520,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.recordingButton);
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.executeButton);
-            this.panel1.Controls.Add(this.experimentButton);
             this.panel1.Controls.Add(this.resultButton);
+            this.panel1.Controls.Add(this.experimentButton);
+            this.panel1.Controls.Add(this.executeButton);
             this.panel1.Controls.Add(this.buttonList);
             this.panel1.Controls.Add(this.buttonReaction);
             this.panel1.Controls.Add(this.buttonStroop);
@@ -535,32 +533,15 @@
             this.panel1.Size = new System.Drawing.Size(260, 470);
             this.panel1.TabIndex = 25;
             // 
-            // recordingButton
-            // 
-            this.recordingButton.Appearance = System.Windows.Forms.Appearance.Button;
-            this.recordingButton.FlatAppearance.BorderSize = 0;
-            this.recordingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.recordingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recordingButton.Image = global::StroopTest.Properties.Resources.icon_audio;
-            this.recordingButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.recordingButton.Location = new System.Drawing.Point(0, 246);
-            this.recordingButton.Name = "recordingButton";
-            this.recordingButton.Size = new System.Drawing.Size(260, 32);
-            this.recordingButton.TabIndex = 27;
-            this.recordingButton.Text = " Gravar Aúdio";
-            this.recordingButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.recordingButton.UseVisualStyleBackColor = true;
-            this.recordingButton.CheckedChanged += new System.EventHandler(this.recordingButton_CheckedChanged);
-            // 
             // radioButton2
             // 
             this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton2.FlatAppearance.BorderSize = 0;
             this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Image = global::StroopTest.Properties.Resources.icon_export;
+            this.radioButton2.Image = global::TestPlatform.Properties.Resources.icon_export;
             this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radioButton2.Location = new System.Drawing.Point(0, 328);
+            this.radioButton2.Location = new System.Drawing.Point(0, 283);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(260, 32);
             this.radioButton2.TabIndex = 26;
@@ -574,9 +555,9 @@
             this.radioButton1.FlatAppearance.BorderSize = 0;
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Image = global::StroopTest.Properties.Resources.icon_import;
+            this.radioButton1.Image = global::TestPlatform.Properties.Resources.icon_import;
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radioButton1.Location = new System.Drawing.Point(0, 287);
+            this.radioButton1.Location = new System.Drawing.Point(0, 243);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(260, 32);
             this.radioButton1.TabIndex = 25;
@@ -590,9 +571,9 @@
             this.executeButton.FlatAppearance.BorderSize = 0;
             this.executeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.executeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.executeButton.Image = global::StroopTest.Properties.Resources.icon_execute;
+            this.executeButton.Image = global::TestPlatform.Properties.Resources.icon_execute;
             this.executeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.executeButton.Location = new System.Drawing.Point(0, 205);
+            this.executeButton.Location = new System.Drawing.Point(0, 163);
             this.executeButton.Name = "executeButton";
             this.executeButton.Size = new System.Drawing.Size(260, 32);
             this.executeButton.TabIndex = 24;
@@ -618,7 +599,7 @@
             this.MinimumSize = new System.Drawing.Size(493, 644);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "StroopTest";
+            this.Text = "Test Platform";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
@@ -681,6 +662,5 @@
         private System.Windows.Forms.RadioButton executeButton;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton recordingButton;
     }
 }

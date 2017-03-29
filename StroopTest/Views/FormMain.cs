@@ -440,16 +440,6 @@ namespace StroopTest
             }
         }
 
-        private void recordingButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (recordingButton.Checked)
-            {
-                if (currentPanelContent != null)
-                {
-                    Controls.Remove(currentPanelContent);
-                }
-            }
-        }
 
         private void executeButton_CheckedChanged(object sender, EventArgs e)
         {

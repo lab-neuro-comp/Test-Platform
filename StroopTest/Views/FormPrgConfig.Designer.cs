@@ -143,7 +143,7 @@
             // helpButton
             // 
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.helpButton.BackgroundImage = global::StroopTest.Properties.Resources.helpButton;
+            this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
             this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.helpButton.Location = new System.Drawing.Point(639, 11);
             this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -175,7 +175,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = global::StroopTest.Properties.Resources.cross;
+            this.panel3.BackgroundImage = global::TestPlatform.Properties.Resources.cross;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel3.Location = new System.Drawing.Point(109, 36);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -186,7 +186,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::StroopTest.Properties.Resources.circle;
+            this.panel2.BackgroundImage = global::TestPlatform.Properties.Resources.circle;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Location = new System.Drawing.Point(160, 38);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1037,7 +1037,7 @@
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(608, 742);
+            this.cancelButton.Location = new System.Drawing.Point(9, 742);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 28);
@@ -1050,7 +1050,7 @@
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(15, 742);
+            this.saveButton.Location = new System.Drawing.Point(621, 742);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 28);

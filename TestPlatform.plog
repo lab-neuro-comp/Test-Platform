@@ -1,0 +1,337 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Solution_Path">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="SolutionPath" type="xs:string" minOccurs="0" />
+                <xs:element name="SolutionVersion" type="xs:string" minOccurs="0" />
+                <xs:element name="PlogVersion" type="xs:unsignedInt" minOccurs="0" />
+                <xs:element name="ModificationDate" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="PVS-Studio_Analysis_Log">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="FavIcon" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Level" type="xs:unsignedInt" minOccurs="0" />
+                <xs:element name="DefaultOrder" type="xs:int" minOccurs="0" />
+                <xs:element name="ErrorCode" type="xs:string" minOccurs="0" />
+                <xs:element name="Message" type="xs:string" />
+                <xs:element name="Project" type="xs:string" minOccurs="0" />
+                <xs:element name="ShortFile" type="xs:string" minOccurs="0" />
+                <xs:element name="Line" type="xs:int" />
+                <xs:element name="FalseAlarm" type="xs:boolean" minOccurs="0" />
+                <xs:element name="File" type="xs:string" />
+                <xs:element name="CodePrev" type="xs:unsignedInt" minOccurs="0" />
+                <xs:element name="CodeCurrent" type="xs:unsignedInt" minOccurs="0" />
+                <xs:element name="CodeNext" type="xs:unsignedInt" minOccurs="0" />
+                <xs:element name="TrialMessage" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Analyzer" type="xs:int" minOccurs="0" />
+                <xs:element name="LineExtension" type="xs:string" minOccurs="0" />
+                <xs:element name="Retired" type="xs:boolean" default="false" minOccurs="0" />
+                <xs:element name="AnalyzedSourceFiles" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//PVS-Studio_Analysis_Log" />
+        <xs:field xpath="Line" />
+        <xs:field xpath="Message" />
+        <xs:field xpath="File" />
+      </xs:unique>
+    </xs:element>
+  </xs:schema>
+  <Solution_Path>
+    <SolutionPath>C:\Users\fabio\Desktop\Test-Platform\TestPlatform.sln</SolutionPath>
+    <SolutionVersion>14.0</SolutionVersion>
+    <PlogVersion>4</PlogVersion>
+    <ModificationDate>2017-03-18T02:39:30.2517707Z</ModificationDate>
+  </Solution_Path>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>1</DefaultOrder>
+    <ErrorCode>V3118</ErrorCode>
+    <Message>Seconds component of 'timeSinceStartTime' is used, which does not represent full time interval. Possibly 'TotalSeconds' value was intended instead.</Message>
+    <Project>TestPlatform</Project>
+    <ShortFile>FormNewAudio.cs</ShortFile>
+    <Line>31</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>C:\Users\fabio\Desktop\Test-Platform\StroopTest\Views\FormNewAudio.cs</File>
+    <CodePrev>4246178736</CodePrev>
+    <CodeCurrent>3238800492</CodeCurrent>
+    <CodeNext>152629795</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>2</DefaultOrder>
+    <ErrorCode>V3013</ErrorCode>
+    <Message>It is odd that the body of 'newProgramToolStripMenuItem_Click' function is fully equivalent to the body of 'newProgram' function (94, line 287).</Message>
+    <Project>TestPlatform</Project>
+    <ShortFile>FormMain.cs</ShortFile>
+    <Line>94</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>C:\Users\fabio\Desktop\Test-Platform\StroopTest\Views\FormMain.cs</File>
+    <CodePrev>0</CodePrev>
+    <CodeCurrent>3358087595</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension>94,287</LineExtension>
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>3</DefaultOrder>
+    <ErrorCode>V3008</ErrorCode>
+    <Message>The 'colorPicked' variable is assigned values twice successively. Perhaps this is a mistake. Check lines: 210, 203.</Message>
+    <Project>TestPlatform</Project>
+    <ShortFile>FormListConfig.cs</ShortFile>
+    <Line>210</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>C:\Users\fabio\Desktop\Test-Platform\StroopTest\Views\FormListConfig.cs</File>
+    <CodePrev>193</CodePrev>
+    <CodeCurrent>461501138</CodeCurrent>
+    <CodeNext>48416443</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension>210,203</LineExtension>
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>1</Level>
+    <DefaultOrder>4</DefaultOrder>
+    <ErrorCode>V3001</ErrorCode>
+    <Message>There are identical sub-expressions 'wordsColoredList.Items.Count != hexColorsList.Items.Count' to the left and to the right of the '||' operator.</Message>
+    <Project>TestPlatform</Project>
+    <ShortFile>FormListConfig.cs</ShortFile>
+    <Line>242</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>C:\Users\fabio\Desktop\Test-Platform\StroopTest\Views\FormListConfig.cs</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>3459078689</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>5</DefaultOrder>
+    <ErrorCode>V3095</ErrorCode>
+    <Message>The 'textBox1.Text' object was used before it was verified against null. Check lines: 88, 90.</Message>
+    <Project>TestPlatform</Project>
+    <ShortFile>FormDefine.cs</ShortFile>
+    <Line>88</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>C:\Users\fabio\Desktop\Test-Platform\StroopTest\Views\FormDefine.cs</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>1828354337</CodeCurrent>
+    <CodeNext>1433746861</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension>88,90</LineExtension>
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>6</DefaultOrder>
+    <ErrorCode>V3008</ErrorCode>
+    <Message>The 'colorPicked' variable is assigned values twice successively. Perhaps this is a mistake. Check lines: 37, 30.</Message>
+    <Project>TestPlatform</Project>
+    <ShortFile>FormWordColorDialog.cs</ShortFile>
+    <Line>37</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>C:\Users\fabio\Desktop\Test-Platform\StroopTest\Views\FormWordColorDialog.cs</File>
+    <CodePrev>193</CodePrev>
+    <CodeCurrent>461501138</CodeCurrent>
+    <CodeNext>48416443</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension>37,30</LineExtension>
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>3</Level>
+    <DefaultOrder>7</DefaultOrder>
+    <ErrorCode>V3008</ErrorCode>
+    <Message>The 'colorPicked' variable is assigned values twice successively. Perhaps this is a mistake. Check lines: 404, 396.</Message>
+    <Project>TestPlatform</Project>
+    <ShortFile>FormPrgConfig.cs</ShortFile>
+    <Line>404</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>C:\Users\fabio\Desktop\Test-Platform\StroopTest\Views\FormPrgConfig.cs</File>
+    <CodePrev>193</CodePrev>
+    <CodeCurrent>461501138</CodeCurrent>
+    <CodeNext>0</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension>404,396</LineExtension>
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>1</Level>
+    <DefaultOrder>8</DefaultOrder>
+    <ErrorCode>V3010</ErrorCode>
+    <Message>The return value of function 'isExpoEnabled' is required to be utilized.</Message>
+    <Project>TestPlatform</Project>
+    <ShortFile>FormPrgConfig.cs</ShortFile>
+    <Line>940</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>C:\Users\fabio\Desktop\Test-Platform\StroopTest\Views\FormPrgConfig.cs</File>
+    <CodePrev>125</CodePrev>
+    <CodeCurrent>1667871967</CodeCurrent>
+    <CodeNext>2393967</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>1</Level>
+    <DefaultOrder>9</DefaultOrder>
+    <ErrorCode>V3041</ErrorCode>
+    <Message>The expression was implicitly cast from 'int' type to 'float' type. Consider utilizing an explicit type cast to avoid the loss of a fractional part. An example: double A = (double)(X) / Y;.</Message>
+    <Project>TestPlatform</Project>
+    <ShortFile>FormExposition.cs</ShortFile>
+    <Line>613</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>C:\Users\fabio\Desktop\Test-Platform\StroopTest\Views\FormExposition.cs</File>
+    <CodePrev>3047038761</CodePrev>
+    <CodeCurrent>305032250</CodeCurrent>
+    <CodeNext>841877132</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>1</Level>
+    <DefaultOrder>10</DefaultOrder>
+    <ErrorCode>V3041</ErrorCode>
+    <Message>The expression was implicitly cast from 'int' type to 'float' type. Consider utilizing an explicit type cast to avoid the loss of a fractional part. An example: double A = (double)(X) / Y;.</Message>
+    <Project>TestPlatform</Project>
+    <ShortFile>FormExposition.cs</ShortFile>
+    <Line>614</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>C:\Users\fabio\Desktop\Test-Platform\StroopTest\Views\FormExposition.cs</File>
+    <CodePrev>305032250</CodePrev>
+    <CodeCurrent>841877132</CodeCurrent>
+    <CodeNext>2312582658</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>1</Level>
+    <DefaultOrder>11</DefaultOrder>
+    <ErrorCode>V3041</ErrorCode>
+    <Message>The expression was implicitly cast from 'int' type to 'float' type. Consider utilizing an explicit type cast to avoid the loss of a fractional part. An example: double A = (double)(X) / Y;.</Message>
+    <Project>TestPlatform</Project>
+    <ShortFile>FormExposition.cs</ShortFile>
+    <Line>615</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>C:\Users\fabio\Desktop\Test-Platform\StroopTest\Views\FormExposition.cs</File>
+    <CodePrev>841877132</CodePrev>
+    <CodeCurrent>2312582658</CodeCurrent>
+    <CodeNext>1734085927</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>1</Level>
+    <DefaultOrder>12</DefaultOrder>
+    <ErrorCode>V3041</ErrorCode>
+    <Message>The expression was implicitly cast from 'int' type to 'float' type. Consider utilizing an explicit type cast to avoid the loss of a fractional part. An example: double A = (double)(X) / Y;.</Message>
+    <Project>TestPlatform</Project>
+    <ShortFile>FormExposition.cs</ShortFile>
+    <Line>616</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>C:\Users\fabio\Desktop\Test-Platform\StroopTest\Views\FormExposition.cs</File>
+    <CodePrev>2312582658</CodePrev>
+    <CodeCurrent>1734085927</CodeCurrent>
+    <CodeNext>69396233</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>1</Level>
+    <DefaultOrder>13</DefaultOrder>
+    <ErrorCode>V3041</ErrorCode>
+    <Message>The expression was implicitly cast from 'int' type to 'float' type. Consider utilizing an explicit type cast to avoid the loss of a fractional part. An example: double A = (double)(X) / Y;.</Message>
+    <Project>TestPlatform</Project>
+    <ShortFile>FormExposition.cs</ShortFile>
+    <Line>627</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>C:\Users\fabio\Desktop\Test-Platform\StroopTest\Views\FormExposition.cs</File>
+    <CodePrev>1085010833</CodePrev>
+    <CodeCurrent>103706406</CodeCurrent>
+    <CodeNext>2354842399</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>1</Level>
+    <DefaultOrder>14</DefaultOrder>
+    <ErrorCode>V3041</ErrorCode>
+    <Message>The expression was implicitly cast from 'int' type to 'float' type. Consider utilizing an explicit type cast to avoid the loss of a fractional part. An example: double A = (double)(X) / Y;.</Message>
+    <Project>TestPlatform</Project>
+    <ShortFile>FormExposition.cs</ShortFile>
+    <Line>628</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>C:\Users\fabio\Desktop\Test-Platform\StroopTest\Views\FormExposition.cs</File>
+    <CodePrev>103706406</CodePrev>
+    <CodeCurrent>2354842399</CodeCurrent>
+    <CodeNext>277546889</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+</NewDataSet>

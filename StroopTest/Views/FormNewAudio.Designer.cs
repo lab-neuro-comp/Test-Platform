@@ -78,7 +78,7 @@
             // helpButton
             // 
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.helpButton.BackgroundImage = global::StroopTest.Properties.Resources.helpButton;
+            this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
             this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.helpButton.Location = new System.Drawing.Point(243, 11);
             this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

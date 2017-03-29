@@ -7,8 +7,8 @@
     <ProjectGuid>{1D508C2F-AB5F-4DF9-B0A5-377F0FF31319}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StroopTest</RootNamespace>
-    <AssemblyName>StroopTest</AssemblyName>
+    <RootNamespace>TestPlatform</RootNamespace>
+    <AssemblyName>TestPlatform</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -59,7 +59,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\icon2_StroopTest.ico</ApplicationIcon>
+    <ApplicationIcon>icon3_TestPlatForm.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -162,7 +162,7 @@
       <DependentUpon>FormShowAudio.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormAudioConfig.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\FormAudioConfig.Designer.cs">
       <DependentUpon>FormAudioConfig.cs</DependentUpon>
@@ -222,7 +222,7 @@
       <DependentUpon>FormWordColorDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\HelpData.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="MainClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -343,6 +343,7 @@
     <None Include="bin\Debug\StroopTestFiles\images\img3.png" />
     <None Include="bin\Debug\StroopTestFiles\images\img4.png" />
     <None Include="bin\Debug\StroopTestFiles\images\img5.png" />
+    <Content Include="icon3_TestPlatForm.ico" />
     <Content Include="README.txt" />
     <None Include="Resources\helpButton.png" />
     <None Include="Resources\circle.png" />

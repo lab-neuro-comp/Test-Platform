@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.helpButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.fixPointTypeLabel = new System.Windows.Forms.Label();
             this.fixPointCross = new System.Windows.Forms.CheckBox();
             this.fixPointColorLabel = new System.Windows.Forms.Label();
@@ -63,24 +61,30 @@
             this.openImgListButton = new System.Windows.Forms.Button();
             this.instructionsBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.stimulusDistance = new System.Windows.Forms.NumericUpDown();
             this.expoTypeLabel = new System.Windows.Forms.Label();
             this.chooseExpoType = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.stimulusColor = new System.Windows.Forms.Button();
+            this.beepDuration = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.beepingCheckbox = new System.Windows.Forms.CheckBox();
             this.numExpoLabel = new System.Windows.Forms.Label();
             this.numExpo = new System.Windows.Forms.NumericUpDown();
             this.wordSizeLabel = new System.Windows.Forms.Label();
-            this.wordSizeNumeric = new System.Windows.Forms.NumericUpDown();
+            this.stimuluSize = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
             this.instructionsLabel = new System.Windows.Forms.Label();
             this.prgNameTextBox = new System.Windows.Forms.TextBox();
             this.prgNameLabel = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.helpButton = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -91,10 +95,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.expoTime)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beepDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wordSizeNumeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -114,20 +119,8 @@
             this.panel1.Location = new System.Drawing.Point(16, 33);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(693, 718);
+            this.panel1.Size = new System.Drawing.Size(693, 698);
             this.panel1.TabIndex = 1;
-            // 
-            // helpButton
-            // 
-            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
-            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(639, 11);
-            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(35, 32);
-            this.helpButton.TabIndex = 81;
-            this.helpButton.UseVisualStyleBackColor = false;
             // 
             // groupBox6
             // 
@@ -176,28 +169,6 @@
             this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 173;
             this.label2.Text = "Tamanho:";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = global::TestPlatform.Properties.Resources.cross;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(109, 36);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(17, 16);
-            this.panel3.TabIndex = 155;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::TestPlatform.Properties.Resources.circle;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(160, 38);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(13, 12);
-            this.panel2.TabIndex = 154;
             // 
             // fixPointTypeLabel
             // 
@@ -511,7 +482,7 @@
             // 
             this.instructionsBox.AcceptsReturn = true;
             this.instructionsBox.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.instructionsBox.Location = new System.Drawing.Point(13, 565);
+            this.instructionsBox.Location = new System.Drawing.Point(13, 548);
             this.instructionsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.instructionsBox.Multiline = true;
             this.instructionsBox.Name = "instructionsBox";
@@ -521,20 +492,20 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.numericUpDown3);
+            this.groupBox1.Controls.Add(this.stimulusDistance);
             this.groupBox1.Controls.Add(this.expoTypeLabel);
             this.groupBox1.Controls.Add(this.chooseExpoType);
             this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.numericUpDown2);
+            this.groupBox1.Controls.Add(this.stimulusColor);
+            this.groupBox1.Controls.Add(this.beepDuration);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.beepingCheckbox);
             this.groupBox1.Controls.Add(this.numExpoLabel);
             this.groupBox1.Controls.Add(this.numExpo);
             this.groupBox1.Controls.Add(this.wordSizeLabel);
-            this.groupBox1.Controls.Add(this.wordSizeNumeric);
+            this.groupBox1.Controls.Add(this.stimuluSize);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(13, 42);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -544,6 +515,34 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Exposição";
+            // 
+            // stimulusDistance
+            // 
+            this.stimulusDistance.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.stimulusDistance.Location = new System.Drawing.Point(281, 90);
+            this.stimulusDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.stimulusDistance.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.stimulusDistance.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.stimulusDistance.Name = "stimulusDistance";
+            this.stimulusDistance.Size = new System.Drawing.Size(80, 22);
+            this.stimulusDistance.TabIndex = 169;
+            this.stimulusDistance.Value = new decimal(new int[] {
+            160,
+            0,
+            0,
+            0});
             // 
             // expoTypeLabel
             // 
@@ -590,34 +589,34 @@
             this.label4.TabIndex = 165;
             this.label4.Text = "Cor do Estímulo:";
             // 
-            // button1
+            // stimulusColor
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(152, 224);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 23);
-            this.button1.TabIndex = 164;
-            this.button1.Text = "escolher";
-            this.button1.UseVisualStyleBackColor = true;
+            this.stimulusColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stimulusColor.Location = new System.Drawing.Point(152, 224);
+            this.stimulusColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.stimulusColor.Name = "stimulusColor";
+            this.stimulusColor.Size = new System.Drawing.Size(184, 23);
+            this.stimulusColor.TabIndex = 164;
+            this.stimulusColor.Text = "escolher";
+            this.stimulusColor.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown2
+            // beepDuration
             // 
-            this.numericUpDown2.Increment = new decimal(new int[] {
+            this.beepDuration.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.numericUpDown2.Location = new System.Drawing.Point(171, 191);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.beepDuration.Location = new System.Drawing.Point(171, 191);
+            this.beepDuration.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.beepDuration.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(80, 22);
-            this.numericUpDown2.TabIndex = 162;
+            this.beepDuration.Name = "beepDuration";
+            this.beepDuration.Size = new System.Drawing.Size(80, 22);
+            this.beepDuration.TabIndex = 162;
             // 
             // label3
             // 
@@ -638,18 +637,16 @@
             this.label1.Text = "Utilizar beep:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // checkBox1
+            // beepingCheckbox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(103, 161);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1.TabIndex = 160;
-            this.checkBox1.TabStop = false;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.beepingCheckbox.AutoSize = true;
+            this.beepingCheckbox.Location = new System.Drawing.Point(103, 161);
+            this.beepingCheckbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.beepingCheckbox.Name = "beepingCheckbox";
+            this.beepingCheckbox.Size = new System.Drawing.Size(18, 17);
+            this.beepingCheckbox.TabIndex = 160;
+            this.beepingCheckbox.TabStop = false;
+            this.beepingCheckbox.UseVisualStyleBackColor = true;
             // 
             // numExpoLabel
             // 
@@ -692,39 +689,48 @@
             this.wordSizeLabel.TabIndex = 159;
             this.wordSizeLabel.Text = "Tamanho do Estímulo:";
             // 
-            // wordSizeNumeric
+            // stimuluSize
             // 
-            this.wordSizeNumeric.Increment = new decimal(new int[] {
+            this.stimuluSize.Increment = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.wordSizeNumeric.Location = new System.Drawing.Point(281, 59);
-            this.wordSizeNumeric.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.wordSizeNumeric.Maximum = new decimal(new int[] {
+            this.stimuluSize.Location = new System.Drawing.Point(281, 59);
+            this.stimuluSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.stimuluSize.Maximum = new decimal(new int[] {
             300,
             0,
             0,
             0});
-            this.wordSizeNumeric.Minimum = new decimal(new int[] {
+            this.stimuluSize.Minimum = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            this.wordSizeNumeric.Name = "wordSizeNumeric";
-            this.wordSizeNumeric.Size = new System.Drawing.Size(80, 22);
-            this.wordSizeNumeric.TabIndex = 13;
-            this.wordSizeNumeric.Value = new decimal(new int[] {
+            this.stimuluSize.Name = "stimuluSize";
+            this.stimuluSize.Size = new System.Drawing.Size(80, 22);
+            this.stimuluSize.TabIndex = 13;
+            this.stimuluSize.Value = new decimal(new int[] {
             160,
             0,
             0,
             0});
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(10, 92);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(257, 17);
+            this.label5.TabIndex = 170;
+            this.label5.Text = "Distância do estímulo ao centro da tela:";
+            // 
             // instructionsLabel
             // 
             this.instructionsLabel.AutoSize = true;
             this.instructionsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.instructionsLabel.Location = new System.Drawing.Point(16, 546);
+            this.instructionsLabel.Location = new System.Drawing.Point(16, 529);
             this.instructionsLabel.Name = "instructionsLabel";
             this.instructionsLabel.Size = new System.Drawing.Size(77, 17);
             this.instructionsLabel.TabIndex = 59;
@@ -748,47 +754,79 @@
             this.prgNameLabel.TabIndex = 34;
             this.prgNameLabel.Text = "Nome do Programa:";
             // 
-            // label5
+            // helpButton
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 92);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(257, 17);
-            this.label5.TabIndex = 170;
-            this.label5.Text = "Distância do estímulo ao centro da tela:";
+            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
+            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.helpButton.Location = new System.Drawing.Point(639, 11);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(35, 32);
+            this.helpButton.TabIndex = 81;
+            this.helpButton.UseVisualStyleBackColor = false;
             // 
-            // numericUpDown3
+            // panel3
             // 
-            this.numericUpDown3.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDown3.Location = new System.Drawing.Point(281, 90);
-            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-            this.numericUpDown3.Minimum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(80, 22);
-            this.numericUpDown3.TabIndex = 169;
-            this.numericUpDown3.Value = new decimal(new int[] {
-            160,
-            0,
-            0,
-            0});
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImage = global::TestPlatform.Properties.Resources.cross;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Location = new System.Drawing.Point(109, 36);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(17, 16);
+            this.panel3.TabIndex = 155;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::TestPlatform.Properties.Resources.circle;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(160, 38);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(13, 12);
+            this.panel2.TabIndex = 154;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.CausesValidation = false;
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cancelButton.Location = new System.Drawing.Point(9, 753);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(100, 28);
+            this.cancelButton.TabIndex = 85;
+            this.cancelButton.Text = "cancelar";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.saveButton.Location = new System.Drawing.Point(621, 753);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(100, 28);
+            this.saveButton.TabIndex = 84;
+            this.saveButton.Text = "salvar";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // FormTRConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.panel1);
             this.Name = "FormTRConfig";
             this.Size = new System.Drawing.Size(725, 785);
@@ -808,10 +846,11 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beepDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wordSizeNumeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -854,22 +893,25 @@
         private System.Windows.Forms.Label numExpoLabel;
         private System.Windows.Forms.NumericUpDown numExpo;
         private System.Windows.Forms.Label wordSizeLabel;
-        private System.Windows.Forms.NumericUpDown wordSizeNumeric;
+        private System.Windows.Forms.NumericUpDown stimuluSize;
         private System.Windows.Forms.Label instructionsLabel;
         private System.Windows.Forms.TextBox prgNameTextBox;
         private System.Windows.Forms.Label prgNameLabel;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.CheckBox beepingCheckbox;
+        private System.Windows.Forms.NumericUpDown beepDuration;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button stimulusColor;
         private System.Windows.Forms.Label expoTypeLabel;
         private System.Windows.Forms.ComboBox chooseExpoType;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown stimulusDistance;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button saveButton;
     }
 }

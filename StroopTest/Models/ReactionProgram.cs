@@ -17,6 +17,39 @@ namespace TestPlatform.Models
         private String stimulusColor; // [11]
         private static Int32 ELEMENTS = 18; //quantity of fields used in ReactionProgram 
 
+
+
+        public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
+                                int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor, int delayTime,
+                                string fixPoint, string backgroundColor, string fixPointColor)
+        {
+            // Program properties
+            this.programName = programName;
+            this.expositionTime = expositionTime;
+            this.numExpositions = numExpositions;
+            this.intervalTime = intervalTime;
+            this.delayTime = delayTime;
+            this.fixPoint = fixPoint;
+            this.backgroundColor = backgroundColor;
+            this.fixPointColor = fixPointColor;
+            
+
+            // ReactionProgram properties
+            this.stimuluSize = stimuluSize;
+            this.stimulusDistance = stimulusDistance;
+            this.isBeeping  = isBeeping;
+            this.beepDuration = beepDuration;
+            this.stimulusColor = stimulusColor;
+
+            //default configurations for first version of ReactionProgram
+            this.audioListFile = "false";
+            this.colorsListFile = "false";
+            this.wordsListFile = "false";
+            this.imagesListFile = "false";
+            this.expositionType = "standard";
+
+        }
+
         public int StimuluSize
         {
             get

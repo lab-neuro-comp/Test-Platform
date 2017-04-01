@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using StroopTest.Models;
 using StroopTest.Views;
 using StroopTest.Views.SidebarControls;
+using TestPlatform.Views.SidebarUserControls;
 
 namespace StroopTest
 {
@@ -489,6 +490,20 @@ namespace StroopTest
             }
         }
 
+        private void buttonReaction_Click(object sender, EventArgs e)
+        {
+            if (buttonReaction.Checked)
+            {
+                if (currentPanelContent != null)
+                {
+                    Controls.Remove(currentPanelContent);
+                }
+                ReactionControl reactControl = new ReactionControl();
+                reactControl.TestFilesPath = testFilesPath;
+                this.Controls.Add(reactControl);
+                currentPanelContent = reactControl;
+            }
 
+        }
     }
 }

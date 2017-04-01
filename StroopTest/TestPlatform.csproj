@@ -145,6 +145,12 @@
     <Compile Include="Views\SidebarUserControls\ListUserControl.Designer.cs">
       <DependentUpon>ListUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SidebarUserControls\ReactionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SidebarUserControls\ReactionControl.Designer.cs">
+      <DependentUpon>ReactionControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SidebarUserControls\StroopControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ListUserControl.resx">
       <DependentUpon>ListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\ReactionControl.resx">
+      <DependentUpon>ReactionControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\StroopControl.resx">
       <DependentUpon>StroopControl.cs</DependentUpon>

@@ -512,6 +512,7 @@
             this.buttonReaction.Text = " ReactionTest";
             this.buttonReaction.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonReaction.UseVisualStyleBackColor = true;
+            this.buttonReaction.Click += new System.EventHandler(this.buttonReaction_Click);
             // 
             // buttonStroop
             // 

@@ -2,7 +2,7 @@
  * Copyright (c) 2016 All Rights Reserved
  * Hugo Honda
  */
- 
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -10,6 +10,7 @@ using System.IO;
 using System.Windows.Forms;
 using StroopTest.Models;
 using StroopTest.Views;
+using StroopTest.Controllers;
 
 namespace StroopTest
 {
@@ -227,7 +228,7 @@ namespace StroopTest
 
         private void chooseWordColor_Click(object sender, EventArgs e)
         {
-            string colorCode = pickColor();
+            string colorCode = ListController.pickColor(this);
             wordColorButton.Text = colorCode;
             wordColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
         }
@@ -249,22 +250,22 @@ namespace StroopTest
 
         private void openWordsList_Click(object sender, EventArgs e)
         {
-            openWordListButton.Text = openListFile("_words");
+            openWordListButton.Text = ListController.openListFile("_words", path);
         }
 
         private void openColorsList_Click(object sender, EventArgs e)
         {
-            openColorListButton.Text = openListFile("_color");
+            openColorListButton.Text = ListController.openListFile("_color", path);
         }
 
         private void openImagesList_Click(object sender, EventArgs e)
         {
-            openImgListButton.Text = openListFile("_image");
+            openImgListButton.Text = ListController.openListFile("_image", path);
         }
 
         private void openAudioList_Click(object sender, EventArgs e)
         {
-            openAudioListButton.Text = openListFile("_audio");
+            openAudioListButton.Text = ListController.openListFile("_audio", path);
         }
         
         //BOX4
@@ -297,7 +298,7 @@ namespace StroopTest
 
         private void chooseFixPointColor_Click(object sender, EventArgs e)
         {
-            string colorCode = pickColor();
+            string colorCode = ListController.pickColor(this);
             fixPointColorButton.Text = colorCode;
             fixPointColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
         }
@@ -336,7 +337,7 @@ namespace StroopTest
 
         private void openSubsList_Click(object sender, EventArgs e)
         {
-            openSubsListButton.Text = openListFile("_words");
+            openSubsListButton.Text = ListController.openListFile("_words", path);
         }
 
         private void subLocationDown_Click(object sender, EventArgs e)
@@ -376,7 +377,7 @@ namespace StroopTest
 
         private void chooseSubsColor(object sender, EventArgs e)
         {
-            string colorCode = pickColor();
+            string colorCode = ListController.pickColor(this);
             subColorButton.Text = colorCode;
             subColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
         }
@@ -385,7 +386,7 @@ namespace StroopTest
 
         private void chooseBGColor(object sender, EventArgs e)
         {
-            string colorCode = pickColor();
+            string colorCode = ListController.pickColor(this);
             bgColorButton.Text = colorCode;
             bgColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
         }
@@ -401,47 +402,8 @@ namespace StroopTest
             instructionsBox.ForeColor = Color.Black;
         }
 
-        //AUX FUNCTIONS
+        
 
-
-        private string openListFile(string itemType)
-        {
-            string progName = "abrir";
-
-            FormDefine defineProgram = new FormDefine("Lista: ", path + "/lst/", "lst", itemType, false);
-            var result = defineProgram.ShowDialog();
-
-            if (result == DialogResult.OK)
-            {
-                progName = defineProgram.ReturnValue + itemType +".lst";
-            }
-
-            return progName;
-        }
-
-        private string pickColor()
-        {
-            ColorDialog MyDialog = new ColorDialog();
-            Color colorPicked = new Color();
-
-            MyDialog.CustomColors = new int[] {
-                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#F8E000")),
-                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#007BB7")),
-                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#7EC845")),
-                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#D01C1F"))
-                                      };
-            colorPicked = this.BackColor;
-
-            string hexColor = "#FFFFFF";
-
-            if (MyDialog.ShowDialog() == DialogResult.OK)
-            {
-                colorPicked = MyDialog.Color;
-                hexColor = "#" + colorPicked.R.ToString("X2") + colorPicked.G.ToString("X2") + colorPicked.B.ToString("X2");
-            }
-
-            return hexColor;
-        }
 
         //WINDOW ITENS
 

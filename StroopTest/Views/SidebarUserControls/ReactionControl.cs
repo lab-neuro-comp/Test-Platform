@@ -1,6 +1,8 @@
 ﻿
 using StroopTest;
 using StroopTest.Views;
+using System;
+using System.Windows.Forms;
 
 namespace TestPlatform.Views.SidebarUserControls
 {
@@ -23,12 +25,16 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void newReactButton_Click(object sender, System.EventArgs e)
         {
-            if (newReactButton.Checked)
+            try
             {
-                FormTRConfig configureProgram = new FormTRConfig();
-                configureProgram.Path = testFilesPath;
-                Parent.Controls.Add(configureProgram);
+                if (newReactButton.Checked)
+                {
+                    FormTRConfig configureProgram = new FormTRConfig();
+                    configureProgram.Path = testFilesPath;
+                    Parent.Controls.Add(configureProgram);
+                }
             }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }

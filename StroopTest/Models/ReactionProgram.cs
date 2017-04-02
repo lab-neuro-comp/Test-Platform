@@ -11,7 +11,7 @@ namespace TestPlatform.Models
     {
         private String defaultProgramFileText = "padraoTR 5 500 50 1000 50 false false false false 0 #D01C1F false false o false #D01C1F 160";
         private Int32 stimuluSize; // [3]
-        private Int32 stimulusDistance; // [5]distance from the center of the screen to stimulus
+        private Int32 stimulusDistance; // [5] distance from the center of the screen to stimulus
         private Boolean isBeeping; // [9]
         private Int32 beepDuration; // [10]
         private String stimulusColor; // [11]
@@ -223,9 +223,9 @@ namespace TestPlatform.Models
             return true;
         }
 
-        static public void writeLineOutput(ReactionProgram program, string nameStimulus, string color, int counter,
-                                   List<string> output, float elapsedTime, string expoType, string audioName,
-                                   string hour, string minute, string second)
+        public static void writeLineOutput(ReactionProgram program, string nameStimulus, string color, int counter,
+                                           List<string> output, float elapsedTime, string expoType, string audioName,
+                                           string hour, string minute, string second)
         {
             // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor
            /* var text = program.ProgramName + "\t" +

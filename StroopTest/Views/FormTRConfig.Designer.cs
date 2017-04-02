@@ -30,9 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.helpButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.fixPointTypeLabel = new System.Windows.Forms.Label();
             this.fixPointCross = new System.Windows.Forms.CheckBox();
             this.fixPointColorLabel = new System.Windows.Forms.Label();
@@ -64,7 +67,7 @@
             this.stimulusDistance = new System.Windows.Forms.NumericUpDown();
             this.expoTypeLabel = new System.Windows.Forms.Label();
             this.chooseExpoType = new System.Windows.Forms.ComboBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.stimulusColorPanel = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.stimulusColor = new System.Windows.Forms.Button();
             this.beepDuration = new System.Windows.Forms.NumericUpDown();
@@ -79,9 +82,6 @@
             this.instructionsLabel = new System.Windows.Forms.Label();
             this.prgNameTextBox = new System.Windows.Forms.TextBox();
             this.prgNameLabel = new System.Windows.Forms.Label();
-            this.helpButton = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
@@ -121,6 +121,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(693, 698);
             this.panel1.TabIndex = 1;
+            // 
+            // helpButton
+            // 
+            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
+            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.helpButton.Location = new System.Drawing.Point(639, 11);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(35, 32);
+            this.helpButton.TabIndex = 81;
+            this.helpButton.UseVisualStyleBackColor = false;
             // 
             // groupBox6
             // 
@@ -170,6 +182,28 @@
             this.label2.TabIndex = 173;
             this.label2.Text = "Tamanho:";
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImage = global::TestPlatform.Properties.Resources.cross;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Location = new System.Drawing.Point(109, 36);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(17, 16);
+            this.panel3.TabIndex = 155;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::TestPlatform.Properties.Resources.circle;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(160, 38);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(13, 12);
+            this.panel2.TabIndex = 154;
+            // 
             // fixPointTypeLabel
             // 
             this.fixPointTypeLabel.AutoSize = true;
@@ -189,6 +223,7 @@
             this.fixPointCross.TabIndex = 40;
             this.fixPointCross.TabStop = false;
             this.fixPointCross.UseVisualStyleBackColor = true;
+            this.fixPointCross.CheckedChanged += new System.EventHandler(this.checkFixPointCross_CheckedChanged);
             // 
             // fixPointColorLabel
             // 
@@ -209,6 +244,7 @@
             this.fixPointCircle.TabIndex = 41;
             this.fixPointCircle.TabStop = false;
             this.fixPointCircle.UseVisualStyleBackColor = true;
+            this.fixPointCircle.CheckedChanged += new System.EventHandler(this.checkFixPointCircle_CheckedChanged);
             // 
             // fixPointColorButton
             // 
@@ -220,6 +256,7 @@
             this.fixPointColorButton.TabIndex = 42;
             this.fixPointColorButton.Text = "escolher";
             this.fixPointColorButton.UseVisualStyleBackColor = true;
+            this.fixPointColorButton.Click += new System.EventHandler(this.fixPointColorButton_Click);
             // 
             // fixPointColorPanel
             // 
@@ -273,6 +310,7 @@
             this.bgColorButton.TabIndex = 26;
             this.bgColorButton.Text = "escolher";
             this.bgColorButton.UseVisualStyleBackColor = true;
+            this.bgColorButton.Click += new System.EventHandler(this.chooseBGColor);
             // 
             // groupBox3
             // 
@@ -425,6 +463,7 @@
             this.openAudioListButton.TabIndex = 23;
             this.openAudioListButton.Text = "abrir";
             this.openAudioListButton.UseVisualStyleBackColor = true;
+            this.openAudioListButton.Click += new System.EventHandler(this.openAudioList_Click);
             // 
             // colorListLabel
             // 
@@ -454,6 +493,7 @@
             this.openWordListButton.TabIndex = 20;
             this.openWordListButton.Text = "abrir";
             this.openWordListButton.UseVisualStyleBackColor = true;
+            this.openWordListButton.Click += new System.EventHandler(this.openWordsList_Click);
             // 
             // openColorListButton
             // 
@@ -465,6 +505,7 @@
             this.openColorListButton.TabIndex = 21;
             this.openColorListButton.Text = "abrir";
             this.openColorListButton.UseVisualStyleBackColor = true;
+            this.openColorListButton.Click += new System.EventHandler(this.openColorsList_Click);
             // 
             // openImgListButton
             // 
@@ -477,6 +518,7 @@
             this.openImgListButton.TabIndex = 22;
             this.openImgListButton.Text = "abrir";
             this.openImgListButton.UseVisualStyleBackColor = true;
+            this.openImgListButton.Click += new System.EventHandler(this.openImagesList_Click);
             // 
             // instructionsBox
             // 
@@ -489,13 +531,14 @@
             this.instructionsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.instructionsBox.Size = new System.Drawing.Size(659, 136);
             this.instructionsBox.TabIndex = 70;
+            this.instructionsBox.TextChanged += new System.EventHandler(this.instructionsBox_TextChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.stimulusDistance);
             this.groupBox1.Controls.Add(this.expoTypeLabel);
             this.groupBox1.Controls.Add(this.chooseExpoType);
-            this.groupBox1.Controls.Add(this.panel4);
+            this.groupBox1.Controls.Add(this.stimulusColorPanel);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.stimulusColor);
             this.groupBox1.Controls.Add(this.beepDuration);
@@ -571,14 +614,14 @@
             this.chooseExpoType.TabIndex = 167;
             this.chooseExpoType.Tag = "";
             // 
-            // panel4
+            // stimulusColorPanel
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Location = new System.Drawing.Point(127, 228);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(18, 17);
-            this.panel4.TabIndex = 166;
+            this.stimulusColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.stimulusColorPanel.Location = new System.Drawing.Point(127, 228);
+            this.stimulusColorPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.stimulusColorPanel.Name = "stimulusColorPanel";
+            this.stimulusColorPanel.Size = new System.Drawing.Size(18, 17);
+            this.stimulusColorPanel.TabIndex = 166;
             // 
             // label4
             // 
@@ -599,6 +642,7 @@
             this.stimulusColor.TabIndex = 164;
             this.stimulusColor.Text = "escolher";
             this.stimulusColor.UseVisualStyleBackColor = true;
+            this.stimulusColor.Click += new System.EventHandler(this.stimulusColor_Click);
             // 
             // beepDuration
             // 
@@ -754,40 +798,6 @@
             this.prgNameLabel.TabIndex = 34;
             this.prgNameLabel.Text = "Nome do Programa:";
             // 
-            // helpButton
-            // 
-            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
-            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(639, 11);
-            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(35, 32);
-            this.helpButton.TabIndex = 81;
-            this.helpButton.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = global::TestPlatform.Properties.Resources.cross;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(109, 36);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(17, 16);
-            this.panel3.TabIndex = 155;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::TestPlatform.Properties.Resources.circle;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(160, 38);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(13, 12);
-            this.panel2.TabIndex = 154;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -798,7 +808,7 @@
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(9, 753);
+            this.cancelButton.Location = new System.Drawing.Point(9, 747);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 28);
@@ -811,7 +821,7 @@
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(621, 753);
+            this.saveButton.Location = new System.Drawing.Point(621, 747);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 28);
@@ -903,7 +913,7 @@
         private System.Windows.Forms.CheckBox beepingCheckbox;
         private System.Windows.Forms.NumericUpDown beepDuration;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel stimulusColorPanel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button stimulusColor;
         private System.Windows.Forms.Label expoTypeLabel;

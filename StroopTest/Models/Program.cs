@@ -51,7 +51,7 @@ namespace TestPlatform.Models
             get { return participantName; }
             set
             {
-                if (Validations.isAlphanumeric(value)) participantName = value;
+                if (!Validations.isEmpty(value) && Validations.isAlphanumeric(value)) participantName = value;
                 else throw new ArgumentException("Nome do usuario deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'JoaoSilva'");
             }   // user name has only alphanumeric elements, without spaces
         }

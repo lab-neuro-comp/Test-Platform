@@ -69,8 +69,10 @@ namespace TestPlatform.Views
                                                              Convert.ToInt32(delayTime.Value), fixPointValue(),
                                                              bgColorButton.Text, fixPointColorButton.Text);
 
+
+            // read instructions and pass them to the newProgram created
             string textLines = "";
-            if (instructionsBox.Lines.Length > 0 && instructionsBox.Text != instructionBoxText) // lê instrução se houver
+            if (instructionsBox.Lines.Length > 0 && instructionsBox.Text != instructionBoxText)
             {
                 for (int i = 0; i < instructionsBox.Lines.Length; i++)
                 {
@@ -87,7 +89,12 @@ namespace TestPlatform.Views
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            ReactionProgram newProgram = configureNewProgram();
+            if (!this.ValidateChildren(ValidationConstraints.Enabled))
+                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+            else
+            {
+                ReactionProgram newProgram = configureNewProgram();
+            
             try
             {
                 if (File.Exists(Path + "prg/" + prgNameTextBox.Text + ".tr"))
@@ -102,9 +109,11 @@ namespace TestPlatform.Views
                 {
                     MessageBox.Show("O programa foi salvo com sucesso");
                 }
+                    this.Parent.Controls.Remove(this);
+
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-            this.Parent.Controls.Remove(this);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -193,5 +202,120 @@ namespace TestPlatform.Views
         
         }
 
+
+        private void prgNameTextBox_Validating(object sender,
+                 System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidProgramName(prgNameTextBox.Text, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(prgNameTextBox, errorMsg);
+            }
+        }
+
+        private void prgNameTextBox_Validated(object sender, System.EventArgs e)
+        {
+            errorProvider1.SetError(prgNameTextBox, "");
+        }
+
+        public bool ValidProgramName(string pgrName, out string errorMessage)
+        {
+            if (pgrName.Length == 0)
+            {
+                errorMessage = "O nome do programa deve ser preenchido.";
+                return false;
+            }
+            if (!Validations.isAlphanumeric(pgrName))
+            {
+                errorMessage = "Nome do programa deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'MeuPrograma'";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void expoTimeNumericUpDown_Validating(object sender,
+         System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidExpoTime(Convert.ToInt32(this.expoTime.Value), out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.expoTime, errorMsg);
+            }
+        }
+
+        private void expoTimeNumericUpDown_Validated(object sender, System.EventArgs e)
+        {
+            // If all conditions have been met, clear the ErrorProvider of errors.
+            errorProvider1.SetError(expoTime, "");
+        }
+
+        public bool ValidExpoTime(int expoTime, out string errorMessage)
+        {
+            if (!Validations.isExpositionTimeValid(expoTime))
+            {
+                errorMessage = "O tempo de exposição deve ser maior do que zero.";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+
+        private void intervalTime_Validating(object sender,
+                                                      System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidIntervalTime(Convert.ToInt32(this.intervalTime.Value), out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.intervalTime, errorMsg);
+            }
+        }
+
+        private void intervalTime_Validated(object sender, System.EventArgs e)
+        {
+            // If all conditions have been met, clear the ErrorProvider of errors.
+            errorProvider1.SetError(intervalTime, "");
+        }
+
+        public bool ValidIntervalTime(int intervalTime, out string errorMessage)
+        {
+            if (!Validations.isIntervalTimeValid(intervalTime))
+            {
+                errorMessage = "Tempo de intervalo deve ser maior que zero (em milissegundos)";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void numExpo_Validating(object sender,
+         System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void numExpo_Validated(object sender, System.EventArgs e)
+        {
+            errorProvider1.SetError(numExpo, "");
+        }
+
+        public bool ValidnumExpo(int numExpo, out string errorMessage)
+        {
+            if (!Validations.isExpositionTimeValid(numExpo))
+            {
+                errorMessage = "O número de exposições deve ser maior do que zero.";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
     }
 }

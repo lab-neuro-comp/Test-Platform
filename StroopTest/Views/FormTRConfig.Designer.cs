@@ -385,6 +385,8 @@
             this.intervalTime.Name = "intervalTime";
             this.intervalTime.Size = new System.Drawing.Size(80, 22);
             this.intervalTime.TabIndex = 31;
+            this.intervalTime.Validating += new System.ComponentModel.CancelEventHandler(this.intervalTime_Validating);
+            this.intervalTime.Validated += new System.EventHandler(this.intervalTime_Validated);
             // 
             // expoTime
             // 
@@ -403,6 +405,8 @@
             this.expoTime.Name = "expoTime";
             this.expoTime.Size = new System.Drawing.Size(80, 22);
             this.expoTime.TabIndex = 30;
+            this.expoTime.Validating += new System.ComponentModel.CancelEventHandler(this.expoTimeNumericUpDown_Validating);
+            this.expoTime.Validated += new System.EventHandler(this.expoTimeNumericUpDown_Validated);
             // 
             // expoTimeLabel
             // 
@@ -485,6 +489,7 @@
             // 
             // openWordListButton
             // 
+            this.openWordListButton.Enabled = false;
             this.openWordListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openWordListButton.Location = new System.Drawing.Point(80, 21);
             this.openWordListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -497,6 +502,7 @@
             // 
             // openColorListButton
             // 
+            this.openColorListButton.Enabled = false;
             this.openColorListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openColorListButton.Location = new System.Drawing.Point(78, 54);
             this.openColorListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -723,6 +729,8 @@
             0,
             0,
             0});
+            this.numExpo.Validating += new System.ComponentModel.CancelEventHandler(this.numExpo_Validating);
+            this.numExpo.Validated += new System.EventHandler(this.numExpo_Validated);
             // 
             // wordSizeLabel
             // 
@@ -788,6 +796,8 @@
             this.prgNameTextBox.Name = "prgNameTextBox";
             this.prgNameTextBox.Size = new System.Drawing.Size(225, 22);
             this.prgNameTextBox.TabIndex = 1;
+            this.prgNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.prgNameTextBox_Validating);
+            this.prgNameTextBox.Validated += new System.EventHandler(this.prgNameTextBox_Validated);
             // 
             // prgNameLabel
             // 
@@ -800,6 +810,7 @@
             // 
             // errorProvider1
             // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
             // cancelButton
@@ -834,7 +845,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.panel1);

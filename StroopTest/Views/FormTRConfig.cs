@@ -13,12 +13,34 @@ namespace TestPlatform.Views
     {
         private String path;
         private String instructionBoxText = "Escreva cada uma das intruções em linhas separadas.";
-        private String instructionsText = HelpData.ProgramConfigInstructions;
+        private String editPrgName = "false";
+        private String prgName = "false";
 
         public FormTRConfig()
         {
             Location = new Point(530, 38);
             InitializeComponent();
+            if (editPrgName.Equals("error"))
+            {
+                Parent.Controls.Remove(this);
+            }
+            if (prgName != "false")
+            {
+                editPrgName = prgName;
+                editProgram();
+            }
+        }
+
+        private void editProgram()
+        {
+            ReactionProgram editProgram = new ReactionProgram();
+            editProgram.readProgramFile(path + "/prg/" + editPrgName + ".tr");
+            prgNameTextBox.Text = editProgram.ProgramName;
+            numExpo.Value = editProgram.NumExpositions;
+            expoTime.Value = editProgram.ExpositionTime;
+            intervalTime.Value = editProgram.IntervalTime;
+            beepingCheckbox.Checked = editProgram.IsBeeping;
+            beepDuration.Value = editProgram.BeepDuration; 
         }
 
         protected override void OnLoad(EventArgs e)
@@ -316,6 +338,19 @@ namespace TestPlatform.Views
 
             errorMessage = "";
             return true;
+        }
+
+        private void beepingCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (beepingCheckbox.Checked)
+            {
+                beepDuration.Enabled = true;
+            }
+            else
+            {
+                beepDuration.Value = 0;
+                beepDuration.Enabled = false;
+            }
         }
     }
 }

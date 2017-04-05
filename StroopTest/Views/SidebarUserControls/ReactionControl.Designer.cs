@@ -58,6 +58,7 @@
             this.editReactButton.Text = "Editar Programa";
             this.editReactButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.editReactButton.UseVisualStyleBackColor = true;
+            this.editReactButton.Click += new System.EventHandler(this.editReactButton_Click);
             // 
             // newReactButton
             // 

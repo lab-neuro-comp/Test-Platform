@@ -10,6 +10,7 @@ using StroopTest.Models;
 using StroopTest.Views;
 using StroopTest.Views.SidebarControls;
 using TestPlatform.Views.SidebarUserControls;
+using System.Collections.Generic;
 
 namespace StroopTest
 {
@@ -489,19 +490,23 @@ namespace StroopTest
         protected override void OnControlAdded(ControlEventArgs e)
         {
             base.OnControlAdded(e);
+            List<Control> controls = new List<Control>();
+
             if (e.Control.GetType().BaseType == typeof(UserControl))
             {
                 int count = 0;
                 foreach (Control c in Controls)
                 {
-                    if (c is UserControl)
+                    if (!(c.Equals(currentPanelContent)) && c is UserControl)
                     {
+                        controls.Add(c);
                         count++;
                     }
                 }
-                if (count > 2)
+                if (count > 1)
                 {
-                    Controls.Remove(e.Control);
+                    Controls.Remove(controls[0]);
+
                 }
             }
         }

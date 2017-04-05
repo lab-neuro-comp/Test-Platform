@@ -17,7 +17,10 @@ namespace TestPlatform.Models
         private String stimulusColor; // [11]
         private static Int32 ELEMENTS = 18; //quantity of fields used in ReactionProgram 
 
+        public ReactionProgram()
+        {
 
+        }
 
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
                                 int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor, int delayTime,

@@ -652,6 +652,7 @@
             // 
             // beepDuration
             // 
+            this.beepDuration.Enabled = false;
             this.beepDuration.Increment = new decimal(new int[] {
             100,
             0,
@@ -697,6 +698,7 @@
             this.beepingCheckbox.TabIndex = 160;
             this.beepingCheckbox.TabStop = false;
             this.beepingCheckbox.UseVisualStyleBackColor = true;
+            this.beepingCheckbox.CheckedChanged += new System.EventHandler(this.beepingCheckbox_CheckedChanged);
             // 
             // numExpoLabel
             // 

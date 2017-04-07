@@ -20,7 +20,6 @@ namespace StroopTest.Models
                                                     "A tarefa vai começar agora"};
         public static Int32 instructionAwaitTime = 4000; // default await time for each frame of instruction shown before the test
         private Boolean expositionRandom;          // [3]*  is exposition random
-        private Boolean intervalTimeRandom;        // [5]*  is interval time random - rnd num between defined intervalTime and minRandomTime (bool)
         private Boolean audioCapture;              // [9]*  is audio capture activated
         private Boolean subtitleShow;              // [10]* subtitles activated
         private Int32 subtitlePlace;              // [11]* subtitles place in screen (left, right, up and down the exposition stimulus)
@@ -32,6 +31,7 @@ namespace StroopTest.Models
         private Int32 rotateImage;                // [22]  rotacionar imagem (90, 180, 270, 360)
         private Boolean rndSubtitlePlace;          // [23]  localizacão da legenda aleatória
         private String wordColor;               // [24]  cor da palavra apresentada em palavraimg
+        private Int32 delayTime;
 
         public StroopProgram()
         {
@@ -174,22 +174,6 @@ namespace StroopTest.Models
             }
         }
 
-        public bool IntervalTimeRandom
-        {
-            get { return intervalTimeRandom; }
-            set
-            {
-                if (Validations.isBoolean(value))
-                {
-                    intervalTimeRandom = value;
-                }
-                else
-                {
-                    throw new ArgumentException(errorExMsg + "\nTempo de intervalo randômico deve ser boleana (true or false)");
-                }
-            }
-        }
-
 
         public bool AudioCapture
         {
@@ -284,7 +268,14 @@ namespace StroopTest.Models
             return data;
         }
 
-
+        public int DelayTime
+        {
+            get { return delayTime; }
+            set
+            {
+                delayTime = value;
+            }
+        }
 
         public string FontWordLabel
         {

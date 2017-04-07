@@ -81,15 +81,30 @@ namespace TestPlatform.Views
             return fixPoint;
         }
 
+
+        private string shapeValue()
+        {
+            string shape = "square";
+            if (circleRadioButton.Checked)
+            {
+                shape = "circle";
+            }
+            else if (triangleRadioButton.Checked)
+            {
+                shape = "triangle";
+            }
+            return shape;
+        }
+
         private ReactionProgram configureNewProgram()
         {
             ReactionProgram newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
                                                              Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
                                                              Convert.ToInt32(intervalTime.Value),
                                                              Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked,
-                                                             Convert.ToInt32(beepDuration.Value), stimulusColor.Text,
-                                                             Convert.ToInt32(delayTime.Value), fixPointValue(),
-                                                             bgColorButton.Text, fixPointColorButton.Text);
+                                                             Convert.ToInt32(beepDuration.Value), stimulusColor.Text, fixPointValue(),
+                                                             bgColorButton.Text, fixPointColorButton.Text, 
+                                                             rndIntervalCheck.Checked, shapeValue());
 
 
             // read instructions and pass them to the newProgram created

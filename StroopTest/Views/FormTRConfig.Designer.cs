@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.shapesGroupBox = new System.Windows.Forms.GroupBox();
+            this.squareRadioButton = new System.Windows.Forms.RadioButton();
+            this.circleRadioButton = new System.Windows.Forms.RadioButton();
+            this.triangleRadioButton = new System.Windows.Forms.RadioButton();
             this.helpButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -47,8 +51,8 @@
             this.bgColorLabel = new System.Windows.Forms.Label();
             this.bgColorButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.delayTimeLabel = new System.Windows.Forms.Label();
-            this.delayTime = new System.Windows.Forms.NumericUpDown();
+            this.rndIntervalCheck = new System.Windows.Forms.CheckBox();
+            this.rndIntervalLabel = new System.Windows.Forms.Label();
             this.intervalTimeLabel = new System.Windows.Forms.Label();
             this.intervalTime = new System.Windows.Forms.NumericUpDown();
             this.expoTime = new System.Windows.Forms.NumericUpDown();
@@ -82,15 +86,16 @@
             this.instructionsLabel = new System.Windows.Forms.Label();
             this.prgNameTextBox = new System.Windows.Forms.TextBox();
             this.prgNameLabel = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.shapeRadioPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
+            this.shapesGroupBox.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.delayTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expoTime)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -100,12 +105,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.shapeRadioPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.shapesGroupBox);
             this.panel1.Controls.Add(this.helpButton);
             this.panel1.Controls.Add(this.groupBox6);
             this.panel1.Controls.Add(this.groupBox5);
@@ -121,6 +128,54 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(693, 698);
             this.panel1.TabIndex = 1;
+            // 
+            // shapesGroupBox
+            // 
+            this.shapesGroupBox.Controls.Add(this.shapeRadioPanel);
+            this.shapesGroupBox.Location = new System.Drawing.Point(404, 172);
+            this.shapesGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.shapesGroupBox.Name = "shapesGroupBox";
+            this.shapesGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.shapesGroupBox.Size = new System.Drawing.Size(270, 127);
+            this.shapesGroupBox.TabIndex = 82;
+            this.shapesGroupBox.TabStop = false;
+            this.shapesGroupBox.Text = "Formas";
+            // 
+            // squareRadioButton
+            // 
+            this.squareRadioButton.AutoSize = true;
+            this.squareRadioButton.Checked = true;
+            this.squareRadioButton.Image = global::TestPlatform.Properties.Resources.square;
+            this.squareRadioButton.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.squareRadioButton.Location = new System.Drawing.Point(3, 3);
+            this.squareRadioButton.Name = "squareRadioButton";
+            this.squareRadioButton.Size = new System.Drawing.Size(72, 24);
+            this.squareRadioButton.TabIndex = 0;
+            this.squareRadioButton.TabStop = true;
+            this.squareRadioButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.squareRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // circleRadioButton
+            // 
+            this.circleRadioButton.AutoSize = true;
+            this.circleRadioButton.Enabled = false;
+            this.circleRadioButton.Image = global::TestPlatform.Properties.Resources.circle1;
+            this.circleRadioButton.Location = new System.Drawing.Point(3, 63);
+            this.circleRadioButton.Name = "circleRadioButton";
+            this.circleRadioButton.Size = new System.Drawing.Size(72, 24);
+            this.circleRadioButton.TabIndex = 2;
+            this.circleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // triangleRadioButton
+            // 
+            this.triangleRadioButton.AutoSize = true;
+            this.triangleRadioButton.Enabled = false;
+            this.triangleRadioButton.Image = global::TestPlatform.Properties.Resources.triangle1;
+            this.triangleRadioButton.Location = new System.Drawing.Point(3, 33);
+            this.triangleRadioButton.Name = "triangleRadioButton";
+            this.triangleRadioButton.Size = new System.Drawing.Size(72, 24);
+            this.triangleRadioButton.TabIndex = 1;
+            this.triangleRadioButton.UseVisualStyleBackColor = true;
             // 
             // helpButton
             // 
@@ -314,8 +369,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.delayTimeLabel);
-            this.groupBox3.Controls.Add(this.delayTime);
+            this.groupBox3.Controls.Add(this.rndIntervalCheck);
+            this.groupBox3.Controls.Add(this.rndIntervalLabel);
             this.groupBox3.Controls.Add(this.intervalTimeLabel);
             this.groupBox3.Controls.Add(this.intervalTime);
             this.groupBox3.Controls.Add(this.expoTime);
@@ -329,34 +384,27 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tempo";
             // 
-            // delayTimeLabel
+            // rndIntervalCheck
             // 
-            this.delayTimeLabel.AutoSize = true;
-            this.delayTimeLabel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.delayTimeLabel.Location = new System.Drawing.Point(68, 90);
-            this.delayTimeLabel.Name = "delayTimeLabel";
-            this.delayTimeLabel.Size = new System.Drawing.Size(85, 17);
-            this.delayTimeLabel.TabIndex = 63;
-            this.delayTimeLabel.Text = "Atraso (ms):";
+            this.rndIntervalCheck.AutoSize = true;
+            this.rndIntervalCheck.Checked = true;
+            this.rndIntervalCheck.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.rndIntervalCheck.Location = new System.Drawing.Point(224, 90);
+            this.rndIntervalCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rndIntervalCheck.Name = "rndIntervalCheck";
+            this.rndIntervalCheck.Size = new System.Drawing.Size(18, 17);
+            this.rndIntervalCheck.TabIndex = 62;
+            this.rndIntervalCheck.UseVisualStyleBackColor = true;
             // 
-            // delayTime
+            // rndIntervalLabel
             // 
-            this.delayTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.delayTime.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.delayTime.Location = new System.Drawing.Point(156, 87);
-            this.delayTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.delayTime.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.delayTime.Name = "delayTime";
-            this.delayTime.Size = new System.Drawing.Size(80, 22);
-            this.delayTime.TabIndex = 62;
+            this.rndIntervalLabel.AutoSize = true;
+            this.rndIntervalLabel.Location = new System.Drawing.Point(24, 90);
+            this.rndIntervalLabel.Name = "rndIntervalLabel";
+            this.rndIntervalLabel.Size = new System.Drawing.Size(189, 17);
+            this.rndIntervalLabel.TabIndex = 63;
+            this.rndIntervalLabel.Text = "Tempo de Intervalo Variável:";
+            this.rndIntervalLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // intervalTimeLabel
             // 
@@ -428,7 +476,7 @@
             this.groupBox2.Controls.Add(this.openColorListButton);
             this.groupBox2.Controls.Add(this.openImgListButton);
             this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(404, 187);
+            this.groupBox2.Location = new System.Drawing.Point(404, 303);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -608,6 +656,7 @@
             this.chooseExpoType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.chooseExpoType.FormattingEnabled = true;
             this.chooseExpoType.Items.AddRange(new object[] {
+            "Formas",
             "Palavra",
             "Imagem",
             "Imagem e Palavra",
@@ -810,11 +859,6 @@
             this.prgNameLabel.TabIndex = 34;
             this.prgNameLabel.Text = "Nome do Programa:";
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider1.ContainerControl = this;
-            // 
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -843,6 +887,21 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // shapeRadioPanel
+            // 
+            this.shapeRadioPanel.Controls.Add(this.squareRadioButton);
+            this.shapeRadioPanel.Controls.Add(this.triangleRadioButton);
+            this.shapeRadioPanel.Controls.Add(this.circleRadioButton);
+            this.shapeRadioPanel.Location = new System.Drawing.Point(20, 20);
+            this.shapeRadioPanel.Name = "shapeRadioPanel";
+            this.shapeRadioPanel.Size = new System.Drawing.Size(115, 100);
+            this.shapeRadioPanel.TabIndex = 3;
+            // 
             // FormTRConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -855,6 +914,7 @@
             this.Size = new System.Drawing.Size(725, 785);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.shapesGroupBox.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -862,7 +922,6 @@
             this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.delayTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.expoTime)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -874,6 +933,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.shapeRadioPanel.ResumeLayout(false);
+            this.shapeRadioPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -896,8 +957,6 @@
         private System.Windows.Forms.Label bgColorLabel;
         private System.Windows.Forms.Button bgColorButton;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label delayTimeLabel;
-        private System.Windows.Forms.NumericUpDown delayTime;
         private System.Windows.Forms.Label intervalTimeLabel;
         private System.Windows.Forms.NumericUpDown intervalTime;
         private System.Windows.Forms.NumericUpDown expoTime;
@@ -936,5 +995,12 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.GroupBox shapesGroupBox;
+        private System.Windows.Forms.RadioButton circleRadioButton;
+        private System.Windows.Forms.RadioButton triangleRadioButton;
+        private System.Windows.Forms.RadioButton squareRadioButton;
+        private System.Windows.Forms.CheckBox rndIntervalCheck;
+        private System.Windows.Forms.Label rndIntervalLabel;
+        private System.Windows.Forms.FlowLayoutPanel shapeRadioPanel;
     }
 }

@@ -15,7 +15,10 @@ namespace TestPlatform.Models
         private Boolean isBeeping; // [9]
         private Int32 beepDuration; // [10]
         private String stimulusColor; // [11]
-        private static Int32 ELEMENTS = 18; //quantity of fields used in ReactionProgram 
+        private String stimuluShape;
+        private String stimulusType;
+
+        private static Int32 ELEMENTS = 20; //quantity of fields used in ReactionProgram 
 
         public ReactionProgram()
         {
@@ -23,19 +26,19 @@ namespace TestPlatform.Models
         }
 
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
-                                int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor, int delayTime,
-                                string fixPoint, string backgroundColor, string fixPointColor)
+                                int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
+                                string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
+                                string stimuluShape, string stimulusType)
         {
             // Program properties
             this.programName = programName;
             this.expositionTime = expositionTime;
             this.numExpositions = numExpositions;
             this.intervalTime = intervalTime;
-            this.delayTime = delayTime;
             this.fixPoint = fixPoint;
             this.backgroundColor = backgroundColor;
             this.fixPointColor = fixPointColor;
-            
+            this.intervalTimeRandom = intervalTimeRandom;
 
             // ReactionProgram properties
             this.stimuluSize = stimuluSize;
@@ -43,6 +46,8 @@ namespace TestPlatform.Models
             this.isBeeping  = isBeeping;
             this.beepDuration = beepDuration;
             this.stimulusColor = stimulusColor;
+            this.stimuluShape = stimuluShape;
+            this.stimulusType = stimulusType;
 
             //default configurations for first version of ReactionProgram
             this.audioListFile = "false";
@@ -118,6 +123,32 @@ namespace TestPlatform.Models
             }
         }
 
+        public string StimuluShape
+        {
+            get
+            {
+                return stimuluShape;
+            }
+
+            set
+            {
+                stimuluShape = value;
+            }
+        }
+
+        public string StimulusType
+        {
+            get
+            {
+                return stimulusType;
+            }
+
+            set
+            {
+                stimulusType = value;
+            }
+        }
+
         public string data()
         {
             string data = this.ProgramName + " " +
@@ -136,7 +167,9 @@ namespace TestPlatform.Models
                  this.FixPoint + " " +
                  this.AudioListFile + " " +
                  this.FixPointColor + " " +
-                 this.DelayTime;
+                 this.IntervalTimeRandom +
+                 this.stimuluShape +
+                 this.stimulusType;
             return data;
         }
 
@@ -181,7 +214,7 @@ namespace TestPlatform.Models
                 WordsListFile = config[6];
                 ColorsListFile = config[7];
                 BackgroundColor = config[8];
-                IsBeeping = Boolean.Parse(config[9]);
+                IsBeeping = bool.Parse(config[9]);
                 BeepDuration = int.Parse(config[10]);
                 StimulusColor = config[11];
                 ExpositionType = config[12]; 
@@ -189,7 +222,9 @@ namespace TestPlatform.Models
                 FixPoint = config[14];
                 AudioListFile = config[15];
                 FixPointColor = config[16];
-                DelayTime = Int32.Parse(config[17]);
+                IntervalTimeRandom = bool.Parse(config[17]);
+                StimuluShape = config[18];
+                StimulusType = config[19];
                 linesInstruction = File.ReadAllLines(filepath);
                 if (linesInstruction.Length > 1) // lê instrução se houver
                 {

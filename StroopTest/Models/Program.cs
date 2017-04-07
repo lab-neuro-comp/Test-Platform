@@ -29,7 +29,8 @@ namespace TestPlatform.Models
         protected String fixPoint;                // [15]  fixation point shown during interval time - cross / circle - false = deactivated
         protected String audioListFile;           // [18]  audio list file name (.lst) - if it is and audio exposition type [13]
         protected String fixPointColor;           // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
-        protected Int32 delayTime;                  // [21]  tempo de atraso = intervalo se não for definido
+        protected Boolean intervalTimeRandom;        // [5]*  is interval time random - rnd num between defined intervalTime and minRandomTime (bool)
+
 
 
         public Program()
@@ -239,12 +240,19 @@ namespace TestPlatform.Models
             }
         }
 
-        public int DelayTime
+        public bool IntervalTimeRandom
         {
-            get { return delayTime; }
+            get { return intervalTimeRandom; }
             set
             {
-                delayTime = value;
+                if (Validations.isBoolean(value))
+                {
+                    intervalTimeRandom = value;
+                }
+                else
+                {
+                    throw new ArgumentException(errorExMsg + "\nTempo de intervalo randômico deve ser boleana (true or false)");
+                }
             }
         }
         public bool NeedsEdition

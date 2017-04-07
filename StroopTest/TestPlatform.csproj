@@ -333,6 +333,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\triangle.png" />
+    <None Include="Resources\square.png" />
     <None Include="Resources\stopButton.png" />
     <None Include="Resources\icon_audio.png" />
     <None Include="Resources\icon_import.png" />
@@ -371,6 +373,7 @@
     <None Include="Resources\cross.png" />
     <None Include="Resources\%24this.Icon.ico" />
     <None Include="Resources\icon2_ReactionTest.png" />
+    <None Include="Resources\circle1.png" />
     <Content Include="Resources\icon2_StroopTest.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -104,10 +104,10 @@ namespace TestPlatform.Views
                                                              Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked,
                                                              Convert.ToInt32(beepDuration.Value), stimulusColor.Text, fixPointValue(),
                                                              bgColorButton.Text, fixPointColorButton.Text, 
-                                                             rndIntervalCheck.Checked, shapeValue());
+                                                             rndIntervalCheck.Checked, shapeValue(), chooseExpoType.Text);
 
 
-            // read instructions and pass them to the newProgram created
+            // read instructions and pass them to the new program created
             string textLines = "";
             if (instructionsBox.Lines.Length > 0 && instructionsBox.Text != instructionBoxText)
             {

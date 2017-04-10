@@ -11,6 +11,7 @@ using StroopTest.Views;
 using StroopTest.Views.SidebarControls;
 using TestPlatform.Views.SidebarUserControls;
 using System.Collections.Generic;
+using TestPlatform.Views;
 
 namespace StroopTest
 {
@@ -92,13 +93,6 @@ namespace StroopTest
             beginTest(prgNameSL.Text);
         }
         
-        private void newProgramToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormPrgConfig configureProgram = new FormPrgConfig();
-            configureProgram.Path = testFilesPath;
-            this.Controls.Add(configureProgram);
-        }
-        
         private void newTextColorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/lst/", false);
@@ -175,26 +169,9 @@ namespace StroopTest
 
         private void editProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormDefine defineProgram;
-            DialogResult result;
-            string editProgramName = "error";
 
-            try
-            {
-                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "/prg/", "prg","program", false);
-                result = defineProgram.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    editProgramName = defineProgram.ReturnValue;
-                    FormPrgConfig configureProgram = new FormPrgConfig();
-                    configureProgram.Path = testFilesPath;
-                    configureProgram.PrgName = editProgramName;
-                    this.Controls.Add(configureProgram);
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-        
+
         private void editTextColorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/lst/", true);
@@ -511,5 +488,45 @@ namespace StroopTest
             }
         }
 
+        private void stroopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPrgConfig configureProgram = new FormPrgConfig();
+            configureProgram.Path = testFilesPath;
+            this.Controls.Add(configureProgram);
+        }
+
+        private void reactionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTRConfig configureProgram = new FormTRConfig();
+            configureProgram.Path = testFilesPath;
+            this.Controls.Add(configureProgram);
+        }
+
+        private void stroopToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormDefine defineProgram;
+            DialogResult result;
+            string editProgramName = "error";
+
+            try
+            {
+                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "/prg/", "prg", "program", false);
+                result = defineProgram.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    editProgramName = defineProgram.ReturnValue;
+                    FormPrgConfig configureProgram = new FormPrgConfig();
+                    configureProgram.Path = testFilesPath;
+                    configureProgram.PrgName = editProgramName;
+                    this.Controls.Add(configureProgram);
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void reactionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

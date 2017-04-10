@@ -79,6 +79,10 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.executeButton = new System.Windows.Forms.RadioButton();
+            this.stroopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stroopToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reactionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.testToolStrip.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -160,10 +164,12 @@
             // 
             // newProgramToolStripMenuItem
             // 
+            this.newProgramToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stroopToolStripMenuItem,
+            this.reactionToolStripMenuItem});
             this.newProgramToolStripMenuItem.Name = "newProgramToolStripMenuItem";
             this.newProgramToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.newProgramToolStripMenuItem.Text = "Programa    Ctrl+N";
-            this.newProgramToolStripMenuItem.Click += new System.EventHandler(this.newProgramToolStripMenuItem_Click);
             // 
             // newAudioToolStripMenu
             // 
@@ -246,10 +252,12 @@
             // 
             // editProgramToolStripMenuItem
             // 
+            this.editProgramToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stroopToolStripMenuItem1,
+            this.reactionToolStripMenuItem1});
             this.editProgramToolStripMenuItem.Name = "editProgramToolStripMenuItem";
             this.editProgramToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.editProgramToolStripMenuItem.Text = "Programa";
-            this.editProgramToolStripMenuItem.Click += new System.EventHandler(this.editProgramToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
@@ -294,14 +302,14 @@
             // displayDataToolStripMenuItem
             // 
             this.displayDataToolStripMenuItem.Name = "displayDataToolStripMenuItem";
-            this.displayDataToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
+            this.displayDataToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.displayDataToolStripMenuItem.Text = "Dados";
             this.displayDataToolStripMenuItem.Click += new System.EventHandler(this.dataToolStripMenuItem_Click);
             // 
             // displayAudiosToolStripMenuItem
             // 
             this.displayAudiosToolStripMenuItem.Name = "displayAudiosToolStripMenuItem";
-            this.displayAudiosToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
+            this.displayAudiosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.displayAudiosToolStripMenuItem.Text = "Áudios";
             this.displayAudiosToolStripMenuItem.Click += new System.EventHandler(this.displayAudiosToolStripMenuItem_Click);
             // 
@@ -346,6 +354,7 @@
             // 
             // testToolStrip
             // 
+            this.testToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.testToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.testToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.testToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -357,10 +366,10 @@
             this.usrNameSL,
             this.directoryToolStripLabel,
             this.dirPathSL});
-            this.testToolStrip.Location = new System.Drawing.Point(0, 28);
+            this.testToolStrip.Location = new System.Drawing.Point(0, 43);
             this.testToolStrip.Name = "testToolStrip";
             this.testToolStrip.Padding = new System.Windows.Forms.Padding(0);
-            this.testToolStrip.Size = new System.Drawing.Size(1269, 27);
+            this.testToolStrip.Size = new System.Drawing.Size(419, 27);
             this.testToolStrip.TabIndex = 1;
             this.testToolStrip.Text = "toolStrip1";
             this.testToolStrip.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
@@ -454,7 +463,7 @@
             this.experimentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.experimentButton.Image = global::TestPlatform.Properties.Resources.icon_experiment;
             this.experimentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.experimentButton.Location = new System.Drawing.Point(0, 123);
+            this.experimentButton.Location = new System.Drawing.Point(0, 137);
             this.experimentButton.Name = "experimentButton";
             this.experimentButton.Size = new System.Drawing.Size(260, 32);
             this.experimentButton.TabIndex = 23;
@@ -471,7 +480,7 @@
             this.resultButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultButton.Image = global::TestPlatform.Properties.Resources.icon_results;
             this.resultButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.resultButton.Location = new System.Drawing.Point(0, 203);
+            this.resultButton.Location = new System.Drawing.Point(0, 217);
             this.resultButton.Name = "resultButton";
             this.resultButton.Size = new System.Drawing.Size(260, 32);
             this.resultButton.TabIndex = 22;
@@ -488,7 +497,7 @@
             this.buttonList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonList.Image = global::TestPlatform.Properties.Resources.icon_list;
             this.buttonList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonList.Location = new System.Drawing.Point(0, 3);
+            this.buttonList.Location = new System.Drawing.Point(0, 17);
             this.buttonList.Name = "buttonList";
             this.buttonList.Size = new System.Drawing.Size(260, 32);
             this.buttonList.TabIndex = 21;
@@ -505,7 +514,7 @@
             this.buttonReaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReaction.Image = global::TestPlatform.Properties.Resources.icon2_ReactionTest;
             this.buttonReaction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonReaction.Location = new System.Drawing.Point(0, 83);
+            this.buttonReaction.Location = new System.Drawing.Point(0, 97);
             this.buttonReaction.Name = "buttonReaction";
             this.buttonReaction.Size = new System.Drawing.Size(260, 32);
             this.buttonReaction.TabIndex = 20;
@@ -522,7 +531,7 @@
             this.buttonStroop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStroop.Image = global::TestPlatform.Properties.Resources.icon_StroopTest;
             this.buttonStroop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonStroop.Location = new System.Drawing.Point(0, 43);
+            this.buttonStroop.Location = new System.Drawing.Point(0, 57);
             this.buttonStroop.Name = "buttonStroop";
             this.buttonStroop.Size = new System.Drawing.Size(260, 32);
             this.buttonStroop.TabIndex = 19;
@@ -541,9 +550,9 @@
             this.panel1.Controls.Add(this.buttonList);
             this.panel1.Controls.Add(this.buttonReaction);
             this.panel1.Controls.Add(this.buttonStroop);
-            this.panel1.Location = new System.Drawing.Point(0, 58);
+            this.panel1.Location = new System.Drawing.Point(0, 156);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 470);
+            this.panel1.Size = new System.Drawing.Size(260, 386);
             this.panel1.TabIndex = 25;
             // 
             // radioButton2
@@ -554,7 +563,7 @@
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.Image = global::TestPlatform.Properties.Resources.icon_export;
             this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radioButton2.Location = new System.Drawing.Point(0, 283);
+            this.radioButton2.Location = new System.Drawing.Point(0, 297);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(260, 32);
             this.radioButton2.TabIndex = 26;
@@ -570,7 +579,7 @@
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.Image = global::TestPlatform.Properties.Resources.icon_import;
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radioButton1.Location = new System.Drawing.Point(0, 243);
+            this.radioButton1.Location = new System.Drawing.Point(0, 257);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(260, 32);
             this.radioButton1.TabIndex = 25;
@@ -586,7 +595,7 @@
             this.executeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.executeButton.Image = global::TestPlatform.Properties.Resources.icon_execute;
             this.executeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.executeButton.Location = new System.Drawing.Point(0, 163);
+            this.executeButton.Location = new System.Drawing.Point(0, 177);
             this.executeButton.Name = "executeButton";
             this.executeButton.Size = new System.Drawing.Size(260, 32);
             this.executeButton.TabIndex = 24;
@@ -594,6 +603,34 @@
             this.executeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.executeButton.UseVisualStyleBackColor = true;
             this.executeButton.Click += new System.EventHandler(this.executeButton_CheckedChanged);
+            // 
+            // stroopToolStripMenuItem
+            // 
+            this.stroopToolStripMenuItem.Name = "stroopToolStripMenuItem";
+            this.stroopToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.stroopToolStripMenuItem.Text = "Stroop";
+            this.stroopToolStripMenuItem.Click += new System.EventHandler(this.stroopToolStripMenuItem_Click);
+            // 
+            // reactionToolStripMenuItem
+            // 
+            this.reactionToolStripMenuItem.Name = "reactionToolStripMenuItem";
+            this.reactionToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.reactionToolStripMenuItem.Text = "Reaction";
+            this.reactionToolStripMenuItem.Click += new System.EventHandler(this.reactionToolStripMenuItem_Click);
+            // 
+            // stroopToolStripMenuItem1
+            // 
+            this.stroopToolStripMenuItem1.Name = "stroopToolStripMenuItem1";
+            this.stroopToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.stroopToolStripMenuItem1.Text = "Stroop";
+            this.stroopToolStripMenuItem1.Click += new System.EventHandler(this.stroopToolStripMenuItem1_Click);
+            // 
+            // reactionToolStripMenuItem1
+            // 
+            this.reactionToolStripMenuItem1.Name = "reactionToolStripMenuItem1";
+            this.reactionToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.reactionToolStripMenuItem1.Text = "Reaction";
+            this.reactionToolStripMenuItem1.Click += new System.EventHandler(this.reactionToolStripMenuItem1_Click);
             // 
             // FormMain
             // 
@@ -676,5 +713,9 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.ToolStripButton typeStripButton;
+        private System.Windows.Forms.ToolStripMenuItem stroopToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reactionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stroopToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem reactionToolStripMenuItem1;
     }
 }

@@ -46,17 +46,75 @@ namespace StroopTest
          * */
         public FormMain()
         {
-            InitializeComponent();
-            testFilesPath = defaultPath + "/StroopTestFiles/";
+            testFilesPath = defaultPath + "/TestFiles/";
+            string stroopTestFilesPath = testFilesPath + "/StroopTestFiles/";
+            string reactionTestFilesPath = testFilesPath + "/ReactionTestFiles/";
+            string listsPath = testFilesPath + "/Lst/";
+            string stroopData = stroopTestFilesPath + "/data/";
+            string reactionData = reactionTestFilesPath + "/data/";
 
-            if(!Directory.Exists(testFilesPath)) Directory.CreateDirectory(testFilesPath); 
-            if (!Directory.Exists(testFilesPath + PGRFOLDERNAME)) Directory.CreateDirectory(testFilesPath + PGRFOLDERNAME); 
-            if (!Directory.Exists(testFilesPath + LSTFOLDERNAME)) Directory.CreateDirectory(testFilesPath + LSTFOLDERNAME); 
-            if (!Directory.Exists(defaultPath + RESULTSFOLDERNAME)) Directory.CreateDirectory(defaultPath + RESULTSFOLDERNAME); 
-            if (!Directory.Exists(defaultPath + BACKUPFOLDERNAME)) Directory.CreateDirectory(defaultPath + BACKUPFOLDERNAME); 
-            if (!File.Exists(testFilesPath + INSTRUCTIONSFILENAME)) { File.Create(testFilesPath + "editableInstructions.txt").Dispose(); }
-            if (!File.Exists(testFilesPath + PGRCONFIGHELPFILENAME)) { File.Create(testFilesPath + PGRCONFIGHELPFILENAME).Dispose(); }
+            if (!Directory.Exists(testFilesPath))
+                Directory.CreateDirectory(testFilesPath);
+
+            // atualizando local de diretório da nova versão da plataforma e exclui a versão antiga do programa
+            if (File.Exists(defaultPath + "/StroopTest.exe")) 
+            {
+
+                DirectoryInfo directoryOldLst = new DirectoryInfo(defaultPath + "/StroopTestFiles/lst");
+                directoryOldLst.MoveTo(listsPath);
+
+                DirectoryInfo directoryOldStroop = new DirectoryInfo(defaultPath + "/StroopTestFiles/");
+                directoryOldStroop.MoveTo(stroopTestFilesPath);                
+
+                DirectoryInfo directoryOldData = new DirectoryInfo(defaultPath + "/data");
+                directoryOldData.MoveTo(stroopTestFilesPath + RESULTSFOLDERNAME);
+
+                try
+                {
+                    File.Delete(defaultPath + "/StroopTest.exe");
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine(e.Message);
+                    return;
+                }
+
+                }
+
+
+
+            if (!Directory.Exists(stroopTestFilesPath))
+                Directory.CreateDirectory(stroopTestFilesPath);
+
+            if (!Directory.Exists(reactionTestFilesPath))
+                Directory.CreateDirectory(reactionTestFilesPath);
+
+            if (!Directory.Exists(stroopTestFilesPath + PGRFOLDERNAME))
+                Directory.CreateDirectory(stroopTestFilesPath + PGRFOLDERNAME);
+
+            if (!Directory.Exists(reactionTestFilesPath + PGRFOLDERNAME))
+                Directory.CreateDirectory(reactionTestFilesPath + PGRFOLDERNAME);
+
+            if (!Directory.Exists(listsPath))
+                Directory.CreateDirectory(listsPath);
+
+            if (!Directory.Exists(stroopTestFilesPath + RESULTSFOLDERNAME))
+                Directory.CreateDirectory(stroopTestFilesPath + RESULTSFOLDERNAME);
+
+            if (!Directory.Exists(reactionTestFilesPath + RESULTSFOLDERNAME))
+                Directory.CreateDirectory(reactionTestFilesPath + RESULTSFOLDERNAME);
+
+            if (!Directory.Exists(defaultPath + BACKUPFOLDERNAME))
+                Directory.CreateDirectory(defaultPath + BACKUPFOLDERNAME);
+            if (!File.Exists(testFilesPath + INSTRUCTIONSFILENAME))
+                File.Create(testFilesPath + "editableInstructions.txt").Dispose();
+            if (!File.Exists(testFilesPath + PGRCONFIGHELPFILENAME))
+                File.Create(testFilesPath + PGRCONFIGHELPFILENAME).Dispose();
+
+
+
             initializeDefaultProgram(); // inicializa programa padrão (cria arquivo programa padrão e listas de palavras e cores padrão)
+            InitializeComponent();
 
             prgNameSL.Text = DEFAULTPGRNAME;
             usrNameSL.Text = DEFAULTUSERNAME;

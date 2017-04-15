@@ -50,6 +50,7 @@ namespace StroopTest.Views
                         configureProgram.Path = testFilesPath;
                         configureProgram.PrgName = editProgramName;
                         Parent.Controls.Add(configureProgram);
+                        editStroopButton.Checked = false;
                     }
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }

@@ -32,6 +32,7 @@ namespace TestPlatform.Views.SidebarUserControls
                     FormTRConfig configureProgram = new FormTRConfig();
                     configureProgram.Path = testFilesPath;
                     Parent.Controls.Add(configureProgram);
+                    newReactButton.Checked = false;
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -55,6 +56,7 @@ namespace TestPlatform.Views.SidebarUserControls
                     configureProgram.Path = testFilesPath;
                     configureProgram.PrgName = editProgramName;
                     this.Controls.Add(configureProgram);
+                    editReactButton.Checked = false;
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

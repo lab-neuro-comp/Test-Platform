@@ -38,6 +38,8 @@
             this.newImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stroopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newAudioToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.defineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.defineProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +51,8 @@
             this.editImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stroopToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reactionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,10 +83,6 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.executeButton = new System.Windows.Forms.RadioButton();
-            this.stroopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stroopToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.reactionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.testToolStrip.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -170,6 +170,20 @@
             this.newProgramToolStripMenuItem.Name = "newProgramToolStripMenuItem";
             this.newProgramToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.newProgramToolStripMenuItem.Text = "Programa    Ctrl+N";
+            // 
+            // stroopToolStripMenuItem
+            // 
+            this.stroopToolStripMenuItem.Name = "stroopToolStripMenuItem";
+            this.stroopToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
+            this.stroopToolStripMenuItem.Text = "Stroop";
+            this.stroopToolStripMenuItem.Click += new System.EventHandler(this.stroopToolStripMenuItem_Click);
+            // 
+            // reactionToolStripMenuItem
+            // 
+            this.reactionToolStripMenuItem.Name = "reactionToolStripMenuItem";
+            this.reactionToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
+            this.reactionToolStripMenuItem.Text = "Reaction";
+            this.reactionToolStripMenuItem.Click += new System.EventHandler(this.reactionToolStripMenuItem_Click);
             // 
             // newAudioToolStripMenu
             // 
@@ -259,6 +273,20 @@
             this.editProgramToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.editProgramToolStripMenuItem.Text = "Programa";
             // 
+            // stroopToolStripMenuItem1
+            // 
+            this.stroopToolStripMenuItem1.Name = "stroopToolStripMenuItem1";
+            this.stroopToolStripMenuItem1.Size = new System.Drawing.Size(142, 26);
+            this.stroopToolStripMenuItem1.Text = "Stroop";
+            this.stroopToolStripMenuItem1.Click += new System.EventHandler(this.stroopToolStripMenuItem1_Click);
+            // 
+            // reactionToolStripMenuItem1
+            // 
+            this.reactionToolStripMenuItem1.Name = "reactionToolStripMenuItem1";
+            this.reactionToolStripMenuItem1.Size = new System.Drawing.Size(142, 26);
+            this.reactionToolStripMenuItem1.Text = "Reaction";
+            this.reactionToolStripMenuItem1.Click += new System.EventHandler(this.reactionToolStripMenuItem1_Click);
+            // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -302,14 +330,14 @@
             // displayDataToolStripMenuItem
             // 
             this.displayDataToolStripMenuItem.Name = "displayDataToolStripMenuItem";
-            this.displayDataToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.displayDataToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
             this.displayDataToolStripMenuItem.Text = "Dados";
             this.displayDataToolStripMenuItem.Click += new System.EventHandler(this.dataToolStripMenuItem_Click);
             // 
             // displayAudiosToolStripMenuItem
             // 
             this.displayAudiosToolStripMenuItem.Name = "displayAudiosToolStripMenuItem";
-            this.displayAudiosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.displayAudiosToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
             this.displayAudiosToolStripMenuItem.Text = "Áudios";
             this.displayAudiosToolStripMenuItem.Click += new System.EventHandler(this.displayAudiosToolStripMenuItem_Click);
             // 
@@ -603,34 +631,6 @@
             this.executeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.executeButton.UseVisualStyleBackColor = true;
             this.executeButton.Click += new System.EventHandler(this.executeButton_CheckedChanged);
-            // 
-            // stroopToolStripMenuItem
-            // 
-            this.stroopToolStripMenuItem.Name = "stroopToolStripMenuItem";
-            this.stroopToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.stroopToolStripMenuItem.Text = "Stroop";
-            this.stroopToolStripMenuItem.Click += new System.EventHandler(this.stroopToolStripMenuItem_Click);
-            // 
-            // reactionToolStripMenuItem
-            // 
-            this.reactionToolStripMenuItem.Name = "reactionToolStripMenuItem";
-            this.reactionToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.reactionToolStripMenuItem.Text = "Reaction";
-            this.reactionToolStripMenuItem.Click += new System.EventHandler(this.reactionToolStripMenuItem_Click);
-            // 
-            // stroopToolStripMenuItem1
-            // 
-            this.stroopToolStripMenuItem1.Name = "stroopToolStripMenuItem1";
-            this.stroopToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
-            this.stroopToolStripMenuItem1.Text = "Stroop";
-            this.stroopToolStripMenuItem1.Click += new System.EventHandler(this.stroopToolStripMenuItem1_Click);
-            // 
-            // reactionToolStripMenuItem1
-            // 
-            this.reactionToolStripMenuItem1.Name = "reactionToolStripMenuItem1";
-            this.reactionToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
-            this.reactionToolStripMenuItem1.Text = "Reaction";
-            this.reactionToolStripMenuItem1.Click += new System.EventHandler(this.reactionToolStripMenuItem1_Click);
             // 
             // FormMain
             // 

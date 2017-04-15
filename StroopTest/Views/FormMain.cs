@@ -286,7 +286,7 @@ namespace StroopTest
             try
             {
                 showData = new FormShowData(defaultPath + "/data/");
-                showData.ShowDialog();
+                this.Controls.Add(showData);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -446,7 +446,9 @@ namespace StroopTest
                 try
                 {
                     showData = new FormShowData(defaultPath + "/data/");
-                    showData.ShowDialog();
+                    this.Controls.Add(showData);
+                    currentPanelContent = showData;
+                    resultButton.Checked = false;
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }

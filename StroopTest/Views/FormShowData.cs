@@ -16,7 +16,7 @@ using StroopTest.Controllers;
 
 namespace StroopTest
 {
-    public partial class FormShowData : Form
+    public partial class FormShowData : UserControl
     {
         private StroopProgram program = new StroopProgram();
         private string path;
@@ -27,6 +27,7 @@ namespace StroopTest
         {
             InitializeComponent();
 
+            Location = new Point(250, 38);
             string[] filePaths = null;
             path = dataFolderPath;
 
@@ -153,7 +154,7 @@ namespace StroopTest
         private void closeButton_Click(object sender, EventArgs e)
         {
             player.Stop();
-            Close();
+            this.Parent.Controls.Remove(this);
         }
     }
 }

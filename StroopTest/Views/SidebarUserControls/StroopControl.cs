@@ -41,7 +41,7 @@ namespace StroopTest.Views
                 try
                 {
                     string editProgramName = "error";
-                    FormDefine defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "/prg/", "prg", "program", false);
+                    FormDefine defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "StroopTestFiles/prg/", "prg", "program", false);
                     DialogResult result = defineProgram.ShowDialog();
                     if (result == DialogResult.OK)
                     {

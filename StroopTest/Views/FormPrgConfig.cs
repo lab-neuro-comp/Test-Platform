@@ -554,7 +554,7 @@ namespace StroopTest
 
             try
             {
-                program.readProgramFile(path + "/prg/" + editPrgName + ".prg");
+                program.readProgramFile(path + "StroopTestFiles/prg/" + editPrgName + ".prg");
                 
                 prgNameTextBox.Text = program.ProgramName;
                 numExpo.Value = program.NumExpositions;
@@ -750,7 +750,7 @@ namespace StroopTest
         
         private void saveProgramFile(StroopProgram newProgram)
         {
-            if (File.Exists(path + "prg/" + prgNameTextBox.Text + ".prg"))
+            if (File.Exists(path + "StroopTestFiles/prg/" + prgNameTextBox.Text + ".prg"))
             {
                 DialogResult dialogResult = MessageBox.Show("O programa já existe, deseja sobrescrevê-lo?", "", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.Cancel)

@@ -23,7 +23,7 @@ namespace TestPlatform.Views.SidebarUserControls
             }
         }
 
-        private void newReactButton_Click(object sender, System.EventArgs e)
+        private void newReactButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -47,14 +47,14 @@ namespace TestPlatform.Views.SidebarUserControls
 
             try
             {
-                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "/prg/", "tr", "program", false);
+                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "ReactionTestFiles/prg/", "tr", "program", false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
                     editProgramName = defineProgram.ReturnValue;
-                    FormPrgConfig configureProgram = new FormPrgConfig();
+                    FormTRConfig configureProgram = new FormTRConfig();
                     configureProgram.Path = testFilesPath;
-                    configureProgram.PrgName = editProgramName;
+              //      configureProgram.PrgName = editProgramName;
                     this.Controls.Add(configureProgram);
                     editReactButton.Checked = false;
                 }

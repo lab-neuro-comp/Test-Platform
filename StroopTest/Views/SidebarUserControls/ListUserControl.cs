@@ -51,7 +51,7 @@ namespace StroopTest.Views.SidebarControls
         {
             if (newAudioListButton.Checked)
             {
-                FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/lst/", false);
+                FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/Lst/", false);
                 try
                 {
                     Parent.Controls.Add(configureAudioList);
@@ -64,7 +64,7 @@ namespace StroopTest.Views.SidebarControls
         {
             if (editAudioListButton.Checked)
             {
-                FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/lst/", true);
+                FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/Lst/", true);
                 try
                 {
                     Parent.Controls.Add(configureAudioList);
@@ -107,7 +107,7 @@ namespace StroopTest.Views.SidebarControls
         {
             if (newWordColorButton.Checked)
             {
-                FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/lst/", false);
+                FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/Lst/", false);
                 try
                 {
                     Parent.Controls.Add(configureList);
@@ -120,7 +120,7 @@ namespace StroopTest.Views.SidebarControls
         {
             if (editWordColorButton.Checked)
             {
-                FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/lst/", true);
+                FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/Lst/", true);
                 try
                 {
                     Parent.Controls.Add(configureList);
@@ -145,7 +145,7 @@ namespace StroopTest.Views.SidebarControls
         {
             if (newImageListButton.Checked)
             {
-                FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/", "false");
+                FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/Lst/", "false");
                 try
                 {
                     Parent.Controls.Add(configureImagesList);
@@ -158,7 +158,7 @@ namespace StroopTest.Views.SidebarControls
         {
             if (editImageListButton.Checked)
             {
-                FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/", "");
+                FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/Lst/", "");
                 try { Parent.Controls.Add(configureImagesList); }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }

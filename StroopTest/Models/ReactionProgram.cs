@@ -248,7 +248,7 @@ namespace TestPlatform.Models
 
         public bool saveProgramFile(string path, string instructionBoxText)
         {
-            StreamWriter writer = new StreamWriter(path + "prg/" + ProgramName + ".tr");
+            StreamWriter writer = new StreamWriter(path + "ReactionTestFiles/prg/" + ProgramName + ".tr");
             writer.WriteLine(data());
             if (InstructionText != null && InstructionText[0] != instructionBoxText)
             {

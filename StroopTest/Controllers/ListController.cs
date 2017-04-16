@@ -47,7 +47,7 @@ namespace StroopTest.Controllers
         {
             string progName = "abrir";
 
-            FormDefine defineProgram = new FormDefine("Lista: ", path + "/lst/", "lst", itemType, false);
+            FormDefine defineProgram = new FormDefine("Lista: ", path + "/Lst/", "lst", itemType, false);
             var result = defineProgram.ShowDialog();
 
             if (result == System.Windows.Forms.DialogResult.OK)

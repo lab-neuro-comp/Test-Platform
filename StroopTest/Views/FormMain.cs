@@ -22,9 +22,11 @@ namespace StroopTest
         /*
          * Valores constantes do programa
          * */
-        private static string PGRFOLDERNAME = "/prg/";
-        private static string LSTFOLDERNAME = "/lst/";
-        private static string RESULTSFOLDERNAME = "/data/";
+        private static string stroopProgramPath = "StroopTestFiles/prg/";
+        private static string reactionProgramPath = "ReactionTestFiles/prg/";
+        private static string LSTFOLDERNAME = "/Lst/";
+        private static string stroopResultsPath = "StroopTestFiles/data/";
+        private static string reactionResultsPath = "ReactionTestFiles/data/";
         private static string BACKUPFOLDERNAME = "/backup/";
         private static string DEFAULTPGRNAME = "padrao";
         private static string DEFAULTUSERNAME = "padrao";
@@ -67,7 +69,7 @@ namespace StroopTest
                 directoryOldStroop.MoveTo(stroopTestFilesPath);                
 
                 DirectoryInfo directoryOldData = new DirectoryInfo(defaultPath + "/data");
-                directoryOldData.MoveTo(stroopTestFilesPath + RESULTSFOLDERNAME);
+                directoryOldData.MoveTo(testFilesPath + stroopResultsPath);
 
                 try
                 {
@@ -89,20 +91,20 @@ namespace StroopTest
             if (!Directory.Exists(reactionTestFilesPath))
                 Directory.CreateDirectory(reactionTestFilesPath);
 
-            if (!Directory.Exists(stroopTestFilesPath + PGRFOLDERNAME))
-                Directory.CreateDirectory(stroopTestFilesPath + PGRFOLDERNAME);
+            if (!Directory.Exists(stroopTestFilesPath + stroopProgramPath))
+                Directory.CreateDirectory(stroopTestFilesPath + stroopProgramPath);
 
-            if (!Directory.Exists(reactionTestFilesPath + PGRFOLDERNAME))
-                Directory.CreateDirectory(reactionTestFilesPath + PGRFOLDERNAME);
+            if (!Directory.Exists(reactionTestFilesPath + stroopProgramPath))
+                Directory.CreateDirectory(reactionTestFilesPath + stroopProgramPath);
 
             if (!Directory.Exists(listsPath))
                 Directory.CreateDirectory(listsPath);
 
-            if (!Directory.Exists(stroopTestFilesPath + RESULTSFOLDERNAME))
-                Directory.CreateDirectory(stroopTestFilesPath + RESULTSFOLDERNAME);
+            if (!Directory.Exists(testFilesPath + stroopResultsPath))
+                Directory.CreateDirectory(testFilesPath + stroopResultsPath);
 
-            if (!Directory.Exists(reactionTestFilesPath + RESULTSFOLDERNAME))
-                Directory.CreateDirectory(reactionTestFilesPath + RESULTSFOLDERNAME);
+            if (!Directory.Exists(testFilesPath + reactionResultsPath))
+                Directory.CreateDirectory(testFilesPath + reactionResultsPath);
 
             if (!Directory.Exists(defaultPath + BACKUPFOLDERNAME))
                 Directory.CreateDirectory(defaultPath + BACKUPFOLDERNAME);
@@ -153,7 +155,7 @@ namespace StroopTest
         
         private void newTextColorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/lst/", false);
+            FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + LSTFOLDERNAME, false);
             try
             {
                 this.Controls.Add(configureList);
@@ -200,7 +202,7 @@ namespace StroopTest
 
         private void newImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/", "false");
+            FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + LSTFOLDERNAME, "false");
             try
             {
                 this.Controls.Add(configureImagesList);
@@ -214,7 +216,7 @@ namespace StroopTest
             programDefault.ProgramName = DEFAULTUSERNAME;
             try
             {
-                programDefault.writeDefaultProgramFile(testFilesPath + PGRFOLDERNAME + programDefault.ProgramName + ".prg"); // ao inicializar formulario escreve arquivo programa padrao
+                programDefault.writeDefaultProgramFile(testFilesPath + stroopProgramPath + programDefault.ProgramName + ".prg"); // ao inicializar formulario escreve arquivo programa padrao
                 StrList.writeDefaultWordsList(testFilesPath + LSTFOLDERNAME); // escreve lista de palavras padrão
                 StrList.writeDefaultColorsList(testFilesPath + LSTFOLDERNAME); // escreve lista de cores padrão 
             }
@@ -232,7 +234,7 @@ namespace StroopTest
 
         private void editTextColorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/lst/", true);
+            FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + LSTFOLDERNAME, true);
             try
             {
                 this.Controls.Add(configureList);
@@ -242,12 +244,12 @@ namespace StroopTest
 
         private void deleteDataFile_ToolStrip_Click(object sender, EventArgs e)
         {
-            moveFileToBackup(defaultPath + RESULTSFOLDERNAME, defaultPath + BACKUPFOLDERNAME, "txt");
+            moveFileToBackup(testFilesPath + stroopResultsPath, defaultPath + BACKUPFOLDERNAME, "txt");
         }
 
         private void deleteProgramFile_ToolStrip_Click(object sender, EventArgs e)
         {
-            moveFileToBackup(testFilesPath + PGRFOLDERNAME, defaultPath + BACKUPFOLDERNAME, "prg");
+            moveFileToBackup(testFilesPath + stroopProgramPath, defaultPath + BACKUPFOLDERNAME, "prg");
         }
 
         private void deleteListFile_ToolStrip_Click(object sender, EventArgs e)
@@ -302,14 +304,15 @@ namespace StroopTest
         
         private void defineProgram()
         {
-            FormDefine defineProgram = new FormDefine("Definir Programa: ", testFilesPath + "/prg/", "prg", "program", false);
+            FormDefineTest defineTest = new FormDefineTest(testFilesPath, stroopProgramPath, reactionProgramPath);
             try
             {
-                var result = defineProgram.ShowDialog();
+                var result = defineTest.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    string progName = defineProgram.ReturnValue;
+                    string progName = defineTest.returnValues[1];
                     prgNameSL.Text = progName;
+                    defineProgramButton.Text = defineTest.returnValues[0];
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -343,7 +346,7 @@ namespace StroopTest
             FormShowData showData;
             try
             {
-                showData = new FormShowData(defaultPath + "/data/");
+                showData = new FormShowData(testFilesPath + stroopResultsPath);
                 this.Controls.Add(showData);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -368,14 +371,14 @@ namespace StroopTest
 
         private void editImagesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/lst/", "");
+            FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/Lst/", "");
             try { this.Controls.Add(configureImagesList); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void audioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/lst/", false);
+            FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/Lst/", false);
             try
             {
                 this.Controls.Add(configureAudioList);
@@ -400,7 +403,7 @@ namespace StroopTest
         
         private void editAudioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/lst/", true);
+            FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/Lst/", true);
             try
             {
                 this.Controls.Add(configureAudioList);
@@ -413,7 +416,7 @@ namespace StroopTest
             FormShowAudio showAudio;
             try
             {
-                showAudio = new FormShowAudio(defaultPath + "/data/");
+                showAudio = new FormShowAudio(testFilesPath + stroopResultsPath);
                 showAudio.ShowDialog();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -503,7 +506,7 @@ namespace StroopTest
                 FormShowData showData;
                 try
                 {
-                    showData = new FormShowData(defaultPath + "/data/");
+                    showData = new FormShowData(testFilesPath + stroopResultsPath);
                     this.Controls.Add(showData);
                     currentPanelContent = showData;
                     resultButton.Checked = false;

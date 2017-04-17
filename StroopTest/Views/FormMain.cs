@@ -125,11 +125,11 @@ namespace StroopTest
         {
             if (e.Control && e.KeyCode == Keys.R) // Ctrl+R - roda teste
             {
-                beginTest(executingNameLabel.Text);
+                beginStroopTest(executingNameLabel.Text);
             }
             if (e.Control && e.KeyCode == Keys.D) // Ctrl+D - define programa
             {
-                defineProgram();
+                defineTest();
             }
             if (e.Control && e.KeyCode == Keys.N) // Ctrl+N - novo programa
             {
@@ -172,7 +172,7 @@ namespace StroopTest
 
         private void defineProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            defineProgram();
+            defineTest();
         }
         
         private void dirPathSL_Click(object sender, EventArgs e)
@@ -263,10 +263,10 @@ namespace StroopTest
 
         private void startTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            beginTest(executingNameLabel.Text);
+            beginStroopTest(executingNameLabel.Text);
         }
 
-        private void beginTest(string programName)
+        private void beginStroopTest(string programName)
         {
             try
             {
@@ -286,8 +286,29 @@ namespace StroopTest
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+
+        private void beginReactionTest(string programName)
+        {
+            try
+            {
+                Screen[] sc;
+                sc = Screen.AllScreens;
+                int showOnMonitor = 0;
+                if (sc.Length > 1)
+                {
+                    if (sc[0].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 1; }
+                    if (sc[1].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 0; }
+                }
+              //  FormReactExposition f = new FormReactExposition(programName, participantTextBox.Text, testFilesPath);
+              //  f.StartPosition = FormStartPosition.Manual;
+              // f.Location = Screen.AllScreens[showOnMonitor].WorkingArea.Location;
+              // SendKeys.SendWait("i");
+              // f.Show();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
         
-        private void defineProgram()
+        private void defineTest()
         {
             FormDefineTest defineTest = new FormDefineTest(testFilesPath, stroopProgramPath, reactionProgramPath);
             try
@@ -543,12 +564,21 @@ namespace StroopTest
 
         private void executeButton_Click(object sender, EventArgs e)
         {
-            beginTest(executingNameLabel.Text);
+            if (executingTypeLabel.Text.Equals("StroopTest"))
+            {
+                beginStroopTest(executingNameLabel.Text);
+            }
+
+            else if (executingTypeLabel.Text.Equals("ReactionTest"))
+            {
+                beginReactionTest(executingNameLabel.Text);
+            }
+            
         }
 
         private void selectButton_Click(object sender, EventArgs e)
         {
-            defineProgram();
+                defineTest();            
         }
     }
 }

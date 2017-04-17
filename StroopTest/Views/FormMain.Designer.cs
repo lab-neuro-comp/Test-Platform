@@ -549,9 +549,9 @@
             // executeBar
             // 
             this.executeBar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.executeBar.Controls.Add(this.executeButton);
             this.executeBar.Controls.Add(this.panel2);
             this.executeBar.Controls.Add(this.panel4);
+            this.executeBar.Controls.Add(this.executeButton);
             this.executeBar.Controls.Add(this.testToolStrip);
             this.executeBar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.executeBar.Location = new System.Drawing.Point(2, 31);
@@ -566,7 +566,7 @@
             this.executeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.executeButton.Image = global::TestPlatform.Properties.Resources.icon_execute;
             this.executeButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.executeButton.Location = new System.Drawing.Point(3, 3);
+            this.executeButton.Location = new System.Drawing.Point(780, 3);
             this.executeButton.Name = "executeButton";
             this.executeButton.Size = new System.Drawing.Size(127, 36);
             this.executeButton.TabIndex = 0;
@@ -583,7 +583,7 @@
             this.panel2.Controls.Add(this.executingNameLabel);
             this.panel2.Controls.Add(this.selectButton);
             this.panel2.Controls.Add(this.executingTypeLabel);
-            this.panel2.Location = new System.Drawing.Point(136, 3);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(469, 36);
             this.panel2.TabIndex = 27;
@@ -647,7 +647,7 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.participantTextBox);
             this.panel4.Controls.Add(this.participantLabel);
-            this.panel4.Location = new System.Drawing.Point(611, 3);
+            this.panel4.Location = new System.Drawing.Point(478, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(296, 36);
             this.panel4.TabIndex = 28;

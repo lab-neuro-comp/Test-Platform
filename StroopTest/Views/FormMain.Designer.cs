@@ -43,7 +43,6 @@
             this.newAudioToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.defineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.defineProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newParticipantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editListsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,12 +65,6 @@
             this.techInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStrip = new System.Windows.Forms.ToolStrip();
-            this.beginTestMainButton = new System.Windows.Forms.ToolStripButton();
-            this.typeStripButton = new System.Windows.Forms.ToolStripButton();
-            this.defineProgramButton = new System.Windows.Forms.ToolStripButton();
-            this.prgNameSL = new System.Windows.Forms.ToolStripLabel();
-            this.defineUserButton = new System.Windows.Forms.ToolStripButton();
-            this.usrNameSL = new System.Windows.Forms.ToolStripLabel();
             this.directoryToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
             this.experimentButton = new System.Windows.Forms.RadioButton();
@@ -82,10 +75,23 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.executeButton = new System.Windows.Forms.RadioButton();
+            this.executeBar = new System.Windows.Forms.FlowLayoutPanel();
+            this.executeButton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.executingNameLabel = new System.Windows.Forms.Label();
+            this.selectButton = new System.Windows.Forms.Button();
+            this.executingTypeLabel = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.participantTextBox = new System.Windows.Forms.TextBox();
+            this.participantLabel = new System.Windows.Forms.Label();
             this.mainMenuStrip.SuspendLayout();
             this.testToolStrip.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.executeBar.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenuStrip
@@ -174,14 +180,14 @@
             // stroopToolStripMenuItem
             // 
             this.stroopToolStripMenuItem.Name = "stroopToolStripMenuItem";
-            this.stroopToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
+            this.stroopToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.stroopToolStripMenuItem.Text = "Stroop";
             this.stroopToolStripMenuItem.Click += new System.EventHandler(this.stroopToolStripMenuItem_Click);
             // 
             // reactionToolStripMenuItem
             // 
             this.reactionToolStripMenuItem.Name = "reactionToolStripMenuItem";
-            this.reactionToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
+            this.reactionToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.reactionToolStripMenuItem.Text = "Reaction";
             this.reactionToolStripMenuItem.Click += new System.EventHandler(this.reactionToolStripMenuItem_Click);
             // 
@@ -196,8 +202,7 @@
             // defineToolStripMenuItem
             // 
             this.defineToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.defineProgramToolStripMenuItem,
-            this.newParticipantToolStripMenuItem});
+            this.defineProgramToolStripMenuItem});
             this.defineToolStripMenuItem.Name = "defineToolStripMenuItem";
             this.defineToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.defineToolStripMenuItem.Text = "Definir";
@@ -205,16 +210,9 @@
             // defineProgramToolStripMenuItem
             // 
             this.defineProgramToolStripMenuItem.Name = "defineProgramToolStripMenuItem";
-            this.defineProgramToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.defineProgramToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.defineProgramToolStripMenuItem.Text = "Programa    Ctrl+D";
             this.defineProgramToolStripMenuItem.Click += new System.EventHandler(this.defineProgramToolStripMenuItem_Click);
-            // 
-            // newParticipantToolStripMenuItem
-            // 
-            this.newParticipantToolStripMenuItem.Name = "newParticipantToolStripMenuItem";
-            this.newParticipantToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
-            this.newParticipantToolStripMenuItem.Text = "Participante        Ctrl+U";
-            this.newParticipantToolStripMenuItem.Click += new System.EventHandler(this.newParticipantToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -386,88 +384,22 @@
             this.testToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.testToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.testToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.beginTestMainButton,
-            this.typeStripButton,
-            this.defineProgramButton,
-            this.prgNameSL,
-            this.defineUserButton,
-            this.usrNameSL,
             this.directoryToolStripLabel,
             this.dirPathSL});
-            this.testToolStrip.Location = new System.Drawing.Point(0, 43);
+            this.testToolStrip.Location = new System.Drawing.Point(910, 0);
             this.testToolStrip.Name = "testToolStrip";
             this.testToolStrip.Padding = new System.Windows.Forms.Padding(0);
-            this.testToolStrip.Size = new System.Drawing.Size(419, 27);
+            this.testToolStrip.Size = new System.Drawing.Size(102, 25);
             this.testToolStrip.TabIndex = 1;
             this.testToolStrip.Text = "toolStrip1";
             this.testToolStrip.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
-            // 
-            // beginTestMainButton
-            // 
-            this.beginTestMainButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.beginTestMainButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.beginTestMainButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.beginTestMainButton.Name = "beginTestMainButton";
-            this.beginTestMainButton.Size = new System.Drawing.Size(91, 24);
-            this.beginTestMainButton.Text = "Iniciar Teste";
-            this.beginTestMainButton.Click += new System.EventHandler(this.beginTestMainButton_Click);
-            // 
-            // typeStripButton
-            // 
-            this.typeStripButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.typeStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.typeStripButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.typeStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.typeStripButton.Name = "typeStripButton";
-            this.typeStripButton.Size = new System.Drawing.Size(43, 24);
-            this.typeStripButton.Text = "Tipo";
-            // 
-            // defineProgramButton
-            // 
-            this.defineProgramButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.defineProgramButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.defineProgramButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.defineProgramButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.defineProgramButton.Name = "defineProgramButton";
-            this.defineProgramButton.Size = new System.Drawing.Size(78, 24);
-            this.defineProgramButton.Text = "Programa";
-            this.defineProgramButton.Click += new System.EventHandler(this.defineProgramButton_Click);
-            // 
-            // prgNameSL
-            // 
-            this.prgNameSL.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.prgNameSL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.prgNameSL.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.prgNameSL.Name = "prgNameSL";
-            this.prgNameSL.Size = new System.Drawing.Size(57, 24);
-            this.prgNameSL.Text = "padrao";
-            // 
-            // defineUserButton
-            // 
-            this.defineUserButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.defineUserButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.defineUserButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.defineUserButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.defineUserButton.Name = "defineUserButton";
-            this.defineUserButton.Size = new System.Drawing.Size(91, 24);
-            this.defineUserButton.Text = "Participante";
-            this.defineUserButton.Click += new System.EventHandler(this.defineUserButton_Click);
-            // 
-            // usrNameSL
-            // 
-            this.usrNameSL.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.usrNameSL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.usrNameSL.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.usrNameSL.Name = "usrNameSL";
-            this.usrNameSL.Size = new System.Drawing.Size(57, 24);
-            this.usrNameSL.Text = "padrao";
             // 
             // directoryToolStripLabel
             // 
             this.directoryToolStripLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.directoryToolStripLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.directoryToolStripLabel.Name = "directoryToolStripLabel";
-            this.directoryToolStripLabel.Size = new System.Drawing.Size(72, 24);
+            this.directoryToolStripLabel.Size = new System.Drawing.Size(72, 22);
             this.directoryToolStripLabel.Text = "Diretório:";
             this.directoryToolStripLabel.Visible = false;
             // 
@@ -477,7 +409,7 @@
             this.dirPathSL.Enabled = false;
             this.dirPathSL.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.dirPathSL.Name = "dirPathSL";
-            this.dirPathSL.Size = new System.Drawing.Size(96, 24);
+            this.dirPathSL.Size = new System.Drawing.Size(96, 22);
             this.dirPathSL.Text = "directoryPath";
             this.dirPathSL.Visible = false;
             this.dirPathSL.Click += new System.EventHandler(this.dirPathSL_Click);
@@ -491,7 +423,7 @@
             this.experimentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.experimentButton.Image = global::TestPlatform.Properties.Resources.icon_experiment;
             this.experimentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.experimentButton.Location = new System.Drawing.Point(0, 137);
+            this.experimentButton.Location = new System.Drawing.Point(0, 143);
             this.experimentButton.Name = "experimentButton";
             this.experimentButton.Size = new System.Drawing.Size(260, 32);
             this.experimentButton.TabIndex = 23;
@@ -508,7 +440,7 @@
             this.resultButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultButton.Image = global::TestPlatform.Properties.Resources.icon_results;
             this.resultButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.resultButton.Location = new System.Drawing.Point(0, 217);
+            this.resultButton.Location = new System.Drawing.Point(0, 185);
             this.resultButton.Name = "resultButton";
             this.resultButton.Size = new System.Drawing.Size(260, 32);
             this.resultButton.TabIndex = 22;
@@ -542,7 +474,7 @@
             this.buttonReaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReaction.Image = global::TestPlatform.Properties.Resources.icon2_ReactionTest;
             this.buttonReaction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonReaction.Location = new System.Drawing.Point(0, 97);
+            this.buttonReaction.Location = new System.Drawing.Point(0, 101);
             this.buttonReaction.Name = "buttonReaction";
             this.buttonReaction.Size = new System.Drawing.Size(260, 32);
             this.buttonReaction.TabIndex = 20;
@@ -559,7 +491,7 @@
             this.buttonStroop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStroop.Image = global::TestPlatform.Properties.Resources.icon_StroopTest;
             this.buttonStroop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonStroop.Location = new System.Drawing.Point(0, 57);
+            this.buttonStroop.Location = new System.Drawing.Point(0, 59);
             this.buttonStroop.Name = "buttonStroop";
             this.buttonStroop.Size = new System.Drawing.Size(260, 32);
             this.buttonStroop.TabIndex = 19;
@@ -574,11 +506,10 @@
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.resultButton);
             this.panel1.Controls.Add(this.experimentButton);
-            this.panel1.Controls.Add(this.executeButton);
             this.panel1.Controls.Add(this.buttonList);
             this.panel1.Controls.Add(this.buttonReaction);
             this.panel1.Controls.Add(this.buttonStroop);
-            this.panel1.Location = new System.Drawing.Point(0, 156);
+            this.panel1.Location = new System.Drawing.Point(0, 94);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(260, 386);
             this.panel1.TabIndex = 25;
@@ -591,7 +522,7 @@
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.Image = global::TestPlatform.Properties.Resources.icon_export;
             this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radioButton2.Location = new System.Drawing.Point(0, 297);
+            this.radioButton2.Location = new System.Drawing.Point(0, 269);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(260, 32);
             this.radioButton2.TabIndex = 26;
@@ -607,7 +538,7 @@
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.Image = global::TestPlatform.Properties.Resources.icon_import;
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radioButton1.Location = new System.Drawing.Point(0, 257);
+            this.radioButton1.Location = new System.Drawing.Point(0, 227);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(260, 32);
             this.radioButton1.TabIndex = 25;
@@ -615,22 +546,129 @@
             this.radioButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // executeBar
+            // 
+            this.executeBar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.executeBar.Controls.Add(this.executeButton);
+            this.executeBar.Controls.Add(this.panel2);
+            this.executeBar.Controls.Add(this.panel4);
+            this.executeBar.Controls.Add(this.testToolStrip);
+            this.executeBar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.executeBar.Location = new System.Drawing.Point(2, 31);
+            this.executeBar.Name = "executeBar";
+            this.executeBar.Size = new System.Drawing.Size(1266, 45);
+            this.executeBar.TabIndex = 26;
+            // 
             // executeButton
             // 
-            this.executeButton.Appearance = System.Windows.Forms.Appearance.Button;
             this.executeButton.FlatAppearance.BorderSize = 0;
             this.executeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.executeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.executeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.executeButton.Image = global::TestPlatform.Properties.Resources.icon_execute;
-            this.executeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.executeButton.Location = new System.Drawing.Point(0, 177);
+            this.executeButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.executeButton.Location = new System.Drawing.Point(3, 3);
             this.executeButton.Name = "executeButton";
-            this.executeButton.Size = new System.Drawing.Size(260, 32);
-            this.executeButton.TabIndex = 24;
-            this.executeButton.Text = " Executar";
+            this.executeButton.Size = new System.Drawing.Size(127, 36);
+            this.executeButton.TabIndex = 0;
+            this.executeButton.Text = "Executar";
             this.executeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.executeButton.UseVisualStyleBackColor = true;
-            this.executeButton.Click += new System.EventHandler(this.executeButton_CheckedChanged);
+            this.executeButton.Click += new System.EventHandler(this.executeButton_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.executingNameLabel);
+            this.panel2.Controls.Add(this.selectButton);
+            this.panel2.Controls.Add(this.executingTypeLabel);
+            this.panel2.Location = new System.Drawing.Point(136, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(469, 36);
+            this.panel2.TabIndex = 27;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(159, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 18);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Nome:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 18);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Tipo:";
+            // 
+            // executingNameLabel
+            // 
+            this.executingNameLabel.AutoSize = true;
+            this.executingNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.executingNameLabel.Location = new System.Drawing.Point(218, 7);
+            this.executingNameLabel.Name = "executingNameLabel";
+            this.executingNameLabel.Size = new System.Drawing.Size(54, 18);
+            this.executingNameLabel.TabIndex = 0;
+            this.executingNameLabel.Text = "padrao";
+            // 
+            // selectButton
+            // 
+            this.selectButton.FlatAppearance.BorderSize = 0;
+            this.selectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.selectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectButton.Location = new System.Drawing.Point(354, 1);
+            this.selectButton.Name = "selectButton";
+            this.selectButton.Size = new System.Drawing.Size(110, 34);
+            this.selectButton.TabIndex = 1;
+            this.selectButton.Text = "Selecionar";
+            this.selectButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.selectButton.UseVisualStyleBackColor = true;
+            this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
+            // 
+            // executingTypeLabel
+            // 
+            this.executingTypeLabel.AutoSize = true;
+            this.executingTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.executingTypeLabel.Location = new System.Drawing.Point(50, 7);
+            this.executingTypeLabel.Name = "executingTypeLabel";
+            this.executingTypeLabel.Size = new System.Drawing.Size(82, 18);
+            this.executingTypeLabel.TabIndex = 0;
+            this.executingTypeLabel.Text = "StroopTest";
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.participantTextBox);
+            this.panel4.Controls.Add(this.participantLabel);
+            this.panel4.Location = new System.Drawing.Point(611, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(296, 36);
+            this.panel4.TabIndex = 28;
+            // 
+            // participantTextBox
+            // 
+            this.participantTextBox.Location = new System.Drawing.Point(112, 7);
+            this.participantTextBox.Name = "participantTextBox";
+            this.participantTextBox.Size = new System.Drawing.Size(172, 22);
+            this.participantTextBox.TabIndex = 1;
+            this.participantTextBox.Text = "padrao";
+            // 
+            // participantLabel
+            // 
+            this.participantLabel.AutoSize = true;
+            this.participantLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.participantLabel.Location = new System.Drawing.Point(3, 8);
+            this.participantLabel.Name = "participantLabel";
+            this.participantLabel.Size = new System.Drawing.Size(85, 18);
+            this.participantLabel.TabIndex = 0;
+            this.participantLabel.Text = "Participante";
             // 
             // FormMain
             // 
@@ -638,7 +676,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1269, 840);
-            this.Controls.Add(this.testToolStrip);
+            this.Controls.Add(this.executeBar);
             this.Controls.Add(this.mainMenuStrip);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
@@ -656,6 +694,12 @@
             this.testToolStrip.ResumeLayout(false);
             this.testToolStrip.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.executeBar.ResumeLayout(false);
+            this.executeBar.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -675,15 +719,11 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editProgramToolStripMenuItem;
         private System.Windows.Forms.ToolStrip testToolStrip;
-        private System.Windows.Forms.ToolStripButton beginTestMainButton;
         private System.Windows.Forms.ToolStripMenuItem defineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem defineProgramToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newTextColorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newImageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newParticipantToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editListsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripLabel prgNameSL;
-        private System.Windows.Forms.ToolStripLabel usrNameSL;
         private System.Windows.Forms.ToolStripLabel directoryToolStripLabel;
         private System.Windows.Forms.ToolStripLabel dirPathSL;
         private System.Windows.Forms.ToolStripMenuItem editTextColorsToolStripMenuItem;
@@ -695,8 +735,6 @@
         private System.Windows.Forms.ToolStripMenuItem displayDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteDataToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton defineProgramButton;
-        private System.Windows.Forms.ToolStripButton defineUserButton;
         private System.Windows.Forms.ToolStripMenuItem newAudioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem techInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewHelpToolStripMenuItem;
@@ -709,13 +747,22 @@
         private System.Windows.Forms.RadioButton buttonStroop;
         private System.Windows.Forms.RadioButton experimentButton;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton executeButton;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.ToolStripButton typeStripButton;
         private System.Windows.Forms.ToolStripMenuItem stroopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reactionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stroopToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem reactionToolStripMenuItem1;
+        private System.Windows.Forms.FlowLayoutPanel executeBar;
+        private System.Windows.Forms.Button executeButton;
+        private System.Windows.Forms.Button selectButton;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label executingTypeLabel;
+        private System.Windows.Forms.Label executingNameLabel;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label participantLabel;
+        private System.Windows.Forms.TextBox participantTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

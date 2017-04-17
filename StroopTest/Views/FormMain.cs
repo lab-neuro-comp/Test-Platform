@@ -118,9 +118,6 @@ namespace StroopTest
             initializeDefaultProgram(); // inicializa programa padrão (cria arquivo programa padrão e listas de palavras e cores padrão)
             InitializeComponent();
 
-            prgNameSL.Text = DEFAULTPGRNAME;
-            usrNameSL.Text = DEFAULTUSERNAME;
-
             dirPathSL.Text = testFilesPath;
         }
 
@@ -128,15 +125,11 @@ namespace StroopTest
         {
             if (e.Control && e.KeyCode == Keys.R) // Ctrl+R - roda teste
             {
-                beginTest(prgNameSL.Text);
+                beginTest(executingNameLabel.Text);
             }
             if (e.Control && e.KeyCode == Keys.D) // Ctrl+D - define programa
             {
                 defineProgram();
-            }
-            if (e.Control && e.KeyCode == Keys.U) // Ctrl+U - define usuário
-            {
-                defineUser();
             }
             if (e.Control && e.KeyCode == Keys.N) // Ctrl+N - novo programa
             {
@@ -148,10 +141,7 @@ namespace StroopTest
             }
         }
 
-        private void beginTestMainButton_Click(object sender, EventArgs e)
-        {
-            beginTest(prgNameSL.Text);
-        }
+
         
         private void newTextColorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -183,11 +173,6 @@ namespace StroopTest
         private void defineProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
             defineProgram();
-        }
-
-        private void newParticipantToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            defineUser();
         }
         
         private void dirPathSL_Click(object sender, EventArgs e)
@@ -278,7 +263,7 @@ namespace StroopTest
 
         private void startTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            beginTest(prgNameSL.Text);
+            beginTest(executingNameLabel.Text);
         }
 
         private void beginTest(string programName)
@@ -293,7 +278,7 @@ namespace StroopTest
                     if (sc[0].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 1; }
                     if (sc[1].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 0; }
                 }
-                FormExposition f = new FormExposition(programName, usrNameSL.Text, defaultPath);
+                FormExposition f = new FormExposition(programName, participantTextBox.Text, testFilesPath);
                 f.StartPosition = FormStartPosition.Manual;
                 f.Location = Screen.AllScreens[showOnMonitor].WorkingArea.Location;
                 SendKeys.SendWait("i");
@@ -311,23 +296,8 @@ namespace StroopTest
                 if (result == DialogResult.OK)
                 {
                     string progName = defineTest.returnValues[1];
-                    prgNameSL.Text = progName;
-                    defineProgramButton.Text = defineTest.returnValues[0];
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
-
-        private void defineUser()
-        {
-            try
-            {
-                FormDefine defineUser = new FormDefine("Definir Participante: ", testFilesPath, "usr", "user",false);
-                var result = defineUser.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    string userName = defineUser.ReturnValue;
-                    usrNameSL.Text = userName;
+                    executingNameLabel.Text = progName;
+                    executingTypeLabel.Text = defineTest.returnValues[0];
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -357,16 +327,6 @@ namespace StroopTest
             FormInstructions infoBox = new FormInstructions(INSTRUCTIONSTEXT, (testFilesPath + INSTRUCTIONSFILENAME));
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
-
-        private void defineProgramButton_Click(object sender, EventArgs e)
-        {
-            defineProgram();
-        }
-
-        private void defineUserButton_Click(object sender, EventArgs e)
-        {
-            defineUser();
         }
 
         private void editImagesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -516,17 +476,6 @@ namespace StroopTest
         }
 
 
-        private void executeButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (executeButton.Checked)
-            {
-                if (currentPanelContent != null)
-                {
-                    Controls.Remove(currentPanelContent);
-                }
-            }
-        }
-
         protected override void OnControlAdded(ControlEventArgs e)
         {
             base.OnControlAdded(e);
@@ -590,6 +539,16 @@ namespace StroopTest
         private void reactionToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void executeButton_Click(object sender, EventArgs e)
+        {
+            beginTest(executingNameLabel.Text);
+        }
+
+        private void selectButton_Click(object sender, EventArgs e)
+        {
+            defineProgram();
         }
     }
 }

@@ -35,6 +35,7 @@ namespace StroopTest
         private string outputFile;
         private Audio audioControl = new Audio();
         private SoundPlayer Player = new SoundPlayer();
+        private string defaultFolderPath;
 
         public FormExposition(string prgName, string usrName, string defaultFolderPath)
         {
@@ -42,8 +43,9 @@ namespace StroopTest
             this.MaximizeBox = true;
             this.StartPosition = FormStartPosition.Manual;
             InitializeComponent();
+            this.defaultFolderPath = defaultFolderPath;
             path = defaultFolderPath + "/StroopTestFiles/";
-            outputDataPath = defaultFolderPath + "/data/";
+            outputDataPath = path + "/data/";
             programInUse.ProgramName = prgName;
             programInUse.UserName = usrName;
             startExpo();
@@ -152,8 +154,8 @@ namespace StroopTest
             try
             {
                 // reading list files:
-                labelText = StrList.readListFile(path + "/lst/" + programInUse.WordsListFile); // string array receives wordsList itens from list file
-                labelColor = StrList.readListFile(path + "/lst/" + programInUse.ColorsListFile); // string array receives colorsList itens from list file
+                labelText = StrList.readListFile(defaultFolderPath + "/Lst/" + programInUse.WordsListFile); // string array receives wordsList itens from list file
+                labelColor = StrList.readListFile(defaultFolderPath + "/Lst/" + programInUse.ColorsListFile); // string array receives colorsList itens from list file
                 subtitlesArray = configureSubtitle();
                 if (programInUse.ExpositionRandom) // if the presentation is random, shuffles arrays
                 {
@@ -162,7 +164,7 @@ namespace StroopTest
                 }
                 if (programInUse.AudioListFile != "false") // if there is an audioFile to be played, string array receives audioList itens from list file
                 {
-                    audioDirs = StroopProgram.readDirListFile(path + "/lst/" + programInUse.AudioListFile);
+                    audioDirs = StroopProgram.readDirListFile(defaultFolderPath + "/Lst/" + programInUse.AudioListFile);
                     if (programInUse.ExpositionRandom) { audioDirs = ExpositionController.shuffleArray(audioDirs, programInUse.NumExpositions, 6); } // if the presentation is random, shuffles array
                 }
                     if(!Validations.allHexPattern(labelColor))
@@ -211,7 +213,8 @@ namespace StroopTest
                         wordLabel.Text = textCurrent;
                         wordLabel.ForeColor = ColorTranslator.FromHtml(colorCurrent);
                         
-                        if (programInUse.AudioListFile.ToLower() != "false" && programInUse.ExpositionType == "txtaud") // reproduz audio
+                        if (programInUse.AudioListFile.ToLower() != "false" && 
+                            programInUse.ExpositionType == "txtaud") // reproduz audio
                         {
                             if (audioCounter == audioDirs.Length) { audioCounter = 0; }
                             audioDetail = audioDirs[audioCounter];
@@ -230,7 +233,8 @@ namespace StroopTest
                         
 
 
-                        StroopProgram.writeLineOutputResult(programInUse, textCurrent, colorCurrent, counter, outputContent, elapsedTime, programInUse.ExpositionType, audioDetail, hour, minutes, seconds);
+                        StroopProgram.writeLineOutputResult(programInUse, textCurrent, colorCurrent, counter, 
+                            outputContent, elapsedTime, programInUse.ExpositionType, audioDetail, hour, minutes, seconds);
                         
                         await Task.Delay(programInUse.ExpositionTime, cts.Token);
                     }
@@ -238,7 +242,9 @@ namespace StroopTest
                     subtitleLabel.Visible = false;
                     await Task.Delay(programInUse.IntervalTime, cts.Token);
                     // beginAudio
-                    if (programInUse.AudioCapture && programInUse.ExpositionType != "txtaud") { stopRecordingAudio(); } // para gravação áudio
+                    if (programInUse.AudioCapture && programInUse.ExpositionType != "txtaud") {
+                        stopRecordingAudio();
+                    } 
                     // endAudio
                     changeBackgroundColor(programInUse, false); // retorna à cor de fundo padrão
 
@@ -295,7 +301,7 @@ namespace StroopTest
                 if (programInUse.ExpandImage) { imgPictureBox.Dock = DockStyle.Fill; }
                 else { imgPictureBox.Dock = DockStyle.None; }
 
-                imageDirs = StroopProgram.readDirListFile(path + "/lst/" + programInUse.ImagesListFile); // auxiliar recebe o vetor original
+                imageDirs = StroopProgram.readDirListFile(defaultFolderPath + "/Lst/" + programInUse.ImagesListFile); // auxiliar recebe o vetor original
                 if (programInUse.ExpositionRandom) // se exposição aleatória, randomiza itens de acordo com o numero de estimulos
                 {
                     imageDirs = ExpositionController.shuffleArray(imageDirs, programInUse.NumExpositions, 3);
@@ -306,13 +312,16 @@ namespace StroopTest
 
                 if (programInUse.AudioListFile != "false")
                 {
-                    audioDirs = StroopProgram.readDirListFile(path + "/lst/" + programInUse.AudioListFile);
+                    audioDirs = StroopProgram.readDirListFile(defaultFolderPath + "/Lst/" + programInUse.AudioListFile);
                     if (programInUse.ExpositionRandom)
                     {
                         audioDirs = ExpositionController.shuffleArray(audioDirs, programInUse.NumExpositions, 6);
                     }
                 }
-                if (programInUse.WordsListFile.ToLower() != "false") { labelText = StrList.readListFile(path + "/lst/" + programInUse.WordsListFile); }
+                if (programInUse.WordsListFile.ToLower() != "false")
+                {
+                    labelText = StrList.readListFile(defaultFolderPath + "/Lst/" + programInUse.WordsListFile);
+                }
                 
                 await showInstructions(programInUse, cts.Token); // Apresenta instruções se houver
 
@@ -342,7 +351,8 @@ namespace StroopTest
                             if(counter < 10)// contador p/ arquivo de audio
                             {
                                 printCount = "0" + counter.ToString();
-                            }else
+                            }
+                            else
                             {
                                 printCount = counter.ToString();
                             }
@@ -353,23 +363,37 @@ namespace StroopTest
                             subtitleLabel.Visible = false;        
                             await intervalOrFixPoint(programInUse, cts.Token);
 
-                            if (arrayCounter == imageDirs.Count()) { arrayCounter = 0; }
-                            if(programInUse.RotateImage != 0) { imgPictureBox.Image = RotateImage(imageDirs[arrayCounter], programInUse.RotateImage); }
-                            else { imgPictureBox.Image = Image.FromFile(imageDirs[arrayCounter]); }
+                            if (arrayCounter == imageDirs.Count())
+                            {
+                                arrayCounter = 0;
+                            }
+                            if(programInUse.RotateImage != 0)
+                            {
+                                imgPictureBox.Image = RotateImage(imageDirs[arrayCounter], programInUse.RotateImage);
+                            }
+                            else {
+                                imgPictureBox.Image = Image.FromFile(imageDirs[arrayCounter]);
+                            }
 
-                            elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
+                            // grava tempo decorrido
+                            elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; 
+
                             SendKeys.SendWait("s");
                             imgPictureBox.Visible = true;
+
                             if (programInUse.SubtitleShow)
                             {
                                 subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
                             }
+
                             wordLabel.Visible = false;
                             actualImagePath = Path.GetFileName(imageDirs[arrayCounter].ToString());
                             arrayCounter++;
 
 
-                            StroopProgram.writeLineOutputResult(programInUse, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "img", audioDetail, hour, minutes, seconds);
+                            StroopProgram.writeLineOutputResult(programInUse, actualImagePath, "false", counter + 1, 
+                                                                outputContent, elapsedTime, "img", audioDetail, hour, 
+                                                                minutes, seconds);
                             
                             await Task.Delay(programInUse.ExpositionTime, cts.Token);
                             
@@ -378,13 +402,15 @@ namespace StroopTest
 
                             await Task.Delay(programInUse.DelayTime, cts.Token);
 
-                            if (programInUse.WordsListFile.ToLower() != "false") // se tiver palavras intercala elas com a imagem
+
+                            // se tiver palavras intercala elas com a imagem
+                            if (programInUse.WordsListFile.ToLower() != "false") 
                             {
                                 if (j == labelText.Count()-1) { j = 0; }
                                 wordLabel.Text = labelText[j];
 
                                 
-                                elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
+                                elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond;
                                 SendKeys.SendWait("s");
                                 imgPictureBox.Visible = false;
                                 subtitleLabel.Visible = false;
@@ -397,7 +423,9 @@ namespace StroopTest
                                 actualImagePath = wordLabel.Text;
                                 j++;
 
-                                StroopProgram.writeLineOutputResult(programInUse, actualImagePath, "false", counter + 1, outputContent, elapsedTime, "txt", audioDetail, hour, minutes, seconds);
+                                StroopProgram.writeLineOutputResult(programInUse, actualImagePath, "false", counter + 1,
+                                                                    outputContent, elapsedTime, "txt", audioDetail, hour, 
+                                                                    minutes, seconds);
                                 
                                 await Task.Delay(programInUse.ExpositionTime, cts.Token);
                             }
@@ -407,7 +435,8 @@ namespace StroopTest
                     }
                     else
                     {
-                        for (int counter = 0; counter < programInUse.NumExpositions; counter++) // AQUI ver estinulo -> palavra ou imagem como um só e ter intervalo separado
+                        // AQUI ver estimulo -> palavra ou imagem como um só e ter intervalo separado
+                        for (int counter = 0; counter < programInUse.NumExpositions; counter++) 
                         {
                             imgPictureBox.Visible = false;
                             wordLabel.Visible = false;
@@ -415,9 +444,15 @@ namespace StroopTest
                             await intervalOrFixPoint(programInUse, cts.Token);
 
 
-                            if (arrayCounter == imageDirs.Count()) { arrayCounter = 0; }
-                            if (programInUse.RotateImage != 0) { imgPictureBox.Image = RotateImage(imageDirs[arrayCounter], programInUse.RotateImage); }
-                            else { imgPictureBox.Image = Image.FromFile(imageDirs[arrayCounter]); }
+                            if (arrayCounter == imageDirs.Count()) {
+                                arrayCounter = 0;
+                            }
+                            if (programInUse.RotateImage != 0) {
+                                imgPictureBox.Image = RotateImage(imageDirs[arrayCounter], programInUse.RotateImage);
+                            }
+                            else {
+                                imgPictureBox.Image = Image.FromFile(imageDirs[arrayCounter]);
+                            }
 
                             if (programInUse.AudioListFile.ToLower() != "false" && programInUse.ExpositionType == "imgaud")
                             {
@@ -438,7 +473,12 @@ namespace StroopTest
                                 subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
                             }
 
-                            StroopProgram.writeLineOutputResult(programInUse, Path.GetFileName(imageDirs[arrayCounter].ToString()), "false", counter + 1, outputContent, elapsedTime, programInUse.ExpositionType, Path.GetFileNameWithoutExtension(audioDetail), hour, minutes, seconds);
+                            StroopProgram.writeLineOutputResult(programInUse, 
+                                                                Path.GetFileName(imageDirs[arrayCounter].ToString()), "false",
+                                                                counter + 1, outputContent, elapsedTime, 
+                                                                programInUse.ExpositionType, 
+                                                                Path.GetFileNameWithoutExtension(audioDetail), hour, minutes,
+                                                                seconds);
                             
                             arrayCounter++;
                             await Task.Delay(programInUse.ExpositionTime, cts.Token);
@@ -452,7 +492,9 @@ namespace StroopTest
 
                     await Task.Delay(programInUse.IntervalTime, cts.Token);
                     // beginAudio
-                    if (programInUse.AudioCapture) { stopRecordingAudio(); } // para gravação áudio
+                    if (programInUse.AudioCapture) {
+                        stopRecordingAudio();
+                    } 
                     // endAudio
                     changeBackgroundColor(programInUse, false); // retorna à cor de fundo padrão
 
@@ -473,7 +515,9 @@ namespace StroopTest
             catch (TaskCanceledException)
             {
                 StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
-                if (programInUse.AudioCapture) { stopRecordingAudio(); }
+                if (programInUse.AudioCapture) {
+                    stopRecordingAudio();
+                }
             }
             catch (Exception ex)
             {
@@ -537,12 +581,13 @@ namespace StroopTest
                 this.BackColor = Color.White;
             }
         }
+
         private string[] configureSubtitle()
         {
             string[] subtitlesArray = null;
             if (programInUse.SubtitleShow)
             {
-                subtitlesArray = StrList.readListFile(path + "/lst/" + programInUse.SubtitlesListFile);
+                subtitlesArray = StrList.readListFile(defaultFolderPath + "/Lst/" + programInUse.SubtitlesListFile);
                 if (programInUse.SubtitleColor.ToLower() != "false")
                 {
                     subtitleLabel.ForeColor = ColorTranslator.FromHtml(programInUse.SubtitleColor);
@@ -557,6 +602,7 @@ namespace StroopTest
             }
             return subtitlesArray;
         }
+
         private int showSubtitle(int subtitleCounter, string[] subtitlesArray)
         {
             Random random = new Random();
@@ -647,7 +693,8 @@ namespace StroopTest
         
         private void FormExposition_FormClosed(object sender, FormClosedEventArgs e)
         {
-            audioControl.saveRecording(outputDataPath + "/audio_" + programInUse.UserName + "_" + programInUse.ProgramName + "_" + now + ".wav");
+            audioControl.saveRecording(outputDataPath + "/audio_" + programInUse.UserName + "_" + programInUse.ProgramName 
+                                        + "_" + now + ".wav");
             if(cts != null)
                 cts.Cancel();
         }

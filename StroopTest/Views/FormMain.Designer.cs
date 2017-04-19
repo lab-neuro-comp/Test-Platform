@@ -76,16 +76,15 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.executeBar = new System.Windows.Forms.FlowLayoutPanel();
-            this.executeButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.executingNameLabel = new System.Windows.Forms.Label();
             this.selectButton = new System.Windows.Forms.Button();
             this.executingTypeLabel = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.participantTextBox = new System.Windows.Forms.TextBox();
             this.participantLabel = new System.Windows.Forms.Label();
+            this.executeButton = new System.Windows.Forms.Button();
             this.mainMenuStrip.SuspendLayout();
             this.testToolStrip.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -180,14 +179,14 @@
             // stroopToolStripMenuItem
             // 
             this.stroopToolStripMenuItem.Name = "stroopToolStripMenuItem";
-            this.stroopToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.stroopToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.stroopToolStripMenuItem.Text = "Stroop";
             this.stroopToolStripMenuItem.Click += new System.EventHandler(this.stroopToolStripMenuItem_Click);
             // 
             // reactionToolStripMenuItem
             // 
             this.reactionToolStripMenuItem.Name = "reactionToolStripMenuItem";
-            this.reactionToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.reactionToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.reactionToolStripMenuItem.Text = "Reaction";
             this.reactionToolStripMenuItem.Click += new System.EventHandler(this.reactionToolStripMenuItem_Click);
             // 
@@ -559,27 +558,10 @@
             this.executeBar.Size = new System.Drawing.Size(1266, 45);
             this.executeBar.TabIndex = 26;
             // 
-            // executeButton
-            // 
-            this.executeButton.FlatAppearance.BorderSize = 0;
-            this.executeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.executeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.executeButton.Image = global::TestPlatform.Properties.Resources.icon_execute;
-            this.executeButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.executeButton.Location = new System.Drawing.Point(780, 3);
-            this.executeButton.Name = "executeButton";
-            this.executeButton.Size = new System.Drawing.Size(127, 36);
-            this.executeButton.TabIndex = 0;
-            this.executeButton.Text = "Executar";
-            this.executeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.executeButton.UseVisualStyleBackColor = true;
-            this.executeButton.Click += new System.EventHandler(this.executeButton_Click);
-            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.executingNameLabel);
             this.panel2.Controls.Add(this.selectButton);
             this.panel2.Controls.Add(this.executingTypeLabel);
@@ -592,21 +574,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(159, 7);
+            this.label2.Location = new System.Drawing.Point(134, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 18);
+            this.label2.Size = new System.Drawing.Size(78, 18);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Nome:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Tipo:";
+            this.label2.Text = "Programa:";
             // 
             // executingNameLabel
             // 
@@ -636,7 +608,7 @@
             // 
             this.executingTypeLabel.AutoSize = true;
             this.executingTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.executingTypeLabel.Location = new System.Drawing.Point(50, 7);
+            this.executingTypeLabel.Location = new System.Drawing.Point(9, 7);
             this.executingTypeLabel.Name = "executingTypeLabel";
             this.executingTypeLabel.Size = new System.Drawing.Size(82, 18);
             this.executingTypeLabel.TabIndex = 0;
@@ -669,6 +641,22 @@
             this.participantLabel.Size = new System.Drawing.Size(85, 18);
             this.participantLabel.TabIndex = 0;
             this.participantLabel.Text = "Participante";
+            // 
+            // executeButton
+            // 
+            this.executeButton.FlatAppearance.BorderSize = 0;
+            this.executeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.executeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.executeButton.Image = global::TestPlatform.Properties.Resources.icon_execute;
+            this.executeButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.executeButton.Location = new System.Drawing.Point(780, 3);
+            this.executeButton.Name = "executeButton";
+            this.executeButton.Size = new System.Drawing.Size(127, 36);
+            this.executeButton.TabIndex = 0;
+            this.executeButton.Text = "Executar";
+            this.executeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.executeButton.UseVisualStyleBackColor = true;
+            this.executeButton.Click += new System.EventHandler(this.executeButton_Click);
             // 
             // FormMain
             // 
@@ -763,6 +751,5 @@
         private System.Windows.Forms.Label participantLabel;
         private System.Windows.Forms.TextBox participantTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
     }
 }

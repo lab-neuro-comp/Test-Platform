@@ -111,6 +111,7 @@
     <Compile Include="Models\Experiment.cs" />
     <Compile Include="Models\Program.cs" />
     <Compile Include="Models\ReactionProgram.cs" />
+    <Compile Include="Models\ReactionTest.cs" />
     <Compile Include="Models\StrList.cs" />
     <Compile Include="Models\Validations.cs" />
     <Compile Include="Settings.cs" />

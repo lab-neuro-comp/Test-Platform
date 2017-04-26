@@ -167,8 +167,8 @@ namespace TestPlatform.Models
                  this.FixPoint + " " +
                  this.AudioListFile + " " +
                  this.FixPointColor + " " +
-                 this.IntervalTimeRandom +
-                 this.stimuluShape +
+                 this.IntervalTimeRandom + " " +
+                 this.stimuluShape + " " +
                  this.stimulusType;
             return data;
         }
@@ -248,7 +248,7 @@ namespace TestPlatform.Models
 
         public bool saveProgramFile(string path, string instructionBoxText)
         {
-            StreamWriter writer = new StreamWriter(path + "ReactionTestFiles/prg/" + ProgramName + ".tr");
+            StreamWriter writer = new StreamWriter(path + "ReactionTestFiles/prg/" + ProgramName + ".prg");
             writer.WriteLine(data());
             if (InstructionText != null && InstructionText[0] != instructionBoxText)
             {

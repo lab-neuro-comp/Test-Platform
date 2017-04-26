@@ -128,16 +128,16 @@
     <Compile Include="Views\FormDefineTest.Designer.cs">
       <DependentUpon>FormDefineTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormReactExposition.cs">
+    <Compile Include="Views\ReactionPages\FormReactExposition.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormReactExposition.Designer.cs">
+    <Compile Include="Views\ReactionPages\FormReactExposition.Designer.cs">
       <DependentUpon>FormReactExposition.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormTRConfig.cs">
+    <Compile Include="Views\ReactionPages\FormTRConfig.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\FormTRConfig.Designer.cs">
+    <Compile Include="Views\ReactionPages\FormTRConfig.Designer.cs">
       <DependentUpon>FormTRConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SidebarUserControls\DefaultUserControl.cs">
@@ -170,10 +170,10 @@
     <Compile Include="Views\SidebarUserControls\StroopControl.Designer.cs">
       <DependentUpon>StroopControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormListConfig.cs">
+    <Compile Include="Views\ListsPages\FormListConfig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormListConfig.Designer.cs">
+    <Compile Include="Views\ListsPages\FormListConfig.Designer.cs">
       <DependentUpon>FormListConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormNewAudio.cs">
@@ -188,16 +188,16 @@
     <Compile Include="Views\FormShowAudio.Designer.cs">
       <DependentUpon>FormShowAudio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormAudioConfig.cs">
+    <Compile Include="Views\ListsPages\FormAudioConfig.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\FormAudioConfig.Designer.cs">
+    <Compile Include="Views\ListsPages\FormAudioConfig.Designer.cs">
       <DependentUpon>FormAudioConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormImgConfig.cs">
+    <Compile Include="Views\ListsPages\FormImgConfig.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\FormImgConfig.Designer.cs">
+    <Compile Include="Views\ListsPages\FormImgConfig.Designer.cs">
       <DependentUpon>FormImgConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormMain.cs">
@@ -212,10 +212,10 @@
     <Compile Include="Views\FormDefine.Designer.cs">
       <DependentUpon>FormDefine.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormPrgConfig.cs">
+    <Compile Include="Views\StroopPages\FormPrgConfig.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\FormPrgConfig.Designer.cs">
+    <Compile Include="Views\StroopPages\FormPrgConfig.Designer.cs">
       <DependentUpon>FormPrgConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormInstructions.cs">
@@ -224,28 +224,28 @@
     <Compile Include="Views\FormInstructions.Designer.cs">
       <DependentUpon>FormInstructions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormExposition.cs">
+    <Compile Include="Views\StroopPages\FormExposition.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormExposition.Designer.cs">
+    <Compile Include="Views\StroopPages\FormExposition.Designer.cs">
       <DependentUpon>FormExposition.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormShowData.cs">
+    <Compile Include="Views\StroopPages\FormShowData.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\FormShowData.Designer.cs">
+    <Compile Include="Views\StroopPages\FormShowData.Designer.cs">
       <DependentUpon>FormShowData.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormWordColorConfig.cs">
+    <Compile Include="Views\ListsPages\FormWordColorConfig.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\FormWordColorConfig.Designer.cs">
+    <Compile Include="Views\ListsPages\FormWordColorConfig.Designer.cs">
       <DependentUpon>FormWordColorConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormWordColorDialog.cs">
+    <Compile Include="Views\ListsPages\FormWordColorDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormWordColorDialog.Designer.cs">
+    <Compile Include="Views\ListsPages\FormWordColorDialog.Designer.cs">
       <DependentUpon>FormWordColorDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\HelpData.cs" />
@@ -264,10 +264,10 @@
     <EmbeddedResource Include="Views\FormDefineTest.resx">
       <DependentUpon>FormDefineTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormReactExposition.resx">
+    <EmbeddedResource Include="Views\ReactionPages\FormReactExposition.resx">
       <DependentUpon>FormReactExposition.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormTRConfig.resx">
+    <EmbeddedResource Include="Views\ReactionPages\FormTRConfig.resx">
       <DependentUpon>FormTRConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\DefaultUserControl.resx">
@@ -285,7 +285,7 @@
     <EmbeddedResource Include="Views\SidebarUserControls\StroopControl.resx">
       <DependentUpon>StroopControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormListConfig.resx">
+    <EmbeddedResource Include="Views\ListsPages\FormListConfig.resx">
       <DependentUpon>FormListConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormNewAudio.resx">
@@ -294,10 +294,10 @@
     <EmbeddedResource Include="Views\FormShowAudio.resx">
       <DependentUpon>FormShowAudio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormAudioConfig.resx">
+    <EmbeddedResource Include="Views\ListsPages\FormAudioConfig.resx">
       <DependentUpon>FormAudioConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormImgConfig.resx">
+    <EmbeddedResource Include="Views\ListsPages\FormImgConfig.resx">
       <DependentUpon>FormImgConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormMain.resx">
@@ -308,7 +308,7 @@
       <DependentUpon>FormDefine.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormPrgConfig.resx">
+    <EmbeddedResource Include="Views\StroopPages\FormPrgConfig.resx">
       <DependentUpon>FormPrgConfig.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -316,18 +316,18 @@
       <DependentUpon>FormInstructions.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormExposition.resx">
+    <EmbeddedResource Include="Views\StroopPages\FormExposition.resx">
       <DependentUpon>FormExposition.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormShowData.resx">
+    <EmbeddedResource Include="Views\StroopPages\FormShowData.resx">
       <DependentUpon>FormShowData.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormWordColorConfig.resx">
+    <EmbeddedResource Include="Views\ListsPages\FormWordColorConfig.resx">
       <DependentUpon>FormWordColorConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormWordColorDialog.resx">
+    <EmbeddedResource Include="Views\ListsPages\FormWordColorDialog.resx">
       <DependentUpon>FormWordColorDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -352,6 +352,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icon_png.png" />
     <None Include="Resources\triangle.png" />
     <None Include="Resources\square.png" />
     <None Include="Resources\stopButton.png" />

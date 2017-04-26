@@ -27,7 +27,7 @@ namespace StroopTest
         {
             InitializeComponent();
 
-            Location = new Point(250, 38);
+            Location = new Point(250, 50);
             string[] filePaths = null;
             path = dataFolderPath;
 

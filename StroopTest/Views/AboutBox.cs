@@ -12,19 +12,17 @@ namespace StroopTest.Views
 {
     partial class AboutBox : Form
     {
-        private String direitosProduto = "© 2016 - Universidade de Brasília";
-        private String nomeEmpresa = "Laboratório de Neurociências e Comportamento";
-        private String descrição = "StroopTest faz parte de uma plataforma de testes neuropsicológicos computadorizados para avaliação de funções executivas. O produto tem a proposta oferecer soluções inovando tecnologicamente de forma prática e dinâmica. Destinado a pesquisadores, alunos e usuários comuns. Developer: hugohon - Hugo Honda Ferreira; 2016";
+        private String descrição = "O TestPlatform é uma plataforma de testes neuropsicológicos computadorizados para avaliação de funções executivas. O produto tem a proposta oferecer soluções inovando tecnologicamente de forma prática e dinâmica. Destinado a pesquisadores, alunos e usuários comuns. Developers: hugohon - Hugo Honda Ferreira e fabiolamfleury - Fabíola Fleury; 2017";
 
 
         public AboutBox()
         {
             InitializeComponent();
-            this.Text = string.Format("About {0}", AssemblyTitle);
+            this.Text = string.Format("Sobre {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = string.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = direitosProduto; // AssemblyCopyright;
-            this.labelCompanyName.Text = nomeEmpresa; //AssemblyCompany;
+            this.labelVersion.Text = string.Format("Versão {0}", AssemblyVersion);
+            this.labelCopyright.Text = AssemblyCopyright;
+            this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = descrição; //AssemblyDescription;
         }
 
@@ -109,6 +107,11 @@ namespace StroopTest.Views
         #endregion
 
         private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBoxDescription_TextChanged(object sender, EventArgs e)
         {
 
         }

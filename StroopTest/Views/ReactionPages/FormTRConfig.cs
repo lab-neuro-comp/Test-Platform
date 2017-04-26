@@ -24,9 +24,9 @@ namespace TestPlatform.Views
             {
                 Parent.Controls.Remove(this);
             }
-            if (prgName != "false")
+            if (PrgName != "false")
             {
-                editPrgName = prgName;
+                editPrgName = PrgName;
                 editProgram();
             }
         }
@@ -65,7 +65,18 @@ namespace TestPlatform.Views
             }
         }
 
+        public string PrgName
+        {
+            get
+            {
+                return prgName;
+            }
 
+            set
+            {
+                prgName = value;
+            }
+        }
 
         private string fixPointValue()
         {

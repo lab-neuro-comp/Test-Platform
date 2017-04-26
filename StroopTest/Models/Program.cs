@@ -62,9 +62,16 @@ namespace TestPlatform.Models
             get { return programName; }
             set
             {
-                if (Validations.isAlphanumeric(value)) programName = value;
-                else throw new ArgumentException("Nome do programa deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'MeuPrograma'");
-            }   // program name has only alphanumeric elements, without spaces
+                if (Validations.isAlphanumeric(value))
+                {
+                    programName = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Nome do programa deve ser composto apenas de caracteres alphanumericos " +
+                                                "e sem espaços;\nExemplo: 'MeuPrograma'");
+                }
+            }
         }
 
         public int NumExpositions
@@ -305,9 +312,36 @@ namespace TestPlatform.Models
             }
             catch (FileNotFoundException ex)
             {
-                throw new Exception("Arquivo Data: '" + Path.GetFileName(filepath) + "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath) + "\n\n( " + ex.Message + " )");
+                throw new Exception("Arquivo Data: '" + Path.GetFileName(filepath) + 
+                                    "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath) + 
+                                    "\n\n( " + ex.Message + " )");
             }
         }
+
+        public bool Exists(string path)
+        {
+            if (File.Exists(path + "/prg/" + ProgramName + ".prg"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Ready(string path)
+        {
+            if (!needsEditionFlag && Exists(path))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
 
         // escreve linha a linha no arquivo de saída
         static public void writeOutputFile(string filepath, string outContent)

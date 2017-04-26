@@ -16,6 +16,19 @@ namespace TestPlatform.Models
         List<DateTime> estimuluAppearedTime;
         List<DateTime> hitTime;
 
+        public string ParticipantName
+        {
+            get
+            {
+                return participantName;
+            }
+
+            set
+            {
+                participantName = value;
+            }
+        }
+
         public void setProgramInUse(string path, string prgName)
         {
             if (File.Exists(path + "/prg/" + prgName + ".prg"))

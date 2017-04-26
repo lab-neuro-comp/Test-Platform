@@ -69,9 +69,10 @@ namespace StroopTest
         {
             try
             {
-                if (!File.Exists(path + "/prg/" + programInUse.ProgramName + ".prg")) {
+                if (!programInUse.Exists(path)) {
                     throw new Exception("Arquivo programa: " + programInUse.ProgramName + ".prg" + 
-                        "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/")); } // confere existência do arquivo
+                                        "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/"));
+                } // confere existência do arquivo
                 programInUse.readProgramFile(path + "/prg/" + programInUse.ProgramName + ".prg"); // reads program into programInUse
                 now = programInUse.InitialDate.Day + "." + programInUse.InitialDate.Month + "_" + hour + "h" + minutes + "." + seconds;
                 outputFile = outputDataPath + programInUse.UserName + "_" + programInUse.ProgramName + ".txt";

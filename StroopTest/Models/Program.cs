@@ -11,7 +11,7 @@ namespace TestPlatform.Models
         protected String headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio";
         protected String errorExMsg = "Arquivo de Programa - parâmetro inválido.";
         protected String defaultRedColor = "#D01C1F";
-
+        public static Int32 instructionAwaitTime = 4000; // default await time for each frame of instruction shown before the test
         protected Boolean needsEditionFlag;
 
         protected List<string> instructionText = new List<string>();
@@ -171,16 +171,6 @@ namespace TestPlatform.Models
         {
             get { return initialDate; }
             set { initialDate = value; }
-        }
-
-        public string ExpositionType
-        {
-            get { return expositionType; }
-            set
-            {
-                if (Validations.isExpoTypeValid(value)) expositionType = value.ToLower();
-                else throw new ArgumentException("Tipo de exposição deve ser do tipo 'txt', 'img', 'imgtxt', 'txtaud' ou 'imgaud'");
-            }
         }
 
         public string ImagesListFile

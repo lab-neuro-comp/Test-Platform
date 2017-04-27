@@ -17,6 +17,7 @@ using System.Media;
 using System.Drawing.Drawing2D;
 using StroopTest.Models;
 using StroopTest.Controllers;
+using TestPlatform.Models;
 
 namespace StroopTest
 {
@@ -565,7 +566,7 @@ namespace StroopTest
                 for (int i = 0; i < program.InstructionText.Count; i++)
                 {
                     instructionLabel.Text = program.InstructionText[i];
-                    await Task.Delay(StroopProgram.instructionAwaitTime);
+                    await Task.Delay(Program.instructionAwaitTime);
                 }
                 instructionLabel.Enabled = false; instructionLabel.Visible = false;
             }

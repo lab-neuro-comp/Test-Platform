@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StroopTest.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,26 +10,30 @@ namespace TestPlatform.Models
 {
     class ReactionProgram : Program
     {
-        private String defaultProgramFileText = "padraoTR 5 500 50 1000 50 false false false false 0 #D01C1F false false o false #D01C1F 160";
+        private String defaultProgramFileText = "padraoTR 5 500 50 1000 50 false false false false 0 #D01C1F Formas false false o #D01C1F false square";
         private Int32 stimuluSize; // [3]
         private Int32 stimulusDistance; // [5] distance from the center of the screen to stimulus
         private Boolean isBeeping; // [9]
         private Int32 beepDuration; // [10]
         private String stimulusColor; // [11]
         private String stimuluShape;
-        private String stimulusType;
 
-        private static Int32 ELEMENTS = 20; //quantity of fields used in ReactionProgram 
+        private static Int32 ELEMENTS = 19; //quantity of fields used in ReactionProgram 
 
         public ReactionProgram()
         {
 
         }
-
+        public override string ToString()
+        {
+            return String.Concat("Nome do programa: ", programName, " tempo de exposição: ",expositionTime, 
+                                 " Numero de exposicoes:", numExpositions, " tamanho do estimulo", stimuluSize
+                                 );
+        }
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
                                 int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
-                                string stimuluShape, string stimulusType)
+                                string stimuluShape, string expoType)
         {
             // Program properties
             this.programName = programName;
@@ -47,14 +52,13 @@ namespace TestPlatform.Models
             this.beepDuration = beepDuration;
             this.stimulusColor = stimulusColor;
             this.stimuluShape = stimuluShape;
-            this.stimulusType = stimulusType;
 
             //default configurations for first version of ReactionProgram
             this.audioListFile = "false";
             this.colorsListFile = "false";
             this.wordsListFile = "false";
             this.imagesListFile = "false";
-            this.expositionType = "standard";
+            this.expositionType = expoType; // "Formas"
 
         }
 
@@ -123,6 +127,23 @@ namespace TestPlatform.Models
             }
         }
 
+        public string ExpositionType
+        {
+            get { return expositionType; }
+            set
+            {
+                if (Validations.isExpoReactValid(value))
+                {
+                    expositionType = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Tipo de exposição deve ser do tipo 'Formas', 'Palavra', 'Imagem'," +
+                                                   "'Imagem e Palavra', 'Palavra com Aúdio' ou 'Imagem com Aúdio'");
+                }
+            }
+        }
+
         public string StimuluShape
         {
             get
@@ -133,19 +154,6 @@ namespace TestPlatform.Models
             set
             {
                 stimuluShape = value;
-            }
-        }
-
-        public string StimulusType
-        {
-            get
-            {
-                return stimulusType;
-            }
-
-            set
-            {
-                stimulusType = value;
             }
         }
 
@@ -160,16 +168,16 @@ namespace TestPlatform.Models
                  this.WordsListFile + " " +
                  this.ColorsListFile + " " +
                  this.BackgroundColor.ToUpper() + " " +
+                 this.isBeeping.ToString() + " " +
                  this.BeepDuration.ToString() + " " +
                  this.StimulusColor.ToString() + " " +
-                 this.ExpositionType.ToLower() + " " +
+                 this.ExpositionType + " " +
                  this.ImagesListFile + " " +
-                 this.FixPoint + " " +
                  this.AudioListFile + " " +
+                 this.FixPoint + " " +
                  this.FixPointColor + " " +
                  this.IntervalTimeRandom + " " +
-                 this.stimuluShape + " " +
-                 this.stimulusType;
+                 this.stimuluShape;
             return data;
         }
 
@@ -190,7 +198,7 @@ namespace TestPlatform.Models
                 line = encodeLatinText(line);
                 config = line.Split().ToList();
                 tr.Close();
-
+                Console.Write(config.Count());
 
                 needsEditionFlag = false;
                 if (config.Count() != ELEMENTS)
@@ -198,7 +206,7 @@ namespace TestPlatform.Models
                     needsEditionFlag = true;
 
                     List<string> defaultConfig = defaultProgramFileText.Split().ToList();
-                    for (int i = config.Count(); i < ELEMENTS; i++)
+                    for (int i = 0; i < ELEMENTS; i++)
                     {
                         config.Add(defaultConfig[i]);
                     }
@@ -219,12 +227,11 @@ namespace TestPlatform.Models
                 StimulusColor = config[11];
                 ExpositionType = config[12]; 
                 ImagesListFile = config[13];
-                FixPoint = config[14];
-                AudioListFile = config[15];
+                AudioListFile = config[14];
+                FixPoint = config[15];
                 FixPointColor = config[16];
                 IntervalTimeRandom = bool.Parse(config[17]);
                 StimuluShape = config[18];
-                StimulusType = config[19];
                 linesInstruction = File.ReadAllLines(filepath);
                 if (linesInstruction.Length > 1) // lê instrução se houver
                 {

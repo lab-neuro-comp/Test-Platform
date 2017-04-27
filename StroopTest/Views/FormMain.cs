@@ -71,6 +71,7 @@ namespace StroopTest
                 DirectoryInfo directoryOldData = new DirectoryInfo(defaultPath + "/data");
                 directoryOldData.MoveTo(testFilesPath + stroopResultsPath);
 
+
                 try
                 {
                     File.Delete(defaultPath + "/StroopTest.exe");
@@ -113,6 +114,8 @@ namespace StroopTest
             if (!File.Exists(testFilesPath + PGRCONFIGHELPFILENAME))
                 File.Create(testFilesPath + PGRCONFIGHELPFILENAME).Dispose();
 
+            if (File.Exists(defaultPath + "/StroopTestFiles"))
+                File.Delete(defaultPath + "/StroopTestFiles");
 
 
             initializeDefaultProgram(); // inicializa programa padrão (cria arquivo programa padrão e listas de palavras e cores padrão)
@@ -299,11 +302,12 @@ namespace StroopTest
                     if (sc[0].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 1; }
                     if (sc[1].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 0; }
                 }
-              //  FormReactExposition f = new FormReactExposition(programName, participantTextBox.Text, testFilesPath);
-              //  f.StartPosition = FormStartPosition.Manual;
-              // f.Location = Screen.AllScreens[showOnMonitor].WorkingArea.Location;
-              // SendKeys.SendWait("i");
-              // f.Show();
+                FormReactExposition reactionExposition = new FormReactExposition(programName, participantTextBox.Text, 
+                                                                                 testFilesPath);
+                reactionExposition.StartPosition = FormStartPosition.Manual;
+                reactionExposition.Location = Screen.AllScreens[showOnMonitor].WorkingArea.Location;
+                SendKeys.SendWait("i");
+                reactionExposition.Show();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

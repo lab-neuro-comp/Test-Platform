@@ -109,6 +109,10 @@ namespace TestPlatform.Views
 
         private ReactionProgram configureNewProgram()
         {
+            if(bgColorButton.Text.Equals("escolher"))
+            {
+                bgColorButton.Text = "false";
+            }
             ReactionProgram newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
                                                              Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
                                                              Convert.ToInt32(intervalTime.Value),

@@ -127,5 +127,14 @@ namespace StroopTest.Models
                 return true;
             return false;
         }
+
+        public static bool isExpoReactValid(string value)
+        {
+            if (value == "Formas" || value == "Palavra" || value == "Imagem e Palavra" || value == "Imagem" ||
+                value == "Palavra com Aúdio" || value == "Imagem com Aúdio")
+                return true;
+            else
+                return false;
+        }
     }
 }

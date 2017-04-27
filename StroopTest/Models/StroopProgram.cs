@@ -18,7 +18,6 @@ namespace StroopTest.Models
         private String[] defaultInstructionText = { "Serão apresentadas palavras coloridas de forma aleatória. Palavras surgirão rapidamente e em seguida desaparecerão",
                                                     "Diga a cor em que a palavra está escrita",
                                                     "A tarefa vai começar agora"};
-        public static Int32 instructionAwaitTime = 4000; // default await time for each frame of instruction shown before the test
         private Boolean expositionRandom;          // [3]*  is exposition random
         private Boolean audioCapture;              // [9]*  is audio capture activated
         private Boolean subtitleShow;              // [10]* subtitles activated
@@ -320,6 +319,15 @@ namespace StroopTest.Models
             }
         }
 
+        public string ExpositionType
+        {
+            get { return expositionType; }
+            set
+            {
+                if (Validations.isExpoTypeValid(value)) expositionType = value.ToLower();
+                else throw new ArgumentException("Tipo de exposição deve ser do tipo 'txt', 'img', 'imgtxt', 'txtaud' ou 'imgaud'");
+            }
+        }
 
         public int RotateImage
         {

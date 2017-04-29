@@ -22,7 +22,7 @@ namespace TestPlatform.Views
         private string seconds = DateTime.Now.Second.ToString("00");
         private string startTime;
         private string outputFile;
-        CancellationTokenSource cancellationTokenSource;
+        CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
 
         public FormReactExposition(string prgName, string participantName, string defaultPath)
@@ -63,10 +63,10 @@ namespace TestPlatform.Views
         }
 
 
-        private async void initializeExposition()
+        private async Task initializeExposition()
         {
             programInUse.readProgramFile(path + "/prg/" + programInUse.ProgramName + ".prg");
-            Console.Write(programInUse.ExpositionType);
+            Console.Write("\n"+programInUse.ExpositionType);
             switch (programInUse.ExpositionType)
             {
                 case "Formas":
@@ -94,7 +94,6 @@ namespace TestPlatform.Views
 
         private async Task shapeExposition()
         {
-
             cancellationTokenSource = new CancellationTokenSource();
             var interval = Task.Run(async delegate {
                 await Task.Delay(programInUse.IntervalTime,
@@ -104,29 +103,22 @@ namespace TestPlatform.Views
                 await Task.Delay(programInUse.ExpositionTime,
                                  cancellationTokenSource.Token);
             });
-            try
-            {
-                await showInstructions(programInUse, cancellationTokenSource.Token);
-                string printCount = "";
-                while (true)
-                {
-                    elapsedTime = 0; // elapsed time to zero
-                    //changeBackgroundColor(programInUse, true);
-                    await Task.Delay(programInUse.IntervalTime, cancellationTokenSource.Token);
-                    for (int counter = 0; counter < programInUse.NumExpositions; counter++)
-                    {
-                        await intervalTime();
 
-                        //preparing execution
-                        await drawSquareShape();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            await showInstructions(programInUse, cancellationTokenSource.Token);
 
+            elapsedTime = 0; // elapsed time to zero
+
+
+            //changeBackgroundColor(programInUse, true);
+            await Task.Delay(programInUse.IntervalTime, cancellationTokenSource.Token);
+            for (int counter = 0; counter < programInUse.NumExpositions; counter++)
+            {
+                await intervalTime();
+
+                //preparing execution
+                await drawSquareShape();
+            }
+            cancellationTokenSource = null;
 
         }
 
@@ -169,6 +161,7 @@ namespace TestPlatform.Views
                 await makingFixPoint(intervalTime);
             }
 
+
         }
 
         private async Task drawSquareShape()
@@ -177,10 +170,12 @@ namespace TestPlatform.Views
             SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(programInUse.FixPointColor));
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
             Graphics formGraphicsEllipse = this.CreateGraphics();
+
             float xEllipse = clientMiddle[0] - brush25 * programInUse.StimulusDistance / 10;
             float yEllipse = clientMiddle[1] - brush25 * programInUse.StimulusDistance / 10;
             float widthEllipse = 2 * brush25;
             float heightEllipse = 2 * brush25;
+
             formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
             await Task.Delay(programInUse.ExpositionTime, cancellationTokenSource.Token);
             formGraphicsEllipse.Dispose();

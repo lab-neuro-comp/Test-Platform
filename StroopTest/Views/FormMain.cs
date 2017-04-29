@@ -534,7 +534,7 @@ namespace StroopTest
 
         private void reactionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormTRConfig configureProgram = new FormTRConfig();
+            FormTRConfig configureProgram = new FormTRConfig("false");
             configureProgram.Path = testFilesPath;
             this.Controls.Add(configureProgram);
         }

@@ -29,7 +29,7 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 if (newReactButton.Checked)
                 {
-                    FormTRConfig configureProgram = new FormTRConfig();
+                    FormTRConfig configureProgram = new FormTRConfig("false");
                     configureProgram.Path = testFilesPath;
                     Parent.Controls.Add(configureProgram);
                     newReactButton.Checked = false;
@@ -43,18 +43,16 @@ namespace TestPlatform.Views.SidebarUserControls
 
             FormDefine defineProgram;
             DialogResult result;
-            string editProgramName = "error";
 
             try
             {
-                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "ReactionTestFiles/prg/", "tr", "program", false);
+                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "ReactionTestFiles/prg/", "prg", 
+                                                "program", false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    editProgramName = defineProgram.ReturnValue;
-                    FormTRConfig configureProgram = new FormTRConfig();
+                    FormTRConfig configureProgram = new FormTRConfig(defineProgram.ReturnValue);
                     configureProgram.Path = testFilesPath;
-              //      configureProgram.PrgName = editProgramName;
                     this.Controls.Add(configureProgram);
                     editReactButton.Checked = false;
                 }

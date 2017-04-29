@@ -15,33 +15,151 @@ namespace TestPlatform.Views
         private String instructionBoxText = "Escreva cada uma das intruções em linhas separadas.";
         private String editPrgName = "false";
         private String prgName = "false";
+        private String defaultColor = "#400040";
 
-        public FormTRConfig()
+        public FormTRConfig(string prgName)
         {
+            this.prgName = prgName;
             Location = new Point(530, 38);
             InitializeComponent();
-            if (editPrgName.Equals("error"))
-            {
-                Parent.Controls.Remove(this);
-            }
+
             if (PrgName != "false")
             {
                 editPrgName = PrgName;
                 editProgram();
+            }
+            if (editPrgName.Equals("error"))
+            {
+                Parent.Controls.Remove(this);
             }
         }
 
         private void editProgram()
         {
             ReactionProgram editProgram = new ReactionProgram();
-            editProgram.readProgramFile(path + "/prg/" + editPrgName + ".tr");
+            editProgram.readProgramFile(path + "TestFiles/ReactionTestFiles/prg/" + editPrgName + ".prg");
+
             prgNameTextBox.Text = editProgram.ProgramName;
             numExpo.Value = editProgram.NumExpositions;
             expoTime.Value = editProgram.ExpositionTime;
             intervalTime.Value = editProgram.IntervalTime;
             beepingCheckbox.Checked = editProgram.IsBeeping;
-            beepDuration.Value = editProgram.BeepDuration; 
+            beepDuration.Value = editProgram.BeepDuration;
+
+            if (editProgram.WordsListFile.ToLower() == "false")
+            {
+                openWordListButton.Enabled = false;
+            }
+            else
+            {
+                openWordListButton.Enabled = true;
+                openWordListButton.Text = editProgram.WordsListFile;
+            }
+
+            if (editProgram.ColorsListFile.ToLower() == "false")
+            {
+                openColorListButton.Enabled = false;
+            }
+            else
+            {
+                openColorListButton.Enabled = true;
+                openColorListButton.Text = editProgram.ColorsListFile;
+            }
+
+            if (editProgram.ImagesListFile.ToLower() == "false")
+            {
+                openImgListButton.Enabled = false;
+            }
+            else
+            {
+                openImgListButton.Enabled = true;
+                openImgListButton.Text = editProgram.ImagesListFile;
+            }
+
+            if (editProgram.AudioListFile.ToLower() == "false")
+            {
+                openAudioListButton.Enabled = false;
+            }
+            else
+            {
+                openAudioListButton.Enabled = true;
+                openAudioListButton.Text = editProgram.AudioListFile;
+            }
+
+            if (editProgram.BackgroundColor.ToLower() == "false")
+            {
+                bgColorPanel.BackColor = Color.White;
+                bgColorButton.Text = "escolher";
+            }
+
+            else
+            {
+                if ((Validations.isHexPattern(editProgram.BackgroundColor)))
+                {
+                    bgColorButton.Text = editProgram.BackgroundColor;
+                    bgColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.BackgroundColor);
+                }
+            }
+
+            if (editProgram.FixPoint == "+")
+            {
+                fixPointCross.Checked = true;
+                fixPointCircle.Checked = false;
+                fixPointColorButton.Text = editProgram.FixPointColor;
+                fixPointColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.FixPointColor);
+            }
+            else if (editProgram.FixPoint == "o")
+            {
+                fixPointCross.Checked = false;
+                fixPointCircle.Checked = true;
+                fixPointColorButton.Text = editProgram.FixPointColor;
+                fixPointColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.FixPointColor);
+            }
+            else
+            {
+                fixPointCross.Checked = false;
+                fixPointCircle.Checked = false;
+            }
+
+            if (editProgram.InstructionText != null) // lê instrução se houver
+            {
+                instructionsBox.ForeColor = Color.Black;
+                instructionsBox.Text = editProgram.InstructionText[0];
+                for (int i = 1; i < editProgram.InstructionText.Count; i++)
+                {
+                    instructionsBox.AppendText(Environment.NewLine + editProgram.InstructionText[i]);
+                }
+            }
+            else
+            {
+                instructionsBox.Text = instructionBoxText;
+            }
+
+            switch (editProgram.ExpositionType)
+            {
+                case "Formas":
+                    chooseExpoType.SelectedIndex = 0;
+                    break;
+                case "Palavra":
+                    chooseExpoType.SelectedIndex = 1;
+                    break;
+                case "Imagem":
+                    chooseExpoType.SelectedIndex = 2;
+                    break;
+                case "Imagem e Palavra":
+                    chooseExpoType.SelectedIndex = 3;
+                    break;
+                case "Palavra com Áudio":
+                    chooseExpoType.SelectedIndex = 4;
+                    break;
+                case "Imagem com Áudio":
+                    chooseExpoType.SelectedIndex = 5;
+                    break;
+                default:
+                    throw new Exception("Tipo de Exposição: " + editProgram.ExpositionType + " inválido!");
+            }
         }
+        
 
         protected override void OnLoad(EventArgs e)
         {
@@ -52,6 +170,7 @@ namespace TestPlatform.Views
             }
             base.OnLoad(e);
         }
+
         public string Path
         {
             get
@@ -107,6 +226,31 @@ namespace TestPlatform.Views
             return shape;
         }
 
+        private string fixPointColor()
+        {
+            if (fixPointColorButton.Text.Equals("escolher"))
+            {
+                return defaultColor;
+            }
+            else
+            {
+                return fixPointColorButton.Text;
+            }
+        }
+
+
+        private string stimulusColorCheck()
+        {
+            if (stimulusColor.Text.Equals("escolher"))
+            {
+                return defaultColor;
+            }
+            else
+            {
+                return stimulusColor.Text;
+            }
+        }
+
         private ReactionProgram configureNewProgram()
         {
             if(bgColorButton.Text.Equals("escolher"))
@@ -117,8 +261,8 @@ namespace TestPlatform.Views
                                                              Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
                                                              Convert.ToInt32(intervalTime.Value),
                                                              Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked,
-                                                             Convert.ToInt32(beepDuration.Value), stimulusColor.Text, fixPointValue(),
-                                                             bgColorButton.Text, fixPointColorButton.Text, 
+                                                             Convert.ToInt32(beepDuration.Value), stimulusColorCheck(), fixPointValue(),
+                                                             bgColorButton.Text, fixPointColor(), 
                                                              rndIntervalCheck.Checked, shapeValue(), chooseExpoType.Text);
 
 
@@ -149,7 +293,7 @@ namespace TestPlatform.Views
             
             try
             {
-                if (File.Exists(Path + "prg/" + prgNameTextBox.Text + ".tr"))
+                if (File.Exists(Path +"ReactionTestFiles/prg/" + prgNameTextBox.Text + ".prg"))
                 {
                     DialogResult dialogResult = MessageBox.Show("O programa já existe, deseja sobrescrevê-lo?", "", MessageBoxButtons.OKCancel);
                     if (dialogResult == DialogResult.Cancel)

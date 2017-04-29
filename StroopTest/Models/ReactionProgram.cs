@@ -198,7 +198,6 @@ namespace TestPlatform.Models
                 line = encodeLatinText(line);
                 config = line.Split().ToList();
                 tr.Close();
-                Console.Write(config.Count());
 
                 needsEditionFlag = false;
                 if (config.Count() != ELEMENTS)

@@ -69,7 +69,6 @@ namespace TestPlatform.Views
         private async void initializeExposition()
         {
             programInUse.readProgramFile(path + "/prg/" + programInUse.ProgramName + ".prg");
-            Console.Write("\n"+programInUse.ExpositionType);
             switch (programInUse.ExpositionType)
             {
                 case "Formas":
@@ -179,15 +178,16 @@ namespace TestPlatform.Views
             Random random = new Random();
             float[,] position = new float[4,2]{ { programInUse.StimulusDistance, 0 }, { 0, programInUse.StimulusDistance }, 
                                                 { -programInUse.StimulusDistance, 0 }, { 0, -programInUse.StimulusDistance } };
-            int index = random.Next(0, 8);
+            int index = random.Next(0, 3);
             float xSquare = (clientMiddle[0] - brush25) + position[index,0];
             float ySquare = (clientMiddle[1] - brush25) + position[index,1];
-            float widthSquare = 2 * brush25;
-            float heightSquare = 2 * brush25;
+            float widthSquare = programInUse.StimuluSize;
+            float heightSquare = programInUse.StimuluSize;
 
             formGraphicsSquare.FillRectangle(myBrush, xSquare, ySquare, widthSquare, heightSquare);
             await Task.Delay(programInUse.ExpositionTime, cancellationTokenSource.Token);
             formGraphicsSquare.Dispose();
+            
         }
 
 
@@ -231,9 +231,8 @@ namespace TestPlatform.Views
         {
             try
             {
-                FormTRConfig configureProgram = new FormTRConfig();
+                FormTRConfig configureProgram = new FormTRConfig(programInUse.ProgramName);
                 configureProgram.Path = path;
-                configureProgram.PrgName = "/" + programInUse.ProgramName;
                 this.Controls.Add(configureProgram);
             }
             catch (Exception ex) { throw new Exception("Edição não pode ser feita " + ex.Message); }

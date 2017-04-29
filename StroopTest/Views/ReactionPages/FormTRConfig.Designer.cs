@@ -31,9 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.shapesGroupBox = new System.Windows.Forms.GroupBox();
+            this.shapeRadioPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.squareRadioButton = new System.Windows.Forms.RadioButton();
-            this.circleRadioButton = new System.Windows.Forms.RadioButton();
             this.triangleRadioButton = new System.Windows.Forms.RadioButton();
+            this.circleRadioButton = new System.Windows.Forms.RadioButton();
             this.helpButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -89,9 +90,9 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.shapeRadioPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.shapesGroupBox.SuspendLayout();
+            this.shapeRadioPanel.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox5.SuspendLayout();
@@ -105,7 +106,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.shapeRadioPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -141,6 +141,16 @@
             this.shapesGroupBox.TabStop = false;
             this.shapesGroupBox.Text = "Formas";
             // 
+            // shapeRadioPanel
+            // 
+            this.shapeRadioPanel.Controls.Add(this.squareRadioButton);
+            this.shapeRadioPanel.Controls.Add(this.triangleRadioButton);
+            this.shapeRadioPanel.Controls.Add(this.circleRadioButton);
+            this.shapeRadioPanel.Location = new System.Drawing.Point(20, 20);
+            this.shapeRadioPanel.Name = "shapeRadioPanel";
+            this.shapeRadioPanel.Size = new System.Drawing.Size(115, 100);
+            this.shapeRadioPanel.TabIndex = 3;
+            // 
             // squareRadioButton
             // 
             this.squareRadioButton.AutoSize = true;
@@ -155,17 +165,6 @@
             this.squareRadioButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.squareRadioButton.UseVisualStyleBackColor = true;
             // 
-            // circleRadioButton
-            // 
-            this.circleRadioButton.AutoSize = true;
-            this.circleRadioButton.Enabled = false;
-            this.circleRadioButton.Image = global::TestPlatform.Properties.Resources.circle1;
-            this.circleRadioButton.Location = new System.Drawing.Point(3, 63);
-            this.circleRadioButton.Name = "circleRadioButton";
-            this.circleRadioButton.Size = new System.Drawing.Size(72, 24);
-            this.circleRadioButton.TabIndex = 2;
-            this.circleRadioButton.UseVisualStyleBackColor = true;
-            // 
             // triangleRadioButton
             // 
             this.triangleRadioButton.AutoSize = true;
@@ -176,6 +175,17 @@
             this.triangleRadioButton.Size = new System.Drawing.Size(72, 24);
             this.triangleRadioButton.TabIndex = 1;
             this.triangleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // circleRadioButton
+            // 
+            this.circleRadioButton.AutoSize = true;
+            this.circleRadioButton.Enabled = false;
+            this.circleRadioButton.Image = global::TestPlatform.Properties.Resources.circle1;
+            this.circleRadioButton.Location = new System.Drawing.Point(3, 63);
+            this.circleRadioButton.Name = "circleRadioButton";
+            this.circleRadioButton.Size = new System.Drawing.Size(72, 24);
+            this.circleRadioButton.TabIndex = 2;
+            this.circleRadioButton.UseVisualStyleBackColor = true;
             // 
             // helpButton
             // 
@@ -623,7 +633,7 @@
             this.stimulusDistance.Location = new System.Drawing.Point(281, 90);
             this.stimulusDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.stimulusDistance.Maximum = new decimal(new int[] {
-            300,
+            500,
             0,
             0,
             0});
@@ -636,7 +646,7 @@
             this.stimulusDistance.Size = new System.Drawing.Size(80, 22);
             this.stimulusDistance.TabIndex = 169;
             this.stimulusDistance.Value = new decimal(new int[] {
-            160,
+            300,
             0,
             0,
             0});
@@ -795,19 +805,14 @@
             // stimuluSize
             // 
             this.stimuluSize.Increment = new decimal(new int[] {
-            10,
+            2,
             0,
             0,
             0});
             this.stimuluSize.Location = new System.Drawing.Point(281, 59);
             this.stimuluSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.stimuluSize.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
             this.stimuluSize.Minimum = new decimal(new int[] {
-            50,
+            10,
             0,
             0,
             0});
@@ -815,7 +820,7 @@
             this.stimuluSize.Size = new System.Drawing.Size(80, 22);
             this.stimuluSize.TabIndex = 13;
             this.stimuluSize.Value = new decimal(new int[] {
-            160,
+            50,
             0,
             0,
             0});
@@ -892,16 +897,6 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
-            // shapeRadioPanel
-            // 
-            this.shapeRadioPanel.Controls.Add(this.squareRadioButton);
-            this.shapeRadioPanel.Controls.Add(this.triangleRadioButton);
-            this.shapeRadioPanel.Controls.Add(this.circleRadioButton);
-            this.shapeRadioPanel.Location = new System.Drawing.Point(20, 20);
-            this.shapeRadioPanel.Name = "shapeRadioPanel";
-            this.shapeRadioPanel.Size = new System.Drawing.Size(115, 100);
-            this.shapeRadioPanel.TabIndex = 3;
-            // 
             // FormTRConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -915,6 +910,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.shapesGroupBox.ResumeLayout(false);
+            this.shapeRadioPanel.ResumeLayout(false);
+            this.shapeRadioPanel.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -933,8 +930,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.shapeRadioPanel.ResumeLayout(false);
-            this.shapeRadioPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }

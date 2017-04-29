@@ -96,12 +96,38 @@ namespace TestPlatform.Views
         {
 
             cancellationTokenSource = new CancellationTokenSource();
-            await showInstructions(programInUse, cancellationTokenSource.Token);
+            var interval = Task.Run(async delegate {
+                await Task.Delay(programInUse.IntervalTime,
+                                  cancellationTokenSource.Token);
+            });
+            var exposition = Task.Run(async delegate {
+                await Task.Delay(programInUse.ExpositionTime,
+                                 cancellationTokenSource.Token);
+            });
+            try
+            {
+                await showInstructions(programInUse, cancellationTokenSource.Token);
+                string printCount = "";
+                while (true)
+                {
+                    elapsedTime = 0; // elapsed time to zero
+                    //changeBackgroundColor(programInUse, true);
+                    await Task.Delay(programInUse.IntervalTime, cancellationTokenSource.Token);
+                    for (int counter = 0; counter < programInUse.NumExpositions; counter++)
+                    {
+                        await intervalTime();
 
-            var interval = Task.Run(async delegate {await Task.Delay(programInUse.IntervalTime, 
-                                                                      cancellationTokenSource.Token);});
-            var exposition = Task.Run(async delegate { await Task.Delay(programInUse.ExpositionTime, 
-                                                                        cancellationTokenSource.Token); });
+                        //preparing execution
+                        await drawSquareShape();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
 
         private async Task showInstructions(ReactionProgram program, CancellationToken token) // apresenta instruções
@@ -118,36 +144,81 @@ namespace TestPlatform.Views
             }
         }
 
+        private async Task intervalTime()
+        {
+            int intervalTime = 200; // minimal rnd interval time
 
-        private void makingFixPoint()
+            // if random interval active, it will be a value between 200 and the defined interval time
+            if (programInUse.IntervalTimeRandom && programInUse.IntervalTime > 200) 
+            {
+                Random random = new Random();
+                intervalTime = random.Next(200, programInUse.IntervalTime);
+            }
+            else
+            {
+                intervalTime = programInUse.IntervalTime;
+            }
+
+            // if there is no fixPoint determination, just wait intervalTime
+            if (programInUse.FixPoint != "+" && programInUse.FixPoint != "o")
+            {
+                await Task.Delay(intervalTime);
+            }
+            else // if it uses fixPoint
+            {
+                await makingFixPoint(intervalTime);
+            }
+
+        }
+
+        private async Task drawSquareShape()
+        {
+            int brush25 = 25;
+            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(programInUse.FixPointColor));
+            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            Graphics formGraphicsEllipse = this.CreateGraphics();
+            float xEllipse = clientMiddle[0] - brush25 * programInUse.StimulusDistance / 10;
+            float yEllipse = clientMiddle[1] - brush25 * programInUse.StimulusDistance / 10;
+            float widthEllipse = 2 * brush25;
+            float heightEllipse = 2 * brush25;
+            formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
+            await Task.Delay(programInUse.ExpositionTime, cancellationTokenSource.Token);
+            formGraphicsEllipse.Dispose();
+        }
+
+
+        private async Task makingFixPoint(int intervalTime)
         {
             SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(programInUse.FixPointColor));
+            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            int brush25 = 25;
+            int brush4 = 4;
 
             switch (programInUse.FixPoint)
             {
                 case "+": // cross fixPoint
                     Graphics formGraphicsCross1 = this.CreateGraphics();
                     Graphics formGraphicsCross2 = this.CreateGraphics();
-                    float xCross1 = ClientSize.Width / 2 - 25;
-                    float yCross1 = ClientSize.Height / 2 - 4;
-                    float xCross2 = ClientSize.Width / 2 - 4;
-                    float yCross2 = ClientSize.Height / 2 - 25;
-                    float widthCross = 2 * 25;
-                    float heightCross = 2 * 4;
+                    float xCross1 = clientMiddle[0] - brush25;
+                    float yCross1 = clientMiddle[1] - brush4;
+                    float xCross2 = clientMiddle[0] - brush4;
+                    float yCross2 = clientMiddle[1] - brush25;
+                    float widthCross = 2 * brush25;
+                    float heightCross = 2 * brush4;
                     formGraphicsCross1.FillRectangle(myBrush, xCross1, yCross1, widthCross, heightCross);
                     formGraphicsCross2.FillRectangle(myBrush, xCross2, yCross2, heightCross, widthCross);
-   /////////////////////////// await Task.Delay(intervalTime);
+                    await Task.Delay(intervalTime);
                     formGraphicsCross1.Dispose();
                     formGraphicsCross2.Dispose();
                     break;
                 case "o": // circle fixPoint
                     Graphics formGraphicsEllipse = this.CreateGraphics();
-                    float xEllipse = ClientSize.Width / 2 - 25;
-                    float yEllipse = ClientSize.Height / 2 - 25;
-                    float widthEllipse = 2 * 25;
-                    float heightEllipse = 2 * 25;
+                    float xEllipse = clientMiddle[0] - brush25;
+                    float yEllipse = clientMiddle[1] - brush25;
+                    float widthEllipse = 2 * brush25;
+                    float heightEllipse = 2 * brush25;
                     formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
-   //////////////////////  await Task.Delay(intervalTime);
+                    await Task.Delay(intervalTime);
                     formGraphicsEllipse.Dispose();
                     break;
             }

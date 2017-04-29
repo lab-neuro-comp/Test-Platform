@@ -27,6 +27,10 @@ namespace TestPlatform.Views
 
         public FormReactExposition(string prgName, string participantName, string defaultPath)
         {
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.MaximizeBox = true;
+            this.StartPosition = FormStartPosition.Manual;
+            InitializeComponent();
             path = defaultPath + "/ReactionTestFiles/";
             outputDataPath = path + "/data";
             startTime = hour + "_" + minutes + "_" + seconds;

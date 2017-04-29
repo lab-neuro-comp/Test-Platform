@@ -42,6 +42,27 @@ namespace TestPlatform.Models
             }
         }
 
+        public static void writeLineOutput(string nameStimulus, string color, int counter, List<string> output, 
+                                           float elapsedTime, string expoType, string audioName, string hour, string minute, 
+                                           string second)
+        {
+            // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor
+            /* var text = program.ProgramName + "\t" +
+                        program.UserName + "\t" +
+                        program.InitialDate.Day + "/" + program.InitialDate.Month + "/" + program.InitialDate.Year + "\t" +
+                        hour + ":" + minute + ":" + second + ":" + DateTime.Now.Millisecond.ToString() + "\t" +
+                        elapsedTime.ToString() + "\t" +
+                        counter + "\t" +
+                        expoType + "\t" +
+                        program.SubtitleShow.ToString().ToLower() + "\t" +
+                        program.SubtitlePlace + "\t" +
+                        nameStimulus + "\t" +
+                        color + "\t" +
+                        audioName;
+             output.Add(text); 
+             */
+        }
+
 
     }
 }

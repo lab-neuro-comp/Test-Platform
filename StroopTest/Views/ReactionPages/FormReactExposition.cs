@@ -26,8 +26,7 @@ namespace TestPlatform.Views
 
 
         public FormReactExposition(string prgName, string participantName, string defaultPath)
-        {
-            this.FormBorderStyle = FormBorderStyle.None;
+        {this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
             this.StartPosition = FormStartPosition.Manual;
             InitializeComponent();
@@ -40,7 +39,7 @@ namespace TestPlatform.Views
         }
 
 
-        public void startExposition()
+        private void startExposition()
         {
             if (programInUse.Ready(path))
             {
@@ -67,7 +66,7 @@ namespace TestPlatform.Views
         }
 
 
-        private async Task initializeExposition()
+        private async void initializeExposition()
         {
             programInUse.readProgramFile(path + "/prg/" + programInUse.ProgramName + ".prg");
             Console.Write("\n"+programInUse.ExpositionType);
@@ -117,6 +116,15 @@ namespace TestPlatform.Views
             await Task.Delay(programInUse.IntervalTime, cancellationTokenSource.Token);
             for (int counter = 0; counter < programInUse.NumExpositions; counter++)
             {
+                if (programInUse.FixPoint != "+" && programInUse.FixPoint != "o")
+                {
+                    // do nothing
+                }
+                else // if it uses fixPoint
+                {
+                    Console.Write("eae\n");
+                    makingFixPoint();
+                }
                 await intervalTime();
 
                 //preparing execution
@@ -154,16 +162,9 @@ namespace TestPlatform.Views
             {
                 intervalTime = programInUse.IntervalTime;
             }
-
+            await Task.Delay(intervalTime);
             // if there is no fixPoint determination, just wait intervalTime
-            if (programInUse.FixPoint != "+" && programInUse.FixPoint != "o")
-            {
-                await Task.Delay(intervalTime);
-            }
-            else // if it uses fixPoint
-            {
-                await makingFixPoint(intervalTime);
-            }
+            
 
 
         }
@@ -171,22 +172,26 @@ namespace TestPlatform.Views
         private async Task drawSquareShape()
         {
             int brush25 = 25;
-            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(programInUse.FixPointColor));
+            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(programInUse.StimulusColor));
+            Color newColor = ColorTranslator.FromHtml(programInUse.StimulusColor);
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            Graphics formGraphicsEllipse = this.CreateGraphics();
+            Graphics formGraphicsSquare = this.CreateGraphics();
+            Random random = new Random();
+            float[,] position = new float[4,2]{ { programInUse.StimulusDistance, 0 }, { 0, programInUse.StimulusDistance }, 
+                                                { -programInUse.StimulusDistance, 0 }, { 0, -programInUse.StimulusDistance } };
+            int index = random.Next(0, 8);
+            float xSquare = (clientMiddle[0] - brush25) + position[index,0];
+            float ySquare = (clientMiddle[1] - brush25) + position[index,1];
+            float widthSquare = 2 * brush25;
+            float heightSquare = 2 * brush25;
 
-            float xEllipse = clientMiddle[0] - brush25 * programInUse.StimulusDistance / 10;
-            float yEllipse = clientMiddle[1] - brush25 * programInUse.StimulusDistance / 10;
-            float widthEllipse = 2 * brush25;
-            float heightEllipse = 2 * brush25;
-
-            formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
+            formGraphicsSquare.FillRectangle(myBrush, xSquare, ySquare, widthSquare, heightSquare);
             await Task.Delay(programInUse.ExpositionTime, cancellationTokenSource.Token);
-            formGraphicsEllipse.Dispose();
+            formGraphicsSquare.Dispose();
         }
 
 
-        private async Task makingFixPoint(int intervalTime)
+        private void makingFixPoint()
         {
             SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(programInUse.FixPointColor));
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
@@ -206,7 +211,6 @@ namespace TestPlatform.Views
                     float heightCross = 2 * brush4;
                     formGraphicsCross1.FillRectangle(myBrush, xCross1, yCross1, widthCross, heightCross);
                     formGraphicsCross2.FillRectangle(myBrush, xCross2, yCross2, heightCross, widthCross);
-                    await Task.Delay(intervalTime);
                     formGraphicsCross1.Dispose();
                     formGraphicsCross2.Dispose();
                     break;
@@ -217,7 +221,6 @@ namespace TestPlatform.Views
                     float widthEllipse = 2 * brush25;
                     float heightEllipse = 2 * brush25;
                     formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
-                    await Task.Delay(intervalTime);
                     formGraphicsEllipse.Dispose();
                     break;
             }

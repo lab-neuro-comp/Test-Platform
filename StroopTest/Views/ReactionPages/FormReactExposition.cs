@@ -115,22 +115,24 @@ namespace TestPlatform.Views
             await Task.Delay(programInUse.IntervalTime, cancellationTokenSource.Token);
             for (int counter = 0; counter < programInUse.NumExpositions; counter++)
             {
+                this.CreateGraphics().Clear(ActiveForm.BackColor);
                 if (programInUse.FixPoint != "+" && programInUse.FixPoint != "o")
                 {
                     // do nothing
                 }
                 else // if it uses fixPoint
                 {
-                    Console.Write("eae\n");
                     makingFixPoint();
                 }
                 await intervalTime();
 
                 //preparing execution
-                await drawSquareShape();
+                drawSquareShape();
+                await Task.Delay(programInUse.ExpositionTime, cancellationTokenSource.Token);
+
             }
             cancellationTokenSource = null;
-
+            Close();
         }
 
         private async Task showInstructions(ReactionProgram program, CancellationToken token) // apresenta instruções
@@ -168,7 +170,7 @@ namespace TestPlatform.Views
 
         }
 
-        private async Task drawSquareShape()
+        private void drawSquareShape()
         {
             int brush25 = 25;
             SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(programInUse.StimulusColor));
@@ -185,7 +187,6 @@ namespace TestPlatform.Views
             float heightSquare = programInUse.StimuluSize;
 
             formGraphicsSquare.FillRectangle(myBrush, xSquare, ySquare, widthSquare, heightSquare);
-            await Task.Delay(programInUse.ExpositionTime, cancellationTokenSource.Token);
             formGraphicsSquare.Dispose();
             
         }

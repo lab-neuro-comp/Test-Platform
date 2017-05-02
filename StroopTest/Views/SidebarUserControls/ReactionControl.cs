@@ -43,18 +43,19 @@ namespace TestPlatform.Views.SidebarUserControls
 
             FormDefine defineProgram;
             DialogResult result;
+            string editProgramName = "error";
 
             try
             {
-                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "ReactionTestFiles/prg/", "prg", 
-                                                "program", false);
+                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "ReactionTestFiles/prg/", "prg", "program", false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    FormTRConfig configureProgram = new FormTRConfig(defineProgram.ReturnValue);
+                    editProgramName = defineProgram.ReturnValue;
+                    FormTRConfig configureProgram = new FormTRConfig(editProgramName);
                     configureProgram.Path = testFilesPath;
-                    this.Controls.Add(configureProgram);
-                    editReactButton.Checked = false;
+                    configureProgram.PrgName = editProgramName;
+                    Parent.Controls.Add(configureProgram);
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

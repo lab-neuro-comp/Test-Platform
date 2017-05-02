@@ -23,6 +23,7 @@ namespace TestPlatform.Views
         private string startTime;
         private string outputFile;
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+        CancellationTokenSource cancellationKeyPressed = new CancellationTokenSource();
 
 
         public FormReactExposition(string prgName, string participantName, string defaultPath)
@@ -101,10 +102,6 @@ namespace TestPlatform.Views
                 await Task.Delay(programInUse.IntervalTime,
                                   cancellationTokenSource.Token);
             });
-            var exposition = Task.Run(async delegate {
-                await Task.Delay(programInUse.ExpositionTime,
-                                 cancellationTokenSource.Token);
-            });
 
             await showInstructions(programInUse, cancellationTokenSource.Token);
 
@@ -127,9 +124,23 @@ namespace TestPlatform.Views
                 await intervalTime();
 
                 //preparing execution
+                cancellationKeyPressed = new CancellationTokenSource();
                 drawSquareShape();
-                await Task.Delay(programInUse.ExpositionTime, cancellationTokenSource.Token);
 
+                var exposition =  Task.Delay(programInUse.ExpositionTime,
+                                             cancellationKeyPressed.Token);
+
+                if (exposition.IsCanceled)
+                    Console.WriteLine("\n\n\napertouuuuuuuu");
+                try
+                {
+                    exposition.Wait();
+                }
+                catch (AggregateException ae)
+                {
+                    foreach (var e in ae.InnerExceptions)
+                        Console.WriteLine("{0}: {1}", e.GetType().Name, e.Message);
+                }
             }
             cancellationTokenSource = null;
             Close();
@@ -239,5 +250,19 @@ namespace TestPlatform.Views
             catch (Exception ex) { throw new Exception("Edição não pode ser feita " + ex.Message); }
         }
 
+
+        private void exposition_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
+            {
+                cancellationKeyPressed.Cancel();
+            }
+            if (e.KeyCode == Keys.Space)
+            {
+                cancellationKeyPressed.Cancel();
+            }
+        }
+
+       
     }
 }

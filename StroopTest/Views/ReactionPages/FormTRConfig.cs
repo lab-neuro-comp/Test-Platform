@@ -5,7 +5,6 @@ using System.IO;
 using StroopTest.Models;
 using System.Drawing;
 using StroopTest.Controllers;
-using StroopTest.Views;
 
 namespace TestPlatform.Views
 {
@@ -20,17 +19,13 @@ namespace TestPlatform.Views
         public FormTRConfig(string prgName)
         {
             this.prgName = prgName;
-            Location = new Point(530, 38);
+            Location = new Point(530, 48);
             InitializeComponent();
 
             if (PrgName != "false")
             {
                 editPrgName = PrgName;
                 editProgram();
-            }
-            if (editPrgName.Equals("error"))
-            {
-                Parent.Controls.Remove(this);
             }
         }
 
@@ -158,6 +153,7 @@ namespace TestPlatform.Views
                 default:
                     throw new Exception("Tipo de Exposição: " + editProgram.ExpositionType + " inválido!");
             }
+
         }
         
 

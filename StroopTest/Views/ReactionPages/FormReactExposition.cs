@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Threading;
@@ -23,8 +24,8 @@ namespace TestPlatform.Views
         private string startTime;
         private string outputFile;
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-        CancellationTokenSource cancellationKeyPressed = new CancellationTokenSource();
-
+        private bool keyPressed = false;
+        static CountdownEvent countdown = new CountdownEvent(1);
 
         public FormReactExposition(string prgName, string participantName, string defaultPath)
         {this.FormBorderStyle = FormBorderStyle.None;
@@ -124,23 +125,15 @@ namespace TestPlatform.Views
                 await intervalTime();
 
                 //preparing execution
-                cancellationKeyPressed = new CancellationTokenSource();
                 drawSquareShape();
 
-                var exposition =  Task.Delay(programInUse.ExpositionTime,
-                                             cancellationKeyPressed.Token);
+                new Thread(wait_KeyDown).Start("Starting to wait key down");
+                new Thread(wait_ExpositionTime).Start("Starting to wait exposition time");
+                countdown.Wait();
+                Console.WriteLine("passou");
+                countdown.TryAddCount();
+                /*wait for either exposition is completed or canceled*/
 
-                if (exposition.IsCanceled)
-                    Console.WriteLine("\n\n\napertouuuuuuuu");
-                try
-                {
-                    exposition.Wait();
-                }
-                catch (AggregateException ae)
-                {
-                    foreach (var e in ae.InnerExceptions)
-                        Console.WriteLine("{0}: {1}", e.GetType().Name, e.Message);
-                }
             }
             cancellationTokenSource = null;
             Close();
@@ -250,16 +243,32 @@ namespace TestPlatform.Views
             catch (Exception ex) { throw new Exception("Edição não pode ser feita " + ex.Message); }
         }
 
+        void wait_KeyDown(object thing)
+        {
+            Console.WriteLine(thing);
+            Thread.Sleep(programInUse.ExpositionTime);
+            countdown.Signal();
+        }
+
+        void wait_ExpositionTime(object thing)
+        {
+            Console.WriteLine(thing);
+            while (!keyPressed)
+            {
+                /*do nothing*/
+            }
+            if (keyPressed)
+            {
+                countdown.Signal();
+            }
+        }
 
         private void exposition_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Right)
-            {
-                cancellationKeyPressed.Cancel();
-            }
             if (e.KeyCode == Keys.Space)
             {
-                cancellationKeyPressed.Cancel();
+                Console.WriteLine("\n\n\n APERTOU BARRA DE ESPAÇO");
+                keyPressed = true;
             }
         }
 

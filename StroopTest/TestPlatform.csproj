@@ -394,6 +394,9 @@
     <None Include="Resources\%24this.Icon.ico" />
     <None Include="Resources\icon2_ReactionTest.png" />
     <None Include="Resources\circle1.png" />
+    <None Include="Resources\fullSquare.png" />
+    <None Include="Resources\fullCircle1.png" />
+    <None Include="Resources\fullTriangle.png" />
     <Content Include="Resources\icon2_StroopTest.ico" />
   </ItemGroup>
   <ItemGroup>

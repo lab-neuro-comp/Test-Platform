@@ -142,8 +142,14 @@
   <data name="icon2_ReactionTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon2_ReactionTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="circle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\circle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fullCircle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fullCircle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon1_StroopTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon2_StroopTest.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_png1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,8 +166,11 @@
   <data name="icon2_StroopTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon2_StroopTest.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stopButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stopButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="circle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\circle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fullSquare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fullSquare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrowRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\subtitlePosition\arrowRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,8 +199,8 @@
   <data name="icon_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon1_StroopTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon2_StroopTest.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="stopButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stopButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="triangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\triangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,7 +211,7 @@
   <data name="icon_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_png1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fullTriangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fullTriangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

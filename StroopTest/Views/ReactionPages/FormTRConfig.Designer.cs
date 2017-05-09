@@ -32,15 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.shapesGroupBox = new System.Windows.Forms.GroupBox();
             this.shapeRadioPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.squareRadioButton = new System.Windows.Forms.RadioButton();
-            this.triangleRadioButton = new System.Windows.Forms.RadioButton();
-            this.circleRadioButton = new System.Windows.Forms.RadioButton();
-            this.helpButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.fixPointTypeLabel = new System.Windows.Forms.Label();
             this.fixPointCross = new System.Windows.Forms.CheckBox();
             this.fixPointColorLabel = new System.Windows.Forms.Label();
@@ -89,12 +81,20 @@
             this.prgNameLabel = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
+            this.squareRadioButton = new System.Windows.Forms.RadioButton();
+            this.fullSquareRadioButton = new System.Windows.Forms.RadioButton();
+            this.circleRadioButton = new System.Windows.Forms.RadioButton();
+            this.fullCircleRadioButton = new System.Windows.Forms.RadioButton();
+            this.TriangleRadioButton = new System.Windows.Forms.RadioButton();
+            this.fullTriangleRadioButton = new System.Windows.Forms.RadioButton();
+            this.helpButton = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.shapesGroupBox.SuspendLayout();
             this.shapeRadioPanel.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).BeginInit();
@@ -144,65 +144,18 @@
             // shapeRadioPanel
             // 
             this.shapeRadioPanel.Controls.Add(this.squareRadioButton);
-            this.shapeRadioPanel.Controls.Add(this.triangleRadioButton);
+            this.shapeRadioPanel.Controls.Add(this.fullSquareRadioButton);
             this.shapeRadioPanel.Controls.Add(this.circleRadioButton);
+            this.shapeRadioPanel.Controls.Add(this.fullCircleRadioButton);
+            this.shapeRadioPanel.Controls.Add(this.TriangleRadioButton);
+            this.shapeRadioPanel.Controls.Add(this.fullTriangleRadioButton);
             this.shapeRadioPanel.Location = new System.Drawing.Point(20, 20);
             this.shapeRadioPanel.Name = "shapeRadioPanel";
-            this.shapeRadioPanel.Size = new System.Drawing.Size(115, 100);
+            this.shapeRadioPanel.Size = new System.Drawing.Size(160, 100);
             this.shapeRadioPanel.TabIndex = 3;
-            // 
-            // squareRadioButton
-            // 
-            this.squareRadioButton.AutoSize = true;
-            this.squareRadioButton.Checked = true;
-            this.squareRadioButton.Image = global::TestPlatform.Properties.Resources.square;
-            this.squareRadioButton.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.squareRadioButton.Location = new System.Drawing.Point(3, 3);
-            this.squareRadioButton.Name = "squareRadioButton";
-            this.squareRadioButton.Size = new System.Drawing.Size(72, 24);
-            this.squareRadioButton.TabIndex = 0;
-            this.squareRadioButton.TabStop = true;
-            this.squareRadioButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.squareRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // triangleRadioButton
-            // 
-            this.triangleRadioButton.AutoSize = true;
-            this.triangleRadioButton.Enabled = false;
-            this.triangleRadioButton.Image = global::TestPlatform.Properties.Resources.triangle1;
-            this.triangleRadioButton.Location = new System.Drawing.Point(3, 33);
-            this.triangleRadioButton.Name = "triangleRadioButton";
-            this.triangleRadioButton.Size = new System.Drawing.Size(72, 24);
-            this.triangleRadioButton.TabIndex = 1;
-            this.triangleRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // circleRadioButton
-            // 
-            this.circleRadioButton.AutoSize = true;
-            this.circleRadioButton.Enabled = false;
-            this.circleRadioButton.Image = global::TestPlatform.Properties.Resources.circle1;
-            this.circleRadioButton.Location = new System.Drawing.Point(3, 63);
-            this.circleRadioButton.Name = "circleRadioButton";
-            this.circleRadioButton.Size = new System.Drawing.Size(72, 24);
-            this.circleRadioButton.TabIndex = 2;
-            this.circleRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // helpButton
-            // 
-            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
-            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(639, 11);
-            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(35, 32);
-            this.helpButton.TabIndex = 81;
-            this.helpButton.UseVisualStyleBackColor = false;
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.numericUpDown1);
-            this.groupBox6.Controls.Add(this.label2);
             this.groupBox6.Controls.Add(this.panel3);
             this.groupBox6.Controls.Add(this.panel2);
             this.groupBox6.Controls.Add(this.fixPointTypeLabel);
@@ -215,59 +168,10 @@
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox6.Size = new System.Drawing.Size(362, 132);
+            this.groupBox6.Size = new System.Drawing.Size(362, 110);
             this.groupBox6.TabIndex = 40;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Ponto de Fixação";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Location = new System.Drawing.Point(109, 56);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(80, 22);
-            this.numericUpDown1.TabIndex = 172;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 17);
-            this.label2.TabIndex = 173;
-            this.label2.Text = "Tamanho:";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = global::TestPlatform.Properties.Resources.cross;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(109, 36);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(17, 16);
-            this.panel3.TabIndex = 155;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::TestPlatform.Properties.Resources.circle;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(160, 38);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(13, 12);
-            this.panel2.TabIndex = 154;
             // 
             // fixPointTypeLabel
             // 
@@ -293,7 +197,7 @@
             // fixPointColorLabel
             // 
             this.fixPointColorLabel.AutoSize = true;
-            this.fixPointColorLabel.Location = new System.Drawing.Point(17, 81);
+            this.fixPointColorLabel.Location = new System.Drawing.Point(17, 69);
             this.fixPointColorLabel.Name = "fixPointColorLabel";
             this.fixPointColorLabel.Size = new System.Drawing.Size(50, 34);
             this.fixPointColorLabel.TabIndex = 171;
@@ -314,7 +218,7 @@
             // fixPointColorButton
             // 
             this.fixPointColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fixPointColorButton.Location = new System.Drawing.Point(97, 86);
+            this.fixPointColorButton.Location = new System.Drawing.Point(97, 74);
             this.fixPointColorButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fixPointColorButton.Name = "fixPointColorButton";
             this.fixPointColorButton.Size = new System.Drawing.Size(148, 23);
@@ -327,7 +231,7 @@
             // 
             this.fixPointColorPanel.BackColor = System.Drawing.Color.White;
             this.fixPointColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fixPointColorPanel.Location = new System.Drawing.Point(73, 89);
+            this.fixPointColorPanel.Location = new System.Drawing.Point(73, 77);
             this.fixPointColorPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fixPointColorPanel.Name = "fixPointColorPanel";
             this.fixPointColorPanel.Size = new System.Drawing.Size(18, 17);
@@ -338,7 +242,7 @@
             this.groupBox5.Controls.Add(this.bgColorPanel);
             this.groupBox5.Controls.Add(this.bgColorLabel);
             this.groupBox5.Controls.Add(this.bgColorButton);
-            this.groupBox5.Location = new System.Drawing.Point(13, 446);
+            this.groupBox5.Location = new System.Drawing.Point(13, 422);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -633,7 +537,7 @@
             this.stimulusDistance.Location = new System.Drawing.Point(281, 90);
             this.stimulusDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.stimulusDistance.Maximum = new decimal(new int[] {
-            500,
+            320,
             0,
             0,
             0});
@@ -646,7 +550,7 @@
             this.stimulusDistance.Size = new System.Drawing.Size(80, 22);
             this.stimulusDistance.TabIndex = 169;
             this.stimulusDistance.Value = new decimal(new int[] {
-            300,
+            100,
             0,
             0,
             0});
@@ -838,7 +742,7 @@
             // 
             this.instructionsLabel.AutoSize = true;
             this.instructionsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.instructionsLabel.Location = new System.Drawing.Point(16, 529);
+            this.instructionsLabel.Location = new System.Drawing.Point(16, 516);
             this.instructionsLabel.Name = "instructionsLabel";
             this.instructionsLabel.Size = new System.Drawing.Size(77, 17);
             this.instructionsLabel.TabIndex = 59;
@@ -892,6 +796,109 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // squareRadioButton
+            // 
+            this.squareRadioButton.AutoSize = true;
+            this.squareRadioButton.Image = global::TestPlatform.Properties.Resources.square;
+            this.squareRadioButton.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.squareRadioButton.Location = new System.Drawing.Point(3, 3);
+            this.squareRadioButton.Name = "squareRadioButton";
+            this.squareRadioButton.Size = new System.Drawing.Size(72, 24);
+            this.squareRadioButton.TabIndex = 0;
+            this.squareRadioButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.squareRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // fullSquareRadioButton
+            // 
+            this.fullSquareRadioButton.AutoSize = true;
+            this.fullSquareRadioButton.Checked = true;
+            this.fullSquareRadioButton.Enabled = false;
+            this.fullSquareRadioButton.Image = global::TestPlatform.Properties.Resources.fullSquare;
+            this.fullSquareRadioButton.Location = new System.Drawing.Point(81, 3);
+            this.fullSquareRadioButton.Name = "fullSquareRadioButton";
+            this.fullSquareRadioButton.Size = new System.Drawing.Size(72, 24);
+            this.fullSquareRadioButton.TabIndex = 1;
+            this.fullSquareRadioButton.TabStop = true;
+            this.fullSquareRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // circleRadioButton
+            // 
+            this.circleRadioButton.AutoSize = true;
+            this.circleRadioButton.Enabled = false;
+            this.circleRadioButton.Image = global::TestPlatform.Properties.Resources.circle1;
+            this.circleRadioButton.Location = new System.Drawing.Point(3, 33);
+            this.circleRadioButton.Name = "circleRadioButton";
+            this.circleRadioButton.Size = new System.Drawing.Size(72, 30);
+            this.circleRadioButton.TabIndex = 2;
+            this.circleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // fullCircleRadioButton
+            // 
+            this.fullCircleRadioButton.AutoSize = true;
+            this.fullCircleRadioButton.Enabled = false;
+            this.fullCircleRadioButton.Image = global::TestPlatform.Properties.Resources.fullCircle1;
+            this.fullCircleRadioButton.Location = new System.Drawing.Point(81, 33);
+            this.fullCircleRadioButton.Name = "fullCircleRadioButton";
+            this.fullCircleRadioButton.Size = new System.Drawing.Size(72, 30);
+            this.fullCircleRadioButton.TabIndex = 3;
+            this.fullCircleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // TriangleRadioButton
+            // 
+            this.TriangleRadioButton.AutoSize = true;
+            this.TriangleRadioButton.Enabled = false;
+            this.TriangleRadioButton.Image = global::TestPlatform.Properties.Resources.triangle1;
+            this.TriangleRadioButton.Location = new System.Drawing.Point(3, 69);
+            this.TriangleRadioButton.Name = "TriangleRadioButton";
+            this.TriangleRadioButton.Size = new System.Drawing.Size(72, 24);
+            this.TriangleRadioButton.TabIndex = 4;
+            this.TriangleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // fullTriangleRadioButton
+            // 
+            this.fullTriangleRadioButton.AutoSize = true;
+            this.fullTriangleRadioButton.Enabled = false;
+            this.fullTriangleRadioButton.Image = global::TestPlatform.Properties.Resources.fullTriangle;
+            this.fullTriangleRadioButton.Location = new System.Drawing.Point(81, 69);
+            this.fullTriangleRadioButton.Name = "fullTriangleRadioButton";
+            this.fullTriangleRadioButton.Size = new System.Drawing.Size(72, 24);
+            this.fullTriangleRadioButton.TabIndex = 5;
+            this.fullTriangleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // helpButton
+            // 
+            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
+            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.helpButton.Location = new System.Drawing.Point(639, 11);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(35, 32);
+            this.helpButton.TabIndex = 81;
+            this.helpButton.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImage = global::TestPlatform.Properties.Resources.cross;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Location = new System.Drawing.Point(109, 36);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(17, 16);
+            this.panel3.TabIndex = 155;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::TestPlatform.Properties.Resources.circle;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(160, 38);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(13, 12);
+            this.panel2.TabIndex = 154;
+            // 
             // errorProvider1
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
@@ -914,7 +921,6 @@
             this.shapeRadioPanel.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -974,8 +980,6 @@
         private System.Windows.Forms.Label instructionsLabel;
         private System.Windows.Forms.TextBox prgNameTextBox;
         private System.Windows.Forms.Label prgNameLabel;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox beepingCheckbox;
         private System.Windows.Forms.NumericUpDown beepDuration;
@@ -992,10 +996,13 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.GroupBox shapesGroupBox;
         private System.Windows.Forms.RadioButton circleRadioButton;
-        private System.Windows.Forms.RadioButton triangleRadioButton;
+        private System.Windows.Forms.RadioButton fullSquareRadioButton;
         private System.Windows.Forms.RadioButton squareRadioButton;
         private System.Windows.Forms.CheckBox rndIntervalCheck;
         private System.Windows.Forms.Label rndIntervalLabel;
         private System.Windows.Forms.FlowLayoutPanel shapeRadioPanel;
+        private System.Windows.Forms.RadioButton fullCircleRadioButton;
+        private System.Windows.Forms.RadioButton TriangleRadioButton;
+        private System.Windows.Forms.RadioButton fullTriangleRadioButton;
     }
 }

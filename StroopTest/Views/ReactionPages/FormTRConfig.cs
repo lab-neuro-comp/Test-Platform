@@ -210,14 +210,26 @@ namespace TestPlatform.Views
 
         private string shapeValue()
         {
-            string shape = "square";
+            string shape = "fullSquare";
             if (circleRadioButton.Checked)
             {
                 shape = "circle";
             }
-            else if (triangleRadioButton.Checked)
+            else if (TriangleRadioButton.Checked)
             {
                 shape = "triangle";
+            }
+            else if (squareRadioButton.Checked)
+            {
+                shape = "square";
+            }
+            else if (fullCircleRadioButton.Checked)
+            {
+                shape = "fullCircle";
+            }
+            else if (fullTriangleRadioButton.Checked)
+            {
+                shape = "fullTriangle";
             }
             return shape;
         }

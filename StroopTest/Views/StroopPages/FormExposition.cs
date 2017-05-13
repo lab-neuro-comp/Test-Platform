@@ -226,7 +226,7 @@ namespace StroopTest
                         }
 
                         elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
-                        SendKeys.SendWait("s");
+                        SendKeys.SendWait("="); //sending event to neuronspectrum
                         if (programInUse.SubtitleShow)
                         {
                             subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
@@ -380,7 +380,7 @@ namespace StroopTest
                             // grava tempo decorrido
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; 
 
-                            SendKeys.SendWait("s");
+                            SendKeys.SendWait("="); //sending event to neuronspectrum
                             imgPictureBox.Visible = true;
 
                             if (programInUse.SubtitleShow)
@@ -413,7 +413,7 @@ namespace StroopTest
 
                                 
                                 elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond;
-                                SendKeys.SendWait("s");
+                                SendKeys.SendWait("="); //sending event to neuronspectrum
                                 imgPictureBox.Visible = false;
                                 subtitleLabel.Visible = false;
                                 wordLabel.ForeColor = ColorTranslator.FromHtml(programInUse.WordColor);
@@ -466,7 +466,7 @@ namespace StroopTest
                             }
                             
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
-                            SendKeys.SendWait("s");
+                            SendKeys.SendWait("="); //sending event to neuronspectrum
 
                             imgPictureBox.Visible = true;
 

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReactExposition));
             this.instructionLabel = new System.Windows.Forms.Label();
+            this.expositionBW = new System.ComponentModel.BackgroundWorker();
+            this.intervalBW = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // instructionLabel
@@ -44,6 +46,18 @@
             this.instructionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.instructionLabel.Visible = false;
             // 
+            // expositionBW
+            // 
+            this.expositionBW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.expositionBW_DoWork);
+            this.expositionBW.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.expositionBW_ProgressChanged);
+            this.expositionBW.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.expositionBW_RunWorkerCompleted);
+            // 
+            // intervalBW
+            // 
+            this.intervalBW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.intervalBW_DoWork);
+            this.intervalBW.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.intervalBW_ProgressChanged);
+            this.intervalBW.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.intervalBW_RunWorkerCompleted);
+            // 
             // FormReactExposition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -52,6 +66,7 @@
             this.Controls.Add(this.instructionLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "FormReactExposition";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -65,5 +80,7 @@
         #endregion
 
         private System.Windows.Forms.Label instructionLabel;
+        private System.ComponentModel.BackgroundWorker expositionBW;
+        private System.ComponentModel.BackgroundWorker intervalBW;
     }
 }

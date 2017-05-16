@@ -465,7 +465,7 @@ namespace StroopTest
                                 Player.Play();
                             }
                             
-                            elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
+                            elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond;
                             SendKeys.SendWait("="); //sending event to neuronspectrum
 
                             imgPictureBox.Visible = true;

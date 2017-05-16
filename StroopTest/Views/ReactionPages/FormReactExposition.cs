@@ -26,8 +26,7 @@ namespace TestPlatform.Views
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private int compareTimes = 0;
         private int backWorkStatus;
-        BackgroundWorker timingExposition = new BackgroundWorker();
-        BackgroundWorker intervalBW = new BackgroundWorker();
+        private int backWorkStatus1;
         private string progress;
         
         public FormReactExposition(string prgName, string participantName, string defaultPath)
@@ -111,36 +110,19 @@ namespace TestPlatform.Views
             //changeBackgroundColor(programInUse, true);
 
             await Task.Delay(programInUse.IntervalTime, cancellationTokenSource.Token);
-            for (int counter = 0; counter < programInUse.NumExpositions; counter++)
-            {
-                if (programInUse.FixPoint != "+" && programInUse.FixPoint != "o")
-                {
-                    // if program doesnt have a fix point, do nothing
-                }
-                else // if it uses fixPoint
-                {
-                    makingFixPoint();
-                }
-                
-                await intervalTime(); // do this only first interval time, then it only does that within jobs
-                
-                //preparing execution
-                expositionBackground(timingExposition);
-                if (backWorkStatus == 0)
-                {
-                    this.CreateGraphics().Clear(ActiveForm.BackColor);
-                    Console.WriteLine("Participante apertou o botão");
-                }
-                else if (backWorkStatus == 1)
-                {
-                    this.CreateGraphics().Clear(ActiveForm.BackColor);
-                    Console.WriteLine("Participante não apertou o botão a tempo");
-                }
-                this.CreateGraphics().Clear(ActiveForm.BackColor);
+            startingBwWorker(intervalBW);
+        }
 
+        private void startingBwWorker(BackgroundWorker bw)
+        {
+            bw = new BackgroundWorker();
+            bw.DoWork += new DoWorkEventHandler(intervalBW_DoWork);
+            bw.ProgressChanged += new ProgressChangedEventHandler(intervalBW_ProgressChanged);
+            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(intervalBW_RunWorkerCompleted);
+            if (bw.IsBusy != true)
+            {
+                bw.RunWorkerAsync();
             }
-            cancellationTokenSource = null;
-            Close();
         }
 
         private async Task showInstructions(ReactionProgram program, CancellationToken token) // apresenta instruções
@@ -157,7 +139,7 @@ namespace TestPlatform.Views
             }
         }
 
-        private async Task intervalTime()
+        private void intervalTime()
         {
             int intervalTime = 200; // minimal rnd interval time
 
@@ -171,8 +153,16 @@ namespace TestPlatform.Views
             {
                 intervalTime = programInUse.IntervalTime;
             }
-            await Task.Delay(intervalTime);
-            // if there is no fixPoint determination, just wait intervalTime
+
+
+            DateTime nowTime = DateTime.Now;
+            DateTime finalTime = DateTime.Now.AddMilliseconds(intervalTime);
+            compareTimes = DateTime.Compare(nowTime, finalTime);
+            while (compareTimes < 0)
+            {
+                    nowTime = DateTime.Now;
+                    compareTimes = DateTime.Compare(nowTime, finalTime);
+             }
         }
 
         private void drawSquareShape()
@@ -181,7 +171,7 @@ namespace TestPlatform.Views
             SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(programInUse.StimulusColor));
             Color newColor = ColorTranslator.FromHtml(programInUse.StimulusColor);
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            Graphics formGraphicsSquare = this.CreateGraphics();
+            Graphics formGraphicsSquare = CreateGraphics();
             Random random = new Random();
             float[,] position = new float[4,2]{ { programInUse.StimulusDistance, 0 }, { 0, programInUse.StimulusDistance }, 
                                                 { -programInUse.StimulusDistance, 0 }, { 0, -programInUse.StimulusDistance } };
@@ -229,6 +219,8 @@ namespace TestPlatform.Views
                     formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
                     formGraphicsEllipse.Dispose();
                     break;
+                default: break;
+
             }
             myBrush.Dispose();
         }
@@ -248,10 +240,14 @@ namespace TestPlatform.Views
         {
             if (e.KeyCode == Keys.Space)
             {
-                if (timingExposition.WorkerSupportsCancellation == true)
+                if (expositionBW.WorkerSupportsCancellation == true)
                 {
-                    timingExposition.CancelAsync();
+                    expositionBW.CancelAsync();
                 }
+            }
+            else if (e.KeyCode == Keys.K)
+            {
+                Close();
             }
         }
 
@@ -266,14 +262,22 @@ namespace TestPlatform.Views
             {
                 bw.RunWorkerAsync();
             }
+            else
+            {
+                /*do nothing*/
+            }
         }
 
         private void expositionBW_DoWork(object sender, DoWorkEventArgs e)
         {
+            /*parameterizing object to backgroundworker*/
             BackgroundWorker worker = sender as BackgroundWorker;
             worker.WorkerSupportsCancellation = true;
             worker.WorkerReportsProgress = true;
-            //startsExposition
+            intervalTime();
+
+
+            /*starts Exposition*/
             drawSquareShape();
             DateTime nowTime = DateTime.Now;
             DateTime finalTime = DateTime.Now.AddMilliseconds(programInUse.ExpositionTime);
@@ -291,6 +295,7 @@ namespace TestPlatform.Views
                     compareTimes = DateTime.Compare(nowTime, finalTime);
                 }
             }
+
             worker.ReportProgress((100)); // work is done if reached here
         }
 
@@ -303,7 +308,9 @@ namespace TestPlatform.Views
         {
             if ((e.Cancelled == true))
             {
-                backWorkStatus = 0; // the work was cancelled
+                backWorkStatus = 1;
+                this.CreateGraphics().Clear(ActiveForm.BackColor);
+                makingFixPoint();
             }
 
             else if (!(e.Error == null))
@@ -315,51 +322,55 @@ namespace TestPlatform.Views
             else
             {
                 backWorkStatus = 1;
+                this.CreateGraphics().Clear(ActiveForm.BackColor);
+                makingFixPoint();
                 // the work was done without any trouble
             }
         }
 
         private void intervalBW_DoWork(object sender, DoWorkEventArgs e)
         {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            worker.WorkerReportsProgress = true;
+
+            elapsedTime = 0;
+            makingFixPoint();
             for (int counter = 0; counter < programInUse.NumExpositions; counter++)
             {
-                if (programInUse.FixPoint != "+" && programInUse.FixPoint != "o")
-                {
-                    // if program doesnt have a fix point, do nothing
-                }
-                else // if it uses fixPoint
-                {
-                    makingFixPoint();
-                }
-
-               // await intervalTime(); // do this only first interval time, then it only does that within jobs
-
                 //preparing execution
-                expositionBackground(timingExposition);
-                if (backWorkStatus == 0)
+                expositionBackground(expositionBW);
+                while (backWorkStatus != 1)
                 {
-                    this.CreateGraphics().Clear(ActiveForm.BackColor);
-                    Console.WriteLine("Participante apertou o botão");
+                    /*wait for exposition to be finished*/
                 }
-                else if (backWorkStatus == 1)
-                {
-                    this.CreateGraphics().Clear(ActiveForm.BackColor);
-                    Console.WriteLine("Participante não apertou o botão a tempo");
-                }
-                this.CreateGraphics().Clear(ActiveForm.BackColor);
-
+                backWorkStatus = 100;
+                worker.ReportProgress((counter/programInUse.NumExpositions)*100);
             }
-            Close();
         }
 
         private void intervalBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-
+            progress = (e.ProgressPercentage.ToString() + "%");
         }
 
         private void intervalBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            if ((e.Cancelled == true))
+            {
+                backWorkStatus1 = 0; // the work was cancelled
+            }
 
+            else if (!(e.Error == null))
+            {
+                backWorkStatus1 = -1;
+                //there was an error while doing work
+            }
+
+            else
+            {
+                Close();
+                // the work was done without any trouble
+            }
         }
     }
 }

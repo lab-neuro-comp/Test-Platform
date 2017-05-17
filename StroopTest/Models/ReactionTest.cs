@@ -10,11 +10,10 @@ namespace TestPlatform.Models
     class ReactionTest
     {
         // todos os dados de horario devem guardar hora, minuto e segundo
-        ReactionProgram programInUse = new ReactionProgram();
-        string participantName;
-        DateTime initialTime;
-        List<DateTime> estimuluAppearedTime;
-        List<DateTime> hitTime;
+        private ReactionProgram programInUse = new ReactionProgram();
+        private string participantName;
+        private DateTime initialTime;
+        private List<string> output = new List<string>();
 
         public string ParticipantName
         {
@@ -26,6 +25,32 @@ namespace TestPlatform.Models
             set
             {
                 participantName = value;
+            }
+        }
+
+        public DateTime InitialTime
+        {
+            get
+            {
+                return initialTime;
+            }
+
+            set
+            {
+                initialTime = value;
+            }
+        }
+
+        public List<string> Output
+        {
+            get
+            {
+                return output;
+            }
+
+            set
+            {
+                output = value;
             }
         }
 
@@ -42,25 +67,18 @@ namespace TestPlatform.Models
             }
         }
 
-        public static void writeLineOutput(string nameStimulus, string color, int counter, List<string> output, 
-                                           float elapsedTime, string expoType, string audioName, string hour, string minute, 
-                                           string second)
+        public void writeLineOutput(long intervalTime, long reactTime, int currentExposition)
         {
-            // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor
-            /* var text = program.ProgramName + "\t" +
-                        program.UserName + "\t" +
-                        program.InitialDate.Day + "/" + program.InitialDate.Month + "/" + program.InitialDate.Year + "\t" +
-                        hour + ":" + minute + ":" + second + ":" + DateTime.Now.Millisecond.ToString() + "\t" +
-                        elapsedTime.ToString() + "\t" +
-                        counter + "\t" +
-                        expoType + "\t" +
-                        program.SubtitleShow.ToString().ToLower() + "\t" +
-                        program.SubtitlePlace + "\t" +
-                        nameStimulus + "\t" +
-                        color + "\t" +
-                        audioName;
-             output.Add(text); 
-             */
+            long elapsedTime = intervalTime + reactTime;
+
+            /* programa\tparticipante\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tFormaDoStimulo\tCordoEstimulo\CordoPontodefixacao */
+            var text = programInUse.ProgramName + "\t" + participantName + "\t" + initialTime.Day + "/" + 
+                       initialTime.Month + "/" + initialTime.Year + "\t" + initialTime.Hour + ":" + initialTime.Minute + 
+                       ":" + initialTime.Second + ":" + initialTime.Millisecond.ToString() + "\t" + elapsedTime.ToString() + "\t" +
+                       currentExposition + "\t" + programInUse.ExpositionType + "\t" + programInUse.StimuluShape + "\t" +
+                       programInUse.StimulusColor + "\t" + programInUse.FixPointColor;
+             Output.Add(text); 
+             
         }
 
 

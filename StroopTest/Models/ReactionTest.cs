@@ -9,7 +9,7 @@ namespace TestPlatform.Models
 {
     class ReactionTest
     {
-        // todos os dados de horario devem guardar hora, minuto e segundo
+        private static String headerOutputFileText = "programa\tparticipante\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tFormaDoStimulo\tCordoEstimulo\tCordoPontodefixacao";
         private ReactionProgram programInUse = new ReactionProgram();
         private string participantName;
         private DateTime initialTime;
@@ -51,6 +51,19 @@ namespace TestPlatform.Models
             set
             {
                 output = value;
+            }
+        }
+
+        public static string HeaderOutputFileText
+        {
+            get
+            {
+                return headerOutputFileText;
+            }
+
+            set
+            {
+                headerOutputFileText = value;
             }
         }
 

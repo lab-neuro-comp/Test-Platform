@@ -8,7 +8,6 @@ namespace TestPlatform.Models
 {
     class Program
     {
-        protected String headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio";
         protected String errorExMsg = "Arquivo de Programa - parâmetro inválido.";
         protected String defaultRedColor = "#D01C1F";
         public static Int32 instructionAwaitTime = 4000; // default await time for each frame of instruction shown before the test
@@ -214,12 +213,7 @@ namespace TestPlatform.Models
                 }
             }
         }
-
-        public string HeaderOutputFile
-        {
-            get { return headerOutputFileText; }
-        }
-
+        
         public string FixPointColor
         {
             get { return fixPointColor; }

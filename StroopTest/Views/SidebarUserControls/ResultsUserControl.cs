@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using StroopTest.Views;
 using StroopTest;
+using TestPlatform.Views.ReactionPages;
 
 namespace TestPlatform.Views.SidebarUserControls
 {
@@ -76,7 +77,14 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void reactionButton_Click(object sender, EventArgs e)
         {
-
+            ReactionResultUserControl showData;
+            try
+            {
+                showData = new ReactionResultUserControl(TestFilesPath + ReactionResultsPath);
+                Parent.Controls.Add(showData);
+                reactionButton.Checked = false;
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }

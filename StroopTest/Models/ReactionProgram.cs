@@ -10,7 +10,7 @@ namespace TestPlatform.Models
 {
     class ReactionProgram : Program
     {
-        private String defaultProgramFileText = "padraoTR 5 500 50 1000 50 false false false false 0 #D01C1F Formas false false o #D01C1F false square";
+        private static String defaultProgramFileText = "padraoTR 5 500 50 1000 50 false false false false 0 #D01C1F Formas false false o #D01C1F false square";
         private Int32 stimuluSize; // [3]
         private Int32 stimulusDistance; // [5] distance from the center of the screen to stimulus
         private Boolean isBeeping; // [9]

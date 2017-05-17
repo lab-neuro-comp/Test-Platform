@@ -14,6 +14,7 @@ namespace StroopTest.Models
 {
     class StroopProgram : Program
     {
+        private String headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio";
         private String defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false";
         private String[] defaultInstructionText = { "Serão apresentadas palavras coloridas de forma aleatória. Palavras surgirão rapidamente e em seguida desaparecerão",
                                                     "Diga a cor em que a palavra está escrita",
@@ -368,6 +369,19 @@ namespace StroopTest.Models
                 {
                     throw new ArgumentException(errorExMsg + "\nCor do ponto da palavra deve ser 'false' ou um código hexadecimal de cor");
                 }
+            }
+        }
+
+        public string HeaderOutputFileText
+        {
+            get
+            {
+                return headerOutputFileText;
+            }
+
+            set
+            {
+                headerOutputFileText = value;
             }
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace TestPlatform.Views.ReactionPages
 {
-    partial class ReactionResultUserControlcs
+    partial class ReactionResultUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.csvExportButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.fileNameBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.helpButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
@@ -68,16 +68,17 @@
             this.dataGridView1.Size = new System.Drawing.Size(917, 238);
             this.dataGridView1.TabIndex = 85;
             // 
-            // comboBox1
+            // fileNameBox
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.fileNameBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(142, 54);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(601, 24);
-            this.comboBox1.TabIndex = 84;
+            this.fileNameBox.FormattingEnabled = true;
+            this.fileNameBox.Location = new System.Drawing.Point(142, 54);
+            this.fileNameBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fileNameBox.Name = "fileNameBox";
+            this.fileNameBox.Size = new System.Drawing.Size(601, 24);
+            this.fileNameBox.TabIndex = 84;
+            this.fileNameBox.SelectedIndexChanged += new System.EventHandler(this.fileNameBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -111,6 +112,7 @@
             this.closeButton.TabIndex = 89;
             this.closeButton.Text = "fechar";
             this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // ReactionResultUserControlcs
             // 
@@ -120,7 +122,7 @@
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.csvExportButton);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.fileNameBox);
             this.Controls.Add(this.label1);
             this.Name = "ReactionResultUserControlcs";
             this.Size = new System.Drawing.Size(939, 409);
@@ -135,7 +137,7 @@
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.Button csvExportButton;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox fileNameBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button closeButton;
     }

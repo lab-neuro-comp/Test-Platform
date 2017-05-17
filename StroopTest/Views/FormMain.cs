@@ -491,6 +491,7 @@ namespace StroopTest
                 ResultsUserControl resultsControl = new ResultsUserControl();
                 resultsControl.TestFilesPath = testFilesPath;
                 resultsControl.StroopResultsPath = stroopResultsPath;
+                resultsControl.ReactionResultsPath = reactionResultsPath;
                 this.Controls.Add(resultsControl);
                 currentPanelContent = resultsControl;
             }

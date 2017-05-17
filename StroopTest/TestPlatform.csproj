@@ -140,6 +140,12 @@
     <Compile Include="Views\ReactionPages\FormTRConfig.Designer.cs">
       <DependentUpon>FormTRConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ReactionPages\ReactionResultUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ReactionPages\ReactionResultUserControl.Designer.cs">
+      <DependentUpon>ReactionResultUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SidebarUserControls\DefaultUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\FormTRConfig.resx">
       <DependentUpon>FormTRConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReactionPages\ReactionResultUserControl.resx">
+      <DependentUpon>ReactionResultUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\DefaultUserControl.resx">
       <DependentUpon>DefaultUserControl.cs</DependentUpon>

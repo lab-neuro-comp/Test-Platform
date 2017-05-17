@@ -20,8 +20,10 @@ namespace StroopTest
     {
         private StroopProgram program = new StroopProgram();
         private string path;
+        private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string instructionsText = HelpData.ShowDataInstructions;
         private SoundPlayer player = new SoundPlayer();
+
         public FormShowData(string dataFolderPath)
         {
             InitializeComponent();
@@ -30,7 +32,7 @@ namespace StroopTest
             string[] filePaths = null;
             path = dataFolderPath;
 
-            string[] headers = program.HeaderOutputFile.Split('\t');
+            string[] headers = program.HeaderOutputFileText.Split('\t');
             foreach (var columnName in headers)
             {
                 dataGridView1.Columns.Add(columnName, columnName); // Configura Cabeçalho na tabela
@@ -110,7 +112,7 @@ namespace StroopTest
                 {
                     using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
                     {
-                        tw.WriteLine(program.HeaderOutputFile);
+                        tw.WriteLine(program.HeaderOutputFileText);
                         for (int i = 0; i < lines.Length; i++)
                         {
                             tw.WriteLine(lines[i]); // escreve linhas no novo arquivo

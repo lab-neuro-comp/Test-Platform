@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Threading;
@@ -14,9 +15,7 @@ namespace TestPlatform.Views
     {
         ReactionProgram programInUse = new ReactionProgram();
         ReactionTest executingTest = new ReactionTest();
-        private static float elapsedTime;               
         private string path;                           
-        private List<string> outputContent;            
         private string outputDataPath;                
         private string hour = DateTime.Now.Hour.ToString("00");
         private string minutes = DateTime.Now.Minute.ToString("00");
@@ -28,7 +27,10 @@ namespace TestPlatform.Views
         private int backWorkStatus;
         private int backWorkStatus1;
         private string progress;
-        
+        private Stopwatch intervalStopWatch = new Stopwatch();
+        private Stopwatch hitStopWatch = new Stopwatch();
+        private int currentExposition = 0;
+
         public FormReactExposition(string prgName, string participantName, string defaultPath)
         {
             this.FormBorderStyle = FormBorderStyle.None;
@@ -36,10 +38,11 @@ namespace TestPlatform.Views
             this.StartPosition = FormStartPosition.Manual;
             InitializeComponent();
             path = defaultPath + "/ReactionTestFiles/";
-            outputDataPath = path + "/data";
+            outputDataPath = path + "/data/";
             startTime = hour + "_" + minutes + "_" + seconds;
             programInUse.ProgramName = prgName;
             executingTest.ParticipantName = participantName;
+            outputFile = outputDataPath + executingTest.ParticipantName + "_" + programInUse.ProgramName + ".txt";
             startExposition();
         }
 
@@ -104,7 +107,6 @@ namespace TestPlatform.Views
             cancellationTokenSource = new CancellationTokenSource();
             await showInstructions(programInUse, cancellationTokenSource.Token);
 
-            elapsedTime = 0; // elapsed time to zero
 
 
             //changeBackgroundColor(programInUse, true);
@@ -274,10 +276,15 @@ namespace TestPlatform.Views
             BackgroundWorker worker = sender as BackgroundWorker;
             worker.WorkerSupportsCancellation = true;
             worker.WorkerReportsProgress = true;
-            intervalTime();
 
+            intervalStopWatch = new Stopwatch();
+            intervalStopWatch.Start();
+            intervalTime();
+            intervalStopWatch.Stop();
 
             /*starts Exposition*/
+            hitStopWatch = new Stopwatch();
+            hitStopWatch.Start();
             drawSquareShape();
             DateTime nowTime = DateTime.Now;
             DateTime finalTime = DateTime.Now.AddMilliseconds(programInUse.ExpositionTime);
@@ -286,6 +293,7 @@ namespace TestPlatform.Views
             {
                 if (worker.CancellationPending)
                 {
+                    hitStopWatch.Stop();
                     e.Cancel = true;
                     break;
                 }
@@ -308,6 +316,8 @@ namespace TestPlatform.Views
         {
             if ((e.Cancelled == true))
             {
+                executingTest.writeLineOutput(intervalStopWatch.ElapsedMilliseconds, hitStopWatch.ElapsedMilliseconds,
+                                              currentExposition);
                 backWorkStatus = 1;
                 this.CreateGraphics().Clear(ActiveForm.BackColor);
                 makingFixPoint();
@@ -321,6 +331,8 @@ namespace TestPlatform.Views
 
             else
             {
+                executingTest.writeLineOutput(intervalStopWatch.ElapsedMilliseconds, 0, currentExposition);
+                hitStopWatch.Stop();
                 backWorkStatus = 1;
                 this.CreateGraphics().Clear(ActiveForm.BackColor);
                 makingFixPoint();
@@ -333,10 +345,11 @@ namespace TestPlatform.Views
             BackgroundWorker worker = sender as BackgroundWorker;
             worker.WorkerReportsProgress = true;
 
-            elapsedTime = 0;
             makingFixPoint();
+            executingTest.InitialTime = DateTime.Now;
             for (int counter = 0; counter < programInUse.NumExpositions; counter++)
             {
+                currentExposition = counter;
                 //preparing execution
                 expositionBackground(expositionBW);
                 while (backWorkStatus != 1)
@@ -368,6 +381,7 @@ namespace TestPlatform.Views
 
             else
             {
+                Program.writeOutputFile(outputFile, string.Join("\n", executingTest.Output.ToArray()));
                 Close();
                 // the work was done without any trouble
             }

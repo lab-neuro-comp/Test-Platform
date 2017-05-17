@@ -67,15 +67,29 @@ namespace TestPlatform.Models
             }
         }
 
+        internal ReactionProgram ProgramInUse
+        {
+            get
+            {
+                return programInUse;
+            }
+
+            set
+            {
+                programInUse = value;
+            }
+        }
+
         public void setProgramInUse(string path, string prgName)
         {
-            if (File.Exists(path + "/prg/" + prgName + ".prg"))
+            string programFile = path + prgName + ".prg";
+            if (File.Exists(programFile))
             {
-                programInUse.readProgramFile(path + "/prg/");
+                ProgramInUse = new ReactionProgram(programFile);
             }
             else
             {
-                throw new Exception("Arquivo programa: " + programInUse.ProgramName + ".prg" +
+                throw new Exception("Arquivo programa: " + ProgramInUse.ProgramName + ".prg" +
                                     "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/"));
             }
         }
@@ -85,11 +99,11 @@ namespace TestPlatform.Models
             long elapsedTime = intervalTime + reactTime;
 
             /* programa\tparticipante\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tFormaDoStimulo\tCordoEstimulo\CordoPontodefixacao */
-            var text = programInUse.ProgramName + "\t" + participantName + "\t" + initialTime.Day + "/" + 
+            var text = ProgramInUse.ProgramName + "\t" + participantName + "\t" + initialTime.Day + "/" + 
                        initialTime.Month + "/" + initialTime.Year + "\t" + initialTime.Hour + ":" + initialTime.Minute + 
                        ":" + initialTime.Second + ":" + initialTime.Millisecond.ToString() + "\t" + elapsedTime.ToString() + "\t" +
-                       currentExposition + "\t" + programInUse.ExpositionType + "\t" + programInUse.StimuluShape + "\t" +
-                       programInUse.StimulusColor + "\t" + programInUse.FixPointColor;
+                       currentExposition + "\t" + ProgramInUse.ExpositionType + "\t" + ProgramInUse.StimuluShape + "\t" +
+                       ProgramInUse.StimulusColor + "\t" + ProgramInUse.FixPointColor;
              Output.Add(text); 
              
         }

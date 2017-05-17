@@ -13,7 +13,6 @@ namespace TestPlatform.Views
 {
     public partial class FormReactExposition : Form
     {
-        ReactionProgram programInUse = new ReactionProgram();
         ReactionTest executingTest = new ReactionTest();
         private string path;                           
         private string outputDataPath;                
@@ -25,7 +24,6 @@ namespace TestPlatform.Views
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private int compareTimes = 0;
         private int backWorkStatus;
-        private int backWorkStatus1;
         private string progress;
         private Stopwatch intervalStopWatch = new Stopwatch();
         private Stopwatch hitStopWatch = new Stopwatch();
@@ -40,27 +38,27 @@ namespace TestPlatform.Views
             path = defaultPath + "/ReactionTestFiles/";
             outputDataPath = path + "/data/";
             startTime = hour + "_" + minutes + "_" + seconds;
-            programInUse.ProgramName = prgName;
             executingTest.ParticipantName = participantName;
-            outputFile = outputDataPath + executingTest.ParticipantName + "_" + programInUse.ProgramName + ".txt";
+            executingTest.setProgramInUse(path + "/prg/", prgName);
+            outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.ProgramName + ".txt";
             startExposition();
         }
 
 
         private void startExposition()
         {
-            if (programInUse.Ready(path))
+            if (executingTest.ProgramInUse.Ready(path))
             {
                 initializeExposition();
             }
             else
             {
-                if (!programInUse.Exists(path))
+                if (!executingTest.ProgramInUse.Exists(path))
                 {
-                    throw new Exception("Arquivo programa: " + programInUse.ProgramName + ".prg" +
+                    throw new Exception("Arquivo programa: " + executingTest.ProgramInUse.ProgramName + ".prg" +
                                     "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/"));
                 }
-                else if (programInUse.NeedsEdition)
+                else if (executingTest.ProgramInUse.NeedsEdition)
                 {
                     repairProgram();
                 }
@@ -76,8 +74,7 @@ namespace TestPlatform.Views
 
         private async void initializeExposition()
         {
-            programInUse.readProgramFile(path + "/prg/" + programInUse.ProgramName + ".prg");
-            switch (programInUse.ExpositionType)
+            switch (executingTest.ProgramInUse.ExpositionType)
             {
                 case "Formas":
                     await shapeExposition();
@@ -97,7 +94,7 @@ namespace TestPlatform.Views
                 case "Imagem com Áudio":
                     // await imageAudioExposition();
                 default:
-                    throw new Exception("Tipo de Exposição: " + programInUse.ExpositionType + " inválido!");
+                    throw new Exception("Tipo de Exposição: " + executingTest.ProgramInUse.ExpositionType + " inválido!");
             }
         }
 
@@ -105,13 +102,13 @@ namespace TestPlatform.Views
         private async Task shapeExposition()
         {
             cancellationTokenSource = new CancellationTokenSource();
-            await showInstructions(programInUse, cancellationTokenSource.Token);
+            await showInstructions(executingTest.ProgramInUse, cancellationTokenSource.Token);
 
 
 
             //changeBackgroundColor(programInUse, true);
 
-            await Task.Delay(programInUse.IntervalTime, cancellationTokenSource.Token);
+            await Task.Delay(executingTest.ProgramInUse.IntervalTime, cancellationTokenSource.Token);
             startingBwWorker(intervalBW);
         }
 
@@ -146,14 +143,14 @@ namespace TestPlatform.Views
             int intervalTime = 200; // minimal rnd interval time
 
             // if random interval active, it will be a value between 200 and the defined interval time
-            if (programInUse.IntervalTimeRandom && programInUse.IntervalTime > 200) 
+            if (executingTest.ProgramInUse.IntervalTimeRandom && executingTest.ProgramInUse.IntervalTime > 200) 
             {
                 Random random = new Random();
-                intervalTime = random.Next(200, programInUse.IntervalTime);
+                intervalTime = random.Next(200, executingTest.ProgramInUse.IntervalTime);
             }
             else
             {
-                intervalTime = programInUse.IntervalTime;
+                intervalTime = executingTest.ProgramInUse.IntervalTime;
             }
 
 
@@ -170,18 +167,18 @@ namespace TestPlatform.Views
         private void drawSquareShape()
         {
             int brush25 = 25;
-            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(programInUse.StimulusColor));
-            Color newColor = ColorTranslator.FromHtml(programInUse.StimulusColor);
+            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+            Color newColor = ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor);
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
             Graphics formGraphicsSquare = CreateGraphics();
             Random random = new Random();
-            float[,] position = new float[4,2]{ { programInUse.StimulusDistance, 0 }, { 0, programInUse.StimulusDistance }, 
-                                                { -programInUse.StimulusDistance, 0 }, { 0, -programInUse.StimulusDistance } };
+            float[,] position = new float[4,2]{ { executingTest.ProgramInUse.StimulusDistance, 0 }, { 0, executingTest.ProgramInUse.StimulusDistance }, 
+                                                { -executingTest.ProgramInUse.StimulusDistance, 0 }, { 0, -executingTest.ProgramInUse.StimulusDistance } };
             int index = random.Next(0, 3);
             float xSquare = (clientMiddle[0] - brush25) + position[index,0];
             float ySquare = (clientMiddle[1] - brush25) + position[index,1];
-            float widthSquare = programInUse.StimuluSize;
-            float heightSquare = programInUse.StimuluSize;
+            float widthSquare = executingTest.ProgramInUse.StimuluSize;
+            float heightSquare = executingTest.ProgramInUse.StimuluSize;
 
             formGraphicsSquare.FillRectangle(myBrush, xSquare, ySquare, widthSquare, heightSquare);
             formGraphicsSquare.Dispose();
@@ -191,12 +188,12 @@ namespace TestPlatform.Views
 
         private void makingFixPoint()
         {
-            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(programInUse.FixPointColor));
+            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.FixPointColor));
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
             int brush25 = 25;
             int brush4 = 4;
 
-            switch (programInUse.FixPoint)
+            switch (executingTest.ProgramInUse.FixPoint)
             {
                 case "+": // cross fixPoint
                     Graphics formGraphicsCross1 = this.CreateGraphics();
@@ -231,7 +228,7 @@ namespace TestPlatform.Views
         {
             try
             {
-                FormTRConfig configureProgram = new FormTRConfig(programInUse.ProgramName);
+                FormTRConfig configureProgram = new FormTRConfig(executingTest.ProgramInUse.ProgramName);
                 configureProgram.Path = path;
                 this.Controls.Add(configureProgram);
             }
@@ -287,7 +284,7 @@ namespace TestPlatform.Views
             hitStopWatch.Start();
             drawSquareShape();
             DateTime nowTime = DateTime.Now;
-            DateTime finalTime = DateTime.Now.AddMilliseconds(programInUse.ExpositionTime);
+            DateTime finalTime = DateTime.Now.AddMilliseconds(executingTest.ProgramInUse.ExpositionTime);
             compareTimes = DateTime.Compare(nowTime, finalTime);
             while (compareTimes < 0)
             {
@@ -347,7 +344,7 @@ namespace TestPlatform.Views
 
             makingFixPoint();
             executingTest.InitialTime = DateTime.Now;
-            for (int counter = 0; counter < programInUse.NumExpositions; counter++)
+            for (int counter = 0; counter < executingTest.ProgramInUse.NumExpositions; counter++)
             {
                 currentExposition = counter;
                 //preparing execution
@@ -357,7 +354,7 @@ namespace TestPlatform.Views
                     /*wait for exposition to be finished*/
                 }
                 backWorkStatus = 100;
-                worker.ReportProgress((counter/programInUse.NumExpositions)*100);
+                worker.ReportProgress((counter/ executingTest.ProgramInUse.NumExpositions)*100);
             }
         }
 
@@ -370,12 +367,10 @@ namespace TestPlatform.Views
         {
             if ((e.Cancelled == true))
             {
-                backWorkStatus1 = 0; // the work was cancelled
             }
 
             else if (!(e.Error == null))
             {
-                backWorkStatus1 = -1;
                 //there was an error while doing work
             }
 

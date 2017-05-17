@@ -24,6 +24,11 @@ namespace TestPlatform.Models
         {
 
         }
+
+        public ReactionProgram(string programPath)
+        {
+            this.readProgramFile(programPath);
+        }
         public override string ToString()
         {
             return String.Concat("Nome do programa: ", programName, " tempo de exposição: ",expositionTime, 

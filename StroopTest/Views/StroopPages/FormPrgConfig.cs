@@ -52,7 +52,7 @@ namespace StroopTest
             subDirectionList.Add(subsUpButton);
             subDirectionList.Add(subsCenterButton);
             enableSubsItens(false);
-            Location = new Point(400, 38);
+            Location = new Point(400, 54);
 
             toolTipsConfig();
             

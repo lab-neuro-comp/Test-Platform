@@ -488,15 +488,11 @@ namespace StroopTest
                 {
                     Controls.Remove(currentPanelContent);
                 }
-                FormShowData showData;
-                try
-                {
-                    showData = new FormShowData(testFilesPath + stroopResultsPath);
-                    this.Controls.Add(showData);
-                    currentPanelContent = showData;
-                    resultButton.Checked = false;
-                }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                ResultsUserControl resultsControl = new ResultsUserControl();
+                resultsControl.TestFilesPath = testFilesPath;
+                resultsControl.StroopResultsPath = stroopResultsPath;
+                this.Controls.Add(resultsControl);
+                currentPanelContent = resultsControl;
             }
         }
 

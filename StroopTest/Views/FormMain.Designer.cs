@@ -104,7 +104,7 @@
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
             this.mainMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.mainMenuStrip.Size = new System.Drawing.Size(1269, 28);
+            this.mainMenuStrip.Size = new System.Drawing.Size(1472, 28);
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "menuStrip1";
             // 
@@ -555,7 +555,7 @@
             this.executeBar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.executeBar.Location = new System.Drawing.Point(2, 31);
             this.executeBar.Name = "executeBar";
-            this.executeBar.Size = new System.Drawing.Size(1266, 45);
+            this.executeBar.Size = new System.Drawing.Size(1470, 45);
             this.executeBar.TabIndex = 26;
             // 
             // panel2
@@ -663,7 +663,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1269, 840);
+            this.ClientSize = new System.Drawing.Size(1472, 840);
             this.Controls.Add(this.executeBar);
             this.Controls.Add(this.mainMenuStrip);
             this.Controls.Add(this.panel1);

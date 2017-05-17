@@ -20,14 +20,13 @@ namespace StroopTest
     {
         private StroopProgram program = new StroopProgram();
         private string path;
-        private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string instructionsText = HelpData.ShowDataInstructions;
         private SoundPlayer player = new SoundPlayer();
         public FormShowData(string dataFolderPath)
         {
             InitializeComponent();
 
-            Location = new Point(250, 50);
+            Location = new Point(395, 50);
             string[] filePaths = null;
             path = dataFolderPath;
 

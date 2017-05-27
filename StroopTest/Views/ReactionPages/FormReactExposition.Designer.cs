@@ -48,6 +48,8 @@
             // 
             // expositionBW
             // 
+            this.expositionBW.WorkerReportsProgress = true;
+            this.expositionBW.WorkerSupportsCancellation = true;
             this.expositionBW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.expositionBW_DoWork);
             this.expositionBW.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.expositionBW_ProgressChanged);
             this.expositionBW.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.expositionBW_RunWorkerCompleted);
@@ -55,7 +57,6 @@
             // intervalBW
             // 
             this.intervalBW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.intervalBW_DoWork);
-            this.intervalBW.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.intervalBW_ProgressChanged);
             this.intervalBW.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.intervalBW_RunWorkerCompleted);
             // 
             // FormReactExposition

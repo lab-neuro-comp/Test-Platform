@@ -22,9 +22,6 @@ namespace TestPlatform.Views
         private string startTime;
         private string outputFile;
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-        private int compareTimes = 0;
-        private int backWorkStatus;
-        private string progress;
         private Stopwatch intervalStopWatch = new Stopwatch();
         private Stopwatch hitStopWatch = new Stopwatch();
         private int currentExposition = 0;
@@ -103,24 +100,17 @@ namespace TestPlatform.Views
         {
             cancellationTokenSource = new CancellationTokenSource();
             await showInstructions(executingTest.ProgramInUse, cancellationTokenSource.Token);
-
-
-
             //changeBackgroundColor(programInUse, true);
 
             await Task.Delay(executingTest.ProgramInUse.IntervalTime, cancellationTokenSource.Token);
-            startingBwWorker(intervalBW);
+            startingIntervalBwWorker();
         }
 
-        private void startingBwWorker(BackgroundWorker bw)
+        private void startingIntervalBwWorker()
         {
-            bw = new BackgroundWorker();
-            bw.DoWork += new DoWorkEventHandler(intervalBW_DoWork);
-            bw.ProgressChanged += new ProgressChangedEventHandler(intervalBW_ProgressChanged);
-            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(intervalBW_RunWorkerCompleted);
-            if (bw.IsBusy != true)
+            if (intervalBW.IsBusy != true)
             {
-                bw.RunWorkerAsync();
+                intervalBW.RunWorkerAsync();
             }
         }
 
@@ -143,25 +133,23 @@ namespace TestPlatform.Views
             int intervalTime = 200; // minimal rnd interval time
 
             // if random interval active, it will be a value between 200 and the defined interval time
-            if (executingTest.ProgramInUse.IntervalTimeRandom && executingTest.ProgramInUse.IntervalTime > 200) 
+            if (executingTest.ProgramInUse.IntervalTimeRandom && executingTest.ProgramInUse.IntervalTime > 400) 
             {
                 Random random = new Random();
-                intervalTime = random.Next(200, executingTest.ProgramInUse.IntervalTime);
+                intervalTime = random.Next(400, executingTest.ProgramInUse.IntervalTime);
             }
             else
             {
                 intervalTime = executingTest.ProgramInUse.IntervalTime;
             }
 
-
-            DateTime nowTime = DateTime.Now;
-            DateTime finalTime = DateTime.Now.AddMilliseconds(intervalTime);
-            compareTimes = DateTime.Compare(nowTime, finalTime);
-            while (compareTimes < 0)
+            intervalStopWatch = new Stopwatch();
+            intervalStopWatch.Start();
+            while (intervalStopWatch.ElapsedMilliseconds < intervalTime)
             {
-                    nowTime = DateTime.Now;
-                    compareTimes = DateTime.Compare(nowTime, finalTime);
-             }
+                /* just wait for interval time to be finished */
+            }
+            intervalStopWatch.Stop();
         }
 
         private void drawSquareShape()
@@ -172,8 +160,8 @@ namespace TestPlatform.Views
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
             Graphics formGraphicsSquare = CreateGraphics();
             Random random = new Random();
-            float[,] position = new float[4,2]{ { executingTest.ProgramInUse.StimulusDistance, 0 }, { 0, executingTest.ProgramInUse.StimulusDistance }, 
-                                                { -executingTest.ProgramInUse.StimulusDistance, 0 }, { 0, -executingTest.ProgramInUse.StimulusDistance } };
+            float[,] position = new float[4,2]{ { executingTest.ProgramInUse.StimulusDistance * 0.75f, 0 }, { 0, executingTest.ProgramInUse.StimulusDistance * 0.75f}, 
+                                                { -executingTest.ProgramInUse.StimulusDistance * 0.75f, 0 }, { 0, -executingTest.ProgramInUse.StimulusDistance * 0.75f } };
             int index = random.Next(0, 3);
             float xSquare = (clientMiddle[0] - brush25) + position[index,0];
             float ySquare = (clientMiddle[1] - brush25) + position[index,1];
@@ -196,8 +184,8 @@ namespace TestPlatform.Views
             switch (executingTest.ProgramInUse.FixPoint)
             {
                 case "+": // cross fixPoint
-                    Graphics formGraphicsCross1 = this.CreateGraphics();
-                    Graphics formGraphicsCross2 = this.CreateGraphics();
+                    Graphics formGraphicsCross1 = CreateGraphics();
+                    Graphics formGraphicsCross2 = CreateGraphics();
                     float xCross1 = clientMiddle[0] - brush25;
                     float yCross1 = clientMiddle[1] - brush4;
                     float xCross2 = clientMiddle[0] - brush4;
@@ -210,7 +198,7 @@ namespace TestPlatform.Views
                     formGraphicsCross2.Dispose();
                     break;
                 case "o": // circle fixPoint
-                    Graphics formGraphicsEllipse = this.CreateGraphics();
+                    Graphics formGraphicsEllipse = CreateGraphics();
                     float xEllipse = clientMiddle[0] - brush25;
                     float yEllipse = clientMiddle[1] - brush25;
                     float widthEllipse = 2 * brush25;
@@ -241,6 +229,7 @@ namespace TestPlatform.Views
             {
                 if (expositionBW.WorkerSupportsCancellation == true)
                 {
+                    Console.WriteLine("apertou?");
                     expositionBW.CancelAsync();
                 }
             }
@@ -250,16 +239,17 @@ namespace TestPlatform.Views
             }
         }
 
-        private void expositionBackground(BackgroundWorker bw)
+        private void expositionBackground()
         {
-            bw = new BackgroundWorker();
-            backWorkStatus = 100;
-            bw.DoWork += new DoWorkEventHandler(expositionBW_DoWork);
-            bw.ProgressChanged += new ProgressChangedEventHandler(expositionBW_ProgressChanged);
-            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(expositionBW_RunWorkerCompleted);
-            if (bw.IsBusy != true)
+            expositionBW = new BackgroundWorker();
+            expositionBW.WorkerSupportsCancellation = true;
+            expositionBW.WorkerReportsProgress = true;
+            expositionBW.DoWork += new DoWorkEventHandler(expositionBW_DoWork);
+            expositionBW.ProgressChanged += new ProgressChangedEventHandler(expositionBW_ProgressChanged);
+            expositionBW.RunWorkerCompleted += new RunWorkerCompletedEventHandler(expositionBW_RunWorkerCompleted);
+            if (!expositionBW.IsBusy)
             {
-                bw.RunWorkerAsync();
+                expositionBW.RunWorkerAsync();
             }
             else
             {
@@ -271,24 +261,18 @@ namespace TestPlatform.Views
         {
             /*parameterizing object to backgroundworker*/
             BackgroundWorker worker = sender as BackgroundWorker;
-            worker.WorkerSupportsCancellation = true;
-            worker.WorkerReportsProgress = true;
 
-            intervalStopWatch = new Stopwatch();
-            intervalStopWatch.Start();
             intervalTime();
-            intervalStopWatch.Stop();
 
             /*starts Exposition*/
             hitStopWatch = new Stopwatch();
+            Console.WriteLine("desenhiu");
             hitStopWatch.Start();
             drawSquareShape();
-            DateTime nowTime = DateTime.Now;
-            DateTime finalTime = DateTime.Now.AddMilliseconds(executingTest.ProgramInUse.ExpositionTime);
-            compareTimes = DateTime.Compare(nowTime, finalTime);
-            while (compareTimes < 0)
+
+            while (hitStopWatch.ElapsedMilliseconds < executingTest.ProgramInUse.ExpositionTime)
             {
-                if (worker.CancellationPending)
+                if (expositionBW.CancellationPending)
                 {
                     hitStopWatch.Stop();
                     e.Cancel = true;
@@ -296,89 +280,71 @@ namespace TestPlatform.Views
                 }
                 else
                 {
-                    nowTime = DateTime.Now;
-                    compareTimes = DateTime.Compare(nowTime, finalTime);
+                    /* just wait for exposition time to be finished */
                 }
             }
-
-            worker.ReportProgress((100)); // work is done if reached here
         }
 
         private void expositionBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            progress = (e.ProgressPercentage.ToString() + "%");
+            Console.WriteLine(currentExposition);
         }
 
         private void expositionBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            Console.WriteLine("apagou");
+            CreateGraphics().Clear(ActiveForm.BackColor);
+            makingFixPoint();
             if ((e.Cancelled == true))
             {
                 executingTest.writeLineOutput(intervalStopWatch.ElapsedMilliseconds, hitStopWatch.ElapsedMilliseconds,
                                               currentExposition);
-                backWorkStatus = 1;
-                this.CreateGraphics().Clear(ActiveForm.BackColor);
-                makingFixPoint();
             }
 
             else if (!(e.Error == null))
             {
-                backWorkStatus = -1;
                 //there was an error while doing work
             }
-
             else
             {
                 executingTest.writeLineOutput(intervalStopWatch.ElapsedMilliseconds, 0, currentExposition);
                 hitStopWatch.Stop();
-                backWorkStatus = 1;
-                this.CreateGraphics().Clear(ActiveForm.BackColor);
-                makingFixPoint();
-                // the work was done without any trouble
+                // the work was done without any trouble, person missed exposition
             }
+            expositionBW.Dispose();
         }
 
         private void intervalBW_DoWork(object sender, DoWorkEventArgs e)
         {
-            BackgroundWorker worker = sender as BackgroundWorker;
-            worker.WorkerReportsProgress = true;
-
             makingFixPoint();
             executingTest.InitialTime = DateTime.Now;
             for (int counter = 0; counter < executingTest.ProgramInUse.NumExpositions; counter++)
             {
                 currentExposition = counter;
                 //preparing execution
-                expositionBackground(expositionBW);
-                while (backWorkStatus != 1)
+                Console.WriteLine("antes " + counter);
+                expositionBackground();
+                while (expositionBW.IsBusy)
                 {
-                    /*wait for exposition to be finished*/
+                    /* wait for exposition to be finished */
                 }
-                backWorkStatus = 100;
-                worker.ReportProgress((counter/ executingTest.ProgramInUse.NumExpositions)*100);
-            }
-        }
+                Thread.Sleep(1);
+                Console.WriteLine("depois " + counter);
 
-        private void intervalBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            progress = (e.ProgressPercentage.ToString() + "%");
+            }
         }
 
         private void intervalBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if ((e.Cancelled == true))
+            if (e.Error == null)
             {
-            }
-
-            else if (!(e.Error == null))
-            {
-                //there was an error while doing work
-            }
-
-            else
-            {
+                /* exposition was a success*/
                 Program.writeOutputFile(outputFile, string.Join("\n", executingTest.Output.ToArray()));
                 Close();
-                // the work was done without any trouble
+            }
+            else
+            {
+                /* there was an error while doing exposition */
             }
         }
     }

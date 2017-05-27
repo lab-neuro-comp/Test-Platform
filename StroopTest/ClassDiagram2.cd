@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StroopTest.Controllers.DGVManipulation" Collapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAgAAAAAAAAAAAAAAAABAAAAAAAAABAAAAAAAgIA=</HashCode>
+      <FileName>Controllers\DGVManipulation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.Controllers.ExpositionController" Collapsed="true">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ExpositionController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.Controllers.ListController" Collapsed="true">
+    <Position X="19.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACABAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ListController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.MainClass" Collapsed="true">
+    <Position X="21" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>MainClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.FormDefine" Collapsed="true">
+    <Position X="12.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACQAAAAQAACAAAACAgABUEAAEAAQQAAAAAA=</HashCode>
+      <FileName>Views\FormDefine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.FormInstructions" Collapsed="true">
+    <Position X="19.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\FormInstructions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.FormMain" Collapsed="true">
+    <Position X="12.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JkLo1qt0HqwBQHoKBAKHjA+HACnD4YEww+gLgYeKIsI=</HashCode>
+      <FileName>Views\FormMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.FormNewAudio" Collapsed="true">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBQAAAEEACQBAAAAEQCgAAACAIAACABABAAAAARgAhw=</HashCode>
+      <FileName>Views\FormNewAudio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.FormShowAudio" Collapsed="true">
+    <Position X="19.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gJAAAgAgACAAAAQEBYCCAAACAEACCAIBAAAASQBIABg=</HashCode>
+      <FileName>Views\FormShowAudio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.FormAudioConfig" Collapsed="true">
+    <Position X="21" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ghACEgCgACQGAEREBYCiAAACAEAMCAMDAAARSYBICok=</HashCode>
+      <FileName>Views\ListsPages\FormAudioConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.FormImgConfig" Collapsed="true">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AjAECCA0ByQEAAAFF0GCABQCImAcCAEAAABRQwRIAAA=</HashCode>
+      <FileName>Views\ListsPages\FormImgConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.FormListConfig" Collapsed="true">
+    <Position X="21" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BiBEIAAIFT4AAAAgBcCSAwACAABMOSEACQABQIRBAAA=</HashCode>
+      <FileName>Views\ListsPages\FormListConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.FormWordColorConfig" Collapsed="true">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gjFAAAAgAiREgECMAdCqAgEKAAAsSEEQAgCRQIRAgAE=</HashCode>
+      <FileName>Views\ListsPages\FormWordColorConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.FormWordColorDialog" Collapsed="true">
+    <Position X="15.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAQABCwABAAAAADAAAACAgAIAQAAAAAQQAAAAAA=</HashCode>
+      <FileName>Views\ListsPages\FormWordColorDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.FormExposition" Collapsed="true">
+    <Position X="15.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAGASRggAAACCCCMAAKEBBkgABEoBiCAUgCASA=</HashCode>
+      <FileName>Views\StroopPages\FormExposition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.FormPrgConfig" Collapsed="true">
+    <Position X="15.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CwSfDulFDq+1UB6DXVmCnwIDhENZb6ETDzoTUUDbgkA=</HashCode>
+      <FileName>Views\StroopPages\FormPrgConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.FormShowData" Collapsed="true">
+    <Position X="21" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIAAAAAAACEgABQQBQCCAAACAEgiCAIBAAAACABAABk=</HashCode>
+      <FileName>Views\StroopPages\FormShowData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.Models.Audio" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAgAAAAAAAAAAAAAEgAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Audio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.Models.Experiment" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Experiment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.Models.StrList" Collapsed="true">
+    <Position X="21" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAACAAQIAAgAABAAAIAAAAAgEAQAIAAAACEA=</HashCode>
+      <FileName>Models\StrList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.Models.StroopProgram" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAgaACGLAgDABQAgBIFAIQARQAGBRAgAAAQQAEAEiAA=</HashCode>
+      <FileName>Models\StroopProgram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.Models.Validations">
+    <Position X="12.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAgAACAEIAQADAQABAAAAAIAAgCAAAUAAAAgIAQAA=</HashCode>
+      <FileName>Models\Validations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestPlatform.Models.Program" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIACKAAIEAhCAECgAIBAwEAKEBBCQgA4QEDAAEhAgA=</HashCode>
+      <FileName>Models\Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestPlatform.Models.ReactionProgram" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEBAAQBAAAACAEBMAAAABAAAAAwAhAQIgQQAAAAAA=</HashCode>
+      <FileName>Models\ReactionProgram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestPlatform.Models.ReactionTest" Collapsed="true">
+    <Position X="14" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACACAAAgAAAAIAAIASAACAEAAAAAAAAAEAAAgAA=</HashCode>
+      <FileName>Models\ReactionTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestPlatform.Properties.Resources" Collapsed="true">
+    <Position X="15.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAgAAAAAKAAAACABCBuQAAAVEAGIAIAEYAAAkKKIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestPlatform.Properties.Settings" Collapsed="true">
+    <Position X="17.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.Properties.Settings" Collapsed="true">
+    <Position X="19.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.Views.AboutBox" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kIAAAAgAICAgCAUAAACAAAADABAAAIAAAAAABAAAAAA=</HashCode>
+      <FileName>Views\AboutBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.Views.HelpData" Collapsed="true">
+    <Position X="17.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAASIAAAgAAAAACACgAAgAIAAAAAAgAAAAAAIAAAEiA=</HashCode>
+      <FileName>Views\HelpData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.Views.DefaultUserControl" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Views\SidebarUserControls\DefaultUserControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.Views.ExperimentControl" Collapsed="true">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAABAACAAAgCAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Views\SidebarUserControls\ExperimentControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.Views.StroopControl" Collapsed="true">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAACAAAEAIAACAAAACAAAAAAAIAAIAAAgACAA=</HashCode>
+      <FileName>Views\SidebarUserControls\StroopControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestPlatform.Views.FormDefineTest" Collapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AiCCAAAAEiQAABAQAACAgBACAAAAECAACEgQASAAAAA=</HashCode>
+      <FileName>Views\FormDefineTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestPlatform.Views.FormReactExposition" Collapsed="true">
+    <Position X="17.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAICKBSJAAAgAAQSiEgAKiAAUgAAAAIEGACBCBQw=</HashCode>
+      <FileName>Views\ReactionPages\FormReactExposition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestPlatform.Views.FormTRConfig" Collapsed="true">
+    <Position X="12.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgC+DiEFRqYxWDMAKBmCjwIDAABJKwARjjoTcUjZgEA=</HashCode>
+      <FileName>Views\ReactionPages\FormTRConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestPlatform.Views.ReactionPages.ReactionResultUserControl" Collapsed="true">
+    <Position X="12.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACEAABAAAACCAAACAAgACACAAAAAAAAAABA=</HashCode>
+      <FileName>Views\ReactionPages\ReactionResultUserControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StroopTest.Views.SidebarControls.ListUserControl" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwwAgMAQgjACAAAIEADgABQCAQQgSAIIGQAAAAAIAFI=</HashCode>
+      <FileName>Views\SidebarUserControls\ListUserControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestPlatform.Views.SidebarUserControls.ReactionControl" Collapsed="true">
+    <Position X="5.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAQCAAAgAIAACAAAACIAAQAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Views\SidebarUserControls\ReactionControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestPlatform.Views.SidebarUserControls.ResultsUserControl" Collapsed="true">
+    <Position X="9.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIEAAEACAABAAICACAkBACAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Views\SidebarUserControls\ResultsUserControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="26" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

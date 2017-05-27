@@ -241,6 +241,7 @@ namespace TestPlatform.Views
             {
                 if (expositionBW.WorkerSupportsCancellation == true)
                 {
+                    Console.WriteLine("apertou?");
                     expositionBW.CancelAsync();
                 }
             }
@@ -250,16 +251,18 @@ namespace TestPlatform.Views
             }
         }
 
-        private void expositionBackground(BackgroundWorker bw)
+        private void expositionBackground()
         {
-            bw = new BackgroundWorker();
+            expositionBW = new BackgroundWorker();
+            expositionBW.WorkerSupportsCancellation = true;
+            expositionBW.WorkerReportsProgress = true;
             backWorkStatus = 100;
-            bw.DoWork += new DoWorkEventHandler(expositionBW_DoWork);
-            bw.ProgressChanged += new ProgressChangedEventHandler(expositionBW_ProgressChanged);
-            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(expositionBW_RunWorkerCompleted);
-            if (bw.IsBusy != true)
+            expositionBW.DoWork += new DoWorkEventHandler(expositionBW_DoWork);
+            expositionBW.ProgressChanged += new ProgressChangedEventHandler(expositionBW_ProgressChanged);
+            expositionBW.RunWorkerCompleted += new RunWorkerCompletedEventHandler(expositionBW_RunWorkerCompleted);
+            if (expositionBW.IsBusy != true)
             {
-                bw.RunWorkerAsync();
+                expositionBW.RunWorkerAsync();
             }
             else
             {
@@ -271,8 +274,6 @@ namespace TestPlatform.Views
         {
             /*parameterizing object to backgroundworker*/
             BackgroundWorker worker = sender as BackgroundWorker;
-            worker.WorkerSupportsCancellation = true;
-            worker.WorkerReportsProgress = true;
 
             intervalStopWatch = new Stopwatch();
             intervalStopWatch.Start();
@@ -288,10 +289,12 @@ namespace TestPlatform.Views
             compareTimes = DateTime.Compare(nowTime, finalTime);
             while (compareTimes < 0)
             {
-                if (worker.CancellationPending)
+                if (expositionBW.CancellationPending)
                 {
+                    Console.WriteLine("apertou!");
                     hitStopWatch.Stop();
                     e.Cancel = true;
+                    compareTimes = 2;
                     break;
                 }
                 else
@@ -301,7 +304,7 @@ namespace TestPlatform.Views
                 }
             }
 
-            worker.ReportProgress((100)); // work is done if reached here
+            expositionBW.ReportProgress((100)); // work is done if reached here
         }
 
         private void expositionBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -313,6 +316,7 @@ namespace TestPlatform.Views
         {
             if ((e.Cancelled == true))
             {
+                Console.WriteLine("apertou");
                 executingTest.writeLineOutput(intervalStopWatch.ElapsedMilliseconds, hitStopWatch.ElapsedMilliseconds,
                                               currentExposition);
                 backWorkStatus = 1;
@@ -335,12 +339,12 @@ namespace TestPlatform.Views
                 makingFixPoint();
                 // the work was done without any trouble
             }
+            expositionBW.Dispose();
         }
 
         private void intervalBW_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
-            worker.WorkerReportsProgress = true;
 
             makingFixPoint();
             executingTest.InitialTime = DateTime.Now;
@@ -348,13 +352,13 @@ namespace TestPlatform.Views
             {
                 currentExposition = counter;
                 //preparing execution
-                expositionBackground(expositionBW);
+                expositionBackground();
                 while (backWorkStatus != 1)
                 {
                     /*wait for exposition to be finished*/
                 }
                 backWorkStatus = 100;
-                worker.ReportProgress((counter/ executingTest.ProgramInUse.NumExpositions)*100);
+                intervalBW.ReportProgress((counter/ executingTest.ProgramInUse.NumExpositions)*100);
             }
         }
 

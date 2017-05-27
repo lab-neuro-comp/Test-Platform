@@ -40,6 +40,7 @@ namespace TestPlatform.Views
             intervalTime.Value = editProgram.IntervalTime;
             beepingCheckbox.Checked = editProgram.IsBeeping;
             beepDuration.Value = editProgram.BeepDuration;
+            stimulusDistance.Value = editProgram.StimulusDistance;
 
             if (editProgram.WordsListFile.ToLower() == "false")
             {

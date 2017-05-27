@@ -160,8 +160,8 @@ namespace TestPlatform.Views
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
             Graphics formGraphicsSquare = CreateGraphics();
             Random random = new Random();
-            float[,] position = new float[4,2]{ { executingTest.ProgramInUse.StimulusDistance, 0 }, { 0, executingTest.ProgramInUse.StimulusDistance }, 
-                                                { -executingTest.ProgramInUse.StimulusDistance, 0 }, { 0, -executingTest.ProgramInUse.StimulusDistance } };
+            float[,] position = new float[4,2]{ { executingTest.ProgramInUse.StimulusDistance * 0.75f, 0 }, { 0, executingTest.ProgramInUse.StimulusDistance * 0.75f}, 
+                                                { -executingTest.ProgramInUse.StimulusDistance * 0.75f, 0 }, { 0, -executingTest.ProgramInUse.StimulusDistance * 0.75f } };
             int index = random.Next(0, 3);
             float xSquare = (clientMiddle[0] - brush25) + position[index,0];
             float ySquare = (clientMiddle[1] - brush25) + position[index,1];
@@ -169,9 +169,6 @@ namespace TestPlatform.Views
             float heightSquare = executingTest.ProgramInUse.StimuluSize;
 
             formGraphicsSquare.FillRectangle(myBrush, xSquare, ySquare, widthSquare, heightSquare);
-            formGraphicsSquare.FillRectangle(myBrush, xSquare, ySquare, widthSquare, heightSquare);
-            formGraphicsSquare.FillRectangle(myBrush, xSquare, ySquare, widthSquare, heightSquare);
-
             formGraphicsSquare.Dispose();
             
         }

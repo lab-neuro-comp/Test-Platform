@@ -173,17 +173,8 @@ namespace TestPlatform.Views
             }
         }
 
-        private void expositionBW_DoWork(object sender, DoWorkEventArgs e)
+        private void showStimulus()
         {
-            /*parameterizing object to backgroundworker*/
-            BackgroundWorker worker = sender as BackgroundWorker;
-
-            intervalElapsedTime = ExpositionsViews.intervalTime(executingTest.ProgramInUse.IntervalTimeRandom, 
-                executingTest.ProgramInUse.IntervalTime);
-
-            /*starts Exposition*/
-            hitStopWatch = new Stopwatch();
-            hitStopWatch.Start();
             switch (executingTest.ProgramInUse.ExpositionType)
             {
                 case "Formas":
@@ -205,7 +196,24 @@ namespace TestPlatform.Views
                 // await imageAudioExposition();
                 default:
                     throw new Exception("Tipo de Exposição: " + executingTest.ProgramInUse.ExpositionType + " inválido!");
+
             }
+        }
+
+        private void expositionBW_DoWork(object sender, DoWorkEventArgs e)
+        {
+            /*parameterizing object to backgroundworker*/
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            intervalElapsedTime = ExpositionsViews.waitTime(executingTest.ProgramInUse.IntervalTimeRandom, 
+                executingTest.ProgramInUse.IntervalTime);
+
+            /*starts Exposition*/
+            hitStopWatch = new Stopwatch();
+            hitStopWatch.Start();
+
+            showStimulus();
+            
 
             while (hitStopWatch.ElapsedMilliseconds < executingTest.ProgramInUse.ExpositionTime)
             {

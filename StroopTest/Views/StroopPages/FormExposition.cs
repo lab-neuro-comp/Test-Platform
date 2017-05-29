@@ -144,6 +144,58 @@ namespace TestPlatform
             catch (Exception ex) { throw new Exception("Edição não pode ser feita " + ex.Message); }
         }
 
+        private async Task startExposition()
+        {
+            cts = new CancellationTokenSource();
+            string textCurrent = null, colorCurrent = null, audioDetail = "false";
+            string[] subtitlesArray = null;
+            int subtitleCounter = 0;
+            List<string> outputContent = new List<string>();
+
+            try
+            {
+                // reading list files:
+                subtitlesArray = configureSubtitle();
+                
+                // presenting test instructions:
+                await showInstructions(programInUse, cts.Token);
+
+                changeBackgroundColor(programInUse, true); // changes background color, if there is one defined
+             
+                // exposition loop:
+                for (int counter = 1; counter <= programInUse.NumExpositions; counter++)
+                {
+                    await Task.Delay(programInUse.IntervalTime, cts.Token);
+                    await intervalOrFixPoint(programInUse, cts.Token);
+
+                    SendKeys.SendWait(executingTest.Mark.ToString()); //sending event to neuronspectrum
+                    if (programInUse.SubtitleShow)
+                    {
+                        subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
+                    }
+                    StroopTest.writeLineOutputResult(programInUse, textCurrent, colorCurrent, counter,
+                            outputContent, elapsedTime, programInUse.ExpositionType, audioDetail, hour, minutes, seconds,
+                            executingTest);
+
+                    await Task.Delay(programInUse.ExpositionTime, cts.Token);
+                }
+                changeBackgroundColor(programInUse, false); // retorna à cor de fundo padrão
+                StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
+                Close(); // finaliza exposição após execução
+            }
+            catch (TaskCanceledException)
+            {
+                StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
+                if (programInUse.AudioCapture) { stopRecordingAudio(); }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            cts = null;
+        }
+
+
         private async Task startWordExposition() // starts colored words exposition - classic Stroop
         {
             cts = new CancellationTokenSource();

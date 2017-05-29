@@ -21,7 +21,7 @@ namespace TestPlatform.Views
         private string startTime;
         private string outputFile;
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-        private Stopwatch intervalStopWatch = new Stopwatch();
+        private int intervalElapsedTime;
         private Stopwatch hitStopWatch = new Stopwatch();
         private int currentExposition = 0;
 
@@ -70,32 +70,11 @@ namespace TestPlatform.Views
 
         private async void initializeExposition()
         {
-            switch (executingTest.ProgramInUse.ExpositionType)
-            {
-                case "Formas":
-                    await shapeExposition();
-                    break;
-                case "Palavra":
-                 // await wordExposition();
-                    break;
-                case "Imagem":
-                 // await imageExposition();
-                    break;
-                case "Imagem e Palavra":
-                 // await imageWordExposition();
-                    break;
-                case "Palavra com Áudio":
-                   // await wordAudioExposition();
-                    break;
-                case "Imagem com Áudio":
-                    // await imageAudioExposition();
-                default:
-                    throw new Exception("Tipo de Exposição: " + executingTest.ProgramInUse.ExpositionType + " inválido!");
-            }
+            await exposition();
         }
 
 
-        private async Task shapeExposition()
+        private async Task exposition()
         {
             cancellationTokenSource = new CancellationTokenSource();
             await showInstructions(executingTest.ProgramInUse, cancellationTokenSource.Token);
@@ -127,29 +106,7 @@ namespace TestPlatform.Views
             }
         }
 
-        private void intervalTime()
-        {
-            int intervalTime = 200; // minimal rnd interval time
 
-            // if random interval active, it will be a value between 200 and the defined interval time
-            if (executingTest.ProgramInUse.IntervalTimeRandom && executingTest.ProgramInUse.IntervalTime > 400) 
-            {
-                Random random = new Random();
-                intervalTime = random.Next(400, executingTest.ProgramInUse.IntervalTime);
-            }
-            else
-            {
-                intervalTime = executingTest.ProgramInUse.IntervalTime;
-            }
-
-            intervalStopWatch = new Stopwatch();
-            intervalStopWatch.Start();
-            while (intervalStopWatch.ElapsedMilliseconds < intervalTime)
-            {
-                /* just wait for interval time to be finished */
-            }
-            intervalStopWatch.Stop();
-        }
 
         private void drawSquareShape()
         {
@@ -170,45 +127,6 @@ namespace TestPlatform.Views
             formGraphicsSquare.FillRectangle(myBrush, xSquare, ySquare, widthSquare, heightSquare);
             formGraphicsSquare.Dispose();
             
-        }
-
-
-        private void makingFixPoint()
-        {
-            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.FixPointColor));
-            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int brush25 = 25;
-            int brush4 = 4;
-
-            switch (executingTest.ProgramInUse.FixPoint)
-            {
-                case "+": // cross fixPoint
-                    Graphics formGraphicsCross1 = CreateGraphics();
-                    Graphics formGraphicsCross2 = CreateGraphics();
-                    float xCross1 = clientMiddle[0] - brush25;
-                    float yCross1 = clientMiddle[1] - brush4;
-                    float xCross2 = clientMiddle[0] - brush4;
-                    float yCross2 = clientMiddle[1] - brush25;
-                    float widthCross = 2 * brush25;
-                    float heightCross = 2 * brush4;
-                    formGraphicsCross1.FillRectangle(myBrush, xCross1, yCross1, widthCross, heightCross);
-                    formGraphicsCross2.FillRectangle(myBrush, xCross2, yCross2, heightCross, widthCross);
-                    formGraphicsCross1.Dispose();
-                    formGraphicsCross2.Dispose();
-                    break;
-                case "o": // circle fixPoint
-                    Graphics formGraphicsEllipse = CreateGraphics();
-                    float xEllipse = clientMiddle[0] - brush25;
-                    float yEllipse = clientMiddle[1] - brush25;
-                    float widthEllipse = 2 * brush25;
-                    float heightEllipse = 2 * brush25;
-                    formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
-                    formGraphicsEllipse.Dispose();
-                    break;
-                default: break;
-
-            }
-            myBrush.Dispose();
         }
 
         private void repairProgram()
@@ -260,12 +178,34 @@ namespace TestPlatform.Views
             /*parameterizing object to backgroundworker*/
             BackgroundWorker worker = sender as BackgroundWorker;
 
-            intervalTime();
+            intervalElapsedTime = ExpositionsViews.intervalTime(executingTest.ProgramInUse.IntervalTimeRandom, 
+                executingTest.ProgramInUse.IntervalTime);
 
             /*starts Exposition*/
             hitStopWatch = new Stopwatch();
             hitStopWatch.Start();
-            drawSquareShape();
+            switch (executingTest.ProgramInUse.ExpositionType)
+            {
+                case "Formas":
+                    drawSquareShape();
+                    break;
+                case "Palavra":
+                    // await wordExposition();
+                    break;
+                case "Imagem":
+                    // await imageExposition();
+                    break;
+                case "Imagem e Palavra":
+                    // await imageWordExposition();
+                    break;
+                case "Palavra com Áudio":
+                    // await wordAudioExposition();
+                    break;
+                case "Imagem com Áudio":
+                // await imageAudioExposition();
+                default:
+                    throw new Exception("Tipo de Exposição: " + executingTest.ProgramInUse.ExpositionType + " inválido!");
+            }
 
             while (hitStopWatch.ElapsedMilliseconds < executingTest.ProgramInUse.ExpositionTime)
             {
@@ -290,10 +230,11 @@ namespace TestPlatform.Views
         private void expositionBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             CreateGraphics().Clear(ActiveForm.BackColor);
-            makingFixPoint();
+            ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint,executingTest.ProgramInUse.FixPointColor,
+                this);
             if ((e.Cancelled == true))
             {
-                executingTest.writeLineOutput(intervalStopWatch.ElapsedMilliseconds, hitStopWatch.ElapsedMilliseconds,
+                executingTest.writeLineOutput(intervalElapsedTime, hitStopWatch.ElapsedMilliseconds,
                                               currentExposition);
             }
 
@@ -303,7 +244,7 @@ namespace TestPlatform.Views
             }
             else
             {
-                executingTest.writeLineOutput(intervalStopWatch.ElapsedMilliseconds, 0, currentExposition);
+                executingTest.writeLineOutput(intervalElapsedTime, 0, currentExposition);
                 hitStopWatch.Stop();
                 // the work was done without any trouble, person missed exposition
             }
@@ -312,7 +253,8 @@ namespace TestPlatform.Views
 
         private void intervalBW_DoWork(object sender, DoWorkEventArgs e)
         {
-            makingFixPoint();
+            ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
+                this);
             executingTest.InitialTime = DateTime.Now;
             for (int counter = 0; counter < executingTest.ProgramInUse.NumExpositions; counter++)
             {

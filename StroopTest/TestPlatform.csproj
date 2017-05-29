@@ -123,6 +123,7 @@
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\DGVManipulation.cs" />
+    <Compile Include="Views\ExpositionsViews.cs" />
     <Compile Include="Views\FormDefineTest.cs">
       <SubType>Form</SubType>
     </Compile>

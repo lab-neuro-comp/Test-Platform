@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StroopTest.Views
+namespace TestPlatform.Views
 {
     public partial class ExperimentControl : DefaultUserControl
     {

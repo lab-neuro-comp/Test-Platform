@@ -2,9 +2,8 @@
 using System.Windows.Forms;
 using TestPlatform.Models;
 using System.IO;
-using StroopTest.Models;
 using System.Drawing;
-using StroopTest.Controllers;
+using TestPlatform.Controllers;
 
 namespace TestPlatform.Views
 {

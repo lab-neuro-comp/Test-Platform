@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Windows.Forms;
 
 
-namespace StroopTest.Views
+namespace TestPlatform.Views
 {
     partial class AboutBox : Form
     {

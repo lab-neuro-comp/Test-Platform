@@ -1,6 +1,6 @@
 ﻿
-using StroopTest;
-using StroopTest.Views;
+using TestPlatform;
+using TestPlatform.Views;
 using System;
 using System.Windows.Forms;
 

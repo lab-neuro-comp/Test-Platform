@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using StroopTest.Views;
-using StroopTest;
+using TestPlatform.Views;
+using TestPlatform;
 using TestPlatform.Views.ReactionPages;
 
 namespace TestPlatform.Views.SidebarUserControls

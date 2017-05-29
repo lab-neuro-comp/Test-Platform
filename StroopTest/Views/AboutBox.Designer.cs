@@ -1,4 +1,4 @@
-﻿namespace StroopTest.Views
+﻿namespace TestPlatform.Views
 {
     partial class AboutBox
     {

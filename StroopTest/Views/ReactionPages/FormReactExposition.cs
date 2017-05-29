@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
@@ -229,7 +228,6 @@ namespace TestPlatform.Views
             {
                 if (expositionBW.WorkerSupportsCancellation == true)
                 {
-                    Console.WriteLine("apertou?");
                     expositionBW.CancelAsync();
                 }
             }
@@ -266,7 +264,6 @@ namespace TestPlatform.Views
 
             /*starts Exposition*/
             hitStopWatch = new Stopwatch();
-            Console.WriteLine("desenhiu");
             hitStopWatch.Start();
             drawSquareShape();
 
@@ -292,7 +289,6 @@ namespace TestPlatform.Views
 
         private void expositionBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Console.WriteLine("apagou");
             CreateGraphics().Clear(ActiveForm.BackColor);
             makingFixPoint();
             if ((e.Cancelled == true))
@@ -322,14 +318,12 @@ namespace TestPlatform.Views
             {
                 currentExposition = counter;
                 //preparing execution
-                Console.WriteLine("antes " + counter);
                 expositionBackground();
                 while (expositionBW.IsBusy)
                 {
                     /* wait for exposition to be finished */
                 }
                 Thread.Sleep(1);
-                Console.WriteLine("depois " + counter);
 
             }
         }

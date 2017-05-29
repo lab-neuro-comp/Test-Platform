@@ -5,11 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using StroopTest.Models;
-using StroopTest.Views;
-using StroopTest.Controllers;
+using TestPlatform.Models;
+using TestPlatform.Views;
+using TestPlatform.Controllers;
 
-namespace StroopTest
+namespace TestPlatform
 {
     public partial class FormWordColorConfig : UserControl
     {

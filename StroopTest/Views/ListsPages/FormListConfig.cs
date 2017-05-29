@@ -7,13 +7,13 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using StroopTest.Models;
-using StroopTest.Controllers;
+using TestPlatform.Models;
+using TestPlatform.Controllers;
 using System.Collections.Generic;
-using StroopTest.Views;
+using TestPlatform.Views;
 using System.Linq;
 
-namespace StroopTest
+namespace TestPlatform
 {
     public partial class FormListConfig : Form
     {

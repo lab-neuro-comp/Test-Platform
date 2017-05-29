@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace StroopTest.Views
+namespace TestPlatform.Views
 {
     public class HelpData
     {

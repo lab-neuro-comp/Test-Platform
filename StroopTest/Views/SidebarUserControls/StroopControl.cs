@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace StroopTest.Views
+namespace TestPlatform.Views
 {
     public partial class StroopControl : DefaultUserControl
     {

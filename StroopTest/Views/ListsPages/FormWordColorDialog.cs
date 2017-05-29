@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using StroopTest.Models;
+using TestPlatform.Models;
 
-namespace StroopTest
+namespace TestPlatform
 {
     public partial class FormWordColorDialog : Form
     {

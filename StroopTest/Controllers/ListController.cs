@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StroopTest.Models;
+using TestPlatform.Models;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace StroopTest.Controllers
+namespace TestPlatform.Controllers
 {
     class ListController
     {

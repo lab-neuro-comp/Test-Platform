@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Media;
 using System.Windows.Forms;
-using StroopTest.Models;
-using StroopTest.Views;
-using StroopTest.Controllers;
+using TestPlatform.Models;
+using TestPlatform.Views;
+using TestPlatform.Controllers;
 using System.IO;
 
-namespace StroopTest
+namespace TestPlatform
 {
     public partial class FormShowAudio : Form
     {

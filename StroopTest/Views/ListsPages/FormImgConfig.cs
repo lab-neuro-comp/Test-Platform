@@ -2,11 +2,11 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using StroopTest.Models;
-using StroopTest.Views;
-using StroopTest.Controllers;
+using TestPlatform.Models;
+using TestPlatform.Views;
+using TestPlatform.Controllers;
 
-namespace StroopTest
+namespace TestPlatform
 {
     public partial class FormImgConfig : UserControl
     {

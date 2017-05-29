@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
-using StroopTest.Models;
-using StroopTest.Views;
+using TestPlatform.Models;
+using TestPlatform.Views;
 using System.Drawing;
 
-namespace StroopTest
+namespace TestPlatform
 {
     public partial class FormNewAudio : UserControl
     {

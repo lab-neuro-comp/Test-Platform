@@ -1,4 +1,4 @@
-﻿namespace StroopTest.Views.SidebarControls
+﻿namespace TestPlatform.Views.SidebarControls
 {
     partial class ListUserControl
     {

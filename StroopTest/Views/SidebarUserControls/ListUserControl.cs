@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StroopTest.Views.SidebarControls
+namespace TestPlatform.Views.SidebarControls
 {
     public partial class ListUserControl : DefaultUserControl
     {

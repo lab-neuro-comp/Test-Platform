@@ -10,11 +10,11 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Media;
-using StroopTest.Models;
-using StroopTest.Views;
-using StroopTest.Controllers;
+using TestPlatform.Models;
+using TestPlatform.Views;
+using TestPlatform.Controllers;
 
-namespace StroopTest
+namespace TestPlatform
 {
     public partial class FormShowData : UserControl
     {
@@ -32,7 +32,7 @@ namespace StroopTest
             string[] filePaths = null;
             path = dataFolderPath;
 
-            string[] headers = program.HeaderOutputFileText.Split('\t');
+            string[] headers = StroopTest.HeaderOutputFileText.Split('\t');
             foreach (var columnName in headers)
             {
                 dataGridView1.Columns.Add(columnName, columnName); // Configura Cabeçalho na tabela
@@ -112,7 +112,7 @@ namespace StroopTest
                 {
                     using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
                     {
-                        tw.WriteLine(program.HeaderOutputFileText);
+                        tw.WriteLine(StroopTest.HeaderOutputFileText);
                         for (int i = 0; i < lines.Length; i++)
                         {
                             tw.WriteLine(lines[i]); // escreve linhas no novo arquivo

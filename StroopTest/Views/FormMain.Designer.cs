@@ -1,4 +1,4 @@
-﻿namespace StroopTest
+﻿namespace TestPlatform
 {
     partial class FormMain
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,21 +77,27 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.executeBar = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.programPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.executingNameLabel = new System.Windows.Forms.Label();
             this.selectButton = new System.Windows.Forms.Button();
             this.executingTypeLabel = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.participantPanel = new System.Windows.Forms.Panel();
             this.participantTextBox = new System.Windows.Forms.TextBox();
             this.participantLabel = new System.Windows.Forms.Label();
+            this.markPanel = new System.Windows.Forms.Panel();
+            this.markTextBox = new System.Windows.Forms.TextBox();
+            this.markLabel = new System.Windows.Forms.Label();
             this.executeButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.mainMenuStrip.SuspendLayout();
             this.testToolStrip.SuspendLayout();
             this.panel1.SuspendLayout();
             this.executeBar.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.programPanel.SuspendLayout();
+            this.participantPanel.SuspendLayout();
+            this.markPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainMenuStrip
@@ -385,7 +392,7 @@
             this.testToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.directoryToolStripLabel,
             this.dirPathSL});
-            this.testToolStrip.Location = new System.Drawing.Point(910, 0);
+            this.testToolStrip.Location = new System.Drawing.Point(1129, 0);
             this.testToolStrip.Name = "testToolStrip";
             this.testToolStrip.Padding = new System.Windows.Forms.Padding(0);
             this.testToolStrip.Size = new System.Drawing.Size(102, 25);
@@ -548,8 +555,9 @@
             // executeBar
             // 
             this.executeBar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.executeBar.Controls.Add(this.panel2);
-            this.executeBar.Controls.Add(this.panel4);
+            this.executeBar.Controls.Add(this.programPanel);
+            this.executeBar.Controls.Add(this.participantPanel);
+            this.executeBar.Controls.Add(this.markPanel);
             this.executeBar.Controls.Add(this.executeButton);
             this.executeBar.Controls.Add(this.testToolStrip);
             this.executeBar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -558,17 +566,17 @@
             this.executeBar.Size = new System.Drawing.Size(1470, 45);
             this.executeBar.TabIndex = 26;
             // 
-            // panel2
+            // programPanel
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.executingNameLabel);
-            this.panel2.Controls.Add(this.selectButton);
-            this.panel2.Controls.Add(this.executingTypeLabel);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(469, 36);
-            this.panel2.TabIndex = 27;
+            this.programPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.programPanel.Controls.Add(this.label2);
+            this.programPanel.Controls.Add(this.executingNameLabel);
+            this.programPanel.Controls.Add(this.selectButton);
+            this.programPanel.Controls.Add(this.executingTypeLabel);
+            this.programPanel.Location = new System.Drawing.Point(3, 3);
+            this.programPanel.Name = "programPanel";
+            this.programPanel.Size = new System.Drawing.Size(469, 36);
+            this.programPanel.TabIndex = 27;
             // 
             // label2
             // 
@@ -614,15 +622,15 @@
             this.executingTypeLabel.TabIndex = 0;
             this.executingTypeLabel.Text = "StroopTest";
             // 
-            // panel4
+            // participantPanel
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.participantTextBox);
-            this.panel4.Controls.Add(this.participantLabel);
-            this.panel4.Location = new System.Drawing.Point(478, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(296, 36);
-            this.panel4.TabIndex = 28;
+            this.participantPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.participantPanel.Controls.Add(this.participantTextBox);
+            this.participantPanel.Controls.Add(this.participantLabel);
+            this.participantPanel.Location = new System.Drawing.Point(478, 3);
+            this.participantPanel.Name = "participantPanel";
+            this.participantPanel.Size = new System.Drawing.Size(322, 36);
+            this.participantPanel.TabIndex = 28;
             // 
             // participantTextBox
             // 
@@ -631,6 +639,8 @@
             this.participantTextBox.Size = new System.Drawing.Size(172, 22);
             this.participantTextBox.TabIndex = 1;
             this.participantTextBox.Text = "padrao";
+            this.participantTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.participantTextBox_Validating);
+            this.participantTextBox.Validated += new System.EventHandler(this.participantTextBox_Validated);
             // 
             // participantLabel
             // 
@@ -642,6 +652,37 @@
             this.participantLabel.TabIndex = 0;
             this.participantLabel.Text = "Participante";
             // 
+            // markPanel
+            // 
+            this.markPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.markPanel.Controls.Add(this.markTextBox);
+            this.markPanel.Controls.Add(this.markLabel);
+            this.markPanel.Location = new System.Drawing.Point(806, 3);
+            this.markPanel.Name = "markPanel";
+            this.markPanel.Size = new System.Drawing.Size(187, 36);
+            this.markPanel.TabIndex = 29;
+            // 
+            // markTextBox
+            // 
+            this.markTextBox.Location = new System.Drawing.Point(112, 7);
+            this.markTextBox.MaxLength = 1;
+            this.markTextBox.Name = "markTextBox";
+            this.markTextBox.Size = new System.Drawing.Size(34, 22);
+            this.markTextBox.TabIndex = 1;
+            this.markTextBox.Text = "s";
+            this.markTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.markTextBox_Validating);
+            this.markTextBox.Validated += new System.EventHandler(this.markTextBox_Validated);
+            // 
+            // markLabel
+            // 
+            this.markLabel.AutoSize = true;
+            this.markLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.markLabel.Location = new System.Drawing.Point(3, 8);
+            this.markLabel.Name = "markLabel";
+            this.markLabel.Size = new System.Drawing.Size(72, 18);
+            this.markLabel.TabIndex = 0;
+            this.markLabel.Text = "Marcador";
+            // 
             // executeButton
             // 
             this.executeButton.FlatAppearance.BorderSize = 0;
@@ -649,7 +690,7 @@
             this.executeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.executeButton.Image = global::TestPlatform.Properties.Resources.icon_execute;
             this.executeButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.executeButton.Location = new System.Drawing.Point(780, 3);
+            this.executeButton.Location = new System.Drawing.Point(999, 3);
             this.executeButton.Name = "executeButton";
             this.executeButton.Size = new System.Drawing.Size(127, 36);
             this.executeButton.TabIndex = 0;
@@ -658,10 +699,17 @@
             this.executeButton.UseVisualStyleBackColor = true;
             this.executeButton.Click += new System.EventHandler(this.executeButton_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormMain
             // 
+            this.AcceptButton = this.executeButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1472, 840);
             this.Controls.Add(this.executeBar);
@@ -684,10 +732,13 @@
             this.panel1.ResumeLayout(false);
             this.executeBar.ResumeLayout(false);
             this.executeBar.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.programPanel.ResumeLayout(false);
+            this.programPanel.PerformLayout();
+            this.participantPanel.ResumeLayout(false);
+            this.participantPanel.PerformLayout();
+            this.markPanel.ResumeLayout(false);
+            this.markPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -744,12 +795,16 @@
         private System.Windows.Forms.FlowLayoutPanel executeBar;
         private System.Windows.Forms.Button executeButton;
         private System.Windows.Forms.Button selectButton;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel programPanel;
         private System.Windows.Forms.Label executingTypeLabel;
         private System.Windows.Forms.Label executingNameLabel;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel participantPanel;
         private System.Windows.Forms.Label participantLabel;
         private System.Windows.Forms.TextBox participantTextBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel markPanel;
+        private System.Windows.Forms.TextBox markTextBox;
+        private System.Windows.Forms.Label markLabel;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

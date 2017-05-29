@@ -15,11 +15,10 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Media;
 using System.Drawing.Drawing2D;
-using StroopTest.Models;
-using StroopTest.Controllers;
 using TestPlatform.Models;
+using TestPlatform.Controllers;
 
-namespace StroopTest
+namespace TestPlatform
 {
     public partial class FormExposition : Form
     {
@@ -37,8 +36,9 @@ namespace StroopTest
         private Audio audioControl = new Audio();
         private SoundPlayer Player = new SoundPlayer();
         private string defaultFolderPath;
+        private StroopTest executingTest = new StroopTest();
 
-        public FormExposition(string prgName, string usrName, string defaultFolderPath)
+        public FormExposition(string prgName, string usrName, string defaultFolderPath, char mark)
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
@@ -48,7 +48,8 @@ namespace StroopTest
             path = defaultFolderPath + "/StroopTestFiles/";
             outputDataPath = path + "/data/";
             programInUse.ProgramName = prgName;
-            programInUse.UserName = usrName;
+            executingTest.ParticipantName = usrName;
+            executingTest.Mark = mark;
             startExpo();
         }
 
@@ -59,7 +60,7 @@ namespace StroopTest
             {
                 MessageBox.Show("A exposição foi cancelada.");
                 if(programInUse.AudioCapture)
-                    audioControl.saveRecording(outputDataPath + "/audio_" + programInUse.UserName + "_" + programInUse.ProgramName + "_" + now + ".wav");
+                    audioControl.saveRecording(outputDataPath + "/audio_" + executingTest.ParticipantName + "_" + programInUse.ProgramName + "_" + now + ".wav");
                 this.Close();
                 return true;
             }
@@ -75,8 +76,9 @@ namespace StroopTest
                                         "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/"));
                 } // confere existência do arquivo
                 programInUse.readProgramFile(path + "/prg/" + programInUse.ProgramName + ".prg"); // reads program into programInUse
-                now = programInUse.InitialDate.Day + "." + programInUse.InitialDate.Month + "_" + hour + "h" + minutes + "." + seconds;
-                outputFile = outputDataPath + programInUse.UserName + "_" + programInUse.ProgramName + ".txt";
+                now = executingTest.InitialDate.Day + "." + executingTest.InitialDate.Month + "_" +
+                    hour + "h" + minutes + "." + seconds;
+                outputFile = outputDataPath + executingTest.ParticipantName + "_" + programInUse.ProgramName + ".txt";
                 if (programInUse.NeedsEdition) // if program is incomplete
                 {
                     MessageBox.Show("O programa contém parâmetros incorretos e/ou está incompleto!\nCorrija o programa na interface a seguir.");
@@ -226,7 +228,7 @@ namespace StroopTest
                         }
 
                         elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; // grava tempo decorrido
-                        SendKeys.SendWait("="); //sending event to neuronspectrum
+                        SendKeys.SendWait(executingTest.Mark.ToString()); //sending event to neuronspectrum
                         if (programInUse.SubtitleShow)
                         {
                             subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
@@ -235,8 +237,9 @@ namespace StroopTest
                         
 
 
-                        StroopProgram.writeLineOutputResult(programInUse, textCurrent, colorCurrent, counter, 
-                            outputContent, elapsedTime, programInUse.ExpositionType, audioDetail, hour, minutes, seconds);
+                        StroopTest.writeLineOutputResult(programInUse, textCurrent, colorCurrent, counter, 
+                            outputContent, elapsedTime, programInUse.ExpositionType, audioDetail, hour, minutes, seconds, 
+                            executingTest);
                         
                         await Task.Delay(programInUse.ExpositionTime, cts.Token);
                     }
@@ -380,7 +383,7 @@ namespace StroopTest
                             // grava tempo decorrido
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; 
 
-                            SendKeys.SendWait("="); //sending event to neuronspectrum
+                            SendKeys.SendWait(executingTest.Mark.ToString()); //sending event to neuronspectrum
                             imgPictureBox.Visible = true;
 
                             if (programInUse.SubtitleShow)
@@ -393,9 +396,9 @@ namespace StroopTest
                             arrayCounter++;
 
 
-                            StroopProgram.writeLineOutputResult(programInUse, actualImagePath, "false", counter + 1, 
+                            StroopTest.writeLineOutputResult(programInUse, actualImagePath, "false", counter + 1, 
                                                                 outputContent, elapsedTime, "img", audioDetail, hour, 
-                                                                minutes, seconds);
+                                                                minutes, seconds, executingTest);
                             
                             await Task.Delay(programInUse.ExpositionTime, cts.Token);
                             
@@ -413,7 +416,7 @@ namespace StroopTest
 
                                 
                                 elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond;
-                                SendKeys.SendWait("="); //sending event to neuronspectrum
+                                SendKeys.SendWait(executingTest.Mark.ToString()); //sending event to neuronspectrum
                                 imgPictureBox.Visible = false;
                                 subtitleLabel.Visible = false;
                                 wordLabel.ForeColor = ColorTranslator.FromHtml(programInUse.WordColor);
@@ -425,9 +428,9 @@ namespace StroopTest
                                 actualImagePath = wordLabel.Text;
                                 j++;
 
-                                StroopProgram.writeLineOutputResult(programInUse, actualImagePath, "false", counter + 1,
+                                StroopTest.writeLineOutputResult(programInUse, actualImagePath, "false", counter + 1,
                                                                     outputContent, elapsedTime, "txt", audioDetail, hour, 
-                                                                    minutes, seconds);
+                                                                    minutes, seconds, executingTest);
                                 
                                 await Task.Delay(programInUse.ExpositionTime, cts.Token);
                             }
@@ -466,7 +469,7 @@ namespace StroopTest
                             }
                             
                             elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond;
-                            SendKeys.SendWait("="); //sending event to neuronspectrum
+                            SendKeys.SendWait(executingTest.Mark.ToString()); //sending event to neuronspectrum
 
                             imgPictureBox.Visible = true;
 
@@ -475,12 +478,12 @@ namespace StroopTest
                                 subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
                             }
 
-                            StroopProgram.writeLineOutputResult(programInUse, 
+                            StroopTest.writeLineOutputResult(programInUse, 
                                                                 Path.GetFileName(imageDirs[arrayCounter].ToString()), "false",
                                                                 counter + 1, outputContent, elapsedTime, 
                                                                 programInUse.ExpositionType, 
                                                                 Path.GetFileNameWithoutExtension(audioDetail), hour, minutes,
-                                                                seconds);
+                                                                seconds, executingTest);
                             
                             arrayCounter++;
                             await Task.Delay(programInUse.ExpositionTime, cts.Token);
@@ -627,8 +630,10 @@ namespace StroopTest
 
         private void stopRecordingAudio()
         {
-            string now = programInUse.InitialDate.Day + "." + programInUse.InitialDate.Month + "_" + hour + "h" + minutes + "." + seconds;
-            audioControl.saveRecording(outputDataPath + "/audio_" + programInUse.UserName + "_" + programInUse.ProgramName + "_" + now + ".wav");
+            string now = executingTest.InitialDate.Day + "." + executingTest.InitialDate.Month + "_" + hour + "h" + 
+                minutes + "." + seconds;
+            audioControl.saveRecording(outputDataPath + "/audio_" + executingTest.ParticipantName + "_" + 
+                programInUse.ProgramName + "_" + now + ".wav");
         } // para gravação de áudio
 
         
@@ -695,7 +700,7 @@ namespace StroopTest
         
         private void FormExposition_FormClosed(object sender, FormClosedEventArgs e)
         {
-            audioControl.saveRecording(outputDataPath + "/audio_" + programInUse.UserName + "_" + programInUse.ProgramName 
+            audioControl.saveRecording(outputDataPath + "/audio_" + executingTest.ParticipantName + "_" + programInUse.ProgramName 
                                         + "_" + now + ".wav");
             if(cts != null)
                 cts.Cancel();

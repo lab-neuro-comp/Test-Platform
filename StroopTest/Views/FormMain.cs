@@ -6,14 +6,13 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
-using StroopTest.Models;
-using StroopTest.Views;
-using StroopTest.Views.SidebarControls;
+using TestPlatform.Models;
+using TestPlatform.Views;
+using TestPlatform.Views.SidebarControls;
 using TestPlatform.Views.SidebarUserControls;
 using System.Collections.Generic;
-using TestPlatform.Views;
 
-namespace StroopTest
+namespace TestPlatform
 {
     public partial class FormMain : Form
     {
@@ -200,7 +199,6 @@ namespace StroopTest
 
         private void initializeDefaultProgram() // inicializa programDefault padrão
         {
-            programDefault.UserName = DEFAULTPGRNAME;
             programDefault.ProgramName = DEFAULTUSERNAME;
             try
             {
@@ -249,14 +247,18 @@ namespace StroopTest
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine("Excluir: ", originPath, fileType, "_image_words_color_audio", true);
+                FormDefine defineFilePath = new FormDefine("Excluir: ", originPath, fileType, "_image_words_color_audio", 
+                    true);
                 var result = defineFilePath.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Deseja realmente excluir " + defineFilePath.ReturnValue + "?", "", MessageBoxButtons.YesNo); // pergunta se deseja repetir o programa
+                    DialogResult dialogResult = MessageBox.Show("Deseja realmente excluir " + defineFilePath.ReturnValue 
+                        + "?", "", MessageBoxButtons.YesNo); // pergunta se deseja repetir o programa
+
                     if (dialogResult == DialogResult.Yes)
                     {
-                        File.Move(originPath + defineFilePath.ReturnValue + "." + fileType, backupPath + "backup_" + defineFilePath.ReturnValue + "." + fileType);
+                        File.Move(originPath + defineFilePath.ReturnValue + "." + fileType, backupPath + "backup_" + 
+                            defineFilePath.ReturnValue + "." + fileType);
                         MessageBox.Show(defineFilePath.ReturnValue + ".lst excluída com sucesso!");
                     }
                 }
@@ -281,7 +283,8 @@ namespace StroopTest
                     if (sc[0].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 1; }
                     if (sc[1].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 0; }
                 }
-                FormExposition f = new FormExposition(programName, participantTextBox.Text, testFilesPath);
+                FormExposition f = new FormExposition(programName, participantTextBox.Text, testFilesPath, 
+                    markTextBox.Text[0]);
                 f.StartPosition = FormStartPosition.Manual;
                 f.Location = Screen.AllScreens[showOnMonitor].WorkingArea.Location;
                 SendKeys.SendWait("i");
@@ -582,21 +585,106 @@ namespace StroopTest
 
         private void executeButton_Click(object sender, EventArgs e)
         {
-            if (executingTypeLabel.Text.Equals("StroopTest"))
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
+            {             
+                if (executingTypeLabel.Text.Equals("StroopTest"))
+                {
+                    beginStroopTest(executingNameLabel.Text);
+                }
+
+                else if (executingTypeLabel.Text.Equals("ReactionTest"))
+                {
+                    beginReactionTest(executingNameLabel.Text);
+                }
+                else
+                {
+                    /* do nothing */
+                }
+            }
+            else
             {
-                beginStroopTest(executingNameLabel.Text);
+                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+
             }
 
-            else if (executingTypeLabel.Text.Equals("ReactionTest"))
-            {
-                beginReactionTest(executingNameLabel.Text);
-            }
-            
         }
 
         private void selectButton_Click(object sender, EventArgs e)
         {
                 defineTest();            
+        }
+
+        private void participantTextBox_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(participantTextBox, "");
+        }
+
+        public bool ValidParticipantName(string participantName, out string errorMessage)
+        {
+            if (participantName.Length == 0)
+            {
+                errorMessage = "O nome do participante deve ser preenchido.";
+                return false;
+            }
+            if (!Validations.isAlphanumeric(participantName))
+            {
+                errorMessage = "Nome do participante deve ser composto apenas de caracteres alphanumericos" + 
+                    "e sem espaços;\nExemplo: 'MeuPrograma'";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void participantTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (ValidParticipantName(participantTextBox.Text, out errorMsg))
+            {
+                /* field is valid */
+            }
+            else
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(participantTextBox, errorMsg);
+            }
+        }
+
+        private void markTextBox_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(markTextBox, "");
+        }
+
+        public bool ValidMark(string mark, out string errorMessage)
+        {
+            if (mark.Length == 0)
+            {
+                errorMessage = "O campo da marca deve ser preenchido.";
+                return false;
+            }
+            if (mark.Length > 1)
+            {
+                errorMessage = "A marca deve ser composta apenas de um caracter";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void markTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (ValidMark(markTextBox.Text, out errorMsg))
+            {
+                /* field is valid */
+            }
+            else
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(markTextBox, errorMsg);
+            }
         }
     }
 }

@@ -10,11 +10,10 @@ using System.Linq;
 using System.Text;
 using TestPlatform.Models;
 
-namespace StroopTest.Models
+namespace TestPlatform.Models
 {
     class StroopProgram : Program
     {
-        private String headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio";
         private String defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false";
         private String[] defaultInstructionText = { "Serão apresentadas palavras coloridas de forma aleatória. Palavras surgirão rapidamente e em seguida desaparecerão",
                                                     "Diga a cor em que a palavra está escrita",
@@ -372,23 +371,6 @@ namespace StroopTest.Models
             }
         }
 
-        public string HeaderOutputFileText
-        {
-            get
-            {
-                return headerOutputFileText;
-            }
-
-            set
-            {
-                headerOutputFileText = value;
-            }
-        }
-
-
-
-
-
         // lê arquivo com programa e retorna true para sucesso
         public void readProgramFile(string filepath)
         {
@@ -503,26 +485,6 @@ namespace StroopTest.Models
                 Console.WriteLine("The file could not be written:");
                 Console.WriteLine(e.Message);
             }
-        }
-        static public void writeLineOutputResult(StroopProgram program, string nameStimulus, string color, int counter, 
-                                           List<string> output, float elapsedTime, string expoType, string audioName,
-                                           string hour, string minute, string second)
-        {
-            // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor
-            var text = program.ProgramName + "\t" +
-                       program.UserName + "\t" +
-                       program.InitialDate.Day + "/" + program.InitialDate.Month + "/" + program.InitialDate.Year + "\t" +
-                       hour + ":" + minute + ":" + second + ":" + DateTime.Now.Millisecond.ToString() + "\t" +
-                       elapsedTime.ToString() + "\t" +
-                       counter + "\t" +
-                       expoType + "\t" +
-                       program.SubtitleShow.ToString().ToLower() + "\t" +
-                       program.SubtitlePlace + "\t" +
-                       nameStimulus + "\t" +
-                       color + "\t" +
-                       audioName;
-            
-                       output.Add(text);
         }
     }
 }

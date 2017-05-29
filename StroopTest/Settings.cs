@@ -1,4 +1,4 @@
-﻿namespace StroopTest.Properties {
+﻿namespace TestPlatform.Properties {
     
     
     // This class allows you to handle specific events on the settings class:

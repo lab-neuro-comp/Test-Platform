@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace StroopTest.Models
+namespace TestPlatform.Models
 {
     class Validations
     {

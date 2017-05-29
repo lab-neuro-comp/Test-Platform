@@ -113,6 +113,7 @@
     <Compile Include="Models\ReactionProgram.cs" />
     <Compile Include="Models\ReactionTest.cs" />
     <Compile Include="Models\StrList.cs" />
+    <Compile Include="Models\StroopTest.cs" />
     <Compile Include="Models\Validations.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Views\AboutBox.cs">

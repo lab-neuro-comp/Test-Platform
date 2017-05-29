@@ -1,7 +1,7 @@
 ﻿
 using System.Runtime.InteropServices;
 
-namespace StroopTest.Models
+namespace TestPlatform.Models
 {
     class Audio
     {

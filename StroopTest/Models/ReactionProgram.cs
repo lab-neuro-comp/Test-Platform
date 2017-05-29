@@ -1,4 +1,4 @@
-﻿using StroopTest.Models;
+﻿using TestPlatform.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;

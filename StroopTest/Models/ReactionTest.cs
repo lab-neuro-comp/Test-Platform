@@ -10,6 +10,7 @@ namespace TestPlatform.Models
     class ReactionTest
     {
         private static String headerOutputFileText = "programa\tparticipante\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tFormaDoStimulo\tCordoEstimulo\tCordoPontodefixacao";
+        private Char mark;
         private ReactionProgram programInUse = new ReactionProgram();
         private string participantName;
         private DateTime initialTime;
@@ -77,6 +78,19 @@ namespace TestPlatform.Models
             set
             {
                 programInUse = value;
+            }
+        }
+
+        public char Mark
+        {
+            get
+            {
+                return mark;
+            }
+
+            set
+            {
+                mark = value;
             }
         }
 

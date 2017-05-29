@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using StroopTest.Models;
+using TestPlatform.Models;
 using System.IO;
 using System.Text;
 
@@ -14,8 +14,6 @@ namespace TestPlatform.Models
         protected Boolean needsEditionFlag;
 
         protected List<string> instructionText = new List<string>();
-        protected DateTime initialDate;           // test execution date
-        protected String participantName;                // tested person name
         protected String programName;             // [0]   program name
         protected Int32 numExpositions;             // [1]*  number of expositions to be shown 
         protected Int32 expositionTime;             // [2]*  duration time of each exposition (millisec)
@@ -30,13 +28,6 @@ namespace TestPlatform.Models
         protected String fixPointColor;           // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
         protected Boolean intervalTimeRandom;        // [5]*  is interval time random - rnd num between defined intervalTime and minRandomTime (bool)
 
-
-
-        public Program()
-        {
-            this.InitialDate = DateTime.Now; // seta Data inicial como o momento da inicialização
-        }
-
         public List<string> InstructionText
         {
             get { return instructionText; }
@@ -44,16 +35,6 @@ namespace TestPlatform.Models
             {
                 instructionText = value;
             }
-        }
-
-        public string UserName
-        {
-            get { return participantName; }
-            set
-            {
-                if (!Validations.isEmpty(value) && Validations.isAlphanumeric(value)) participantName = value;
-                else throw new ArgumentException("Nome do usuario deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'JoaoSilva'");
-            }   // user name has only alphanumeric elements, without spaces
         }
 
         public string ProgramName
@@ -164,12 +145,6 @@ namespace TestPlatform.Models
                     throw new ArgumentException(errorExMsg + "\nCor de Fundo deve ser 'false' ou um código hexadecimal de cor");
                 }   // colors must match with the hexadecimal pattern for color codes or be "false" to indicate that theres no color defined
             }
-        }
-
-        public DateTime InitialDate
-        {
-            get { return initialDate; }
-            set { initialDate = value; }
         }
 
         public string ImagesListFile

@@ -7,7 +7,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace StroopTest
+namespace TestPlatform
 {
     static class MainClass
     {

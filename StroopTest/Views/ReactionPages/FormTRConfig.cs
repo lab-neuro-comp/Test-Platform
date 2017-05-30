@@ -269,9 +269,11 @@ namespace TestPlatform.Views
                                                              Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
                                                              Convert.ToInt32(intervalTime.Value),
                                                              Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked,
-                                                             Convert.ToInt32(beepDuration.Value), stimulusColorCheck(), fixPointValue(),
-                                                             bgColorButton.Text, fixPointColor(), 
-                                                             rndIntervalCheck.Checked, shapeValue(), chooseExpoType.Text);
+                                                             Convert.ToInt32(beepDuration.Value), stimulusColorCheck(), 
+                                                             fixPointValue(), bgColorButton.Text, fixPointColor(), 
+                                                             rndIntervalCheck.Checked, shapeValue(), chooseExpoType.Text, 
+                                                             randomBeepCheck.Checked, Convert.ToInt32(positionsBox.Text
+                                                             ), responseTypeBox.Text);
 
 
             // read instructions and pass them to the new program created

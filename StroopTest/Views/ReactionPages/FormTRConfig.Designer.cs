@@ -32,7 +32,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.shapesGroupBox = new System.Windows.Forms.GroupBox();
             this.shapeRadioPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.squareRadioButton = new System.Windows.Forms.RadioButton();
+            this.fullSquareRadioButton = new System.Windows.Forms.RadioButton();
+            this.circleRadioButton = new System.Windows.Forms.RadioButton();
+            this.fullCircleRadioButton = new System.Windows.Forms.RadioButton();
+            this.TriangleRadioButton = new System.Windows.Forms.RadioButton();
+            this.fullTriangleRadioButton = new System.Windows.Forms.RadioButton();
+            this.helpButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.fixPointTypeLabel = new System.Windows.Forms.Label();
             this.fixPointCross = new System.Windows.Forms.CheckBox();
             this.fixPointColorLabel = new System.Windows.Forms.Label();
@@ -81,16 +90,14 @@
             this.prgNameLabel = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
-            this.squareRadioButton = new System.Windows.Forms.RadioButton();
-            this.fullSquareRadioButton = new System.Windows.Forms.RadioButton();
-            this.circleRadioButton = new System.Windows.Forms.RadioButton();
-            this.fullCircleRadioButton = new System.Windows.Forms.RadioButton();
-            this.TriangleRadioButton = new System.Windows.Forms.RadioButton();
-            this.fullTriangleRadioButton = new System.Windows.Forms.RadioButton();
-            this.helpButton = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.randomBeepLabel = new System.Windows.Forms.Label();
+            this.randomBeepCheck = new System.Windows.Forms.CheckBox();
+            this.positionLabel = new System.Windows.Forms.Label();
+            this.positionsBox = new System.Windows.Forms.ComboBox();
+            this.userResponse = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.responseTypeBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.shapesGroupBox.SuspendLayout();
             this.shapeRadioPanel.SuspendLayout();
@@ -106,12 +113,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.userResponse.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.userResponse);
             this.panel1.Controls.Add(this.shapesGroupBox);
             this.panel1.Controls.Add(this.helpButton);
             this.panel1.Controls.Add(this.groupBox6);
@@ -132,7 +141,7 @@
             // shapesGroupBox
             // 
             this.shapesGroupBox.Controls.Add(this.shapeRadioPanel);
-            this.shapesGroupBox.Location = new System.Drawing.Point(404, 172);
+            this.shapesGroupBox.Location = new System.Drawing.Point(404, 168);
             this.shapesGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.shapesGroupBox.Name = "shapesGroupBox";
             this.shapesGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -154,6 +163,87 @@
             this.shapeRadioPanel.Size = new System.Drawing.Size(160, 100);
             this.shapeRadioPanel.TabIndex = 3;
             // 
+            // squareRadioButton
+            // 
+            this.squareRadioButton.AutoSize = true;
+            this.squareRadioButton.Image = global::TestPlatform.Properties.Resources.square;
+            this.squareRadioButton.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.squareRadioButton.Location = new System.Drawing.Point(3, 3);
+            this.squareRadioButton.Name = "squareRadioButton";
+            this.squareRadioButton.Size = new System.Drawing.Size(72, 24);
+            this.squareRadioButton.TabIndex = 0;
+            this.squareRadioButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.squareRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // fullSquareRadioButton
+            // 
+            this.fullSquareRadioButton.AutoSize = true;
+            this.fullSquareRadioButton.Checked = true;
+            this.fullSquareRadioButton.Enabled = false;
+            this.fullSquareRadioButton.Image = global::TestPlatform.Properties.Resources.fullSquare;
+            this.fullSquareRadioButton.Location = new System.Drawing.Point(81, 3);
+            this.fullSquareRadioButton.Name = "fullSquareRadioButton";
+            this.fullSquareRadioButton.Size = new System.Drawing.Size(72, 24);
+            this.fullSquareRadioButton.TabIndex = 1;
+            this.fullSquareRadioButton.TabStop = true;
+            this.fullSquareRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // circleRadioButton
+            // 
+            this.circleRadioButton.AutoSize = true;
+            this.circleRadioButton.Enabled = false;
+            this.circleRadioButton.Image = global::TestPlatform.Properties.Resources.circle1;
+            this.circleRadioButton.Location = new System.Drawing.Point(3, 33);
+            this.circleRadioButton.Name = "circleRadioButton";
+            this.circleRadioButton.Size = new System.Drawing.Size(72, 30);
+            this.circleRadioButton.TabIndex = 2;
+            this.circleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // fullCircleRadioButton
+            // 
+            this.fullCircleRadioButton.AutoSize = true;
+            this.fullCircleRadioButton.Enabled = false;
+            this.fullCircleRadioButton.Image = global::TestPlatform.Properties.Resources.fullCircle1;
+            this.fullCircleRadioButton.Location = new System.Drawing.Point(81, 33);
+            this.fullCircleRadioButton.Name = "fullCircleRadioButton";
+            this.fullCircleRadioButton.Size = new System.Drawing.Size(72, 30);
+            this.fullCircleRadioButton.TabIndex = 3;
+            this.fullCircleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // TriangleRadioButton
+            // 
+            this.TriangleRadioButton.AutoSize = true;
+            this.TriangleRadioButton.Enabled = false;
+            this.TriangleRadioButton.Image = global::TestPlatform.Properties.Resources.triangle1;
+            this.TriangleRadioButton.Location = new System.Drawing.Point(3, 69);
+            this.TriangleRadioButton.Name = "TriangleRadioButton";
+            this.TriangleRadioButton.Size = new System.Drawing.Size(72, 24);
+            this.TriangleRadioButton.TabIndex = 4;
+            this.TriangleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // fullTriangleRadioButton
+            // 
+            this.fullTriangleRadioButton.AutoSize = true;
+            this.fullTriangleRadioButton.Enabled = false;
+            this.fullTriangleRadioButton.Image = global::TestPlatform.Properties.Resources.fullTriangle;
+            this.fullTriangleRadioButton.Location = new System.Drawing.Point(81, 69);
+            this.fullTriangleRadioButton.Name = "fullTriangleRadioButton";
+            this.fullTriangleRadioButton.Size = new System.Drawing.Size(72, 24);
+            this.fullTriangleRadioButton.TabIndex = 5;
+            this.fullTriangleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // helpButton
+            // 
+            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
+            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.helpButton.Location = new System.Drawing.Point(639, 11);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(35, 32);
+            this.helpButton.TabIndex = 81;
+            this.helpButton.UseVisualStyleBackColor = false;
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.panel3);
@@ -164,7 +254,7 @@
             this.groupBox6.Controls.Add(this.fixPointCircle);
             this.groupBox6.Controls.Add(this.fixPointColorButton);
             this.groupBox6.Controls.Add(this.fixPointColorPanel);
-            this.groupBox6.Location = new System.Drawing.Point(16, 303);
+            this.groupBox6.Location = new System.Drawing.Point(16, 325);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -172,6 +262,28 @@
             this.groupBox6.TabIndex = 40;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Ponto de Fixação";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImage = global::TestPlatform.Properties.Resources.cross;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Location = new System.Drawing.Point(109, 36);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(17, 16);
+            this.panel3.TabIndex = 155;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::TestPlatform.Properties.Resources.circle;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(160, 38);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(13, 12);
+            this.panel2.TabIndex = 154;
             // 
             // fixPointTypeLabel
             // 
@@ -242,7 +354,7 @@
             this.groupBox5.Controls.Add(this.bgColorPanel);
             this.groupBox5.Controls.Add(this.bgColorLabel);
             this.groupBox5.Controls.Add(this.bgColorButton);
-            this.groupBox5.Location = new System.Drawing.Point(13, 422);
+            this.groupBox5.Location = new System.Drawing.Point(13, 439);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -390,7 +502,7 @@
             this.groupBox2.Controls.Add(this.openColorListButton);
             this.groupBox2.Controls.Add(this.openImgListButton);
             this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(404, 303);
+            this.groupBox2.Location = new System.Drawing.Point(404, 298);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -503,6 +615,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.positionsBox);
+            this.groupBox1.Controls.Add(this.positionLabel);
+            this.groupBox1.Controls.Add(this.randomBeepLabel);
+            this.groupBox1.Controls.Add(this.randomBeepCheck);
             this.groupBox1.Controls.Add(this.stimulusDistance);
             this.groupBox1.Controls.Add(this.expoTypeLabel);
             this.groupBox1.Controls.Add(this.chooseExpoType);
@@ -522,7 +638,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(367, 257);
+            this.groupBox1.Size = new System.Drawing.Size(367, 276);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Exposição";
@@ -586,7 +702,7 @@
             // stimulusColorPanel
             // 
             this.stimulusColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.stimulusColorPanel.Location = new System.Drawing.Point(127, 228);
+            this.stimulusColorPanel.Location = new System.Drawing.Point(127, 247);
             this.stimulusColorPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.stimulusColorPanel.Name = "stimulusColorPanel";
             this.stimulusColorPanel.Size = new System.Drawing.Size(18, 17);
@@ -595,7 +711,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 228);
+            this.label4.Location = new System.Drawing.Point(10, 247);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 17);
             this.label4.TabIndex = 165;
@@ -604,7 +720,7 @@
             // stimulusColor
             // 
             this.stimulusColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stimulusColor.Location = new System.Drawing.Point(152, 224);
+            this.stimulusColor.Location = new System.Drawing.Point(152, 243);
             this.stimulusColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.stimulusColor.Name = "stimulusColor";
             this.stimulusColor.Size = new System.Drawing.Size(184, 23);
@@ -621,7 +737,7 @@
             0,
             0,
             0});
-            this.beepDuration.Location = new System.Drawing.Point(171, 191);
+            this.beepDuration.Location = new System.Drawing.Point(171, 210);
             this.beepDuration.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.beepDuration.Maximum = new decimal(new int[] {
             10000,
@@ -635,7 +751,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 193);
+            this.label3.Location = new System.Drawing.Point(10, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(154, 17);
             this.label3.TabIndex = 163;
@@ -644,7 +760,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 160);
+            this.label1.Location = new System.Drawing.Point(10, 179);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 17);
             this.label1.TabIndex = 161;
@@ -654,7 +770,7 @@
             // beepingCheckbox
             // 
             this.beepingCheckbox.AutoSize = true;
-            this.beepingCheckbox.Location = new System.Drawing.Point(103, 161);
+            this.beepingCheckbox.Location = new System.Drawing.Point(103, 180);
             this.beepingCheckbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.beepingCheckbox.Name = "beepingCheckbox";
             this.beepingCheckbox.Size = new System.Drawing.Size(18, 17);
@@ -666,7 +782,7 @@
             // numExpoLabel
             // 
             this.numExpoLabel.AutoSize = true;
-            this.numExpoLabel.Location = new System.Drawing.Point(10, 127);
+            this.numExpoLabel.Location = new System.Drawing.Point(10, 146);
             this.numExpoLabel.Name = "numExpoLabel";
             this.numExpoLabel.Size = new System.Drawing.Size(152, 17);
             this.numExpoLabel.TabIndex = 35;
@@ -674,7 +790,7 @@
             // 
             // numExpo
             // 
-            this.numExpo.Location = new System.Drawing.Point(171, 125);
+            this.numExpo.Location = new System.Drawing.Point(171, 144);
             this.numExpo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numExpo.Maximum = new decimal(new int[] {
             5000,
@@ -750,7 +866,7 @@
             // 
             // prgNameTextBox
             // 
-            this.prgNameTextBox.Location = new System.Drawing.Point(153, 16);
+            this.prgNameTextBox.Location = new System.Drawing.Point(153, 10);
             this.prgNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.prgNameTextBox.MaxLength = 300;
             this.prgNameTextBox.Name = "prgNameTextBox";
@@ -762,7 +878,7 @@
             // prgNameLabel
             // 
             this.prgNameLabel.AutoSize = true;
-            this.prgNameLabel.Location = new System.Drawing.Point(13, 18);
+            this.prgNameLabel.Location = new System.Drawing.Point(13, 12);
             this.prgNameLabel.Name = "prgNameLabel";
             this.prgNameLabel.Size = new System.Drawing.Size(135, 17);
             this.prgNameLabel.TabIndex = 34;
@@ -796,113 +912,86 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // squareRadioButton
-            // 
-            this.squareRadioButton.AutoSize = true;
-            this.squareRadioButton.Image = global::TestPlatform.Properties.Resources.square;
-            this.squareRadioButton.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.squareRadioButton.Location = new System.Drawing.Point(3, 3);
-            this.squareRadioButton.Name = "squareRadioButton";
-            this.squareRadioButton.Size = new System.Drawing.Size(72, 24);
-            this.squareRadioButton.TabIndex = 0;
-            this.squareRadioButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.squareRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // fullSquareRadioButton
-            // 
-            this.fullSquareRadioButton.AutoSize = true;
-            this.fullSquareRadioButton.Checked = true;
-            this.fullSquareRadioButton.Enabled = false;
-            this.fullSquareRadioButton.Image = global::TestPlatform.Properties.Resources.fullSquare;
-            this.fullSquareRadioButton.Location = new System.Drawing.Point(81, 3);
-            this.fullSquareRadioButton.Name = "fullSquareRadioButton";
-            this.fullSquareRadioButton.Size = new System.Drawing.Size(72, 24);
-            this.fullSquareRadioButton.TabIndex = 1;
-            this.fullSquareRadioButton.TabStop = true;
-            this.fullSquareRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // circleRadioButton
-            // 
-            this.circleRadioButton.AutoSize = true;
-            this.circleRadioButton.Enabled = false;
-            this.circleRadioButton.Image = global::TestPlatform.Properties.Resources.circle1;
-            this.circleRadioButton.Location = new System.Drawing.Point(3, 33);
-            this.circleRadioButton.Name = "circleRadioButton";
-            this.circleRadioButton.Size = new System.Drawing.Size(72, 30);
-            this.circleRadioButton.TabIndex = 2;
-            this.circleRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // fullCircleRadioButton
-            // 
-            this.fullCircleRadioButton.AutoSize = true;
-            this.fullCircleRadioButton.Enabled = false;
-            this.fullCircleRadioButton.Image = global::TestPlatform.Properties.Resources.fullCircle1;
-            this.fullCircleRadioButton.Location = new System.Drawing.Point(81, 33);
-            this.fullCircleRadioButton.Name = "fullCircleRadioButton";
-            this.fullCircleRadioButton.Size = new System.Drawing.Size(72, 30);
-            this.fullCircleRadioButton.TabIndex = 3;
-            this.fullCircleRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // TriangleRadioButton
-            // 
-            this.TriangleRadioButton.AutoSize = true;
-            this.TriangleRadioButton.Enabled = false;
-            this.TriangleRadioButton.Image = global::TestPlatform.Properties.Resources.triangle1;
-            this.TriangleRadioButton.Location = new System.Drawing.Point(3, 69);
-            this.TriangleRadioButton.Name = "TriangleRadioButton";
-            this.TriangleRadioButton.Size = new System.Drawing.Size(72, 24);
-            this.TriangleRadioButton.TabIndex = 4;
-            this.TriangleRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // fullTriangleRadioButton
-            // 
-            this.fullTriangleRadioButton.AutoSize = true;
-            this.fullTriangleRadioButton.Enabled = false;
-            this.fullTriangleRadioButton.Image = global::TestPlatform.Properties.Resources.fullTriangle;
-            this.fullTriangleRadioButton.Location = new System.Drawing.Point(81, 69);
-            this.fullTriangleRadioButton.Name = "fullTriangleRadioButton";
-            this.fullTriangleRadioButton.Size = new System.Drawing.Size(72, 24);
-            this.fullTriangleRadioButton.TabIndex = 5;
-            this.fullTriangleRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // helpButton
-            // 
-            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
-            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(639, 11);
-            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(35, 32);
-            this.helpButton.TabIndex = 81;
-            this.helpButton.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = global::TestPlatform.Properties.Resources.cross;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(109, 36);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(17, 16);
-            this.panel3.TabIndex = 155;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::TestPlatform.Properties.Resources.circle;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(160, 38);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(13, 12);
-            this.panel2.TabIndex = 154;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
+            // 
+            // randomBeepLabel
+            // 
+            this.randomBeepLabel.AutoSize = true;
+            this.randomBeepLabel.Location = new System.Drawing.Point(168, 180);
+            this.randomBeepLabel.Name = "randomBeepLabel";
+            this.randomBeepLabel.Size = new System.Drawing.Size(105, 17);
+            this.randomBeepLabel.TabIndex = 172;
+            this.randomBeepLabel.Text = "Beep Aleatório:";
+            this.randomBeepLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // randomBeepCheck
+            // 
+            this.randomBeepCheck.AutoSize = true;
+            this.randomBeepCheck.Location = new System.Drawing.Point(278, 181);
+            this.randomBeepCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.randomBeepCheck.Name = "randomBeepCheck";
+            this.randomBeepCheck.Size = new System.Drawing.Size(18, 17);
+            this.randomBeepCheck.TabIndex = 171;
+            this.randomBeepCheck.TabStop = false;
+            this.randomBeepCheck.UseVisualStyleBackColor = true;
+            // 
+            // positionLabel
+            // 
+            this.positionLabel.AutoSize = true;
+            this.positionLabel.Location = new System.Drawing.Point(10, 116);
+            this.positionLabel.Name = "positionLabel";
+            this.positionLabel.Size = new System.Drawing.Size(228, 17);
+            this.positionLabel.TabIndex = 173;
+            this.positionLabel.Text = "Quantidade de possíveis posições:";
+            // 
+            // positionsBox
+            // 
+            this.positionsBox.FormattingEnabled = true;
+            this.positionsBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "4",
+            "8"});
+            this.positionsBox.Location = new System.Drawing.Point(281, 117);
+            this.positionsBox.Name = "positionsBox";
+            this.positionsBox.Size = new System.Drawing.Size(80, 24);
+            this.positionsBox.TabIndex = 174;
+            // 
+            // userResponse
+            // 
+            this.userResponse.Controls.Add(this.responseTypeBox);
+            this.userResponse.Controls.Add(this.label2);
+            this.userResponse.Location = new System.Drawing.Point(404, 471);
+            this.userResponse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userResponse.Name = "userResponse";
+            this.userResponse.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userResponse.Size = new System.Drawing.Size(265, 73);
+            this.userResponse.TabIndex = 152;
+            this.userResponse.TabStop = false;
+            this.userResponse.Text = "Resposta do Usuário";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 17);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "Tecla";
+            // 
+            // responseTypeBox
+            // 
+            this.responseTypeBox.FormattingEnabled = true;
+            this.responseTypeBox.Items.AddRange(new object[] {
+            "Espaço",
+            "Setas"});
+            this.responseTypeBox.Location = new System.Drawing.Point(80, 31);
+            this.responseTypeBox.Name = "responseTypeBox";
+            this.responseTypeBox.Size = new System.Drawing.Size(179, 24);
+            this.responseTypeBox.TabIndex = 175;
             // 
             // FormTRConfig
             // 
@@ -936,6 +1025,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.userResponse.ResumeLayout(false);
+            this.userResponse.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1004,5 +1095,12 @@
         private System.Windows.Forms.RadioButton fullCircleRadioButton;
         private System.Windows.Forms.RadioButton TriangleRadioButton;
         private System.Windows.Forms.RadioButton fullTriangleRadioButton;
+        private System.Windows.Forms.Label randomBeepLabel;
+        private System.Windows.Forms.CheckBox randomBeepCheck;
+        private System.Windows.Forms.Label positionLabel;
+        private System.Windows.Forms.ComboBox positionsBox;
+        private System.Windows.Forms.GroupBox userResponse;
+        private System.Windows.Forms.ComboBox responseTypeBox;
+        private System.Windows.Forms.Label label2;
     }
 }

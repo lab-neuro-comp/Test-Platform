@@ -14,11 +14,14 @@ namespace TestPlatform.Models
         private Int32 stimuluSize; // [3]
         private Int32 stimulusDistance; // [5] distance from the center of the screen to stimulus
         private Boolean isBeeping; // [9]
+        private Boolean beepingRandom; // [19]
         private Int32 beepDuration; // [10]
         private String stimulusColor; // [11]
         private String stimuluShape;
+        private Int32 numberPositions; // [20]
+        private String responseType; // [21]
 
-        private static Int32 ELEMENTS = 19; //quantity of fields used in ReactionProgram 
+        private static Int32 ELEMENTS = 22; //quantity of fields used in ReactionProgram 
 
         public ReactionProgram()
         {
@@ -29,16 +32,19 @@ namespace TestPlatform.Models
         {
             this.readProgramFile(programPath);
         }
+
         public override string ToString()
         {
             return String.Concat("Nome do programa: ", programName, " tempo de exposição: ",expositionTime, 
                                  " Numero de exposicoes:", numExpositions, " tamanho do estimulo", stimuluSize
                                  );
         }
+
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
                                 int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
-                                string stimuluShape, string expoType)
+                                string stimuluShape, string expoType, bool beepRandom, int numberPositions,
+                                string responseType)
         {
             // Program properties
             this.programName = programName;
@@ -57,6 +63,9 @@ namespace TestPlatform.Models
             this.beepDuration = beepDuration;
             this.stimulusColor = stimulusColor;
             this.stimuluShape = stimuluShape;
+            this.BeepingRandom = beepRandom;
+            this.ResponseType = responseType;
+            this.NumberPositions = numberPositions;
 
             //default configurations for first version of ReactionProgram
             this.audioListFile = "false";
@@ -162,6 +171,45 @@ namespace TestPlatform.Models
             }
         }
 
+        public bool BeepingRandom
+        {
+            get
+            {
+                return beepingRandom;
+            }
+
+            set
+            {
+                beepingRandom = value;
+            }
+        }
+
+        public int NumberPositions
+        {
+            get
+            {
+                return numberPositions;
+            }
+
+            set
+            {
+                numberPositions = value;
+            }
+        }
+
+        public string ResponseType
+        {
+            get
+            {
+                return responseType;
+            }
+
+            set
+            {
+                responseType = value;
+            }
+        }
+
         public string data()
         {
             string data = this.ProgramName + " " +
@@ -182,7 +230,10 @@ namespace TestPlatform.Models
                  this.FixPoint + " " +
                  this.FixPointColor + " " +
                  this.IntervalTimeRandom + " " +
-                 this.stimuluShape;
+                 this.stimuluShape + " " +
+                 this.BeepingRandom + " " +
+                 this.NumberPositions + " " +
+                 this.ResponseType;
             return data;
         }
 
@@ -236,6 +287,10 @@ namespace TestPlatform.Models
                 FixPointColor = config[16];
                 IntervalTimeRandom = bool.Parse(config[17]);
                 StimuluShape = config[18];
+                BeepingRandom = bool.Parse(config[19]);
+                NumberPositions = int.Parse(config[20]);
+                ResponseType = config[21];
+
                 linesInstruction = File.ReadAllLines(filepath);
                 if (linesInstruction.Length > 1) // lê instrução se houver
                 {

@@ -10,32 +10,6 @@ namespace TestPlatform.Views
         private static int brush25 = 25;
         private static int brush4 = 4;
 
-        public static int waitTime(bool isWaitTimeRandom, int waitTime)
-        {
-            int intervalTimeRandom = 200; // minimal rnd interval time
-
-            // if random interval active, it will be a value between 200 and the defined interval time
-            if (isWaitTimeRandom && waitTime > 400)
-            {
-                Random random = new Random();
-                intervalTimeRandom = random.Next(400, waitTime);
-            }
-            else
-            {
-                intervalTimeRandom = waitTime;
-            }
-
-            Stopwatch intervalStopWatch = new Stopwatch();
-            intervalStopWatch.Start();
-            while (intervalStopWatch.ElapsedMilliseconds < intervalTimeRandom)
-            {
-                /* just wait for interval time to be finished */
-            }
-            intervalStopWatch.Stop();
-            int elapsedTime = (int) intervalStopWatch.ElapsedMilliseconds;
-            return elapsedTime;
-        }
-
         public static void makingFixPoint(string fixPoint, string fixPointColor, Form expositionForm)
         {
             SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(fixPointColor));

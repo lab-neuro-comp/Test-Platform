@@ -9,7 +9,8 @@ namespace TestPlatform.Models
 {
     class ReactionTest
     {
-        private static String headerOutputFileText = "programa\tparticipante\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tFormaDoStimulo\tCordoEstimulo\tCordoPontodefixacao";
+        private static String headerOutputFileText = "programa\tparticipante\tdata\thorario\ttempohit(ms)\tintervalo(ms)"
+            + "\tintervaloestimado(ms)\texposicao(ms)\tsequencia\ttipoEstimulo\tFormaDoStimulo\tCordoEstimulo";
         private Char mark;
         private ReactionProgram programInUse = new ReactionProgram();
         private string participantName;
@@ -108,16 +109,17 @@ namespace TestPlatform.Models
             }
         }
 
-        public void writeLineOutput(long intervalTime, long reactTime, int currentExposition)
+        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition)
         {
-            long elapsedTime = intervalTime + reactTime;
-
-            /* programa\tparticipante\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tFormaDoStimulo\tCordoEstimulo\CordoPontodefixacao */
-            var text = ProgramInUse.ProgramName + "\t" + participantName + "\t" + initialTime.Day + "/" + 
-                       initialTime.Month + "/" + initialTime.Year + "\t" + initialTime.Hour + ":" + initialTime.Minute + 
-                       ":" + initialTime.Second + ":" + initialTime.Millisecond.ToString() + "\t" + elapsedTime.ToString() + "\t" +
-                       currentExposition + "\t" + ProgramInUse.ExpositionType + "\t" + ProgramInUse.StimuluShape + "\t" +
-                       ProgramInUse.StimulusColor + "\t" + ProgramInUse.FixPointColor;
+            /* This variable keeps data from an exposition to only one stimulus, being them:
+             * program  name    participant     name    date    hour    hit time(ms) interval(ms)  interval should be(ms)  
+             * exposition time(ms)  number of sequency   type of stimulus    shape of stimulus   stimulus color */
+            var text = ProgramInUse.ProgramName + "\t" + participantName + "\t" + initialTime.Day + "/" +
+                       initialTime.Month + "/" + initialTime.Year + "\t" + initialTime.Hour + ":" + initialTime.Minute +
+                       ":" + initialTime.Second + ":" + initialTime.Millisecond.ToString() + "\t" + reactTime.ToString() +
+                        "\t" + intervalTime.ToString() + "\t" + intervalShouldBe.ToString() + "\t" + 
+                        ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + ProgramInUse.ExpositionType + "\t" +
+                        ProgramInUse.StimuluShape + "\t" + ProgramInUse.StimulusColor;
              Output.Add(text); 
              
         }

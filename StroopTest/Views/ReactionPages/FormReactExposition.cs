@@ -22,8 +22,10 @@ namespace TestPlatform.Views
         private string outputFile;
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private int intervalElapsedTime;
+        private int intervalShouldBe;
         private Stopwatch hitStopWatch = new Stopwatch();
         private int currentExposition = 0;
+        private bool intervalCancelled;
 
         public FormReactExposition(string prgName, string participantName, string defaultPath)
         {
@@ -155,6 +157,40 @@ namespace TestPlatform.Views
             }
         }
 
+        private int waitIntervalTime(bool isWaitTimeRandom, int waitTime)
+        {
+            int intervalTimeRandom = 200; // minimal rnd interval time
+            intervalCancelled = false;
+
+            // if random interval active, it will be a value between 200 and the defined interval time
+            if (isWaitTimeRandom && waitTime > 400)
+            {
+                Random random = new Random();
+                intervalTimeRandom = random.Next(400, waitTime);
+            }
+            else
+            {
+                intervalTimeRandom = waitTime;
+            }
+
+            Stopwatch intervalStopWatch = new Stopwatch();
+            intervalStopWatch.Start();
+            while (intervalStopWatch.ElapsedMilliseconds < intervalTimeRandom)
+            {
+                if (expositionBW.CancellationPending)
+                {
+                    intervalCancelled = true;
+                    break;
+                }
+                /* just wait for interval time to be finished */
+            }
+            intervalShouldBe = intervalTimeRandom;
+            intervalStopWatch.Stop();
+            int elapsedTime = (int)intervalStopWatch.ElapsedMilliseconds;
+            return elapsedTime;
+        }
+
+
         private void expositionBackground()
         {
             expositionBW = new BackgroundWorker();
@@ -205,7 +241,7 @@ namespace TestPlatform.Views
             /*parameterizing object to backgroundworker*/
             BackgroundWorker worker = sender as BackgroundWorker;
 
-            intervalElapsedTime = ExpositionsViews.waitTime(executingTest.ProgramInUse.IntervalTimeRandom, 
+            intervalElapsedTime = waitIntervalTime(executingTest.ProgramInUse.IntervalTimeRandom, 
                 executingTest.ProgramInUse.IntervalTime);
 
             /*starts Exposition*/
@@ -213,19 +249,24 @@ namespace TestPlatform.Views
             hitStopWatch.Start();
 
             showStimulus();
-            
-
-            while (hitStopWatch.ElapsedMilliseconds < executingTest.ProgramInUse.ExpositionTime)
+            if (intervalCancelled)
             {
-                if (expositionBW.CancellationPending)
+                e.Cancel = true;
+            }
+            else
+            {
+                while (hitStopWatch.ElapsedMilliseconds < executingTest.ProgramInUse.ExpositionTime)
                 {
-                    hitStopWatch.Stop();
-                    e.Cancel = true;
-                    break;
-                }
-                else
-                {
-                    /* just wait for exposition time to be finished */
+                    if (expositionBW.CancellationPending)
+                    {
+                        hitStopWatch.Stop();
+                        e.Cancel = true;
+                        break;
+                    }
+                    else
+                    {
+                        /* just wait for exposition time to be finished */
+                    }
                 }
             }
         }
@@ -240,21 +281,24 @@ namespace TestPlatform.Views
             CreateGraphics().Clear(ActiveForm.BackColor);
             ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint,executingTest.ProgramInUse.FixPointColor,
                 this);
-            if ((e.Cancelled == true))
+            if ((e.Cancelled == true) && !intervalCancelled)
             {
-                executingTest.writeLineOutput(intervalElapsedTime, hitStopWatch.ElapsedMilliseconds,
+                /* user clicked after stimulus is shown*/
+                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds,
                                               currentExposition);
             }
 
-            else if (!(e.Error == null))
+            else if ((e.Cancelled == true) && intervalCancelled)
             {
-                //there was an error while doing work
+                /* user clicked before stimulus is shown*/
+                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0,
+                                              currentExposition);
             }
             else
             {
-                executingTest.writeLineOutput(intervalElapsedTime, 0, currentExposition);
+                /* user missed stimulus */
+                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition);
                 hitStopWatch.Stop();
-                // the work was done without any trouble, person missed exposition
             }
             expositionBW.Dispose();
         }

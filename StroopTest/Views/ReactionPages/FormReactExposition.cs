@@ -26,7 +26,9 @@ namespace TestPlatform.Views
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private int intervalElapsedTime;
         private int intervalShouldBe;
+        private long expositionAccumulative;
         private Stopwatch hitStopWatch = new Stopwatch();
+        private Stopwatch accumulativeStopWatch = new Stopwatch();
         private int currentExposition = 0;
         private bool intervalCancelled;
 
@@ -348,6 +350,7 @@ namespace TestPlatform.Views
 
         private void singleShapeExposition(string shape)
         {
+            executingTest.CurrentShape = shape;
             switch (shape)
             {
                 case "fullSquare":
@@ -427,12 +430,12 @@ namespace TestPlatform.Views
                 executingTest.ProgramInUse.IntervalTime);
 
             /*starts Exposition*/
+            expositionAccumulative = accumulativeStopWatch.ElapsedMilliseconds;
             hitStopWatch = new Stopwatch();
             hitStopWatch.Start();
 
             // Sending mark to neuronspectrum to sinalize that exposition of stimulus started
             SendKeys.SendWait(executingTest.Mark.ToString());
-
             showStimulus();
 
             if (intervalCancelled)
@@ -471,19 +474,19 @@ namespace TestPlatform.Views
             {
                 /* user clicked after stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds,
-                                              currentExposition + 1);
+                                              currentExposition + 1, expositionAccumulative);
             }
 
             else if ((e.Cancelled == true) && intervalCancelled)
             {
                 /* user clicked before stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, intervalElapsedTime - intervalShouldBe,
-                                              currentExposition + 1);
+                                              currentExposition + 1, expositionAccumulative);
             }
             else
             {
                 /* user missed stimulus */
-                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1);
+                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative);
                 hitStopWatch.Stop();
             }
             expositionBW.Dispose();
@@ -493,7 +496,10 @@ namespace TestPlatform.Views
         {
             ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
                 this);
+
             executingTest.InitialTime = DateTime.Now;
+            accumulativeStopWatch.Start();
+
             for (int counter = 0; counter < executingTest.ProgramInUse.NumExpositions; counter++)
             {
                 currentExposition = counter;

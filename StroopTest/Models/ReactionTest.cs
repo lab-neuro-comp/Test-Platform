@@ -10,11 +10,12 @@ namespace TestPlatform.Models
     class ReactionTest
     {
         private static String headerOutputFileText = "programa\tparticipante\tdata\thorario\ttempohit(ms)\tintervalo(ms)"
-            + "\tintervaloestimado(ms)\texposicao(ms)\tsequencia\ttipoEstimulo\tFormaDoStimulo\tCordoEstimulo";
+            + "\tintervaloestimado(ms)\texposicaoHorario(ms)\texposicao(ms)\tsequencia\ttipoEstimulo\tFormaDoStimulo\tCordoEstimulo";
         private Char mark;
         private ReactionProgram programInUse = new ReactionProgram();
         private string participantName;
         private DateTime initialTime;
+        private string currentShape;
         private List<string> output = new List<string>();
 
         public string ParticipantName
@@ -95,6 +96,19 @@ namespace TestPlatform.Models
             }
         }
 
+        public string CurrentShape
+        {
+            get
+            {
+                return currentShape;
+            }
+
+            set
+            {
+                currentShape = value;
+            }
+        }
+
         public void setProgramInUse(string path, string prgName)
         {
             string programFile = path + prgName + ".prg";
@@ -109,17 +123,18 @@ namespace TestPlatform.Models
             }
         }
 
-        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition)
+        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative)
         {
             /* This variable keeps data from an exposition to only one stimulus, being them:
              * program  name    participant     name    date    hour    hit time(ms) interval(ms)  interval should be(ms)  
-             * exposition time(ms)  number of sequency   type of stimulus    shape of stimulus   stimulus color */
+             * exposition accumulative timeexposition time(ms)  number of sequency   type of stimulus    shape of stimulus   
+             * stimulus color */
             var text = ProgramInUse.ProgramName + "\t" + participantName + "\t" + initialTime.Day + "/" +
                        initialTime.Month + "/" + initialTime.Year + "\t" + initialTime.Hour + ":" + initialTime.Minute +
                        ":" + initialTime.Second + ":" + initialTime.Millisecond.ToString() + "\t" + reactTime.ToString() +
-                        "\t" + intervalTime.ToString() + "\t" + intervalShouldBe.ToString() + "\t" + 
+                        "\t" + intervalTime.ToString() + "\t" + intervalShouldBe.ToString() + "\t" + expositionAccumulative + "\t" +
                         ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + ProgramInUse.ExpositionType + "\t" +
-                        ProgramInUse.StimuluShape + "\t" + ProgramInUse.StimulusColor;
+                        currentShape + "\t" + ProgramInUse.StimulusColor;
              Output.Add(text); 
              
         }

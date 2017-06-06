@@ -47,6 +47,7 @@
             this.csvExportButton.TabIndex = 86;
             this.csvExportButton.Text = "Exportar como .cvs";
             this.csvExportButton.UseVisualStyleBackColor = true;
+            this.csvExportButton.Click += new System.EventHandler(this.csvExportButton_Click);
             // 
             // dataGridView1
             // 
@@ -65,7 +66,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(917, 238);
+            this.dataGridView1.Size = new System.Drawing.Size(917, 406);
             this.dataGridView1.TabIndex = 85;
             // 
             // fileNameBox
@@ -105,7 +106,7 @@
             // 
             this.closeButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.closeButton.Location = new System.Drawing.Point(14, 363);
+            this.closeButton.Location = new System.Drawing.Point(14, 505);
             this.closeButton.Margin = new System.Windows.Forms.Padding(4);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(100, 28);
@@ -114,7 +115,7 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // ReactionResultUserControlcs
+            // ReactionResultUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -124,8 +125,8 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.fileNameBox);
             this.Controls.Add(this.label1);
-            this.Name = "ReactionResultUserControlcs";
-            this.Size = new System.Drawing.Size(939, 409);
+            this.Name = "ReactionResultUserControl";
+            this.Size = new System.Drawing.Size(939, 545);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

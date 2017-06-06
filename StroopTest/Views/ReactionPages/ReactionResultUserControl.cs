@@ -76,5 +76,39 @@ namespace TestPlatform.Views.ReactionPages
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+
+        private void csvExportButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            string[] lines;
+
+            saveFileDialog1.Filter = "Excel CSV (.csv)|*.csv"; // salva em .csvs
+            saveFileDialog1.RestoreDirectory = true;
+            saveFileDialog1.FileName = fileNameBox.Text;
+
+            try
+            {
+                if (fileNameBox.SelectedIndex == -1)
+                {
+                    throw new Exception("Selecione um arquivo de dados!");
+                }
+
+                lines = ReactionProgram.readDataFile(path + "/" + fileNameBox.SelectedItem.ToString() + ".txt");
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
+                {
+                    using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
+                    {
+                        tw.WriteLine(StroopTest.HeaderOutputFileText);
+                        for (int i = 0; i < lines.Length; i++)
+                        {
+                            tw.WriteLine(lines[i]); // escreve linhas no novo arquivo
+                        }
+                        tw.Close();
+                        MessageBox.Show("Arquivo exportado com sucesso!");
+                    }
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
     }
 }

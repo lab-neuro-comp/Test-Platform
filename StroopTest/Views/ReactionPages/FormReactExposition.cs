@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -110,7 +112,7 @@ namespace TestPlatform.Views
 
 
 
-        private void drawSquareShape()
+        private void drawFullSquareShape()
         {
             int brush25 = 25;
             SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
@@ -131,6 +133,101 @@ namespace TestPlatform.Views
             
         }
 
+        private void drawSquareShape()
+        {
+            int brush25 = 25;
+            Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+
+            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            Graphics formGraphicsSquare = CreateGraphics();
+            Random random = new Random();
+            float[,] position = new float[4, 2]{ { executingTest.ProgramInUse.StimulusDistance * 0.75f, 0 }, { 0, executingTest.ProgramInUse.StimulusDistance * 0.75f},
+                                                { -executingTest.ProgramInUse.StimulusDistance * 0.75f, 0 }, { 0, -executingTest.ProgramInUse.StimulusDistance * 0.75f } };
+            int index = random.Next(0, 3);
+            float xSquare = (clientMiddle[0] - brush25) + position[index, 0];
+            float ySquare = (clientMiddle[1] - brush25) + position[index, 1];
+            float widthSquare = executingTest.ProgramInUse.StimuluSize;
+            float heightSquare = executingTest.ProgramInUse.StimuluSize;
+
+            formGraphicsSquare.DrawRectangle(myPen, xSquare, ySquare, widthSquare, heightSquare);
+            formGraphicsSquare.Dispose();
+
+        }
+
+        private void drawFullCircleShape()
+        {
+            int brush25 = 25;
+            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+            Color newColor = ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor);
+            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            Graphics formGraphicsEllipse = CreateGraphics();
+            Random random = new Random();
+            float[,] position = new float[4, 2]{ { executingTest.ProgramInUse.StimulusDistance * 0.75f, 0 }, { 0, executingTest.ProgramInUse.StimulusDistance * 0.75f},
+                                                { -executingTest.ProgramInUse.StimulusDistance * 0.75f, 0 }, { 0, -executingTest.ProgramInUse.StimulusDistance * 0.75f } };
+            int index = random.Next(0, 3);
+            float xEllipse = (clientMiddle[0] - brush25) + position[index, 0];
+            float yEllipse = (clientMiddle[1] - brush25) + position[index, 1];
+            float widthEllipse = executingTest.ProgramInUse.StimuluSize;
+            float heightEllipse = executingTest.ProgramInUse.StimuluSize;
+
+            formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
+            formGraphicsEllipse.Dispose();
+
+        }
+
+        private void drawCircleShape()
+        {
+            int brush25 = 25;
+            Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+
+            Graphics formGraphicsEllipse = CreateGraphics();
+            Random random = new Random();
+
+            float[,] position = new float[4, 2]{ { executingTest.ProgramInUse.StimulusDistance * 0.75f, 0 }, { 0, executingTest.ProgramInUse.StimulusDistance * 0.75f},
+                                                { -executingTest.ProgramInUse.StimulusDistance * 0.75f, 0 }, { 0, -executingTest.ProgramInUse.StimulusDistance * 0.75f } };
+            int index = random.Next(0, 3);
+            float xEllipse = (clientMiddle[0] - brush25) + position[index, 0];
+            float yEllipse = (clientMiddle[1] - brush25) + position[index, 1];
+
+            float widthEllipse = executingTest.ProgramInUse.StimuluSize;
+            float heightEllipse = executingTest.ProgramInUse.StimuluSize;
+
+            formGraphicsEllipse.DrawEllipse(myPen, xEllipse, yEllipse, widthEllipse, heightEllipse);
+            formGraphicsEllipse.Dispose();
+
+        }
+
+        private void drawTriangleShape()
+        {
+            int brush25 = 25;
+            int brush12 = 12;
+            Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor), 3);
+            int[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+
+            Graphics formGraphicsEllipse = CreateGraphics();
+            Random random = new Random();
+
+            int[,] position = new int[4, 2]{ { executingTest.ProgramInUse.StimulusDistance, 0 }, { 0, executingTest.ProgramInUse.StimulusDistance},
+                                                { -executingTest.ProgramInUse.StimulusDistance, 0 }, { 0, -executingTest.ProgramInUse.StimulusDistance } };
+            int index = random.Next(0, 3);
+
+            Point point1 = new Point((clientMiddle[0]) + position[index, 0], (clientMiddle[1] - brush25) + position[index, 1]);
+            Point point2 = new Point((clientMiddle[0] - brush25) + position[index, 0], (clientMiddle[1] - brush25) + position[index, 1]);
+            Point point3 = new Point((clientMiddle[0] - brush25) + position[index, 0] + brush12, (clientMiddle[1] - brush25) + position[index, 1] - brush25);
+            Point[] trianglePoints =
+                     {
+                 point1,
+                 point2,
+                 point3
+             };
+
+
+            formGraphicsEllipse.DrawPolygon(myPen, trianglePoints); 
+            formGraphicsEllipse.Dispose();
+
+        }
+        
         private void repairProgram()
         {
             try
@@ -151,8 +248,16 @@ namespace TestPlatform.Views
                     expositionBW.CancelAsync();
                 }
             }
-            else if (e.KeyCode == Keys.K)
+            else if (e.KeyCode == Keys.Escape)
             {
+                if (expositionBW.IsBusy)
+                {
+                    expositionBW.CancelAsync();
+                }
+                while (expositionBW.CancellationPending)
+                {
+                    //wait
+                }
                 Close();
             }
         }
@@ -209,12 +314,56 @@ namespace TestPlatform.Views
             }
         }
 
+        private void singleShapeExposition(string shape)
+        {
+            switch (shape)
+            {
+                case "fullSquare":
+                    drawFullSquareShape();
+                    break;
+                case "fullCircle":
+                    drawFullCircleShape();
+                    break;
+                case "fullTriangle":
+                    break;
+                case "square":
+                    drawSquareShape();
+                    break;
+                case "circle":
+                    drawCircleShape();
+                    break;
+                case "triangle":
+                    drawTriangleShape();
+                    break;
+            }
+        }
+
+        private void drawShape()
+        {
+            List<string> shapes = executingTest.ProgramInUse.StimuluShape.Split(',').ToList();
+            if (shapes.Count == 1)
+            {
+                singleShapeExposition(shapes[0]);
+            }
+            else
+            {
+                randomShapeExposition(shapes);
+            }
+        }
+
+        private void randomShapeExposition(List<string> shapes)
+        {
+            Random random = new Random();
+            int index = random.Next(0, shapes.Count - 1);
+            singleShapeExposition(shapes[index]);
+        }
+
         private void showStimulus()
         {
             switch (executingTest.ProgramInUse.ExpositionType)
             {
                 case "Formas":
-                    drawSquareShape();
+                    drawShape();
                     break;
                 case "Palavra":
                     // await wordExposition();

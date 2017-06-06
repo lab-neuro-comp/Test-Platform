@@ -4,6 +4,7 @@ using TestPlatform.Models;
 using System.IO;
 using System.Drawing;
 using TestPlatform.Controllers;
+using System.Collections.Generic;
 
 namespace TestPlatform.Views
 {
@@ -210,28 +211,40 @@ namespace TestPlatform.Views
 
         private string shapeValue()
         {
-            string shape = "fullSquare";
-            if (circleRadioButton.Checked)
+            List<string> shapes = new List<string>();
+
+            if (fullCircleCheckBox.Checked)
             {
-                shape = "circle";
+                shapes.Add("fullCircle");
             }
-            else if (TriangleRadioButton.Checked)
+            if (fullSquareCheckBox.Checked)
             {
-                shape = "triangle";
+                shapes.Add("fullSquare");
             }
-            else if (squareRadioButton.Checked)
+            if (fullTriangleCheckBox.Checked)
             {
-                shape = "square";
+                shapes.Add("fullTriangle");
             }
-            else if (fullCircleRadioButton.Checked)
+            if (squareCheckBox.Checked)
             {
-                shape = "fullCircle";
+                shapes.Add("square");
             }
-            else if (fullTriangleRadioButton.Checked)
+            if (circleCheckBox.Checked)
             {
-                shape = "fullTriangle";
+                shapes.Add("circle");
             }
-            return shape;
+            if (triangleCheckBox.Checked)
+            {
+                shapes.Add("triangle");
+            }
+
+            string result = null;
+
+            for (int i = 0; i < shapes.Count; i++)
+            {
+                result += shapes[i] + ",";
+            }
+            return result;
         }
 
         private string fixPointColor()

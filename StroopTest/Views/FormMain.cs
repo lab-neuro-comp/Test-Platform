@@ -306,7 +306,7 @@ namespace TestPlatform
                     if (sc[1].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 0; }
                 }
                 FormReactExposition reactionExposition = new FormReactExposition(programName, participantTextBox.Text, 
-                                                                                 testFilesPath);
+                                                                                 testFilesPath, markTextBox.Text[0]);
                 reactionExposition.StartPosition = FormStartPosition.Manual;
                 reactionExposition.Location = Screen.AllScreens[showOnMonitor].WorkingArea.Location;
                 SendKeys.SendWait("i");

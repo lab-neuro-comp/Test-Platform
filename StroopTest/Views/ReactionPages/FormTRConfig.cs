@@ -21,7 +21,8 @@ namespace TestPlatform.Views
             this.prgName = prgName;
             Location = new Point(530, 48);
             InitializeComponent();
-
+            positionsBox.SelectedIndex = 2;
+            responseTypeBox.SelectedIndex = 0;
             if (PrgName != "false")
             {
                 editPrgName = PrgName;
@@ -41,6 +42,9 @@ namespace TestPlatform.Views
             beepingCheckbox.Checked = editProgram.IsBeeping;
             beepDuration.Value = editProgram.BeepDuration;
             stimulusDistance.Value = editProgram.StimulusDistance;
+
+            stimulusColor.Text = editProgram.StimulusColor;
+            stimulusColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.StimulusColor);
 
             if (editProgram.WordsListFile.ToLower() == "false")
             {

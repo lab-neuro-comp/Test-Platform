@@ -30,7 +30,7 @@ namespace TestPlatform.Views
         private int currentExposition = 0;
         private bool intervalCancelled;
 
-        public FormReactExposition(string prgName, string participantName, string defaultPath)
+        public FormReactExposition(string prgName, string participantName, string defaultPath, char mark)
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
@@ -41,6 +41,7 @@ namespace TestPlatform.Views
             startTime = hour + "_" + minutes + "_" + seconds;
             executingTest.ParticipantName = participantName;
             executingTest.setProgramInUse(path + "/prg/", prgName);
+            executingTest.Mark = mark;
             outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.ProgramName + ".txt";
             startExposition();
         }
@@ -429,7 +430,11 @@ namespace TestPlatform.Views
             hitStopWatch = new Stopwatch();
             hitStopWatch.Start();
 
+            // Sending mark to neuronspectrum to sinalize that exposition of stimulus started
+            SendKeys.SendWait(executingTest.Mark.ToString());
+
             showStimulus();
+
             if (intervalCancelled)
             {
                 e.Cancel = true;
@@ -466,19 +471,19 @@ namespace TestPlatform.Views
             {
                 /* user clicked after stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds,
-                                              currentExposition);
+                                              currentExposition + 1);
             }
 
             else if ((e.Cancelled == true) && intervalCancelled)
             {
                 /* user clicked before stimulus is shown*/
-                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0,
-                                              currentExposition);
+                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, intervalElapsedTime - intervalShouldBe,
+                                              currentExposition + 1);
             }
             else
             {
                 /* user missed stimulus */
-                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition);
+                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1);
                 hitStopWatch.Stop();
             }
             expositionBW.Dispose();

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.userResponse = new System.Windows.Forms.GroupBox();
-            this.responseTypeBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.shapesGroupBox = new System.Windows.Forms.GroupBox();
             this.shapeRadioPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -67,7 +66,6 @@
             this.openImgListButton = new System.Windows.Forms.Button();
             this.instructionsBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.positionsBox = new System.Windows.Forms.ComboBox();
             this.positionLabel = new System.Windows.Forms.Label();
             this.randomBeepLabel = new System.Windows.Forms.Label();
             this.randomBeepCheck = new System.Windows.Forms.CheckBox();
@@ -98,6 +96,8 @@
             this.fullTriangleCheckBox = new System.Windows.Forms.CheckBox();
             this.triangleCheckBox = new System.Windows.Forms.CheckBox();
             this.fullSquareCheckBox = new System.Windows.Forms.CheckBox();
+            this.positionsBox = new System.Windows.Forms.ComboBox();
+            this.responseTypeBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.userResponse.SuspendLayout();
             this.shapesGroupBox.SuspendLayout();
@@ -150,17 +150,6 @@
             this.userResponse.TabIndex = 152;
             this.userResponse.TabStop = false;
             this.userResponse.Text = "Resposta do Usuário";
-            // 
-            // responseTypeBox
-            // 
-            this.responseTypeBox.FormattingEnabled = true;
-            this.responseTypeBox.Items.AddRange(new object[] {
-            "Espaço",
-            "Setas"});
-            this.responseTypeBox.Location = new System.Drawing.Point(80, 31);
-            this.responseTypeBox.Name = "responseTypeBox";
-            this.responseTypeBox.Size = new System.Drawing.Size(179, 24);
-            this.responseTypeBox.TabIndex = 175;
             // 
             // label2
             // 
@@ -607,19 +596,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Exposição";
             // 
-            // positionsBox
-            // 
-            this.positionsBox.FormattingEnabled = true;
-            this.positionsBox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "4",
-            "8"});
-            this.positionsBox.Location = new System.Drawing.Point(281, 117);
-            this.positionsBox.Name = "positionsBox";
-            this.positionsBox.Size = new System.Drawing.Size(80, 24);
-            this.positionsBox.TabIndex = 174;
-            // 
             // positionLabel
             // 
             this.positionLabel.AutoSize = true;
@@ -987,6 +963,38 @@
             this.fullSquareCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.fullSquareCheckBox.UseVisualStyleBackColor = true;
             // 
+            // positionsBox
+            // 
+            this.positionsBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.positionsBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.positionsBox.FormattingEnabled = true;
+            this.positionsBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "4",
+            "8"});
+            this.positionsBox.Location = new System.Drawing.Point(281, 117);
+            this.positionsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.positionsBox.Name = "positionsBox";
+            this.positionsBox.Size = new System.Drawing.Size(80, 24);
+            this.positionsBox.TabIndex = 175;
+            this.positionsBox.Tag = "";
+            // 
+            // responseTypeBox
+            // 
+            this.responseTypeBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.responseTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.responseTypeBox.FormattingEnabled = true;
+            this.responseTypeBox.Items.AddRange(new object[] {
+            "Espaço",
+            "Setas"});
+            this.responseTypeBox.Location = new System.Drawing.Point(66, 31);
+            this.responseTypeBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.responseTypeBox.Name = "responseTypeBox";
+            this.responseTypeBox.Size = new System.Drawing.Size(185, 24);
+            this.responseTypeBox.TabIndex = 176;
+            this.responseTypeBox.Tag = "";
+            // 
             // FormTRConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1086,9 +1094,7 @@
         private System.Windows.Forms.Label randomBeepLabel;
         private System.Windows.Forms.CheckBox randomBeepCheck;
         private System.Windows.Forms.Label positionLabel;
-        private System.Windows.Forms.ComboBox positionsBox;
         private System.Windows.Forms.GroupBox userResponse;
-        private System.Windows.Forms.ComboBox responseTypeBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox fullSquareCheckBox;
         private System.Windows.Forms.CheckBox squareCheckBox;
@@ -1096,5 +1102,7 @@
         private System.Windows.Forms.CheckBox circleCheckBox;
         private System.Windows.Forms.CheckBox fullTriangleCheckBox;
         private System.Windows.Forms.CheckBox triangleCheckBox;
+        private System.Windows.Forms.ComboBox responseTypeBox;
+        private System.Windows.Forms.ComboBox positionsBox;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -205,7 +206,7 @@ namespace TestPlatform.Views
             Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor), 3);
             int[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
 
-            Graphics formGraphicsEllipse = CreateGraphics();
+            Graphics formGraphicsTriangle = CreateGraphics();
             Random random = new Random();
 
             int[,] position = new int[4, 2]{ { executingTest.ProgramInUse.StimulusDistance, 0 }, { 0, executingTest.ProgramInUse.StimulusDistance},
@@ -223,11 +224,41 @@ namespace TestPlatform.Views
              };
 
 
-            formGraphicsEllipse.DrawPolygon(myPen, trianglePoints); 
-            formGraphicsEllipse.Dispose();
+            formGraphicsTriangle.DrawPolygon(myPen, trianglePoints); 
+            formGraphicsTriangle.Dispose();
 
         }
-        
+
+        private void drawFullTriangleShape()
+        {
+            int brush25 = 25;
+            int brush12 = 12;
+            int[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+            Graphics formGraphicsTriangle = CreateGraphics();
+            Random random = new Random();
+
+            int[,] position = new int[4, 2]{ { executingTest.ProgramInUse.StimulusDistance, 0 }, { 0, executingTest.ProgramInUse.StimulusDistance},
+                                                { -executingTest.ProgramInUse.StimulusDistance, 0 }, { 0, -executingTest.ProgramInUse.StimulusDistance } };
+            int index = random.Next(0, 3);
+
+            Point point1 = new Point((clientMiddle[0]) + position[index, 0], (clientMiddle[1] - brush25) + position[index, 1]);
+            Point point2 = new Point((clientMiddle[0] - brush25) + position[index, 0], (clientMiddle[1] - brush25) + position[index, 1]);
+            Point point3 = new Point((clientMiddle[0] - brush25) + position[index, 0] + brush12, (clientMiddle[1] - brush25) + position[index, 1] - brush25);
+            Point[] trianglePoints =
+                     {
+                 point1,
+                 point2,
+                 point3
+             };
+
+            FillMode newFillMode = FillMode.Winding;
+
+            formGraphicsTriangle.FillPolygon(myBrush, trianglePoints, newFillMode);
+            formGraphicsTriangle.Dispose();
+
+        }
+
         private void repairProgram()
         {
             try
@@ -325,6 +356,7 @@ namespace TestPlatform.Views
                     drawFullCircleShape();
                     break;
                 case "fullTriangle":
+                    drawFullTriangleShape();
                     break;
                 case "square":
                     drawSquareShape();

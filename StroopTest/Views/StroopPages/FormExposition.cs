@@ -17,7 +17,6 @@ using System.Media;
 using System.Drawing.Drawing2D;
 using TestPlatform.Models;
 using TestPlatform.Controllers;
-using TestPlatform.Views;
 using System.Diagnostics;
 
 namespace TestPlatform
@@ -52,6 +51,7 @@ namespace TestPlatform
             programInUse.ProgramName = prgName;
             executingTest.ParticipantName = usrName;
             executingTest.Mark = mark;
+            executingTest.InitialDate = DateTime.Now;
             startExpo();
         }
 
@@ -154,14 +154,14 @@ namespace TestPlatform
             int textArrayCounter = 0, colorArrayCounter = 0, audioCounter = 0, subtitleCounter = 0;
             List<string> outputContent = new List<string>();
 
-            var interval = Task.Run(async delegate{ await Task.Delay(programInUse.IntervalTime, cts.Token); });
-            var exposition = Task.Run(async delegate{ await Task.Delay(programInUse.ExpositionTime, cts.Token); });
             
             try
             {
-                // reading list files:
-                labelText = StrList.readListFile(defaultFolderPath + "/Lst/" + programInUse.WordsListFile); // string array receives wordsList itens from list file
-                labelColor = StrList.readListFile(defaultFolderPath + "/Lst/" + programInUse.ColorsListFile); // string array receives colorsList itens from list file
+                // reading list files                
+                // string array receives lists itens from lists file
+                labelText = StrList.readListFile(defaultFolderPath + "/Lst/" + programInUse.WordsListFile); 
+                labelColor = StrList.readListFile(defaultFolderPath + "/Lst/" + programInUse.ColorsListFile);
+                 
                 subtitlesArray = configureSubtitle();
 
                 if (programInUse.AudioListFile != "false") // if there is an audioFile to be played, string array receives audioList itens from list file
@@ -260,9 +260,9 @@ namespace TestPlatform
                     }
                     wordLabel.Visible = true;
                    
-                    StroopTest.writeLineOutputResult(programInUse, textCurrent, colorCurrent, counter, 
-                        outputContent, elapsedTime, programInUse.ExpositionType, audioDetail, hour, minutes, seconds, 
-                        executingTest);
+                    executingTest.writeLineOutputResult(programInUse, textCurrent, colorCurrent, counter, 
+                        outputContent, elapsedTime, programInUse.ExpositionType, audioDetail
+                        );
                         
                     await Task.Delay(programInUse.ExpositionTime, cts.Token);
                 }
@@ -357,7 +357,8 @@ namespace TestPlatform
                 j = 0; subtitleCounter = 0;
                 arrayCounter = 0;
                 var audioCounter = 0;
-                    
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
                 await Task.Delay(programInUse.IntervalTime, cts.Token);
 
                 // beginAudio
@@ -388,7 +389,7 @@ namespace TestPlatform
                         }
 
                         // grava tempo decorrido
-                        elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond; 
+                        elapsedTime = stopwatch.ElapsedMilliseconds; 
 
                             SendKeys.SendWait(executingTest.Mark.ToString()); //sending event to neuronspectrum
                             imgPictureBox.Visible = true;
@@ -403,9 +404,8 @@ namespace TestPlatform
                             arrayCounter++;
 
 
-                            StroopTest.writeLineOutputResult(programInUse, actualImagePath, "false", counter + 1, 
-                                                                outputContent, elapsedTime, "img", audioDetail, hour, 
-                                                                minutes, seconds, executingTest);
+                            executingTest.writeLineOutputResult(programInUse, actualImagePath, "false", counter + 1, 
+                                                                outputContent, elapsedTime, "img", audioDetail);
                             
                             await Task.Delay(programInUse.ExpositionTime, cts.Token);
                             
@@ -422,7 +422,7 @@ namespace TestPlatform
                                 wordLabel.Text = labelText[j];
 
                                 
-                                elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond;
+                                elapsedTime = stopwatch.ElapsedMilliseconds;
                                 SendKeys.SendWait(executingTest.Mark.ToString()); //sending event to neuronspectrum
                                 imgPictureBox.Visible = false;
                                 subtitleLabel.Visible = false;
@@ -435,9 +435,8 @@ namespace TestPlatform
                                 actualImagePath = wordLabel.Text;
                                 j++;
 
-                                StroopTest.writeLineOutputResult(programInUse, actualImagePath, "false", counter + 1,
-                                                                    outputContent, elapsedTime, "txt", audioDetail, hour, 
-                                                                    minutes, seconds, executingTest);
+                                executingTest.writeLineOutputResult(programInUse, actualImagePath, "false", counter + 1,
+                                                                    outputContent, elapsedTime, "txt", audioDetail);
                                 
                                 await Task.Delay(programInUse.ExpositionTime, cts.Token);
                             }
@@ -475,7 +474,7 @@ namespace TestPlatform
                                 Player.Play();
                             }
                             
-                            elapsedTime = elapsedTime + (DateTime.Now.Second * 1000) + DateTime.Now.Millisecond;
+                            elapsedTime = stopwatch.ElapsedMilliseconds;
                             SendKeys.SendWait(executingTest.Mark.ToString()); //sending event to neuronspectrum
 
                             imgPictureBox.Visible = true;
@@ -485,12 +484,11 @@ namespace TestPlatform
                                 subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
                             }
 
-                            StroopTest.writeLineOutputResult(programInUse, 
+                            executingTest.writeLineOutputResult(programInUse, 
                                                                 Path.GetFileName(imageDirs[arrayCounter].ToString()), "false",
                                                                 counter + 1, outputContent, elapsedTime, 
                                                                 programInUse.ExpositionType, 
-                                                                Path.GetFileNameWithoutExtension(audioDetail), hour, minutes,
-                                                                seconds, executingTest);
+                                                                Path.GetFileNameWithoutExtension(audioDetail));
                             
                             arrayCounter++;
                             await Task.Delay(programInUse.ExpositionTime, cts.Token);
@@ -665,10 +663,10 @@ namespace TestPlatform
                         case "+": // cross fixPoint
                             Graphics formGraphicsCross1 = this.CreateGraphics();
                             Graphics formGraphicsCross2 = this.CreateGraphics();
-                            float xCross1 = ClientSize.Width / 2 - 25;
-                            float yCross1 = ClientSize.Height / 2 - 4;
-                            float xCross2 = ClientSize.Width / 2 - 4;
-                            float yCross2 = ClientSize.Height / 2 - 25;
+                            float xCross1 = (float) (ClientSize.Width) / 2 - 25;
+                            float yCross1 = (float) ClientSize.Height / 2 - 4;
+                            float xCross2 = (float) ClientSize.Width / 2 - 4;
+                            float yCross2 = (float) ClientSize.Height / 2 - 25;
                             float widthCross = 2 * 25;
                             float heightCross = 2 * 4;
                             formGraphicsCross1.FillRectangle(myBrush, xCross1, yCross1, widthCross, heightCross);
@@ -679,8 +677,8 @@ namespace TestPlatform
                             break;
                         case "o": // circle fixPoint
                             Graphics formGraphicsEllipse = this.CreateGraphics();
-                            float xEllipse = ClientSize.Width / 2 - 25;
-                            float yEllipse = ClientSize.Height / 2 - 25;
+                            float xEllipse = (float) ClientSize.Width / 2 - 25;
+                            float yEllipse = (float) ClientSize.Height / 2 - 25;
                             float widthEllipse = 2 * 25;
                             float heightEllipse = 2 * 25;
                             formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);

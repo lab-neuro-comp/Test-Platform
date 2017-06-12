@@ -40,7 +40,7 @@
             // csvExportButton
             // 
             this.csvExportButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.csvExportButton.Location = new System.Drawing.Point(749, 52);
+            this.csvExportButton.Location = new System.Drawing.Point(749, 60);
             this.csvExportButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.csvExportButton.Name = "csvExportButton";
             this.csvExportButton.Size = new System.Drawing.Size(182, 26);
@@ -58,7 +58,7 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 93);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 101);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -66,7 +66,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(917, 406);
+            this.dataGridView1.Size = new System.Drawing.Size(917, 455);
             this.dataGridView1.TabIndex = 85;
             // 
             // fileNameBox
@@ -74,7 +74,7 @@
             this.fileNameBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fileNameBox.FormattingEnabled = true;
-            this.fileNameBox.Location = new System.Drawing.Point(142, 54);
+            this.fileNameBox.Location = new System.Drawing.Point(142, 62);
             this.fileNameBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fileNameBox.Name = "fileNameBox";
             this.fileNameBox.Size = new System.Drawing.Size(601, 24);
@@ -84,7 +84,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 61);
+            this.label1.Location = new System.Drawing.Point(11, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 17);
             this.label1.TabIndex = 83;
@@ -95,7 +95,7 @@
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
             this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(896, 2);
+            this.helpButton.Location = new System.Drawing.Point(896, 22);
             this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(35, 32);
@@ -106,7 +106,7 @@
             // 
             this.closeButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.closeButton.Location = new System.Drawing.Point(14, 505);
+            this.closeButton.Location = new System.Drawing.Point(14, 562);
             this.closeButton.Margin = new System.Windows.Forms.Padding(4);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(100, 28);
@@ -126,7 +126,7 @@
             this.Controls.Add(this.fileNameBox);
             this.Controls.Add(this.label1);
             this.Name = "ReactionResultUserControl";
-            this.Size = new System.Drawing.Size(939, 545);
+            this.Size = new System.Drawing.Size(939, 597);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

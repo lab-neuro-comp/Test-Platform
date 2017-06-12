@@ -46,10 +46,9 @@ namespace TestPlatform.Views.ReactionPages
 
         private void fileNameBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.dataGridView1.DataSource = null;
-            this.dataGridView1.Rows.Clear();
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
             string[] line;
-            string[] filePaths = null;
             try
             {
                 dataGridView1.Rows.Clear();
@@ -65,7 +64,7 @@ namespace TestPlatform.Views.ReactionPages
                             dataGridView1.Rows.Add(cellArray);
                             for (int j = 0; j < cellArray.Length; j++)
                             {
-                                if (Validations.allHexPattern(cellArray))
+                                if (Validations.isHexPattern(cellArray[j]))
                                 {
                                     dataGridView1.Rows[i].Cells[j].Style.BackColor = ColorTranslator.FromHtml(cellArray[j]);
                                 }
@@ -98,7 +97,7 @@ namespace TestPlatform.Views.ReactionPages
                 {
                     using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
                     {
-                        tw.WriteLine(StroopTest.HeaderOutputFileText);
+                        tw.WriteLine(ReactionTest.HeaderOutputFileText);
                         for (int i = 0; i < lines.Length; i++)
                         {
                             tw.WriteLine(lines[i]); // escreve linhas no novo arquivo

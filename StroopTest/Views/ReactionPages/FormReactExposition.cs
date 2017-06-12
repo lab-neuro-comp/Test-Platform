@@ -291,6 +291,7 @@ namespace TestPlatform.Views
                 while (expositionBW.CancellationPending)
                 {
                     //wait
+                    Thread.Sleep(10);
                 }
                 Close();
             }
@@ -436,6 +437,7 @@ namespace TestPlatform.Views
 
             // Sending mark to neuronspectrum to sinalize that exposition of stimulus started
             SendKeys.SendWait(executingTest.Mark.ToString());
+            executingTest.ExpositionTime = DateTime.Now;
             showStimulus();
 
             if (intervalCancelled)

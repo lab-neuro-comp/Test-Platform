@@ -19,7 +19,7 @@ namespace TestPlatform
         private FolderBrowserDialog folderBrowserDialog1;
         
         /*
-         * Valores constantes do programa
+         * Constants for tests platform
          * */
         private static string stroopProgramPath = "StroopTestFiles/prg/";
         private static string reactionProgramPath = "ReactionTestFiles/prg/";
@@ -35,15 +35,15 @@ namespace TestPlatform
         private static string TECHTEXT = HelpData.TechnicalInformations;
         private static string HELPTEXT = HelpData.VisualizeHelp;
 
-        /* Variaveis
+        /* Variables
          */
         private StroopProgram programDefault = new StroopProgram();
-        private Control currentPanelContent; //guarda o painel do segundo menu que esta renderizado no momento da execução
+        private Control currentPanelContent; //holds current panel in exact execution time
         private string testFilesPath;
         public string defaultPath = (Path.GetDirectoryName(Application.ExecutablePath));
 
         /**
-         * Metodo construtor do formulario, cria os diretorios necessarios para o programa caso nao existam
+         * Constructor method, creates directories for program, in case they dont exist
          * */
         public FormMain()
         {
@@ -55,9 +55,15 @@ namespace TestPlatform
             string reactionData = reactionTestFilesPath + "/data/";
 
             if (!Directory.Exists(testFilesPath))
+            {
                 Directory.CreateDirectory(testFilesPath);
+            }
+            else
+            {
+                /*do nothing*/
+            }            
 
-            // atualizando local de diretório da nova versão da plataforma e exclui a versão antiga do programa
+            // updating local directory of new version of platform, excluding old stroop one
             if (File.Exists(defaultPath + "/StroopTest.exe")) 
             {
 
@@ -81,24 +87,28 @@ namespace TestPlatform
                     return;
                 }
 
-                }
-
-
-
+            }
+            else
+            {
+                /*do nothing*/
+            }
+            
             if (!Directory.Exists(stroopTestFilesPath))
                 Directory.CreateDirectory(stroopTestFilesPath);
 
             if (!Directory.Exists(reactionTestFilesPath))
                 Directory.CreateDirectory(reactionTestFilesPath);
 
-            if (!Directory.Exists(stroopTestFilesPath + stroopProgramPath))
-                Directory.CreateDirectory(stroopTestFilesPath + stroopProgramPath);
+            if (!Directory.Exists(testFilesPath + stroopProgramPath))
+                Directory.CreateDirectory(testFilesPath + stroopProgramPath);
 
-            if (!Directory.Exists(reactionTestFilesPath + stroopProgramPath))
-                Directory.CreateDirectory(reactionTestFilesPath + stroopProgramPath);
+            if (!Directory.Exists(testFilesPath + reactionProgramPath))
+                Directory.CreateDirectory(testFilesPath + reactionProgramPath);
 
             if (!Directory.Exists(listsPath))
+            {
                 Directory.CreateDirectory(listsPath);
+            }
 
             if (!Directory.Exists(testFilesPath + stroopResultsPath))
                 Directory.CreateDirectory(testFilesPath + stroopResultsPath);

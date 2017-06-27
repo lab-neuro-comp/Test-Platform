@@ -191,7 +191,7 @@
       <DependentUpon>FormListConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormShowAudio.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\FormShowAudio.Designer.cs">
       <DependentUpon>FormShowAudio.cs</DependentUpon>

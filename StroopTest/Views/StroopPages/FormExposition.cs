@@ -194,12 +194,13 @@ namespace TestPlatform
                 elapsedTime = 0; // elapsed time to zero
                 subtitleCounter = 0;
                 changeBackgroundColor(programInUse, true); // changes background color, if there is one defined
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
                 await Task.Delay(programInUse.IntervalTime, cts.Token); // first interval before exposition begins
                 if (programInUse.AudioCapture && programInUse.ExpositionType != "txtaud") {
                     startRecordingAudio();
                 }
-                Stopwatch stopwatch = new Stopwatch();
-                stopwatch.Start();
+                
                 // exposition loop
                 for (int counter = 1; counter <= programInUse.NumExpositions; counter++) 
                 {

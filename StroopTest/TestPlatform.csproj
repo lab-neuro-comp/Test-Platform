@@ -190,12 +190,6 @@
     <Compile Include="Views\ListsPages\FormListConfig.Designer.cs">
       <DependentUpon>FormListConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormNewAudio.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\FormNewAudio.Designer.cs">
-      <DependentUpon>FormNewAudio.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\FormShowAudio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,9 +301,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormListConfig.resx">
       <DependentUpon>FormListConfig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormNewAudio.resx">
-      <DependentUpon>FormNewAudio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormShowAudio.resx">
       <DependentUpon>FormShowAudio.cs</DependentUpon>

@@ -6,7 +6,7 @@ namespace TestPlatform.Models
 {
     class ReactionTest
     {
-        private static String headerOutputFileText = "programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\thit(ms)\tintervalo(ms)"
+        private static String headerOutputFileText = "programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)"
             + "\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\ttipoEstimulo\tFormaDoStimulo\tCordoEstimulo";
         private Char mark;
         private ReactionProgram programInUse = new ReactionProgram();

@@ -405,18 +405,18 @@ namespace TestPlatform
             try
             {
                 showAudio = new FormShowAudio(testFilesPath + stroopResultsPath);
-                showAudio.ShowDialog();
+                this.Controls.Add(showAudio);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void newAudioToolStripMenu_Click(object sender, EventArgs e)
         {
-            FormNewAudio newAudio;
+            FormShowAudio showAudio;
             try
             {
-                newAudio = new FormNewAudio();
-                this.Controls.Add(newAudio);
+                showAudio = new FormShowAudio(testFilesPath + stroopResultsPath);
+                this.Controls.Add(showAudio);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -425,9 +425,11 @@ namespace TestPlatform
         {
             if (experimentButton.Checked)
             {
-                if(currentPanelContent != null)
+                // removing second side bar from view, if there is one, and removing its context too
+                if (currentPanelContent != null)
                 {
                     Controls.Remove(currentPanelContent);
+                    removingAllUserControlsFound();
                 }
 
                 ExperimentControl experimentControl = new ExperimentControl();
@@ -441,9 +443,11 @@ namespace TestPlatform
             
             if (buttonStroop.Checked)
             {
+                // removing second side bar from view, if there is one, and removing its context too
                 if (currentPanelContent != null)
                 {
                     Controls.Remove(currentPanelContent);
+                    removingAllUserControlsFound();
                 }
                 StroopControl stroopControl = new StroopControl();
                 stroopControl.TestFilesPath = testFilesPath;
@@ -456,9 +460,11 @@ namespace TestPlatform
         {
             if (buttonReaction.Checked)
             {
+                // removing second side bar from view, if there is one, and removing its context too
                 if (currentPanelContent != null)
                 {
                     Controls.Remove(currentPanelContent);
+                    removingAllUserControlsFound();
                 }
                 ReactionControl reactControl = new ReactionControl();
                 reactControl.TestFilesPath = testFilesPath;
@@ -472,9 +478,15 @@ namespace TestPlatform
         {
             if (buttonList.Checked)
             {
+                // removing second side bar from view, if there is one, and removing its context too
                 if (currentPanelContent != null)
                 {
                     Controls.Remove(currentPanelContent);
+                    removingAllUserControlsFound();
+                }
+                else
+                {
+                    /*do nothing*/
                 }
                 ListUserControl listControl = new ListUserControl();
                 listControl.TestFilesPath = testFilesPath;
@@ -487,9 +499,15 @@ namespace TestPlatform
         {
             if (resultButton.Checked)
             {
+                // removing second side bar from view, if there is one, and removing its context too
                 if (currentPanelContent != null)
                 {
                     Controls.Remove(currentPanelContent);
+                    removingAllUserControlsFound();
+                }
+                else
+                {
+                    /*do nothing*/
                 }
                 ResultsUserControl resultsControl = new ResultsUserControl();
                 resultsControl.TestFilesPath = testFilesPath;
@@ -525,6 +543,28 @@ namespace TestPlatform
             }
         }
 
+        /* Listing all controls in current context and removing all intances of UserControl found */
+        private void removingAllUserControlsFound()
+        {
+            List<Control> controls = new List<Control>();
+            int count = 0;
+            foreach (Control c in Controls)
+            {
+                if (c is UserControl)
+                {
+                    controls.Add(c);
+                    count++;
+                }
+                else
+                {
+                    /*do nothing*/
+                }
+            }
+            for(int i = 0; i < count; i++)
+            {
+                Controls.Remove(controls[i]);
+            }
+        }
         private void stroopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormPrgConfig configureProgram = new FormPrgConfig();

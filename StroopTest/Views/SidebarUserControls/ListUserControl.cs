@@ -42,7 +42,7 @@ namespace TestPlatform.Views.SidebarControls
         {
             if (recordAudioButton.Checked)
             {
-                FormNewAudio newAudio = new FormNewAudio();                
+                FormShowAudio newAudio = new FormShowAudio(testFilesPath + "/StroopTestFiles/data/");                
                 Parent.Controls.Add(newAudio);
             }
         }

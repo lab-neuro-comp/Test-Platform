@@ -206,7 +206,7 @@ namespace TestPlatform.Views
         {
             int brush25 = 25;
             int brush12 = 12;
-            Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor), 3);
+            Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor), 1);
             int[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
 
             Graphics formGraphicsTriangle = CreateGraphics();
@@ -216,9 +216,10 @@ namespace TestPlatform.Views
                                                 { -executingTest.ProgramInUse.StimulusDistance, 0 }, { 0, -executingTest.ProgramInUse.StimulusDistance } };
             int index = random.Next(0, 3);
 
-            Point point1 = new Point((clientMiddle[0]) + position[index, 0], (clientMiddle[1] - brush25) + position[index, 1]);
-            Point point2 = new Point((clientMiddle[0] - brush25) + position[index, 0], (clientMiddle[1] - brush25) + position[index, 1]);
-            Point point3 = new Point((clientMiddle[0] - brush25) + position[index, 0] + brush12, (clientMiddle[1] - brush25) + position[index, 1] - brush25);
+            Point point1 = new Point((clientMiddle[0]) + position[index, 0] + brush12, (clientMiddle[1] - brush25) + position[index, 1]);
+            Point point2 = new Point((clientMiddle[0] - (brush12 * 3)) + position[index, 0], (clientMiddle[1] - brush25) + position[index, 1]);
+            Point point3 = new Point((clientMiddle[0] - brush25) + position[index, 0] + brush12, 
+                                        (clientMiddle[1] - brush25) + position[index, 1] - (brush25 * 2));
             Point[] trianglePoints =
                      {
                  point1,
@@ -245,9 +246,10 @@ namespace TestPlatform.Views
                                                 { -executingTest.ProgramInUse.StimulusDistance, 0 }, { 0, -executingTest.ProgramInUse.StimulusDistance } };
             int index = random.Next(0, 3);
 
-            Point point1 = new Point((clientMiddle[0]) + position[index, 0], (clientMiddle[1] - brush25) + position[index, 1]);
-            Point point2 = new Point((clientMiddle[0] - brush25) + position[index, 0], (clientMiddle[1] - brush25) + position[index, 1]);
-            Point point3 = new Point((clientMiddle[0] - brush25) + position[index, 0] + brush12, (clientMiddle[1] - brush25) + position[index, 1] - brush25);
+            Point point1 = new Point((clientMiddle[0]) + position[index, 0] + brush12, (clientMiddle[1] - brush25) + position[index, 1]);
+            Point point2 = new Point((clientMiddle[0] - (brush12 * 3)) + position[index, 0], (clientMiddle[1] - brush25) + position[index, 1]);
+            Point point3 = new Point((clientMiddle[0] - brush25) + position[index, 0] + brush12,
+                                        (clientMiddle[1] - brush25) + position[index, 1] - (brush25 * 2));
             Point[] trianglePoints =
                      {
                  point1,
@@ -288,7 +290,15 @@ namespace TestPlatform.Views
                 {
                     expositionBW.CancelAsync();
                 }
-                while (expositionBW.CancellationPending)
+                else if (intervalBW.IsBusy)
+                {
+                    intervalBW.CancelAsync();
+                }
+                else
+                {
+                    /*do nothing*/
+                }
+                while (expositionBW.CancellationPending && intervalBW.CancellationPending)
                 {
                     //wait
                     Thread.Sleep(10);

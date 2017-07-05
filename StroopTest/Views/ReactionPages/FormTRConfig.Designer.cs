@@ -31,9 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.userResponse = new System.Windows.Forms.GroupBox();
+            this.responseTypeBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.shapesGroupBox = new System.Windows.Forms.GroupBox();
             this.shapeRadioPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.fullSquareCheckBox = new System.Windows.Forms.CheckBox();
+            this.squareCheckBox = new System.Windows.Forms.CheckBox();
+            this.fullCircleCheckBox = new System.Windows.Forms.CheckBox();
+            this.circleCheckBox = new System.Windows.Forms.CheckBox();
+            this.fullTriangleCheckBox = new System.Windows.Forms.CheckBox();
+            this.triangleCheckBox = new System.Windows.Forms.CheckBox();
             this.helpButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -48,6 +55,7 @@
             this.bgColorPanel = new System.Windows.Forms.Panel();
             this.bgColorLabel = new System.Windows.Forms.Label();
             this.bgColorButton = new System.Windows.Forms.Button();
+            this.stimulusDistance = new System.Windows.Forms.NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rndIntervalCheck = new System.Windows.Forms.CheckBox();
             this.rndIntervalLabel = new System.Windows.Forms.Label();
@@ -66,10 +74,10 @@
             this.openImgListButton = new System.Windows.Forms.Button();
             this.instructionsBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.positionsBox = new System.Windows.Forms.ComboBox();
             this.positionLabel = new System.Windows.Forms.Label();
             this.randomBeepLabel = new System.Windows.Forms.Label();
             this.randomBeepCheck = new System.Windows.Forms.CheckBox();
-            this.stimulusDistance = new System.Windows.Forms.NumericUpDown();
             this.expoTypeLabel = new System.Windows.Forms.Label();
             this.chooseExpoType = new System.Windows.Forms.ComboBox();
             this.stimulusColorPanel = new System.Windows.Forms.Panel();
@@ -90,26 +98,18 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.squareCheckBox = new System.Windows.Forms.CheckBox();
-            this.fullCircleCheckBox = new System.Windows.Forms.CheckBox();
-            this.circleCheckBox = new System.Windows.Forms.CheckBox();
-            this.fullTriangleCheckBox = new System.Windows.Forms.CheckBox();
-            this.triangleCheckBox = new System.Windows.Forms.CheckBox();
-            this.fullSquareCheckBox = new System.Windows.Forms.CheckBox();
-            this.positionsBox = new System.Windows.Forms.ComboBox();
-            this.responseTypeBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.userResponse.SuspendLayout();
             this.shapesGroupBox.SuspendLayout();
             this.shapeRadioPanel.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expoTime)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beepDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).BeginInit();
@@ -135,21 +135,36 @@
             this.panel1.Location = new System.Drawing.Point(16, 33);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(693, 698);
+            this.panel1.Size = new System.Drawing.Size(693, 708);
             this.panel1.TabIndex = 1;
             // 
             // userResponse
             // 
             this.userResponse.Controls.Add(this.responseTypeBox);
             this.userResponse.Controls.Add(this.label2);
-            this.userResponse.Location = new System.Drawing.Point(404, 471);
+            this.userResponse.Location = new System.Drawing.Point(404, 410);
             this.userResponse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userResponse.Name = "userResponse";
             this.userResponse.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.userResponse.Size = new System.Drawing.Size(265, 73);
+            this.userResponse.Size = new System.Drawing.Size(270, 73);
             this.userResponse.TabIndex = 152;
             this.userResponse.TabStop = false;
             this.userResponse.Text = "Resposta do Usuário";
+            // 
+            // responseTypeBox
+            // 
+            this.responseTypeBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.responseTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.responseTypeBox.FormattingEnabled = true;
+            this.responseTypeBox.Items.AddRange(new object[] {
+            "Espaço",
+            "Setas"});
+            this.responseTypeBox.Location = new System.Drawing.Point(66, 31);
+            this.responseTypeBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.responseTypeBox.Name = "responseTypeBox";
+            this.responseTypeBox.Size = new System.Drawing.Size(185, 24);
+            this.responseTypeBox.TabIndex = 176;
+            this.responseTypeBox.Tag = "";
             // 
             // label2
             // 
@@ -163,7 +178,7 @@
             // shapesGroupBox
             // 
             this.shapesGroupBox.Controls.Add(this.shapeRadioPanel);
-            this.shapesGroupBox.Location = new System.Drawing.Point(404, 168);
+            this.shapesGroupBox.Location = new System.Drawing.Point(404, 163);
             this.shapesGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.shapesGroupBox.Name = "shapesGroupBox";
             this.shapesGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -185,12 +200,75 @@
             this.shapeRadioPanel.Size = new System.Drawing.Size(222, 102);
             this.shapeRadioPanel.TabIndex = 3;
             // 
+            // fullSquareCheckBox
+            // 
+            this.fullSquareCheckBox.AutoSize = true;
+            this.fullSquareCheckBox.Checked = true;
+            this.fullSquareCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.fullSquareCheckBox.Image = global::TestPlatform.Properties.Resources.fullSquare;
+            this.fullSquareCheckBox.Location = new System.Drawing.Point(3, 3);
+            this.fullSquareCheckBox.Name = "fullSquareCheckBox";
+            this.fullSquareCheckBox.Size = new System.Drawing.Size(73, 24);
+            this.fullSquareCheckBox.TabIndex = 5;
+            this.fullSquareCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.fullSquareCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // squareCheckBox
+            // 
+            this.squareCheckBox.AutoSize = true;
+            this.squareCheckBox.Image = global::TestPlatform.Properties.Resources.square;
+            this.squareCheckBox.Location = new System.Drawing.Point(82, 3);
+            this.squareCheckBox.Name = "squareCheckBox";
+            this.squareCheckBox.Size = new System.Drawing.Size(73, 24);
+            this.squareCheckBox.TabIndex = 0;
+            this.squareCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // fullCircleCheckBox
+            // 
+            this.fullCircleCheckBox.AutoSize = true;
+            this.fullCircleCheckBox.Image = global::TestPlatform.Properties.Resources.fullCircle1;
+            this.fullCircleCheckBox.Location = new System.Drawing.Point(3, 33);
+            this.fullCircleCheckBox.Name = "fullCircleCheckBox";
+            this.fullCircleCheckBox.Size = new System.Drawing.Size(73, 30);
+            this.fullCircleCheckBox.TabIndex = 1;
+            this.fullCircleCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // circleCheckBox
+            // 
+            this.circleCheckBox.AutoSize = true;
+            this.circleCheckBox.Image = global::TestPlatform.Properties.Resources.circle1;
+            this.circleCheckBox.Location = new System.Drawing.Point(82, 33);
+            this.circleCheckBox.Name = "circleCheckBox";
+            this.circleCheckBox.Size = new System.Drawing.Size(73, 30);
+            this.circleCheckBox.TabIndex = 2;
+            this.circleCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // fullTriangleCheckBox
+            // 
+            this.fullTriangleCheckBox.AutoSize = true;
+            this.fullTriangleCheckBox.Image = global::TestPlatform.Properties.Resources.fullTriangle;
+            this.fullTriangleCheckBox.Location = new System.Drawing.Point(3, 69);
+            this.fullTriangleCheckBox.Name = "fullTriangleCheckBox";
+            this.fullTriangleCheckBox.Size = new System.Drawing.Size(73, 24);
+            this.fullTriangleCheckBox.TabIndex = 3;
+            this.fullTriangleCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // triangleCheckBox
+            // 
+            this.triangleCheckBox.AutoSize = true;
+            this.triangleCheckBox.Image = global::TestPlatform.Properties.Resources.triangle;
+            this.triangleCheckBox.Location = new System.Drawing.Point(82, 69);
+            this.triangleCheckBox.Name = "triangleCheckBox";
+            this.triangleCheckBox.Size = new System.Drawing.Size(73, 24);
+            this.triangleCheckBox.TabIndex = 4;
+            this.triangleCheckBox.UseVisualStyleBackColor = true;
+            // 
             // helpButton
             // 
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
             this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(639, 11);
+            this.helpButton.Location = new System.Drawing.Point(651, 2);
             this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(35, 32);
@@ -207,11 +285,11 @@
             this.groupBox6.Controls.Add(this.fixPointCircle);
             this.groupBox6.Controls.Add(this.fixPointColorButton);
             this.groupBox6.Controls.Add(this.fixPointColorPanel);
-            this.groupBox6.Location = new System.Drawing.Point(16, 325);
+            this.groupBox6.Location = new System.Drawing.Point(404, 290);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox6.Size = new System.Drawing.Size(362, 110);
+            this.groupBox6.Size = new System.Drawing.Size(270, 110);
             this.groupBox6.TabIndex = 40;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Ponto de Fixação";
@@ -307,11 +385,11 @@
             this.groupBox5.Controls.Add(this.bgColorPanel);
             this.groupBox5.Controls.Add(this.bgColorLabel);
             this.groupBox5.Controls.Add(this.bgColorButton);
-            this.groupBox5.Location = new System.Drawing.Point(13, 439);
+            this.groupBox5.Location = new System.Drawing.Point(404, 485);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox5.Size = new System.Drawing.Size(367, 73);
+            this.groupBox5.Size = new System.Drawing.Size(270, 73);
             this.groupBox5.TabIndex = 60;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Outros";
@@ -319,7 +397,7 @@
             // bgColorPanel
             // 
             this.bgColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bgColorPanel.Location = new System.Drawing.Point(139, 32);
+            this.bgColorPanel.Location = new System.Drawing.Point(114, 32);
             this.bgColorPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bgColorPanel.Name = "bgColorPanel";
             this.bgColorPanel.Size = new System.Drawing.Size(18, 17);
@@ -328,7 +406,7 @@
             // bgColorLabel
             // 
             this.bgColorLabel.AutoSize = true;
-            this.bgColorLabel.Location = new System.Drawing.Point(35, 32);
+            this.bgColorLabel.Location = new System.Drawing.Point(10, 32);
             this.bgColorLabel.Name = "bgColorLabel";
             this.bgColorLabel.Size = new System.Drawing.Size(98, 17);
             this.bgColorLabel.TabIndex = 42;
@@ -337,14 +415,42 @@
             // bgColorButton
             // 
             this.bgColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bgColorButton.Location = new System.Drawing.Point(164, 28);
+            this.bgColorButton.Location = new System.Drawing.Point(139, 28);
             this.bgColorButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bgColorButton.Name = "bgColorButton";
-            this.bgColorButton.Size = new System.Drawing.Size(184, 23);
+            this.bgColorButton.Size = new System.Drawing.Size(106, 23);
             this.bgColorButton.TabIndex = 26;
             this.bgColorButton.Text = "escolher";
             this.bgColorButton.UseVisualStyleBackColor = true;
             this.bgColorButton.Click += new System.EventHandler(this.chooseBGColor);
+            // 
+            // stimulusDistance
+            // 
+            this.stimulusDistance.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.stimulusDistance.Location = new System.Drawing.Point(281, 89);
+            this.stimulusDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.stimulusDistance.Maximum = new decimal(new int[] {
+            320,
+            0,
+            0,
+            0});
+            this.stimulusDistance.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.stimulusDistance.Name = "stimulusDistance";
+            this.stimulusDistance.Size = new System.Drawing.Size(80, 22);
+            this.stimulusDistance.TabIndex = 169;
+            this.stimulusDistance.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             // 
             // groupBox3
             // 
@@ -354,7 +460,7 @@
             this.groupBox3.Controls.Add(this.intervalTime);
             this.groupBox3.Controls.Add(this.expoTime);
             this.groupBox3.Controls.Add(this.expoTimeLabel);
-            this.groupBox3.Location = new System.Drawing.Point(404, 42);
+            this.groupBox3.Location = new System.Drawing.Point(404, 35);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -455,11 +561,11 @@
             this.groupBox2.Controls.Add(this.openColorListButton);
             this.groupBox2.Controls.Add(this.openImgListButton);
             this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(404, 298);
+            this.groupBox2.Location = new System.Drawing.Point(19, 324);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(270, 157);
+            this.groupBox2.Size = new System.Drawing.Size(361, 159);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listas";
@@ -557,7 +663,7 @@
             // 
             this.instructionsBox.AcceptsReturn = true;
             this.instructionsBox.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.instructionsBox.Location = new System.Drawing.Point(13, 548);
+            this.instructionsBox.Location = new System.Drawing.Point(13, 564);
             this.instructionsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.instructionsBox.Multiline = true;
             this.instructionsBox.Name = "instructionsBox";
@@ -572,8 +678,8 @@
             this.groupBox1.Controls.Add(this.positionLabel);
             this.groupBox1.Controls.Add(this.randomBeepLabel);
             this.groupBox1.Controls.Add(this.randomBeepCheck);
-            this.groupBox1.Controls.Add(this.stimulusDistance);
             this.groupBox1.Controls.Add(this.expoTypeLabel);
+            this.groupBox1.Controls.Add(this.stimulusDistance);
             this.groupBox1.Controls.Add(this.chooseExpoType);
             this.groupBox1.Controls.Add(this.stimulusColorPanel);
             this.groupBox1.Controls.Add(this.label4);
@@ -587,7 +693,7 @@
             this.groupBox1.Controls.Add(this.wordSizeLabel);
             this.groupBox1.Controls.Add(this.stimuluSize);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(13, 42);
+            this.groupBox1.Location = new System.Drawing.Point(13, 35);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -595,6 +701,23 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Exposição";
+            // 
+            // positionsBox
+            // 
+            this.positionsBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.positionsBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.positionsBox.FormattingEnabled = true;
+            this.positionsBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "4",
+            "8"});
+            this.positionsBox.Location = new System.Drawing.Point(281, 117);
+            this.positionsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.positionsBox.Name = "positionsBox";
+            this.positionsBox.Size = new System.Drawing.Size(80, 24);
+            this.positionsBox.TabIndex = 175;
+            this.positionsBox.Tag = "";
             // 
             // positionLabel
             // 
@@ -625,34 +748,6 @@
             this.randomBeepCheck.TabIndex = 171;
             this.randomBeepCheck.TabStop = false;
             this.randomBeepCheck.UseVisualStyleBackColor = true;
-            // 
-            // stimulusDistance
-            // 
-            this.stimulusDistance.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.stimulusDistance.Location = new System.Drawing.Point(281, 90);
-            this.stimulusDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.stimulusDistance.Maximum = new decimal(new int[] {
-            320,
-            0,
-            0,
-            0});
-            this.stimulusDistance.Minimum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.stimulusDistance.Name = "stimulusDistance";
-            this.stimulusDistance.Size = new System.Drawing.Size(80, 22);
-            this.stimulusDistance.TabIndex = 169;
-            this.stimulusDistance.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
             // 
             // expoTypeLabel
             // 
@@ -841,7 +936,7 @@
             // 
             this.instructionsLabel.AutoSize = true;
             this.instructionsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.instructionsLabel.Location = new System.Drawing.Point(16, 516);
+            this.instructionsLabel.Location = new System.Drawing.Point(16, 541);
             this.instructionsLabel.Name = "instructionsLabel";
             this.instructionsLabel.Size = new System.Drawing.Size(77, 17);
             this.instructionsLabel.TabIndex = 59;
@@ -900,101 +995,6 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
-            // squareCheckBox
-            // 
-            this.squareCheckBox.AutoSize = true;
-            this.squareCheckBox.Image = global::TestPlatform.Properties.Resources.square;
-            this.squareCheckBox.Location = new System.Drawing.Point(82, 3);
-            this.squareCheckBox.Name = "squareCheckBox";
-            this.squareCheckBox.Size = new System.Drawing.Size(73, 24);
-            this.squareCheckBox.TabIndex = 0;
-            this.squareCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // fullCircleCheckBox
-            // 
-            this.fullCircleCheckBox.AutoSize = true;
-            this.fullCircleCheckBox.Image = global::TestPlatform.Properties.Resources.fullCircle1;
-            this.fullCircleCheckBox.Location = new System.Drawing.Point(3, 33);
-            this.fullCircleCheckBox.Name = "fullCircleCheckBox";
-            this.fullCircleCheckBox.Size = new System.Drawing.Size(73, 30);
-            this.fullCircleCheckBox.TabIndex = 1;
-            this.fullCircleCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // circleCheckBox
-            // 
-            this.circleCheckBox.AutoSize = true;
-            this.circleCheckBox.Image = global::TestPlatform.Properties.Resources.circle1;
-            this.circleCheckBox.Location = new System.Drawing.Point(82, 33);
-            this.circleCheckBox.Name = "circleCheckBox";
-            this.circleCheckBox.Size = new System.Drawing.Size(73, 30);
-            this.circleCheckBox.TabIndex = 2;
-            this.circleCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // fullTriangleCheckBox
-            // 
-            this.fullTriangleCheckBox.AutoSize = true;
-            this.fullTriangleCheckBox.Image = global::TestPlatform.Properties.Resources.fullTriangle;
-            this.fullTriangleCheckBox.Location = new System.Drawing.Point(3, 69);
-            this.fullTriangleCheckBox.Name = "fullTriangleCheckBox";
-            this.fullTriangleCheckBox.Size = new System.Drawing.Size(73, 24);
-            this.fullTriangleCheckBox.TabIndex = 3;
-            this.fullTriangleCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // triangleCheckBox
-            // 
-            this.triangleCheckBox.AutoSize = true;
-            this.triangleCheckBox.Image = global::TestPlatform.Properties.Resources.triangle;
-            this.triangleCheckBox.Location = new System.Drawing.Point(82, 69);
-            this.triangleCheckBox.Name = "triangleCheckBox";
-            this.triangleCheckBox.Size = new System.Drawing.Size(73, 24);
-            this.triangleCheckBox.TabIndex = 4;
-            this.triangleCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // fullSquareCheckBox
-            // 
-            this.fullSquareCheckBox.AutoSize = true;
-            this.fullSquareCheckBox.Checked = true;
-            this.fullSquareCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.fullSquareCheckBox.Image = global::TestPlatform.Properties.Resources.fullSquare;
-            this.fullSquareCheckBox.Location = new System.Drawing.Point(3, 3);
-            this.fullSquareCheckBox.Name = "fullSquareCheckBox";
-            this.fullSquareCheckBox.Size = new System.Drawing.Size(73, 24);
-            this.fullSquareCheckBox.TabIndex = 5;
-            this.fullSquareCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.fullSquareCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // positionsBox
-            // 
-            this.positionsBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.positionsBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.positionsBox.FormattingEnabled = true;
-            this.positionsBox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "4",
-            "8"});
-            this.positionsBox.Location = new System.Drawing.Point(281, 117);
-            this.positionsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.positionsBox.Name = "positionsBox";
-            this.positionsBox.Size = new System.Drawing.Size(80, 24);
-            this.positionsBox.TabIndex = 175;
-            this.positionsBox.Tag = "";
-            // 
-            // responseTypeBox
-            // 
-            this.responseTypeBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.responseTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.responseTypeBox.FormattingEnabled = true;
-            this.responseTypeBox.Items.AddRange(new object[] {
-            "Espaço",
-            "Setas"});
-            this.responseTypeBox.Location = new System.Drawing.Point(66, 31);
-            this.responseTypeBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.responseTypeBox.Name = "responseTypeBox";
-            this.responseTypeBox.Size = new System.Drawing.Size(185, 24);
-            this.responseTypeBox.TabIndex = 176;
-            this.responseTypeBox.Tag = "";
-            // 
             // FormTRConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1016,6 +1016,7 @@
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).EndInit();
@@ -1024,7 +1025,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beepDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).EndInit();

@@ -71,6 +71,7 @@
             this.newExperimentButton.Text = "Novo Experimento";
             this.newExperimentButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.newExperimentButton.UseVisualStyleBackColor = true;
+            this.newExperimentButton.Click += new System.EventHandler(this.newExperimentButton_Click);
             // 
             // ExperimentControl
             // 
@@ -79,7 +80,6 @@
             this.Controls.Add(this.deleteExperimentButton);
             this.Controls.Add(this.editExperimentButton);
             this.Controls.Add(this.newExperimentButton);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "ExperimentControl";
             this.ResumeLayout(false);
 

@@ -797,7 +797,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(205, 191);
+            this.label1.Location = new System.Drawing.Point(203, 156);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 34);
             this.label1.TabIndex = 164;
@@ -806,7 +806,7 @@
             // expandImgLabel
             // 
             this.expandImgLabel.AutoSize = true;
-            this.expandImgLabel.Location = new System.Drawing.Point(36, 191);
+            this.expandImgLabel.Location = new System.Drawing.Point(34, 156);
             this.expandImgLabel.Name = "expandImgLabel";
             this.expandImgLabel.Size = new System.Drawing.Size(120, 17);
             this.expandImgLabel.TabIndex = 161;
@@ -816,7 +816,7 @@
             // 
             this.wordColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.wordColorPanel.Enabled = false;
-            this.wordColorPanel.Location = new System.Drawing.Point(164, 156);
+            this.wordColorPanel.Location = new System.Drawing.Point(164, 202);
             this.wordColorPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wordColorPanel.Name = "wordColorPanel";
             this.wordColorPanel.Size = new System.Drawing.Size(18, 17);
@@ -836,7 +836,7 @@
             "-135°",
             "-90°",
             "-45°"});
-            this.rotateImgComboBox.Location = new System.Drawing.Point(273, 191);
+            this.rotateImgComboBox.Location = new System.Drawing.Point(271, 156);
             this.rotateImgComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rotateImgComboBox.Name = "rotateImgComboBox";
             this.rotateImgComboBox.Size = new System.Drawing.Size(76, 24);
@@ -847,7 +847,7 @@
             // 
             this.wordColorLabel.AutoSize = true;
             this.wordColorLabel.Enabled = false;
-            this.wordColorLabel.Location = new System.Drawing.Point(52, 156);
+            this.wordColorLabel.Location = new System.Drawing.Point(52, 202);
             this.wordColorLabel.Name = "wordColorLabel";
             this.wordColorLabel.Size = new System.Drawing.Size(106, 17);
             this.wordColorLabel.TabIndex = 160;
@@ -857,7 +857,7 @@
             // 
             this.expandImgCheck.AutoSize = true;
             this.expandImgCheck.Enabled = false;
-            this.expandImgCheck.Location = new System.Drawing.Point(163, 191);
+            this.expandImgCheck.Location = new System.Drawing.Point(161, 156);
             this.expandImgCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.expandImgCheck.Name = "expandImgCheck";
             this.expandImgCheck.Size = new System.Drawing.Size(18, 17);
@@ -870,7 +870,7 @@
             // 
             this.wordColorButton.Enabled = false;
             this.wordColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wordColorButton.Location = new System.Drawing.Point(189, 153);
+            this.wordColorButton.Location = new System.Drawing.Point(189, 199);
             this.wordColorButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wordColorButton.Name = "wordColorButton";
             this.wordColorButton.Size = new System.Drawing.Size(161, 23);

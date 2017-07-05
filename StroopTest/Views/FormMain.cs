@@ -443,6 +443,7 @@ namespace TestPlatform
                 }
 
                 ExperimentControl experimentControl = new ExperimentControl();
+                experimentControl.TestFilesPath = testFilesPath;
                 this.Controls.Add(experimentControl);
                 currentPanelContent = experimentControl;
             }

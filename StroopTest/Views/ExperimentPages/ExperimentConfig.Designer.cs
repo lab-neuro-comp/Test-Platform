@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.experimentConfigPanel = new System.Windows.Forms.Panel();
             this.helpButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rndIntervalCheck = new System.Windows.Forms.CheckBox();
@@ -36,22 +37,12 @@
             this.intervalTimeLabel = new System.Windows.Forms.Label();
             this.intervalTime = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.program1Label = new System.Windows.Forms.Label();
-            this.audioListLabel = new System.Windows.Forms.Label();
-            this.openAudioListButton = new System.Windows.Forms.Button();
-            this.program2Label = new System.Windows.Forms.Label();
-            this.program3Label = new System.Windows.Forms.Label();
-            this.program1Button = new System.Windows.Forms.Button();
-            this.openColorListButton = new System.Windows.Forms.Button();
-            this.openImgListButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.deleteItemLabel = new System.Windows.Forms.Label();
+            this.programDataGridView = new System.Windows.Forms.DataGridView();
+            this.programName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typePrograma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.programSelectButton = new System.Windows.Forms.Button();
             this.instructionsBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,31 +54,32 @@
             this.experimentNameLabel = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.experimentConfigPanel.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.programDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // experimentConfigPanel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.helpButton);
-            this.panel1.Controls.Add(this.groupBox3);
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.instructionsBox);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.instructionsLabel);
-            this.panel1.Controls.Add(this.experimentNameTextBox);
-            this.panel1.Controls.Add(this.experimentNameLabel);
-            this.panel1.Location = new System.Drawing.Point(22, 54);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(693, 672);
-            this.panel1.TabIndex = 2;
+            this.experimentConfigPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.experimentConfigPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.experimentConfigPanel.Controls.Add(this.helpButton);
+            this.experimentConfigPanel.Controls.Add(this.groupBox3);
+            this.experimentConfigPanel.Controls.Add(this.groupBox2);
+            this.experimentConfigPanel.Controls.Add(this.instructionsBox);
+            this.experimentConfigPanel.Controls.Add(this.groupBox1);
+            this.experimentConfigPanel.Controls.Add(this.instructionsLabel);
+            this.experimentConfigPanel.Controls.Add(this.experimentNameTextBox);
+            this.experimentConfigPanel.Controls.Add(this.experimentNameLabel);
+            this.experimentConfigPanel.Location = new System.Drawing.Point(22, 54);
+            this.experimentConfigPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.experimentConfigPanel.Name = "experimentConfigPanel";
+            this.experimentConfigPanel.Size = new System.Drawing.Size(693, 672);
+            this.experimentConfigPanel.TabIndex = 2;
             // 
             // helpButton
             // 
@@ -168,201 +160,96 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.program1Label);
-            this.groupBox2.Controls.Add(this.audioListLabel);
-            this.groupBox2.Controls.Add(this.openAudioListButton);
-            this.groupBox2.Controls.Add(this.program2Label);
-            this.groupBox2.Controls.Add(this.program3Label);
-            this.groupBox2.Controls.Add(this.program1Button);
-            this.groupBox2.Controls.Add(this.openColorListButton);
-            this.groupBox2.Controls.Add(this.openImgListButton);
+            this.groupBox2.Controls.Add(this.deleteButton);
+            this.groupBox2.Controls.Add(this.deleteItemLabel);
+            this.groupBox2.Controls.Add(this.programDataGridView);
+            this.groupBox2.Controls.Add(this.programSelectButton);
             this.groupBox2.Location = new System.Drawing.Point(19, 182);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(361, 313);
+            this.groupBox2.Size = new System.Drawing.Size(654, 313);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Programas";
             // 
-            // label4
+            // deleteButton
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 262);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 17);
-            this.label4.TabIndex = 172;
-            this.label4.Text = "Programa 8:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteButton.Location = new System.Drawing.Point(9, 128);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(99, 27);
+            this.deleteButton.TabIndex = 62;
+            this.deleteButton.Text = "Apagar";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
-            // button3
+            // deleteItemLabel
             // 
-            this.button3.Enabled = false;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(112, 262);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(243, 23);
-            this.button3.TabIndex = 170;
-            this.button3.Text = "abrir";
-            this.button3.UseVisualStyleBackColor = true;
+            this.deleteItemLabel.AutoSize = true;
+            this.deleteItemLabel.Location = new System.Drawing.Point(7, 109);
+            this.deleteItemLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.deleteItemLabel.Name = "deleteItemLabel";
+            this.deleteItemLabel.Size = new System.Drawing.Size(88, 17);
+            this.deleteItemLabel.TabIndex = 61;
+            this.deleteItemLabel.Text = "Apagar Item:";
             // 
-            // label5
+            // programDataGridView
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 229);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 17);
-            this.label5.TabIndex = 171;
-            this.label5.Text = "Programa 7:";
+            this.programDataGridView.AllowUserToAddRows = false;
+            this.programDataGridView.AllowUserToDeleteRows = false;
+            this.programDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.programDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.programDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.programDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.programDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.programName,
+            this.typePrograma});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.programDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.programDataGridView.Location = new System.Drawing.Point(112, 51);
+            this.programDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.programDataGridView.Name = "programDataGridView";
+            this.programDataGridView.ReadOnly = true;
+            this.programDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.programDataGridView.RowHeadersVisible = false;
+            this.programDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.programDataGridView.Size = new System.Drawing.Size(520, 239);
+            this.programDataGridView.TabIndex = 1;
             // 
-            // button4
+            // programName
             // 
-            this.button4.Enabled = false;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(112, 229);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(243, 23);
-            this.button4.TabIndex = 169;
-            this.button4.Text = "abrir";
-            this.button4.UseVisualStyleBackColor = true;
+            this.programName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.programName.HeaderText = "Nome do Programa";
+            this.programName.Name = "programName";
+            this.programName.ReadOnly = true;
             // 
-            // label2
+            // typePrograma
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 192);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 17);
-            this.label2.TabIndex = 168;
-            this.label2.Text = "Programa 6:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.typePrograma.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.typePrograma.HeaderText = "Tipo do Programa";
+            this.typePrograma.Name = "typePrograma";
+            this.typePrograma.ReadOnly = true;
+            this.typePrograma.Width = 200;
             // 
-            // button1
+            // programSelectButton
             // 
-            this.button1.Enabled = false;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(112, 192);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(243, 23);
-            this.button1.TabIndex = 166;
-            this.button1.Text = "abrir";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 159);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 17);
-            this.label3.TabIndex = 167;
-            this.label3.Text = "Programa 5:";
-            // 
-            // button2
-            // 
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(112, 159);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(243, 23);
-            this.button2.TabIndex = 165;
-            this.button2.Text = "abrir";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // program1Label
-            // 
-            this.program1Label.AutoSize = true;
-            this.program1Label.Location = new System.Drawing.Point(6, 27);
-            this.program1Label.Name = "program1Label";
-            this.program1Label.Size = new System.Drawing.Size(86, 17);
-            this.program1Label.TabIndex = 40;
-            this.program1Label.Text = "Programa 1:";
-            // 
-            // audioListLabel
-            // 
-            this.audioListLabel.AutoSize = true;
-            this.audioListLabel.Location = new System.Drawing.Point(6, 127);
-            this.audioListLabel.Name = "audioListLabel";
-            this.audioListLabel.Size = new System.Drawing.Size(86, 17);
-            this.audioListLabel.TabIndex = 164;
-            this.audioListLabel.Text = "Programa 4:";
-            this.audioListLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // openAudioListButton
-            // 
-            this.openAudioListButton.Enabled = false;
-            this.openAudioListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openAudioListButton.Location = new System.Drawing.Point(112, 127);
-            this.openAudioListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.openAudioListButton.Name = "openAudioListButton";
-            this.openAudioListButton.Size = new System.Drawing.Size(243, 23);
-            this.openAudioListButton.TabIndex = 23;
-            this.openAudioListButton.Text = "abrir";
-            this.openAudioListButton.UseVisualStyleBackColor = true;
-            // 
-            // program2Label
-            // 
-            this.program2Label.AutoSize = true;
-            this.program2Label.Location = new System.Drawing.Point(6, 60);
-            this.program2Label.Name = "program2Label";
-            this.program2Label.Size = new System.Drawing.Size(86, 17);
-            this.program2Label.TabIndex = 41;
-            this.program2Label.Text = "Programa 2:";
-            // 
-            // program3Label
-            // 
-            this.program3Label.AutoSize = true;
-            this.program3Label.Location = new System.Drawing.Point(6, 94);
-            this.program3Label.Name = "program3Label";
-            this.program3Label.Size = new System.Drawing.Size(86, 17);
-            this.program3Label.TabIndex = 57;
-            this.program3Label.Text = "Programa 3:";
-            // 
-            // program1Button
-            // 
-            this.program1Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.program1Button.Location = new System.Drawing.Point(112, 27);
-            this.program1Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.program1Button.Name = "program1Button";
-            this.program1Button.Size = new System.Drawing.Size(243, 23);
-            this.program1Button.TabIndex = 20;
-            this.program1Button.Text = "abrir";
-            this.program1Button.UseVisualStyleBackColor = true;
-            this.program1Button.Click += new System.EventHandler(this.program1button_Click);
-            // 
-            // openColorListButton
-            // 
-            this.openColorListButton.Enabled = false;
-            this.openColorListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openColorListButton.Location = new System.Drawing.Point(112, 60);
-            this.openColorListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.openColorListButton.Name = "openColorListButton";
-            this.openColorListButton.Size = new System.Drawing.Size(243, 23);
-            this.openColorListButton.TabIndex = 21;
-            this.openColorListButton.Text = "abrir";
-            this.openColorListButton.UseVisualStyleBackColor = true;
-            // 
-            // openImgListButton
-            // 
-            this.openImgListButton.Enabled = false;
-            this.openImgListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openImgListButton.Location = new System.Drawing.Point(112, 94);
-            this.openImgListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.openImgListButton.Name = "openImgListButton";
-            this.openImgListButton.Size = new System.Drawing.Size(243, 23);
-            this.openImgListButton.TabIndex = 22;
-            this.openImgListButton.Text = "abrir";
-            this.openImgListButton.UseVisualStyleBackColor = true;
+            this.programSelectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.programSelectButton.Location = new System.Drawing.Point(9, 51);
+            this.programSelectButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.programSelectButton.Name = "programSelectButton";
+            this.programSelectButton.Size = new System.Drawing.Size(99, 28);
+            this.programSelectButton.TabIndex = 20;
+            this.programSelectButton.Text = "Adicionar";
+            this.programSelectButton.UseVisualStyleBackColor = true;
+            this.programSelectButton.Click += new System.EventHandler(this.addProgramButton_Click);
             // 
             // instructionsBox
             // 
@@ -503,18 +390,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.CausesValidation = false;
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.experimentConfigPanel);
             this.Name = "ExperimentConfig";
             this.Size = new System.Drawing.Size(740, 786);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.experimentConfigPanel.ResumeLayout(false);
+            this.experimentConfigPanel.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.programDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
@@ -524,7 +414,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel experimentConfigPanel;
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox rndIntervalCheck;
@@ -532,14 +422,7 @@
         private System.Windows.Forms.Label intervalTimeLabel;
         private System.Windows.Forms.NumericUpDown intervalTime;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label program1Label;
-        private System.Windows.Forms.Label audioListLabel;
-        private System.Windows.Forms.Button openAudioListButton;
-        private System.Windows.Forms.Label program2Label;
-        private System.Windows.Forms.Label program3Label;
-        private System.Windows.Forms.Button program1Button;
-        private System.Windows.Forms.Button openColorListButton;
-        private System.Windows.Forms.Button openImgListButton;
+        private System.Windows.Forms.Button programSelectButton;
         private System.Windows.Forms.TextBox instructionsBox;
         private System.Windows.Forms.Label instructionsLabel;
         private System.Windows.Forms.TextBox experimentNameTextBox;
@@ -549,15 +432,12 @@
         private System.Windows.Forms.CheckBox beepingCheckbox;
         private System.Windows.Forms.Label numExpoLabel;
         private System.Windows.Forms.NumericUpDown numExpo;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.DataGridView programDataGridView;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Label deleteItemLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn programName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typePrograma;
     }
 }

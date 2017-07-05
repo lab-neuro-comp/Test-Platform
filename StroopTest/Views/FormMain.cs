@@ -23,6 +23,7 @@ namespace TestPlatform
          * */
         private static string stroopProgramPath = "StroopTestFiles/prg/";
         private static string reactionProgramPath = "ReactionTestFiles/prg/";
+        private static string experimentProgramPath = "ExperimentTestFiles/prg/";
         private static string LSTFOLDERNAME = "/Lst/";
         private static string stroopResultsPath = "StroopTestFiles/data/";
         private static string reactionResultsPath = "ReactionTestFiles/data/";
@@ -50,9 +51,11 @@ namespace TestPlatform
             testFilesPath = defaultPath + "/TestFiles/";
             string stroopTestFilesPath = testFilesPath + "/StroopTestFiles/";
             string reactionTestFilesPath = testFilesPath + "/ReactionTestFiles/";
+            string experimentTestFilesPath = testFilesPath + "/ExperimentTestFiles/";
             string listsPath = testFilesPath + "/Lst/";
             string stroopData = stroopTestFilesPath + "/data/";
             string reactionData = reactionTestFilesPath + "/data/";
+            string experimentData = experimentTestFilesPath + "/data/";
 
             if (!Directory.Exists(testFilesPath))
             {
@@ -99,11 +102,17 @@ namespace TestPlatform
             if (!Directory.Exists(reactionTestFilesPath))
                 Directory.CreateDirectory(reactionTestFilesPath);
 
+            if (!Directory.Exists(experimentTestFilesPath))
+                Directory.CreateDirectory(experimentTestFilesPath);
+
             if (!Directory.Exists(testFilesPath + stroopProgramPath))
                 Directory.CreateDirectory(testFilesPath + stroopProgramPath);
 
             if (!Directory.Exists(testFilesPath + reactionProgramPath))
                 Directory.CreateDirectory(testFilesPath + reactionProgramPath);
+
+            if (!Directory.Exists(testFilesPath + experimentProgramPath))
+                Directory.CreateDirectory(testFilesPath + experimentProgramPath);
 
             if (!Directory.Exists(listsPath))
             {
@@ -115,6 +124,9 @@ namespace TestPlatform
 
             if (!Directory.Exists(testFilesPath + reactionResultsPath))
                 Directory.CreateDirectory(testFilesPath + reactionResultsPath);
+
+            if (!Directory.Exists(experimentData))
+                Directory.CreateDirectory(experimentData);
 
             if (!Directory.Exists(defaultPath + BACKUPFOLDERNAME))
                 Directory.CreateDirectory(defaultPath + BACKUPFOLDERNAME);

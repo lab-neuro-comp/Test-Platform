@@ -1,15 +1,19 @@
-﻿
-
-using System;
-using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using TestPlatform.Views.ExperimentPages;
 
-namespace TestPlatform.Views
+namespace TestPlatform.Views.SidebarUserControls
 {
     public partial class ExperimentControl : DefaultUserControl
     {
         private string testFilesPath;
-
         public ExperimentControl()
         {
             InitializeComponent();
@@ -28,16 +32,25 @@ namespace TestPlatform.Views
             }
         }
 
-        private void newExperimentButton_Click(object sender, System.EventArgs e)
+        private void newExperimentButton_Click(object sender, EventArgs e)
         {
             try
             {
-                ExperimentConfig newExperiment = new ExperimentConfig();
-                newExperiment.Path = TestFilesPath;
-                Parent.Controls.Add(newExperiment);
-                
+                if (newExperimentButton.Checked)
+                {
+                    ExperimentConfig newExperiment = new ExperimentConfig();
+                    newExperiment.Path = TestFilesPath;
+                    Parent.Controls.Add(newExperiment);
+                    newExperimentButton.Checked = false;
+                }
+                else
+                {
+                    /*do nothing*/
+                }
+
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
         }

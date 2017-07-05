@@ -515,7 +515,7 @@
             this.panel1.Controls.Add(this.buttonList);
             this.panel1.Controls.Add(this.buttonReaction);
             this.panel1.Controls.Add(this.buttonStroop);
-            this.panel1.Location = new System.Drawing.Point(0, 94);
+            this.panel1.Location = new System.Drawing.Point(0, 77);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(260, 386);
             this.panel1.TabIndex = 25;
@@ -720,6 +720,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenuStrip;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(493, 644);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

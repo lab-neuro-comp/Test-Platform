@@ -12,7 +12,7 @@ namespace TestPlatform.Views.ExperimentPages
 
         public ExperimentConfig()
         {
-            Location = new Point(530, 48);
+            Location = new Point(500, 38);
             InitializeComponent();
         }
 
@@ -28,6 +28,7 @@ namespace TestPlatform.Views.ExperimentPages
                 path = value;
             }
         }
+
         private string[] defineTest()
         {
             FormDefineTest defineTest = new FormDefineTest(path, stroopProgramPath, reactionProgramPath);
@@ -48,22 +49,38 @@ namespace TestPlatform.Views.ExperimentPages
             }
             return null;
         }
-        private void program1button_Click(object sender, System.EventArgs e)
+
+        private void addProgramButton_Click(object sender, System.EventArgs e)
         {
             string[] result = defineTest();
             if(result != null)
             {
-                program1Button.Text = result[0] + ": " + result[1];
+                programDataGridView.Rows.Add(result[1], result[0]);
             }
             else
             {
-                program1Button.Text = "abrir";
+                /*do nothing*/
             }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Parent.Controls.Remove(this);
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (programDataGridView.RowCount > 0)
+                {
+                    programDataGridView.Rows.RemoveAt(this.programDataGridView.SelectedRows[0].Index);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

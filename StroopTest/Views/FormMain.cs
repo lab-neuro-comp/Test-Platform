@@ -749,5 +749,10 @@ namespace TestPlatform
                 this.errorProvider1.SetError(markTextBox, errorMsg);
             }
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

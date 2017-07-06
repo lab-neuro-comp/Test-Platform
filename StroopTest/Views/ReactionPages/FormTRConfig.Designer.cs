@@ -55,7 +55,6 @@
             this.bgColorPanel = new System.Windows.Forms.Panel();
             this.bgColorLabel = new System.Windows.Forms.Label();
             this.bgColorButton = new System.Windows.Forms.Button();
-            this.stimulusDistance = new System.Windows.Forms.NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rndIntervalCheck = new System.Windows.Forms.CheckBox();
             this.rndIntervalLabel = new System.Windows.Forms.Label();
@@ -79,6 +78,7 @@
             this.randomBeepLabel = new System.Windows.Forms.Label();
             this.randomBeepCheck = new System.Windows.Forms.CheckBox();
             this.expoTypeLabel = new System.Windows.Forms.Label();
+            this.stimulusDistance = new System.Windows.Forms.NumericUpDown();
             this.chooseExpoType = new System.Windows.Forms.ComboBox();
             this.stimulusColorPanel = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -104,12 +104,12 @@
             this.shapeRadioPanel.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expoTime)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beepDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).BeginInit();
@@ -424,34 +424,6 @@
             this.bgColorButton.UseVisualStyleBackColor = true;
             this.bgColorButton.Click += new System.EventHandler(this.chooseBGColor);
             // 
-            // stimulusDistance
-            // 
-            this.stimulusDistance.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.stimulusDistance.Location = new System.Drawing.Point(281, 89);
-            this.stimulusDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.stimulusDistance.Maximum = new decimal(new int[] {
-            320,
-            0,
-            0,
-            0});
-            this.stimulusDistance.Minimum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.stimulusDistance.Name = "stimulusDistance";
-            this.stimulusDistance.Size = new System.Drawing.Size(80, 22);
-            this.stimulusDistance.TabIndex = 169;
-            this.stimulusDistance.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.rndIntervalCheck);
@@ -758,6 +730,34 @@
             this.expoTypeLabel.TabIndex = 168;
             this.expoTypeLabel.Text = "Tipo de Estímulo:";
             // 
+            // stimulusDistance
+            // 
+            this.stimulusDistance.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.stimulusDistance.Location = new System.Drawing.Point(281, 89);
+            this.stimulusDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.stimulusDistance.Maximum = new decimal(new int[] {
+            490,
+            0,
+            0,
+            0});
+            this.stimulusDistance.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.stimulusDistance.Name = "stimulusDistance";
+            this.stimulusDistance.Size = new System.Drawing.Size(80, 22);
+            this.stimulusDistance.TabIndex = 169;
+            this.stimulusDistance.Value = new decimal(new int[] {
+            250,
+            0,
+            0,
+            0});
+            // 
             // chooseExpoType
             // 
             this.chooseExpoType.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -1016,7 +1016,6 @@
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).EndInit();
@@ -1025,6 +1024,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beepDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).EndInit();

@@ -40,25 +40,37 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void editReactButton_Click(object sender, EventArgs e)
         {
-
-            FormDefine defineProgram;
-            DialogResult result;
-            string editProgramName = "error";
-
-            try
+            if (editReactButton.Checked)
             {
-                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "ReactionTestFiles/prg/", "prg", "program", false);
-                result = defineProgram.ShowDialog();
-                if (result == DialogResult.OK)
+                FormDefine defineProgram;
+                DialogResult result;
+                string editProgramName = "error";
+
+                try
                 {
-                    editProgramName = defineProgram.ReturnValue;
-                    FormTRConfig configureProgram = new FormTRConfig(editProgramName);
-                    configureProgram.Path = testFilesPath;
-                    configureProgram.PrgName = editProgramName;
-                    Parent.Controls.Add(configureProgram);
+                    defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "ReactionTestFiles/prg/", "prg", "program", false);
+                    result = defineProgram.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        editProgramName = defineProgram.ReturnValue;
+                        FormTRConfig configureProgram = new FormTRConfig(editProgramName);
+                        configureProgram.Path = testFilesPath;
+                        configureProgram.PrgName = editProgramName;
+                        Parent.Controls.Add(configureProgram);
+                        editReactButton.Checked = false;
+                    }
+                    else
+                    {
+                        /*do nothing, user cancelled selection of program*/
+                    }
                 }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            else
+            {
+                /*do nothing*/
+            }
+            
         }
     }
 }

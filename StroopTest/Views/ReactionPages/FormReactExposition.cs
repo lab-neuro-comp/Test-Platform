@@ -33,6 +33,7 @@ namespace TestPlatform.Views
         private Stopwatch accumulativeStopWatch = new Stopwatch();
         private int currentExposition = 0;
         private bool intervalCancelled;
+        private bool cancelExposition = false;
 
         public FormReactExposition(string prgName, string participantName, string defaultPath, char mark)
         {
@@ -186,24 +187,17 @@ namespace TestPlatform.Views
             Graphics formGraphicsEllipse = CreateGraphics();
             formGraphicsEllipse.DrawEllipse(myPen, xEllipse, yEllipse, widthEllipse, heightEllipse);
             formGraphicsEllipse.Dispose();
-        }
+        } 
+
         private void triangleShape_draw(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
             
-            int brush25 = 25;
-            int brush12 = 12;
-            int[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int[] screenPosition = randomScreenPosition();
-            Point point1 = new Point((clientMiddle[X]) + screenPosition[X] + brush12, (clientMiddle[Y] - brush25) + screenPosition[Y]);
-            Point point2 = new Point((clientMiddle[X] - (brush12 * 3)) + screenPosition[X], (clientMiddle[Y] - brush25) + screenPosition[Y]);
-            Point point3 = new Point((clientMiddle[X] - brush25) + screenPosition[X] + brush12,
-                                        (clientMiddle[Y] - brush25) + screenPosition[Y] - (brush25 * 2));
-
-            Point[] trianglePoints = { point1, point2, point3 };
+            
             ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
                 this);
             Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor), 1);
+            Point[] trianglePoints = createTrianglePoints();
             g.DrawPolygon(myPen, trianglePoints);
         }
 
@@ -216,19 +210,8 @@ namespace TestPlatform.Views
         }
 
         private void drawFullTriangleShape()
-        {
-            int brush25 = 25;
-            int brush12 = 12;
-            int[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            
-
-            int[] screenPosition = randomScreenPosition();
-            Point point1 = new Point((clientMiddle[X]) + screenPosition[X] + brush12, (clientMiddle[Y] - brush25) + screenPosition[Y]);
-            Point point2 = new Point((clientMiddle[X] - (brush12 * 3)) + screenPosition[X], (clientMiddle[Y] - brush25) + screenPosition[Y]);
-            Point point3 = new Point((clientMiddle[X] - brush25) + screenPosition[X] + brush12, 
-                                        (clientMiddle[Y] - brush25) + screenPosition[Y] - (brush25 * 2));
-
-            Point[] trianglePoints = { point1, point2, point3 };
+        {            
+            Point[] trianglePoints = createTrianglePoints();
 
             FillMode newFillMode = FillMode.Winding;
             SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
@@ -236,6 +219,22 @@ namespace TestPlatform.Views
             formGraphicsTriangle.FillPolygon(myBrush, trianglePoints, newFillMode);
             formGraphicsTriangle.Dispose();
 
+        }
+
+        private Point[] createTrianglePoints()
+        {
+            int[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            int[] screenPosition = randomScreenPosition();
+            int heightTriangle = executingTest.ProgramInUse.StimuluSize;
+
+            Point point1 = new Point((clientMiddle[X]) + screenPosition[X] + (heightTriangle / 3),
+                (clientMiddle[Y] - (heightTriangle / 2)) + screenPosition[Y]);
+            Point point2 = new Point((clientMiddle[X] - (3 * heightTriangle / 4)) + screenPosition[X], (clientMiddle[Y] - (heightTriangle / 2)) + screenPosition[Y]);
+            Point point3 = new Point((clientMiddle[X] - (heightTriangle / 2)) + screenPosition[X] + (heightTriangle / 3),
+                                        (clientMiddle[Y] - (heightTriangle / 2)) + screenPosition[Y] - heightTriangle);
+
+            Point[] trianglePoints = { point1, point2, point3 };
+            return trianglePoints;
         }
 
         private void repairProgram()
@@ -260,6 +259,7 @@ namespace TestPlatform.Views
             }
             else if (e.KeyCode == Keys.Escape)
             {
+                cancelExposition = true;
                 if (expositionBW.IsBusy)
                 {
                     expositionBW.CancelAsync();
@@ -453,9 +453,17 @@ namespace TestPlatform.Views
 
         private void expositionBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            CreateGraphics().Clear(ActiveForm.BackColor);
-            ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint,executingTest.ProgramInUse.FixPointColor,
-                this);
+            if (!cancelExposition)
+            {
+                CreateGraphics().Clear(ActiveForm.BackColor);
+                ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
+                    this);
+            }
+            else
+            {
+                /*do nothing*/
+            }
+            
             if ((e.Cancelled == true) && !intervalCancelled)
             {
                 /* user clicked after stimulus is shown*/
@@ -516,13 +524,13 @@ namespace TestPlatform.Views
 
         /* creates a x and y vector according to program stimulus distance randomly, from four different positions */
         private int[] randomScreenPosition (){
-            int[,] position = new int[4, 2]{ { (executingTest.ProgramInUse.StimulusDistance + 270), 0 }, // on the right side of the screen
-                                             { 0, (executingTest.ProgramInUse.StimulusDistance)}, // on bottom of the screen
-                                             { -(executingTest.ProgramInUse.StimulusDistance * 2), 0 }, // on the left side of the screen
-                                             { 0, -( executingTest.ProgramInUse.StimulusDistance) } }; // on top of the screen
+            int[,] position = new int[4, 2]{ { (executingTest.ProgramInUse.StimulusDistance + (executingTest.ProgramInUse.StimulusDistance / 4)), 0 }, // on the right side of the screen
+                                             { 0, (executingTest.ProgramInUse.StimulusDistance - (executingTest.ProgramInUse.StimulusDistance / 4))}, // on bottom of the screen
+                                             { -(executingTest.ProgramInUse.StimulusDistance + (executingTest.ProgramInUse.StimulusDistance / 4)), 0 }, // on the left side of the screen
+                                             { 0, -( executingTest.ProgramInUse.StimulusDistance - (executingTest.ProgramInUse.StimulusDistance / 4)) } }; // on top of the screen
             Random random = new Random();
             int index = random.Next(0, 4);
-            return new int []{ position[0, X], position[0, Y] };
+            return new int []{ position[index, X], position[index, Y] };
         }
     }
 }

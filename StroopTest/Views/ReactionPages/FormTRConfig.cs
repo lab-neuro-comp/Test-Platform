@@ -5,6 +5,7 @@ using System.IO;
 using System.Drawing;
 using TestPlatform.Controllers;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TestPlatform.Views
 {
@@ -42,9 +43,11 @@ namespace TestPlatform.Views
             beepingCheckbox.Checked = editProgram.IsBeeping;
             beepDuration.Value = editProgram.BeepDuration;
             stimulusDistance.Value = editProgram.StimulusDistance;
+            stimuluSize.Value = editProgram.StimuluSize;
 
             stimulusColor.Text = editProgram.StimulusColor;
             stimulusColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.StimulusColor);
+            editProgramShapes(editProgram);
 
             if (editProgram.WordsListFile.ToLower() == "false")
             {
@@ -161,6 +164,37 @@ namespace TestPlatform.Views
 
         }
         
+
+        // preparing shapes checkbox according to shapes in the program that will be edited
+        private void editProgramShapes(ReactionProgram editProgram)
+        {
+            List<string> shapes = editProgram.StimuluShape.Split(',').ToList();
+            foreach (string shape in shapes)
+            {
+                switch (shape)
+                {
+                    case "fullSquare":
+                        fullSquareCheckBox.Checked = true;
+                        break;
+                    case "fullCircle":
+                        fullCircleCheckBox.Checked = true;
+                        break;
+                    case "fullTriangle":
+                        fullTriangleCheckBox.Checked = true;
+                        break;
+                    case "square":
+                        squareCheckBox.Checked = true;
+                        break;
+                    case "circle":
+                        circleCheckBox.Checked = true;
+                        break;
+                    case "triangle":
+                        triangleCheckBox.Checked = true;
+                        break;
+                }
+            }
+
+        }
 
         protected override void OnLoad(EventArgs e)
         {

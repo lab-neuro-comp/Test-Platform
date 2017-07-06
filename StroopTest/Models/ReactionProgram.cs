@@ -17,7 +17,7 @@ namespace TestPlatform.Models
         private Boolean beepingRandom; // [19]
         private Int32 beepDuration; // [10]
         private String stimulusColor; // [11]
-        private String stimuluShape;
+        private String stimuluShape; // keeps a list of shapes in this program, which one separated by a comma (",")
         private Int32 numberPositions; // [20]
         private String responseType; // [21]
 

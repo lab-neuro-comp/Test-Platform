@@ -203,8 +203,6 @@
             // fullSquareCheckBox
             // 
             this.fullSquareCheckBox.AutoSize = true;
-            this.fullSquareCheckBox.Checked = true;
-            this.fullSquareCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.fullSquareCheckBox.Image = global::TestPlatform.Properties.Resources.fullSquare;
             this.fullSquareCheckBox.Location = new System.Drawing.Point(3, 3);
             this.fullSquareCheckBox.Name = "fullSquareCheckBox";

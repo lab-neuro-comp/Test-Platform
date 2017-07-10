@@ -71,8 +71,6 @@
             // 
             // fileNameBox
             // 
-            this.fileNameBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.fileNameBox.FormattingEnabled = true;
             this.fileNameBox.Location = new System.Drawing.Point(142, 62);
             this.fileNameBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

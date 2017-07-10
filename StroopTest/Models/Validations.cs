@@ -64,6 +64,13 @@ namespace TestPlatform.Models
             return false;
         }
 
+        public static bool isExperimentIntervalTimeValid(int value)
+        {
+            if (value >= 0)
+                return true;
+            return false;
+        }
+
         public static bool isListValid (string value)
         {
             if (value.Length > 4 && value.Substring(value.Length - 4) == ".lst" || value.ToLower() == "false")

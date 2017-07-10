@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.experimentConfigPanel = new System.Windows.Forms.Panel();
             this.helpButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rndIntervalCheck = new System.Windows.Forms.CheckBox();
-            this.rndIntervalLabel = new System.Windows.Forms.Label();
             this.intervalTimeLabel = new System.Windows.Forms.Label();
             this.intervalTime = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -47,8 +45,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.beepingCheckbox = new System.Windows.Forms.CheckBox();
-            this.numExpoLabel = new System.Windows.Forms.Label();
-            this.numExpo = new System.Windows.Forms.NumericUpDown();
             this.instructionsLabel = new System.Windows.Forms.Label();
             this.experimentNameTextBox = new System.Windows.Forms.TextBox();
             this.experimentNameLabel = new System.Windows.Forms.Label();
@@ -60,7 +56,6 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.programDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
             this.SuspendLayout();
             // 
             // experimentConfigPanel
@@ -95,45 +90,21 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.rndIntervalCheck);
-            this.groupBox3.Controls.Add(this.rndIntervalLabel);
             this.groupBox3.Controls.Add(this.intervalTimeLabel);
             this.groupBox3.Controls.Add(this.intervalTime);
             this.groupBox3.Location = new System.Drawing.Point(404, 40);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(269, 91);
+            this.groupBox3.Size = new System.Drawing.Size(269, 59);
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tempo";
             // 
-            // rndIntervalCheck
-            // 
-            this.rndIntervalCheck.AutoSize = true;
-            this.rndIntervalCheck.Checked = true;
-            this.rndIntervalCheck.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.rndIntervalCheck.Location = new System.Drawing.Point(224, 57);
-            this.rndIntervalCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rndIntervalCheck.Name = "rndIntervalCheck";
-            this.rndIntervalCheck.Size = new System.Drawing.Size(18, 17);
-            this.rndIntervalCheck.TabIndex = 62;
-            this.rndIntervalCheck.UseVisualStyleBackColor = true;
-            // 
-            // rndIntervalLabel
-            // 
-            this.rndIntervalLabel.AutoSize = true;
-            this.rndIntervalLabel.Location = new System.Drawing.Point(24, 57);
-            this.rndIntervalLabel.Name = "rndIntervalLabel";
-            this.rndIntervalLabel.Size = new System.Drawing.Size(189, 17);
-            this.rndIntervalLabel.TabIndex = 63;
-            this.rndIntervalLabel.Text = "Tempo de Intervalo Variável:";
-            this.rndIntervalLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // intervalTimeLabel
             // 
             this.intervalTimeLabel.AutoSize = true;
-            this.intervalTimeLabel.Location = new System.Drawing.Point(56, 25);
+            this.intervalTimeLabel.Location = new System.Drawing.Point(15, 22);
             this.intervalTimeLabel.Name = "intervalTimeLabel";
             this.intervalTimeLabel.Size = new System.Drawing.Size(98, 17);
             this.intervalTimeLabel.TabIndex = 38;
@@ -147,7 +118,7 @@
             0,
             0,
             0});
-            this.intervalTime.Location = new System.Drawing.Point(156, 22);
+            this.intervalTime.Location = new System.Drawing.Point(142, 22);
             this.intervalTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.intervalTime.Maximum = new decimal(new int[] {
             10000,
@@ -164,11 +135,11 @@
             this.groupBox2.Controls.Add(this.deleteItemLabel);
             this.groupBox2.Controls.Add(this.programDataGridView);
             this.groupBox2.Controls.Add(this.programSelectButton);
-            this.groupBox2.Location = new System.Drawing.Point(19, 182);
+            this.groupBox2.Location = new System.Drawing.Point(19, 103);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(654, 313);
+            this.groupBox2.Size = new System.Drawing.Size(654, 392);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Programas";
@@ -206,14 +177,14 @@
             this.programDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.programName,
             this.typePrograma});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.programDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.programDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.programDataGridView.Location = new System.Drawing.Point(112, 51);
             this.programDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.programDataGridView.Name = "programDataGridView";
@@ -221,7 +192,7 @@
             this.programDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.programDataGridView.RowHeadersVisible = false;
             this.programDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.programDataGridView.Size = new System.Drawing.Size(520, 239);
+            this.programDataGridView.Size = new System.Drawing.Size(520, 335);
             this.programDataGridView.TabIndex = 1;
             // 
             // programName
@@ -255,25 +226,23 @@
             // 
             this.instructionsBox.AcceptsReturn = true;
             this.instructionsBox.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.instructionsBox.Location = new System.Drawing.Point(13, 527);
+            this.instructionsBox.Location = new System.Drawing.Point(16, 527);
             this.instructionsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.instructionsBox.Multiline = true;
             this.instructionsBox.Name = "instructionsBox";
             this.instructionsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.instructionsBox.Size = new System.Drawing.Size(659, 136);
+            this.instructionsBox.Size = new System.Drawing.Size(657, 136);
             this.instructionsBox.TabIndex = 70;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.beepingCheckbox);
-            this.groupBox1.Controls.Add(this.numExpoLabel);
-            this.groupBox1.Controls.Add(this.numExpo);
-            this.groupBox1.Location = new System.Drawing.Point(13, 41);
+            this.groupBox1.Location = new System.Drawing.Point(19, 41);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(367, 137);
+            this.groupBox1.Size = new System.Drawing.Size(367, 58);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Exposição";
@@ -298,38 +267,6 @@
             this.beepingCheckbox.TabIndex = 160;
             this.beepingCheckbox.TabStop = false;
             this.beepingCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // numExpoLabel
-            // 
-            this.numExpoLabel.AutoSize = true;
-            this.numExpoLabel.Location = new System.Drawing.Point(12, 58);
-            this.numExpoLabel.Name = "numExpoLabel";
-            this.numExpoLabel.Size = new System.Drawing.Size(155, 17);
-            this.numExpoLabel.TabIndex = 35;
-            this.numExpoLabel.Text = "Número de Programas:";
-            // 
-            // numExpo
-            // 
-            this.numExpo.Location = new System.Drawing.Point(173, 58);
-            this.numExpo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.numExpo.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.numExpo.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numExpo.Name = "numExpo";
-            this.numExpo.Size = new System.Drawing.Size(80, 22);
-            this.numExpo.TabIndex = 11;
-            this.numExpo.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // instructionsLabel
             // 
@@ -361,7 +298,6 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -376,7 +312,6 @@
             // 
             // saveButton
             // 
-            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.saveButton.Location = new System.Drawing.Point(615, 744);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
@@ -385,11 +320,13 @@
             this.saveButton.TabIndex = 86;
             this.saveButton.Text = "salvar";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // ExperimentConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.CausesValidation = false;
             this.Controls.Add(this.cancelButton);
@@ -407,7 +344,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.programDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -417,8 +353,6 @@
         private System.Windows.Forms.Panel experimentConfigPanel;
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckBox rndIntervalCheck;
-        private System.Windows.Forms.Label rndIntervalLabel;
         private System.Windows.Forms.Label intervalTimeLabel;
         private System.Windows.Forms.NumericUpDown intervalTime;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -430,8 +364,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox beepingCheckbox;
-        private System.Windows.Forms.Label numExpoLabel;
-        private System.Windows.Forms.NumericUpDown numExpo;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.DataGridView programDataGridView;

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.reactionConfigPanel = new System.Windows.Forms.Panel();
             this.userResponse = new System.Windows.Forms.GroupBox();
             this.responseTypeBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -98,7 +98,7 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel1.SuspendLayout();
+            this.reactionConfigPanel.SuspendLayout();
             this.userResponse.SuspendLayout();
             this.shapesGroupBox.SuspendLayout();
             this.shapeRadioPanel.SuspendLayout();
@@ -116,27 +116,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // reactionConfigPanel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.userResponse);
-            this.panel1.Controls.Add(this.shapesGroupBox);
-            this.panel1.Controls.Add(this.helpButton);
-            this.panel1.Controls.Add(this.groupBox6);
-            this.panel1.Controls.Add(this.groupBox5);
-            this.panel1.Controls.Add(this.groupBox3);
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.instructionsBox);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.instructionsLabel);
-            this.panel1.Controls.Add(this.prgNameTextBox);
-            this.panel1.Controls.Add(this.prgNameLabel);
-            this.panel1.Location = new System.Drawing.Point(16, 33);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(693, 708);
-            this.panel1.TabIndex = 1;
+            this.reactionConfigPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.reactionConfigPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.reactionConfigPanel.Controls.Add(this.userResponse);
+            this.reactionConfigPanel.Controls.Add(this.shapesGroupBox);
+            this.reactionConfigPanel.Controls.Add(this.helpButton);
+            this.reactionConfigPanel.Controls.Add(this.groupBox6);
+            this.reactionConfigPanel.Controls.Add(this.groupBox5);
+            this.reactionConfigPanel.Controls.Add(this.groupBox3);
+            this.reactionConfigPanel.Controls.Add(this.groupBox2);
+            this.reactionConfigPanel.Controls.Add(this.instructionsBox);
+            this.reactionConfigPanel.Controls.Add(this.groupBox1);
+            this.reactionConfigPanel.Controls.Add(this.instructionsLabel);
+            this.reactionConfigPanel.Controls.Add(this.prgNameTextBox);
+            this.reactionConfigPanel.Controls.Add(this.prgNameLabel);
+            this.reactionConfigPanel.Location = new System.Drawing.Point(16, 33);
+            this.reactionConfigPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.reactionConfigPanel.Name = "reactionConfigPanel";
+            this.reactionConfigPanel.Size = new System.Drawing.Size(693, 708);
+            this.reactionConfigPanel.TabIndex = 1;
             // 
             // userResponse
             // 
@@ -962,7 +962,6 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -977,7 +976,6 @@
             // 
             // saveButton
             // 
-            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.saveButton.Location = new System.Drawing.Point(621, 747);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
@@ -1000,11 +998,11 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.reactionConfigPanel);
             this.Name = "FormTRConfig";
             this.Size = new System.Drawing.Size(725, 785);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.reactionConfigPanel.ResumeLayout(false);
+            this.reactionConfigPanel.PerformLayout();
             this.userResponse.ResumeLayout(false);
             this.userResponse.PerformLayout();
             this.shapesGroupBox.ResumeLayout(false);
@@ -1033,7 +1031,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel reactionConfigPanel;
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Panel panel3;

@@ -1,31 +1,64 @@
 ﻿
 using System.Runtime.InteropServices;
+using CSCore.SoundIn;
+using CSCore.Codecs.WAV;
+using CSCore.CoreAudioAPI;
+using System;
 
 namespace TestPlatform.Models
 {
     class Audio
     {
+        WasapiCapture capture;
+        WaveWriter writer;
+
 
         [DllImport("winmm.dll")]
         private static extern int mciSendString(string MciComando, string MciRetorno, int MciRetornoLeng, int CallBack);
-
-        public bool startRecording()
+        
+        private void selectDevice()
         {
-            mciSendString("open new type waveaudio alias audio", null, 0, 0);
-            mciSendString("record audio", null, 0, 0);
+            
+            using (MMDeviceEnumerator enumerator = new MMDeviceEnumerator())
+            {
+                using (MMDeviceCollection devices = enumerator.EnumAudioEndpoints(DataFlow.Capture, DeviceState.Active))
+                {
+                    MMDevice device = (MMDevice)devices[0];
+                    Console.WriteLine(devices[0]);
+                    capture = new WasapiCapture();
+                    capture.Device = device;
+
+                    capture.Initialize();
+                    
+                }
+            }
+        }
+
+        public bool startRecording(string path)
+        {
+            selectDevice();
+            writer = new WaveWriter(path, capture.WaveFormat);
+            capture.DataAvailable += (s, e) =>
+            {
+                //save the recorded audio
+                writer.Write(e.Data, e.Offset, e.ByteCount);
+            };
+            capture.Start();
             return true;
         }
         public bool pauseRecording()
         {
-            mciSendString("pause audio", null, 0, 0);
+            capture.Stop();
             return true;
         }
-        public bool saveRecording(string path)
-        {
-            mciSendString("save audio " + path, null, 0, 0);
-            mciSendString("close audio", null, 0, 0);
+
+        public bool saveRecording()
+        {            
+            capture.Stop();
+            writer.Dispose();
             return true;
         }
+
         public void playAudio(string file)
         {
             mciSendString("play " + file, null, 0, 0);

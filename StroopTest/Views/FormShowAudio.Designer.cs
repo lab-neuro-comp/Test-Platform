@@ -32,6 +32,8 @@
             this.moveDownButton = new System.Windows.Forms.Button();
             this.moveUpButton = new System.Windows.Forms.Button();
             this.audioPathDataGridView = new System.Windows.Forms.DataGridView();
+            this.fileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.closeButton = new System.Windows.Forms.Button();
             this.playAudioButton = new System.Windows.Forms.Button();
             this.numberFilesLabel = new System.Windows.Forms.Label();
@@ -45,10 +47,11 @@
             this.recordingLabel = new System.Windows.Forms.Label();
             this.stopRecordingButton = new System.Windows.Forms.Button();
             this.recordButton = new System.Windows.Forms.Button();
-            this.fileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.filePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.directoryLabel = new System.Windows.Forms.Label();
+            this.selectedDirectory = new System.Windows.Forms.Label();
+            this.recordButton1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.audioPathDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +112,23 @@
             this.audioPathDataGridView.TabIndex = 44;
             this.audioPathDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.audioPathDataGridView_CellContentDoubleClick);
             this.audioPathDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.audioPathDataGridView_KeyDown);
+            // 
+            // fileNameColumn
+            // 
+            this.fileNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.fileNameColumn.FillWeight = 187.013F;
+            this.fileNameColumn.HeaderText = "Nome do Arquivo";
+            this.fileNameColumn.Name = "fileNameColumn";
+            this.fileNameColumn.ReadOnly = true;
+            this.fileNameColumn.Width = 200;
+            // 
+            // filePathColumn
+            // 
+            this.filePathColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.filePathColumn.FillWeight = 12.98701F;
+            this.filePathColumn.HeaderText = "Localização";
+            this.filePathColumn.Name = "filePathColumn";
+            this.filePathColumn.ReadOnly = true;
             // 
             // closeButton
             // 
@@ -223,7 +243,7 @@
             // 
             this.recordingLabel.AutoSize = true;
             this.recordingLabel.ForeColor = System.Drawing.Color.Red;
-            this.recordingLabel.Location = new System.Drawing.Point(287, 63);
+            this.recordingLabel.Location = new System.Drawing.Point(13, 54);
             this.recordingLabel.Name = "recordingLabel";
             this.recordingLabel.Size = new System.Drawing.Size(71, 17);
             this.recordingLabel.TabIndex = 89;
@@ -233,12 +253,12 @@
             // 
             this.stopRecordingButton.FlatAppearance.BorderSize = 0;
             this.stopRecordingButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.stopRecordingButton.Location = new System.Drawing.Point(398, 91);
+            this.stopRecordingButton.Location = new System.Drawing.Point(366, 88);
             this.stopRecordingButton.Margin = new System.Windows.Forms.Padding(4);
             this.stopRecordingButton.Name = "stopRecordingButton";
             this.stopRecordingButton.Size = new System.Drawing.Size(144, 28);
             this.stopRecordingButton.TabIndex = 88;
-            this.stopRecordingButton.Text = "Parar gravação";
+            this.stopRecordingButton.Text = "Salvar gravação";
             this.stopRecordingButton.UseVisualStyleBackColor = true;
             this.stopRecordingButton.Click += new System.EventHandler(this.stopRecordingButton_Click);
             // 
@@ -246,39 +266,27 @@
             // 
             this.recordButton.FlatAppearance.BorderSize = 0;
             this.recordButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.recordButton.Location = new System.Drawing.Point(237, 91);
+            this.recordButton.Location = new System.Drawing.Point(237, 124);
             this.recordButton.Margin = new System.Windows.Forms.Padding(4);
             this.recordButton.Name = "recordButton";
-            this.recordButton.Size = new System.Drawing.Size(121, 28);
+            this.recordButton.Size = new System.Drawing.Size(153, 28);
             this.recordButton.TabIndex = 87;
-            this.recordButton.Text = "Gravar Aúdio";
+            this.recordButton.Text = "Selecionar Pasta";
             this.recordButton.UseVisualStyleBackColor = true;
             this.recordButton.Click += new System.EventHandler(this.recordingButton_Click);
-            // 
-            // fileNameColumn
-            // 
-            this.fileNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.fileNameColumn.FillWeight = 187.013F;
-            this.fileNameColumn.HeaderText = "Nome do Arquivo";
-            this.fileNameColumn.Name = "fileNameColumn";
-            this.fileNameColumn.ReadOnly = true;
-            this.fileNameColumn.Width = 200;
-            // 
-            // filePathColumn
-            // 
-            this.filePathColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.filePathColumn.FillWeight = 12.98701F;
-            this.filePathColumn.HeaderText = "Localização";
-            this.filePathColumn.Name = "filePathColumn";
-            this.filePathColumn.ReadOnly = true;
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.recordButton1);
+            this.panel1.Controls.Add(this.selectedDirectory);
+            this.panel1.Controls.Add(this.directoryLabel);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.stopRecordingButton);
+            this.panel1.Controls.Add(this.recordingLabel);
             this.panel1.Location = new System.Drawing.Point(220, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(341, 99);
+            this.panel1.Size = new System.Drawing.Size(652, 129);
             this.panel1.TabIndex = 91;
             // 
             // label1
@@ -290,13 +298,42 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Novo Aúdio";
             // 
+            // directoryLabel
+            // 
+            this.directoryLabel.AutoSize = true;
+            this.directoryLabel.Location = new System.Drawing.Point(114, 0);
+            this.directoryLabel.Name = "directoryLabel";
+            this.directoryLabel.Size = new System.Drawing.Size(148, 17);
+            this.directoryLabel.TabIndex = 90;
+            this.directoryLabel.Text = "Diretório Selecionado:";
+            // 
+            // selectedDirectory
+            // 
+            this.selectedDirectory.AutoSize = true;
+            this.selectedDirectory.Location = new System.Drawing.Point(271, 0);
+            this.selectedDirectory.Name = "selectedDirectory";
+            this.selectedDirectory.Size = new System.Drawing.Size(61, 17);
+            this.selectedDirectory.TabIndex = 91;
+            this.selectedDirectory.Text = "Nenhum";
+            // 
+            // recordButton1
+            // 
+            this.recordButton1.FlatAppearance.BorderSize = 0;
+            this.recordButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.recordButton1.Location = new System.Drawing.Point(185, 88);
+            this.recordButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.recordButton1.Name = "recordButton1";
+            this.recordButton1.Size = new System.Drawing.Size(153, 28);
+            this.recordButton1.TabIndex = 92;
+            this.recordButton1.Text = "Gravar Aúdio";
+            this.recordButton1.UseVisualStyleBackColor = true;
+            this.recordButton1.Click += new System.EventHandler(this.recordButton1_Click);
+            // 
             // FormShowAudio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.currentElapsedTimeDisplay);
-            this.Controls.Add(this.recordingLabel);
-            this.Controls.Add(this.stopRecordingButton);
             this.Controls.Add(this.recordButton);
             this.Controls.Add(this.currenFolderLabel);
             this.Controls.Add(this.directoryButton);
@@ -345,5 +382,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn filePathColumn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label selectedDirectory;
+        private System.Windows.Forms.Label directoryLabel;
+        private System.Windows.Forms.Button recordButton1;
     }
 }

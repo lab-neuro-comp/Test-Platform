@@ -20,6 +20,7 @@ namespace TestPlatform
         private DateTime startTime = DateTime.MinValue;
         private TimeSpan currentElapsedTime = TimeSpan.Zero;
         private bool timerRunning = false;
+        private string pathText = null;
 
         public FormShowAudio(string dataFolderPath)
         {
@@ -96,32 +97,28 @@ namespace TestPlatform
         }
         private void recordingButton_Click(object sender, EventArgs e)
         {
-            recordingLabel.Visible = true;
-            currentElapsedTimeDisplay.Visible = true;
-            audioRecorder.startRecording();
-            if (!timerRunning)
-            {
-                startTime = DateTime.Now;
+            
 
-                timer.Start();
-                timerRunning = true;
-            }
-        }
-
-        private void stopRecordingButton_Click(object sender, EventArgs e)
-        {
-            audioRecorder.pauseRecording();
-            recordingLabel.Visible = false;
-            timer.Stop();
-            timerRunning = false;
-            currentElapsedTime = TimeSpan.Zero;
             SaveFileDialog save = new SaveFileDialog();
             save.Filter = "WAVE|*.wav";
             if (save.ShowDialog() == DialogResult.OK)
             {
-                audioRecorder.saveRecording(save.FileName);
-                loadingAudioFilesToDataGrid();
+                selectedDirectory.Text = save.FileName;
             }
+            
+            
+        }
+
+        private void stopRecordingButton_Click(object sender, EventArgs e)
+        {
+            recordingLabel.Visible = false;
+            timer.Stop();
+            timerRunning = false;
+            currentElapsedTime = TimeSpan.Zero;
+            audioRecorder.saveRecording();
+            
+            loadingAudioFilesToDataGrid();
+            
         }
 
 
@@ -173,6 +170,28 @@ namespace TestPlatform
                 {
                     /*do nothing*/
                 }
+            }
+            
+        }
+
+        private void recordButton1_Click(object sender, EventArgs e)
+        {
+            if(selectedDirectory.Text != "Nenhum")
+            {
+                audioRecorder.startRecording(selectedDirectory.Text);
+                recordingLabel.Visible = true;
+                currentElapsedTimeDisplay.Visible = true;
+                if (!timerRunning)
+                {
+                    startTime = DateTime.Now;
+
+                    timer.Start();
+                    timerRunning = true;
+                }
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("É necessário selecionar o local do arquivo antes de gravar.", "", MessageBoxButtons.OK);
             }
             
         }

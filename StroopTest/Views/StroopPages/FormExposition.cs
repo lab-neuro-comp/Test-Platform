@@ -62,7 +62,7 @@ namespace TestPlatform
             {
                 MessageBox.Show("A exposição foi cancelada.");
                 if(programInUse.AudioCapture)
-                    audioControl.saveRecording(outputDataPath + "/audio_" + executingTest.ParticipantName + "_" + programInUse.ProgramName + "_" + now + ".wav");
+                    audioControl.saveRecording();
                 this.Close();
                 return true;
             }
@@ -623,7 +623,7 @@ namespace TestPlatform
         // beginAudio
         private void startRecordingAudio()
         {
-            audioControl.startRecording();
+            audioControl.startRecording(outputDataPath + "/audio_" + executingTest.ParticipantName + "_" + programInUse.ProgramName + "_" + now + ".wav");
             
         } // inicia gravação de áudio
 
@@ -631,8 +631,7 @@ namespace TestPlatform
         {
             string now = executingTest.InitialDate.Day + "." + executingTest.InitialDate.Month + "_" + hour + "h" + 
                 minutes + "." + seconds;
-            audioControl.saveRecording(outputDataPath + "/audio_" + executingTest.ParticipantName + "_" + 
-                programInUse.ProgramName + "_" + now + ".wav");
+            audioControl.saveRecording();
         } // para gravação de áudio
 
         
@@ -700,8 +699,7 @@ namespace TestPlatform
         
         private void FormExposition_FormClosed(object sender, FormClosedEventArgs e)
         {
-            audioControl.saveRecording(outputDataPath + "/audio_" + executingTest.ParticipantName + "_" + programInUse.ProgramName 
-                                        + "_" + now + ".wav");
+            audioControl.saveRecording();
             if(cts != null)
                 cts.Cancel();
         }

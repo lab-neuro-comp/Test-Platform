@@ -70,7 +70,7 @@
             this.experimentConfigPanel.Controls.Add(this.instructionsLabel);
             this.experimentConfigPanel.Controls.Add(this.experimentNameTextBox);
             this.experimentConfigPanel.Controls.Add(this.experimentNameLabel);
-            this.experimentConfigPanel.Location = new System.Drawing.Point(22, 54);
+            this.experimentConfigPanel.Location = new System.Drawing.Point(22, 12);
             this.experimentConfigPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.experimentConfigPanel.Name = "experimentConfigPanel";
             this.experimentConfigPanel.Size = new System.Drawing.Size(693, 672);
@@ -233,6 +233,7 @@
             this.instructionsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.instructionsBox.Size = new System.Drawing.Size(657, 136);
             this.instructionsBox.TabIndex = 70;
+            this.instructionsBox.Text = "Escreva cada uma das intruções em linhas separadas.";
             // 
             // groupBox1
             // 
@@ -298,10 +299,11 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.AutoSize = true;
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(22, 744);
+            this.cancelButton.Location = new System.Drawing.Point(22, 702);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 28);
@@ -312,8 +314,10 @@
             // 
             // saveButton
             // 
+            this.saveButton.AutoSize = true;
+            this.saveButton.Enabled = false;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(615, 744);
+            this.saveButton.Location = new System.Drawing.Point(615, 702);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 28);
@@ -345,6 +349,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

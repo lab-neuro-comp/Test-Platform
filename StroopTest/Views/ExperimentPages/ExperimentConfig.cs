@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using TestPlatform.Models;
 
 namespace TestPlatform.Views.ExperimentPages
 {
@@ -12,7 +13,7 @@ namespace TestPlatform.Views.ExperimentPages
 
         public ExperimentConfig()
         {
-            Location = new Point(500, 38);
+            this.Dock = DockStyle.Fill;
             InitializeComponent();
         }
 
@@ -85,7 +86,22 @@ namespace TestPlatform.Views.ExperimentPages
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            Experiment savingExperiment = new Experiment();
+            savingExperiment.Name = experimentNameTextBox.Text;
+            savingExperiment.IsOrderRandom = beepingCheckbox.Checked;
+            savingExperiment.IntervalTime = Convert.ToInt32(intervalTime.Value);
 
+            if (instructionsBox.Lines.Length > 0) // lê instrução se houver
+            {
+                for (int i = 0; i < instructionsBox.Lines.Length; i++)
+                {
+                    savingExperiment.InstructionText.Add(instructionsBox.Lines[i]);
+                }
+            }
+            else
+            {
+                savingExperiment.InstructionText = null;
+            }
         }
     }
 }

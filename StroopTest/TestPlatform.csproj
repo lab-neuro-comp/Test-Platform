@@ -136,6 +136,7 @@
     <Compile Include="Views\FormDefineTest.Designer.cs">
       <DependentUpon>FormDefineTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Global.cs" />
     <Compile Include="Views\ReactionPages\FormReactExposition.cs">
       <SubType>Form</SubType>
     </Compile>

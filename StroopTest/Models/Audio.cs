@@ -16,27 +16,11 @@ namespace TestPlatform.Models
         [DllImport("winmm.dll")]
         private static extern int mciSendString(string MciComando, string MciRetorno, int MciRetornoLeng, int CallBack);
         
-        private void selectDevice()
-        {
-            
-            using (MMDeviceEnumerator enumerator = new MMDeviceEnumerator())
-            {
-                using (MMDeviceCollection devices = enumerator.EnumAudioEndpoints(DataFlow.Capture, DeviceState.Active))
-                {
-                    MMDevice device = (MMDevice)devices[0];
-                    Console.WriteLine(devices[0]);
-                    capture = new WasapiCapture();
-                    capture.Device = device;
-
-                    capture.Initialize();
-                    
-                }
-            }
-        }
 
         public bool startRecording(string path)
         {
-            selectDevice();
+            capture = new WasapiCapture();
+            capture.Initialize();
             writer = new WaveWriter(path, capture.WaveFormat);
             capture.DataAvailable += (s, e) =>
             {

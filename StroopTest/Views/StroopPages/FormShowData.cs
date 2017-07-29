@@ -19,18 +19,17 @@ namespace TestPlatform
     public partial class FormShowData : UserControl
     {
         private StroopProgram program = new StroopProgram();
-        private string path;
+        private string path = Global.stroopTestFilesPath + Global.resultsFolderName;
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string instructionsText = HelpData.ShowDataInstructions;
         private SoundPlayer player = new SoundPlayer();
 
-        public FormShowData(string dataFolderPath)
+        public FormShowData()
         {
             InitializeComponent();
 
             this.Dock = DockStyle.Fill;
             string[] filePaths = null;
-            path = dataFolderPath;
 
             string[] headers = StroopTest.HeaderOutputFileText.Split('\t');
             foreach (var columnName in headers)
@@ -38,7 +37,7 @@ namespace TestPlatform
                 dataGridView1.Columns.Add(columnName, columnName); // Configura Cabeçalho na tabela
             }
 
-            if (Directory.Exists(dataFolderPath)) // Preenche comboBox com arquivos do tipo .txt no diretório dado
+            if (Directory.Exists(path)) // Preenche comboBox com arquivos do tipo .txt no diretório dado
             {
                 filePaths = Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
                 for (int i = 0; i < filePaths.Length; i++)
@@ -48,7 +47,7 @@ namespace TestPlatform
             }
             else
             {
-                Console.WriteLine("{0} é um caminho inválido!.", dataFolderPath);
+                Console.WriteLine("{0} é um caminho inválido!.", path);
             }
         }
         

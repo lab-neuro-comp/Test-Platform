@@ -15,48 +15,6 @@ namespace TestPlatform.Views.SidebarUserControls
 {
     public partial class ResultsUserControl : DefaultUserControl
     {
-        private string testFilesPath;
-        private string stroopResultsPath;
-        private string reactionResultsPath;
-
-        public string TestFilesPath
-        {
-            get
-            {
-                return testFilesPath;
-            }
-
-            set
-            {
-                testFilesPath = value;
-            }
-        }
-
-        public string StroopResultsPath
-        {
-            get
-            {
-                return stroopResultsPath;
-            }
-
-            set
-            {
-                stroopResultsPath = value;
-            }
-        }
-
-        public string ReactionResultsPath
-        {
-            get
-            {
-                return reactionResultsPath;
-            }
-
-            set
-            {
-                reactionResultsPath = value;
-            }
-        }
 
         public ResultsUserControl()
         {
@@ -69,7 +27,7 @@ namespace TestPlatform.Views.SidebarUserControls
             FormShowData showData;
             try
             {
-                showData = new FormShowData(TestFilesPath + StroopResultsPath);
+                showData = new FormShowData();
                 Global.GlobalFormMain._contentPanel.Controls.Add(showData);
                 StroopButton.Checked = false;
             }
@@ -81,7 +39,7 @@ namespace TestPlatform.Views.SidebarUserControls
             ReactionResultUserControl showData;
             try
             {
-                showData = new ReactionResultUserControl(TestFilesPath + ReactionResultsPath);
+                showData = new ReactionResultUserControl();
                 Global.GlobalFormMain._contentPanel.Controls.Add(showData);
                 reactionButton.Checked = false;
             }

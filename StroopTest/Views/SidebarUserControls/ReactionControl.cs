@@ -1,6 +1,4 @@
 ﻿
-using TestPlatform;
-using TestPlatform.Views;
 using System;
 using System.Windows.Forms;
 
@@ -8,20 +6,10 @@ namespace TestPlatform.Views.SidebarUserControls
 {
     public partial class ReactionControl : DefaultUserControl
     {
-        string testFilesPath;
         public ReactionControl()
         {
             this.Dock = DockStyle.Fill;
             InitializeComponent();
-        }
-
-
-        public string TestFilesPath
-        {
-            set
-            {
-                testFilesPath = value;
-            }
         }
 
         private void newReactButton_Click(object sender, EventArgs e)
@@ -31,7 +19,6 @@ namespace TestPlatform.Views.SidebarUserControls
                 if (newReactButton.Checked)
                 {
                     FormTRConfig configureProgram = new FormTRConfig("false");
-                    configureProgram.Path = testFilesPath;
                     Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
                     newReactButton.Checked = false;
                 }
@@ -49,13 +36,12 @@ namespace TestPlatform.Views.SidebarUserControls
 
                 try
                 {
-                    defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "ReactionTestFiles/prg/", "prg", "program", false);
+                    defineProgram = new FormDefine("Editar Programa: ", Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false);
                     result = defineProgram.ShowDialog();
                     if (result == DialogResult.OK)
                     {
                         editProgramName = defineProgram.ReturnValue;
                         FormTRConfig configureProgram = new FormTRConfig(editProgramName);
-                        configureProgram.Path = testFilesPath;
                         configureProgram.PrgName = editProgramName;
                         Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
                         editReactButton.Checked = false;

@@ -11,7 +11,7 @@ namespace TestPlatform.Views
 {
     public partial class FormTRConfig : UserControl
     {
-        private String path;
+        private String path = Global.reactionTestFilesPath;
         private String instructionBoxText = "Escreva cada uma das intruções em linhas separadas.";
         private String editPrgName = "false";
         private String prgName = "false";
@@ -34,7 +34,7 @@ namespace TestPlatform.Views
         private void editProgram()
         {
             ReactionProgram editProgram = new ReactionProgram();
-            editProgram.readProgramFile(path + "TestFiles/ReactionTestFiles/prg/" + editPrgName + ".prg");
+            editProgram.readProgramFile(path + Global.programFolderName + editPrgName + ".prg");
 
             prgNameTextBox.Text = editProgram.ProgramName;
             numExpo.Value = editProgram.NumExpositions;
@@ -194,30 +194,7 @@ namespace TestPlatform.Views
                 }
             }
 
-        }
-
-        protected override void OnLoad(EventArgs e)
-        {
-            
-            if (Validations.isEmpty(path))
-            {
-                throw new ArgumentException("O caminho do arquivo deve ser especificado.");
-            }
-            base.OnLoad(e);
-        }
-
-        public string Path
-        {
-            get
-            {
-                return path;
-            }
-
-            set
-            {
-                path = value;
-            }
-        }
+        }     
 
         public string PrgName
         {
@@ -354,7 +331,7 @@ namespace TestPlatform.Views
             
             try
             {
-                if (File.Exists(Path +"ReactionTestFiles/prg/" + prgNameTextBox.Text + ".prg"))
+                if (File.Exists(path + Global.programFolderName + prgNameTextBox.Text + ".prg"))
                 {
                     DialogResult dialogResult = MessageBox.Show("O programa já existe, deseja sobrescrevê-lo?", "", MessageBoxButtons.OKCancel);
                     if (dialogResult == DialogResult.Cancel)
@@ -362,7 +339,7 @@ namespace TestPlatform.Views
                         throw new Exception("O programa não será salvo!");
                     }
                 }
-                if (newProgram.saveProgramFile(Path, instructionsBox.Text))
+                if (newProgram.saveProgramFile(path + Global.programFolderName, instructionsBox.Text))
                 {
                     MessageBox.Show("O programa foi salvo com sucesso");
                 }
@@ -389,22 +366,22 @@ namespace TestPlatform.Views
 
         private void openWordsList_Click(object sender, EventArgs e)
         {
-            openWordListButton.Text = ListController.openListFile("_words", path);
+            openWordListButton.Text = ListController.openListFile("_words");
         }
 
         private void openColorsList_Click(object sender, EventArgs e)
         {
-            openColorListButton.Text = ListController.openListFile("_color", path);
+            openColorListButton.Text = ListController.openListFile("_color");
         }
 
         private void openImagesList_Click(object sender, EventArgs e)
         {
-            openImgListButton.Text = ListController.openListFile("_image", path);
+            openImgListButton.Text = ListController.openListFile("_image");
         }
 
         private void openAudioList_Click(object sender, EventArgs e)
         {
-            openAudioListButton.Text = ListController.openListFile("_audio", path);
+            openAudioListButton.Text = ListController.openListFile("_audio");
         }
 
         private void fixPointColorButton_Click(object sender, EventArgs e)

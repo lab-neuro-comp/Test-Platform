@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 using TestPlatform.Models;
 
@@ -7,9 +6,6 @@ namespace TestPlatform.Views.ExperimentPages
 {
     public partial class ExperimentConfig : UserControl
     {
-        private string path;
-        private static string stroopProgramPath = "StroopTestFiles/prg/";
-        private static string reactionProgramPath = "ReactionTestFiles/prg/";
 
         public ExperimentConfig()
         {
@@ -17,22 +13,9 @@ namespace TestPlatform.Views.ExperimentPages
             InitializeComponent();
         }
 
-        public string Path
-        {
-            get
-            {
-                return path;
-            }
-
-            set
-            {
-                path = value;
-            }
-        }
-
         private string[] defineTest()
         {
-            FormDefineTest defineTest = new FormDefineTest(path, stroopProgramPath, reactionProgramPath);
+            FormDefineTest defineTest = new FormDefineTest();
             try
             {
                 var result = defineTest.ShowDialog();

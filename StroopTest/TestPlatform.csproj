@@ -136,7 +136,7 @@
     <Compile Include="Views\FormDefineTest.Designer.cs">
       <DependentUpon>FormDefineTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Global.cs" />
+    <Compile Include="Models\Global.cs" />
     <Compile Include="Views\ReactionPages\FormReactExposition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,7 +263,7 @@
     <Compile Include="Views\ListsPages\FormWordColorDialog.Designer.cs">
       <DependentUpon>FormWordColorDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\HelpData.cs" />
+    <Compile Include="Models\HelpData.cs" />
     <Compile Include="MainClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

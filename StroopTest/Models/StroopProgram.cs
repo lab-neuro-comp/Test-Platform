@@ -454,7 +454,7 @@ namespace TestPlatform.Models
 
         public bool saveProgramFile(string path, string instructionBoxText)
         {
-            StreamWriter writer = new StreamWriter(path + "StroopTestFiles/prg/" + ProgramName + ".prg");
+            StreamWriter writer = new StreamWriter(path + ProgramName + ".prg");
             writer.WriteLine(data());
             if (InstructionText != null && InstructionText[0] != instructionBoxText)
             {

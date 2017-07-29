@@ -16,7 +16,7 @@ namespace TestPlatform
 {
     public partial class FormPrgConfig : UserControl
     {
-        private String path;
+        private String path = Global.stroopTestFilesPath + Global.programFolderName;
         private String instructionBoxText = "Escreva cada uma das intruções em linhas separadas.";
         private List<Button> subDirectionList = new List<Button>();
         private Int32 subDirectionNumber = 1;
@@ -25,23 +25,20 @@ namespace TestPlatform
         private String instructionsText = HelpData.ProgramConfigInstructions;
         private String prgName = "false";
 
-        public string Path
-        {
-            set
-            {
-                path = value;
-            }
-        }
-
         public string PrgName
         {
+            get
+            {
+                return prgName;
+            }
+
             set
             {
                 prgName = value;
             }
         }
 
-        public FormPrgConfig()
+        public FormPrgConfig(string programName)
         {
             InitializeComponent();
             chooseExpoType.SelectedIndex = 0;
@@ -55,26 +52,11 @@ namespace TestPlatform
 
             toolTipsConfig();
             this.Dock = DockStyle.Fill;
-            if (prgName != "false")
+            if (programName != "false")
             {
-                editPrgName = prgName;
+                editPrgName = programName;
                 editProgram();
             }
-        }
-
-
-        protected override void OnLoad(EventArgs e)
-        {
-
-            if (prgName != "false")
-            {
-                editPrgName = prgName;
-                editProgram();
-            }
-            if (Validations.isEmpty(path)){
-                throw new ArgumentException("O caminho do arquivo deve ser especificado.");
-            }
-            base.OnLoad(e);
         }
 
         private void toolTipsConfig()
@@ -249,22 +231,22 @@ namespace TestPlatform
 
         private void openWordsList_Click(object sender, EventArgs e)
         {
-            openWordListButton.Text = ListController.openListFile("_words", path);
+            openWordListButton.Text = ListController.openListFile("_words");
         }
 
         private void openColorsList_Click(object sender, EventArgs e)
         {
-            openColorListButton.Text = ListController.openListFile("_color", path);
+            openColorListButton.Text = ListController.openListFile("_color");
         }
 
         private void openImagesList_Click(object sender, EventArgs e)
         {
-            openImgListButton.Text = ListController.openListFile("_image", path);
+            openImgListButton.Text = ListController.openListFile("_image");
         }
 
         private void openAudioList_Click(object sender, EventArgs e)
         {
-            openAudioListButton.Text = ListController.openListFile("_audio", path);
+            openAudioListButton.Text = ListController.openListFile("_audio");
         }
         
         //BOX4
@@ -336,7 +318,7 @@ namespace TestPlatform
 
         private void openSubsList_Click(object sender, EventArgs e)
         {
-            openSubsListButton.Text = ListController.openListFile("_words", path);
+            openSubsListButton.Text = ListController.openListFile("_words");
         }
 
         private void subLocationDown_Click(object sender, EventArgs e)
@@ -553,7 +535,7 @@ namespace TestPlatform
 
             try
             {
-                program.readProgramFile(path + "StroopTestFiles/prg/" + editPrgName + ".prg");
+                program.readProgramFile(path + editPrgName + ".prg");
                 
                 prgNameTextBox.Text = program.ProgramName;
                 numExpo.Value = program.NumExpositions;
@@ -749,7 +731,7 @@ namespace TestPlatform
         
         private void saveProgramFile(StroopProgram newProgram)
         {
-            if (File.Exists(path + "StroopTestFiles/prg/" + prgNameTextBox.Text + ".prg"))
+            if (File.Exists(path + prgNameTextBox.Text + ".prg"))
             {
                 DialogResult dialogResult = MessageBox.Show("O programa já existe, deseja sobrescrevê-lo?", "", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.Cancel)

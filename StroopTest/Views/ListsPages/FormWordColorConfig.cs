@@ -15,17 +15,15 @@ namespace TestPlatform
     {
         List<string> wordsList = new List<string>(), colorsList = new List<string>();
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
-        private string path;
         private string instructionsText = HelpData.WordColorConfigInstructions;
 
-        public FormWordColorConfig(string listsPath, bool editFile)
+        public FormWordColorConfig(bool editFile)
         {
-            path = listsPath;
             InitializeComponent();
             this.Dock = DockStyle.Fill;
             if (editFile)
             {
-                openFilesForEdition(listsPath);
+                openFilesForEdition();
             }
             else
             {
@@ -37,11 +35,11 @@ namespace TestPlatform
         }
         
 
-        private void openFilesForEdition(string filePath)
+        private void openFilesForEdition()
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine("Listas de Palavras: ", filePath, "lst", "_words_color", true);
+                FormDefine defineFilePath = new FormDefine("Listas de Palavras: ", Global.testFilesPath + Global.listFolderName, "lst", "_words_color", true);
                 var result = defineFilePath.ShowDialog();
 
                 if (result == DialogResult.OK)
@@ -50,8 +48,8 @@ namespace TestPlatform
                     fileName = fileName.Remove(fileName.Length - 6);
                     listNameTextBox.Text = fileName;
 
-                    string wFile = filePath + "/" + fileName + "_words.lst";
-                    string cFile = filePath + "/" + fileName + "_color.lst";
+                    string wFile = Global.testFilesPath + Global.listFolderName + "/" + fileName + "_words.lst";
+                    string cFile = Global.testFilesPath + Global.listFolderName + "/" + fileName + "_color.lst";
                     
                     if (File.Exists(wFile))
                     {
@@ -303,14 +301,14 @@ namespace TestPlatform
             }
         }
 
-        private bool saveListFile(List<string> list, string filePath, string fileName, string fileType, string type)
+        private bool saveListFile(List<string> list, string fileName, string fileType, string type)
         {
             string file;
             StrList strlist;
             if ((MessageBox.Show("Deseja salvar o arquivo " + type + " '" + fileName + "' ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK))
             {
                 strlist = ListController.createList(list, fileName);
-                if (strlist.exists(filePath + fileName + fileType))
+                if (strlist.exists(Global.testFilesPath + Global.listFolderName  + fileName + fileType))
                 {
                     DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
                     if (dialogResult == DialogResult.Cancel)
@@ -319,7 +317,7 @@ namespace TestPlatform
                         return false;
                     }
                 }
-                file = filePath + fileName + fileType;
+                file = Global.testFilesPath + Global.listFolderName + fileName + fileType;
                 if (strlist.save(file))
                 {
                     MessageBox.Show("A lista '" + fileName + "' foi salva com sucesso");
@@ -341,9 +339,9 @@ namespace TestPlatform
             else
             {
                 if (wordsListCheckBox.Checked)
-                    valid = saveListFile(wordsList, path, listNameTextBox.Text, "_words" + ".lst", "de Palavras");
+                    valid = saveListFile(wordsList, listNameTextBox.Text, "_words" + ".lst", "de Palavras");
                 if (colorsListCheckBox.Checked)
-                    valid = saveListFile(colorsList, path, listNameTextBox.Text, "_color" + ".lst", "de Cores");                
+                    valid = saveListFile(colorsList, listNameTextBox.Text, "_color" + ".lst", "de Cores");                
                 if (valid)
                     this.Parent.Controls.Remove(this);
                 else

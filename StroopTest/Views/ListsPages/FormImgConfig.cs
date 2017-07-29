@@ -11,10 +11,9 @@ namespace TestPlatform
     public partial class FormImgConfig : UserControl
     {
         private ImageList imgsList = new ImageList();
-        private string path;
         private string instructionsText = HelpData.ImageConfigInstructions;
 
-        public FormImgConfig(string imagesFolderPath, string imgListEdit)
+        public FormImgConfig(string imgListEdit)
         {
             this.Dock = DockStyle.Fill;
             InitializeComponent();
@@ -22,7 +21,6 @@ namespace TestPlatform
             imgPathDataGridView.RowTemplate.MinimumHeight = 120;
             
             labelEmpty.Visible = false;
-            path = imagesFolderPath;
             if (imgListEdit != "false")
             {
                 openImgList();
@@ -33,7 +31,7 @@ namespace TestPlatform
         {
             try
             {
-                FormDefine defineFilePath = defineFilePath = new FormDefine("Lista de Imagens: ", path, "lst","_image",true);
+                FormDefine defineFilePath = defineFilePath = new FormDefine("Lista de Imagens: ", Global.testFilesPath + Global.listFolderName, "lst","_image",true);
                 var result = defineFilePath.ShowDialog();
                 
                 if (result == DialogResult.OK)
@@ -41,7 +39,7 @@ namespace TestPlatform
                     string dir = defineFilePath.ReturnValue;
                     imgListNameTextBox.Text = dir.Remove(dir.Length - 6); // removes the _img identification from file while editing (when its saved it is always added again)
 
-                    string[] filePaths = StroopProgram.readDirListFile(path + "/" + dir + ".lst");
+                    string[] filePaths = StroopProgram.readDirListFile(Global.testFilesPath + Global.listFolderName + "/" + dir + ".lst");
                     readImagesIntoDGV(filePaths, imgPathDataGridView);
                     
                 }
@@ -181,7 +179,7 @@ namespace TestPlatform
                 try
                 {
                     DataGridView dgv = imgPathDataGridView;
-                    DGVManipulation.saveColumnToListFile(dgv, 2, path, imgListNameTextBox.Text + "_image");
+                    DGVManipulation.saveColumnToListFile(dgv, 2, Global.testFilesPath + Global.listFolderName, imgListNameTextBox.Text + "_image");
                     this.Parent.Controls.Remove(this);
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }

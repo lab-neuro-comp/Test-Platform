@@ -10,14 +10,12 @@ namespace TestPlatform
 {
     public partial class FormAudioConfig : UserControl
     {
-        private string path;
         private SoundPlayer player = new SoundPlayer();
         private string instructionsText = HelpData.AudioConfigInstructions;
 
-        public FormAudioConfig(string audioFolderPath, bool editList)
+        public FormAudioConfig(bool editList)
         {
             InitializeComponent();
-            path = audioFolderPath;
             labelEmpty.Visible = false;
             this.Dock = DockStyle.Fill;
             if (editList)
@@ -30,15 +28,15 @@ namespace TestPlatform
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine("Listas de Audio: ", path, "lst", "_audio", true);
+                FormDefine defineFilePath = new FormDefine("Listas de Audio: ", Global.testFilesPath  + Global.listFolderName, "lst", "_audio", true);
                 var result = defineFilePath.ShowDialog();
 
                 if (result == DialogResult.OK)
                 {
-                    string dir = defineFilePath.ReturnValue;
-                    audioListNameTextBox.Text = dir.Remove(dir.Length - 6); // removes the _audio identification from file while editing (when its saved it is always added again)
+                    string choosenList = defineFilePath.ReturnValue;
+                    audioListNameTextBox.Text = choosenList.Remove(choosenList.Length - 6); // removes the _audio identification from file while editing (when its saved it is always added again)
 
-                    string[] filePaths = StroopProgram.readDirListFile(path + "/" + dir + ".lst");
+                    string[] filePaths = StroopProgram.readDirListFile(Global.testFilesPath + Global.listFolderName + "/" + choosenList + ".lst");
                     DGVManipulation.readStringListIntoDGV(filePaths, audioPathDataGridView);
                     numberFiles.Text = audioPathDataGridView.RowCount.ToString();
                 }
@@ -118,7 +116,7 @@ namespace TestPlatform
                 else
                 {
                     DataGridView dgv = audioPathDataGridView;
-                    DGVManipulation.saveColumnToListFile(dgv, 1, path, audioListNameTextBox.Text + "_audio");
+                    DGVManipulation.saveColumnToListFile(dgv, 1, Global.testFilesPath + Global.listFolderName, audioListNameTextBox.Text + "_audio");
                     this.Parent.Controls.Remove(this);
                 }
             }

@@ -11,7 +11,7 @@ namespace TestPlatform
 {
     public partial class FormShowAudio : UserControl
     {
-        private string path;
+        private string path = Global.stroopTestFilesPath + Global.resultsFolderName;
         private SoundPlayer player = new SoundPlayer();
         private string instructionsText = HelpData.ShowAudioInstructions + HelpData.NewAudioInstructions;
         Audio audioRecorder = new Audio();
@@ -23,7 +23,7 @@ namespace TestPlatform
         private string pathText = null;
         private bool recording = false;
 
-        public FormShowAudio(string dataFolderPath)
+        public FormShowAudio()
         {
             this.Dock = DockStyle.Fill;
             InitializeComponent();
@@ -33,7 +33,6 @@ namespace TestPlatform
             timer.Tick += new EventHandler(timer_Tick);
             currentElapsedTimeDisplay.Visible = false;
             
-            path = dataFolderPath;
             loadingAudioFilesToDataGrid();
         }
 

@@ -6,20 +6,13 @@ namespace TestPlatform.Views
 {
     public partial class FormDefineTest : Form
     {
-        string stroopProgramPath;
-        string reactionProgramPath;
 
         //primeira posição guarda o tipo, segunda guarda o nome do arquivo
         public string[] returnValues = new string[2]; 
 
-        public FormDefineTest(string testFilePath, string stroopProgramPath, string reactionProgramPath)
+        public FormDefineTest()
         {
-            Console.Write(testFilePath + "\n");
             InitializeComponent();
-            this.stroopProgramPath = testFilePath + stroopProgramPath;
-            this.reactionProgramPath = testFilePath + reactionProgramPath;
-            Console.Write(this.stroopProgramPath + "\n");
-            Console.Write(this.reactionProgramPath + "\n");
         }
 
 
@@ -53,7 +46,7 @@ namespace TestPlatform.Views
             {
                 comboBox1.SelectedItem = null;
                 removeOptionsComboBox();
-                addOptionsComboBox(stroopProgramPath);
+                addOptionsComboBox(Global.stroopTestFilesPath + Global.programFolderName);
             }
         }
 
@@ -63,7 +56,7 @@ namespace TestPlatform.Views
             {
                 comboBox1.SelectedItem = null;
                 removeOptionsComboBox();
-                addOptionsComboBox(reactionProgramPath);
+                addOptionsComboBox(Global.reactionTestFilesPath + Global.programFolderName);
             }
         }
 

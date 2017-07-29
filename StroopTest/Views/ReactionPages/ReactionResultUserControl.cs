@@ -9,15 +9,14 @@ namespace TestPlatform.Views.ReactionPages
 {
     public partial class ReactionResultUserControl : UserControl
     {
-        private string path;
+        private string path = Global.reactionTestFilesPath + Global.resultsFolderName;
 
-        public ReactionResultUserControl(string dataFolderPath)
+        public ReactionResultUserControl()
         {
             InitializeComponent();
 
             this.Dock = DockStyle.Fill;
             string[] filePaths = null;
-            path = dataFolderPath;
 
             string[] headers = ReactionTest.HeaderOutputFileText.Split('\t');
             foreach (var columnName in headers)
@@ -25,7 +24,7 @@ namespace TestPlatform.Views.ReactionPages
                 dataGridView1.Columns.Add(columnName, columnName); // Configura Cabeçalho na tabela
             }
 
-            if (Directory.Exists(dataFolderPath)) // Preenche comboBox com arquivos do tipo .txt no diretório dado
+            if (Directory.Exists(path)) // Preenche comboBox com arquivos do tipo .txt no diretório dado
             {
                 filePaths = Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
                 for (int i = 0; i < filePaths.Length; i++)
@@ -35,7 +34,7 @@ namespace TestPlatform.Views.ReactionPages
             }
             else
             {
-                Console.WriteLine("{0} é um caminho inválido!.", dataFolderPath);
+                Console.WriteLine("{0} é um caminho inválido!.", path);
             }
         }
 

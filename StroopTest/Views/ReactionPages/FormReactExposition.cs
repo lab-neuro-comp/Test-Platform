@@ -16,8 +16,8 @@ namespace TestPlatform.Views
     public partial class FormReactExposition : Form
     {
         ReactionTest executingTest = new ReactionTest();
-        private string path;                           
-        private string outputDataPath;                
+        private string path = Global.reactionTestFilesPath;                           
+        private string outputDataPath = Global.reactionTestFilesPath + Global.resultsFolderName;                
         private string hour = DateTime.Now.Hour.ToString("00");
         private string minutes = DateTime.Now.Minute.ToString("00");
         private string seconds = DateTime.Now.Second.ToString("00");
@@ -35,14 +35,12 @@ namespace TestPlatform.Views
         private bool intervalCancelled;
         private bool cancelExposition = false;
 
-        public FormReactExposition(string prgName, string participantName, string defaultPath, char mark)
+        public FormReactExposition(string prgName, string participantName, char mark)
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
             this.StartPosition = FormStartPosition.Manual;
             InitializeComponent();
-            path = defaultPath + "/ReactionTestFiles/";
-            outputDataPath = path + "/data/";
             startTime = hour + "_" + minutes + "_" + seconds;
             executingTest.ParticipantName = participantName;
             executingTest.setProgramInUse(path + "/prg/", prgName);
@@ -242,7 +240,6 @@ namespace TestPlatform.Views
             try
             {
                 FormTRConfig configureProgram = new FormTRConfig(executingTest.ProgramInUse.ProgramName);
-                configureProgram.Path = path;
                 this.Controls.Add(configureProgram);
             }
             catch (Exception ex) { throw new Exception("Edição não pode ser feita " + ex.Message); }

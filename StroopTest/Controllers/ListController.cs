@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TestPlatform.Models;
 using System.Drawing;
 using System.Windows.Forms;
+using TestPlatform.Views;
 
 namespace TestPlatform.Controllers
 {
@@ -43,11 +44,11 @@ namespace TestPlatform.Controllers
         }
 
 
-        public static string openListFile(string itemType,string path)
+        public static string openListFile(string itemType)
         {
             string progName = "abrir";
 
-            FormDefine defineProgram = new FormDefine("Lista: ", path + "/Lst/", "lst", itemType, false);
+            FormDefine defineProgram = new FormDefine("Lista: ", Global.testFilesPath + Global.listFolderName, "lst", itemType, false);
             var result = defineProgram.ShowDialog();
 
             if (result == System.Windows.Forms.DialogResult.OK)

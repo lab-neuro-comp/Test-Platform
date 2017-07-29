@@ -6,30 +6,17 @@ namespace TestPlatform.Views
 {
     public partial class StroopControl : DefaultUserControl
     {
-        string testFilesPath;
         public StroopControl()
         {
             this.Dock = DockStyle.Fill;
             InitializeComponent();
-        }
-
-        public string TestFilesPath
-        {
-            set
-            {
-                testFilesPath = value;
-            }
-        }
-
-              
-
+        }     
 
         private void newStroopButton_CheckedChanged(object sender, EventArgs e)
         {
             if (newStroopButton.Checked)
             {
-                FormPrgConfig configureProgram = new FormPrgConfig();
-                configureProgram.Path = testFilesPath;
+                FormPrgConfig configureProgram = new FormPrgConfig("false");
                 Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
                 newStroopButton.Checked = false;
             }
@@ -42,14 +29,12 @@ namespace TestPlatform.Views
                 try
                 {
                     string editProgramName = "error";
-                    FormDefine defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "StroopTestFiles/prg/", "prg", "program", false);
+                    FormDefine defineProgram = new FormDefine("Editar Programa: ", Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
                     DialogResult result = defineProgram.ShowDialog();
                     if (result == DialogResult.OK)
                     {
                         editProgramName = defineProgram.ReturnValue;
-                        FormPrgConfig configureProgram = new FormPrgConfig();
-                        configureProgram.Path = testFilesPath;
-                        configureProgram.PrgName = editProgramName;
+                        FormPrgConfig configureProgram = new FormPrgConfig(editProgramName);
                         Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
                         editStroopButton.Checked = false;
                     }

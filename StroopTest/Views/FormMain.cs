@@ -18,16 +18,7 @@ namespace TestPlatform
     {
         private FolderBrowserDialog folderBrowserDialog1;
         
-        /*
-         * Constants for tests platform
-         * */
-        private static string stroopProgramPath = "StroopTestFiles/prg/";
-        private static string reactionProgramPath = "ReactionTestFiles/prg/";
-        private static string experimentProgramPath = "ExperimentTestFiles/prg/";
-        private static string LSTFOLDERNAME = "/Lst/";
-        private static string stroopResultsPath = "StroopTestFiles/data/";
-        private static string reactionResultsPath = "ReactionTestFiles/data/";
-        private static string BACKUPFOLDERNAME = "/backup/";
+
         private static string DEFAULTPGRNAME = "padrao";
         private static string DEFAULTUSERNAME = "padrao";
         private static string INSTRUCTIONSFILENAME = "editableInstructions.txt";
@@ -40,49 +31,43 @@ namespace TestPlatform
          */
         private StroopProgram programDefault = new StroopProgram();
         private Control currentPanelContent; //holds current panel in exact execution time
-        private string testFilesPath;
-        public string defaultPath = (Path.GetDirectoryName(Application.ExecutablePath));
+        
+        
 
         /**
          * Constructor method, creates directories for program, in case they dont exist
          * */
         public FormMain()
         {
-            testFilesPath = defaultPath + "/TestFiles/";
-            string stroopTestFilesPath = testFilesPath + "/StroopTestFiles/";
-            string reactionTestFilesPath = testFilesPath + "/ReactionTestFiles/";
-            string experimentTestFilesPath = testFilesPath + "/ExperimentTestFiles/";
-            string listsPath = testFilesPath + "/Lst/";
-            string stroopData = stroopTestFilesPath + "/data/";
-            string reactionData = reactionTestFilesPath + "/data/";
-            string experimentData = experimentTestFilesPath + "/data/";
-
-            if (!Directory.Exists(testFilesPath))
+            /* Creating main folder for application*/
+            Global.defaultPath = (Path.GetDirectoryName(Application.ExecutablePath)); //saving on variable current executing path
+            Global.testFilesPath = Global.defaultPath + Global.testFilesPath;
+            if (!Directory.Exists(Global.testFilesPath))
             {
-                Directory.CreateDirectory(testFilesPath);
+                Directory.CreateDirectory(Global.testFilesPath);
             }
             else
             {
                 /*do nothing*/
-            }            
-
+            }
+            Global.stroopTestFilesPath = Global.testFilesPath + Global.stroopTestFilesPath;
             // updating local directory of new version of platform, excluding old stroop one
-            if (File.Exists(defaultPath + "/StroopTest.exe")) 
-            {
+            if (File.Exists(Global.defaultPath + "/StroopTest.exe")) 
+            {               
 
-                DirectoryInfo directoryOldLst = new DirectoryInfo(defaultPath + "/StroopTestFiles/lst");
-                directoryOldLst.MoveTo(listsPath);
+                DirectoryInfo directoryOldLst = new DirectoryInfo(Global.defaultPath + "/StroopTestFiles/lst");
+                directoryOldLst.MoveTo(Global.testFilesPath + Global.listFolderName);
+                
+                DirectoryInfo directoryOldStroop = new DirectoryInfo(Global.defaultPath + "/StroopTestFiles/");
+                directoryOldStroop.MoveTo(Global.stroopTestFilesPath);                
 
-                DirectoryInfo directoryOldStroop = new DirectoryInfo(defaultPath + "/StroopTestFiles/");
-                directoryOldStroop.MoveTo(stroopTestFilesPath);                
-
-                DirectoryInfo directoryOldData = new DirectoryInfo(defaultPath + "/data");
-                directoryOldData.MoveTo(testFilesPath + stroopResultsPath);
+                DirectoryInfo directoryOldData = new DirectoryInfo(Global.defaultPath + "/data");
+                directoryOldData.MoveTo(Global.stroopTestFilesPath + Global.resultsFolderName);
 
 
                 try
                 {
-                    File.Delete(defaultPath + "/StroopTest.exe");
+                    File.Delete(Global.defaultPath + "/StroopTest.exe");
                 }
                 catch (IOException e)
                 {
@@ -96,53 +81,53 @@ namespace TestPlatform
                 /*do nothing*/
             }
             
-            if (!Directory.Exists(stroopTestFilesPath))
-                Directory.CreateDirectory(stroopTestFilesPath);
+            /* creating directories related to StroopTest in case they don't already exists*/
+            if (!Directory.Exists(Global.stroopTestFilesPath))
+                Directory.CreateDirectory(Global.stroopTestFilesPath);
+            if (!Directory.Exists(Global.stroopTestFilesPath + Global.programFolderName))
+                Directory.CreateDirectory(Global.stroopTestFilesPath + Global.programFolderName);
+            if (!Directory.Exists(Global.stroopTestFilesPath + Global.resultsFolderName))
+                Directory.CreateDirectory(Global.stroopTestFilesPath + Global.resultsFolderName);
 
-            if (!Directory.Exists(reactionTestFilesPath))
-                Directory.CreateDirectory(reactionTestFilesPath);
+            /* creating directories related to ReactionTest in case they don't already exists*/
+            Global.reactionTestFilesPath = Global.testFilesPath + Global.reactionTestFilesPath;
+            if (!Directory.Exists(Global.reactionTestFilesPath))
+                Directory.CreateDirectory(Global.reactionTestFilesPath);
+            if (!Directory.Exists(Global.reactionTestFilesPath + Global.programFolderName))
+                Directory.CreateDirectory(Global.reactionTestFilesPath + Global.programFolderName);
+            if (!Directory.Exists(Global.reactionTestFilesPath + Global.resultsFolderName))
+                Directory.CreateDirectory(Global.reactionTestFilesPath + Global.resultsFolderName);
 
-            if (!Directory.Exists(experimentTestFilesPath))
-                Directory.CreateDirectory(experimentTestFilesPath);
+            /* creating directories related to Experiment in case they don't already exists*/
+            Global.experimentTestFilesPath = Global.testFilesPath + Global.experimentTestFilesPath;
+            if (!Directory.Exists(Global.experimentTestFilesPath))
+                Directory.CreateDirectory(Global.experimentTestFilesPath);
+            if (!Directory.Exists(Global.experimentTestFilesPath + Global.programFolderName))
+                Directory.CreateDirectory(Global.experimentTestFilesPath + Global.programFolderName);
+            if (!Directory.Exists(Global.experimentTestFilesPath + Global.resultsFolderName))
+                Directory.CreateDirectory(Global.experimentTestFilesPath + Global.resultsFolderName);
 
-            if (!Directory.Exists(testFilesPath + stroopProgramPath))
-                Directory.CreateDirectory(testFilesPath + stroopProgramPath);
-
-            if (!Directory.Exists(testFilesPath + reactionProgramPath))
-                Directory.CreateDirectory(testFilesPath + reactionProgramPath);
-
-            if (!Directory.Exists(testFilesPath + experimentProgramPath))
-                Directory.CreateDirectory(testFilesPath + experimentProgramPath);
-
-            if (!Directory.Exists(listsPath))
+            /* creating Lists folder*/
+            if (!Directory.Exists(Global.testFilesPath + Global.listFolderName))
             {
-                Directory.CreateDirectory(listsPath);
+                Directory.CreateDirectory(Global.testFilesPath + Global.listFolderName);
             }
 
-            if (!Directory.Exists(testFilesPath + stroopResultsPath))
-                Directory.CreateDirectory(testFilesPath + stroopResultsPath);
+            if (!Directory.Exists(Global.defaultPath + Global.backupFolderName))
+                Directory.CreateDirectory(Global.defaultPath + Global.backupFolderName);
+            if (!File.Exists(Global.testFilesPath + INSTRUCTIONSFILENAME))
+                File.Create(Global.testFilesPath + "editableInstructions.txt").Dispose();
+            if (!File.Exists(Global.testFilesPath + PGRCONFIGHELPFILENAME))
+                File.Create(Global.testFilesPath + PGRCONFIGHELPFILENAME).Dispose();
 
-            if (!Directory.Exists(testFilesPath + reactionResultsPath))
-                Directory.CreateDirectory(testFilesPath + reactionResultsPath);
-
-            if (!Directory.Exists(experimentData))
-                Directory.CreateDirectory(experimentData);
-
-            if (!Directory.Exists(defaultPath + BACKUPFOLDERNAME))
-                Directory.CreateDirectory(defaultPath + BACKUPFOLDERNAME);
-            if (!File.Exists(testFilesPath + INSTRUCTIONSFILENAME))
-                File.Create(testFilesPath + "editableInstructions.txt").Dispose();
-            if (!File.Exists(testFilesPath + PGRCONFIGHELPFILENAME))
-                File.Create(testFilesPath + PGRCONFIGHELPFILENAME).Dispose();
-
-            if (File.Exists(defaultPath + "/StroopTestFiles"))
-                File.Delete(defaultPath + "/StroopTestFiles");
+            if (File.Exists(Global.defaultPath + "/StroopTestFiles"))
+                File.Delete(Global.defaultPath + "/StroopTestFiles");
 
 
             initializeDefaultProgram(); // inicializa programa padrão (cria arquivo programa padrão e listas de palavras e cores padrão)
             InitializeComponent();
             _contentPanel = contentPanel;
-            dirPathSL.Text = testFilesPath;
+            dirPathSL.Text = Global.testFilesPath;
         }
 
         private void FormMain_KeyDown(object sender, KeyEventArgs e)
@@ -169,7 +154,7 @@ namespace TestPlatform
         
         private void newTextColorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + LSTFOLDERNAME, false);
+            FormWordColorConfig configureList = new FormWordColorConfig(false);
             try
             {
                 this.Controls.Add(configureList);
@@ -206,12 +191,12 @@ namespace TestPlatform
             {
                 dirPathSL.Text = folderBrowserDialog1.SelectedPath;
             }
-            testFilesPath = dirPathSL.Text;
+            Global.testFilesPath = dirPathSL.Text;
         }
 
         private void newImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + LSTFOLDERNAME, "false");
+            FormImgConfig configureImagesList = new FormImgConfig("false");
             try
             {
                 this.Controls.Add(configureImagesList);
@@ -224,9 +209,9 @@ namespace TestPlatform
             programDefault.ProgramName = DEFAULTUSERNAME;
             try
             {
-                programDefault.writeDefaultProgramFile(testFilesPath + stroopProgramPath + programDefault.ProgramName + ".prg"); // ao inicializar formulario escreve arquivo programa padrao
-                StrList.writeDefaultWordsList(testFilesPath + LSTFOLDERNAME); // escreve lista de palavras padrão
-                StrList.writeDefaultColorsList(testFilesPath + LSTFOLDERNAME); // escreve lista de cores padrão 
+                programDefault.writeDefaultProgramFile(Global.stroopTestFilesPath + Global.programFolderName + programDefault.ProgramName + ".prg"); // ao inicializar formulario escreve arquivo programa padrao
+                StrList.writeDefaultWordsList(Global.testFilesPath + Global.listFolderName); // escreve lista de palavras padrão
+                StrList.writeDefaultColorsList(Global.testFilesPath + Global.listFolderName); // escreve lista de cores padrão 
             }
             catch (Exception ex)
             {
@@ -242,7 +227,7 @@ namespace TestPlatform
 
         private void editTextColorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + LSTFOLDERNAME, true);
+            FormWordColorConfig configureList = new FormWordColorConfig(true);
             try
             {
                 this.Controls.Add(configureList);
@@ -252,17 +237,17 @@ namespace TestPlatform
 
         private void deleteDataFile_ToolStrip_Click(object sender, EventArgs e)
         {
-            moveFileToBackup(testFilesPath + stroopResultsPath, defaultPath + BACKUPFOLDERNAME, "txt");
+            moveFileToBackup(Global.stroopTestFilesPath + Global.resultsFolderName, Global.defaultPath + Global.backupFolderName, "txt");
         }
 
         private void deleteProgramFile_ToolStrip_Click(object sender, EventArgs e)
         {
-            moveFileToBackup(testFilesPath + stroopProgramPath, defaultPath + BACKUPFOLDERNAME, "prg");
+            moveFileToBackup(Global.stroopTestFilesPath + Global.programFolderName, Global.defaultPath + Global.backupFolderName, "prg");
         }
 
         private void deleteListFile_ToolStrip_Click(object sender, EventArgs e)
         {
-            moveFileToBackup(testFilesPath + LSTFOLDERNAME, defaultPath + BACKUPFOLDERNAME, "lst");
+            moveFileToBackup(Global.testFilesPath + Global.listFolderName, Global.defaultPath + Global.backupFolderName, "lst");
         }
 
         private void moveFileToBackup (string originPath, string backupPath, string fileType)
@@ -305,8 +290,7 @@ namespace TestPlatform
                     if (sc[0].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 1; }
                     if (sc[1].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 0; }
                 }
-                FormExposition f = new FormExposition(programName, participantTextBox.Text, testFilesPath, 
-                    markTextBox.Text[0]);
+                FormExposition f = new FormExposition(programName, participantTextBox.Text, markTextBox.Text[0]);
                 f.StartPosition = FormStartPosition.Manual;
                 f.Location = Screen.AllScreens[showOnMonitor].WorkingArea.Location;
                 SendKeys.SendWait("i");
@@ -327,8 +311,7 @@ namespace TestPlatform
                     if (sc[0].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 1; }
                     if (sc[1].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 0; }
                 }
-                FormReactExposition reactionExposition = new FormReactExposition(programName, participantTextBox.Text, 
-                                                                                 testFilesPath, markTextBox.Text[0]);
+                FormReactExposition reactionExposition = new FormReactExposition(programName, participantTextBox.Text, markTextBox.Text[0]);
                 reactionExposition.StartPosition = FormStartPosition.Manual;
                 reactionExposition.Location = Screen.AllScreens[showOnMonitor].WorkingArea.Location;
                 SendKeys.SendWait("i");
@@ -339,7 +322,7 @@ namespace TestPlatform
         
         private void defineTest()
         {
-            FormDefineTest defineTest = new FormDefineTest(testFilesPath, stroopProgramPath, reactionProgramPath);
+            FormDefineTest defineTest = new FormDefineTest();
             try
             {
                 var result = defineTest.ShowDialog();
@@ -356,8 +339,7 @@ namespace TestPlatform
         private void newProgram()
         {
 
-            FormPrgConfig configureProgram = new FormPrgConfig();
-            configureProgram.Path = testFilesPath;
+            FormPrgConfig configureProgram = new FormPrgConfig("false");
             this.Controls.Add(configureProgram);
         }
 
@@ -366,7 +348,7 @@ namespace TestPlatform
             FormShowData showData;
             try
             {
-                showData = new FormShowData(testFilesPath + stroopResultsPath);
+                showData = new FormShowData();
                 this.Controls.Add(showData);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -374,21 +356,21 @@ namespace TestPlatform
         
         private void showInstructions()
         {
-            FormInstructions infoBox = new FormInstructions(INSTRUCTIONSTEXT, (testFilesPath + INSTRUCTIONSFILENAME));
+            FormInstructions infoBox = new FormInstructions(INSTRUCTIONSTEXT, (Global.testFilesPath + INSTRUCTIONSFILENAME));
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void editImagesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/Lst/", "");
+            FormImgConfig configureImagesList = new FormImgConfig("");
             try { this.Controls.Add(configureImagesList); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void audioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/Lst/", false);
+            FormAudioConfig configureAudioList = new FormAudioConfig(false);
             try
             {
                 this.Controls.Add(configureAudioList);
@@ -413,7 +395,7 @@ namespace TestPlatform
         
         private void editAudioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/Lst/", true);
+            FormAudioConfig configureAudioList = new FormAudioConfig(true);
             try
             {
                 this.Controls.Add(configureAudioList);
@@ -426,7 +408,7 @@ namespace TestPlatform
             FormShowAudio showAudio;
             try
             {
-                showAudio = new FormShowAudio(testFilesPath + stroopResultsPath);
+                showAudio = new FormShowAudio();
                 this.Controls.Add(showAudio);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -437,7 +419,7 @@ namespace TestPlatform
             FormShowAudio showAudio;
             try
             {
-                showAudio = new FormShowAudio(testFilesPath + stroopResultsPath);
+                showAudio = new FormShowAudio();
                 this.Controls.Add(showAudio);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -455,7 +437,6 @@ namespace TestPlatform
                 }
 
                 ExperimentControl experimentControl = new ExperimentControl();
-                experimentControl.TestFilesPath = testFilesPath;
                 this.sideBarPanel.Controls.Add(experimentControl);
                 currentPanelContent = experimentControl;
             }
@@ -473,7 +454,6 @@ namespace TestPlatform
                     contentPanel.Controls.Clear();
                 }
                 StroopControl stroopControl = new StroopControl();
-                stroopControl.TestFilesPath = testFilesPath;
                 this.sideBarPanel.Controls.Add(stroopControl);
                 currentPanelContent = stroopControl;
             }
@@ -490,7 +470,6 @@ namespace TestPlatform
                     contentPanel.Controls.Clear();
                 }
                 ReactionControl reactControl = new ReactionControl();
-                reactControl.TestFilesPath = testFilesPath;
                 this.sideBarPanel.Controls.Add(reactControl);
                 currentPanelContent = reactControl;
             }
@@ -512,7 +491,6 @@ namespace TestPlatform
                     /*do nothing*/
                 }
                 ListUserControl listControl = new ListUserControl();
-                listControl.TestFilesPath = testFilesPath;
                 this.sideBarPanel.Controls.Add(listControl);
                 currentPanelContent = listControl;
             }
@@ -533,9 +511,6 @@ namespace TestPlatform
                     /*do nothing*/
                 }
                 ResultsUserControl resultsControl = new ResultsUserControl();
-                resultsControl.TestFilesPath = testFilesPath;
-                resultsControl.StroopResultsPath = stroopResultsPath;
-                resultsControl.ReactionResultsPath = reactionResultsPath;
                 this.sideBarPanel.Controls.Add(resultsControl);
                 currentPanelContent = resultsControl;
             }
@@ -568,15 +543,13 @@ namespace TestPlatform
 
         private void stroopToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPrgConfig configureProgram = new FormPrgConfig();
-            configureProgram.Path = testFilesPath;
+            FormPrgConfig configureProgram = new FormPrgConfig("false");
             this.Controls.Add(configureProgram);
         }
 
         private void reactionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormTRConfig configureProgram = new FormTRConfig("false");
-            configureProgram.Path = testFilesPath;
             this.Controls.Add(configureProgram);
         }
 
@@ -588,14 +561,12 @@ namespace TestPlatform
 
             try
             {
-                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "StroopTestFiles/prg/", "prg", "program", false);
+                defineProgram = new FormDefine("Editar Programa: ", Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
                     editProgramName = defineProgram.ReturnValue;
-                    FormPrgConfig configureProgram = new FormPrgConfig();
-                    configureProgram.Path = testFilesPath;
-                    configureProgram.PrgName = editProgramName;
+                    FormPrgConfig configureProgram = new FormPrgConfig(editProgramName);
                     this.Controls.Add(configureProgram);
                 }
             }
@@ -610,13 +581,12 @@ namespace TestPlatform
 
             try
             {
-                defineProgram = new FormDefine("Editar Programa: ", testFilesPath + "ReactionTestFiles/prg/", "prg", "program", false);
+                defineProgram = new FormDefine("Editar Programa: ", Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
                     editProgramName = defineProgram.ReturnValue;
                     FormTRConfig configureProgram = new FormTRConfig(editProgramName);
-                    configureProgram.Path = testFilesPath;
                     configureProgram.PrgName = editProgramName;
                     this.Controls.Add(configureProgram);
                 }

@@ -18,6 +18,7 @@ using System.Drawing.Drawing2D;
 using TestPlatform.Models;
 using TestPlatform.Controllers;
 using System.Diagnostics;
+using TestPlatform.Views;
 
 namespace TestPlatform
 {
@@ -26,9 +27,9 @@ namespace TestPlatform
         CancellationTokenSource cts;
         StroopProgram programInUse = new StroopProgram(); // program in current use
         private static float elapsedTime;                // elapsed time during each item exposition
-        private string path;                            // global program path
+        private string path = Global.stroopTestFilesPath;                           
         private List<string> outputContent;            // output file content
-        private string outputDataPath;                // output file Path
+        private string outputDataPath = Global.stroopTestFilesPath + Global.resultsFolderName;                // output file Path
         private string hour = DateTime.Now.Hour.ToString("00");
         private string minutes = DateTime.Now.Minute.ToString("00");
         private string seconds = DateTime.Now.Second.ToString("00");
@@ -36,18 +37,15 @@ namespace TestPlatform
         private string outputFile;
         private Audio audioControl = new Audio();
         private SoundPlayer Player = new SoundPlayer();
-        private string defaultFolderPath;
+        private string defaultFolderPath = Global.testFilesPath;
         private StroopTest executingTest = new StroopTest();
 
-        public FormExposition(string prgName, string usrName, string defaultFolderPath, char mark)
+        public FormExposition(string prgName, string usrName, char mark)
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
             this.StartPosition = FormStartPosition.Manual;
             InitializeComponent();
-            this.defaultFolderPath = defaultFolderPath;
-            path = defaultFolderPath + "/StroopTestFiles/";
-            outputDataPath = path + "/data/";
             programInUse.ProgramName = prgName;
             executingTest.ParticipantName = usrName;
             executingTest.Mark = mark;
@@ -138,9 +136,7 @@ namespace TestPlatform
             try
             {
 
-                FormPrgConfig configureProgram = new FormPrgConfig();
-                configureProgram.Path = path;
-                configureProgram.PrgName = "/" + programInUse.ProgramName;
+                FormPrgConfig configureProgram = new FormPrgConfig(programInUse.ProgramName);
                 this.Controls.Add(configureProgram);
             }
             catch (Exception ex) { throw new Exception("Edição não pode ser feita " + ex.Message); }

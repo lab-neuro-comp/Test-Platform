@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.experimentConfigPanel = new System.Windows.Forms.Panel();
             this.helpButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -50,12 +51,14 @@
             this.experimentNameLabel = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.experimentConfigPanel.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.programDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // experimentConfigPanel
@@ -177,14 +180,14 @@
             this.programDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.programName,
             this.typePrograma});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.programDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.programDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.programDataGridView.Location = new System.Drawing.Point(112, 51);
             this.programDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.programDataGridView.Name = "programDataGridView";
@@ -288,6 +291,7 @@
             this.experimentNameTextBox.Name = "experimentNameTextBox";
             this.experimentNameTextBox.Size = new System.Drawing.Size(262, 22);
             this.experimentNameTextBox.TabIndex = 1;
+            this.experimentNameTextBox.Validated += new System.EventHandler(this.experimentNameTextBox_Validated);
             // 
             // experimentNameLabel
             // 
@@ -316,6 +320,7 @@
             // saveButton
             // 
             this.saveButton.AutoSize = true;
+            this.saveButton.CausesValidation = false;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.saveButton.Location = new System.Drawing.Point(615, 702);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
@@ -325,6 +330,11 @@
             this.saveButton.Text = "salvar";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
             // 
             // ExperimentConfig
             // 
@@ -348,6 +358,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.programDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,5 +387,6 @@
         private System.Windows.Forms.Label deleteItemLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn programName;
         private System.Windows.Forms.DataGridViewTextBoxColumn typePrograma;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

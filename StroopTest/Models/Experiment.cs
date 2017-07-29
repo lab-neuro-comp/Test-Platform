@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 using TestPlatform.Views;
 
 namespace TestPlatform.Models
@@ -128,6 +130,70 @@ namespace TestPlatform.Models
                 }
             }
             return stringList;
+        }
+
+        // lê arquivo com programa e retorna true para sucesso
+        public void readProgramFile()
+        {
+            
+            string filePath = Global.experimentTestFilesPath + Global.programFolderName + experimentName + ".prg";
+            try
+            {
+                if (!File.Exists(filePath))
+                {
+                    throw new FileNotFoundException();
+                }
+
+                string[] fileLines = File.ReadAllLines(filePath);
+                string line = fileLines[0];
+                line = Program.encodeLatinText(line);
+                List<string> configurationFile = new List<string>();
+                configurationFile = line.Split().ToList();
+
+                experimentName = configurationFile[0];
+                if (Path.GetFileNameWithoutExtension(filePath) != (this.experimentName))
+                {
+                    throw new Exception("Parâmetro escrito no arquivo como: '" + this.experimentName +
+                        "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filePath) + "'.prg");
+                }
+                intervalTime = int.Parse(configurationFile[1]);
+                isOrderRandom = bool.Parse(configurationFile[2]);
+
+                string listLine = fileLines[1];
+                line = Program.encodeLatinText(line);
+                List<string> listConfiguration = new List<string>();
+                listConfiguration = listLine.Split().ToList();
+                for (int i = 1; i <= listConfiguration.Count() - 2; i = i + 2)
+                {
+                    if (listConfiguration[i] == "StroopProgram")
+                    {
+                        addStroopProgram(listConfiguration[i-1]);
+                    }
+                    else if (listConfiguration[i] == "ReactionProgram")
+                    {
+                        addReactionProgram(listConfiguration[i-1]);
+                    }
+                }
+
+                if (fileLines.Length > 2) // reads instructions if there are any
+                {
+                    for (int i = 2; i < fileLines.Length; i++)
+                    {
+                        this.InstructionText.Add(fileLines[i]);
+                    }
+                }
+                else
+                {
+                    this.InstructionText = null;
+                }
+
+            }
+            catch (FileNotFoundException ex)
+            {
+                throw new FileNotFoundException("Arquivo programa: " + Path.GetFileName(filePath) + "\nnão foi encontrado no local:\n" + 
+                    Path.GetDirectoryName(filePath) + "\n\n( " + ex.Message + " )");
+            }
+
         }
 
         public bool saveExperimentFile(string path)

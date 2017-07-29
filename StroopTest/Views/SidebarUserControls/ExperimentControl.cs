@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestPlatform.Views.ExperimentPages;
 
@@ -26,7 +19,7 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 if (newExperimentButton.Checked)
                 {
-                    ExperimentConfig newExperiment = new ExperimentConfig();
+                    ExperimentConfig newExperiment = new ExperimentConfig("false");
                     Global.GlobalFormMain._contentPanel.Controls.Add(newExperiment);
                     newExperimentButton.Checked = false;
                 }
@@ -40,6 +33,28 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void editExperimentButton_Click(object sender, EventArgs e)
+        {
+            FormDefine defineProgram;
+            DialogResult result;
+            string editProgramName = "error";
+
+
+                defineProgram = new FormDefine("Editar Programa: ", Global.experimentTestFilesPath + Global.programFolderName, "prg", "program", false);
+                result = defineProgram.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    editProgramName = defineProgram.ReturnValue;
+                    ExperimentConfig editExperiment = new ExperimentConfig(editProgramName);
+                    Global.GlobalFormMain._contentPanel.Controls.Add(editExperiment);
+                    editExperimentButton.Checked = false;
+                }
+                else
+                {
+                    /*do nothing, user cancelled selection of program*/
+                }
         }
     }
 }

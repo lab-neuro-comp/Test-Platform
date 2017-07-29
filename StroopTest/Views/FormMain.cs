@@ -35,7 +35,7 @@ namespace TestPlatform
         private static string INSTRUCTIONSTEXT = "O participante deve ser orientado para execução de forma clara e uniforme entre os experimentares e o grupo de participantes.<br><br>Para o Stroop clássico as instruções básicas praticadas são:<br>'Nesta tarefa você deve falar o nome da cor em que as palavras estão pintadas.'<br>ou<br>'Nesta tarefa você deve ler a palavra apresentada na tela.'";
         private static string TECHTEXT = HelpData.TechnicalInformations;
         private static string HELPTEXT = HelpData.VisualizeHelp;
-
+        public Panel _contentPanel;
         /* Variables
          */
         private StroopProgram programDefault = new StroopProgram();
@@ -141,7 +141,7 @@ namespace TestPlatform
 
             initializeDefaultProgram(); // inicializa programa padrão (cria arquivo programa padrão e listas de palavras e cores padrão)
             InitializeComponent();
-
+            _contentPanel = contentPanel;
             dirPathSL.Text = testFilesPath;
         }
 
@@ -451,12 +451,12 @@ namespace TestPlatform
                 if (currentPanelContent != null)
                 {
                     Controls.Remove(currentPanelContent);
-                    removingAllUserControlsFound();
+                    contentPanel.Controls.Clear();
                 }
 
                 ExperimentControl experimentControl = new ExperimentControl();
                 experimentControl.TestFilesPath = testFilesPath;
-                this.Controls.Add(experimentControl);
+                this.sideBarPanel.Controls.Add(experimentControl);
                 currentPanelContent = experimentControl;
             }
         }
@@ -467,14 +467,14 @@ namespace TestPlatform
             if (buttonStroop.Checked)
             {
                 // removing second side bar from view, if there is one, and removing its context too
-                if (currentPanelContent != null)
+                if (sideBarPanel.Controls.Count > 0)
                 {
-                    Controls.Remove(currentPanelContent);
-                    removingAllUserControlsFound();
+                    sideBarPanel.Controls.Remove(currentPanelContent);
+                    contentPanel.Controls.Clear();
                 }
                 StroopControl stroopControl = new StroopControl();
                 stroopControl.TestFilesPath = testFilesPath;
-                this.Controls.Add(stroopControl);
+                this.sideBarPanel.Controls.Add(stroopControl);
                 currentPanelContent = stroopControl;
             }
         }
@@ -484,14 +484,14 @@ namespace TestPlatform
             if (buttonReaction.Checked)
             {
                 // removing second side bar from view, if there is one, and removing its context too
-                if (currentPanelContent != null)
+                if (sideBarPanel.Controls.Count > 0)
                 {
-                    Controls.Remove(currentPanelContent);
-                    removingAllUserControlsFound();
+                    sideBarPanel.Controls.Remove(currentPanelContent);
+                    contentPanel.Controls.Clear();
                 }
                 ReactionControl reactControl = new ReactionControl();
                 reactControl.TestFilesPath = testFilesPath;
-                this.Controls.Add(reactControl);
+                this.sideBarPanel.Controls.Add(reactControl);
                 currentPanelContent = reactControl;
             }
 
@@ -502,10 +502,10 @@ namespace TestPlatform
             if (buttonList.Checked)
             {
                 // removing second side bar from view, if there is one, and removing its context too
-                if (currentPanelContent != null)
+                if (sideBarPanel.Controls.Count > 0)
                 {
-                    Controls.Remove(currentPanelContent);
-                    removingAllUserControlsFound();
+                    sideBarPanel.Controls.Remove(currentPanelContent);
+                    contentPanel.Controls.Clear();
                 }
                 else
                 {
@@ -513,7 +513,7 @@ namespace TestPlatform
                 }
                 ListUserControl listControl = new ListUserControl();
                 listControl.TestFilesPath = testFilesPath;
-                this.Controls.Add(listControl);
+                this.sideBarPanel.Controls.Add(listControl);
                 currentPanelContent = listControl;
             }
         }
@@ -523,10 +523,10 @@ namespace TestPlatform
             if (resultButton.Checked)
             {
                 // removing second side bar from view, if there is one, and removing its context too
-                if (currentPanelContent != null)
+                if (sideBarPanel.Controls.Count > 0)
                 {
-                    Controls.Remove(currentPanelContent);
-                    removingAllUserControlsFound();
+                    sideBarPanel.Controls.Remove(currentPanelContent);
+                    contentPanel.Controls.Clear();
                 }
                 else
                 {
@@ -536,7 +536,7 @@ namespace TestPlatform
                 resultsControl.TestFilesPath = testFilesPath;
                 resultsControl.StroopResultsPath = stroopResultsPath;
                 resultsControl.ReactionResultsPath = reactionResultsPath;
-                this.Controls.Add(resultsControl);
+                this.sideBarPanel.Controls.Add(resultsControl);
                 currentPanelContent = resultsControl;
             }
         }
@@ -566,28 +566,6 @@ namespace TestPlatform
             }
         }
 
-        /* Listing all controls in current context and removing all intances of UserControl found */
-        private void removingAllUserControlsFound()
-        {
-            List<Control> controls = new List<Control>();
-            int count = 0;
-            foreach (Control c in Controls)
-            {
-                if (c is UserControl)
-                {
-                    controls.Add(c);
-                    count++;
-                }
-                else
-                {
-                    /*do nothing*/
-                }
-            }
-            for(int i = 0; i < count; i++)
-            {
-                Controls.Remove(controls[i]);
-            }
-        }
         private void stroopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormPrgConfig configureProgram = new FormPrgConfig();
@@ -753,6 +731,12 @@ namespace TestPlatform
         private void FormMain_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void menuPanel_Click(object sender, EventArgs e)
+        {
+            sideBarPanel.Controls.Clear();
+            contentPanel.Controls.Clear();
         }
     }
 }

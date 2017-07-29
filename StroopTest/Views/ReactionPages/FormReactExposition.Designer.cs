@@ -38,7 +38,7 @@
             // 
             this.instructionLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.instructionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.instructionLabel.Location = new System.Drawing.Point(449, 284);
+            this.instructionLabel.Location = new System.Drawing.Point(449, 280);
             this.instructionLabel.Name = "instructionLabel";
             this.instructionLabel.Size = new System.Drawing.Size(695, 524);
             this.instructionLabel.TabIndex = 12;
@@ -63,7 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1592, 1092);
+            this.ClientSize = new System.Drawing.Size(1592, 1084);
             this.Controls.Add(this.instructionLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

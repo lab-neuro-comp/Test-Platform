@@ -11,6 +11,7 @@ namespace TestPlatform.Views.SidebarUserControls
         string testFilesPath;
         public ReactionControl()
         {
+            this.Dock = DockStyle.Fill;
             InitializeComponent();
         }
 
@@ -31,7 +32,7 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     FormTRConfig configureProgram = new FormTRConfig("false");
                     configureProgram.Path = testFilesPath;
-                    Parent.Controls.Add(configureProgram);
+                    Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
                     newReactButton.Checked = false;
                 }
             }
@@ -56,7 +57,7 @@ namespace TestPlatform.Views.SidebarUserControls
                         FormTRConfig configureProgram = new FormTRConfig(editProgramName);
                         configureProgram.Path = testFilesPath;
                         configureProgram.PrgName = editProgramName;
-                        Parent.Controls.Add(configureProgram);
+                        Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
                         editReactButton.Checked = false;
                     }
                     else

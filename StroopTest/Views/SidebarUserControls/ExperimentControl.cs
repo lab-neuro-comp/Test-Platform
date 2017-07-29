@@ -16,6 +16,7 @@ namespace TestPlatform.Views.SidebarUserControls
         private string testFilesPath;
         public ExperimentControl()
         {
+            this.Dock = DockStyle.Fill;
             InitializeComponent();
         }
 
@@ -40,7 +41,7 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     ExperimentConfig newExperiment = new ExperimentConfig();
                     newExperiment.Path = TestFilesPath;
-                    Parent.Controls.Add(newExperiment);
+                    Global.GlobalFormMain._contentPanel.Controls.Add(newExperiment);
                     newExperimentButton.Checked = false;
                 }
                 else

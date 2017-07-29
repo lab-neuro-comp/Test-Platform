@@ -52,10 +52,9 @@ namespace TestPlatform
             subDirectionList.Add(subsUpButton);
             subDirectionList.Add(subsCenterButton);
             enableSubsItens(false);
-            Location = new Point(400, 54);
 
             toolTipsConfig();
-            
+            this.Dock = DockStyle.Fill;
             if (prgName != "false")
             {
                 editPrgName = prgName;

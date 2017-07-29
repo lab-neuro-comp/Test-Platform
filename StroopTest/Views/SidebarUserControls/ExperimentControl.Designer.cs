@@ -35,12 +35,15 @@
             // 
             // deleteReactButton
             // 
+            this.deleteReactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteReactButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.deleteReactButton.Enabled = false;
             this.deleteReactButton.FlatAppearance.BorderSize = 0;
             this.deleteReactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteReactButton.Location = new System.Drawing.Point(0, 81);
             this.deleteReactButton.Name = "deleteReactButton";
-            this.deleteReactButton.Size = new System.Drawing.Size(260, 33);
+            this.deleteReactButton.Size = new System.Drawing.Size(264, 33);
             this.deleteReactButton.TabIndex = 8;
             this.deleteReactButton.Text = "Excluir Experimento";
             this.deleteReactButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -48,12 +51,15 @@
             // 
             // editReactButton
             // 
+            this.editReactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.editReactButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.editReactButton.Enabled = false;
             this.editReactButton.FlatAppearance.BorderSize = 0;
             this.editReactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editReactButton.Location = new System.Drawing.Point(0, 42);
             this.editReactButton.Name = "editReactButton";
-            this.editReactButton.Size = new System.Drawing.Size(260, 33);
+            this.editReactButton.Size = new System.Drawing.Size(264, 33);
             this.editReactButton.TabIndex = 7;
             this.editReactButton.Text = "Editar Experimento";
             this.editReactButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -61,26 +67,29 @@
             // 
             // newExperimentButton
             // 
+            this.newExperimentButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.newExperimentButton.Appearance = System.Windows.Forms.Appearance.Button;
             this.newExperimentButton.FlatAppearance.BorderSize = 0;
             this.newExperimentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newExperimentButton.Location = new System.Drawing.Point(0, 3);
             this.newExperimentButton.Name = "newExperimentButton";
-            this.newExperimentButton.Size = new System.Drawing.Size(260, 33);
+            this.newExperimentButton.Size = new System.Drawing.Size(264, 33);
             this.newExperimentButton.TabIndex = 6;
             this.newExperimentButton.Text = "Novo Experimento";
             this.newExperimentButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.newExperimentButton.UseVisualStyleBackColor = true;
             this.newExperimentButton.Click += new System.EventHandler(this.newExperimentButton_Click);
             // 
-            // ExperimentUserControl
+            // ExperimentControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.deleteReactButton);
             this.Controls.Add(this.editReactButton);
             this.Controls.Add(this.newExperimentButton);
-            this.Name = "ExperimentUserControl";
+            this.Name = "ExperimentControl";
+            this.Size = new System.Drawing.Size(263, 1353);
             this.ResumeLayout(false);
 
         }

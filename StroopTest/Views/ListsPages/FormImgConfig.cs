@@ -16,10 +16,11 @@ namespace TestPlatform
 
         public FormImgConfig(string imagesFolderPath, string imgListEdit)
         {
+            this.Dock = DockStyle.Fill;
             InitializeComponent();
             imgPathDataGridView.AllowDrop = true;
             imgPathDataGridView.RowTemplate.MinimumHeight = 120;
-            Location = new Point(400, 38);
+            
             labelEmpty.Visible = false;
             path = imagesFolderPath;
             if (imgListEdit != "false")
@@ -136,7 +137,11 @@ namespace TestPlatform
         // pictureBox receives clicked rows img
         private void selectedImageIntoPictureBox()
         {
-            pictureBox.Image = Image.FromFile(imgPathDataGridView.CurrentRow.Cells[2].Value.ToString());
+            if(imgPathDataGridView.CurrentRow != null)
+            {
+                pictureBox.Image = Image.FromFile(imgPathDataGridView.CurrentRow.Cells[2].Value.ToString());
+            }
+            
         }
         
         // button up click - moves selected row Upper
@@ -146,7 +151,10 @@ namespace TestPlatform
             try
             {
                 DGVManipulation.moveDGVRowUp(dgv);
-                pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells[2].Value.ToString());
+                if (imgPathDataGridView.CurrentRow.Cells.Count > 0)
+                {
+                    pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells[2].Value.ToString());
+                }
             }
             catch { }
         }

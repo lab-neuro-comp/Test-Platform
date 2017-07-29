@@ -55,8 +55,6 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(141, 69);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -87,11 +85,12 @@
             // 
             // csvExportButton
             // 
+            this.csvExportButton.AutoSize = true;
             this.csvExportButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.csvExportButton.Location = new System.Drawing.Point(748, 67);
             this.csvExportButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.csvExportButton.Name = "csvExportButton";
-            this.csvExportButton.Size = new System.Drawing.Size(182, 26);
+            this.csvExportButton.Size = new System.Drawing.Size(182, 27);
             this.csvExportButton.TabIndex = 4;
             this.csvExportButton.Text = "Exportar como .cvs";
             this.csvExportButton.UseVisualStyleBackColor = true;
@@ -121,7 +120,7 @@
             this.audioPathDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fileNameColumn,
             this.filePathColumn});
-            this.audioPathDataGridView.Location = new System.Drawing.Point(11, 457);
+            this.audioPathDataGridView.Location = new System.Drawing.Point(11, 409);
             this.audioPathDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.audioPathDataGridView.MultiSelect = false;
             this.audioPathDataGridView.Name = "audioPathDataGridView";
@@ -152,7 +151,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 431);
+            this.label2.Location = new System.Drawing.Point(8, 383);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 17);
             this.label2.TabIndex = 85;
@@ -161,7 +160,7 @@
             // stopAudio
             // 
             this.stopAudio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.stopAudio.Location = new System.Drawing.Point(745, 421);
+            this.stopAudio.Location = new System.Drawing.Point(745, 373);
             this.stopAudio.Margin = new System.Windows.Forms.Padding(4);
             this.stopAudio.Name = "stopAudio";
             this.stopAudio.Size = new System.Drawing.Size(181, 28);
@@ -173,7 +172,7 @@
             // playAudioButton
             // 
             this.playAudioButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.playAudioButton.Location = new System.Drawing.Point(537, 421);
+            this.playAudioButton.Location = new System.Drawing.Point(537, 373);
             this.playAudioButton.Margin = new System.Windows.Forms.Padding(4);
             this.playAudioButton.Name = "playAudioButton";
             this.playAudioButton.Size = new System.Drawing.Size(181, 28);
@@ -186,7 +185,7 @@
             // 
             this.closeButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.closeButton.Location = new System.Drawing.Point(13, 739);
+            this.closeButton.Location = new System.Drawing.Point(13, 691);
             this.closeButton.Margin = new System.Windows.Forms.Padding(4);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(100, 28);

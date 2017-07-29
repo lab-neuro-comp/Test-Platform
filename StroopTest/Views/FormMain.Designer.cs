@@ -68,36 +68,40 @@
             this.testToolStrip = new System.Windows.Forms.ToolStrip();
             this.directoryToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
-            this.experimentButton = new System.Windows.Forms.RadioButton();
+            this.executeButton = new System.Windows.Forms.Button();
+            this.markPanel = new System.Windows.Forms.Panel();
+            this.markTextBox = new System.Windows.Forms.TextBox();
+            this.markLabel = new System.Windows.Forms.Label();
+            this.participantPanel = new System.Windows.Forms.Panel();
+            this.participantTextBox = new System.Windows.Forms.TextBox();
+            this.participantLabel = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.menuPanel = new System.Windows.Forms.Panel();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.resultButton = new System.Windows.Forms.RadioButton();
+            this.experimentButton = new System.Windows.Forms.RadioButton();
             this.buttonList = new System.Windows.Forms.RadioButton();
             this.buttonReaction = new System.Windows.Forms.RadioButton();
             this.buttonStroop = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.executeBar = new System.Windows.Forms.FlowLayoutPanel();
+            this.sideBarPanel = new System.Windows.Forms.Panel();
+            this.contentPanel = new System.Windows.Forms.Panel();
             this.programPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.executingNameLabel = new System.Windows.Forms.Label();
             this.selectButton = new System.Windows.Forms.Button();
             this.executingTypeLabel = new System.Windows.Forms.Label();
-            this.participantPanel = new System.Windows.Forms.Panel();
-            this.participantTextBox = new System.Windows.Forms.TextBox();
-            this.participantLabel = new System.Windows.Forms.Label();
-            this.markPanel = new System.Windows.Forms.Panel();
-            this.markTextBox = new System.Windows.Forms.TextBox();
-            this.markLabel = new System.Windows.Forms.Label();
-            this.executeButton = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.mainMenuStrip.SuspendLayout();
             this.testToolStrip.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.executeBar.SuspendLayout();
-            this.programPanel.SuspendLayout();
-            this.participantPanel.SuspendLayout();
             this.markPanel.SuspendLayout();
+            this.participantPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.menuPanel.SuspendLayout();
+            this.programPanel.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenuStrip
@@ -386,16 +390,16 @@
             // 
             // testToolStrip
             // 
-            this.testToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.testToolStrip.Dock = System.Windows.Forms.DockStyle.Fill;
             this.testToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.testToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.testToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.directoryToolStripLabel,
             this.dirPathSL});
-            this.testToolStrip.Location = new System.Drawing.Point(1129, 0);
+            this.testToolStrip.Location = new System.Drawing.Point(494, 0);
             this.testToolStrip.Name = "testToolStrip";
             this.testToolStrip.Padding = new System.Windows.Forms.Padding(0);
-            this.testToolStrip.Size = new System.Drawing.Size(102, 25);
+            this.testToolStrip.Size = new System.Drawing.Size(474, 40);
             this.testToolStrip.TabIndex = 1;
             this.testToolStrip.Text = "toolStrip1";
             this.testToolStrip.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
@@ -405,7 +409,7 @@
             this.directoryToolStripLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.directoryToolStripLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.directoryToolStripLabel.Name = "directoryToolStripLabel";
-            this.directoryToolStripLabel.Size = new System.Drawing.Size(72, 22);
+            this.directoryToolStripLabel.Size = new System.Drawing.Size(72, 37);
             this.directoryToolStripLabel.Text = "Diretório:";
             this.directoryToolStripLabel.Visible = false;
             // 
@@ -415,10 +419,197 @@
             this.dirPathSL.Enabled = false;
             this.dirPathSL.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.dirPathSL.Name = "dirPathSL";
-            this.dirPathSL.Size = new System.Drawing.Size(96, 22);
+            this.dirPathSL.Size = new System.Drawing.Size(96, 37);
             this.dirPathSL.Text = "directoryPath";
             this.dirPathSL.Visible = false;
             this.dirPathSL.Click += new System.EventHandler(this.dirPathSL_Click);
+            // 
+            // executeButton
+            // 
+            this.executeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.executeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.executeButton.FlatAppearance.BorderSize = 0;
+            this.executeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.executeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.executeButton.Image = global::TestPlatform.Properties.Resources.icon_execute;
+            this.executeButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.executeButton.Location = new System.Drawing.Point(390, 3);
+            this.executeButton.Name = "executeButton";
+            this.executeButton.Size = new System.Drawing.Size(101, 34);
+            this.executeButton.TabIndex = 0;
+            this.executeButton.Text = "Executar";
+            this.executeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.executeButton.UseVisualStyleBackColor = true;
+            this.executeButton.Click += new System.EventHandler(this.executeButton_Click);
+            // 
+            // markPanel
+            // 
+            this.markPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.markPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.markPanel.Controls.Add(this.markTextBox);
+            this.markPanel.Controls.Add(this.markLabel);
+            this.markPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.markPanel.Location = new System.Drawing.Point(239, 3);
+            this.markPanel.Name = "markPanel";
+            this.markPanel.Size = new System.Drawing.Size(145, 34);
+            this.markPanel.TabIndex = 29;
+            // 
+            // markTextBox
+            // 
+            this.markTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.markTextBox.Location = new System.Drawing.Point(83, 6);
+            this.markTextBox.MaxLength = 1;
+            this.markTextBox.Name = "markTextBox";
+            this.markTextBox.Size = new System.Drawing.Size(34, 22);
+            this.markTextBox.TabIndex = 1;
+            this.markTextBox.Text = "w";
+            this.markTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.markTextBox_Validating);
+            this.markTextBox.Validated += new System.EventHandler(this.markTextBox_Validated);
+            // 
+            // markLabel
+            // 
+            this.markLabel.AutoSize = true;
+            this.markLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.markLabel.Location = new System.Drawing.Point(10, 7);
+            this.markLabel.Name = "markLabel";
+            this.markLabel.Size = new System.Drawing.Size(72, 18);
+            this.markLabel.TabIndex = 0;
+            this.markLabel.Text = "Marcador";
+            // 
+            // participantPanel
+            // 
+            this.participantPanel.AutoSize = true;
+            this.participantPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.participantPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.participantPanel.Controls.Add(this.participantTextBox);
+            this.participantPanel.Controls.Add(this.participantLabel);
+            this.participantPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.participantPanel.Location = new System.Drawing.Point(3, 3);
+            this.participantPanel.Name = "participantPanel";
+            this.participantPanel.Size = new System.Drawing.Size(230, 34);
+            this.participantPanel.TabIndex = 28;
+            // 
+            // participantTextBox
+            // 
+            this.participantTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.participantTextBox.Location = new System.Drawing.Point(112, 7);
+            this.participantTextBox.Name = "participantTextBox";
+            this.participantTextBox.Size = new System.Drawing.Size(115, 22);
+            this.participantTextBox.TabIndex = 1;
+            this.participantTextBox.Text = "padrao";
+            this.participantTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.participantTextBox_Validating);
+            this.participantTextBox.Validated += new System.EventHandler(this.participantTextBox_Validated);
+            // 
+            // participantLabel
+            // 
+            this.participantLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.participantLabel.AutoSize = true;
+            this.participantLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.participantLabel.Location = new System.Drawing.Point(3, 8);
+            this.participantLabel.Name = "participantLabel";
+            this.participantLabel.Size = new System.Drawing.Size(85, 18);
+            this.participantLabel.TabIndex = 0;
+            this.participantLabel.Text = "Participante";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.menuPanel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.sideBarPanel, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.contentPanel, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.programPanel, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.executingTypeLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 28);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1472, 812);
+            this.tableLayoutPanel1.TabIndex = 28;
+            // 
+            // menuPanel
+            // 
+            this.menuPanel.Controls.Add(this.radioButton2);
+            this.menuPanel.Controls.Add(this.radioButton1);
+            this.menuPanel.Controls.Add(this.resultButton);
+            this.menuPanel.Controls.Add(this.experimentButton);
+            this.menuPanel.Controls.Add(this.buttonList);
+            this.menuPanel.Controls.Add(this.buttonReaction);
+            this.menuPanel.Controls.Add(this.buttonStroop);
+            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuPanel.Location = new System.Drawing.Point(5, 53);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(184, 754);
+            this.menuPanel.TabIndex = 25;
+            this.menuPanel.Click += new System.EventHandler(this.menuPanel_Click);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton2.Enabled = false;
+            this.radioButton2.FlatAppearance.BorderSize = 0;
+            this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Image = global::TestPlatform.Properties.Resources.icon_export;
+            this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.radioButton2.Location = new System.Drawing.Point(0, 269);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(260, 32);
+            this.radioButton2.TabIndex = 26;
+            this.radioButton2.Text = " Exportar";
+            this.radioButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton1.Enabled = false;
+            this.radioButton1.FlatAppearance.BorderSize = 0;
+            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Image = global::TestPlatform.Properties.Resources.icon_import;
+            this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.radioButton1.Location = new System.Drawing.Point(0, 227);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(260, 32);
+            this.radioButton1.TabIndex = 25;
+            this.radioButton1.Text = " Importar";
+            this.radioButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // resultButton
+            // 
+            this.resultButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.resultButton.FlatAppearance.BorderSize = 0;
+            this.resultButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resultButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resultButton.Image = global::TestPlatform.Properties.Resources.icon_results;
+            this.resultButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.resultButton.Location = new System.Drawing.Point(0, 185);
+            this.resultButton.Name = "resultButton";
+            this.resultButton.Size = new System.Drawing.Size(260, 32);
+            this.resultButton.TabIndex = 22;
+            this.resultButton.Text = " Resultados";
+            this.resultButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.resultButton.UseVisualStyleBackColor = true;
+            this.resultButton.Click += new System.EventHandler(this.resultButton_CheckedChanged);
             // 
             // experimentButton
             // 
@@ -437,23 +628,6 @@
             this.experimentButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.experimentButton.UseVisualStyleBackColor = false;
             this.experimentButton.Click += new System.EventHandler(this.experimentButton_CheckedChanged);
-            // 
-            // resultButton
-            // 
-            this.resultButton.Appearance = System.Windows.Forms.Appearance.Button;
-            this.resultButton.FlatAppearance.BorderSize = 0;
-            this.resultButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resultButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultButton.Image = global::TestPlatform.Properties.Resources.icon_results;
-            this.resultButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.resultButton.Location = new System.Drawing.Point(0, 185);
-            this.resultButton.Name = "resultButton";
-            this.resultButton.Size = new System.Drawing.Size(260, 32);
-            this.resultButton.TabIndex = 22;
-            this.resultButton.Text = " Resultados";
-            this.resultButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.resultButton.UseVisualStyleBackColor = true;
-            this.resultButton.Click += new System.EventHandler(this.resultButton_CheckedChanged);
             // 
             // buttonList
             // 
@@ -506,67 +680,22 @@
             this.buttonStroop.UseVisualStyleBackColor = true;
             this.buttonStroop.Click += new System.EventHandler(this.buttonStroop_CheckedChanged);
             // 
-            // panel1
+            // sideBarPanel
             // 
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.resultButton);
-            this.panel1.Controls.Add(this.experimentButton);
-            this.panel1.Controls.Add(this.buttonList);
-            this.panel1.Controls.Add(this.buttonReaction);
-            this.panel1.Controls.Add(this.buttonStroop);
-            this.panel1.Location = new System.Drawing.Point(0, 77);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 386);
-            this.panel1.TabIndex = 25;
+            this.sideBarPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sideBarPanel.Location = new System.Drawing.Point(197, 53);
+            this.sideBarPanel.Name = "sideBarPanel";
+            this.sideBarPanel.Size = new System.Drawing.Size(294, 754);
+            this.sideBarPanel.TabIndex = 28;
             // 
-            // radioButton2
+            // contentPanel
             // 
-            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton2.Enabled = false;
-            this.radioButton2.FlatAppearance.BorderSize = 0;
-            this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Image = global::TestPlatform.Properties.Resources.icon_export;
-            this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radioButton2.Location = new System.Drawing.Point(0, 269);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(260, 32);
-            this.radioButton2.TabIndex = 26;
-            this.radioButton2.Text = " Exportar";
-            this.radioButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton1.Enabled = false;
-            this.radioButton1.FlatAppearance.BorderSize = 0;
-            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Image = global::TestPlatform.Properties.Resources.icon_import;
-            this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.radioButton1.Location = new System.Drawing.Point(0, 227);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(260, 32);
-            this.radioButton1.TabIndex = 25;
-            this.radioButton1.Text = " Importar";
-            this.radioButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // executeBar
-            // 
-            this.executeBar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.executeBar.Controls.Add(this.programPanel);
-            this.executeBar.Controls.Add(this.participantPanel);
-            this.executeBar.Controls.Add(this.markPanel);
-            this.executeBar.Controls.Add(this.executeButton);
-            this.executeBar.Controls.Add(this.testToolStrip);
-            this.executeBar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.executeBar.Location = new System.Drawing.Point(2, 31);
-            this.executeBar.Name = "executeBar";
-            this.executeBar.Size = new System.Drawing.Size(1470, 45);
-            this.executeBar.TabIndex = 26;
+            this.contentPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.contentPanel.Location = new System.Drawing.Point(499, 53);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(968, 753);
+            this.contentPanel.TabIndex = 27;
             // 
             // programPanel
             // 
@@ -574,40 +703,50 @@
             this.programPanel.Controls.Add(this.label2);
             this.programPanel.Controls.Add(this.executingNameLabel);
             this.programPanel.Controls.Add(this.selectButton);
-            this.programPanel.Controls.Add(this.executingTypeLabel);
-            this.programPanel.Location = new System.Drawing.Point(3, 3);
+            this.programPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.programPanel.Location = new System.Drawing.Point(197, 7);
+            this.programPanel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.programPanel.Name = "programPanel";
-            this.programPanel.Size = new System.Drawing.Size(469, 36);
+            this.programPanel.Size = new System.Drawing.Size(294, 36);
             this.programPanel.TabIndex = 27;
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(134, 7);
+            this.label2.Location = new System.Drawing.Point(3, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Programa:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // executingNameLabel
             // 
+            this.executingNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.executingNameLabel.AutoSize = true;
             this.executingNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.executingNameLabel.Location = new System.Drawing.Point(218, 7);
+            this.executingNameLabel.Location = new System.Drawing.Point(85, 11);
             this.executingNameLabel.Name = "executingNameLabel";
             this.executingNameLabel.Size = new System.Drawing.Size(54, 18);
             this.executingNameLabel.TabIndex = 0;
             this.executingNameLabel.Text = "padrao";
+            this.executingNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // selectButton
             // 
+            this.selectButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.selectButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.selectButton.FlatAppearance.BorderSize = 0;
-            this.selectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.selectButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.selectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectButton.Location = new System.Drawing.Point(354, 1);
+            this.selectButton.Location = new System.Drawing.Point(176, 4);
             this.selectButton.Name = "selectButton";
-            this.selectButton.Size = new System.Drawing.Size(110, 34);
+            this.selectButton.Size = new System.Drawing.Size(110, 28);
             this.selectButton.TabIndex = 1;
             this.selectButton.Text = "Selecionar";
             this.selectButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -617,94 +756,35 @@
             // executingTypeLabel
             // 
             this.executingTypeLabel.AutoSize = true;
-            this.executingTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.executingTypeLabel.Location = new System.Drawing.Point(9, 7);
+            this.executingTypeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.executingTypeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.executingTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.executingTypeLabel.Location = new System.Drawing.Point(5, 7);
+            this.executingTypeLabel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.executingTypeLabel.Name = "executingTypeLabel";
-            this.executingTypeLabel.Size = new System.Drawing.Size(82, 18);
+            this.executingTypeLabel.Size = new System.Drawing.Size(184, 36);
             this.executingTypeLabel.TabIndex = 0;
             this.executingTypeLabel.Text = "StroopTest";
+            this.executingTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // participantPanel
+            // tableLayoutPanel2
             // 
-            this.participantPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.participantPanel.Controls.Add(this.participantTextBox);
-            this.participantPanel.Controls.Add(this.participantLabel);
-            this.participantPanel.Location = new System.Drawing.Point(478, 3);
-            this.participantPanel.Name = "participantPanel";
-            this.participantPanel.Size = new System.Drawing.Size(322, 36);
-            this.participantPanel.TabIndex = 28;
-            // 
-            // participantTextBox
-            // 
-            this.participantTextBox.Location = new System.Drawing.Point(112, 7);
-            this.participantTextBox.Name = "participantTextBox";
-            this.participantTextBox.Size = new System.Drawing.Size(172, 22);
-            this.participantTextBox.TabIndex = 1;
-            this.participantTextBox.Text = "padrao";
-            this.participantTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.participantTextBox_Validating);
-            this.participantTextBox.Validated += new System.EventHandler(this.participantTextBox_Validated);
-            // 
-            // participantLabel
-            // 
-            this.participantLabel.AutoSize = true;
-            this.participantLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.participantLabel.Location = new System.Drawing.Point(3, 8);
-            this.participantLabel.Name = "participantLabel";
-            this.participantLabel.Size = new System.Drawing.Size(85, 18);
-            this.participantLabel.TabIndex = 0;
-            this.participantLabel.Text = "Participante";
-            // 
-            // markPanel
-            // 
-            this.markPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.markPanel.Controls.Add(this.markTextBox);
-            this.markPanel.Controls.Add(this.markLabel);
-            this.markPanel.Location = new System.Drawing.Point(806, 3);
-            this.markPanel.Name = "markPanel";
-            this.markPanel.Size = new System.Drawing.Size(187, 36);
-            this.markPanel.TabIndex = 29;
-            // 
-            // markTextBox
-            // 
-            this.markTextBox.Location = new System.Drawing.Point(112, 7);
-            this.markTextBox.MaxLength = 1;
-            this.markTextBox.Name = "markTextBox";
-            this.markTextBox.Size = new System.Drawing.Size(34, 22);
-            this.markTextBox.TabIndex = 1;
-            this.markTextBox.Text = "s";
-            this.markTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.markTextBox_Validating);
-            this.markTextBox.Validated += new System.EventHandler(this.markTextBox_Validated);
-            // 
-            // markLabel
-            // 
-            this.markLabel.AutoSize = true;
-            this.markLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.markLabel.Location = new System.Drawing.Point(3, 8);
-            this.markLabel.Name = "markLabel";
-            this.markLabel.Size = new System.Drawing.Size(72, 18);
-            this.markLabel.TabIndex = 0;
-            this.markLabel.Text = "Marcador";
-            // 
-            // executeButton
-            // 
-            this.executeButton.FlatAppearance.BorderSize = 0;
-            this.executeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.executeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.executeButton.Image = global::TestPlatform.Properties.Resources.icon_execute;
-            this.executeButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.executeButton.Location = new System.Drawing.Point(999, 3);
-            this.executeButton.Name = "executeButton";
-            this.executeButton.Size = new System.Drawing.Size(127, 36);
-            this.executeButton.TabIndex = 0;
-            this.executeButton.Text = "Executar";
-            this.executeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.executeButton.UseVisualStyleBackColor = true;
-            this.executeButton.Click += new System.EventHandler(this.executeButton_Click);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider1.ContainerControl = this;
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.48347F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.70248F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.15702F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.86364F));
+            this.tableLayoutPanel2.Controls.Add(this.testToolStrip, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.participantPanel, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.executeButton, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.markPanel, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(499, 5);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(968, 40);
+            this.tableLayoutPanel2.TabIndex = 29;
             // 
             // FormMain
             // 
@@ -714,9 +794,8 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1472, 840);
-            this.Controls.Add(this.executeBar);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.mainMenuStrip);
-            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -726,22 +805,25 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Test Platform";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
             this.testToolStrip.ResumeLayout(false);
             this.testToolStrip.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.executeBar.ResumeLayout(false);
-            this.executeBar.PerformLayout();
-            this.programPanel.ResumeLayout(false);
-            this.programPanel.PerformLayout();
-            this.participantPanel.ResumeLayout(false);
-            this.participantPanel.PerformLayout();
             this.markPanel.ResumeLayout(false);
             this.markPanel.PerformLayout();
+            this.participantPanel.ResumeLayout(false);
+            this.participantPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.menuPanel.ResumeLayout(false);
+            this.programPanel.ResumeLayout(false);
+            this.programPanel.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -783,31 +865,34 @@
         private System.Windows.Forms.ToolStripMenuItem editAudioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newAudioToolStripMenu;
         private System.Windows.Forms.ToolStripMenuItem displayAudiosToolStripMenuItem;
-        private System.Windows.Forms.RadioButton resultButton;
-        private System.Windows.Forms.RadioButton buttonList;
-        private System.Windows.Forms.RadioButton buttonReaction;
-        private System.Windows.Forms.RadioButton buttonStroop;
-        private System.Windows.Forms.RadioButton experimentButton;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.ToolStripMenuItem stroopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reactionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stroopToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem reactionToolStripMenuItem1;
-        private System.Windows.Forms.FlowLayoutPanel executeBar;
         private System.Windows.Forms.Button executeButton;
-        private System.Windows.Forms.Button selectButton;
-        private System.Windows.Forms.Panel programPanel;
-        private System.Windows.Forms.Label executingTypeLabel;
-        private System.Windows.Forms.Label executingNameLabel;
         private System.Windows.Forms.Panel participantPanel;
         private System.Windows.Forms.Label participantLabel;
         private System.Windows.Forms.TextBox participantTextBox;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel markPanel;
         private System.Windows.Forms.TextBox markTextBox;
         private System.Windows.Forms.Label markLabel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel programPanel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label executingNameLabel;
+        private System.Windows.Forms.Button selectButton;
+        private System.Windows.Forms.Label executingTypeLabel;
+        private System.Windows.Forms.Panel menuPanel;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton resultButton;
+        private System.Windows.Forms.RadioButton experimentButton;
+        private System.Windows.Forms.RadioButton buttonList;
+        private System.Windows.Forms.RadioButton buttonReaction;
+        private System.Windows.Forms.RadioButton buttonStroop;
+        private System.Windows.Forms.Panel sideBarPanel;
+        private System.Windows.Forms.Panel contentPanel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

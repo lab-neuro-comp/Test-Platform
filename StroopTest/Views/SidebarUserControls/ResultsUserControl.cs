@@ -60,6 +60,7 @@ namespace TestPlatform.Views.SidebarUserControls
 
         public ResultsUserControl()
         {
+            this.Dock = DockStyle.Fill;
             InitializeComponent();
         }
 
@@ -69,7 +70,7 @@ namespace TestPlatform.Views.SidebarUserControls
             try
             {
                 showData = new FormShowData(TestFilesPath + StroopResultsPath);
-                Parent.Controls.Add(showData);
+                Global.GlobalFormMain._contentPanel.Controls.Add(showData);
                 StroopButton.Checked = false;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -81,7 +82,7 @@ namespace TestPlatform.Views.SidebarUserControls
             try
             {
                 showData = new ReactionResultUserControl(TestFilesPath + ReactionResultsPath);
-                Parent.Controls.Add(showData);
+                Global.GlobalFormMain._contentPanel.Controls.Add(showData);
                 reactionButton.Checked = false;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

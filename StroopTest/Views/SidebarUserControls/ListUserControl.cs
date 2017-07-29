@@ -24,6 +24,7 @@ namespace TestPlatform.Views.SidebarControls
 
         public ListUserControl()
         {
+            this.Dock = DockStyle.Fill;
             InitializeComponent();
         }
 
@@ -42,8 +43,8 @@ namespace TestPlatform.Views.SidebarControls
         {
             if (recordAudioButton.Checked)
             {
-                FormShowAudio newAudio = new FormShowAudio(testFilesPath + "/StroopTestFiles/data/");                
-                Parent.Controls.Add(newAudio);
+                FormShowAudio newAudio = new FormShowAudio(testFilesPath + "/StroopTestFiles/data/");
+                Global.GlobalFormMain._contentPanel.Controls.Add(newAudio);
             }
         }
 
@@ -54,7 +55,7 @@ namespace TestPlatform.Views.SidebarControls
                 FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/Lst/", false);
                 try
                 {
-                    Parent.Controls.Add(configureAudioList);
+                    Global.GlobalFormMain._contentPanel.Controls.Add(configureAudioList);
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
@@ -67,7 +68,7 @@ namespace TestPlatform.Views.SidebarControls
                 FormAudioConfig configureAudioList = new FormAudioConfig(testFilesPath + "/Lst/", true);
                 try
                 {
-                    Parent.Controls.Add(configureAudioList);
+                    Global.GlobalFormMain._contentPanel.Controls.Add(configureAudioList);
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
@@ -110,7 +111,7 @@ namespace TestPlatform.Views.SidebarControls
                 FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/Lst/", false);
                 try
                 {
-                    Parent.Controls.Add(configureList);
+                    Global.GlobalFormMain._contentPanel.Controls.Add(configureList);
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
@@ -123,7 +124,7 @@ namespace TestPlatform.Views.SidebarControls
                 FormWordColorConfig configureList = new FormWordColorConfig(testFilesPath + "/Lst/", true);
                 try
                 {
-                    Parent.Controls.Add(configureList);
+                    Global.GlobalFormMain._contentPanel.Controls.Add(configureList);
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
@@ -148,7 +149,7 @@ namespace TestPlatform.Views.SidebarControls
                 FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/Lst/", "false");
                 try
                 {
-                    Parent.Controls.Add(configureImagesList);
+                    Global.GlobalFormMain._contentPanel.Controls.Add(configureImagesList);
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
@@ -159,7 +160,7 @@ namespace TestPlatform.Views.SidebarControls
             if (editImageListButton.Checked)
             {
                 FormImgConfig configureImagesList = new FormImgConfig(testFilesPath + "/Lst/", "");
-                try { Parent.Controls.Add(configureImagesList); }
+                try { Global.GlobalFormMain._contentPanel.Controls.Add(configureImagesList); }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }

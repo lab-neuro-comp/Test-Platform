@@ -20,7 +20,7 @@ namespace TestPlatform.Views
         public FormTRConfig(string prgName)
         {
             this.prgName = prgName;
-            Location = new Point(530, 48);
+            this.Dock = DockStyle.Fill;
             InitializeComponent();
             positionsBox.SelectedIndex = 2;
             responseTypeBox.SelectedIndex = 0;

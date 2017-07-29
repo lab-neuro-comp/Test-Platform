@@ -37,7 +37,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.Name = "DefaultUserControl";
-            this.Size = new System.Drawing.Size(260, 900);
+            this.Size = new System.Drawing.Size(260, 1143);
             this.Load += new System.EventHandler(this.DefaultUserControl_Load);
             this.ResumeLayout(false);
 

@@ -57,12 +57,15 @@
             // 
             // btnOpen
             // 
+            this.btnOpen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnOpen.AutoSize = true;
             this.btnOpen.CausesValidation = false;
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOpen.Location = new System.Drawing.Point(25, 107);
             this.btnOpen.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(181, 28);
+            this.btnOpen.Size = new System.Drawing.Size(48, 27);
             this.btnOpen.TabIndex = 20;
             this.btnOpen.Text = "Abrir";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -70,22 +73,27 @@
             // 
             // pictureBox
             // 
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox.Location = new System.Drawing.Point(236, 57);
             this.pictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(463, 270);
+            this.pictureBox.Size = new System.Drawing.Size(463, 247);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 4;
             this.pictureBox.TabStop = false;
             // 
             // deleteItemButton
             // 
+            this.deleteItemButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.deleteItemButton.AutoSize = true;
             this.deleteItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.deleteItemButton.Location = new System.Drawing.Point(25, 159);
             this.deleteItemButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteItemButton.Name = "deleteItemButton";
-            this.deleteItemButton.Size = new System.Drawing.Size(181, 28);
+            this.deleteItemButton.Size = new System.Drawing.Size(119, 27);
             this.deleteItemButton.TabIndex = 21;
             this.deleteItemButton.Text = "Apagar (Delete)";
             this.deleteItemButton.UseVisualStyleBackColor = true;
@@ -93,13 +101,16 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cancelButton.AutoSize = true;
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(25, 747);
+            this.cancelButton.Location = new System.Drawing.Point(28, 702);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(100, 28);
+            this.cancelButton.Size = new System.Drawing.Size(72, 27);
             this.cancelButton.TabIndex = 31;
             this.cancelButton.Text = "cancelar";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -107,11 +118,14 @@
             // 
             // saveButton
             // 
+            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.saveButton.AutoSize = true;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(600, 747);
+            this.saveButton.Location = new System.Drawing.Point(643, 702);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(100, 28);
+            this.saveButton.Size = new System.Drawing.Size(56, 27);
             this.saveButton.TabIndex = 30;
             this.saveButton.Text = "salvar";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -122,6 +136,8 @@
             this.imgPathDataGridView.AllowUserToAddRows = false;
             this.imgPathDataGridView.AllowUserToOrderColumns = true;
             this.imgPathDataGridView.AllowUserToResizeRows = false;
+            this.imgPathDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.imgPathDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.imgPathDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.imgPathDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -136,7 +152,7 @@
             this.imgPathDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.imgPathDataGridView.RowHeadersVisible = false;
             this.imgPathDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.imgPathDataGridView.Size = new System.Drawing.Size(671, 404);
+            this.imgPathDataGridView.Size = new System.Drawing.Size(671, 340);
             this.imgPathDataGridView.TabIndex = 10;
             this.imgPathDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.imgPathDataGridView_CellContentClick);
             this.imgPathDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.imgPathDataGridView_CellMouseClick);
@@ -174,11 +190,14 @@
             // 
             // moveUpButton
             // 
+            this.moveUpButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.moveUpButton.AutoSize = true;
             this.moveUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.moveUpButton.Location = new System.Drawing.Point(25, 210);
             this.moveUpButton.Margin = new System.Windows.Forms.Padding(4);
             this.moveUpButton.Name = "moveUpButton";
-            this.moveUpButton.Size = new System.Drawing.Size(181, 28);
+            this.moveUpButton.Size = new System.Drawing.Size(120, 27);
             this.moveUpButton.TabIndex = 22;
             this.moveUpButton.Text = "Acima (Ctrl + ->)";
             this.moveUpButton.UseVisualStyleBackColor = true;
@@ -186,11 +205,14 @@
             // 
             // moveDownButton
             // 
+            this.moveDownButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.moveDownButton.AutoSize = true;
             this.moveDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.moveDownButton.Location = new System.Drawing.Point(25, 246);
             this.moveDownButton.Margin = new System.Windows.Forms.Padding(4);
             this.moveDownButton.Name = "moveDownButton";
-            this.moveDownButton.Size = new System.Drawing.Size(181, 28);
+            this.moveDownButton.Size = new System.Drawing.Size(124, 27);
             this.moveDownButton.TabIndex = 23;
             this.moveDownButton.Text = "Abaixo (Ctrl + <-)";
             this.moveDownButton.UseVisualStyleBackColor = true;
@@ -198,6 +220,8 @@
             // 
             // moveRowLabel
             // 
+            this.moveRowLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.moveRowLabel.AutoSize = true;
             this.moveRowLabel.Location = new System.Drawing.Point(25, 191);
             this.moveRowLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -208,6 +232,8 @@
             // 
             // imagesLabel
             // 
+            this.imagesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.imagesLabel.AutoSize = true;
             this.imagesLabel.Location = new System.Drawing.Point(25, 87);
             this.imagesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -218,6 +244,8 @@
             // 
             // deleteItemLabel
             // 
+            this.deleteItemLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.deleteItemLabel.AutoSize = true;
             this.deleteItemLabel.Location = new System.Drawing.Point(25, 139);
             this.deleteItemLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -228,6 +256,8 @@
             // 
             // imgListNameTextBox
             // 
+            this.imgListNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.imgListNameTextBox.Location = new System.Drawing.Point(25, 54);
             this.imgListNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.imgListNameTextBox.Name = "imgListNameTextBox";
@@ -238,6 +268,8 @@
             // 
             // imgListNameLabel
             // 
+            this.imgListNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.imgListNameLabel.AutoSize = true;
             this.imgListNameLabel.Location = new System.Drawing.Point(25, 34);
             this.imgListNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -248,6 +280,8 @@
             // 
             // numberFilesLabel
             // 
+            this.numberFilesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.numberFilesLabel.AutoSize = true;
             this.numberFilesLabel.Location = new System.Drawing.Point(29, 306);
             this.numberFilesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -258,6 +292,8 @@
             // 
             // numberFiles
             // 
+            this.numberFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.numberFiles.AutoSize = true;
             this.numberFiles.Location = new System.Drawing.Point(155, 306);
             this.numberFiles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -268,6 +304,9 @@
             // 
             // helpButton
             // 
+            this.helpButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.helpButton.AutoSize = true;
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
             this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -285,6 +324,8 @@
             // 
             // labelEmpty
             // 
+            this.labelEmpty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.labelEmpty.AutoSize = true;
             this.labelEmpty.ForeColor = System.Drawing.Color.Red;
             this.labelEmpty.Location = new System.Drawing.Point(28, 287);
@@ -320,7 +361,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(594, 666);
             this.Name = "FormImgConfig";
-            this.Size = new System.Drawing.Size(725, 785);
+            this.Size = new System.Drawing.Size(725, 804);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPathDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

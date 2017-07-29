@@ -9,6 +9,7 @@ namespace TestPlatform.Views
         string testFilesPath;
         public StroopControl()
         {
+            this.Dock = DockStyle.Fill;
             InitializeComponent();
         }
 
@@ -29,7 +30,7 @@ namespace TestPlatform.Views
             {
                 FormPrgConfig configureProgram = new FormPrgConfig();
                 configureProgram.Path = testFilesPath;
-                Parent.Controls.Add(configureProgram);
+                Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
                 newStroopButton.Checked = false;
             }
         }
@@ -49,7 +50,7 @@ namespace TestPlatform.Views
                         FormPrgConfig configureProgram = new FormPrgConfig();
                         configureProgram.Path = testFilesPath;
                         configureProgram.PrgName = editProgramName;
-                        Parent.Controls.Add(configureProgram);
+                        Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
                         editStroopButton.Checked = false;
                     }
                 }

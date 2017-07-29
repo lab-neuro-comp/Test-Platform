@@ -6,6 +6,7 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
+using TestPlatform.Views;
 
 namespace TestPlatform
 {
@@ -19,7 +20,9 @@ namespace TestPlatform
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            FormMain application = new FormMain();
+            Global.GlobalFormMain = application;
+            Application.Run(application);
         }
     }
 }

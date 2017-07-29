@@ -66,7 +66,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(917, 455);
+            this.dataGridView1.Size = new System.Drawing.Size(917, 415);
             this.dataGridView1.TabIndex = 85;
             // 
             // fileNameBox
@@ -104,7 +104,7 @@
             // 
             this.closeButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.closeButton.Location = new System.Drawing.Point(14, 562);
+            this.closeButton.Location = new System.Drawing.Point(14, 536);
             this.closeButton.Margin = new System.Windows.Forms.Padding(4);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(100, 28);

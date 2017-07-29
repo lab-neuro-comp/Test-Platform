@@ -28,7 +28,7 @@ namespace TestPlatform
         {
             InitializeComponent();
 
-            Location = new Point(395, 50);
+            this.Dock = DockStyle.Fill;
             string[] filePaths = null;
             path = dataFolderPath;
 

@@ -132,7 +132,7 @@
             this.reactionConfigPanel.Controls.Add(this.instructionsLabel);
             this.reactionConfigPanel.Controls.Add(this.prgNameTextBox);
             this.reactionConfigPanel.Controls.Add(this.prgNameLabel);
-            this.reactionConfigPanel.Location = new System.Drawing.Point(16, 33);
+            this.reactionConfigPanel.Location = new System.Drawing.Point(16, 4);
             this.reactionConfigPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reactionConfigPanel.Name = "reactionConfigPanel";
             this.reactionConfigPanel.Size = new System.Drawing.Size(693, 708);
@@ -962,10 +962,11 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.AutoSize = true;
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(9, 747);
+            this.cancelButton.Location = new System.Drawing.Point(16, 718);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 28);
@@ -976,8 +977,9 @@
             // 
             // saveButton
             // 
+            this.saveButton.AutoSize = true;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(621, 747);
+            this.saveButton.Location = new System.Drawing.Point(609, 718);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 28);
@@ -1026,6 +1028,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

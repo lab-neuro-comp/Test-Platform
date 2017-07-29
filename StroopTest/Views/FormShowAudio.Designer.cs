@@ -48,10 +48,10 @@
             this.stopRecordingButton = new System.Windows.Forms.Button();
             this.recordButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.directoryLabel = new System.Windows.Forms.Label();
-            this.selectedDirectory = new System.Windows.Forms.Label();
             this.recordButton1 = new System.Windows.Forms.Button();
+            this.selectedDirectory = new System.Windows.Forms.Label();
+            this.directoryLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.audioPathDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +108,7 @@
             this.audioPathDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.audioPathDataGridView.RowHeadersVisible = false;
             this.audioPathDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.audioPathDataGridView.Size = new System.Drawing.Size(693, 537);
+            this.audioPathDataGridView.Size = new System.Drawing.Size(693, 356);
             this.audioPathDataGridView.TabIndex = 44;
             this.audioPathDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.audioPathDataGridView_CellContentDoubleClick);
             this.audioPathDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.audioPathDataGridView_KeyDown);
@@ -134,7 +134,7 @@
             // 
             this.closeButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.closeButton.Location = new System.Drawing.Point(19, 755);
+            this.closeButton.Location = new System.Drawing.Point(13, 639);
             this.closeButton.Margin = new System.Windows.Forms.Padding(4);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(100, 28);
@@ -158,7 +158,7 @@
             // numberFilesLabel
             // 
             this.numberFilesLabel.AutoSize = true;
-            this.numberFilesLabel.Location = new System.Drawing.Point(217, 755);
+            this.numberFilesLabel.Location = new System.Drawing.Point(211, 639);
             this.numberFilesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numberFilesLabel.Name = "numberFilesLabel";
             this.numberFilesLabel.Size = new System.Drawing.Size(164, 17);
@@ -168,7 +168,7 @@
             // numberFiles
             // 
             this.numberFiles.AutoSize = true;
-            this.numberFiles.Location = new System.Drawing.Point(403, 755);
+            this.numberFiles.Location = new System.Drawing.Point(397, 639);
             this.numberFiles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numberFiles.Name = "numberFiles";
             this.numberFiles.Size = new System.Drawing.Size(16, 17);
@@ -223,6 +223,7 @@
             // 
             // currenFolderLabel
             // 
+            this.currenFolderLabel.AutoEllipsis = true;
             this.currenFolderLabel.AutoSize = true;
             this.currenFolderLabel.Location = new System.Drawing.Point(318, 183);
             this.currenFolderLabel.Name = "currenFolderLabel";
@@ -289,33 +290,6 @@
             this.panel1.Size = new System.Drawing.Size(652, 129);
             this.panel1.TabIndex = 91;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Novo Aúdio";
-            // 
-            // directoryLabel
-            // 
-            this.directoryLabel.AutoSize = true;
-            this.directoryLabel.Location = new System.Drawing.Point(114, 0);
-            this.directoryLabel.Name = "directoryLabel";
-            this.directoryLabel.Size = new System.Drawing.Size(148, 17);
-            this.directoryLabel.TabIndex = 90;
-            this.directoryLabel.Text = "Diretório Selecionado:";
-            // 
-            // selectedDirectory
-            // 
-            this.selectedDirectory.AutoSize = true;
-            this.selectedDirectory.Location = new System.Drawing.Point(271, 0);
-            this.selectedDirectory.Name = "selectedDirectory";
-            this.selectedDirectory.Size = new System.Drawing.Size(61, 17);
-            this.selectedDirectory.TabIndex = 91;
-            this.selectedDirectory.Text = "Nenhum";
-            // 
             // recordButton1
             // 
             this.recordButton1.FlatAppearance.BorderSize = 0;
@@ -328,6 +302,33 @@
             this.recordButton1.Text = "Gravar Aúdio";
             this.recordButton1.UseVisualStyleBackColor = true;
             this.recordButton1.Click += new System.EventHandler(this.recordButton1_Click);
+            // 
+            // selectedDirectory
+            // 
+            this.selectedDirectory.AutoSize = true;
+            this.selectedDirectory.Location = new System.Drawing.Point(271, 0);
+            this.selectedDirectory.Name = "selectedDirectory";
+            this.selectedDirectory.Size = new System.Drawing.Size(61, 17);
+            this.selectedDirectory.TabIndex = 91;
+            this.selectedDirectory.Text = "Nenhum";
+            // 
+            // directoryLabel
+            // 
+            this.directoryLabel.AutoSize = true;
+            this.directoryLabel.Location = new System.Drawing.Point(114, 0);
+            this.directoryLabel.Name = "directoryLabel";
+            this.directoryLabel.Size = new System.Drawing.Size(148, 17);
+            this.directoryLabel.TabIndex = 90;
+            this.directoryLabel.Text = "Diretório Selecionado:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Novo Aúdio";
             // 
             // FormShowAudio
             // 

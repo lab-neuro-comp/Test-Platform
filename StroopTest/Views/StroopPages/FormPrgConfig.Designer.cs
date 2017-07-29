@@ -134,7 +134,7 @@
             this.panel1.Controls.Add(this.instructionsLabel);
             this.panel1.Controls.Add(this.prgNameTextBox);
             this.panel1.Controls.Add(this.prgNameLabel);
-            this.panel1.Location = new System.Drawing.Point(15, 14);
+            this.panel1.Location = new System.Drawing.Point(15, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(693, 718);
@@ -1033,14 +1033,14 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.AutoSize = true;
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(9, 742);
+            this.cancelButton.Location = new System.Drawing.Point(15, 722);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(100, 28);
+            this.cancelButton.Size = new System.Drawing.Size(100, 27);
             this.cancelButton.TabIndex = 83;
             this.cancelButton.Text = "cancelar";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -1048,12 +1048,12 @@
             // 
             // saveButton
             // 
-            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.saveButton.AutoSize = true;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(621, 742);
+            this.saveButton.Location = new System.Drawing.Point(608, 722);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(100, 28);
+            this.saveButton.Size = new System.Drawing.Size(100, 27);
             this.saveButton.TabIndex = 82;
             this.saveButton.Text = "salvar";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -1102,6 +1102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

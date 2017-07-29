@@ -34,6 +34,8 @@
             // 
             // StroopButton
             // 
+            this.StroopButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.StroopButton.Appearance = System.Windows.Forms.Appearance.Button;
             this.StroopButton.FlatAppearance.BorderSize = 0;
             this.StroopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -48,6 +50,8 @@
             // 
             // reactionButton
             // 
+            this.reactionButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.reactionButton.Appearance = System.Windows.Forms.Appearance.Button;
             this.reactionButton.FlatAppearance.BorderSize = 0;
             this.reactionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -67,6 +71,7 @@
             this.Controls.Add(this.reactionButton);
             this.Controls.Add(this.StroopButton);
             this.Name = "ResultsUserControl";
+            this.Size = new System.Drawing.Size(263, 1257);
             this.ResumeLayout(false);
 
         }

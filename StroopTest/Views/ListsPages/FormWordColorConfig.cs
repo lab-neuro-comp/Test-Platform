@@ -22,7 +22,7 @@ namespace TestPlatform
         {
             path = listsPath;
             InitializeComponent();
-            Location = new Point(400, 38);
+            this.Dock = DockStyle.Fill;
             if (editFile)
             {
                 openFilesForEdition(listsPath);

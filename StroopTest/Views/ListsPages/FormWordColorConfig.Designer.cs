@@ -73,7 +73,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.wordsDataGridView.Location = new System.Drawing.Point(201, 94);
+            this.wordsDataGridView.Location = new System.Drawing.Point(201, 52);
             this.wordsDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.wordsDataGridView.Name = "wordsDataGridView";
             this.wordsDataGridView.ReadOnly = true;
@@ -97,7 +97,7 @@
             // 
             // listNameTextBox
             // 
-            this.listNameTextBox.Location = new System.Drawing.Point(120, 57);
+            this.listNameTextBox.Location = new System.Drawing.Point(120, 15);
             this.listNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.listNameTextBox.Name = "listNameTextBox";
             this.listNameTextBox.Size = new System.Drawing.Size(180, 22);
@@ -108,7 +108,7 @@
             // listNameLabel
             // 
             this.listNameLabel.AutoSize = true;
-            this.listNameLabel.Location = new System.Drawing.Point(8, 60);
+            this.listNameLabel.Location = new System.Drawing.Point(8, 18);
             this.listNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.listNameLabel.Name = "listNameLabel";
             this.listNameLabel.Size = new System.Drawing.Size(103, 17);
@@ -118,7 +118,7 @@
             // wordsListCheckBox
             // 
             this.wordsListCheckBox.AutoSize = true;
-            this.wordsListCheckBox.Location = new System.Drawing.Point(327, 59);
+            this.wordsListCheckBox.Location = new System.Drawing.Point(327, 17);
             this.wordsListCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.wordsListCheckBox.Name = "wordsListCheckBox";
             this.wordsListCheckBox.Size = new System.Drawing.Size(139, 21);
@@ -130,7 +130,7 @@
             // colorsListCheckBox
             // 
             this.colorsListCheckBox.AutoSize = true;
-            this.colorsListCheckBox.Location = new System.Drawing.Point(492, 59);
+            this.colorsListCheckBox.Location = new System.Drawing.Point(492, 17);
             this.colorsListCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.colorsListCheckBox.Name = "colorsListCheckBox";
             this.colorsListCheckBox.Size = new System.Drawing.Size(121, 21);
@@ -141,12 +141,13 @@
             // 
             // newItemButton
             // 
+            this.newItemButton.AutoSize = true;
             this.newItemButton.CausesValidation = false;
             this.newItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.newItemButton.Location = new System.Drawing.Point(12, 94);
+            this.newItemButton.Location = new System.Drawing.Point(12, 52);
             this.newItemButton.Margin = new System.Windows.Forms.Padding(4);
             this.newItemButton.Name = "newItemButton";
-            this.newItemButton.Size = new System.Drawing.Size(181, 28);
+            this.newItemButton.Size = new System.Drawing.Size(181, 29);
             this.newItemButton.TabIndex = 10;
             this.newItemButton.Text = "Novo Item";
             this.newItemButton.UseVisualStyleBackColor = true;
@@ -155,7 +156,7 @@
             // deleteItemLabel
             // 
             this.deleteItemLabel.AutoSize = true;
-            this.deleteItemLabel.Location = new System.Drawing.Point(12, 126);
+            this.deleteItemLabel.Location = new System.Drawing.Point(12, 84);
             this.deleteItemLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.deleteItemLabel.Name = "deleteItemLabel";
             this.deleteItemLabel.Size = new System.Drawing.Size(88, 17);
@@ -165,7 +166,7 @@
             // moveRowLabel
             // 
             this.moveRowLabel.AutoSize = true;
-            this.moveRowLabel.Location = new System.Drawing.Point(12, 177);
+            this.moveRowLabel.Location = new System.Drawing.Point(12, 135);
             this.moveRowLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.moveRowLabel.Name = "moveRowLabel";
             this.moveRowLabel.Size = new System.Drawing.Size(81, 17);
@@ -174,8 +175,9 @@
             // 
             // moveDownButton
             // 
+            this.moveDownButton.AutoSize = true;
             this.moveDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.moveDownButton.Location = new System.Drawing.Point(12, 233);
+            this.moveDownButton.Location = new System.Drawing.Point(12, 191);
             this.moveDownButton.Margin = new System.Windows.Forms.Padding(4);
             this.moveDownButton.Name = "moveDownButton";
             this.moveDownButton.Size = new System.Drawing.Size(181, 28);
@@ -186,8 +188,9 @@
             // 
             // moveUpButton
             // 
+            this.moveUpButton.AutoSize = true;
             this.moveUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.moveUpButton.Location = new System.Drawing.Point(12, 197);
+            this.moveUpButton.Location = new System.Drawing.Point(12, 155);
             this.moveUpButton.Margin = new System.Windows.Forms.Padding(4);
             this.moveUpButton.Name = "moveUpButton";
             this.moveUpButton.Size = new System.Drawing.Size(181, 28);
@@ -198,8 +201,9 @@
             // 
             // deleteButton
             // 
+            this.deleteButton.AutoSize = true;
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.deleteButton.Location = new System.Drawing.Point(12, 145);
+            this.deleteButton.Location = new System.Drawing.Point(12, 103);
             this.deleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(181, 28);
@@ -211,7 +215,7 @@
             // numberItens
             // 
             this.numberItens.AutoSize = true;
-            this.numberItens.Location = new System.Drawing.Point(173, 276);
+            this.numberItens.Location = new System.Drawing.Point(173, 234);
             this.numberItens.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numberItens.Name = "numberItens";
             this.numberItens.Size = new System.Drawing.Size(16, 17);
@@ -221,7 +225,7 @@
             // numberItensLabel
             // 
             this.numberItensLabel.AutoSize = true;
-            this.numberItensLabel.Location = new System.Drawing.Point(16, 276);
+            this.numberItensLabel.Location = new System.Drawing.Point(16, 234);
             this.numberItensLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numberItensLabel.Name = "numberItensLabel";
             this.numberItensLabel.Size = new System.Drawing.Size(96, 17);
@@ -233,7 +237,7 @@
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(15, 753);
+            this.cancelButton.Location = new System.Drawing.Point(15, 711);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 28);
@@ -245,7 +249,7 @@
             // saveButton
             // 
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(608, 753);
+            this.saveButton.Location = new System.Drawing.Point(608, 711);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 28);
@@ -256,10 +260,11 @@
             // 
             // helpButton
             // 
+            this.helpButton.AutoSize = true;
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
             this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(623, 56);
+            this.helpButton.Location = new System.Drawing.Point(673, 14);
             this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(35, 32);

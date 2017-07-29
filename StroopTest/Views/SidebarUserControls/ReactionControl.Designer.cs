@@ -35,7 +35,10 @@
             // 
             // deleteReactButton
             // 
+            this.deleteReactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteReactButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.deleteReactButton.Enabled = false;
             this.deleteReactButton.FlatAppearance.BorderSize = 0;
             this.deleteReactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteReactButton.Location = new System.Drawing.Point(0, 81);
@@ -48,6 +51,8 @@
             // 
             // editReactButton
             // 
+            this.editReactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.editReactButton.Appearance = System.Windows.Forms.Appearance.Button;
             this.editReactButton.FlatAppearance.BorderSize = 0;
             this.editReactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -62,6 +67,8 @@
             // 
             // newReactButton
             // 
+            this.newReactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.newReactButton.Appearance = System.Windows.Forms.Appearance.Button;
             this.newReactButton.FlatAppearance.BorderSize = 0;
             this.newReactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -82,6 +89,7 @@
             this.Controls.Add(this.editReactButton);
             this.Controls.Add(this.newReactButton);
             this.Name = "ReactionControl";
+            this.Size = new System.Drawing.Size(263, 1252);
             this.ResumeLayout(false);
 
         }

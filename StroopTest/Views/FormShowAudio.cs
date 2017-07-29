@@ -21,16 +21,18 @@ namespace TestPlatform
         private TimeSpan currentElapsedTime = TimeSpan.Zero;
         private bool timerRunning = false;
         private string pathText = null;
+        private bool recording = false;
 
         public FormShowAudio(string dataFolderPath)
         {
+            this.Dock = DockStyle.Fill;
             InitializeComponent();
             recordingLabel.Visible = false;
             timer = new Timer();
             timer.Interval = 1;
             timer.Tick += new EventHandler(timer_Tick);
             currentElapsedTimeDisplay.Visible = false;
-            Location = new Point(400, 38);
+            
             path = dataFolderPath;
             loadingAudioFilesToDataGrid();
         }
@@ -111,13 +113,18 @@ namespace TestPlatform
 
         private void stopRecordingButton_Click(object sender, EventArgs e)
         {
-            recordingLabel.Visible = false;
-            timer.Stop();
-            timerRunning = false;
-            currentElapsedTime = TimeSpan.Zero;
-            audioRecorder.saveRecording();
+            if (recording)
+            {
+                recording = false;
+                recordingLabel.Visible = false;
+                timer.Stop();
+                timerRunning = false;
+                currentElapsedTime = TimeSpan.Zero;
+                audioRecorder.saveRecording();
+                MessageBox.Show("Aúdio gravado com sucesso!");
+                loadingAudioFilesToDataGrid();
+            }            
             
-            loadingAudioFilesToDataGrid();
             
         }
 
@@ -152,7 +159,7 @@ namespace TestPlatform
 
         private void stopAudio_Click(object sender, EventArgs e)
         {
-            player.Stop();
+                player.Stop();
         }
 
         private void directoryButton_Click(object sender, EventArgs e)
@@ -178,16 +185,21 @@ namespace TestPlatform
         {
             if(selectedDirectory.Text != "Nenhum")
             {
-                audioRecorder.startRecording(selectedDirectory.Text);
-                recordingLabel.Visible = true;
-                currentElapsedTimeDisplay.Visible = true;
-                if (!timerRunning)
+                if(recording != true)
                 {
-                    startTime = DateTime.Now;
+                    recording = true;
+                    audioRecorder.startRecording(selectedDirectory.Text);
+                    recordingLabel.Visible = true;
+                    currentElapsedTimeDisplay.Visible = true;
+                    if (!timerRunning)
+                    {
+                        startTime = DateTime.Now;
 
-                    timer.Start();
-                    timerRunning = true;
+                        timer.Start();
+                        timerRunning = true;
+                    }
                 }
+                
             }
             else
             {

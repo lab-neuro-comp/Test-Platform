@@ -19,7 +19,7 @@ namespace TestPlatform
             InitializeComponent();
             path = audioFolderPath;
             labelEmpty.Visible = false;
-            Location = new Point(400, 50);
+            this.Dock = DockStyle.Fill;
             if (editList)
             {
                 openFilesForEdition();

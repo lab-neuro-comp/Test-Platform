@@ -35,7 +35,10 @@
             // 
             // deleteStroopButton
             // 
+            this.deleteStroopButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteStroopButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.deleteStroopButton.Enabled = false;
             this.deleteStroopButton.FlatAppearance.BorderSize = 0;
             this.deleteStroopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteStroopButton.Location = new System.Drawing.Point(0, 80);
@@ -48,6 +51,8 @@
             // 
             // editStroopButton
             // 
+            this.editStroopButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.editStroopButton.Appearance = System.Windows.Forms.Appearance.Button;
             this.editStroopButton.FlatAppearance.BorderSize = 0;
             this.editStroopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -62,6 +67,8 @@
             // 
             // newStroopButton
             // 
+            this.newStroopButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.newStroopButton.Appearance = System.Windows.Forms.Appearance.Button;
             this.newStroopButton.FlatAppearance.BorderSize = 0;
             this.newStroopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -83,6 +90,7 @@
             this.Controls.Add(this.editStroopButton);
             this.Controls.Add(this.newStroopButton);
             this.Name = "StroopControl";
+            this.Size = new System.Drawing.Size(263, 1225);
             this.ResumeLayout(false);
 
         }

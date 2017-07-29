@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using TestPlatform.Models;
 
@@ -6,6 +7,7 @@ namespace TestPlatform.Views.ExperimentPages
 {
     public partial class ExperimentConfig : UserControl
     {
+        Experiment savingExperiment = new Experiment();
 
         public ExperimentConfig()
         {
@@ -34,13 +36,26 @@ namespace TestPlatform.Views.ExperimentPages
             return null;
         }
 
-        private void addProgramButton_Click(object sender, System.EventArgs e)
+        private void addProgramButton_Click(object sender, EventArgs e)
         {
             string[] result = defineTest();
             if(result != null)
             {
                 programDataGridView.Rows.Add(result[1], result[0]);
-            }
+                if(result[0] == "StroopTest")
+                {
+                    savingExperiment.addStroopProgram(result[1]);
+                }
+                else if (result[0] == "ReactionTest")
+                {
+                    savingExperiment.addReactionProgram(result[1]);
+                }
+
+                else
+                {
+                    /*do nothin*/
+                }
+    }
             else
             {
                 /*do nothing*/
@@ -58,6 +73,8 @@ namespace TestPlatform.Views.ExperimentPages
             {
                 if (programDataGridView.RowCount > 0)
                 {
+                    int programIndex = programDataGridView.SelectedRows[0].Index;
+                    savingExperiment.ProgramList.RemoveAt(programIndex);
                     programDataGridView.Rows.RemoveAt(this.programDataGridView.SelectedRows[0].Index);
                 }
             }
@@ -69,7 +86,6 @@ namespace TestPlatform.Views.ExperimentPages
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            Experiment savingExperiment = new Experiment();
             savingExperiment.Name = experimentNameTextBox.Text;
             savingExperiment.IsOrderRandom = beepingCheckbox.Checked;
             savingExperiment.IntervalTime = Convert.ToInt32(intervalTime.Value);
@@ -85,6 +101,12 @@ namespace TestPlatform.Views.ExperimentPages
             {
                 savingExperiment.InstructionText = null;
             }
+            if (savingExperiment.saveExperimentFile(Global.experimentTestFilesPath + Global.programFolderName))
+            {
+                MessageBox.Show("O programa foi salvo com sucesso");
+                this.Parent.Controls.Remove(this);
+            }
+            
         }
     }
 }

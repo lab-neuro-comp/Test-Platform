@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.experimentConfigPanel = new System.Windows.Forms.Panel();
             this.helpButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -177,14 +177,14 @@
             this.programDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.programName,
             this.typePrograma});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.programDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.programDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.programDataGridView.Location = new System.Drawing.Point(112, 51);
             this.programDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.programDataGridView.Name = "programDataGridView";
@@ -225,6 +225,7 @@
             // instructionsBox
             // 
             this.instructionsBox.AcceptsReturn = true;
+            this.instructionsBox.AccessibleDescription = "";
             this.instructionsBox.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.instructionsBox.Location = new System.Drawing.Point(16, 527);
             this.instructionsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -233,7 +234,7 @@
             this.instructionsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.instructionsBox.Size = new System.Drawing.Size(657, 136);
             this.instructionsBox.TabIndex = 70;
-            this.instructionsBox.Text = "Escreva cada uma das intruções em linhas separadas.";
+            this.instructionsBox.Tag = "";
             // 
             // groupBox1
             // 
@@ -315,7 +316,6 @@
             // saveButton
             // 
             this.saveButton.AutoSize = true;
-            this.saveButton.Enabled = false;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.saveButton.Location = new System.Drawing.Point(615, 702);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);

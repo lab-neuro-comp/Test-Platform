@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using TestPlatform.Views;
 
 namespace TestPlatform.Models
 {
@@ -79,33 +80,62 @@ namespace TestPlatform.Models
             }
         }
 
-        public void addStroopProgram(string programName, string path)
+        internal List<Program> ProgramList
+        {
+            get
+            {
+                return programList;
+            }
+
+            set
+            {
+                programList = value;
+            }
+        }
+
+        public void addStroopProgram(string programName)
         {
             StroopProgram newProgram = new StroopProgram();
             newProgram.ProgramName = programName;
-            newProgram.readProgramFile(path + "/prg/" + newProgram.ProgramName + ".prg");
-            addingProgramToList(newProgram);
+            newProgram.readProgramFile(Global.stroopTestFilesPath + Global.programFolderName + newProgram.ProgramName + ".prg");
+            ProgramList.Add(newProgram);
         }
 
-        public void addReactionProgram(string path)
+        public void addReactionProgram(string programName)
         {
-            ReactionProgram newProgram = new ReactionProgram(path);
-            addingProgramToList(newProgram);
+            ReactionProgram newProgram = new ReactionProgram(Global.reactionTestFilesPath + Global.programFolderName + programName + ".prg");
+            ProgramList.Add(newProgram);
         }
 
         private string data()
         {
-            string experimentData = this.experimentName + " " + this.intervalTime + " " + this.isOrderRandom + "\n";
-            experimentData = experimentData + String.Join(", ", programList);
-
+            string experimentData = this.experimentName + " " + this.intervalTime + " " + this.isOrderRandom;
             return experimentData;
         }
 
-        public bool saveExperimentFile(string path, string instructionBoxText)
+        private string writeProgramList()
         {
-            StreamWriter writer = new StreamWriter(path + "ExperimentTestFiles/prg/" + experimentName + ".prg");
-            writer.Write(data());
-            if (InstructionText != null && InstructionText[0] != instructionBoxText)
+            string stringList = "";
+            foreach (Program program in ProgramList)
+            {
+                if(program.GetType() == typeof(StroopProgram))
+                {
+                    stringList = stringList + program.ProgramName + " StroopProgram ";
+                }
+                else if (program.GetType() == typeof(ReactionProgram))
+                {
+                    stringList = stringList + program.ProgramName + " ReactionProgram ";
+                }
+            }
+            return stringList;
+        }
+
+        public bool saveExperimentFile(string path)
+        {
+            StreamWriter writer = new StreamWriter(path + experimentName + ".prg");
+            writer.WriteLine(data());
+            writer.WriteLine(writeProgramList());
+            if (InstructionText != null)
             {
                 for (int i = 0; i < InstructionText.Count; i++)
                 {
@@ -116,9 +146,5 @@ namespace TestPlatform.Models
             return true;
         }
 
-        private void addingProgramToList(Program program)
-        {
-            programList.Add(program);
-        }
     }
 }

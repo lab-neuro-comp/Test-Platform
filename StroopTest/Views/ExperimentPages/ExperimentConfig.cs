@@ -13,7 +13,8 @@ namespace TestPlatform.Views.ExperimentPages
         {
             this.Dock = DockStyle.Fill;
             InitializeComponent();
-            if(programName != "false")
+            labelEmpty.Visible = false;
+            if (programName != "false")
             {
                 editProgramName = programName;
                 programEdition();
@@ -185,6 +186,36 @@ namespace TestPlatform.Views.ExperimentPages
 
             errorMessage = "";
             return true;
+        }
+
+
+        private void listLength_Validated(object sender, System.EventArgs e)
+        {
+            labelEmpty.Visible = false;
+        }
+
+        public bool ValidListLength(int number, out string errorMessage)
+        {
+            if (number == 0)
+            {
+                errorMessage = "A lista está \n vazia!";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void listLength_Validating(object sender,
+                             System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidListLength(programDataGridView.RowCount, out errorMsg))
+            {
+                e.Cancel = true;
+                labelEmpty.Text = errorMsg;
+                labelEmpty.Visible = true;
+            }
         }
     }
 }

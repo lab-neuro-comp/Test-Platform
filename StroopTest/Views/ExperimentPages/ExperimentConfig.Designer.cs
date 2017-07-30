@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.experimentConfigPanel = new System.Windows.Forms.Panel();
             this.helpButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -52,6 +52,7 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labelEmpty = new System.Windows.Forms.Label();
             this.experimentConfigPanel.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).BeginInit();
@@ -134,6 +135,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.labelEmpty);
             this.groupBox2.Controls.Add(this.deleteButton);
             this.groupBox2.Controls.Add(this.deleteItemLabel);
             this.groupBox2.Controls.Add(this.programDataGridView);
@@ -180,14 +182,14 @@
             this.programDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.programName,
             this.typePrograma});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.programDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.programDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.programDataGridView.Location = new System.Drawing.Point(112, 51);
             this.programDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.programDataGridView.Name = "programDataGridView";
@@ -197,6 +199,8 @@
             this.programDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.programDataGridView.Size = new System.Drawing.Size(520, 335);
             this.programDataGridView.TabIndex = 1;
+            this.programDataGridView.Validating += new System.ComponentModel.CancelEventHandler(this.listLength_Validating);
+            this.programDataGridView.Validated += new System.EventHandler(this.listLength_Validated);
             // 
             // programName
             // 
@@ -291,6 +295,7 @@
             this.experimentNameTextBox.Name = "experimentNameTextBox";
             this.experimentNameTextBox.Size = new System.Drawing.Size(262, 22);
             this.experimentNameTextBox.TabIndex = 1;
+            this.experimentNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.prgNameTextBox_Validating);
             this.experimentNameTextBox.Validated += new System.EventHandler(this.experimentNameTextBox_Validated);
             // 
             // experimentNameLabel
@@ -335,6 +340,19 @@
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
+            // 
+            // labelEmpty
+            // 
+            this.labelEmpty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelEmpty.AutoSize = true;
+            this.labelEmpty.ForeColor = System.Drawing.Color.Red;
+            this.labelEmpty.Location = new System.Drawing.Point(7, 177);
+            this.labelEmpty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEmpty.Name = "labelEmpty";
+            this.labelEmpty.Size = new System.Drawing.Size(77, 17);
+            this.labelEmpty.TabIndex = 84;
+            this.labelEmpty.Text = "labelEmpty";
             // 
             // ExperimentConfig
             // 
@@ -388,5 +406,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn programName;
         private System.Windows.Forms.DataGridViewTextBoxColumn typePrograma;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label labelEmpty;
     }
 }

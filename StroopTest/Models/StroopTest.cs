@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace TestPlatform.Models
 {
+    /*
+    * Class that represents results found while executing a test program (StroopProgram) and stores data from a partincipant test
+    *
+    */
     class StroopTest
     {
         private static String headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio";

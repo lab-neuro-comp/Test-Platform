@@ -60,6 +60,16 @@ namespace TestPlatform.Views
             }
         }
 
+        private void experimentRadioButon_Click(object sender, EventArgs e)
+        {
+            if (experimentRadioButon.Checked)
+            {
+                comboBox1.SelectedItem = null;
+                removeOptionsComboBox();
+                addOptionsComboBox(Global.experimentTestFilesPath + Global.programFolderName);
+            }
+        }
+
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.returnValues[1] = "padrao";
@@ -86,6 +96,10 @@ namespace TestPlatform.Views
                 else if (reactionButton.Checked)
                 {
                     returnValues[0] = "ReactionTest";
+                }
+                else if(experimentRadioButon.Checked)
+                {
+                    returnValues[0] = "Experimento";
                 }
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -118,5 +132,7 @@ namespace TestPlatform.Views
         {
             errorProvider1.SetError(comboBox1, "");
         }
+
+
     }
 }

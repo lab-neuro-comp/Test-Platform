@@ -7,7 +7,7 @@ namespace TestPlatform.Views.ExperimentPages
 {
     public partial class ExperimentConfig : UserControl
     {
-        Experiment savingExperiment = new Experiment();
+        ExperimentProgram savingExperiment = new ExperimentProgram();
         string editProgramName;
         public ExperimentConfig(string programName)
         {

@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.experimentRadioButon = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -86,21 +87,21 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.experimentRadioButon);
             this.panel1.Controls.Add(this.reactionButton);
             this.panel1.Controls.Add(this.stroopButton);
             this.panel1.Location = new System.Drawing.Point(12, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(380, 28);
+            this.panel1.Size = new System.Drawing.Size(407, 28);
             this.panel1.TabIndex = 24;
             // 
             // reactionButton
             // 
             this.reactionButton.AutoSize = true;
-            this.reactionButton.Location = new System.Drawing.Point(139, 3);
+            this.reactionButton.Location = new System.Drawing.Point(146, 4);
             this.reactionButton.Name = "reactionButton";
             this.reactionButton.Size = new System.Drawing.Size(113, 21);
             this.reactionButton.TabIndex = 1;
-            this.reactionButton.TabStop = true;
             this.reactionButton.Text = "ReactionTest";
             this.reactionButton.UseVisualStyleBackColor = true;
             this.reactionButton.Click += new System.EventHandler(this.reactionButton_Click);
@@ -108,6 +109,7 @@
             // stroopButton
             // 
             this.stroopButton.AutoSize = true;
+            this.stroopButton.Checked = true;
             this.stroopButton.Location = new System.Drawing.Point(3, 3);
             this.stroopButton.Name = "stroopButton";
             this.stroopButton.Size = new System.Drawing.Size(99, 21);
@@ -139,6 +141,18 @@
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
+            // 
+            // experimentRadioButon
+            // 
+            this.experimentRadioButon.AutoSize = true;
+            this.experimentRadioButon.Location = new System.Drawing.Point(297, 4);
+            this.experimentRadioButon.Name = "experimentRadioButon";
+            this.experimentRadioButon.Size = new System.Drawing.Size(107, 21);
+            this.experimentRadioButon.TabIndex = 2;
+            this.experimentRadioButon.TabStop = true;
+            this.experimentRadioButon.Text = "Experimento";
+            this.experimentRadioButon.UseVisualStyleBackColor = true;
+            this.experimentRadioButon.Click += new System.EventHandler(this.experimentRadioButon_Click);
             // 
             // FormDefineTest
             // 
@@ -175,5 +189,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.RadioButton experimentRadioButon;
     }
 }

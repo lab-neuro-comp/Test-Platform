@@ -115,126 +115,6 @@ namespace TestPlatform.Views
             }
         }
 
-        private void drawFullSquareShape()
-        {
-            int brush25 = 25;
-            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            
-            int[] screenPosition = randomScreenPosition();
-            float xSquare = (clientMiddle[X] - brush25) + screenPosition[X];
-            float ySquare = (clientMiddle[Y] - brush25) + screenPosition[Y];
-            float widthSquare = executingTest.ProgramInUse.StimuluSize;
-            float heightSquare = executingTest.ProgramInUse.StimuluSize;
-
-            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
-            Graphics formGraphicsSquare = CreateGraphics();
-            formGraphicsSquare.FillRectangle(myBrush, xSquare, ySquare, widthSquare, heightSquare);
-            formGraphicsSquare.Dispose();
-            
-        }
-
-        private void drawSquareShape()
-        {
-            int brush25 = 25;
-            int[] screenPosition = randomScreenPosition();
-            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };           
-            float xSquare = (clientMiddle[X] - brush25) + screenPosition[X];
-            float ySquare = (clientMiddle[Y] - brush25) + screenPosition[Y];
-
-            float widthSquare = executingTest.ProgramInUse.StimuluSize;
-            float heightSquare = executingTest.ProgramInUse.StimuluSize;
-
-            Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
-            Graphics formGraphicsSquare = CreateGraphics();
-            formGraphicsSquare.DrawRectangle(myPen, xSquare, ySquare, widthSquare, heightSquare);
-            formGraphicsSquare.Dispose();
-
-        }
-
-        private void drawFullCircleShape()
-        {
-            int brush25 = 25;
-            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };            
-            int[] screenPosition = randomScreenPosition();
-            
-            float xEllipse = (clientMiddle[X] - brush25) + screenPosition[X];
-            float yEllipse = (clientMiddle[Y] - brush25) + screenPosition[Y];
-            float widthEllipse = executingTest.ProgramInUse.StimuluSize;
-            float heightEllipse = executingTest.ProgramInUse.StimuluSize;
-
-            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
-            Graphics formGraphicsEllipse = CreateGraphics();
-            formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
-            formGraphicsEllipse.Dispose();
-
-        }
-
-        private void drawCircleShape()
-        {
-            int brush25 = 25;
-            
-            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int[] screenPosition = randomScreenPosition();
-            float xEllipse = (clientMiddle[X] - brush25) + screenPosition[X];
-            float yEllipse = (clientMiddle[Y] - brush25) + screenPosition[Y];
-
-            float widthEllipse = executingTest.ProgramInUse.StimuluSize;
-            float heightEllipse = executingTest.ProgramInUse.StimuluSize;
-
-            Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
-            Graphics formGraphicsEllipse = CreateGraphics();
-            formGraphicsEllipse.DrawEllipse(myPen, xEllipse, yEllipse, widthEllipse, heightEllipse);
-            formGraphicsEllipse.Dispose();
-        } 
-
-        private void triangleShape_draw(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            
-            
-            ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
-                this);
-            Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor), 1);
-            Point[] trianglePoints = createTrianglePoints();
-            g.DrawPolygon(myPen, trianglePoints);
-        }
-
-
-        private void drawTriangleShape()
-        {
-            Paint -= new PaintEventHandler(triangleShape_draw);
-            Paint += new PaintEventHandler(triangleShape_draw);            
-            Invalidate();
-        }
-
-        private void drawFullTriangleShape()
-        {            
-            Point[] trianglePoints = createTrianglePoints();
-
-            FillMode newFillMode = FillMode.Winding;
-            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
-            Graphics formGraphicsTriangle = CreateGraphics();
-            formGraphicsTriangle.FillPolygon(myBrush, trianglePoints, newFillMode);
-            formGraphicsTriangle.Dispose();
-
-        }
-
-        private Point[] createTrianglePoints()
-        {
-            int[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int[] screenPosition = randomScreenPosition();
-            int heightTriangle = executingTest.ProgramInUse.StimuluSize;
-
-            Point point1 = new Point((clientMiddle[X]) + screenPosition[X] + (heightTriangle / 3),
-                (clientMiddle[Y] - (heightTriangle / 2)) + screenPosition[Y]);
-            Point point2 = new Point((clientMiddle[X] - (3 * heightTriangle / 4)) + screenPosition[X], (clientMiddle[Y] - (heightTriangle / 2)) + screenPosition[Y]);
-            Point point3 = new Point((clientMiddle[X] - (heightTriangle / 2)) + screenPosition[X] + (heightTriangle / 3),
-                                        (clientMiddle[Y] - (heightTriangle / 2)) + screenPosition[Y] - heightTriangle);
-
-            Point[] trianglePoints = { point1, point2, point3 };
-            return trianglePoints;
-        }
-
         private void repairProgram()
         {
             try
@@ -384,19 +264,19 @@ namespace TestPlatform.Views
                     drawShape();
                     break;
                 case "Palavra":
-                    // await wordExposition();
+                    //  wordExposition();
                     break;
                 case "Imagem":
-                    // await imageExposition();
+                    // imageExposition();
                     break;
                 case "Imagem e Palavra":
-                    // await imageWordExposition();
+                    //  imageWordExposition();
                     break;
                 case "Palavra com Áudio":
-                    // await wordAudioExposition();
+                    // wordAudioExposition();
                     break;
                 case "Imagem com Áudio":
-                // await imageAudioExposition();
+                    // imageAudioExposition();
                 default:
                     throw new Exception("Tipo de Exposição: " + executingTest.ProgramInUse.ExpositionType + " inválido!");
 
@@ -528,6 +408,126 @@ namespace TestPlatform.Views
             Random random = new Random();
             int index = random.Next(0, 4);
             return new int []{ position[index, X], position[index, Y] };
+        }
+
+        private void drawFullSquareShape()
+        {
+            int brush25 = 25;
+            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+
+            int[] screenPosition = randomScreenPosition();
+            float xSquare = (clientMiddle[X] - brush25) + screenPosition[X];
+            float ySquare = (clientMiddle[Y] - brush25) + screenPosition[Y];
+            float widthSquare = executingTest.ProgramInUse.StimuluSize;
+            float heightSquare = executingTest.ProgramInUse.StimuluSize;
+
+            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+            Graphics formGraphicsSquare = CreateGraphics();
+            formGraphicsSquare.FillRectangle(myBrush, xSquare, ySquare, widthSquare, heightSquare);
+            formGraphicsSquare.Dispose();
+
+        }
+
+        private void drawSquareShape()
+        {
+            int brush25 = 25;
+            int[] screenPosition = randomScreenPosition();
+            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            float xSquare = (clientMiddle[X] - brush25) + screenPosition[X];
+            float ySquare = (clientMiddle[Y] - brush25) + screenPosition[Y];
+
+            float widthSquare = executingTest.ProgramInUse.StimuluSize;
+            float heightSquare = executingTest.ProgramInUse.StimuluSize;
+
+            Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+            Graphics formGraphicsSquare = CreateGraphics();
+            formGraphicsSquare.DrawRectangle(myPen, xSquare, ySquare, widthSquare, heightSquare);
+            formGraphicsSquare.Dispose();
+
+        }
+
+        private void drawFullCircleShape()
+        {
+            int brush25 = 25;
+            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            int[] screenPosition = randomScreenPosition();
+
+            float xEllipse = (clientMiddle[X] - brush25) + screenPosition[X];
+            float yEllipse = (clientMiddle[Y] - brush25) + screenPosition[Y];
+            float widthEllipse = executingTest.ProgramInUse.StimuluSize;
+            float heightEllipse = executingTest.ProgramInUse.StimuluSize;
+
+            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+            Graphics formGraphicsEllipse = CreateGraphics();
+            formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
+            formGraphicsEllipse.Dispose();
+
+        }
+
+        private void drawCircleShape()
+        {
+            int brush25 = 25;
+
+            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            int[] screenPosition = randomScreenPosition();
+            float xEllipse = (clientMiddle[X] - brush25) + screenPosition[X];
+            float yEllipse = (clientMiddle[Y] - brush25) + screenPosition[Y];
+
+            float widthEllipse = executingTest.ProgramInUse.StimuluSize;
+            float heightEllipse = executingTest.ProgramInUse.StimuluSize;
+
+            Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+            Graphics formGraphicsEllipse = CreateGraphics();
+            formGraphicsEllipse.DrawEllipse(myPen, xEllipse, yEllipse, widthEllipse, heightEllipse);
+            formGraphicsEllipse.Dispose();
+        }
+
+        private void triangleShape_draw(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+
+            ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
+                this);
+            Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor), 1);
+            Point[] trianglePoints = createTrianglePoints();
+            g.DrawPolygon(myPen, trianglePoints);
+        }
+
+
+        private void drawTriangleShape()
+        {
+            Paint -= new PaintEventHandler(triangleShape_draw);
+            Paint += new PaintEventHandler(triangleShape_draw);
+            Invalidate();
+        }
+
+        private void drawFullTriangleShape()
+        {
+            Point[] trianglePoints = createTrianglePoints();
+
+            FillMode newFillMode = FillMode.Winding;
+            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+            Graphics formGraphicsTriangle = CreateGraphics();
+            formGraphicsTriangle.FillPolygon(myBrush, trianglePoints, newFillMode);
+            formGraphicsTriangle.Dispose();
+
+        }
+
+        private Point[] createTrianglePoints()
+        {
+            int[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            int[] screenPosition = randomScreenPosition();
+            int heightTriangle = executingTest.ProgramInUse.StimuluSize;
+
+            Point point1 = new Point((clientMiddle[X]) + screenPosition[X] + (heightTriangle / 3),
+                (clientMiddle[Y] - (heightTriangle / 2)) + screenPosition[Y]);
+            Point point2 = new Point((clientMiddle[X] - (3 * heightTriangle / 4)) + screenPosition[X], (clientMiddle[Y] - (heightTriangle / 2)) + screenPosition[Y]);
+            Point point3 = new Point((clientMiddle[X] - (heightTriangle / 2)) + screenPosition[X] + (heightTriangle / 3),
+                                        (clientMiddle[Y] - (heightTriangle / 2)) + screenPosition[Y] - heightTriangle);
+
+            Point[] trianglePoints = { point1, point2, point3 };
+            return trianglePoints;
         }
     }
 }

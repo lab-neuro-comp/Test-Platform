@@ -11,6 +11,7 @@ using TestPlatform.Views;
 using TestPlatform.Views.SidebarControls;
 using TestPlatform.Views.SidebarUserControls;
 using System.Collections.Generic;
+using TestPlatform.Controllers;
 
 namespace TestPlatform
 {
@@ -134,7 +135,7 @@ namespace TestPlatform
         {
             if (e.Control && e.KeyCode == Keys.R) // Ctrl+R - roda teste
             {
-                beginStroopTest(executingNameLabel.Text);
+                ExpositionController.beginStroopTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
             }
             if (e.Control && e.KeyCode == Keys.D) // Ctrl+D - define programa
             {
@@ -275,51 +276,10 @@ namespace TestPlatform
 
         private void startTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            beginStroopTest(executingNameLabel.Text);
+            ExpositionController.beginStroopTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
         }
 
-        private void beginStroopTest(string programName)
-        {
-            try
-            {
-                Screen[] sc;
-                sc = Screen.AllScreens;
-                int showOnMonitor = 0;
-                if (sc.Length > 1)
-                {
-                    if (sc[0].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 1; }
-                    if (sc[1].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 0; }
-                }
-                FormExposition f = new FormExposition(programName, participantTextBox.Text, markTextBox.Text[0]);
-                f.StartPosition = FormStartPosition.Manual;
-                f.Location = Screen.AllScreens[showOnMonitor].WorkingArea.Location;
-                SendKeys.SendWait("i");
-                f.Show();
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
 
-        private void beginReactionTest(string programName)
-        {
-            try
-            {
-                Screen[] sc;
-                sc = Screen.AllScreens;
-                int showOnMonitor = 0;
-                if (sc.Length > 1)
-                {
-                    if (sc[0].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 1; }
-                    if (sc[1].Bounds == Screen.FromControl(this).Bounds) { showOnMonitor = 0; }
-                }
-                FormReactExposition reactionExposition = new FormReactExposition(programName, participantTextBox.Text, markTextBox.Text[0]);
-                reactionExposition.StartPosition = FormStartPosition.Manual;
-                reactionExposition.Location = Screen.AllScreens[showOnMonitor].WorkingArea.Location;
-                SendKeys.SendWait("i");
-                reactionExposition.Show();
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
-        
         private void defineTest()
         {
             FormDefineTest defineTest = new FormDefineTest();
@@ -600,16 +560,20 @@ namespace TestPlatform
             {             
                 if (executingTypeLabel.Text.Equals("StroopTest"))
                 {
-                    beginStroopTest(executingNameLabel.Text);
+                    ExpositionController.beginStroopTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
                 }
 
                 else if (executingTypeLabel.Text.Equals("ReactionTest"))
                 {
-                    beginReactionTest(executingNameLabel.Text);
+                    ExpositionController.beginReactionTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
+                }
+                else if (executingTypeLabel.Text.Equals("Experimento"))
+                {
+                    ExpositionController.beginExperimentTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
                 }
                 else
                 {
-                    /* do nothing */
+                    /* do nothing*/
                 }
             }
             else

@@ -108,7 +108,8 @@
     <Compile Include="Controllers\ExpositionController.cs" />
     <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Models\Audio.cs" />
-    <Compile Include="Models\Experiment.cs" />
+    <Compile Include="Models\ExperimentProgram.cs" />
+    <Compile Include="Models\ExperimentTest.cs" />
     <Compile Include="Models\Program.cs" />
     <Compile Include="Models\ReactionProgram.cs" />
     <Compile Include="Models\ReactionTest.cs" />
@@ -128,6 +129,12 @@
     </Compile>
     <Compile Include="Views\ExperimentPages\ExperimentConfig.Designer.cs">
       <DependentUpon>ExperimentConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExperimentPages\FormExperimentExposition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ExperimentPages\FormExperimentExposition.Designer.cs">
+      <DependentUpon>FormExperimentExposition.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ExpositionsViews.cs" />
     <Compile Include="Views\FormDefineTest.cs">
@@ -278,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ExperimentPages\ExperimentConfig.resx">
       <DependentUpon>ExperimentConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExperimentPages\FormExperimentExposition.resx">
+      <DependentUpon>FormExperimentExposition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormDefineTest.resx">
       <DependentUpon>FormDefineTest.cs</DependentUpon>

@@ -7,7 +7,7 @@ using TestPlatform.Views;
 
 namespace TestPlatform.Models
 {
-    class Experiment
+    class ExperimentProgram
     {
         private String experimentName;
         private List<Program> programList = new List<Program>();
@@ -210,6 +210,21 @@ namespace TestPlatform.Models
             }
             writer.Close();
             return true;
+        }
+
+
+        public void Shuffle()
+        {
+            Random random = new Random();
+            int counter = programList.Count;
+            while (counter > 1)
+            {
+                counter--;
+                int k = random.Next(counter + 1);
+                Program value = programList[k];
+                programList[k] = programList[counter];
+                programList[counter] = value;
+            }
         }
 
     }

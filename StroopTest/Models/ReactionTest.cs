@@ -4,6 +4,10 @@ using System.IO;
 
 namespace TestPlatform.Models
 {
+    /*
+     * Class that represents results found while executing a test program (ReactionProgram) and stores data from a partincipant test
+     *
+     */
     class ReactionTest
     {
         private static String headerOutputFileText = "programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)"

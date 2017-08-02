@@ -13,7 +13,7 @@ namespace TestPlatform.Models
     class ExperimentTest
     {
         private static String headerOutputFileText = "experimento\tprograma\ttipoPrograma\tusuario\tdata\thorarioInicial\thorarioTeste\tsequencia";
-        private DateTime initialDate;           // test execution date
+        private DateTime initialDate = DateTime.Now;           // test execution date
         private String participantName;                // tested person name
         private Char mark; // char mark made into neurospectrum program
         private ExperimentProgram programInUse = new ExperimentProgram();
@@ -98,6 +98,19 @@ namespace TestPlatform.Models
             }
         }
 
+        public static string HeaderOutputFileText
+        {
+            get
+            {
+                return headerOutputFileText;
+            }
+
+            set
+            {
+                headerOutputFileText = value;
+            }
+        }
+
         public void writeLineOutput(int currentExposition, Program currentProgram)
         {
             /* This variable keeps data from an exposition to only one program on the list, being them:
@@ -116,7 +129,7 @@ namespace TestPlatform.Models
             var text = programInUse.Name + "\t" + currentProgram.ProgramName + "\t" + programType + "\t" + participantName + "\t" + initialDate.Day + "/" +
                        initialDate.Month + "/" + initialDate.Year + "\t" + initialDate.Hour + ":" + initialDate.Minute +
                        ":" + initialDate.Second + ":" + initialDate.Millisecond.ToString() + "\t" + ExpositionTime.Hour + ":" + ExpositionTime.Minute +
-                       ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + currentExposition;
+                       ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" + currentExposition;
             Output.Add(text);
 
         }

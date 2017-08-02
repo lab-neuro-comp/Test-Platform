@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TestPlatform.Views;
 using TestPlatform;
 using TestPlatform.Views.ReactionPages;
+using TestPlatform.Views.ExperimentPages;
 
 namespace TestPlatform.Views.SidebarUserControls
 {
@@ -42,6 +43,18 @@ namespace TestPlatform.Views.SidebarUserControls
                 showData = new ReactionResultUserControl();
                 Global.GlobalFormMain._contentPanel.Controls.Add(showData);
                 reactionButton.Checked = false;
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void experimentButton_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                ExperimentResultUserControl showData = new ExperimentResultUserControl();
+                Global.GlobalFormMain._contentPanel.Controls.Add(showData);
+                experimentButton.Checked = false;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

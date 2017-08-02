@@ -130,6 +130,12 @@
     <Compile Include="Views\ExperimentPages\ExperimentConfig.Designer.cs">
       <DependentUpon>ExperimentConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ExperimentPages\ExperimentResultUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ExperimentPages\ExperimentResultUserControl.Designer.cs">
+      <DependentUpon>ExperimentResultUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ExperimentPages\FormExperimentExposition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ExperimentPages\ExperimentConfig.resx">
       <DependentUpon>ExperimentConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExperimentPages\ExperimentResultUserControl.resx">
+      <DependentUpon>ExperimentResultUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ExperimentPages\FormExperimentExposition.resx">
       <DependentUpon>FormExperimentExposition.cs</DependentUpon>

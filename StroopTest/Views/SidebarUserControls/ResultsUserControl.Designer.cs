@@ -30,6 +30,7 @@
         {
             this.StroopButton = new System.Windows.Forms.RadioButton();
             this.reactionButton = new System.Windows.Forms.RadioButton();
+            this.experimentButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // StroopButton
@@ -64,10 +65,27 @@
             this.reactionButton.UseVisualStyleBackColor = true;
             this.reactionButton.Click += new System.EventHandler(this.reactionButton_Click);
             // 
+            // experimentButton
+            // 
+            this.experimentButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.experimentButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.experimentButton.FlatAppearance.BorderSize = 0;
+            this.experimentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.experimentButton.Location = new System.Drawing.Point(2, 106);
+            this.experimentButton.Name = "experimentButton";
+            this.experimentButton.Size = new System.Drawing.Size(258, 33);
+            this.experimentButton.TabIndex = 3;
+            this.experimentButton.Text = "Experimento";
+            this.experimentButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.experimentButton.UseVisualStyleBackColor = true;
+            this.experimentButton.Click += new System.EventHandler(this.experimentButton_Click);
+            // 
             // ResultsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.experimentButton);
             this.Controls.Add(this.reactionButton);
             this.Controls.Add(this.StroopButton);
             this.Name = "ResultsUserControl";
@@ -80,5 +98,6 @@
 
         private System.Windows.Forms.RadioButton StroopButton;
         private System.Windows.Forms.RadioButton reactionButton;
+        private System.Windows.Forms.RadioButton experimentButton;
     }
 }

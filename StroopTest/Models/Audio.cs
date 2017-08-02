@@ -37,9 +37,13 @@ namespace TestPlatform.Models
         }
 
         public bool saveRecording()
-        {            
-            capture.Stop();
-            writer.Dispose();
+        {
+            if(capture != null)
+            {
+                capture.Stop();
+                writer.Dispose();
+            }
+            
             return true;
         }
 

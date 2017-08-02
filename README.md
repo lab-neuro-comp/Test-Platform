@@ -26,10 +26,6 @@ You can run tests using visual studio default configurations.
 Or you can rigth click on unit test project and select "Test with" and select NCover for coverage.
 
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
 * **Hugo Honda Ferreira** - *Initial work with StroopTest* - [StroopTest](https://github.com/lab-neuro-comp/StroopTest)

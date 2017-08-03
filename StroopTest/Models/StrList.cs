@@ -20,15 +20,18 @@ namespace TestPlatform.Models
 
         public StrList(List<string> list, string name, string type)
         {
-            this.listContent = list;
-            this.listName = name;
+            ListContent = list;
+            ListName = name;
             Type = type;
         }
 
 
         public List<string> ListContent
         {
-            get { return listContent; }
+            get
+            {
+                return listContent;
+            }
             set
             {
                 listContent = value;
@@ -40,7 +43,15 @@ namespace TestPlatform.Models
             get { return listName; }
             set
             {
-                listName = value;
+                if (!Validations.isEmpty(value))
+                {
+                    listName = value;
+                }
+                else
+                {
+                    throw new ArgumentException("\nO nome da lista não pode ser nulo.");
+                }
+                
             }
         }
 
@@ -59,14 +70,15 @@ namespace TestPlatform.Models
                 }
                 else
                 {
-                    throw new ArgumentException("\nO tipo de lista é inválido, a lista deve ser de aúdio, imagens, palavras ou cores.");
+                    throw new ArgumentException("\nO tipo de lista é inválido, a lista deve ser de aúdio," + 
+                        "imagens, palavras ou cores.");
                 }
             }
         }
 
-        public string getFilePath()
+        private string getFilePath()
         {
-            return Global.testFilesPath + Global.listFolderName + listName + Type + ".lst";
+            return Global.testFilesPath + Global.listFolderName + ListName + Type + ".lst";
         }
 
         public bool save()

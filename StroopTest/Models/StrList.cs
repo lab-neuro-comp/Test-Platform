@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using TestPlatform.Views;
 
 namespace TestPlatform.Models
 {
@@ -10,15 +11,18 @@ namespace TestPlatform.Models
     {
         private List<string> listContent = new List<string>();
         private String listName;
+        private String type;
         private static String defaultWordsListName = "padrao_words.lst";
         private static String defaultWordsListText = "amarelo azul verde vermelho";
         private static String defaultColorsListName = "padrao_color.lst";
         private static String defaultColorsListText = "#F8E000 #007BB7 #7EC845 #D01C1F";
+        private static String[] types = { "_image", "_audio", "_words", "_color" };
 
-        public StrList(List<string> list, string name)
+        public StrList(List<string> list, string name, string type)
         {
             this.listContent = list;
             this.listName = name;
+            Type = type;
         }
 
 
@@ -39,10 +43,35 @@ namespace TestPlatform.Models
                 listName = value;
             }
         }
- 
-        public bool save(string filePath)
+
+        public string Type
         {
-            StreamWriter wr = new StreamWriter(filePath);
+            get
+            {
+                return type;
+            }
+
+            set
+            {
+                if (value.Equals(types[0]) || value.Equals(types[1]) || value.Equals(types[2]) || value.Equals(types[3]))
+                {
+                    type = value;
+                }
+                else
+                {
+                    throw new ArgumentException("\nO tipo de lista é inválido, a lista deve ser de aúdio, imagens, palavras ou cores.");
+                }
+            }
+        }
+
+        public string getFilePath()
+        {
+            return Global.testFilesPath + Global.listFolderName + listName + Type + ".lst";
+        }
+
+        public bool save()
+        {
+            StreamWriter wr = new StreamWriter(getFilePath());
             wr.Write(listContent[0]);
             foreach (string item in listContent.Skip(0))
             {
@@ -52,9 +81,9 @@ namespace TestPlatform.Models
             return true;
         }
 
-        public bool exists(string path)
+        public bool exists()
         {
-            if (File.Exists(path))
+            if (File.Exists(getFilePath()))
                 return true;
             else
                 return false;
@@ -91,35 +120,34 @@ namespace TestPlatform.Models
             }
         }
 
-        public StrList readListIntoStrList(string filepath, string listName)
+        public StrList readListIntoStrList(string filepath, string listName, string listType)
         {
-            return new StrList(new List<string>(readListFile(filepath)), listName);
+            return new StrList(new List<string>(readListFile(filepath)), listName, listType);
         }
 
         // lê palavras do arquivo e retorna vetor
         static internal string[] readListFile(string filepath)
-        {
-            TextReader tr;
-            List<string> list;
-            string[] splitedLine;
-
-            try
+        {           
+            if (File.Exists(filepath))
             {
-                if (!File.Exists(filepath)) { throw new FileNotFoundException(); } // checa se arquivo existe
-                tr = new StreamReader(filepath, Encoding.Default, true);
-                list = new List<string>(); // lista de palavras
+                TextReader tr = new StreamReader(filepath, Encoding.Default, true);
+                List<string>  list = new List<string>(); // lista de palavras
                 while (tr.Peek() >= 0)
                 {
-                    splitedLine = tr.ReadLine().Split();
-                    for (int i = 0; i < splitedLine.Count(); i++) { list.Add(splitedLine[i]); } // adiciona cada palavra como novo item a uma lista
+                    string[] splitedLine = tr.ReadLine().Split();
+                    for (int i = 0; i < splitedLine.Count(); i++) //adding elements to list one by one
+                    {
+                        list.Add(splitedLine[i]);
+                    }
                 }
                 tr.Close();
-                return list.ToArray(); // retorna palavras em vetor
+                return list.ToArray(); // retorning list in array                
             }
-            catch (FileNotFoundException ex)
+            else
             {
-                throw new Exception("Arquivo lista (parâmetro): '" + Path.GetFileName(filepath) + "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath) + "\n\n( " + ex.Message + " )");
-            }
+                throw new FileNotFoundException("Arquivo lista (parâmetro): '" + Path.GetFileName(filepath) + 
+                    "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath));
+            }           
         }
     }
 }

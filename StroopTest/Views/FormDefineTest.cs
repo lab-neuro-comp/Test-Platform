@@ -13,6 +13,7 @@ namespace TestPlatform.Views
         public FormDefineTest()
         {
             InitializeComponent();
+            addOptionsComboBox(Global.stroopTestFilesPath + Global.programFolderName);
         }
 
 

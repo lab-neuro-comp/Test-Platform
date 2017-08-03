@@ -303,12 +303,11 @@ namespace TestPlatform
 
         private bool saveListFile(List<string> list, string fileName, string fileType, string type)
         {
-            string file;
             StrList strlist;
             if ((MessageBox.Show("Deseja salvar o arquivo " + type + " '" + fileName + "' ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK))
             {
-                strlist = ListController.createList(list, fileName);
-                if (strlist.exists(Global.testFilesPath + Global.listFolderName  + fileName + fileType))
+                strlist = ListController.createList(list, fileName, fileType);
+                if (strlist.exists())
                 {
                     DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
                     if (dialogResult == DialogResult.Cancel)
@@ -317,8 +316,7 @@ namespace TestPlatform
                         return false;
                     }
                 }
-                file = Global.testFilesPath + Global.listFolderName + fileName + fileType;
-                if (strlist.save(file))
+                if (strlist.save())
                 {
                     MessageBox.Show("A lista '" + fileName + "' foi salva com sucesso");
                     
@@ -339,9 +337,9 @@ namespace TestPlatform
             else
             {
                 if (wordsListCheckBox.Checked)
-                    valid = saveListFile(wordsList, listNameTextBox.Text, "_words" + ".lst", "de Palavras");
+                    valid = saveListFile(wordsList, listNameTextBox.Text, "_words", "de Palavras");
                 if (colorsListCheckBox.Checked)
-                    valid = saveListFile(colorsList, listNameTextBox.Text, "_color" + ".lst", "de Cores");                
+                    valid = saveListFile(colorsList, listNameTextBox.Text, "_color", "de Cores");                
                 if (valid)
                     this.Parent.Controls.Remove(this);
                 else

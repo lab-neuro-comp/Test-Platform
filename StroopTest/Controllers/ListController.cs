@@ -12,9 +12,9 @@ namespace TestPlatform.Controllers
 {
     class ListController
     {
-        public static StrList createList(List<string> list, string listName)
+        public static StrList createList(List<string> list, string listName, string listType)
         {
-            StrList wordList = new StrList(list, listName);
+            StrList wordList = new StrList(list, listName, listType);
             return wordList;
         }
 

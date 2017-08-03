@@ -1,4 +1,5 @@
 # TestPlatform
+[![Build status](https://ci.appveyor.com/api/projects/status/ldpimyp67n2c14mh?svg=true)](https://ci.appveyor.com/project/fabiolamfleury/test-platform)
 
 TestPlatform is a project developed inside University of Brasilia Behavioral and Neuroscience Laboratory. It continuous the work initialized by https://github.com/lab-neuro-comp/StroopTest, including now ReactionTest and Experiments, and soon it will include another set of cognitive tests. This is a desktop application built to be used on Windows systems.
 

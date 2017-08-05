@@ -226,55 +226,44 @@ namespace TestPlatform.Models
             get { return needsEditionFlag; }
         }
 
-        // decodifica texto
-        static public string encodeLatinText(string text)
+        public static string encodeLatinText(string text)
         {
             Encoding iso = Encoding.GetEncoding("ISO-8859-1");
             Encoding utf8 = Encoding.UTF8;
-            byte[] utfBytes;
-            byte[] isoBytes;
-            string encodedStr = "";
 
-            utfBytes = utf8.GetBytes(text);
-            isoBytes = Encoding.Convert(utf8, iso, utfBytes);
-            encodedStr = iso.GetString(isoBytes);
+            byte[] utfBytes = utf8.GetBytes(text);
+            byte[] isoBytes = Encoding.Convert(utf8, iso, utfBytes);
+            string encodedStr = iso.GetString(isoBytes);
 
             return encodedStr;
         }
 
-        static public string[] readDirListFile(string filepath)
+        public static string[] readDirListFile(string filepath)
         {
-            string[] imageDirs;
-
-            try
-            {
-                if (!File.Exists(filepath)) { throw new FileNotFoundException(); }
-                imageDirs = File.ReadAllLines(filepath);
-                return imageDirs; // retorna vetor com diretórios
+            if (File.Exists(filepath)) {
+                string[] imageDirs = File.ReadAllLines(filepath);
+                return imageDirs; // return directories
             }
-            catch (FileNotFoundException ex)
-            {
-                throw new Exception("Arquivo lista (parâmetro): '" + Path.GetFileName(filepath) + "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath) + "\n\n( " + ex.Message + " )");
+            else{
+                throw new FileNotFoundException("Arquivo lista (parâmetro): '" + Path.GetFileName(filepath) + 
+                    "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath));
             }
+            
+            
         }
 
         // lê dados do arquivo e retorna vetor
-        static public string[] readDataFile(string filepath)
+        public static string[] readDataFile(string filepath)
         {
-            string[] linesList;
-
-            try
-            {
-                if (!File.Exists(filepath)) { throw new FileNotFoundException(); }
-                linesList = File.ReadAllLines(filepath);
-                return linesList;
+            if (File.Exists(filepath)) {
+                string[] linesList = File.ReadAllLines(filepath);
+                return linesList;                
             }
-            catch (FileNotFoundException ex)
+            else
             {
-                throw new Exception("Arquivo Data: '" + Path.GetFileName(filepath) + 
-                                    "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath) + 
-                                    "\n\n( " + ex.Message + " )");
-            }
+                throw new FileNotFoundException("Arquivo Data: '" + Path.GetFileName(filepath) +
+                    "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath));
+            }            
         }
 
         public bool Exists(string path)
@@ -303,7 +292,7 @@ namespace TestPlatform.Models
 
 
         // escreve linha a linha no arquivo de saída
-        static public void writeOutputFile(string filepath, string outContent)
+        public static void writeOutputFile(string filepath, string outContent)
         {
             try
             {

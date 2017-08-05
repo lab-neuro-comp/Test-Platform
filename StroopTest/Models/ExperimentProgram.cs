@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using TestPlatform.Views;
 
 namespace TestPlatform.Models
@@ -52,14 +51,14 @@ namespace TestPlatform.Models
         {
             get
             {
-                return experimentName;
+                return ExperimentName;
             }
 
             set
             {
                 if (Validations.isAlphanumeric(value))
                 {
-                    experimentName = value;
+                    ExperimentName = value;
                 }
                 else
                 {
@@ -95,6 +94,19 @@ namespace TestPlatform.Models
             }
         }
 
+        public string ExperimentName
+        {
+            get
+            {
+                return experimentName;
+            }
+
+            set
+            {
+                experimentName = value;
+            }
+        }
+
         public void addStroopProgram(string programName)
         {
             StroopProgram newProgram = new StroopProgram();
@@ -111,7 +123,7 @@ namespace TestPlatform.Models
 
         private string data()
         {
-            string experimentData = this.experimentName + " " + this.intervalTime + " " + this.isOrderRandom;
+            string experimentData = this.ExperimentName + " " + this.intervalTime + " " + this.isOrderRandom;
             return experimentData;
         }
 
@@ -132,28 +144,22 @@ namespace TestPlatform.Models
             return stringList;
         }
 
-        // lê arquivo com programa e retorna true para sucesso
-        public void readProgramFile()
-        {
-            
-            string filePath = Global.experimentTestFilesPath + Global.programFolderName + experimentName + ".prg";
-            try
-            {
-                if (!File.Exists(filePath))
-                {
-                    throw new FileNotFoundException();
-                }
 
+        public void readProgramFile()
+        {            
+            string filePath = Global.experimentTestFilesPath + Global.programFolderName + ExperimentName + ".prg";
+            if (File.Exists(filePath))
+            {
                 string[] fileLines = File.ReadAllLines(filePath);
                 string line = fileLines[0];
                 line = Program.encodeLatinText(line);
                 List<string> configurationFile = new List<string>();
                 configurationFile = line.Split().ToList();
 
-                experimentName = configurationFile[0];
-                if (Path.GetFileNameWithoutExtension(filePath) != (this.experimentName))
+                ExperimentName = configurationFile[0];
+                if (Path.GetFileNameWithoutExtension(filePath) != (this.ExperimentName))
                 {
-                    throw new Exception("Parâmetro escrito no arquivo como: '" + this.experimentName +
+                    throw new Exception("Parâmetro escrito no arquivo como: '" + this.ExperimentName +
                         "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filePath) + "'.prg");
                 }
                 intervalTime = int.Parse(configurationFile[1]);
@@ -167,11 +173,11 @@ namespace TestPlatform.Models
                 {
                     if (listConfiguration[i] == "StroopProgram")
                     {
-                        addStroopProgram(listConfiguration[i-1]);
+                       addStroopProgram(listConfiguration[i - 1]);
                     }
                     else if (listConfiguration[i] == "ReactionProgram")
                     {
-                        addReactionProgram(listConfiguration[i-1]);
+                        addReactionProgram(listConfiguration[i - 1]);
                     }
                 }
 
@@ -180,25 +186,24 @@ namespace TestPlatform.Models
                     for (int i = 2; i < fileLines.Length; i++)
                     {
                         this.InstructionText.Add(fileLines[i]);
-                    }
+                   }
                 }
                 else
                 {
                     this.InstructionText = null;
                 }
-
             }
-            catch (FileNotFoundException ex)
+            else
             {
-                throw new FileNotFoundException("Arquivo programa: " + Path.GetFileName(filePath) + "\nnão foi encontrado no local:\n" + 
-                    Path.GetDirectoryName(filePath) + "\n\n( " + ex.Message + " )");
-            }
+               throw new FileNotFoundException("Arquivo programa: " + Path.GetFileName(filePath) + "\nnão foi encontrado no local:\n" +
+                Path.GetDirectoryName(filePath));
+            }           
 
         }
 
         public bool saveExperimentFile(string path)
         {
-            StreamWriter writer = new StreamWriter(path + experimentName + ".prg");
+            StreamWriter writer = new StreamWriter(path + ExperimentName + ".prg");
             writer.WriteLine(data());
             writer.WriteLine(writeProgramList());
             if (InstructionText != null)

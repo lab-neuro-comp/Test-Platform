@@ -73,7 +73,9 @@ namespace TestPlatform.Views.ExperimentPages
             foreach (Program program in executingTest.ProgramInUse.ProgramList)
             {
                 index++;
+                await Task.Delay(executingTest.ProgramInUse.IntervalTime);
                 executingTest.ExpositionTime = DateTime.Now;
+
                 if (program.GetType() == typeof(StroopProgram))
                 {
                     ExpositionController.beginStroopTest(program.ProgramName, executingTest.ParticipantName, executingTest.Mark, this);
@@ -82,8 +84,7 @@ namespace TestPlatform.Views.ExperimentPages
                 {
                     ExpositionController.beginReactionTest(program.ProgramName, executingTest.ParticipantName, executingTest.Mark, this);
                 }
-                executingTest.writeLineOutput(index, program);
-                await Task.Delay(executingTest.ProgramInUse.IntervalTime);
+                executingTest.writeLineOutput(index, program);                
             }
             Program.writeOutputFile(outputFile, string.Join("\n", executingTest.Output.ToArray()));
             Close();

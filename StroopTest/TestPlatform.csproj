@@ -117,10 +117,10 @@
     <Compile Include="Models\StroopTest.cs" />
     <Compile Include="Models\Validations.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Views\AboutBox.cs">
+    <Compile Include="Views\MainForms\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AboutBox.Designer.cs">
+    <Compile Include="Views\MainForms\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\DGVManipulation.cs" />
@@ -143,10 +143,10 @@
       <DependentUpon>FormExperimentExposition.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ExpositionsViews.cs" />
-    <Compile Include="Views\FormDefineTest.cs">
+    <Compile Include="Views\MainForms\FormDefineTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormDefineTest.Designer.cs">
+    <Compile Include="Views\MainForms\FormDefineTest.Designer.cs">
       <DependentUpon>FormDefineTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Global.cs" />
@@ -210,10 +210,10 @@
     <Compile Include="Views\ListsPages\FormListConfig.Designer.cs">
       <DependentUpon>FormListConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormShowAudio.cs">
+    <Compile Include="Views\ListsPages\FormShowAudio.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\FormShowAudio.Designer.cs">
+    <Compile Include="Views\ListsPages\FormShowAudio.Designer.cs">
       <DependentUpon>FormShowAudio.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ListsPages\FormAudioConfig.cs">
@@ -228,16 +228,16 @@
     <Compile Include="Views\ListsPages\FormImgConfig.Designer.cs">
       <DependentUpon>FormImgConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormMain.cs">
+    <Compile Include="Views\MainForms\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormMain.Designer.cs">
+    <Compile Include="Views\MainForms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormDefine.cs">
+    <Compile Include="Views\MainForms\FormDefine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormDefine.Designer.cs">
+    <Compile Include="Views\MainForms\FormDefine.Designer.cs">
       <DependentUpon>FormDefine.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\StroopPages\FormPrgConfig.cs">
@@ -246,11 +246,11 @@
     <Compile Include="Views\StroopPages\FormPrgConfig.Designer.cs">
       <DependentUpon>FormPrgConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormInstructions.cs">
+    <Compile Include="Views\MainForms\FormHelp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormInstructions.Designer.cs">
-      <DependentUpon>FormInstructions.cs</DependentUpon>
+    <Compile Include="Views\MainForms\FormHelp.Designer.cs">
+      <DependentUpon>FormHelp.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\StroopPages\FormExposition.cs">
       <SubType>Form</SubType>
@@ -285,7 +285,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Models\StroopProgram.cs" />
-    <EmbeddedResource Include="Views\AboutBox.resx">
+    <EmbeddedResource Include="Views\MainForms\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -298,7 +298,7 @@
     <EmbeddedResource Include="Views\ExperimentPages\FormExperimentExposition.resx">
       <DependentUpon>FormExperimentExposition.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormDefineTest.resx">
+    <EmbeddedResource Include="Views\MainForms\FormDefineTest.resx">
       <DependentUpon>FormDefineTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\FormReactExposition.resx">
@@ -331,7 +331,7 @@
     <EmbeddedResource Include="Views\ListsPages\FormListConfig.resx">
       <DependentUpon>FormListConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormShowAudio.resx">
+    <EmbeddedResource Include="Views\ListsPages\FormShowAudio.resx">
       <DependentUpon>FormShowAudio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormAudioConfig.resx">
@@ -340,11 +340,11 @@
     <EmbeddedResource Include="Views\ListsPages\FormImgConfig.resx">
       <DependentUpon>FormImgConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormMain.resx">
+    <EmbeddedResource Include="Views\MainForms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormDefine.resx">
+    <EmbeddedResource Include="Views\MainForms\FormDefine.resx">
       <DependentUpon>FormDefine.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -352,8 +352,8 @@
       <DependentUpon>FormPrgConfig.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormInstructions.resx">
-      <DependentUpon>FormInstructions.cs</DependentUpon>
+    <EmbeddedResource Include="Views\MainForms\FormHelp.resx">
+      <DependentUpon>FormHelp.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StroopPages\FormExposition.resx">
@@ -388,7 +388,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="TestPlatform_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

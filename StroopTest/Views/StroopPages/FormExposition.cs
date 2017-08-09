@@ -61,6 +61,7 @@ namespace TestPlatform
                 MessageBox.Show("A exposição foi cancelada.");
                 if(programInUse.AudioCapture)
                     audioControl.saveRecording();
+                this.DialogResult = DialogResult.Cancel;
                 this.Close();
                 return true;
             }
@@ -275,6 +276,7 @@ namespace TestPlatform
                 changeBackgroundColor(programInUse, false); // retorna à cor de fundo padrão
             
                 StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
+                this.DialogResult = DialogResult.OK;
                 Close(); // finaliza exposição após execução
             }
             catch(TaskCanceledException)
@@ -510,6 +512,7 @@ namespace TestPlatform
                 wordLabel.Font = new Font(wordLabel.Font.FontFamily, 160);
                 wordLabel.ForeColor = Color.Black;
                 StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
+                this.DialogResult = DialogResult.OK;
                 Close();
             }
             catch (TaskCanceledException)

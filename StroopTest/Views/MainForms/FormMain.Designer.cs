@@ -88,7 +88,6 @@
             this.sideBarPanel = new System.Windows.Forms.Panel();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.programPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.executingNameLabel = new System.Windows.Forms.Label();
             this.selectButton = new System.Windows.Forms.Button();
             this.executingTypeLabel = new System.Windows.Forms.Label();
@@ -700,7 +699,6 @@
             // programPanel
             // 
             this.programPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.programPanel.Controls.Add(this.label2);
             this.programPanel.Controls.Add(this.executingNameLabel);
             this.programPanel.Controls.Add(this.selectButton);
             this.programPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -710,26 +708,13 @@
             this.programPanel.Size = new System.Drawing.Size(294, 36);
             this.programPanel.TabIndex = 27;
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Programa:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // executingNameLabel
             // 
             this.executingNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.executingNameLabel.AutoSize = true;
             this.executingNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.executingNameLabel.Location = new System.Drawing.Point(85, 11);
+            this.executingNameLabel.Location = new System.Drawing.Point(9, 12);
             this.executingNameLabel.Name = "executingNameLabel";
             this.executingNameLabel.Size = new System.Drawing.Size(54, 18);
             this.executingNameLabel.TabIndex = 0;
@@ -879,7 +864,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel programPanel;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label executingNameLabel;
         private System.Windows.Forms.Button selectButton;
         private System.Windows.Forms.Label executingTypeLabel;

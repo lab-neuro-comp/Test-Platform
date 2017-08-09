@@ -35,8 +35,12 @@ namespace TestPlatform.Controllers
                 FormExposition ormExposition = new FormExposition(programName, participantName, mark);
                 ormExposition.StartPosition = FormStartPosition.Manual;
                 ormExposition.Location = Screen.AllScreens[showOnMonitor(form)].WorkingArea.Location;
-                SendKeys.SendWait("i");
-                ormExposition.Show();
+                SendKeys.SendWait("i");                
+                var dialogResult = ormExposition.ShowDialog();
+                while(ormExposition.DialogResult != DialogResult.OK)
+                {
+                    /** do nothing*/
+                }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

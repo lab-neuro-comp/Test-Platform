@@ -37,10 +37,7 @@ namespace TestPlatform.Controllers
                 ormExposition.Location = Screen.AllScreens[showOnMonitor(form)].WorkingArea.Location;
                 SendKeys.SendWait("i");                
                 var dialogResult = ormExposition.ShowDialog();
-                while(ormExposition.DialogResult != DialogResult.OK)
-                {
-                    /** do nothing*/
-                }
+
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -53,7 +50,7 @@ namespace TestPlatform.Controllers
                 reactionExposition.StartPosition = FormStartPosition.Manual;
                 reactionExposition.Location = Screen.AllScreens[showOnMonitor(form)].WorkingArea.Location;
                 SendKeys.SendWait("i");
-                reactionExposition.Show();
+                reactionExposition.ShowDialog();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

@@ -12,6 +12,8 @@ using TestPlatform.Views.SidebarControls;
 using TestPlatform.Views.SidebarUserControls;
 using System.Collections.Generic;
 using TestPlatform.Controllers;
+using TestPlatform.Views.ReactionPages;
+using TestPlatform.Views.ExperimentPages;
 
 namespace TestPlatform
 {
@@ -158,7 +160,7 @@ namespace TestPlatform
             FormWordColorConfig configureList = new FormWordColorConfig(false);
             try
             {
-                this.Controls.Add(configureList);
+                this.contentPanel.Controls.Add(configureList);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -200,7 +202,7 @@ namespace TestPlatform
             FormImgConfig configureImagesList = new FormImgConfig("false");
             try
             {
-                this.Controls.Add(configureImagesList);
+                this.contentPanel.Controls.Add(configureImagesList);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -231,7 +233,7 @@ namespace TestPlatform
             FormWordColorConfig configureList = new FormWordColorConfig(true);
             try
             {
-                this.Controls.Add(configureList);
+                this.contentPanel.Controls.Add(configureList);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -309,11 +311,11 @@ namespace TestPlatform
             try
             {
                 showData = new FormShowData();
-                this.Controls.Add(showData);
+                this.contentPanel.Controls.Add(showData);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-        
+
         private void showInstructions()
         {
             FormInstructions infoBox = new FormInstructions(INSTRUCTIONSTEXT, (Global.testFilesPath + INSTRUCTIONSFILENAME));
@@ -324,7 +326,7 @@ namespace TestPlatform
         private void editImagesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormImgConfig configureImagesList = new FormImgConfig("");
-            try { this.Controls.Add(configureImagesList); }
+            try { this.contentPanel.Controls.Add(configureImagesList); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
@@ -333,7 +335,7 @@ namespace TestPlatform
             FormAudioConfig configureAudioList = new FormAudioConfig(false);
             try
             {
-                this.Controls.Add(configureAudioList);
+                this.contentPanel.Controls.Add(configureAudioList);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -358,7 +360,7 @@ namespace TestPlatform
             FormAudioConfig configureAudioList = new FormAudioConfig(true);
             try
             {
-                this.Controls.Add(configureAudioList);
+                this.contentPanel.Controls.Add(configureAudioList);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -504,13 +506,13 @@ namespace TestPlatform
         private void stroopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormPrgConfig configureProgram = new FormPrgConfig("false");
-            this.Controls.Add(configureProgram);
+            this.contentPanel.Controls.Add(configureProgram);
         }
 
         private void reactionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormTRConfig configureProgram = new FormTRConfig("false");
-            this.Controls.Add(configureProgram);
+            this.contentPanel.Controls.Add(configureProgram);
         }
 
         private void stroopToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -671,6 +673,27 @@ namespace TestPlatform
         {
             sideBarPanel.Controls.Clear();
             contentPanel.Controls.Clear();
+        }
+
+        private void reactionToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            ReactionResultUserControl showData;
+            try
+            {
+                showData = new ReactionResultUserControl();
+                Global.GlobalFormMain._contentPanel.Controls.Add(showData);
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void experimentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExperimentResultUserControl showData = new ExperimentResultUserControl();
+                Global.GlobalFormMain._contentPanel.Controls.Add(showData);
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }

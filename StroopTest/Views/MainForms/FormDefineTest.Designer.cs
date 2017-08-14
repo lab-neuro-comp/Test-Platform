@@ -34,12 +34,12 @@
             this.okButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.experimentRadioButon = new System.Windows.Forms.RadioButton();
             this.reactionButton = new System.Windows.Forms.RadioButton();
             this.stroopButton = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.experimentRadioButon = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -95,6 +95,18 @@
             this.panel1.Size = new System.Drawing.Size(407, 28);
             this.panel1.TabIndex = 24;
             // 
+            // experimentRadioButon
+            // 
+            this.experimentRadioButon.AutoSize = true;
+            this.experimentRadioButon.Location = new System.Drawing.Point(297, 4);
+            this.experimentRadioButon.Name = "experimentRadioButon";
+            this.experimentRadioButon.Size = new System.Drawing.Size(107, 21);
+            this.experimentRadioButon.TabIndex = 2;
+            this.experimentRadioButon.TabStop = true;
+            this.experimentRadioButon.Text = "Experimento";
+            this.experimentRadioButon.UseVisualStyleBackColor = true;
+            this.experimentRadioButon.Click += new System.EventHandler(this.experimentRadioButon_Click);
+            // 
             // reactionButton
             // 
             this.reactionButton.AutoSize = true;
@@ -141,18 +153,6 @@
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
-            // 
-            // experimentRadioButon
-            // 
-            this.experimentRadioButon.AutoSize = true;
-            this.experimentRadioButon.Location = new System.Drawing.Point(297, 4);
-            this.experimentRadioButon.Name = "experimentRadioButon";
-            this.experimentRadioButon.Size = new System.Drawing.Size(107, 21);
-            this.experimentRadioButon.TabIndex = 2;
-            this.experimentRadioButon.TabStop = true;
-            this.experimentRadioButon.Text = "Experimento";
-            this.experimentRadioButon.UseVisualStyleBackColor = true;
-            this.experimentRadioButon.Click += new System.EventHandler(this.experimentRadioButon_Click);
             // 
             // FormDefineTest
             // 

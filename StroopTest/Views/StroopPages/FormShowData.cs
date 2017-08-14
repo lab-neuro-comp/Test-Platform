@@ -81,8 +81,12 @@ namespace TestPlatform
                 }
                 if (Directory.Exists(path)) // Preenche dgv com arquivos do tipo .wav no diretório dado que possua o padrao da comboBox
                 {
-                    audioPathDataGridView.Rows.Clear();
-                    audioPathDataGridView.Refresh();
+                    if(audioPathDataGridView.RowCount > 0)
+                    {
+                        audioPathDataGridView.Rows.Clear();
+                        audioPathDataGridView.Refresh();
+                    }
+                    
                     filePaths = Directory.GetFiles(path, "audio_" + comboBox1.SelectedItem.ToString()+"*", SearchOption.AllDirectories);
                     DGVManipulation.readStringListIntoDGV(filePaths, audioPathDataGridView);
                 }
@@ -98,30 +102,25 @@ namespace TestPlatform
             saveFileDialog1.Filter = "Excel CSV (.csv)|*.csv"; // salva em .csvs
             saveFileDialog1.RestoreDirectory = true;
             saveFileDialog1.FileName = comboBox1.Text;
-
-            try
+            if (comboBox1.SelectedIndex == -1)
             {
-                if (comboBox1.SelectedIndex == -1)
-                {
-                    throw new Exception("Selecione um arquivo de dados!");
-                }
-                
-                lines = StroopProgram.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
-                {
-                    using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
-                    {
-                        tw.WriteLine(StroopTest.HeaderOutputFileText);
-                        for (int i = 0; i < lines.Length; i++)
-                        {
-                            tw.WriteLine(lines[i]); // escreve linhas no novo arquivo
-                        }
-                        tw.Close();
-                        MessageBox.Show("Arquivo exportado com sucesso!");
-                    }
-                }
+                throw new Exception("Selecione um arquivo de dados!");
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+              
+            lines = StroopProgram.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
+            {
+                using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
+                {
+                    tw.WriteLine(StroopTest.HeaderOutputFileText);
+                    for (int i = 0; i < lines.Length; i++)
+                    {
+                        tw.WriteLine(lines[i]); // escreve linhas no novo arquivo
+                    }
+                    tw.Close();
+                    MessageBox.Show("Arquivo exportado com sucesso!");
+                }
+           }            
         }
 
         private void helpButton_Click(object sender, EventArgs e)

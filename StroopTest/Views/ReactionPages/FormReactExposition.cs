@@ -87,10 +87,23 @@ namespace TestPlatform.Views
         {
             cancellationTokenSource = new CancellationTokenSource();
             await showInstructions(executingTest.ProgramInUse, cancellationTokenSource.Token);
-            //changeBackgroundColor(programInUse, true);
+            changeBackgroundColor();
 
             await Task.Delay(executingTest.ProgramInUse.IntervalTime, cancellationTokenSource.Token);
             startingIntervalBwWorker();
+        }
+
+
+        private void changeBackgroundColor()
+        {
+            if (executingTest.ProgramInUse.BackgroundColor.ToLower() != "false")
+            {
+                this.BackColor = ColorTranslator.FromHtml(executingTest.ProgramInUse.BackgroundColor);
+            }
+            else
+            {
+                this.BackColor = Color.White;
+            }
         }
 
         private void startingIntervalBwWorker()

@@ -13,6 +13,7 @@ namespace TestPlatform.Views
         public FormDefineTest()
         {
             InitializeComponent();
+            AutoValidate = AutoValidate.Disable;
             addOptionsComboBox(Global.stroopTestFilesPath + Global.programFolderName);
         }
 

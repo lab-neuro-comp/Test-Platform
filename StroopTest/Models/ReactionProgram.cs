@@ -5,12 +5,16 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestPlatform.Views;
 
 namespace TestPlatform.Models
 {
     class ReactionProgram : Program
     {
-        private static String defaultProgramFileText = "padraoTR 5 500 50 1000 50 false false false false 0 #D01C1F Formas false false o #D01C1F false square";
+        private static String defaultProgramFileText = "padrao 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 Formas false false + #FF0000 True square, False 4 Espaço";
+        private static String[] defaultInstructionText = { "Serão apresentados quadrados de forma aleatória. ",
+                                                    "Aperte a barra de espaço quando ver quadrado",
+                                                    "A tarefa vai começar agora"};
         private Int32 stimuluSize; // [3]
         private Int32 stimulusDistance; // [5] distance from the center of the screen to stimulus
         private Boolean isBeeping; // [9]
@@ -313,6 +317,26 @@ namespace TestPlatform.Models
                 throw new FileNotFoundException("Arquivo programa: " + Path.GetFileName(filepath) + "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath) + "\n\n( " + ex.Message + " )");
             }
 
+        }
+
+        // escreve arquivo com programa padrão
+        public static void writeDefaultProgramFile() // escreve 
+        {
+            try
+            {
+                TextWriter tw = new StreamWriter(Global.reactionTestFilesPath + Global.programFolderName + "padrao.prg");
+                tw.WriteLine(defaultProgramFileText);
+                for (int i = 0; i < defaultInstructionText.Length; i++)
+                {
+                    tw.WriteLine(defaultInstructionText[i]);
+                }
+                tw.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be written:");
+                Console.WriteLine(e.Message);
+            }
         }
 
         public bool saveProgramFile(string path, string instructionBoxText)

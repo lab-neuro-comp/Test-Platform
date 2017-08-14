@@ -32,7 +32,6 @@ namespace TestPlatform
         public Panel _contentPanel;
         /* Variables
          */
-        private StroopProgram programDefault = new StroopProgram();
         private Control currentPanelContent; //holds current panel in exact execution time
         
         
@@ -127,7 +126,7 @@ namespace TestPlatform
                 File.Delete(Global.defaultPath + "/StroopTestFiles");
 
 
-            initializeDefaultProgram(); // inicializa programa padrão (cria arquivo programa padrão e listas de palavras e cores padrão)
+            initializeDefaultPrograms(); // inicializa programa padrão (cria arquivo programa padrão e listas de palavras e cores padrão)
             InitializeComponent();
             _contentPanel = contentPanel;
             dirPathSL.Text = Global.testFilesPath;
@@ -207,12 +206,14 @@ namespace TestPlatform
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void initializeDefaultProgram() // inicializa programDefault padrão
+        private void initializeDefaultPrograms() // inicializa programDefault padrão
         {
-            programDefault.ProgramName = DEFAULTUSERNAME;
+            StroopProgram programDefault = new StroopProgram();
+            programDefault.ProgramName = DEFAULTPGRNAME;
             try
             {
                 programDefault.writeDefaultProgramFile(Global.stroopTestFilesPath + Global.programFolderName + programDefault.ProgramName + ".prg"); // ao inicializar formulario escreve arquivo programa padrao
+                ReactionProgram.writeDefaultProgramFile();
                 StrList.writeDefaultWordsList(Global.testFilesPath + Global.listFolderName); // escreve lista de palavras padrão
                 StrList.writeDefaultColorsList(Global.testFilesPath + Global.listFolderName); // escreve lista de cores padrão 
             }

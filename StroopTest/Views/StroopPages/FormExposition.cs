@@ -190,7 +190,7 @@ namespace TestPlatform
                 colorArrayCounter = 0;
                 elapsedTime = 0; // elapsed time to zero
                 subtitleCounter = 0;
-                changeBackgroundColor(programInUse, true); // changes background color, if there is one defined
+                changeBackgroundColor(true); // changes background color, if there is one defined
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatch.Start();
                 await Task.Delay(programInUse.IntervalTime, cts.Token); // first interval before exposition begins
@@ -273,7 +273,7 @@ namespace TestPlatform
                     stopRecordingAudio();
                 } 
                 // endAudio
-                changeBackgroundColor(programInUse, false); // retorna à cor de fundo padrão
+                changeBackgroundColor(false); // retorna à cor de fundo padrão
             
                 StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
                 this.DialogResult = DialogResult.OK;
@@ -349,7 +349,7 @@ namespace TestPlatform
                 outputContent = new List<string>();
                 
 
-                changeBackgroundColor(programInUse, true); // muda cor de fundo se houver parametro
+                changeBackgroundColor(true); // muda cor de fundo se houver parametro
                 imgPictureBox.BackColor = BackColor;
 
                 elapsedTime = 0; // zera tempo em milissegundos decorrido
@@ -505,7 +505,7 @@ namespace TestPlatform
                         stopRecordingAudio();
                     } 
                     // endAudio
-                    changeBackgroundColor(programInUse, false); // retorna à cor de fundo padrão
+                    changeBackgroundColor(false); // retorna à cor de fundo padrão
 
                     
                 imgPictureBox.Dock = DockStyle.None;
@@ -573,11 +573,11 @@ namespace TestPlatform
             }
         }
 
-        private void changeBackgroundColor(StroopProgram program, bool flag) // muda cor de fundo
+        private void changeBackgroundColor(bool flag) // muda cor de fundo
         {
-            if (flag && program.BackgroundColor.ToLower() != "false")
+            if (flag && programInUse.BackgroundColor.ToLower() != "false")
             { 
-                    this.BackColor = ColorTranslator.FromHtml(program.BackgroundColor);
+                    this.BackColor = ColorTranslator.FromHtml(programInUse.BackgroundColor);
             }
             else
             {

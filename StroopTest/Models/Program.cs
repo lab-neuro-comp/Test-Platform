@@ -101,16 +101,13 @@ namespace TestPlatform.Models
             get { return wordsListFile; }
             set
             {
-                if (value.Length > 4)
+                if (value == "false" || value.Contains("_words.lst"))
                 {
-                    if (Validations.isListValid(value))
-                    {
-                        wordsListFile = value;
-                    }
+                    wordsListFile = value;
                 }
                 else
                 {
-                    throw new ArgumentException(errorExMsg + "\nNome do arquivo " + value + " de lista de palavras deve ter terminação .lst");
+                    throw new ArgumentException(errorExMsg + "\nNome do arquivo " + value + " de lista de palavras deve ter terminação _words.lst");
                 }   // list files must have (.lst) termination or be "false" to indicate that theres no list defined
             }
         }

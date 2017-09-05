@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using TestPlatform.Models;
@@ -132,6 +133,7 @@ namespace TestPlatform.Views.ExperimentPages
 
                 if (instructionsBox.Lines.Length > 0) // lê instrução se houver
                 {
+                    savingExperiment.InstructionText = new List<string>();
                     for (int i = 0; i < instructionsBox.Lines.Length; i++)
                     {
                         savingExperiment.InstructionText.Add(instructionsBox.Lines[i]);

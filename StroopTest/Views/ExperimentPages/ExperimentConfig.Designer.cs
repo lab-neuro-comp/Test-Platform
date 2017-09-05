@@ -36,6 +36,7 @@
             this.intervalTimeLabel = new System.Windows.Forms.Label();
             this.intervalTime = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelEmpty = new System.Windows.Forms.Label();
             this.deleteButton = new System.Windows.Forms.Button();
             this.deleteItemLabel = new System.Windows.Forms.Label();
             this.programDataGridView = new System.Windows.Forms.DataGridView();
@@ -52,7 +53,6 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.labelEmpty = new System.Windows.Forms.Label();
             this.experimentConfigPanel.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).BeginInit();
@@ -149,6 +149,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Programas";
             // 
+            // labelEmpty
+            // 
+            this.labelEmpty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelEmpty.AutoSize = true;
+            this.labelEmpty.ForeColor = System.Drawing.Color.Red;
+            this.labelEmpty.Location = new System.Drawing.Point(7, 177);
+            this.labelEmpty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEmpty.Name = "labelEmpty";
+            this.labelEmpty.Size = new System.Drawing.Size(77, 17);
+            this.labelEmpty.TabIndex = 84;
+            this.labelEmpty.Text = "labelEmpty";
+            // 
             // deleteButton
             // 
             this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -233,7 +246,7 @@
             // 
             this.instructionsBox.AcceptsReturn = true;
             this.instructionsBox.AccessibleDescription = "";
-            this.instructionsBox.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.instructionsBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.instructionsBox.Location = new System.Drawing.Point(16, 527);
             this.instructionsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.instructionsBox.Multiline = true;
@@ -340,19 +353,6 @@
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
-            // 
-            // labelEmpty
-            // 
-            this.labelEmpty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelEmpty.AutoSize = true;
-            this.labelEmpty.ForeColor = System.Drawing.Color.Red;
-            this.labelEmpty.Location = new System.Drawing.Point(7, 177);
-            this.labelEmpty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelEmpty.Name = "labelEmpty";
-            this.labelEmpty.Size = new System.Drawing.Size(77, 17);
-            this.labelEmpty.TabIndex = 84;
-            this.labelEmpty.Text = "labelEmpty";
             // 
             // ExperimentConfig
             // 

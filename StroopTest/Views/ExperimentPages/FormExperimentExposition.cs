@@ -65,9 +65,13 @@ namespace TestPlatform.Views.ExperimentPages
 
         private async Task startTesting()
         {
-            if (executingTest.ProgramInUse.IsOrderRandom)
+            if (executingTest.ProgramInUse.IsOrderRandom && !executingTest.ProgramInUse.TrainingProgram)
             {
                 executingTest.ProgramInUse.Shuffle();
+            }
+            else if (executingTest.ProgramInUse.IsOrderRandom && executingTest.ProgramInUse.TrainingProgram)
+            {
+                executingTest.ProgramInUse.ShuffleWithTrainingProgram();
             }
             int index = 0;
             foreach (Program program in executingTest.ProgramInUse.ProgramList)

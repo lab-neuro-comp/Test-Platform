@@ -53,6 +53,8 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.practiceProgramLabel = new System.Windows.Forms.Label();
+            this.trainingProgramCheckBox = new System.Windows.Forms.CheckBox();
             this.experimentConfigPanel.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).BeginInit();
@@ -135,6 +137,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.trainingProgramCheckBox);
+            this.groupBox2.Controls.Add(this.practiceProgramLabel);
             this.groupBox2.Controls.Add(this.labelEmpty);
             this.groupBox2.Controls.Add(this.deleteButton);
             this.groupBox2.Controls.Add(this.deleteItemLabel);
@@ -354,6 +358,24 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // practiceProgramLabel
+            // 
+            this.practiceProgramLabel.AutoSize = true;
+            this.practiceProgramLabel.Location = new System.Drawing.Point(115, 20);
+            this.practiceProgramLabel.Name = "practiceProgramLabel";
+            this.practiceProgramLabel.Size = new System.Drawing.Size(134, 17);
+            this.practiceProgramLabel.TabIndex = 85;
+            this.practiceProgramLabel.Text = "Programa de treino:";
+            // 
+            // trainingProgramCheckBox
+            // 
+            this.trainingProgramCheckBox.AutoSize = true;
+            this.trainingProgramCheckBox.Location = new System.Drawing.Point(255, 21);
+            this.trainingProgramCheckBox.Name = "trainingProgramCheckBox";
+            this.trainingProgramCheckBox.Size = new System.Drawing.Size(18, 17);
+            this.trainingProgramCheckBox.TabIndex = 86;
+            this.trainingProgramCheckBox.UseVisualStyleBackColor = true;
+            // 
             // ExperimentConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -407,5 +429,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn typePrograma;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label labelEmpty;
+        private System.Windows.Forms.CheckBox trainingProgramCheckBox;
+        private System.Windows.Forms.Label practiceProgramLabel;
     }
 }

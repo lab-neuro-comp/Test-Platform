@@ -13,6 +13,7 @@ namespace TestPlatform.Models
         private Boolean isOrderRandom; // if true it means that programs will not be executed in the list order
         private Int32 intervalTime;               // duration time for interval between program expositions in millisec, it can be zero
         private List<string> instructionText = new List<string>();
+        private Boolean trainingProgram; // if true there is a program which is fixed (training program) and the  rest is random
 
         public bool IsOrderRandom
         {
@@ -107,6 +108,19 @@ namespace TestPlatform.Models
             }
         }
 
+        public bool TrainingProgram
+        {
+            get
+            {
+                return trainingProgram;
+            }
+
+            set
+            {
+                trainingProgram = value;
+            }
+        }
+
         public void addStroopProgram(string programName)
         {
             StroopProgram newProgram = new StroopProgram();
@@ -123,7 +137,7 @@ namespace TestPlatform.Models
 
         private string data()
         {
-            string experimentData = this.ExperimentName + " " + this.intervalTime + " " + this.isOrderRandom;
+            string experimentData = this.ExperimentName + " " + this.intervalTime + " " + this.isOrderRandom + " " + this.trainingProgram;
             return experimentData;
         }
 
@@ -144,8 +158,8 @@ namespace TestPlatform.Models
             return stringList;
         }
 
-
-        public void readProgramFile()
+        /* getting information from .prg file and converting to an experiment object */
+        public void readProgramFile() 
         {            
             string filePath = Global.experimentTestFilesPath + Global.programFolderName + ExperimentName + ".prg";
             if (File.Exists(filePath))
@@ -162,8 +176,16 @@ namespace TestPlatform.Models
                     throw new Exception("Parâmetro escrito no arquivo como: '" + this.ExperimentName +
                         "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filePath) + "'.prg");
                 }
-                intervalTime = int.Parse(configurationFile[1]);
-                isOrderRandom = bool.Parse(configurationFile[2]);
+                IntervalTime = int.Parse(configurationFile[1]);
+                IsOrderRandom = bool.Parse(configurationFile[2]);
+                if (configurationFile.Count > 3)
+                {
+                    TrainingProgram = bool.Parse(configurationFile[3]);
+                }
+                else
+                {
+                    TrainingProgram = false;
+                }
 
                 string listLine = fileLines[1];
                 line = Program.encodeLatinText(line);
@@ -226,6 +248,20 @@ namespace TestPlatform.Models
             {
                 counter--;
                 int k = random.Next(counter + 1);
+                Program value = programList[k];
+                programList[k] = programList[counter];
+                programList[counter] = value;
+            }
+        }
+
+        public void ShuffleWithTrainingProgram()
+        {
+            Random random = new Random();
+            int counter = programList.Count;
+            while (counter > 2)
+            {
+                counter--;
+                int k = random.Next(1,counter + 1);
                 Program value = programList[k];
                 programList[k] = programList[counter];
                 programList[counter] = value;

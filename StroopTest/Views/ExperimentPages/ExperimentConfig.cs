@@ -29,6 +29,7 @@ namespace TestPlatform.Views.ExperimentPages
             savingExperiment.readProgramFile();
             beepingCheckbox.Checked = savingExperiment.IsOrderRandom;
             intervalTime.Value = savingExperiment.IntervalTime;
+            trainingProgramCheckBox.Checked = savingExperiment.TrainingProgram;
 
             foreach (Program program in savingExperiment.ProgramList)
             {
@@ -142,6 +143,14 @@ namespace TestPlatform.Views.ExperimentPages
                 else
                 {
                     savingExperiment.InstructionText = null;
+                }
+                if (trainingProgramCheckBox.Checked)
+                {
+                    savingExperiment.TrainingProgram = true;
+                }
+                else
+                {
+                    savingExperiment.TrainingProgram = false;
                 }
                 if (savingExperiment.saveExperimentFile(Global.experimentTestFilesPath + Global.programFolderName))
                 {

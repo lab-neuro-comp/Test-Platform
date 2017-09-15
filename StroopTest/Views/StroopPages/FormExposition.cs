@@ -268,7 +268,7 @@ namespace TestPlatform
                 subtitleLabel.Visible = false;
                 await Task.Delay(programInUse.IntervalTime, cts.Token);
                 // beginAudio
-                if (programInUse.AudioCapture && programInUse.ExpositionType != "txtaud")
+                if (programInUse.AudioCapture && programInUse.ExpositionType != "txtaud" && programInUse.ExpositionType != "imgaud")
                 {
                     stopRecordingAudio();
                 } 
@@ -282,7 +282,10 @@ namespace TestPlatform
             catch(TaskCanceledException)
             {
                 StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
-                if (programInUse.AudioCapture) { stopRecordingAudio(); }
+                if (programInUse.AudioCapture && programInUse.ExpositionType != "txtaud" && programInUse.ExpositionType != "imgaud")
+                {
+                    stopRecordingAudio();
+                }
             }
             catch (Exception ex)
             {
@@ -501,7 +504,7 @@ namespace TestPlatform
 
                     await Task.Delay(programInUse.IntervalTime, cts.Token);
                     // beginAudio
-                    if (programInUse.AudioCapture) {
+                    if (programInUse.AudioCapture && programInUse.ExpositionType != "txtaud" && programInUse.ExpositionType != "imgaud") {
                         stopRecordingAudio();
                     } 
                     // endAudio
@@ -518,7 +521,7 @@ namespace TestPlatform
             catch (TaskCanceledException)
             {
                 StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
-                if (programInUse.AudioCapture) {
+                if (programInUse.AudioCapture && programInUse.ExpositionType != "txtaud" && programInUse.ExpositionType != "imgaud") {
                     stopRecordingAudio();
                 }
             }

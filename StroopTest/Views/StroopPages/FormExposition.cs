@@ -156,14 +156,14 @@ namespace TestPlatform
             {
                 // reading list files                
                 // string array receives lists itens from lists file
-                labelText = StrList.readListFile(defaultFolderPath + "/Lst/" + programInUse.WordsListFile); 
-                labelColor = StrList.readListFile(defaultFolderPath + "/Lst/" + programInUse.ColorsListFile);
+                labelText = programInUse.getWordListFile().ListContent.ToArray(); 
+                labelColor = programInUse.getColorListFile().ListContent.ToArray();
                  
                 subtitlesArray = configureSubtitle();
 
-                if (programInUse.AudioListFile != "false") // if there is an audioFile to be played, string array receives audioList itens from list file
+                if (programInUse.getAudioListFile() != null) // if there is an audioFile to be played, string array receives audioList itens from list file
                 {
-                    audioDirs = StroopProgram.readDirListFile(defaultFolderPath + "/Lst/" + programInUse.AudioListFile);
+                    audioDirs = programInUse.getAudioListFile().ListContent.ToArray();
                 }
 
                 if (programInUse.ExpositionRandom) // if the presentation is random, shuffles arrays
@@ -179,7 +179,7 @@ namespace TestPlatform
                     
                 if(!Validations.allHexPattern(labelColor))
                 {
-                    throw new Exception("A lista de cores '" + programInUse.ColorsListFile + "' contém valores inválidos!\n A lista de"+ 
+                    throw new Exception("A lista de cores '" + programInUse.getColorListFile().ListName + "' contém valores inválidos!\n A lista de"+ 
                         "cores deve conter apenas valores hexadecimais (ex: #000000)");
                 }
                 
@@ -228,7 +228,7 @@ namespace TestPlatform
                     wordLabel.Text = textCurrent;
                     wordLabel.ForeColor = ColorTranslator.FromHtml(colorCurrent);
                         
-                    if (programInUse.AudioListFile.ToLower() != "false" && 
+                    if (programInUse.getAudioListFile() != null && 
                         programInUse.ExpositionType == "txtaud") // reproduz audio
                     {
                         if (audioCounter == audioDirs.Length)
@@ -325,7 +325,7 @@ namespace TestPlatform
                 if (programInUse.ExpandImage) { imgPictureBox.Dock = DockStyle.Fill; }
                 else { imgPictureBox.Dock = DockStyle.None; }
 
-                imageDirs = StroopProgram.readDirListFile(defaultFolderPath + "/Lst/" + programInUse.ImagesListFile); // auxiliar recebe o vetor original
+                imageDirs = programInUse.getImageListFile().ListContent.ToArray(); // auxiliar recebe o vetor original
                 if (programInUse.ExpositionRandom) // se exposição aleatória, randomiza itens de acordo com o numero de estimulos
                 {
                     imageDirs = ExpositionController.shuffleArray(imageDirs, programInUse.NumExpositions, 3);
@@ -334,17 +334,17 @@ namespace TestPlatform
                 subtitlesArray = configureSubtitle();
 
 
-                if (programInUse.AudioListFile != "false")
+                if (programInUse.getAudioListFile() != null)
                 {
-                    audioDirs = StroopProgram.readDirListFile(defaultFolderPath + "/Lst/" + programInUse.AudioListFile);
+                    audioDirs = programInUse.getAudioListFile().ListContent.ToArray();
                     if (programInUse.ExpositionRandom)
                     {
                         audioDirs = ExpositionController.shuffleArray(audioDirs, programInUse.NumExpositions, 6);
                     }
                 }
-                if (programInUse.WordsListFile.ToLower() != "false")
+                if (programInUse.getWordListFile() != null)
                 {
-                    labelText = StrList.readListFile(defaultFolderPath + "/Lst/" + programInUse.WordsListFile);
+                    labelText = programInUse.getWordListFile().ListContent.ToArray();
                 }
                 
                 await showInstructions(programInUse, cts.Token); // Apresenta instruções se houver
@@ -418,7 +418,7 @@ namespace TestPlatform
 
 
                             // se tiver palavras intercala elas com a imagem
-                            if (programInUse.WordsListFile.ToLower() != "false") 
+                            if (programInUse.getWordListFile() != null) 
                             {
                                 if (j == labelText.Count()-1) { j = 0; }
                                 wordLabel.Text = labelText[j];
@@ -467,7 +467,7 @@ namespace TestPlatform
                                 imgPictureBox.Image = Image.FromFile(imageDirs[arrayCounter]);
                             }
 
-                            if (programInUse.AudioListFile.ToLower() != "false" && programInUse.ExpositionType == "imgaud")
+                            if (programInUse.getAudioListFile() != null && programInUse.ExpositionType == "imgaud")
                             {
                                 if (audioCounter == audioDirs.Length) { audioCounter = 0; }
                                 audioDetail = audioDirs[audioCounter];

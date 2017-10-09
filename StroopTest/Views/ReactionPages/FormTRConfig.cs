@@ -49,44 +49,44 @@ namespace TestPlatform.Views
             stimulusColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.StimulusColor);
             editProgramShapes(editProgram);
 
-            if (editProgram.WordsListFile.ToLower() == "false")
+            if (editProgram.getWordListFile() == null)
             {
                 openWordListButton.Enabled = false;
             }
             else
             {
                 openWordListButton.Enabled = true;
-                openWordListButton.Text = editProgram.WordsListFile;
+                openWordListButton.Text = editProgram.getWordListFile().ListName;
             }
 
-            if (editProgram.ColorsListFile.ToLower() == "false")
+            if (editProgram.getColorListFile() == null)
             {
                 openColorListButton.Enabled = false;
             }
             else
             {
                 openColorListButton.Enabled = true;
-                openColorListButton.Text = editProgram.ColorsListFile;
+                openColorListButton.Text = editProgram.getColorListFile().ListName;
             }
 
-            if (editProgram.ImagesListFile.ToLower() == "false")
+            if (editProgram.getImageListFile() == null)
             {
                 openImgListButton.Enabled = false;
             }
             else
             {
                 openImgListButton.Enabled = true;
-                openImgListButton.Text = editProgram.ImagesListFile;
+                openImgListButton.Text = editProgram.getImageListFile().ListName;
             }
 
-            if (editProgram.AudioListFile.ToLower() == "false")
+            if (editProgram.getAudioListFile() == null)
             {
                 openAudioListButton.Enabled = false;
             }
             else
             {
                 openAudioListButton.Enabled = true;
-                openAudioListButton.Text = editProgram.AudioListFile;
+                openAudioListButton.Text = editProgram.getAudioListFile().ListName;
             }
 
             if (editProgram.BackgroundColor.ToLower() == "false")

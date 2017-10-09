@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TestPlatform.Models;
 using System.Drawing;
 using System.Windows.Forms;
@@ -53,7 +49,7 @@ namespace TestPlatform.Controllers
 
             if (result == System.Windows.Forms.DialogResult.OK)
             {
-                progName = defineProgram.ReturnValue + itemType + ".lst";
+                progName = defineProgram.ReturnValue;
             }
 
             return progName;

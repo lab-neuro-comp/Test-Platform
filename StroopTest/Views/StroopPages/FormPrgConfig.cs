@@ -401,8 +401,8 @@ namespace TestPlatform
         {
 
             StroopProgram programWrite = new StroopProgram();
-            try
-            {               
+          //  try
+            //{               
                 switch (chooseExpoType.SelectedIndex)
                 {
                     case 0: //txt
@@ -521,11 +521,11 @@ namespace TestPlatform
                 programWrite.ExpandImage = expandImgCheck.Checked;
                 saveProgramFile(programWrite);
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+          //  }
+         //   catch (Exception ex)
+         //   {
+             //   MessageBox.Show(ex.Message);
+           // }
         }
 
 
@@ -533,8 +533,8 @@ namespace TestPlatform
         {
             StroopProgram program = new StroopProgram();
 
-            try
-            {
+       //     try
+         //   {
                 program.readProgramFile(path + editPrgName + ".prg");
                 
                 prgNameTextBox.Text = program.ProgramName;
@@ -548,17 +548,47 @@ namespace TestPlatform
                 expandImgCheck.Checked = program.ExpandImage;
                 subsRndCheckBox.Checked = program.RndSubtitlePlace;
 
-                if (program.WordsListFile.ToLower() == "false") { openWordListButton.Enabled = false; }
-                else { openWordListButton.Enabled = true; openWordListButton.Text = program.WordsListFile; }
+                if (program.getWordListFile() != null)
+                {
+                    openWordListButton.Enabled = true;
+                    openWordListButton.Text = program.getWordListFile().ListName;
+                    
+                }
+                else
+                {
+                    openWordListButton.Enabled = false;
+                }
 
-                if (program.ColorsListFile.ToLower() == "false") { openColorListButton.Enabled = false; }
-                else { openColorListButton.Enabled = true; openColorListButton.Text = program.ColorsListFile; }
+                if (program.getColorListFile() != null)
+                {
+                    openColorListButton.Enabled = true;
+                    openColorListButton.Text = program.getColorListFile().ListName; 
+                }
+                else
+                {
+                    openColorListButton.Enabled = false;
+                }
 
-                if (program.ImagesListFile.ToLower() == "false") { openImgListButton.Enabled = false; }
-                else { openImgListButton.Enabled = true; openImgListButton.Text = program.ImagesListFile; }
+                if (program.getImageListFile() != null)
+                {
+                    openImgListButton.Enabled = true;
+                    openImgListButton.Text = program.getImageListFile().ListName;
+                }
+                else
+                {
+                    openImgListButton.Enabled = false; 
+                }
 
-                if (program.AudioListFile.ToLower() == "false") { openAudioListButton.Enabled = false; }
-                else { openAudioListButton.Enabled = true; openAudioListButton.Text = program.AudioListFile; }
+                if (program.getAudioListFile() != null)
+                {
+                    openAudioListButton.Enabled = true;
+                    openAudioListButton.Text = program.getAudioListFile().ListName;
+                }
+                else
+                {
+                    openAudioListButton.Enabled = false;
+
+                }
                 
                 if (program.BackgroundColor.ToLower() == "false")
                 {
@@ -720,13 +750,13 @@ namespace TestPlatform
                 
                 wordColorButton.Text = program.WordColor;
                 wordColorPanel.BackColor = ColorTranslator.FromHtml(program.WordColor);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                Dispose();
-                this.Parent.Controls.Remove(this);
-            }
+            //}
+      //      catch (Exception ex)
+        //    {
+          //      MessageBox.Show(ex.Message);
+            //    Dispose();
+              //  this.Parent.Controls.Remove(this);
+           // }
         }
         
         private void saveProgramFile(StroopProgram newProgram)

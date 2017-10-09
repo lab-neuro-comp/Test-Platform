@@ -72,10 +72,10 @@ namespace TestPlatform.Models
             this.NumberPositions = numberPositions;
 
             //default configurations for first version of ReactionProgram
-            this.audioListFile = "false";
-            this.colorsListFile = "false";
-            this.wordsListFile = "false";
-            this.imagesListFile = "false";
+            this.setAudioListFile("false");
+            this.setColorListFile("false");
+            this.setWordListFile("false");
+            this.setImageListFile("false");
             this.expositionType = expoType; // "Formas"
 
         }
@@ -222,15 +222,15 @@ namespace TestPlatform.Models
                  this.StimuluSize.ToString() + " " +
                  this.IntervalTime.ToString() + " " +
                  this.StimulusDistance.ToString() + " " +
-                 this.WordsListFile + " " +
-                 this.ColorsListFile + " " +
+                 this.getWordListFile().ListName + " " +
+                 this.getColorListFile().ListName + " " +
                  this.BackgroundColor.ToUpper() + " " +
                  this.isBeeping.ToString() + " " +
                  this.BeepDuration.ToString() + " " +
                  this.StimulusColor.ToString() + " " +
                  this.ExpositionType + " " +
-                 this.ImagesListFile + " " +
-                 this.AudioListFile + " " +
+                 this.getImageListFile().ListName + " " +
+                 this.getAudioListFile().ListName + " " +
                  this.FixPoint + " " +
                  this.FixPointColor + " " +
                  this.IntervalTimeRandom + " " +
@@ -281,15 +281,15 @@ namespace TestPlatform.Models
                 StimuluSize = int.Parse(config[3]);
                 IntervalTime = int.Parse(config[4]);
                 StimulusDistance = int.Parse(config[5]);
-                WordsListFile = config[6];
-                ColorsListFile = config[7];
+                setWordListFile(config[6]);
+                setColorListFile(config[7]);
                 BackgroundColor = config[8];
                 IsBeeping = bool.Parse(config[9]);
                 BeepDuration = int.Parse(config[10]);
                 StimulusColor = config[11];
                 ExpositionType = config[12]; 
-                ImagesListFile = config[13];
-                AudioListFile = config[14];
+                setImageListFile(config[13]);
+                setAudioListFile(config[14]);
                 FixPoint = config[15];
                 FixPointColor = config[16];
                 IntervalTimeRandom = bool.Parse(config[17]);

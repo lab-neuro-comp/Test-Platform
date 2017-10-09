@@ -18,13 +18,13 @@ namespace TestPlatform.Models
         protected Int32 numExpositions;             // [1]*  number of expositions to be shown 
         protected Int32 expositionTime;             // [2]*  duration time of each exposition (millisec)
         protected Int32 intervalTime;               // [4]*  duration time for interval between expositions (millisec)
-        protected String wordsListFile;           // [6]   words list file name (.lst)
-        protected String colorsListFile;          // [7]   colors list file name (.lst)
+        protected StrList wordsListFile;           // [6]   words list file name (.lst)
+        protected StrList colorsListFile;          // [7]   colors list file name (.lst)
         protected String backgroundColor;         // [8]   background color during exposition (hex)
         protected String expositionType;          // [13]  exposition type
-        protected String imagesListFile;          // [14]  images path list file name (.lst)
+        protected StrList imagesListFile;          // [14]  images path list file name (.lst)
         protected String fixPoint;                // [15]  fixation point shown during interval time - cross / circle - false = deactivated
-        protected String audioListFile;           // [18]  audio list file name (.lst) - if it is and audio exposition type [13]
+        protected StrList audioListFile;           // [18]  audio list file name (.lst) - if it is and audio exposition type [13]
         protected String fixPointColor;           // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
         protected Boolean intervalTimeRandom;        // [5]*  is interval time random - rnd num between defined intervalTime and minRandomTime (bool)
 
@@ -96,36 +96,57 @@ namespace TestPlatform.Models
             }
         }
 
-        public string WordsListFile
+
+        public void setWordListFile(string listName)
         {
-            get { return wordsListFile; }
-            set
+            if (listName != "false")
             {
-                if (value == "false" || value.Contains("_words.lst"))
-                {
-                    wordsListFile = value;
-                }
-                else
-                {
-                    throw new ArgumentException(errorExMsg + "\nNome do arquivo " + value + " de lista de palavras deve ter terminação _words.lst");
-                }   // list files must have (.lst) termination or be "false" to indicate that theres no list defined
+                wordsListFile = new StrList(listName, 2);
             }
+            else
+            {
+                wordsListFile = null;
+            }
+
         }
 
-        public string ColorsListFile
+        public StrList getWordListFile()
         {
-            get { return colorsListFile; }
-            set
+            if (wordsListFile != null)
             {
-                if (Validations.isListValid(value))
-                {
-                    colorsListFile = value;
-                }
-                else
-                {
-                    throw new ArgumentException(errorExMsg + "\nNome do arquivo" + value + " de lista de cores deve ter terminação .lst");
-                }   // list files must have (.lst) termination or be "false" to indicate that theres no list defined
+                return wordsListFile;
             }
+            else
+            {
+                return null;
+            }
+
+        }
+
+        public void setColorListFile(string listName)
+        {
+            if (listName != "false")
+            {
+                colorsListFile = new StrList(listName, 3);
+            }
+            else
+            {
+                colorsListFile = null;
+            }
+
+        }
+
+        public StrList getColorListFile()
+        {
+            if (colorsListFile != null)
+            {
+                return colorsListFile;
+            }
+            else
+            {
+                return null;
+            }
+
         }
 
         public string BackgroundColor
@@ -144,20 +165,30 @@ namespace TestPlatform.Models
             }
         }
 
-        public string ImagesListFile
+        public void setImageListFile(string listName)
         {
-            get { return imagesListFile; }
-            set
+            if (listName != "false")
             {
-                if (Validations.isListValid(value))
-                {
-                    imagesListFile = value;
-                }
-                else
-                {
-                    throw new ArgumentException(errorExMsg + "\nNome do arquivo " + value + " de lista de imagens deve ter terminação .lst");
-                }
+                imagesListFile = new StrList(listName, 0);
             }
+            else
+            {
+                imagesListFile = null;
+            }
+
+        }
+
+        public StrList getImageListFile()
+        {
+            if (imagesListFile != null)
+            {
+                return imagesListFile;
+            }
+            else
+            {
+                return null;
+            }
+
         }
 
         public string FixPoint
@@ -170,20 +201,30 @@ namespace TestPlatform.Models
             }
         }
 
-        public string AudioListFile
+        public void setAudioListFile(string listName)
         {
-            get { return audioListFile; }
-            set
+            if (listName != "false")
             {
-                if (Validations.isListValid(value))
-                {
-                    audioListFile = value;
-                }
-                else
-                {
-                    throw new ArgumentException(errorExMsg + "\nNome do arquivo " + value + " de lista de aúdios deve ter terminação .lst");
-                }
+                audioListFile = new StrList(listName, 1);
             }
+            else
+            {
+                audioListFile = null;
+            }
+
+        }
+
+        public StrList getAudioListFile()
+        {
+            if (audioListFile != null)
+            {
+                return audioListFile;
+            }
+            else
+            {
+                return null;
+            }
+
         }
         
         public string FixPointColor

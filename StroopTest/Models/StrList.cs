@@ -12,17 +12,53 @@ namespace TestPlatform.Models
         private List<string> listContent = new List<string>();
         private String listName;
         private String type;
-        private static String defaultWordsListName = "padrao_words.lst";
+        private static String defaultWordsListName = "padrao";
         private static String defaultWordsListText = "amarelo azul verde vermelho";
-        private static String defaultColorsListName = "padrao_color.lst";
+        private static String defaultColorsListName = "padrao";
         private static String defaultColorsListText = "#F8E000 #007BB7 #7EC845 #D01C1F";
         private static String[] types = { "_image", "_audio", "_words", "_color" };
 
-        public StrList(List<string> list, string name, string type)
-        {
+      public StrList(List<string> list, string name, string type)
+      {
             ListContent = list;
             ListName = name;
             Type = type;
+      }
+
+        // constructor method for reading an existing list file and transforming it in an object
+        public StrList(string name, int type)
+        {
+            string listname = name;
+            if (name.Contains("_"))
+            {
+               listname = name.Split('_')[0];
+            }
+            ListName = listname;
+            Type = types[type];
+
+            string file = Global.testFilesPath + Global.listFolderName + "/" + listname + types[type] + ".lst";
+
+
+            if (File.Exists(file))
+            {
+                TextReader tr = new StreamReader(file, Encoding.Default, true);
+                List<string> list = new List<string>(); // lista de palavras
+                while (tr.Peek() >= 0)
+                {
+                    string[] splitedLine = tr.ReadLine().Split();
+                    for (int i = 0; i < splitedLine.Count(); i++) //adding elements to list one by one
+                    {
+                        list.Add(splitedLine[i]);
+                    }
+                }
+                tr.Close();
+                ListContent = list; // retorning list in array                
+            }
+            else
+            {
+                throw new FileNotFoundException("Não foi possível abrir a lista: '" + listName +
+                    "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(file));
+            }
         }
 
 
@@ -132,11 +168,6 @@ namespace TestPlatform.Models
             }
         }
 
-        public StrList readListIntoStrList(string filepath, string listName, string listType)
-        {
-            return new StrList(new List<string>(readListFile(filepath)), listName, listType);
-        }
-
         // lê palavras do arquivo e retorna vetor
         static internal string[] readListFile(string filepath)
         {           
@@ -161,5 +192,8 @@ namespace TestPlatform.Models
                     "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath));
             }           
         }
+
+
+
     }
 }

@@ -123,7 +123,7 @@ namespace TestPlatform.Models
         }
         public static bool isLengthValid(int value)
         {
-            if (value <= 10)
+            if (value <= 1)
                 return false;
             return true;
         }

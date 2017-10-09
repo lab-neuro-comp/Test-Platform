@@ -48,10 +48,10 @@ namespace TestPlatform.Models
             this.FontWordLabel = wordSize;
             this.IntervalTime = intervalTime;
             this.IntervalTimeRandom = intervalRandom;
-            this.WordsListFile = wordList;
-            this.ColorsListFile = colorList;
-            this.ImagesListFile = "false";
-            this.AudioListFile = "false";
+            this.setWordListFile(wordList);
+            this.setColorListFile(colorList);
+            this.setImageListFile("false");
+            this.setAudioListFile("false");
             this.ExpositionType = "txt";
             this.SubtitleColor = "false";
             this.SubtitlesListFile = "false";
@@ -72,10 +72,10 @@ namespace TestPlatform.Models
             this.FontWordLabel = wordSize;
             this.IntervalTime = intervalTime;
             this.IntervalTimeRandom = intervalRandom;
-            this.ImagesListFile = imageList;
-            this.WordsListFile = "false";
-            this.ColorsListFile = "false";
-            this.AudioListFile = "false";
+            this.setImageListFile(imageList);
+            this.setWordListFile("false");
+            this.setColorListFile("false");
+            this.setAudioListFile("false");
             this.ExpositionType = "img";
             this.SubtitleColor = "false";
             this.SubtitlesListFile = "false";
@@ -96,10 +96,10 @@ namespace TestPlatform.Models
             this.FontWordLabel = wordSize;
             this.IntervalTime = intervalTime;
             this.IntervalTimeRandom = intervalRandom;
-            this.ImagesListFile = imageList;
-            this.WordsListFile = wordList;
-            this.AudioListFile = "false";
-            this.ColorsListFile = "false";
+            this.setImageListFile(imageList);
+            this.setWordListFile(wordList);
+            this.setAudioListFile("false");
+            this.setColorListFile("false");
             this.ExpositionType = "imgtxt";
             this.SubtitleColor = "false";
             this.SubtitlesListFile = "false";
@@ -120,10 +120,10 @@ namespace TestPlatform.Models
             this.FontWordLabel = wordSize;
             this.IntervalTime = intervalTime;
             this.IntervalTimeRandom = intervalRandom;
-            this.ImagesListFile = "false";
-            this.WordsListFile = wordList;
-            this.ColorsListFile = colorList;
-            this.AudioListFile = audioList;
+            this.setImageListFile("false");
+            this.setWordListFile(wordList);
+            this.setColorListFile(colorList);
+            this.setAudioListFile(audioList);
             this.ExpositionType = "txtaud";
             this.SubtitleColor = "false";
             this.SubtitlesListFile = "false";
@@ -144,10 +144,10 @@ namespace TestPlatform.Models
             this.FontWordLabel = wordSize;
             this.IntervalTime = intervalTime;
             this.IntervalTimeRandom = intervalRandom;
-            this.WordsListFile = "false";
-            this.ColorsListFile = "false";
-            this.AudioListFile = audioList;
-            this.ImagesListFile = imageList;
+            this.setWordListFile("false");
+            this.setColorListFile("false");
+            this.setAudioListFile(audioList);
+            this.setImageListFile(imageList);
             this.ExpositionType = "imgaud";
             this.SubtitleColor = "false";
             this.SubtitlesListFile = "false";
@@ -239,25 +239,49 @@ namespace TestPlatform.Models
         }
         public string data()
         {
+            string audioList = "false";
+            if (this.getAudioListFile() != null)
+            {
+                audioList = this.getAudioListFile().ListName;
+            }
+
+            string wordList = "false";
+            if (this.getWordListFile() != null)
+            {
+                wordList = this.getWordListFile().ListName;
+            }
+
+            string colorList = "false";
+            if (this.getColorListFile() != null)
+            {
+                colorList = this.getColorListFile().ListName;
+            }
+
+            string imageList = "false";
+            if (this.getImageListFile() != null)
+            {
+                imageList = this.getImageListFile().ListName;
+            }
+
             string data = this.ProgramName + " " +
                  this.NumExpositions.ToString() + " " +
                  this.ExpositionTime.ToString() + " " +
                  this.ExpositionRandom.ToString() + " " +
                  this.IntervalTime.ToString() + " " +
                  this.IntervalTimeRandom.ToString() + " " +
-                 this.WordsListFile + " " +
-                 this.ColorsListFile + " " +
+                 wordList + " " +
+                 colorList + " " +
                  this.BackgroundColor.ToUpper() + " " +
                  this.AudioCapture.ToString() + " " +
                  this.SubtitleShow.ToString() + " " +
                  this.SubtitlePlace.ToString() + " " +
                  this.SubtitleColor.ToUpper() + " " +
                  this.ExpositionType.ToLower() + " " +
-                 this.ImagesListFile + " " +
+                 imageList + " " +
                  this.FixPoint + " " +
                  this.FontWordLabel + " " +
                  this.ExpandImage + " " +
-                 this.AudioListFile + " " +
+                 audioList + " " +
                  this.SubtitlesListFile + " " +
                  this.FixPointColor + " " +
                  this.DelayTime + " " +
@@ -409,8 +433,8 @@ namespace TestPlatform.Models
                 ExpositionRandom = Boolean.Parse(config[3]);
                 IntervalTime = Int32.Parse(config[4]);
                 IntervalTimeRandom = Boolean.Parse(config[5]);
-                WordsListFile = config[6];
-                ColorsListFile = config[7];
+                setWordListFile(config[6]);
+                setColorListFile(config[7]);
                 BackgroundColor = config[8];
                 AudioCapture = Boolean.Parse(config[9]);
                 SubtitleShow = Boolean.Parse(config[10]);
@@ -418,11 +442,11 @@ namespace TestPlatform.Models
                 if (SubtitleShow) { SubtitlePlace = Int32.Parse(config[11]); SubtitleColor = config[12]; }
                 else { SubtitlePlace = 1; SubtitleColor = "false"; }
                 ExpositionType = config[13]; // aqui
-                ImagesListFile = config[14];
+                setImageListFile(config[14]);
                 FixPoint = config[15];
                 FontWordLabel = config[16];
                 ExpandImage = Boolean.Parse(config[17]);
-                AudioListFile = config[18];
+                setAudioListFile(config[18]);
                 SubtitlesListFile = config[19];
                 
                 FixPointColor = config[20];

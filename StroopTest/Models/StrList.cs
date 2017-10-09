@@ -45,11 +45,19 @@ namespace TestPlatform.Models
                 List<string> list = new List<string>(); // lista de palavras
                 while (tr.Peek() >= 0)
                 {
-                    string[] splitedLine = tr.ReadLine().Split();
-                    for (int i = 0; i < splitedLine.Count(); i++) //adding elements to list one by one
+                    if(type > 1)
                     {
-                        list.Add(splitedLine[i]);
+                        string[] splitedLine = tr.ReadLine().Split();
+                        for (int i = 0; i < splitedLine.Count(); i++) //adding elements to list one by one
+                        {
+                            list.Add(splitedLine[i]);
+                        }
                     }
+                    else
+                    {
+                        list.Add(tr.ReadLine());
+                    }
+
                 }
                 tr.Close();
                 ListContent = list; // retorning list in array                

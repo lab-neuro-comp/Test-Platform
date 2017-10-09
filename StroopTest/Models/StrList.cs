@@ -12,9 +12,9 @@ namespace TestPlatform.Models
         private List<string> listContent = new List<string>();
         private String listName;
         private String type;
-        private static String defaultWordsListName = "padrao";
+        private static String defaultWordsListName = "padrao_words.lst";
         private static String defaultWordsListText = "amarelo azul verde vermelho";
-        private static String defaultColorsListName = "padrao";
+        private static String defaultColorsListName = "padrao_color.lst";
         private static String defaultColorsListText = "#F8E000 #007BB7 #7EC845 #D01C1F";
         private static String[] types = { "_image", "_audio", "_words", "_color" };
 

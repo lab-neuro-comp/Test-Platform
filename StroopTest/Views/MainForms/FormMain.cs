@@ -539,8 +539,6 @@ namespace TestPlatform
             DialogResult result;
             string editProgramName = "error";
 
-            try
-            {
                 defineProgram = new FormDefine("Editar Programa: ", Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
@@ -550,8 +548,7 @@ namespace TestPlatform
                     configureProgram.PrgName = editProgramName;
                     this.Controls.Add(configureProgram);
                 }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
         }
 
         private void executeButton_Click(object sender, EventArgs e)

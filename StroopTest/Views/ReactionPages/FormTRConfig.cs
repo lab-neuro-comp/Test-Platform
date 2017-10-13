@@ -45,8 +45,17 @@ namespace TestPlatform.Views
             stimulusDistance.Value = editProgram.StimulusDistance;
             stimuluSize.Value = editProgram.StimuluSize;
 
-            stimulusColor.Text = editProgram.StimulusColor;
-            stimulusColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.StimulusColor);
+            if (editProgram.ExpositionRandom)
+            {
+                isRandomExposition.Checked = true;
+            }
+
+            if(editProgram.StimulusColor != "false")
+            {
+                stimulusColor.Text = editProgram.StimulusColor;
+                stimulusColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.StimulusColor);
+            }
+            
             editProgramShapes(editProgram);
 
             if (editProgram.getWordListFile() == null)
@@ -318,7 +327,7 @@ namespace TestPlatform.Views
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value), 
                                                      Convert.ToInt32(intervalTime.Value), Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
                                                      fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, openImgListButton.Text, randomBeepCheck.Checked, 
-                                                     Convert.ToInt32(positionsBox.Text), responseTypeBox.Text);
+                                                     Convert.ToInt32(positionsBox.Text), responseTypeBox.Text, isRandomExposition.Checked);
                     break;
                 
                 // Program type "Imagem e Palavra"
@@ -608,12 +617,16 @@ namespace TestPlatform.Views
                     openImgListButton.Enabled = false;
                     stimulusColor.Enabled = true;
                     shapesGroupBox.Enabled = true;
+                    isRandomExposition.Enabled = false;
                     break;
                 case 2:
                     errorProvider1.Clear();
                     openImgListButton.Enabled = true;
+                    stimulusColor.Text = "escolher";
+                    stimulusColorPanel.BackColor = Color.White;
                     stimulusColor.Enabled = false;
                     shapesGroupBox.Enabled = false;
+                    isRandomExposition.Enabled = true;
                     break;
                 default:
                     errorProvider1.SetError(chooseExpoType, "Tipo de exposição ainda não está disponível");

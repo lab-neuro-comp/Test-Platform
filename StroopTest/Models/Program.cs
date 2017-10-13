@@ -17,6 +17,7 @@ namespace TestPlatform.Models
         protected String programName;             // [0]   program name
         protected Int32 numExpositions;             // [1]*  number of expositions to be shown 
         protected Int32 expositionTime;             // [2]*  duration time of each exposition (millisec)
+        protected Boolean expositionRandom;          // [3]*  is exposition random
         protected Int32 intervalTime;               // [4]*  duration time for interval between expositions (millisec)
         protected StrList wordsListFile;           // [6]   words list file name (.lst)
         protected StrList colorsListFile;          // [7]   colors list file name (.lst)
@@ -241,6 +242,16 @@ namespace TestPlatform.Models
                 {
                     throw new ArgumentException(errorExMsg + "\nCor do ponto de fixação deve ser 'false' ou um código hexadecimal de cor");
                 }
+            }
+        }
+
+        public bool ExpositionRandom
+        {
+            get { return expositionRandom; }
+            set
+            {
+                expositionRandom = value;
+
             }
         }
 

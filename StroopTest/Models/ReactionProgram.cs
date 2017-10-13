@@ -1,17 +1,15 @@
-﻿using TestPlatform.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using TestPlatform.Views;
 
 namespace TestPlatform.Models
 {
     class ReactionProgram : Program
     {
-        private static String defaultProgramFileText = "padrao 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 Formas false false + #FF0000 True square, False 4 Espaço";
+        private static String defaultProgramFileText = "padrao 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 Formas false false + #FF0000 True square, False 4 Espaço false";
         private static String[] defaultInstructionText = { "Serão apresentados quadrados de forma aleatória. ",
                                                     "Aperte a barra de espaço quando ver quadrado",
                                                     "A tarefa vai começar agora"};
@@ -25,7 +23,7 @@ namespace TestPlatform.Models
         private Int32 numberPositions; // [20]
         private String responseType; // [21]
 
-        private static Int32 ELEMENTS = 22; //quantity of fields used in ReactionProgram 
+        private static Int32 ELEMENTS = 23; //quantity of fields used in ReactionProgram 
 
         public ReactionProgram()
         {
@@ -74,11 +72,12 @@ namespace TestPlatform.Models
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
 
-            //default configurations for first version of ReactionProgram
+            //default configurations for shapes version of ReactionProgram
             this.setAudioListFile("false");
             this.setColorListFile("false");
             this.setWordListFile("false");
             this.setImageListFile("false");
+            this.expositionRandom = false;
             this.expositionType = expoType; // "Formas"
 
         }
@@ -90,7 +89,7 @@ namespace TestPlatform.Models
                         int stimulusDistance, bool isBeeping, int beepDuration,
                         string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                         string imageList, bool beepRandom, int numberPositions,
-                        string responseType)
+                        string responseType, bool isExpositionRandom)
         {
             // Program properties
             this.programName = programName;
@@ -101,6 +100,7 @@ namespace TestPlatform.Models
             this.backgroundColor = backgroundColor;
             this.fixPointColor = fixPointColor;
             this.intervalTimeRandom = intervalTimeRandom;
+            this.expositionRandom = isExpositionRandom;
 
             // ReactionProgram properties
             this.stimuluSize = stimuluSize;
@@ -302,7 +302,8 @@ namespace TestPlatform.Models
                  this.stimuluShape + " " +
                  this.BeepingRandom + " " +
                  this.NumberPositions + " " +
-                 this.ResponseType;
+                 this.ResponseType + " " +
+                 this.ExpositionRandom.ToString();
             return data;
         }
 
@@ -362,6 +363,7 @@ namespace TestPlatform.Models
                 BeepingRandom = bool.Parse(config[19]);
                 NumberPositions = int.Parse(config[20]);
                 ResponseType = config[21];
+                expositionRandom = bool.Parse(config[22]);
 
                 linesInstruction = File.ReadAllLines(filepath);
                 if (linesInstruction.Length > 1) // lê instrução se houver

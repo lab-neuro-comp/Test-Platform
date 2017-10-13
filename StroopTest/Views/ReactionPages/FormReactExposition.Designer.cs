@@ -56,7 +56,9 @@
             // 
             // intervalBW
             // 
+            this.intervalBW.WorkerReportsProgress = true;
             this.intervalBW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.intervalBW_DoWork);
+            this.intervalBW.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.intervalBW_ProgressChanged);
             this.intervalBW.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.intervalBW_RunWorkerCompleted);
             // 
             // FormReactExposition

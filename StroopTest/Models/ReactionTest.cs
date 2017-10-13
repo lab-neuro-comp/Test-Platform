@@ -11,13 +11,13 @@ namespace TestPlatform.Models
     class ReactionTest
     {
         private static String headerOutputFileText = "programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)"
-            + "\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\ttipoEstimulo\tFormaDoStimulo\tCordoEstimulo";
+            + "\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\ttipoEstimulo\tEstimulo\tCordoEstimulo";
         private Char mark;
         private ReactionProgram programInUse = new ReactionProgram();
         private string participantName;
         private DateTime initialTime;
         private DateTime expositionTime;
-        private string currentShape;
+        private string currentStimulus;
         private List<string> output = new List<string>();
 
         public string ParticipantName
@@ -102,12 +102,12 @@ namespace TestPlatform.Models
         {
             get
             {
-                return currentShape;
+                return currentStimulus;
             }
 
             set
             {
-                currentShape = value;
+                currentStimulus = value;
             }
         }
 
@@ -142,7 +142,7 @@ namespace TestPlatform.Models
         {
             /* This variable keeps data from an exposition to only one stimulus, being them:
              * program  name    participant     name    date    hour    exposition hour    hit time(ms) interval(ms)  interval should be(ms)  
-             * exposition accumulative timeexposition time(ms)  number of sequency   type of stimulus    shape of stimulus   
+             * exposition accumulative timeexposition time(ms)  number of sequency   type of stimulus    stimulus   
              * stimulus color */
             var text = ProgramInUse.ProgramName + "\t" + participantName + "\t" + initialTime.Day + "/" +
                        initialTime.Month + "/" + initialTime.Year + "\t" + initialTime.Hour + ":" + initialTime.Minute +
@@ -150,7 +150,7 @@ namespace TestPlatform.Models
                        ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" + reactTime.ToString() +
                         "\t" + intervalTime.ToString() + "\t" + intervalShouldBe.ToString() + "\t" + expositionAccumulative + "\t" +
                         ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + ProgramInUse.ExpositionType + "\t" +
-                        currentShape + "\t" + ProgramInUse.StimulusColor;
+                        currentStimulus + "\t" + ProgramInUse.StimulusColor;
              Output.Add(text); 
              
         }

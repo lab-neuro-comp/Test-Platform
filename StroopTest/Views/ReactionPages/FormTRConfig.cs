@@ -289,21 +289,57 @@ namespace TestPlatform.Views
 
         private ReactionProgram configureNewProgram()
         {
-            if(bgColorButton.Text.Equals("escolher"))
+            if (bgColorButton.Text.Equals("escolher"))
             {
                 bgColorButton.Text = "false";
             }
-            ReactionProgram newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
-                                                             Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
-                                                             Convert.ToInt32(intervalTime.Value),
-                                                             Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked,
-                                                             Convert.ToInt32(beepDuration.Value), stimulusColorCheck(), 
-                                                             fixPointValue(), bgColorButton.Text, fixPointColor(), 
-                                                             rndIntervalCheck.Checked, shapeValue(), chooseExpoType.Text, 
-                                                             randomBeepCheck.Checked, Convert.ToInt32(positionsBox.Text
-                                                             ), responseTypeBox.Text);
-
-
+            ReactionProgram newProgram = new ReactionProgram();
+            switch (chooseExpoType.SelectedIndex)
+            {
+                // Program type "Formas"
+                case 0:
+                    newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
+                                                Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
+                                                Convert.ToInt32(intervalTime.Value),
+                                                Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked,
+                                                Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
+                                                fixPointValue(), bgColorButton.Text, fixPointColor(),
+                                                rndIntervalCheck.Checked, shapeValue(), chooseExpoType.Text,
+                                                randomBeepCheck.Checked, Convert.ToInt32(positionsBox.Text
+                                                ), responseTypeBox.Text);
+                    break;
+                // Program type "Palavra"
+                case 1:
+                    // TODO: Add ReactionProgram constructor to "Palavra" type here
+                    break;
+                
+                // Program type "Imagem"
+                case 2:
+                    newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value), 
+                                                     Convert.ToInt32(intervalTime.Value), Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
+                                                     fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, openImgListButton.Text, randomBeepCheck.Checked, 
+                                                     Convert.ToInt32(positionsBox.Text), responseTypeBox.Text);
+                    break;
+                
+                // Program type "Imagem e Palavra"
+                case 3:
+                    // TODO: Add ReactionProgram constructor to "Imagem e Palavra" type here
+                    break;
+                
+                // Program type "Palavra com Aúdio"
+                case 4:
+                    // TODO: Add ReactionProgram constructor to "Palavra com aúdio" type here
+                    break;
+                
+                // Program type "Imagem com Aúdio"
+                case 5:
+                    // TODO: Add ReactionProgram constructor to "Imagem com aúdio" type here
+                    break;
+                
+                // invalid type aws choosen
+                default:
+                    throw new Exception("O tipo de programa entrado é invalido!");
+            }
             // read instructions and pass them to the new program created
             string textLines = "";
             if (instructionsBox.Lines.Length > 0 && instructionsBox.Text != instructionBoxText)
@@ -323,12 +359,10 @@ namespace TestPlatform.Views
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (!this.ValidateChildren(ValidationConstraints.Enabled))
-                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
-            else
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 ReactionProgram newProgram = configureNewProgram();
-            
+
 
                 if (File.Exists(path + Global.programFolderName + prgNameTextBox.Text + ".prg"))
                 {
@@ -342,7 +376,12 @@ namespace TestPlatform.Views
                 {
                     MessageBox.Show("O programa foi salvo com sucesso");
                 }
-                    this.Parent.Controls.Remove(this);
+                this.Parent.Controls.Remove(this);
+            }
+                
+            else
+            {
+                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
             }
         }
 

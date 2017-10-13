@@ -44,6 +44,9 @@ namespace TestPlatform.Models
                                  );
         }
 
+        /// <summary>
+        /// This constructor is used to create a reaction program with shapes using only one color
+        /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
                                 int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
@@ -77,6 +80,45 @@ namespace TestPlatform.Models
             this.setWordListFile("false");
             this.setImageListFile("false");
             this.expositionType = expoType; // "Formas"
+
+        }
+
+        /// <summary>
+        /// This constructor is used to create a reaction program with image type
+        /// </summary>
+        public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
+                        int stimulusDistance, bool isBeeping, int beepDuration,
+                        string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
+                        string imageList, bool beepRandom, int numberPositions,
+                        string responseType)
+        {
+            // Program properties
+            this.programName = programName;
+            this.expositionTime = expositionTime;
+            this.numExpositions = numExpositions;
+            this.intervalTime = intervalTime;
+            this.fixPoint = fixPoint;
+            this.backgroundColor = backgroundColor;
+            this.fixPointColor = fixPointColor;
+            this.intervalTimeRandom = intervalTimeRandom;
+
+            // ReactionProgram properties
+            this.stimuluSize = stimuluSize;
+            this.stimulusDistance = stimulusDistance;
+            this.isBeeping = isBeeping;
+            this.beepDuration = beepDuration;
+            this.stimulusColor = "false";
+            this.stimuluShape = "false";
+            this.BeepingRandom = beepRandom;
+            this.ResponseType = responseType;
+            this.NumberPositions = numberPositions;
+
+            //default configurations for first version of ReactionProgram
+            this.setAudioListFile("false");
+            this.setColorListFile("false");
+            this.setWordListFile("false");
+            this.setImageListFile(imageList);
+            this.expositionType = "Imagem"; 
 
         }
 

@@ -249,14 +249,7 @@ namespace TestPlatform.Models
             get { return intervalTimeRandom; }
             set
             {
-                if (Validations.isBoolean(value))
-                {
-                    intervalTimeRandom = value;
-                }
-                else
-                {
-                    throw new ArgumentException(errorExMsg + "\nTempo de intervalo randômico deve ser boleana (true or false)");
-                }
+                intervalTimeRandom = value;
             }
         }
         public bool NeedsEdition

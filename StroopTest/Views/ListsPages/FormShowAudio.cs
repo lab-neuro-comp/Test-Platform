@@ -15,12 +15,10 @@ namespace TestPlatform
         private SoundPlayer player = new SoundPlayer();
         private string instructionsText = HelpData.ShowAudioInstructions + HelpData.NewAudioInstructions;
         Audio audioRecorder = new Audio();
-        private string file = "";
         private Timer timer;
         private DateTime startTime = DateTime.MinValue;
         private TimeSpan currentElapsedTime = TimeSpan.Zero;
         private bool timerRunning = false;
-        private string pathText = null;
         private bool recording = false;
 
         public FormShowAudio()

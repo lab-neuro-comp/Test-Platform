@@ -329,8 +329,7 @@ namespace TestPlatform.Views
             {
                 ReactionProgram newProgram = configureNewProgram();
             
-            try
-            {
+
                 if (File.Exists(path + Global.programFolderName + prgNameTextBox.Text + ".prg"))
                 {
                     DialogResult dialogResult = MessageBox.Show("O programa já existe, deseja sobrescrevê-lo?", "", MessageBoxButtons.OKCancel);
@@ -344,9 +343,6 @@ namespace TestPlatform.Views
                     MessageBox.Show("O programa foi salvo com sucesso");
                 }
                     this.Parent.Controls.Remove(this);
-
-                }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }
 
@@ -563,6 +559,56 @@ namespace TestPlatform.Views
                 beepDuration.Value = 0;
                 beepDuration.Enabled = false;
             }
+        }
+
+        private void chooseExpoType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (chooseExpoType.SelectedIndex) {
+                case 0:
+                    errorProvider1.Clear();
+                    openImgListButton.Enabled = false;
+                    stimulusColor.Enabled = true;
+                    shapesGroupBox.Enabled = true;
+                    break;
+                case 2:
+                    errorProvider1.Clear();
+                    openImgListButton.Enabled = true;
+                    stimulusColor.Enabled = false;
+                    shapesGroupBox.Enabled = false;
+                    break;
+                default:
+                    errorProvider1.SetError(chooseExpoType, "Tipo de exposição ainda não está disponível");
+                    break;
+            }
+                
+        }
+
+        private void openImgListButton_Validating(object sender,
+                                     System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidopenImgListButton(openImgListButton.Text, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.openImgListButton, errorMsg);
+            }
+        }
+
+        private void openImgListButton_Validated(object sender, System.EventArgs e)
+        {
+            errorProvider1.SetError(this.openImgListButton, "");
+        }
+
+        public bool ValidopenImgListButton(string text, out string errorMessage)
+        {
+            if (Validations.isExpoEnabled(openImgListButton) && !Validations.isLengthValid(text))
+            {
+                errorMessage = "Selecione o arquivo de lista de imagem!";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
         }
     }
 }

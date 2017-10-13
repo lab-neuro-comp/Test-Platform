@@ -162,14 +162,8 @@ namespace TestPlatform.Models
             get { return expositionRandom; }
             set
             {
-                if (Validations.isBoolean(value))    // checks boolean
-                {
-                    expositionRandom = value;
-                }
-                else
-                {
-                    throw new ArgumentException(errorExMsg + "\nExposicao Randômica deve ser boleana (true or false)");
-                }
+                expositionRandom = value;
+                
             }
         }
 
@@ -179,14 +173,7 @@ namespace TestPlatform.Models
             get { return audioCapture; }
             set
             {
-                if (Validations.isBoolean(value))
-                {
-                    audioCapture = value;
-                }
-                else
-                {
-                    throw new ArgumentException(errorExMsg + "\nCaptura de audio deve ser boleana (true or false)");
-                }
+                audioCapture = value;              
             }
         }
 
@@ -195,14 +182,7 @@ namespace TestPlatform.Models
             get { return subtitleShow; }
             set
             {
-                if (Validations.isBoolean(value))
-                {
-                    subtitleShow = value;
-                }
-                else
-                {
-                    throw new ArgumentException(errorExMsg + "\nApresentação de legenda deve ser boleana (true or false)");
-                }
+                 subtitleShow = value;
             }
         }
 
@@ -314,14 +294,7 @@ namespace TestPlatform.Models
             get { return expandImage; }
             set
             {
-                if (Validations.isBoolean(value))
-                {
-                    expandImage = value;
-                }
-                else
-                {
-                    throw new ArgumentException(errorExMsg + "\nExpansão de Imagem deve ser boleana (true or false)");
-                }
+                 expandImage = value;
             }
         }
 
@@ -367,14 +340,7 @@ namespace TestPlatform.Models
             get { return rndSubtitlePlace; }
             set
             {
-                if (Validations.isBoolean(value))
-                {
-                    rndSubtitlePlace = value;
-                }
-                else
-                {
-                    throw new ArgumentException(errorExMsg + "\nPosição Aleátória deve ser boleana (true or false)");
-                }
+                rndSubtitlePlace = value;
             }
         }
 

@@ -1,9 +1,12 @@
-﻿using System;
-using System.IO;
-using System.Windows.Forms;
-
-namespace TestPlatform.Controllers
+﻿namespace TestPlatform.Controllers
 {
+    using System;
+    using System.IO;
+    using System.Windows.Forms;
+
+    /// <summary>  
+    ///  This class performs different kinds of manipulations on data grid views that are necessary to application  
+    /// </summary>
     class DGVManipulation
     {
         internal static void moveDGVRowUp(DataGridView dgv)

@@ -43,13 +43,6 @@ namespace TestPlatform.Models
             return false;
         }
 
-        public static bool isBoolean(bool value)
-        {
-            if (value == true || value == false)
-                return true;
-            return false;
-        }
-
         public static bool isSubtitlePlaceValid(int value)
         {
             if (value > 0 && value <= 6)
@@ -121,11 +114,11 @@ namespace TestPlatform.Models
                 return true;
             return false;
         }
-        public static bool isLengthValid(int value)
+        public static bool isLengthValid(string value)
         {
-            if (value <= 1)
-                return false;
-            return true;
+            if (value.Length > 0 && value != "abrir")
+                return true;
+            return false;
         }
 
         public static bool isExpoEnabled(Button value)

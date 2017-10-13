@@ -530,7 +530,6 @@
             this.groupBox2.Controls.Add(this.openWordListButton);
             this.groupBox2.Controls.Add(this.openColorListButton);
             this.groupBox2.Controls.Add(this.openImgListButton);
-            this.groupBox2.Enabled = false;
             this.groupBox2.Location = new System.Drawing.Point(19, 324);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
@@ -628,6 +627,8 @@
             this.openImgListButton.Text = "abrir";
             this.openImgListButton.UseVisualStyleBackColor = true;
             this.openImgListButton.Click += new System.EventHandler(this.openImagesList_Click);
+            this.openImgListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openImgListButton_Validating);
+            this.openImgListButton.Validated += new System.EventHandler(this.openImgListButton_Validated);
             // 
             // instructionsBox
             // 
@@ -774,6 +775,7 @@
             this.chooseExpoType.Size = new System.Drawing.Size(185, 24);
             this.chooseExpoType.TabIndex = 167;
             this.chooseExpoType.Tag = "";
+            this.chooseExpoType.SelectedIndexChanged += new System.EventHandler(this.chooseExpoType_SelectedIndexChanged);
             // 
             // stimulusColorPanel
             // 

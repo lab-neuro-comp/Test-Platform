@@ -20,7 +20,6 @@ namespace TestPlatform
     public partial class FormMain : Form
     {
         private FolderBrowserDialog folderBrowserDialog1;
-        
 
         private static string DEFAULTPGRNAME = "padrao";
         private static string DEFAULTUSERNAME = "padrao";
@@ -365,8 +364,7 @@ namespace TestPlatform
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-
-        private void displayAudiosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openShowAudioForm()
         {
             FormShowAudio showAudio;
             try
@@ -377,15 +375,14 @@ namespace TestPlatform
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
+        private void displayAudiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openShowAudioForm();
+        }
+
         private void newAudioToolStripMenu_Click(object sender, EventArgs e)
         {
-            FormShowAudio showAudio;
-            try
-            {
-                showAudio = new FormShowAudio();
-                this.Controls.Add(showAudio);
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            openShowAudioForm();
         }
 
         private void experimentButton_CheckedChanged(object sender, EventArgs e)

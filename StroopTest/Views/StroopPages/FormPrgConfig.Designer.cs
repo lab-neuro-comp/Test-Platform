@@ -663,7 +663,7 @@
             // wordListLabel
             // 
             this.wordListLabel.AutoSize = true;
-            this.wordListLabel.Location = new System.Drawing.Point(89, 25);
+            this.wordListLabel.Location = new System.Drawing.Point(58, 25);
             this.wordListLabel.Name = "wordListLabel";
             this.wordListLabel.Size = new System.Drawing.Size(67, 17);
             this.wordListLabel.TabIndex = 40;
@@ -672,7 +672,7 @@
             // audioListLabel
             // 
             this.audioListLabel.AutoSize = true;
-            this.audioListLabel.Location = new System.Drawing.Point(100, 124);
+            this.audioListLabel.Location = new System.Drawing.Point(69, 124);
             this.audioListLabel.Name = "audioListLabel";
             this.audioListLabel.Size = new System.Drawing.Size(55, 17);
             this.audioListLabel.TabIndex = 164;
@@ -683,7 +683,7 @@
             // 
             this.openAudioListButton.Enabled = false;
             this.openAudioListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openAudioListButton.Location = new System.Drawing.Point(161, 121);
+            this.openAudioListButton.Location = new System.Drawing.Point(130, 121);
             this.openAudioListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.openAudioListButton.Name = "openAudioListButton";
             this.openAudioListButton.Size = new System.Drawing.Size(187, 23);
@@ -697,7 +697,7 @@
             // colorListLabel
             // 
             this.colorListLabel.AutoSize = true;
-            this.colorListLabel.Location = new System.Drawing.Point(107, 58);
+            this.colorListLabel.Location = new System.Drawing.Point(76, 58);
             this.colorListLabel.Name = "colorListLabel";
             this.colorListLabel.Size = new System.Drawing.Size(49, 17);
             this.colorListLabel.TabIndex = 41;
@@ -706,7 +706,7 @@
             // imgListLabel
             // 
             this.imgListLabel.AutoSize = true;
-            this.imgListLabel.Location = new System.Drawing.Point(89, 91);
+            this.imgListLabel.Location = new System.Drawing.Point(58, 91);
             this.imgListLabel.Name = "imgListLabel";
             this.imgListLabel.Size = new System.Drawing.Size(65, 17);
             this.imgListLabel.TabIndex = 57;
@@ -715,7 +715,7 @@
             // openWordListButton
             // 
             this.openWordListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openWordListButton.Location = new System.Drawing.Point(163, 21);
+            this.openWordListButton.Location = new System.Drawing.Point(132, 21);
             this.openWordListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.openWordListButton.Name = "openWordListButton";
             this.openWordListButton.Size = new System.Drawing.Size(187, 23);
@@ -729,7 +729,7 @@
             // openColorListButton
             // 
             this.openColorListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openColorListButton.Location = new System.Drawing.Point(161, 54);
+            this.openColorListButton.Location = new System.Drawing.Point(130, 54);
             this.openColorListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.openColorListButton.Name = "openColorListButton";
             this.openColorListButton.Size = new System.Drawing.Size(187, 23);
@@ -744,7 +744,7 @@
             // 
             this.openImgListButton.Enabled = false;
             this.openImgListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openImgListButton.Location = new System.Drawing.Point(161, 87);
+            this.openImgListButton.Location = new System.Drawing.Point(130, 87);
             this.openImgListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.openImgListButton.Name = "openImgListButton";
             this.openImgListButton.Size = new System.Drawing.Size(187, 23);

@@ -112,15 +112,20 @@ namespace TestPlatform
             try
             {
                 if (!this.ValidateChildren(ValidationConstraints.Enabled))
+                {
                     MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+                }                   
                 else
                 {
-                    DataGridView dgv = audioPathDataGridView;
-                    DGVManipulation.saveColumnToListFile(dgv, 1, Global.testFilesPath + Global.listFolderName, audioListNameTextBox.Text + "_audio");
+                    DataGridView dgv = this.audioPathDataGridView;
+                    DGVManipulation.saveColumnToListFile(dgv, 1, Global.testFilesPath + Global.listFolderName, this.audioListNameTextBox.Text + "_audio");
                     this.Parent.Controls.Remove(this);
                 }
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void audioPathDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

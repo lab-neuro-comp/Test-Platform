@@ -910,7 +910,7 @@ namespace TestPlatform
          System.ComponentModel.CancelEventArgs e)
         {
             string errorMsg;
-            if (!ValidopenWordList(openWordListButton.Text.Length, out errorMsg))
+            if (!ValidopenWordList(openWordListButton.Text, out errorMsg))
             {
                 e.Cancel = true;
                 this.errorProvider1.SetError(this.openWordListButton, errorMsg);
@@ -922,15 +922,14 @@ namespace TestPlatform
             errorProvider1.SetError(this.openWordListButton, "");
         }
 
-        public bool ValidopenWordList(int length, out string errorMessage)
+        public bool ValidopenWordList(string text, out string errorMessage)
         {
-            if (Validations.isExpoEnabled(openWordListButton) && !Validations.isLengthValid(length))
+            if (Validations.isExpoEnabled(openWordListButton) && !Validations.isLengthValid(text))
             {
                 Console.WriteLine(Validations.isExpoEnabled(openWordListButton));
                 errorMessage = "Selecione o arquivo de lista de palavras!";
                 return false;
             }
-            Validations.isExpoEnabled(openWordListButton);
             errorMessage = "";
             return true;
         }
@@ -939,7 +938,7 @@ namespace TestPlatform
                                              System.ComponentModel.CancelEventArgs e)
         {
             string errorMsg;
-            if (!ValidopenColorListButton(openColorListButton.Text.Length, out errorMsg))
+            if (!ValidopenColorListButton(openColorListButton.Text, out errorMsg))
             {
                 e.Cancel = true;
                 this.errorProvider1.SetError(this.openColorListButton, errorMsg);
@@ -951,9 +950,9 @@ namespace TestPlatform
             errorProvider1.SetError(this.openColorListButton, "");
         }
 
-        public bool ValidopenColorListButton(int length, out string errorMessage)
+        public bool ValidopenColorListButton(string text, out string errorMessage)
         {
-            if (Validations.isExpoEnabled(openColorListButton) && !Validations.isLengthValid(length))
+            if (Validations.isExpoEnabled(openColorListButton) && !Validations.isLengthValid(text))
             {
                 errorMessage = "Selecione o arquivo de lista de cores!";
                 return false;
@@ -967,7 +966,7 @@ namespace TestPlatform
                                              System.ComponentModel.CancelEventArgs e)
         {
             string errorMsg;
-            if (!ValidopenImgListButton(openImgListButton.Text.Length, out errorMsg))
+            if (!ValidopenImgListButton(openImgListButton.Text, out errorMsg))
             {
                 e.Cancel = true;
                 this.errorProvider1.SetError(this.openImgListButton, errorMsg);
@@ -979,9 +978,9 @@ namespace TestPlatform
             errorProvider1.SetError(this.openImgListButton, "");
         }
 
-        public bool ValidopenImgListButton(int length, out string errorMessage)
+        public bool ValidopenImgListButton(string text, out string errorMessage)
         {
-            if (Validations.isExpoEnabled(openImgListButton) && !Validations.isLengthValid(length))
+            if (Validations.isExpoEnabled(openImgListButton) && !Validations.isLengthValid(text))
             {
                 errorMessage = "Selecione o arquivo de lista de imagem!";
                 return false;
@@ -997,7 +996,7 @@ namespace TestPlatform
                                              System.ComponentModel.CancelEventArgs e)
         {
             string errorMsg;
-            if (!ValidopenAudioListButton(openAudioListButton.Text.Length, out errorMsg))
+            if (!ValidopenAudioListButton(openAudioListButton.Text, out errorMsg))
             {
                 e.Cancel = true;
                 this.errorProvider1.SetError(this.openAudioListButton, errorMsg);
@@ -1009,9 +1008,9 @@ namespace TestPlatform
             errorProvider1.SetError(this.openAudioListButton, "");
         }
 
-        public bool ValidopenAudioListButton(int length, out string errorMessage)
+        public bool ValidopenAudioListButton(string text, out string errorMessage)
         {
-            if (Validations.isExpoEnabled(openAudioListButton) && !Validations.isLengthValid(length))
+            if (Validations.isExpoEnabled(openAudioListButton) && !Validations.isLengthValid(text))
             {
                 errorMessage = "Selecione o arquivo de lista de audio!";
                 return false;

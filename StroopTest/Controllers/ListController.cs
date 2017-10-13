@@ -18,7 +18,7 @@ namespace TestPlatform.Controllers
         public static string pickColor(Control control)
         {
             ColorDialog MyDialog = new ColorDialog();
-            Color colorPicked = new Color();
+            
 
             MyDialog.CustomColors = new int[] {
                                         ColorTranslator.ToOle(ColorTranslator.FromHtml("#F8E000")),
@@ -26,6 +26,7 @@ namespace TestPlatform.Controllers
                                         ColorTranslator.ToOle(ColorTranslator.FromHtml("#7EC845")),
                                         ColorTranslator.ToOle(ColorTranslator.FromHtml("#D01C1F"))
                                       };
+            Color colorPicked = new Color();
             colorPicked = control.BackColor;
 
             string hexColor = "#FFFFFF";

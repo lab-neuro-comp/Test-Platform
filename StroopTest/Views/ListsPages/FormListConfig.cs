@@ -51,7 +51,7 @@ namespace TestPlatform
 
             try
             {
-                //MessageBox.Show(fileName);
+                // MessageBox.Show(fileName);
                 /*
                 var typeOfList = fileName.Substring(fileName.Length - 6, fileName.Length);
                 switch (typeOfList.ToLower())
@@ -68,19 +68,22 @@ namespace TestPlatform
                 */
                 fileName = fileName.Remove(fileName.Length - 6);
 
-                wordsFilePath = path + fileName + "_words.lst";
-                colorsFilePath = path + fileName + "_colors.lst";
+                wordsFilePath = this.path + fileName + "_words.lst";
+                colorsFilePath = this.path + fileName + "_colors.lst";
 
-                listNameTextBox.Text = fileName;
+                this.listNameTextBox.Text = fileName;
 
-                checkWords.Checked = false;
-                checkColors.Checked = false;
+                this.checkWords.Checked = false;
+                this.checkColors.Checked = false;
 
                 if (File.Exists(wordsFilePath))
                 {
                     wordsArray = StrList.readListFile(wordsFilePath);
-                    checkWords.Checked = true;
-                    foreach (string item in wordsArray) { wordsColoredList.Items.Add(item); }
+                    this.checkWords.Checked = true;
+                    foreach (string item in wordsArray)
+                    {
+                        wordsColoredList.Items.Add(item);
+                    }
                 }
                 if (File.Exists(colorsFilePath))
                 {
@@ -239,7 +242,7 @@ namespace TestPlatform
         {
                 if (checkWords.Checked && checkColors.Checked && !String.IsNullOrEmpty(wordTextBox.Text) && !String.IsNullOrEmpty(hexColorTextBox.Text))
                 {
-                    if (wordsColoredList.Items.Count != hexColorsList.Items.Count || hexColorsList.Items.Count != wordsColoredList.Items.Count)
+                    if (wordsColoredList.Items.Count != hexColorsList.Items.Count)
                     {
                         wordsColoredList.Items.Clear();
                         hexColorsList.Items.Clear();

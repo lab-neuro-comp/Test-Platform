@@ -216,21 +216,44 @@ namespace TestPlatform.Models
 
         public string data()
         {
+            string audioList = "false";
+            if (this.getAudioListFile() != null)
+            {
+                audioList = this.getAudioListFile().ListName;
+            }
+
+            string wordList = "false";
+            if (this.getWordListFile() != null)
+            {
+                wordList = this.getWordListFile().ListName;
+            }
+
+            string colorList = "false";
+            if (this.getColorListFile() != null)
+            {
+                colorList = this.getColorListFile().ListName;
+            }
+
+            string imageList = "false";
+            if (this.getImageListFile() != null)
+            {
+                imageList = this.getImageListFile().ListName;
+            }
             string data = this.ProgramName + " " +
                  this.NumExpositions.ToString() + " " +
                  this.ExpositionTime.ToString() + " " +
                  this.StimuluSize.ToString() + " " +
                  this.IntervalTime.ToString() + " " +
                  this.StimulusDistance.ToString() + " " +
-                 this.getWordListFile().ListName + " " +
-                 this.getColorListFile().ListName + " " +
+                 wordList + " " +
+                 colorList + " " +
                  this.BackgroundColor.ToUpper() + " " +
                  this.isBeeping.ToString() + " " +
                  this.BeepDuration.ToString() + " " +
                  this.StimulusColor.ToString() + " " +
                  this.ExpositionType + " " +
-                 this.getImageListFile().ListName + " " +
-                 this.getAudioListFile().ListName + " " +
+                 imageList + " " +
+                 audioList + " " +
                  this.FixPoint + " " +
                  this.FixPointColor + " " +
                  this.IntervalTimeRandom + " " +

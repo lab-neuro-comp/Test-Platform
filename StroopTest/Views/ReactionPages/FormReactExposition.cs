@@ -39,6 +39,9 @@ namespace TestPlatform.Views
         private int imageCounter = 0;
         private PictureBox imgPictureBox = new PictureBox();
         private bool exposing = false;
+        private string currentStimulus = null;
+        private string position = null;
+        private int currentPosition;
 
         public FormReactExposition(string prgName, string participantName, char mark)
         {
@@ -241,7 +244,7 @@ namespace TestPlatform.Views
 
         private void singleShapeExposition(string shape)
         {
-            executingTest.CurrentShape = shape;
+            currentStimulus = shape;
             switch (shape)
             {
                 case "fullSquare":
@@ -292,6 +295,7 @@ namespace TestPlatform.Views
             imgPictureBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
             imgPictureBox.Location = new Point(screenPosition[X], screenPosition[Y]);
             imgPictureBox.Image = Image.FromFile(imagesList[imageCounter]);
+            currentStimulus = imagesList[imageCounter];
             imgPictureBox.Enabled = true;
             imageCounter++;            
             if(imageCounter == imagesList.Length)
@@ -396,19 +400,19 @@ namespace TestPlatform.Views
             {
                 /* user clicked after stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds,
-                                              currentExposition + 1, expositionAccumulative);
+                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition));
             }
 
             else if ((e.Cancelled == true) && intervalCancelled)
             {
                 /* user clicked before stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, intervalElapsedTime - intervalShouldBe,
-                                              currentExposition + 1, expositionAccumulative);
+                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition));
             }
             else
             {
                 /* user missed stimulus */
-                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative);
+                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition));
                 hitStopWatch.Stop();
             }
             expositionBW.Dispose();
@@ -453,11 +457,12 @@ namespace TestPlatform.Views
         /* creates a x and y vector according to program stimulus distance randomly, from four different positions */
         private int[] randomShapeScreenPosition (){
             int[,] position = new int[4, 2]{ { (executingTest.ProgramInUse.StimulusDistance + (executingTest.ProgramInUse.StimulusDistance / 4)), 0 }, // on the right side of the screen
-                                             { 0, (executingTest.ProgramInUse.StimulusDistance - (executingTest.ProgramInUse.StimulusDistance / 4))}, // on bottom of the screen
+                                            { 0, -( executingTest.ProgramInUse.StimulusDistance - (executingTest.ProgramInUse.StimulusDistance / 4)) }, // on top of the screen
                                              { -(executingTest.ProgramInUse.StimulusDistance + (executingTest.ProgramInUse.StimulusDistance / 4)), 0 }, // on the left side of the screen
-                                             { 0, -( executingTest.ProgramInUse.StimulusDistance - (executingTest.ProgramInUse.StimulusDistance / 4)) } }; // on top of the screen
+                                              { 0, (executingTest.ProgramInUse.StimulusDistance - (executingTest.ProgramInUse.StimulusDistance / 4))} }; // on bottom of the screen
             Random random = new Random();
             int index = random.Next(0, 4);
+            currentPosition = index;
             return new int []{ position[index, X], position[index, Y] };
         }
 
@@ -472,6 +477,7 @@ namespace TestPlatform.Views
                                              { 0, (executingTest.ProgramInUse.StimulusDistance - 50) } }; // on bottom of the screen
             Random random = new Random();
             int index = random.Next(0, 4);
+            currentPosition = index;
             int x = (int)(clientMiddle[X]) + position[index, X];
             int y = (int)(clientMiddle[Y]) + position[index, Y];
             return new int[] { x , y };
@@ -607,6 +613,24 @@ namespace TestPlatform.Views
             {
                 this.Controls.Remove(imgPictureBox);
             }
+        }
+
+        private string position_converter(int index)
+        {
+            switch (index)
+            {
+                case 0:
+                    return "right";
+                case 1:
+                    return "top";
+                case 2:
+                    return "left";
+                case 3:
+                    return "bottom";
+                default:
+                    return "invalid";
+            }
+                
         }
     }
 }

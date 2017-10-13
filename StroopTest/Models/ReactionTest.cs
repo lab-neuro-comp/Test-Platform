@@ -17,7 +17,6 @@ namespace TestPlatform.Models
         private string participantName;
         private DateTime initialTime;
         private DateTime expositionTime;
-        private string currentStimulus;
         private List<string> output = new List<string>();
 
         public string ParticipantName
@@ -98,19 +97,6 @@ namespace TestPlatform.Models
             }
         }
 
-        public string CurrentShape
-        {
-            get
-            {
-                return currentStimulus;
-            }
-
-            set
-            {
-                currentStimulus = value;
-            }
-        }
-
         public DateTime ExpositionTime
         {
             get
@@ -138,7 +124,7 @@ namespace TestPlatform.Models
             }
         }
 
-        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative)
+        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, string currentStimulus, string position)
         {
             /* This variable keeps data from an exposition to only one stimulus, being them:
              * program  name    participant     name    date    hour    exposition hour    hit time(ms) interval(ms)  interval should be(ms)  
@@ -149,7 +135,7 @@ namespace TestPlatform.Models
                        ":" + initialTime.Second + ":" + initialTime.Millisecond.ToString() + "\t" + ExpositionTime.Hour + ":" + ExpositionTime.Minute +
                        ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" + reactTime.ToString() +
                         "\t" + intervalTime.ToString() + "\t" + intervalShouldBe.ToString() + "\t" + expositionAccumulative + "\t" +
-                        ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + ProgramInUse.ExpositionType + "\t" +
+                        ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + position  + "\t"+ ProgramInUse.ExpositionType + "\t" +
                         currentStimulus + "\t" + ProgramInUse.StimulusColor;
              Output.Add(text); 
              

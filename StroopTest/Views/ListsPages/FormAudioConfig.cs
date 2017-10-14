@@ -37,7 +37,7 @@ namespace TestPlatform
                     audioListNameTextBox.Text = choosenList.Remove(choosenList.Length - 6); // removes the _audio identification from file while editing (when its saved it is always added again)
 
                     string[] filePaths = StroopProgram.readDirListFile(Global.testFilesPath + Global.listFolderName + "/" + choosenList + ".lst");
-                    DGVManipulation.readStringListIntoDGV(filePaths, audioPathDataGridView);
+                    DGVManipulation.ReadStringListIntoDGV(filePaths, audioPathDataGridView);
                     numberFiles.Text = audioPathDataGridView.RowCount.ToString();
                 }
             }
@@ -62,7 +62,7 @@ namespace TestPlatform
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string[] fileNames = openFileDialog.FileNames;
-                    DGVManipulation.readStringListIntoDGV(fileNames, audioPathDataGridView);
+                    DGVManipulation.ReadStringListIntoDGV(fileNames, audioPathDataGridView);
                     numberFiles.Text = audioPathDataGridView.RowCount.ToString();
                 }
             }
@@ -75,20 +75,20 @@ namespace TestPlatform
         private void deleteButton_Click(object sender, EventArgs e)
         {
             DataGridView dgv = audioPathDataGridView;
-            DGVManipulation.deleteDGVRow(dgv);
+            DGVManipulation.DeleteDGVRow(dgv);
             numberFiles.Text = audioPathDataGridView.RowCount.ToString();
         }
 
         private void moveUpButton_Click(object sender, EventArgs e)
         {
             DataGridView dgv = audioPathDataGridView;
-            DGVManipulation.moveDGVRowUp(dgv);
+            DGVManipulation.MoveDGVRowUp(dgv);
         }
 
         private void moveDownButton_Click(object sender, EventArgs e)
         {
             DataGridView dgv = audioPathDataGridView;
-            DGVManipulation.moveDGVRowDown(dgv);
+            DGVManipulation.MoveDGVRowDown(dgv);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace TestPlatform
             DataGridView dgv = audioPathDataGridView;
             try
             {
-                DGVManipulation.closeFormListNotEmpty(dgv);
+                DGVManipulation.CloseFormListNotEmpty(dgv);
                 this.Parent.Controls.Remove(this);
             }
             catch (Exception ex)
@@ -118,7 +118,7 @@ namespace TestPlatform
                 else
                 {
                     DataGridView dgv = this.audioPathDataGridView;
-                    DGVManipulation.saveColumnToListFile(dgv, 1, Global.testFilesPath + Global.listFolderName, this.audioListNameTextBox.Text + "_audio");
+                    DGVManipulation.SaveColumnToListFile(dgv, 1, Global.testFilesPath + Global.listFolderName, this.audioListNameTextBox.Text + "_audio");
                     this.Parent.Controls.Remove(this);
                 }
             }
@@ -151,7 +151,7 @@ namespace TestPlatform
             {
                 try
                 {
-                    DGVManipulation.moveDGVRowUp(dgv);
+                    DGVManipulation.MoveDGVRowUp(dgv);
                 }
                 catch { }
             }
@@ -159,7 +159,7 @@ namespace TestPlatform
             {
                 try
                 {
-                    DGVManipulation.moveDGVRowDown(dgv);
+                    DGVManipulation.MoveDGVRowDown(dgv);
                 }
                 catch { }
             }

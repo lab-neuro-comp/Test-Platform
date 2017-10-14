@@ -1,30 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using TestPlatform.Views;
-
-namespace TestPlatform.Models
+﻿namespace TestPlatform.Models
 {
-    class ExperimentProgram
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using TestPlatform.Views;
+
+    public class ExperimentProgram
     {
-        private String experimentName;
+        private string experimentName;
         private List<Program> programList = new List<Program>();
-        private Boolean isOrderRandom; // if true it means that programs will not be executed in the list order
-        private Int32 intervalTime;               // duration time for interval between program expositions in millisec, it can be zero
+        private bool isOrderRandom; // if true it means that programs will not be executed in the list order
+        private int intervalTime;               // duration time for interval between program expositions in millisec, it can be zero
         private List<string> instructionText = new List<string>();
-        private Boolean trainingProgram; // if true there is a program which is fixed (training program) and the  rest is random
+        private bool trainingProgram; // if true there is a program which is fixed (training program) and the  rest is random
 
         public bool IsOrderRandom
         {
             get
             {
-                return isOrderRandom;
+                return this.isOrderRandom;
             }
 
             set
             {
-                isOrderRandom = value;
+                this.isOrderRandom = value;
             }
         }
 
@@ -32,14 +32,14 @@ namespace TestPlatform.Models
         {
             get
             {
-                return intervalTime;
+                return this.intervalTime;
             }
 
             set
             {
                 if (Validations.isExperimentIntervalTimeValid(value))
                 {
-                    intervalTime = value;
+                    this.intervalTime = value;
                 }
                 else
                 {

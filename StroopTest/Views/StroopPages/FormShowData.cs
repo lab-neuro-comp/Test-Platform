@@ -88,7 +88,7 @@ namespace TestPlatform
                     }
                     
                     filePaths = Directory.GetFiles(path, "audio_" + comboBox1.SelectedItem.ToString()+"*", SearchOption.AllDirectories);
-                    DGVManipulation.readStringListIntoDGV(filePaths, audioPathDataGridView);
+                    DGVManipulation.ReadStringListIntoDGV(filePaths, audioPathDataGridView);
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

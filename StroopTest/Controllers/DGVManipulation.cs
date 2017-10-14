@@ -7,15 +7,19 @@
     /// <summary>  
     ///  This class performs different kinds of manipulations on data grid views that are necessary to application  
     /// </summary>
-    class DGVManipulation
+    public class DGVManipulation
     {
-        internal static void moveDGVRowUp(DataGridView dgv)
+        internal static void MoveDGVRowUp(DataGridView dgv)
         {
             int totalRows = dgv.Rows.Count;
+
             // get index of the row for the selected cell
             int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
             if (rowIndex == 0)
+            {
                 return;
+            }
+                
             // get index of the column for the selected cell
             int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
             DataGridViewRow selectedRow = dgv.Rows[rowIndex];
@@ -25,13 +29,17 @@
             dgv.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
         }
 
-        internal static void moveDGVRowDown(DataGridView dgv)
+        internal static void MoveDGVRowDown(DataGridView dgv)
         {
             int totalRows = dgv.Rows.Count;
+
             // get index of the row for the selected cell
             int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
             if (rowIndex == totalRows - 1)
+            {
                 return;
+            }
+               
             // get index of the column for the selected cell
             int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
             DataGridViewRow selectedRow = dgv.Rows[rowIndex];
@@ -41,7 +49,7 @@
             dgv.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
         }
 
-        internal static void deleteDGVRow(DataGridView dgv)
+        internal static void DeleteDGVRow(DataGridView dgv)
         {
             if (dgv.RowCount > 1)
             {
@@ -57,7 +65,7 @@
             }
         }
 
-        internal static void saveColumnToListFile(DataGridView dgv, int column, string path, string filename)
+        internal static void SaveColumnToListFile(DataGridView dgv, int column, string path, string filename)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             try
@@ -67,7 +75,7 @@
                 
                 if (File.Exists(path + filename + ".lst"))
                 {
-                    DialogResult dr = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
+                    DialogResult dr = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", string.Empty, MessageBoxButtons.OKCancel);
                     if (dr == DialogResult.Cancel)
                     {
                         throw new Exception("A lista não será salva!");
@@ -79,14 +87,17 @@
                 {
                     w1.WriteLine(dgv.Rows[i].Cells[column].Value.ToString());
                 }
+
                 w1.Close();
                 MessageBox.Show("A lista " + filename + ".lst foi salva com sucesso");
-
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        internal static void readStringListIntoDGV(string[] fileNames, DataGridView dataGridView)
+        internal static void ReadStringListIntoDGV(string[] fileNames, DataGridView dataGridView)
         {
             try
             {
@@ -101,7 +112,7 @@
             }
         }
 
-        internal static void closeFormListNotEmpty(DataGridView dgv)
+        internal static void CloseFormListNotEmpty(DataGridView dgv)
         {
             if (dgv.RowCount != 0)
             {

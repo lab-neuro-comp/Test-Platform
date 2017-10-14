@@ -3,20 +3,19 @@
  * Hugo Honda
  */
 
-using System;
-using System.IO;
-using System.Windows.Forms;
-using TestPlatform.Views;
-
 namespace TestPlatform
 {
-    static class MainClass
+    using System;
+    using System.Windows.Forms;
+    using TestPlatform.Views;
+
+    public static class MainClass
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

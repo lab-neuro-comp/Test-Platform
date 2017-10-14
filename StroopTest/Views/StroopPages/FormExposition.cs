@@ -171,11 +171,11 @@ namespace TestPlatform
 
                 if (currentTest.ProgramInUse.ExpositionRandom) // if the presentation is random, shuffles arrays
                 {
-                    labelText = ExpositionController.shuffleArray(labelText, currentTest.ProgramInUse.NumExpositions, 1);
-                    labelColor = ExpositionController.shuffleArray(labelColor, currentTest.ProgramInUse.NumExpositions, 5);
+                    labelText = ExpositionController.ShuffleArray(labelText, currentTest.ProgramInUse.NumExpositions, 1);
+                    labelColor = ExpositionController.ShuffleArray(labelColor, currentTest.ProgramInUse.NumExpositions, 5);
                     if (audioDirs != null)
                     {
-                        audioDirs = ExpositionController.shuffleArray(audioDirs, currentTest.ProgramInUse.NumExpositions, 6);
+                        audioDirs = ExpositionController.ShuffleArray(audioDirs, currentTest.ProgramInUse.NumExpositions, 6);
                     }
                 }
                 
@@ -328,7 +328,7 @@ namespace TestPlatform
 
                 if (currentTest.ProgramInUse.ExpositionRandom) // se exposição aleatória, randomiza itens de acordo com o numero de estimulos
                 {
-                    imageDirs = ExpositionController.shuffleArray(imageDirs, currentTest.ProgramInUse.NumExpositions, 3);
+                    imageDirs = ExpositionController.ShuffleArray(imageDirs, currentTest.ProgramInUse.NumExpositions, 3);
                 }
 
                 subtitlesArray = configureSubtitle();
@@ -339,7 +339,7 @@ namespace TestPlatform
                     audioDirs = currentTest.ProgramInUse.getAudioListFile().ListContent.ToArray();
                     if (currentTest.ProgramInUse.ExpositionRandom)
                     {
-                        audioDirs = ExpositionController.shuffleArray(audioDirs, currentTest.ProgramInUse.NumExpositions, 6);
+                        audioDirs = ExpositionController.ShuffleArray(audioDirs, currentTest.ProgramInUse.NumExpositions, 6);
                     }
                 }
                 if (currentTest.ProgramInUse.getWordListFile() != null)
@@ -623,7 +623,7 @@ namespace TestPlatform
         // beginAudio
         private void startRecordingAudio()
         {
-            audioControl.startRecording(outputDataPath + "/audio_" + currentTest.ParticipantName + "_" + currentTest.ProgramInUse.ProgramName + "_" + now + ".wav");
+            audioControl.StartRecording(outputDataPath + "/audio_" + currentTest.ParticipantName + "_" + currentTest.ProgramInUse.ProgramName + "_" + now + ".wav");
             
         } // inicia gravação de áudio
 
@@ -631,7 +631,7 @@ namespace TestPlatform
         {
             string now = currentTest.InitialDate.Day + "." + currentTest.InitialDate.Month + "_" + hour + "h" + 
                 minutes + "." + seconds;
-            audioControl.saveRecording();
+            audioControl.SaveRecording();
 
         } // para gravação de áudio
 

@@ -209,7 +209,7 @@ namespace TestPlatform
 
         private void chooseWordColor_Click(object sender, EventArgs e)
         {
-            string colorCode = ListController.pickColor(this);
+            string colorCode = ListController.PickColor(this);
             wordColorButton.Text = colorCode;
             wordColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
         }
@@ -231,22 +231,22 @@ namespace TestPlatform
 
         private void openWordsList_Click(object sender, EventArgs e)
         {
-            openWordListButton.Text = ListController.openListFile("_words");
+            openWordListButton.Text = ListController.OpenListFile("_words");
         }
 
         private void openColorsList_Click(object sender, EventArgs e)
         {
-            openColorListButton.Text = ListController.openListFile("_color");
+            openColorListButton.Text = ListController.OpenListFile("_color");
         }
 
         private void openImagesList_Click(object sender, EventArgs e)
         {
-            openImgListButton.Text = ListController.openListFile("_image");
+            openImgListButton.Text = ListController.OpenListFile("_image");
         }
 
         private void openAudioList_Click(object sender, EventArgs e)
         {
-            openAudioListButton.Text = ListController.openListFile("_audio");
+            openAudioListButton.Text = ListController.OpenListFile("_audio");
         }
         
         //BOX4
@@ -279,7 +279,7 @@ namespace TestPlatform
 
         private void chooseFixPointColor_Click(object sender, EventArgs e)
         {
-            string colorCode = ListController.pickColor(this);
+            string colorCode = ListController.PickColor(this);
             fixPointColorButton.Text = colorCode;
             fixPointColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
         }
@@ -318,7 +318,7 @@ namespace TestPlatform
 
         private void openSubsList_Click(object sender, EventArgs e)
         {
-            openSubsListButton.Text = ListController.openListFile("_words");
+            openSubsListButton.Text = ListController.OpenListFile("_words");
         }
 
         private void subLocationDown_Click(object sender, EventArgs e)
@@ -358,7 +358,7 @@ namespace TestPlatform
 
         private void chooseSubsColor(object sender, EventArgs e)
         {
-            string colorCode = ListController.pickColor(this);
+            string colorCode = ListController.PickColor(this);
             subColorButton.Text = colorCode;
             subColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
         }
@@ -367,7 +367,7 @@ namespace TestPlatform
 
         private void chooseBGColor(object sender, EventArgs e)
         {
-            string colorCode = ListController.pickColor(this);
+            string colorCode = ListController.PickColor(this);
             bgColorButton.Text = colorCode;
             bgColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
         }

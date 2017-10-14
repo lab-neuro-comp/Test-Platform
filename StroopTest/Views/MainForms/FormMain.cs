@@ -135,7 +135,7 @@ namespace TestPlatform
         {
             if (e.Control && e.KeyCode == Keys.R) // Ctrl+R - roda teste
             {
-                ExpositionController.beginStroopTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
+                ExpositionController.BeginStroopTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
             }
             if (e.Control && e.KeyCode == Keys.D) // Ctrl+D - define programa
             {
@@ -278,7 +278,7 @@ namespace TestPlatform
 
         private void startTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ExpositionController.beginStroopTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
+            ExpositionController.BeginStroopTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
         }
 
 
@@ -557,16 +557,16 @@ namespace TestPlatform
             {             
                 if (executingTypeLabel.Text.Equals("StroopTest"))
                 {
-                    ExpositionController.beginStroopTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
+                    ExpositionController.BeginStroopTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
                 }
 
                 else if (executingTypeLabel.Text.Equals("ReactionTest"))
                 {
-                    ExpositionController.beginReactionTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
+                    ExpositionController.BeginReactionTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
                 }
                 else if (executingTypeLabel.Text.Equals("Experimento"))
                 {
-                    ExpositionController.beginExperimentTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
+                    ExpositionController.BeginExperimentTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
                 }
                 else
                 {

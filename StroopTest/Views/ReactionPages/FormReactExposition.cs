@@ -94,7 +94,7 @@ namespace TestPlatform.Views
 
                     if (executingTest.ProgramInUse.ExpositionRandom)
                     {
-                        imagesList = ExpositionController.shuffleArray(imagesList, executingTest.ProgramInUse.NumExpositions, 3);
+                        imagesList = ExpositionController.ShuffleArray(imagesList, executingTest.ProgramInUse.NumExpositions, 3);
                     }
                     break;
             }

@@ -1,56 +1,52 @@
-﻿
-using System.Runtime.InteropServices;
-using CSCore.SoundIn;
-using CSCore.Codecs.WAV;
-using CSCore.CoreAudioAPI;
-using System;
-
-namespace TestPlatform.Models
+﻿namespace TestPlatform.Models
 {
-    class Audio
-    {
-        WasapiCapture capture;
-        WaveWriter writer;
+    using System.Runtime.InteropServices;
+    using CSCore.Codecs.WAV;
+    using CSCore.SoundIn;
 
+    public class Audio
+    {
+        private WasapiCapture capture;
+        private WaveWriter writer;
+        
+        public bool StartRecording(string path)
+        {
+            this.capture = new WasapiCapture();
+            this.capture.Initialize();
+            this.writer = new WaveWriter(path, this.capture.WaveFormat);
+            this.capture.DataAvailable += (s, e) =>
+            {
+                // save the recorded audio
+                this.writer.Write(e.Data, e.Offset, e.ByteCount);
+            };
+            this.capture.Start();
+            return true;
+        }
+
+        public bool PauseRecording()
+        {
+            this.capture.Stop();
+            return true;
+        }
+
+        public bool SaveRecording()
+        {
+            if (this.capture != null)
+            {
+                this.capture.Stop();
+                this.capture.Dispose();
+                this.writer.Dispose();
+            }
+                        
+            return true;
+        }
+
+        public void PlayAudio(string file)
+        {
+            MciSendString("play " + file, null, 0, 0);
+        }
 
         [DllImport("winmm.dll")]
-        private static extern int mciSendString(string MciComando, string MciRetorno, int MciRetornoLeng, int CallBack);
-        
-
-        public bool startRecording(string path)
-        {
-            capture = new WasapiCapture();
-            capture.Initialize();
-            writer = new WaveWriter(path, capture.WaveFormat);
-            capture.DataAvailable += (s, e) =>
-            {
-                //save the recorded audio
-                writer.Write(e.Data, e.Offset, e.ByteCount);
-            };
-            capture.Start();
-            return true;
-        }
-        public bool pauseRecording()
-        {
-            capture.Stop();
-            return true;
-        }
-
-        public bool saveRecording()
-        {
-            if(capture != null)
-            {
-                capture.Stop();
-                capture.Dispose();
-                writer.Dispose();
-            }
-            
-            return true;
-        }
-
-        public void playAudio(string file)
-        {
-            mciSendString("play " + file, null, 0, 0);
-        }
+        private static extern int MciSendString(string mciComando, string mciRetorno, int mciRetornoLeng, int callBack);
     }
 }

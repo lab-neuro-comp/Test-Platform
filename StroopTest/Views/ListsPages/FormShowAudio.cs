@@ -44,7 +44,7 @@ namespace TestPlatform
                 currenFolderLabel.Text = path;
                 string[] filePaths = null;
                 filePaths = Directory.GetFiles(path, "*.WAV", SearchOption.AllDirectories);
-                DGVManipulation.readStringListIntoDGV(filePaths, audioPathDataGridView);
+                DGVManipulation.ReadStringListIntoDGV(filePaths, audioPathDataGridView);
                 numberFiles.Text = audioPathDataGridView.RowCount.ToString();
             }
             else
@@ -55,13 +55,13 @@ namespace TestPlatform
         private void moveUpButton_Click(object sender, EventArgs e)
         {
             DataGridView dgv = audioPathDataGridView;
-            DGVManipulation.moveDGVRowUp(dgv);
+            DGVManipulation.MoveDGVRowUp(dgv);
         }
 
         private void moveDownButton_Click(object sender, EventArgs e)
         {
             DataGridView dgv = audioPathDataGridView;
-            DGVManipulation.moveDGVRowDown(dgv);
+            DGVManipulation.MoveDGVRowDown(dgv);
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace TestPlatform
             player.Dispose();
             if (recording)
             {
-                audioRecorder.pauseRecording();
+                audioRecorder.PauseRecording();
             }
 
             this.Parent.Controls.Remove(this);
@@ -123,7 +123,7 @@ namespace TestPlatform
                 timer.Stop();
                 timerRunning = false;
                 currentElapsedTime = TimeSpan.Zero;
-                audioRecorder.saveRecording();
+                audioRecorder.SaveRecording();
                 MessageBox.Show("Aúdio gravado com sucesso!");
                 loadingAudioFilesToDataGrid();
             }            
@@ -139,7 +139,7 @@ namespace TestPlatform
             {
                 try
                 {
-                    DGVManipulation.moveDGVRowUp(dgv);
+                    DGVManipulation.MoveDGVRowUp(dgv);
                 }
                 catch { }
             }
@@ -147,7 +147,7 @@ namespace TestPlatform
             {
                 try
                 {
-                    DGVManipulation.moveDGVRowDown(dgv);
+                    DGVManipulation.MoveDGVRowDown(dgv);
                 }
                 catch { }
             }
@@ -192,7 +192,7 @@ namespace TestPlatform
                 if(recording != true)
                 {
                     recording = true;
-                    audioRecorder.startRecording(selectedDirectory.Text);
+                    audioRecorder.StartRecording(selectedDirectory.Text);
                     recordingLabel.Visible = true;
                     currentElapsedTimeDisplay.Visible = true;
                     if (!timerRunning)

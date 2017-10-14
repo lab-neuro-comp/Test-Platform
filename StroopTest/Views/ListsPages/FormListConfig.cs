@@ -326,7 +326,7 @@ namespace TestPlatform
             StrList strlist;
             if ((MessageBox.Show("Deseja salvar o arquivo " + type + " '" + fileName + "' ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK))
             {
-                strlist = ListController.createList(list, fileName, fileType);
+                strlist = ListController.CreateList(list, fileName, fileType);
                 if (strlist.exists())
                 {
                     DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);

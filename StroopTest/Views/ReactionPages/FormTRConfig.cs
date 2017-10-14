@@ -402,7 +402,7 @@ namespace TestPlatform.Views
 
         private void chooseBGColor(object sender, EventArgs e)
         {
-            string colorCode = ListController.pickColor(this);
+            string colorCode = ListController.PickColor(this);
             bgColorButton.Text = colorCode;
             bgColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
         }
@@ -410,34 +410,34 @@ namespace TestPlatform.Views
 
         private void openWordsList_Click(object sender, EventArgs e)
         {
-            openWordListButton.Text = ListController.openListFile("_words");
+            openWordListButton.Text = ListController.OpenListFile("_words");
         }
 
         private void openColorsList_Click(object sender, EventArgs e)
         {
-            openColorListButton.Text = ListController.openListFile("_color");
+            openColorListButton.Text = ListController.OpenListFile("_color");
         }
 
         private void openImagesList_Click(object sender, EventArgs e)
         {
-            openImgListButton.Text = ListController.openListFile("_image");
+            openImgListButton.Text = ListController.OpenListFile("_image");
         }
 
         private void openAudioList_Click(object sender, EventArgs e)
         {
-            openAudioListButton.Text = ListController.openListFile("_audio");
+            openAudioListButton.Text = ListController.OpenListFile("_audio");
         }
 
         private void fixPointColorButton_Click(object sender, EventArgs e)
         {
-            string colorCode = ListController.pickColor(this);
+            string colorCode = ListController.PickColor(this);
             fixPointColorButton.Text = colorCode;
             fixPointColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
         }
 
         private void stimulusColor_Click(object sender, EventArgs e)
         {
-            string colorCode = ListController.pickColor(this);
+            string colorCode = ListController.PickColor(this);
             stimulusColor.Text = colorCode;
             stimulusColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
         }

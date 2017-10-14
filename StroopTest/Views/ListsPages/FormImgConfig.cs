@@ -108,7 +108,7 @@ namespace TestPlatform
         private void deleteRow_Click(object sender, EventArgs e)
         {
             DataGridView dgv = imgPathDataGridView;
-            DGVManipulation.deleteDGVRow(dgv);
+            DGVManipulation.DeleteDGVRow(dgv);
             numberFiles.Text = imgPathDataGridView.RowCount.ToString();
             if(imgPathDataGridView.RowCount == 0)
             {
@@ -148,7 +148,7 @@ namespace TestPlatform
             DataGridView dgv = imgPathDataGridView;
             try
             {
-                DGVManipulation.moveDGVRowUp(dgv);
+                DGVManipulation.MoveDGVRowUp(dgv);
                 if (imgPathDataGridView.CurrentRow.Cells.Count > 0)
                 {
                     pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells[2].Value.ToString());
@@ -163,7 +163,7 @@ namespace TestPlatform
             DataGridView dgv = imgPathDataGridView;
             try
             {
-                DGVManipulation.moveDGVRowDown(dgv);
+                DGVManipulation.MoveDGVRowDown(dgv);
                 pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells[2].Value.ToString());
             }
             catch { }
@@ -179,7 +179,7 @@ namespace TestPlatform
                 try
                 {
                     DataGridView dgv = imgPathDataGridView;
-                    DGVManipulation.saveColumnToListFile(dgv, 2, Global.testFilesPath + Global.listFolderName, imgListNameTextBox.Text + "_image");
+                    DGVManipulation.SaveColumnToListFile(dgv, 2, Global.testFilesPath + Global.listFolderName, imgListNameTextBox.Text + "_image");
                     this.Parent.Controls.Remove(this);
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -192,7 +192,7 @@ namespace TestPlatform
             AutoValidate = AutoValidate.Disable;
             try
             {
-                DGVManipulation.closeFormListNotEmpty(dgv);
+                DGVManipulation.CloseFormListNotEmpty(dgv);
                 this.Parent.Controls.Remove(this);
             }
             catch (Exception ex)
@@ -209,7 +209,7 @@ namespace TestPlatform
                 DataGridView dgv = imgPathDataGridView;
                 try
                 {
-                    DGVManipulation.moveDGVRowUp(dgv);
+                    DGVManipulation.MoveDGVRowUp(dgv);
                 }
                 catch { }
             }
@@ -218,7 +218,7 @@ namespace TestPlatform
                 DataGridView dgv = imgPathDataGridView;
                 try
                 {
-                    DGVManipulation.moveDGVRowDown(dgv);
+                    DGVManipulation.MoveDGVRowDown(dgv);
                 }
                 catch { }
             }

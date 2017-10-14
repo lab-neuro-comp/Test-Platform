@@ -82,11 +82,11 @@ namespace TestPlatform.Views.ExperimentPages
 
                 if (program.GetType() == typeof(StroopProgram))
                 {
-                    ExpositionController.beginStroopTest(program.ProgramName, executingTest.ParticipantName, executingTest.Mark, this);
+                    ExpositionController.BeginStroopTest(program.ProgramName, executingTest.ParticipantName, executingTest.Mark, this);
                 }
                 else if (program.GetType() == typeof(ReactionProgram))
                 {
-                    ExpositionController.beginReactionTest(program.ProgramName, executingTest.ParticipantName, executingTest.Mark, this);
+                    ExpositionController.BeginReactionTest(program.ProgramName, executingTest.ParticipantName, executingTest.Mark, this);
                 }
                 executingTest.writeLineOutput(index, program);                
             }

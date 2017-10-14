@@ -45,8 +45,17 @@ namespace TestPlatform.Views
             stimulusDistance.Value = editProgram.StimulusDistance;
             stimuluSize.Value = editProgram.StimuluSize;
 
-            stimulusColor.Text = editProgram.StimulusColor;
-            stimulusColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.StimulusColor);
+            if (editProgram.ExpositionRandom)
+            {
+                isRandomExposition.Checked = true;
+            }
+
+            if(editProgram.StimulusColor != "false")
+            {
+                stimulusColor.Text = editProgram.StimulusColor;
+                stimulusColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.StimulusColor);
+            }
+            
             editProgramShapes(editProgram);
 
             if (editProgram.getWordListFile() == null)
@@ -289,21 +298,57 @@ namespace TestPlatform.Views
 
         private ReactionProgram configureNewProgram()
         {
-            if(bgColorButton.Text.Equals("escolher"))
+            if (bgColorButton.Text.Equals("escolher"))
             {
                 bgColorButton.Text = "false";
             }
-            ReactionProgram newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
-                                                             Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
-                                                             Convert.ToInt32(intervalTime.Value),
-                                                             Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked,
-                                                             Convert.ToInt32(beepDuration.Value), stimulusColorCheck(), 
-                                                             fixPointValue(), bgColorButton.Text, fixPointColor(), 
-                                                             rndIntervalCheck.Checked, shapeValue(), chooseExpoType.Text, 
-                                                             randomBeepCheck.Checked, Convert.ToInt32(positionsBox.Text
-                                                             ), responseTypeBox.Text);
-
-
+            ReactionProgram newProgram = new ReactionProgram();
+            switch (chooseExpoType.SelectedIndex)
+            {
+                // Program type "Formas"
+                case 0:
+                    newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
+                                                Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
+                                                Convert.ToInt32(intervalTime.Value),
+                                                Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked,
+                                                Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
+                                                fixPointValue(), bgColorButton.Text, fixPointColor(),
+                                                rndIntervalCheck.Checked, shapeValue(), chooseExpoType.Text,
+                                                randomBeepCheck.Checked, Convert.ToInt32(positionsBox.Text
+                                                ), responseTypeBox.Text);
+                    break;
+                // Program type "Palavra"
+                case 1:
+                    // TODO: Add ReactionProgram constructor to "Palavra" type here
+                    break;
+                
+                // Program type "Imagem"
+                case 2:
+                    newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value), 
+                                                     Convert.ToInt32(intervalTime.Value), Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
+                                                     fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, openImgListButton.Text, randomBeepCheck.Checked, 
+                                                     Convert.ToInt32(positionsBox.Text), responseTypeBox.Text, isRandomExposition.Checked);
+                    break;
+                
+                // Program type "Imagem e Palavra"
+                case 3:
+                    // TODO: Add ReactionProgram constructor to "Imagem e Palavra" type here
+                    break;
+                
+                // Program type "Palavra com Aúdio"
+                case 4:
+                    // TODO: Add ReactionProgram constructor to "Palavra com aúdio" type here
+                    break;
+                
+                // Program type "Imagem com Aúdio"
+                case 5:
+                    // TODO: Add ReactionProgram constructor to "Imagem com aúdio" type here
+                    break;
+                
+                // invalid type aws choosen
+                default:
+                    throw new Exception("O tipo de programa entrado é invalido!");
+            }
             // read instructions and pass them to the new program created
             string textLines = "";
             if (instructionsBox.Lines.Length > 0 && instructionsBox.Text != instructionBoxText)
@@ -323,12 +368,10 @@ namespace TestPlatform.Views
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (!this.ValidateChildren(ValidationConstraints.Enabled))
-                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
-            else
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 ReactionProgram newProgram = configureNewProgram();
-            
+
 
                 if (File.Exists(path + Global.programFolderName + prgNameTextBox.Text + ".prg"))
                 {
@@ -342,7 +385,12 @@ namespace TestPlatform.Views
                 {
                     MessageBox.Show("O programa foi salvo com sucesso");
                 }
-                    this.Parent.Controls.Remove(this);
+                this.Parent.Controls.Remove(this);
+            }
+                
+            else
+            {
+                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
             }
         }
 
@@ -569,12 +617,16 @@ namespace TestPlatform.Views
                     openImgListButton.Enabled = false;
                     stimulusColor.Enabled = true;
                     shapesGroupBox.Enabled = true;
+                    isRandomExposition.Enabled = false;
                     break;
                 case 2:
                     errorProvider1.Clear();
                     openImgListButton.Enabled = true;
+                    stimulusColor.Text = "escolher";
+                    stimulusColorPanel.BackColor = Color.White;
                     stimulusColor.Enabled = false;
                     shapesGroupBox.Enabled = false;
+                    isRandomExposition.Enabled = true;
                     break;
                 default:
                     errorProvider1.SetError(chooseExpoType, "Tipo de exposição ainda não está disponível");

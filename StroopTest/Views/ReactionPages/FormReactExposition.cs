@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestPlatform.Controllers;
 using TestPlatform.Models;
 
 namespace TestPlatform.Views
@@ -34,6 +35,13 @@ namespace TestPlatform.Views
         private int currentExposition = 0;
         private bool intervalCancelled;
         private bool cancelExposition = false;
+        private string[] imagesList = null;
+        private int imageCounter = 0;
+        private PictureBox imgPictureBox = new PictureBox();
+        private bool exposing = false;
+        private string currentStimulus = null;
+        private string position = null;
+        private int currentPosition;
 
         public FormReactExposition(string prgName, string participantName, char mark)
         {
@@ -79,6 +87,17 @@ namespace TestPlatform.Views
 
         private async void initializeExposition()
         {
+            switch (executingTest.ProgramInUse.ExpositionType)
+            {
+                case "Imagem":
+                    imagesList = executingTest.ProgramInUse.getImageListFile().ListContent.ToArray();
+
+                    if (executingTest.ProgramInUse.ExpositionRandom)
+                    {
+                        imagesList = ExpositionController.shuffleArray(imagesList, executingTest.ProgramInUse.NumExpositions, 3);
+                    }
+                    break;
+            }
             await exposition();
         }
 
@@ -225,7 +244,7 @@ namespace TestPlatform.Views
 
         private void singleShapeExposition(string shape)
         {
-            executingTest.CurrentShape = shape;
+            currentStimulus = shape;
             switch (shape)
             {
                 case "fullSquare":
@@ -269,6 +288,23 @@ namespace TestPlatform.Views
             singleShapeExposition(shapes[index]);
         }
 
+        private void drawImage()
+        {            
+            int[] screenPosition = randomImageScreenPosition();
+            imgPictureBox = new PictureBox();
+            imgPictureBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
+            imgPictureBox.Location = new Point(screenPosition[X], screenPosition[Y]);
+            imgPictureBox.Image = Image.FromFile(imagesList[imageCounter]);
+            currentStimulus = imagesList[imageCounter];
+            imgPictureBox.Enabled = true;
+            imageCounter++;            
+            if(imageCounter == imagesList.Length)
+            {
+                imageCounter = 0;
+            }
+            expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.NumExpositions * 100, imgPictureBox);
+        }
+
         private void showStimulus()
         {
             switch (executingTest.ProgramInUse.ExpositionType)
@@ -280,7 +316,7 @@ namespace TestPlatform.Views
                     //  wordExposition();
                     break;
                 case "Imagem":
-                    // imageExposition();
+                    drawImage();
                     break;
                 case "Imagem e Palavra":
                     //  imageWordExposition();
@@ -313,7 +349,7 @@ namespace TestPlatform.Views
             SendKeys.SendWait(executingTest.Mark.ToString());
             executingTest.ExpositionTime = DateTime.Now;
             showStimulus();
-
+            
             if (intervalCancelled)
             {
                 e.Cancel = true;
@@ -338,14 +374,20 @@ namespace TestPlatform.Views
 
         private void expositionBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            Console.WriteLine(currentExposition);
+            exposing = true;
+            intervalBW.ReportProgress(20, imgPictureBox);
         }
 
         private void expositionBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (!cancelExposition)
             {
-                CreateGraphics().Clear(ActiveForm.BackColor);
+                this.CreateGraphics().Clear(ActiveForm.BackColor);
+                if (imgPictureBox.Enabled)
+                {
+                    exposing = false;
+                    intervalBW.ReportProgress(50, imgPictureBox);
+                }
                 ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
                     this);
             }
@@ -358,19 +400,19 @@ namespace TestPlatform.Views
             {
                 /* user clicked after stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds,
-                                              currentExposition + 1, expositionAccumulative);
+                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition));
             }
 
             else if ((e.Cancelled == true) && intervalCancelled)
             {
                 /* user clicked before stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, intervalElapsedTime - intervalShouldBe,
-                                              currentExposition + 1, expositionAccumulative);
+                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition));
             }
             else
             {
                 /* user missed stimulus */
-                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative);
+                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition));
                 hitStopWatch.Stop();
             }
             expositionBW.Dispose();
@@ -413,14 +455,32 @@ namespace TestPlatform.Views
         }
 
         /* creates a x and y vector according to program stimulus distance randomly, from four different positions */
-        private int[] randomScreenPosition (){
+        private int[] randomShapeScreenPosition (){
             int[,] position = new int[4, 2]{ { (executingTest.ProgramInUse.StimulusDistance + (executingTest.ProgramInUse.StimulusDistance / 4)), 0 }, // on the right side of the screen
-                                             { 0, (executingTest.ProgramInUse.StimulusDistance - (executingTest.ProgramInUse.StimulusDistance / 4))}, // on bottom of the screen
+                                            { 0, -( executingTest.ProgramInUse.StimulusDistance - (executingTest.ProgramInUse.StimulusDistance / 4)) }, // on top of the screen
                                              { -(executingTest.ProgramInUse.StimulusDistance + (executingTest.ProgramInUse.StimulusDistance / 4)), 0 }, // on the left side of the screen
-                                             { 0, -( executingTest.ProgramInUse.StimulusDistance - (executingTest.ProgramInUse.StimulusDistance / 4)) } }; // on top of the screen
+                                              { 0, (executingTest.ProgramInUse.StimulusDistance - (executingTest.ProgramInUse.StimulusDistance / 4))} }; // on bottom of the screen
             Random random = new Random();
             int index = random.Next(0, 4);
+            currentPosition = index;
             return new int []{ position[index, X], position[index, Y] };
+        }
+
+        /* creates a x and y vector according to program stimulus distance randomly, from four different positions */
+        private int[] randomImageScreenPosition()
+        {
+            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            
+            int[,] position = new int[4, 2]{ { (2 * executingTest.ProgramInUse.StimulusDistance - 80), 0 }, // on the right side of the screen
+                                             { 0, ( - executingTest.ProgramInUse.StimulusDistance)}, // on top of the screen
+                                             { - (2 * executingTest.ProgramInUse.StimulusDistance - 50), 0 }, // on the left side of the screen
+                                             { 0, (executingTest.ProgramInUse.StimulusDistance - 50) } }; // on bottom of the screen
+            Random random = new Random();
+            int index = random.Next(0, 4);
+            currentPosition = index;
+            int x = (int)(clientMiddle[X]) + position[index, X];
+            int y = (int)(clientMiddle[Y]) + position[index, Y];
+            return new int[] { x , y };
         }
 
         private void drawFullSquareShape()
@@ -428,7 +488,7 @@ namespace TestPlatform.Views
             int brush25 = 25;
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
 
-            int[] screenPosition = randomScreenPosition();
+            int[] screenPosition = randomShapeScreenPosition();
             float xSquare = (clientMiddle[X] - brush25) + screenPosition[X];
             float ySquare = (clientMiddle[Y] - brush25) + screenPosition[Y];
             float widthSquare = executingTest.ProgramInUse.StimuluSize;
@@ -444,7 +504,7 @@ namespace TestPlatform.Views
         private void drawSquareShape()
         {
             int brush25 = 25;
-            int[] screenPosition = randomScreenPosition();
+            int[] screenPosition = randomShapeScreenPosition();
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
             float xSquare = (clientMiddle[X] - brush25) + screenPosition[X];
             float ySquare = (clientMiddle[Y] - brush25) + screenPosition[Y];
@@ -463,7 +523,7 @@ namespace TestPlatform.Views
         {
             int brush25 = 25;
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int[] screenPosition = randomScreenPosition();
+            int[] screenPosition = randomShapeScreenPosition();
 
             float xEllipse = (clientMiddle[X] - brush25) + screenPosition[X];
             float yEllipse = (clientMiddle[Y] - brush25) + screenPosition[Y];
@@ -482,7 +542,7 @@ namespace TestPlatform.Views
             int brush25 = 25;
 
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int[] screenPosition = randomScreenPosition();
+            int[] screenPosition = randomShapeScreenPosition();
             float xEllipse = (clientMiddle[X] - brush25) + screenPosition[X];
             float yEllipse = (clientMiddle[Y] - brush25) + screenPosition[Y];
 
@@ -530,7 +590,7 @@ namespace TestPlatform.Views
         private Point[] createTrianglePoints()
         {
             int[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int[] screenPosition = randomScreenPosition();
+            int[] screenPosition = randomShapeScreenPosition();
             int heightTriangle = executingTest.ProgramInUse.StimuluSize;
 
             Point point1 = new Point((clientMiddle[X]) + screenPosition[X] + (heightTriangle / 3),
@@ -541,6 +601,36 @@ namespace TestPlatform.Views
 
             Point[] trianglePoints = { point1, point2, point3 };
             return trianglePoints;
+        }
+
+        private void intervalBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            if (exposing)
+            {
+                this.Controls.Add(imgPictureBox);
+            }
+            else
+            {
+                this.Controls.Remove(imgPictureBox);
+            }
+        }
+
+        private string position_converter(int index)
+        {
+            switch (index)
+            {
+                case 0:
+                    return "right";
+                case 1:
+                    return "top";
+                case 2:
+                    return "left";
+                case 3:
+                    return "bottom";
+                default:
+                    return "invalid";
+            }
+                
         }
     }
 }

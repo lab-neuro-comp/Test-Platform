@@ -11,13 +11,12 @@ namespace TestPlatform.Models
     class ReactionTest
     {
         private static String headerOutputFileText = "programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)"
-            + "\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\ttipoEstimulo\tFormaDoStimulo\tCordoEstimulo";
+            + "\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\ttipoEstimulo\tEstimulo\tCordoEstimulo";
         private Char mark;
         private ReactionProgram programInUse = new ReactionProgram();
         private string participantName;
         private DateTime initialTime;
         private DateTime expositionTime;
-        private string currentShape;
         private List<string> output = new List<string>();
 
         public string ParticipantName
@@ -98,19 +97,6 @@ namespace TestPlatform.Models
             }
         }
 
-        public string CurrentShape
-        {
-            get
-            {
-                return currentShape;
-            }
-
-            set
-            {
-                currentShape = value;
-            }
-        }
-
         public DateTime ExpositionTime
         {
             get
@@ -138,19 +124,19 @@ namespace TestPlatform.Models
             }
         }
 
-        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative)
+        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, string currentStimulus, string position)
         {
             /* This variable keeps data from an exposition to only one stimulus, being them:
              * program  name    participant     name    date    hour    exposition hour    hit time(ms) interval(ms)  interval should be(ms)  
-             * exposition accumulative timeexposition time(ms)  number of sequency   type of stimulus    shape of stimulus   
+             * exposition accumulative timeexposition time(ms)  number of sequency   type of stimulus    stimulus   
              * stimulus color */
             var text = ProgramInUse.ProgramName + "\t" + participantName + "\t" + initialTime.Day + "/" +
                        initialTime.Month + "/" + initialTime.Year + "\t" + initialTime.Hour + ":" + initialTime.Minute +
                        ":" + initialTime.Second + ":" + initialTime.Millisecond.ToString() + "\t" + ExpositionTime.Hour + ":" + ExpositionTime.Minute +
                        ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" + reactTime.ToString() +
                         "\t" + intervalTime.ToString() + "\t" + intervalShouldBe.ToString() + "\t" + expositionAccumulative + "\t" +
-                        ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + ProgramInUse.ExpositionType + "\t" +
-                        currentShape + "\t" + ProgramInUse.StimulusColor;
+                        ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + position  + "\t"+ ProgramInUse.ExpositionType + "\t" +
+                        currentStimulus + "\t" + ProgramInUse.StimulusColor;
              Output.Add(text); 
              
         }

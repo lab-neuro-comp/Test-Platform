@@ -326,10 +326,7 @@ namespace TestPlatform
                 else { imgPictureBox.Dock = DockStyle.None; }
 
                 imageDirs = programInUse.getImageListFile().ListContent.ToArray(); // auxiliar recebe o vetor original
-                foreach (string name in imageDirs)
-                {
-                    Console.WriteLine(name);
-                }
+
                 if (programInUse.ExpositionRandom) // se exposição aleatória, randomiza itens de acordo com o numero de estimulos
                 {
                     imageDirs = ExpositionController.shuffleArray(imageDirs, programInUse.NumExpositions, 3);

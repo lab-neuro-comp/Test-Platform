@@ -18,7 +18,6 @@ namespace TestPlatform.Models
         private String[] defaultInstructionText = { "Serão apresentadas palavras coloridas de forma aleatória. Palavras surgirão rapidamente e em seguida desaparecerão",
                                                     "Diga a cor em que a palavra está escrita",
                                                     "A tarefa vai começar agora"};
-        private Boolean expositionRandom;          // [3]*  is exposition random
         private Boolean audioCapture;              // [9]*  is audio capture activated
         private Boolean subtitleShow;              // [10]* subtitles activated
         private Int32 subtitlePlace;              // [11]* subtitles place in screen (left, right, up and down the exposition stimulus)
@@ -155,16 +154,6 @@ namespace TestPlatform.Models
             this.FixPoint = "false";
             this.FixPointColor = "false";
 
-        }
-
-        public bool ExpositionRandom
-        {
-            get { return expositionRandom; }
-            set
-            {
-                expositionRandom = value;
-                
-            }
         }
 
 

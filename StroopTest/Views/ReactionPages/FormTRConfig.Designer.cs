@@ -73,6 +73,8 @@
             this.openImgListButton = new System.Windows.Forms.Button();
             this.instructionsBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.isRandomExposition = new System.Windows.Forms.CheckBox();
             this.positionsBox = new System.Windows.Forms.ComboBox();
             this.positionLabel = new System.Windows.Forms.Label();
             this.randomBeepLabel = new System.Windows.Forms.Label();
@@ -530,7 +532,7 @@
             this.groupBox2.Controls.Add(this.openWordListButton);
             this.groupBox2.Controls.Add(this.openColorListButton);
             this.groupBox2.Controls.Add(this.openImgListButton);
-            this.groupBox2.Location = new System.Drawing.Point(19, 324);
+            this.groupBox2.Location = new System.Drawing.Point(19, 347);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -645,6 +647,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.isRandomExposition);
             this.groupBox1.Controls.Add(this.positionsBox);
             this.groupBox1.Controls.Add(this.positionLabel);
             this.groupBox1.Controls.Add(this.randomBeepLabel);
@@ -668,10 +672,32 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(367, 276);
+            this.groupBox1.Size = new System.Drawing.Size(367, 305);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Exposição";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 173);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 17);
+            this.label6.TabIndex = 177;
+            this.label6.Text = "Ordem aleatória:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // isRandomExposition
+            // 
+            this.isRandomExposition.AutoSize = true;
+            this.isRandomExposition.Enabled = false;
+            this.isRandomExposition.Location = new System.Drawing.Point(132, 174);
+            this.isRandomExposition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.isRandomExposition.Name = "isRandomExposition";
+            this.isRandomExposition.Size = new System.Drawing.Size(18, 17);
+            this.isRandomExposition.TabIndex = 176;
+            this.isRandomExposition.TabStop = false;
+            this.isRandomExposition.UseVisualStyleBackColor = true;
             // 
             // positionsBox
             // 
@@ -702,7 +728,7 @@
             // randomBeepLabel
             // 
             this.randomBeepLabel.AutoSize = true;
-            this.randomBeepLabel.Location = new System.Drawing.Point(168, 180);
+            this.randomBeepLabel.Location = new System.Drawing.Point(168, 207);
             this.randomBeepLabel.Name = "randomBeepLabel";
             this.randomBeepLabel.Size = new System.Drawing.Size(105, 17);
             this.randomBeepLabel.TabIndex = 172;
@@ -712,7 +738,7 @@
             // randomBeepCheck
             // 
             this.randomBeepCheck.AutoSize = true;
-            this.randomBeepCheck.Location = new System.Drawing.Point(278, 181);
+            this.randomBeepCheck.Location = new System.Drawing.Point(278, 208);
             this.randomBeepCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.randomBeepCheck.Name = "randomBeepCheck";
             this.randomBeepCheck.Size = new System.Drawing.Size(18, 17);
@@ -780,7 +806,7 @@
             // stimulusColorPanel
             // 
             this.stimulusColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.stimulusColorPanel.Location = new System.Drawing.Point(127, 247);
+            this.stimulusColorPanel.Location = new System.Drawing.Point(127, 274);
             this.stimulusColorPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.stimulusColorPanel.Name = "stimulusColorPanel";
             this.stimulusColorPanel.Size = new System.Drawing.Size(18, 17);
@@ -789,7 +815,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 247);
+            this.label4.Location = new System.Drawing.Point(10, 274);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 17);
             this.label4.TabIndex = 165;
@@ -798,7 +824,7 @@
             // stimulusColor
             // 
             this.stimulusColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stimulusColor.Location = new System.Drawing.Point(152, 243);
+            this.stimulusColor.Location = new System.Drawing.Point(152, 270);
             this.stimulusColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.stimulusColor.Name = "stimulusColor";
             this.stimulusColor.Size = new System.Drawing.Size(184, 23);
@@ -815,7 +841,7 @@
             0,
             0,
             0});
-            this.beepDuration.Location = new System.Drawing.Point(171, 210);
+            this.beepDuration.Location = new System.Drawing.Point(171, 237);
             this.beepDuration.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.beepDuration.Maximum = new decimal(new int[] {
             10000,
@@ -829,7 +855,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 212);
+            this.label3.Location = new System.Drawing.Point(10, 239);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(154, 17);
             this.label3.TabIndex = 163;
@@ -838,7 +864,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 179);
+            this.label1.Location = new System.Drawing.Point(10, 206);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 17);
             this.label1.TabIndex = 161;
@@ -848,7 +874,7 @@
             // beepingCheckbox
             // 
             this.beepingCheckbox.AutoSize = true;
-            this.beepingCheckbox.Location = new System.Drawing.Point(103, 180);
+            this.beepingCheckbox.Location = new System.Drawing.Point(103, 207);
             this.beepingCheckbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.beepingCheckbox.Name = "beepingCheckbox";
             this.beepingCheckbox.Size = new System.Drawing.Size(18, 17);
@@ -1105,5 +1131,7 @@
         private System.Windows.Forms.CheckBox triangleCheckBox;
         private System.Windows.Forms.ComboBox responseTypeBox;
         private System.Windows.Forms.ComboBox positionsBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox isRandomExposition;
     }
 }

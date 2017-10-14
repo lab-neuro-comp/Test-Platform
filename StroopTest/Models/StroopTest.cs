@@ -65,6 +65,19 @@ namespace TestPlatform.Models
             }
         }
 
+        internal StroopProgram ProgramInUse
+        {
+            get
+            {
+                return programInUse;
+            }
+
+            set
+            {
+                programInUse = value;
+            }
+        }
+
         public void writeLineOutputResult(StroopProgram program, string nameStimulus, string color, int counter,
                                    List<string> output, float elapsedTime, string expoType, string audioName)
         {

@@ -85,9 +85,15 @@ namespace TestPlatform
                 }
                 else
                 {
-                    usrName = textBox1.Text.Replace(" ", "");
-                    this.ReturnValue = usrName;
-                    if (String.IsNullOrEmpty(textBox1.Text)) throw new Exception("A caixa de texto não pode estar vazia!");
+                    if(!String.IsNullOrEmpty(textBox1.Text))
+                    {
+                        usrName = textBox1.Text.Replace(" ", "");
+                        this.ReturnValue = usrName;
+                    }
+                    else
+                    {
+                        throw new Exception("A caixa de texto não pode estar vazia!");
+                    }
                 }
                 this.DialogResult = DialogResult.OK;
                 this.Close();

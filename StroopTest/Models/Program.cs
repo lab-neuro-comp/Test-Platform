@@ -76,7 +76,7 @@ namespace TestPlatform.Models
                 }
                 else
                 {
-                    throw new ArgumentException(errorExMsg + "\nTempo de exposição deve ser maior que zero (em milissegundos)");
+                    throw new ArgumentException(errorExMsg + "\nTempo de exposição deve ser maior que zero e menor que 10.000 (em milissegundos)");
                 }   // exposition time must be greater than zero
             }
         }

@@ -41,6 +41,7 @@ namespace TestPlatform.Models
             if(capture != null)
             {
                 capture.Stop();
+                capture.Dispose();
                 writer.Dispose();
             }
             

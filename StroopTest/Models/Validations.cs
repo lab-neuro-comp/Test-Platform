@@ -38,7 +38,7 @@ namespace TestPlatform.Models
 
         public static bool isExpositionTimeValid(int value)
         {
-            if (value > 0)
+            if (value > 0 && value < 10000)
                 return true;
             return false;
         }

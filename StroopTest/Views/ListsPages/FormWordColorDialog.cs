@@ -27,14 +27,13 @@ namespace TestPlatform
         private string pickColor()
         {
             ColorDialog MyDialog = new ColorDialog();
-            Color colorPicked = new Color();
             MyDialog.CustomColors = new int[] {
                                         ColorTranslator.ToOle(ColorTranslator.FromHtml("#F8E000")),
                                         ColorTranslator.ToOle(ColorTranslator.FromHtml("#007BB7")),
                                         ColorTranslator.ToOle(ColorTranslator.FromHtml("#7EC845")),
                                         ColorTranslator.ToOle(ColorTranslator.FromHtml("#D01C1F"))
                                       };
-            colorPicked = this.BackColor;
+            Color colorPicked = this.BackColor;
             string hexColor = null;
             if (MyDialog.ShowDialog() == DialogResult.OK)
             {

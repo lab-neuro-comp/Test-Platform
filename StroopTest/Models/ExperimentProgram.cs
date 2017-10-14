@@ -167,8 +167,7 @@ namespace TestPlatform.Models
                 string[] fileLines = File.ReadAllLines(filePath);
                 string line = fileLines[0];
                 line = Program.encodeLatinText(line);
-                List<string> configurationFile = new List<string>();
-                configurationFile = line.Split().ToList();
+                List<string> configurationFile = line.Split().ToList();
 
                 ExperimentName = configurationFile[0];
                 if (Path.GetFileNameWithoutExtension(filePath) != (this.ExperimentName))
@@ -189,8 +188,7 @@ namespace TestPlatform.Models
 
                 string listLine = fileLines[1];
                 line = Program.encodeLatinText(line);
-                List<string> listConfiguration = new List<string>();
-                listConfiguration = listLine.Split().ToList();
+                List<string> listConfiguration = listLine.Split().ToList();
                 for (int i = 1; i <= listConfiguration.Count() - 2; i = i + 2)
                 {
                     if (listConfiguration[i] == "StroopProgram")

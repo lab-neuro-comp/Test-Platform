@@ -9,7 +9,7 @@ using System.Drawing;
 
 namespace TestPlatform
 {
-    public partial class FormShowAudio : UserControl
+    public partial class FormShowAudio : UserControl, IDisposable 
     {
         private string path = Global.stroopTestFilesPath + Global.resultsFolderName;
         private SoundPlayer player = new SoundPlayer();
@@ -67,6 +67,12 @@ namespace TestPlatform
         private void closeButton_Click(object sender, EventArgs e)
         {
             player.Stop();
+            player.Dispose();
+            if (recording)
+            {
+                audioRecorder.pauseRecording();
+            }
+
             this.Parent.Controls.Remove(this);
         }
 
@@ -89,7 +95,7 @@ namespace TestPlatform
         void timer_Tick(object sender, EventArgs e)
         {
             var timeSinceStartTime = DateTime.Now - startTime;
-            timeSinceStartTime = new TimeSpan(timeSinceStartTime.Seconds);
+            timeSinceStartTime = new TimeSpan((long)timeSinceStartTime.TotalSeconds);
             currentElapsedTime = timeSinceStartTime;
             currentElapsedTimeDisplay.Text = timeSinceStartTime.ToString();
 
@@ -177,6 +183,7 @@ namespace TestPlatform
             }
             
         }
+
 
         private void recordButton1_Click(object sender, EventArgs e)
         {

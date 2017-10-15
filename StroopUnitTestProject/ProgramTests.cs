@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using TestPlatform.Models;
 
 namespace StroopUnitTestProject
@@ -47,6 +48,50 @@ namespace StroopUnitTestProject
             Program newProgram = new Program();
             newProgram.NumExpositions = expected;
             Assert.AreEqual(expected, newProgram.NumExpositions);
+        }
+
+        // Testing method to set program exposition time with valid input
+        [TestMethod]
+        public void ValidExpositionTime()
+        {
+            Random random = new Random();
+            int expected = random.Next(1,10000);
+            Program newProgram = new Program();
+            newProgram.ExpositionTime = expected;
+            Assert.AreEqual(expected, newProgram.ExpositionTime);
+        }
+
+        // Testing method to set program numbers of expositions with invalid negative input
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "\nTempo de exposição deve ser maior que zero e menor que 10.000 (em milissegundos)")]
+        public void InvalidNegativeExpositionTime()
+        {
+            Random random = new Random();
+            int expected = -random.Next();
+            Program newProgram = new Program();
+            newProgram.ExpositionTime = expected;
+        }
+
+        // Testing method to set program numbers of expositions with invalid negative input
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "\nTempo de exposição deve ser maior que zero e menor que 10.000 (em milissegundos)")]
+        public void InvalidGreatExpositionTime()
+        {
+            Random random = new Random();
+            int expected = random.Next() + 10000;
+            Program newProgram = new Program();
+            newProgram.ExpositionTime = expected;
+        }
+
+        // Testing method to set program instructions
+        [TestMethod]
+        public void SetAndGetValidInstructions()
+        {
+            Program newProgram = new Program();
+            List<string> expected = new List<string>();
+            expected.Add("These are some instructions");
+            newProgram.InstructionText = expected;
+            Assert.AreEqual(expected, newProgram.InstructionText);
         }
 
         // Testing method to set program numbers of expositions with invalid negative input

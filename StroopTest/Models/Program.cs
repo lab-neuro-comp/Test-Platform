@@ -15,7 +15,7 @@ namespace TestPlatform.Models
 
         protected List<string> instructionText = new List<string>();
         protected String programName;             // [0]   program name
-        protected Int32 numExpositions;             // [1]*  number of expositions to be shown 
+        protected Int32 numExpositions;             // [1]*  number of expositions to be shown
         protected Int32 expositionTime;             // [2]*  duration time of each exposition (millisec)
         protected Boolean expositionRandom;          // [3]*  is exposition random
         protected Int32 intervalTime;               // [4]*  duration time for interval between expositions (millisec)
@@ -113,10 +113,12 @@ namespace TestPlatform.Models
 
         public StrList getWordListFile()
         {
+            // Used to check if the wordListFile is valid
             if (wordsListFile != null)
             {
                 return wordsListFile;
             }
+            // Returns a null to indicate that the value in wordsListFile is invalid
             else
             {
                 return null;
@@ -126,10 +128,12 @@ namespace TestPlatform.Models
 
         public void setColorListFile(string listName)
         {
+            // Used to check if the passed argument is valid
             if (listName != "false")
             {
                 colorsListFile = new StrList(listName, 3);
             }
+            // Returns a null to indicate that the argument passed in the function is invalid
             else
             {
                 colorsListFile = null;
@@ -139,10 +143,12 @@ namespace TestPlatform.Models
 
         public StrList getColorListFile()
         {
+            // Used to check if the color list file is valid
             if (colorsListFile != null)
             {
                 return colorsListFile;
             }
+            // Returns null to indicate that the value in colorListFile was invalid
             else
             {
                 return null;
@@ -227,7 +233,7 @@ namespace TestPlatform.Models
             }
 
         }
-        
+
         public string FixPointColor
         {
             get { return fixPointColor; }
@@ -287,11 +293,11 @@ namespace TestPlatform.Models
                 return imageDirs; // return directories
             }
             else{
-                throw new FileNotFoundException("Arquivo lista (parâmetro): '" + Path.GetFileName(filepath) + 
+                throw new FileNotFoundException("Arquivo lista (parâmetro): '" + Path.GetFileName(filepath) +
                     "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath));
             }
-            
-            
+
+
         }
 
         // lê dados do arquivo e retorna vetor
@@ -299,13 +305,13 @@ namespace TestPlatform.Models
         {
             if (File.Exists(filepath)) {
                 string[] linesList = File.ReadAllLines(filepath);
-                return linesList;                
+                return linesList;
             }
             else
             {
                 throw new FileNotFoundException("Arquivo Data: '" + Path.GetFileName(filepath) +
                     "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath));
-            }            
+            }
         }
 
         public bool Exists(string path)

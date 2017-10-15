@@ -110,6 +110,7 @@ namespace TestPlatform.Models
             }
         }
 
+        // Used to find a program and use it
         public void setProgramInUse(string path, string prgName)
         {
             string programFile = path + prgName + ".prg";
@@ -127,8 +128,8 @@ namespace TestPlatform.Models
         public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, string currentStimulus, string position)
         {
             /* This variable keeps data from an exposition to only one stimulus, being them:
-             * program  name    participant     name    date    hour    exposition hour    hit time(ms) interval(ms)  interval should be(ms)  
-             * exposition accumulative timeexposition time(ms)  number of sequency   type of stimulus    stimulus   
+             * program  name    participant     name    date    hour    exposition hour    hit time(ms) interval(ms)  interval should be(ms)
+             * exposition accumulative timeexposition time(ms)  number of sequency   type of stimulus    stimulus
              * stimulus color */
             var text = ProgramInUse.ProgramName + "\t" + participantName + "\t" + initialTime.Day + "/" +
                        initialTime.Month + "/" + initialTime.Year + "\t" + initialTime.Hour + ":" + initialTime.Minute +
@@ -137,8 +138,8 @@ namespace TestPlatform.Models
                         "\t" + intervalTime.ToString() + "\t" + intervalShouldBe.ToString() + "\t" + expositionAccumulative + "\t" +
                         ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + position  + "\t"+ ProgramInUse.ExpositionType + "\t" +
                         currentStimulus + "\t" + ProgramInUse.StimulusColor;
-             Output.Add(text); 
-             
+             Output.Add(text);
+
         }
 
 

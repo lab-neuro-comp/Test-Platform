@@ -8,7 +8,8 @@
     {
         private WasapiCapture capture;
         private WaveWriter writer;
-        
+
+        // Used to record the audio from the program
         public bool StartRecording(string path)
         {
             this.capture = new WasapiCapture();
@@ -23,12 +24,15 @@
             return true;
         }
 
+
+        // Used to pause the recording of the program
         public bool PauseRecording()
         {
             this.capture.Stop();
             return true;
         }
 
+        // Used to save the recording in the "database"
         public bool SaveRecording()
         {
             if (this.capture != null)
@@ -37,10 +41,11 @@
                 this.capture.Dispose();
                 this.writer.Dispose();
             }
-                        
+
             return true;
         }
 
+        // Used to play a saved recording
         public void PlayAudio(string file)
         {
             MciSendString("play " + file, null, 0, 0);

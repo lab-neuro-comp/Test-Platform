@@ -5,10 +5,12 @@ using System.Windows.Forms;
 
 namespace TestPlatform.Models
 {
+    // Used to create validations for classes and variables type
     class Validations
     {
         private static String hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
 
+        // Used to check if the string has no characters
         public static bool isEmpty(string word)
         {
             if (string.IsNullOrEmpty(word))
@@ -16,6 +18,7 @@ namespace TestPlatform.Models
             return false;
         }
 
+        // Used to check if the character on the string a numeric one
         public static bool isAlphanumeric(string word)
         {
             if (!string.IsNullOrEmpty(word) && word.All(char.IsLetterOrDigit))
@@ -23,12 +26,15 @@ namespace TestPlatform.Models
             return false;
         }
 
+        // Used to check if the character on the string is a digit
         public static bool isDigit(string word)
         {
             if (word.All(char.IsDigit))
                 return true;
             return false;
         }
+
+        // Used to check if the value of the int variable passed is valid
         public static bool isNumExpositionsValid(int value)
         {
             if (value > 0)
@@ -36,6 +42,7 @@ namespace TestPlatform.Models
             return false;
         }
 
+        // Used to check if the value of the int variable passed is within the valid range
         public static bool isExpositionTimeValid(int value)
         {
             if (value > 0 && value < 10000)

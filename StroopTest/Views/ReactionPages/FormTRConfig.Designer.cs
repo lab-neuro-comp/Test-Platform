@@ -851,6 +851,8 @@
             this.beepDuration.Name = "beepDuration";
             this.beepDuration.Size = new System.Drawing.Size(80, 22);
             this.beepDuration.TabIndex = 162;
+            this.beepDuration.Validating += new System.ComponentModel.CancelEventHandler(this.beepDuration_Validating);
+            this.beepDuration.Validated += new System.EventHandler(this.beepDuration_Validated);
             // 
             // label3
             // 

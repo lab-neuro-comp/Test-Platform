@@ -32,7 +32,7 @@ namespace TestPlatform.Views.ExperimentPages
             startTime = hour + "_" + minutes + "_" + seconds;
             executingTest.ParticipantName = participantName;
             executingTest.ProgramInUse.Name = progamName;
-            executingTest.ProgramInUse.readProgramFile();
+            executingTest.ProgramInUse.ReadProgramFile();
             executingTest.Mark = mark;
             outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.Name + ".txt";
             startExposition();

@@ -52,14 +52,14 @@
         {
             get
             {
-                return ExperimentName;
+                return this.ExperimentName;
             }
 
             set
             {
                 if (Validations.isAlphanumeric(value))
                 {
-                    ExperimentName = value;
+                    this.ExperimentName = value;
                 }
                 else
                 {
@@ -73,12 +73,12 @@
         {
             get
             {
-                return instructionText;
+                return this.instructionText;
             }
 
             set
             {
-                instructionText = value;
+                this.instructionText = value;
             }
         }
 
@@ -86,12 +86,12 @@
         {
             get
             {
-                return programList;
+                return this.programList;
             }
 
             set
             {
-                programList = value;
+                this.programList = value;
             }
         }
 
@@ -99,12 +99,12 @@
         {
             get
             {
-                return experimentName;
+                return this.experimentName;
             }
 
             set
             {
-                experimentName = value;
+                this.experimentName = value;
             }
         }
 
@@ -112,16 +112,16 @@
         {
             get
             {
-                return trainingProgram;
+                return this.trainingProgram;
             }
 
             set
             {
-                trainingProgram = value;
+                this.trainingProgram = value;
             }
         }
 
-        public void addStroopProgram(string programName)
+        public void AddStroopProgram(string programName)
         {
             StroopProgram newProgram = new StroopProgram();
             newProgram.ProgramName = programName;
@@ -129,19 +129,19 @@
             ProgramList.Add(newProgram);
         }
 
-        public void addReactionProgram(string programName)
+        public void AddReactionProgram(string programName)
         {
             ReactionProgram newProgram = new ReactionProgram(Global.reactionTestFilesPath + Global.programFolderName + programName + ".prg");
             ProgramList.Add(newProgram);
         }
 
-        private string data()
+        private string Data()
         {
             string experimentData = this.ExperimentName + " " + this.intervalTime + " " + this.isOrderRandom + " " + this.trainingProgram;
             return experimentData;
         }
 
-        private string writeProgramList()
+        private string WriteProgramList()
         {
             string stringList = "";
             foreach (Program program in ProgramList)
@@ -159,7 +159,7 @@
         }
 
         /* getting information from .prg file and converting to an experiment object */
-        public void readProgramFile() 
+        public void ReadProgramFile() 
         {            
             string filePath = Global.experimentTestFilesPath + Global.programFolderName + ExperimentName + ".prg";
             if (File.Exists(filePath))
@@ -193,11 +193,11 @@
                 {
                     if (listConfiguration[i] == "StroopProgram")
                     {
-                       addStroopProgram(listConfiguration[i - 1]);
+                       AddStroopProgram(listConfiguration[i - 1]);
                     }
                     else if (listConfiguration[i] == "ReactionProgram")
                     {
-                        addReactionProgram(listConfiguration[i - 1]);
+                        AddReactionProgram(listConfiguration[i - 1]);
                     }
                 }
 
@@ -221,11 +221,11 @@
 
         }
 
-        public bool saveExperimentFile(string path)
+        public bool SaveExperimentFile(string path)
         {
             StreamWriter writer = new StreamWriter(path + ExperimentName + ".prg");
-            writer.WriteLine(data());
-            writer.WriteLine(writeProgramList());
+            writer.WriteLine(Data());
+            writer.WriteLine(WriteProgramList());
             if (InstructionText != null)
             {
                 for (int i = 0; i < InstructionText.Count; i++)

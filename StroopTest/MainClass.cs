@@ -7,6 +7,8 @@ namespace TestPlatform
 {
     using System;
     using System.Windows.Forms;
+    using System.Globalization;
+    using System.Threading;
     using TestPlatform.Views;
 
     public static class MainClass
@@ -17,6 +19,9 @@ namespace TestPlatform
         [STAThread]
         public static void Main()
         {
+            CultureInfo newCultureInfo = new System.Globalization.CultureInfo("pt-BR");
+            Thread.CurrentThread.CurrentCulture = newCultureInfo;
+            Thread.CurrentThread.CurrentUICulture = newCultureInfo;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             FormMain application = new FormMain();

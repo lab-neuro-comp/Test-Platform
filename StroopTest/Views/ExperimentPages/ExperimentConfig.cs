@@ -26,7 +26,7 @@ namespace TestPlatform.Views.ExperimentPages
         {
             savingExperiment.Name = editProgramName;
             experimentNameTextBox.Text = editProgramName;
-            savingExperiment.readProgramFile();
+            savingExperiment.ReadProgramFile();
             beepingCheckbox.Checked = savingExperiment.IsOrderRandom;
             intervalTime.Value = savingExperiment.IntervalTime;
             trainingProgramCheckBox.Checked = savingExperiment.TrainingProgram;
@@ -83,11 +83,11 @@ namespace TestPlatform.Views.ExperimentPages
                 programDataGridView.Rows.Add(result[1], result[0]);
                 if(result[0] == "StroopTest")
                 {
-                    savingExperiment.addStroopProgram(result[1]);
+                    savingExperiment.AddStroopProgram(result[1]);
                 }
                 else if (result[0] == "ReactionTest")
                 {
-                    savingExperiment.addReactionProgram(result[1]);
+                    savingExperiment.AddReactionProgram(result[1]);
                 }
 
                 else
@@ -152,7 +152,7 @@ namespace TestPlatform.Views.ExperimentPages
                 {
                     savingExperiment.TrainingProgram = false;
                 }
-                if (savingExperiment.saveExperimentFile(Global.experimentTestFilesPath + Global.programFolderName))
+                if (savingExperiment.SaveExperimentFile(Global.experimentTestFilesPath + Global.programFolderName))
                 {
                     MessageBox.Show("O programa foi salvo com sucesso");
                     this.Parent.Controls.Remove(this);

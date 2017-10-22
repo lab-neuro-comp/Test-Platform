@@ -47,25 +47,10 @@ namespace TestPlatform
         {
             StroopProgram program = new StroopProgram();
             string wordsFilePath = "", colorsFilePath = "";
-            string[] list = null, wordsArray = null, colorsArray = null;
+            string[] wordsArray = null, colorsArray = null;
 
             try
             {
-                // MessageBox.Show(fileName);
-                /*
-                var typeOfList = fileName.Substring(fileName.Length - 6, fileName.Length);
-                switch (typeOfList.ToLower())
-                {
-                    case "_words":
-                        fileName = fileName.Remove(fileName.Length - 6);
-                        break;
-                    case "_color":
-                        fileName = fileName.Remove(fileName.Length - 6);
-                        break;
-                    default:
-                        break;
-                }
-                */
                 fileName = fileName.Remove(fileName.Length - 6);
 
                 wordsFilePath = this.path + fileName + "_words.lst";

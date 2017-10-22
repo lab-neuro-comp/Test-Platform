@@ -2,38 +2,37 @@
  * Copyright (c) 2016 All Rights Reserved
  * Hugo Honda
  */
-
-using System;
-using System.IO;
-using System.Windows.Forms;
-using TestPlatform.Models;
-using TestPlatform.Views;
-using TestPlatform.Views.SidebarControls;
-using TestPlatform.Views.SidebarUserControls;
-using System.Collections.Generic;
-using TestPlatform.Controllers;
-using TestPlatform.Views.ReactionPages;
-using TestPlatform.Views.ExperimentPages;
-
 namespace TestPlatform
 {
+    using System;
+    using System.IO;
+    using System.Windows.Forms;
+    using System.Resources;
+    using TestPlatform.Models;
+    using TestPlatform.Views;
+    using TestPlatform.Views.SidebarControls;
+    using TestPlatform.Views.SidebarUserControls;
+    using System.Collections.Generic;
+    using TestPlatform.Controllers;
+    using TestPlatform.Views.ReactionPages;
+    using TestPlatform.Views.ExperimentPages;
+    using System.Globalization;
+
     public partial class FormMain : Form
     {
         private FolderBrowserDialog folderBrowserDialog1;
 
         private static string DEFAULTPGRNAME = "padrao";
-        private static string DEFAULTUSERNAME = "padrao";
         private static string INSTRUCTIONSFILENAME = "editableInstructions.txt";
         private static string PGRCONFIGHELPFILENAME = "prgConfigHelp.txt";
-        private static string INSTRUCTIONSTEXT = "O participante deve ser orientado para execução de forma clara e uniforme entre os experimentares e o grupo de participantes.<br><br>Para o Stroop clássico as instruções básicas praticadas são:<br>'Nesta tarefa você deve falar o nome da cor em que as palavras estão pintadas.'<br>ou<br>'Nesta tarefa você deve ler a palavra apresentada na tela.'";
         private static string TECHTEXT = HelpData.TechnicalInformations;
         private static string HELPTEXT = HelpData.VisualizeHelp;
         public Panel _contentPanel;
         /* Variables
          */
         private Control currentPanelContent; //holds current panel in exact execution time
-        
-        
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
 
         /**
          * Constructor method, creates directories for program, in case they dont exist
@@ -211,10 +210,11 @@ namespace TestPlatform
             programDefault.ProgramName = DEFAULTPGRNAME;
             try
             {
-                programDefault.writeDefaultProgramFile(Global.stroopTestFilesPath + Global.programFolderName + programDefault.ProgramName + ".prg"); // ao inicializar formulario escreve arquivo programa padrao
+                // writing default program and lists on to disk
+                programDefault.writeDefaultProgramFile(Global.stroopTestFilesPath + Global.programFolderName + programDefault.ProgramName + ".prg"); 
                 ReactionProgram.writeDefaultProgramFile();
-                StrList.writeDefaultWordsList(Global.testFilesPath + Global.listFolderName); // escreve lista de palavras padrão
-                StrList.writeDefaultColorsList(Global.testFilesPath + Global.listFolderName); // escreve lista de cores padrão 
+                StrList.writeDefaultWordsList(Global.testFilesPath + Global.listFolderName); 
+                StrList.writeDefaultColorsList(Global.testFilesPath + Global.listFolderName); 
             }
             catch (Exception ex)
             {
@@ -257,19 +257,19 @@ namespace TestPlatform
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine("Excluir: ", originPath, fileType, "_image_words_color_audio", 
+                FormDefine defineFilePath = new FormDefine(LocRM.GetString("exclude", currentCulture), originPath, fileType, "_image_words_color_audio", 
                     true);
                 var result = defineFilePath.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Deseja realmente excluir " + defineFilePath.ReturnValue 
+                    DialogResult dialogResult = MessageBox.Show(LocRM.GetString("reallyExclude", currentCulture) + defineFilePath.ReturnValue 
                         + "?", "", MessageBoxButtons.YesNo); // pergunta se deseja repetir o programa
 
                     if (dialogResult == DialogResult.Yes)
                     {
                         File.Move(originPath + defineFilePath.ReturnValue + "." + fileType, backupPath + "backup_" + 
                             defineFilePath.ReturnValue + "." + fileType);
-                        MessageBox.Show(defineFilePath.ReturnValue + ".lst excluída com sucesso!");
+                        MessageBox.Show(defineFilePath.ReturnValue + ".lst " + LocRM.GetString("exclusionSucceeded", currentCulture));
                     }
                 }
             }
@@ -313,14 +313,22 @@ namespace TestPlatform
                 showData = new FormShowData();
                 this.contentPanel.Controls.Add(showData);
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void showInstructions()
         {
-            FormInstructions infoBox = new FormInstructions(INSTRUCTIONSTEXT, (Global.testFilesPath + INSTRUCTIONSFILENAME));
-            try { infoBox.Show(); }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("instructionBoxText", currentCulture), (Global.testFilesPath + INSTRUCTIONSFILENAME));
+            try {
+                infoBox.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void editImagesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -343,15 +351,26 @@ namespace TestPlatform
         private void techInfoButto_ToolStrip_Click(object sender, EventArgs e)
         {
             FormInstructions infoBox = new FormInstructions(TECHTEXT);
-            try { infoBox.Show(); }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            try {
+                infoBox.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormInstructions infoBox = new FormInstructions(HELPTEXT);
-            try { infoBox.Show(); }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            try
+            {
+                infoBox.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
         
@@ -362,7 +381,10 @@ namespace TestPlatform
             {
                 this.contentPanel.Controls.Add(configureAudioList);
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void openShowAudioForm()
         {
@@ -372,7 +394,10 @@ namespace TestPlatform
                 showAudio = new FormShowAudio();
                 this.Controls.Add(showAudio);
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void displayAudiosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -521,7 +546,7 @@ namespace TestPlatform
 
             try
             {
-                defineProgram = new FormDefine("Editar Programa: ", Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
+                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -539,7 +564,7 @@ namespace TestPlatform
             DialogResult result;
             string editProgramName = "error";
 
-                defineProgram = new FormDefine("Editar Programa: ", Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false);
+                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -555,16 +580,16 @@ namespace TestPlatform
         {
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {             
-                if (executingTypeLabel.Text.Equals("StroopTest"))
+                if (executingTypeLabel.Text.Equals(LocRM.GetString("stroopTest", currentCulture)))
                 {
                     ExpositionController.BeginStroopTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
                 }
 
-                else if (executingTypeLabel.Text.Equals("ReactionTest"))
+                else if (executingTypeLabel.Text.Equals(LocRM.GetString("reactionTest", currentCulture)))
                 {
                     ExpositionController.BeginReactionTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
                 }
-                else if (executingTypeLabel.Text.Equals("Experimento"))
+                else if (executingTypeLabel.Text.Equals(LocRM.GetString("experiment", currentCulture)))
                 {
                     ExpositionController.BeginExperimentTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
                 }
@@ -575,7 +600,7 @@ namespace TestPlatform
             }
             else
             {
-                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+                MessageBox.Show(LocRM.GetString("notFilledProperlyMessage", currentCulture));
 
             }
 
@@ -595,13 +620,12 @@ namespace TestPlatform
         {
             if (participantName.Length == 0)
             {
-                errorMessage = "O nome do participante deve ser preenchido.";
+                errorMessage = LocRM.GetString("participantNameLengthError", currentCulture);
                 return false;
             }
             if (!Validations.isAlphanumeric(participantName))
             {
-                errorMessage = "Nome do participante deve ser composto apenas de caracteres alphanumericos" + 
-                    "e sem espaços;\nExemplo: 'MeuPrograma'";
+                errorMessage = LocRM.GetString("participantNameAlphanumericError", currentCulture);
                 return false;
             }
 
@@ -632,12 +656,12 @@ namespace TestPlatform
         {
             if (mark.Length == 0)
             {
-                errorMessage = "O campo da marca deve ser preenchido.";
+                errorMessage = LocRM.GetString("markLengthError", currentCulture);
                 return false;
             }
             if (mark.Length > 1)
             {
-                errorMessage = "A marca deve ser composta apenas de um caracter";
+                errorMessage = LocRM.GetString("markLengthError2", currentCulture);
                 return false;
             }
 
@@ -689,6 +713,26 @@ namespace TestPlatform
                 Global.GlobalFormMain._contentPanel.Controls.Add(showData);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void portuguêsBrasilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (englishUnitedStatesToolStripMenuItem.Checked)
+            {
+                currentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
+                englishUnitedStatesToolStripMenuItem.Checked = false;
+            }
+            portuguêsBrasilToolStripMenuItem.Checked = true;
+        }
+
+        private void englishUnitedStatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (portuguêsBrasilToolStripMenuItem.Checked)
+            {
+                currentCulture = CultureInfo.CreateSpecificCulture("en-US");
+                portuguêsBrasilToolStripMenuItem.Checked = false;
+            }
+            englishUnitedStatesToolStripMenuItem.Checked = true;
         }
     }
 }

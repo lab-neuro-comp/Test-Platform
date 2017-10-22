@@ -17,6 +17,8 @@ namespace TestPlatform
     using TestPlatform.Views.ReactionPages;
     using TestPlatform.Views.ExperimentPages;
     using System.Globalization;
+    using System.ComponentModel;
+    using System.Linq;
 
     public partial class FormMain : Form
     {
@@ -721,6 +723,10 @@ namespace TestPlatform
             {
                 currentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
                 englishUnitedStatesToolStripMenuItem.Checked = false;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = currentCulture;
+                ComponentResourceManager resources = new ComponentResourceManager(typeof(FormMain));
+                resources.ApplyResources(this, "$this");
+                ApplyResources(resources, this.Controls);
             }
             portuguêsBrasilToolStripMenuItem.Checked = true;
         }
@@ -731,8 +737,49 @@ namespace TestPlatform
             {
                 currentCulture = CultureInfo.CreateSpecificCulture("en-US");
                 portuguêsBrasilToolStripMenuItem.Checked = false;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = currentCulture;
+                ComponentResourceManager resources = new ComponentResourceManager(typeof(FormMain));
+                resources.ApplyResources(this, "$this");
+                ApplyResources(resources, this.Controls);
+                ApplyToolStripResources(resources, mainMenuStrip.Items);
             }
             englishUnitedStatesToolStripMenuItem.Checked = true;
         }
-    }
+
+        private void ApplyResources(ComponentResourceManager resources, Control.ControlCollection ctls)
+        {
+            foreach (Control ctl in ctls)
+            {
+                resources.ApplyResources(ctl, ctl.Name);
+                ApplyResources(resources, ctl.Controls);
+            }            
+        }
+
+        private void ApplyToolStripResources(ComponentResourceManager resources, ToolStripItemCollection toolStrip)
+        {
+            foreach (ToolStripItem item in toolStrip)
+            //for each object.
+            {
+                ToolStripMenuItem subMenu = item as ToolStripMenuItem;
+                resources.ApplyResources(item, item.Name);
+                //Try cast to ToolStripMenuItem as it could be toolstrip separator as well.
+
+                if (subMenu != null)
+                //if we get the desired object type.
+                {
+                    resources.ApplyResources(item, item.Name);
+                    // if subMenu has children call recursive method
+                    if (subMenu.HasDropDownItems) 
+                    {
+                        ApplyToolStripResources(resources, subMenu.DropDownItems); 
+                    }
+                    else 
+                    {
+                        // do nothing
+                    }
+                }
+            }
+        }
+        }
+    
 }

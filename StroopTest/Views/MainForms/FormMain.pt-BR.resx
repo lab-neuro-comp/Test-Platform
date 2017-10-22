@@ -117,43 +117,163 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="editProgram" xml:space="preserve">
-    <value>Edit Program: </value>
+  <data name="startTestToolStripMenuItem.Text" xml:space="preserve">
+    <value>Iniciar Teste    Ctrl+R</value>
   </data>
-  <data name="exclude" xml:space="preserve">
-    <value>Delete: </value>
+  <data name="newTextColorsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Palavras e Cores</value>
   </data>
-  <data name="exclusionSucceeded" xml:space="preserve">
-    <value>delete succeeded!</value>
+  <data name="newImageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Imagens</value>
   </data>
-  <data name="experiment" xml:space="preserve">
-    <value>Experiment</value>
+  <data name="newAudioToolStripMenuItem.Text" xml:space="preserve">
+    <value>Áudios</value>
   </data>
-  <data name="instructionBoxText" xml:space="preserve">
-    <value>The participant must be clearly and uniformly oriented to test execution accordingly to participant group and experiment team.&lt;br&gt;&lt;br&gt;For classic Stroop Test basic instructions are: &lt;br&gt;'In this task you must speak the name of the color in which the words are painted.'&lt;br&gt;or&lt;br&gt;'In this task you should read the word displayed on the screen.'</value>
+  <data name="newStimulusListToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lista de Estímulos</value>
   </data>
-  <data name="markLengthError" xml:space="preserve">
-    <value>Field mark must be filled.</value>
+  <data name="stroopToolStripMenuItem.Text" xml:space="preserve">
+    <value>Stroop</value>
   </data>
-  <data name="markLengthError2" xml:space="preserve">
-    <value>A marca deve ser composta apenas de um caracter</value>
+  <data name="reactionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tempo de Reação</value>
   </data>
-  <data name="notFilledProperlyMessage" xml:space="preserve">
-    <value>Some field was not filled in correctly.</value>
+  <data name="newProgramToolStripMenuItem.Text" xml:space="preserve">
+    <value>Programa    Ctrl+N</value>
   </data>
-  <data name="participantNameAlphanumericError" xml:space="preserve">
-    <value>Nome do participante deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'LuisAugusto'"</value>
+  <data name="newAudioToolStripMenu.Text" xml:space="preserve">
+    <value>Áudio</value>
   </data>
-  <data name="participantNameLengthError" xml:space="preserve">
-    <value>Participant name must be filled.</value>
+  <data name="newToolStripMenuItem.Text" xml:space="preserve">
+    <value>Novo</value>
   </data>
-  <data name="reactionTest" xml:space="preserve">
-    <value>ReactionTest</value>
+  <data name="defineProgramToolStripMenuItem.Text" xml:space="preserve">
+    <value>Programa    Ctrl+D</value>
   </data>
-  <data name="reallyExclude" xml:space="preserve">
-    <value>Do you really want to delete</value>
+  <data name="defineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Definir</value>
   </data>
-  <data name="stroopTest" xml:space="preserve">
-    <value>StroopTest</value>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sair                  Alt+F4</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="editTextColorsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Palavras e Cores</value>
+  </data>
+  <data name="editImagesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Imagens</value>
+  </data>
+  <data name="editAudioToolStripMenuItem.Text" xml:space="preserve">
+    <value>Áudios</value>
+  </data>
+  <data name="editListsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lista de Estímulos</value>
+  </data>
+  <data name="stroopToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Stroop</value>
+  </data>
+  <data name="reactionToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Tempo de Reação</value>
+  </data>
+  <data name="editProgramToolStripMenuItem.Text" xml:space="preserve">
+    <value>Programa</value>
+  </data>
+  <data name="deleteListToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="deleteProgramToolStripMenuItem.Text" xml:space="preserve">
+    <value>Programa</value>
+  </data>
+  <data name="deleteDataToolStripMenuItem.Text" xml:space="preserve">
+    <value>Dados</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="editToolStripMenuItem.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="stroopToolStripMenuItem2.Text" xml:space="preserve">
+    <value>Stroop</value>
+  </data>
+  <data name="reactionToolStripMenuItem2.Text" xml:space="preserve">
+    <value>Tempo de Reação</value>
+  </data>
+  <data name="experimentoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Experimento</value>
+  </data>
+  <data name="displayDataToolStripMenuItem.Text" xml:space="preserve">
+    <value>Dados</value>
+  </data>
+  <data name="displayAudiosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Áudios</value>
+  </data>
+  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exibir</value>
+  </data>
+  <data name="instructionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Instruções    Ctrl+H</value>
+  </data>
+  <data name="viewHelpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Visualizar Ajuda</value>
+  </data>
+  <data name="techInfoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Informações Técnicas</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
+  <data name="idiomaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="directoryToolStripLabel.Text" xml:space="preserve">
+    <value>Diretório:</value>
+  </data>
+  <data name="executeButton.Text" xml:space="preserve">
+    <value>Executar</value>
+  </data>
+  <data name="markLabel.Text" xml:space="preserve">
+    <value>Marcador</value>
+  </data>
+  <data name="participantTextBox.Text" xml:space="preserve">
+    <value>padrao</value>
+  </data>
+  <data name="participantLabel.Text" xml:space="preserve">
+    <value>Participante</value>
+  </data>
+  <data name="radioButton2.Text" xml:space="preserve">
+    <value> Exportar</value>
+  </data>
+  <data name="radioButton1.Text" xml:space="preserve">
+    <value> Importar</value>
+  </data>
+  <data name="resultButton.Text" xml:space="preserve">
+    <value> Resultados</value>
+  </data>
+  <data name="experimentButton.Text" xml:space="preserve">
+    <value> Experimento</value>
+  </data>
+  <data name="buttonList.Text" xml:space="preserve">
+    <value> Lista</value>
+  </data>
+  <data name="buttonReaction.Text" xml:space="preserve">
+    <value>Tempo de Reação</value>
+  </data>
+  <data name="buttonStroop.Text" xml:space="preserve">
+    <value>Stroop</value>
+  </data>
+  <data name="executingNameLabel.Text" xml:space="preserve">
+    <value>padrao</value>
+  </data>
+  <data name="selectButton.Text" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="executingTypeLabel.Text" xml:space="preserve">
+    <value>Stroop</value>
   </data>
 </root>

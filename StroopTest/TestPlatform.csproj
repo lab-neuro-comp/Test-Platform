@@ -305,6 +305,12 @@
     <EmbeddedResource Include="Views\MainForms\FormDefineTest.resx">
       <DependentUpon>FormDefineTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FormMain.en-US.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FormMain.pt-BR.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\FormReactExposition.resx">
       <DependentUpon>FormReactExposition.cs</DependentUpon>
     </EmbeddedResource>

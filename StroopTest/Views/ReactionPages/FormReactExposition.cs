@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,6 +43,7 @@ namespace TestPlatform.Views
         private string currentStimulus = null;
         private string position = null;
         private int currentPosition;
+        private bool currentBeep = false;
 
         public FormReactExposition(string prgName, string participantName, char mark)
         {
@@ -307,6 +309,11 @@ namespace TestPlatform.Views
 
         private void showStimulus()
         {
+            if (executingTest.ProgramInUse.IsBeeping)
+            {
+                MakeBeep();
+            }
+
             switch (executingTest.ProgramInUse.ExpositionType)
             {
                 case "Formas":
@@ -330,6 +337,32 @@ namespace TestPlatform.Views
                     throw new Exception("Tipo de Exposição: " + executingTest.ProgramInUse.ExpositionType + " inválido!");
 
             }
+        }
+
+        private void MakeBeep()
+        {
+            bool beep;
+            if (executingTest.ProgramInUse.BeepingRandom)
+            {
+                Random gen = new Random();
+                int prob = gen.Next(1,100);
+                beep = (prob >= 50);
+            }
+            else
+            {
+                beep = true;
+            }
+
+            if (beep)
+            {
+                currentBeep = true;
+                Console.Beep(400, executingTest.ProgramInUse.BeepDuration);
+            }
+            else
+            {
+                currentBeep = false;
+            }
+            
         }
 
         private void expositionBW_DoWork(object sender, DoWorkEventArgs e)
@@ -400,19 +433,20 @@ namespace TestPlatform.Views
             {
                 /* user clicked after stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds,
-                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition));
+                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition), currentBeep);
             }
 
             else if ((e.Cancelled == true) && intervalCancelled)
             {
                 /* user clicked before stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, intervalElapsedTime - intervalShouldBe,
-                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition));
+                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition), currentBeep);
             }
             else
             {
                 /* user missed stimulus */
-                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition));
+                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition),
+                                                currentBeep);
                 hitStopWatch.Stop();
             }
             expositionBW.Dispose();
@@ -426,7 +460,7 @@ namespace TestPlatform.Views
             executingTest.InitialTime = DateTime.Now;
             accumulativeStopWatch.Start();
 
-            for (int counter = 0; counter < executingTest.ProgramInUse.NumExpositions; counter++)
+            for (int counter = 0; counter < executingTest.ProgramInUse.NumExpositions && !cancelExposition; counter++)
             {
                 currentExposition = counter;
                 //preparing execution

@@ -61,7 +61,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon3_TestPlatForm.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\icon3_TestPlatForm.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -429,7 +429,7 @@
     <None Include="bin\Debug\StroopTestFiles\images\img3.png" />
     <None Include="bin\Debug\StroopTestFiles\images\img4.png" />
     <None Include="bin\Debug\StroopTestFiles\images\img5.png" />
-    <Content Include="icon3_TestPlatForm.ico" />
+    <Content Include="Resources\icon3_TestPlatForm.ico" />
     <Content Include="README.txt" />
     <None Include="Resources\helpButton.png" />
     <None Include="Resources\circle.png" />

@@ -11,7 +11,7 @@ namespace TestPlatform.Models
     class ReactionTest
     {
         private static String headerOutputFileText = "programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)"
-            + "\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\ttipoEstimulo\tEstimulo\tCordoEstimulo";
+            + "\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep";
         private Char mark;
         private ReactionProgram programInUse = new ReactionProgram();
         private string participantName;
@@ -124,7 +124,7 @@ namespace TestPlatform.Models
             }
         }
 
-        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, string currentStimulus, string position)
+        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, string currentStimulus, string position, bool beeped)
         {
             /* This variable keeps data from an exposition to only one stimulus, being them:
              * program  name    participant     name    date    hour    exposition hour    hit time(ms) interval(ms)  interval should be(ms)  
@@ -136,7 +136,7 @@ namespace TestPlatform.Models
                        ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" + reactTime.ToString() +
                         "\t" + intervalTime.ToString() + "\t" + intervalShouldBe.ToString() + "\t" + expositionAccumulative + "\t" +
                         ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + position  + "\t"+ ProgramInUse.ExpositionType + "\t" +
-                        currentStimulus + "\t" + ProgramInUse.StimulusColor;
+                        currentStimulus + "\t" + ProgramInUse.StimulusColor + "\t" + beeped.ToString();
              Output.Add(text); 
              
         }

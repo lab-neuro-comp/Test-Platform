@@ -14,14 +14,17 @@ namespace TestPlatform.Views.ReactionPages
         public ReactionResultUserControl()
         {
             InitializeComponent();
-
             this.Dock = DockStyle.Fill;
             string[] filePaths = null;
 
             string[] headers = ReactionTest.HeaderOutputFileText.Split('\t');
+
+            dataGridView1.ScrollBars = ScrollBars.Both;
+            dataGridView1.AutoResizeColumns();
             foreach (var columnName in headers)
             {
-                dataGridView1.Columns.Add(columnName, columnName); // Configura Cabeçalho na tabela
+                dataGridView1.Columns.Add(columnName, columnName); // Add header to table
+                this.dataGridView1.Columns[columnName].Frozen = false;
             }
 
             if (Directory.Exists(path)) // Preenche comboBox com arquivos do tipo .txt no diretório dado
@@ -36,6 +39,7 @@ namespace TestPlatform.Views.ReactionPages
             {
                 Console.WriteLine("{0} é um caminho inválido!.", path);
             }
+
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -71,6 +75,10 @@ namespace TestPlatform.Views.ReactionPages
                         }
                     }
                 }
+
+                dataGridView1.AutoSize = false;
+                dataGridView1.ScrollBars = ScrollBars.Both;
+                dataGridView1.AutoResizeColumns();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

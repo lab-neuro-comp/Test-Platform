@@ -662,5 +662,32 @@ namespace TestPlatform.Views
             errorMessage = "";
             return true;
         }
+
+        private void beepDuration_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidBeepDuration(beepDuration.Value, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.beepDuration, errorMsg);
+            }
+        }
+
+        public bool ValidBeepDuration(decimal duration, out string errorMessage)
+        {
+            if (duration <= 0)
+            {
+                errorMessage = "O beep deve durar mais do que 0 milissegundos";
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void beepDuration_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(this.beepDuration, "");
+        }
     }
 }

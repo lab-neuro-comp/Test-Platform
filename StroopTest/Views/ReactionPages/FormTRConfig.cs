@@ -170,6 +170,23 @@ namespace TestPlatform.Views
                 default:
                     throw new Exception("Tipo de Exposição: " + editProgram.ExpositionType + " inválido!");
             }
+            switch (editProgram.NumberPositions)
+            {
+                case 1:
+                    positionsBox.SelectedIndex = 0;
+                    break;
+                case 2:
+                    positionsBox.SelectedIndex = 1;
+                    break;
+                case 4:
+                    positionsBox.SelectedIndex = 2;
+                    break;
+                case 8:
+                    positionsBox.SelectedIndex = 3;
+                    break;
+                default:
+                    throw new Exception("Número de posições do estímulo: " + editProgram.NumberPositions + " inválido!");
+            }       
 
         }
         

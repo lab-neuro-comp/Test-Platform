@@ -44,6 +44,7 @@ namespace TestPlatform.Views
         private string position = null;
         private int currentPosition;
         private bool currentBeep = false;
+        private int[,] positions;
 
         public FormReactExposition(string prgName, string participantName, char mark)
         {
@@ -55,6 +56,27 @@ namespace TestPlatform.Views
             executingTest.ParticipantName = participantName;
             executingTest.setProgramInUse(path + "/prg/", prgName);
             executingTest.Mark = mark;
+
+            // initializes position propertie so that they become avaible for stimulus
+            positions = new int[9, 2]{      {0, 0 }, //center position
+                                            { (2 * executingTest.ProgramInUse.StimulusDistance - executingTest.ProgramInUse.StimuluSize), 0 }, // on the right side of the screen
+                                            { - (2 * executingTest.ProgramInUse.StimulusDistance - executingTest.ProgramInUse.StimuluSize), 0 }, // on the left side of the screen
+                                             { 0, ( - executingTest.ProgramInUse.StimulusDistance + executingTest.ProgramInUse.StimuluSize)}, // on top of the screen
+                                             { 0, (executingTest.ProgramInUse.StimulusDistance - executingTest.ProgramInUse.StimuluSize) }, // on bottom of the screen
+                                             { - (2 * executingTest.ProgramInUse.StimulusDistance - executingTest.ProgramInUse.StimuluSize),
+                                                ( - executingTest.ProgramInUse.StimulusDistance + executingTest.ProgramInUse.StimuluSize)
+                                             }, // on left top of the screen
+                                             {  (2 * executingTest.ProgramInUse.StimulusDistance - executingTest.ProgramInUse.StimuluSize),
+                                                ( - executingTest.ProgramInUse.StimulusDistance + executingTest.ProgramInUse.StimuluSize)
+                                             }, // on right top of the screen
+                                             { - (2 * executingTest.ProgramInUse.StimulusDistance - executingTest.ProgramInUse.StimuluSize),
+                                                (executingTest.ProgramInUse.StimulusDistance - executingTest.ProgramInUse.StimuluSize)
+                                             }, // on left bottom of the screen
+                                             { (2 * executingTest.ProgramInUse.StimulusDistance - executingTest.ProgramInUse.StimuluSize),
+                                                (executingTest.ProgramInUse.StimulusDistance - executingTest.ProgramInUse.StimuluSize)
+                                             } // on right bottom of the screen                                             
+                                     }; 
+
             outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.ProgramName + ".txt";
             startExposition();
         }
@@ -291,8 +313,8 @@ namespace TestPlatform.Views
         }
 
         private void drawImage()
-        {            
-            int[] screenPosition = randomImageScreenPosition();
+        {
+            int[] screenPosition = ScreenPosition();
             imgPictureBox = new PictureBox();
             imgPictureBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
             imgPictureBox.Location = new Point(screenPosition[X], screenPosition[Y]);
@@ -508,43 +530,107 @@ namespace TestPlatform.Views
             }
         }
 
-        /* creates a x and y vector according to program stimulus distance randomly, from four different positions */
-        private int[] randomShapeScreenPosition (){
-            int[,] position = new int[4, 2]{ { (executingTest.ProgramInUse.StimulusDistance + (executingTest.ProgramInUse.StimulusDistance / 4)), 0 }, // on the right side of the screen
-                                            { 0, -( executingTest.ProgramInUse.StimulusDistance - (executingTest.ProgramInUse.StimulusDistance / 4)) }, // on top of the screen
-                                             { -(executingTest.ProgramInUse.StimulusDistance + (executingTest.ProgramInUse.StimulusDistance / 4)), 0 }, // on the left side of the screen
-                                              { 0, (executingTest.ProgramInUse.StimulusDistance - (executingTest.ProgramInUse.StimulusDistance / 4))} }; // on bottom of the screen
+        /* creates a x and y vector according to program stimulus distance randomly, accordingly to program, that can be 1, 2, 4 or 8 positions */
+        private int[] ScreenPosition (){
+            switch (executingTest.ProgramInUse.NumberPositions)
+            {
+                case 1:
+                    return centerShapePosition();
+                case 2:
+                    return randomScreenTwoPositions();
+                case 4:
+                    return randomScreenFourPositions();
+                case 8:
+                    return randomScreenEightPositions();
+                default:
+                    throw new Exception("Quantidade de posições do estímulo inválidas, deve ser um dos seguintes valores: 1, 2, 4 ou 8.");
+            }
+        }
+
+        /* creates a x and y vector on center of the screen */
+        private int[] centerShapePosition()
+        {
+            currentPosition = 0;
+            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            return new int[] { (int)clientMiddle[X], (int)clientMiddle[Y] };
+        }
+
+        /* creates a x and y vector according to program stimulus distance randomly, from two different positions */
+        private int[] randomScreenTwoPositions()
+        {
             Random random = new Random();
-            int index = random.Next(0, 4);
+            int index = random.Next(1, 3);
             currentPosition = index;
-            return new int []{ position[index, X], position[index, Y] };
+
+            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            int x = (int)(clientMiddle[X]) + positions[index, X];
+            int y = (int)(clientMiddle[Y]) + positions[index, Y];
+
+            int[] coordinates = CoordinatesWithinRange(x, y);
+            return coordinates;
         }
 
         /* creates a x and y vector according to program stimulus distance randomly, from four different positions */
-        private int[] randomImageScreenPosition()
+        private int[] randomScreenFourPositions()
         {
-            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            
-            int[,] position = new int[4, 2]{ { (2 * executingTest.ProgramInUse.StimulusDistance - 80), 0 }, // on the right side of the screen
-                                             { 0, ( - executingTest.ProgramInUse.StimulusDistance)}, // on top of the screen
-                                             { - (2 * executingTest.ProgramInUse.StimulusDistance - 50), 0 }, // on the left side of the screen
-                                             { 0, (executingTest.ProgramInUse.StimulusDistance - 50) } }; // on bottom of the screen
             Random random = new Random();
-            int index = random.Next(0, 4);
+            int index = random.Next(1, 5);
             currentPosition = index;
-            int x = (int)(clientMiddle[X]) + position[index, X];
-            int y = (int)(clientMiddle[Y]) + position[index, Y];
-            return new int[] { x , y };
+
+            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            int x = (int)(clientMiddle[X]) + positions[index, X];
+            int y = (int)(clientMiddle[Y]) + positions[index, Y];
+
+            int[] coordinates = CoordinatesWithinRange(x, y);
+            return coordinates;
+        }
+
+        /* creates a x and y vector according to program stimulus distance randomly, from eight different positions */
+        private int[] randomScreenEightPositions()
+        {
+
+            Random random = new Random();
+            int index = random.Next(1, 9);
+            currentPosition = index;
+
+            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
+            int x = (int)(clientMiddle[X]) + positions[index, X];
+            int y = (int)(clientMiddle[Y]) + positions[index, Y];
+
+            int[] coordinates = CoordinatesWithinRange(x, y);
+            return coordinates;
+        }
+
+        private int[] CoordinatesWithinRange(int x, int y)
+        {
+            float[] clientSize = { (ClientSize.Width), (ClientSize.Height) };
+            if (x > clientSize[X] || (x + executingTest.ProgramInUse.StimuluSize > clientSize[X] ) ) 
+            {
+                x = (int)clientSize[X] - (executingTest.ProgramInUse.StimuluSize);
+            }
+            else if (x < 1)
+            {
+                x = 1;
+            }
+
+            if (y > clientSize[Y])
+            {
+                y = (int)clientSize[Y] - executingTest.ProgramInUse.StimuluSize;
+            }
+            else if (y < 1)
+            {
+                y = 1;
+            }
+
+            return new int[] { x, y };
         }
 
         private void drawFullSquareShape()
         {
-            int brush25 = 25;
-            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
 
-            int[] screenPosition = randomShapeScreenPosition();
-            float xSquare = (clientMiddle[X] - brush25) + screenPosition[X];
-            float ySquare = (clientMiddle[Y] - brush25) + screenPosition[Y];
+            int[] screenPosition = this.ScreenPosition();
+            float xSquare = screenPosition[X];
+            float ySquare = screenPosition[Y];
             float widthSquare = executingTest.ProgramInUse.StimuluSize;
             float heightSquare = executingTest.ProgramInUse.StimuluSize;
 
@@ -557,11 +643,9 @@ namespace TestPlatform.Views
 
         private void drawSquareShape()
         {
-            int brush25 = 25;
-            int[] screenPosition = randomShapeScreenPosition();
-            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            float xSquare = (clientMiddle[X] - brush25) + screenPosition[X];
-            float ySquare = (clientMiddle[Y] - brush25) + screenPosition[Y];
+            int[] screenPosition = this.ScreenPosition();
+            float xSquare = screenPosition[X];
+            float ySquare = screenPosition[Y];
 
             float widthSquare = executingTest.ProgramInUse.StimuluSize;
             float heightSquare = executingTest.ProgramInUse.StimuluSize;
@@ -575,12 +659,10 @@ namespace TestPlatform.Views
 
         private void drawFullCircleShape()
         {
-            int brush25 = 25;
-            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int[] screenPosition = randomShapeScreenPosition();
+            int[] screenPosition = this.ScreenPosition();
+            float xEllipse = screenPosition[X];
+            float yEllipse = screenPosition[Y];
 
-            float xEllipse = (clientMiddle[X] - brush25) + screenPosition[X];
-            float yEllipse = (clientMiddle[Y] - brush25) + screenPosition[Y];
             float widthEllipse = executingTest.ProgramInUse.StimuluSize;
             float heightEllipse = executingTest.ProgramInUse.StimuluSize;
 
@@ -593,12 +675,9 @@ namespace TestPlatform.Views
 
         private void drawCircleShape()
         {
-            int brush25 = 25;
-
-            float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int[] screenPosition = randomShapeScreenPosition();
-            float xEllipse = (clientMiddle[X] - brush25) + screenPosition[X];
-            float yEllipse = (clientMiddle[Y] - brush25) + screenPosition[Y];
+            int[] screenPosition = this.ScreenPosition();
+            float xEllipse = screenPosition[X];
+            float yEllipse = screenPosition[Y];
 
             float widthEllipse = executingTest.ProgramInUse.StimuluSize;
             float heightEllipse = executingTest.ProgramInUse.StimuluSize;
@@ -644,14 +723,12 @@ namespace TestPlatform.Views
         private Point[] createTrianglePoints()
         {
             int[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int[] screenPosition = randomShapeScreenPosition();
+            int[] screenPosition = this.ScreenPosition();
             int heightTriangle = executingTest.ProgramInUse.StimuluSize;
 
-            Point point1 = new Point((clientMiddle[X]) + screenPosition[X] + (heightTriangle / 3),
-                (clientMiddle[Y] - (heightTriangle / 2)) + screenPosition[Y]);
-            Point point2 = new Point((clientMiddle[X] - (3 * heightTriangle / 4)) + screenPosition[X], (clientMiddle[Y] - (heightTriangle / 2)) + screenPosition[Y]);
-            Point point3 = new Point((clientMiddle[X] - (heightTriangle / 2)) + screenPosition[X] + (heightTriangle / 3),
-                                        (clientMiddle[Y] - (heightTriangle / 2)) + screenPosition[Y] - heightTriangle);
+            Point point1 = new Point( screenPosition[X] + (heightTriangle / 3), (heightTriangle / 2) + screenPosition[Y]);
+            Point point2 = new Point( (8 * heightTriangle / 6) + screenPosition[X], (heightTriangle / 2) + screenPosition[Y]);
+            Point point3 = new Point(((heightTriangle / 2)) + screenPosition[X] + (heightTriangle / 3), ((heightTriangle / 2)) + screenPosition[Y] - heightTriangle);
 
             Point[] trianglePoints = { point1, point2, point3 };
             return trianglePoints;
@@ -674,13 +751,23 @@ namespace TestPlatform.Views
             switch (index)
             {
                 case 0:
-                    return "right";
+                    return "centro";
                 case 1:
-                    return "top";
+                    return "direita";
                 case 2:
-                    return "left";
+                    return "esquerda";
                 case 3:
-                    return "bottom";
+                    return "cima";
+                case 4:
+                    return "baixo";
+                case 5:
+                    return "cima_esquerda";
+                case 6:
+                    return "cima_direita";
+                case 7:
+                    return "baixo_esquerda";
+                case 8:
+                    return "baixo_direita";
                 default:
                     return "invalid";
             }

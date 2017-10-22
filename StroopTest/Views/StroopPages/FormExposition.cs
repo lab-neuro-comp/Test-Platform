@@ -51,6 +51,7 @@ namespace TestPlatform
             this.MaximizeBox = true;
             this.StartPosition = FormStartPosition.Manual;
             InitializeComponent();
+            currentTest.ProgramInUse = new StroopProgram();
             currentTest.ProgramInUse.ProgramName = prgName;
             currentTest.ParticipantName = usrName;
             currentTest.Mark = mark;

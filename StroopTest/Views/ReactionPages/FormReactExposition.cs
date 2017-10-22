@@ -356,13 +356,33 @@ namespace TestPlatform.Views
             if (beep)
             {
                 currentBeep = true;
-                Console.Beep(400, executingTest.ProgramInUse.BeepDuration);
+                beepBackground();
             }
             else
             {
                 currentBeep = false;
             }
             
+        }
+
+        private void beepBackground()
+        {
+            BackgroundWorker beepBW = new BackgroundWorker();
+            beepBW.WorkerSupportsCancellation = true;
+            beepBW.DoWork += new DoWorkEventHandler(beepBW_DoWork);
+            if (!beepBW.IsBusy)
+            {
+                beepBW.RunWorkerAsync();
+            }
+            else
+            {
+                /*do nothing*/
+            }
+        }
+
+        private void beepBW_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Console.Beep(400, executingTest.ProgramInUse.BeepDuration);
         }
 
         private void expositionBW_DoWork(object sender, DoWorkEventArgs e)

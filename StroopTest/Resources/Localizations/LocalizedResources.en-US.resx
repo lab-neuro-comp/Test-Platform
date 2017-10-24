@@ -120,6 +120,9 @@
   <data name="editProgram" xml:space="preserve">
     <value>Edit Program: </value>
   </data>
+  <data name="emptyList" xml:space="preserve">
+    <value>The list is empty!</value>
+  </data>
   <data name="exclude" xml:space="preserve">
     <value>Delete: </value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="experiment" xml:space="preserve">
     <value>Experiment</value>
+  </data>
+  <data name="fieldNotRight" xml:space="preserve">
+    <value>Some field was not filled in correctly.</value>
   </data>
   <data name="instructionBoxText" xml:space="preserve">
     <value>The participant must be clearly and uniformly oriented to test execution accordingly to participant group and experiment team.&lt;br&gt;&lt;br&gt;For classic Stroop Test basic instructions are: &lt;br&gt;'In this task you must speak the name of the color in which the words are painted.'&lt;br&gt;or&lt;br&gt;'In this task you should read the word displayed on the screen.'</value>
@@ -147,11 +153,23 @@
   <data name="participantNameLengthError" xml:space="preserve">
     <value>Participant name must be filled.</value>
   </data>
+  <data name="programNotAlphanumeric" xml:space="preserve">
+    <value>The program name must be composed only of alphanumerical characters and no spaces; \ nExample: 'MyProgram'</value>
+  </data>
+  <data name="programNotFilled" xml:space="preserve">
+    <value>The program name must be filled in.</value>
+  </data>
+  <data name="programSaved" xml:space="preserve">
+    <value>Program was saved with successfully</value>
+  </data>
   <data name="reactionTest" xml:space="preserve">
     <value>ReactionTest</value>
   </data>
   <data name="reallyExclude" xml:space="preserve">
     <value>Do you really want to delete</value>
+  </data>
+  <data name="selectTraining" xml:space="preserve">
+    <value>Select a training program!</value>
   </data>
   <data name="stroopTest" xml:space="preserve">
     <value>StroopTest</value>

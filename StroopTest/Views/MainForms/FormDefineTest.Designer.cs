@@ -48,40 +48,27 @@
             // 
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(12, 156);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(100, 28);
-            this.cancelButton.TabIndex = 23;
-            this.cancelButton.Text = "cancelar";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // okButton
             // 
-            this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.okButton.Location = new System.Drawing.Point(300, 156);
-            this.okButton.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.okButton, "okButton");
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(100, 28);
-            this.okButton.TabIndex = 22;
-            this.okButton.Text = "ok";
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
-            "padrao"});
+            resources.GetString("comboBox1.AutoCompleteCustomSource")});
             this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 121);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(388, 24);
-            this.comboBox1.TabIndex = 21;
             this.comboBox1.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox1_Validating);
             this.comboBox1.Validated += new System.EventHandler(this.comboBox1_Validated);
             // 
@@ -90,64 +77,42 @@
             this.panel1.Controls.Add(this.experimentRadioButon);
             this.panel1.Controls.Add(this.reactionButton);
             this.panel1.Controls.Add(this.stroopButton);
-            this.panel1.Location = new System.Drawing.Point(12, 39);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(407, 28);
-            this.panel1.TabIndex = 24;
             // 
             // experimentRadioButon
             // 
-            this.experimentRadioButon.AutoSize = true;
-            this.experimentRadioButon.Location = new System.Drawing.Point(297, 4);
+            resources.ApplyResources(this.experimentRadioButon, "experimentRadioButon");
             this.experimentRadioButon.Name = "experimentRadioButon";
-            this.experimentRadioButon.Size = new System.Drawing.Size(107, 21);
-            this.experimentRadioButon.TabIndex = 2;
             this.experimentRadioButon.TabStop = true;
-            this.experimentRadioButon.Text = "Experimento";
             this.experimentRadioButon.UseVisualStyleBackColor = true;
             this.experimentRadioButon.Click += new System.EventHandler(this.experimentRadioButon_Click);
             // 
             // reactionButton
             // 
-            this.reactionButton.AutoSize = true;
-            this.reactionButton.Location = new System.Drawing.Point(146, 4);
+            resources.ApplyResources(this.reactionButton, "reactionButton");
             this.reactionButton.Name = "reactionButton";
-            this.reactionButton.Size = new System.Drawing.Size(113, 21);
-            this.reactionButton.TabIndex = 1;
-            this.reactionButton.Text = "ReactionTest";
             this.reactionButton.UseVisualStyleBackColor = true;
             this.reactionButton.Click += new System.EventHandler(this.reactionButton_Click);
             // 
             // stroopButton
             // 
-            this.stroopButton.AutoSize = true;
+            resources.ApplyResources(this.stroopButton, "stroopButton");
             this.stroopButton.Checked = true;
-            this.stroopButton.Location = new System.Drawing.Point(3, 3);
             this.stroopButton.Name = "stroopButton";
-            this.stroopButton.Size = new System.Drawing.Size(99, 21);
-            this.stroopButton.TabIndex = 0;
             this.stroopButton.TabStop = true;
-            this.stroopButton.Text = "StroopTest";
             this.stroopButton.UseVisualStyleBackColor = true;
             this.stroopButton.Click += new System.EventHandler(this.stroopButton_Click);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 9);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 17);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Tipo";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 93);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 17);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Nome";
             // 
             // errorProvider1
             // 
@@ -156,20 +121,16 @@
             // 
             // FormDefineTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(431, 209);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.comboBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDefineTest";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Definir Execução";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

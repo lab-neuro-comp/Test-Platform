@@ -429,7 +429,7 @@ namespace TestPlatform
             }
         }
 
-        private void buttonStroop_CheckedChanged(object sender, EventArgs e)
+        private void buttonStroop_Click(object sender, EventArgs e)
         {
             
             if (buttonStroop.Checked)

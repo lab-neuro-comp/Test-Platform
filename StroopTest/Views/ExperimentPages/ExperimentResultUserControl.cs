@@ -24,12 +24,14 @@ namespace TestPlatform.Views.ExperimentPages
             string[] headers = ExperimentTest.HeaderOutputFileText.Split('\t');
             foreach (var columnName in headers)
             {
-                dataGridView1.Columns.Add(columnName, columnName); // Configura Cabeçalho na tabela
+                // Configuring headers name
+                dataGridView1.Columns.Add(columnName, columnName); 
             }
 
-            if (Directory.Exists(path)) // Preenche comboBox com arquivos do tipo .txt no diretório dado
+            if (Directory.Exists(path)) 
             {
                 filePaths = Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
+                // Filling combobox with experiment results
                 for (int i = 0; i < filePaths.Length; i++)
                 {
                     fileNameBox.Items.Add(Path.GetFileNameWithoutExtension(filePaths[i]));
@@ -37,7 +39,7 @@ namespace TestPlatform.Views.ExperimentPages
             }
             else
             {
-                Console.WriteLine("{0} é um caminho inválido!.", path);
+                throw new Exception("Caminho para os arquivos de dados de experimentos inválido.");
             }
         }
 

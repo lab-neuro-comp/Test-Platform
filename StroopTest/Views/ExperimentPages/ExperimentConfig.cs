@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
+using System.Resources;
 using System.Windows.Forms;
 using TestPlatform.Models;
 
@@ -10,6 +12,9 @@ namespace TestPlatform.Views.ExperimentPages
     {
         ExperimentProgram savingExperiment = new ExperimentProgram();
         string editProgramName;
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
+
         public ExperimentConfig(string programName)
         {
             this.Dock = DockStyle.Fill;
@@ -27,23 +32,29 @@ namespace TestPlatform.Views.ExperimentPages
             savingExperiment.Name = editProgramName;
             experimentNameTextBox.Text = editProgramName;
             savingExperiment.ReadProgramFile();
-            beepingCheckbox.Checked = savingExperiment.IsOrderRandom;
+            randomOrderCheckbox.Checked = savingExperiment.IsOrderRandom;
             intervalTime.Value = savingExperiment.IntervalTime;
-            trainingProgramCheckBox.Checked = savingExperiment.TrainingProgram;
 
             foreach (Program program in savingExperiment.ProgramList)
             {
                 if (program.GetType() == typeof(StroopProgram))
                 {
-                    programDataGridView.Rows.Add(program.ProgramName, "StroopTest");
+                    programDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("stroopTest", currentCulture));
                 }
                 else if (program.GetType() == typeof(ReactionProgram))
                 {
-                    programDataGridView.Rows.Add(program.ProgramName, "ReactionTest");
+                    programDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("reactionTest", currentCulture));
                 }
             }
 
-            if (savingExperiment.InstructionText != null) // lê instrução se houver
+            if (savingExperiment.TrainingProgram)
+            {
+                programDataGridView.Rows[0].Cells[0].Style.BackColor = Color.LightGray;
+                programDataGridView.Rows[0].Cells[1].Style.BackColor = Color.LightGray;
+            }
+
+            // read instructions if there are any
+            if (savingExperiment.InstructionText != null) 
             {
                 instructionsBox.ForeColor = Color.Black;
                 instructionsBox.Text = savingExperiment.InstructionText[0];
@@ -69,7 +80,8 @@ namespace TestPlatform.Views.ExperimentPages
                     /*do nothing*/
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
             return null;
@@ -78,10 +90,10 @@ namespace TestPlatform.Views.ExperimentPages
         private void addProgramButton_Click(object sender, EventArgs e)
         {
             string[] result = defineTest();
-            if(result != null)
+            if (result != null)
             {
                 programDataGridView.Rows.Add(result[1], result[0]);
-                if(result[0] == "StroopTest")
+                if (result[0] == "StroopTest")
                 {
                     savingExperiment.AddStroopProgram(result[1]);
                 }
@@ -92,9 +104,9 @@ namespace TestPlatform.Views.ExperimentPages
 
                 else
                 {
-                    /*do nothin*/
+                    /*do nothing*/
                 }
-    }
+            }
             else
             {
                 /*do nothing*/
@@ -129,7 +141,7 @@ namespace TestPlatform.Views.ExperimentPages
             {
 
                 savingExperiment.Name = experimentNameTextBox.Text;
-                savingExperiment.IsOrderRandom = beepingCheckbox.Checked;
+                savingExperiment.IsOrderRandom = randomOrderCheckbox.Checked;
                 savingExperiment.IntervalTime = Convert.ToInt32(intervalTime.Value);
 
                 if (instructionsBox.Lines.Length > 0) // lê instrução se houver
@@ -144,7 +156,7 @@ namespace TestPlatform.Views.ExperimentPages
                 {
                     savingExperiment.InstructionText = null;
                 }
-                if (trainingProgramCheckBox.Checked)
+                if (programDataGridView.Rows[0].Cells[0].Style.BackColor == Color.LightGray)
                 {
                     savingExperiment.TrainingProgram = true;
                 }
@@ -154,15 +166,15 @@ namespace TestPlatform.Views.ExperimentPages
                 }
                 if (savingExperiment.SaveExperimentFile(Global.experimentTestFilesPath + Global.programFolderName))
                 {
-                    MessageBox.Show("O programa foi salvo com sucesso");
+                    MessageBox.Show(LocRM.GetString("programSaved", currentCulture));
                     this.Parent.Controls.Remove(this);
                 }
             }
             else
             {
-                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+                MessageBox.Show(LocRM.GetString("fieldNotRight", currentCulture));
             }
-            
+
         }
 
 
@@ -176,7 +188,7 @@ namespace TestPlatform.Views.ExperimentPages
                 errorProvider1.SetError(experimentNameTextBox, errorMsg);
             }
         }
-        
+
         private void experimentNameTextBox_Validated(object sender, EventArgs e)
         {
             errorProvider1.SetError(experimentNameTextBox, "");
@@ -186,12 +198,12 @@ namespace TestPlatform.Views.ExperimentPages
         {
             if (pgrName.Length == 0)
             {
-                errorMessage = "O nome do programa deve ser preenchido.";
+                errorMessage = LocRM.GetString("programNotFilled", currentCulture);
                 return false;
             }
             if (!Validations.isAlphanumeric(pgrName))
             {
-                errorMessage = "Nome do programa deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'MeuPrograma'";
+                errorMessage = LocRM.GetString("programNotAlphanumeric", currentCulture);
                 return false;
             }
 
@@ -209,7 +221,7 @@ namespace TestPlatform.Views.ExperimentPages
         {
             if (number == 0)
             {
-                errorMessage = "A lista está \n vazia!";
+                errorMessage = LocRM.GetString("emptyList", currentCulture);
                 return false;
             }
 
@@ -226,6 +238,86 @@ namespace TestPlatform.Views.ExperimentPages
                 e.Cancel = true;
                 labelEmpty.Text = errorMsg;
                 labelEmpty.Visible = true;
+            }
+        }
+
+        private void trainingButton_Click(object sender, EventArgs e)
+        {
+            if (programDataGridView.RowCount > 0 && programDataGridView.SelectedRows[0] != null)
+            {
+                if (programDataGridView.SelectedRows[0].Index == 0 && programDataGridView.Rows[0].Cells[0].Style.BackColor != Color.LightGray)
+                {
+                    changingBackColorFirstRow(Color.LightGray);
+                    changingFontStyleFirstRow(FontStyle.Bold);
+                }
+                else if (programDataGridView.SelectedRows[0].Index == 0 && programDataGridView.Rows[0].Cells[0].Style.BackColor == Color.LightGray)
+                {
+                    changingBackColorFirstRow(Color.White);
+                    changingFontStyleFirstRow(FontStyle.Regular);
+                }
+                else if (programDataGridView.SelectedRows[0].Index != 0)
+                {
+                    if (programDataGridView.Rows[0].Cells[0].Style.BackColor == Color.LightGray)
+                    {
+                        changingBackColorFirstRow(Color.White);
+                        changingFontStyleFirstRow(FontStyle.Regular);
+                    }
+                    // swapping first row and selected row
+                    swappingRows();
+
+                    // marking first row as training
+                    changingBackColorFirstRow(Color.LightGray);
+                    changingFontStyleFirstRow(FontStyle.Bold);
+                }
+            }
+            else
+            {
+                MessageBox.Show(LocRM.GetString("selectTraining", currentCulture));
+            }
+        }
+
+
+        /// <summary>
+        /// swapping first row of programDatagridView with current selected row by user
+        /// </summary>
+        private void swappingRows()
+        {
+            var selectedRow = programDataGridView.SelectedRows[0];
+            int index = programDataGridView.SelectedRows[0].Index;
+            var currentFirsRow = programDataGridView.Rows[0];
+            programDataGridView.Rows.Remove(currentFirsRow);
+            programDataGridView.Rows.Remove(selectedRow);
+            programDataGridView.Rows.Insert(0, selectedRow);
+            programDataGridView.Rows.Insert(index, currentFirsRow);
+        }
+
+        private void changingBackColorFirstRow(Color color)
+        {
+            programDataGridView.Rows[0].Cells[0].Style.BackColor = color;
+            programDataGridView.Rows[0].Cells[1].Style.BackColor = color;
+        }
+
+        private void changingFontStyleFirstRow(FontStyle style)
+        {
+            programDataGridView.Rows[0].Cells[0].Style.Font = new Font(programDataGridView.Font, style);
+            programDataGridView.Rows[0].Cells[1].Style.Font = new Font(programDataGridView.Font, style);
+        }
+
+        private void randomOrderCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (randomOrderCheckbox.Checked)
+            {
+                trainingButton.Enabled = true;
+            }
+            else
+            {
+                if (programDataGridView.RowCount != 0 &&  programDataGridView.Rows[0].Cells[0].Style.BackColor == Color.LightGray)
+                {
+                    changingBackColorFirstRow(Color.White);
+                    changingFontStyleFirstRow(FontStyle.Regular);
+                }
+                trainingButton.Enabled = false;
+
             }
         }
     }

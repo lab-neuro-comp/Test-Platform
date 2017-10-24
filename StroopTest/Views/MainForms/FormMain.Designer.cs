@@ -562,7 +562,7 @@
             this.buttonStroop.Image = global::TestPlatform.Properties.Resources.icon_StroopTest;
             this.buttonStroop.Name = "buttonStroop";
             this.buttonStroop.UseVisualStyleBackColor = true;
-            this.buttonStroop.Click += new System.EventHandler(this.buttonStroop_CheckedChanged);
+            this.buttonStroop.Click += new System.EventHandler(this.buttonStroop_Click);
             // 
             // sideBarPanel
             // 

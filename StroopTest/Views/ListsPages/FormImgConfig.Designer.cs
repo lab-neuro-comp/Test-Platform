@@ -66,8 +66,8 @@
             // 
             // pictureBox
             // 
-            resources.ApplyResources(this.pictureBox, "pictureBox");
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.pictureBox, "pictureBox");
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.TabStop = false;
             // 
@@ -99,13 +99,13 @@
             this.imgPathDataGridView.AllowUserToAddRows = false;
             this.imgPathDataGridView.AllowUserToOrderColumns = true;
             this.imgPathDataGridView.AllowUserToResizeRows = false;
-            resources.ApplyResources(this.imgPathDataGridView, "imgPathDataGridView");
             this.imgPathDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.imgPathDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.imgPathDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fileNameColumn,
             this.thumbnailColumn,
             this.filePathColumn});
+            resources.ApplyResources(this.imgPathDataGridView, "imgPathDataGridView");
             this.imgPathDataGridView.MultiSelect = false;
             this.imgPathDataGridView.Name = "imgPathDataGridView";
             this.imgPathDataGridView.ReadOnly = true;

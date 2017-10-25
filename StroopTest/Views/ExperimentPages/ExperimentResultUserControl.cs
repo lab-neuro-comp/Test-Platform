@@ -9,12 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using TestPlatform.Models;
+using System.Resources;
+using System.Globalization;
 
 namespace TestPlatform.Views.ExperimentPages
 {
     public partial class ExperimentResultUserControl : UserControl
     {
         private string path = Global.experimentTestFilesPath + Global.resultsFolderName;
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
+
         public ExperimentResultUserControl()
         {
             InitializeComponent();
@@ -39,7 +44,7 @@ namespace TestPlatform.Views.ExperimentPages
             }
             else
             {
-                throw new Exception("Caminho para os arquivos de dados de experimentos inválido.");
+                throw new Exception(LocRM.GetString("experimentFiles", currentCulture));
             }
         }
 
@@ -56,7 +61,7 @@ namespace TestPlatform.Views.ExperimentPages
             {
                 if (fileNameBox.SelectedIndex == -1)
                 {
-                    throw new Exception("Selecione um arquivo de dados!");
+                    throw new Exception(LocRM.GetString("selectDataFile", currentCulture));
                 }
 
                 lines = Program.readDataFile(path + "/" + fileNameBox.SelectedItem.ToString() + ".txt");
@@ -70,7 +75,7 @@ namespace TestPlatform.Views.ExperimentPages
                             tw.WriteLine(lines[i]); // escreve linhas no novo arquivo
                         }
                         tw.Close();
-                        MessageBox.Show("Arquivo exportado com sucesso!");
+                        MessageBox.Show(LocRM.GetString("exportedFile", currentCulture));
                     }
                 }
             }

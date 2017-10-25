@@ -156,9 +156,6 @@
   <data name="&gt;&gt;btnOpen.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="pictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
   <data name="pictureBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>236, 57</value>
   </data>
@@ -222,11 +219,11 @@
   <data name="&gt;&gt;deleteItemButton.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
   <data name="cancelButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cancelButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
   </data>
   <data name="cancelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -258,11 +255,11 @@
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="saveButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
   <data name="saveButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="saveButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
   </data>
   <data name="saveButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -293,9 +290,6 @@
   </data>
   <data name="&gt;&gt;saveButton.ZOrder" xml:space="preserve">
     <value>13</value>
-  </data>
-  <data name="imgPathDataGridView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
   </data>
   <metadata name="fileNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -684,8 +678,8 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
   </data>
-  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
   </data>
   <data name="labelEmpty.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
@@ -704,7 +698,7 @@
   </data>
   <data name="labelEmpty.Text" xml:space="preserve">
     <value>labelEmpty</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;labelEmpty.Name" xml:space="preserve">
     <value>labelEmpty</value>
   </data>
@@ -724,7 +718,7 @@
     <value>594, 666</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>725, 1308</value>
+    <value>704, 750</value>
   </data>
   <data name="&gt;&gt;fileNameColumn.Name" xml:space="preserve">
     <value>fileNameColumn</value>

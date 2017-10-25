@@ -100,12 +100,12 @@
             this.audioPathDataGridView.AllowUserToAddRows = false;
             this.audioPathDataGridView.AllowUserToOrderColumns = true;
             this.audioPathDataGridView.AllowUserToResizeRows = false;
-            resources.ApplyResources(this.audioPathDataGridView, "audioPathDataGridView");
             this.audioPathDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.audioPathDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.audioPathDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fileNameColumn,
             this.filePathColumn});
+            resources.ApplyResources(this.audioPathDataGridView, "audioPathDataGridView");
             this.audioPathDataGridView.MultiSelect = false;
             this.audioPathDataGridView.Name = "audioPathDataGridView";
             this.audioPathDataGridView.ReadOnly = true;
@@ -183,9 +183,9 @@
             // 
             // helpButton
             // 
-            resources.ApplyResources(this.helpButton, "helpButton");
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
+            resources.ApplyResources(this.helpButton, "helpButton");
             this.helpButton.Name = "helpButton";
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);

@@ -6,6 +6,8 @@ using TestPlatform.Views;
 using TestPlatform.Controllers;
 using System.IO;
 using System.Drawing;
+using System.Resources;
+using System.Globalization;
 
 namespace TestPlatform
 {
@@ -20,6 +22,8 @@ namespace TestPlatform
         private TimeSpan currentElapsedTime = TimeSpan.Zero;
         private bool timerRunning = false;
         private bool recording = false;
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
 
         public FormShowAudio()
         {
@@ -36,8 +40,8 @@ namespace TestPlatform
 
         private void loadingAudioFilesToDataGrid()
         {
-
-            if (Directory.Exists(path)) // Preenche dgv com arquivos do tipo .wav no diretório dado
+            // Fills data grid view with .wav files from data directory
+            if (Directory.Exists(path)) 
             {
                 audioPathDataGridView.Rows.Clear();
                 audioPathDataGridView.Refresh();
@@ -124,7 +128,7 @@ namespace TestPlatform
                 timerRunning = false;
                 currentElapsedTime = TimeSpan.Zero;
                 audioRecorder.SaveRecording();
-                MessageBox.Show("Aúdio gravado com sucesso!");
+                MessageBox.Show(LocRM.GetString("audioRecordSuccess", currentCulture));
                 loadingAudioFilesToDataGrid();
             }            
             
@@ -187,7 +191,7 @@ namespace TestPlatform
 
         private void recordButton1_Click(object sender, EventArgs e)
         {
-            if(selectedDirectory.Text != "Nenhum")
+            if(selectedDirectory.Text != LocRM.GetString("none", currentCulture))
             {
                 if(recording != true)
                 {
@@ -207,7 +211,7 @@ namespace TestPlatform
             }
             else
             {
-                DialogResult dr = MessageBox.Show("É necessário selecionar o local do arquivo antes de gravar.", "", MessageBoxButtons.OK);
+                DialogResult dr = MessageBox.Show(LocRM.GetString("selectPlace", currentCulture), "", MessageBoxButtons.OK);
             }
             
         }

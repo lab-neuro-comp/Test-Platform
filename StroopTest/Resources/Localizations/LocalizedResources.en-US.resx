@@ -117,11 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="audioList" xml:space="preserve">
+    <value>Audio Lists:</value>
+  </data>
+  <data name="audioRecordSuccess" xml:space="preserve">
+    <value>Successfully recorded audio.</value>
+  </data>
+  <data name="colors" xml:space="preserve">
+    <value>Colors</value>
+  </data>
+  <data name="colorsList" xml:space="preserve">
+    <value>Colors List</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>The TestPlatform is a platform of computerized neuropsychological tests for the evaluation of executive functions. The product has the proposal to offer solutions innovating technologically in a practical and dynamic way. Intended for researchers, students and ordinary users. Developers: hugohon - Hugo Honda Ferreira and fabiolamfleury - Fabíola Fleury; 2017</value>
+  </data>
   <data name="editProgram" xml:space="preserve">
     <value>Edit Program: </value>
   </data>
+  <data name="emptyBox" xml:space="preserve">
+    <value>Text field can't be empty.</value>
+  </data>
   <data name="emptyList" xml:space="preserve">
     <value>The list is empty!</value>
+  </data>
+  <data name="emptyListName" xml:space="preserve">
+    <value>The list name must be filled in.</value>
   </data>
   <data name="exclude" xml:space="preserve">
     <value>Delete: </value>
@@ -132,17 +153,47 @@
   <data name="experiment" xml:space="preserve">
     <value>Experiment</value>
   </data>
+  <data name="experimentFiles" xml:space="preserve">
+    <value>Path for experiments data is invalid.</value>
+  </data>
+  <data name="exportedFile" xml:space="preserve">
+    <value>File exported successfully!</value>
+  </data>
   <data name="fieldNotRight" xml:space="preserve">
     <value>Some field was not filled in correctly.</value>
   </data>
+  <data name="imageFileError" xml:space="preserve">
+    <value>Couldn't show image. You don't have permission to access this file or it can be corrupted.\n</value>
+  </data>
+  <data name="imageList" xml:space="preserve">
+    <value>Image Lists:</value>
+  </data>
   <data name="instructionBoxText" xml:space="preserve">
     <value>The participant must be clearly and uniformly oriented to test execution accordingly to participant group and experiment team.&lt;br&gt;&lt;br&gt;For classic Stroop Test basic instructions are: &lt;br&gt;'In this task you must speak the name of the color in which the words are painted.'&lt;br&gt;or&lt;br&gt;'In this task you should read the word displayed on the screen.'</value>
+  </data>
+  <data name="invalidPath" xml:space="preserve">
+    <value>is an invalid path.</value>
+  </data>
+  <data name="list" xml:space="preserve">
+    <value>The list '</value>
+  </data>
+  <data name="listExists" xml:space="preserve">
+    <value>A list with this name already exists. \n Do you want to overwrite it?</value>
+  </data>
+  <data name="listNotSaved" xml:space="preserve">
+    <value>The list won't be saved.</value>
+  </data>
+  <data name="listSaveSuccess" xml:space="preserve">
+    <value>' was save successfully</value>
   </data>
   <data name="markLengthError" xml:space="preserve">
     <value>Field mark must be filled.</value>
   </data>
   <data name="markLengthError2" xml:space="preserve">
     <value>A marca deve ser composta apenas de um caracter</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>None</value>
   </data>
   <data name="notFilledProperlyMessage" xml:space="preserve">
     <value>Some field was not filled in correctly.</value>
@@ -168,10 +219,34 @@
   <data name="reallyExclude" xml:space="preserve">
     <value>Do you really want to delete</value>
   </data>
+  <data name="selectDataFile" xml:space="preserve">
+    <value>Select a data file!</value>
+  </data>
+  <data name="selectPlace" xml:space="preserve">
+    <value>Select file destination before recording</value>
+  </data>
   <data name="selectTraining" xml:space="preserve">
     <value>Select a training program!</value>
   </data>
   <data name="stroopTest" xml:space="preserve">
     <value>StroopTest</value>
+  </data>
+  <data name="version" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+  <data name="wishToSave" xml:space="preserve">
+    <value>Do you want to save the file</value>
+  </data>
+  <data name="wordColorList" xml:space="preserve">
+    <value>Words with Colors List</value>
+  </data>
+  <data name="wordList" xml:space="preserve">
+    <value>Word Lists:</value>
+  </data>
+  <data name="words" xml:space="preserve">
+    <value>Words</value>
+  </data>
+  <data name="wordsList" xml:space="preserve">
+    <value>Words List</value>
   </data>
 </root>

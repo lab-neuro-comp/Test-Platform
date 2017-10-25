@@ -5,6 +5,8 @@ using TestPlatform.Models;
 using TestPlatform.Views;
 using TestPlatform.Controllers;
 using System.Drawing;
+using System.Resources;
+using System.Globalization;
 
 namespace TestPlatform
 {
@@ -12,6 +14,8 @@ namespace TestPlatform
     {
         private SoundPlayer player = new SoundPlayer();
         private string instructionsText = HelpData.AudioConfigInstructions;
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
 
         public FormAudioConfig(bool editList)
         {
@@ -28,7 +32,7 @@ namespace TestPlatform
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine("Listas de Audio: ", Global.testFilesPath  + Global.listFolderName, "lst", "_audio", true);
+                FormDefine defineFilePath = new FormDefine(LocRM.GetString("audioList", currentCulture), Global.testFilesPath  + Global.listFolderName, "lst", "_audio", true);
                 var result = defineFilePath.ShowDialog();
 
                 if (result == DialogResult.OK)
@@ -113,7 +117,7 @@ namespace TestPlatform
             {
                 if (!this.ValidateChildren(ValidationConstraints.Enabled))
                 {
-                    MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+                    MessageBox.Show(LocRM.GetString("fieldNotRight", currentCulture));
                 }                   
                 else
                 {
@@ -192,7 +196,7 @@ namespace TestPlatform
         {
             if (Validations.isEmpty(listName))
             {
-                errorMessage = "O nome da lista deve ser preenchido.";
+                errorMessage = LocRM.GetString("emptyListName", currentCulture);
                 return false;
             }
             errorMessage = "";
@@ -208,7 +212,7 @@ namespace TestPlatform
         {
             if (number == 0)
             {
-                errorMessage = "A lista não possui \n nenhum item!";
+                errorMessage = LocRM.GetString("emptyList", currentCulture);
                 return false;
             }
 

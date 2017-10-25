@@ -4,7 +4,9 @@
  */
 
 using System;
+using System.Globalization;
 using System.IO;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace TestPlatform
@@ -15,7 +17,9 @@ namespace TestPlatform
         public string[] filePaths;
         private string type;
         private string usrName;
-        
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
+
         public FormDefine(string formTitle, string dataFolderPath, string fileType, string itemType, bool sufix)
         {
             InitializeComponent();
@@ -54,7 +58,7 @@ namespace TestPlatform
                 }
                 else
                 {
-                    Console.WriteLine("{0} é um caminho inválido!.", dataFolderPath);
+                    MessageBox.Show("{0}" + LocRM.GetString("invalidPath", currentCulture), dataFolderPath);
                 }
             }
             else
@@ -92,7 +96,7 @@ namespace TestPlatform
                     }
                     else
                     {
-                        throw new Exception("A caixa de texto não pode estar vazia!");
+                        MessageBox.Show(LocRM.GetString("emptyBox", currentCulture));
                     }
                 }
                 this.DialogResult = DialogResult.OK;

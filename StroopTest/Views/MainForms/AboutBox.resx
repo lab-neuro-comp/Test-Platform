@@ -182,7 +182,7 @@
   </data>
   <data name="labelProductName.Text" xml:space="preserve">
     <value>Product Name</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="labelProductName.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -218,7 +218,7 @@
   </data>
   <data name="labelVersion.Text" xml:space="preserve">
     <value>Version</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="labelVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -254,7 +254,7 @@
   </data>
   <data name="labelCopyright.Text" xml:space="preserve">
     <value>Copyright</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="labelCopyright.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -290,7 +290,7 @@
   </data>
   <data name="labelCompanyName.Text" xml:space="preserve">
     <value>Company Name</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="labelCompanyName.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -350,7 +350,7 @@
   </data>
   <data name="textBoxDescription.Text" xml:space="preserve">
     <value>Description</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;textBoxDescription.Name" xml:space="preserve">
     <value>textBoxDescription</value>
   </data>

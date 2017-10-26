@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Resources;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -45,6 +47,8 @@ namespace TestPlatform.Views
         private int currentPosition;
         private bool currentBeep = false;
         private int[,] positions;
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
 
         public FormReactExposition(string prgName, string participantName, char mark)
         {
@@ -92,8 +96,8 @@ namespace TestPlatform.Views
             {
                 if (!executingTest.ProgramInUse.Exists(path))
                 {
-                    throw new Exception("Arquivo programa: " + executingTest.ProgramInUse.ProgramName + ".prg" +
-                                    "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/"));
+                    throw new Exception(LocRM.GetString("file", currentCulture) + executingTest.ProgramInUse.ProgramName + ".prg" +
+                                    LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(path + "/prg/"));
                 }
                 else if (executingTest.ProgramInUse.NeedsEdition)
                 {

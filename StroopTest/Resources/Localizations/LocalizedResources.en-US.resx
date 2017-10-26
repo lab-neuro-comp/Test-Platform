@@ -162,6 +162,9 @@
   <data name="fieldNotRight" xml:space="preserve">
     <value>Some field was not filled in correctly.</value>
   </data>
+  <data name="file" xml:space="preserve">
+    <value>File</value>
+  </data>
   <data name="imageFileError" xml:space="preserve">
     <value>Couldn't show image. You don't have permission to access this file or it can be corrupted.\n</value>
   </data>
@@ -197,6 +200,9 @@
   </data>
   <data name="notFilledProperlyMessage" xml:space="preserve">
     <value>Some field was not filled in correctly.</value>
+  </data>
+  <data name="notFoundIn" xml:space="preserve">
+    <value>\nwasn't found in location:\n</value>
   </data>
   <data name="participantNameAlphanumericError" xml:space="preserve">
     <value>Nome do participante deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'LuisAugusto'"</value>

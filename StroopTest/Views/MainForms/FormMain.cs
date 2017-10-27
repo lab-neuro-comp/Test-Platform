@@ -20,6 +20,7 @@ namespace TestPlatform
     using System.ComponentModel;
     using System.Linq;
     using Views.MainForms;
+    using System.IO.Compression;
 
     public partial class FormMain : Form
     {
@@ -784,8 +785,63 @@ namespace TestPlatform
 
         private void exportButton_Click(object sender, EventArgs e)
         {
-            ExportUserControl exportView = new ExportUserControl();
-            this._contentPanel.Controls.Add(exportView);
+            if (exportButton.Checked)
+            {
+                ExportUserControl exportView = new ExportUserControl();
+                this._contentPanel.Controls.Add(exportView);
+            }
+            
+        }
+
+        private void importButton_Click(object sender, EventArgs e)
+        {
+            if (importButton.Checked)
+            {
+                try
+                {
+                    OpenFileDialog openFileDialog = new OpenFileDialog();
+                    openFileDialog.Filter = "ZIP|*.zip";
+
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string importDirectory = Global.testFilesPath + "/import";
+                        ZipFile.ExtractToDirectory(openFileDialog.FileName, importDirectory);
+                        importFiles(importDirectory + "/StroopProgram/", Global.stroopTestFilesPath + Global.programFolderName);
+                        importFiles(importDirectory + "/ReactionProgram/", Global.reactionTestFilesPath + Global.programFolderName);
+                        importFiles(importDirectory + "/ExperimentProgram/", Global.experimentTestFilesPath + Global.programFolderName);
+                        importFiles(importDirectory + "/StringLists/", Global.testFilesPath + Global.listFolderName);
+                        importListFiles(importDirectory + "/FileLists");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void importListFiles(string directory)
+        {
+            //move to images directory
+            string imageDirectory = Global.testFilesPath + "/list_files";
+            Directory.Move(directory, imageDirectory);
+            string[] directories = Directory.GetDirectories(imageDirectory);
+            foreach(string list in directories)
+            {
+                string[] listConfig = list.Split('_');
+                string[] content = Directory.GetFiles(list);
+                List<string> contentList = new List<string>(content);
+                StrList newlist = new StrList(contentList ,listConfig[0], "_" + listConfig[1]);
+                newlist.save();
+            }
+        }
+
+        private void importFiles(string currentDirectory, string targetDirectory)
+        {
+            foreach (var file in Directory.GetFiles(currentDirectory))
+            {
+                File.Copy(file, Path.Combine(targetDirectory, Path.GetFileName(file)));
+            }
         }
     }
     

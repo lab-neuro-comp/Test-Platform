@@ -212,12 +212,14 @@ namespace TestPlatform.Views.MainForms
             foreach (string content in filePaths)
             {
                 string fileName = Path.GetFileName(content);
-                if (File.Exists(content))
+                if (File.Exists(fileName))
                 {
-                    Console.WriteLine("EXISTE");
+                    System.IO.File.Copy(Path.GetFullPath(content), listDestination + fileName, true);
                 }
-                Console.WriteLine(Path.GetFullPath(content));
-                System.IO.File.Copy(Path.GetFullPath(content), listDestination + fileName, true);
+                else
+                {
+                    MessageBox.Show("Não foi possível encontrar o arquivo no caminho: " + fileName);
+                }
             }
             
         }

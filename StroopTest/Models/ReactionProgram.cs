@@ -9,7 +9,7 @@ namespace TestPlatform.Models
 {
     class ReactionProgram : Program
     {
-        private static String defaultProgramFileText = "padrao 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 Formas false false + #FF0000 True square, False 4 Espaço false";
+        private static String defaultProgramFileText = "padrao 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 Espaço false";
         private static String[] defaultInstructionText = { "Serão apresentados quadrados de forma aleatória. ",
                                                     "Aperte a barra de espaço quando ver quadrado",
                                                     "A tarefa vai começar agora"};
@@ -48,7 +48,7 @@ namespace TestPlatform.Models
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
                                 int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
-                                string stimuluShape, string expoType, bool beepRandom, int numberPositions,
+                                string stimuluShape, bool beepRandom, int numberPositions,
                                 string responseType)
         {
             // Program properties
@@ -78,7 +78,7 @@ namespace TestPlatform.Models
             this.setWordListFile("false");
             this.setImageListFile("false");
             this.expositionRandom = false;
-            this.expositionType = expoType; // "Formas"
+            this.expositionType =  "shapes";
 
         }
 
@@ -118,7 +118,7 @@ namespace TestPlatform.Models
             this.setColorListFile("false");
             this.setWordListFile("false");
             this.setImageListFile(imageList);
-            this.expositionType = "Imagem"; 
+            this.expositionType = "images"; 
 
         }
 

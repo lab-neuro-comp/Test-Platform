@@ -130,8 +130,8 @@ namespace TestPlatform.Models
 
         public static bool isExpoReactValid(string value)
         {
-            if (value == "Formas" || value == "Palavra" || value == "Imagem e Palavra" || value == "Imagem" ||
-                value == "Palavra com Aúdio" || value == "Imagem com Aúdio")
+            if (value == "shapes" || value == "words" || value == "imageAndWord" || value == "images" ||
+                value == "wordWithAudio" || value == "imageWithAudio")
                 return true;
             else
                 return false;

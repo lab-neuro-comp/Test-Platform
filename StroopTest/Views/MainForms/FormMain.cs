@@ -19,6 +19,7 @@ namespace TestPlatform
     using System.Globalization;
     using System.ComponentModel;
     using System.Linq;
+    using Views.MainForms;
 
     public partial class FormMain : Form
     {
@@ -780,6 +781,12 @@ namespace TestPlatform
                 }
             }
         }
+
+        private void exportButton_Click(object sender, EventArgs e)
+        {
+            ExportUserControl exportView = new ExportUserControl();
+            this._contentPanel.Controls.Add(exportView);
         }
+    }
     
 }

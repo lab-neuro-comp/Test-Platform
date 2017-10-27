@@ -84,7 +84,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuPanel = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.exportButton = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.resultButton = new System.Windows.Forms.RadioButton();
             this.experimentButton = new System.Windows.Forms.RadioButton();
@@ -491,7 +491,7 @@
             // 
             // menuPanel
             // 
-            this.menuPanel.Controls.Add(this.radioButton2);
+            this.menuPanel.Controls.Add(this.exportButton);
             this.menuPanel.Controls.Add(this.radioButton1);
             this.menuPanel.Controls.Add(this.resultButton);
             this.menuPanel.Controls.Add(this.experimentButton);
@@ -502,13 +502,14 @@
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Click += new System.EventHandler(this.menuPanel_Click);
             // 
-            // radioButton2
+            // exportButton
             // 
-            resources.ApplyResources(this.radioButton2, "radioButton2");
-            this.radioButton2.FlatAppearance.BorderSize = 0;
-            this.radioButton2.Image = global::TestPlatform.Properties.Resources.icon_export;
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.exportButton, "exportButton");
+            this.exportButton.FlatAppearance.BorderSize = 0;
+            this.exportButton.Image = global::TestPlatform.Properties.Resources.icon_export;
+            this.exportButton.Name = "exportButton";
+            this.exportButton.UseVisualStyleBackColor = true;
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
             // radioButton1
             // 
@@ -700,7 +701,7 @@
         private System.Windows.Forms.Button selectButton;
         private System.Windows.Forms.Label executingTypeLabel;
         private System.Windows.Forms.Panel menuPanel;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton exportButton;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton resultButton;
         private System.Windows.Forms.RadioButton experimentButton;

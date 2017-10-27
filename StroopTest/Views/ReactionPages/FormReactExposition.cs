@@ -342,22 +342,22 @@ namespace TestPlatform.Views
 
             switch (executingTest.ProgramInUse.ExpositionType)
             {
-                case "Formas":
+                case "shapes":
                     drawShape();
                     break;
-                case "Palavra":
+                case "words":
                     //  wordExposition();
                     break;
-                case "Imagem":
+                case "images":
                     drawImage();
                     break;
-                case "Imagem e Palavra":
+                case "imageAndWord":
                     //  imageWordExposition();
                     break;
-                case "Palavra com Áudio":
+                case "wordWithAudio":
                     // wordAudioExposition();
                     break;
-                case "Imagem com Áudio":
+                case "imageWithAudio":
                     // imageAudioExposition();
                 default:
                     throw new Exception("Tipo de Exposição: " + executingTest.ProgramInUse.ExpositionType + " inválido!");

@@ -149,22 +149,22 @@ namespace TestPlatform.Views
 
             switch (editProgram.ExpositionType)
             {
-                case "Formas":
+                case "shapes":
                     chooseExpoType.SelectedIndex = 0;
                     break;
-                case "Palavra":
+                case "words":
                     chooseExpoType.SelectedIndex = 1;
                     break;
-                case "Imagem":
+                case "images":
                     chooseExpoType.SelectedIndex = 2;
                     break;
-                case "Imagem e Palavra":
+                case "imageAndWord":
                     chooseExpoType.SelectedIndex = 3;
                     break;
-                case "Palavra com Áudio":
+                case "wordWithAudio":
                     chooseExpoType.SelectedIndex = 4;
                     break;
-                case "Imagem com Áudio":
+                case "imageWithAudio":
                     chooseExpoType.SelectedIndex = 5;
                     break;
                 default:
@@ -300,6 +300,27 @@ namespace TestPlatform.Views
             }
         }
 
+        private string typeValue()
+        {
+            switch (chooseExpoType.SelectedIndex)
+            {
+                case 0:
+                   return "shapes";
+                case 1:
+                    return "words";
+                case 2:
+                    return "images";
+                case 3:
+                    return "imageAndWord";
+                case 4:
+                    return "wordWithAudio";
+                case 5:
+                    return "imageWithAudio";
+                default:
+                    throw new Exception("Tipo de Exposição inválido!");
+            }
+        }
+
 
         private string stimulusColorCheck()
         {
@@ -322,7 +343,7 @@ namespace TestPlatform.Views
             ReactionProgram newProgram = new ReactionProgram();
             switch (chooseExpoType.SelectedIndex)
             {
-                // Program type "Formas"
+                // Program type "shapes"
                 case 0:
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
                                                 Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
@@ -330,16 +351,15 @@ namespace TestPlatform.Views
                                                 Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked,
                                                 Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
                                                 fixPointValue(), bgColorButton.Text, fixPointColor(),
-                                                rndIntervalCheck.Checked, shapeValue(), chooseExpoType.Text,
-                                                randomBeepCheck.Checked, Convert.ToInt32(positionsBox.Text
-                                                ), responseTypeBox.Text);
+                                                rndIntervalCheck.Checked, shapeValue(), randomBeepCheck.Checked, 
+                                                Convert.ToInt32(positionsBox.Text), responseTypeBox.Text);
                     break;
-                // Program type "Palavra"
+                // Program type "words"
                 case 1:
-                    // TODO: Add ReactionProgram constructor to "Palavra" type here
+                    // TODO: Add ReactionProgram constructor to "words" type here
                     break;
                 
-                // Program type "Imagem"
+                // Program type "images"
                 case 2:
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value), 
                                                      Convert.ToInt32(intervalTime.Value), Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
@@ -347,22 +367,22 @@ namespace TestPlatform.Views
                                                      Convert.ToInt32(positionsBox.Text), responseTypeBox.Text, isRandomExposition.Checked);
                     break;
                 
-                // Program type "Imagem e Palavra"
+                // Program type "imageAndWord"
                 case 3:
-                    // TODO: Add ReactionProgram constructor to "Imagem e Palavra" type here
+                    // TODO: Add ReactionProgram constructor to "imageAndWord" type here
                     break;
                 
-                // Program type "Palavra com Aúdio"
+                // Program type "wordWithAudio"
                 case 4:
-                    // TODO: Add ReactionProgram constructor to "Palavra com aúdio" type here
+                    // TODO: Add ReactionProgram constructor to "wordWithAudio" type here
                     break;
                 
-                // Program type "Imagem com Aúdio"
+                // Program type "imageWithAudio"
                 case 5:
-                    // TODO: Add ReactionProgram constructor to "Imagem com aúdio" type here
+                    // TODO: Add ReactionProgram constructor to "imageWithAudio" type here
                     break;
                 
-                // invalid type aws choosen
+                // invalid type was choosen
                 default:
                     throw new Exception("O tipo de programa entrado é invalido!");
             }

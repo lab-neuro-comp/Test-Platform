@@ -23,8 +23,8 @@ namespace TestPlatform
         private bool timerRunning = false;
         private bool recording = false;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
-
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+        
         public FormShowAudio()
         {
             this.Dock = DockStyle.Fill;

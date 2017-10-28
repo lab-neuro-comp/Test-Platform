@@ -6,19 +6,24 @@ using System.Drawing;
 using TestPlatform.Controllers;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
+using System.Globalization;
 
 namespace TestPlatform.Views
 {
     public partial class FormTRConfig : UserControl
     {
         private String path = Global.reactionTestFilesPath;
-        private String instructionBoxText = "Escreva cada uma das intruções em linhas separadas.";
+        private String instructionBoxText;
         private String editPrgName = "false";
         private String prgName = "false";
         private String defaultColor = "#400040";
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public FormTRConfig(string prgName)
         {
+            instructionBoxText = LocRM.GetString("instructionBox",currentCulture);
             this.prgName = prgName;
             this.Dock = DockStyle.Fill;
             InitializeComponent();
@@ -101,7 +106,7 @@ namespace TestPlatform.Views
             if (editProgram.BackgroundColor.ToLower() == "false")
             {
                 bgColorPanel.BackColor = Color.White;
-                bgColorButton.Text = "escolher";
+                bgColorButton.Text = LocRM.GetString("choose", currentCulture);
             }
 
             else
@@ -133,7 +138,8 @@ namespace TestPlatform.Views
                 fixPointCircle.Checked = false;
             }
 
-            if (editProgram.InstructionText != null) // lê instrução se houver
+            // reads program instructions to instruction box if there are any
+            if (editProgram.InstructionText != null) 
             {
                 instructionsBox.ForeColor = Color.Black;
                 instructionsBox.Text = editProgram.InstructionText[0];
@@ -168,7 +174,7 @@ namespace TestPlatform.Views
                     chooseExpoType.SelectedIndex = 5;
                     break;
                 default:
-                    throw new Exception("Tipo de Exposição: " + editProgram.ExpositionType + " inválido!");
+                    throw new Exception(LocRM.GetString("expoType", currentCulture) + editProgram.ExpositionType + LocRM.GetString("invalid", currentCulture));
             }
             switch (editProgram.NumberPositions)
             {
@@ -185,7 +191,7 @@ namespace TestPlatform.Views
                     positionsBox.SelectedIndex = 3;
                     break;
                 default:
-                    throw new Exception("Número de posições do estímulo: " + editProgram.NumberPositions + " inválido!");
+                    throw new Exception(LocRM.GetString("positionInvalid", currentCulture) + "(" + editProgram.NumberPositions + ")");
             }       
 
         }
@@ -290,7 +296,7 @@ namespace TestPlatform.Views
 
         private string fixPointColor()
         {
-            if (fixPointColorButton.Text.Equals("escolher"))
+            if (fixPointColorButton.Text.Equals(LocRM.GetString("choose", currentCulture)))
             {
                 return defaultColor;
             }
@@ -317,14 +323,14 @@ namespace TestPlatform.Views
                 case 5:
                     return "imageWithAudio";
                 default:
-                    throw new Exception("Tipo de Exposição inválido!");
+                    throw new Exception(LocRM.GetString("invalidExpoType", currentCulture));
             }
         }
 
 
         private string stimulusColorCheck()
         {
-            if (stimulusColor.Text.Equals("escolher"))
+            if (stimulusColor.Text.Equals(LocRM.GetString("choose", currentCulture)))
             {
                 return defaultColor;
             }
@@ -336,7 +342,7 @@ namespace TestPlatform.Views
 
         private ReactionProgram configureNewProgram()
         {
-            if (bgColorButton.Text.Equals("escolher"))
+            if (bgColorButton.Text.Equals(LocRM.GetString("choose", currentCulture)))
             {
                 bgColorButton.Text = "false";
             }
@@ -384,7 +390,7 @@ namespace TestPlatform.Views
                 
                 // invalid type was choosen
                 default:
-                    throw new Exception("O tipo de programa entrado é invalido!");
+                    throw new Exception(LocRM.GetString("invalidExpoType", currentCulture));
             }
             // read instructions and pass them to the new program created
             string textLines = "";
@@ -412,22 +418,22 @@ namespace TestPlatform.Views
 
                 if (File.Exists(path + Global.programFolderName + prgNameTextBox.Text + ".prg"))
                 {
-                    DialogResult dialogResult = MessageBox.Show("O programa já existe, deseja sobrescrevê-lo?", "", MessageBoxButtons.OKCancel);
+                    DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExists", currentCulture), "", MessageBoxButtons.OKCancel);
                     if (dialogResult == DialogResult.Cancel)
                     {
-                        throw new Exception("O programa não será salvo!");
+                        throw new Exception(LocRM.GetString("programNotSave", currentCulture));
                     }
                 }
                 if (newProgram.saveProgramFile(path + Global.programFolderName, instructionsBox.Text))
                 {
-                    MessageBox.Show("O programa foi salvo com sucesso");
+                    MessageBox.Show(LocRM.GetString("programSave", currentCulture));
                 }
                 this.Parent.Controls.Remove(this);
             }
                 
             else
             {
-                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+                MessageBox.Show(LocRM.GetString("fieldNotRight", currentCulture));
             }
         }
 
@@ -538,12 +544,12 @@ namespace TestPlatform.Views
         {
             if (pgrName.Length == 0)
             {
-                errorMessage = "O nome do programa deve ser preenchido.";
+                errorMessage = LocRM.GetString("programNotFilled", currentCulture);
                 return false;
             }
             if (!Validations.isAlphanumeric(pgrName))
             {
-                errorMessage = "Nome do programa deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'MeuPrograma'";
+                errorMessage = LocRM.GetString("programNotAlphanumeric", currentCulture);
                 return false;
             }
 
@@ -572,7 +578,7 @@ namespace TestPlatform.Views
         {
             if (!Validations.isExpositionTimeValid(expoTime))
             {
-                errorMessage = "O tempo de exposição deve ser maior do que zero.";
+                errorMessage = LocRM.GetString("expoTime", currentCulture);
                 return false;
             }
 
@@ -602,7 +608,7 @@ namespace TestPlatform.Views
         {
             if (!Validations.isIntervalTimeValid(intervalTime))
             {
-                errorMessage = "Tempo de intervalo deve ser maior que zero (em milissegundos)";
+                errorMessage = LocRM.GetString("intervalTime", currentCulture);
                 return false;
             }
 
@@ -625,7 +631,7 @@ namespace TestPlatform.Views
         {
             if (!Validations.isExpositionTimeValid(numExpo))
             {
-                errorMessage = "O número de exposições deve ser maior do que zero.";
+                errorMessage = LocRM.GetString("expoNumber", currentCulture);
                 return false;
             }
 
@@ -666,7 +672,7 @@ namespace TestPlatform.Views
                     isRandomExposition.Enabled = true;
                     break;
                 default:
-                    errorProvider1.SetError(chooseExpoType, "Tipo de exposição ainda não está disponível");
+                    errorProvider1.SetError(chooseExpoType, LocRM.GetString("unavailableExpo", currentCulture));
                     break;
             }
                 
@@ -692,7 +698,7 @@ namespace TestPlatform.Views
         {
             if (Validations.isExpoEnabled(openImgListButton) && !Validations.isLengthValid(text))
             {
-                errorMessage = "Selecione o arquivo de lista de imagem!";
+                errorMessage = LocRM.GetString("selectImage", currentCulture);
                 return false;
             }
 
@@ -714,7 +720,7 @@ namespace TestPlatform.Views
         {
             if (duration <= 0)
             {
-                errorMessage = "O beep deve durar mais do que 0 milissegundos";
+                errorMessage = LocRM.GetString("beepDuration",currentCulture);
                 return false;
             }
 

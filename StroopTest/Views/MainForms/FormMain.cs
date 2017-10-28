@@ -288,7 +288,7 @@ namespace TestPlatform
 
         private void defineTest()
         {
-            FormDefineTest defineTest = new FormDefineTest();
+            FormDefineTest defineTest = new FormDefineTest(CultureInfo.CurrentUICulture);
             try
             {
                 var result = defineTest.ShowDialog();

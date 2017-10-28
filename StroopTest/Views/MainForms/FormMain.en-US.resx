@@ -276,4 +276,10 @@
   <data name="idiomaToolStripMenuItem.Text" xml:space="preserve">
     <value>Language</value>
   </data>
+  <data name="exportButton.Text" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="importButton.Text" xml:space="preserve">
+    <value>Import</value>
+  </data>
 </root>

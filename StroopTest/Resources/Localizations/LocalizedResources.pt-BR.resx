@@ -123,14 +123,38 @@
   <data name="audioRecordSuccess" xml:space="preserve">
     <value>Aúdio gravado com sucesso!</value>
   </data>
+  <data name="beepDuration" xml:space="preserve">
+    <value>O beep deve durar mais do que 0 milissegundos</value>
+  </data>
+  <data name="center" xml:space="preserve">
+    <value>centro</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>escolher</value>
+  </data>
   <data name="colors" xml:space="preserve">
     <value>de Cores</value>
   </data>
   <data name="colorsList" xml:space="preserve">
     <value>Lista de Cores</value>
   </data>
+  <data name="couldntEdit" xml:space="preserve">
+    <value>Edição não pode ser feita </value>
+  </data>
+  <data name="default" xml:space="preserve">
+    <value>padrao</value>
+  </data>
   <data name="description" xml:space="preserve">
     <value>"O TestPlatform é uma plataforma de testes neuropsicológicos computadorizados para avaliação de funções executivas. O produto tem a proposta oferecer soluções inovando tecnologicamente de forma prática e dinâmica. Destinado a pesquisadores, alunos e usuários comuns. Desenvolvedores: hugohon - Hugo Honda Ferreira e fabiolamfleury - Fabíola Fleury; 2017";</value>
+  </data>
+  <data name="down" xml:space="preserve">
+    <value>baixo</value>
+  </data>
+  <data name="down_left" xml:space="preserve">
+    <value>baixo_esquerda</value>
+  </data>
+  <data name="down_right" xml:space="preserve">
+    <value>baixo_direita</value>
   </data>
   <data name="editProgram" xml:space="preserve">
     <value>Editar Programa: </value>
@@ -156,8 +180,17 @@
   <data name="experimentFiles" xml:space="preserve">
     <value>Caminho para os arquivos de dados de experimentos inválido.</value>
   </data>
+  <data name="expoNumber" xml:space="preserve">
+    <value>O número de exposições deve ser maior do que zero.</value>
+  </data>
   <data name="exportedFile" xml:space="preserve">
     <value>Arquivo exportado com sucesso!</value>
+  </data>
+  <data name="expoTime" xml:space="preserve">
+    <value>O tempo de exposição deve ser maior do que zero.</value>
+  </data>
+  <data name="expoType" xml:space="preserve">
+    <value>Tipo de Exposição: </value>
   </data>
   <data name="fieldNotRight" xml:space="preserve">
     <value>Algum campo não foi preenchido de forma correta.</value>
@@ -171,11 +204,26 @@
   <data name="imageList" xml:space="preserve">
     <value>Lista de Imagens: </value>
   </data>
+  <data name="instructionBox" xml:space="preserve">
+    <value>Escreva cada uma das intruções em linhas separadas.</value>
+  </data>
   <data name="instructionBoxText" xml:space="preserve">
     <value>O participante deve ser orientado para execução de forma clara e uniforme entre os experimentares e o grupo de participantes.&lt;br&gt;&lt;br&gt;Para o Stroop clássico as instruções básicas praticadas são:&lt;br&gt;'Nesta tarefa você deve falar o nome da cor em que as palavras estão pintadas.'&lt;br&gt;ou&lt;br&gt;'Nesta tarefa você deve ler a palavra apresentada na tela.'</value>
   </data>
+  <data name="intervalTime" xml:space="preserve">
+    <value>O tempo de intervalo deve ser maior do que zero.</value>
+  </data>
+  <data name="invalid" xml:space="preserve">
+    <value>  inválido</value>
+  </data>
+  <data name="invalidExpoType" xml:space="preserve">
+    <value>Tipo de Exposição inválido!</value>
+  </data>
   <data name="invalidPath" xml:space="preserve">
     <value>é um caminho inválido!</value>
+  </data>
+  <data name="left" xml:space="preserve">
+    <value>esquerda</value>
   </data>
   <data name="list" xml:space="preserve">
     <value>A lista '</value>
@@ -210,11 +258,23 @@
   <data name="participantNameLengthError" xml:space="preserve">
     <value>O nome do participante deve ser preenchido.</value>
   </data>
+  <data name="positionInvalid" xml:space="preserve">
+    <value>Quantidade de posições do estímulo inválidas, deve ser um dos seguintes valores: 1, 2, 4 ou 8.</value>
+  </data>
+  <data name="programExists" xml:space="preserve">
+    <value>O programa já existe, deseja sobrescrevê-lo?</value>
+  </data>
   <data name="programNotAlphanumeric" xml:space="preserve">
     <value>Nome do programa deve ser composto apenas de caracteres alfanuméricos e sem espaços;\nExemplo: 'MeuPrograma'"</value>
   </data>
   <data name="programNotFilled" xml:space="preserve">
     <value>O nome do programa deve ser preenchido.</value>
+  </data>
+  <data name="programNotSave" xml:space="preserve">
+    <value>O programa não será salvo!</value>
+  </data>
+  <data name="programSave" xml:space="preserve">
+    <value>O programa foi salvo com sucesso.</value>
   </data>
   <data name="programSaved" xml:space="preserve">
     <value>O programa foi salvo com sucesso</value>
@@ -225,8 +285,14 @@
   <data name="reallyExclude" xml:space="preserve">
     <value>Deseja realmente excluir </value>
   </data>
+  <data name="right" xml:space="preserve">
+    <value>direita</value>
+  </data>
   <data name="selectDataFile" xml:space="preserve">
     <value>Selecione um arquivo de dados!</value>
+  </data>
+  <data name="selectImage" xml:space="preserve">
+    <value>Selecione o arquivo de lista de imagem!</value>
   </data>
   <data name="selectPlace" xml:space="preserve">
     <value>É necessário selecionar o local do arquivo antes de gravar.</value>
@@ -236,6 +302,18 @@
   </data>
   <data name="stroopTest" xml:space="preserve">
     <value>Stroop</value>
+  </data>
+  <data name="unavailableExpo" xml:space="preserve">
+    <value>Tipo de exposição ainda não está disponível.</value>
+  </data>
+  <data name="up" xml:space="preserve">
+    <value>cima</value>
+  </data>
+  <data name="up_left" xml:space="preserve">
+    <value>cima_esquerda</value>
+  </data>
+  <data name="up_right" xml:space="preserve">
+    <value>cima_direita</value>
   </data>
   <data name="version" xml:space="preserve">
     <value>Versão</value>

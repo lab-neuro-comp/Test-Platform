@@ -15,7 +15,7 @@ namespace TestPlatform
         private ImageList imgsList = new ImageList();
         private string instructionsText = HelpData.ImageConfigInstructions;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public FormImgConfig(string imgListEdit)
         {

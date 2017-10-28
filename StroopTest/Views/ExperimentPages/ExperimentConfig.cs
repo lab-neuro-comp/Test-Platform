@@ -13,7 +13,7 @@ namespace TestPlatform.Views.ExperimentPages
         ExperimentProgram savingExperiment = new ExperimentProgram();
         string editProgramName;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public ExperimentConfig(string programName)
         {
@@ -67,7 +67,7 @@ namespace TestPlatform.Views.ExperimentPages
 
         private string[] defineTest()
         {
-            FormDefineTest defineTest = new FormDefineTest();
+            FormDefineTest defineTest = new FormDefineTest(CultureInfo.CurrentUICulture);
             try
             {
                 var result = defineTest.ShowDialog();

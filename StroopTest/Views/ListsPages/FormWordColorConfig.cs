@@ -19,7 +19,7 @@ namespace TestPlatform
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string instructionsText = HelpData.WordColorConfigInstructions;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public FormWordColorConfig(bool editFile)
         {

@@ -15,7 +15,7 @@ namespace TestPlatform.Views
     partial class AboutBox : Form
     {
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private String description; 
 
         public AboutBox()

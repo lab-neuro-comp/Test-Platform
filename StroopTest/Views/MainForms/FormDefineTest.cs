@@ -12,10 +12,11 @@ namespace TestPlatform.Views
         //primeira posição guarda o tipo, segunda guarda o nome do arquivo
         public string[] returnValues = new string[2];
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
+        private CultureInfo currentCulture;
 
-        public FormDefineTest()
+        public FormDefineTest(CultureInfo currentCulture)
         {
+            this.currentCulture = currentCulture;
             InitializeComponent();
             AutoValidate = AutoValidate.Disable;
             addOptionsComboBox(Global.stroopTestFilesPath + Global.programFolderName);
@@ -78,8 +79,8 @@ namespace TestPlatform.Views
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.returnValues[1] = "padrao";
-            this.returnValues[0] = "StroopTest";
+            this.returnValues[1] = LocRM.GetString("default", currentCulture);
+            this.returnValues[0] = LocRM.GetString("stroopTest", currentCulture);
             this.DialogResult = DialogResult.Cancel;
             AutoValidate = AutoValidate.Disable;
             this.Close();
@@ -107,6 +108,7 @@ namespace TestPlatform.Views
                 {
                     returnValues[0] = LocRM.GetString("experiment", currentCulture);
                 }
+                Console.WriteLine(currentCulture.EnglishName);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

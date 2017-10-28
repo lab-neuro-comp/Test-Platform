@@ -18,7 +18,7 @@ namespace TestPlatform
         private string type;
         private string usrName;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public FormDefine(string formTitle, string dataFolderPath, string fileType, string itemType, bool sufix)
         {
@@ -110,7 +110,7 @@ namespace TestPlatform
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.ReturnValue = "padrao";
+            this.ReturnValue = LocRM.GetString("default", currentCulture);
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }

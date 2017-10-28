@@ -15,7 +15,7 @@ namespace TestPlatform
         private SoundPlayer player = new SoundPlayer();
         private string instructionsText = HelpData.AudioConfigInstructions;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public FormAudioConfig(bool editList)
         {

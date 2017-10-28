@@ -48,7 +48,7 @@ namespace TestPlatform.Views
         private bool currentBeep = false;
         private int[,] positions;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CurrentCulture;
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public FormReactExposition(string prgName, string participantName, char mark)
         {
@@ -117,7 +117,7 @@ namespace TestPlatform.Views
         {
             switch (executingTest.ProgramInUse.ExpositionType)
             {
-                case "Imagem":
+                case "images":
                     imagesList = executingTest.ProgramInUse.getImageListFile().ListContent.ToArray();
 
                     if (executingTest.ProgramInUse.ExpositionRandom)
@@ -161,7 +161,8 @@ namespace TestPlatform.Views
             }
         }
 
-        private async Task showInstructions(ReactionProgram program, CancellationToken token) // apresenta instruções
+        // show participant instructions to execute during test
+        private async Task showInstructions(ReactionProgram program, CancellationToken token)
         {
             if (program.InstructionText != null)
             {
@@ -182,7 +183,10 @@ namespace TestPlatform.Views
                 FormTRConfig configureProgram = new FormTRConfig(executingTest.ProgramInUse.ProgramName);
                 this.Controls.Add(configureProgram);
             }
-            catch (Exception ex) { throw new Exception("Edição não pode ser feita " + ex.Message); }
+            catch (Exception ex)
+            {
+                throw new Exception(LocRM.GetString("couldntEdit", currentCulture) + ex.Message);
+            }
         }
 
         private void exposition_KeyDown(object sender, KeyEventArgs e)
@@ -360,7 +364,7 @@ namespace TestPlatform.Views
                 case "imageWithAudio":
                     // imageAudioExposition();
                 default:
-                    throw new Exception("Tipo de Exposição: " + executingTest.ProgramInUse.ExpositionType + " inválido!");
+                    throw new Exception(LocRM.GetString("expoType", currentCulture) + executingTest.ProgramInUse.ExpositionType + LocRM.GetString("invalid", currentCulture));
 
             }
         }
@@ -547,7 +551,7 @@ namespace TestPlatform.Views
                 case 8:
                     return randomScreenEightPositions();
                 default:
-                    throw new Exception("Quantidade de posições do estímulo inválidas, deve ser um dos seguintes valores: 1, 2, 4 ou 8.");
+                    throw new Exception(LocRM.GetString("positionInvalid", currentCulture));
             }
         }
 
@@ -605,6 +609,7 @@ namespace TestPlatform.Views
             return coordinates;
         }
 
+        // checks if generated coordinates for stimulus are within screen range and if they are not, put them inside of it
         private int[] CoordinatesWithinRange(int x, int y)
         {
             float[] clientSize = { (ClientSize.Width), (ClientSize.Height) };
@@ -629,6 +634,7 @@ namespace TestPlatform.Views
             return new int[] { x, y };
         }
 
+        // draw on screen filled square stimulus
         private void drawFullSquareShape()
         {
 
@@ -738,6 +744,7 @@ namespace TestPlatform.Views
             return trianglePoints;
         }
 
+        // interval background worker sends message to main thread so that ui controls can be added or removed
         private void intervalBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             if (exposing)
@@ -755,25 +762,25 @@ namespace TestPlatform.Views
             switch (index)
             {
                 case 0:
-                    return "centro";
+                    return LocRM.GetString("center",currentCulture);
                 case 1:
-                    return "direita";
+                    return LocRM.GetString("right", currentCulture);
                 case 2:
-                    return "esquerda";
+                    return LocRM.GetString("left", currentCulture);
                 case 3:
-                    return "cima";
+                    return LocRM.GetString("up", currentCulture);
                 case 4:
-                    return "baixo";
+                    return LocRM.GetString("down", currentCulture);
                 case 5:
-                    return "cima_esquerda";
+                    return LocRM.GetString("up_left", currentCulture);
                 case 6:
-                    return "cima_direita";
+                    return LocRM.GetString("up_right", currentCulture);
                 case 7:
-                    return "baixo_esquerda";
+                    return LocRM.GetString("down_left", currentCulture);
                 case 8:
-                    return "baixo_direita";
+                    return LocRM.GetString("down_right", currentCulture);
                 default:
-                    return "invalid";
+                    return LocRM.GetString("invalid", currentCulture);
             }
                 
         }

@@ -276,4 +276,10 @@
   <data name="executingTypeLabel.Text" xml:space="preserve">
     <value>Stroop</value>
   </data>
+  <data name="exportButton.Text" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="importButton.Text" xml:space="preserve">
+    <value>Importar</value>
+  </data>
 </root>

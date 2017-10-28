@@ -4,12 +4,16 @@ using System.Linq;
 using System.Windows.Forms;
 using TestPlatform.Models;
 using System.IO;
+using System.Globalization;
+using System.Resources;
 
 namespace TestPlatform.Views.ReactionPages
 {
     public partial class ReactionResultUserControl : UserControl
     {
         private string path = Global.reactionTestFilesPath + Global.resultsFolderName;
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public ReactionResultUserControl()
         {
@@ -37,7 +41,7 @@ namespace TestPlatform.Views.ReactionPages
             }
             else
             {
-                Console.WriteLine("{0} é um caminho inválido!.", path);
+                MessageBox.Show("{0}" + LocRM.GetString("invalidPath", currentCulture), path);
             }
 
         }
@@ -94,25 +98,28 @@ namespace TestPlatform.Views.ReactionPages
 
             try
             {
-                if (fileNameBox.SelectedIndex == -1)
+                // checks if there are any results selected
+                if (!(fileNameBox.SelectedIndex == -1))
                 {
-                    throw new Exception("Selecione um arquivo de dados!");
-                }
-
-                lines = ReactionProgram.readDataFile(path + "/" + fileNameBox.SelectedItem.ToString() + ".txt");
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
-                {
-                    using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
+                    lines = ReactionProgram.readDataFile(path + "/" + fileNameBox.SelectedItem.ToString() + ".txt");
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
                     {
-                        tw.WriteLine(ReactionTest.HeaderOutputFileText);
-                        for (int i = 0; i < lines.Length; i++)
+                        using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
                         {
-                            tw.WriteLine(lines[i]); // escreve linhas no novo arquivo
+                            tw.WriteLine(ReactionTest.HeaderOutputFileText);
+                            for (int i = 0; i < lines.Length; i++)
+                            {
+                                tw.WriteLine(lines[i]); // escreve linhas no novo arquivo
+                            }
+                            tw.Close();
+                            MessageBox.Show("Arquivo exportado com sucesso!");
                         }
-                        tw.Close();
-                        MessageBox.Show("Arquivo exportado com sucesso!");
                     }
                 }
+                else
+                {
+                    MessageBox.Show(LocRM.GetString("selectDataFile", currentCulture));
+                }                
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

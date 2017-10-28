@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="activeAudio" xml:space="preserve">
+    <value>Active audio recording during test execution</value>
+  </data>
+  <data name="audioFile" xml:space="preserve">
+    <value>Audio list file</value>
+  </data>
   <data name="audioList" xml:space="preserve">
     <value>Audio Lists:</value>
   </data>
   <data name="audioRecordSuccess" xml:space="preserve">
     <value>Successfully recorded audio.</value>
+  </data>
+  <data name="backgroundColor" xml:space="preserve">
+    <value>Background color to stimuli presentation</value>
   </data>
   <data name="beepDuration" xml:space="preserve">
     <value>Beep should last longer than 0 milliseconds.</value>
@@ -132,11 +141,17 @@
   <data name="choose" xml:space="preserve">
     <value>choose</value>
   </data>
+  <data name="colorFile" xml:space="preserve">
+    <value>Color list file</value>
+  </data>
   <data name="colors" xml:space="preserve">
     <value>Colors</value>
   </data>
   <data name="colorsList" xml:space="preserve">
     <value>Colors List</value>
+  </data>
+  <data name="colorWords" xml:space="preserve">
+    <value>Word color for image and word expositions</value>
   </data>
   <data name="couldntEdit" xml:space="preserve">
     <value>Could not edit program</value>
@@ -174,17 +189,29 @@
   <data name="exclusionSucceeded" xml:space="preserve">
     <value>delete succeeded!</value>
   </data>
+  <data name="expandImages" xml:space="preserve">
+    <value>Expand image to fill screen</value>
+  </data>
   <data name="experiment" xml:space="preserve">
     <value>Experiment</value>
   </data>
   <data name="experimentFiles" xml:space="preserve">
     <value>Path for experiments data is invalid.</value>
   </data>
+  <data name="expoCancel" xml:space="preserve">
+    <value>Exposition was cancelled.</value>
+  </data>
   <data name="expoNumber" xml:space="preserve">
     <value>Exposition number must be greater than zero.</value>
   </data>
+  <data name="expoRandomize" xml:space="preserve">
+    <value>Random stimulus exposition according to list</value>
+  </data>
   <data name="exportedFile" xml:space="preserve">
     <value>File exported successfully!</value>
+  </data>
+  <data name="expositionDuration" xml:space="preserve">
+    <value>Exposition duration for each stimulus</value>
   </data>
   <data name="expoTime" xml:space="preserve">
     <value>Exposition time must be greater than zero.</value>
@@ -198,6 +225,21 @@
   <data name="file" xml:space="preserve">
     <value>File</value>
   </data>
+  <data name="fixpointColor" xml:space="preserve">
+    <value>Fix point color</value>
+  </data>
+  <data name="fixpointEx" xml:space="preserve">
+    <value>Fix point: cross or point</value>
+  </data>
+  <data name="fontSize" xml:space="preserve">
+    <value>Font size to the following exposition types: word, word with audio and image with word</value>
+  </data>
+  <data name="help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="imageFile" xml:space="preserve">
+    <value>Image list file</value>
+  </data>
   <data name="imageFileError" xml:space="preserve">
     <value>Couldn't show image. You don't have permission to access this file or it can be corrupted.\n</value>
   </data>
@@ -209,6 +251,15 @@
   </data>
   <data name="instructionBoxText" xml:space="preserve">
     <value>The participant must be clearly and uniformly oriented to test execution accordingly to participant group and experiment team.&lt;br&gt;&lt;br&gt;For classic Stroop Test basic instructions are: &lt;br&gt;'In this task you must speak the name of the color in which the words are painted.'&lt;br&gt;or&lt;br&gt;'In this task you should read the word displayed on the screen.'</value>
+  </data>
+  <data name="instructionsI" xml:space="preserve">
+    <value>Instructions to be shown before test starts, each line will be shown in one screen</value>
+  </data>
+  <data name="intervalsTime" xml:space="preserve">
+    <value>Time between each attempt</value>
+  </data>
+  <data name="intervalsTimeRandom" xml:space="preserve">
+    <value>Variation of time between attempts</value>
   </data>
   <data name="intervalTime" xml:space="preserve">
     <value>Interval time must be greater than zero.</value>
@@ -246,11 +297,17 @@
   <data name="none" xml:space="preserve">
     <value>None</value>
   </data>
+  <data name="notEdit" xml:space="preserve">
+    <value>Program couldn't be edited.</value>
+  </data>
   <data name="notFilledProperlyMessage" xml:space="preserve">
     <value>Some field was not filled in correctly.</value>
   </data>
   <data name="notFoundIn" xml:space="preserve">
     <value>\nwasn't found in location:\n</value>
+  </data>
+  <data name="numberExpositions" xml:space="preserve">
+    <value>Number of times that stimulus will be exposed</value>
   </data>
   <data name="participantNameAlphanumericError" xml:space="preserve">
     <value>Nome do participante deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'LuisAugusto'"</value>
@@ -260,6 +317,9 @@
   </data>
   <data name="positionInvalid" xml:space="preserve">
     <value>Number of stimulus positions is invalid, must be one of the following values: 1, 2, 4 or 8."</value>
+  </data>
+  <data name="programEdit" xml:space="preserve">
+    <value>The program contains incorrect parameters and / or is incomplete! \nCorrect the program in the following interface.</value>
   </data>
   <data name="programExists" xml:space="preserve">
     <value>A program with this name already exists. \n Do you want to overwrite it?</value>
@@ -303,6 +363,21 @@
   <data name="stroopTest" xml:space="preserve">
     <value>StroopTest</value>
   </data>
+  <data name="subtitleActive" xml:space="preserve">
+    <value>Active subtitles for image type</value>
+  </data>
+  <data name="subtitleColor" xml:space="preserve">
+    <value>Subititle color</value>
+  </data>
+  <data name="subtitlePosition" xml:space="preserve">
+    <value>Subtitle position in relation to stimuli</value>
+  </data>
+  <data name="testName" xml:space="preserve">
+    <value>Test name</value>
+  </data>
+  <data name="typeStimulus" xml:space="preserve">
+    <value>Program stimulus category</value>
+  </data>
   <data name="unavailableExpo" xml:space="preserve">
     <value>Exposition type currently unavailable.</value>
   </data>
@@ -315,6 +390,9 @@
   <data name="up_right" xml:space="preserve">
     <value>up_right</value>
   </data>
+  <data name="validColor" xml:space="preserve">
+    <value>'contains invalid values! \ n The' color list must contain only hexadecimal values (example: # 000000)</value>
+  </data>
   <data name="version" xml:space="preserve">
     <value>Versão</value>
   </data>
@@ -323,6 +401,9 @@
   </data>
   <data name="wordColorList" xml:space="preserve">
     <value>Words with Colors List</value>
+  </data>
+  <data name="wordFile" xml:space="preserve">
+    <value>Word list file</value>
   </data>
   <data name="wordList" xml:space="preserve">
     <value>Word Lists:</value>

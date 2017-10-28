@@ -6,18 +6,22 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
+using System.Resources;
 using System.Windows.Forms;
+using TestPlatform.Controllers;
 using TestPlatform.Models;
 using TestPlatform.Views;
-using TestPlatform.Controllers;
 
 namespace TestPlatform
 {
     public partial class FormPrgConfig : UserControl
     {
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private String path = Global.stroopTestFilesPath + Global.programFolderName;
-        private String instructionBoxText = "Escreva cada uma das intruções em linhas separadas.";
+        private String instructionBoxText;
         private List<Button> subDirectionList = new List<Button>();
         private Int32 subDirectionNumber = 1;
         private String fontSize = "160";
@@ -40,6 +44,7 @@ namespace TestPlatform
 
         public FormPrgConfig(string programName)
         {
+            instructionBoxText = LocRM.GetString("instructionBox", currentCulture);
             InitializeComponent();
             chooseExpoType.SelectedIndex = 0;
             rotateImgComboBox.SelectedIndex = 0;
@@ -69,34 +74,31 @@ namespace TestPlatform
             helpToolTip.ShowAlways = true;
 
 
-            // colocar em lista e deixar dinâmico
-
-            helpToolTip.SetToolTip(prgNameLabel, "Nome do esquema de apresentação de estímulos");
-            helpToolTip.SetToolTip(expoTypeLabel, "Categoria dos estímulos do programa");
-            helpToolTip.SetToolTip(rndExpoLabel, "Exposição dos estímulos em ordem aleatória em relação à lista");
-            helpToolTip.SetToolTip(numExpoLabel, "Número de vezes em que os estímulos serão expostos");
-            helpToolTip.SetToolTip(wordSizeLabel, "Tamanho da fonte do texto, para exposição do tipo Palavra, Palavra com áudio, Imagem e palavra");
-            helpToolTip.SetToolTip(wordColorLabel, "Cor da palavra, para exposição do tipo Imagem e Palavra");
-            helpToolTip.SetToolTip(wordListLabel, "Arquivo de Lista de palavras");
-            helpToolTip.SetToolTip(colorListLabel, "Arquivo de Lista de cores");
-            helpToolTip.SetToolTip(imgListLabel, "Arquivo de Lista de imagens");
-            helpToolTip.SetToolTip(audioListLabel, "Arquivo de Lista de áudio");
-            helpToolTip.SetToolTip(expoTimeLabel, "Duração da exposição de cada estímulo");
-            helpToolTip.SetToolTip(intervalTimeLabel, "Tempo entre as tentativas");
-            helpToolTip.SetToolTip(rndIntervalLabel, "Variação do tempo entre as tentativas");
-            helpToolTip.SetToolTip(fixPointTypeLabel, "Tipo de ponto de fixação: cruz ou ponto");
-            helpToolTip.SetToolTip(fixPointColorLabel, "Cor do ponto de fixação");
-            helpToolTip.SetToolTip(activateSubsLabel, "Ativa legenda para estímulos do tipo imagem");
-            helpToolTip.SetToolTip(subLocationLabel, "Posicionamento da legenda em relação aos estímulos");
-            helpToolTip.SetToolTip(subColorLabel, "Cor da legenda apresentada");
-            helpToolTip.SetToolTip(audioCaptureLabel, "Ativa captura de áudio durante a execução do teste");
-            helpToolTip.SetToolTip(bgColorLabel, "Cor de fundo durante a apresentação dos estímulos");
-            helpToolTip.SetToolTip(expandImgLabel, "Expande a imagem até as bordas da tela");
-            helpToolTip.SetToolTip(instructionsLabel, "Instruções apresentadas no início do programa - será apresentada um tela para cada linha escrita abaixo");
-            helpToolTip.SetToolTip(helpButton, "Ajuda");
+            // putting tip to each field so that user can se details if they stop mouse over the field name
+            helpToolTip.SetToolTip(prgNameLabel, LocRM.GetString("testName", currentCulture));
+            helpToolTip.SetToolTip(expoTypeLabel, LocRM.GetString("typeStimulus", currentCulture));
+            helpToolTip.SetToolTip(rndExpoLabel, LocRM.GetString("expoRandomize", currentCulture));
+            helpToolTip.SetToolTip(numExpoLabel, LocRM.GetString("numberExpositions", currentCulture));
+            helpToolTip.SetToolTip(wordSizeLabel, LocRM.GetString("fontSize", currentCulture));
+            helpToolTip.SetToolTip(wordColorLabel, LocRM.GetString("colorWords", currentCulture));
+            helpToolTip.SetToolTip(wordListLabel, LocRM.GetString("wordFile", currentCulture));
+            helpToolTip.SetToolTip(colorListLabel, LocRM.GetString("colorFile", currentCulture));
+            helpToolTip.SetToolTip(imgListLabel, LocRM.GetString("imageFile", currentCulture));
+            helpToolTip.SetToolTip(audioListLabel, LocRM.GetString("audioFile", currentCulture));
+            helpToolTip.SetToolTip(expoTimeLabel, LocRM.GetString("expositionDuration", currentCulture));
+            helpToolTip.SetToolTip(intervalTimeLabel, LocRM.GetString("intervalsTime", currentCulture));
+            helpToolTip.SetToolTip(rndIntervalLabel, LocRM.GetString("intervalsTimeRandom", currentCulture));
+            helpToolTip.SetToolTip(fixPointTypeLabel, LocRM.GetString("fixpointEx", currentCulture));
+            helpToolTip.SetToolTip(fixPointColorLabel, LocRM.GetString("fixpointColor", currentCulture));
+            helpToolTip.SetToolTip(activateSubsLabel, LocRM.GetString("subtitleActive", currentCulture));
+            helpToolTip.SetToolTip(subLocationLabel, LocRM.GetString("subtitlePosition", currentCulture));
+            helpToolTip.SetToolTip(subColorLabel, LocRM.GetString("subtitleColor", currentCulture));
+            helpToolTip.SetToolTip(audioCaptureLabel, LocRM.GetString("activeAudio", currentCulture));
+            helpToolTip.SetToolTip(bgColorLabel, LocRM.GetString("backgroundColor", currentCulture));
+            helpToolTip.SetToolTip(expandImgLabel, LocRM.GetString("expandImages", currentCulture));
+            helpToolTip.SetToolTip(instructionsLabel, LocRM.GetString("instructionsI", currentCulture));
+            helpToolTip.SetToolTip(helpButton, LocRM.GetString("help", currentCulture));
         }
-
- 
         
         private void configurePrgItens(int expoType)
         {

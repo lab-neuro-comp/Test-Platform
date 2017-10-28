@@ -1691,28 +1691,28 @@ Imagem:</value>
   </data>
   <data name="rotateImgComboBox.Items" xml:space="preserve">
     <value>-</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="rotateImgComboBox.Items1" xml:space="preserve">
     <value>45°</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="rotateImgComboBox.Items2" xml:space="preserve">
     <value>90°</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="rotateImgComboBox.Items3" xml:space="preserve">
     <value>135°</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="rotateImgComboBox.Items4" xml:space="preserve">
     <value>180°</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="rotateImgComboBox.Items5" xml:space="preserve">
     <value>-135°</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="rotateImgComboBox.Items6" xml:space="preserve">
     <value>-90°</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="rotateImgComboBox.Items7" xml:space="preserve">
     <value>-45°</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="rotateImgComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>271, 156</value>
   </data>

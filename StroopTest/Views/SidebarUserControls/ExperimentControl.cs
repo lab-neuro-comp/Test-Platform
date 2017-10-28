@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Resources;
 using System.Windows.Forms;
 using TestPlatform.Views.ExperimentPages;
 
@@ -6,6 +8,9 @@ namespace TestPlatform.Views.SidebarUserControls
 {
     public partial class ExperimentControl : DefaultUserControl
     {
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+
         public ExperimentControl()
         {
             this.Dock = DockStyle.Fill;
@@ -42,7 +47,7 @@ namespace TestPlatform.Views.SidebarUserControls
             string editProgramName = "error";
 
 
-                defineProgram = new FormDefine("Editar Programa: ", Global.experimentTestFilesPath + Global.programFolderName, "prg", "program", false);
+                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.experimentTestFilesPath + Global.programFolderName, "prg", "program", false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {

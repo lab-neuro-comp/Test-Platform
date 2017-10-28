@@ -535,8 +535,8 @@ namespace TestPlatform
         {
             StroopProgram program = new StroopProgram();
 
-       //     try
-         //   {
+            try
+            {
                 program.readProgramFile(path + editPrgName + ".prg");
                 
                 prgNameTextBox.Text = program.ProgramName;
@@ -613,13 +613,16 @@ namespace TestPlatform
                 }
                 else
                 {
-                    if ((Validations.isHexPattern(program.FixPointColor)))
-                    {
-                        fixPointColorButton.Text = program.FixPointColor;
-                        fixPointColorPanel.BackColor = ColorTranslator.FromHtml(program.FixPointColor);
-                    }
-                    else { throw new Exception("Deu errado no match"); }
+                if ((Validations.isHexPattern(program.FixPointColor)))
+                {
+                    fixPointColorButton.Text = program.FixPointColor;
+                    fixPointColorPanel.BackColor = ColorTranslator.FromHtml(program.FixPointColor);
                 }
+                else
+                {
+                    throw new Exception(LocRM.GetString("colorMatch",currentCulture));
+                }
+            }
 
 
                 delayTime.Value = program.DelayTime;
@@ -672,7 +675,8 @@ namespace TestPlatform
                 }
                 chooseFixPointType();
 
-                if (program.InstructionText != null) // lê instrução se houver
+                // reads instructions if there are any to instruction box text
+                if (program.InstructionText != null) 
                 {
                     instructionsBox.ForeColor = Color.Black;
                     instructionsBox.Text = program.InstructionText[0];
@@ -730,8 +734,15 @@ namespace TestPlatform
                     activateSubsCheck.Checked = true;
                     enableSubsItens(true);
                     selectSubDirectionNumber(program.SubtitlePlace);
-                    if (program.SubtitlesListFile.ToLower() != "false") { openSubsListButton.Text = program.SubtitlesListFile; }
-                    else { openSubsListButton.Text = "escolher"; }
+
+                    if (program.SubtitlesListFile.ToLower() != "false")
+                    {
+                        openSubsListButton.Text = program.SubtitlesListFile;
+                    }
+                    else
+                    {
+                        openSubsListButton.Text = LocRM.GetString("choose", currentCulture);
+                    }
 
                     if (Validations.isHexPattern(program.SubtitleColor))
                     {
@@ -740,7 +751,7 @@ namespace TestPlatform
                     }
                     else
                     {
-                        subColorButton.Text = "escolher";
+                        subColorButton.Text = LocRM.GetString("choose", currentCulture);
                         subColorPanel.BackColor = Color.White;
                     }
                 }
@@ -752,38 +763,42 @@ namespace TestPlatform
                 
                 wordColorButton.Text = program.WordColor;
                 wordColorPanel.BackColor = ColorTranslator.FromHtml(program.WordColor);
-            //}
-      //      catch (Exception ex)
-        //    {
-          //      MessageBox.Show(ex.Message);
-            //    Dispose();
-              //  this.Parent.Controls.Remove(this);
-           // }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Dispose();
+                this.Parent.Controls.Remove(this);
+            }
         }
         
         private void saveProgramFile(StroopProgram newProgram)
         {
             if (File.Exists(path + prgNameTextBox.Text + ".prg"))
             {
-                DialogResult dialogResult = MessageBox.Show("O programa já existe, deseja sobrescrevê-lo?", "", MessageBoxButtons.OKCancel);
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExists", currentCulture), "", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.Cancel)
                 {
-                    throw new Exception("O programa não será salvo!");
+                    throw new Exception(LocRM.GetString("programNotSave", currentCulture));
                 }
             }
             if (newProgram.saveProgramFile(path, instructionBoxText))
             {
-                MessageBox.Show("O programa foi salvo com sucesso");
+                MessageBox.Show(LocRM.GetString("programSave", currentCulture));
             }
             this.Parent.Controls.Remove(this);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if(!this.ValidateChildren(ValidationConstraints.Enabled))
-                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+            if (!this.ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show(LocRM.GetString("notFilledProperlyMessage", currentCulture));
+            }
             else
+            {
                 configureNewProgram();
+            }
         }
 
         private void prgNameTextBox_Validating(object sender,
@@ -806,12 +821,12 @@ namespace TestPlatform
         {
             if (pgrName.Length == 0)
             {
-                errorMessage = "O nome do programa deve ser preenchido.";
+                errorMessage = LocRM.GetString("programNotFilled", currentCulture);
                 return false;
             }
             if (!Validations.isAlphanumeric(pgrName))
             {
-                errorMessage = "Nome do programa deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'MeuPrograma'";
+                errorMessage = LocRM.GetString("programNotAlphanumeric", currentCulture);
                 return false;
             }
 
@@ -840,7 +855,7 @@ namespace TestPlatform
         {
             if (!Validations.isExpositionTimeValid(expoTime))
             {
-                errorMessage = "O tempo de exposição deve ser maior do que zero.";
+                errorMessage = LocRM.GetString("expoTime", currentCulture);
                 return false;
             }
 
@@ -870,7 +885,7 @@ namespace TestPlatform
         {
             if (!Validations.isIntervalTimeValid(intervalTime))
             {
-                errorMessage = "Tempo de intervalo deve ser maior que zero (em milissegundos)";
+                errorMessage = LocRM.GetString("intervalTime", currentCulture);
                 return false;
             }
 
@@ -899,7 +914,7 @@ namespace TestPlatform
         {
             if (!Validations.isExpositionTimeValid(numExpo))
             {
-                errorMessage = "O número de exposições deve ser maior do que zero.";
+                errorMessage = LocRM.GetString("expoNumber", currentCulture);
                 return false;
             }
 
@@ -929,7 +944,7 @@ namespace TestPlatform
             if (Validations.isExpoEnabled(openWordListButton) && !Validations.isLengthValid(text))
             {
                 Console.WriteLine(Validations.isExpoEnabled(openWordListButton));
-                errorMessage = "Selecione o arquivo de lista de palavras!";
+                errorMessage = LocRM.GetString("selectWord", currentCulture);
                 return false;
             }
             errorMessage = "";
@@ -956,7 +971,7 @@ namespace TestPlatform
         {
             if (Validations.isExpoEnabled(openColorListButton) && !Validations.isLengthValid(text))
             {
-                errorMessage = "Selecione o arquivo de lista de cores!";
+                errorMessage = LocRM.GetString("selectColor", currentCulture);
                 return false;
             }
 
@@ -984,7 +999,7 @@ namespace TestPlatform
         {
             if (Validations.isExpoEnabled(openImgListButton) && !Validations.isLengthValid(text))
             {
-                errorMessage = "Selecione o arquivo de lista de imagem!";
+                errorMessage = LocRM.GetString("selectImage", currentCulture);
                 return false;
             }
 
@@ -1014,7 +1029,7 @@ namespace TestPlatform
         {
             if (Validations.isExpoEnabled(openAudioListButton) && !Validations.isLengthValid(text))
             {
-                errorMessage = "Selecione o arquivo de lista de audio!";
+                errorMessage = LocRM.GetString("selectImage", currentCulture);
                 return false;
             }
 

@@ -120,10 +120,259 @@
   <metadata name="fileNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="fileNameColumn.HeaderText" xml:space="preserve">
+    <value>Nome do Arquivo</value>
+  </data>
   <metadata name="typeColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="typeColumn.HeaderText" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
   <metadata name="locationColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="locationColumn.HeaderText" xml:space="preserve">
+    <value>location</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="locationColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="exportDataGridView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 116</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="exportDataGridView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="exportDataGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 340</value>
+  </data>
+  <data name="exportDataGridView.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="&gt;&gt;exportDataGridView.Name" xml:space="preserve">
+    <value>exportDataGridView</value>
+  </data>
+  <data name="&gt;&gt;exportDataGridView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exportDataGridView.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;exportDataGridView.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="deleteItemLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="deleteItemLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="deleteItemLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="deleteItemLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 119</value>
+  </data>
+  <data name="deleteItemLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="deleteItemLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 17</value>
+  </data>
+  <data name="deleteItemLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="deleteItemLabel.Text" xml:space="preserve">
+    <value>Apagar Item:</value>
+  </data>
+  <data name="&gt;&gt;deleteItemLabel.Name" xml:space="preserve">
+    <value>deleteItemLabel</value>
+  </data>
+  <data name="&gt;&gt;deleteItemLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteItemLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;deleteItemLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="deleteItemButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="deleteItemButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="deleteItemButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="deleteItemButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="deleteItemButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="deleteItemButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 139</value>
+  </data>
+  <data name="deleteItemButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="deleteItemButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 27</value>
+  </data>
+  <data name="deleteItemButton.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="deleteItemButton.Text" xml:space="preserve">
+    <value>Apagar</value>
+  </data>
+  <data name="&gt;&gt;deleteItemButton.Name" xml:space="preserve">
+    <value>deleteItemButton</value>
+  </data>
+  <data name="&gt;&gt;deleteItemButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteItemButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;deleteItemButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="typeComboBox.Items" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="typeComboBox.Items1" xml:space="preserve">
+    <value>Stroop</value>
+  </data>
+  <data name="typeComboBox.Items2" xml:space="preserve">
+    <value>Tempo de Reação</value>
+  </data>
+  <data name="typeComboBox.Items3" xml:space="preserve">
+    <value>Experimento</value>
+  </data>
+  <data name="typeComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 52</value>
+  </data>
+  <data name="typeComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 24</value>
+  </data>
+  <data name="typeComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="&gt;&gt;typeComboBox.Name" xml:space="preserve">
+    <value>typeComboBox</value>
+  </data>
+  <data name="&gt;&gt;typeComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;typeComboBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;typeComboBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnChoose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="btnChoose.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnChoose.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btnChoose.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="btnChoose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnChoose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>304, 50</value>
+  </data>
+  <data name="btnChoose.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnChoose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 27</value>
+  </data>
+  <data name="btnChoose.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="btnChoose.Text" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="&gt;&gt;btnChoose.Name" xml:space="preserve">
+    <value>btnChoose</value>
+  </data>
+  <data name="&gt;&gt;btnChoose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnChoose.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnChoose.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="exportButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>733, 478</value>
+  </data>
+  <data name="exportButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="exportButton.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="exportButton.Text" xml:space="preserve">
+    <value>exportar</value>
+  </data>
+  <data name="&gt;&gt;exportButton.Name" xml:space="preserve">
+    <value>exportButton</value>
+  </data>
+  <data name="&gt;&gt;exportButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exportButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;exportButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>888, 514</value>
+  </data>
+  <data name="&gt;&gt;fileNameColumn.Name" xml:space="preserve">
+    <value>fileNameColumn</value>
+  </data>
+  <data name="&gt;&gt;fileNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;typeColumn.Name" xml:space="preserve">
+    <value>typeColumn</value>
+  </data>
+  <data name="&gt;&gt;typeColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;locationColumn.Name" xml:space="preserve">
+    <value>locationColumn</value>
+  </data>
+  <data name="&gt;&gt;locationColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ExportUserControl</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

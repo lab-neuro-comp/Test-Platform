@@ -352,7 +352,7 @@
     <value>Selecione um arquivo de dados!</value>
   </data>
   <data name="selectImage" xml:space="preserve">
-    <value>Selecione o arquivo de lista de imagem!</value>
+    <value>Selecione o arquivo de lista de imagem.</value>
   </data>
   <data name="selectPlace" xml:space="preserve">
     <value>É necessário selecionar o local do arquivo antes de gravar.</value>
@@ -413,5 +413,29 @@
   </data>
   <data name="wordsList" xml:space="preserve">
     <value>Lista de Palavras</value>
+  </data>
+  <data name="colorMatch" xml:space="preserve">
+    <value>A cor do ponto de fixação não segue o padrão hexadecimal: #000000</value>
+  </data>
+  <data name="exportDirectory" xml:space="preserve">
+    <value>Selecione um diretório válido onde ainda não há nenhuma exportação da plataforma</value>
+  </data>
+  <data name="fileNotFound" xml:space="preserve">
+    <value>Não foi possível encontrar o arquivo no caminho:</value>
+  </data>
+  <data name="lists" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="removeItem" xml:space="preserve">
+    <value>Selecione um arquivo para remover da lista.</value>
+  </data>
+  <data name="selectAudio" xml:space="preserve">
+    <value>Selecione o arquivo de lista de aúdios.</value>
+  </data>
+  <data name="selectColor" xml:space="preserve">
+    <value>Selecione o arquivo de lista de cores.</value>
+  </data>
+  <data name="selectWord" xml:space="preserve">
+    <value>Selecione o arquivo de lista de palavras.</value>
   </data>
 </root>

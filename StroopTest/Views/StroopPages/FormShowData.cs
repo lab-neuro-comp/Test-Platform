@@ -13,6 +13,8 @@ using System.Media;
 using TestPlatform.Models;
 using TestPlatform.Views;
 using TestPlatform.Controllers;
+using System.Resources;
+using System.Globalization;
 
 namespace TestPlatform
 {
@@ -20,9 +22,10 @@ namespace TestPlatform
     {
         private StroopProgram program = new StroopProgram();
         private string path = Global.stroopTestFilesPath + Global.resultsFolderName;
-        private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private string instructionsText = HelpData.ShowDataInstructions;
         private SoundPlayer player = new SoundPlayer();
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public FormShowData()
         {
@@ -47,7 +50,7 @@ namespace TestPlatform
             }
             else
             {
-                Console.WriteLine("{0} é um caminho inválido!.", path);
+                MessageBox.Show("{0}"+ LocRM.GetString("invalidPath",currentCulture), path);
             }
         }
         
@@ -71,7 +74,7 @@ namespace TestPlatform
                             dataGridView1.Rows.Add(cellArray);
                             for (int j = 0; j < cellArray.Length; j++)
                             {
-                                if (Regex.IsMatch(cellArray[j], hexPattern))
+                                if (Validations.isHexPattern(cellArray[j]))
                                 {
                                     dataGridView1.Rows[i].Cells[j].Style.BackColor = ColorTranslator.FromHtml(cellArray[j]);
                                 }
@@ -79,7 +82,8 @@ namespace TestPlatform
                         }
                     }
                 }
-                if (Directory.Exists(path)) // Preenche dgv com arquivos do tipo .wav no diretório dado que possua o padrao da comboBox
+                // fills audio data grid view with .wav files in directory in case there are any matching the patter on combobox
+                if (Directory.Exists(path)) 
                 {
                     if(audioPathDataGridView.RowCount > 0)
                     {
@@ -99,28 +103,36 @@ namespace TestPlatform
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             string[] lines;
 
-            saveFileDialog1.Filter = "Excel CSV (.csv)|*.csv"; // salva em .csvs
+            // salva file on .csv format
+            saveFileDialog1.Filter = "Excel CSV (.csv)|*.csv"; 
             saveFileDialog1.RestoreDirectory = true;
             saveFileDialog1.FileName = comboBox1.Text;
-            if (comboBox1.SelectedIndex == -1)
+
+            // only saves if there is one selected result to save
+            if (!(comboBox1.SelectedIndex == -1))
             {
-                throw new Exception("Selecione um arquivo de dados!");
-            }
-              
-            lines = StroopProgram.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
-            {
-                using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
+                lines = StroopProgram.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
                 {
-                    tw.WriteLine(StroopTest.HeaderOutputFileText);
-                    for (int i = 0; i < lines.Length; i++)
+                    using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
                     {
-                        tw.WriteLine(lines[i]); // escreve linhas no novo arquivo
+                        tw.WriteLine(StroopTest.HeaderOutputFileText);
+                        for (int i = 0; i < lines.Length; i++)
+                        {
+                            // writing lines on new file
+                            tw.WriteLine(lines[i]); 
+                        }
+                        tw.Close();
+                        MessageBox.Show(LocRM.GetString("exportedFile", currentCulture));
                     }
-                    tw.Close();
-                    MessageBox.Show("Arquivo exportado com sucesso!");
                 }
-           }            
+                
+            }
+            else
+            {
+                MessageBox.Show(LocRM.GetString("selectDataFile", currentCulture));
+            } 
+                       
         }
 
         private void helpButton_Click(object sender, EventArgs e)

@@ -414,4 +414,28 @@
   <data name="wordsList" xml:space="preserve">
     <value>Words List</value>
   </data>
+  <data name="colorMatch" xml:space="preserve">
+    <value>Fix point color doesn't follow hexadecimal pattern: #000000</value>
+  </data>
+  <data name="exportDirectory" xml:space="preserve">
+    <value>Select a valid directory where there is no export from the platform</value>
+  </data>
+  <data name="fileNotFound" xml:space="preserve">
+    <value>Couldn't find file on path: </value>
+  </data>
+  <data name="lists" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="removeItem" xml:space="preserve">
+    <value>You must select item to be removed from list.</value>
+  </data>
+  <data name="selectAudio" xml:space="preserve">
+    <value>You must select the audio list file.</value>
+  </data>
+  <data name="selectColor" xml:space="preserve">
+    <value>You must select the color list file.</value>
+  </data>
+  <data name="selectWord" xml:space="preserve">
+    <value>You must select the word list file.</value>
+  </data>
 </root>

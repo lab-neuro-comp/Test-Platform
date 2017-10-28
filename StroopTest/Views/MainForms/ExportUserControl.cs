@@ -1,15 +1,21 @@
 ﻿using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
+using System.Globalization;
+using System.IO;
+using System.IO.Compression;
+using System.Resources;
 using System.Windows.Forms;
 using TestPlatform.Controllers;
 using TestPlatform.Models;
-using System.IO.Compression;
-using System.IO;
 
 namespace TestPlatform.Views.MainForms
 {
     public partial class ExportUserControl : UserControl
     {
+        // properties used to localize strings during runtime
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture;
+
         public ExportUserControl()
         {
             this.Dock = DockStyle.Fill;
@@ -21,10 +27,10 @@ namespace TestPlatform.Views.MainForms
             switch (typeComboBox.SelectedIndex)
             {
                 case 0:
-                    AddType("Lista", Global.testFilesPath + Global.listFolderName, "lst", "image, audio, words, color", true);
+                    AddType(LocRM.GetString("lists", currentCulture), Global.testFilesPath + Global.listFolderName, "lst", "image, audio, words, color", true);
                     break;
                 case 1:
-                    string programName = AddType("Stroop", Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
+                    string programName = AddType(LocRM.GetString("stroopTest", currentCulture), Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
                     if (!string.IsNullOrEmpty(programName))
                     {
                         StroopProgram newProgram = new StroopProgram();
@@ -34,7 +40,7 @@ namespace TestPlatform.Views.MainForms
                     
                     break;
                 case 2:
-                    string reactionProgramName = AddType("Tempo de Reação", Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false);
+                    string reactionProgramName = AddType(LocRM.GetString("reactionTest", currentCulture), Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false);
                     if (!string.IsNullOrEmpty(reactionProgramName))
                     {
                         ReactionProgram newReaction = new ReactionProgram(Global.reactionTestFilesPath + Global.programFolderName + reactionProgramName + ".prg");
@@ -42,7 +48,7 @@ namespace TestPlatform.Views.MainForms
                     }
                     break;
                 case 3:
-                    string experimentName = AddType("Experimento", Global.experimentTestFilesPath + Global.programFolderName, "prg", "program", false);
+                    string experimentName = AddType(LocRM.GetString("experiment", currentCulture), Global.experimentTestFilesPath + Global.programFolderName, "prg", "program", false);
                     if (!string.IsNullOrEmpty(experimentName))
                     {
                         addPrograms(experimentName);
@@ -60,17 +66,17 @@ namespace TestPlatform.Views.MainForms
             {
                 if (program.GetType() == typeof(StroopProgram))
                 {
-                    if (!isAlreadyThere(program.ProgramName, "Stroop"))
+                    if (!isAlreadyThere(program.ProgramName, LocRM.GetString("stroopTest", currentCulture)))
                     {
-                        exportDataGridView.Rows.Add(program.ProgramName, "Stroop", Global.stroopTestFilesPath + Global.programFolderName + program.ProgramName + ".prg");
+                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("stroopTest", currentCulture), Global.stroopTestFilesPath + Global.programFolderName + program.ProgramName + ".prg");
                         addLists(program, Global.testFilesPath + Global.listFolderName);
                     }
                 }
                 else if(program.GetType() == typeof(ReactionProgram))
                 {
-                    if (!isAlreadyThere(program.ProgramName, "Tempo de Reação"))
+                    if (!isAlreadyThere(program.ProgramName, LocRM.GetString("reactionTest", currentCulture)))
                     {
-                        exportDataGridView.Rows.Add(program.ProgramName, "Tempo de Reação", Global.reactionTestFilesPath + Global.programFolderName + program.ProgramName + ".prg");
+                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("reactionTest", currentCulture), Global.reactionTestFilesPath + Global.programFolderName + program.ProgramName + ".prg");
                         addLists(program, Global.testFilesPath + Global.listFolderName);
                     }
                 }
@@ -94,33 +100,33 @@ namespace TestPlatform.Views.MainForms
             {
                 string fileName = newProgram.getAudioListFile().ListName + "_audio";
 
-                if (!isAlreadyThere(fileName, "Lista"))
+                if (!isAlreadyThere(fileName, LocRM.GetString("lists", currentCulture)))
                 {
-                    exportDataGridView.Rows.Add(fileName, "Lista", path + fileName + ".lst");
+                    exportDataGridView.Rows.Add(fileName, LocRM.GetString("lists", currentCulture), path + fileName + ".lst");
                 }
             }
             if (newProgram.getColorListFile() != null)
             {
                 string fileName = newProgram.getColorListFile().ListName + "_color";
-                if (!isAlreadyThere(fileName, "Lista"))
+                if (!isAlreadyThere(fileName, LocRM.GetString("lists", currentCulture)))
                 {                    
-                    exportDataGridView.Rows.Add(fileName, "Lista", path + fileName + ".lst");
+                    exportDataGridView.Rows.Add(fileName, LocRM.GetString("lists", currentCulture), path + fileName + ".lst");
                 }
             }
             if (newProgram.getImageListFile() != null)
             {
                 string fileName = newProgram.getImageListFile().ListName + "_image";
-                if (!isAlreadyThere(fileName, "Lista"))
+                if (!isAlreadyThere(fileName, LocRM.GetString("lists", currentCulture)))
                 {
-                    exportDataGridView.Rows.Add(fileName, "Lista", path + fileName + ".lst");
+                    exportDataGridView.Rows.Add(fileName, LocRM.GetString("lists", currentCulture), path + fileName + ".lst");
                 }
             }
             if (newProgram.getWordListFile() != null)
             {
                 string fileName = newProgram.getWordListFile().ListName + "_words";
-                if (!isAlreadyThere(fileName, "Lista"))
+                if (!isAlreadyThere(fileName, LocRM.GetString("lists", currentCulture)))
                 {
-                    exportDataGridView.Rows.Add(fileName, "Lista", path + fileName + ".lst");
+                    exportDataGridView.Rows.Add(fileName, LocRM.GetString("lists", currentCulture), path + fileName + ".lst");
                 }
             }
             exportDataGridView.Refresh();
@@ -158,30 +164,34 @@ namespace TestPlatform.Views.MainForms
                 System.IO.Directory.CreateDirectory(folderDialog.FileName + "/ExportingFiles/" + "StringLists");
                 System.IO.Directory.CreateDirectory(folderDialog.FileName + "/ExportingFiles/" + "FileLists");
 
+                // exporting each row according to type: list, reaction program, stroop program or experiment program
                 foreach (DataGridViewRow row in exportDataGridView.Rows)
                 {
-                    switch (row.Cells[1].Value.ToString())
+                    if (row.Cells[1].Value.ToString() == LocRM.GetString("lists", currentCulture))
                     {
-                        case "Lista":
-                            if ((row.Cells[0].Value.ToString().Split('_')[1] == "color") || (row.Cells[0].Value.ToString().Split('_')[1] == "words"))
-                            {
-                                exportFile(row.Cells[2].Value.ToString(), folderDialog.FileName + "/ExportingFiles/" + "StringLists/" + row.Cells[0].Value.ToString() + ".lst");
-                            }
-                            else
-                            {
-                                exportListContent(row.Cells[0].Value.ToString(), folderDialog.FileName + "/ExportingFiles/" + "FileLists");
-                            }
-                            break;
-                        case "Tempo de Reação":
-                            exportFile(row.Cells[2].Value.ToString(), folderDialog.FileName + "/ExportingFiles/" + "ReactionProgram/" + row.Cells[0].Value.ToString() + ".prg");
-                            break;
-                        case "Stroop":
-                            exportFile(row.Cells[2].Value.ToString(), folderDialog.FileName + "/ExportingFiles/" + "StroopProgram/" + row.Cells[0].Value.ToString() + ".prg");
-                            break;
-                        case "Experimento":
-                            exportFile(row.Cells[2].Value.ToString(), folderDialog.FileName + "/ExportingFiles/" + "ExperimentProgram/" + row.Cells[0].Value.ToString() + ".prg");
-                            break;
+                        if ((row.Cells[0].Value.ToString().Split('_')[1] == "color") || (row.Cells[0].Value.ToString().Split('_')[1] == "words"))
+                        {
+                            exportFile(row.Cells[2].Value.ToString(), folderDialog.FileName + "/ExportingFiles/" + "StringLists/" + row.Cells[0].Value.ToString() + ".lst");
+                        }
+                        else
+                        {
+                            exportListContent(row.Cells[0].Value.ToString(), folderDialog.FileName + "/ExportingFiles/" + "FileLists");
+                            exportFile(row.Cells[2].Value.ToString(), folderDialog.FileName + "/ExportingFiles/" + "FileLists/" + row.Cells[0].Value.ToString() + "/" + row.Cells[0].Value.ToString() + ".lst");
+                        }
                     }
+                    else if (row.Cells[1].Value.ToString() == LocRM.GetString("reactionTest", currentCulture))
+                    {
+                        exportFile(row.Cells[2].Value.ToString(), folderDialog.FileName + "/ExportingFiles/" + "ReactionProgram/" + row.Cells[0].Value.ToString() + ".prg");
+                    }
+                    else if (row.Cells[1].Value.ToString() == LocRM.GetString("stroopTest", currentCulture))
+                    {
+                        exportFile(row.Cells[2].Value.ToString(), folderDialog.FileName + "/ExportingFiles/" + "StroopProgram/" + row.Cells[0].Value.ToString() + ".prg");
+                    }
+                    else if (row.Cells[1].Value.ToString() == LocRM.GetString("experiment", currentCulture))
+                    {
+                        exportFile(row.Cells[2].Value.ToString(), folderDialog.FileName + "/ExportingFiles/" + "ExperimentProgram/" + row.Cells[0].Value.ToString() + ".prg");
+                    }
+                    
                 }
                 
                 ZipFile.CreateFromDirectory(folderDialog.FileName + "/ExportingFiles/", folderDialog.FileName + "/exportingFiles.zip");
@@ -190,7 +200,7 @@ namespace TestPlatform.Views.MainForms
             }
             else
             {
-                MessageBox.Show("Selecione um diretório válido onde ainda não há nenhuma exportação da plataforma");
+                MessageBox.Show(LocRM.GetString("exportDirectory", currentCulture));
             }
         }
 
@@ -208,8 +218,9 @@ namespace TestPlatform.Views.MainForms
             {
                 newList = new StrList(name[0], 1);
             }
-            string[] filePaths = newList.ListContent.ToArray();
-            foreach (string content in filePaths)
+
+
+            foreach (string content in newList.ListContent)
             {
                 string fileName = Path.GetFileName(content);
                 if (File.Exists(fileName))
@@ -218,7 +229,7 @@ namespace TestPlatform.Views.MainForms
                 }
                 else
                 {
-                    MessageBox.Show("Não foi possível encontrar o arquivo no caminho: " + fileName);
+                    MessageBox.Show(LocRM.GetString("fileNotFound",currentCulture) + fileName);
                 }
             }
             
@@ -237,7 +248,7 @@ namespace TestPlatform.Views.MainForms
             }
             else
             {
-                MessageBox.Show("Selecione um arquivo para remover da lista!");
+                MessageBox.Show(LocRM.GetString("removeItem", currentCulture));
             }
         }
     }

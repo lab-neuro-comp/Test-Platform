@@ -382,7 +382,10 @@ namespace TestPlatform.Models
                 }
                 
                 ProgramName = config[0];
-                if (Path.GetFileNameWithoutExtension(filepath) != (this.ProgramName)) { throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName + "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + "'.prg"); }
+                if (Path.GetFileNameWithoutExtension(filepath) != (this.ProgramName))
+                {
+                    throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName + "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + "'.prg");
+                }
                 NumExpositions = Int32.Parse(config[1]);
                 ExpositionTime = Int32.Parse(config[2]); 
                 ExpositionRandom = Boolean.Parse(config[3]);

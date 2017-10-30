@@ -438,4 +438,7 @@
   <data name="selectWord" xml:space="preserve">
     <value>You must select the word list file.</value>
   </data>
+  <data name="import" xml:space="preserve">
+    <value>Files were imported sucessfully.</value>
+  </data>
 </root>

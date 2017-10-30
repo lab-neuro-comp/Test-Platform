@@ -34,7 +34,7 @@
     <ProductName>TestPlatform</ProductName>
     <PublisherName>fabiolamfleury</PublisherName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -369,6 +369,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ExperimentPages\FormExperimentExposition.resx">
       <DependentUpon>FormExperimentExposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\ExportUserControl.en-US.resx">
+      <DependentUpon>ExportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\ExportUserControl.pt-BR.resx">
+      <DependentUpon>ExportUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\ExportUserControl.resx">
       <DependentUpon>ExportUserControl.cs</DependentUpon>

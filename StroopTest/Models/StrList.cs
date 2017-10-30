@@ -137,6 +137,18 @@ namespace TestPlatform.Models
             return true;
         }
 
+
+        public bool saveDirectories()
+        {
+            StreamWriter wr = new StreamWriter(getFilePath());
+            foreach (string item in listContent)
+            {
+                wr.WriteLine(item);
+            }
+            wr.Close();
+            return true;
+        }
+
         public bool exists()
         {
             if (File.Exists(getFilePath()))

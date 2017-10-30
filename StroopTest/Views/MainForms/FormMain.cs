@@ -823,16 +823,25 @@ namespace TestPlatform
         private void importListFiles(string directory)
         {
             //move to images directory
-            string imageDirectory = Global.testFilesPath + "/list_files";
+            string imageDirectory = Global.testFilesPath + "/list_files/";
             Directory.Move(directory, imageDirectory);
             string[] directories = Directory.GetDirectories(imageDirectory);
-            foreach(string list in directories)
+            foreach(string listDirectory in directories)
             {
-                string[] listConfig = list.Split('_');
-                string[] content = Directory.GetFiles(list);
-                List<string> contentList = new List<string>(content);
-                StrList newlist = new StrList(contentList ,listConfig[0], "_" + listConfig[1]);
-                newlist.save();
+                string listName = listDirectory + "/" + Path.GetFileName(listDirectory) + ".lst";
+
+                string[] listContent = StroopProgram.readDirListFile(listName);
+                List<string> newList = new List<string>();
+                foreach(string entry in listContent)
+                {
+                    string fileName = Path.GetFileName(entry);
+                    newList.Add(listDirectory + "/" + fileName);
+                }
+
+                string[] listConfig = Path.GetFileName(listDirectory).Split('_');
+                StrList newlist = new StrList(newList ,listConfig[0], "_" + listConfig[1]);
+                newlist.saveDirectories();
+                MessageBox.Show(LocRM.GetString("import",currentCulture));
             }
         }
 
@@ -840,7 +849,7 @@ namespace TestPlatform
         {
             foreach (var file in Directory.GetFiles(currentDirectory))
             {
-                File.Copy(file, Path.Combine(targetDirectory, Path.GetFileName(file)));
+                File.Copy(file, Path.Combine(targetDirectory, Path.GetFileName(file)), true);
             }
         }
     }

@@ -14,7 +14,7 @@ namespace TestPlatform.Views.MainForms
     {
         // properties used to localize strings during runtime
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture;
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public ExportUserControl()
         {
@@ -223,13 +223,13 @@ namespace TestPlatform.Views.MainForms
             foreach (string content in newList.ListContent)
             {
                 string fileName = Path.GetFileName(content);
-                if (File.Exists(fileName))
+                if (File.Exists(content))
                 {
                     System.IO.File.Copy(Path.GetFullPath(content), listDestination + fileName, true);
                 }
                 else
                 {
-                    MessageBox.Show(LocRM.GetString("fileNotFound",currentCulture) + fileName);
+                    MessageBox.Show(LocRM.GetString("fileNotFound",currentCulture) + content);
                 }
             }
             

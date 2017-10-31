@@ -17,11 +17,11 @@ build:
   verbosity: minimal
 
 after_test:
-- ps: >-
+- ps:
 
-.\\packages\\OpenCover.4.6.166\\tools\\OpenCover.Console.exe
+.\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe
 –register:user
--target:"C:\\projects\\$env:Test-Platform\\packages\\xunit.runner.console.\n.2.3.1\\tools\\xunit.console.exe" "-targetargs:StroopUnitTestProject\\bin\\$env:CONFIGURATION\\:StroopUnitTestProject.dll\n–appveyor –noshadow"
+-target:"C:\projects\$env:Test-Platform\packages\xunit.runner.console.\n.2.3.1\tools\xunit.console.exe" "-targetargs:StroopUnitTestProject\bin\$env:CONFIGURATION\:StroopUnitTestProject.dll\n–appveyor –noshadow"
 –output:opencoverCoverage.xml
 
 $coveralls = (Resolve-Path\n"packages/coveralls.net.*/tools/csmacnz.coveralls.exe").ToString()

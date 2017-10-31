@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlatform", "StroopTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlatformUnitTests", "StroopUnitTestProject\TestPlatformUnitTests.csproj", "{5282A7FD-3FCE-4499-824D-F79B364C565C}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TestPlatformSetup", "TestPlatformSetup\TestPlatformSetup.vdproj", "{65B90F6E-43B5-418C-B971-4131684A4EED}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,8 +21,6 @@ Global
 		{5282A7FD-3FCE-4499-824D-F79B364C565C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5282A7FD-3FCE-4499-824D-F79B364C565C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5282A7FD-3FCE-4499-824D-F79B364C565C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65B90F6E-43B5-418C-B971-4131684A4EED}.Debug|Any CPU.ActiveCfg = Debug
-		{65B90F6E-43B5-418C-B971-4131684A4EED}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

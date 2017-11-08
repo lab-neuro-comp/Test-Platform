@@ -213,8 +213,9 @@ namespace TestPlatform
             try
             {
                 // writing default program and lists on to disk
-                programDefault.writeDefaultProgramFile(Global.stroopTestFilesPath + Global.programFolderName + programDefault.ProgramName + ".prg"); 
-                ReactionProgram.writeDefaultProgramFile();
+                programDefault.writeDefaultProgramFile(Global.stroopTestFilesPath + Global.programFolderName + programDefault.ProgramName + ".prg");
+                ReactionProgram defaultProgram = new ReactionProgram();
+                defaultProgram.writeDefaultProgramFile();
                 StrList.writeDefaultWordsList(Global.testFilesPath + Global.listFolderName); 
                 StrList.writeDefaultColorsList(Global.testFilesPath + Global.listFolderName); 
             }

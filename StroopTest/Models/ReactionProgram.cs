@@ -9,10 +9,6 @@ namespace TestPlatform.Models
 {
     class ReactionProgram : Program
     {
-        private static String defaultProgramFileText = "padrao 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 Espaço false";
-        private static String[] defaultInstructionText = { "Serão apresentados quadrados de forma aleatória. ",
-                                                    "Aperte a barra de espaço quando ver quadrado",
-                                                    "A tarefa vai começar agora"};
         private Int32 stimuluSize; // [3]
         private Int32 stimulusDistance; // [5] distance from the center of the screen to stimulus
         private Boolean isBeeping; // [9]
@@ -330,7 +326,7 @@ namespace TestPlatform.Models
                 {
                     needsEditionFlag = true;
 
-                    List<string> defaultConfig = defaultProgramFileText.Split().ToList();
+                    List<string> defaultConfig = LocRM.GetString("defaultReactionProgram", currentCulture).Split().ToList();
                     for (int i = 0; i < ELEMENTS; i++)
                     {
                         config.Add(defaultConfig[i]);
@@ -386,13 +382,15 @@ namespace TestPlatform.Models
 
         }
 
-        // escreve arquivo com programa padrão
-        public static void writeDefaultProgramFile() // escreve 
+        // saves default reaction program file on disk
+        public void writeDefaultProgramFile()  
         {
             try
             {
-                TextWriter tw = new StreamWriter(Global.reactionTestFilesPath + Global.programFolderName + "padrao.prg");
-                tw.WriteLine(defaultProgramFileText);
+                string[] defaultInstructionText = { LocRM.GetString("defaultReactionInstructions1", currentCulture),
+                                                    LocRM.GetString("defaultReactionInstructions2", currentCulture)};
+                TextWriter tw = new StreamWriter(Global.reactionTestFilesPath + Global.programFolderName + LocRM.GetString("default", currentCulture) + ".prg");
+                tw.WriteLine(LocRM.GetString("defaultReactionProgram", currentCulture));
                 for (int i = 0; i < defaultInstructionText.Length; i++)
                 {
                     tw.WriteLine(defaultInstructionText[i]);
@@ -401,8 +399,7 @@ namespace TestPlatform.Models
             }
             catch (Exception e)
             {
-                Console.WriteLine("The file could not be written:");
-                Console.WriteLine(e.Message);
+                throw new Exception(LocRM.GetString("defaultReactionProgramError", currentCulture));
             }
         }
 

@@ -62,6 +62,14 @@ namespace TestPlatform.Views
             }
             
             editProgramShapes(editProgram);
+            if (editProgram.ResponseType == "space")
+            {
+                responseTypeBox.SelectedIndex = 0;
+            }
+            else if (editProgram.ResponseType == "arrows")
+            {
+                responseTypeBox.SelectedIndex = 1;
+            }
 
             if (editProgram.getWordListFile() == null)
             {
@@ -117,7 +125,6 @@ namespace TestPlatform.Views
                     bgColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.BackgroundColor);
                 }
             }
-
             if (editProgram.FixPoint == "+")
             {
                 fixPointCross.Checked = true;
@@ -327,6 +334,19 @@ namespace TestPlatform.Views
             }
         }
 
+        private string responseType()
+        {
+            switch (responseTypeBox.SelectedIndex)
+            {
+                case 0:
+                    return "space";
+                case 1:
+                    return "arrows";
+                default:
+                    throw new Exception(LocRM.GetString("responseTypeError", currentCulture));
+            }
+        }
+
 
         private string stimulusColorCheck()
         {
@@ -358,7 +378,7 @@ namespace TestPlatform.Views
                                                 Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
                                                 fixPointValue(), bgColorButton.Text, fixPointColor(),
                                                 rndIntervalCheck.Checked, shapeValue(), randomBeepCheck.Checked, 
-                                                Convert.ToInt32(positionsBox.Text), responseTypeBox.Text);
+                                                Convert.ToInt32(positionsBox.Text), responseType());
                     break;
                 // Program type "words"
                 case 1:
@@ -370,7 +390,7 @@ namespace TestPlatform.Views
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value), 
                                                      Convert.ToInt32(intervalTime.Value), Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
                                                      fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, openImgListButton.Text, randomBeepCheck.Checked, 
-                                                     Convert.ToInt32(positionsBox.Text), responseTypeBox.Text, isRandomExposition.Checked);
+                                                     Convert.ToInt32(positionsBox.Text), responseType(), isRandomExposition.Checked);
                     break;
                 
                 // Program type "imageAndWord"

@@ -483,4 +483,34 @@
   <data name="wordColorConfigInstructions" xml:space="preserve">
     <value />
   </data>
+  <data name="backgroundColorError" xml:space="preserve">
+    <value>Background color of the program should be 'false' or a color hexadecimal code</value>
+  </data>
+  <data name="defaultColorList" xml:space="preserve">
+    <value>#F8E000 #007BB7 #7EC845 #D01C1F</value>
+  </data>
+  <data name="defaultReactionProgram" xml:space="preserve">
+    <value>default 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false</value>
+  </data>
+  <data name="defaultReactionProgramError" xml:space="preserve">
+    <value>Couldn't write default Reaction Test program.</value>
+  </data>
+  <data name="defaultWordList" xml:space="preserve">
+    <value>yellow blue green red</value>
+  </data>
+  <data name="fixPointColorError" xml:space="preserve">
+    <value>Color of the fixation point should be 'false' or a color hexadecimal code</value>
+  </data>
+  <data name="fixPointError" xml:space="preserve">
+    <value>The point of fixation of the program must be represented by: \ n '+' - cross-sectional point \ n'o '- fixing point circle \ n'false' - if there is no point;</value>
+  </data>
+  <data name="notCreated" xml:space="preserve">
+    <value>wasn't written\n\n</value>
+  </data>
+  <data name="reactionTestHeader" xml:space="preserve">
+    <value>program\tparticipant\tdate\tInitialTime\texpositionTime\treactionTime(ms)\tInterval(ms)\testimatedInterval(ms)\texpositionDuration(ms)\texposition(ms)\tsenquency\tpos\tstimulusType\tstimulus\tstimulusColor\tBeep</value>
+  </data>
+  <data name="responseTypeError" xml:space="preserve">
+    <value>Selected response type is invalid. Valid options are: spacebar or key arrows.</value>
+  </data>
 </root>

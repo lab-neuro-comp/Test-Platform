@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using TestPlatform.Views;
 
@@ -12,10 +14,6 @@ namespace TestPlatform.Models
         private List<string> listContent = new List<string>();
         private String listName;
         private String type;
-        private static String defaultWordsListName = "padrao_words.lst";
-        private static String defaultWordsListText = "amarelo azul verde vermelho";
-        private static String defaultColorsListName = "padrao_color.lst";
-        private static String defaultColorsListText = "#F8E000 #007BB7 #7EC845 #D01C1F";
         private static String[] types = { "_image", "_audio", "_words", "_color" };
 
       public StrList(List<string> list, string name, string type)
@@ -157,44 +155,43 @@ namespace TestPlatform.Models
                 return false;
         }
 
+        private static void writesDefaultList(string filepath, string listNameTermination, string listContent)
+        {
+            // properties used to localize strings during runtime
+            ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+            CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+            try
+            {
+                string defaultListName = LocRM.GetString("default", currentCulture) + listNameTermination;
+                TextWriter tw = new StreamWriter(filepath + defaultListName);
+                tw.WriteLine(LocRM.GetString(listContent, currentCulture));
+                tw.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(LocRM.GetString("file", currentCulture) + LocRM.GetString("default", currentCulture) + listNameTermination + LocRM.GetString("notCreated", currentCulture) + ex.Message);
+            }
+        }
 
-        // escreve arquivo com lista de palavras padrão
+        // writes default word list with yellow blue green and red
         public static void writeDefaultWordsList(string filepath)
         {
-            try
-            {
-                TextWriter tw = new StreamWriter(filepath + defaultWordsListName);
-                tw.WriteLine(defaultWordsListText);
-                tw.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Arquivo '" + defaultWordsListName + "' não foi escrito\n\n( " + ex.Message + " )");
-            }
+            writesDefaultList(filepath, "_words.lst", "defaultWordList");
         }
 
-        // escreve arquivo com lista de cores padrão
+        // writes default color list
         public static void writeDefaultColorsList(string filepath)
         {
-            try
-            {
-                TextWriter tw = new StreamWriter(filepath + defaultColorsListName);
-                tw.WriteLine(defaultColorsListText);
-                tw.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Arquivo '" + defaultColorsListName + "' não foi escrito\n\n( " + ex.Message + " )");
-            }
+            writesDefaultList(filepath, "_color.lst", "defaultColorList");
         }
 
-        // lê palavras do arquivo e retorna vetor
+        // reads each word in file and returns a vector of them
         static internal string[] readListFile(string filepath)
         {           
             if (File.Exists(filepath))
             {
                 TextReader tr = new StreamReader(filepath, Encoding.Default, true);
-                List<string>  list = new List<string>(); // lista de palavras
+                List<string>  list = new List<string>();
                 while (tr.Peek() >= 0)
                 {
                     string[] splitedLine = tr.ReadLine().Split();
@@ -204,12 +201,15 @@ namespace TestPlatform.Models
                     }
                 }
                 tr.Close();
-                return list.ToArray(); // retorning list in array                
+                return list.ToArray(); // returning list in array                
             }
             else
             {
-                throw new FileNotFoundException("Arquivo lista (parâmetro): '" + Path.GetFileName(filepath) + 
-                    "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath));
+                // properties used to localize strings during runtime
+                ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+                CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+                throw new FileNotFoundException(LocRM.GetString("file", currentCulture) + Path.GetFileName(filepath) +
+                    LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(filepath));
             }           
         }
 

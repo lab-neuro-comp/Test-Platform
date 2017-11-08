@@ -559,4 +559,40 @@
   <data name="wordColorConfigInstructions" xml:space="preserve">
     <value>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;h1 { font-size:20.0pt; font-family:Arial; color:black mso-ansi-language:PT-BR; font-weight:'normal' }h3 { font-size:12.0pt; font-family:Arial; color:black mso-ansi-language:PT-BR; font-weight:'normal' }p { font-size:11.0pt; font-family:Arial; color:black mso-ansi-language:PT-BR; font-weight:'normal' }&lt;/style&gt;&lt;/head&gt;&lt;body lang=PT-BR&gt;&lt;h1&gt;Nova/Editar Lista de Palavras e Cores&lt;/h1&gt;&lt;p&gt;Permite criar e modificar a lista de imagens a ser utilizada na definição do programa.&lt;/p&gt;&lt;h3&gt;Nome da Lista&lt;/h3&gt;&lt;p&gt;Define o nome da lista que será escolhida na definição do programa. É recomendável que o nome da lista caracterize o conjunto de elementos escolhido e a etapa que compreende, por exemplo, “Victoria1”. A ordem em que os elementos são informados será mantida na respectiva lista.&lt;/p&gt;&lt;h3&gt;Novo Item&lt;/h3&gt;&lt;p&gt;Abre uma tela para preencher uma nova palavra e sua cor. A cor padrão é preto.&lt;/p&gt;&lt;h3&gt;Apagar Item&lt;/h3&gt;&lt;p&gt;Exclui da lista a palavra e sua cor correspondente selecionada com o botão “Apagar”.&lt;/p&gt;&lt;h3&gt;Mover Item&lt;/h3&gt;&lt;p&gt;Reposiciona a palavra colorida selecionado na lista com os botões “Acima” e “Abaixo”.&lt;/p&gt;&lt;h3&gt;Lista de Palavras&lt;/h3&gt;&lt;p&gt;Quando a caixa da lista de palavras estiver marcada, será salva a lista de palavras criada&lt;/p&gt;&lt;h3&gt;Lista de Cores&lt;/h3&gt;&lt;p&gt;Quando a caixa da lista de palavras estiver marcada, será salva a lista de cores criada. Se ambas as caixas estiveram marcadas, ambas listas serão salvas.&lt;/p&gt;&lt;p&gt;Na lista são apresentados o Nome do Arquivo escolhido, a Imagem e a Localização.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</value>
   </data>
+  <data name="backgroundColorError" xml:space="preserve">
+    <value>Cor de Fundo do programa deve ser 'false' ou um código hexadecimal de cor</value>
+  </data>
+  <data name="defaultColorList" xml:space="preserve">
+    <value>#F8E000 #007BB7 #7EC845 #D01C1F</value>
+  </data>
+  <data name="defaultReactionInstructions1" xml:space="preserve">
+    <value>Serão apresentados quadrados de forma aleatória. Aperte a barra de espaço quando ver o quadrado.</value>
+  </data>
+  <data name="defaultReactionInstructions2" xml:space="preserve">
+    <value>A tarefa vai começar agora</value>
+  </data>
+  <data name="defaultReactionProgram" xml:space="preserve">
+    <value>padrao 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false</value>
+  </data>
+  <data name="defaultReactionProgramError" xml:space="preserve">
+    <value>Erro ao criar o programa padrão do teste de tempo de reação.</value>
+  </data>
+  <data name="defaultWordList" xml:space="preserve">
+    <value>amarelo azul verde vermelho</value>
+  </data>
+  <data name="fixPointColorError" xml:space="preserve">
+    <value>Cor do ponto de fixação deve ser 'false' ou um código hexadecimal de cor</value>
+  </data>
+  <data name="fixPointError" xml:space="preserve">
+    <value>O ponto de fixação do programa deve ser representado por:\n'+' - ponto de fixação cruz\n'o' - ponto de fixação circulo\n'false' - se não houver ponto;</value>
+  </data>
+  <data name="notCreated" xml:space="preserve">
+    <value>não foi escrito\n\n</value>
+  </data>
+  <data name="reactionTestHeader" xml:space="preserve">
+    <value>programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep</value>
+  </data>
+  <data name="responseTypeError" xml:space="preserve">
+    <value>Tipo de resposta selecionado inválido. As opções válidas são: barra de espaço ou setas.</value>
+  </data>
 </root>

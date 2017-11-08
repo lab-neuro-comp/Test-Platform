@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using TestPlatform.Models;
 using System.IO;
 using System.Text;
+using System.Resources;
+using System.Globalization;
 
 namespace TestPlatform.Models
 {
     class Program
     {
-        protected String errorExMsg = "Arquivo de Programa - parâmetro inválido.";
+        // properties used to localize strings during runtime
+        protected ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        protected CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         protected String defaultRedColor = "#D01C1F";
         public static Int32 instructionAwaitTime = 4000; // default await time for each frame of instruction shown before the test
         protected Boolean needsEditionFlag;
@@ -49,8 +52,7 @@ namespace TestPlatform.Models
                 }
                 else
                 {
-                    throw new ArgumentException("Nome do programa deve ser composto apenas de caracteres alphanumericos " +
-                                                "e sem espaços;\nExemplo: 'MeuPrograma'");
+                    throw new ArgumentException(LocRM.GetString("programNotAlphanumeric", currentCulture));
                 }
             }
         }
@@ -60,9 +62,16 @@ namespace TestPlatform.Models
             get { return numExpositions; }
             set
             {
-                if (Validations.isNumExpositionsValid(value)) numExpositions = value;
-                else throw new ArgumentException(errorExMsg + "\nNumero de exposições deve ser maior que zero");
-            }   // number of expositions must be greater than zero
+                // number of expositions must be greater than zero
+                if (Validations.isNumExpositionsValid(value))
+                {
+                    numExpositions = value;
+                }
+                else
+                {
+                    throw new ArgumentException(LocRM.GetString("expoNumber", currentCulture));
+                }
+            }   
         }
 
         public int ExpositionTime
@@ -70,14 +79,15 @@ namespace TestPlatform.Models
             get { return expositionTime; }
             set
             {
+                // exposition time must be greater than zero
                 if (Validations.isExpositionTimeValid(value))
                 {
                     expositionTime = value;
                 }
                 else
                 {
-                    throw new ArgumentException(errorExMsg + "\nTempo de exposição deve ser maior que zero e menor que 10.000 (em milissegundos)");
-                }   // exposition time must be greater than zero
+                    throw new ArgumentException(LocRM.GetString("expoTime", currentCulture));
+                }   
             }
         }
 
@@ -86,18 +96,19 @@ namespace TestPlatform.Models
             get { return intervalTime; }
             set
             {
+                // interval time must be greater than zero
                 if (Validations.isIntervalTimeValid(value))
                 {
                     intervalTime = value;
                 }
                 else
                 {
-                    throw new ArgumentException(errorExMsg + "\nTempo de intervalo deve ser maior que zero (em milissegundos)");
-                }   // interval time must be greater than zero
+                    throw new ArgumentException(LocRM.GetString("intervalTime", currentCulture));
+                }   
             }
         }
 
-
+        // creates word list object in case program has one 
         public void setWordListFile(string listName)
         {
             if (listName != "false")
@@ -111,6 +122,7 @@ namespace TestPlatform.Models
 
         }
 
+        // gets program word list in case there is one
         public StrList getWordListFile()
         {
             if (wordsListFile != null)
@@ -155,14 +167,15 @@ namespace TestPlatform.Models
             get { return backgroundColor; }
             set
             {
+                // colors must match with the hexadecimal (#000000) pattern for color codes or be "false" to indicate that theres no color defined
                 if (Validations.isColorValid(value))
                 {
                     backgroundColor = value;
                 }
                 else
                 {
-                    throw new ArgumentException(errorExMsg + "\nCor de Fundo deve ser 'false' ou um código hexadecimal de cor");
-                }   // colors must match with the hexadecimal pattern for color codes or be "false" to indicate that theres no color defined
+                    throw new ArgumentException(LocRM.GetString("backgroundColorError", currentCulture));
+                }   
             }
         }
 
@@ -197,8 +210,14 @@ namespace TestPlatform.Models
             get { return fixPoint; }
             set
             {
-                if (Validations.isFixPointValid(value)) fixPoint = value.ToLower();
-                else throw new ArgumentException("Ponto de fixação deve ser representado por:\n'+' - ponto de fixação cruz\n'o' - ponto de fixação circulo\n'false' - se não houver ponto;");
+                if (Validations.isFixPointValid(value))
+                {
+                    fixPoint = value.ToLower();
+                }
+                else
+                {
+                    throw new ArgumentException(LocRM.GetString("fixPointError", currentCulture));
+                }
             }
         }
 
@@ -236,18 +255,24 @@ namespace TestPlatform.Models
                 if (Validations.isColorValid(value))
                 {
                     fixPointColor = value;
-                    if (fixPointColor.ToLower().Equals("false")) { fixPointColor = defaultRedColor; }
+                    if (fixPointColor.ToLower().Equals("false"))
+                    {
+                        fixPointColor = defaultRedColor;
+                    }
                 }
                 else
                 {
-                    throw new ArgumentException(errorExMsg + "\nCor do ponto de fixação deve ser 'false' ou um código hexadecimal de cor");
+                    throw new ArgumentException(LocRM.GetString("fixPointColorError", currentCulture));
                 }
             }
         }
 
         public bool ExpositionRandom
         {
-            get { return expositionRandom; }
+            get
+            {
+                return expositionRandom;
+            }
             set
             {
                 expositionRandom = value;
@@ -257,15 +282,22 @@ namespace TestPlatform.Models
 
         public bool IntervalTimeRandom
         {
-            get { return intervalTimeRandom; }
+            get
+            {
+                return intervalTimeRandom;
+            }
             set
             {
                 intervalTimeRandom = value;
             }
         }
+
         public bool NeedsEdition
         {
-            get { return needsEditionFlag; }
+            get
+            {
+                return needsEditionFlag;
+            }
         }
 
         public static string encodeLatinText(string text)
@@ -282,19 +314,21 @@ namespace TestPlatform.Models
 
         public static string[] readDirListFile(string filepath)
         {
-            if (File.Exists(filepath)) {
+            if (File.Exists(filepath))
+            {
                 string[] imageDirs = File.ReadAllLines(filepath);
                 return imageDirs; // return directories
             }
-            else{
-                throw new FileNotFoundException("Arquivo lista (parâmetro): '" + Path.GetFileName(filepath) + 
-                    "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath));
+            else
+            {
+                throw new FileNotFoundException(Path.GetFileName(filepath) + 
+                    "  " + Path.GetDirectoryName(filepath));
             }
             
             
         }
 
-        // lê dados do arquivo e retorna vetor
+        // reads data file and returns a list with attributes
         public static string[] readDataFile(string filepath)
         {
             if (File.Exists(filepath)) {
@@ -303,8 +337,8 @@ namespace TestPlatform.Models
             }
             else
             {
-                throw new FileNotFoundException("Arquivo Data: '" + Path.GetFileName(filepath) +
-                    "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath));
+                throw new FileNotFoundException(Path.GetFileName(filepath) +
+                    "   " + Path.GetDirectoryName(filepath));
             }            
         }
 
@@ -333,7 +367,7 @@ namespace TestPlatform.Models
         }
 
 
-        // escreve linha a linha no arquivo de saída
+        // writes lines in output file
         public static void writeOutputFile(string filepath, string outContent)
         {
             try

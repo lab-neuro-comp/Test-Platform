@@ -14,10 +14,6 @@ namespace TestPlatform.Models
 {
     class StroopProgram : Program
     {
-        private String defaultProgramFileText = "padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false";
-        private String[] defaultInstructionText = { "Serão apresentadas palavras coloridas de forma aleatória. Palavras surgirão rapidamente e em seguida desaparecerão",
-                                                    "Diga a cor em que a palavra está escrita",
-                                                    "A tarefa vai começar agora"};
         private Boolean audioCapture;              // [9]*  is audio capture activated
         private Boolean subtitleShow;              // [10]* subtitles activated
         private Int32 subtitlePlace;              // [11]* subtitles place in screen (left, right, up and down the exposition stimulus)
@@ -186,7 +182,7 @@ namespace TestPlatform.Models
                 }
                 else
                 {
-                    throw new ArgumentException(errorExMsg + "\nPosição da legenda " + value + " deve ser um número de 1 a 5");
+                    throw new ArgumentException(LocRM.GetString("subtitlePositionError", currentCulture) + value + LocRM.GetString("subtitlePositionError1", currentCulture));
                 }   // each number indicates a position
             }
         }
@@ -196,14 +192,15 @@ namespace TestPlatform.Models
             get { return subtitleColor; }
             set
             {
+                // colors must match with the hexadecimal pattern for color codes or be "false" to indicate that theres no color defined
                 if (Validations.isColorValid(value))
                 {
                     subtitleColor = value;
                 }
                 else
                 {
-                    throw new ArgumentException(errorExMsg + "\nCor da Legenda deve ser 'false' ou um código hexadecimal de cor");
-                }   // colors must match with the hexadecimal pattern for color codes or be "false" to indicate that theres no color defined
+                    throw new ArgumentException(LocRM.GetString("subtitleColorError", currentCulture));
+                }   
             }
         }
         public string data()
@@ -300,7 +297,7 @@ namespace TestPlatform.Models
                 }
                 else
                 {
-                    throw new ArgumentException(errorExMsg + "\nNome do arquivo " + value + " de lista deve ter terminação .lst");
+                    throw new ArgumentException(LocRM.GetString("fileName", currentCulture) + value + LocRM.GetString("fileNameError", currentCulture));
                 }
             }
         }
@@ -311,7 +308,7 @@ namespace TestPlatform.Models
             set
             {
                 if (Validations.isExpoTypeValid(value)) expositionType = value.ToLower();
-                else throw new ArgumentException("Tipo de exposição deve ser do tipo 'txt', 'img', 'imgtxt', 'txtaud' ou 'imgaud'");
+                else throw new ArgumentException(LocRM.GetString("expositionTypeError", currentCulture) + " 'txt', 'img', 'imgtxt', 'txtaud' ou 'imgaud'");
             }
         }
 
@@ -341,16 +338,19 @@ namespace TestPlatform.Models
                 if (Validations.isColorValid(value))
                 {
                     wordColor = value;
-                    if (value.ToLower().Equals("false")) { wordColor = defaultRedColor; }
+                    if (value.ToLower().Equals("false"))
+                    {
+                        wordColor = defaultRedColor;
+                    }
                 }
                 else
                 {
-                    throw new ArgumentException(errorExMsg + "\nCor do ponto da palavra deve ser 'false' ou um código hexadecimal de cor");
+                    throw new ArgumentException(LocRM.GetString("wordColorError", currentCulture));
                 }
             }
         }
 
-        // lê arquivo com programa e retorna true para sucesso
+        // converts .prg file into a stroopprogram object
         public void readProgramFile(string filepath)
         {
             StreamReader tr;
@@ -358,15 +358,14 @@ namespace TestPlatform.Models
             string[] linesInstruction;
             List<string> config = new List<string>();
 
-            try
-            {
-                if (!File.Exists(filepath)) { throw new FileNotFoundException(); } // confere existência do arquivo
 
+            if (File.Exists(filepath))
+            {
                 tr = new StreamReader(filepath, Encoding.Default, true);
                 line = tr.ReadLine();
                 line = encodeLatinText(line);
                 config = line.Split().ToList();
-                List<string> defaultConfig = defaultProgramFileText.Split().ToList();
+                List<string> defaultConfig = LocRM.GetString("defaultStroopProgram", currentCulture).Split().ToList();
                 tr.Close();
 
                 Console.WriteLine(config[0]);
@@ -380,14 +379,15 @@ namespace TestPlatform.Models
                         config.Add(defaultConfig[i]);
                     }
                 }
-                
+
                 ProgramName = config[0];
                 if (Path.GetFileNameWithoutExtension(filepath) != (this.ProgramName))
                 {
-                    throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName + "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + "'.prg");
+                    throw new Exception(LocRM.GetString("fileNameError1", currentCulture) + this.ProgramName + " != " + Path.GetFileNameWithoutExtension(filepath) + "'.prg");
                 }
+
                 NumExpositions = Int32.Parse(config[1]);
-                ExpositionTime = Int32.Parse(config[2]); 
+                ExpositionTime = Int32.Parse(config[2]);
                 ExpositionRandom = Boolean.Parse(config[3]);
                 IntervalTime = Int32.Parse(config[4]);
                 IntervalTimeRandom = Boolean.Parse(config[5]);
@@ -395,26 +395,37 @@ namespace TestPlatform.Models
                 setColorListFile(config[7]);
                 BackgroundColor = config[8];
                 AudioCapture = Boolean.Parse(config[9]);
-                SubtitleShow = Boolean.Parse(config[10]);
 
-                if (SubtitleShow) { SubtitlePlace = Int32.Parse(config[11]); SubtitleColor = config[12]; }
-                else { SubtitlePlace = 1; SubtitleColor = "false"; }
-                ExpositionType = config[13]; // aqui
+                // subtitle configurations
+                SubtitleShow = Boolean.Parse(config[10]);
+                if (SubtitleShow)
+                {
+                    SubtitlePlace = Int32.Parse(config[11]);
+                    SubtitleColor = config[12];
+                }
+                else
+                {
+                    SubtitlePlace = 1;
+                    SubtitleColor = "false";
+                }
+
+                ExpositionType = config[13];
                 setImageListFile(config[14]);
                 FixPoint = config[15];
                 FontWordLabel = config[16];
                 ExpandImage = Boolean.Parse(config[17]);
                 setAudioListFile(config[18]);
                 SubtitlesListFile = config[19];
-                
+
                 FixPointColor = config[20];
                 DelayTime = Int32.Parse(config[21]);
                 RotateImage = Int32.Parse(config[22]);
                 RndSubtitlePlace = Boolean.Parse(config[23]);
                 WordColor = config[24];
 
-                linesInstruction = File.ReadAllLines(filepath);               
-                if (linesInstruction.Length > 1) // lê instrução se houver
+                // reads instructions if there are any
+                linesInstruction = File.ReadAllLines(filepath);
+                if (linesInstruction.Length > 1) 
                 {
                     for (int i = 1; i < linesInstruction.Length; i++)
                     {
@@ -425,13 +436,12 @@ namespace TestPlatform.Models
                 {
                     this.InstructionText = null;
                 }
-
             }
-            catch (FileNotFoundException ex)
+            else
             {
-                throw new FileNotFoundException("Arquivo programa: " + Path.GetFileName(filepath) + "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath) + "\n\n( " + ex.Message + " )");
+                throw new FileNotFoundException(LocRM.GetString("file", currentCulture) + Path.GetFileName(filepath) + LocRM.GetString("fileNotFound", currentCulture) + Path.GetDirectoryName(filepath));
             }
-            
+
         }
 
         public bool saveProgramFile(string path, string instructionBoxText)
@@ -449,13 +459,16 @@ namespace TestPlatform.Models
             return true;
         }
         
-        // escreve arquivo com programa padrão
+        // writes default file
         public void writeDefaultProgramFile(string filepath) // escreve 
         {
+            string[] defaultInstructionText = { LocRM.GetString("defaultStroopInstruction1", currentCulture),
+                                                LocRM.GetString("defaultStroopInstruction2", currentCulture),
+                                                LocRM.GetString("defaultStroopInstruction3", currentCulture)};
             try
             {
                 TextWriter tw = new StreamWriter(filepath);
-                tw.WriteLine(defaultProgramFileText);
+                tw.WriteLine(LocRM.GetString("defaultStroopProgram", currentCulture));
                 for(int i = 0; i < defaultInstructionText.Length; i++)
                 {
                     tw.WriteLine(defaultInstructionText[i]);

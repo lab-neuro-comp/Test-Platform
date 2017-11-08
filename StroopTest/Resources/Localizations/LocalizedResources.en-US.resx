@@ -495,8 +495,32 @@
   <data name="defaultReactionProgramError" xml:space="preserve">
     <value>Couldn't write default Reaction Test program.</value>
   </data>
+  <data name="defaultStroopInstruction1" xml:space="preserve">
+    <value>This test will present colored words in random order. Words will appear and rapidly disappear</value>
+  </data>
+  <data name="defaultStroopInstruction2" xml:space="preserve">
+    <value>Say out loud the color that the word is painted</value>
+  </data>
+  <data name="defaultStroopInstruction3" xml:space="preserve">
+    <value>This task will start now</value>
+  </data>
+  <data name="defaultStroopProgram" xml:space="preserve">
+    <value>default 16 1000 true 1000 False default_words.lst default_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false</value>
+  </data>
   <data name="defaultWordList" xml:space="preserve">
     <value>yellow blue green red</value>
+  </data>
+  <data name="expositionTypeError" xml:space="preserve">
+    <value>Exposition type must be one of the following</value>
+  </data>
+  <data name="fileName" xml:space="preserve">
+    <value>File name  </value>
+  </data>
+  <data name="fileNameError" xml:space="preserve">
+    <value>of list must finish with .lst</value>
+  </data>
+  <data name="fileNameError1" xml:space="preserve">
+    <value>Program name in file must be equal to file name. </value>
   </data>
   <data name="fixPointColorError" xml:space="preserve">
     <value>Color of the fixation point should be 'false' or a color hexadecimal code</value>
@@ -512,5 +536,20 @@
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Selected response type is invalid. Valid options are: spacebar or key arrows.</value>
+  </data>
+  <data name="stroopResultHeader" xml:space="preserve">
+    <value>program\tparticipant\tdate\thour\ttime(ms)\tsequency\tstimulusType\tsubtitle\tsubtitlePosition\tstimulus\tcolor\taudio</value>
+  </data>
+  <data name="subtitleColorError" xml:space="preserve">
+    <value>Subtitle color must be 'false' or a hex color code</value>
+  </data>
+  <data name="subtitlePositionError" xml:space="preserve">
+    <value>Subtitle position</value>
+  </data>
+  <data name="subtitlePositionError1" xml:space="preserve">
+    <value>must be a number between 1 and 5.</value>
+  </data>
+  <data name="wordColorError" xml:space="preserve">
+    <value>Word point color must be 'false' or a hexadecimal color code</value>
   </data>
 </root>

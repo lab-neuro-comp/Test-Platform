@@ -310,7 +310,7 @@
     <value>Número de vezes em que os estímulos serão expostos</value>
   </data>
   <data name="participantNameAlphanumericError" xml:space="preserve">
-    <value>Nome do participante deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'LuisAugusto'"</value>
+    <value>Nome do participante deve ser composto apenas de caracteres alfanuméricos e sem espaços;\nExemplo: 'LuisAugusto'"</value>
   </data>
   <data name="participantNameLengthError" xml:space="preserve">
     <value>O nome do participante deve ser preenchido.</value>
@@ -562,6 +562,9 @@
   <data name="backgroundColorError" xml:space="preserve">
     <value>Cor de Fundo do programa deve ser 'false' ou um código hexadecimal de cor</value>
   </data>
+  <data name="defaulStroopProgram" xml:space="preserve">
+    <value>padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false</value>
+  </data>
   <data name="defaultColorList" xml:space="preserve">
     <value>#F8E000 #007BB7 #7EC845 #D01C1F</value>
   </data>
@@ -577,8 +580,29 @@
   <data name="defaultReactionProgramError" xml:space="preserve">
     <value>Erro ao criar o programa padrão do teste de tempo de reação.</value>
   </data>
+  <data name="defaultStroopInstruction1" xml:space="preserve">
+    <value>Serão apresentadas palavras coloridas de forma aleatória. Palavras surgirão rapidamente e em seguida desaparecerão</value>
+  </data>
+  <data name="defaultStroopInstruction2" xml:space="preserve">
+    <value>Diga a cor em que a palavra está escrita</value>
+  </data>
+  <data name="defaultStroopInstruction3" xml:space="preserve">
+    <value>A tarefa vai começar agora</value>
+  </data>
   <data name="defaultWordList" xml:space="preserve">
     <value>amarelo azul verde vermelho</value>
+  </data>
+  <data name="expositionTypeError" xml:space="preserve">
+    <value>Tipo de exposição deve ser um dos seguintes</value>
+  </data>
+  <data name="fileName" xml:space="preserve">
+    <value>Nome do arquivo</value>
+  </data>
+  <data name="fileNameError" xml:space="preserve">
+    <value>de lista deve ter terminação .lst</value>
+  </data>
+  <data name="fileNameError1" xml:space="preserve">
+    <value>Nome do programa contido dentro do arquivo deve ser igual ao nome do arquivo. </value>
   </data>
   <data name="fixPointColorError" xml:space="preserve">
     <value>Cor do ponto de fixação deve ser 'false' ou um código hexadecimal de cor</value>
@@ -594,5 +618,20 @@
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Tipo de resposta selecionado inválido. As opções válidas são: barra de espaço ou setas.</value>
+  </data>
+  <data name="stroopResultHeader" xml:space="preserve">
+    <value>programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio</value>
+  </data>
+  <data name="subtitleColorError" xml:space="preserve">
+    <value>Cor da Legenda deve ser 'false' ou um código hexadecimal de cor</value>
+  </data>
+  <data name="subtitlePositionError" xml:space="preserve">
+    <value>Posição da legenda</value>
+  </data>
+  <data name="subtitlePositionError1" xml:space="preserve">
+    <value>deve ser um número de 1 a 5</value>
+  </data>
+  <data name="wordColorError" xml:space="preserve">
+    <value>Cor do ponto da palavra deve ser 'false' ou um código hexadecimal de cor</value>
   </data>
 </root>

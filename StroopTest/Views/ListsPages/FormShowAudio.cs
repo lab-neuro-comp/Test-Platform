@@ -15,7 +15,6 @@ namespace TestPlatform
     {
         private string path = Global.stroopTestFilesPath + Global.resultsFolderName;
         private SoundPlayer player = new SoundPlayer();
-        private string instructionsText = HelpData.ShowAudioInstructions + HelpData.NewAudioInstructions;
         Audio audioRecorder = new Audio();
         private Timer timer;
         private DateTime startTime = DateTime.MinValue;
@@ -159,7 +158,7 @@ namespace TestPlatform
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(instructionsText);
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("showAudioInstructions", currentCulture) + LocRM.GetString("newAudioInstructions", currentCulture));
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

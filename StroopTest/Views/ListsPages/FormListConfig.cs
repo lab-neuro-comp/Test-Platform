@@ -12,13 +12,16 @@ using TestPlatform.Controllers;
 using System.Collections.Generic;
 using TestPlatform.Views;
 using System.Linq;
+using System.Globalization;
+using System.Resources;
 
 namespace TestPlatform
 {
     public partial class FormListConfig : Form
     {
         private string path;
-        private string instructionsText = HelpData.WordColorConfigInstructions;
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public FormListConfig(string dataFolderPath, string lstName)
         {
@@ -465,7 +468,7 @@ namespace TestPlatform
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(instructionsText);
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("wordColorConfigInstructions", currentCulture));
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 

@@ -29,8 +29,6 @@ namespace TestPlatform
         private static string DEFAULTPGRNAME = "padrao";
         private static string INSTRUCTIONSFILENAME = "editableInstructions.txt";
         private static string PGRCONFIGHELPFILENAME = "prgConfigHelp.txt";
-        private static string TECHTEXT = HelpData.TechnicalInformations;
-        private static string HELPTEXT = HelpData.VisualizeHelp;
         public Panel _contentPanel;
         /* Variables
          */
@@ -354,7 +352,7 @@ namespace TestPlatform
 
         private void techInfoButto_ToolStrip_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(TECHTEXT);
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("technicalInformation", currentCulture));
             try {
                 infoBox.Show();
             }
@@ -366,7 +364,7 @@ namespace TestPlatform
 
         private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(HELPTEXT);
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("viewHelp", currentCulture));
             try
             {
                 infoBox.Show();

@@ -13,7 +13,6 @@ namespace TestPlatform
     public partial class FormImgConfig : UserControl
     {
         private ImageList imgsList = new ImageList();
-        private string instructionsText = HelpData.ImageConfigInstructions;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
@@ -297,7 +296,7 @@ namespace TestPlatform
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(instructionsText);
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("imageConfigInstructions", currentCulture));
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

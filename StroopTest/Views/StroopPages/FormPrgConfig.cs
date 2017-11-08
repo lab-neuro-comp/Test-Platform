@@ -26,7 +26,6 @@ namespace TestPlatform
         private Int32 subDirectionNumber = 1;
         private String fontSize = "160";
         private String editPrgName = "error";
-        private String instructionsText = HelpData.ProgramConfigInstructions;
         private String prgName = "false";
 
         public string PrgName
@@ -392,7 +391,7 @@ namespace TestPlatform
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(instructionsText);
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("programConfigInstructions", currentCulture));
             try { infoBox.Show(); }
             catch (Exception ex) { throw new Exception(ex.Message); }
         }

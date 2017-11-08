@@ -17,7 +17,6 @@ namespace TestPlatform
     {
         List<string> wordsList = new List<string>(), colorsList = new List<string>();
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
-        private string instructionsText = HelpData.WordColorConfigInstructions;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
@@ -410,7 +409,7 @@ namespace TestPlatform
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(instructionsText);
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("wordColorConfigInstructions", currentCulture));
             try
             {
                 infoBox.Show();

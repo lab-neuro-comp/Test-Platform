@@ -22,7 +22,6 @@ namespace TestPlatform
     {
         private StroopProgram program = new StroopProgram();
         private string path = Global.stroopTestFilesPath + Global.resultsFolderName;
-        private string instructionsText = HelpData.ShowDataInstructions;
         private SoundPlayer player = new SoundPlayer();
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
@@ -137,7 +136,7 @@ namespace TestPlatform
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(instructionsText);
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("showDataInstructions", currentCulture));
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

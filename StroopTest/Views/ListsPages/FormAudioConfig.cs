@@ -13,7 +13,6 @@ namespace TestPlatform
     public partial class FormAudioConfig : UserControl
     {
         private SoundPlayer player = new SoundPlayer();
-        private string instructionsText = HelpData.AudioConfigInstructions;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
@@ -171,7 +170,7 @@ namespace TestPlatform
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(instructionsText);
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("audioConfigInstructions", currentCulture));
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

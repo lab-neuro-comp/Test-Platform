@@ -2,8 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
+    using System.Resources;
     using TestPlatform.Views;
 
     public class ExperimentProgram
@@ -14,6 +16,9 @@
         private int intervalTime;               // duration time for interval between program expositions in millisec, it can be zero
         private List<string> instructionText = new List<string>();
         private bool trainingProgram; // if true there is a program which is fixed (training program) and the  rest is random
+       // properties used to localize strings during runtime
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public bool IsOrderRandom
         {
@@ -43,7 +48,7 @@
                 }
                 else
                 {
-                    throw new ArgumentException("\nTempo de intervalo entre programas deve ser maior ou igual a zero (em milissegundos)");
+                    throw new ArgumentException(LocRM.GetString("intervalInvalid", currentCulture));
                 }
             }
         }
@@ -63,8 +68,7 @@
                 }
                 else
                 {
-                    throw new ArgumentException("Nome do experimento deve ser composto apenas de caracteres alphanumericos " +
-                                                "e sem espaços;\nExemplo: 'MeuExperimento'");
+                    throw new ArgumentException(LocRM.GetString("experimentName", currentCulture));
                 }
             }
         }
@@ -172,8 +176,8 @@
                 ExperimentName = configurationFile[0];
                 if (Path.GetFileNameWithoutExtension(filePath) != (this.ExperimentName))
                 {
-                    throw new Exception("Parâmetro escrito no arquivo como: '" + this.ExperimentName +
-                        "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filePath) + "'.prg");
+                    throw new Exception(LocRM.GetString("parameter", currentCulture) + this.ExperimentName +
+                       LocRM.GetString("parameterShould", currentCulture) + Path.GetFileNameWithoutExtension(filePath) + "'.prg");
                 }
                 IntervalTime = int.Parse(configurationFile[1]);
                 IsOrderRandom = bool.Parse(configurationFile[2]);
@@ -215,8 +219,7 @@
             }
             else
             {
-               throw new FileNotFoundException("Arquivo programa: " + Path.GetFileName(filePath) + "\nnão foi encontrado no local:\n" +
-                Path.GetDirectoryName(filePath));
+               throw new FileNotFoundException(LocRM.GetString("fileNotFound", currentCulture) + Path.GetDirectoryName(filePath));
             }           
 
         }

@@ -438,7 +438,49 @@
   <data name="selectWord" xml:space="preserve">
     <value>You must select the word list file.</value>
   </data>
+  <data name="experimentHeader" xml:space="preserve">
+    <value>experiment\tprogram\tProgramType\tparticipant\tdate\tinitialTime\ttestTime\tsequence</value>
+  </data>
+  <data name="experimentName" xml:space="preserve">
+    <value>The experiment name must be composed only of alphanumerical characters and no spaces; \ nExample: 'MyExperiment'</value>
+  </data>
   <data name="import" xml:space="preserve">
     <value>Files were imported sucessfully.</value>
+  </data>
+  <data name="intervalInvalid" xml:space="preserve">
+    <value>\n Interval time between programs must be equal to zero or greater (miliseconds).</value>
+  </data>
+  <data name="parameter" xml:space="preserve">
+    <value>File parameter written:</value>
+  </data>
+  <data name="parameterShould" xml:space="preserve">
+    <value>\n should be:</value>
+  </data>
+  <data name="audioConfigInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imageConfigInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="newAudioInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="programConfigInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="showAudioInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="showDataInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="technicalInformation" xml:space="preserve">
+    <value />
+  </data>
+  <data name="viewHelp" xml:space="preserve">
+    <value />
+  </data>
+  <data name="wordColorConfigInstructions" xml:space="preserve">
+    <value />
   </data>
 </root>

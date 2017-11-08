@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,13 +14,22 @@ namespace TestPlatform.Models
     */
     class ExperimentTest
     {
-        private static String headerOutputFileText = "experimento\tprograma\ttipoPrograma\tusuario\tdata\thorarioInicial\thorarioTeste\tsequencia";
+        // properties used to localize strings during runtime
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+        private static String headerOutputFileText;
         private DateTime initialDate = DateTime.Now;           // test execution date
         private String participantName;                // tested person name
         private Char mark; // char mark made into neurospectrum program
         private ExperimentProgram programInUse = new ExperimentProgram();
         private List<string> output = new List<string>();
         private DateTime expositionTime;
+
+        public ExperimentTest()
+        {
+            headerOutputFileText = LocRM.GetString("experimentHeader", currentCulture);
+        }
+
 
         public DateTime InitialDate
         {

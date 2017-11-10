@@ -223,7 +223,7 @@
     <value>Some field was not filled in correctly.</value>
   </data>
   <data name="file" xml:space="preserve">
-    <value>File</value>
+    <value>File </value>
   </data>
   <data name="fixpointColor" xml:space="preserve">
     <value>Fix point color</value>
@@ -551,5 +551,11 @@
   </data>
   <data name="wordColorError" xml:space="preserve">
     <value>Word point color must be 'false' or a hexadecimal color code</value>
+  </data>
+  <data name="defaultReactionInstructions1" xml:space="preserve">
+    <value>Random squares will be displayed. Press the space bar when you see the square.</value>
+  </data>
+  <data name="defaultReactionInstructions2" xml:space="preserve">
+    <value>The task will start now</value>
   </data>
 </root>

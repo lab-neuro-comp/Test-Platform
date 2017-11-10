@@ -26,7 +26,11 @@ namespace TestPlatform.Views.ExperimentPages
             this.Dock = DockStyle.Fill;
             string[] filePaths = null;
 
-            string[] headers = ExperimentTest.HeaderOutputFileText.Split('\t');
+            // getting experiment localized headers and separating each one of them
+            string localizedHeaders = LocRM.GetString("experimentHeader", currentCulture);
+            string[] separators = { @"\t" };
+            string[] headers = localizedHeaders.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+
             foreach (var columnName in headers)
             {
                 // Configuring headers name
@@ -69,7 +73,7 @@ namespace TestPlatform.Views.ExperimentPages
                 {
                     using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
                     {
-                        tw.WriteLine(ExperimentTest.HeaderOutputFileText);
+                        tw.WriteLine(LocRM.GetString("experimentHeader", currentCulture));
                         for (int i = 0; i < lines.Length; i++)
                         {
                             tw.WriteLine(lines[i]); // escreve linhas no novo arquivo

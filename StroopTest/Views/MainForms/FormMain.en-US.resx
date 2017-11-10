@@ -154,7 +154,7 @@
     <value>StroopTest</value>
   </data>
   <data name="executingNameLabel.Text" xml:space="preserve">
-    <value>padrao</value>
+    <value>default</value>
   </data>
   <data name="selectButton.Text" xml:space="preserve">
     <value>Select</value>

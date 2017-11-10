@@ -5,36 +5,35 @@
 namespace TestPlatform
 {
     using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Globalization;
     using System.IO;
-    using System.Windows.Forms;
+    using System.IO.Compression;
     using System.Resources;
+    using System.Windows.Forms;
+    using TestPlatform.Controllers;
     using TestPlatform.Models;
     using TestPlatform.Views;
+    using TestPlatform.Views.ExperimentPages;
+    using TestPlatform.Views.ReactionPages;
     using TestPlatform.Views.SidebarControls;
     using TestPlatform.Views.SidebarUserControls;
-    using System.Collections.Generic;
-    using TestPlatform.Controllers;
-    using TestPlatform.Views.ReactionPages;
-    using TestPlatform.Views.ExperimentPages;
-    using System.Globalization;
-    using System.ComponentModel;
-    using System.Linq;
     using Views.MainForms;
-    using System.IO.Compression;
 
     public partial class FormMain : Form
     {
         private FolderBrowserDialog folderBrowserDialog1;
 
-        private static string DEFAULTPGRNAME = "padrao";
         private static string INSTRUCTIONSFILENAME = "editableInstructions.txt";
         private static string PGRCONFIGHELPFILENAME = "prgConfigHelp.txt";
         public Panel _contentPanel;
         /* Variables
          */
-        private Control currentPanelContent; //holds current panel in exact execution time
+        //holds current panel in exact execution time
+        private Control currentPanelContent; 
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
+        private CultureInfo currentCulture = System.Threading.Thread.CurrentThread.CurrentUICulture;
 
         /**
          * Constructor method, creates directories for program, in case they dont exist
@@ -209,7 +208,7 @@ namespace TestPlatform
         private void initializeDefaultPrograms() // inicializa programDefault padrão
         {
             StroopProgram programDefault = new StroopProgram();
-            programDefault.ProgramName = DEFAULTPGRNAME;
+            programDefault.ProgramName = LocRM.GetString("default", currentCulture);
             try
             {
                 // writing default program and lists on to disk

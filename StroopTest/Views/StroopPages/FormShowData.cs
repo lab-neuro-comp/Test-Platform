@@ -7,7 +7,6 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Media;
 using TestPlatform.Models;
@@ -33,7 +32,10 @@ namespace TestPlatform
             this.Dock = DockStyle.Fill;
             string[] filePaths = null;
 
-            string[] headers = StroopTest.HeaderOutputFileText.Split('\t');
+            string localizedHeaders = LocRM.GetString("stroopResultHeader", currentCulture);
+            string[] separators = { @"\t" };
+            string[] headers = localizedHeaders.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+
             foreach (var columnName in headers)
             {
                 dataGridView1.Columns.Add(columnName, columnName); // Configura Cabeçalho na tabela
@@ -115,7 +117,7 @@ namespace TestPlatform
                 {
                     using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
                     {
-                        tw.WriteLine(StroopTest.HeaderOutputFileText);
+                        tw.WriteLine(LocRM.GetString("stroopResultHeader", currentCulture));
                         for (int i = 0; i < lines.Length; i++)
                         {
                             // writing lines on new file

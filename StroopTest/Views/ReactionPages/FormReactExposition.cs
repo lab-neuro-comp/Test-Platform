@@ -530,7 +530,10 @@ namespace TestPlatform.Views
             {
                 /* exposition was a success*/
                 Program.writeOutputFile(outputFile, string.Join("\n", executingTest.Output.ToArray()));
-                Close();
+                if (Application.OpenForms.OfType<FormReactExposition>().Any())
+                {
+                    Close();
+                }
             }
             else
             {

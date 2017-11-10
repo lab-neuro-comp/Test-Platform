@@ -399,7 +399,7 @@ namespace TestPlatform.Models
             }
             catch (Exception e)
             {
-                throw new Exception(LocRM.GetString("defaultReactionProgramError", currentCulture));
+                throw new Exception(LocRM.GetString("defaultReactionProgramError", currentCulture) + "\n\n\n" +  e.Message);
             }
         }
 

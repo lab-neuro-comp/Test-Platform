@@ -19,9 +19,8 @@ namespace TestPlatform
         [STAThread]
         public static void Main()
         {
-            CultureInfo newCultureInfo = new System.Globalization.CultureInfo("pt-BR");
-            Thread.CurrentThread.CurrentCulture = newCultureInfo;
-            Thread.CurrentThread.CurrentUICulture = newCultureInfo;
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+            System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("pt-BR");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             FormMain application = new FormMain();

@@ -378,6 +378,8 @@
             // 
             // idiomaToolStripMenuItem
             // 
+            this.idiomaToolStripMenuItem.Checked = true;
+            this.idiomaToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.idiomaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.portuguêsBrasilToolStripMenuItem,
             this.englishUnitedStatesToolStripMenuItem});

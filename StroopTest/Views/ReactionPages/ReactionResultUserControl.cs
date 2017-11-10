@@ -6,6 +6,7 @@ using TestPlatform.Models;
 using System.IO;
 using System.Globalization;
 using System.Resources;
+using System.Text.RegularExpressions;
 
 namespace TestPlatform.Views.ReactionPages
 {
@@ -20,18 +21,22 @@ namespace TestPlatform.Views.ReactionPages
             InitializeComponent();
             this.Dock = DockStyle.Fill;
             string[] filePaths = null;
-
-            string[] headers = ReactionTest.HeaderOutputFileText.Split('\t');
+            
+            // getting names of resulting headers and separating them
+            string localizedHeaders = LocRM.GetString("reactionTestHeader", currentCulture).ToString();
+            string[] separators = { @"\t" };
+            string[] headers = localizedHeaders.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 
             dataGridView1.ScrollBars = ScrollBars.Both;
             dataGridView1.AutoResizeColumns();
-            foreach (var columnName in headers)
+            foreach (string columnName in headers)
             {
                 dataGridView1.Columns.Add(columnName, columnName); // Add header to table
                 this.dataGridView1.Columns[columnName].Frozen = false;
             }
 
-            if (Directory.Exists(path)) // Preenche comboBox com arquivos do tipo .txt no diretório dado
+            // filling result combobox with result in pattern participant_programname in the directory
+            if (Directory.Exists(path)) 
             {
                 filePaths = Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
                 for (int i = 0; i < filePaths.Length; i++)
@@ -106,7 +111,7 @@ namespace TestPlatform.Views.ReactionPages
                     {
                         using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
                         {
-                            tw.WriteLine(ReactionTest.HeaderOutputFileText);
+                            tw.WriteLine(LocRM.GetString("reactionTestHeader", currentCulture));
                             for (int i = 0; i < lines.Length; i++)
                             {
                                 tw.WriteLine(lines[i]); // escreve linhas no novo arquivo

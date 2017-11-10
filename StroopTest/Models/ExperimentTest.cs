@@ -106,7 +106,7 @@ namespace TestPlatform.Models
             }
         }
 
-        public static string HeaderOutputFileText
+        public string HeaderOutputFileText
         {
             get
             {

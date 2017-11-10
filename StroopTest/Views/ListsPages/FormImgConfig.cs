@@ -5,13 +5,16 @@ using System.Windows.Forms;
 using TestPlatform.Models;
 using TestPlatform.Views;
 using TestPlatform.Controllers;
+using System.Globalization;
+using System.Resources;
 
 namespace TestPlatform
 {
     public partial class FormImgConfig : UserControl
     {
         private ImageList imgsList = new ImageList();
-        private string instructionsText = HelpData.ImageConfigInstructions;
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public FormImgConfig(string imgListEdit)
         {
@@ -31,7 +34,7 @@ namespace TestPlatform
         {
             try
             {
-                FormDefine defineFilePath = defineFilePath = new FormDefine("Lista de Imagens: ", Global.testFilesPath + Global.listFolderName, "lst","_image",true);
+                FormDefine defineFilePath = defineFilePath = new FormDefine(LocRM.GetString("imageList", currentCulture), Global.testFilesPath + Global.listFolderName, "lst","_image",true);
                 var result = defineFilePath.ShowDialog();
                 
                 if (result == DialogResult.OK)
@@ -76,7 +79,7 @@ namespace TestPlatform
             }
             catch (FileLoadException ex)
             {
-                throw new Exception("Não pode apresentar a imagem. Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n" + ex.Message);
+                throw new Exception(LocRM.GetString("imageFileError", currentCulture) + ex.Message);
             }
             catch (Exception ex)
             {
@@ -173,7 +176,7 @@ namespace TestPlatform
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (!this.ValidateChildren(ValidationConstraints.Enabled))
-                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+                MessageBox.Show(LocRM.GetString("fieldNotRight", currentCulture));
             else
             {
                 try
@@ -254,7 +257,7 @@ namespace TestPlatform
         {
             if (Validations.isEmpty(name))
             {
-                errorMessage = "O nome da lista deve ser preenchido";
+                errorMessage = LocRM.GetString("emptyListName", currentCulture);
                 return false;
             }
 
@@ -271,7 +274,7 @@ namespace TestPlatform
         {
             if (number == 0)
             {
-                errorMessage = "A lista não possui \n nenhum item!";
+                errorMessage = LocRM.GetString("emptyList", currentCulture);
                 return false;
             }
 
@@ -293,7 +296,7 @@ namespace TestPlatform
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(instructionsText);
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("imageConfigInstructions", currentCulture));
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

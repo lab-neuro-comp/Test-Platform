@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="activeAudio" xml:space="preserve">
+    <value>Ativa captura de áudio durante a execução do teste</value>
+  </data>
+  <data name="audioFile" xml:space="preserve">
+    <value>Arquivo de Lista de áudio</value>
+  </data>
+  <data name="audioList" xml:space="preserve">
+    <value>Listas de Audio: </value>
+  </data>
+  <data name="audioRecordSuccess" xml:space="preserve">
+    <value>Aúdio gravado com sucesso!</value>
+  </data>
+  <data name="backgroundColor" xml:space="preserve">
+    <value>Cor de fundo durante a apresentação dos estímulos</value>
+  </data>
+  <data name="beepDuration" xml:space="preserve">
+    <value>O beep deve durar mais do que 0 milissegundos</value>
+  </data>
+  <data name="center" xml:space="preserve">
+    <value>centro</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>escolher</value>
+  </data>
+  <data name="colorFile" xml:space="preserve">
+    <value>Arquivo de Lista de cores</value>
+  </data>
+  <data name="colors" xml:space="preserve">
+    <value>de Cores</value>
+  </data>
+  <data name="colorsList" xml:space="preserve">
+    <value>Lista de Cores</value>
+  </data>
+  <data name="colorWords" xml:space="preserve">
+    <value>Cor da palavra, para exposição do tipo Imagem e Palavra</value>
+  </data>
+  <data name="couldntEdit" xml:space="preserve">
+    <value>Edição não pode ser feita </value>
+  </data>
+  <data name="default" xml:space="preserve">
+    <value>padrao</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>"O TestPlatform é uma plataforma de testes neuropsicológicos computadorizados para avaliação de funções executivas. O produto tem a proposta oferecer soluções inovando tecnologicamente de forma prática e dinâmica. Destinado a pesquisadores, alunos e usuários comuns. Desenvolvedores: hugohon - Hugo Honda Ferreira e fabiolamfleury - Fabíola Fleury; 2017";</value>
+  </data>
+  <data name="down" xml:space="preserve">
+    <value>baixo</value>
+  </data>
+  <data name="down_left" xml:space="preserve">
+    <value>baixo_esquerda</value>
+  </data>
+  <data name="down_right" xml:space="preserve">
+    <value>baixo_direita</value>
+  </data>
+  <data name="editProgram" xml:space="preserve">
+    <value>Editar Programa: </value>
+  </data>
+  <data name="emptyBox" xml:space="preserve">
+    <value>A caixa de texto não pode estar vazia!</value>
+  </data>
+  <data name="emptyList" xml:space="preserve">
+    <value>A lista está \n vazia!</value>
+  </data>
+  <data name="emptyListName" xml:space="preserve">
+    <value>O nome da lista deve ser preenchido.</value>
+  </data>
+  <data name="exclude" xml:space="preserve">
+    <value>Excluir: </value>
+  </data>
+  <data name="exclusionSucceeded" xml:space="preserve">
+    <value>excluída com sucesso!</value>
+  </data>
+  <data name="expandImages" xml:space="preserve">
+    <value>Expande a imagem até as bordas da tela</value>
+  </data>
+  <data name="experiment" xml:space="preserve">
+    <value>Experimento</value>
+  </data>
+  <data name="experimentFiles" xml:space="preserve">
+    <value>Caminho para os arquivos de dados de experimentos inválido.</value>
+  </data>
+  <data name="expoCancel" xml:space="preserve">
+    <value>A exposição foi cancelada.</value>
+  </data>
+  <data name="expoNumber" xml:space="preserve">
+    <value>O número de exposições deve ser maior do que zero.</value>
+  </data>
+  <data name="expoRandomize" xml:space="preserve">
+    <value>Exposição dos estímulos em ordem aleatória em relação à lista</value>
+  </data>
+  <data name="exportedFile" xml:space="preserve">
+    <value>Arquivo exportado com sucesso!</value>
+  </data>
+  <data name="expositionDuration" xml:space="preserve">
+    <value>Duração da exposição de cada estímulo</value>
+  </data>
+  <data name="expoTime" xml:space="preserve">
+    <value>O tempo de exposição deve ser maior do que zero.</value>
+  </data>
+  <data name="expoType" xml:space="preserve">
+    <value>Tipo de Exposição: </value>
+  </data>
+  <data name="fieldNotRight" xml:space="preserve">
+    <value>Algum campo não foi preenchido de forma correta.</value>
+  </data>
+  <data name="file" xml:space="preserve">
+    <value>Arquivo: </value>
+  </data>
+  <data name="fixpointColor" xml:space="preserve">
+    <value>Cor do ponto de fixação</value>
+  </data>
+  <data name="fixpointEx" xml:space="preserve">
+    <value>Tipo de ponto de fixação: cruz ou ponto</value>
+  </data>
+  <data name="fontSize" xml:space="preserve">
+    <value>Tamanho da fonte do texto, para exposição do tipo Palavra, Palavra com áudio, Imagem e palavra</value>
+  </data>
+  <data name="help" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
+  <data name="imageFile" xml:space="preserve">
+    <value>Arquivo de Lista de imagens</value>
+  </data>
+  <data name="imageFileError" xml:space="preserve">
+    <value>Não pode apresentar a imagem. Você pode não ter permissão para ler este arquivo ou ele pode estar corrompido.\n</value>
+  </data>
+  <data name="imageList" xml:space="preserve">
+    <value>Lista de Imagens: </value>
+  </data>
+  <data name="instructionBox" xml:space="preserve">
+    <value>Escreva cada uma das intruções em linhas separadas.</value>
+  </data>
+  <data name="instructionBoxText" xml:space="preserve">
+    <value>O participante deve ser orientado para execução de forma clara e uniforme entre os experimentares e o grupo de participantes.&lt;br&gt;&lt;br&gt;Para o Stroop clássico as instruções básicas praticadas são:&lt;br&gt;'Nesta tarefa você deve falar o nome da cor em que as palavras estão pintadas.'&lt;br&gt;ou&lt;br&gt;'Nesta tarefa você deve ler a palavra apresentada na tela.'</value>
+  </data>
+  <data name="instructionsI" xml:space="preserve">
+    <value>Instruções apresentadas no início do programa - será apresentada um tela para cada linha escrita abaixo</value>
+  </data>
+  <data name="intervalsTime" xml:space="preserve">
+    <value>Tempo entre as tentativas</value>
+  </data>
+  <data name="intervalsTimeRandom" xml:space="preserve">
+    <value>Variação do tempo entre as tentativas</value>
+  </data>
+  <data name="intervalTime" xml:space="preserve">
+    <value>O tempo de intervalo deve ser maior do que zero.</value>
+  </data>
+  <data name="invalid" xml:space="preserve">
+    <value>  inválido</value>
+  </data>
+  <data name="invalidExpoType" xml:space="preserve">
+    <value>Tipo de Exposição inválido!</value>
+  </data>
+  <data name="invalidPath" xml:space="preserve">
+    <value>é um caminho inválido!</value>
+  </data>
+  <data name="left" xml:space="preserve">
+    <value>esquerda</value>
+  </data>
+  <data name="list" xml:space="preserve">
+    <value>A lista '</value>
+  </data>
+  <data name="listExists" xml:space="preserve">
+    <value>Uma lista com este nome já existe.\nDeseja sobrescrevê-la?</value>
+  </data>
+  <data name="listNotSaved" xml:space="preserve">
+    <value>A lista não será salva</value>
+  </data>
+  <data name="listSaveSuccess" xml:space="preserve">
+    <value>' foi salva com sucesso</value>
+  </data>
+  <data name="markLengthError" xml:space="preserve">
+    <value>O campo da marca deve ser preenchido.</value>
+  </data>
+  <data name="markLengthError2" xml:space="preserve">
+    <value>A marca deve ser composta apenas de um caracter</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+  <data name="notEdit" xml:space="preserve">
+    <value>Edição não pode ser feita.</value>
+  </data>
+  <data name="notFilledProperlyMessage" xml:space="preserve">
+    <value>Algum campo não foi preenchido de forma correta.</value>
+  </data>
+  <data name="notFoundIn" xml:space="preserve">
+    <value>\nnão foi encontrado no local:\n</value>
+  </data>
+  <data name="numberExpositions" xml:space="preserve">
+    <value>Número de vezes em que os estímulos serão expostos</value>
+  </data>
+  <data name="participantNameAlphanumericError" xml:space="preserve">
+    <value>Nome do participante deve ser composto apenas de caracteres alfanuméricos e sem espaços;\nExemplo: 'LuisAugusto'"</value>
+  </data>
+  <data name="participantNameLengthError" xml:space="preserve">
+    <value>O nome do participante deve ser preenchido.</value>
+  </data>
+  <data name="positionInvalid" xml:space="preserve">
+    <value>Quantidade de posições do estímulo inválidas, deve ser um dos seguintes valores: 1, 2, 4 ou 8.</value>
+  </data>
+  <data name="programEdit" xml:space="preserve">
+    <value>O programa contém parâmetros incorretos e/ou está incompleto!\nCorrija o programa na interface a seguir.</value>
+  </data>
+  <data name="programExists" xml:space="preserve">
+    <value>O programa já existe, deseja sobrescrevê-lo?</value>
+  </data>
+  <data name="programNotAlphanumeric" xml:space="preserve">
+    <value>Nome do programa deve ser composto apenas de caracteres alfanuméricos e sem espaços;\nExemplo: 'MeuPrograma'"</value>
+  </data>
+  <data name="programNotFilled" xml:space="preserve">
+    <value>O nome do programa deve ser preenchido.</value>
+  </data>
+  <data name="programNotSave" xml:space="preserve">
+    <value>O programa não será salvo!</value>
+  </data>
+  <data name="programSave" xml:space="preserve">
+    <value>O programa foi salvo com sucesso.</value>
+  </data>
+  <data name="programSaved" xml:space="preserve">
+    <value>O programa foi salvo com sucesso</value>
+  </data>
+  <data name="reactionTest" xml:space="preserve">
+    <value>Tempo de Reação</value>
+  </data>
+  <data name="reallyExclude" xml:space="preserve">
+    <value>Deseja realmente excluir </value>
+  </data>
+  <data name="right" xml:space="preserve">
+    <value>direita</value>
+  </data>
+  <data name="selectDataFile" xml:space="preserve">
+    <value>Selecione um arquivo de dados!</value>
+  </data>
+  <data name="selectImage" xml:space="preserve">
+    <value>Selecione o arquivo de lista de imagem.</value>
+  </data>
+  <data name="selectPlace" xml:space="preserve">
+    <value>É necessário selecionar o local do arquivo antes de gravar.</value>
+  </data>
+  <data name="selectTraining" xml:space="preserve">
+    <value>Selecione um programa para ser seu treino!</value>
+  </data>
+  <data name="stroopTest" xml:space="preserve">
+    <value>Stroop</value>
+  </data>
+  <data name="subtitleActive" xml:space="preserve">
+    <value>Ativa legenda para estímulos do tipo imagem</value>
+  </data>
+  <data name="subtitleColor" xml:space="preserve">
+    <value>Cor da legenda apresentada</value>
+  </data>
+  <data name="subtitlePosition" xml:space="preserve">
+    <value>Posicionamento da legenda em relação aos estímulos</value>
+  </data>
+  <data name="testName" xml:space="preserve">
+    <value>Nome do esquema de apresentação de estímulos</value>
+  </data>
+  <data name="typeStimulus" xml:space="preserve">
+    <value>Categoria dos estímulos do programa</value>
+  </data>
+  <data name="unavailableExpo" xml:space="preserve">
+    <value>Tipo de exposição ainda não está disponível.</value>
+  </data>
+  <data name="up" xml:space="preserve">
+    <value>cima</value>
+  </data>
+  <data name="up_left" xml:space="preserve">
+    <value>cima_esquerda</value>
+  </data>
+  <data name="up_right" xml:space="preserve">
+    <value>cima_direita</value>
+  </data>
+  <data name="validColor" xml:space="preserve">
+    <value>' contém valores inválidos!\n A lista de "cores deve conter apenas valores hexadecimais (ex: #000000)</value>
+  </data>
+  <data name="version" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+  <data name="wishToSave" xml:space="preserve">
+    <value>Deseja salvar o arquivo </value>
+  </data>
+  <data name="wordColorList" xml:space="preserve">
+    <value>Lista de Palavras com Cores</value>
+  </data>
+  <data name="wordFile" xml:space="preserve">
+    <value>Arquivo de Lista de palavras</value>
+  </data>
+  <data name="wordList" xml:space="preserve">
+    <value>Listas de Palavras: </value>
+  </data>
+  <data name="words" xml:space="preserve">
+    <value>de Palavras</value>
+  </data>
+  <data name="wordsList" xml:space="preserve">
+    <value>Lista de Palavras</value>
+  </data>
+  <data name="colorMatch" xml:space="preserve">
+    <value>A cor do ponto de fixação não segue o padrão hexadecimal: #000000</value>
+  </data>
+  <data name="exportDirectory" xml:space="preserve">
+    <value>Selecione um diretório válido onde ainda não há nenhuma exportação da plataforma</value>
+  </data>
+  <data name="fileNotFound" xml:space="preserve">
+    <value>Não foi possível encontrar o arquivo no caminho:</value>
+  </data>
+  <data name="lists" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="removeItem" xml:space="preserve">
+    <value>Selecione um arquivo para remover da lista.</value>
+  </data>
+  <data name="selectAudio" xml:space="preserve">
+    <value>Selecione o arquivo de lista de aúdios.</value>
+  </data>
+  <data name="selectColor" xml:space="preserve">
+    <value>Selecione o arquivo de lista de cores.</value>
+  </data>
+  <data name="selectWord" xml:space="preserve">
+    <value>Selecione o arquivo de lista de palavras.</value>
+  </data>
+  <data name="experimentHeader" xml:space="preserve">
+    <value>experimento\tprograma\ttipoPrograma\tusuario\tdata\thorarioInicial\thorarioTeste\tsequencia</value>
+  </data>
+  <data name="experimentName" xml:space="preserve">
+    <value>Nome do experimento deve ser composto apenas de caracteres alfanuméricos. \nExemplo: 'MeuExprimento'.</value>
+  </data>
+  <data name="import" xml:space="preserve">
+    <value>Arquivos importados com sucesso.</value>
+  </data>
+  <data name="intervalInvalid" xml:space="preserve">
+    <value>\nTempo de intervalo entre programas deve ser maior ou igual a zero (em milissegundos)</value>
+  </data>
+  <data name="parameter" xml:space="preserve">
+    <value>Parâmetro escrito no arquivo como: '</value>
+  </data>
+  <data name="parameterShould" xml:space="preserve">
+    <value>'\ndeveria ser igual ao nome no arquivo: '</value>
+  </data>
+  <data name="audioConfigInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;h1 { font-size:20.0pt; font-family:Arial; color:black }h3 { font-size:12.0pt; font-family:Arial; color:black }p { font-size:11.0pt; font-family:Arial; color:black}&lt;/style&gt;&lt;/head&gt;&lt;body lang=PT-BR&gt;&lt;h1&gt;Nova/Editar Lista de Áudios&lt;/h1&gt;&lt;p&gt;Permite criar e modificar a lista de imagens para ser utilizada na definição do programa.&lt;/p&gt;&lt;h3&gt;Nome da Lista&lt;/h3&gt;&lt;p&gt;Define o nome da lista que será escolhida na definição do programa. É recomendável que o nome da lista caracterize o conjunto de elementos escolhido e a etapa que compreende, por exemplo, “Victoria1”. A ordem em que os elementos são informados será mantida na respectiva lista.&lt;/p&gt;&lt;h3&gt;Imagens&lt;/h3&gt;&lt;p&gt;Seleciona a pasta que contém os arquivos de áudio a serem colocados na lista pelo botão “Abrir”.&lt;/p&gt;&lt;h3&gt;Apagar Item&lt;/h3&gt;&lt;p&gt;Exclui da lista o arquivo de áudio selecionado com o botão “Apagar”.&lt;/p&gt;&lt;h3&gt;Mover Item&lt;/h3&gt;&lt;p&gt;Reposiciona o arquivo de áudio selecionado na lista com os botões “Acima” e “Abaixo”.&lt;/p&gt;&lt;h3&gt;Reproduzir Áudio&lt;/h3&gt;&lt;p&gt;Representa o arquivo de áudio selecionado utilizando os dispositivos de som ativos do computador. Na lista são apresentados o Nome do Arquivo escolhido e a Localização.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</value>
+  </data>
+  <data name="imageConfigInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;h1 { font-size:20.0pt; font-family:Arial; color:black mso-ansi-language:PT-BR; font-weight:'normal' }h3 { font-size:12.0pt; font-family:Arial; color:black mso-ansi-language:PT-BR; font-weight:'normal' }p { font-size:11.0pt; font-family:Arial; color:black mso-ansi-language:PT-BR; font-weight:'normal' }&lt;/style&gt;&lt;/head&gt;&lt;body lang=PT-BR&gt;&lt;h1&gt;Nova/Editar Lista de Imagens&lt;/h1&gt;&lt;p&gt;Permite criar e modificar a lista de imagens a ser utilizada na definição do programa.&lt;/p&gt;&lt;h3&gt;Nome da Lista&lt;/h3&gt;&lt;p&gt;Define o nome da lista que será escolhida na definição do programa. É recomendável que o nome da lista caracterize o conjunto de elementos escolhido e a etapa que compreende, por exemplo, “Victoria1”. A ordem em que os elementos são informados será mantida na respectiva lista.&lt;/p&gt;&lt;h3&gt;Imagens&lt;/h3&gt;&lt;p&gt;Seleciona a pasta que contém as imagens a serem inseridos na lista pelo botão “Abrir”.&lt;/p&gt;&lt;h3&gt;Apagar Item&lt;/h3&gt;&lt;p&gt;Exclui da lista o arquivo de imagem selecionado com o botão “Apagar”.&lt;/p&gt;&lt;h3&gt;Mover Item&lt;/h3&gt;&lt;p&gt;Reposiciona o arquivo de imagem selecionado na lista com os botões “Acima” e “Abaixo”.&lt;/p&gt;&lt;p&gt;Na lista são apresentados o Nome do Arquivo escolhido, a Imagem e a Localização.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</value>
+  </data>
+  <data name="newAudioInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;h1 { font-size:20.0pt; font-family:Arial; color:black mso-ansi-language:PT-BR; font-weight:normal' }p { font-size:11.0pt; font-family:Arial; color:black mso-ansi-language:PT-BR; font-weight:'normal' }&lt;/style&gt;&lt;/head&gt;&lt;body lang=PT-BR&gt;&lt;h1&gt;Criação de arquivos de aúdio no formato WAV&lt;/h1&gt;&lt;p&gt;Nessa tela é possível a gravação de aúdios no formato WAV para serem utilizados como arquivos em listas de aúdio.&lt;br&gt;A gravação inicia-se ao clicar no botão Gravar&lt;br&gt;e é finalizada, podendo ser salva, no botão Parar / Salvar &lt;br&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</value>
+  </data>
+  <data name="programConfigInstructions" xml:space="preserve">
+    <value>&lt;div&gt;
+&lt;h1&gt;Novo / Editar Programa&lt;/h1&gt;
+&lt;p&gt;Permite criar e modificar um esquema de apresenta&amp;ccedil;&amp;atilde;o de est&amp;iacute;mulos, que mant&amp;eacute;m a sequ&amp;ecirc;nciade elementos a ser utilizada como teste com as defini&amp;ccedil;&amp;otilde;es de tempo, n&amp;uacute;mero detentativas, cores etc.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Nome do Programa &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Define o nome do esquema de apresenta&amp;ccedil;&amp;atilde;o de est&amp;iacute;mulos. O nome do programa devecaracterizar o paradigma escolhido e a etapa que compreende, por exemplo,&amp;ldquo;Victoria1&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; Exposi&amp;ccedil;&amp;atilde;o &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Refere-se a todos osdetalhes dos est&amp;iacute;mulos que ser&amp;atilde;o utilizados no teste em cria&amp;ccedil;&amp;atilde;o/edi&amp;ccedil;&amp;atilde;o&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Tipo do est&amp;iacute;mulo &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Define a categoria dos est&amp;iacute;mulos definidos para o programa: Palavra, Palavracom &amp;aacute;udio, Imagem, Imagem com Palavra, Imagem com &amp;aacute;udio.&lt;/p&gt;
+&lt;p&gt;Palavra&lt;/p&gt;
+&lt;p&gt;Para exposi&amp;ccedil;&amp;atilde;o de palavras coloridas. Exige a informa&amp;ccedil;&amp;atilde;o da lista de palavras e cores, constru&amp;iacute;das previamente (verNovo/Editar Listas).&lt;/p&gt;
+&lt;p&gt;Palavra com &amp;Aacute;udio&lt;/p&gt;
+&lt;p&gt;Para exposi&amp;ccedil;&amp;atilde;o de palavras coloridas comreprodu&amp;ccedil;&amp;atilde;o de &amp;aacute;udio. Exige a informa&amp;ccedil;&amp;atilde;o da lista de palavras, lista de cores elista de &amp;aacute;udio, constru&amp;iacute;das previamente (ver Novo/Editar Listas).&lt;/p&gt;
+&lt;p&gt;Imagem&lt;/p&gt;
+&lt;p&gt;Para exposi&amp;ccedil;&amp;atilde;o de imagens. Exige ainforma&amp;ccedil;&amp;atilde;o da lista de imagens constru&amp;iacute;das previamente (ver Novo/EditarListas).&lt;/p&gt;
+&lt;p&gt;Imagem com &amp;Aacute;udio&lt;/p&gt;
+&lt;p&gt;Para exposi&amp;ccedil;&amp;atilde;o de imagens com reprodu&amp;ccedil;&amp;atilde;ode &amp;aacute;udio. Exige a informa&amp;ccedil;&amp;atilde;o da lista de imagens e lista de &amp;aacute;udio, constru&amp;iacute;daspreviamente (ver Novo/Editar Listas).&lt;/p&gt;
+&lt;p&gt;Palavra e Imagem&lt;/p&gt;
+&lt;p&gt;Para exposi&amp;ccedil;&amp;atilde;o de est&amp;iacute;mulos sequenciados,ou seja, uma tentativa equivale &amp;agrave; sequ&amp;ecirc;ncia palavra-imagem. Exige a informa&amp;ccedil;&amp;atilde;oda lista de imagens e lista de palavras, constru&amp;iacute;das previamente (ver Novo/Editar Listas).&lt;/p&gt;
+&lt;p&gt;Imagem e Palavra&lt;/p&gt;
+&lt;p&gt;Para exposi&amp;ccedil;&amp;atilde;o de est&amp;iacute;mulos sequenciados,ou seja, uma tentativa equivale &amp;agrave; sequ&amp;ecirc;ncia imagem-palavra. Exige a informa&amp;ccedil;&amp;atilde;oda lista de imagens e lista de palavras, constru&amp;iacute;das previamente (ver Novo/Editar Listas).&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;Quando o n&amp;uacute;mero de itens nas listas &amp;eacute; menor que o n&amp;uacute;mero de tentativas, ser&amp;aacute;utilizada a quantidade de itens das listas repetindo os itens o necess&amp;aacute;rio paraatingir o n&amp;uacute;mero de tentativas. Da mesma forma, quando o n&amp;uacute;mero de itens naslistas &amp;eacute; maior que o n&amp;uacute;mero de tentativas, ser&amp;aacute; utilizada a quantidade de itensdas listas correspondente ao n&amp;uacute;mero de tentativas.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; N&amp;uacute;merode Tentativas &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;Define o n&amp;uacute;mero de vezes em que os est&amp;iacute;mulos ser&amp;atilde;o expostos.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; OrdemAleat&amp;oacute;ria &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Indica se a exposi&amp;ccedil;&amp;atilde;o dos est&amp;iacute;mulos ser&amp;aacute; feita de forma aleat&amp;oacute;ria em rela&amp;ccedil;&amp;atilde;o aordem da lista.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Tamanhoda palavra &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Indica o tamanho da fonte do texto, para exposi&amp;ccedil;&amp;atilde;o do tipo Palavra, Palavra com&amp;aacute;udio, Imagem e palavra. O tamanho padr&amp;atilde;o &amp;eacute; 160.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Corda palavra &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Indica a cor da palavra, para exposi&amp;ccedil;&amp;atilde;o do tipo Palavra e Imagem / Imagem e Palavra. A cor padr&amp;atilde;o &amp;eacute; preta.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; ExpandirImagem &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;Define a expans&amp;atilde;o da imagem no limite proporcional &amp;agrave; tela. N&amp;atilde;o podeocorrer simultaneamente &amp;agrave; apresenta&amp;ccedil;&amp;atilde;o de legenda.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;u&gt;Girar Imagem &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;Define a rota&amp;ccedil;&amp;atilde;o da imagem no &amp;acirc;ngulo e sentido indicados na lista.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; Listas &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Refere-se &amp;agrave;s listas de est&amp;iacute;mulos que dever&amp;atilde;o ser informadas para exposi&amp;ccedil;&amp;atilde;o. Devem serpreviamente criadas (ver Novo/Editar Listas).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Palavras&amp;nbsp;&amp;nbsp;&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Carrega a lista de palavras que ser&amp;atilde;o apresentadas para os tipos Palavra ePalavra com &amp;Aacute;udio. A exposi&amp;ccedil;&amp;atilde;o n&amp;atilde;o aleat&amp;oacute;ria seguir&amp;aacute; a ordem das palavras nalista.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Cores &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Carrega a lista de cores das palavras que ser&amp;atilde;o apresentadas para os tipos Palavra ePalavra com &amp;Aacute;udio. A exposi&amp;ccedil;&amp;atilde;o n&amp;atilde;o aleat&amp;oacute;ria seguir&amp;aacute; a ordem das cores nalista.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Imagens &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Carrega a lista de imagens que ser&amp;atilde;o apresentadas para os tipos Imagem, Imagemcom &amp;Aacute;udio e Imagem e Palavra. A exposi&amp;ccedil;&amp;atilde;o n&amp;atilde;o aleat&amp;oacute;ria seguir&amp;aacute; a ordem das imagensna lista.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; &amp;Aacute;udios &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Carrega a lista de &amp;aacute;udios que ser&amp;atilde;o reproduzidos no teste para os tipos Palavra com&amp;Aacute;udio e Imagem com &amp;Aacute;udio. A exposi&amp;ccedil;&amp;atilde;o n&amp;atilde;o aleat&amp;oacute;ria seguir&amp;aacute; a ordem dos &amp;aacute;udiosna lista.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tempo &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;u&gt;Exposi&amp;ccedil;&amp;atilde;o (ms) &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;Define a dura&amp;ccedil;&amp;atilde;o em milissegundos da exposi&amp;ccedil;&amp;atilde;o do est&amp;iacute;mulo escolhido, palavraou imagem.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;u&gt;Intervalo (ms) &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Define o tempo em milissegundos entre as tentativas.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;u&gt;Tempo Intervalo Vari&amp;aacute;vel &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Indica que o intervalo ter&amp;aacute; a dura&amp;ccedil;&amp;atilde;o variada aleatoriamente a partir de 400ms at&amp;eacute; o tempo de intervalo informado.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;u&gt;Atraso &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;Define o tempo em milissegundos entre os est&amp;iacute;mulos pareados para os tipospalavra e imagem / imagem e palavra. Se n&amp;atilde;o informado, ser&amp;aacute; usado o tempo deintervalo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; Legenda&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Refere-se &amp;agrave; coloca&amp;ccedil;&amp;atilde;o deuma inscri&amp;ccedil;&amp;atilde;o em diferentes posi&amp;ccedil;&amp;otilde;es para a imagem ou palavra.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Ativar&amp;nbsp;&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Indica se a exposi&amp;ccedil;&amp;atilde;o imagem ter&amp;aacute; legenda. Ao ativar, deve ser selecionada alista de palavras a serem apresentadas como legenda (ver Novo/Editar Listas).&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Posi&amp;ccedil;&amp;atilde;o&amp;nbsp;&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;Indica o local que ser&amp;aacute; colocada a legenda em rela&amp;ccedil;&amp;atilde;o ao est&amp;iacute;mulo: &amp;larr;, &amp;agrave;esquerda (imagens); &amp;uarr;, acima (palavras e imagens); &amp;rarr;, &amp;agrave; direita(imagens); &amp;darr;, abaixo (palavras e imagens); ・, ao centro (imagens); Aleat&amp;oacute;ria, variar aposi&amp;ccedil;&amp;atilde;o, de acordo com o tipo do est&amp;iacute;mulo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Cor&amp;nbsp;&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Indica a cor da legenda. Ser&amp;aacute; utilizada a cor preta, se n&amp;atilde;o informado.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; Ponto de Fixa&amp;ccedil;&amp;atilde;o &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Refere-se ao indicador visual para atrair a aten&amp;ccedil;&amp;atilde;o para o centro da tela, que ser&amp;aacute;apresentado durante o intervalo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Tipo&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Indica a forma do ponto de fixa&amp;ccedil;&amp;atilde;o: + ou ・.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Cordo Ponto &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Indica a cor do ponto de fixa&amp;ccedil;&amp;atilde;o.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; Outros&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Refere-se a detalhes adicionais n&amp;atilde;o relacionados aos est&amp;iacute;mulos.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Capturar &amp;Aacute;udio durante Execu&amp;ccedil;&amp;atilde;o &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Indica que as respostas do sujeito ser&amp;atilde;o gravadas automaticamente durante a execu&amp;ccedil;&amp;atilde;o.Ser&amp;aacute; gerado um arquivo de &amp;aacute;udio na pasta de dados. Exige o arquivo NAudio.dllesteja na mesma pasta do teste. O padr&amp;atilde;o &amp;eacute; selecionado. &amp;lt;spanstyle='mso-ansi-language:PT-BR'&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Corde Fundo &lt;/u&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Define a cor tela por tr&amp;aacute;s do est&amp;iacute;mulo durante a apresenta&amp;ccedil;&amp;atilde;o. O padr&amp;atilde;o &amp;eacute; telacinza.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;u&gt; Instru&amp;ccedil;&amp;otilde;es&amp;nbsp;&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Descreve as orienta&amp;ccedil;&amp;otilde;espara o participante sobre a execu&amp;ccedil;&amp;atilde;o do teste. Cada linha informada ser&amp;aacute; apresentada em uma tela durante 4000 ms.&lt;/p&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="showAudioInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;h1 { font-size:20.0pt; font-family:Arial; color:black mso-ansi-language:PT-BR; font-weight:normal' }p { font-size:11.0pt; font-family:Arial; color:black mso-ansi-language:PT-BR; font-weight:'normal' }&lt;/style&gt;&lt;/head&gt;&lt;body lang=PT-BR&gt;&lt;h1&gt;Exibição de Aúdios de Testes&lt;/h1&gt;&lt;p&gt;Nessa tela são exibidos os aúdios gravados no decorrer de testes executados anteriormente.&lt;br&gt;Os aúdios da execução do teste serão gravados em arquivo nomeado com o programa escolhido&lt;br&gt;e a identificação do participante, caso já tenha ocorrido esta&lt;br&gt;combinação os novos audios serão adicionados ao mesmo arquivo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</value>
+  </data>
+  <data name="showDataInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;h1 { font-size:20.0pt;     font-family:Arial;     color:black     mso-ansi-language:PT-BR;     font-weight:normal' }h3 { font-size:12.0pt;     font-family:Arial;     color:black     mso-ansi-language:PT-BR;     font-weight:normal' }p { font-size:11.0pt;    font-family:Arial;    color:black    mso-ansi-language:PT-BR;    font-weight:normal' }&lt;/style&gt;&lt;/head&gt;&lt;body lang=PT-BR&gt;&lt;h1&gt;Exibir Dados&lt;/h1&gt;&lt;p&gt;Exibe os dados de execução do teste&lt;h4&gt;Arquivo de Dados&lt;/h4&gt;Escolha do arquivo gerado na execução do teste. Os arquivos de dados contém o nome do programa executado e o nome definido para o usuário.&lt;h4&gt;Reproduzir o áudio&lt;/h4&gt;Opção para transmitir o áudio gravado durante a execução do teste, se o programa utilizado tinha esta opção.&lt;h4&gt;Exportar como .csv&lt;/h4&gt;Opção para exportar os dados em arquivo formato texto delimitado em local a ser informado.&lt;/p&gt;&lt;img src=\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/show_data.png?raw=true\"/&gt;&lt;/body&gt;&lt;/html&gt;</value>
+  </data>
+  <data name="technicalInformation" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;h1 { font-size:20.0pt;     font-family:Arial;     color:black     mso-ansi-language:PT-BR;     font-weight:normal' }h3 { font-size:12.0pt;     font-family:Arial;     color:black     mso-ansi-language:PT-BR;     font-weight:normal' }p { font-size:11.0pt;    font-family:Arial;    color:black    mso-ansi-language:PT-BR;    font-weight:normal' }&lt;/style&gt;&lt;/head&gt;&lt;body lang=PT-BR&gt;&lt;h1&gt;Informações Técnicas&lt;/h1&gt;&lt;p&gt;Toda a configuração de programas e listas criadas são armazenadas em arquivos formato texto, que não devem ser acessados diretamente, apenas via aplicação.&lt;/p&gt;&lt;p&gt;Para gravação do arquivo de áudio é necessário que o arquivo de biblioteca NAudio.dll esteja na pasta da aplicação.&lt;/p&gt;&lt;p&gt;Esta aplicação foi desenvolvida utilizando a linguagem C# na plataforma IDE Visual Studio, compatível com sistema operacional Windows Vista ou superior.&lt;/p&gt;&lt;p&gt;Utilize o link &lt;a href=\"https://github.com/lab-neuro-comp/StroopTest\" &gt; Repositório Github - StroopTest&lt;/a&gt; para baixar o arquivo executável, StroopTest.exe, para instalação ou atualização.&lt;/p&gt;&lt;p&gt;Para instalação, o arquivo executável deve ser colocado em uma pasta exclusiva para aplicação onde serão organizadas as pastas de operação após a primeira execução do teste conforme descrito a seguir:&lt;/p&gt;&lt;p&gt;- Stroop (pasta criada pelo usuário para uso exclusivo da aplicação)&lt;br&gt;-- StroopTestFiles (arquivos gerados pela aplicação para execução do teste)&lt;br&gt;---lst (listas de estímulos)&lt;br&gt;---prg (programas definidos)&lt;br&gt;-- data (dados de execução do teste e arquivos de áudio de respostas do participante)&lt;br&gt;-- backup (arquivos escolhidos)&lt;/p&gt;&lt;p&gt;Para atualização, o novo arquivo executável deve ser colocado na mesma  pasta em que está localizada a versão corrente, substituindo o arquivo de mesmo nome.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</value>
+  </data>
+  <data name="viewHelp" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;h1 { font-size:20.0pt;     font-family:Arial;     color:black     mso-ansi-language:PT-BR;     font-weight:normal' }h3 { font-size:12.0pt;     font-family:Arial;     color:black     mso-ansi-language:PT-BR;     font-weight:normal' }p { font-size:11.0pt;    font-family:Arial;    color:black    mso-ansi-language:PT-BR;    font-weight:normal' }&lt;/style&gt;&lt;/head&gt;&lt;body lang=PT-BR&gt;&lt;h1&gt;StroopTest&lt;/h1&gt;Esta aplicação propõe a apresentação de elementos em sequência com tempos de exposição e intervalos programados. De acordo com o paradigma do Stroop, o elementos apresentados carregam algum conflito semântico, como o clássico palavras de cores coloridas (&lt;font color=\"FF0000\"&gt;amarelo&lt;/font&gt;). O StroopTest disponibiliza diferentes categorias de estímulos - palavra, imagem, áudio - que podem ser combinadas individualmente ou em par promovendo o efeito Stroop em diversas e  próprias versões.&lt;p&gt;&lt;a href=\"#apresentacao\"&gt;Apresentação&lt;/a&gt;&lt;br&gt;&lt;a href=\"#menu\"&gt;Menu&lt;/a&gt;&lt;br&gt;&lt;a href=\"#secao1\"&gt;Novo/Editar Listas de Palavras e Cores&lt;/a&gt;&lt;br&gt;&lt;a href=\"#secao2\"&gt;Novo/Editar Imagens&lt;/a&gt;&lt;br&gt;&lt;a href=\"#secao3\"&gt;Novo/Editar Lista de Áudios&lt;/a&gt;&lt;br&gt;&lt;a href=\"#secao4\"&gt;Novo/ Editar Programa&lt;/a&gt;&lt;br&gt;&lt;a href=\"#secao5\"&gt;Definir Programa&lt;/a&gt;&lt;br&gt;&lt;a href=\"#secao6\"&gt;Definir Participante&lt;/a&gt;&lt;br&gt;&lt;a href=\"#secao7\"&gt;Excluir Lista&lt;/a&gt;&lt;br&gt;&lt;a href=\"#secao8\"&gt;Excluir Programa&lt;/a&gt;&lt;br&gt;&lt;a href=\"#secao9\"&gt;Excluir Dados&lt;/a&gt;&lt;br&gt;&lt;a href=\"#secao10\"&gt;Iniciar Teste&lt;/a&gt;&lt;br&gt;&lt;a href=\"#secao11\"&gt;Exibir Dados&lt;/a&gt;&lt;br&gt;&lt;/p&gt;&lt;h1 id=\"apresentacao\"&gt;Apresentação&lt;/h1&gt;&lt;p&gt;O StroopTest++ consiste de três procedimentos básicos:&lt;/p&gt;&lt;p&gt;1. Definição do Teste&lt;br&gt;2. Execução do Teste&lt;br&gt;3. Reprodução do resultado do teste&lt;/p&gt; &lt;img src=\"https://raw.githubusercontent.com/fabiolamfleury/StroopTest/dev/StroopTest/Resources/help_images/procedure.png\"/&gt;&lt;h1 id=\"menu\"&gt;Menu&lt;/h1&gt; A aplicação está organizada com base em menus de navegação:&lt;p&gt;&lt;img src =\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/menu.png?raw=true\" /&gt;&lt;/ p &gt; &lt;h2&gt; Menu Arquivo&lt;/h2&gt;&lt;img src =\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/archive_menu.png?raw=true\" /&gt; &lt;br&gt; Compreende as funcionalidades destinadas à criação de novas listas de elementos e de novos programas, definição dos itens para execução - programa e participante - e execução do teste;&lt;h2&gt;Menu Editar&lt;/h2&gt;&lt;img src =\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/edit_menu.png?raw=true\" /&gt;&lt;br&gt; Compreende as funcionalidades para modificação de listas e programas e, também, exclusão de listas e programas que estão armazenados no computador;&lt;h2&gt;Menu Exibir&lt;/h2&gt;&lt;img src =\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/show_menu.png?raw=true\" /&gt;&lt;br&gt; Compreende o mecanismo de apresentação dos dados gravados durante a execução: lista com a sequencia de eventos e áudio das respostas.&lt;p&gt;Além de uma barra de ferramentas com itens de rápido acesso:&lt;/p&gt;&lt;p&gt;Iniciar Teste, para iniciar a execução do programa definido;&lt;br&gt;Programa, para definir a teste a ser executado;&lt;br&gt;Participante, para definir o usuário do teste.&lt;/p&gt;&lt;h1 id=\"secao1\"&gt;Novo/Editar Listas de Palavras e Cores&lt;/h1&gt;&lt;p&gt;Permite criar e modificar a lista de palavras e a lista de cores para serem utilizadas na definição do programa.&lt;h4&gt;Nome da Lista&lt;/h4&gt; Define o nome da lista que será escolhida na definição do programa.É recomendável que o  nome da lista caracterize o conjunto de elementos escolhido e a etapa que compreende, por exemplo, “Victoria1”. A ordem em que os elementos são informados será mantida na respectiva lista.&lt;h4&gt;Lista de Palavras&lt;/h4&gt; Quando selecionada será criada a lista de palavras. &lt;h4&gt;Lista de Cores&lt;/h4&gt; Quando selecionada será criada a lista de cores.&lt;h4&gt;Novo Item&lt;/h4&gt;Para criar um novo item, seja cor ou palavra, basta clicar no botão \"Novo Item\".&lt;/p&gt;&lt;img src=\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/word_color_list.png?raw=true\" /&gt;                          &lt;h1 id=\"secao2\"&gt; Novo / Editar Imagens&lt;/h1&gt;                           &lt;p&gt;Permite criar e modificar a lista de imagens para ser utilizada na definição do programa.                           &lt;h4&gt;Nome da Lista&lt;/h4&gt;                           Define o nome da lista que será escolhida na definição do programa.É recomendável que o  nome da lista caracterize o conjunto de elementos escolhido e a etapa que compreende, por exemplo, “Victoria1”. A ordem em que os elementos são informados será mantida na respectiva lista.                           &lt;h4&gt;Imagens&lt;/h4&gt;                           Seleciona a pasta que contém as imagens a serem colocadas na lista pelo botão “Abrir”. &lt;h4&gt;Apagar Item&lt;/h4&gt;Exclui da lista a imagem selecionada com o botão “Apagar”.&lt;h4&gt;Mover Item&lt;/h4&gt;Reposiciona a imagem selecionada na lista com os botões “Acima” e “Abaixo”.Na lista são apresentados o Nome do Arquivo escolhido, a Imagem e a Localização.                           &lt;/p&gt;&lt;img src =\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/img_list.png?raw=true\" /&gt;                                                      &lt;h1 id=\"secao3\"&gt; Novo / Editar Lista de Áudios&lt;/h1&gt;                           &lt;p&gt;Permite criar e modificar a lista de imagens para ser utilizada na definição do programa.&lt;h4&gt;Nome da Lista&lt;/h4&gt; Define o nome da lista que será escolhida na definição do programa.É recomendável que o  nome da lista caracterize o conjunto de elementos escolhido e a etapa que compreende, por exemplo, “Victoria1”. A ordem em que os elementos são informados será mantida na respectiva lista.&lt;h4&gt;Diretório&lt;/h4&gt; Seleciona a pasta que contém os arquivos de áudio a serem colocados na lista pelo botão “Abrir”.&lt;h4&gt;Apagar Item&lt;/h4&gt;Exclui da lista o arquivo de áudio selecionado com o botão “Apagar”.&lt;h4&gt;Mover Item&lt;/h4&gt;Reposiciona o arquivo de áudio selecionado na lista com os botões “Acima” e “Abaixo”.&lt;h4&gt;Reproduzir Áudio&lt;/h4&gt;                   Representa o arquivo de áudio selecionado utilizando os dispositivos de som ativos do computador.&lt;br&gt;Na lista são apresentados o Nome do Arquivo escolhido e a Localização.&lt;/p&gt;&lt;img src =\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/audio_list.png?raw=true\"/&gt;                           &lt;h1 id=\"secao4\"&gt; Novo / Editar Programa&lt;/h1&gt;                           &lt;p&gt;Permite criar e modificar um esquema de apresentação de estímulos, que mantém a sequência de elementos a ser utilizada como teste com as definições de tempo, número de tentativas, cores etc. &lt;img src =\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/new_program.png?raw=true\" /&gt;&lt;h4&gt; Nome do Programa&lt;/h4&gt;                           Define o nome do esquema de apresentação de estímulos.O nome do programa deve caracterizar o paradigma escolhido e a etapa que compreende, por exemplo, “Victoria1”.&lt;h4&gt;Exposição&lt;/h4&gt; Refere-se a todos os detalhes dos estímulos que serão utilizados no teste em criação/edição&lt;h5&gt; Tipo do estímulo&lt;/h5&gt; Define a categoria dos estímulos definidos para o programa: Palavra, Palavra com áudio, Imagem, Imagem com Palavra, Imagem com áudio.&lt;h5&gt;- Palavra&lt;/h5&gt; Para exposição de palavras coloridas. Exige a informação da lista de palavras e cores, construídas previamente (ver Novo/Editar Listas).&lt;h5&gt;- Palavra com Áudio&lt;/h5&gt; Para exposição de palavras coloridas com reprodução de áudio.Exige a informação da lista de palavras, lista de cores e lista de áudio, construídas previamente (ver Novo/Editar Listas).&lt;h5&gt;- Imagem&lt;/h5&gt; Para exposição de imagens.Exige a informação da lista de imagens construídas previamente(ver Novo/Editar Listas).&lt;h5&gt;- Imagem com Áudio&lt;/h5&gt; Para exposição de imagens com reprodução de áudio.Exige a informação da lista de imagens e lista de áudio, construídas previamente(ver Novo/Editar Listas).&lt;h5&gt;- Imagem e Palavra&lt;/h5&gt; Para exposição de estímulos sequenciados, ou seja,uma tentativa equivale à sequência imagem-palavra.Exige a informação da lista de imagens e lista de palavras, construídas previamente(ver Novo/Editar Listas).&lt;p&gt;	Quando o número de itens nas listas é menor que o número de tentativas, será utilizada a quantidade de itens das listas repetindo os itens o necessário para atingir o número de tentativas.Da mesma forma, quando o número de itens nas listas é maior que o número de tentativas, será utilizada a quantidade de itens das listas correspondente ao número de tentativas&lt;/p&gt;&lt;h5&gt;Número de Tentativas&lt;/h5&gt; Define o número de vezes em que os estímulos serão expostos.&lt;h5&gt;Ordem Aleatória&lt;/h5&gt;Indica se a exposição dos estímulos será feita de forma aleatória em relação a ordem da lista.&lt;h5&gt;Tamanho da palavra&lt;/h5&gt; Indica o tamanho da fonte do texto, para exposição do tipo Palavra, Palavra com áudio, Imagem e palavra.O tamanho padrão é 160.&lt;h5&gt;Cor da palavra&lt;/h5&gt; Indica a cor da palavra, para exposição do tipo Palavra e Imagem / Imagem e Palavra.A cor padrão é preta.      &lt;h5&gt;Expandir Imagem&lt;/h5&gt;Define a expansão da imagem no limite proporcional à tela. Não pode ocorrer simultaneamente à apresentação de legenda.&lt;h5&gt;Girar Imagem&lt;/h5&gt;Define a rotação da imagem no ângulo e sentido indicados na lista.&lt;h4&gt;Listas&lt;/h4&gt; Refere-se às listas de estímulos que deverão ser informadas para exposição.Devem ser previamente criadas (ver Novo/Editar Listas).&lt;h5&gt;Palavras&lt;/h5&gt; Carrega a lista de palavras que serão apresentadas para os tipos Palavra e Palavra com Áudio.A exposição não aleatória seguirá a ordem das palavras na lista&lt;h5&gt; Cores&lt;/h5&gt;Carrega a lista de cores das palavras que serão apresentadas para os tipos Palavra e Palavra com Áudio. A exposição não aleatória seguirá a ordem das cores na lista.&lt;h5&gt;Imagens&lt;/h5&gt; Carrega a lista de imagens que serão apresentadas para os tipos Imagem, Imagem com Áudio e Imagem e Palavra.A exposição não aleatória seguirá a ordem das imagens na lista.&lt;h5&gt;Aúdios&lt;/h5&gt; Carrega a lista de áudios que serão reproduzidos no teste para os tipos Palavra com Áudio e Imagem com Áudio.A exposição não aleatória seguirá a ordem dos áudios na lista.&lt;h4&gt;Tempo&lt;/h4&gt; Refere-se aos tempos programados para os estímulos durante o teste.&lt;h5&gt;Exposição(ms)&lt;/h5&gt;Define a duração em milissegundos da exposição do estímulo escolhido, palavra ou imagem.&lt;h5&gt;Intervalo(ms)&lt;/h5&gt;Define o tempo em milissegundos entre as tentativas.&lt;h5&gt;Tempo Intervalo Variável&lt;/h5&gt; Indica que o intervalo terá a duração variada aleatoriamente a partir de 400ms até o tempo de intervalo informado.&lt;h5&gt;Atraso&lt;/h5&gt; Define o tempo  em milissegundos entre os estímulos pareados para os tipos palavra e imagem / imagem e palavra.Se não informado, será usado o tempo de intervalo.&lt;h4&gt;Legenda&lt;/h4&gt; Refere-se à colocação de uma inscrição em diferentes posições para a imagem ou palavra.&lt;h5&gt;Ativar&lt;/h5&gt; Indica se a exposição imagem terá legenda. Ao ativar, deve ser selecionada a lista de palavras a serem apresentadas como legenda (ver Novo/Editar Listas).&lt;h5&gt;Posição&lt;/h5&gt; Indica o local que será colocada a legenda em relação ao estímulo:à esquerda(imagens);  acima(palavras e imagens); à direita(imagens);  abaixo(palavras e imagens); ao centro(imagens); Aleatória, variar a posição, de acordo com o tipo do estímulo.&lt;h5&gt;Cor&lt;/h5&gt; Indica a cor da legenda.Será utilizada a cor preta, se não informado.&lt;h4&gt;Ponto de Fixação&lt;/h4&gt; Refere-se ao indicador visual para atrair a atenção para o centro da tela, que será apresentado durante o intervalo.&lt;h5&gt;Tipo&lt;/h5&gt; Indica a forma do ponto de fixação: em cruz ou ponto.&lt;h5&gt;Cor do Ponto&lt;/h5&gt; Indica a cor do ponto de fixação.&lt;h4&gt;Outros&lt;/h4&gt; Refere-se a detalhes adicionais não relacionados aos estímulos.&lt;h5&gt;Capturar Aúdio durante Execução&lt;/h5&gt;Indica que as respostas do sujeito serão gravadas automaticamente durante a execução.Será gerado um arquivo de áudio na pasta de dados. Exige o arquivo NAudio.dll esteja na mesma pasta do teste.O padrão é selecionado.&lt;h5&gt;Cor de Fundo&lt;/h5&gt; Define a cor tela por trás do estímulo durante a apresentação. O padrão é tela cinza.&lt;h3&gt;Instruções&lt;/h3&gt; Descreve as orientações para o participante sobre a execução do teste.Cada linha informada será apresentada em uma tela durante 4000 ms.&lt;h1 id =\"secao5\" &gt; Definir Programa&lt;/h1&gt;&lt;img src =\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/define_program.png?raw=true\"/&gt;Determinar qual o programa, entre todos os que estão gravados no dispositivo em operação, será utilizado na execução do teste.Ao escolher, será feita verificação da existência dos arquivos de lista apenas.&lt;h1 id=\"secao6\"&gt;Definir Participante&lt;/h1&gt;&lt;img src =\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/define_participant.png?raw=true\"/&gt;Identificar o participante que irá desempenhar o teste com o programa escolhido.Os dados da execução do participante serão gravados em arquivo nomeado com o programa escolhido e a identificação do participante, caso já tenha ocorrido esta combinação os novos dados serão adicionados ao mesmo arquivo.&lt;h1 id=\"secao7\"&gt;Excluir Lista&lt;/h1&gt;&lt;img src =\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/delete_list.png?raw=true\"/&gt;Eliminar do controle da aplicação a lista de elementos escolhida. O arquivo será movido para uma pasta de backup.&lt;h1 id=\"secao8\"&gt;Excluir Programa&lt;/h1&gt;&lt;img src =\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/delete_program.png?raw=true\" /&gt;Eliminar do controle da aplicação o programa escolhido. O arquivo será movido para uma pasta de backup.&lt;h1 id=\"secao9\"&gt;Excluir Dados&lt;/h1&gt;&lt;img src =\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/delete_data.png?raw=true\" /&gt;Eliminar do controle da aplicação os dados do participante escolhido. O arquivo será movido para uma pasta de backup.&lt;h1 id=\"secao10\"&gt;Iniciar Teste&lt;/h1&gt;A execução do teste ocorre com base no programa definido que contém a indicação das listas dos estímulos informadas na configuração.As respostas verbais do participante podem ser gravadas em arquivos de áudio formato WAV, desde tenha sido indicado na configuração do programa (opção: Capturar Áudio durante Execução). O registro da execução do teste é armazenado em arquivo formato texto identificados pelo programa executado e nome do participante informado.Os arquivos são incrementados quando há coincidência do par programa_partcipante.&lt;h1 id=\"secao11\"&gt;Exibir Dados&lt;/h1&gt;&lt;p&gt;Exibe os dados de execução do teste&lt;h4&gt; Arquivo de Dados&lt;/h4&gt;Escolha do arquivo gerado na execução do teste.Os arquivos de dados contém o nome do programa executado e o nome definido para o usuário.&lt;h4&gt;Reproduzir o áudio&lt;/h4&gt;Opção para transmitir o áudio gravado durante a execução do teste, se o programa utilizado tinha esta opção.&lt;h4&gt;Exportar como .csv&lt;/h4&gt;Opção para exportar os dados em arquivo formato texto delimitado em local a ser informado.&lt;/p&gt;&lt;img src =\"https://github.com/fabiolamfleury/StroopTest/blob/dev/StroopTest/Resources/help_images/show_data.png?raw=true\"/&gt;&lt;/ body &gt;&lt;/ html &gt;</value>
+  </data>
+  <data name="wordColorConfigInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;h1 { font-size:20.0pt; font-family:Arial; color:black mso-ansi-language:PT-BR; font-weight:'normal' }h3 { font-size:12.0pt; font-family:Arial; color:black mso-ansi-language:PT-BR; font-weight:'normal' }p { font-size:11.0pt; font-family:Arial; color:black mso-ansi-language:PT-BR; font-weight:'normal' }&lt;/style&gt;&lt;/head&gt;&lt;body lang=PT-BR&gt;&lt;h1&gt;Nova/Editar Lista de Palavras e Cores&lt;/h1&gt;&lt;p&gt;Permite criar e modificar a lista de imagens a ser utilizada na definição do programa.&lt;/p&gt;&lt;h3&gt;Nome da Lista&lt;/h3&gt;&lt;p&gt;Define o nome da lista que será escolhida na definição do programa. É recomendável que o nome da lista caracterize o conjunto de elementos escolhido e a etapa que compreende, por exemplo, “Victoria1”. A ordem em que os elementos são informados será mantida na respectiva lista.&lt;/p&gt;&lt;h3&gt;Novo Item&lt;/h3&gt;&lt;p&gt;Abre uma tela para preencher uma nova palavra e sua cor. A cor padrão é preto.&lt;/p&gt;&lt;h3&gt;Apagar Item&lt;/h3&gt;&lt;p&gt;Exclui da lista a palavra e sua cor correspondente selecionada com o botão “Apagar”.&lt;/p&gt;&lt;h3&gt;Mover Item&lt;/h3&gt;&lt;p&gt;Reposiciona a palavra colorida selecionado na lista com os botões “Acima” e “Abaixo”.&lt;/p&gt;&lt;h3&gt;Lista de Palavras&lt;/h3&gt;&lt;p&gt;Quando a caixa da lista de palavras estiver marcada, será salva a lista de palavras criada&lt;/p&gt;&lt;h3&gt;Lista de Cores&lt;/h3&gt;&lt;p&gt;Quando a caixa da lista de palavras estiver marcada, será salva a lista de cores criada. Se ambas as caixas estiveram marcadas, ambas listas serão salvas.&lt;/p&gt;&lt;p&gt;Na lista são apresentados o Nome do Arquivo escolhido, a Imagem e a Localização.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</value>
+  </data>
+  <data name="backgroundColorError" xml:space="preserve">
+    <value>Cor de Fundo do programa deve ser 'false' ou um código hexadecimal de cor</value>
+  </data>
+  <data name="defaulStroopProgram" xml:space="preserve">
+    <value>padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false</value>
+  </data>
+  <data name="defaultColorList" xml:space="preserve">
+    <value>#F8E000 #007BB7 #7EC845 #D01C1F</value>
+  </data>
+  <data name="defaultReactionInstructions1" xml:space="preserve">
+    <value>Serão apresentados quadrados de forma aleatória. Aperte a barra de espaço quando ver o quadrado.</value>
+  </data>
+  <data name="defaultReactionInstructions2" xml:space="preserve">
+    <value>A tarefa vai começar agora</value>
+  </data>
+  <data name="defaultReactionProgram" xml:space="preserve">
+    <value>padrao 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false</value>
+  </data>
+  <data name="defaultReactionProgramError" xml:space="preserve">
+    <value>Erro ao criar o programa padrão do teste de tempo de reação.</value>
+  </data>
+  <data name="defaultStroopInstruction1" xml:space="preserve">
+    <value>Serão apresentadas palavras coloridas de forma aleatória. Palavras surgirão rapidamente e em seguida desaparecerão</value>
+  </data>
+  <data name="defaultStroopInstruction2" xml:space="preserve">
+    <value>Diga a cor em que a palavra está escrita</value>
+  </data>
+  <data name="defaultStroopInstruction3" xml:space="preserve">
+    <value>A tarefa vai começar agora</value>
+  </data>
+  <data name="defaultWordList" xml:space="preserve">
+    <value>amarelo azul verde vermelho</value>
+  </data>
+  <data name="expositionTypeError" xml:space="preserve">
+    <value>Tipo de exposição deve ser um dos seguintes</value>
+  </data>
+  <data name="fileName" xml:space="preserve">
+    <value>Nome do arquivo</value>
+  </data>
+  <data name="fileNameError" xml:space="preserve">
+    <value>de lista deve ter terminação .lst</value>
+  </data>
+  <data name="fileNameError1" xml:space="preserve">
+    <value>Nome do programa contido dentro do arquivo deve ser igual ao nome do arquivo. </value>
+  </data>
+  <data name="fixPointColorError" xml:space="preserve">
+    <value>Cor do ponto de fixação deve ser 'false' ou um código hexadecimal de cor</value>
+  </data>
+  <data name="fixPointError" xml:space="preserve">
+    <value>O ponto de fixação do programa deve ser representado por:\n'+' - ponto de fixação cruz\n'o' - ponto de fixação circulo\n'false' - se não houver ponto;</value>
+  </data>
+  <data name="notCreated" xml:space="preserve">
+    <value>não foi escrito\n\n</value>
+  </data>
+  <data name="reactionTestHeader" xml:space="preserve">
+    <value>programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep</value>
+  </data>
+  <data name="responseTypeError" xml:space="preserve">
+    <value>Tipo de resposta selecionado inválido. As opções válidas são: barra de espaço ou setas.</value>
+  </data>
+  <data name="stroopResultHeader" xml:space="preserve">
+    <value>programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio</value>
+  </data>
+  <data name="subtitleColorError" xml:space="preserve">
+    <value>Cor da Legenda deve ser 'false' ou um código hexadecimal de cor</value>
+  </data>
+  <data name="subtitlePositionError" xml:space="preserve">
+    <value>Posição da legenda</value>
+  </data>
+  <data name="subtitlePositionError1" xml:space="preserve">
+    <value>deve ser um número de 1 a 5</value>
+  </data>
+  <data name="wordColorError" xml:space="preserve">
+    <value>Cor do ponto da palavra deve ser 'false' ou um código hexadecimal de cor</value>
+  </data>
+</root>

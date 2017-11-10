@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormWordColorConfig));
             this.wordsDataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listNameTextBox = new System.Windows.Forms.TextBox();
@@ -73,14 +74,10 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.wordsDataGridView.Location = new System.Drawing.Point(201, 52);
-            this.wordsDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.wordsDataGridView, "wordsDataGridView");
             this.wordsDataGridView.Name = "wordsDataGridView";
             this.wordsDataGridView.ReadOnly = true;
-            this.wordsDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.wordsDataGridView.RowHeadersVisible = false;
-            this.wordsDataGridView.Size = new System.Drawing.Size(507, 650);
-            this.wordsDataGridView.TabIndex = 0;
             this.wordsDataGridView.Validating += new System.ComponentModel.CancelEventHandler(this.listLength_Validating);
             this.wordsDataGridView.Validated += new System.EventHandler(this.listLength_Validated);
             // 
@@ -90,197 +87,116 @@
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column1.HeaderText = "Lista de Estímulos";
+            resources.ApplyResources(this.Column1, "Column1");
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // listNameTextBox
             // 
-            this.listNameTextBox.Location = new System.Drawing.Point(120, 15);
-            this.listNameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.listNameTextBox, "listNameTextBox");
             this.listNameTextBox.Name = "listNameTextBox";
-            this.listNameTextBox.Size = new System.Drawing.Size(180, 22);
-            this.listNameTextBox.TabIndex = 5;
             this.listNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.listName_Validating);
             this.listNameTextBox.Validated += new System.EventHandler(this.listName_Validated);
             // 
             // listNameLabel
             // 
-            this.listNameLabel.AutoSize = true;
-            this.listNameLabel.Location = new System.Drawing.Point(8, 18);
-            this.listNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.listNameLabel, "listNameLabel");
             this.listNameLabel.Name = "listNameLabel";
-            this.listNameLabel.Size = new System.Drawing.Size(103, 17);
-            this.listNameLabel.TabIndex = 6;
-            this.listNameLabel.Text = "Nome da Lista:";
             // 
             // wordsListCheckBox
             // 
-            this.wordsListCheckBox.AutoSize = true;
-            this.wordsListCheckBox.Location = new System.Drawing.Point(327, 17);
-            this.wordsListCheckBox.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.wordsListCheckBox, "wordsListCheckBox");
             this.wordsListCheckBox.Name = "wordsListCheckBox";
-            this.wordsListCheckBox.Size = new System.Drawing.Size(139, 21);
-            this.wordsListCheckBox.TabIndex = 7;
-            this.wordsListCheckBox.Text = "Lista de Palavras";
             this.wordsListCheckBox.UseVisualStyleBackColor = true;
             this.wordsListCheckBox.CheckedChanged += new System.EventHandler(this.wordsListCheckBox_CheckedChanged);
             // 
             // colorsListCheckBox
             // 
-            this.colorsListCheckBox.AutoSize = true;
-            this.colorsListCheckBox.Location = new System.Drawing.Point(492, 17);
-            this.colorsListCheckBox.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.colorsListCheckBox, "colorsListCheckBox");
             this.colorsListCheckBox.Name = "colorsListCheckBox";
-            this.colorsListCheckBox.Size = new System.Drawing.Size(121, 21);
-            this.colorsListCheckBox.TabIndex = 9;
-            this.colorsListCheckBox.Text = "Lista de Cores";
             this.colorsListCheckBox.UseVisualStyleBackColor = true;
             this.colorsListCheckBox.CheckedChanged += new System.EventHandler(this.colorsListCheckBox_CheckedChanged);
             // 
             // newItemButton
             // 
-            this.newItemButton.AutoSize = true;
+            resources.ApplyResources(this.newItemButton, "newItemButton");
             this.newItemButton.CausesValidation = false;
-            this.newItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.newItemButton.Location = new System.Drawing.Point(12, 52);
-            this.newItemButton.Margin = new System.Windows.Forms.Padding(4);
             this.newItemButton.Name = "newItemButton";
-            this.newItemButton.Size = new System.Drawing.Size(181, 29);
-            this.newItemButton.TabIndex = 10;
-            this.newItemButton.Text = "Novo Item";
             this.newItemButton.UseVisualStyleBackColor = true;
             this.newItemButton.Click += new System.EventHandler(this.newItemButton_Click);
             // 
             // deleteItemLabel
             // 
-            this.deleteItemLabel.AutoSize = true;
-            this.deleteItemLabel.Location = new System.Drawing.Point(12, 84);
-            this.deleteItemLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.deleteItemLabel, "deleteItemLabel");
             this.deleteItemLabel.Name = "deleteItemLabel";
-            this.deleteItemLabel.Size = new System.Drawing.Size(88, 17);
-            this.deleteItemLabel.TabIndex = 59;
-            this.deleteItemLabel.Text = "Apagar Item:";
             // 
             // moveRowLabel
             // 
-            this.moveRowLabel.AutoSize = true;
-            this.moveRowLabel.Location = new System.Drawing.Point(12, 135);
-            this.moveRowLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.moveRowLabel, "moveRowLabel");
             this.moveRowLabel.Name = "moveRowLabel";
-            this.moveRowLabel.Size = new System.Drawing.Size(81, 17);
-            this.moveRowLabel.TabIndex = 58;
-            this.moveRowLabel.Text = "Mover item:";
             // 
             // moveDownButton
             // 
-            this.moveDownButton.AutoSize = true;
-            this.moveDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.moveDownButton.Location = new System.Drawing.Point(12, 191);
-            this.moveDownButton.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.moveDownButton, "moveDownButton");
             this.moveDownButton.Name = "moveDownButton";
-            this.moveDownButton.Size = new System.Drawing.Size(181, 28);
-            this.moveDownButton.TabIndex = 57;
-            this.moveDownButton.Text = "Abaixo";
             this.moveDownButton.UseVisualStyleBackColor = true;
             this.moveDownButton.Click += new System.EventHandler(this.moveDownButton_Click);
             // 
             // moveUpButton
             // 
-            this.moveUpButton.AutoSize = true;
-            this.moveUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.moveUpButton.Location = new System.Drawing.Point(12, 155);
-            this.moveUpButton.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.moveUpButton, "moveUpButton");
             this.moveUpButton.Name = "moveUpButton";
-            this.moveUpButton.Size = new System.Drawing.Size(181, 28);
-            this.moveUpButton.TabIndex = 56;
-            this.moveUpButton.Text = "Acima";
             this.moveUpButton.UseVisualStyleBackColor = true;
             this.moveUpButton.Click += new System.EventHandler(this.moveUpButton_Click);
             // 
             // deleteButton
             // 
-            this.deleteButton.AutoSize = true;
-            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.deleteButton.Location = new System.Drawing.Point(12, 103);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.deleteButton, "deleteButton");
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(181, 28);
-            this.deleteButton.TabIndex = 55;
-            this.deleteButton.Text = "Apagar";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // numberItens
             // 
-            this.numberItens.AutoSize = true;
-            this.numberItens.Location = new System.Drawing.Point(173, 234);
-            this.numberItens.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.numberItens, "numberItens");
             this.numberItens.Name = "numberItens";
-            this.numberItens.Size = new System.Drawing.Size(16, 17);
-            this.numberItens.TabIndex = 61;
-            this.numberItens.Text = "0";
             // 
             // numberItensLabel
             // 
-            this.numberItensLabel.AutoSize = true;
-            this.numberItensLabel.Location = new System.Drawing.Point(16, 234);
-            this.numberItensLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.numberItensLabel, "numberItensLabel");
             this.numberItensLabel.Name = "numberItensLabel";
-            this.numberItensLabel.Size = new System.Drawing.Size(96, 17);
-            this.numberItensLabel.TabIndex = 60;
-            this.numberItensLabel.Text = "Itens na Lista:";
             // 
             // cancelButton
             // 
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(15, 711);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(100, 28);
-            this.cancelButton.TabIndex = 63;
-            this.cancelButton.Text = "cancelar";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // saveButton
             // 
-            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(608, 711);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.saveButton, "saveButton");
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(100, 28);
-            this.saveButton.TabIndex = 62;
-            this.saveButton.Text = "salvar";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // helpButton
             // 
-            this.helpButton.AutoSize = true;
+            resources.ApplyResources(this.helpButton, "helpButton");
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
-            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(673, 14);
-            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(35, 32);
-            this.helpButton.TabIndex = 82;
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // labelEmpty
             // 
-            this.labelEmpty.AutoSize = true;
+            resources.ApplyResources(this.labelEmpty, "labelEmpty");
             this.labelEmpty.ForeColor = System.Drawing.Color.Red;
-            this.labelEmpty.Location = new System.Drawing.Point(6, 267);
-            this.labelEmpty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEmpty.Name = "labelEmpty";
-            this.labelEmpty.Size = new System.Drawing.Size(0, 17);
-            this.labelEmpty.TabIndex = 83;
             // 
             // errorProvider1
             // 
@@ -289,9 +205,8 @@
             // 
             // FormWordColorConfig
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.Controls.Add(this.labelEmpty);
             this.Controls.Add(this.helpButton);
@@ -310,9 +225,7 @@
             this.Controls.Add(this.listNameLabel);
             this.Controls.Add(this.listNameTextBox);
             this.Controls.Add(this.wordsDataGridView);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormWordColorConfig";
-            this.Size = new System.Drawing.Size(725, 785);
             ((System.ComponentModel.ISupportInitialize)(this.wordsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

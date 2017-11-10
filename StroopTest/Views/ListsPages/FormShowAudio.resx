@@ -117,16 +117,670 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="moveRowLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="moveRowLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 366</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="moveRowLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="moveRowLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 17</value>
+  </data>
+  <data name="moveRowLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="moveRowLabel.Text" xml:space="preserve">
+    <value>Mover item:</value>
+  </data>
+  <data name="&gt;&gt;moveRowLabel.Name" xml:space="preserve">
+    <value>moveRowLabel</value>
+  </data>
+  <data name="&gt;&gt;moveRowLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;moveRowLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;moveRowLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="moveDownButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="moveDownButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 422</value>
+  </data>
+  <data name="moveDownButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="moveDownButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 28</value>
+  </data>
+  <data name="moveDownButton.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="moveDownButton.Text" xml:space="preserve">
+    <value>Abaixo</value>
+  </data>
+  <data name="&gt;&gt;moveDownButton.Name" xml:space="preserve">
+    <value>moveDownButton</value>
+  </data>
+  <data name="&gt;&gt;moveDownButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;moveDownButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;moveDownButton.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="moveUpButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="moveUpButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 386</value>
+  </data>
+  <data name="moveUpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="moveUpButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 28</value>
+  </data>
+  <data name="moveUpButton.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="moveUpButton.Text" xml:space="preserve">
+    <value>Acima</value>
+  </data>
+  <data name="&gt;&gt;moveUpButton.Name" xml:space="preserve">
+    <value>moveUpButton</value>
+  </data>
+  <data name="&gt;&gt;moveUpButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;moveUpButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;moveUpButton.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
   <metadata name="fileNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="fileNameColumn.HeaderText" xml:space="preserve">
+    <value>Nome do Arquivo</value>
+  </data>
+  <data name="fileNameColumn.Width" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
   <metadata name="filePathColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="fileNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="filePathColumn.HeaderText" xml:space="preserve">
+    <value>Localização</value>
+  </data>
+  <data name="audioPathDataGridView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 210</value>
+  </data>
+  <data name="audioPathDataGridView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="audioPathDataGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>693, 356</value>
+  </data>
+  <data name="audioPathDataGridView.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="&gt;&gt;audioPathDataGridView.Name" xml:space="preserve">
+    <value>audioPathDataGridView</value>
+  </data>
+  <data name="&gt;&gt;audioPathDataGridView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;audioPathDataGridView.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;audioPathDataGridView.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="closeButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="closeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 639</value>
+  </data>
+  <data name="closeButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="closeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 28</value>
+  </data>
+  <data name="closeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="closeButton.Text" xml:space="preserve">
+    <value>fechar</value>
+  </data>
+  <data name="&gt;&gt;closeButton.Name" xml:space="preserve">
+    <value>closeButton</value>
+  </data>
+  <data name="&gt;&gt;closeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;closeButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;closeButton.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="playAudioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="playAudioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 282</value>
+  </data>
+  <data name="playAudioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="playAudioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 28</value>
+  </data>
+  <data name="playAudioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="playAudioButton.Text" xml:space="preserve">
+    <value>Reproduzir Áudio</value>
+  </data>
+  <data name="&gt;&gt;playAudioButton.Name" xml:space="preserve">
+    <value>playAudioButton</value>
+  </data>
+  <data name="&gt;&gt;playAudioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;playAudioButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;playAudioButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="numberFilesLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="numberFilesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>211, 639</value>
+  </data>
+  <data name="numberFilesLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="numberFilesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 17</value>
+  </data>
+  <data name="numberFilesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="numberFilesLabel.Text" xml:space="preserve">
+    <value>Quantidade de arquivos:</value>
+  </data>
+  <data name="&gt;&gt;numberFilesLabel.Name" xml:space="preserve">
+    <value>numberFilesLabel</value>
+  </data>
+  <data name="&gt;&gt;numberFilesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numberFilesLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;numberFilesLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="numberFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="numberFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>397, 639</value>
+  </data>
+  <data name="numberFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="numberFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 17</value>
+  </data>
+  <data name="numberFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="numberFiles.Text" xml:space="preserve">
+    <value>0</value>
+  <comment>@Invariant</comment></data>
+  <data name="&gt;&gt;numberFiles.Name" xml:space="preserve">
+    <value>numberFiles</value>
+  </data>
+  <data name="&gt;&gt;numberFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numberFiles.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;numberFiles.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="helpButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>878, 35</value>
+  </data>
+  <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 32</value>
+  </data>
+  <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
+    <value>82</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Name" xml:space="preserve">
+    <value>helpButton</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;helpButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="stopAudio.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="stopAudio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 318</value>
+  </data>
+  <data name="stopAudio.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="stopAudio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 28</value>
+  </data>
+  <data name="stopAudio.TabIndex" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <data name="stopAudio.Text" xml:space="preserve">
+    <value>Parar Reprodução</value>
+  </data>
+  <data name="&gt;&gt;stopAudio.Name" xml:space="preserve">
+    <value>stopAudio</value>
+  </data>
+  <data name="&gt;&gt;stopAudio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stopAudio.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;stopAudio.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="currentFolderLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="currentFolderLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>217, 183</value>
+  </data>
+  <data name="currentFolderLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 17</value>
+  </data>
+  <data name="currentFolderLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="currentFolderLabel.Text" xml:space="preserve">
+    <value>Diretório atual:</value>
+  </data>
+  <data name="&gt;&gt;currentFolderLabel.Name" xml:space="preserve">
+    <value>currentFolderLabel</value>
+  </data>
+  <data name="&gt;&gt;currentFolderLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;currentFolderLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;currentFolderLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="directoryButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="directoryButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 240</value>
+  </data>
+  <data name="directoryButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="directoryButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 28</value>
+  </data>
+  <data name="directoryButton.TabIndex" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="directoryButton.Text" xml:space="preserve">
+    <value>Alterar diretório</value>
+  </data>
+  <data name="&gt;&gt;directoryButton.Name" xml:space="preserve">
+    <value>directoryButton</value>
+  </data>
+  <data name="&gt;&gt;directoryButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;directoryButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;directoryButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="currenFolderLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="currenFolderLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>318, 183</value>
+  </data>
+  <data name="currenFolderLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="currenFolderLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="&gt;&gt;currenFolderLabel.Name" xml:space="preserve">
+    <value>currenFolderLabel</value>
+  </data>
+  <data name="&gt;&gt;currenFolderLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;currenFolderLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;currenFolderLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="currentElapsedTimeDisplay.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="currentElapsedTimeDisplay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>234, 63</value>
+  </data>
+  <data name="currentElapsedTimeDisplay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 17</value>
+  </data>
+  <data name="currentElapsedTimeDisplay.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="currentElapsedTimeDisplay.Text" xml:space="preserve">
+    <value>00</value>
+  <comment>@Invariant</comment></data>
+  <data name="&gt;&gt;currentElapsedTimeDisplay.Name" xml:space="preserve">
+    <value>currentElapsedTimeDisplay</value>
+  </data>
+  <data name="&gt;&gt;currentElapsedTimeDisplay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;currentElapsedTimeDisplay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;currentElapsedTimeDisplay.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="recordingLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="recordingLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 54</value>
+  </data>
+  <data name="recordingLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 17</value>
+  </data>
+  <data name="recordingLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="recordingLabel.Text" xml:space="preserve">
+    <value>Gravando</value>
+  </data>
+  <data name="&gt;&gt;recordingLabel.Name" xml:space="preserve">
+    <value>recordingLabel</value>
+  </data>
+  <data name="&gt;&gt;recordingLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recordingLabel.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;recordingLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="stopRecordingButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="stopRecordingButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>366, 88</value>
+  </data>
+  <data name="stopRecordingButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="stopRecordingButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 28</value>
+  </data>
+  <data name="stopRecordingButton.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="stopRecordingButton.Text" xml:space="preserve">
+    <value>Salvar gravação</value>
+  </data>
+  <data name="&gt;&gt;stopRecordingButton.Name" xml:space="preserve">
+    <value>stopRecordingButton</value>
+  </data>
+  <data name="&gt;&gt;stopRecordingButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stopRecordingButton.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;stopRecordingButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="recordButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="recordButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 124</value>
+  </data>
+  <data name="recordButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="recordButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 28</value>
+  </data>
+  <data name="recordButton.TabIndex" type="System.Int32, mscorlib">
+    <value>87</value>
+  </data>
+  <data name="recordButton.Text" xml:space="preserve">
+    <value>Selecionar Pasta</value>
+  </data>
+  <data name="&gt;&gt;recordButton.Name" xml:space="preserve">
+    <value>recordButton</value>
+  </data>
+  <data name="&gt;&gt;recordButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recordButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;recordButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="recordButton1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="recordButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 88</value>
+  </data>
+  <data name="recordButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="recordButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 28</value>
+  </data>
+  <data name="recordButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>92</value>
+  </data>
+  <data name="recordButton1.Text" xml:space="preserve">
+    <value>Gravar Aúdio</value>
+  </data>
+  <data name="&gt;&gt;recordButton1.Name" xml:space="preserve">
+    <value>recordButton1</value>
+  </data>
+  <data name="&gt;&gt;recordButton1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recordButton1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;recordButton1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="selectedDirectory.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="selectedDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 0</value>
+  </data>
+  <data name="selectedDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 17</value>
+  </data>
+  <data name="selectedDirectory.TabIndex" type="System.Int32, mscorlib">
+    <value>91</value>
+  </data>
+  <data name="selectedDirectory.Text" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+  <data name="&gt;&gt;selectedDirectory.Name" xml:space="preserve">
+    <value>selectedDirectory</value>
+  </data>
+  <data name="&gt;&gt;selectedDirectory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;selectedDirectory.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;selectedDirectory.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="directoryLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="directoryLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 0</value>
+  </data>
+  <data name="directoryLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 17</value>
+  </data>
+  <data name="directoryLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="directoryLabel.Text" xml:space="preserve">
+    <value>Diretório Selecionado:</value>
+  </data>
+  <data name="&gt;&gt;directoryLabel.Name" xml:space="preserve">
+    <value>directoryLabel</value>
+  </data>
+  <data name="&gt;&gt;directoryLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;directoryLabel.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;directoryLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 17</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Novo Aúdio</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 35</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>652, 129</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>91</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="filePathColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>928, 810</value>
+  </data>
+  <data name="&gt;&gt;fileNameColumn.Name" xml:space="preserve">
+    <value>fileNameColumn</value>
+  </data>
+  <data name="&gt;&gt;fileNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filePathColumn.Name" xml:space="preserve">
+    <value>filePathColumn</value>
+  </data>
+  <data name="&gt;&gt;filePathColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormShowAudio</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

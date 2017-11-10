@@ -12,13 +12,16 @@ using TestPlatform.Controllers;
 using System.Collections.Generic;
 using TestPlatform.Views;
 using System.Linq;
+using System.Globalization;
+using System.Resources;
 
 namespace TestPlatform
 {
     public partial class FormListConfig : Form
     {
         private string path;
-        private string instructionsText = HelpData.WordColorConfigInstructions;
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public FormListConfig(string dataFolderPath, string lstName)
         {
@@ -47,25 +50,10 @@ namespace TestPlatform
         {
             StroopProgram program = new StroopProgram();
             string wordsFilePath = "", colorsFilePath = "";
-            string[] list = null, wordsArray = null, colorsArray = null;
+            string[] wordsArray = null, colorsArray = null;
 
             try
             {
-                // MessageBox.Show(fileName);
-                /*
-                var typeOfList = fileName.Substring(fileName.Length - 6, fileName.Length);
-                switch (typeOfList.ToLower())
-                {
-                    case "_words":
-                        fileName = fileName.Remove(fileName.Length - 6);
-                        break;
-                    case "_color":
-                        fileName = fileName.Remove(fileName.Length - 6);
-                        break;
-                    default:
-                        break;
-                }
-                */
                 fileName = fileName.Remove(fileName.Length - 6);
 
                 wordsFilePath = this.path + fileName + "_words.lst";
@@ -480,7 +468,7 @@ namespace TestPlatform
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(instructionsText);
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("wordColorConfigInstructions", currentCulture));
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 

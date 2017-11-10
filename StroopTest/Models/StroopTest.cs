@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Resources;
+using System.Globalization;
 
 namespace TestPlatform.Models
 {
@@ -13,15 +15,19 @@ namespace TestPlatform.Models
     */
     class StroopTest
     {
-        private static String headerOutputFileText = "programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor\taudio";
+        private static String headerOutputFileText;
         private DateTime initialDate;           // test execution date
         private String participantName;                // tested person name
         private Char mark; // char mark made into neurospectrum program
         private StroopProgram programInUse;
 
-
         public StroopTest()
         {
+            // used to localize strings during runtime
+            ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+            CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+
+            headerOutputFileText = LocRM.GetString("stroopResultHeader", currentCulture);
         }
         public static string HeaderOutputFileText
         {
@@ -47,9 +53,20 @@ namespace TestPlatform.Models
             get { return participantName; }
             set
             {
-                if (!Validations.isEmpty(value) && Validations.isAlphanumeric(value)) participantName = value;
-                else throw new ArgumentException("Nome do usuario deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'JoaoSilva'");
-            }   // user name has only alphanumeric elements, without spaces
+                // user name can have only alphanumeric elements, without spaces
+                if (!Validations.isEmpty(value) && Validations.isAlphanumeric(value))
+                {
+                    participantName = value;
+                }
+                else
+                { 
+                    // used to localize strings during runtime
+                    ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+                    CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+
+                    throw new ArgumentException(LocRM.GetString("participantNameAlphanumericError", currentCulture));
+                }
+            }   
         }
 
         public char Mark

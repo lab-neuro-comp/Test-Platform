@@ -2,8 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
+    using System.Resources;
     using TestPlatform.Views;
 
     public class ExperimentProgram
@@ -14,6 +16,9 @@
         private int intervalTime;               // duration time for interval between program expositions in millisec, it can be zero
         private List<string> instructionText = new List<string>();
         private bool trainingProgram; // if true there is a program which is fixed (training program) and the  rest is random
+       // properties used to localize strings during runtime
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public bool IsOrderRandom
         {
@@ -43,7 +48,7 @@
                 }
                 else
                 {
-                    throw new ArgumentException("\nTempo de intervalo entre programas deve ser maior ou igual a zero (em milissegundos)");
+                    throw new ArgumentException(LocRM.GetString("intervalInvalid", currentCulture));
                 }
             }
         }
@@ -52,19 +57,18 @@
         {
             get
             {
-                return ExperimentName;
+                return this.ExperimentName;
             }
 
             set
             {
                 if (Validations.isAlphanumeric(value))
                 {
-                    ExperimentName = value;
+                    this.ExperimentName = value;
                 }
                 else
                 {
-                    throw new ArgumentException("Nome do experimento deve ser composto apenas de caracteres alphanumericos " +
-                                                "e sem espaços;\nExemplo: 'MeuExperimento'");
+                    throw new ArgumentException(LocRM.GetString("experimentName", currentCulture));
                 }
             }
         }
@@ -73,12 +77,12 @@
         {
             get
             {
-                return instructionText;
+                return this.instructionText;
             }
 
             set
             {
-                instructionText = value;
+                this.instructionText = value;
             }
         }
 
@@ -86,12 +90,12 @@
         {
             get
             {
-                return programList;
+                return this.programList;
             }
 
             set
             {
-                programList = value;
+                this.programList = value;
             }
         }
 
@@ -99,12 +103,12 @@
         {
             get
             {
-                return experimentName;
+                return this.experimentName;
             }
 
             set
             {
-                experimentName = value;
+                this.experimentName = value;
             }
         }
 
@@ -112,16 +116,16 @@
         {
             get
             {
-                return trainingProgram;
+                return this.trainingProgram;
             }
 
             set
             {
-                trainingProgram = value;
+                this.trainingProgram = value;
             }
         }
 
-        public void addStroopProgram(string programName)
+        public void AddStroopProgram(string programName)
         {
             StroopProgram newProgram = new StroopProgram();
             newProgram.ProgramName = programName;
@@ -129,19 +133,19 @@
             ProgramList.Add(newProgram);
         }
 
-        public void addReactionProgram(string programName)
+        public void AddReactionProgram(string programName)
         {
             ReactionProgram newProgram = new ReactionProgram(Global.reactionTestFilesPath + Global.programFolderName + programName + ".prg");
             ProgramList.Add(newProgram);
         }
 
-        private string data()
+        private string Data()
         {
             string experimentData = this.ExperimentName + " " + this.intervalTime + " " + this.isOrderRandom + " " + this.trainingProgram;
             return experimentData;
         }
 
-        private string writeProgramList()
+        private string WriteProgramList()
         {
             string stringList = "";
             foreach (Program program in ProgramList)
@@ -159,7 +163,7 @@
         }
 
         /* getting information from .prg file and converting to an experiment object */
-        public void readProgramFile() 
+        public void ReadProgramFile() 
         {            
             string filePath = Global.experimentTestFilesPath + Global.programFolderName + ExperimentName + ".prg";
             if (File.Exists(filePath))
@@ -172,8 +176,8 @@
                 ExperimentName = configurationFile[0];
                 if (Path.GetFileNameWithoutExtension(filePath) != (this.ExperimentName))
                 {
-                    throw new Exception("Parâmetro escrito no arquivo como: '" + this.ExperimentName +
-                        "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filePath) + "'.prg");
+                    throw new Exception(LocRM.GetString("parameter", currentCulture) + this.ExperimentName +
+                       LocRM.GetString("parameterShould", currentCulture) + Path.GetFileNameWithoutExtension(filePath) + "'.prg");
                 }
                 IntervalTime = int.Parse(configurationFile[1]);
                 IsOrderRandom = bool.Parse(configurationFile[2]);
@@ -193,11 +197,11 @@
                 {
                     if (listConfiguration[i] == "StroopProgram")
                     {
-                       addStroopProgram(listConfiguration[i - 1]);
+                       AddStroopProgram(listConfiguration[i - 1]);
                     }
                     else if (listConfiguration[i] == "ReactionProgram")
                     {
-                        addReactionProgram(listConfiguration[i - 1]);
+                        AddReactionProgram(listConfiguration[i - 1]);
                     }
                 }
 
@@ -215,17 +219,16 @@
             }
             else
             {
-               throw new FileNotFoundException("Arquivo programa: " + Path.GetFileName(filePath) + "\nnão foi encontrado no local:\n" +
-                Path.GetDirectoryName(filePath));
+               throw new FileNotFoundException(LocRM.GetString("fileNotFound", currentCulture) + Path.GetDirectoryName(filePath));
             }           
 
         }
 
-        public bool saveExperimentFile(string path)
+        public bool SaveExperimentFile(string path)
         {
             StreamWriter writer = new StreamWriter(path + ExperimentName + ".prg");
-            writer.WriteLine(data());
-            writer.WriteLine(writeProgramList());
+            writer.WriteLine(Data());
+            writer.WriteLine(WriteProgramList());
             if (InstructionText != null)
             {
                 for (int i = 0; i < InstructionText.Count; i++)

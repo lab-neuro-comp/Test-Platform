@@ -4,6 +4,8 @@ using TestPlatform.Models;
 using System.IO;
 using TestPlatform.Views;
 using System;
+using System.Threading;
+using System.Globalization;
 
 namespace StroopUnitTestProject
 {
@@ -19,6 +21,8 @@ namespace StroopUnitTestProject
         [TestInitialize]
         public void TestInitialize()
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+            System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("pt-BR");
             listsPath = Global.testFilesPath + Global.listFolderName;
             StrList.writeDefaultColorsList(listsPath);
             StrList.writeDefaultWordsList(listsPath);

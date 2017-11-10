@@ -6,6 +6,8 @@ using TestPlatform.Views;
 using TestPlatform.Controllers;
 using System.IO;
 using System.Drawing;
+using System.Resources;
+using System.Globalization;
 
 namespace TestPlatform
 {
@@ -13,14 +15,15 @@ namespace TestPlatform
     {
         private string path = Global.stroopTestFilesPath + Global.resultsFolderName;
         private SoundPlayer player = new SoundPlayer();
-        private string instructionsText = HelpData.ShowAudioInstructions + HelpData.NewAudioInstructions;
         Audio audioRecorder = new Audio();
         private Timer timer;
         private DateTime startTime = DateTime.MinValue;
         private TimeSpan currentElapsedTime = TimeSpan.Zero;
         private bool timerRunning = false;
         private bool recording = false;
-
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+        
         public FormShowAudio()
         {
             this.Dock = DockStyle.Fill;
@@ -36,8 +39,8 @@ namespace TestPlatform
 
         private void loadingAudioFilesToDataGrid()
         {
-
-            if (Directory.Exists(path)) // Preenche dgv com arquivos do tipo .wav no diretório dado
+            // Fills data grid view with .wav files from data directory
+            if (Directory.Exists(path)) 
             {
                 audioPathDataGridView.Rows.Clear();
                 audioPathDataGridView.Refresh();
@@ -124,7 +127,7 @@ namespace TestPlatform
                 timerRunning = false;
                 currentElapsedTime = TimeSpan.Zero;
                 audioRecorder.SaveRecording();
-                MessageBox.Show("Aúdio gravado com sucesso!");
+                MessageBox.Show(LocRM.GetString("audioRecordSuccess", currentCulture));
                 loadingAudioFilesToDataGrid();
             }            
             
@@ -155,7 +158,7 @@ namespace TestPlatform
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(instructionsText);
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("showAudioInstructions", currentCulture) + LocRM.GetString("newAudioInstructions", currentCulture));
             try { infoBox.Show(); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -187,7 +190,7 @@ namespace TestPlatform
 
         private void recordButton1_Click(object sender, EventArgs e)
         {
-            if(selectedDirectory.Text != "Nenhum")
+            if(selectedDirectory.Text != LocRM.GetString("none", currentCulture))
             {
                 if(recording != true)
                 {
@@ -207,7 +210,7 @@ namespace TestPlatform
             }
             else
             {
-                DialogResult dr = MessageBox.Show("É necessário selecionar o local do arquivo antes de gravar.", "", MessageBoxButtons.OK);
+                DialogResult dr = MessageBox.Show(LocRM.GetString("selectPlace", currentCulture), "", MessageBoxButtons.OK);
             }
             
         }

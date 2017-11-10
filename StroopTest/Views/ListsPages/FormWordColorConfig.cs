@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using TestPlatform.Models;
 using TestPlatform.Views;
 using TestPlatform.Controllers;
+using System.Resources;
+using System.Globalization;
 
 namespace TestPlatform
 {
@@ -15,7 +17,8 @@ namespace TestPlatform
     {
         List<string> wordsList = new List<string>(), colorsList = new List<string>();
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
-        private string instructionsText = HelpData.WordColorConfigInstructions;
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public FormWordColorConfig(bool editFile)
         {
@@ -39,7 +42,7 @@ namespace TestPlatform
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine("Listas de Palavras: ", Global.testFilesPath + Global.listFolderName, "lst", "_words_color", true);
+                FormDefine defineFilePath = new FormDefine(LocRM.GetString("wordList", currentCulture), Global.testFilesPath + Global.listFolderName, "lst", "_words_color", true);
                 var result = defineFilePath.ShowDialog();
 
                 if (result == DialogResult.OK)
@@ -132,17 +135,17 @@ namespace TestPlatform
                 clearDGV(wordsDataGridView);
                 if (wordsListCheckBox.Checked && colorsListCheckBox.Checked)
                 {
-                    wordsDataGridView.Columns[0].HeaderText = "Lista de Palavras com Cores";
+                    wordsDataGridView.Columns[0].HeaderText = LocRM.GetString("wordColorList", currentCulture);
                     readColoredWordsIntoDGV(wordsList, colorsList, wordsDataGridView);
                 }
                 if (wordsListCheckBox.Checked && !colorsListCheckBox.Checked)
                 {
-                    wordsDataGridView.Columns[0].HeaderText = "Lista de Palavras";
+                    wordsDataGridView.Columns[0].HeaderText = LocRM.GetString("wordsList", currentCulture);
                     readWordsIntoDGV(wordsList, wordsDataGridView);
                 }
                 if (!wordsListCheckBox.Checked && colorsListCheckBox.Checked)
                 {
-                    wordsDataGridView.Columns[0].HeaderText = "Lista de Cores";
+                    wordsDataGridView.Columns[0].HeaderText = LocRM.GetString("colorsList", currentCulture);
                     readColorsIntoDGV(colorsList, wordsDataGridView);
                 }
                 numberItens.Text = wordsDataGridView.RowCount.ToString();
@@ -304,21 +307,21 @@ namespace TestPlatform
         private bool saveListFile(List<string> list, string fileName, string fileType, string type)
         {
             StrList strlist;
-            if ((MessageBox.Show("Deseja salvar o arquivo " + type + " '" + fileName + "' ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK))
+            if ((MessageBox.Show(LocRM.GetString("wishToSave", currentCulture) + type + " '" + fileName + "' ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK))
             {
                 strlist = ListController.CreateList(list, fileName, fileType);
                 if (strlist.exists())
                 {
-                    DialogResult dialogResult = MessageBox.Show("Uma lista com este nome já existe.\nDeseja sobrescrevê-la?", "", MessageBoxButtons.OKCancel);
+                    DialogResult dialogResult = MessageBox.Show(LocRM.GetString("listExists", currentCulture), "", MessageBoxButtons.OKCancel);
                     if (dialogResult == DialogResult.Cancel)
                     {
-                        MessageBox.Show("A lista não será salva");
+                        MessageBox.Show(LocRM.GetString("listNotSaved", currentCulture));
                         return false;
                     }
                 }
                 if (strlist.save())
                 {
-                    MessageBox.Show("A lista '" + fileName + "' foi salva com sucesso");
+                    MessageBox.Show(LocRM.GetString("list", currentCulture) + fileName + LocRM.GetString("listSaveSuccess", currentCulture));
                     
                 }
                 return true;
@@ -333,17 +336,17 @@ namespace TestPlatform
         {
             bool valid = true;
             if (!this.ValidateChildren(ValidationConstraints.Enabled))
-                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+                MessageBox.Show(LocRM.GetString("notFilledProperlyMessage", currentCulture));
             else
             {
                 if (wordsListCheckBox.Checked)
-                    valid = saveListFile(wordsList, listNameTextBox.Text, "_words", "de Palavras");
+                    valid = saveListFile(wordsList, listNameTextBox.Text, "_words", LocRM.GetString("words", currentCulture));
                 if (colorsListCheckBox.Checked)
-                    valid = saveListFile(colorsList, listNameTextBox.Text, "_color", "de Cores");                
+                    valid = saveListFile(colorsList, listNameTextBox.Text, "_color", LocRM.GetString("colors", currentCulture));                
                 if (valid)
                     this.Parent.Controls.Remove(this);
                 else
-                    MessageBox.Show("Lista não cadastrada");
+                    MessageBox.Show(LocRM.GetString("listNotSaved", currentCulture));
             }
         }
 
@@ -367,7 +370,7 @@ namespace TestPlatform
         {
             if (Validations.isEmpty(name))
             {
-                errorMessage = "O nome da lista deve ser preenchido";
+                errorMessage = LocRM.GetString("emptyListName", currentCulture);
                 return false;
             }
 
@@ -384,7 +387,7 @@ namespace TestPlatform
         {
             if (number == 0)
             {
-                errorMessage = "A lista não possui \n nenhum item!";
+                errorMessage = LocRM.GetString("emptyList", currentCulture);
                 return false;
             }
 
@@ -406,9 +409,15 @@ namespace TestPlatform
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(instructionsText);
-            try { infoBox.Show(); }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("wordColorConfigInstructions", currentCulture));
+            try
+            {
+                infoBox.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace TestPlatform.Views
@@ -8,10 +10,13 @@ namespace TestPlatform.Views
     {
 
         //primeira posição guarda o tipo, segunda guarda o nome do arquivo
-        public string[] returnValues = new string[2]; 
+        public string[] returnValues = new string[2];
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture;
 
-        public FormDefineTest()
+        public FormDefineTest(CultureInfo currentCulture)
         {
+            this.currentCulture = currentCulture;
             InitializeComponent();
             AutoValidate = AutoValidate.Disable;
             addOptionsComboBox(Global.stroopTestFilesPath + Global.programFolderName);
@@ -32,7 +37,7 @@ namespace TestPlatform.Views
             }
             else
             {
-                Console.WriteLine("{0} é um caminho inválido!.", testFilePath);
+                MessageBox.Show("{0}" + LocRM.GetString("invalidPath", currentCulture), testFilePath);
             }
         }
 
@@ -74,8 +79,8 @@ namespace TestPlatform.Views
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.returnValues[1] = "padrao";
-            this.returnValues[0] = "StroopTest";
+            this.returnValues[1] = LocRM.GetString("default", currentCulture);
+            this.returnValues[0] = LocRM.GetString("stroopTest", currentCulture);
             this.DialogResult = DialogResult.Cancel;
             AutoValidate = AutoValidate.Disable;
             this.Close();
@@ -85,7 +90,7 @@ namespace TestPlatform.Views
         {
 
             if (!this.ValidateChildren(ValidationConstraints.Enabled))
-                MessageBox.Show("Algum campo não foi preenchido de forma correta.");
+                MessageBox.Show(LocRM.GetString("fieldNotRight", currentCulture));
             else
             {
                 comboBox1.Items.Add(comboBox1.Text);
@@ -93,16 +98,17 @@ namespace TestPlatform.Views
 
                 if (stroopButton.Checked)
                 {
-                    returnValues[0] = "StroopTest";
+                    returnValues[0] = LocRM.GetString("stroopTest", currentCulture);
                 }
                 else if (reactionButton.Checked)
                 {
-                    returnValues[0] = "ReactionTest";
+                    returnValues[0] = LocRM.GetString("reactionTest", currentCulture);
                 }
                 else if(experimentRadioButon.Checked)
                 {
-                    returnValues[0] = "Experimento";
+                    returnValues[0] = LocRM.GetString("experiment", currentCulture);
                 }
+                Console.WriteLine(currentCulture.EnglishName);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -122,7 +128,7 @@ namespace TestPlatform.Views
         {
             if (comboBox1.SelectedItem == null)
             {
-                errorMessage = "Deve-se selecionar um teste.";
+                errorMessage = LocRM.GetString("emptyBox", currentCulture);
                 return false;
             }
 

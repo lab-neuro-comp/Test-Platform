@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TestPlatform.Views
+﻿namespace TestPlatform.Views
 {
     /*
     * Constants for tests platform
@@ -25,7 +19,6 @@ namespace TestPlatform.Views
         public static string resultsFolderName = "/data/";
         
         public static string backupFolderName = "/backup/";
-
         public static FormMain GlobalFormMain
         {
             get { return _globalFormMain; }

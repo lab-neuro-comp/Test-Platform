@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTRConfig));
             this.reactionConfigPanel = new System.Windows.Forms.Panel();
             this.userResponse = new System.Windows.Forms.GroupBox();
             this.responseTypeBox = new System.Windows.Forms.ComboBox();
@@ -134,24 +135,16 @@
             this.reactionConfigPanel.Controls.Add(this.instructionsLabel);
             this.reactionConfigPanel.Controls.Add(this.prgNameTextBox);
             this.reactionConfigPanel.Controls.Add(this.prgNameLabel);
-            this.reactionConfigPanel.Location = new System.Drawing.Point(16, 4);
-            this.reactionConfigPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.reactionConfigPanel, "reactionConfigPanel");
             this.reactionConfigPanel.Name = "reactionConfigPanel";
-            this.reactionConfigPanel.Size = new System.Drawing.Size(693, 708);
-            this.reactionConfigPanel.TabIndex = 1;
             // 
             // userResponse
             // 
             this.userResponse.Controls.Add(this.responseTypeBox);
             this.userResponse.Controls.Add(this.label2);
-            this.userResponse.Location = new System.Drawing.Point(404, 410);
-            this.userResponse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.userResponse, "userResponse");
             this.userResponse.Name = "userResponse";
-            this.userResponse.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.userResponse.Size = new System.Drawing.Size(270, 73);
-            this.userResponse.TabIndex = 152;
             this.userResponse.TabStop = false;
-            this.userResponse.Text = "Resposta do Usuário";
             // 
             // responseTypeBox
             // 
@@ -159,35 +152,23 @@
             this.responseTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.responseTypeBox.FormattingEnabled = true;
             this.responseTypeBox.Items.AddRange(new object[] {
-            "Espaço",
-            "Setas"});
-            this.responseTypeBox.Location = new System.Drawing.Point(66, 31);
-            this.responseTypeBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.GetString("responseTypeBox.Items"),
+            resources.GetString("responseTypeBox.Items1")});
+            resources.ApplyResources(this.responseTypeBox, "responseTypeBox");
             this.responseTypeBox.Name = "responseTypeBox";
-            this.responseTypeBox.Size = new System.Drawing.Size(185, 24);
-            this.responseTypeBox.TabIndex = 176;
             this.responseTypeBox.Tag = "";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 34);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 17);
-            this.label2.TabIndex = 42;
-            this.label2.Text = "Tecla";
             // 
             // shapesGroupBox
             // 
             this.shapesGroupBox.Controls.Add(this.shapeRadioPanel);
-            this.shapesGroupBox.Location = new System.Drawing.Point(404, 163);
-            this.shapesGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.shapesGroupBox, "shapesGroupBox");
             this.shapesGroupBox.Name = "shapesGroupBox";
-            this.shapesGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.shapesGroupBox.Size = new System.Drawing.Size(270, 127);
-            this.shapesGroupBox.TabIndex = 82;
             this.shapesGroupBox.TabStop = false;
-            this.shapesGroupBox.Text = "Formas";
             // 
             // shapeRadioPanel
             // 
@@ -197,82 +178,57 @@
             this.shapeRadioPanel.Controls.Add(this.circleCheckBox);
             this.shapeRadioPanel.Controls.Add(this.fullTriangleCheckBox);
             this.shapeRadioPanel.Controls.Add(this.triangleCheckBox);
-            this.shapeRadioPanel.Location = new System.Drawing.Point(20, 20);
+            resources.ApplyResources(this.shapeRadioPanel, "shapeRadioPanel");
             this.shapeRadioPanel.Name = "shapeRadioPanel";
-            this.shapeRadioPanel.Size = new System.Drawing.Size(222, 102);
-            this.shapeRadioPanel.TabIndex = 3;
             // 
             // fullSquareCheckBox
             // 
-            this.fullSquareCheckBox.AutoSize = true;
+            resources.ApplyResources(this.fullSquareCheckBox, "fullSquareCheckBox");
             this.fullSquareCheckBox.Image = global::TestPlatform.Properties.Resources.fullSquare;
-            this.fullSquareCheckBox.Location = new System.Drawing.Point(3, 3);
             this.fullSquareCheckBox.Name = "fullSquareCheckBox";
-            this.fullSquareCheckBox.Size = new System.Drawing.Size(73, 24);
-            this.fullSquareCheckBox.TabIndex = 5;
-            this.fullSquareCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.fullSquareCheckBox.UseVisualStyleBackColor = true;
             // 
             // squareCheckBox
             // 
-            this.squareCheckBox.AutoSize = true;
+            resources.ApplyResources(this.squareCheckBox, "squareCheckBox");
             this.squareCheckBox.Image = global::TestPlatform.Properties.Resources.square;
-            this.squareCheckBox.Location = new System.Drawing.Point(82, 3);
             this.squareCheckBox.Name = "squareCheckBox";
-            this.squareCheckBox.Size = new System.Drawing.Size(73, 24);
-            this.squareCheckBox.TabIndex = 0;
             this.squareCheckBox.UseVisualStyleBackColor = true;
             // 
             // fullCircleCheckBox
             // 
-            this.fullCircleCheckBox.AutoSize = true;
+            resources.ApplyResources(this.fullCircleCheckBox, "fullCircleCheckBox");
             this.fullCircleCheckBox.Image = global::TestPlatform.Properties.Resources.fullCircle1;
-            this.fullCircleCheckBox.Location = new System.Drawing.Point(3, 33);
             this.fullCircleCheckBox.Name = "fullCircleCheckBox";
-            this.fullCircleCheckBox.Size = new System.Drawing.Size(73, 30);
-            this.fullCircleCheckBox.TabIndex = 1;
             this.fullCircleCheckBox.UseVisualStyleBackColor = true;
             // 
             // circleCheckBox
             // 
-            this.circleCheckBox.AutoSize = true;
+            resources.ApplyResources(this.circleCheckBox, "circleCheckBox");
             this.circleCheckBox.Image = global::TestPlatform.Properties.Resources.circle1;
-            this.circleCheckBox.Location = new System.Drawing.Point(82, 33);
             this.circleCheckBox.Name = "circleCheckBox";
-            this.circleCheckBox.Size = new System.Drawing.Size(73, 30);
-            this.circleCheckBox.TabIndex = 2;
             this.circleCheckBox.UseVisualStyleBackColor = true;
             // 
             // fullTriangleCheckBox
             // 
-            this.fullTriangleCheckBox.AutoSize = true;
+            resources.ApplyResources(this.fullTriangleCheckBox, "fullTriangleCheckBox");
             this.fullTriangleCheckBox.Image = global::TestPlatform.Properties.Resources.fullTriangle;
-            this.fullTriangleCheckBox.Location = new System.Drawing.Point(3, 69);
             this.fullTriangleCheckBox.Name = "fullTriangleCheckBox";
-            this.fullTriangleCheckBox.Size = new System.Drawing.Size(73, 24);
-            this.fullTriangleCheckBox.TabIndex = 3;
             this.fullTriangleCheckBox.UseVisualStyleBackColor = true;
             // 
             // triangleCheckBox
             // 
-            this.triangleCheckBox.AutoSize = true;
+            resources.ApplyResources(this.triangleCheckBox, "triangleCheckBox");
             this.triangleCheckBox.Image = global::TestPlatform.Properties.Resources.triangle;
-            this.triangleCheckBox.Location = new System.Drawing.Point(82, 69);
             this.triangleCheckBox.Name = "triangleCheckBox";
-            this.triangleCheckBox.Size = new System.Drawing.Size(73, 24);
-            this.triangleCheckBox.TabIndex = 4;
             this.triangleCheckBox.UseVisualStyleBackColor = true;
             // 
             // helpButton
             // 
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
-            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.helpButton.Location = new System.Drawing.Point(651, 2);
-            this.helpButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.helpButton, "helpButton");
             this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(35, 32);
-            this.helpButton.TabIndex = 81;
             this.helpButton.UseVisualStyleBackColor = false;
             // 
             // groupBox6
@@ -285,88 +241,54 @@
             this.groupBox6.Controls.Add(this.fixPointCircle);
             this.groupBox6.Controls.Add(this.fixPointColorButton);
             this.groupBox6.Controls.Add(this.fixPointColorPanel);
-            this.groupBox6.Location = new System.Drawing.Point(404, 290);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox6.Size = new System.Drawing.Size(270, 110);
-            this.groupBox6.TabIndex = 40;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Ponto de Fixação";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = global::TestPlatform.Properties.Resources.cross;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(109, 36);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(17, 16);
-            this.panel3.TabIndex = 155;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = global::TestPlatform.Properties.Resources.circle;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(160, 38);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(13, 12);
-            this.panel2.TabIndex = 154;
             // 
             // fixPointTypeLabel
             // 
-            this.fixPointTypeLabel.AutoSize = true;
-            this.fixPointTypeLabel.Location = new System.Drawing.Point(36, 34);
+            resources.ApplyResources(this.fixPointTypeLabel, "fixPointTypeLabel");
             this.fixPointTypeLabel.Name = "fixPointTypeLabel";
-            this.fixPointTypeLabel.Size = new System.Drawing.Size(40, 17);
-            this.fixPointTypeLabel.TabIndex = 64;
-            this.fixPointTypeLabel.Text = "Tipo:";
             // 
             // fixPointCross
             // 
-            this.fixPointCross.AutoSize = true;
-            this.fixPointCross.Location = new System.Drawing.Point(83, 34);
-            this.fixPointCross.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.fixPointCross, "fixPointCross");
             this.fixPointCross.Name = "fixPointCross";
-            this.fixPointCross.Size = new System.Drawing.Size(18, 17);
-            this.fixPointCross.TabIndex = 40;
             this.fixPointCross.TabStop = false;
             this.fixPointCross.UseVisualStyleBackColor = true;
             this.fixPointCross.CheckedChanged += new System.EventHandler(this.checkFixPointCross_CheckedChanged);
             // 
             // fixPointColorLabel
             // 
-            this.fixPointColorLabel.AutoSize = true;
-            this.fixPointColorLabel.Location = new System.Drawing.Point(17, 69);
+            resources.ApplyResources(this.fixPointColorLabel, "fixPointColorLabel");
             this.fixPointColorLabel.Name = "fixPointColorLabel";
-            this.fixPointColorLabel.Size = new System.Drawing.Size(50, 34);
-            this.fixPointColorLabel.TabIndex = 171;
-            this.fixPointColorLabel.Text = "Cor do\r\nPonto:";
             // 
             // fixPointCircle
             // 
-            this.fixPointCircle.AutoSize = true;
-            this.fixPointCircle.Location = new System.Drawing.Point(133, 36);
-            this.fixPointCircle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.fixPointCircle, "fixPointCircle");
             this.fixPointCircle.Name = "fixPointCircle";
-            this.fixPointCircle.Size = new System.Drawing.Size(18, 17);
-            this.fixPointCircle.TabIndex = 41;
             this.fixPointCircle.TabStop = false;
             this.fixPointCircle.UseVisualStyleBackColor = true;
             this.fixPointCircle.CheckedChanged += new System.EventHandler(this.checkFixPointCircle_CheckedChanged);
             // 
             // fixPointColorButton
             // 
-            this.fixPointColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fixPointColorButton.Location = new System.Drawing.Point(97, 74);
-            this.fixPointColorButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.fixPointColorButton, "fixPointColorButton");
             this.fixPointColorButton.Name = "fixPointColorButton";
-            this.fixPointColorButton.Size = new System.Drawing.Size(148, 23);
-            this.fixPointColorButton.TabIndex = 42;
-            this.fixPointColorButton.Text = "escolher";
             this.fixPointColorButton.UseVisualStyleBackColor = true;
             this.fixPointColorButton.Click += new System.EventHandler(this.fixPointColorButton_Click);
             // 
@@ -374,53 +296,33 @@
             // 
             this.fixPointColorPanel.BackColor = System.Drawing.Color.White;
             this.fixPointColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fixPointColorPanel.Location = new System.Drawing.Point(73, 77);
-            this.fixPointColorPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.fixPointColorPanel, "fixPointColorPanel");
             this.fixPointColorPanel.Name = "fixPointColorPanel";
-            this.fixPointColorPanel.Size = new System.Drawing.Size(18, 17);
-            this.fixPointColorPanel.TabIndex = 153;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.bgColorPanel);
             this.groupBox5.Controls.Add(this.bgColorLabel);
             this.groupBox5.Controls.Add(this.bgColorButton);
-            this.groupBox5.Location = new System.Drawing.Point(404, 485);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox5.Size = new System.Drawing.Size(270, 73);
-            this.groupBox5.TabIndex = 60;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Outros";
             // 
             // bgColorPanel
             // 
             this.bgColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bgColorPanel.Location = new System.Drawing.Point(114, 32);
-            this.bgColorPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.bgColorPanel, "bgColorPanel");
             this.bgColorPanel.Name = "bgColorPanel";
-            this.bgColorPanel.Size = new System.Drawing.Size(18, 17);
-            this.bgColorPanel.TabIndex = 151;
             // 
             // bgColorLabel
             // 
-            this.bgColorLabel.AutoSize = true;
-            this.bgColorLabel.Location = new System.Drawing.Point(10, 32);
+            resources.ApplyResources(this.bgColorLabel, "bgColorLabel");
             this.bgColorLabel.Name = "bgColorLabel";
-            this.bgColorLabel.Size = new System.Drawing.Size(98, 17);
-            this.bgColorLabel.TabIndex = 42;
-            this.bgColorLabel.Text = "Cor de Fundo:";
             // 
             // bgColorButton
             // 
-            this.bgColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bgColorButton.Location = new System.Drawing.Point(139, 28);
-            this.bgColorButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.bgColorButton, "bgColorButton");
             this.bgColorButton.Name = "bgColorButton";
-            this.bgColorButton.Size = new System.Drawing.Size(106, 23);
-            this.bgColorButton.TabIndex = 26;
-            this.bgColorButton.Text = "escolher";
             this.bgColorButton.UseVisualStyleBackColor = true;
             this.bgColorButton.Click += new System.EventHandler(this.chooseBGColor);
             // 
@@ -432,45 +334,27 @@
             this.groupBox3.Controls.Add(this.intervalTime);
             this.groupBox3.Controls.Add(this.expoTime);
             this.groupBox3.Controls.Add(this.expoTimeLabel);
-            this.groupBox3.Location = new System.Drawing.Point(404, 35);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(269, 126);
-            this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tempo";
             // 
             // rndIntervalCheck
             // 
-            this.rndIntervalCheck.AutoSize = true;
+            resources.ApplyResources(this.rndIntervalCheck, "rndIntervalCheck");
             this.rndIntervalCheck.Checked = true;
             this.rndIntervalCheck.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.rndIntervalCheck.Location = new System.Drawing.Point(224, 90);
-            this.rndIntervalCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rndIntervalCheck.Name = "rndIntervalCheck";
-            this.rndIntervalCheck.Size = new System.Drawing.Size(18, 17);
-            this.rndIntervalCheck.TabIndex = 62;
             this.rndIntervalCheck.UseVisualStyleBackColor = true;
             // 
             // rndIntervalLabel
             // 
-            this.rndIntervalLabel.AutoSize = true;
-            this.rndIntervalLabel.Location = new System.Drawing.Point(24, 90);
+            resources.ApplyResources(this.rndIntervalLabel, "rndIntervalLabel");
             this.rndIntervalLabel.Name = "rndIntervalLabel";
-            this.rndIntervalLabel.Size = new System.Drawing.Size(189, 17);
-            this.rndIntervalLabel.TabIndex = 63;
-            this.rndIntervalLabel.Text = "Tempo de Intervalo Variável:";
-            this.rndIntervalLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // intervalTimeLabel
             // 
-            this.intervalTimeLabel.AutoSize = true;
-            this.intervalTimeLabel.Location = new System.Drawing.Point(56, 58);
+            resources.ApplyResources(this.intervalTimeLabel, "intervalTimeLabel");
             this.intervalTimeLabel.Name = "intervalTimeLabel";
-            this.intervalTimeLabel.Size = new System.Drawing.Size(98, 17);
-            this.intervalTimeLabel.TabIndex = 38;
-            this.intervalTimeLabel.Text = "Intervalo (ms):";
             // 
             // intervalTime
             // 
@@ -480,16 +364,13 @@
             0,
             0,
             0});
-            this.intervalTime.Location = new System.Drawing.Point(156, 55);
-            this.intervalTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.intervalTime, "intervalTime");
             this.intervalTime.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.intervalTime.Name = "intervalTime";
-            this.intervalTime.Size = new System.Drawing.Size(80, 22);
-            this.intervalTime.TabIndex = 31;
             this.intervalTime.Validating += new System.ComponentModel.CancelEventHandler(this.intervalTime_Validating);
             this.intervalTime.Validated += new System.EventHandler(this.intervalTime_Validated);
             // 
@@ -500,27 +381,20 @@
             0,
             0,
             0});
-            this.expoTime.Location = new System.Drawing.Point(156, 21);
-            this.expoTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.expoTime, "expoTime");
             this.expoTime.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.expoTime.Name = "expoTime";
-            this.expoTime.Size = new System.Drawing.Size(80, 22);
-            this.expoTime.TabIndex = 30;
             this.expoTime.Validating += new System.ComponentModel.CancelEventHandler(this.expoTimeNumericUpDown_Validating);
             this.expoTime.Validated += new System.EventHandler(this.expoTimeNumericUpDown_Validated);
             // 
             // expoTimeLabel
             // 
-            this.expoTimeLabel.AutoSize = true;
-            this.expoTimeLabel.Location = new System.Drawing.Point(45, 23);
+            resources.ApplyResources(this.expoTimeLabel, "expoTimeLabel");
             this.expoTimeLabel.Name = "expoTimeLabel";
-            this.expoTimeLabel.Size = new System.Drawing.Size(108, 17);
-            this.expoTimeLabel.TabIndex = 36;
-            this.expoTimeLabel.Text = "Exposição (ms):";
             // 
             // groupBox2
             // 
@@ -532,101 +406,55 @@
             this.groupBox2.Controls.Add(this.openWordListButton);
             this.groupBox2.Controls.Add(this.openColorListButton);
             this.groupBox2.Controls.Add(this.openImgListButton);
-            this.groupBox2.Location = new System.Drawing.Point(19, 347);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(361, 159);
-            this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Listas";
             // 
             // wordListLabel
             // 
-            this.wordListLabel.AutoSize = true;
-            this.wordListLabel.Location = new System.Drawing.Point(6, 25);
+            resources.ApplyResources(this.wordListLabel, "wordListLabel");
             this.wordListLabel.Name = "wordListLabel";
-            this.wordListLabel.Size = new System.Drawing.Size(67, 17);
-            this.wordListLabel.TabIndex = 40;
-            this.wordListLabel.Text = "Palavras:";
             // 
             // audioListLabel
             // 
-            this.audioListLabel.AutoSize = true;
-            this.audioListLabel.Location = new System.Drawing.Point(17, 124);
+            resources.ApplyResources(this.audioListLabel, "audioListLabel");
             this.audioListLabel.Name = "audioListLabel";
-            this.audioListLabel.Size = new System.Drawing.Size(55, 17);
-            this.audioListLabel.TabIndex = 164;
-            this.audioListLabel.Text = "Áudios:";
-            this.audioListLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // openAudioListButton
             // 
-            this.openAudioListButton.Enabled = false;
-            this.openAudioListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openAudioListButton.Location = new System.Drawing.Point(78, 121);
-            this.openAudioListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.openAudioListButton, "openAudioListButton");
             this.openAudioListButton.Name = "openAudioListButton";
-            this.openAudioListButton.Size = new System.Drawing.Size(187, 23);
-            this.openAudioListButton.TabIndex = 23;
-            this.openAudioListButton.Text = "abrir";
             this.openAudioListButton.UseVisualStyleBackColor = true;
             this.openAudioListButton.Click += new System.EventHandler(this.openAudioList_Click);
             // 
             // colorListLabel
             // 
-            this.colorListLabel.AutoSize = true;
-            this.colorListLabel.Location = new System.Drawing.Point(24, 58);
+            resources.ApplyResources(this.colorListLabel, "colorListLabel");
             this.colorListLabel.Name = "colorListLabel";
-            this.colorListLabel.Size = new System.Drawing.Size(49, 17);
-            this.colorListLabel.TabIndex = 41;
-            this.colorListLabel.Text = "Cores:";
             // 
             // imgListLabel
             // 
-            this.imgListLabel.AutoSize = true;
-            this.imgListLabel.Location = new System.Drawing.Point(6, 91);
+            resources.ApplyResources(this.imgListLabel, "imgListLabel");
             this.imgListLabel.Name = "imgListLabel";
-            this.imgListLabel.Size = new System.Drawing.Size(65, 17);
-            this.imgListLabel.TabIndex = 57;
-            this.imgListLabel.Text = "Imagens:";
             // 
             // openWordListButton
             // 
-            this.openWordListButton.Enabled = false;
-            this.openWordListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openWordListButton.Location = new System.Drawing.Point(80, 21);
-            this.openWordListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.openWordListButton, "openWordListButton");
             this.openWordListButton.Name = "openWordListButton";
-            this.openWordListButton.Size = new System.Drawing.Size(187, 23);
-            this.openWordListButton.TabIndex = 20;
-            this.openWordListButton.Text = "abrir";
             this.openWordListButton.UseVisualStyleBackColor = true;
             this.openWordListButton.Click += new System.EventHandler(this.openWordsList_Click);
             // 
             // openColorListButton
             // 
-            this.openColorListButton.Enabled = false;
-            this.openColorListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openColorListButton.Location = new System.Drawing.Point(78, 54);
-            this.openColorListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.openColorListButton, "openColorListButton");
             this.openColorListButton.Name = "openColorListButton";
-            this.openColorListButton.Size = new System.Drawing.Size(187, 23);
-            this.openColorListButton.TabIndex = 21;
-            this.openColorListButton.Text = "abrir";
             this.openColorListButton.UseVisualStyleBackColor = true;
             this.openColorListButton.Click += new System.EventHandler(this.openColorsList_Click);
             // 
             // openImgListButton
             // 
-            this.openImgListButton.Enabled = false;
-            this.openImgListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openImgListButton.Location = new System.Drawing.Point(78, 87);
-            this.openImgListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.openImgListButton, "openImgListButton");
             this.openImgListButton.Name = "openImgListButton";
-            this.openImgListButton.Size = new System.Drawing.Size(187, 23);
-            this.openImgListButton.TabIndex = 22;
-            this.openImgListButton.Text = "abrir";
             this.openImgListButton.UseVisualStyleBackColor = true;
             this.openImgListButton.Click += new System.EventHandler(this.openImagesList_Click);
             this.openImgListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openImgListButton_Validating);
@@ -636,13 +464,8 @@
             // 
             this.instructionsBox.AcceptsReturn = true;
             this.instructionsBox.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.instructionsBox.Location = new System.Drawing.Point(13, 564);
-            this.instructionsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.instructionsBox.Multiline = true;
+            resources.ApplyResources(this.instructionsBox, "instructionsBox");
             this.instructionsBox.Name = "instructionsBox";
-            this.instructionsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.instructionsBox.Size = new System.Drawing.Size(659, 136);
-            this.instructionsBox.TabIndex = 70;
             this.instructionsBox.TextChanged += new System.EventHandler(this.instructionsBox_TextChanged);
             // 
             // groupBox1
@@ -668,34 +491,19 @@
             this.groupBox1.Controls.Add(this.wordSizeLabel);
             this.groupBox1.Controls.Add(this.stimuluSize);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(13, 35);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(367, 305);
-            this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Exposição";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 173);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 17);
-            this.label6.TabIndex = 177;
-            this.label6.Text = "Ordem aleatória:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // isRandomExposition
             // 
-            this.isRandomExposition.AutoSize = true;
-            this.isRandomExposition.Enabled = false;
-            this.isRandomExposition.Location = new System.Drawing.Point(132, 174);
-            this.isRandomExposition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.isRandomExposition, "isRandomExposition");
             this.isRandomExposition.Name = "isRandomExposition";
-            this.isRandomExposition.Size = new System.Drawing.Size(18, 17);
-            this.isRandomExposition.TabIndex = 176;
             this.isRandomExposition.TabStop = false;
             this.isRandomExposition.UseVisualStyleBackColor = true;
             // 
@@ -705,55 +513,35 @@
             this.positionsBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.positionsBox.FormattingEnabled = true;
             this.positionsBox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "4",
-            "8"});
-            this.positionsBox.Location = new System.Drawing.Point(281, 117);
-            this.positionsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.GetString("positionsBox.Items"),
+            resources.GetString("positionsBox.Items1"),
+            resources.GetString("positionsBox.Items2"),
+            resources.GetString("positionsBox.Items3")});
+            resources.ApplyResources(this.positionsBox, "positionsBox");
             this.positionsBox.Name = "positionsBox";
-            this.positionsBox.Size = new System.Drawing.Size(80, 24);
-            this.positionsBox.TabIndex = 175;
             this.positionsBox.Tag = "";
             // 
             // positionLabel
             // 
-            this.positionLabel.AutoSize = true;
-            this.positionLabel.Location = new System.Drawing.Point(10, 116);
+            resources.ApplyResources(this.positionLabel, "positionLabel");
             this.positionLabel.Name = "positionLabel";
-            this.positionLabel.Size = new System.Drawing.Size(228, 17);
-            this.positionLabel.TabIndex = 173;
-            this.positionLabel.Text = "Quantidade de possíveis posições:";
             // 
             // randomBeepLabel
             // 
-            this.randomBeepLabel.AutoSize = true;
-            this.randomBeepLabel.Location = new System.Drawing.Point(168, 207);
+            resources.ApplyResources(this.randomBeepLabel, "randomBeepLabel");
             this.randomBeepLabel.Name = "randomBeepLabel";
-            this.randomBeepLabel.Size = new System.Drawing.Size(105, 17);
-            this.randomBeepLabel.TabIndex = 172;
-            this.randomBeepLabel.Text = "Beep Aleatório:";
-            this.randomBeepLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // randomBeepCheck
             // 
-            this.randomBeepCheck.AutoSize = true;
-            this.randomBeepCheck.Location = new System.Drawing.Point(278, 208);
-            this.randomBeepCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.randomBeepCheck, "randomBeepCheck");
             this.randomBeepCheck.Name = "randomBeepCheck";
-            this.randomBeepCheck.Size = new System.Drawing.Size(18, 17);
-            this.randomBeepCheck.TabIndex = 171;
             this.randomBeepCheck.TabStop = false;
             this.randomBeepCheck.UseVisualStyleBackColor = true;
             // 
             // expoTypeLabel
             // 
-            this.expoTypeLabel.AutoSize = true;
-            this.expoTypeLabel.Location = new System.Drawing.Point(10, 26);
+            resources.ApplyResources(this.expoTypeLabel, "expoTypeLabel");
             this.expoTypeLabel.Name = "expoTypeLabel";
-            this.expoTypeLabel.Size = new System.Drawing.Size(117, 17);
-            this.expoTypeLabel.TabIndex = 168;
-            this.expoTypeLabel.Text = "Tipo de Estímulo:";
             // 
             // stimulusDistance
             // 
@@ -762,8 +550,7 @@
             0,
             0,
             0});
-            this.stimulusDistance.Location = new System.Drawing.Point(281, 89);
-            this.stimulusDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.stimulusDistance, "stimulusDistance");
             this.stimulusDistance.Maximum = new decimal(new int[] {
             490,
             0,
@@ -775,8 +562,6 @@
             0,
             0});
             this.stimulusDistance.Name = "stimulusDistance";
-            this.stimulusDistance.Size = new System.Drawing.Size(80, 22);
-            this.stimulusDistance.TabIndex = 169;
             this.stimulusDistance.Value = new decimal(new int[] {
             250,
             0,
@@ -789,115 +574,78 @@
             this.chooseExpoType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.chooseExpoType.FormattingEnabled = true;
             this.chooseExpoType.Items.AddRange(new object[] {
-            "Formas",
-            "Palavra",
-            "Imagem",
-            "Imagem e Palavra",
-            "Palavra com Áudio",
-            "Imagem com Áudio"});
-            this.chooseExpoType.Location = new System.Drawing.Point(135, 22);
-            this.chooseExpoType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.GetString("chooseExpoType.Items"),
+            resources.GetString("chooseExpoType.Items1"),
+            resources.GetString("chooseExpoType.Items2"),
+            resources.GetString("chooseExpoType.Items3"),
+            resources.GetString("chooseExpoType.Items4"),
+            resources.GetString("chooseExpoType.Items5")});
+            resources.ApplyResources(this.chooseExpoType, "chooseExpoType");
             this.chooseExpoType.Name = "chooseExpoType";
-            this.chooseExpoType.Size = new System.Drawing.Size(185, 24);
-            this.chooseExpoType.TabIndex = 167;
             this.chooseExpoType.Tag = "";
             this.chooseExpoType.SelectedIndexChanged += new System.EventHandler(this.chooseExpoType_SelectedIndexChanged);
             // 
             // stimulusColorPanel
             // 
             this.stimulusColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.stimulusColorPanel.Location = new System.Drawing.Point(127, 274);
-            this.stimulusColorPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.stimulusColorPanel, "stimulusColorPanel");
             this.stimulusColorPanel.Name = "stimulusColorPanel";
-            this.stimulusColorPanel.Size = new System.Drawing.Size(18, 17);
-            this.stimulusColorPanel.TabIndex = 166;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 274);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 17);
-            this.label4.TabIndex = 165;
-            this.label4.Text = "Cor do Estímulo:";
             // 
             // stimulusColor
             // 
-            this.stimulusColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stimulusColor.Location = new System.Drawing.Point(152, 270);
-            this.stimulusColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.stimulusColor, "stimulusColor");
             this.stimulusColor.Name = "stimulusColor";
-            this.stimulusColor.Size = new System.Drawing.Size(184, 23);
-            this.stimulusColor.TabIndex = 164;
-            this.stimulusColor.Text = "escolher";
             this.stimulusColor.UseVisualStyleBackColor = true;
             this.stimulusColor.Click += new System.EventHandler(this.stimulusColor_Click);
             // 
             // beepDuration
             // 
-            this.beepDuration.Enabled = false;
+            resources.ApplyResources(this.beepDuration, "beepDuration");
             this.beepDuration.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.beepDuration.Location = new System.Drawing.Point(171, 237);
-            this.beepDuration.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.beepDuration.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.beepDuration.Name = "beepDuration";
-            this.beepDuration.Size = new System.Drawing.Size(80, 22);
-            this.beepDuration.TabIndex = 162;
             this.beepDuration.Validating += new System.ComponentModel.CancelEventHandler(this.beepDuration_Validating);
             this.beepDuration.Validated += new System.EventHandler(this.beepDuration_Validated);
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 239);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 17);
-            this.label3.TabIndex = 163;
-            this.label3.Text = "Duração do beep (ms):";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 206);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 17);
-            this.label1.TabIndex = 161;
-            this.label1.Text = "Utilizar beep:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // beepingCheckbox
             // 
-            this.beepingCheckbox.AutoSize = true;
-            this.beepingCheckbox.Location = new System.Drawing.Point(103, 207);
-            this.beepingCheckbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.beepingCheckbox, "beepingCheckbox");
             this.beepingCheckbox.Name = "beepingCheckbox";
-            this.beepingCheckbox.Size = new System.Drawing.Size(18, 17);
-            this.beepingCheckbox.TabIndex = 160;
             this.beepingCheckbox.TabStop = false;
             this.beepingCheckbox.UseVisualStyleBackColor = true;
             this.beepingCheckbox.CheckedChanged += new System.EventHandler(this.beepingCheckbox_CheckedChanged);
             // 
             // numExpoLabel
             // 
-            this.numExpoLabel.AutoSize = true;
-            this.numExpoLabel.Location = new System.Drawing.Point(10, 146);
+            resources.ApplyResources(this.numExpoLabel, "numExpoLabel");
             this.numExpoLabel.Name = "numExpoLabel";
-            this.numExpoLabel.Size = new System.Drawing.Size(152, 17);
-            this.numExpoLabel.TabIndex = 35;
-            this.numExpoLabel.Text = "Número de Tentativas:";
             // 
             // numExpo
             // 
-            this.numExpo.Location = new System.Drawing.Point(171, 144);
-            this.numExpo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.numExpo, "numExpo");
             this.numExpo.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -909,8 +657,6 @@
             0,
             0});
             this.numExpo.Name = "numExpo";
-            this.numExpo.Size = new System.Drawing.Size(80, 22);
-            this.numExpo.TabIndex = 11;
             this.numExpo.Value = new decimal(new int[] {
             1,
             0,
@@ -921,12 +667,8 @@
             // 
             // wordSizeLabel
             // 
-            this.wordSizeLabel.AutoSize = true;
-            this.wordSizeLabel.Location = new System.Drawing.Point(10, 61);
+            resources.ApplyResources(this.wordSizeLabel, "wordSizeLabel");
             this.wordSizeLabel.Name = "wordSizeLabel";
-            this.wordSizeLabel.Size = new System.Drawing.Size(149, 17);
-            this.wordSizeLabel.TabIndex = 159;
-            this.wordSizeLabel.Text = "Tamanho do Estímulo:";
             // 
             // stimuluSize
             // 
@@ -935,16 +677,13 @@
             0,
             0,
             0});
-            this.stimuluSize.Location = new System.Drawing.Point(281, 59);
-            this.stimuluSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.stimuluSize, "stimuluSize");
             this.stimuluSize.Minimum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.stimuluSize.Name = "stimuluSize";
-            this.stimuluSize.Size = new System.Drawing.Size(80, 22);
-            this.stimuluSize.TabIndex = 13;
             this.stimuluSize.Value = new decimal(new int[] {
             50,
             0,
@@ -953,68 +692,40 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 92);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(257, 17);
-            this.label5.TabIndex = 170;
-            this.label5.Text = "Distância do estímulo ao centro da tela:";
             // 
             // instructionsLabel
             // 
-            this.instructionsLabel.AutoSize = true;
+            resources.ApplyResources(this.instructionsLabel, "instructionsLabel");
             this.instructionsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.instructionsLabel.Location = new System.Drawing.Point(16, 541);
             this.instructionsLabel.Name = "instructionsLabel";
-            this.instructionsLabel.Size = new System.Drawing.Size(77, 17);
-            this.instructionsLabel.TabIndex = 59;
-            this.instructionsLabel.Text = "Instruções:";
             // 
             // prgNameTextBox
             // 
-            this.prgNameTextBox.Location = new System.Drawing.Point(153, 10);
-            this.prgNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.prgNameTextBox.MaxLength = 300;
+            resources.ApplyResources(this.prgNameTextBox, "prgNameTextBox");
             this.prgNameTextBox.Name = "prgNameTextBox";
-            this.prgNameTextBox.Size = new System.Drawing.Size(225, 22);
-            this.prgNameTextBox.TabIndex = 1;
             this.prgNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.prgNameTextBox_Validating);
             this.prgNameTextBox.Validated += new System.EventHandler(this.prgNameTextBox_Validated);
             // 
             // prgNameLabel
             // 
-            this.prgNameLabel.AutoSize = true;
-            this.prgNameLabel.Location = new System.Drawing.Point(13, 12);
+            resources.ApplyResources(this.prgNameLabel, "prgNameLabel");
             this.prgNameLabel.Name = "prgNameLabel";
-            this.prgNameLabel.Size = new System.Drawing.Size(135, 17);
-            this.prgNameLabel.TabIndex = 34;
-            this.prgNameLabel.Text = "Nome do Programa:";
             // 
             // cancelButton
             // 
-            this.cancelButton.AutoSize = true;
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelButton.Location = new System.Drawing.Point(16, 718);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(100, 28);
-            this.cancelButton.TabIndex = 85;
-            this.cancelButton.Text = "cancelar";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // saveButton
             // 
-            this.saveButton.AutoSize = true;
-            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.saveButton.Location = new System.Drawing.Point(609, 718);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.saveButton, "saveButton");
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(100, 28);
-            this.saveButton.TabIndex = 84;
-            this.saveButton.Text = "salvar";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
@@ -1025,14 +736,13 @@
             // 
             // FormTRConfig
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.reactionConfigPanel);
             this.Name = "FormTRConfig";
-            this.Size = new System.Drawing.Size(725, 785);
             this.reactionConfigPanel.ResumeLayout(false);
             this.reactionConfigPanel.PerformLayout();
             this.userResponse.ResumeLayout(false);

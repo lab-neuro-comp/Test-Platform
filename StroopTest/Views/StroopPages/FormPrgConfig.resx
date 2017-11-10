@@ -117,7 +117,683 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="helpButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>639, 11</value>
+  </data>
+  <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 32</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
+    <value>81</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Name" xml:space="preserve">
+    <value>helpButton</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;helpButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 36</value>
+  </data>
+  <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 16</value>
+  </data>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>155</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 38</value>
+  </data>
+  <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 12</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>154</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fixPointTypeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fixPointTypeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 34</value>
+  </data>
+  <data name="fixPointTypeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 17</value>
+  </data>
+  <data name="fixPointTypeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>64</value>
+  </data>
+  <data name="fixPointTypeLabel.Text" xml:space="preserve">
+    <value>Tipo:</value>
+  </data>
+  <data name="&gt;&gt;fixPointTypeLabel.Name" xml:space="preserve">
+    <value>fixPointTypeLabel</value>
+  </data>
+  <data name="&gt;&gt;fixPointTypeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fixPointTypeLabel.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;fixPointTypeLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fixPointCross.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fixPointCross.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 34</value>
+  </data>
+  <data name="fixPointCross.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="fixPointCross.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 17</value>
+  </data>
+  <data name="fixPointCross.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;fixPointCross.Name" xml:space="preserve">
+    <value>fixPointCross</value>
+  </data>
+  <data name="&gt;&gt;fixPointCross.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fixPointCross.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;fixPointCross.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="fixPointColorLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fixPointColorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 58</value>
+  </data>
+  <data name="fixPointColorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 34</value>
+  </data>
+  <data name="fixPointColorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>171</value>
+  </data>
+  <data name="fixPointColorLabel.Text" xml:space="preserve">
+    <value>Cor do
+Ponto:</value>
+  </data>
+  <data name="&gt;&gt;fixPointColorLabel.Name" xml:space="preserve">
+    <value>fixPointColorLabel</value>
+  </data>
+  <data name="&gt;&gt;fixPointColorLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fixPointColorLabel.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;fixPointColorLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="fixPointCircle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fixPointCircle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>133, 36</value>
+  </data>
+  <data name="fixPointCircle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="fixPointCircle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 17</value>
+  </data>
+  <data name="fixPointCircle.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;fixPointCircle.Name" xml:space="preserve">
+    <value>fixPointCircle</value>
+  </data>
+  <data name="&gt;&gt;fixPointCircle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fixPointCircle.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;fixPointCircle.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="fixPointColorButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="fixPointColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 63</value>
+  </data>
+  <data name="fixPointColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="fixPointColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 23</value>
+  </data>
+  <data name="fixPointColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="fixPointColorButton.Text" xml:space="preserve">
+    <value>escolher</value>
+  </data>
+  <data name="&gt;&gt;fixPointColorButton.Name" xml:space="preserve">
+    <value>fixPointColorButton</value>
+  </data>
+  <data name="&gt;&gt;fixPointColorButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fixPointColorButton.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;fixPointColorButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="fixPointColorPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 66</value>
+  </data>
+  <data name="fixPointColorPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="fixPointColorPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 17</value>
+  </data>
+  <data name="fixPointColorPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>153</value>
+  </data>
+  <data name="&gt;&gt;fixPointColorPanel.Name" xml:space="preserve">
+    <value>fixPointColorPanel</value>
+  </data>
+  <data name="&gt;&gt;fixPointColorPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fixPointColorPanel.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;fixPointColorPanel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>404, 374</value>
+  </data>
+  <data name="groupBox6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="groupBox6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 103</value>
+  </data>
+  <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Ponto de Fixação</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Name" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="audioCaptureLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="audioCaptureLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 18</value>
+  </data>
+  <data name="audioCaptureLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 34</value>
+  </data>
+  <data name="audioCaptureLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="audioCaptureLabel.Text" xml:space="preserve">
+    <value>Capturar áudio
+durante execução:</value>
+  </data>
+  <data name="audioCaptureLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;audioCaptureLabel.Name" xml:space="preserve">
+    <value>audioCaptureLabel</value>
+  </data>
+  <data name="&gt;&gt;audioCaptureLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;audioCaptureLabel.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;audioCaptureLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="audioCaptureCheck.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="audioCaptureCheck.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 21</value>
+  </data>
+  <data name="audioCaptureCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="audioCaptureCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 17</value>
+  </data>
+  <data name="audioCaptureCheck.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;audioCaptureCheck.Name" xml:space="preserve">
+    <value>audioCaptureCheck</value>
+  </data>
+  <data name="&gt;&gt;audioCaptureCheck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;audioCaptureCheck.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;audioCaptureCheck.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bgColorPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 64</value>
+  </data>
+  <data name="bgColorPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="bgColorPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 17</value>
+  </data>
+  <data name="bgColorPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>151</value>
+  </data>
+  <data name="&gt;&gt;bgColorPanel.Name" xml:space="preserve">
+    <value>bgColorPanel</value>
+  </data>
+  <data name="&gt;&gt;bgColorPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bgColorPanel.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;bgColorPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="bgColorLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bgColorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 64</value>
+  </data>
+  <data name="bgColorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="bgColorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="bgColorLabel.Text" xml:space="preserve">
+    <value>Cor de Fundo:</value>
+  </data>
+  <data name="&gt;&gt;bgColorLabel.Name" xml:space="preserve">
+    <value>bgColorLabel</value>
+  </data>
+  <data name="&gt;&gt;bgColorLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bgColorLabel.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;bgColorLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="bgColorButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="bgColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>164, 60</value>
+  </data>
+  <data name="bgColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="bgColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 23</value>
+  </data>
+  <data name="bgColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="bgColorButton.Text" xml:space="preserve">
+    <value>escolher</value>
+  </data>
+  <data name="&gt;&gt;bgColorButton.Name" xml:space="preserve">
+    <value>bgColorButton</value>
+  </data>
+  <data name="&gt;&gt;bgColorButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bgColorButton.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;bgColorButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 446</value>
+  </data>
+  <data name="groupBox5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="groupBox5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 96</value>
+  </data>
+  <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Outros</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="subsRndCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="subsRndCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 89</value>
+  </data>
+  <data name="subsRndCheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="subsRndCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 21</value>
+  </data>
+  <data name="subsRndCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>160</value>
+  </data>
+  <data name="subsRndCheckBox.Text" xml:space="preserve">
+    <value>aleatória</value>
+  </data>
+  <data name="&gt;&gt;subsRndCheckBox.Name" xml:space="preserve">
+    <value>subsRndCheckBox</value>
+  </data>
+  <data name="&gt;&gt;subsRndCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;subsRndCheckBox.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;subsRndCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="activateSubsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="activateSubsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>31, 31</value>
+  </data>
+  <data name="activateSubsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 17</value>
+  </data>
+  <data name="activateSubsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="activateSubsLabel.Text" xml:space="preserve">
+    <value>Ativar:</value>
+  </data>
+  <data name="&gt;&gt;activateSubsLabel.Name" xml:space="preserve">
+    <value>activateSubsLabel</value>
+  </data>
+  <data name="&gt;&gt;activateSubsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;activateSubsLabel.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;activateSubsLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="subColorLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="subColorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 118</value>
+  </data>
+  <data name="subColorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 17</value>
+  </data>
+  <data name="subColorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="subColorLabel.Text" xml:space="preserve">
+    <value>Cor:</value>
+  </data>
+  <data name="&gt;&gt;subColorLabel.Name" xml:space="preserve">
+    <value>subColorLabel</value>
+  </data>
+  <data name="&gt;&gt;subColorLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;subColorLabel.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;subColorLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="subLocationLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="subLocationLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 62</value>
+  </data>
+  <data name="subLocationLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 17</value>
+  </data>
+  <data name="subLocationLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="subLocationLabel.Text" xml:space="preserve">
+    <value>Posição:</value>
+  </data>
+  <data name="&gt;&gt;subLocationLabel.Name" xml:space="preserve">
+    <value>subLocationLabel</value>
+  </data>
+  <data name="&gt;&gt;subLocationLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;subLocationLabel.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;subLocationLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="activateSubsCheck.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="activateSubsCheck.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 31</value>
+  </data>
+  <data name="activateSubsCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="activateSubsCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 17</value>
+  </data>
+  <data name="activateSubsCheck.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="&gt;&gt;activateSubsCheck.Name" xml:space="preserve">
+    <value>activateSubsCheck</value>
+  </data>
+  <data name="&gt;&gt;activateSubsCheck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;activateSubsCheck.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;activateSubsCheck.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="openSubsListButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="openSubsListButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="openSubsListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 27</value>
+  </data>
+  <data name="openSubsListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="openSubsListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 23</value>
+  </data>
+  <data name="openSubsListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="openSubsListButton.Text" xml:space="preserve">
+    <value>abrir</value>
+  </data>
+  <data name="&gt;&gt;openSubsListButton.Name" xml:space="preserve">
+    <value>openSubsListButton</value>
+  </data>
+  <data name="&gt;&gt;openSubsListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openSubsListButton.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;openSubsListButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="subColorButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="subColorButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="subColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 114</value>
+  </data>
+  <data name="subColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="subColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 23</value>
+  </data>
+  <data name="subColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="subColorButton.Text" xml:space="preserve">
+    <value>escolher</value>
+  </data>
+  <data name="&gt;&gt;subColorButton.Name" xml:space="preserve">
+    <value>subColorButton</value>
+  </data>
+  <data name="&gt;&gt;subColorButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;subColorButton.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;subColorButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="subColorPanel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="subColorPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 117</value>
+  </data>
+  <data name="subColorPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="subColorPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 17</value>
+  </data>
+  <data name="subColorPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>152</value>
+  </data>
+  <data name="&gt;&gt;subColorPanel.Name" xml:space="preserve">
+    <value>subColorPanel</value>
+  </data>
+  <data name="&gt;&gt;subColorPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;subColorPanel.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;subColorPanel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="subsCenterButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -174,6 +850,36 @@
         gg==
 </value>
   </data>
+  <data name="subsCenterButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="subsCenterButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="subsCenterButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 60</value>
+  </data>
+  <data name="subsCenterButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="subsCenterButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 17</value>
+  </data>
+  <data name="subsCenterButton.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="&gt;&gt;subsCenterButton.Name" xml:space="preserve">
+    <value>subsCenterButton</value>
+  </data>
+  <data name="&gt;&gt;subsCenterButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;subsCenterButton.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;subsCenterButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="subsDownButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
@@ -183,6 +889,36 @@
         HD2JJZDluJUz0H0ankQLRuXgJ2hYEimIlAMzbGhJE0TLgRlKlOT9JVQOzFCjJOFyYIYWKKzlDxAtZ+b0
         AQ3D4UgjgnmPAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="subsDownButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="subsDownButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="subsDownButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 60</value>
+  </data>
+  <data name="subsDownButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="subsDownButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 17</value>
+  </data>
+  <data name="subsDownButton.TabIndex" type="System.Int32, mscorlib">
+    <value>154</value>
+  </data>
+  <data name="&gt;&gt;subsDownButton.Name" xml:space="preserve">
+    <value>subsDownButton</value>
+  </data>
+  <data name="&gt;&gt;subsDownButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;subsDownButton.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;subsDownButton.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="subsLeftButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -194,6 +930,36 @@
         fzhSQFESKMrh1RfhxOGajV1kewAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="subsLeftButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="subsLeftButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="subsLeftButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 60</value>
+  </data>
+  <data name="subsLeftButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="subsLeftButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 17</value>
+  </data>
+  <data name="subsLeftButton.TabIndex" type="System.Int32, mscorlib">
+    <value>155</value>
+  </data>
+  <data name="&gt;&gt;subsLeftButton.Name" xml:space="preserve">
+    <value>subsLeftButton</value>
+  </data>
+  <data name="&gt;&gt;subsLeftButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;subsLeftButton.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;subsLeftButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <data name="subsRightButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
@@ -203,6 +969,36 @@
         N0LcPOsPoMfMwZaevFeEQqnY8vN/uXMwmAIpugzLHUEwBankFZU7vOBS7FmpVt7GyvvMUCzBlt6nyh2B
         iKX657r6DycWKEsCZTmM+AImUt8ERSXrDgAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="subsRightButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="subsRightButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="subsRightButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 60</value>
+  </data>
+  <data name="subsRightButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="subsRightButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 17</value>
+  </data>
+  <data name="subsRightButton.TabIndex" type="System.Int32, mscorlib">
+    <value>156</value>
+  </data>
+  <data name="&gt;&gt;subsRightButton.Name" xml:space="preserve">
+    <value>subsRightButton</value>
+  </data>
+  <data name="&gt;&gt;subsRightButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;subsRightButton.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;subsRightButton.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="subsUpButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -214,9 +1010,1285 @@
         gUoVqFSBShWoGNs+gbST8c0Puwrhmu6BOn4AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="subsUpButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="subsUpButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="subsUpButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 60</value>
+  </data>
+  <data name="subsUpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="subsUpButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 17</value>
+  </data>
+  <data name="subsUpButton.TabIndex" type="System.Int32, mscorlib">
+    <value>157</value>
+  </data>
+  <data name="&gt;&gt;subsUpButton.Name" xml:space="preserve">
+    <value>subsUpButton</value>
+  </data>
+  <data name="&gt;&gt;subsUpButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;subsUpButton.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;subsUpButton.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>404, 198</value>
+  </data>
+  <data name="groupBox4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="groupBox4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 171</value>
+  </data>
+  <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Legenda</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="delayTimeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="delayTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 90</value>
+  </data>
+  <data name="delayTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 17</value>
+  </data>
+  <data name="delayTimeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="delayTimeLabel.Text" xml:space="preserve">
+    <value>Atraso (ms):</value>
+  </data>
+  <data name="&gt;&gt;delayTimeLabel.Name" xml:space="preserve">
+    <value>delayTimeLabel</value>
+  </data>
+  <data name="&gt;&gt;delayTimeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;delayTimeLabel.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;delayTimeLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="delayTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 87</value>
+  </data>
+  <data name="delayTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="delayTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 22</value>
+  </data>
+  <data name="delayTime.TabIndex" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="&gt;&gt;delayTime.Name" xml:space="preserve">
+    <value>delayTime</value>
+  </data>
+  <data name="&gt;&gt;delayTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;delayTime.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;delayTime.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="intervalTimeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="intervalTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 58</value>
+  </data>
+  <data name="intervalTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="intervalTimeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="intervalTimeLabel.Text" xml:space="preserve">
+    <value>Intervalo (ms):</value>
+  </data>
+  <data name="&gt;&gt;intervalTimeLabel.Name" xml:space="preserve">
+    <value>intervalTimeLabel</value>
+  </data>
+  <data name="&gt;&gt;intervalTimeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;intervalTimeLabel.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;intervalTimeLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="intervalTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 55</value>
+  </data>
+  <data name="intervalTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="intervalTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 22</value>
+  </data>
+  <data name="intervalTime.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;intervalTime.Name" xml:space="preserve">
+    <value>intervalTime</value>
+  </data>
+  <data name="&gt;&gt;intervalTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;intervalTime.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;intervalTime.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="rndIntervalCheck.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rndIntervalCheck.Location" type="System.Drawing.Point, System.Drawing">
+    <value>217, 122</value>
+  </data>
+  <data name="rndIntervalCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="rndIntervalCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 17</value>
+  </data>
+  <data name="rndIntervalCheck.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;rndIntervalCheck.Name" xml:space="preserve">
+    <value>rndIntervalCheck</value>
+  </data>
+  <data name="&gt;&gt;rndIntervalCheck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rndIntervalCheck.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;rndIntervalCheck.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="rndIntervalLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rndIntervalLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 122</value>
+  </data>
+  <data name="rndIntervalLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 17</value>
+  </data>
+  <data name="rndIntervalLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="rndIntervalLabel.Text" xml:space="preserve">
+    <value>Tempo de Intervalo Variável:</value>
+  </data>
+  <data name="rndIntervalLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;rndIntervalLabel.Name" xml:space="preserve">
+    <value>rndIntervalLabel</value>
+  </data>
+  <data name="&gt;&gt;rndIntervalLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rndIntervalLabel.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;rndIntervalLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="expoTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 21</value>
+  </data>
+  <data name="expoTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="expoTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 22</value>
+  </data>
+  <data name="expoTime.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;expoTime.Name" xml:space="preserve">
+    <value>expoTime</value>
+  </data>
+  <data name="&gt;&gt;expoTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;expoTime.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;expoTime.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="expoTimeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="expoTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 23</value>
+  </data>
+  <data name="expoTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 17</value>
+  </data>
+  <data name="expoTimeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="expoTimeLabel.Text" xml:space="preserve">
+    <value>Exposição (ms):</value>
+  </data>
+  <data name="&gt;&gt;expoTimeLabel.Name" xml:space="preserve">
+    <value>expoTimeLabel</value>
+  </data>
+  <data name="&gt;&gt;expoTimeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;expoTimeLabel.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;expoTimeLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>404, 42</value>
+  </data>
+  <data name="groupBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="groupBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 151</value>
+  </data>
+  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Tempo</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="wordListLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="wordListLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 25</value>
+  </data>
+  <data name="wordListLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 17</value>
+  </data>
+  <data name="wordListLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="wordListLabel.Text" xml:space="preserve">
+    <value>Palavras:</value>
+  </data>
+  <data name="&gt;&gt;wordListLabel.Name" xml:space="preserve">
+    <value>wordListLabel</value>
+  </data>
+  <data name="&gt;&gt;wordListLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wordListLabel.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;wordListLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="audioListLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="audioListLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 124</value>
+  </data>
+  <data name="audioListLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 17</value>
+  </data>
+  <data name="audioListLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>164</value>
+  </data>
+  <data name="audioListLabel.Text" xml:space="preserve">
+    <value>Áudios:</value>
+  </data>
+  <data name="audioListLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;audioListLabel.Name" xml:space="preserve">
+    <value>audioListLabel</value>
+  </data>
+  <data name="&gt;&gt;audioListLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;audioListLabel.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;audioListLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="openAudioListButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="openAudioListButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="openAudioListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 121</value>
+  </data>
+  <data name="openAudioListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="openAudioListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="openAudioListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="openAudioListButton.Text" xml:space="preserve">
+    <value>abrir</value>
+  </data>
+  <data name="&gt;&gt;openAudioListButton.Name" xml:space="preserve">
+    <value>openAudioListButton</value>
+  </data>
+  <data name="&gt;&gt;openAudioListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openAudioListButton.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;openAudioListButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="colorListLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colorListLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 58</value>
+  </data>
+  <data name="colorListLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 17</value>
+  </data>
+  <data name="colorListLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="colorListLabel.Text" xml:space="preserve">
+    <value>Cores:</value>
+  </data>
+  <data name="&gt;&gt;colorListLabel.Name" xml:space="preserve">
+    <value>colorListLabel</value>
+  </data>
+  <data name="&gt;&gt;colorListLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colorListLabel.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;colorListLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="imgListLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="imgListLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 91</value>
+  </data>
+  <data name="imgListLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 17</value>
+  </data>
+  <data name="imgListLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="imgListLabel.Text" xml:space="preserve">
+    <value>Imagens:</value>
+  </data>
+  <data name="&gt;&gt;imgListLabel.Name" xml:space="preserve">
+    <value>imgListLabel</value>
+  </data>
+  <data name="&gt;&gt;imgListLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;imgListLabel.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;imgListLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="openWordListButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="openWordListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 21</value>
+  </data>
+  <data name="openWordListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="openWordListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="openWordListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="openWordListButton.Text" xml:space="preserve">
+    <value>abrir</value>
+  </data>
+  <data name="&gt;&gt;openWordListButton.Name" xml:space="preserve">
+    <value>openWordListButton</value>
+  </data>
+  <data name="&gt;&gt;openWordListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openWordListButton.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;openWordListButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="openColorListButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="openColorListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 54</value>
+  </data>
+  <data name="openColorListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="openColorListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="openColorListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="openColorListButton.Text" xml:space="preserve">
+    <value>abrir</value>
+  </data>
+  <data name="&gt;&gt;openColorListButton.Name" xml:space="preserve">
+    <value>openColorListButton</value>
+  </data>
+  <data name="&gt;&gt;openColorListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openColorListButton.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;openColorListButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="openImgListButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="openImgListButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="openImgListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 87</value>
+  </data>
+  <data name="openImgListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="openImgListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="openImgListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="openImgListButton.Text" xml:space="preserve">
+    <value>abrir</value>
+  </data>
+  <data name="&gt;&gt;openImgListButton.Name" xml:space="preserve">
+    <value>openImgListButton</value>
+  </data>
+  <data name="&gt;&gt;openImgListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openImgListButton.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;openImgListButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 283</value>
+  </data>
+  <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>365, 158</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Listas</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="instructionsBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 565</value>
+  </data>
+  <data name="instructionsBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="instructionsBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="instructionsBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="instructionsBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>659, 136</value>
+  </data>
+  <data name="instructionsBox.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="&gt;&gt;instructionsBox.Name" xml:space="preserve">
+    <value>instructionsBox</value>
+  </data>
+  <data name="&gt;&gt;instructionsBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;instructionsBox.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;instructionsBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 156</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 34</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>164</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Girar
+Imagem:</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="expandImgLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="expandImgLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 156</value>
+  </data>
+  <data name="expandImgLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 17</value>
+  </data>
+  <data name="expandImgLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>161</value>
+  </data>
+  <data name="expandImgLabel.Text" xml:space="preserve">
+    <value>Expandir Imagem:</value>
+  </data>
+  <data name="&gt;&gt;expandImgLabel.Name" xml:space="preserve">
+    <value>expandImgLabel</value>
+  </data>
+  <data name="&gt;&gt;expandImgLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;expandImgLabel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;expandImgLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="wordColorPanel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="wordColorPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>164, 202</value>
+  </data>
+  <data name="wordColorPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="wordColorPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 17</value>
+  </data>
+  <data name="wordColorPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>162</value>
+  </data>
+  <data name="&gt;&gt;wordColorPanel.Name" xml:space="preserve">
+    <value>wordColorPanel</value>
+  </data>
+  <data name="&gt;&gt;wordColorPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wordColorPanel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;wordColorPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rotateImgComboBox.Items" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="rotateImgComboBox.Items1" xml:space="preserve">
+    <value>45°</value>
+  </data>
+  <data name="rotateImgComboBox.Items2" xml:space="preserve">
+    <value>90°</value>
+  </data>
+  <data name="rotateImgComboBox.Items3" xml:space="preserve">
+    <value>135°</value>
+  </data>
+  <data name="rotateImgComboBox.Items4" xml:space="preserve">
+    <value>180°</value>
+  </data>
+  <data name="rotateImgComboBox.Items5" xml:space="preserve">
+    <value>-135°</value>
+  </data>
+  <data name="rotateImgComboBox.Items6" xml:space="preserve">
+    <value>-90°</value>
+  </data>
+  <data name="rotateImgComboBox.Items7" xml:space="preserve">
+    <value>-45°</value>
+  </data>
+  <data name="rotateImgComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 156</value>
+  </data>
+  <data name="rotateImgComboBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="rotateImgComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 24</value>
+  </data>
+  <data name="rotateImgComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;rotateImgComboBox.Name" xml:space="preserve">
+    <value>rotateImgComboBox</value>
+  </data>
+  <data name="&gt;&gt;rotateImgComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rotateImgComboBox.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;rotateImgComboBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="wordColorLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="wordColorLabel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="wordColorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 202</value>
+  </data>
+  <data name="wordColorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 17</value>
+  </data>
+  <data name="wordColorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>160</value>
+  </data>
+  <data name="wordColorLabel.Text" xml:space="preserve">
+    <value>Cor da Palavra:</value>
+  </data>
+  <data name="&gt;&gt;wordColorLabel.Name" xml:space="preserve">
+    <value>wordColorLabel</value>
+  </data>
+  <data name="&gt;&gt;wordColorLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wordColorLabel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;wordColorLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="expandImgCheck.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="expandImgCheck.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="expandImgCheck.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 156</value>
+  </data>
+  <data name="expandImgCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="expandImgCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 17</value>
+  </data>
+  <data name="expandImgCheck.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;expandImgCheck.Name" xml:space="preserve">
+    <value>expandImgCheck</value>
+  </data>
+  <data name="&gt;&gt;expandImgCheck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;expandImgCheck.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;expandImgCheck.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="wordColorButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="wordColorButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="wordColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>189, 199</value>
+  </data>
+  <data name="wordColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="wordColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 23</value>
+  </data>
+  <data name="wordColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="wordColorButton.Text" xml:space="preserve">
+    <value>escolher</value>
+  </data>
+  <data name="&gt;&gt;wordColorButton.Name" xml:space="preserve">
+    <value>wordColorButton</value>
+  </data>
+  <data name="&gt;&gt;wordColorButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wordColorButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;wordColorButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="expoTypeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="expoTypeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 25</value>
+  </data>
+  <data name="expoTypeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 17</value>
+  </data>
+  <data name="expoTypeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="expoTypeLabel.Text" xml:space="preserve">
+    <value>Tipo de Estímulo:</value>
+  </data>
+  <data name="&gt;&gt;expoTypeLabel.Name" xml:space="preserve">
+    <value>expoTypeLabel</value>
+  </data>
+  <data name="&gt;&gt;expoTypeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;expoTypeLabel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;expoTypeLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="chooseExpoType.Items" xml:space="preserve">
+    <value>Palavra</value>
+  </data>
+  <data name="chooseExpoType.Items1" xml:space="preserve">
+    <value>Imagem</value>
+  </data>
+  <data name="chooseExpoType.Items2" xml:space="preserve">
+    <value>Imagem e Palavra</value>
+  </data>
+  <data name="chooseExpoType.Items3" xml:space="preserve">
+    <value>Palavra com Áudio</value>
+  </data>
+  <data name="chooseExpoType.Items4" xml:space="preserve">
+    <value>Imagem com Áudio</value>
+  </data>
+  <data name="chooseExpoType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>164, 21</value>
+  </data>
+  <data name="chooseExpoType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="chooseExpoType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 24</value>
+  </data>
+  <data name="chooseExpoType.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;chooseExpoType.Name" xml:space="preserve">
+    <value>chooseExpoType</value>
+  </data>
+  <data name="&gt;&gt;chooseExpoType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chooseExpoType.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;chooseExpoType.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="numExpoLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="numExpoLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 59</value>
+  </data>
+  <data name="numExpoLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 17</value>
+  </data>
+  <data name="numExpoLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="numExpoLabel.Text" xml:space="preserve">
+    <value>Número de Tentativas:</value>
+  </data>
+  <data name="&gt;&gt;numExpoLabel.Name" xml:space="preserve">
+    <value>numExpoLabel</value>
+  </data>
+  <data name="&gt;&gt;numExpoLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numExpoLabel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;numExpoLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="numExpo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>164, 57</value>
+  </data>
+  <data name="numExpo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="numExpo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 22</value>
+  </data>
+  <data name="numExpo.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;numExpo.Name" xml:space="preserve">
+    <value>numExpo</value>
+  </data>
+  <data name="&gt;&gt;numExpo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numExpo.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;numExpo.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="rndExpoLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rndExpoLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 91</value>
+  </data>
+  <data name="rndExpoLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 17</value>
+  </data>
+  <data name="rndExpoLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="rndExpoLabel.Text" xml:space="preserve">
+    <value>Ordem Aleatória:</value>
+  </data>
+  <data name="rndExpoLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;rndExpoLabel.Name" xml:space="preserve">
+    <value>rndExpoLabel</value>
+  </data>
+  <data name="&gt;&gt;rndExpoLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rndExpoLabel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;rndExpoLabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="wordSizeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="wordSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 123</value>
+  </data>
+  <data name="wordSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 17</value>
+  </data>
+  <data name="wordSizeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>159</value>
+  </data>
+  <data name="wordSizeLabel.Text" xml:space="preserve">
+    <value>Tamanho da Palavra:</value>
+  </data>
+  <data name="&gt;&gt;wordSizeLabel.Name" xml:space="preserve">
+    <value>wordSizeLabel</value>
+  </data>
+  <data name="&gt;&gt;wordSizeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wordSizeLabel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;wordSizeLabel.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="wordSizeNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>164, 118</value>
+  </data>
+  <data name="wordSizeNumeric.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="wordSizeNumeric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 22</value>
+  </data>
+  <data name="wordSizeNumeric.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;wordSizeNumeric.Name" xml:space="preserve">
+    <value>wordSizeNumeric</value>
+  </data>
+  <data name="&gt;&gt;wordSizeNumeric.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wordSizeNumeric.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;wordSizeNumeric.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="rndExpoCheck.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rndExpoCheck.Location" type="System.Drawing.Point, System.Drawing">
+    <value>164, 91</value>
+  </data>
+  <data name="rndExpoCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="rndExpoCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 17</value>
+  </data>
+  <data name="rndExpoCheck.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;rndExpoCheck.Name" xml:space="preserve">
+    <value>rndExpoCheck</value>
+  </data>
+  <data name="&gt;&gt;rndExpoCheck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rndExpoCheck.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;rndExpoCheck.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 42</value>
+  </data>
+  <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 236</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Exposição</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="instructionsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="instructionsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 546</value>
+  </data>
+  <data name="instructionsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 17</value>
+  </data>
+  <data name="instructionsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="instructionsLabel.Text" xml:space="preserve">
+    <value>Instruções:</value>
+  </data>
+  <data name="&gt;&gt;instructionsLabel.Name" xml:space="preserve">
+    <value>instructionsLabel</value>
+  </data>
+  <data name="&gt;&gt;instructionsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;instructionsLabel.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;instructionsLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="prgNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 16</value>
+  </data>
+  <data name="prgNameTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="prgNameTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>300</value>
+  </data>
+  <data name="prgNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="prgNameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;prgNameTextBox.Name" xml:space="preserve">
+    <value>prgNameTextBox</value>
+  </data>
+  <data name="&gt;&gt;prgNameTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;prgNameTextBox.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;prgNameTextBox.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="prgNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="prgNameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 18</value>
+  </data>
+  <data name="prgNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 17</value>
+  </data>
+  <data name="prgNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="prgNameLabel.Text" xml:space="preserve">
+    <value>Nome do Programa:</value>
+  </data>
+  <data name="&gt;&gt;prgNameLabel.Name" xml:space="preserve">
+    <value>prgNameLabel</value>
+  </data>
+  <data name="&gt;&gt;prgNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;prgNameLabel.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;prgNameLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 2</value>
+  </data>
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>693, 718</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cancelButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cancelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 722</value>
+  </data>
+  <data name="cancelButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 27</value>
+  </data>
+  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>cancelar</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
+    <value>cancelButton</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="saveButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="saveButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="saveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>608, 722</value>
+  </data>
+  <data name="saveButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="saveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 27</value>
+  </data>
+  <data name="saveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>82</value>
+  </data>
+  <data name="saveButton.Text" xml:space="preserve">
+    <value>salvar</value>
+  </data>
+  <data name="&gt;&gt;saveButton.Name" xml:space="preserve">
+    <value>saveButton</value>
+  </data>
+  <data name="&gt;&gt;saveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;saveButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>725, 785</value>
+  </data>
+  <data name="&gt;&gt;errorProvider.Name" xml:space="preserve">
+    <value>errorProvider</value>
+  </data>
+  <data name="&gt;&gt;errorProvider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
+    <value>errorProvider1</value>
+  </data>
+  <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormPrgConfig</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>213, 12</value>
   </metadata>

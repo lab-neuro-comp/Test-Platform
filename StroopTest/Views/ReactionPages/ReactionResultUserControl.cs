@@ -4,30 +4,39 @@ using System.Linq;
 using System.Windows.Forms;
 using TestPlatform.Models;
 using System.IO;
+using System.Globalization;
+using System.Resources;
+using System.Text.RegularExpressions;
 
 namespace TestPlatform.Views.ReactionPages
 {
     public partial class ReactionResultUserControl : UserControl
     {
         private string path = Global.reactionTestFilesPath + Global.resultsFolderName;
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public ReactionResultUserControl()
         {
             InitializeComponent();
             this.Dock = DockStyle.Fill;
             string[] filePaths = null;
-
-            string[] headers = ReactionTest.HeaderOutputFileText.Split('\t');
+            
+            // getting names of resulting headers and separating them
+            string localizedHeaders = LocRM.GetString("reactionTestHeader", currentCulture).ToString();
+            string[] separators = { @"\t" };
+            string[] headers = localizedHeaders.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 
             dataGridView1.ScrollBars = ScrollBars.Both;
             dataGridView1.AutoResizeColumns();
-            foreach (var columnName in headers)
+            foreach (string columnName in headers)
             {
                 dataGridView1.Columns.Add(columnName, columnName); // Add header to table
                 this.dataGridView1.Columns[columnName].Frozen = false;
             }
 
-            if (Directory.Exists(path)) // Preenche comboBox com arquivos do tipo .txt no diretório dado
+            // filling result combobox with result in pattern participant_programname in the directory
+            if (Directory.Exists(path)) 
             {
                 filePaths = Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
                 for (int i = 0; i < filePaths.Length; i++)
@@ -37,7 +46,7 @@ namespace TestPlatform.Views.ReactionPages
             }
             else
             {
-                Console.WriteLine("{0} é um caminho inválido!.", path);
+                MessageBox.Show("{0}" + LocRM.GetString("invalidPath", currentCulture), path);
             }
 
         }
@@ -94,25 +103,28 @@ namespace TestPlatform.Views.ReactionPages
 
             try
             {
-                if (fileNameBox.SelectedIndex == -1)
+                // checks if there are any results selected
+                if (!(fileNameBox.SelectedIndex == -1))
                 {
-                    throw new Exception("Selecione um arquivo de dados!");
-                }
-
-                lines = ReactionProgram.readDataFile(path + "/" + fileNameBox.SelectedItem.ToString() + ".txt");
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
-                {
-                    using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
+                    lines = ReactionProgram.readDataFile(path + "/" + fileNameBox.SelectedItem.ToString() + ".txt");
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
                     {
-                        tw.WriteLine(ReactionTest.HeaderOutputFileText);
-                        for (int i = 0; i < lines.Length; i++)
+                        using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
                         {
-                            tw.WriteLine(lines[i]); // escreve linhas no novo arquivo
+                            tw.WriteLine(LocRM.GetString("reactionTestHeader", currentCulture));
+                            for (int i = 0; i < lines.Length; i++)
+                            {
+                                tw.WriteLine(lines[i]); // escreve linhas no novo arquivo
+                            }
+                            tw.Close();
+                            MessageBox.Show("Arquivo exportado com sucesso!");
                         }
-                        tw.Close();
-                        MessageBox.Show("Arquivo exportado com sucesso!");
                     }
                 }
+                else
+                {
+                    MessageBox.Show(LocRM.GetString("selectDataFile", currentCulture));
+                }                
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

@@ -65,11 +65,18 @@
 
         public static void BeginExperimentTest(string programName, string participantName, char mark, Form form)
         {
+            try
+            {
                 FormExperimentExposition experimentExposition = new FormExperimentExposition(programName, participantName, mark);
                 experimentExposition.StartPosition = FormStartPosition.Manual;
                 experimentExposition.Location = Screen.AllScreens[ShowOnMonitor(form)].WorkingArea.Location;
                 SendKeys.SendWait("i");
                 experimentExposition.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private static int ShowOnMonitor(Form form)

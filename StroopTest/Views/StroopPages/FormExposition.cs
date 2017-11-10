@@ -4,20 +4,20 @@
  */
 
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Globalization;
 using System.IO;
-using System.Windows.Forms;
+using System.Linq;
+using System.Media;
+using System.Resources;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Linq;
-
-
-using System.Collections.Generic;
-using System.Media;
-using System.Drawing.Drawing2D;
-using TestPlatform.Models;
+using System.Windows.Forms;
 using TestPlatform.Controllers;
-using System.Diagnostics;
+using TestPlatform.Models;
 using TestPlatform.Views;
 
 namespace TestPlatform
@@ -39,6 +39,8 @@ namespace TestPlatform
         private SoundPlayer Player = new SoundPlayer();
         private string defaultFolderPath = Global.testFilesPath;
         private bool runExposition = true;
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         /// <summary>
         /// This is the constructor method for stroop test exposition form.</summary>
@@ -68,7 +70,7 @@ namespace TestPlatform
                 this.Close();
                 this.Dispose();
                 this.DialogResult = DialogResult.Cancel;
-                throw new Exception("A exposição foi cancelada.");
+                throw new Exception(LocRM.GetString("expoCancel", currentCulture));
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
@@ -87,7 +89,7 @@ namespace TestPlatform
                 // if program is incomplete
                 if (currentTest.ProgramInUse.NeedsEdition)
                 {
-                    MessageBox.Show("O programa contém parâmetros incorretos e/ou está incompleto!\nCorrija o programa na interface a seguir.");
+                    MessageBox.Show(LocRM.GetString("programEdit", currentCulture));
                     repairProgram(); // opens prgConfig for program edition
                     currentTest.ProgramInUse.readProgramFile(path + "/prg/" + currentTest.ProgramInUse.ProgramName + ".prg"); // reads new program
                 }
@@ -111,13 +113,13 @@ namespace TestPlatform
                         await startImageExposition();
                         break;
                     default:
-                        throw new Exception("Tipo de Exposição: " + currentTest.ProgramInUse.ExpositionType + " inválido!");
+                        throw new Exception(LocRM.GetString("expoType", currentCulture) + currentTest.ProgramInUse.ExpositionType + LocRM.GetString("invalid", currentCulture));
                 }
             }
             else
             {
-                throw new Exception("Arquivo programa: " + currentTest.ProgramInUse.ProgramName + ".prg" +
-                                    "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/"));
+                throw new Exception(LocRM.GetString("file", currentCulture) + currentTest.ProgramInUse.ProgramName + ".prg" +
+                                    LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(path + "/prg/"));
             }
         }
 
@@ -144,7 +146,7 @@ namespace TestPlatform
                 this.Controls.Add(configureProgram);
             }
             catch (Exception ex) {
-                throw new Exception("Edição não pode ser feita " + ex.Message);
+                throw new Exception(LocRM.GetString("notEdit", currentCulture) + ex.Message);
             }
         }
 
@@ -165,12 +167,15 @@ namespace TestPlatform
                  
                 string[] subtitlesArray = configureSubtitle();
                 string[] audioDirs = null;
-                if (currentTest.ProgramInUse.getAudioListFile() != null) // if there is an audioFile to be played, string array receives audioList itens from list file
+
+                // if there is an audioFile to be played, string array receives audioList itens from list file
+                if (currentTest.ProgramInUse.getAudioListFile() != null) 
                 {
                     audioDirs = currentTest.ProgramInUse.getAudioListFile().ListContent.ToArray();
                 }
 
-                if (currentTest.ProgramInUse.ExpositionRandom) // if the presentation is random, shuffles arrays
+                // if the presentation is random, shuffles arrays
+                if (currentTest.ProgramInUse.ExpositionRandom) 
                 {
                     labelText = ExpositionController.ShuffleArray(labelText, currentTest.ProgramInUse.NumExpositions, 1);
                     labelColor = ExpositionController.ShuffleArray(labelColor, currentTest.ProgramInUse.NumExpositions, 5);
@@ -183,8 +188,7 @@ namespace TestPlatform
                     
                 if(!Validations.allHexPattern(labelColor))
                 {
-                    throw new Exception("A lista de cores '" + currentTest.ProgramInUse.getColorListFile().ListName + "' contém valores inválidos!\n A lista de"+ 
-                        "cores deve conter apenas valores hexadecimais (ex: #000000)");
+                    throw new Exception(LocRM.GetString("list", currentCulture) + currentTest.ProgramInUse.getColorListFile().ListName + LocRM.GetString("validColor", currentCulture));
                 }
                 
                 // presenting test instructions:
@@ -348,15 +352,17 @@ namespace TestPlatform
                     labelText = currentTest.ProgramInUse.getWordListFile().ListContent.ToArray();
                 }
                 
-                await showInstructions(currentTest.ProgramInUse, cts.Token); // Apresenta instruções se houver
+                // shows program instructions to participant if there are any
+                await showInstructions(currentTest.ProgramInUse, cts.Token); 
 
                 outputContent = new List<string>();
                 
-
-                changeBackgroundColor(true); // muda cor de fundo se houver parametro
+                // changes background if user select one
+                changeBackgroundColor(true); 
                 imgPictureBox.BackColor = BackColor;
 
-                elapsedTime = 0; // zera tempo em milissegundos decorrido
+                // restart elapsed miliseconds
+                elapsedTime = 0; 
                 j = 0; subtitleCounter = 0;
                 arrayCounter = 0;
                 var audioCounter = 0;
@@ -371,7 +377,7 @@ namespace TestPlatform
                 if (currentTest.ProgramInUse.ExpositionType == "imgtxt")
                 {
                     
-                    for (int counter = 0; counter < currentTest.ProgramInUse.NumExpositions && runExposition; counter++) // AQUI ver estimulo -> palavra ou imagem como um só e ter intervalo separado
+                    for (int counter = 0; counter < currentTest.ProgramInUse.NumExpositions && runExposition; counter++) 
                     {
                         imgPictureBox.Visible = false;
                         wordLabel.Visible = false;
@@ -392,61 +398,63 @@ namespace TestPlatform
                         }
 
                         // grava tempo decorrido
-                        elapsedTime = stopwatch.ElapsedMilliseconds; 
+                        elapsedTime = stopwatch.ElapsedMilliseconds;
 
-                            SendKeys.SendWait(currentTest.Mark.ToString()); //sending event to neuronspectrum
-                            imgPictureBox.Visible = true;
+                        //sending event to program that is running on background, normally neuronspectrum
+                        SendKeys.SendWait(currentTest.Mark.ToString());
+                        imgPictureBox.Visible = true;
 
+                        if (currentTest.ProgramInUse.SubtitleShow)
+                        {
+                            subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
+                        }
+
+                        wordLabel.Visible = false;
+                        actualImagePath = Path.GetFileName(imageDirs[arrayCounter].ToString());
+                        arrayCounter++;
+
+
+                        currentTest.writeLineOutputResult(currentTest.ProgramInUse, actualImagePath, "false", counter + 1,
+                                                            outputContent, elapsedTime, "img", audioDetail);
+
+                        await Task.Delay(currentTest.ProgramInUse.ExpositionTime, cts.Token);
+
+                        imgPictureBox.Visible = false;
+                        wordLabel.Visible = false;
+
+                        await Task.Delay(currentTest.ProgramInUse.DelayTime, cts.Token);
+
+
+                        // if there are images interweaves them
+                        if (currentTest.ProgramInUse.getWordListFile() != null)
+                        {
+                            if (j == labelText.Count() - 1) { j = 0; }
+                            wordLabel.Text = labelText[j];
+
+
+                            elapsedTime = stopwatch.ElapsedMilliseconds;
+                            //sending event to program that is running on background, normally neuronspectrum
+                            SendKeys.SendWait(currentTest.Mark.ToString());
+                            imgPictureBox.Visible = false;
+                            subtitleLabel.Visible = false;
+                            wordLabel.ForeColor = ColorTranslator.FromHtml(currentTest.ProgramInUse.WordColor);
+                            wordLabel.Visible = true;
                             if (currentTest.ProgramInUse.SubtitleShow)
                             {
                                 subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
                             }
+                            actualImagePath = wordLabel.Text;
+                            j++;
 
-                            wordLabel.Visible = false;
-                            actualImagePath = Path.GetFileName(imageDirs[arrayCounter].ToString());
-                            arrayCounter++;
+                            currentTest.writeLineOutputResult(currentTest.ProgramInUse, actualImagePath, "false", counter + 1,
+                                                                outputContent, elapsedTime, "txt", audioDetail);
 
-
-                            currentTest.writeLineOutputResult(currentTest.ProgramInUse, actualImagePath, "false", counter + 1, 
-                                                                outputContent, elapsedTime, "img", audioDetail);
-                            
                             await Task.Delay(currentTest.ProgramInUse.ExpositionTime, cts.Token);
-                            
-                            imgPictureBox.Visible = false;
-                            wordLabel.Visible = false;
-
-                            await Task.Delay(currentTest.ProgramInUse.DelayTime, cts.Token);
-
-
-                            // se tiver palavras intercala elas com a imagem
-                            if (currentTest.ProgramInUse.getWordListFile() != null) 
-                            {
-                                if (j == labelText.Count()-1) { j = 0; }
-                                wordLabel.Text = labelText[j];
-
-                                
-                                elapsedTime = stopwatch.ElapsedMilliseconds;
-                                SendKeys.SendWait(currentTest.Mark.ToString()); //sending event to neuronspectrum
-                                imgPictureBox.Visible = false;
-                                subtitleLabel.Visible = false;
-                                wordLabel.ForeColor = ColorTranslator.FromHtml(currentTest.ProgramInUse.WordColor);
-                                wordLabel.Visible = true;
-                                if (currentTest.ProgramInUse.SubtitleShow)
-                                {
-                                    subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
-                                }
-                                actualImagePath = wordLabel.Text;
-                                j++;
-
-                                currentTest.writeLineOutputResult(currentTest.ProgramInUse, actualImagePath, "false", counter + 1,
-                                                                    outputContent, elapsedTime, "txt", audioDetail);
-                                
-                                await Task.Delay(currentTest.ProgramInUse.ExpositionTime, cts.Token);
-                            }
-
-                            await Task.Delay(currentTest.ProgramInUse.IntervalTime, cts.Token);
                         }
+
+                        await Task.Delay(currentTest.ProgramInUse.IntervalTime, cts.Token);
                     }
+                }
                     else
                     {
                         // AQUI ver estimulo -> palavra ou imagem como um só e ter intervalo separado
@@ -561,7 +569,7 @@ namespace TestPlatform
         
   
 
-        private async Task showInstructions(StroopProgram program, CancellationToken token) // apresenta instruções
+        private async Task showInstructions(StroopProgram program, CancellationToken token) 
         {
             if (program.InstructionText != null)
             {
@@ -626,15 +634,16 @@ namespace TestPlatform
         {
             audioControl.StartRecording(outputDataPath + "/audio_" + currentTest.ParticipantName + "_" + currentTest.ProgramInUse.ProgramName + "_" + now + ".wav");
             
-        } // inicia gravação de áudio
+        } 
 
+        // stop recording and saves audio file
         private void stopRecordingAudio()
         {
             string now = currentTest.InitialDate.Day + "." + currentTest.InitialDate.Month + "_" + hour + "h" + 
                 minutes + "." + seconds;
             audioControl.SaveRecording();
 
-        } // para gravação de áudio
+        }
 
 
         private async Task intervalOrFixPoint(StroopProgram program, CancellationToken token)

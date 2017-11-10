@@ -4,7 +4,9 @@
  */
 
 using System;
+using System.Globalization;
 using System.Reflection;
+using System.Resources;
 using System.Windows.Forms;
 
 
@@ -12,18 +14,21 @@ namespace TestPlatform.Views
 {
     partial class AboutBox : Form
     {
-        private String descrição = "O TestPlatform é uma plataforma de testes neuropsicológicos computadorizados para avaliação de funções executivas. O produto tem a proposta oferecer soluções inovando tecnologicamente de forma prática e dinâmica. Destinado a pesquisadores, alunos e usuários comuns. Developers: hugohon - Hugo Honda Ferreira e fabiolamfleury - Fabíola Fleury; 2017";
-
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+        private String description; 
 
         public AboutBox()
         {
             InitializeComponent();
             this.Text = string.Format("Sobre {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = string.Format("Versão {0}", AssemblyVersion);
+            this.labelVersion.Text = string.Format(LocRM.GetString("version", currentCulture)+ " { 0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = descrição; //AssemblyDescription;
+            description = LocRM.GetString("description", currentCulture);
+
+            this.textBoxDescription.Text = description; //AssemblyDescription;
         }
 
         #region Assembly Attribute Accessors

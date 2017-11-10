@@ -9,27 +9,38 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using TestPlatform.Models;
+using System.Resources;
+using System.Globalization;
 
 namespace TestPlatform.Views.ExperimentPages
 {
     public partial class ExperimentResultUserControl : UserControl
     {
         private string path = Global.experimentTestFilesPath + Global.resultsFolderName;
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+
         public ExperimentResultUserControl()
         {
             InitializeComponent();
             this.Dock = DockStyle.Fill;
             string[] filePaths = null;
 
-            string[] headers = ExperimentTest.HeaderOutputFileText.Split('\t');
+            // getting experiment localized headers and separating each one of them
+            string localizedHeaders = LocRM.GetString("experimentHeader", currentCulture);
+            string[] separators = { @"\t" };
+            string[] headers = localizedHeaders.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+
             foreach (var columnName in headers)
             {
-                dataGridView1.Columns.Add(columnName, columnName); // Configura Cabeçalho na tabela
+                // Configuring headers name
+                dataGridView1.Columns.Add(columnName, columnName); 
             }
 
-            if (Directory.Exists(path)) // Preenche comboBox com arquivos do tipo .txt no diretório dado
+            if (Directory.Exists(path)) 
             {
                 filePaths = Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
+                // Filling combobox with experiment results
                 for (int i = 0; i < filePaths.Length; i++)
                 {
                     fileNameBox.Items.Add(Path.GetFileNameWithoutExtension(filePaths[i]));
@@ -37,7 +48,7 @@ namespace TestPlatform.Views.ExperimentPages
             }
             else
             {
-                Console.WriteLine("{0} é um caminho inválido!.", path);
+                throw new Exception(LocRM.GetString("experimentFiles", currentCulture));
             }
         }
 
@@ -54,7 +65,7 @@ namespace TestPlatform.Views.ExperimentPages
             {
                 if (fileNameBox.SelectedIndex == -1)
                 {
-                    throw new Exception("Selecione um arquivo de dados!");
+                    throw new Exception(LocRM.GetString("selectDataFile", currentCulture));
                 }
 
                 lines = Program.readDataFile(path + "/" + fileNameBox.SelectedItem.ToString() + ".txt");
@@ -62,13 +73,13 @@ namespace TestPlatform.Views.ExperimentPages
                 {
                     using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
                     {
-                        tw.WriteLine(ExperimentTest.HeaderOutputFileText);
+                        tw.WriteLine(LocRM.GetString("experimentHeader", currentCulture));
                         for (int i = 0; i < lines.Length; i++)
                         {
                             tw.WriteLine(lines[i]); // escreve linhas no novo arquivo
                         }
                         tw.Close();
-                        MessageBox.Show("Arquivo exportado com sucesso!");
+                        MessageBox.Show(LocRM.GetString("exportedFile", currentCulture));
                     }
                 }
             }

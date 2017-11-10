@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="activeAudio" xml:space="preserve">
+    <value>Active audio recording during test execution</value>
+  </data>
+  <data name="audioFile" xml:space="preserve">
+    <value>Audio list file</value>
+  </data>
+  <data name="audioList" xml:space="preserve">
+    <value>Audio Lists:</value>
+  </data>
+  <data name="audioRecordSuccess" xml:space="preserve">
+    <value>Successfully recorded audio.</value>
+  </data>
+  <data name="backgroundColor" xml:space="preserve">
+    <value>Background color to stimuli presentation</value>
+  </data>
+  <data name="beepDuration" xml:space="preserve">
+    <value>Beep should last longer than 0 milliseconds.</value>
+  </data>
+  <data name="center" xml:space="preserve">
+    <value>center</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>choose</value>
+  </data>
+  <data name="colorFile" xml:space="preserve">
+    <value>Color list file</value>
+  </data>
+  <data name="colors" xml:space="preserve">
+    <value>Colors</value>
+  </data>
+  <data name="colorsList" xml:space="preserve">
+    <value>Colors List</value>
+  </data>
+  <data name="colorWords" xml:space="preserve">
+    <value>Word color for image and word expositions</value>
+  </data>
+  <data name="couldntEdit" xml:space="preserve">
+    <value>Could not edit program</value>
+  </data>
+  <data name="default" xml:space="preserve">
+    <value>default</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>The TestPlatform is a platform of computerized neuropsychological tests for the evaluation of executive functions. The product has the proposal to offer solutions innovating technologically in a practical and dynamic way. Intended for researchers, students and ordinary users. Developers: hugohon - Hugo Honda Ferreira and fabiolamfleury - Fabíola Fleury; 2017</value>
+  </data>
+  <data name="down" xml:space="preserve">
+    <value>down</value>
+  </data>
+  <data name="down_left" xml:space="preserve">
+    <value>down_left</value>
+  </data>
+  <data name="down_right" xml:space="preserve">
+    <value>down_right</value>
+  </data>
+  <data name="editProgram" xml:space="preserve">
+    <value>Edit Program: </value>
+  </data>
+  <data name="emptyBox" xml:space="preserve">
+    <value>Text field can't be empty.</value>
+  </data>
+  <data name="emptyList" xml:space="preserve">
+    <value>The list is empty!</value>
+  </data>
+  <data name="emptyListName" xml:space="preserve">
+    <value>The list name must be filled in.</value>
+  </data>
+  <data name="exclude" xml:space="preserve">
+    <value>Delete: </value>
+  </data>
+  <data name="exclusionSucceeded" xml:space="preserve">
+    <value>delete succeeded!</value>
+  </data>
+  <data name="expandImages" xml:space="preserve">
+    <value>Expand image to fill screen</value>
+  </data>
+  <data name="experiment" xml:space="preserve">
+    <value>Experiment</value>
+  </data>
+  <data name="experimentFiles" xml:space="preserve">
+    <value>Path for experiments data is invalid.</value>
+  </data>
+  <data name="expoCancel" xml:space="preserve">
+    <value>Exposition was cancelled.</value>
+  </data>
+  <data name="expoNumber" xml:space="preserve">
+    <value>Exposition number must be greater than zero.</value>
+  </data>
+  <data name="expoRandomize" xml:space="preserve">
+    <value>Random stimulus exposition according to list</value>
+  </data>
+  <data name="exportedFile" xml:space="preserve">
+    <value>File exported successfully!</value>
+  </data>
+  <data name="expositionDuration" xml:space="preserve">
+    <value>Exposition duration for each stimulus</value>
+  </data>
+  <data name="expoTime" xml:space="preserve">
+    <value>Exposition time must be greater than zero.</value>
+  </data>
+  <data name="expoType" xml:space="preserve">
+    <value>Exposition type:</value>
+  </data>
+  <data name="fieldNotRight" xml:space="preserve">
+    <value>Some field was not filled in correctly.</value>
+  </data>
+  <data name="file" xml:space="preserve">
+    <value>File </value>
+  </data>
+  <data name="fixpointColor" xml:space="preserve">
+    <value>Fix point color</value>
+  </data>
+  <data name="fixpointEx" xml:space="preserve">
+    <value>Fix point: cross or point</value>
+  </data>
+  <data name="fontSize" xml:space="preserve">
+    <value>Font size to the following exposition types: word, word with audio and image with word</value>
+  </data>
+  <data name="help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="imageFile" xml:space="preserve">
+    <value>Image list file</value>
+  </data>
+  <data name="imageFileError" xml:space="preserve">
+    <value>Couldn't show image. You don't have permission to access this file or it can be corrupted.\n</value>
+  </data>
+  <data name="imageList" xml:space="preserve">
+    <value>Image Lists:</value>
+  </data>
+  <data name="instructionBox" xml:space="preserve">
+    <value>Write each of the instructions on separate lines.</value>
+  </data>
+  <data name="instructionBoxText" xml:space="preserve">
+    <value>The participant must be clearly and uniformly oriented to test execution accordingly to participant group and experiment team.&lt;br&gt;&lt;br&gt;For classic Stroop Test basic instructions are: &lt;br&gt;'In this task you must speak the name of the color in which the words are painted.'&lt;br&gt;or&lt;br&gt;'In this task you should read the word displayed on the screen.'</value>
+  </data>
+  <data name="instructionsI" xml:space="preserve">
+    <value>Instructions to be shown before test starts, each line will be shown in one screen</value>
+  </data>
+  <data name="intervalsTime" xml:space="preserve">
+    <value>Time between each attempt</value>
+  </data>
+  <data name="intervalsTimeRandom" xml:space="preserve">
+    <value>Variation of time between attempts</value>
+  </data>
+  <data name="intervalTime" xml:space="preserve">
+    <value>Interval time must be greater than zero.</value>
+  </data>
+  <data name="invalid" xml:space="preserve">
+    <value> invalid</value>
+  </data>
+  <data name="invalidExpoType" xml:space="preserve">
+    <value>Exposition type is invalid!</value>
+  </data>
+  <data name="invalidPath" xml:space="preserve">
+    <value>is an invalid path.</value>
+  </data>
+  <data name="left" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="list" xml:space="preserve">
+    <value>The list '</value>
+  </data>
+  <data name="listExists" xml:space="preserve">
+    <value>A list with this name already exists. \n Do you want to overwrite it?</value>
+  </data>
+  <data name="listNotSaved" xml:space="preserve">
+    <value>The list won't be saved.</value>
+  </data>
+  <data name="listSaveSuccess" xml:space="preserve">
+    <value>' was save successfully</value>
+  </data>
+  <data name="markLengthError" xml:space="preserve">
+    <value>Field mark must be filled.</value>
+  </data>
+  <data name="markLengthError2" xml:space="preserve">
+    <value>A marca deve ser composta apenas de um caracter</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="notEdit" xml:space="preserve">
+    <value>Program couldn't be edited.</value>
+  </data>
+  <data name="notFilledProperlyMessage" xml:space="preserve">
+    <value>Some field was not filled in correctly.</value>
+  </data>
+  <data name="notFoundIn" xml:space="preserve">
+    <value>\nwasn't found in location:\n</value>
+  </data>
+  <data name="numberExpositions" xml:space="preserve">
+    <value>Number of times that stimulus will be exposed</value>
+  </data>
+  <data name="participantNameAlphanumericError" xml:space="preserve">
+    <value>Nome do participante deve ser composto apenas de caracteres alphanumericos e sem espaços;\nExemplo: 'LuisAugusto'"</value>
+  </data>
+  <data name="participantNameLengthError" xml:space="preserve">
+    <value>Participant name must be filled.</value>
+  </data>
+  <data name="positionInvalid" xml:space="preserve">
+    <value>Number of stimulus positions is invalid, must be one of the following values: 1, 2, 4 or 8."</value>
+  </data>
+  <data name="programEdit" xml:space="preserve">
+    <value>The program contains incorrect parameters and / or is incomplete! \nCorrect the program in the following interface.</value>
+  </data>
+  <data name="programExists" xml:space="preserve">
+    <value>A program with this name already exists. \n Do you want to overwrite it?</value>
+  </data>
+  <data name="programNotAlphanumeric" xml:space="preserve">
+    <value>The program name must be composed only of alphanumerical characters and no spaces; \ nExample: 'MyProgram'</value>
+  </data>
+  <data name="programNotFilled" xml:space="preserve">
+    <value>The program name must be filled in.</value>
+  </data>
+  <data name="programNotSave" xml:space="preserve">
+    <value>Program wil not be saved.</value>
+  </data>
+  <data name="programSave" xml:space="preserve">
+    <value>Program saved.</value>
+  </data>
+  <data name="programSaved" xml:space="preserve">
+    <value>Program was saved with successfully</value>
+  </data>
+  <data name="reactionTest" xml:space="preserve">
+    <value>ReactionTest</value>
+  </data>
+  <data name="reallyExclude" xml:space="preserve">
+    <value>Do you really want to delete</value>
+  </data>
+  <data name="right" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="selectDataFile" xml:space="preserve">
+    <value>Select a data file!</value>
+  </data>
+  <data name="selectImage" xml:space="preserve">
+    <value>You must select the image list file.</value>
+  </data>
+  <data name="selectPlace" xml:space="preserve">
+    <value>Select file destination before recording</value>
+  </data>
+  <data name="selectTraining" xml:space="preserve">
+    <value>Select a training program!</value>
+  </data>
+  <data name="stroopTest" xml:space="preserve">
+    <value>StroopTest</value>
+  </data>
+  <data name="subtitleActive" xml:space="preserve">
+    <value>Active subtitles for image type</value>
+  </data>
+  <data name="subtitleColor" xml:space="preserve">
+    <value>Subititle color</value>
+  </data>
+  <data name="subtitlePosition" xml:space="preserve">
+    <value>Subtitle position in relation to stimuli</value>
+  </data>
+  <data name="testName" xml:space="preserve">
+    <value>Test name</value>
+  </data>
+  <data name="typeStimulus" xml:space="preserve">
+    <value>Program stimulus category</value>
+  </data>
+  <data name="unavailableExpo" xml:space="preserve">
+    <value>Exposition type currently unavailable.</value>
+  </data>
+  <data name="up" xml:space="preserve">
+    <value>up</value>
+  </data>
+  <data name="up_left" xml:space="preserve">
+    <value>up_left</value>
+  </data>
+  <data name="up_right" xml:space="preserve">
+    <value>up_right</value>
+  </data>
+  <data name="validColor" xml:space="preserve">
+    <value>'contains invalid values! \ n The' color list must contain only hexadecimal values (example: # 000000)</value>
+  </data>
+  <data name="version" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+  <data name="wishToSave" xml:space="preserve">
+    <value>Do you want to save the file</value>
+  </data>
+  <data name="wordColorList" xml:space="preserve">
+    <value>Words with Colors List</value>
+  </data>
+  <data name="wordFile" xml:space="preserve">
+    <value>Word list file</value>
+  </data>
+  <data name="wordList" xml:space="preserve">
+    <value>Word Lists:</value>
+  </data>
+  <data name="words" xml:space="preserve">
+    <value>Words</value>
+  </data>
+  <data name="wordsList" xml:space="preserve">
+    <value>Words List</value>
+  </data>
+  <data name="colorMatch" xml:space="preserve">
+    <value>Fix point color doesn't follow hexadecimal pattern: #000000</value>
+  </data>
+  <data name="exportDirectory" xml:space="preserve">
+    <value>Select a valid directory where there is no export from the platform</value>
+  </data>
+  <data name="fileNotFound" xml:space="preserve">
+    <value>Couldn't find file on path: </value>
+  </data>
+  <data name="lists" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="removeItem" xml:space="preserve">
+    <value>You must select item to be removed from list.</value>
+  </data>
+  <data name="selectAudio" xml:space="preserve">
+    <value>You must select the audio list file.</value>
+  </data>
+  <data name="selectColor" xml:space="preserve">
+    <value>You must select the color list file.</value>
+  </data>
+  <data name="selectWord" xml:space="preserve">
+    <value>You must select the word list file.</value>
+  </data>
+  <data name="experimentHeader" xml:space="preserve">
+    <value>experiment\tprogram\tProgramType\tparticipant\tdate\tinitialTime\ttestTime\tsequence</value>
+  </data>
+  <data name="experimentName" xml:space="preserve">
+    <value>The experiment name must be composed only of alphanumerical characters and no spaces; \ nExample: 'MyExperiment'</value>
+  </data>
+  <data name="import" xml:space="preserve">
+    <value>Files were imported sucessfully.</value>
+  </data>
+  <data name="intervalInvalid" xml:space="preserve">
+    <value>\n Interval time between programs must be equal to zero or greater (miliseconds).</value>
+  </data>
+  <data name="parameter" xml:space="preserve">
+    <value>File parameter written:</value>
+  </data>
+  <data name="parameterShould" xml:space="preserve">
+    <value>\n should be:</value>
+  </data>
+  <data name="audioConfigInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imageConfigInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="newAudioInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="programConfigInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="showAudioInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="showDataInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="technicalInformation" xml:space="preserve">
+    <value />
+  </data>
+  <data name="viewHelp" xml:space="preserve">
+    <value />
+  </data>
+  <data name="wordColorConfigInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="backgroundColorError" xml:space="preserve">
+    <value>Background color of the program should be 'false' or a color hexadecimal code</value>
+  </data>
+  <data name="defaultColorList" xml:space="preserve">
+    <value>#F8E000 #007BB7 #7EC845 #D01C1F</value>
+  </data>
+  <data name="defaultReactionProgram" xml:space="preserve">
+    <value>default 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false</value>
+  </data>
+  <data name="defaultReactionProgramError" xml:space="preserve">
+    <value>Couldn't write default Reaction Test program.</value>
+  </data>
+  <data name="defaultStroopInstruction1" xml:space="preserve">
+    <value>This test will present colored words in random order. Words will appear and rapidly disappear</value>
+  </data>
+  <data name="defaultStroopInstruction2" xml:space="preserve">
+    <value>Say out loud the color that the word is painted</value>
+  </data>
+  <data name="defaultStroopInstruction3" xml:space="preserve">
+    <value>This task will start now</value>
+  </data>
+  <data name="defaultStroopProgram" xml:space="preserve">
+    <value>default 16 1000 true 1000 False default_words.lst default_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false</value>
+  </data>
+  <data name="defaultWordList" xml:space="preserve">
+    <value>yellow blue green red</value>
+  </data>
+  <data name="expositionTypeError" xml:space="preserve">
+    <value>Exposition type must be one of the following</value>
+  </data>
+  <data name="fileName" xml:space="preserve">
+    <value>File name  </value>
+  </data>
+  <data name="fileNameError" xml:space="preserve">
+    <value>of list must finish with .lst</value>
+  </data>
+  <data name="fileNameError1" xml:space="preserve">
+    <value>Program name in file must be equal to file name. </value>
+  </data>
+  <data name="fixPointColorError" xml:space="preserve">
+    <value>Color of the fixation point should be 'false' or a color hexadecimal code</value>
+  </data>
+  <data name="fixPointError" xml:space="preserve">
+    <value>The point of fixation of the program must be represented by: \ n '+' - cross-sectional point \ n'o '- fixing point circle \ n'false' - if there is no point;</value>
+  </data>
+  <data name="notCreated" xml:space="preserve">
+    <value>wasn't written\n\n</value>
+  </data>
+  <data name="reactionTestHeader" xml:space="preserve">
+    <value>program\tparticipant\tdate\tInitialTime\texpositionTime\treactionTime(ms)\tInterval(ms)\testimatedInterval(ms)\texpositionDuration(ms)\texposition(ms)\tsenquency\tpos\tstimulusType\tstimulus\tstimulusColor\tBeep</value>
+  </data>
+  <data name="responseTypeError" xml:space="preserve">
+    <value>Selected response type is invalid. Valid options are: spacebar or key arrows.</value>
+  </data>
+  <data name="stroopResultHeader" xml:space="preserve">
+    <value>program\tparticipant\tdate\thour\ttime(ms)\tsequency\tstimulusType\tsubtitle\tsubtitlePosition\tstimulus\tcolor\taudio</value>
+  </data>
+  <data name="subtitleColorError" xml:space="preserve">
+    <value>Subtitle color must be 'false' or a hex color code</value>
+  </data>
+  <data name="subtitlePositionError" xml:space="preserve">
+    <value>Subtitle position</value>
+  </data>
+  <data name="subtitlePositionError1" xml:space="preserve">
+    <value>must be a number between 1 and 5.</value>
+  </data>
+  <data name="wordColorError" xml:space="preserve">
+    <value>Word point color must be 'false' or a hexadecimal color code</value>
+  </data>
+  <data name="defaultReactionInstructions1" xml:space="preserve">
+    <value>Random squares will be displayed. Press the space bar when you see the square.</value>
+  </data>
+  <data name="defaultReactionInstructions2" xml:space="preserve">
+    <value>The task will start now</value>
+  </data>
+</root>

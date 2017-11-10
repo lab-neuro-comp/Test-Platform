@@ -1,11 +1,16 @@
 ﻿
 using System;
+using System.Globalization;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace TestPlatform.Views.SidebarUserControls
 {
     public partial class ReactionControl : DefaultUserControl
     {
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+
         public ReactionControl()
         {
             this.Dock = DockStyle.Fill;
@@ -36,7 +41,7 @@ namespace TestPlatform.Views.SidebarUserControls
 
                 try
                 {
-                    defineProgram = new FormDefine("Editar Programa: ", Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false);
+                    defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false);
                     result = defineProgram.ShowDialog();
                     if (result == DialogResult.OK)
                     {

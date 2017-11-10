@@ -14,7 +14,10 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\fabio\Desktop\</PublishUrl>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <HockeyAppResourceId>4e4db72659e84ec1ab96ac2196fa1559</HockeyAppResourceId>
+    <PublishUrl>C:\Users\fabio\Desktop\UnB\6º Semestre\PIBITI\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,19 +27,20 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>https://github.com/lab-neuro-comp/Test-Platform/</UpdateUrl>
+    <UpdateUrl>https://github.com/lab-neuro-comp/Test-Platform/tree/master/StroopTest/</UpdateUrl>
+    <SupportUrl>https://github.com/lab-neuro-comp/Test-Platform</SupportUrl>
+    <ErrorReportUrl>https://github.com/lab-neuro-comp/Test-Platform</ErrorReportUrl>
     <TargetCulture>pt-BR</TargetCulture>
-    <ProductName>StroopTest</ProductName>
-    <PublisherName>com.hugohondaf</PublisherName>
+    <ProductName>TestPlatform</ProductName>
+    <PublisherName>fabiolamfleury</PublisherName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -91,10 +95,20 @@
       <HintPath>..\packages\CSCore.1.2.1.1\lib\net35-client\CSCore.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack.Core.1.1.0\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack.Shell.1.1.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -145,6 +159,12 @@
       <DependentUpon>FormExperimentExposition.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ExpositionsViews.cs" />
+    <Compile Include="Views\MainForms\ExportUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MainForms\ExportUserControl.Designer.cs">
+      <DependentUpon>ExportUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainForms\FormDefineTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,7 +298,6 @@
     <Compile Include="Views\ListsPages\FormWordColorDialog.Designer.cs">
       <DependentUpon>FormWordColorDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\HelpData.cs" />
     <Compile Include="MainClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -287,6 +306,56 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Models\StroopProgram.cs" />
+    <EmbeddedResource Include="Resources\Localizations\LocalizedResources.en-US.resx" />
+    <EmbeddedResource Include="Resources\Localizations\LocalizedResources.pt-BR.resx" />
+    <EmbeddedResource Include="Views\ExperimentPages\ExperimentConfig.en-US.resx">
+      <DependentUpon>ExperimentConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExperimentPages\ExperimentConfig.pt-BR.resx">
+      <DependentUpon>ExperimentConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExperimentPages\ExperimentResultUserControl.en-US.resx">
+      <DependentUpon>ExperimentResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExperimentPages\ExperimentResultUserControl.pt-BR.resx">
+      <DependentUpon>ExperimentResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListsPages\FormAudioConfig.en-US.resx">
+      <DependentUpon>FormAudioConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListsPages\FormAudioConfig.pt-BR.resx">
+      <DependentUpon>FormAudioConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListsPages\FormImgConfig.en-US.resx">
+      <DependentUpon>FormImgConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListsPages\FormImgConfig.pt-BR.resx">
+      <DependentUpon>FormImgConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListsPages\FormShowAudio.en-US.resx">
+      <DependentUpon>FormShowAudio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListsPages\FormShowAudio.pt-BR.resx">
+      <DependentUpon>FormShowAudio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListsPages\FormWordColorConfig.en-US.resx">
+      <DependentUpon>FormWordColorConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListsPages\FormWordColorConfig.pt-BR.resx">
+      <DependentUpon>FormWordColorConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListsPages\FormWordColorDialog.en-US.resx">
+      <DependentUpon>FormWordColorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListsPages\FormWordColorDialog.pt-BR.resx">
+      <DependentUpon>FormWordColorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\AboutBox.en-US.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\AboutBox.pt-BR.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -300,14 +369,59 @@
     <EmbeddedResource Include="Views\ExperimentPages\FormExperimentExposition.resx">
       <DependentUpon>FormExperimentExposition.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\ExportUserControl.en-US.resx">
+      <DependentUpon>ExportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\ExportUserControl.pt-BR.resx">
+      <DependentUpon>ExportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\ExportUserControl.resx">
+      <DependentUpon>ExportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FormDefine.en-US.resx">
+      <DependentUpon>FormDefine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FormDefine.pt-BR.resx">
+      <DependentUpon>FormDefine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FormDefineTest.en-US.resx">
+      <DependentUpon>FormDefineTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FormDefineTest.pt-BR.resx">
+      <DependentUpon>FormDefineTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormDefineTest.resx">
       <DependentUpon>FormDefineTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FormHelp.en-US.resx">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FormHelp.pt-BR.resx">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FormMain.en-US.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FormMain.pt-BR.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\FormReactExposition.resx">
       <DependentUpon>FormReactExposition.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReactionPages\FormTRConfig.en-US.resx">
+      <DependentUpon>FormTRConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReactionPages\FormTRConfig.pt-BR.resx">
+      <DependentUpon>FormTRConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\FormTRConfig.resx">
       <DependentUpon>FormTRConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReactionPages\ReactionResultUserControl.en-US.resx">
+      <DependentUpon>ReactionResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReactionPages\ReactionResultUserControl.pt-BR.resx">
+      <DependentUpon>ReactionResultUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\ReactionResultUserControl.resx">
       <DependentUpon>ReactionResultUserControl.cs</DependentUpon>
@@ -315,17 +429,47 @@
     <EmbeddedResource Include="Views\SidebarUserControls\DefaultUserControl.resx">
       <DependentUpon>DefaultUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\ExperimentControl.en-US.resx">
+      <DependentUpon>ExperimentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\ExperimentControl.pt-BR.resx">
+      <DependentUpon>ExperimentControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ExperimentControl.resx">
       <DependentUpon>ExperimentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\ListUserControl.en-US.resx">
+      <DependentUpon>ListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\ListUserControl.pt-BR.resx">
+      <DependentUpon>ListUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ListUserControl.resx">
       <DependentUpon>ListUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\ReactionControl.en-US.resx">
+      <DependentUpon>ReactionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\ReactionControl.pt-BR.resx">
+      <DependentUpon>ReactionControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ReactionControl.resx">
       <DependentUpon>ReactionControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\ResultsUserControl.en-US.resx">
+      <DependentUpon>ResultsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\ResultsUserControl.pt-BR.resx">
+      <DependentUpon>ResultsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ResultsUserControl.resx">
       <DependentUpon>ResultsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\StroopControl.en-US.resx">
+      <DependentUpon>StroopControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\StroopControl.pt-BR.resx">
+      <DependentUpon>StroopControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\StroopControl.resx">
       <DependentUpon>StroopControl.cs</DependentUpon>
@@ -350,6 +494,12 @@
       <DependentUpon>FormDefine.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\StroopPages\FormPrgConfig.en-US.resx">
+      <DependentUpon>FormPrgConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StroopPages\FormPrgConfig.pt-BR.resx">
+      <DependentUpon>FormPrgConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\StroopPages\FormPrgConfig.resx">
       <DependentUpon>FormPrgConfig.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -361,6 +511,12 @@
     <EmbeddedResource Include="Views\StroopPages\FormExposition.resx">
       <DependentUpon>FormExposition.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StroopPages\FormShowData.en-US.resx">
+      <DependentUpon>FormShowData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StroopPages\FormShowData.pt-BR.resx">
+      <DependentUpon>FormShowData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StroopPages\FormShowData.resx">
       <DependentUpon>FormShowData.cs</DependentUpon>
@@ -443,9 +599,9 @@
     <Content Include="Resources\icon2_StroopTest.ico" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -454,15 +610,27 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PublishFile Include="en-US\TestPlatform.resources">
+      <Visible>False</Visible>
+      <Group>en-US</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="pt-BR\TestPlatform.resources">
+      <Visible>False</Visible>
+      <Group>pt-BR</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets" Condition="Exists('..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

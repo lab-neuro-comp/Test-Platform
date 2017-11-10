@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Resources;
 
 namespace TestPlatform.Models
 {
@@ -10,14 +12,21 @@ namespace TestPlatform.Models
      */
     class ReactionTest
     {
-        private static String headerOutputFileText = "programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)"
-            + "\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep";
+        private static String headerOutputFileText;
         private Char mark;
         private ReactionProgram programInUse = new ReactionProgram();
         private string participantName;
         private DateTime initialTime;
         private DateTime expositionTime;
         private List<string> output = new List<string>();
+        // properties used to localize strings during runtime
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+
+        public ReactionTest()
+        {
+            headerOutputFileText = LocRM.GetString("reactionTestHeader", currentCulture);
+        }
 
         public string ParticipantName
         {
@@ -119,8 +128,8 @@ namespace TestPlatform.Models
             }
             else
             {
-                throw new Exception("Arquivo programa: " + ProgramInUse.ProgramName + ".prg" +
-                                    "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(path + "/prg/"));
+                throw new Exception(LocRM.GetString("file", currentCulture) + ProgramInUse.ProgramName + ".prg" +
+                                    LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(path + "/prg/"));
             }
         }
 

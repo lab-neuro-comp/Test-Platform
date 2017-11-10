@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace TestPlatform.Views
 {
     public partial class StroopControl : DefaultUserControl
     {
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+
         public StroopControl()
         {
             this.Dock = DockStyle.Fill;
@@ -29,7 +34,7 @@ namespace TestPlatform.Views
                 try
                 {
                     string editProgramName = "error";
-                    FormDefine defineProgram = new FormDefine("Editar Programa: ", Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
+                    FormDefine defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
                     DialogResult result = defineProgram.ShowDialog();
                     if (result == DialogResult.OK)
                     {
@@ -39,7 +44,10 @@ namespace TestPlatform.Views
                         editStroopButton.Checked = false;
                     }
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

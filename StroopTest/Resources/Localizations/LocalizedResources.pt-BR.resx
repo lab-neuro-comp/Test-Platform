@@ -634,4 +634,10 @@
   <data name="wordColorError" xml:space="preserve">
     <value>Cor do ponto da palavra deve ser 'false' ou um código hexadecimal de cor</value>
   </data>
+  <data name="open" xml:space="preserve">
+    <value>abrir</value>
+  </data>
+  <data name="wordListError" xml:space="preserve">
+    <value>Selecione uma lista de palavras</value>
+  </data>
 </root>

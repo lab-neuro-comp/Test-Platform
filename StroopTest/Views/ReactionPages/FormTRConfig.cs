@@ -382,7 +382,14 @@ namespace TestPlatform.Views
                     break;
                 // Program type "words"
                 case 1:
-                    // TODO: Add ReactionProgram constructor to "words" type here
+                    newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
+                                                Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
+                                                Convert.ToInt32(intervalTime.Value),
+                                                Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked,
+                                                Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
+                                                fixPointValue(), bgColorButton.Text, fixPointColor(),
+                                                rndIntervalCheck.Checked, randomBeepCheck.Checked,
+                                                Convert.ToInt32(positionsBox.Text), responseType(), openWordListButton.Text);
                     break;
                 
                 // Program type "images"
@@ -675,17 +682,30 @@ namespace TestPlatform.Views
         private void chooseExpoType_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (chooseExpoType.SelectedIndex) {
+                //Shapes exposition
                 case 0:
+                    openWordListButton.Enabled = false;
                     errorProvider1.Clear();
                     openImgListButton.Enabled = false;
                     stimulusColor.Enabled = true;
                     shapesGroupBox.Enabled = true;
                     isRandomExposition.Enabled = false;
                     break;
+                //Words exposition
+                case 1:
+                    errorProvider1.Clear();
+                    openImgListButton.Enabled = false;
+                    stimulusColor.Enabled = true;
+                    shapesGroupBox.Enabled = false;
+                    isRandomExposition.Enabled = true;
+                    openWordListButton.Enabled = true;
+                    break;
+                //Images exposition
                 case 2:
+                    openWordListButton.Enabled = false;
                     errorProvider1.Clear();
                     openImgListButton.Enabled = true;
-                    stimulusColor.Text = "escolher";
+                    stimulusColor.Text = LocRM.GetString("choose", currentCulture);
                     stimulusColorPanel.BackColor = Color.White;
                     stimulusColor.Enabled = false;
                     shapesGroupBox.Enabled = false;
@@ -751,6 +771,42 @@ namespace TestPlatform.Views
         private void beepDuration_Validated(object sender, EventArgs e)
         {
             errorProvider1.SetError(this.beepDuration, "");
+        }
+
+        private void openWordListButton_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (openWordListButton.Enabled)
+            {
+                string errorMsg;
+                if (ValidWordList(openWordListButton.Text, out errorMsg))
+                {
+                    //do nothing
+                }
+                else
+                {
+                    e.Cancel = true;
+                    this.errorProvider1.SetError(this.openWordListButton, errorMsg);
+                }
+            }
+        }
+
+        public bool ValidWordList(string buttonText, out string errorMessage)
+        {
+            if (buttonText != LocRM.GetString("open", currentCulture))
+            {
+                errorMessage = "";
+                return true;
+            }
+            else
+            {
+                errorMessage = LocRM.GetString("wordListError", currentCulture);
+                return false;
+            }
+        }
+
+        private void openWordListButton_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(this.openWordListButton, "");
         }
     }
 }

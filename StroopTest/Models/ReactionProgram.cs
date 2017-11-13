@@ -79,6 +79,46 @@ namespace TestPlatform.Models
         }
 
         /// <summary>
+        /// This constructor is used to create a reaction program with words using only one color
+        /// </summary>
+        public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
+                                int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
+                                string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
+                                bool beepRandom, int numberPositions, string responseType,
+                                string wordList)
+        {
+            // Program properties
+            this.programName = programName;
+            this.expositionTime = expositionTime;
+            this.numExpositions = numExpositions;
+            this.intervalTime = intervalTime;
+            this.fixPoint = fixPoint;
+            this.backgroundColor = backgroundColor;
+            this.fixPointColor = fixPointColor;
+            this.intervalTimeRandom = intervalTimeRandom;
+
+            // ReactionProgram properties
+            this.stimuluSize = stimuluSize;
+            this.stimulusDistance = stimulusDistance;
+            this.isBeeping = isBeeping;
+            this.beepDuration = beepDuration;
+            this.stimulusColor = stimulusColor;
+            this.stimuluShape = "false";
+            this.BeepingRandom = beepRandom;
+            this.ResponseType = responseType;
+            this.NumberPositions = numberPositions;
+            this.setWordListFile(wordList);
+
+            //default configurations for shapes version of ReactionProgram
+            this.setAudioListFile("false");
+            this.setColorListFile("false");
+            this.setImageListFile("false");
+            this.expositionRandom = false;
+            this.expositionType = "words";
+
+        }
+
+        /// <summary>
         /// This constructor is used to create a reaction program with image type
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,

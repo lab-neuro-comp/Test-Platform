@@ -43,7 +43,6 @@ namespace TestPlatform.Views
         private PictureBox imgPictureBox = new PictureBox();
         private bool exposing = false;
         private string currentStimulus = null;
-        private string position = null;
         private int currentPosition;
         private bool currentBeep = false;
         private int[,] positions;

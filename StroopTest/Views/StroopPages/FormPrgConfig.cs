@@ -232,22 +232,22 @@ namespace TestPlatform
 
         private void openWordsList_Click(object sender, EventArgs e)
         {
-            openWordListButton.Text = ListController.OpenListFile("_words");
+            openWordListButton.Text = ListController.OpenListFile("_words", openWordListButton.Text);
         }
 
         private void openColorsList_Click(object sender, EventArgs e)
         {
-            openColorListButton.Text = ListController.OpenListFile("_color");
+            openColorListButton.Text = ListController.OpenListFile("_color", openColorListButton.Text);
         }
 
         private void openImagesList_Click(object sender, EventArgs e)
         {
-            openImgListButton.Text = ListController.OpenListFile("_image");
+            openImgListButton.Text = ListController.OpenListFile("_image", openImgListButton.Text);
         }
 
         private void openAudioList_Click(object sender, EventArgs e)
         {
-            openAudioListButton.Text = ListController.OpenListFile("_audio");
+            openAudioListButton.Text = ListController.OpenListFile("_audio", openAudioListButton.Text);
         }
         
         //BOX4
@@ -319,7 +319,7 @@ namespace TestPlatform
 
         private void openSubsList_Click(object sender, EventArgs e)
         {
-            openSubsListButton.Text = ListController.OpenListFile("_words");
+            openSubsListButton.Text = ListController.OpenListFile("_words", openSubsListButton.Text);
         }
 
         private void subLocationDown_Click(object sender, EventArgs e)
@@ -533,85 +533,82 @@ namespace TestPlatform
         private void editProgram()
         {
             StroopProgram program = new StroopProgram();
+            program.readProgramFile(path + editPrgName + ".prg");
 
-            try
+            prgNameTextBox.Text = program.ProgramName;
+            numExpo.Value = program.NumExpositions;
+            expoTime.Value = program.ExpositionTime;
+            rndExpoCheck.Checked = program.ExpositionRandom;
+            intervalTime.Value = program.IntervalTime;
+            rndIntervalCheck.Checked = program.IntervalTimeRandom;
+            audioCaptureCheck.Checked = program.AudioCapture;
+            wordSizeNumeric.Value = Convert.ToInt32(program.FontWordLabel);
+            expandImgCheck.Checked = program.ExpandImage;
+            subsRndCheckBox.Checked = program.RndSubtitlePlace;
+
+            if (program.getWordListFile() != null)
             {
-                program.readProgramFile(path + editPrgName + ".prg");
-                
-                prgNameTextBox.Text = program.ProgramName;
-                numExpo.Value = program.NumExpositions;
-                expoTime.Value = program.ExpositionTime;
-                rndExpoCheck.Checked = program.ExpositionRandom;
-                intervalTime.Value = program.IntervalTime;
-                rndIntervalCheck.Checked = program.IntervalTimeRandom;
-                audioCaptureCheck.Checked = program.AudioCapture;
-                wordSizeNumeric.Value = Convert.ToInt32(program.FontWordLabel);
-                expandImgCheck.Checked = program.ExpandImage;
-                subsRndCheckBox.Checked = program.RndSubtitlePlace;
+                openWordListButton.Enabled = true;
+                openWordListButton.Text = program.getWordListFile().ListName;
 
-                if (program.getWordListFile() != null)
-                {
-                    openWordListButton.Enabled = true;
-                    openWordListButton.Text = program.getWordListFile().ListName;
-                    
-                }
-                else
-                {
-                    openWordListButton.Enabled = false;
-                }
+            }
+            else
+            {
+                openWordListButton.Enabled = false;
+            }
 
-                if (program.getColorListFile() != null)
-                {
-                    openColorListButton.Enabled = true;
-                    openColorListButton.Text = program.getColorListFile().ListName; 
-                }
-                else
-                {
-                    openColorListButton.Enabled = false;
-                }
+            if (program.getColorListFile() != null)
+            {
+                openColorListButton.Enabled = true;
+                openColorListButton.Text = program.getColorListFile().ListName;
+            }
+            else
+            {
+                openColorListButton.Enabled = false;
+            }
 
-                if (program.getImageListFile() != null)
-                {
-                    openImgListButton.Enabled = true;
-                    openImgListButton.Text = program.getImageListFile().ListName;
-                }
-                else
-                {
-                    openImgListButton.Enabled = false; 
-                }
+            if (program.getImageListFile() != null)
+            {
+                openImgListButton.Enabled = true;
+                openImgListButton.Text = program.getImageListFile().ListName;
+            }
+            else
+            {
+                openImgListButton.Enabled = false;
+            }
 
-                if (program.getAudioListFile() != null)
-                {
-                    openAudioListButton.Enabled = true;
-                    openAudioListButton.Text = program.getAudioListFile().ListName;
-                }
-                else
-                {
-                    openAudioListButton.Enabled = false;
+            if (program.getAudioListFile() != null)
+            {
+                openAudioListButton.Enabled = true;
+                openAudioListButton.Text = program.getAudioListFile().ListName;
+            }
+            else
+            {
+                openAudioListButton.Enabled = false;
 
-                }
-                
-                if (program.BackgroundColor.ToLower() == "false")
+            }
+
+            if (program.BackgroundColor.ToLower() == "false")
+            {
+                bgColorPanel.BackColor = Color.White;
+                bgColorButton.Text = "escolher";
+            }
+            else
+            {
+                if ((Validations.isHexPattern(program.BackgroundColor)))
                 {
-                    bgColorPanel.BackColor = Color.White;
-                    bgColorButton.Text = "escolher";
+                    bgColorButton.Text = program.BackgroundColor;
+                    bgColorPanel.BackColor = ColorTranslator.FromHtml(program.BackgroundColor);
                 }
-                else
-                {
-                    if ((Validations.isHexPattern(program.BackgroundColor)))
-                    {
-                        bgColorButton.Text = program.BackgroundColor;
-                        bgColorPanel.BackColor = ColorTranslator.FromHtml(program.BackgroundColor);
-                    }
-                }
-                
-                if (program.FixPointColor.ToLower() == "false")
-                {
-                    fixPointColorPanel.BackColor = ColorTranslator.FromHtml("#D01C1F");
-                    fixPointColorButton.Text = "#D01C1F";
-                }
-                else
-                {
+            }
+
+            if (program.FixPointColor.ToLower() == "false")
+            {
+                fixPointColorPanel.BackColor = ColorTranslator.FromHtml("#D01C1F");
+                fixPointColorButton.Text = "#D01C1F";
+            }
+            else
+            {
                 if ((Validations.isHexPattern(program.FixPointColor)))
                 {
                     fixPointColorButton.Text = program.FixPointColor;
@@ -619,158 +616,152 @@ namespace TestPlatform
                 }
                 else
                 {
-                    throw new Exception(LocRM.GetString("colorMatch",currentCulture));
+                    throw new Exception(LocRM.GetString("colorMatch", currentCulture));
                 }
             }
 
 
-                delayTime.Value = program.DelayTime;
+            delayTime.Value = program.DelayTime;
 
-                switch (program.RotateImage)
+            switch (program.RotateImage)
+            {
+                case 45:
+                    rotateImgComboBox.SelectedIndex = 1;
+                    break;
+                case 90:
+                    rotateImgComboBox.SelectedIndex = 2;
+                    break;
+                case 135:
+                    rotateImgComboBox.SelectedIndex = 3;
+                    break;
+                case 180:
+                    rotateImgComboBox.SelectedIndex = 4;
+                    break;
+                case 225:
+                    rotateImgComboBox.SelectedIndex = 5;
+                    break;
+                case 270:
+                    rotateImgComboBox.SelectedIndex = 6;
+                    break;
+                case 315:
+                    rotateImgComboBox.SelectedIndex = 7;
+                    break;
+                default:
+                    rotateImgComboBox.SelectedIndex = 0;
+                    break;
+            }
+
+            if (program.FixPoint == "+")
+            {
+                fixPointCross.Checked = true;
+                fixPointCircle.Checked = false;
+            }
+            else
+            {
+                if (program.FixPoint == "o")
                 {
-                    case 45:
-                        rotateImgComboBox.SelectedIndex = 1;
-                        break;
-                    case 90:
-                        rotateImgComboBox.SelectedIndex = 2;
-                        break;
-                    case 135:
-                        rotateImgComboBox.SelectedIndex = 3;
-                        break;
-                    case 180:
-                        rotateImgComboBox.SelectedIndex = 4;
-                        break;
-                    case 225:
-                        rotateImgComboBox.SelectedIndex = 5;
-                        break;
-                    case 270:
-                        rotateImgComboBox.SelectedIndex = 6;
-                        break;
-                    case 315:
-                        rotateImgComboBox.SelectedIndex = 7;
-                        break;
-                    default:
-                        rotateImgComboBox.SelectedIndex = 0;
-                        break;
+                    fixPointCross.Checked = false;
+                    fixPointCircle.Checked = true;
                 }
-                
-                if (program.FixPoint == "+")
+                else
                 {
-                    fixPointCross.Checked = true;
+                    fixPointCross.Checked = false;
                     fixPointCircle.Checked = false;
                 }
-                else
-                {
-                    if (program.FixPoint == "o")
-                    {
-                        fixPointCross.Checked = false;
-                        fixPointCircle.Checked = true;
-                    }
-                    else
-                    {
-                        fixPointCross.Checked = false;
-                        fixPointCircle.Checked = false;
-                    }
-                }
-                chooseFixPointType();
-
-                // reads instructions if there are any to instruction box text
-                if (program.InstructionText != null) 
-                {
-                    instructionsBox.ForeColor = Color.Black;
-                    instructionsBox.Text = program.InstructionText[0];
-                    for (int i = 1; i < program.InstructionText.Count; i++)
-                    {
-                        instructionsBox.AppendText(Environment.NewLine + program.InstructionText[i]);
-                    }
-                }
-                else
-                {
-                    instructionsBox.Text = instructionBoxText;
-                }
-
-                switch (program.ExpositionType)
-                {
-                    case "txt":
-                        chooseExpoType.SelectedIndex = 0;
-                        openWordListButton.Enabled = true;
-                        openColorListButton.Enabled = true;
-                        openImgListButton.Enabled = false;
-                        openAudioListButton.Enabled = false;
-                        break;
-                    case "img":
-                        chooseExpoType.SelectedIndex = 1;
-                        openWordListButton.Enabled = false;
-                        openColorListButton.Enabled = false;
-                        openImgListButton.Enabled = true;
-                        openAudioListButton.Enabled = false;
-                        break;
-                    case "imgtxt":
-                        chooseExpoType.SelectedIndex = 2;
-                        openWordListButton.Enabled = true;
-                        openColorListButton.Enabled = false;
-                        openImgListButton.Enabled = true;
-                        openAudioListButton.Enabled = false;
-                        break;
-                    case "txtaud":
-                        chooseExpoType.SelectedIndex = 3;
-                        openWordListButton.Enabled = true;
-                        openColorListButton.Enabled = true;
-                        openImgListButton.Enabled = false;
-                        openAudioListButton.Enabled = true;
-                        break;
-                    case "imgaud":
-                        chooseExpoType.SelectedIndex = 4;
-                        openWordListButton.Enabled = false;
-                        openColorListButton.Enabled = false;
-                        openImgListButton.Enabled = true;
-                        openAudioListButton.Enabled = true;
-                        break;
-                }
-
-                if (program.SubtitleShow)
-                {
-                    activateSubsCheck.Checked = true;
-                    enableSubsItens(true);
-                    selectSubDirectionNumber(program.SubtitlePlace);
-
-                    if (program.SubtitlesListFile.ToLower() != "false")
-                    {
-                        openSubsListButton.Text = program.SubtitlesListFile;
-                    }
-                    else
-                    {
-                        openSubsListButton.Text = LocRM.GetString("choose", currentCulture);
-                    }
-
-                    if (Validations.isHexPattern(program.SubtitleColor))
-                    {
-                        subColorButton.Text = program.SubtitleColor;
-                        subColorPanel.BackColor = ColorTranslator.FromHtml(program.SubtitleColor);
-                    }
-                    else
-                    {
-                        subColorButton.Text = LocRM.GetString("choose", currentCulture);
-                        subColorPanel.BackColor = Color.White;
-                    }
-                }
-                else
-                {
-                    activateSubsCheck.Checked = false;
-                    enableSubsItens(false);
-                }
-                
-                wordColorButton.Text = program.WordColor;
-                wordColorPanel.BackColor = ColorTranslator.FromHtml(program.WordColor);
             }
-            catch (Exception ex)
+            chooseFixPointType();
+
+            // reads instructions if there are any to instruction box text
+            if (program.InstructionText != null)
             {
-                MessageBox.Show(ex.Message);
-                Dispose();
-                this.Parent.Controls.Remove(this);
+                instructionsBox.ForeColor = Color.Black;
+                instructionsBox.Text = program.InstructionText[0];
+                for (int i = 1; i < program.InstructionText.Count; i++)
+                {
+                    instructionsBox.AppendText(Environment.NewLine + program.InstructionText[i]);
+                }
             }
+            else
+            {
+                instructionsBox.Text = instructionBoxText;
+            }
+
+            switch (program.ExpositionType)
+            {
+                case "txt":
+                    chooseExpoType.SelectedIndex = 0;
+                    openWordListButton.Enabled = true;
+                    openColorListButton.Enabled = true;
+                    openImgListButton.Enabled = false;
+                    openAudioListButton.Enabled = false;
+                    break;
+                case "img":
+                    chooseExpoType.SelectedIndex = 1;
+                    openWordListButton.Enabled = false;
+                    openColorListButton.Enabled = false;
+                    openImgListButton.Enabled = true;
+                    openAudioListButton.Enabled = false;
+                    break;
+                case "imgtxt":
+                    chooseExpoType.SelectedIndex = 2;
+                    openWordListButton.Enabled = true;
+                    openColorListButton.Enabled = false;
+                    openImgListButton.Enabled = true;
+                    openAudioListButton.Enabled = false;
+                    break;
+                case "txtaud":
+                    chooseExpoType.SelectedIndex = 3;
+                    openWordListButton.Enabled = true;
+                    openColorListButton.Enabled = true;
+                    openImgListButton.Enabled = false;
+                    openAudioListButton.Enabled = true;
+                    break;
+                case "imgaud":
+                    chooseExpoType.SelectedIndex = 4;
+                    openWordListButton.Enabled = false;
+                    openColorListButton.Enabled = false;
+                    openImgListButton.Enabled = true;
+                    openAudioListButton.Enabled = true;
+                    break;
+            }
+
+            if (program.SubtitleShow)
+            {
+                activateSubsCheck.Checked = true;
+                enableSubsItens(true);
+                selectSubDirectionNumber(program.SubtitlePlace);
+
+                if (program.SubtitlesListFile.ToLower() != "false")
+                {
+                    openSubsListButton.Text = program.SubtitlesListFile;
+                }
+                else
+                {
+                    openSubsListButton.Text = LocRM.GetString("choose", currentCulture);
+                }
+
+                if (Validations.isHexPattern(program.SubtitleColor))
+                {
+                    subColorButton.Text = program.SubtitleColor;
+                    subColorPanel.BackColor = ColorTranslator.FromHtml(program.SubtitleColor);
+                }
+                else
+                {
+                    subColorButton.Text = LocRM.GetString("choose", currentCulture);
+                    subColorPanel.BackColor = Color.White;
+                }
+            }
+            else
+            {
+                activateSubsCheck.Checked = false;
+                enableSubsItens(false);
+            }
+
+            wordColorButton.Text = program.WordColor;
+            wordColorPanel.BackColor = ColorTranslator.FromHtml(program.WordColor);
+
         }
-        
+
         private void saveProgramFile(StroopProgram newProgram)
         {
             if (File.Exists(path + prgNameTextBox.Text + ".prg"))

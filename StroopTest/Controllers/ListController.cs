@@ -2,7 +2,9 @@
 {
     using System.Collections.Generic;
     using System.Drawing;
-    using System.Windows.Forms;    
+    using System.Globalization;
+    using System.Resources;
+    using System.Windows.Forms;
     using TestPlatform.Models;
     using TestPlatform.Views;
 
@@ -37,16 +39,26 @@
             return hexColor;
         }
 
-        public static string OpenListFile(string itemType)
+        public static string OpenListFile(string itemType, string current)
         {
-            string progName = "abrir";
+            ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+            CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+
+            string progName = LocRM.GetString("open", currentCulture);
 
             FormDefine defineProgram = new FormDefine("Lista: ", Global.testFilesPath + Global.listFolderName, "lst", itemType, false);
             var result = defineProgram.ShowDialog();
 
             if (result == System.Windows.Forms.DialogResult.OK)
             {
-                progName = defineProgram.ReturnValue;
+                if (defineProgram.ReturnValue.Length != 0)
+                {
+                    progName = defineProgram.ReturnValue;
+                }
+                else
+                {
+                    progName = current;
+                }
             }
 
             return progName;

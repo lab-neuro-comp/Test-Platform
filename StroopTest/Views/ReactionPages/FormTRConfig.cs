@@ -480,22 +480,22 @@ namespace TestPlatform.Views
 
         private void openWordsList_Click(object sender, EventArgs e)
         {
-            openWordListButton.Text = ListController.OpenListFile("_words");
+            openWordListButton.Text = ListController.OpenListFile("_words", openWordListButton.Text);
         }
 
         private void openColorsList_Click(object sender, EventArgs e)
         {
-            openColorListButton.Text = ListController.OpenListFile("_color");
+            openColorListButton.Text = ListController.OpenListFile("_color", openColorListButton.Text);
         }
 
         private void openImagesList_Click(object sender, EventArgs e)
         {
-            openImgListButton.Text = ListController.OpenListFile("_image");
+            openImgListButton.Text = ListController.OpenListFile("_image", openImgListButton.Text);
         }
 
         private void openAudioList_Click(object sender, EventArgs e)
         {
-            openAudioListButton.Text = ListController.OpenListFile("_audio");
+            openAudioListButton.Text = ListController.OpenListFile("_audio", openAudioListButton.Text);
         }
 
         private void fixPointColorButton_Click(object sender, EventArgs e)
@@ -792,7 +792,7 @@ namespace TestPlatform.Views
 
         public bool ValidWordList(string buttonText, out string errorMessage)
         {
-            if (buttonText != LocRM.GetString("open", currentCulture))
+            if (buttonText.Length != 0 && buttonText != LocRM.GetString("open", currentCulture))
             {
                 errorMessage = "";
                 return true;

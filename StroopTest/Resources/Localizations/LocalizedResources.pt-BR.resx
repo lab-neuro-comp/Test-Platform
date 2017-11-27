@@ -640,4 +640,7 @@
   <data name="wordListError" xml:space="preserve">
     <value>Selecione uma lista de palavras</value>
   </data>
+  <data name="defaultStroopProgram" xml:space="preserve">
+    <value>padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false</value>
+  </data>
 </root>

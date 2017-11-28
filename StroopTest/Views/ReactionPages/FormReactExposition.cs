@@ -50,7 +50,7 @@ namespace TestPlatform.Views
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private int wordCounter = 0;
-        private Label wordLabel = new Label();
+        private System.Windows.Forms.Label wordLabel = new System.Windows.Forms.Label();
 
         public FormReactExposition(string prgName, string participantName, char mark)
         {
@@ -337,7 +337,7 @@ namespace TestPlatform.Views
         private void wordExposition()
         {
             int[] screenPosition = ScreenPosition();
-            wordLabel = new Label();
+            wordLabel = new System.Windows.Forms.Label();
             wordLabel.Size = new Size(100,100);
             wordLabel.Font = new Font("Arial", 24, FontStyle.Bold);
             wordLabel.BackColor = Color.Red;
@@ -494,7 +494,7 @@ namespace TestPlatform.Views
         private void expositionBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             exposing = true;
-            intervalBW.ReportProgress(20, imgPictureBox);
+            intervalBW.ReportProgress(20, (Control)e.UserState);
         }
 
         private void expositionBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -502,13 +502,24 @@ namespace TestPlatform.Views
             if (!cancelExposition)
             {
                 this.CreateGraphics().Clear(ActiveForm.BackColor);
-                if (imgPictureBox.Enabled)
+                if(executingTest.ProgramInUse.ExpositionType == "images")
                 {
-                    exposing = false;
-                    intervalBW.ReportProgress(50, imgPictureBox);
+                    if (((Control)e.UserState).Enabled)
+                    {
+                        exposing = false;
+                        intervalBW.ReportProgress(50, imgPictureBox);
+                    }
+                    ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
+                        this);
                 }
-                ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
-                    this);
+                if (executingTest.ProgramInUse.ExpositionType == "words")
+                {
+                    if(wordLabel.Enabled)
+                    {
+                        exposing = false;
+                        intervalBW.ReportProgress(50, wordLabel);
+                    }
+                }
             }
             else
             {
@@ -790,7 +801,7 @@ namespace TestPlatform.Views
             if (exposing)
             {
                 this.Controls.Add((Control)e.UserState);
-                MessageBox.Show("Senpai me nota " + (Control)e.UserState);
+                //MessageBox.Show("Senpai me nota " + (Control)e.UserState);
 
             }
             else

@@ -520,6 +520,7 @@ namespace TestPlatform.Views
                         intervalBW.ReportProgress(50, wordLabel);
                     }
                 }
+                ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor, this);
             }
             else
             {

@@ -39,6 +39,7 @@ namespace TestPlatform.Views
         private bool intervalCancelled;
         private bool cancelExposition = false;
         private string[] imagesList = null;
+        private string[] wordsList = null;
         private int imageCounter = 0;
         private PictureBox imgPictureBox = new PictureBox();
         private bool exposing = false;
@@ -48,6 +49,8 @@ namespace TestPlatform.Views
         private int[,] positions;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+        private int wordCounter = 0;
+        private Label wordLabel = new Label();
 
         public FormReactExposition(string prgName, string participantName, char mark)
         {
@@ -110,9 +113,7 @@ namespace TestPlatform.Views
                 
             }
         }
-
-
-        private async void initializeExposition()
+        private void loadLists()
         {
             switch (executingTest.ProgramInUse.ExpositionType)
             {
@@ -124,7 +125,21 @@ namespace TestPlatform.Views
                         imagesList = ExpositionController.ShuffleArray(imagesList, executingTest.ProgramInUse.NumExpositions, 3);
                     }
                     break;
+                case "words":
+                    wordsList = executingTest.ProgramInUse.getWordListFile().ListContent.ToArray();
+
+                    if(executingTest.ProgramInUse.ExpositionRandom)
+                    {
+                        wordsList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumberPositions, 3);
+                    }
+                    break;
             }
+        }
+
+
+        private async void initializeExposition()
+        {
+            loadLists();
             await exposition();
         }
 
@@ -319,6 +334,28 @@ namespace TestPlatform.Views
             singleShapeExposition(shapes[index]);
         }
 
+        private void wordExposition()
+        {
+            int[] screenPosition = ScreenPosition();
+            wordLabel = new Label();
+            wordLabel.Size = new Size(100,100);
+            wordLabel.Font = new Font("Arial", 24, FontStyle.Bold);
+            wordLabel.BackColor = Color.Red;
+            wordLabel.Location = new Point(0, 0);
+            wordLabel.Text = wordsList[wordCounter];
+            currentStimulus = wordsList[wordCounter];
+            wordLabel.Visible = true;
+            wordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+            wordLabel.Enabled = true;
+            wordCounter++;
+            if(wordCounter == wordsList.Length)
+            {
+                wordCounter = 0;
+            }
+            expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.NumExpositions * 100, wordLabel);
+        }
+
         private void drawImage()
         {
             int[] screenPosition = ScreenPosition();
@@ -349,7 +386,7 @@ namespace TestPlatform.Views
                     drawShape();
                     break;
                 case "words":
-                    //  wordExposition();
+                    wordExposition();
                     break;
                 case "images":
                     drawImage();
@@ -749,13 +786,16 @@ namespace TestPlatform.Views
         // interval background worker sends message to main thread so that ui controls can be added or removed
         private void intervalBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            
             if (exposing)
             {
-                this.Controls.Add(imgPictureBox);
+                this.Controls.Add((Control)e.UserState);
+                MessageBox.Show("Senpai me nota " + (Control)e.UserState);
+
             }
             else
             {
-                this.Controls.Remove(imgPictureBox);
+                this.Controls.Remove((Control)e.UserState);
             }
         }
 

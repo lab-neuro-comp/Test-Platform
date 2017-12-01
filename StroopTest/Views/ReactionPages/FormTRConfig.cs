@@ -438,20 +438,21 @@ namespace TestPlatform.Views
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            bool hasToSave = true;
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 ReactionProgram newProgram = configureNewProgram();
-
 
                 if (File.Exists(path + Global.programFolderName + prgNameTextBox.Text + ".prg"))
                 {
                     DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExists", currentCulture), "", MessageBoxButtons.OKCancel);
                     if (dialogResult == DialogResult.Cancel)
                     {
-                        throw new Exception(LocRM.GetString("programNotSave", currentCulture));
+                        hasToSave = false;
+                        MessageBox.Show(LocRM.GetString("programNotSave", currentCulture));
                     }
                 }
-                if (newProgram.saveProgramFile(path + Global.programFolderName, instructionsBox.Text))
+                if (hasToSave && newProgram.saveProgramFile(path + Global.programFolderName, instructionsBox.Text))
                 {
                     MessageBox.Show(LocRM.GetString("programSave", currentCulture));
                 }

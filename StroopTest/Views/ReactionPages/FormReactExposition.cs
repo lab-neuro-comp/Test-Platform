@@ -127,10 +127,9 @@ namespace TestPlatform.Views
                     break;
                 case "words":
                     wordsList = executingTest.ProgramInUse.getWordListFile().ListContent.ToArray();
-
-                    if(executingTest.ProgramInUse.ExpositionRandom)
+                    if (executingTest.ProgramInUse.ExpositionRandom)
                     {
-                        wordsList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumberPositions, 3);
+                        wordsList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumberPositions, 9);
                     }
                     break;
             }
@@ -338,15 +337,14 @@ namespace TestPlatform.Views
         {
             int[] screenPosition = ScreenPosition();
             wordLabel = new System.Windows.Forms.Label();
-            wordLabel.Size = new Size(100,100);
+            wordLabel.Size = new Size(executingTest.ProgramInUse.StimuluSize * 5, executingTest.ProgramInUse.StimuluSize);
             wordLabel.Font = new Font("Arial", 24, FontStyle.Bold);
-            wordLabel.BackColor = Color.Red;
-            wordLabel.Location = new Point(0, 0);
+            wordLabel.Location = new Point(screenPosition[X], screenPosition[Y]);
             wordLabel.Text = wordsList[wordCounter];
             currentStimulus = wordsList[wordCounter];
             wordLabel.Visible = true;
             wordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
+            wordLabel.ForeColor = ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor);
             wordLabel.Enabled = true;
             wordCounter++;
             if(wordCounter == wordsList.Length)
@@ -504,13 +502,11 @@ namespace TestPlatform.Views
                 this.CreateGraphics().Clear(ActiveForm.BackColor);
                 if(executingTest.ProgramInUse.ExpositionType == "images")
                 {
-                    if (((Control)e.UserState).Enabled)
+                    if (imgPictureBox.Enabled)
                     {
                         exposing = false;
                         intervalBW.ReportProgress(50, imgPictureBox);
                     }
-                    ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
-                        this);
                 }
                 if (executingTest.ProgramInUse.ExpositionType == "words")
                 {
@@ -802,7 +798,6 @@ namespace TestPlatform.Views
             if (exposing)
             {
                 this.Controls.Add((Control)e.UserState);
-                //MessageBox.Show("Senpai me nota " + (Control)e.UserState);
 
             }
             else

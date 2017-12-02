@@ -51,6 +51,7 @@ namespace TestPlatform.Views
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private int wordCounter = 0;
         private System.Windows.Forms.Label wordLabel = new System.Windows.Forms.Label();
+        private Control currentControl = null;
 
         public FormReactExposition(string prgName, string participantName, char mark)
         {
@@ -492,6 +493,7 @@ namespace TestPlatform.Views
         private void expositionBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             exposing = true;
+            currentControl = (Control)e.UserState;
             intervalBW.ReportProgress(20, (Control)e.UserState);
         }
 
@@ -500,20 +502,16 @@ namespace TestPlatform.Views
             if (!cancelExposition)
             {
                 this.CreateGraphics().Clear(ActiveForm.BackColor);
-                if(executingTest.ProgramInUse.ExpositionType == "images")
+
+                // if expositions type uses any kind of control to show stimulus such as a word label or image picture box 
+                if(currentControl != null)
                 {
-                    if (imgPictureBox.Enabled)
+                    // if current control is enabled it means that just showed a stimulus
+                    if (currentControl.Enabled)
                     {
+                        // signaling to interval background worker that exposing must end and control must be removed from screen
                         exposing = false;
-                        intervalBW.ReportProgress(50, imgPictureBox);
-                    }
-                }
-                if (executingTest.ProgramInUse.ExpositionType == "words")
-                {
-                    if(wordLabel.Enabled)
-                    {
-                        exposing = false;
-                        intervalBW.ReportProgress(50, wordLabel);
+                        intervalBW.ReportProgress(50, currentControl);
                     }
                 }
                 ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor, this);
@@ -798,7 +796,6 @@ namespace TestPlatform.Views
             if (exposing)
             {
                 this.Controls.Add((Control)e.UserState);
-
             }
             else
             {

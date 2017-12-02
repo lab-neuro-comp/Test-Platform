@@ -85,7 +85,7 @@ namespace TestPlatform.Models
                                 int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                                 bool beepRandom, int numberPositions, string responseType,
-                                string wordList)
+                                string wordList, bool expositionRandom)
         {
             // Program properties
             this.programName = programName;
@@ -96,6 +96,7 @@ namespace TestPlatform.Models
             this.backgroundColor = backgroundColor;
             this.fixPointColor = fixPointColor;
             this.intervalTimeRandom = intervalTimeRandom;
+            this.expositionRandom = expositionRandom;
 
             // ReactionProgram properties
             this.stimuluSize = stimuluSize;
@@ -113,7 +114,6 @@ namespace TestPlatform.Models
             this.setAudioListFile("false");
             this.setColorListFile("false");
             this.setImageListFile("false");
-            this.expositionRandom = false;
             this.expositionType = "words";
 
         }

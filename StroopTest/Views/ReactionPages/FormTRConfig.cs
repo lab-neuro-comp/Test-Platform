@@ -55,6 +55,11 @@ namespace TestPlatform.Views
                 isRandomExposition.Checked = true;
             }
 
+            if (editProgram.BeepingRandom)
+            {
+                randomBeepCheck.Checked = true;
+            }
+
             if(editProgram.StimulusColor != "false")
             {
                 stimulusColor.Text = editProgram.StimulusColor;
@@ -389,7 +394,7 @@ namespace TestPlatform.Views
                                                 Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
                                                 fixPointValue(), bgColorButton.Text, fixPointColor(),
                                                 rndIntervalCheck.Checked, randomBeepCheck.Checked,
-                                                Convert.ToInt32(positionsBox.Text), responseType(), openWordListButton.Text);
+                                                Convert.ToInt32(positionsBox.Text), responseType(), openWordListButton.Text, isRandomExposition.Checked);
                     break;
                 
                 // Program type "images"

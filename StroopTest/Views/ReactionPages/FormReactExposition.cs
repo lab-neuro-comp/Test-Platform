@@ -338,8 +338,8 @@ namespace TestPlatform.Views
         {
             int[] screenPosition = ScreenPosition();
             wordLabel = new System.Windows.Forms.Label();
-            wordLabel.Size = new Size(executingTest.ProgramInUse.StimuluSize * 5, executingTest.ProgramInUse.StimuluSize);
-            wordLabel.Font = new Font("Arial", 24, FontStyle.Bold);
+            wordLabel.AutoSize = true;
+            wordLabel.Font = new Font("Arial", executingTest.ProgramInUse.StimuluSize, FontStyle.Bold);
             wordLabel.Location = new Point(screenPosition[X], screenPosition[Y]);
             wordLabel.Text = wordsList[wordCounter];
             currentStimulus = wordsList[wordCounter];

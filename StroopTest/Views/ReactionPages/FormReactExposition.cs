@@ -336,17 +336,20 @@ namespace TestPlatform.Views
 
         private void wordExposition()
         {
-            int[] screenPosition = ScreenPosition();
+            // configuring label that have word stimulus dimensions, color and position
             wordLabel = new System.Windows.Forms.Label();
             wordLabel.AutoSize = true;
             wordLabel.Font = new Font("Arial", executingTest.ProgramInUse.StimuluSize, FontStyle.Bold);
-            wordLabel.Location = new Point(screenPosition[X], screenPosition[Y]);
             wordLabel.Text = wordsList[wordCounter];
             currentStimulus = wordsList[wordCounter];
             wordLabel.Visible = true;
-            wordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            //wordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             wordLabel.ForeColor = ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor);
             wordLabel.Enabled = true;
+
+            int[] screenPosition = ScreenPosition(wordLabel.PreferredSize);
+            wordLabel.Location = new Point(screenPosition[X], screenPosition[Y]);
+
             wordCounter++;
             if(wordCounter == wordsList.Length)
             {
@@ -357,9 +360,9 @@ namespace TestPlatform.Views
 
         private void drawImage()
         {
-            int[] screenPosition = ScreenPosition();
             imgPictureBox = new PictureBox();
             imgPictureBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
+            int[] screenPosition = ScreenPosition(imgPictureBox.Size);
             imgPictureBox.Location = new Point(screenPosition[X], screenPosition[Y]);
             imgPictureBox.Image = Image.FromFile(imagesList[imageCounter]);
             currentStimulus = imagesList[imageCounter];
@@ -584,62 +587,62 @@ namespace TestPlatform.Views
         }
 
         /* creates a x and y vector according to program stimulus distance randomly, accordingly to program, that can be 1, 2, 4 or 8 positions */
-        private int[] ScreenPosition (){
+        private int[] ScreenPosition (Size size){
             switch (executingTest.ProgramInUse.NumberPositions)
             {
                 case 1:
-                    return centerShapePosition();
+                    return centerShapePosition(size);
                 case 2:
-                    return randomScreenTwoPositions();
+                    return randomScreenTwoPositions(size);
                 case 4:
-                    return randomScreenFourPositions();
+                    return randomScreenFourPositions(size);
                 case 8:
-                    return randomScreenEightPositions();
+                    return randomScreenEightPositions(size);
                 default:
                     throw new Exception(LocRM.GetString("positionInvalid", currentCulture));
             }
         }
 
         /* creates a x and y vector on center of the screen */
-        private int[] centerShapePosition()
+        private int[] centerShapePosition(Size size)
         {
             currentPosition = 0;
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            return new int[] { (int)clientMiddle[X], (int)clientMiddle[Y] };
+            return new int[] { (int)clientMiddle[X]-(size.Width/2), (int)clientMiddle[Y]-(size.Height/2) };
         }
 
         /* creates a x and y vector according to program stimulus distance randomly, from two different positions */
-        private int[] randomScreenTwoPositions()
+        private int[] randomScreenTwoPositions(Size size)
         {
             Random random = new Random();
             int index = random.Next(1, 3);
             currentPosition = index;
 
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int x = (int)(clientMiddle[X]) + positions[index, X];
-            int y = (int)(clientMiddle[Y]) + positions[index, Y];
+            int x = (int)(clientMiddle[X]) + positions[index, X] - (size.Width/2);
+            int y = (int)(clientMiddle[Y]) + positions[index, Y] - (size.Height/2);
 
             int[] coordinates = CoordinatesWithinRange(x, y);
             return coordinates;
         }
 
         /* creates a x and y vector according to program stimulus distance randomly, from four different positions */
-        private int[] randomScreenFourPositions()
+        private int[] randomScreenFourPositions(Size size)
         {
             Random random = new Random();
             int index = random.Next(1, 5);
             currentPosition = index;
 
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int x = (int)(clientMiddle[X]) + positions[index, X];
-            int y = (int)(clientMiddle[Y]) + positions[index, Y];
+            int x = (int)(clientMiddle[X]) + positions[index, X] - (size.Width / 2);
+            int y = (int)(clientMiddle[Y]) + positions[index, Y] - (size.Height / 2);
 
             int[] coordinates = CoordinatesWithinRange(x, y);
             return coordinates;
         }
 
         /* creates a x and y vector according to program stimulus distance randomly, from eight different positions */
-        private int[] randomScreenEightPositions()
+        private int[] randomScreenEightPositions(Size size)
         {
 
             Random random = new Random();
@@ -647,11 +650,39 @@ namespace TestPlatform.Views
             currentPosition = index;
 
             float[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int x = (int)(clientMiddle[X]) + positions[index, X];
-            int y = (int)(clientMiddle[Y]) + positions[index, Y];
+            int x = (int)(clientMiddle[X]) + positions[index, X] - (size.Width / 2);
+            int y = (int)(clientMiddle[Y]) + positions[index, Y] - (size.Height / 2);
 
             int[] coordinates = CoordinatesWithinRange(x, y);
             return coordinates;
+        }
+
+        private int[] wordLabelWithinRange(int x, int y)
+        {
+            Size sizeofLabel = wordLabel.Size;
+            x = x + sizeofLabel.Width;
+            y = y + sizeofLabel.Height;
+
+            float[] clientSize = { (ClientSize.Width), (ClientSize.Height) };
+            if (x > clientSize[X])
+            {
+                x = (int)clientSize[X] - sizeofLabel.Width;
+            }
+            else if (x < 1)
+            {
+                x = 1;
+            }
+
+            if (y > clientSize[Y])
+            {
+                y = (int)clientSize[Y] - sizeofLabel.Height;
+            }
+            else if (y < 1)
+            {
+                y = 1;
+            }
+
+            return new int[] { x, y };
         }
 
         // checks if generated coordinates for stimulus are within screen range and if they are not, put them inside of it
@@ -682,15 +713,15 @@ namespace TestPlatform.Views
         // draw on screen filled square stimulus
         private void drawFullSquareShape()
         {
-
-            int[] screenPosition = this.ScreenPosition();
-            float xSquare = screenPosition[X];
-            float ySquare = screenPosition[Y];
             float widthSquare = executingTest.ProgramInUse.StimuluSize;
             float heightSquare = executingTest.ProgramInUse.StimuluSize;
 
             SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
             Graphics formGraphicsSquare = CreateGraphics();
+
+            int[] screenPosition = this.ScreenPosition(new Size((int)widthSquare, (int)heightSquare));
+            float xSquare = screenPosition[X];
+            float ySquare = screenPosition[Y];
             formGraphicsSquare.FillRectangle(myBrush, xSquare, ySquare, widthSquare, heightSquare);
             formGraphicsSquare.Dispose();
 
@@ -698,15 +729,15 @@ namespace TestPlatform.Views
 
         private void drawSquareShape()
         {
-            int[] screenPosition = this.ScreenPosition();
-            float xSquare = screenPosition[X];
-            float ySquare = screenPosition[Y];
-
             float widthSquare = executingTest.ProgramInUse.StimuluSize;
             float heightSquare = executingTest.ProgramInUse.StimuluSize;
 
             Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
             Graphics formGraphicsSquare = CreateGraphics();
+
+            int[] screenPosition = this.ScreenPosition(new Size((int)widthSquare, (int)heightSquare));
+            float xSquare = screenPosition[X];
+            float ySquare = screenPosition[Y];
             formGraphicsSquare.DrawRectangle(myPen, xSquare, ySquare, widthSquare, heightSquare);
             formGraphicsSquare.Dispose();
 
@@ -714,15 +745,15 @@ namespace TestPlatform.Views
 
         private void drawFullCircleShape()
         {
-            int[] screenPosition = this.ScreenPosition();
-            float xEllipse = screenPosition[X];
-            float yEllipse = screenPosition[Y];
-
             float widthEllipse = executingTest.ProgramInUse.StimuluSize;
             float heightEllipse = executingTest.ProgramInUse.StimuluSize;
 
             SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
             Graphics formGraphicsEllipse = CreateGraphics();
+
+            int[] screenPosition = this.ScreenPosition(new Size((int)widthEllipse, (int)heightEllipse));
+            float xEllipse = screenPosition[X];
+            float yEllipse = screenPosition[Y];
             formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
             formGraphicsEllipse.Dispose();
 
@@ -730,15 +761,15 @@ namespace TestPlatform.Views
 
         private void drawCircleShape()
         {
-            int[] screenPosition = this.ScreenPosition();
-            float xEllipse = screenPosition[X];
-            float yEllipse = screenPosition[Y];
-
             float widthEllipse = executingTest.ProgramInUse.StimuluSize;
             float heightEllipse = executingTest.ProgramInUse.StimuluSize;
 
             Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
             Graphics formGraphicsEllipse = CreateGraphics();
+
+            int[] screenPosition = this.ScreenPosition(new Size((int)widthEllipse, (int)heightEllipse));
+            float xEllipse = screenPosition[X];
+            float yEllipse = screenPosition[Y];
             formGraphicsEllipse.DrawEllipse(myPen, xEllipse, yEllipse, widthEllipse, heightEllipse);
             formGraphicsEllipse.Dispose();
         }
@@ -778,8 +809,10 @@ namespace TestPlatform.Views
         private Point[] createTrianglePoints()
         {
             int[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int[] screenPosition = this.ScreenPosition();
             int heightTriangle = executingTest.ProgramInUse.StimuluSize;
+            int[] screenPosition = this.ScreenPosition(new Size(heightTriangle, heightTriangle));
+            screenPosition[X] -= heightTriangle / 3;
+            screenPosition[Y] += heightTriangle / 2;
 
             Point point1 = new Point( screenPosition[X] + (heightTriangle / 3), (heightTriangle / 2) + screenPosition[Y]);
             Point point2 = new Point( (8 * heightTriangle / 6) + screenPosition[X], (heightTriangle / 2) + screenPosition[Y]);

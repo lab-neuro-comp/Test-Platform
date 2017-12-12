@@ -383,7 +383,7 @@ namespace TestPlatform.Views
                                                 Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
                                                 fixPointValue(), bgColorButton.Text, fixPointColor(),
                                                 rndIntervalCheck.Checked, shapeValue(), randomBeepCheck.Checked, 
-                                                Convert.ToInt32(positionsBox.Text), responseType());
+                                                Convert.ToInt32(positionsBox.Text), responseType(), openColorListButton.Text);
                     break;
                 // Program type "words"
                 case 1:
@@ -492,6 +492,8 @@ namespace TestPlatform.Views
         private void openColorsList_Click(object sender, EventArgs e)
         {
             openColorListButton.Text = ListController.OpenListFile("_color", openColorListButton.Text);
+            stimulusColor.Text = LocRM.GetString("choose", currentCulture);
+            stimulusColorPanel.BackColor = Color.White;
         }
 
         private void openImagesList_Click(object sender, EventArgs e)
@@ -516,6 +518,7 @@ namespace TestPlatform.Views
             string colorCode = ListController.PickColor(this);
             stimulusColor.Text = colorCode;
             stimulusColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
+            openColorListButton.Text = LocRM.GetString("open", currentCulture);
         }
 
 
@@ -690,12 +693,16 @@ namespace TestPlatform.Views
             switch (chooseExpoType.SelectedIndex) {
                 //Shapes exposition
                 case 0:
-                    openWordListButton.Enabled = false;
                     errorProvider1.Clear();
-                    openImgListButton.Enabled = false;
                     stimulusColor.Enabled = true;
                     shapesGroupBox.Enabled = true;
+                    openColorListButton.Enabled = true;
                     isRandomExposition.Enabled = false;
+                    //disable unused buttons
+                    openImgListButton.Enabled = false;
+                    openImgListButton.Text = LocRM.GetString("open", currentCulture);
+                    openWordListButton.Enabled = false;
+                    openWordListButton.Text = LocRM.GetString("open", currentCulture);
                     break;
                 //Words exposition
                 case 1:
@@ -705,17 +712,26 @@ namespace TestPlatform.Views
                     shapesGroupBox.Enabled = false;
                     isRandomExposition.Enabled = true;
                     openWordListButton.Enabled = true;
+                    //disable unused buttons
+                    openColorListButton.Enabled = false;
+                    openColorListButton.Text = LocRM.GetString("open", currentCulture);
                     break;
                 //Images exposition
                 case 2:
-                    openWordListButton.Enabled = false;
+                    
+                    isRandomExposition.Enabled = true;
                     errorProvider1.Clear();
                     openImgListButton.Enabled = true;
-                    stimulusColor.Text = LocRM.GetString("choose", currentCulture);
                     stimulusColorPanel.BackColor = Color.White;
-                    stimulusColor.Enabled = false;
                     shapesGroupBox.Enabled = false;
-                    isRandomExposition.Enabled = true;
+                    openColorListButton.Enabled = false;
+                    //disable unused buttons
+                    openColorListButton.Text = LocRM.GetString("open", currentCulture);
+                    openWordListButton.Enabled = false;
+                    openColorListButton.Text = LocRM.GetString("open", currentCulture);
+                    stimulusColor.Enabled = false;
+                    stimulusColor.Text = LocRM.GetString("choose", currentCulture);
+
                     break;
                 default:
                     errorProvider1.SetError(chooseExpoType, LocRM.GetString("unavailableExpo", currentCulture));

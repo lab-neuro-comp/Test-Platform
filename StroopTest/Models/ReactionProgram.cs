@@ -39,13 +39,13 @@ namespace TestPlatform.Models
         }
 
         /// <summary>
-        /// This constructor is used to create a reaction program with shapes using only one color
+        /// This constructor is used to create a reaction program with shapes
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
                                 int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                                 string stimuluShape, bool beepRandom, int numberPositions,
-                                string responseType)
+                                string responseType, string colorList)
         {
             // Program properties
             this.programName = programName;
@@ -62,19 +62,29 @@ namespace TestPlatform.Models
             this.stimulusDistance = stimulusDistance;
             this.isBeeping  = isBeeping;
             this.beepDuration = beepDuration;
-            this.stimulusColor = stimulusColor;
             this.stimuluShape = stimuluShape;
             this.BeepingRandom = beepRandom;
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
+            if(colorList == LocRM.GetString("open", currentCulture))
+            {
+                this.stimulusColor = stimulusColor;
+                this.setWordListFile("false");
+            }
+            else
+            {
+                this.stimulusColor = "false";
+                this.setColorListFile(colorList);
+            }
 
             //default configurations for shapes version of ReactionProgram
             this.setAudioListFile("false");
-            this.setColorListFile("false");
-            this.setWordListFile("false");
             this.setImageListFile("false");
+            this.setWordListFile("false");
             this.expositionRandom = false;
             this.expositionType =  "shapes";
+
+            
 
         }
 

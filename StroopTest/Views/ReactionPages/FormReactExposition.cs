@@ -343,7 +343,6 @@ namespace TestPlatform.Views
             wordLabel.Text = wordsList[wordCounter];
             currentStimulus = wordsList[wordCounter];
             wordLabel.Visible = true;
-            //wordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             wordLabel.ForeColor = ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor);
             wordLabel.Enabled = true;
 
@@ -472,6 +471,7 @@ namespace TestPlatform.Views
             // Sending mark to neuronspectrum to sinalize that exposition of stimulus started
             SendKeys.SendWait(executingTest.Mark.ToString());
             executingTest.ExpositionTime = DateTime.Now;
+
             showStimulus();
             
             if (intervalCancelled)
@@ -826,7 +826,7 @@ namespace TestPlatform.Views
         // interval background worker sends message to main thread so that ui controls can be added or removed
         private void intervalBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            
+
             if (exposing)
             {
                 this.Controls.Add((Control)e.UserState);
@@ -863,6 +863,11 @@ namespace TestPlatform.Views
                     return LocRM.GetString("invalid", currentCulture);
             }
                 
+        }
+
+        private void FormReactExposition_Paint(object sender, PaintEventArgs e)
+        {
+            ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor, this);
         }
     }
 }

@@ -75,6 +75,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ReactionTest";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormReactExposition_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.exposition_KeyDown);
             this.ResumeLayout(false);
 

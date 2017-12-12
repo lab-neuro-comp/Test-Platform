@@ -443,6 +443,8 @@
             this.openWordListButton.Name = "openWordListButton";
             this.openWordListButton.UseVisualStyleBackColor = true;
             this.openWordListButton.Click += new System.EventHandler(this.openWordsList_Click);
+            this.openWordListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openWordListButton_Validating);
+            this.openWordListButton.Validated += new System.EventHandler(this.openWordListButton_Validated);
             // 
             // openColorListButton
             // 

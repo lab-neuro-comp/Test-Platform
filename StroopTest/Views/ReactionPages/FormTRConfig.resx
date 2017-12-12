@@ -1344,16 +1344,16 @@ Ponto:</value>
   </data>
   <data name="positionsBox.Items" xml:space="preserve">
     <value>1</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="positionsBox.Items1" xml:space="preserve">
     <value>2</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="positionsBox.Items2" xml:space="preserve">
     <value>4</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="positionsBox.Items3" xml:space="preserve">
     <value>8</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="positionsBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>281, 117</value>
   </data>

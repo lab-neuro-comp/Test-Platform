@@ -558,4 +558,10 @@
   <data name="defaultReactionInstructions2" xml:space="preserve">
     <value>The task will start now</value>
   </data>
+  <data name="open" xml:space="preserve">
+    <value>open</value>
+  </data>
+  <data name="wordListError" xml:space="preserve">
+    <value>Choose a word list</value>
+  </data>
 </root>

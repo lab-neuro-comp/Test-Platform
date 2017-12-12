@@ -31,22 +31,18 @@ namespace TestPlatform.Views
         {
             if (editStroopButton.Checked)
             {
-                try
+                string editProgramName = "error";
+                FormDefine defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
+                DialogResult result = defineProgram.ShowDialog();
+                if (result == DialogResult.OK)
                 {
-                    string editProgramName = "error";
-                    FormDefine defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
-                    DialogResult result = defineProgram.ShowDialog();
-                    if (result == DialogResult.OK)
+                    editProgramName = defineProgram.ReturnValue;
+                    FormPrgConfig configureProgram = new FormPrgConfig(editProgramName);
+                    if (!configureProgram.IsDisposed)
                     {
-                        editProgramName = defineProgram.ReturnValue;
-                        FormPrgConfig configureProgram = new FormPrgConfig(editProgramName);
                         Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
-                        editStroopButton.Checked = false;
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                    editStroopButton.Checked = false;
                 }
             }
         }

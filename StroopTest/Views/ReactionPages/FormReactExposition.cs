@@ -348,6 +348,9 @@ namespace TestPlatform.Views
             wordLabel.Enabled = true;
 
             int[] screenPosition = ScreenPosition(wordLabel.PreferredSize);
+            Console.WriteLine("Before x "+ screenPosition[X] + "and y " + screenPosition[Y]);
+            screenPosition = wordLabelWithinRange(screenPosition[X], screenPosition[Y]);
+            Console.WriteLine("After x " + screenPosition[X] + "and y " + screenPosition[Y]);
             wordLabel.Location = new Point(screenPosition[X], screenPosition[Y]);
 
             wordCounter++;
@@ -456,7 +459,7 @@ namespace TestPlatform.Views
         private void expositionBW_DoWork(object sender, DoWorkEventArgs e)
         {
             /*parameterizing object to backgroundworker*/
-            BackgroundWorker worker = sender as BackgroundWorker;
+            BackgroundWorker worker = sender as BackgroundWorker;   
 
             intervalElapsedTime = waitIntervalTime(executingTest.ProgramInUse.IntervalTimeRandom, 
                 executingTest.ProgramInUse.IntervalTime);
@@ -659,12 +662,10 @@ namespace TestPlatform.Views
 
         private int[] wordLabelWithinRange(int x, int y)
         {
-            Size sizeofLabel = wordLabel.Size;
-            x = x + sizeofLabel.Width;
-            y = y + sizeofLabel.Height;
-
+            Size sizeofLabel = wordLabel.PreferredSize;
             float[] clientSize = { (ClientSize.Width), (ClientSize.Height) };
-            if (x > clientSize[X])
+
+            if (x + sizeofLabel.Width > clientSize[X])
             {
                 x = (int)clientSize[X] - sizeofLabel.Width;
             }
@@ -673,7 +674,7 @@ namespace TestPlatform.Views
                 x = 1;
             }
 
-            if (y > clientSize[Y])
+            if (y + sizeofLabel.Height > clientSize[Y])
             {
                 y = (int)clientSize[Y] - sizeofLabel.Height;
             }

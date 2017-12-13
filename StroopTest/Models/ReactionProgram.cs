@@ -69,7 +69,7 @@ namespace TestPlatform.Models
             if(colorList == LocRM.GetString("open", currentCulture))
             {
                 this.stimulusColor = stimulusColor;
-                this.setWordListFile("false");
+                this.setColorListFile("false");
             }
             else
             {
@@ -89,13 +89,13 @@ namespace TestPlatform.Models
         }
 
         /// <summary>
-        /// This constructor is used to create a reaction program with words using only one color
+        /// This constructor is used to create a reaction program with words
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
                                 int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                                 bool beepRandom, int numberPositions, string responseType,
-                                string wordList, bool expositionRandom)
+                                string wordList, bool expositionRandom, string colorList)
         {
             // Program properties
             this.programName = programName;
@@ -113,16 +113,24 @@ namespace TestPlatform.Models
             this.stimulusDistance = stimulusDistance;
             this.isBeeping = isBeeping;
             this.beepDuration = beepDuration;
-            this.stimulusColor = stimulusColor;
             this.stimuluShape = "false";
             this.BeepingRandom = beepRandom;
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
             this.setWordListFile(wordList);
+            if (colorList == LocRM.GetString("open", currentCulture))
+            {
+                this.stimulusColor = stimulusColor;
+                this.setColorListFile("false");
+            }
+            else
+            {
+                this.stimulusColor = "false";
+                this.setColorListFile(colorList);
+            }
 
             //default configurations for shapes version of ReactionProgram
             this.setAudioListFile("false");
-            this.setColorListFile("false");
             this.setImageListFile("false");
             this.expositionType = "words";
 

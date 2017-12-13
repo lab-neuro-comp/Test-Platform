@@ -141,10 +141,20 @@ namespace TestPlatform.Views
                     break;
                 case "words":
                     wordsList = executingTest.ProgramInUse.getWordListFile().ListContent.ToArray();
+                    if(executingTest.ProgramInUse.StimulusColor == "false") //if stimulusColor is false then there exists a color list
+                    { 
+                        colorsList = executingTest.ProgramInUse.getColorListFile().ListContent.ToArray();
+                    }
+                    else //if stimulusColor isn't false then there is no color list
+                    {
+                       colorsList = new string[] { executingTest.ProgramInUse.StimulusColor };
+                    }
                     if (executingTest.ProgramInUse.ExpositionRandom)
                     {
                         wordsList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumberPositions, 9);
+                        colorsList = ExpositionController.ShuffleArray(colorsList, executingTest.ProgramInUse.NumExpositions, 3);
                     }
+
                     break;
             }
         }
@@ -356,19 +366,22 @@ namespace TestPlatform.Views
             wordLabel.Text = wordsList[wordCounter];
             currentStimulus = wordsList[wordCounter];
             wordLabel.Visible = true;
-            wordLabel.ForeColor = ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor);
+            wordLabel.ForeColor = ColorTranslator.FromHtml(colorsList[colorCounter]);
             wordLabel.Enabled = true;
 
             int[] screenPosition = ScreenPosition(wordLabel.PreferredSize);
-            Console.WriteLine("Before x "+ screenPosition[X] + "and y " + screenPosition[Y]);
             screenPosition = wordLabelWithinRange(screenPosition[X], screenPosition[Y]);
-            Console.WriteLine("After x " + screenPosition[X] + "and y " + screenPosition[Y]);
             wordLabel.Location = new Point(screenPosition[X], screenPosition[Y]);
 
             wordCounter++;
             if(wordCounter == wordsList.Length)
             {
                 wordCounter = 0;
+            }
+            colorCounter++;
+            if (colorCounter == colorsList.Length)
+            {
+                colorCounter = 0;
             }
             expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.NumExpositions * 100, wordLabel);
         }
@@ -520,7 +533,7 @@ namespace TestPlatform.Views
         {
             if (!cancelExposition)
             {
-                if(ActiveForm.BackColor != null)
+                if(ActiveForm != null)
                 { 
                     this.CreateGraphics().Clear(ActiveForm.BackColor);
                 }

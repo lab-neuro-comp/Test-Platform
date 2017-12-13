@@ -394,7 +394,7 @@ namespace TestPlatform.Views
                                                 Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
                                                 fixPointValue(), bgColorButton.Text, fixPointColor(),
                                                 rndIntervalCheck.Checked, randomBeepCheck.Checked,
-                                                Convert.ToInt32(positionsBox.Text), responseType(), openWordListButton.Text, isRandomExposition.Checked);
+                                                Convert.ToInt32(positionsBox.Text), responseType(), openWordListButton.Text, isRandomExposition.Checked, openColorListButton.Text);
                     break;
                 
                 // Program type "images"
@@ -707,14 +707,14 @@ namespace TestPlatform.Views
                 //Words exposition
                 case 1:
                     errorProvider1.Clear();
-                    openImgListButton.Enabled = false;
                     stimulusColor.Enabled = true;
                     shapesGroupBox.Enabled = false;
                     isRandomExposition.Enabled = true;
                     openWordListButton.Enabled = true;
+                    openColorListButton.Enabled = true;
                     //disable unused buttons
-                    openColorListButton.Enabled = false;
-                    openColorListButton.Text = LocRM.GetString("open", currentCulture);
+                    openImgListButton.Enabled = false;
+                    openImgListButton.Text = LocRM.GetString("open", currentCulture);
                     break;
                 //Images exposition
                 case 2:

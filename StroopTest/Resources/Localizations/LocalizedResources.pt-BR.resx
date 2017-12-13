@@ -614,7 +614,7 @@
     <value>não foi escrito\n\n</value>
   </data>
   <data name="reactionTestHeader" xml:space="preserve">
-    <value>programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep</value>
+    <value>programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\trespostaUsuario\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep</value>
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Tipo de resposta selecionado inválido. As opções válidas são: barra de espaço ou setas.</value>

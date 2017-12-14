@@ -244,6 +244,6 @@
     <value>ReactionControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6556.40230, Culture=neutral, PublicKeyToken=null</value>
+    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6557.35652, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

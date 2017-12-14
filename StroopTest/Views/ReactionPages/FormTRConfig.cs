@@ -55,7 +55,6 @@ namespace TestPlatform.Views
                 ColorListOption.Checked = true;
                 openColorListButton.Enabled = true;
                 stimulusColor.Enabled = false;
-                stimulusColor.Enabled = false;
             }
             if (editProgram.ExpositionRandom)
             {
@@ -72,7 +71,11 @@ namespace TestPlatform.Views
                 stimulusColor.Text = editProgram.StimulusColor;
                 stimulusColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.StimulusColor);
             }
-            
+            else
+            {
+                stimulusColor.Enabled = false;
+                stimulusColorPanel.BackColor = Color.White;
+            }
             editProgramShapes(editProgram);
             if (editProgram.ResponseType == "space")
             {
@@ -699,12 +702,21 @@ namespace TestPlatform.Views
                 //Shapes exposition
                 case 0:
                     errorProvider1.Clear();
-                    stimulusColor.Enabled = true;
                     shapesGroupBox.Enabled = true;
                     openColorListButton.Enabled = true;
                     isRandomExposition.Enabled = false;
                     ColorListOption.Enabled = true;
                     UniqueColorOption.Enabled = true;
+                    if(ColorListOption.Checked)
+                    {
+                        stimulusColor.Enabled = false;
+                        openColorListButton.Enabled = true;
+                    }
+                    else
+                    {
+                        stimulusColor.Enabled = true;
+                        openColorListButton.Enabled = false;
+                    }
                     //disable unused buttons
                     openImgListButton.Enabled = false;
                     openImgListButton.Text = LocRM.GetString("open", currentCulture);
@@ -714,13 +726,21 @@ namespace TestPlatform.Views
                 //Words exposition
                 case 1:
                     errorProvider1.Clear();
-                    stimulusColor.Enabled = true;
                     shapesGroupBox.Enabled = false;
                     isRandomExposition.Enabled = true;
                     openWordListButton.Enabled = true;
-                    openColorListButton.Enabled = true;
                     ColorListOption.Enabled = true;
                     UniqueColorOption.Enabled = true;
+                    if (ColorListOption.Checked)
+                    {
+                        stimulusColor.Enabled = false;
+                        openColorListButton.Enabled = true;
+                    }
+                    else
+                    {
+                        stimulusColor.Enabled = true;
+                        openColorListButton.Enabled = false;
+                    }
                     //disable unused buttons
                     openImgListButton.Enabled = false;
                     openImgListButton.Text = LocRM.GetString("open", currentCulture);

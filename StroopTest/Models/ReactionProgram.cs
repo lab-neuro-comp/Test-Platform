@@ -18,8 +18,9 @@ namespace TestPlatform.Models
         private String stimuluShape; // keeps a list of shapes in this program, which one separated by a comma (",")
         private Int32 numberPositions; // [20]
         private String responseType; // [21]
+        private Boolean hasColorList;
 
-        private static Int32 ELEMENTS = 23; //quantity of fields used in ReactionProgram 
+        private static Int32 ELEMENTS = 24; //quantity of fields used in ReactionProgram 
 
         public ReactionProgram()
         {
@@ -45,7 +46,7 @@ namespace TestPlatform.Models
                                 int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                                 string stimuluShape, bool beepRandom, int numberPositions,
-                                string responseType, string colorList)
+                                string responseType, string colorList, bool hasColorList)
         {
             // Program properties
             this.programName = programName;
@@ -66,7 +67,8 @@ namespace TestPlatform.Models
             this.BeepingRandom = beepRandom;
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
-            if(colorList == LocRM.GetString("open", currentCulture))
+            this.hasColorList = hasColorList;
+            if(!hasColorList)
             {
                 this.stimulusColor = stimulusColor;
                 this.setColorListFile("false");
@@ -95,7 +97,7 @@ namespace TestPlatform.Models
                                 int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                                 bool beepRandom, int numberPositions, string responseType,
-                                string wordList, bool expositionRandom, string colorList)
+                                string wordList, bool expositionRandom, string colorList, bool hasColorList)
         {
             // Program properties
             this.programName = programName;
@@ -118,7 +120,8 @@ namespace TestPlatform.Models
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
             this.setWordListFile(wordList);
-            if (colorList == LocRM.GetString("open", currentCulture))
+            this.hasColorList = hasColorList;
+            if (!hasColorList)
             {
                 this.stimulusColor = stimulusColor;
                 this.setColorListFile("false");
@@ -166,6 +169,7 @@ namespace TestPlatform.Models
             this.BeepingRandom = beepRandom;
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
+            this.hasColorList = false;
 
             //default configurations for first version of ReactionProgram
             this.setAudioListFile("false");
@@ -284,6 +288,17 @@ namespace TestPlatform.Models
             }
         }
 
+        public bool getHasColorList()
+        {
+            return this.hasColorList;
+        }
+
+        public void setHasColorList(Boolean hasColorList)
+        {
+            this.hasColorList = hasColorList;
+
+        }
+
         public int NumberPositions
         {
             get
@@ -357,7 +372,9 @@ namespace TestPlatform.Models
                  this.BeepingRandom + " " +
                  this.NumberPositions + " " +
                  this.ResponseType + " " +
-                 this.ExpositionRandom.ToString();
+                 this.ExpositionRandom.ToString() + " " +
+                 this.hasColorList.ToString();
+            
             return data;
         }
 
@@ -418,7 +435,7 @@ namespace TestPlatform.Models
                 NumberPositions = int.Parse(config[20]);
                 ResponseType = config[21];
                 expositionRandom = bool.Parse(config[22]);
-
+                hasColorList = bool.Parse(config[23]);
                 linesInstruction = File.ReadAllLines(filepath);
                 if (linesInstruction.Length > 1) // lê instrução se houver
                 {

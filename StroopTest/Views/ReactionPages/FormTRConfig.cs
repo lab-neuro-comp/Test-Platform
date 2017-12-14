@@ -49,7 +49,14 @@ namespace TestPlatform.Views
             beepDuration.Value = editProgram.BeepDuration;
             stimulusDistance.Value = editProgram.StimulusDistance;
             stimuluSize.Value = editProgram.StimuluSize;
-
+            if(editProgram.getHasColorList())
+            {
+                UniqueColorOption.Checked = false;
+                ColorListOption.Checked = true;
+                openColorListButton.Enabled = true;
+                stimulusColor.Enabled = false;
+                stimulusColor.Enabled = false;
+            }
             if (editProgram.ExpositionRandom)
             {
                 isRandomExposition.Checked = true;
@@ -383,7 +390,7 @@ namespace TestPlatform.Views
                                                 Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
                                                 fixPointValue(), bgColorButton.Text, fixPointColor(),
                                                 rndIntervalCheck.Checked, shapeValue(), randomBeepCheck.Checked, 
-                                                Convert.ToInt32(positionsBox.Text), responseType(), openColorListButton.Text);
+                                                Convert.ToInt32(positionsBox.Text), responseType(), openColorListButton.Text, ColorListOption.Checked);
                     break;
                 // Program type "words"
                 case 1:
@@ -394,7 +401,8 @@ namespace TestPlatform.Views
                                                 Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
                                                 fixPointValue(), bgColorButton.Text, fixPointColor(),
                                                 rndIntervalCheck.Checked, randomBeepCheck.Checked,
-                                                Convert.ToInt32(positionsBox.Text), responseType(), openWordListButton.Text, isRandomExposition.Checked, openColorListButton.Text);
+                                                Convert.ToInt32(positionsBox.Text), responseType(), openWordListButton.Text,
+                                                isRandomExposition.Checked, openColorListButton.Text, ColorListOption.Checked);
                     break;
                 
                 // Program type "images"
@@ -492,8 +500,6 @@ namespace TestPlatform.Views
         private void openColorsList_Click(object sender, EventArgs e)
         {
             openColorListButton.Text = ListController.OpenListFile("_color", openColorListButton.Text);
-            stimulusColor.Text = LocRM.GetString("choose", currentCulture);
-            stimulusColorPanel.BackColor = Color.White;
         }
 
         private void openImagesList_Click(object sender, EventArgs e)
@@ -518,7 +524,6 @@ namespace TestPlatform.Views
             string colorCode = ListController.PickColor(this);
             stimulusColor.Text = colorCode;
             stimulusColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
-            openColorListButton.Text = LocRM.GetString("open", currentCulture);
         }
 
 
@@ -698,6 +703,8 @@ namespace TestPlatform.Views
                     shapesGroupBox.Enabled = true;
                     openColorListButton.Enabled = true;
                     isRandomExposition.Enabled = false;
+                    ColorListOption.Enabled = true;
+                    UniqueColorOption.Enabled = true;
                     //disable unused buttons
                     openImgListButton.Enabled = false;
                     openImgListButton.Text = LocRM.GetString("open", currentCulture);
@@ -712,6 +719,8 @@ namespace TestPlatform.Views
                     isRandomExposition.Enabled = true;
                     openWordListButton.Enabled = true;
                     openColorListButton.Enabled = true;
+                    ColorListOption.Enabled = true;
+                    UniqueColorOption.Enabled = true;
                     //disable unused buttons
                     openImgListButton.Enabled = false;
                     openImgListButton.Text = LocRM.GetString("open", currentCulture);
@@ -725,6 +734,8 @@ namespace TestPlatform.Views
                     stimulusColorPanel.BackColor = Color.White;
                     shapesGroupBox.Enabled = false;
                     openColorListButton.Enabled = false;
+                    ColorListOption.Enabled = false;
+                    UniqueColorOption.Enabled = false;
                     //disable unused buttons
                     openColorListButton.Text = LocRM.GetString("open", currentCulture);
                     openWordListButton.Enabled = false;
@@ -829,6 +840,86 @@ namespace TestPlatform.Views
         private void openWordListButton_Validated(object sender, EventArgs e)
         {
             errorProvider1.SetError(this.openWordListButton, "");
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numExpoLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void positionLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void wordSizeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stimulusColorPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void beepDuration_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ColorListOption_CheckedChanged(object sender, EventArgs e)
+        {
+            stimulusColor.Enabled = false;
+            stimulusColorPanel.BackColor = Color.White;
+            openColorListButton.Enabled = true;
+            stimulusColor.Text = LocRM.GetString("choose", currentCulture);
+        }
+
+        private void UniqueColorOption_CheckedChanged(object sender, EventArgs e)
+        {
+            stimulusColor.Enabled = true;
+            openColorListButton.Enabled = false;
+            openColorListButton.Text = LocRM.GetString("open", currentCulture);
         }
     }
 }

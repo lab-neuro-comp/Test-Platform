@@ -614,7 +614,7 @@
     <value>não foi escrito\n\n</value>
   </data>
   <data name="reactionTestHeader" xml:space="preserve">
-    <value>programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep</value>
+    <value>programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\trespostaUsuario\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep</value>
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Tipo de resposta selecionado inválido. As opções válidas são: barra de espaço ou setas.</value>
@@ -642,5 +642,20 @@
   </data>
   <data name="defaultStroopProgram" xml:space="preserve">
     <value>padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false</value>
+  </data>
+  <data name="arrowDown" xml:space="preserve">
+    <value>setaBaixo</value>
+  </data>
+  <data name="arrowLeft" xml:space="preserve">
+    <value>setaEsquerda</value>
+  </data>
+  <data name="arrowRight" xml:space="preserve">
+    <value>setaDireita</value>
+  </data>
+  <data name="arrowUp" xml:space="preserve">
+    <value>setaCima</value>
+  </data>
+  <data name="spaceBar" xml:space="preserve">
+    <value>barraDeEspaço</value>
   </data>
 </root>

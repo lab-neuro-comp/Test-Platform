@@ -532,7 +532,7 @@
     <value>wasn't written\n\n</value>
   </data>
   <data name="reactionTestHeader" xml:space="preserve">
-    <value>program\tparticipant\tdate\tInitialTime\texpositionTime\treactionTime(ms)\tInterval(ms)\testimatedInterval(ms)\texpositionDuration(ms)\texposition(ms)\tsenquency\tpos\tstimulusType\tstimulus\tstimulusColor\tBeep</value>
+    <value>program\tparticipant\tdate\tInitialTime\texpositionTime\treactionTime(ms)\tInterval(ms)\testimatedInterval(ms)\texpositionDuration(ms)\texposition(ms)\tsenquency\tpos\tuserResponse\tstimulusType\tstimulus\tstimulusColor\tBeep</value>
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Selected response type is invalid. Valid options are: spacebar or key arrows.</value>
@@ -563,5 +563,20 @@
   </data>
   <data name="wordListError" xml:space="preserve">
     <value>Choose a word list</value>
+  </data>
+  <data name="arrowDown" xml:space="preserve">
+    <value>arrowDown</value>
+  </data>
+  <data name="arrowLeft" xml:space="preserve">
+    <value>arrowLeft</value>
+  </data>
+  <data name="arrowRight" xml:space="preserve">
+    <value>arrowRight</value>
+  </data>
+  <data name="arrowUp" xml:space="preserve">
+    <value>arrowUp</value>
+  </data>
+  <data name="spaceBar" xml:space="preserve">
+    <value>spaceBar</value>
   </data>
 </root>

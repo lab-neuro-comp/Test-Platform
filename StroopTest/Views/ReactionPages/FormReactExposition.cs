@@ -228,34 +228,80 @@ namespace TestPlatform.Views
 
         private void exposition_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space)
+            // user entered any key, if it is escape finish exposition
+            if (e.KeyCode != Keys.Escape)
             {
-                if (expositionBW.WorkerSupportsCancellation == true)
-                {
-                    expositionBW.CancelAsync();
+                UserResponseControl(e.KeyCode);
+            }
+            else
+            {
+                CancelExposition();
+            }
+        }
+
+        private void UserResponseControl(Keys keyCode)
+        {
+            if (executingTest.ProgramInUse.ResponseType.Equals("space") && keyCode == Keys.Space)
+            {
+                SendUserResponse(LocRM.GetString("spaceBar", currentCulture));
+            }
+            else if (executingTest.ProgramInUse.ResponseType.Equals("arrows"))
+            {
+                switch (keyCode)
+                {                    
+                    case Keys.Up:
+                        SendUserResponse(LocRM.GetString("arrowUp", currentCulture));
+                        break;
+                    case Keys.Down:
+                        SendUserResponse(LocRM.GetString("arrowDown", currentCulture));
+                        break;
+                    case Keys.Left:
+                        SendUserResponse(LocRM.GetString("arrowLeft", currentCulture));
+                        break;
+                    case Keys.Right:
+                        SendUserResponse(LocRM.GetString("arrowRight", currentCulture));
+                        break;
                 }
             }
-            else if (e.KeyCode == Keys.Escape)
+        }
+
+        private void SendUserResponse(string keyName)
+        {
+            if (expositionBW.WorkerSupportsCancellation == true)
             {
-                cancelExposition = true;
-                if (expositionBW.IsBusy)
+                executingTest.CurrentResponse = keyName;
+                expositionBW.CancelAsync();
+            }
+        }
+
+        private void CancelExposition()
+        {
+            cancelExposition = true;
+            if (expositionBW.IsBusy)
+            {
+                expositionBW.CancelAsync();
+            }
+            else if (intervalBW.IsBusy)
+            {
+                intervalBW.CancelAsync();
+            }
+            else
+            {
+                /*do nothing*/
+            }
+            while (expositionBW.CancellationPending && intervalBW.CancellationPending)
+            {
+                //wait
+                Thread.Sleep(10);
+            }
+            FormCollection fc = Application.OpenForms;
+
+            foreach (Form frm in fc)
+            {
+                if (frm is FormReactExposition)
                 {
-                    expositionBW.CancelAsync();
+                    Close();
                 }
-                else if (intervalBW.IsBusy)
-                {
-                    intervalBW.CancelAsync();
-                }
-                else
-                {
-                    /*do nothing*/
-                }
-                while (expositionBW.CancellationPending && intervalBW.CancellationPending)
-                {
-                    //wait
-                    Thread.Sleep(10);
-                }
-                Close();
             }
         }
 
@@ -571,6 +617,7 @@ namespace TestPlatform.Views
             else
             {
                 /* user missed stimulus */
+                executingTest.CurrentResponse = "NA";
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition),
                                                 currentBeep);
                 hitStopWatch.Stop();

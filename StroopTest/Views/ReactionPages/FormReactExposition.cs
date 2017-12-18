@@ -220,23 +220,23 @@ namespace TestPlatform.Views
         {
             if (executingTest.ProgramInUse.ResponseType.Equals("space") && keyCode == Keys.Space)
             {
-                SendUserResponse(keyCode.ToString());
+                SendUserResponse(LocRM.GetString("spaceBar", currentCulture));
             }
             else if (executingTest.ProgramInUse.ResponseType.Equals("arrows"))
             {
                 switch (keyCode)
                 {                    
                     case Keys.Up:
-                        SendUserResponse(keyCode.ToString());
+                        SendUserResponse(LocRM.GetString("arrowUp", currentCulture));
                         break;
                     case Keys.Down:
-                        SendUserResponse(keyCode.ToString());
+                        SendUserResponse(LocRM.GetString("arrowDown", currentCulture));
                         break;
                     case Keys.Left:
-                        SendUserResponse(keyCode.ToString());
+                        SendUserResponse(LocRM.GetString("arrowLeft", currentCulture));
                         break;
                     case Keys.Right:
-                        SendUserResponse(keyCode.ToString());
+                        SendUserResponse(LocRM.GetString("arrowRight", currentCulture));
                         break;
                 }
             }

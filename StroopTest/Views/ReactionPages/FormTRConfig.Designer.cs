@@ -74,6 +74,9 @@
             this.openImgListButton = new System.Windows.Forms.Button();
             this.instructionsBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.UniqueColorOption = new System.Windows.Forms.RadioButton();
+            this.ColorListOption = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.isRandomExposition = new System.Windows.Forms.CheckBox();
             this.positionsBox = new System.Windows.Forms.ComboBox();
@@ -101,6 +104,7 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.reactionConfigPanel.SuspendLayout();
             this.userResponse.SuspendLayout();
             this.shapesGroupBox.SuspendLayout();
@@ -409,6 +413,7 @@
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // wordListLabel
             // 
@@ -472,6 +477,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.UniqueColorOption);
+            this.groupBox1.Controls.Add(this.ColorListOption);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.isRandomExposition);
             this.groupBox1.Controls.Add(this.positionsBox);
@@ -496,11 +504,35 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // UniqueColorOption
+            // 
+            resources.ApplyResources(this.UniqueColorOption, "UniqueColorOption");
+            this.UniqueColorOption.Checked = true;
+            this.UniqueColorOption.Name = "UniqueColorOption";
+            this.UniqueColorOption.TabStop = true;
+            this.UniqueColorOption.UseVisualStyleBackColor = true;
+            this.UniqueColorOption.CheckedChanged += new System.EventHandler(this.UniqueColorOption_CheckedChanged);
+            // 
+            // ColorListOption
+            // 
+            resources.ApplyResources(this.ColorListOption, "ColorListOption");
+            this.ColorListOption.Name = "ColorListOption";
+            this.ColorListOption.UseVisualStyleBackColor = true;
+            this.ColorListOption.CheckedChanged += new System.EventHandler(this.ColorListOption_CheckedChanged);
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // isRandomExposition
             // 
@@ -527,6 +559,7 @@
             // 
             resources.ApplyResources(this.positionLabel, "positionLabel");
             this.positionLabel.Name = "positionLabel";
+            this.positionLabel.Click += new System.EventHandler(this.positionLabel_Click);
             // 
             // randomBeepLabel
             // 
@@ -592,11 +625,13 @@
             this.stimulusColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.stimulusColorPanel, "stimulusColorPanel");
             this.stimulusColorPanel.Name = "stimulusColorPanel";
+            this.stimulusColorPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.stimulusColorPanel_Paint);
             // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // stimulusColor
             // 
@@ -619,6 +654,7 @@
             0,
             0});
             this.beepDuration.Name = "beepDuration";
+            this.beepDuration.ValueChanged += new System.EventHandler(this.beepDuration_ValueChanged);
             this.beepDuration.Validating += new System.ComponentModel.CancelEventHandler(this.beepDuration_Validating);
             this.beepDuration.Validated += new System.EventHandler(this.beepDuration_Validated);
             // 
@@ -626,11 +662,13 @@
             // 
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // beepingCheckbox
             // 
@@ -644,6 +682,7 @@
             // 
             resources.ApplyResources(this.numExpoLabel, "numExpoLabel");
             this.numExpoLabel.Name = "numExpoLabel";
+            this.numExpoLabel.Click += new System.EventHandler(this.numExpoLabel_Click);
             // 
             // numExpo
             // 
@@ -671,6 +710,7 @@
             // 
             resources.ApplyResources(this.wordSizeLabel, "wordSizeLabel");
             this.wordSizeLabel.Name = "wordSizeLabel";
+            this.wordSizeLabel.Click += new System.EventHandler(this.wordSizeLabel_Click);
             // 
             // stimuluSize
             // 
@@ -696,6 +736,7 @@
             // 
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // instructionsLabel
             // 
@@ -847,5 +888,9 @@
         private System.Windows.Forms.ComboBox positionsBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox isRandomExposition;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RadioButton UniqueColorOption;
+        private System.Windows.Forms.RadioButton ColorListOption;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

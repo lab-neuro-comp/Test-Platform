@@ -18,8 +18,9 @@ namespace TestPlatform.Models
         private String stimuluShape; // keeps a list of shapes in this program, which one separated by a comma (",")
         private Int32 numberPositions; // [20]
         private String responseType; // [21]
+        private Boolean hasColorList;
 
-        private static Int32 ELEMENTS = 23; //quantity of fields used in ReactionProgram 
+        private static Int32 ELEMENTS = 24; //quantity of fields used in ReactionProgram 
 
         public ReactionProgram()
         {
@@ -39,13 +40,13 @@ namespace TestPlatform.Models
         }
 
         /// <summary>
-        /// This constructor is used to create a reaction program with shapes using only one color
+        /// This constructor is used to create a reaction program with shapes
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
                                 int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                                 string stimuluShape, bool beepRandom, int numberPositions,
-                                string responseType)
+                                string responseType, string colorList, bool hasColorList)
         {
             // Program properties
             this.programName = programName;
@@ -62,30 +63,41 @@ namespace TestPlatform.Models
             this.stimulusDistance = stimulusDistance;
             this.isBeeping  = isBeeping;
             this.beepDuration = beepDuration;
-            this.stimulusColor = stimulusColor;
             this.stimuluShape = stimuluShape;
             this.BeepingRandom = beepRandom;
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
+            this.hasColorList = hasColorList;
+            if(!hasColorList)
+            {
+                this.stimulusColor = stimulusColor;
+                this.setColorListFile("false");
+            }
+            else
+            {
+                this.stimulusColor = "false";
+                this.setColorListFile(colorList);
+            }
 
             //default configurations for shapes version of ReactionProgram
             this.setAudioListFile("false");
-            this.setColorListFile("false");
-            this.setWordListFile("false");
             this.setImageListFile("false");
+            this.setWordListFile("false");
             this.expositionRandom = false;
             this.expositionType =  "shapes";
+
+            
 
         }
 
         /// <summary>
-        /// This constructor is used to create a reaction program with words using only one color
+        /// This constructor is used to create a reaction program with words
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
                                 int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                                 bool beepRandom, int numberPositions, string responseType,
-                                string wordList, bool expositionRandom)
+                                string wordList, bool expositionRandom, string colorList, bool hasColorList)
         {
             // Program properties
             this.programName = programName;
@@ -103,16 +115,25 @@ namespace TestPlatform.Models
             this.stimulusDistance = stimulusDistance;
             this.isBeeping = isBeeping;
             this.beepDuration = beepDuration;
-            this.stimulusColor = stimulusColor;
             this.stimuluShape = "false";
             this.BeepingRandom = beepRandom;
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
             this.setWordListFile(wordList);
+            this.hasColorList = hasColorList;
+            if (!hasColorList)
+            {
+                this.stimulusColor = stimulusColor;
+                this.setColorListFile("false");
+            }
+            else
+            {
+                this.stimulusColor = "false";
+                this.setColorListFile(colorList);
+            }
 
             //default configurations for shapes version of ReactionProgram
             this.setAudioListFile("false");
-            this.setColorListFile("false");
             this.setImageListFile("false");
             this.expositionType = "words";
 
@@ -148,6 +169,7 @@ namespace TestPlatform.Models
             this.BeepingRandom = beepRandom;
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
+            this.hasColorList = false;
 
             //default configurations for first version of ReactionProgram
             this.setAudioListFile("false");
@@ -266,6 +288,17 @@ namespace TestPlatform.Models
             }
         }
 
+        public bool getHasColorList()
+        {
+            return this.hasColorList;
+        }
+
+        public void setHasColorList(Boolean hasColorList)
+        {
+            this.hasColorList = hasColorList;
+
+        }
+
         public int NumberPositions
         {
             get
@@ -339,7 +372,9 @@ namespace TestPlatform.Models
                  this.BeepingRandom + " " +
                  this.NumberPositions + " " +
                  this.ResponseType + " " +
-                 this.ExpositionRandom.ToString();
+                 this.ExpositionRandom.ToString() + " " +
+                 this.hasColorList.ToString();
+            
             return data;
         }
 
@@ -400,7 +435,7 @@ namespace TestPlatform.Models
                 NumberPositions = int.Parse(config[20]);
                 ResponseType = config[21];
                 expositionRandom = bool.Parse(config[22]);
-
+                hasColorList = bool.Parse(config[23]);
                 linesInstruction = File.ReadAllLines(filepath);
                 if (linesInstruction.Length > 1) // lê instrução se houver
                 {

@@ -40,6 +40,7 @@ namespace TestPlatform.Views
         private bool cancelExposition = false;
         private string[] imagesList = null;
         private string[] wordsList = null;
+        private string[] colorsList = null;
         private int imageCounter = 0;
         private PictureBox imgPictureBox = new PictureBox();
         private bool exposing = false;
@@ -50,6 +51,7 @@ namespace TestPlatform.Views
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private int wordCounter = 0;
+        private int colorCounter = 0;
         private System.Windows.Forms.Label wordLabel = new System.Windows.Forms.Label();
         private Control currentControl = null;
 
@@ -118,6 +120,17 @@ namespace TestPlatform.Views
         {
             switch (executingTest.ProgramInUse.ExpositionType)
             {
+                case "shapes":
+                    if(executingTest.ProgramInUse.StimulusColor == "false") //if stimulusColor is false then there exists a color list
+                    { 
+                        colorsList = executingTest.ProgramInUse.getColorListFile().ListContent.ToArray();
+                    }
+                    else //if stimulusColor isn't false then there is no color list
+                    {
+                       colorsList = new string[] { executingTest.ProgramInUse.StimulusColor };
+                    }
+                    colorsList = ExpositionController.ShuffleArray(colorsList, executingTest.ProgramInUse.NumExpositions, 3);
+                    break;
                 case "images":
                     imagesList = executingTest.ProgramInUse.getImageListFile().ListContent.ToArray();
 
@@ -128,10 +141,20 @@ namespace TestPlatform.Views
                     break;
                 case "words":
                     wordsList = executingTest.ProgramInUse.getWordListFile().ListContent.ToArray();
+                    if(executingTest.ProgramInUse.StimulusColor == "false") //if stimulusColor is false then there exists a color list
+                    { 
+                        colorsList = executingTest.ProgramInUse.getColorListFile().ListContent.ToArray();
+                    }
+                    else //if stimulusColor isn't false then there is no color list
+                    {
+                       colorsList = new string[] { executingTest.ProgramInUse.StimulusColor };
+                    }
                     if (executingTest.ProgramInUse.ExpositionRandom)
                     {
                         wordsList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumberPositions, 9);
+                        colorsList = ExpositionController.ShuffleArray(colorsList, executingTest.ProgramInUse.NumExpositions, 3);
                     }
+
                     break;
             }
         }
@@ -343,19 +366,22 @@ namespace TestPlatform.Views
             wordLabel.Text = wordsList[wordCounter];
             currentStimulus = wordsList[wordCounter];
             wordLabel.Visible = true;
-            wordLabel.ForeColor = ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor);
+            wordLabel.ForeColor = ColorTranslator.FromHtml(colorsList[colorCounter]);
             wordLabel.Enabled = true;
 
             int[] screenPosition = ScreenPosition(wordLabel.PreferredSize);
-            Console.WriteLine("Before x "+ screenPosition[X] + "and y " + screenPosition[Y]);
             screenPosition = wordLabelWithinRange(screenPosition[X], screenPosition[Y]);
-            Console.WriteLine("After x " + screenPosition[X] + "and y " + screenPosition[Y]);
             wordLabel.Location = new Point(screenPosition[X], screenPosition[Y]);
 
             wordCounter++;
             if(wordCounter == wordsList.Length)
             {
                 wordCounter = 0;
+            }
+            colorCounter++;
+            if (colorCounter == colorsList.Length)
+            {
+                colorCounter = 0;
             }
             expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.NumExpositions * 100, wordLabel);
         }
@@ -507,10 +533,12 @@ namespace TestPlatform.Views
         {
             if (!cancelExposition)
             {
-                this.CreateGraphics().Clear(ActiveForm.BackColor);
-
+                if(ActiveForm != null)
+                { 
+                    this.CreateGraphics().Clear(ActiveForm.BackColor);
+                }
                 // if expositions type uses any kind of control to show stimulus such as a word label or image picture box 
-                if(currentControl != null)
+                if (currentControl != null)
                 {
                     // if current control is enabled it means that just showed a stimulus
                     if (currentControl.Enabled)
@@ -717,7 +745,7 @@ namespace TestPlatform.Views
             float widthSquare = executingTest.ProgramInUse.StimuluSize;
             float heightSquare = executingTest.ProgramInUse.StimuluSize;
 
-            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(colorsList[colorCounter]));
             Graphics formGraphicsSquare = CreateGraphics();
 
             int[] screenPosition = this.ScreenPosition(new Size((int)widthSquare, (int)heightSquare));
@@ -725,7 +753,11 @@ namespace TestPlatform.Views
             float ySquare = screenPosition[Y];
             formGraphicsSquare.FillRectangle(myBrush, xSquare, ySquare, widthSquare, heightSquare);
             formGraphicsSquare.Dispose();
-
+            colorCounter++;
+            if (colorCounter == colorsList.Length)
+            {
+                colorCounter = 0;
+            }
         }
 
         private void drawSquareShape()
@@ -733,7 +765,7 @@ namespace TestPlatform.Views
             float widthSquare = executingTest.ProgramInUse.StimuluSize;
             float heightSquare = executingTest.ProgramInUse.StimuluSize;
 
-            Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+            Pen myPen = new Pen(ColorTranslator.FromHtml(colorsList[colorCounter]));
             Graphics formGraphicsSquare = CreateGraphics();
 
             int[] screenPosition = this.ScreenPosition(new Size((int)widthSquare, (int)heightSquare));
@@ -741,7 +773,11 @@ namespace TestPlatform.Views
             float ySquare = screenPosition[Y];
             formGraphicsSquare.DrawRectangle(myPen, xSquare, ySquare, widthSquare, heightSquare);
             formGraphicsSquare.Dispose();
-
+            colorCounter++;
+            if (colorCounter == colorsList.Length)
+            {
+                colorCounter = 0;
+            }
         }
 
         private void drawFullCircleShape()
@@ -749,7 +785,7 @@ namespace TestPlatform.Views
             float widthEllipse = executingTest.ProgramInUse.StimuluSize;
             float heightEllipse = executingTest.ProgramInUse.StimuluSize;
 
-            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(colorsList[colorCounter]));
             Graphics formGraphicsEllipse = CreateGraphics();
 
             int[] screenPosition = this.ScreenPosition(new Size((int)widthEllipse, (int)heightEllipse));
@@ -757,7 +793,11 @@ namespace TestPlatform.Views
             float yEllipse = screenPosition[Y];
             formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
             formGraphicsEllipse.Dispose();
-
+            colorCounter++;
+            if (colorCounter == colorsList.Length)
+            {
+                colorCounter = 0;
+            }
         }
 
         private void drawCircleShape()
@@ -765,7 +805,7 @@ namespace TestPlatform.Views
             float widthEllipse = executingTest.ProgramInUse.StimuluSize;
             float heightEllipse = executingTest.ProgramInUse.StimuluSize;
 
-            Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+            Pen myPen = new Pen(ColorTranslator.FromHtml(colorsList[colorCounter]));
             Graphics formGraphicsEllipse = CreateGraphics();
 
             int[] screenPosition = this.ScreenPosition(new Size((int)widthEllipse, (int)heightEllipse));
@@ -773,6 +813,11 @@ namespace TestPlatform.Views
             float yEllipse = screenPosition[Y];
             formGraphicsEllipse.DrawEllipse(myPen, xEllipse, yEllipse, widthEllipse, heightEllipse);
             formGraphicsEllipse.Dispose();
+            colorCounter++;
+            if (colorCounter == colorsList.Length)
+            {
+                colorCounter = 0;
+            }
         }
 
         private void triangleShape_draw(object sender, PaintEventArgs e)
@@ -782,9 +827,14 @@ namespace TestPlatform.Views
 
             ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
                 this);
-            Pen myPen = new Pen(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor), 1);
+            Pen myPen = new Pen(ColorTranslator.FromHtml(colorsList[colorCounter]), 1);
             Point[] trianglePoints = createTrianglePoints();
             g.DrawPolygon(myPen, trianglePoints);
+            colorCounter++;
+            if (colorCounter == colorsList.Length)
+            {
+                colorCounter = 0;
+            }
         }
 
 
@@ -800,10 +850,15 @@ namespace TestPlatform.Views
             Point[] trianglePoints = createTrianglePoints();
 
             FillMode newFillMode = FillMode.Winding;
-            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(executingTest.ProgramInUse.StimulusColor));
+            SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(colorsList[colorCounter]));
             Graphics formGraphicsTriangle = CreateGraphics();
             formGraphicsTriangle.FillPolygon(myBrush, trianglePoints, newFillMode);
             formGraphicsTriangle.Dispose();
+            colorCounter++;
+            if (colorCounter == colorsList.Length)
+            {
+                colorCounter = 0;
+            }
 
         }
 

@@ -124,10 +124,6 @@
   <data name="deleteReactButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="deleteReactButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="deleteReactButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -138,6 +134,7 @@
   <data name="deleteReactButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 33</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="deleteReactButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
@@ -244,6 +241,6 @@
     <value>ReactionControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6557.35652, Culture=neutral, PublicKeyToken=null</value>
+    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6562.39306, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

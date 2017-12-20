@@ -579,4 +579,16 @@
   <data name="spaceBar" xml:space="preserve">
     <value>spaceBar</value>
   </data>
+  <data name="deleteProgram" xml:space="preserve">
+    <value>Delete program:</value>
+  </data>
+  <data name="programDeleted" xml:space="preserve">
+    <value>was deleted sucessful!</value>
+  </data>
+  <data name="programExistsInBackup" xml:space="preserve">
+    <value>A program with this name already exists in backup folder. \n Do you want to overwrite it?</value>
+  </data>
+  <data name="programNotDeleted" xml:space="preserve">
+    <value>The program will not be deleted!</value>
+  </data>
 </root>

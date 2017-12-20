@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Globalization;
+using System.IO;
 using System.Resources;
 using System.Windows.Forms;
 
@@ -63,6 +64,53 @@ namespace TestPlatform.Views.SidebarUserControls
                 /*do nothing*/
             }
             
+        }
+
+        private void deleteReactButton_Click(object sender, EventArgs e)
+        {
+            if (deleteReactButton.Checked)
+            {
+                FormDefine defineProgram;
+                DialogResult result;
+                string deleteProgramName = "error";
+
+                try
+                {
+                    defineProgram = new FormDefine(LocRM.GetString("deleteProgram", currentCulture), Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false);
+                    result = defineProgram.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        deleteProgramName = defineProgram.ReturnValue;
+                        File.Move(Global.reactionTestFilesPath + Global.programFolderName + deleteProgramName + ".prg", Global.defaultPath + Global.backupFolderName + deleteProgramName + ".prg");
+                        MessageBox.Show(deleteProgramName + LocRM.GetString("programDeleted", currentCulture));
+                        editReactButton.Checked = false;
+                    }
+                    else
+                    {
+                        /*do nothing, user cancelled selection of program*/
+                    }
+                }
+                catch (IOException)
+                {
+                    DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExistsInBackup", currentCulture), "", MessageBoxButtons.OKCancel);
+                    if (dialogResult == DialogResult.Cancel)
+                    {
+                        MessageBox.Show(LocRM.GetString("programNotDeleted", currentCulture));
+                    }
+                    else
+                    {
+                        File.Delete(Global.defaultPath + Global.backupFolderName + deleteProgramName + ".prg");
+                        File.Move(Global.reactionTestFilesPath + Global.programFolderName + deleteProgramName + ".prg", Global.defaultPath + Global.backupFolderName + deleteProgramName + ".prg");
+                        MessageBox.Show(deleteProgramName +" "+ LocRM.GetString("programDeleted", currentCulture));
+                    }
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+            }
+            else
+            {
+                /*do nothing*/
+            }
+
         }
     }
 }

@@ -40,6 +40,7 @@
             this.deleteStroopButton.FlatAppearance.BorderSize = 0;
             this.deleteStroopButton.Name = "deleteStroopButton";
             this.deleteStroopButton.UseVisualStyleBackColor = true;
+            this.deleteStroopButton.Click += new System.EventHandler(this.deleteStroopButton_Click);
             // 
             // editStroopButton
             // 

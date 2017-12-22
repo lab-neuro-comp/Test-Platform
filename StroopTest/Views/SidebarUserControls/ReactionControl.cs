@@ -81,9 +81,9 @@ namespace TestPlatform.Views.SidebarUserControls
                     if (result == DialogResult.OK)
                     {
                         deleteProgramName = defineProgram.ReturnValue;
-                        File.Move(Global.reactionTestFilesPath + Global.programFolderName + deleteProgramName + ".prg", Global.defaultPath + Global.backupFolderName + deleteProgramName + ".prg");
-                        MessageBox.Show(deleteProgramName + LocRM.GetString("programDeleted", currentCulture));
-                        editReactButton.Checked = false;
+                        File.Move(Global.reactionTestFilesPath + Global.programFolderName + deleteProgramName + ".prg", Global.reactionTestFilesBackupPath + deleteProgramName + ".prg");
+                        MessageBox.Show(deleteProgramName + " " + LocRM.GetString("programDeleted", currentCulture));
+                        deleteReactButton.Checked = false;
                     }
                     else
                     {
@@ -99,10 +99,11 @@ namespace TestPlatform.Views.SidebarUserControls
                     }
                     else
                     {
-                        File.Delete(Global.defaultPath + Global.backupFolderName + deleteProgramName + ".prg");
-                        File.Move(Global.reactionTestFilesPath + Global.programFolderName + deleteProgramName + ".prg", Global.defaultPath + Global.backupFolderName + deleteProgramName + ".prg");
+                        File.Delete(Global.experimentTestFilesBackupPath + deleteProgramName + ".prg");
+                        File.Move(Global.reactionTestFilesPath + Global.programFolderName + deleteProgramName + ".prg", Global.reactionTestFilesBackupPath + deleteProgramName + ".prg");
                         MessageBox.Show(deleteProgramName +" "+ LocRM.GetString("programDeleted", currentCulture));
                     }
+                    deleteReactButton.Checked = false;
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }

@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExperimentControl));
-            this.deleteReactButton = new System.Windows.Forms.RadioButton();
+            this.deleteExperimentButton = new System.Windows.Forms.RadioButton();
             this.editExperimentButton = new System.Windows.Forms.RadioButton();
             this.newExperimentButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // deleteReactButton
             // 
-            resources.ApplyResources(this.deleteReactButton, "deleteReactButton");
-            this.deleteReactButton.FlatAppearance.BorderSize = 0;
-            this.deleteReactButton.Name = "deleteReactButton";
-            this.deleteReactButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.deleteExperimentButton, "deleteExperimentButton");
+            this.deleteExperimentButton.FlatAppearance.BorderSize = 0;
+            this.deleteExperimentButton.Name = "deleteExperimentButton";
+            this.deleteExperimentButton.UseVisualStyleBackColor = true;
+            this.deleteExperimentButton.Click += new System.EventHandler(this.deleteExperimentButton_Click);
             // 
             // editExperimentButton
             // 
@@ -61,7 +62,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.deleteReactButton);
+            this.Controls.Add(this.deleteExperimentButton);
             this.Controls.Add(this.editExperimentButton);
             this.Controls.Add(this.newExperimentButton);
             this.Name = "ExperimentControl";
@@ -71,7 +72,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton deleteReactButton;
+        private System.Windows.Forms.RadioButton deleteExperimentButton;
         private System.Windows.Forms.RadioButton editExperimentButton;
         private System.Windows.Forms.RadioButton newExperimentButton;
     }

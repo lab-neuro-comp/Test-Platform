@@ -160,9 +160,9 @@ namespace TestPlatform.Views
                     }
                     break;
                 case "imageAndWord":
+
                     wordsList = executingTest.ProgramInUse.getWordListFile().ListContent.ToArray();
                     imagesList = executingTest.ProgramInUse.getImageListFile().ListContent.ToArray();
-                    imagesAndWordsList = ExpositionController.mergeLists(wordsList, imagesList);
                     if (executingTest.ProgramInUse.StimulusColor == "false") //if stimulusColor is false then there exists a color list
                     {
                         colorsList = executingTest.ProgramInUse.getColorListFile().ListContent.ToArray();
@@ -173,9 +173,11 @@ namespace TestPlatform.Views
                     }
                     if (executingTest.ProgramInUse.ExpositionRandom)
                     {
-                        imagesAndWordsList = ExpositionController.ShuffleArray(imagesAndWordsList, executingTest.ProgramInUse.NumExpositions, 9);
+                        wordsList = ExpositionController.ShuffleArray(wordsList, wordsList.Length, 9);
+                        imagesList = ExpositionController.ShuffleArray(imagesList, wordsList.Length, 9);
                         colorsList = ExpositionController.ShuffleArray(colorsList, executingTest.ProgramInUse.NumExpositions, 3);
                     }
+                    imagesAndWordsList = ExpositionController.mergeLists(wordsList, imagesList);
                     break;
             }
         }

@@ -173,11 +173,24 @@ namespace TestPlatform.Views
                     }
                     if (executingTest.ProgramInUse.ExpositionRandom)
                     {
+                        Random rnd = new Random(DateTime.Now.Millisecond);
                         wordsList = ExpositionController.ShuffleArray(wordsList, wordsList.Length, 9);
-                        imagesList = ExpositionController.ShuffleArray(imagesList, wordsList.Length, 9);
+                        imagesList = ExpositionController.ShuffleArray(imagesList, wordsList.Length, 10);
                         colorsList = ExpositionController.ShuffleArray(colorsList, executingTest.ProgramInUse.NumExpositions, 3);
+                        if (rnd.Next() % 2 == 0)
+                        {
+                            imagesAndWordsList = ExpositionController.mergeLists(wordsList, imagesList, executingTest.ProgramInUse.ExpositionRandom);
+                        }
+                        else
+                        {
+                            imagesAndWordsList = ExpositionController.mergeLists(imagesList, wordsList, executingTest.ProgramInUse.ExpositionRandom);
+                        }
                     }
-                    imagesAndWordsList = ExpositionController.mergeLists(wordsList, imagesList);
+                    else
+                    {
+                        imagesAndWordsList = ExpositionController.mergeLists(imagesList, wordsList, executingTest.ProgramInUse.ExpositionRandom);
+                    }
+
                     break;
             }
         }

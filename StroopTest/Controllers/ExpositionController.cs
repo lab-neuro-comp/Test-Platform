@@ -31,7 +31,7 @@
             return randomArray.ToArray();
         }
 
-        public static string[] mergeLists(string[] firstList, string[] secondList)
+        public static string[] mergeLists(string[] firstList, string[] secondList, bool isRandExposition)
         {
             List<string> mergedList = new List<string>();
             bool hasFirstListEnded = false, hasSecondListEnded = false;
@@ -47,6 +47,7 @@
                 {
                     mergedList.Add(firstList[firstListIndex]);
                     hasFirstListEnded = true;
+                    firstList = ShuffleArray(firstList, firstList.Length, Math.Abs(firstListIndex - secondListIndex));
                     firstListIndex = 0;
                 }
                 if(secondListIndex < secondList.Length-1)
@@ -58,6 +59,7 @@
                 {
                     mergedList.Add(secondList[secondListIndex]);
                     hasSecondListEnded = true;
+                    secondList = ShuffleArray(secondList, secondList.Length, Math.Abs(secondListIndex - firstListIndex));
                     secondListIndex = 0;
                 }
             }

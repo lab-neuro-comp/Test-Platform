@@ -418,7 +418,11 @@ namespace TestPlatform.Views
                 
                 // Program type "imageAndWord"
                 case 3:
-                    // TODO: Add ReactionProgram constructor to "imageAndWord" type here
+                    newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
+                                                     Convert.ToInt32(intervalTime.Value), Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
+                                                     fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked,
+                                                     openImgListButton.Text, openWordListButton.Text, openColorListButton.Text, randomBeepCheck.Checked,
+                                                     Convert.ToInt32(positionsBox.Text), ColorListOption.Checked,  responseType(), isRandomExposition.Checked, stimulusColorCheck());
                     break;
                 
                 // Program type "wordWithAudio"
@@ -762,7 +766,25 @@ namespace TestPlatform.Views
                     openColorListButton.Text = LocRM.GetString("open", currentCulture);
                     stimulusColor.Enabled = false;
                     stimulusColor.Text = LocRM.GetString("choose", currentCulture);
-
+                    break;
+                case 3:
+                    errorProvider1.Clear();
+                    shapesGroupBox.Enabled = false;
+                    isRandomExposition.Enabled = true;
+                    openWordListButton.Enabled = true;
+                    ColorListOption.Enabled = true;
+                    UniqueColorOption.Enabled = true;
+                    if (ColorListOption.Checked)
+                    {
+                        stimulusColor.Enabled = false;
+                        openColorListButton.Enabled = true;
+                    }
+                    else
+                    {
+                        stimulusColor.Enabled = true;
+                        openColorListButton.Enabled = false;
+                    }
+                    openImgListButton.Enabled = true;
                     break;
                 default:
                     errorProvider1.SetError(chooseExpoType, LocRM.GetString("unavailableExpo", currentCulture));

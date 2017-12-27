@@ -40,6 +40,7 @@ namespace TestPlatform.Views
         private bool cancelExposition = false;
         private string[] imagesList = null;
         private string[] wordsList = null;
+        private string[] imagesAndWordsList = null;
         private string[] colorsList = null;
         private int imageCounter = 0;
         private PictureBox imgPictureBox = new PictureBox();
@@ -52,6 +53,7 @@ namespace TestPlatform.Views
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private int wordCounter = 0;
         private int colorCounter = 0;
+        private int imageAndWordCounter = 0;
         private System.Windows.Forms.Label wordLabel = new System.Windows.Forms.Label();
         private Control currentControl = null;
 
@@ -116,6 +118,8 @@ namespace TestPlatform.Views
                 
             }
         }
+
+
         private void loadLists()
         {
             switch (executingTest.ProgramInUse.ExpositionType)
@@ -151,8 +155,40 @@ namespace TestPlatform.Views
                     }
                     if (executingTest.ProgramInUse.ExpositionRandom)
                     {
-                        wordsList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumberPositions, 9);
+                        wordsList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumExpositions, 9);
                         colorsList = ExpositionController.ShuffleArray(colorsList, executingTest.ProgramInUse.NumExpositions, 3);
+                    }
+                    break;
+                case "imageAndWord":
+
+                    wordsList = executingTest.ProgramInUse.getWordListFile().ListContent.ToArray();
+                    imagesList = executingTest.ProgramInUse.getImageListFile().ListContent.ToArray();
+                    if (executingTest.ProgramInUse.StimulusColor == "false") //if stimulusColor is false then there exists a color list
+                    {
+                        colorsList = executingTest.ProgramInUse.getColorListFile().ListContent.ToArray();
+                    }
+                    else //if stimulusColor isn't false then there is no color list
+                    {
+                        colorsList = new string[] { executingTest.ProgramInUse.StimulusColor };
+                    }
+                    if (executingTest.ProgramInUse.ExpositionRandom)
+                    {
+                        Random rnd = new Random(DateTime.Now.Millisecond);
+                        wordsList = ExpositionController.ShuffleArray(wordsList, wordsList.Length, 9);
+                        imagesList = ExpositionController.ShuffleArray(imagesList, wordsList.Length, 10);
+                        colorsList = ExpositionController.ShuffleArray(colorsList, executingTest.ProgramInUse.NumExpositions, 3);
+                        if (rnd.Next() % 2 == 0)
+                        {
+                            imagesAndWordsList = ExpositionController.mergeLists(wordsList, imagesList, executingTest.ProgramInUse.ExpositionRandom);
+                        }
+                        else
+                        {
+                            imagesAndWordsList = ExpositionController.mergeLists(imagesList, wordsList, executingTest.ProgramInUse.ExpositionRandom);
+                        }
+                    }
+                    else
+                    {
+                        imagesAndWordsList = ExpositionController.mergeLists(imagesList, wordsList, executingTest.ProgramInUse.ExpositionRandom);
                     }
 
                     break;
@@ -449,6 +485,53 @@ namespace TestPlatform.Views
             expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.NumExpositions * 100, imgPictureBox);
         }
 
+        private void imageWordExposition()
+        {
+            if (File.Exists(imagesAndWordsList[imageAndWordCounter])) //if it's a valid file, then it is an image
+            {
+                imgPictureBox = new PictureBox();
+                imgPictureBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
+                int[] screenPosition = ScreenPosition(imgPictureBox.Size);
+                imgPictureBox.Location = new Point(screenPosition[X], screenPosition[Y]);
+                imgPictureBox.Image = Image.FromFile(imagesAndWordsList[imageAndWordCounter]);
+                currentStimulus = imagesAndWordsList[imageAndWordCounter];
+                imgPictureBox.Enabled = true;
+                imageAndWordCounter++;
+                if (imageAndWordCounter == imagesAndWordsList.Length)
+                {
+                    imageAndWordCounter = 0;
+                }
+                expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.NumExpositions * 100, imgPictureBox);
+            }
+            else //if it's not a valid file, then it is a word.
+            {
+                wordLabel = new System.Windows.Forms.Label();
+                wordLabel.AutoSize = true;
+                wordLabel.Font = new Font("Arial", executingTest.ProgramInUse.StimuluSize, FontStyle.Bold);
+                wordLabel.Text = imagesAndWordsList[imageAndWordCounter];
+                currentStimulus = imagesAndWordsList[imageAndWordCounter];
+                wordLabel.Visible = true;
+                wordLabel.ForeColor = ColorTranslator.FromHtml(colorsList[colorCounter]);
+                wordLabel.Enabled = true;
+
+                int[] screenPosition = ScreenPosition(wordLabel.PreferredSize);
+                screenPosition = wordLabelWithinRange(screenPosition[X], screenPosition[Y]);
+                wordLabel.Location = new Point(screenPosition[X], screenPosition[Y]);
+
+                imageAndWordCounter++;
+                if (imageAndWordCounter == imagesAndWordsList.Length)
+                {
+                    imageAndWordCounter = 0;
+                }
+                colorCounter++;
+                if (colorCounter == colorsList.Length)
+                {
+                    colorCounter = 0;
+                }
+                expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.NumExpositions * 100, wordLabel);
+            }
+       }
+
         private void showStimulus()
         {
             if (executingTest.ProgramInUse.IsBeeping)
@@ -468,7 +551,7 @@ namespace TestPlatform.Views
                     drawImage();
                     break;
                 case "imageAndWord":
-                    //  imageWordExposition();
+                    imageWordExposition();
                     break;
                 case "wordWithAudio":
                     // wordAudioExposition();

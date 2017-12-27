@@ -118,45 +118,42 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="deleteReactButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="deleteExperimentButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="deleteReactButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+  <data name="deleteExperimentButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="deleteReactButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="deleteReactButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="deleteExperimentButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="deleteReactButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="deleteExperimentButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 81</value>
   </data>
-  <data name="deleteReactButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="deleteExperimentButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>264, 33</value>
   </data>
-  <data name="deleteReactButton.TabIndex" type="System.Int32, mscorlib">
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="deleteExperimentButton.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="deleteReactButton.Text" xml:space="preserve">
+  <data name="deleteExperimentButton.Text" xml:space="preserve">
     <value>Excluir Experimento</value>
   </data>
-  <data name="deleteReactButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="deleteExperimentButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;deleteReactButton.Name" xml:space="preserve">
-    <value>deleteReactButton</value>
+  <data name="&gt;&gt;deleteExperimentButton.Name" xml:space="preserve">
+    <value>deleteExperimentButton</value>
   </data>
-  <data name="&gt;&gt;deleteReactButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;deleteExperimentButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;deleteReactButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;deleteExperimentButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;deleteReactButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;deleteExperimentButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="editExperimentButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -235,15 +232,15 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 1353</value>
+    <value>197, 1099</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ExperimentControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6506.27852, Culture=neutral, PublicKeyToken=null</value>
+    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6565.23713, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

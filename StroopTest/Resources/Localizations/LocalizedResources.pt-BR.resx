@@ -658,4 +658,16 @@
   <data name="spaceBar" xml:space="preserve">
     <value>barraDeEspaço</value>
   </data>
+  <data name="deleteProgram" xml:space="preserve">
+    <value>Deletar programa:</value>
+  </data>
+  <data name="programDeleted" xml:space="preserve">
+    <value>foi deletado com sucesso!</value>
+  </data>
+  <data name="programExistsInBackup" xml:space="preserve">
+    <value>O programa já existe na pasta de backup, deseja sobrescrevê-lo?</value>
+  </data>
+  <data name="programNotDeleted" xml:space="preserve">
+    <value>O programa não será excluído!</value>
+  </data>
 </root>

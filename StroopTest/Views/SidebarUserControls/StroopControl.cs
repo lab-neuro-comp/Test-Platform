@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Resources;
 using System.Windows.Forms;
 
@@ -15,7 +16,7 @@ namespace TestPlatform.Views
         {
             this.Dock = DockStyle.Fill;
             InitializeComponent();
-        }     
+        }
 
         private void newStroopButton_CheckedChanged(object sender, EventArgs e)
         {
@@ -44,6 +45,52 @@ namespace TestPlatform.Views
                     }
                     editStroopButton.Checked = false;
                 }
+            }
+        }
+        private void deleteStroopButton_Click(object sender, EventArgs e)
+        {
+            if (deleteStroopButton.Checked)
+            {
+                FormDefine defineProgram;
+                DialogResult result;
+                string deleteProgramName = "error";
+
+                try
+                {
+                    defineProgram = new FormDefine(LocRM.GetString("deleteProgram", currentCulture), Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
+                    result = defineProgram.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        deleteProgramName = defineProgram.ReturnValue;
+                        File.Move(Global.stroopTestFilesPath + Global.programFolderName + deleteProgramName + ".prg", Global.stroopTestFilesBackupPath + deleteProgramName + ".prg");
+                        MessageBox.Show(deleteProgramName + " " + LocRM.GetString("programDeleted", currentCulture));
+                        deleteStroopButton.Checked = false;
+                    }
+                    else
+                    {
+                        /*do nothing, user cancelled selection of program*/
+                    }
+                }
+                catch (IOException)
+                {
+                    DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExistsInBackup", currentCulture), "", MessageBoxButtons.OKCancel);
+                    if (dialogResult == DialogResult.Cancel)
+                    {
+                        MessageBox.Show(LocRM.GetString("programNotDeleted", currentCulture));
+                    }
+                    else
+                    {
+                        File.Delete(Global.stroopTestFilesPath + deleteProgramName + ".prg");
+                        File.Move(Global.stroopTestFilesPath + Global.programFolderName + deleteProgramName + ".prg", Global.stroopTestFilesBackupPath + deleteProgramName + ".prg");
+                        MessageBox.Show(deleteProgramName + " " + LocRM.GetString("programDeleted", currentCulture));
+                    }
+                    deleteStroopButton.Checked = false;
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+            }
+            else
+            {
+                /*do nothing*/
             }
         }
     }

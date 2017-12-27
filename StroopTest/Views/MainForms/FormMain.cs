@@ -116,6 +116,15 @@ namespace TestPlatform
 
             if (!Directory.Exists(Global.defaultPath + Global.backupFolderName))
                 Directory.CreateDirectory(Global.defaultPath + Global.backupFolderName);
+            Global.stroopTestFilesBackupPath = Global.defaultPath + Global.backupFolderName + Global.stroopTestFilesBackupPath;
+            Global.reactionTestFilesBackupPath = Global.defaultPath + Global.backupFolderName + Global.reactionTestFilesBackupPath;
+            Global.experimentTestFilesBackupPath = Global.defaultPath + Global.backupFolderName + Global.experimentTestFilesBackupPath;
+            if (!Directory.Exists(Global.experimentTestFilesBackupPath))
+                Directory.CreateDirectory(Global.experimentTestFilesBackupPath);
+            if (!Directory.Exists(Global.stroopTestFilesBackupPath))
+                Directory.CreateDirectory(Global.stroopTestFilesBackupPath);
+            if (!Directory.Exists(Global.reactionTestFilesBackupPath))
+                Directory.CreateDirectory(Global.reactionTestFilesBackupPath);
             if (!File.Exists(Global.testFilesPath + INSTRUCTIONSFILENAME))
                 File.Create(Global.testFilesPath + "editableInstructions.txt").Dispose();
             if (!File.Exists(Global.testFilesPath + PGRCONFIGHELPFILENAME))

@@ -180,6 +180,54 @@ namespace TestPlatform.Models
 
         }
 
+        /// <summary>
+        /// This constructor is used to create a reaction program with image and words
+        /// </summary>
+        public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
+                        int stimulusDistance, bool isBeeping, int beepDuration,
+                        string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
+                        string imageList, string wordList,  string colorList, bool beepRandom, int numberPositions,
+                        bool hasColorList, string responseType, bool isExpositionRandom, string stimulusColor)
+        {
+            // Program properties
+            this.programName = programName;
+            this.expositionTime = expositionTime;
+            this.numExpositions = numExpositions;
+            this.intervalTime = intervalTime;
+            this.fixPoint = fixPoint;
+            this.backgroundColor = backgroundColor;
+            this.fixPointColor = fixPointColor;
+            this.intervalTimeRandom = intervalTimeRandom;
+            this.expositionRandom = isExpositionRandom;
+
+            // ReactionProgram properties
+            this.stimuluSize = stimuluSize;
+            this.stimulusDistance = stimulusDistance;
+            this.isBeeping = isBeeping;
+            this.beepDuration = beepDuration;
+            this.stimuluShape = "false";
+            this.BeepingRandom = beepRandom;
+            this.ResponseType = responseType;
+            this.NumberPositions = numberPositions;
+            this.hasColorList = hasColorList;
+            if (!hasColorList)
+            {
+                this.stimulusColor = stimulusColor;
+                this.setColorListFile("false");
+            }
+            else
+            {
+                this.stimulusColor = "false";
+                this.setColorListFile(colorList);
+            }
+
+            //default configurations for first version of ReactionProgram
+            this.setAudioListFile("false");
+            this.setWordListFile(wordList);
+            this.setImageListFile(imageList);
+            this.expositionType = "imageAndWord";
+        }
+
         public int StimuluSize
         {
             get

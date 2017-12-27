@@ -31,6 +31,41 @@
             return randomArray.ToArray();
         }
 
+        public static string[] mergeLists(string[] firstList, string[] secondList, bool isRandExposition)
+        {
+            List<string> mergedList = new List<string>();
+            bool hasFirstListEnded = false, hasSecondListEnded = false;
+            int firstListIndex = 0, secondListIndex = 0;
+            while(!hasFirstListEnded || !hasSecondListEnded)
+            {
+                if(firstListIndex != firstList.Length-1) //do this till reach last element in first array
+                {
+                    mergedList.Add(firstList[firstListIndex]);
+                    firstListIndex++;
+                }
+                else //when reach last element add it on list and set flag as true
+                {
+                    mergedList.Add(firstList[firstListIndex]);
+                    hasFirstListEnded = true;
+                    firstList = ShuffleArray(firstList, firstList.Length, Math.Abs(firstListIndex - secondListIndex));
+                    firstListIndex = 0;
+                }
+                if(secondListIndex < secondList.Length-1)
+                {
+                    mergedList.Add(secondList[secondListIndex]);
+                    secondListIndex++;
+                }
+                else
+                {
+                    mergedList.Add(secondList[secondListIndex]);
+                    hasSecondListEnded = true;
+                    secondList = ShuffleArray(secondList, secondList.Length, Math.Abs(secondListIndex - firstListIndex));
+                    secondListIndex = 0;
+                }
+            }
+            return mergedList.ToArray();
+        }
+
         public static void BeginStroopTest(string programName, string participantName, char mark, Form form)
         {
             try

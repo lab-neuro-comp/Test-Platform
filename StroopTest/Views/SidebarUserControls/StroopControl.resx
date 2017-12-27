@@ -124,10 +124,6 @@
   <data name="deleteStroopButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="deleteStroopButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="deleteStroopButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -138,6 +134,7 @@
   <data name="deleteStroopButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 33</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="deleteStroopButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -235,15 +232,15 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 1225</value>
+    <value>197, 995</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>StroopControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6506.27852, Culture=neutral, PublicKeyToken=null</value>
+    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6565.23560, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

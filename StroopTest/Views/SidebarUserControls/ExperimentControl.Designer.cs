@@ -34,7 +34,7 @@
             this.newExperimentButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
-            // deleteReactButton
+            // deleteExperimentButton
             // 
             resources.ApplyResources(this.deleteExperimentButton, "deleteExperimentButton");
             this.deleteExperimentButton.FlatAppearance.BorderSize = 0;

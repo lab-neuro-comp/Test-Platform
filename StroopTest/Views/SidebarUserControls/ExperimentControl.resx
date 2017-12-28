@@ -132,7 +132,7 @@
     <value>0, 81</value>
   </data>
   <data name="deleteExperimentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 33</value>
+    <value>197, 33</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="deleteExperimentButton.TabIndex" type="System.Int32, mscorlib">
@@ -169,7 +169,7 @@
     <value>0, 42</value>
   </data>
   <data name="editExperimentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 33</value>
+    <value>197, 33</value>
   </data>
   <data name="editExperimentButton.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -205,7 +205,7 @@
     <value>0, 3</value>
   </data>
   <data name="newExperimentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 33</value>
+    <value>197, 33</value>
   </data>
   <data name="newExperimentButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -241,6 +241,6 @@
     <value>ExperimentControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6565.23713, Culture=neutral, PublicKeyToken=null</value>
+    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6571.29848, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Resources;
 using System.Windows.Forms;
+using TestPlatform.Views.ReactionPages;
 
 namespace TestPlatform.Views.SidebarUserControls
 {
@@ -111,6 +112,25 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 /*do nothing*/
             }
+
+        }
+
+        private void recoverReactButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (recoverReactButton.Checked)
+                {
+                    RecoverTR recoverProgram = new RecoverTR();
+                    Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                    recoverReactButton.Checked = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void deleteReactButton_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }

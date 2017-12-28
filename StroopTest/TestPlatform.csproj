@@ -190,6 +190,12 @@
     <Compile Include="Views\ReactionPages\ReactionResultUserControl.Designer.cs">
       <DependentUpon>ReactionResultUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ReactionPages\RecoverTR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ReactionPages\RecoverTR.Designer.cs">
+      <DependentUpon>RecoverTR.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SidebarUserControls\DefaultUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -425,6 +431,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\ReactionResultUserControl.resx">
       <DependentUpon>ReactionResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReactionPages\RecoverTR.en-US.resx">
+      <DependentUpon>RecoverTR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReactionPages\RecoverTR.pt-BR.resx">
+      <DependentUpon>RecoverTR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReactionPages\RecoverTR.resx">
+      <DependentUpon>RecoverTR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\DefaultUserControl.resx">
       <DependentUpon>DefaultUserControl.cs</DependentUpon>

@@ -591,4 +591,19 @@
   <data name="programNotDeleted" xml:space="preserve">
     <value>The program will not be deleted!</value>
   </data>
+  <data name="recoveredSucessful" xml:space="preserve">
+    <value>All selected programs were recovered successful.</value>
+  </data>
+  <data name="programRecovered" xml:space="preserve">
+    <value>was recovered sucessful!</value>
+  </data>
+  <data name="programNotRecovered" xml:space="preserve">
+    <value>The program will not be recovered!</value>
+  </data>
+  <data name="conflictsFound" xml:space="preserve">
+    <value>conflict(s) found. Do you want to treat them now?</value>
+  </data>
+  <data name="conflict" xml:space="preserve">
+    <value>Conflict</value>
+  </data>
 </root>

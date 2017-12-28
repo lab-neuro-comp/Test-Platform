@@ -670,4 +670,19 @@
   <data name="programNotDeleted" xml:space="preserve">
     <value>O programa não será excluído!</value>
   </data>
+  <data name="recoveredSucessful" xml:space="preserve">
+    <value>Todos os programas selecionados foram recuperados com sucesso.</value>
+  </data>
+  <data name="programRecovered" xml:space="preserve">
+    <value>foi recuperado com sucesso!</value>
+  </data>
+  <data name="programNotRecovered" xml:space="preserve">
+    <value>O programa não será recuperado!</value>
+  </data>
+  <data name="conflictsFound" xml:space="preserve">
+    <value>conflito(s) encontrado(s). deseja trata-lo(s) agora?</value>
+  </data>
+  <data name="conflict" xml:space="preserve">
+    <value>Conflito</value>
+  </data>
 </root>

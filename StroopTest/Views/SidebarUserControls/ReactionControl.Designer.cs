@@ -32,6 +32,7 @@
             this.deleteReactButton = new System.Windows.Forms.RadioButton();
             this.editReactButton = new System.Windows.Forms.RadioButton();
             this.newReactButton = new System.Windows.Forms.RadioButton();
+            this.recoverReactButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // deleteReactButton
@@ -40,6 +41,7 @@
             this.deleteReactButton.FlatAppearance.BorderSize = 0;
             this.deleteReactButton.Name = "deleteReactButton";
             this.deleteReactButton.UseVisualStyleBackColor = true;
+            this.deleteReactButton.CheckedChanged += new System.EventHandler(this.deleteReactButton_CheckedChanged);
             this.deleteReactButton.Click += new System.EventHandler(this.deleteReactButton_Click);
             // 
             // editReactButton
@@ -58,10 +60,19 @@
             this.newReactButton.UseVisualStyleBackColor = true;
             this.newReactButton.Click += new System.EventHandler(this.newReactButton_Click);
             // 
+            // recoverReactButton
+            // 
+            resources.ApplyResources(this.recoverReactButton, "recoverReactButton");
+            this.recoverReactButton.FlatAppearance.BorderSize = 0;
+            this.recoverReactButton.Name = "recoverReactButton";
+            this.recoverReactButton.UseVisualStyleBackColor = true;
+            this.recoverReactButton.Click += new System.EventHandler(this.recoverReactButton_Click);
+            // 
             // ReactionControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.recoverReactButton);
             this.Controls.Add(this.deleteReactButton);
             this.Controls.Add(this.editReactButton);
             this.Controls.Add(this.newReactButton);
@@ -75,5 +86,6 @@
         private System.Windows.Forms.RadioButton deleteReactButton;
         private System.Windows.Forms.RadioButton editReactButton;
         private System.Windows.Forms.RadioButton newReactButton;
+        private System.Windows.Forms.RadioButton recoverReactButton;
     }
 }

@@ -118,39 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="recoverButton.AutoSize" type="System.Boolean, mscorlib">
+  <data name="sendButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="recoverButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="sendButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="recoverButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="sendButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="recoverButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="sendButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>414, 535</value>
   </data>
-  <data name="recoverButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="sendButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 23</value>
   </data>
-  <data name="recoverButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="sendButton.TabIndex" type="System.Int32, mscorlib">
     <value>87</value>
   </data>
-  <data name="recoverButton.Text" xml:space="preserve">
+  <data name="sendButton.Text" xml:space="preserve">
     <value>recuperar</value>
   </data>
-  <data name="&gt;&gt;recoverButton.Name" xml:space="preserve">
-    <value>recoverButton</value>
+  <data name="&gt;&gt;sendButton.Name" xml:space="preserve">
+    <value>sendButton</value>
   </data>
-  <data name="&gt;&gt;recoverButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;sendButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;recoverButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;sendButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;recoverButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;sendButton.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="cancelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -276,65 +276,65 @@
   <data name="&gt;&gt;addToDeletedList.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="experimentDeletedLabel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="programDeletedLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="experimentDeletedLabel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="programDeletedLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 42</value>
   </data>
-  <data name="experimentDeletedLabel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="programDeletedLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 13</value>
   </data>
-  <data name="experimentDeletedLabel.TabIndex" type="System.Int32, mscorlib">
+  <data name="programDeletedLabel.TabIndex" type="System.Int32, mscorlib">
     <value>92</value>
   </data>
-  <data name="experimentDeletedLabel.Text" xml:space="preserve">
+  <data name="programDeletedLabel.Text" xml:space="preserve">
     <value>Experimentos deletados:</value>
   </data>
-  <data name="&gt;&gt;experimentDeletedLabel.Name" xml:space="preserve">
-    <value>experimentDeletedLabel</value>
+  <data name="&gt;&gt;programDeletedLabel.Name" xml:space="preserve">
+    <value>programDeletedLabel</value>
   </data>
-  <data name="&gt;&gt;experimentDeletedLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;programDeletedLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;experimentDeletedLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;programDeletedLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;experimentDeletedLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;programDeletedLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="experimentRecoveredLabel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="programRecoveredLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="experimentRecoveredLabel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="programRecoveredLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>289, 42</value>
   </data>
-  <data name="experimentRecoveredLabel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="programRecoveredLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 13</value>
   </data>
-  <data name="experimentRecoveredLabel.TabIndex" type="System.Int32, mscorlib">
+  <data name="programRecoveredLabel.TabIndex" type="System.Int32, mscorlib">
     <value>93</value>
   </data>
-  <data name="experimentRecoveredLabel.Text" xml:space="preserve">
+  <data name="programRecoveredLabel.Text" xml:space="preserve">
     <value>Experimentos que serão recuperados:</value>
   </data>
-  <data name="&gt;&gt;experimentRecoveredLabel.Name" xml:space="preserve">
-    <value>experimentRecoveredLabel</value>
+  <data name="&gt;&gt;programRecoveredLabel.Name" xml:space="preserve">
+    <value>programRecoveredLabel</value>
   </data>
-  <data name="&gt;&gt;experimentRecoveredLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;programRecoveredLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;experimentRecoveredLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;programRecoveredLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;experimentRecoveredLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;programRecoveredLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="warningLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 466</value>
   </data>
   <data name="warningLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>490, 32</value>
+    <value>490, 43</value>
   </data>
   <data name="warningLabel.TabIndex" type="System.Int32, mscorlib">
     <value>94</value>
@@ -358,7 +358,7 @@
     <value>True</value>
   </data>
   <data name="agreeCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 500</value>
+    <value>12, 512</value>
   </data>
   <data name="agreeCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 17</value>
@@ -394,7 +394,7 @@
     <value>520, 576</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>RecoverTR</value>
+    <value>TRManagment</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

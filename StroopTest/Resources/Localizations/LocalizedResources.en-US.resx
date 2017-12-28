@@ -606,4 +606,43 @@
   <data name="conflict" xml:space="preserve">
     <value>Conflict</value>
   </data>
+  <data name="delete" xml:space="preserve">
+    <value>delete</value>
+  </data>
+  <data name="recover" xml:space="preserve">
+    <value>recover</value>
+  </data>
+  <data name="deletedExperiments" xml:space="preserve">
+    <value>Deleted experiments:</value>
+  </data>
+  <data name="deletedPrograms" xml:space="preserve">
+    <value>Deleted programs:</value>
+  </data>
+  <data name="existingExperiments" xml:space="preserve">
+    <value>Existing experiments:</value>
+  </data>
+  <data name="existingPrograms" xml:space="preserve">
+    <value>Existing programs:</value>
+  </data>
+  <data name="toDeleteExperiments" xml:space="preserve">
+    <value>Experiments that will be deleted:</value>
+  </data>
+  <data name="toDeletePrograms" xml:space="preserve">
+    <value>Programs that will be deleted:</value>
+  </data>
+  <data name="toRecoverExperiments" xml:space="preserve">
+    <value>Experiments that will be recovered:</value>
+  </data>
+  <data name="toRecoverPrograms" xml:space="preserve">
+    <value>Programs that will be recovered:</value>
+  </data>
+  <data name="warningDelete" xml:space="preserve">
+    <value>Warning: Items marked in red indicate that there's existing programs with same name in backup folder. Deleting these programs will overwrite existing programs, and you will not be able to recover them.</value>
+  </data>
+  <data name="warningRecover" xml:space="preserve">
+    <value>Warning: Items marked in red indicate existing programs. Recovering these programs will overwrite existing programs, and you will not be able to recover them.</value>
+  </data>
+  <data name="deletedSucessful" xml:space="preserve">
+    <value>All selected programs were deleted successful.</value>
+  </data>
 </root>

@@ -13,7 +13,7 @@ using System.Globalization;
 
 namespace TestPlatform.Views.StroopPages
 {
-    public partial class RecoverStroop : UserControl
+    public partial class StroopManagment : UserControl
     {
 
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
@@ -24,6 +24,8 @@ namespace TestPlatform.Views.StroopPages
         private SolidBrush reportsBackgroundBrushSelected = new SolidBrush(Color.FromKnownColor(KnownColor.Highlight));
         private SolidBrush reportsBackgroundBrush1 = new SolidBrush(Color.Red);
         private bool hasConflict = false;
+
+        private string sourcePath, destPath;
 
         private void deletedListBox_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -42,7 +44,7 @@ namespace TestPlatform.Views.StroopPages
                 {
                     backgroundBrush = reportsBackgroundBrushSelected;
                 }
-                else if (File.Exists(Global.stroopTestFilesPath + Global.programFolderName + text + ".prg") == true)
+                else if (File.Exists(destPath + text + ".prg") == true)
                 {
                     backgroundBrush = reportsBackgroundBrush1;
                 }
@@ -76,7 +78,7 @@ namespace TestPlatform.Views.StroopPages
                 {
                     backgroundBrush = reportsBackgroundBrushSelected;
                 }
-                else if (File.Exists(Global.stroopTestFilesPath + Global.programFolderName + text + ".prg") == true)
+                else if (File.Exists(destPath + text + ".prg") == true)
                 {
                     backgroundBrush = reportsBackgroundBrush1;
                 }
@@ -93,10 +95,30 @@ namespace TestPlatform.Views.StroopPages
             e.DrawFocusRectangle();
         }
 
-        public RecoverStroop()
+        public StroopManagment(string sourcePath, string destPath, char mode)
         {
+            this.sourcePath = sourcePath;
+            this.destPath = destPath;
             InitializeComponent();
             loadDeletedList();
+            if (mode == 'r') //recover mode
+            {
+                sendButton.Text = LocRM.GetString("recover", currentCulture);
+                programDeletedLabel.Text = LocRM.GetString("deletedPrograms", currentCulture);
+                programRecoveredLabel.Text = LocRM.GetString("toRecoverPrograms", currentCulture);
+                warningLabel.Text = LocRM.GetString("warningRecover", currentCulture);
+            }
+            else if (mode == 'd') //delete mode
+            {
+                sendButton.Text = LocRM.GetString("delete", currentCulture);
+                programDeletedLabel.Text = LocRM.GetString("existingPrograms", currentCulture);
+                programRecoveredLabel.Text = LocRM.GetString("toDeletePrograms", currentCulture);
+                warningLabel.Text = LocRM.GetString("warningDelete", currentCulture);
+            }
+            else
+            {
+                throw new ArgumentException();
+            }
         }
 
         private void loadDeletedList()
@@ -104,7 +126,7 @@ namespace TestPlatform.Views.StroopPages
             string[] filePaths;
             string programName;
             deletedListBox.Items.Clear();
-            filePaths = Directory.GetFiles(Global.stroopTestFilesBackupPath, ("*.prg"), SearchOption.AllDirectories);
+            filePaths = Directory.GetFiles(sourcePath, ("*.prg"), SearchOption.AllDirectories);
             foreach (string file in filePaths)
             {
                 programName = Path.GetFileNameWithoutExtension(file);
@@ -115,13 +137,13 @@ namespace TestPlatform.Views.StroopPages
             {
                 agreeCheckBox.Visible = true;
                 warningLabel.Visible = true;
-                recoverButton.Enabled = false;
+                sendButton.Enabled = false;
             }
             else
             {
                 agreeCheckBox.Visible = false;
                 warningLabel.Visible = false;
-                recoverButton.Enabled = true;
+                sendButton.Enabled = true;
             }
         }
 
@@ -129,7 +151,7 @@ namespace TestPlatform.Views.StroopPages
         {
             for (int count = 0; count < deletedListBox.Items.Count; count++)
             {
-                if (File.Exists(Global.stroopTestFilesPath + Global.programFolderName + deletedListBox.Items[count].ToString() + ".prg"))
+                if (File.Exists(destPath + deletedListBox.Items[count].ToString() + ".prg"))
                 {
                     hasConflict = true;
                     return;
@@ -141,11 +163,11 @@ namespace TestPlatform.Views.StroopPages
         {
             if (agreeCheckBox.Checked)
             {
-                recoverButton.Enabled = true;
+                sendButton.Enabled = true;
             }
             else
             {
-                recoverButton.Enabled = false;
+                sendButton.Enabled = false;
             }
         }
 
@@ -168,17 +190,24 @@ namespace TestPlatform.Views.StroopPages
                 {
                     try
                     {
-                        File.Move(Global.stroopTestFilesBackupPath + programs[count] + ".prg", Global.stroopTestFilesPath + Global.programFolderName + programs[count] + ".prg");
+                        File.Move(sourcePath + programs[count] + ".prg", destPath + programs[count] + ".prg");
                         toRecoverListBox.Items.Remove(programs[count]);
                     }
                     catch (IOException)
                     {
-                        File.Delete(Global.stroopTestFilesPath + Global.programFolderName + programs[count] + ".prg");
-                        File.Move(Global.stroopTestFilesBackupPath + programs[count] + ".prg", Global.stroopTestFilesPath + Global.programFolderName + programs[count] + ".prg");
+                        File.Delete(destPath + programs[count] + ".prg");
+                        File.Move(sourcePath + programs[count] + ".prg", destPath + programs[count] + ".prg");
                         toRecoverListBox.Items.Remove(programs[count]);
                     }
                 }
-                MessageBox.Show(LocRM.GetString("recoveredSucessful", currentCulture));
+                if (sendButton.Text == LocRM.GetString("recover", currentCulture))
+                {
+                    MessageBox.Show(LocRM.GetString("recoveredSucessful", currentCulture));
+                }
+                else
+                {
+                    MessageBox.Show(LocRM.GetString("deletedSucessful", currentCulture));
+                }
                 loadDeletedList();
             }
             else

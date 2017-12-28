@@ -133,11 +133,11 @@
     <Compile Include="Models\StroopTest.cs" />
     <Compile Include="Models\Validations.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Views\ExperimentPages\RecoverExperiment.cs">
+    <Compile Include="Views\ExperimentPages\ExperimentManagment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ExperimentPages\RecoverExperiment.Designer.cs">
-      <DependentUpon>RecoverExperiment.cs</DependentUpon>
+    <Compile Include="Views\ExperimentPages\ExperimentManagment.Designer.cs">
+      <DependentUpon>ExperimentManagment.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\MainForms\AboutBox.cs">
       <SubType>Form</SubType>
@@ -196,11 +196,11 @@
     <Compile Include="Views\ReactionPages\ReactionResultUserControl.Designer.cs">
       <DependentUpon>ReactionResultUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ReactionPages\RecoverTR.cs">
+    <Compile Include="Views\ReactionPages\TRManagment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ReactionPages\RecoverTR.Designer.cs">
-      <DependentUpon>RecoverTR.cs</DependentUpon>
+    <Compile Include="Views\ReactionPages\TRManagment.Designer.cs">
+      <DependentUpon>TRManagment.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SidebarUserControls\DefaultUserControl.cs">
       <SubType>UserControl</SubType>
@@ -318,11 +318,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Models\StroopProgram.cs" />
-    <Compile Include="Views\StroopPages\RecoverStroop.cs">
+    <Compile Include="Views\StroopPages\StroopManagment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\StroopPages\RecoverStroop.Designer.cs">
-      <DependentUpon>RecoverStroop.cs</DependentUpon>
+    <Compile Include="Views\StroopPages\StroopManagment.Designer.cs">
+      <DependentUpon>StroopManagment.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Resources\Localizations\LocalizedResources.en-US.resx" />
     <EmbeddedResource Include="Resources\Localizations\LocalizedResources.pt-BR.resx" />
@@ -338,14 +338,14 @@
     <EmbeddedResource Include="Views\ExperimentPages\ExperimentResultUserControl.pt-BR.resx">
       <DependentUpon>ExperimentResultUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ExperimentPages\RecoverExperiment.en-US.resx">
-      <DependentUpon>RecoverExperiment.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ExperimentPages\ExperimentManagment.en-US.resx">
+      <DependentUpon>ExperimentManagment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ExperimentPages\RecoverExperiment.pt-BR.resx">
-      <DependentUpon>RecoverExperiment.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ExperimentPages\ExperimentManagment.pt-BR.resx">
+      <DependentUpon>ExperimentManagment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ExperimentPages\RecoverExperiment.resx">
-      <DependentUpon>RecoverExperiment.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ExperimentPages\ExperimentManagment.resx">
+      <DependentUpon>ExperimentManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormAudioConfig.en-US.resx">
       <DependentUpon>FormAudioConfig.cs</DependentUpon>
@@ -453,14 +453,14 @@
     <EmbeddedResource Include="Views\ReactionPages\ReactionResultUserControl.resx">
       <DependentUpon>ReactionResultUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ReactionPages\RecoverTR.en-US.resx">
-      <DependentUpon>RecoverTR.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ReactionPages\TRManagment.en-US.resx">
+      <DependentUpon>TRManagment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ReactionPages\RecoverTR.pt-BR.resx">
-      <DependentUpon>RecoverTR.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ReactionPages\TRManagment.pt-BR.resx">
+      <DependentUpon>TRManagment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ReactionPages\RecoverTR.resx">
-      <DependentUpon>RecoverTR.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ReactionPages\TRManagment.resx">
+      <DependentUpon>TRManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\DefaultUserControl.resx">
       <DependentUpon>DefaultUserControl.cs</DependentUpon>
@@ -569,14 +569,14 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\StroopPages\RecoverStroop.en-US.resx">
-      <DependentUpon>RecoverStroop.cs</DependentUpon>
+    <EmbeddedResource Include="Views\StroopPages\StroopManagment.en-US.resx">
+      <DependentUpon>StroopManagment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\StroopPages\RecoverStroop.pt-BR.resx">
-      <DependentUpon>RecoverStroop.cs</DependentUpon>
+    <EmbeddedResource Include="Views\StroopPages\StroopManagment.pt-BR.resx">
+      <DependentUpon>StroopManagment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\StroopPages\RecoverStroop.resx">
-      <DependentUpon>RecoverStroop.cs</DependentUpon>
+    <EmbeddedResource Include="Views\StroopPages\StroopManagment.resx">
+      <DependentUpon>StroopManagment.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config">
       <SubType>Designer</SubType>

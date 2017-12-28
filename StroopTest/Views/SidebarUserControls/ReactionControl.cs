@@ -69,50 +69,16 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void deleteReactButton_Click(object sender, EventArgs e)
         {
-            if (deleteReactButton.Checked)
+            try
             {
-                FormDefine defineProgram;
-                DialogResult result;
-                string deleteProgramName = "error";
-
-                try
+                if (deleteReactButton.Checked)
                 {
-                    defineProgram = new FormDefine(LocRM.GetString("deleteProgram", currentCulture), Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false);
-                    result = defineProgram.ShowDialog();
-                    if (result == DialogResult.OK)
-                    {
-                        deleteProgramName = defineProgram.ReturnValue;
-                        File.Move(Global.reactionTestFilesPath + Global.programFolderName + deleteProgramName + ".prg", Global.reactionTestFilesBackupPath + deleteProgramName + ".prg");
-                        MessageBox.Show(deleteProgramName + " " + LocRM.GetString("programDeleted", currentCulture));
-                        deleteReactButton.Checked = false;
-                    }
-                    else
-                    {
-                        /*do nothing, user cancelled selection of program*/
-                    }
-                }
-                catch (IOException)
-                {
-                    DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExistsInBackup", currentCulture), "", MessageBoxButtons.OKCancel);
-                    if (dialogResult == DialogResult.Cancel)
-                    {
-                        MessageBox.Show(LocRM.GetString("programNotDeleted", currentCulture));
-                    }
-                    else
-                    {
-                        File.Delete(Global.experimentTestFilesBackupPath + deleteProgramName + ".prg");
-                        File.Move(Global.reactionTestFilesPath + Global.programFolderName + deleteProgramName + ".prg", Global.reactionTestFilesBackupPath + deleteProgramName + ".prg");
-                        MessageBox.Show(deleteProgramName +" "+ LocRM.GetString("programDeleted", currentCulture));
-                    }
+                    TRManagment recoverProgram = new TRManagment(Global.reactionTestFilesPath + Global.programFolderName, Global.reactionTestFilesBackupPath, 'd');
+                    Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                     deleteReactButton.Checked = false;
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
-            else
-            {
-                /*do nothing*/
-            }
-
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void recoverReactButton_Click(object sender, EventArgs e)
@@ -121,7 +87,7 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 if (recoverReactButton.Checked)
                 {
-                    RecoverTR recoverProgram = new RecoverTR();
+                    TRManagment recoverProgram = new TRManagment(Global.reactionTestFilesBackupPath, Global.reactionTestFilesPath + Global.programFolderName, 'r');
                     Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                     recoverReactButton.Checked = false;
                 }

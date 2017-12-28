@@ -8,15 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Resources;
 using System.Globalization;
+using System.Resources;
 
-namespace TestPlatform.Views.ExperimentPages
+namespace TestPlatform.Views.ReactionPages
 {
-    public partial class RecoverExperiment : UserControl
+    public partial class TRManagment : UserControl
     {
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+
+        string sourcePath, destPath;
 
         private SolidBrush reportsForegroundBrushSelected = new SolidBrush(Color.White);
         private SolidBrush reportsForegroundBrush = new SolidBrush(Color.Black);
@@ -40,7 +42,7 @@ namespace TestPlatform.Views.ExperimentPages
                 {
                     backgroundBrush = reportsBackgroundBrushSelected;
                 }
-                else if (File.Exists(Global.experimentTestFilesPath + Global.programFolderName + text + ".prg") == true)
+                else if (File.Exists(destPath + text + ".prg") == true)
                 {
                     backgroundBrush = reportsBackgroundBrush1;
                 }
@@ -74,7 +76,7 @@ namespace TestPlatform.Views.ExperimentPages
                 {
                     backgroundBrush = reportsBackgroundBrushSelected;
                 }
-                else if (File.Exists(Global.experimentTestFilesPath + Global.programFolderName + text + ".prg") == true)
+                else if (File.Exists(destPath + text + ".prg") == true)
                 {
                     backgroundBrush = reportsBackgroundBrush1;
                 }
@@ -90,10 +92,31 @@ namespace TestPlatform.Views.ExperimentPages
             }
             e.DrawFocusRectangle();
         }
-        public RecoverExperiment()
+
+        public TRManagment(string sourcePath, string destPath, char mode)
         {
+            this.sourcePath = sourcePath;
+            this.destPath = destPath;
             InitializeComponent();
             loadDeletedList();
+            if(mode == 'r') //recover mode
+            {
+                sendButton.Text = LocRM.GetString("recover", currentCulture);
+                programDeletedLabel.Text = LocRM.GetString("deletedPrograms", currentCulture);
+                programRecoveredLabel.Text = LocRM.GetString("toRecoverPrograms", currentCulture);
+                warningLabel.Text = LocRM.GetString("warningRecover", currentCulture);
+            }
+            else if(mode == 'd') //delete mode
+            {
+                sendButton.Text = LocRM.GetString("delete", currentCulture);
+                programDeletedLabel.Text = LocRM.GetString("existingPrograms", currentCulture);
+                programRecoveredLabel.Text = LocRM.GetString("toDeletePrograms", currentCulture);
+                warningLabel.Text = LocRM.GetString("warningDelete", currentCulture);
+            }
+            else
+            {
+                throw new ArgumentException();
+            }
         }
 
         private void loadDeletedList()
@@ -101,8 +124,8 @@ namespace TestPlatform.Views.ExperimentPages
             string[] filePaths;
             string programName;
             deletedListBox.Items.Clear();
-            filePaths = Directory.GetFiles(Global.experimentTestFilesBackupPath, ("*.prg"), SearchOption.AllDirectories);
-            foreach (string file in filePaths)
+            filePaths = Directory.GetFiles(sourcePath, ("*.prg"), SearchOption.AllDirectories);
+            foreach(string file in filePaths)
             {
                 programName = Path.GetFileNameWithoutExtension(file);
                 deletedListBox.Items.Add(programName);
@@ -112,13 +135,13 @@ namespace TestPlatform.Views.ExperimentPages
             {
                 agreeCheckBox.Visible = true;
                 warningLabel.Visible = true;
-                recoverButton.Enabled = false;
+                sendButton.Enabled = false;
             }
             else
             {
                 agreeCheckBox.Visible = false;
                 warningLabel.Visible = false;
-                recoverButton.Enabled = true;
+                sendButton.Enabled = true;
             }
         }
 
@@ -126,8 +149,7 @@ namespace TestPlatform.Views.ExperimentPages
         {
             for (int count = 0; count < deletedListBox.Items.Count; count++)
             {
-                if (File.Exists(Global.experimentTestFilesPath + Global.programFolderName + deletedListBox.Items[count].ToString() + ".prg"))
-                {
+                if(File.Exists(destPath + deletedListBox.Items[count].ToString() + ".prg")){
                     hasConflict = true;
                     return;
                 }
@@ -153,6 +175,7 @@ namespace TestPlatform.Views.ExperimentPages
             {
                 /*do nothing*/
             }
+
         }
 
         private void addToDeletedList_Click(object sender, EventArgs e)
@@ -183,17 +206,24 @@ namespace TestPlatform.Views.ExperimentPages
                 {
                     try
                     {
-                        File.Move(Global.experimentTestFilesBackupPath + programs[count] + ".prg", Global.experimentTestFilesPath + Global.programFolderName + programs[count] + ".prg");
+                        File.Move(sourcePath + programs[count] + ".prg", destPath + programs[count] + ".prg");
                         toRecoverListBox.Items.Remove(programs[count]);
                     }
                     catch (IOException)
                     {
-                        File.Delete(Global.experimentTestFilesPath + Global.programFolderName + programs[count] + ".prg");
-                        File.Move(Global.experimentTestFilesBackupPath + programs[count] + ".prg", Global.experimentTestFilesPath + Global.programFolderName + programs[count] + ".prg");
+                        File.Delete(destPath + programs[count] + ".prg");
+                        File.Move(sourcePath + programs[count] + ".prg", destPath + programs[count] + ".prg");
                         toRecoverListBox.Items.Remove(programs[count]);
                     }
                 }
-                MessageBox.Show(LocRM.GetString("recoveredSucessful", currentCulture));
+                if (sendButton.Text == LocRM.GetString("recover", currentCulture))
+                {
+                    MessageBox.Show(LocRM.GetString("recoveredSucessful", currentCulture));
+                }
+                else
+                {
+                    MessageBox.Show(LocRM.GetString("deletedSucessful", currentCulture));
+                }
                 loadDeletedList();
             }
             else
@@ -206,13 +236,12 @@ namespace TestPlatform.Views.ExperimentPages
         {
             if (agreeCheckBox.Checked)
             {
-                recoverButton.Enabled = true;
+                sendButton.Enabled = true;
             }
             else
             {
-                recoverButton.Enabled = false;
+                sendButton.Enabled = false;
             }
         }
-
     }
 }

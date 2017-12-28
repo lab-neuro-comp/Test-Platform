@@ -64,49 +64,19 @@ namespace TestPlatform.Views.SidebarUserControls
         }
         private void deleteExperimentButton_Click(object sender, EventArgs e)
         {
-            if (deleteExperimentButton.Checked)
-            {
-                FormDefine defineProgram;
-                DialogResult result;
-                string deleteProgramName = "error";
-
-                try
+            try {
+                if (deleteExperimentButton.Checked)
                 {
-                    defineProgram = new FormDefine(LocRM.GetString("deleteProgram", currentCulture), Global.experimentTestFilesPath + Global.programFolderName, "prg", "program", false);
-                    result = defineProgram.ShowDialog();
-                    if (result == DialogResult.OK)
-                    {
-                        deleteProgramName = defineProgram.ReturnValue;
-                        File.Move(Global.experimentTestFilesPath + Global.programFolderName + deleteProgramName + ".prg", Global.experimentTestFilesBackupPath + deleteProgramName + ".prg");
-                        MessageBox.Show(deleteProgramName + " " + LocRM.GetString("programDeleted", currentCulture));
-                        deleteExperimentButton.Checked = false;
-                    }
-                    else
-                    {
-                        /*do nothing, user cancelled selection of program*/
-                    }
-                }
-                catch (IOException)
-                {
-                    DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExistsInBackup", currentCulture), "", MessageBoxButtons.OKCancel);
-                    if (dialogResult == DialogResult.Cancel)
-                    {
-                        MessageBox.Show(LocRM.GetString("programNotDeleted", currentCulture));
-                    }
-                    else
-                    {
-                        File.Delete(Global.experimentTestFilesPath + deleteProgramName + ".prg");
-                        File.Move(Global.experimentTestFilesPath + Global.programFolderName + deleteProgramName + ".prg", Global.experimentTestFilesBackupPath + deleteProgramName + ".prg");
-                        MessageBox.Show(deleteProgramName + " " + LocRM.GetString("programDeleted", currentCulture));
-                    }
+                    ExperimentManagment recoverProgram = new ExperimentManagment(Global.experimentTestFilesPath + Global.programFolderName, Global.experimentTestFilesBackupPath, 'd');
+                    Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                     deleteExperimentButton.Checked = false;
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                else
+                {
+                    /*do nothing*/
+                }
             }
-            else
-            {
-                /*do nothing*/
-            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void recoverExperimentButton_Click(object sender, EventArgs e)
@@ -115,9 +85,13 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 if (recoverExperimentButton.Checked)
                 {
-                    RecoverExperiment recoverProgram = new RecoverExperiment();
+                    ExperimentManagment recoverProgram = new ExperimentManagment(Global.experimentTestFilesBackupPath, Global.experimentTestFilesPath + Global.programFolderName, 'r');
                     Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                     recoverExperimentButton.Checked = false;
+                }
+                else
+                {
+                    /*do nothing */
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

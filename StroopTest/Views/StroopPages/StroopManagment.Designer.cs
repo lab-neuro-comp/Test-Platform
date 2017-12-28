@@ -1,6 +1,6 @@
 ﻿namespace TestPlatform.Views.StroopPages
 {
-    partial class RecoverStroop
+    partial class StroopManagment
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecoverStroop));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StroopManagment));
             this.deletedListBox = new System.Windows.Forms.ListBox();
             this.toRecoverListBox = new System.Windows.Forms.ListBox();
             this.warningLabel = new System.Windows.Forms.Label();
             this.agreeCheckBox = new System.Windows.Forms.CheckBox();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.recoverButton = new System.Windows.Forms.Button();
+            this.sendButton = new System.Windows.Forms.Button();
             this.addToDeletedList = new System.Windows.Forms.Button();
             this.addToRecoverList = new System.Windows.Forms.Button();
             this.programRecoveredLabel = new System.Windows.Forms.Label();
@@ -77,12 +77,12 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // recoverButton
+            // sendButton
             // 
-            resources.ApplyResources(this.recoverButton, "recoverButton");
-            this.recoverButton.Name = "recoverButton";
-            this.recoverButton.UseVisualStyleBackColor = true;
-            this.recoverButton.Click += new System.EventHandler(this.recoverButton_Click);
+            resources.ApplyResources(this.sendButton, "sendButton");
+            this.sendButton.Name = "sendButton";
+            this.sendButton.UseVisualStyleBackColor = true;
+            this.sendButton.Click += new System.EventHandler(this.recoverButton_Click);
             // 
             // addToDeletedList
             // 
@@ -108,7 +108,7 @@
             resources.ApplyResources(this.programDeletedLabel, "programDeletedLabel");
             this.programDeletedLabel.Name = "programDeletedLabel";
             // 
-            // RecoverStroop
+            // StroopManagment
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -116,13 +116,13 @@
             this.Controls.Add(this.programDeletedLabel);
             this.Controls.Add(this.addToDeletedList);
             this.Controls.Add(this.addToRecoverList);
-            this.Controls.Add(this.recoverButton);
+            this.Controls.Add(this.sendButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.agreeCheckBox);
             this.Controls.Add(this.warningLabel);
             this.Controls.Add(this.toRecoverListBox);
             this.Controls.Add(this.deletedListBox);
-            this.Name = "RecoverStroop";
+            this.Name = "StroopManagment";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,7 +135,7 @@
         private System.Windows.Forms.Label warningLabel;
         private System.Windows.Forms.CheckBox agreeCheckBox;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button recoverButton;
+        private System.Windows.Forms.Button sendButton;
         private System.Windows.Forms.Button addToDeletedList;
         private System.Windows.Forms.Button addToRecoverList;
         private System.Windows.Forms.Label programRecoveredLabel;

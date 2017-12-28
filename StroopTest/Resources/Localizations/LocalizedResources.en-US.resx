@@ -645,4 +645,10 @@
   <data name="deletedSucessful" xml:space="preserve">
     <value>All selected programs were deleted successful.</value>
   </data>
+  <data name="savePending" xml:space="preserve">
+    <value>There might have unsaved changes in the program. Do you wish to save them?</value>
+  </data>
+  <data name="savePendingTitle" xml:space="preserve">
+    <value>Unsaved changes</value>
+  </data>
 </root>

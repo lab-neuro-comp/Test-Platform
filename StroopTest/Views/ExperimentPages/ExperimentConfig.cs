@@ -135,6 +135,12 @@ namespace TestPlatform.Views.ExperimentPages
             }
         }
 
+        public void save()
+        {
+            saveButton_Click(this, null);
+        }
+
+
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (this.ValidateChildren(ValidationConstraints.Enabled))

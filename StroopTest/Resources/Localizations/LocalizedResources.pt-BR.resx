@@ -724,4 +724,10 @@
   <data name="deletedSucessful" xml:space="preserve">
     <value>Todos os programas selecionados foram deletedos com sucesso.</value>
   </data>
+  <data name="savePending" xml:space="preserve">
+    <value>Pode haver mudanças não-salvas no programa que está sendo editado. deseja grava-las?</value>
+  </data>
+  <data name="savePendingTitle" xml:space="preserve">
+    <value>Alterações não-salvas</value>
+  </data>
 </root>

@@ -94,6 +94,5 @@ namespace TestPlatform.Views.SidebarUserControls
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-
     }
 }

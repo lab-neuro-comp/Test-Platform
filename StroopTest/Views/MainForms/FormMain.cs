@@ -589,6 +589,48 @@ namespace TestPlatform
 
         private void executeButton_Click(object sender, EventArgs e)
         {
+            if (Global.GlobalFormMain.contentPanel.Controls.Count > 0)
+            {
+                if(Global.GlobalFormMain.contentPanel.Controls[0] is FormTRConfig)
+                {
+                    DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
+                    if(dialogResult == DialogResult.Yes)
+                    {
+                        FormTRConfig toSave = (FormTRConfig)(Global.GlobalFormMain.contentPanel.Controls[0]);
+                        toSave.save();
+                    }
+                    else
+                    {
+                        /*do nothing*/
+                    }
+                }
+                else if (Global.GlobalFormMain.contentPanel.Controls[0] is ExperimentConfig)
+                {
+                    DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        ExperimentConfig toSave = (ExperimentConfig)(Global.GlobalFormMain.contentPanel.Controls[0]);
+                        toSave.save();
+                    }
+                    else
+                    {
+                        /*do nothing*/
+                    }
+                }
+                else if (Global.GlobalFormMain.contentPanel.Controls[0] is FormPrgConfig)
+                {
+                    DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        FormPrgConfig toSave = (FormPrgConfig)(Global.GlobalFormMain.contentPanel.Controls[0]);
+                        toSave.save();
+                    }
+                    else
+                    {
+                        /*do nothing*/
+                    }
+                }
+            }
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {             
                 if (executingTypeLabel.Text.Equals(LocRM.GetString("stroopTest", currentCulture)))

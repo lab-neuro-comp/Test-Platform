@@ -456,6 +456,11 @@ namespace TestPlatform.Views
             return newProgram;
         }
 
+        public void save()
+        {
+            saveButton_Click(this, null);
+        }
+
         private void saveButton_Click(object sender, EventArgs e)
         {
             bool hasToSave = true;

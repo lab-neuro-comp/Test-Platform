@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Globalization;
 using System.Resources;
+using System.Globalization;
 
-namespace TestPlatform.Views.ReactionPages
+namespace TestPlatform.Views.ExperimentPages
 {
-    public partial class RecoverTR : UserControl
+    public partial class RecoverExperiment : UserControl
     {
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
@@ -40,7 +40,7 @@ namespace TestPlatform.Views.ReactionPages
                 {
                     backgroundBrush = reportsBackgroundBrushSelected;
                 }
-                else if (File.Exists(Global.reactionTestFilesPath + Global.programFolderName + text + ".prg") == true)
+                else if (File.Exists(Global.experimentTestFilesPath + Global.programFolderName + text + ".prg") == true)
                 {
                     backgroundBrush = reportsBackgroundBrush1;
                 }
@@ -74,7 +74,7 @@ namespace TestPlatform.Views.ReactionPages
                 {
                     backgroundBrush = reportsBackgroundBrushSelected;
                 }
-                else if (File.Exists(Global.reactionTestFilesPath + Global.programFolderName + text + ".prg") == true)
+                else if (File.Exists(Global.experimentTestFilesPath + Global.programFolderName + text + ".prg") == true)
                 {
                     backgroundBrush = reportsBackgroundBrush1;
                 }
@@ -90,8 +90,7 @@ namespace TestPlatform.Views.ReactionPages
             }
             e.DrawFocusRectangle();
         }
-
-        public RecoverTR()
+        public RecoverExperiment()
         {
             InitializeComponent();
             loadDeletedList();
@@ -102,8 +101,8 @@ namespace TestPlatform.Views.ReactionPages
             string[] filePaths;
             string programName;
             deletedListBox.Items.Clear();
-            filePaths = Directory.GetFiles(Global.reactionTestFilesBackupPath, ("*.prg"), SearchOption.AllDirectories);
-            foreach(string file in filePaths)
+            filePaths = Directory.GetFiles(Global.experimentTestFilesBackupPath, ("*.prg"), SearchOption.AllDirectories);
+            foreach (string file in filePaths)
             {
                 programName = Path.GetFileNameWithoutExtension(file);
                 deletedListBox.Items.Add(programName);
@@ -127,7 +126,8 @@ namespace TestPlatform.Views.ReactionPages
         {
             for (int count = 0; count < deletedListBox.Items.Count; count++)
             {
-                if(File.Exists(Global.reactionTestFilesPath + Global.programFolderName + deletedListBox.Items[count].ToString() + ".prg")){
+                if (File.Exists(Global.experimentTestFilesPath + Global.programFolderName + deletedListBox.Items[count].ToString() + ".prg"))
+                {
                     hasConflict = true;
                     return;
                 }
@@ -153,7 +153,6 @@ namespace TestPlatform.Views.ReactionPages
             {
                 /*do nothing*/
             }
-
         }
 
         private void addToDeletedList_Click(object sender, EventArgs e)
@@ -184,13 +183,13 @@ namespace TestPlatform.Views.ReactionPages
                 {
                     try
                     {
-                        File.Move(Global.reactionTestFilesBackupPath + programs[count] + ".prg", Global.reactionTestFilesPath + Global.programFolderName + programs[count] + ".prg");
+                        File.Move(Global.experimentTestFilesBackupPath + programs[count] + ".prg", Global.experimentTestFilesPath + Global.programFolderName + programs[count] + ".prg");
                         toRecoverListBox.Items.Remove(programs[count]);
                     }
                     catch (IOException)
                     {
-                        File.Delete(Global.reactionTestFilesPath + Global.programFolderName + programs[count] + ".prg");
-                        File.Move(Global.reactionTestFilesBackupPath + programs[count] + ".prg", Global.reactionTestFilesPath + Global.programFolderName + programs[count] + ".prg");
+                        File.Delete(Global.experimentTestFilesPath + Global.programFolderName + programs[count] + ".prg");
+                        File.Move(Global.experimentTestFilesBackupPath + programs[count] + ".prg", Global.experimentTestFilesPath + Global.programFolderName + programs[count] + ".prg");
                         toRecoverListBox.Items.Remove(programs[count]);
                     }
                 }
@@ -214,5 +213,6 @@ namespace TestPlatform.Views.ReactionPages
                 recoverButton.Enabled = false;
             }
         }
+
     }
 }

@@ -41,7 +41,6 @@
             this.deleteReactButton.FlatAppearance.BorderSize = 0;
             this.deleteReactButton.Name = "deleteReactButton";
             this.deleteReactButton.UseVisualStyleBackColor = true;
-            this.deleteReactButton.CheckedChanged += new System.EventHandler(this.deleteReactButton_CheckedChanged);
             this.deleteReactButton.Click += new System.EventHandler(this.deleteReactButton_Click);
             // 
             // editReactButton

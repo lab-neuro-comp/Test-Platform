@@ -133,6 +133,6 @@
     <value>recover</value>
   </data>
   <data name="warningLabel.Text" xml:space="preserve">
-    <value>Attention: Items marked in red indicate existing programs. Recovering these programs will overwrite existing programs, and you will not be able to recover them.</value>
+    <value>Warning: Items marked in red indicate existing programs. Recovering these programs will overwrite existing programs, and you will not be able to recover them.</value>
   </data>
 </root>

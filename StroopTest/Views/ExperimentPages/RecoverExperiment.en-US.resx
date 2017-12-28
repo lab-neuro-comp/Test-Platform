@@ -117,22 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="warningLabel.Text" xml:space="preserve">
+    <value>Warning: Items marked in red indicate existing experiments. Recovering these experiments will overwrite existing experiments, and you will not be able to recover them.</value>
+  </data>
   <data name="agreeCheckBox.Text" xml:space="preserve">
-    <value>Li e compreendo os riscos.</value>
-  </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>cancelar</value>
-  </data>
-  <data name="programRecoveredLabel.Text" xml:space="preserve">
-    <value>Programas que serão recuperados:</value>
+    <value>I've read and know the risks.</value>
   </data>
   <data name="recoverButton.Text" xml:space="preserve">
-    <value>recuperar</value>
+    <value>recover</value>
   </data>
-  <data name="warningLabel.Text" xml:space="preserve">
-    <value>Aviso: Itens marcados em vermelho indicam programas já existentes. Recuperar esses programas irá sobreescrever os programas já existentes, não sendo possível recupera-los.</value>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="programRecoveredLabel.Text" xml:space="preserve">
+    <value>Experiments that will be recovered:</value>
   </data>
   <data name="programDeletedLabel.Text" xml:space="preserve">
-    <value>Programas deletados:</value>
+    <value>Deleted experiments:</value>
   </data>
 </root>

@@ -129,9 +129,5 @@ namespace TestPlatform.Views.SidebarUserControls
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void deleteReactButton_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

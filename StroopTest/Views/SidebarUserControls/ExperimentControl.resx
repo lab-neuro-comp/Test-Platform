@@ -132,7 +132,7 @@
     <value>0, 81</value>
   </data>
   <data name="deleteExperimentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 33</value>
+    <value>220, 33</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="deleteExperimentButton.TabIndex" type="System.Int32, mscorlib">
@@ -154,7 +154,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;deleteExperimentButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="editExperimentButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -169,7 +169,7 @@
     <value>0, 42</value>
   </data>
   <data name="editExperimentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 33</value>
+    <value>220, 33</value>
   </data>
   <data name="editExperimentButton.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -190,7 +190,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;editExperimentButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="newExperimentButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -205,7 +205,7 @@
     <value>0, 3</value>
   </data>
   <data name="newExperimentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 33</value>
+    <value>220, 33</value>
   </data>
   <data name="newExperimentButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -226,7 +226,43 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;newExperimentButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="recoverExperimentButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="recoverExperimentButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="recoverExperimentButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="recoverExperimentButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 120</value>
+  </data>
+  <data name="recoverExperimentButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 33</value>
+  </data>
+  <data name="recoverExperimentButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="recoverExperimentButton.Text" xml:space="preserve">
+    <value>Recuperar Experimento</value>
+  </data>
+  <data name="recoverExperimentButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;recoverExperimentButton.Name" xml:space="preserve">
+    <value>recoverExperimentButton</value>
+  </data>
+  <data name="&gt;&gt;recoverExperimentButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recoverExperimentButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;recoverExperimentButton.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -235,12 +271,15 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 1099</value>
+    <value>220, 1099</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ExperimentControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6571.29848, Culture=neutral, PublicKeyToken=null</value>
+    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6571.31727, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="deleteReactButton.Text" xml:space="preserve">
+    <value>Excluir Experimento</value>
   </data>
 </root>

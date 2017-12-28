@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Resources;
 using System.IO;
+using System.Resources;
 using System.Globalization;
 
 namespace TestPlatform.Views.StroopPages
@@ -18,14 +18,13 @@ namespace TestPlatform.Views.StroopPages
 
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
-        //global brushes with ordinary/selected colors
+
         private SolidBrush reportsForegroundBrushSelected = new SolidBrush(Color.White);
         private SolidBrush reportsForegroundBrush = new SolidBrush(Color.Black);
         private SolidBrush reportsBackgroundBrushSelected = new SolidBrush(Color.FromKnownColor(KnownColor.Highlight));
         private SolidBrush reportsBackgroundBrush1 = new SolidBrush(Color.Red);
         private bool hasConflict = false;
 
-        //custom method to draw the items, don't forget to set DrawMode of the ListBox to OwnerDrawFixed
         private void deletedListBox_DrawItem(object sender, DrawItemEventArgs e)
         {
             e.DrawBackground();
@@ -105,7 +104,6 @@ namespace TestPlatform.Views.StroopPages
             string[] filePaths;
             string programName;
             deletedListBox.Items.Clear();
-            MessageBox.Show(Global.stroopTestFilesBackupPath);
             filePaths = Directory.GetFiles(Global.stroopTestFilesBackupPath, ("*.prg"), SearchOption.AllDirectories);
             foreach (string file in filePaths)
             {
@@ -139,41 +137,22 @@ namespace TestPlatform.Views.StroopPages
             }
         }
 
+        private void agreeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (agreeCheckBox.Checked)
+            {
+                recoverButton.Enabled = true;
+            }
+            else
+            {
+                recoverButton.Enabled = false;
+            }
+        }
+
         private void cancelButton_Click(object sender, EventArgs e)
         {
             AutoValidate = AutoValidate.Disable;
             this.Parent.Controls.Remove(this);
-        }
-
-        private void addToRecoverList_Click(object sender, EventArgs e)
-        {
-            string programName;
-            if (deletedListBox.SelectedItem != null)
-            {
-                programName = deletedListBox.SelectedItem.ToString();
-                deletedListBox.Items.Remove(programName);
-                toRecoverListBox.Items.Add(programName);
-            }
-            else
-            {
-                /*do nothing*/
-            }
-
-        }
-
-        private void addToDeletedList_Click(object sender, EventArgs e)
-        {
-            string programName;
-            if (toRecoverListBox.SelectedItem != null)
-            {
-                programName = toRecoverListBox.SelectedItem.ToString();
-                toRecoverListBox.Items.Remove(programName);
-                deletedListBox.Items.Add(programName);
-            }
-            else
-            {
-                /*do nothing*/
-            }
         }
 
         private void recoverButton_Click(object sender, EventArgs e)
@@ -208,15 +187,33 @@ namespace TestPlatform.Views.StroopPages
             }
         }
 
-        private void agreeCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void addToRecoverList_Click(object sender, EventArgs e)
         {
-            if (agreeCheckBox.Checked)
+            string programName;
+            if (deletedListBox.SelectedItem != null)
             {
-                recoverButton.Enabled = true;
+                programName = deletedListBox.SelectedItem.ToString();
+                deletedListBox.Items.Remove(programName);
+                toRecoverListBox.Items.Add(programName);
             }
             else
             {
-                recoverButton.Enabled = false;
+                /*do nothing*/
+            }
+        }
+
+        private void addToDeletedList_Click(object sender, EventArgs e)
+        {
+            string programName;
+            if (toRecoverListBox.SelectedItem != null)
+            {
+                programName = toRecoverListBox.SelectedItem.ToString();
+                toRecoverListBox.Items.Remove(programName);
+                deletedListBox.Items.Add(programName);
+            }
+            else
+            {
+                /*do nothing*/
             }
         }
     }

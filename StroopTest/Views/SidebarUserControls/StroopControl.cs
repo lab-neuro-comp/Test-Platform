@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Resources;
 using System.Windows.Forms;
+using TestPlatform.Views.StroopPages;
 
 namespace TestPlatform.Views
 {
@@ -92,6 +93,20 @@ namespace TestPlatform.Views
             {
                 /*do nothing*/
             }
+        }
+
+        private void recoverStroopButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (recoverStroopButton.Checked)
+                {
+                    RecoverStroop recoverProgram = new RecoverStroop();
+                    Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                    recoverStroopButton.Checked = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }

@@ -118,88 +118,60 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="recoverButton.AutoSize" type="System.Boolean, mscorlib">
+  <data name="programDeletedLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="recoverButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="recoverButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="recoverButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>414, 535</value>
+  <data name="programDeletedLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 42</value>
   </data>
-  <data name="recoverButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 23</value>
+  <data name="programDeletedLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 13</value>
   </data>
-  <data name="recoverButton.TabIndex" type="System.Int32, mscorlib">
-    <value>87</value>
+  <data name="programDeletedLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="recoverButton.Text" xml:space="preserve">
-    <value>recuperar</value>
+  <data name="programDeletedLabel.Text" xml:space="preserve">
+    <value>Experimentos deletados:</value>
   </data>
-  <data name="&gt;&gt;recoverButton.Name" xml:space="preserve">
-    <value>recoverButton</value>
+  <data name="&gt;&gt;programDeletedLabel.Name" xml:space="preserve">
+    <value>programDeletedLabel</value>
   </data>
-  <data name="&gt;&gt;recoverButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;programDeletedLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;recoverButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;programDeletedLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;recoverButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;programDeletedLabel.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="cancelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
+  <data name="programRecoveredLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 535</value>
+  <data name="programRecoveredLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>289, 42</value>
   </data>
-  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 23</value>
+  <data name="programRecoveredLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 13</value>
   </data>
-  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>87</value>
+  <data name="programRecoveredLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>cancelar</value>
+  <data name="programRecoveredLabel.Text" xml:space="preserve">
+    <value>Experimentos que serão recuperados:</value>
   </data>
-  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
-    <value>cancelButton</value>
+  <data name="&gt;&gt;programRecoveredLabel.Name" xml:space="preserve">
+    <value>programRecoveredLabel</value>
   </data>
-  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;programRecoveredLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;programRecoveredLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;programRecoveredLabel.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="deletedListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 59</value>
-  </data>
-  <data name="deletedListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 394</value>
-  </data>
-  <data name="deletedListBox.TabIndex" type="System.Int32, mscorlib">
-    <value>88</value>
-  </data>
-  <data name="&gt;&gt;deletedListBox.Name" xml:space="preserve">
-    <value>deletedListBox</value>
-  </data>
-  <data name="&gt;&gt;deletedListBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;deletedListBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;deletedListBox.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="toRecoverListBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>292, 59</value>
@@ -208,7 +180,7 @@
     <value>207, 394</value>
   </data>
   <data name="toRecoverListBox.TabIndex" type="System.Int32, mscorlib">
-    <value>89</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;toRecoverListBox.Name" xml:space="preserve">
     <value>toRecoverListBox</value>
@@ -220,46 +192,41 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;toRecoverListBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
-  <data name="addToRecoverList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="deletedListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 59</value>
   </data>
-  <data name="addToRecoverList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 198</value>
+  <data name="deletedListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 394</value>
   </data>
-  <data name="addToRecoverList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 23</value>
+  <data name="deletedListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="addToRecoverList.TabIndex" type="System.Int32, mscorlib">
-    <value>90</value>
+  <data name="&gt;&gt;deletedListBox.Name" xml:space="preserve">
+    <value>deletedListBox</value>
   </data>
-  <data name="addToRecoverList.Text" xml:space="preserve">
-    <value>&gt;&gt;</value>
+  <data name="&gt;&gt;deletedListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;addToRecoverList.Name" xml:space="preserve">
-    <value>addToRecoverList</value>
-  </data>
-  <data name="&gt;&gt;addToRecoverList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addToRecoverList.Parent" xml:space="preserve">
+  <data name="&gt;&gt;deletedListBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;addToRecoverList.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;deletedListBox.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="addToDeletedList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="addToDeletedList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 227</value>
+    <value>225, 214</value>
   </data>
   <data name="addToDeletedList.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 23</value>
   </data>
   <data name="addToDeletedList.TabIndex" type="System.Int32, mscorlib">
-    <value>91</value>
+    <value>4</value>
   </data>
   <data name="addToDeletedList.Text" xml:space="preserve">
     <value>&lt;&lt;</value>
@@ -274,61 +241,37 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;addToDeletedList.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="addToRecoverList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="addToRecoverList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 185</value>
+  </data>
+  <data name="addToRecoverList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 23</value>
+  </data>
+  <data name="addToRecoverList.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="addToRecoverList.Text" xml:space="preserve">
+    <value>&gt;&gt;</value>
+  </data>
+  <data name="&gt;&gt;addToRecoverList.Name" xml:space="preserve">
+    <value>addToRecoverList</value>
+  </data>
+  <data name="&gt;&gt;addToRecoverList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addToRecoverList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;addToRecoverList.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="experimentDeletedLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="experimentDeletedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 42</value>
-  </data>
-  <data name="experimentDeletedLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 13</value>
-  </data>
-  <data name="experimentDeletedLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>92</value>
-  </data>
-  <data name="experimentDeletedLabel.Text" xml:space="preserve">
-    <value>Experimentos deletados:</value>
-  </data>
-  <data name="&gt;&gt;experimentDeletedLabel.Name" xml:space="preserve">
-    <value>experimentDeletedLabel</value>
-  </data>
-  <data name="&gt;&gt;experimentDeletedLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;experimentDeletedLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;experimentDeletedLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="experimentRecoveredLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="experimentRecoveredLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>289, 42</value>
-  </data>
-  <data name="experimentRecoveredLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 13</value>
-  </data>
-  <data name="experimentRecoveredLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>93</value>
-  </data>
-  <data name="experimentRecoveredLabel.Text" xml:space="preserve">
-    <value>Experimentos que serão recuperados:</value>
-  </data>
-  <data name="&gt;&gt;experimentRecoveredLabel.Name" xml:space="preserve">
-    <value>experimentRecoveredLabel</value>
-  </data>
-  <data name="&gt;&gt;experimentRecoveredLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;experimentRecoveredLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;experimentRecoveredLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="warningLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="warningLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 466</value>
@@ -337,7 +280,7 @@
     <value>490, 32</value>
   </data>
   <data name="warningLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>94</value>
+    <value>95</value>
   </data>
   <data name="warningLabel.Text" xml:space="preserve">
     <value>Atenção: Itens marcados em vermelho indicam experimentos já existentes. Recuperar esses experimentos irá sobreescrever os experimentos já existentes, não sendo possível recupera-los.</value>
@@ -352,10 +295,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;warningLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="agreeCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="agreeCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="agreeCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 500</value>
@@ -364,7 +310,7 @@
     <value>152, 17</value>
   </data>
   <data name="agreeCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>95</value>
+    <value>98</value>
   </data>
   <data name="agreeCheckBox.Text" xml:space="preserve">
     <value>Li e compreendo os riscos.</value>
@@ -381,6 +327,69 @@
   <data name="&gt;&gt;agreeCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cancelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="cancelButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 535</value>
+  </data>
+  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>96</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>cancelar</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
+    <value>cancelButton</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="recoverButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="recoverButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="recoverButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="recoverButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>414, 535</value>
+  </data>
+  <data name="recoverButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="recoverButton.TabIndex" type="System.Int32, mscorlib">
+    <value>97</value>
+  </data>
+  <data name="recoverButton.Text" xml:space="preserve">
+    <value>recuperar</value>
+  </data>
+  <data name="&gt;&gt;recoverButton.Name" xml:space="preserve">
+    <value>recoverButton</value>
+  </data>
+  <data name="&gt;&gt;recoverButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recoverButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;recoverButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -394,7 +403,7 @@
     <value>520, 576</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>RecoverTR</value>
+    <value>RecoverExperiment</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

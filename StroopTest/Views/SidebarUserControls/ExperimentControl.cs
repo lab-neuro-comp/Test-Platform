@@ -108,5 +108,19 @@ namespace TestPlatform.Views.SidebarUserControls
                 /*do nothing*/
             }
         }
+
+        private void recoverExperimentButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (recoverExperimentButton.Checked)
+                {
+                    RecoverExperiment recoverProgram = new RecoverExperiment();
+                    Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                    recoverExperimentButton.Checked = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
     }
 }

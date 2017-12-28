@@ -724,6 +724,9 @@
   <data name="deletedSucessful" xml:space="preserve">
     <value>Todos os programas selecionados foram deletedos com sucesso.</value>
   </data>
+  <data name="expoTypeError" xml:space="preserve">
+    <value>O tipo de exposição deve ser selecionado.</value>
+  </data>
   <data name="savePending" xml:space="preserve">
     <value>Pode haver mudanças não-salvas no programa que está sendo editado. deseja grava-las?</value>
   </data>

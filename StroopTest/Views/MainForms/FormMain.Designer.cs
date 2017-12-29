@@ -572,6 +572,7 @@
             // 
             resources.ApplyResources(this.sideBarPanel, "sideBarPanel");
             this.sideBarPanel.Name = "sideBarPanel";
+            this.sideBarPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sideBarPanel_Paint);
             // 
             // contentPanel
             // 

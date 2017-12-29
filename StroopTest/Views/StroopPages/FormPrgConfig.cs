@@ -779,9 +779,17 @@ namespace TestPlatform
             this.Parent.Controls.Remove(this);
         }
 
-        public void save()
+        public bool save()
         {
             saveButton_Click(this, null);
+            foreach (Control c in this.errorProvider.ContainerControl.Controls)
+            { 
+                if (errorProvider.GetError(c) != "")
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         private void saveButton_Click(object sender, EventArgs e)

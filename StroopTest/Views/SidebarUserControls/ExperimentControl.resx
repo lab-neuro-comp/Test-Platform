@@ -277,6 +277,6 @@
     <value>ExperimentControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6571.34036, Culture=neutral, PublicKeyToken=null</value>
+    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6571.40641, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

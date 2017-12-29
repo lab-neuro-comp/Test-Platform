@@ -19,44 +19,98 @@ namespace TestPlatform.Views
             InitializeComponent();
         }
 
+
+
+        private bool checkSave()
+        {
+            bool result = false;
+            if (Global.GlobalFormMain._contentPanel.Controls[0] is FormPrgConfig)
+            {
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    FormPrgConfig programToSave = (FormPrgConfig)(Global.GlobalFormMain._contentPanel.Controls[0]);
+                    result = programToSave.save();
+                }
+                else
+                {
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    return true;
+                }
+            }
+            if (result == false)
+            {
+                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void newStroopButton_CheckedChanged(object sender, EventArgs e)
         {
+            bool screenTranslationAllowed = true;
             if (newStroopButton.Checked)
             {
-                FormPrgConfig configureProgram = new FormPrgConfig("false");
-                Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
-                newStroopButton.Checked = false;
+                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                {
+                    screenTranslationAllowed = checkSave();
+                }
+                if (screenTranslationAllowed)
+                {
+                    FormPrgConfig configureProgram = new FormPrgConfig("false");
+                    Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
+                    newStroopButton.Checked = false; 
+                }
             }
         }
 
         private void editStroopButton_CheckedChanged(object sender, EventArgs e)
         {
+            bool screenTranslationAllowed = true;
             if (editStroopButton.Checked)
             {
-                string editProgramName = "error";
-                FormDefine defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
-                DialogResult result = defineProgram.ShowDialog();
-                if (result == DialogResult.OK)
+                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
                 {
-                    editProgramName = defineProgram.ReturnValue;
-                    FormPrgConfig configureProgram = new FormPrgConfig(editProgramName);
-                    if (!configureProgram.IsDisposed)
+                    screenTranslationAllowed = checkSave();
+                }
+                if (screenTranslationAllowed)
+                {
+                    string editProgramName = "error";
+                    FormDefine defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
+                    DialogResult result = defineProgram.ShowDialog();
+                    if (result == DialogResult.OK)
                     {
-                        Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
-                    }
-                    editStroopButton.Checked = false;
+                        editProgramName = defineProgram.ReturnValue;
+                        FormPrgConfig configureProgram = new FormPrgConfig(editProgramName);
+                        if (!configureProgram.IsDisposed)
+                        {
+                            Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
+                        }
+                        editStroopButton.Checked = false;
+                    } 
                 }
             }
         }
         private void deleteStroopButton_Click(object sender, EventArgs e)
         {
+            bool screenTranslationAllowed = true;
             try
             {
                 if (deleteStroopButton.Checked)
                 {
-                    StroopManagment recoverProgram = new StroopManagment(Global.stroopTestFilesPath + Global.programFolderName, Global.stroopTestFilesBackupPath, 'd');
-                    Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
-                    deleteStroopButton.Checked = false;
+                    if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                    {
+                        screenTranslationAllowed = checkSave();
+                    }
+                    if (screenTranslationAllowed)
+                    {
+                        StroopManagment recoverProgram = new StroopManagment(Global.stroopTestFilesPath + Global.programFolderName, Global.stroopTestFilesBackupPath, 'd');
+                        Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                        deleteStroopButton.Checked = false; 
+                    }
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -64,13 +118,21 @@ namespace TestPlatform.Views
 
         private void recoverStroopButton_Click(object sender, EventArgs e)
         {
+            bool screenTranslationAllowed = true;
             try
             {
                 if (recoverStroopButton.Checked)
                 {
-                    StroopManagment recoverProgram = new StroopManagment(Global.stroopTestFilesBackupPath, Global.stroopTestFilesPath + Global.programFolderName, 'r');
-                    Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
-                    recoverStroopButton.Checked = false;
+                    if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                    {
+                        screenTranslationAllowed = checkSave();
+                    }
+                    if (screenTranslationAllowed)
+                    {
+                        StroopManagment recoverProgram = new StroopManagment(Global.stroopTestFilesBackupPath, Global.stroopTestFilesPath + Global.programFolderName, 'r');
+                        Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                        recoverStroopButton.Checked = false; 
+                    }
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

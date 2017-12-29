@@ -900,6 +900,11 @@ namespace TestPlatform
                 File.Copy(file, Path.Combine(targetDirectory, Path.GetFileName(file)), true);
             }
         }
+
+        private void sideBarPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
     
 }

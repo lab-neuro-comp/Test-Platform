@@ -19,15 +19,53 @@ namespace TestPlatform.Views.SidebarUserControls
             InitializeComponent();
         }
 
+
+        private bool checkSave()
+        {
+            bool result = false;
+            if (Global.GlobalFormMain._contentPanel.Controls[0] is FormTRConfig)
+            {
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    FormTRConfig programToSave = (FormTRConfig)(Global.GlobalFormMain._contentPanel.Controls[0]);
+                    result = programToSave.save();
+                }
+                else
+                {
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    return true;
+                }
+            }
+            if(result == false)
+            { 
+                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
         private void newReactButton_Click(object sender, EventArgs e)
         {
+            bool screenTranslationAllowed = true;
             try
             {
                 if (newReactButton.Checked)
                 {
-                    FormTRConfig configureProgram = new FormTRConfig("false");
-                    Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
-                    newReactButton.Checked = false;
+                    if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                    {
+                        screenTranslationAllowed = checkSave();
+                    }
+                    if (screenTranslationAllowed)
+                    {
+                        FormTRConfig configureProgram = new FormTRConfig("false");
+                        Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
+                        newReactButton.Checked = false;
+                    }
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -35,30 +73,38 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void editReactButton_Click(object sender, EventArgs e)
         {
+            bool screenTranslationAllowed = true;
             if (editReactButton.Checked)
             {
-                FormDefine defineProgram;
-                DialogResult result;
-                string editProgramName = "error";
-
-                try
+                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
                 {
-                    defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false);
-                    result = defineProgram.ShowDialog();
-                    if (result == DialogResult.OK)
-                    {
-                        editProgramName = defineProgram.ReturnValue;
-                        FormTRConfig configureProgram = new FormTRConfig(editProgramName);
-                        configureProgram.PrgName = editProgramName;
-                        Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
-                        editReactButton.Checked = false;
-                    }
-                    else
-                    {
-                        /*do nothing, user cancelled selection of program*/
-                    }
+                    screenTranslationAllowed = checkSave();
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                if (screenTranslationAllowed)
+                {
+                    FormDefine defineProgram;
+                    DialogResult result;
+                    string editProgramName = "error";
+
+                    try
+                    {
+                        defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false);
+                        result = defineProgram.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            editProgramName = defineProgram.ReturnValue;
+                            FormTRConfig configureProgram = new FormTRConfig(editProgramName);
+                            configureProgram.PrgName = editProgramName;
+                            Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
+                            editReactButton.Checked = false;
+                        }
+                        else
+                        {
+                            /*do nothing, user cancelled selection of program*/
+                        }
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); } 
+                }
             }
             else
             {
@@ -69,13 +115,21 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void deleteReactButton_Click(object sender, EventArgs e)
         {
+            bool screenTranslationAllowed = true;
             try
             {
                 if (deleteReactButton.Checked)
                 {
-                    TRManagment recoverProgram = new TRManagment(Global.reactionTestFilesPath + Global.programFolderName, Global.reactionTestFilesBackupPath, 'd');
-                    Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
-                    deleteReactButton.Checked = false;
+                    if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                    {
+                        screenTranslationAllowed = checkSave();
+                    }
+                    if (screenTranslationAllowed)
+                    {
+                        TRManagment recoverProgram = new TRManagment(Global.reactionTestFilesPath + Global.programFolderName, Global.reactionTestFilesBackupPath, 'd');
+                        Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                        deleteReactButton.Checked = false; 
+                    }
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -83,13 +137,21 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void recoverReactButton_Click(object sender, EventArgs e)
         {
+            bool screenTranslationAllowed = true;
             try
             {
                 if (recoverReactButton.Checked)
                 {
-                    TRManagment recoverProgram = new TRManagment(Global.reactionTestFilesBackupPath, Global.reactionTestFilesPath + Global.programFolderName, 'r');
-                    Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
-                    recoverReactButton.Checked = false;
+                    if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                    {
+                        screenTranslationAllowed = checkSave();
+                    }
+                    if (screenTranslationAllowed)
+                    {
+                        TRManagment recoverProgram = new TRManagment(Global.reactionTestFilesBackupPath, Global.reactionTestFilesPath + Global.programFolderName, 'r');
+                        Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                        recoverReactButton.Checked = false; 
+                    }
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

@@ -17,21 +17,56 @@ namespace TestPlatform.Views.SidebarUserControls
             this.Dock = DockStyle.Fill;
             InitializeComponent();
         }
-        
 
-        private void newExperimentButton_Click(object sender, EventArgs e)
+        private bool checkSave()
         {
-            try
+            bool result = false;
+            if (Global.GlobalFormMain._contentPanel.Controls[0] is ExperimentConfig)
             {
-                if (newExperimentButton.Checked)
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    ExperimentConfig newExperiment = new ExperimentConfig("false");
-                    Global.GlobalFormMain._contentPanel.Controls.Add(newExperiment);
-                    newExperimentButton.Checked = false;
+                    ExperimentConfig programToSave = (ExperimentConfig)(Global.GlobalFormMain._contentPanel.Controls[0]);
+                    result = programToSave.save();
                 }
                 else
                 {
-                    /*do nothing*/
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    return true;
+                }
+            }
+            if (result == false)
+            {
+                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void newExperimentButton_Click(object sender, EventArgs e)
+        {
+            bool screenTranslationAllowed = true;
+            try
+            {
+                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                {
+                    screenTranslationAllowed = checkSave();
+                }
+                if (screenTranslationAllowed)
+                {
+                    if (newExperimentButton.Checked)
+                    {
+                        ExperimentConfig newExperiment = new ExperimentConfig("false");
+                        Global.GlobalFormMain._contentPanel.Controls.Add(newExperiment);
+                        newExperimentButton.Checked = false;
+                    }
+                    else
+                    {
+                        /*do nothing*/
+                    }
                 }
 
             }
@@ -43,9 +78,17 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void editExperimentButton_Click(object sender, EventArgs e)
         {
-            FormDefine defineProgram;
-            DialogResult result;
-            string editProgramName = "error";
+            bool screenTranslationAllowed = true;
+
+            if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+            {
+                screenTranslationAllowed = checkSave();
+            }
+            if (screenTranslationAllowed)
+            {
+                FormDefine defineProgram;
+                DialogResult result;
+                string editProgramName = "error";
 
 
                 defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.experimentTestFilesPath + Global.programFolderName, "prg", "program", false);
@@ -61,19 +104,29 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     /*do nothing, user cancelled selection of program*/
                 }
+            }
         }
         private void deleteExperimentButton_Click(object sender, EventArgs e)
         {
             try {
-                if (deleteExperimentButton.Checked)
+                bool screenTranslationAllowed = true;
+
+                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
                 {
-                    ExperimentManagment recoverProgram = new ExperimentManagment(Global.experimentTestFilesPath + Global.programFolderName, Global.experimentTestFilesBackupPath, 'd');
-                    Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
-                    deleteExperimentButton.Checked = false;
+                    screenTranslationAllowed = checkSave();
                 }
-                else
+                if (screenTranslationAllowed)
                 {
-                    /*do nothing*/
+                    if (deleteExperimentButton.Checked)
+                    {
+                        ExperimentManagment recoverProgram = new ExperimentManagment(Global.experimentTestFilesPath + Global.programFolderName, Global.experimentTestFilesBackupPath, 'd');
+                        Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                        deleteExperimentButton.Checked = false;
+                    }
+                    else
+                    {
+                        /*do nothing*/
+                    }
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -81,20 +134,29 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void recoverExperimentButton_Click(object sender, EventArgs e)
         {
-            try
+            bool screenTranslationAllowed = true;
+
+            if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
             {
-                if (recoverExperimentButton.Checked)
-                {
-                    ExperimentManagment recoverProgram = new ExperimentManagment(Global.experimentTestFilesBackupPath, Global.experimentTestFilesPath + Global.programFolderName, 'r');
-                    Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
-                    recoverExperimentButton.Checked = false;
-                }
-                else
-                {
-                    /*do nothing */
-                }
+                screenTranslationAllowed = checkSave();
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            if (screenTranslationAllowed)
+            {
+                try
+                {
+                    if (recoverExperimentButton.Checked)
+                    {
+                        ExperimentManagment recoverProgram = new ExperimentManagment(Global.experimentTestFilesBackupPath, Global.experimentTestFilesPath + Global.programFolderName, 'r');
+                        Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                        recoverExperimentButton.Checked = false;
+                    }
+                    else
+                    {
+                        /*do nothing */
+                    }
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+            }
         }
     }
 }

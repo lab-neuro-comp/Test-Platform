@@ -15,6 +15,11 @@ namespace TestPlatform
         private ImageList imgsList = new ImageList();
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+        private bool isListNameValid = false;
+        public bool isValid()
+        {
+            return isListNameValid;
+        }
 
         public FormImgConfig(string imgListEdit)
         {
@@ -39,7 +44,13 @@ namespace TestPlatform
                 
                 if (result == DialogResult.OK)
                 {
+                    isListNameValid = true;
                     string dir = defineFilePath.ReturnValue;
+                    if(dir == "")
+                    {
+                        isListNameValid = false;
+                        return;
+                    }
                     imgListNameTextBox.Text = dir.Remove(dir.Length - 6); // removes the _img identification from file while editing (when its saved it is always added again)
 
                     string[] filePaths = StroopProgram.readDirListFile(Global.testFilesPath + Global.listFolderName + "/" + dir + ".lst");

@@ -654,4 +654,10 @@
   <data name="savePendingTitle" xml:space="preserve">
     <value>Unsaved changes</value>
   </data>
+  <data name="unsavedLists" xml:space="preserve">
+    <value>You have lists that might have unsaved changes. Any unsaved change will be lost if you continue. Continue?</value>
+  </data>
+  <data name="unsavedListsTitle" xml:space="preserve">
+    <value>Unsaved lists</value>
+  </data>
 </root>

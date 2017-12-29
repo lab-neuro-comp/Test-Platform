@@ -12,9 +12,16 @@ namespace TestPlatform
 {
     public partial class FormAudioConfig : UserControl
     {
+        private bool isListNameValid = false;
+
         private SoundPlayer player = new SoundPlayer();
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+
+        public bool isValid()
+        {
+            return isListNameValid;
+        }
 
         public FormAudioConfig(bool editList)
         {
@@ -36,8 +43,15 @@ namespace TestPlatform
 
                 if (result == DialogResult.OK)
                 {
+                    isListNameValid = true;
                     string choosenList = defineFilePath.ReturnValue;
+                    if(choosenList == "")
+                    {
+                        isListNameValid = false;
+                        return;
+                    }
                     audioListNameTextBox.Text = choosenList.Remove(choosenList.Length - 6); // removes the _audio identification from file while editing (when its saved it is always added again)
+
 
                     string[] filePaths = StroopProgram.readDirListFile(Global.testFilesPath + Global.listFolderName + "/" + choosenList + ".lst");
                     DGVManipulation.ReadStringListIntoDGV(filePaths, audioPathDataGridView);

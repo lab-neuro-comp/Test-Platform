@@ -426,11 +426,8 @@ namespace TestPlatform
             if (experimentButton.Checked)
             {
                 // removing second side bar from view, if there is one, and removing its context too
-                if (currentPanelContent != null)
-                {
-                    Controls.Remove(currentPanelContent);
-                    contentPanel.Controls.Clear();
-                }
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
 
                 ExperimentControl experimentControl = new ExperimentControl();
                 this.sideBarPanel.Controls.Add(experimentControl);
@@ -443,12 +440,9 @@ namespace TestPlatform
             
             if (buttonStroop.Checked)
             {
-                // removing second side bar from view, if there is one, and removing its context too
-                if (sideBarPanel.Controls.Count > 0)
-                {
-                    sideBarPanel.Controls.Remove(currentPanelContent);
-                    contentPanel.Controls.Clear();
-                }
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
+
                 StroopControl stroopControl = new StroopControl();
                 this.sideBarPanel.Controls.Add(stroopControl);
                 currentPanelContent = stroopControl;
@@ -459,12 +453,9 @@ namespace TestPlatform
         {
             if (buttonReaction.Checked)
             {
-                // removing second side bar from view, if there is one, and removing its context too
-                if (sideBarPanel.Controls.Count > 0)
-                {
-                    sideBarPanel.Controls.Remove(currentPanelContent);
-                    contentPanel.Controls.Clear();
-                }
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
+
                 ReactionControl reactControl = new ReactionControl();
                 this.sideBarPanel.Controls.Add(reactControl);
                 currentPanelContent = reactControl;
@@ -476,16 +467,9 @@ namespace TestPlatform
         {
             if (buttonList.Checked)
             {
-                // removing second side bar from view, if there is one, and removing its context too
-                if (sideBarPanel.Controls.Count > 0)
-                {
-                    sideBarPanel.Controls.Remove(currentPanelContent);
-                    contentPanel.Controls.Clear();
-                }
-                else
-                {
-                    /*do nothing*/
-                }
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
+
                 ListUserControl listControl = new ListUserControl();
                 this.sideBarPanel.Controls.Add(listControl);
                 currentPanelContent = listControl;
@@ -835,6 +819,8 @@ namespace TestPlatform
         {
             if (exportButton.Checked)
             {
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
                 ExportUserControl exportView = new ExportUserControl();
                 this._contentPanel.Controls.Add(exportView);
             }
@@ -847,6 +833,8 @@ namespace TestPlatform
             {
                 try
                 {
+                    this.sideBarPanel.Controls.Clear();
+                    this._contentPanel.Controls.Clear();
                     OpenFileDialog openFileDialog = new OpenFileDialog();
                     openFileDialog.Filter = "ZIP|*.zip";
 
@@ -901,10 +889,6 @@ namespace TestPlatform
             }
         }
 
-        private void sideBarPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
     
 }

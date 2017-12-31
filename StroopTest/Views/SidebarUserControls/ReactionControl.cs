@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Resources;
 using System.Windows.Forms;
+using TestPlatform.Views.MainForms;
 using TestPlatform.Views.ReactionPages;
 
 namespace TestPlatform.Views.SidebarUserControls
@@ -126,8 +127,8 @@ namespace TestPlatform.Views.SidebarUserControls
                     }
                     if (screenTranslationAllowed)
                     {
-                        TRManagment recoverProgram = new TRManagment(Global.reactionTestFilesPath + Global.programFolderName, Global.reactionTestFilesBackupPath, 'd');
-                        Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                        FileManagment deleteProgram = new FileManagment(Global.reactionTestFilesPath + Global.programFolderName, Global.reactionTestFilesBackupPath, 'd');
+                        Global.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                         deleteReactButton.Checked = false; 
                     }
                 }
@@ -148,7 +149,7 @@ namespace TestPlatform.Views.SidebarUserControls
                     }
                     if (screenTranslationAllowed)
                     {
-                        TRManagment recoverProgram = new TRManagment(Global.reactionTestFilesBackupPath, Global.reactionTestFilesPath + Global.programFolderName, 'r');
+                        FileManagment recoverProgram = new FileManagment(Global.reactionTestFilesBackupPath, Global.reactionTestFilesPath + Global.programFolderName, 'r');
                         Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverReactButton.Checked = false; 
                     }

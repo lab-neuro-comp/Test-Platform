@@ -117,22 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="agreeCheckBox.Text" xml:space="preserve">
-    <value>Li e compreendo os riscos.</value>
+  <data name="sendButton.Text" xml:space="preserve">
+    <value>sendButton</value>
+  </data>
+  <data name="warningMessage.Text" xml:space="preserve">
+    <value>warningMessage</value>
+  </data>
+  <data name="destinationListLabel.Text" xml:space="preserve">
+    <value>destinationListLabel</value>
+  </data>
+  <data name="originListLabel.Text" xml:space="preserve">
+    <value>originListLabel</value>
+  </data>
+  <data name="warningCheckBox.Text" xml:space="preserve">
+    <value>I've read and know the risks.</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
-    <value>cancelar</value>
-  </data>
-  <data name="programRecoveredLabel.Text" xml:space="preserve">
-    <value>Programas que serão recuperados:</value>
-  </data>
-  <data name="recoverButton.Text" xml:space="preserve">
-    <value>recuperar</value>
-  </data>
-  <data name="warningLabel.Text" xml:space="preserve">
-    <value>Aviso: Itens marcados em vermelho indicam programas já existentes. Recuperar esses programas irá sobreescrever os programas já existentes, não sendo possível recupera-los.</value>
-  </data>
-  <data name="programDeletedLabel.Text" xml:space="preserve">
-    <value>Programas deletados:</value>
+    <value>cancel</value>
   </data>
 </root>

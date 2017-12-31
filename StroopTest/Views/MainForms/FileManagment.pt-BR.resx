@@ -117,22 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="warningLabel.Text" xml:space="preserve">
-    <value>Warning: Items marked in red indicate existing programs. Recovering these programs will overwrite existing programs, and you will not be able to recover them.</value>
+  <data name="sendButton.Text" xml:space="preserve">
+    <value>sendButton</value>
   </data>
-  <data name="agreeCheckBox.Text" xml:space="preserve">
-    <value>I've read and know the risks.</value>
+  <data name="warningMessage.Text" xml:space="preserve">
+    <value>warningMessage</value>
   </data>
-  <data name="programRecoveredLabel.Text" xml:space="preserve">
-    <value>Programs that will be recovered:</value>
+  <data name="destinationListLabel.Text" xml:space="preserve">
+    <value>destinationListLabel</value>
   </data>
-  <data name="programDeletedLabel.Text" xml:space="preserve">
-    <value>Deleted programs:</value>
+  <data name="originListLabel.Text" xml:space="preserve">
+    <value>originListLabel</value>
+  </data>
+  <data name="warningCheckBox.Text" xml:space="preserve">
+    <value>Li e compreendo os riscos.</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
-    <value>cancel</value>
-  </data>
-  <data name="recoverButton.Text" xml:space="preserve">
-    <value>recover</value>
+    <value>cancelar</value>
   </data>
 </root>

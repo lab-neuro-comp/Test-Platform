@@ -118,115 +118,169 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="deletedListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 59</value>
+  <data name="originFilesList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 56</value>
   </data>
-  <data name="deletedListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 394</value>
+  <data name="originFilesList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 329</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="deletedListBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="originFilesList.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;deletedListBox.Name" xml:space="preserve">
-    <value>deletedListBox</value>
+  <data name="&gt;&gt;originFilesList.Name" xml:space="preserve">
+    <value>originFilesList</value>
   </data>
-  <data name="&gt;&gt;deletedListBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;originFilesList.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;deletedListBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;originFilesList.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;deletedListBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;originFilesList.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="toRecoverListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 59</value>
+  <data name="destinationFilesList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 56</value>
   </data>
-  <data name="toRecoverListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 394</value>
+  <data name="destinationFilesList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 329</value>
   </data>
-  <data name="toRecoverListBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="destinationFilesList.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;toRecoverListBox.Name" xml:space="preserve">
-    <value>toRecoverListBox</value>
+  <data name="&gt;&gt;destinationFilesList.Name" xml:space="preserve">
+    <value>destinationFilesList</value>
   </data>
-  <data name="&gt;&gt;toRecoverListBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;destinationFilesList.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toRecoverListBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;destinationFilesList.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;toRecoverListBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;destinationFilesList.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="warningLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 466</value>
-  </data>
-  <data name="warningLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>490, 43</value>
-  </data>
-  <data name="warningLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="warningLabel.Text" xml:space="preserve">
-    <value>Atenção: Itens marcados em vermelho indicam programas já existentes. Recuperar esses programas irá sobreescrever os programas já existentes, não sendo possível recupera-los.</value>
-  </data>
-  <data name="&gt;&gt;warningLabel.Name" xml:space="preserve">
-    <value>warningLabel</value>
-  </data>
-  <data name="&gt;&gt;warningLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;warningLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;warningLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="agreeCheckBox.AutoSize" type="System.Boolean, mscorlib">
+  <data name="originListLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="agreeCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 512</value>
+  <data name="originListLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 33</value>
   </data>
-  <data name="agreeCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 17</value>
+  <data name="originListLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
   </data>
-  <data name="agreeCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="originListLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="agreeCheckBox.Text" xml:space="preserve">
-    <value>Li e compreendo os riscos.</value>
+  <data name="originListLabel.Text" xml:space="preserve">
+    <value>originListLabel</value>
   </data>
-  <data name="&gt;&gt;agreeCheckBox.Name" xml:space="preserve">
-    <value>agreeCheckBox</value>
+  <data name="&gt;&gt;originListLabel.Name" xml:space="preserve">
+    <value>originListLabel</value>
   </data>
-  <data name="&gt;&gt;agreeCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;originListLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;agreeCheckBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;originListLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;agreeCheckBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;originListLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="destinationListLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cancelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
+  <data name="destinationListLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 535</value>
+  <data name="destinationListLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 33</value>
   </data>
-  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="destinationListLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
   </data>
-  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="destinationListLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="destinationListLabel.Text" xml:space="preserve">
+    <value>destinationListLabel</value>
+  </data>
+  <data name="&gt;&gt;destinationListLabel.Name" xml:space="preserve">
+    <value>destinationListLabel</value>
+  </data>
+  <data name="&gt;&gt;destinationListLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;destinationListLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;destinationListLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="warningMessage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 412</value>
+  </data>
+  <data name="warningMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 81</value>
+  </data>
+  <data name="warningMessage.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="warningMessage.Text" xml:space="preserve">
+    <value>warningMessage</value>
+  </data>
+  <data name="&gt;&gt;warningMessage.Name" xml:space="preserve">
+    <value>warningMessage</value>
+  </data>
+  <data name="&gt;&gt;warningMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;warningMessage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;warningMessage.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="warningCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="warningCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 496</value>
+  </data>
+  <data name="warningCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 17</value>
+  </data>
+  <data name="warningCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="warningCheckBox.Text" xml:space="preserve">
+    <value>warningCheckBox</value>
+  </data>
+  <data name="&gt;&gt;warningCheckBox.Name" xml:space="preserve">
+    <value>warningCheckBox</value>
+  </data>
+  <data name="&gt;&gt;warningCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;warningCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;warningCheckBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 542</value>
+  </data>
+  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 23</value>
+  </data>
+  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <data name="cancelButton.Text" xml:space="preserve">
-    <value>cancelar</value>
+    <value>cancelButton</value>
   </data>
   <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
     <value>cancelButton</value>
@@ -238,22 +292,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
-  <data name="sendButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
+  <data name="sendButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="sendButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>423, 535</value>
+    <value>378, 542</value>
   </data>
   <data name="sendButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 22</value>
+    <value>112, 23</value>
   </data>
   <data name="sendButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="sendButton.Text" xml:space="preserve">
-    <value>recuperar</value>
+    <value>sendButton</value>
   </data>
   <data name="&gt;&gt;sendButton.Name" xml:space="preserve">
     <value>sendButton</value>
@@ -265,127 +319,73 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;sendButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="addToDeletedList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="addToDeletedList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="addToDeletedList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 227</value>
-  </data>
-  <data name="addToDeletedList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 23</value>
-  </data>
-  <data name="addToDeletedList.TabIndex" type="System.Int32, mscorlib">
-    <value>93</value>
-  </data>
-  <data name="addToDeletedList.Text" xml:space="preserve">
-    <value>&lt;&lt;</value>
-  </data>
-  <data name="&gt;&gt;addToDeletedList.Name" xml:space="preserve">
-    <value>addToDeletedList</value>
-  </data>
-  <data name="&gt;&gt;addToDeletedList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addToDeletedList.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;addToDeletedList.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="addToRecoverList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="addToDestinationList.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="addToDestinationList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="addToRecoverList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="addToDestinationList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="addToRecoverList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 198</value>
+  <data name="addToDestinationList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 178</value>
   </data>
-  <data name="addToRecoverList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 23</value>
+  <data name="addToDestinationList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 25</value>
   </data>
-  <data name="addToRecoverList.TabIndex" type="System.Int32, mscorlib">
-    <value>92</value>
+  <data name="addToDestinationList.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="addToRecoverList.Text" xml:space="preserve">
+  <data name="addToDestinationList.Text" xml:space="preserve">
     <value>&gt;&gt;</value>
   </data>
-  <data name="&gt;&gt;addToRecoverList.Name" xml:space="preserve">
-    <value>addToRecoverList</value>
+  <data name="&gt;&gt;addToDestinationList.Name" xml:space="preserve">
+    <value>addToDestinationList</value>
   </data>
-  <data name="&gt;&gt;addToRecoverList.Type" xml:space="preserve">
+  <data name="&gt;&gt;addToDestinationList.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;addToRecoverList.Parent" xml:space="preserve">
+  <data name="&gt;&gt;addToDestinationList.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;addToRecoverList.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="programRecoveredLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="programRecoveredLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="programRecoveredLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>289, 43</value>
-  </data>
-  <data name="programRecoveredLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 13</value>
-  </data>
-  <data name="programRecoveredLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>95</value>
-  </data>
-  <data name="programRecoveredLabel.Text" xml:space="preserve">
-    <value>Programas que serão recuperados:</value>
-  </data>
-  <data name="&gt;&gt;programRecoveredLabel.Name" xml:space="preserve">
-    <value>programRecoveredLabel</value>
-  </data>
-  <data name="&gt;&gt;programRecoveredLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;programRecoveredLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;programRecoveredLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="programDeletedLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="programDeletedLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="programDeletedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 43</value>
-  </data>
-  <data name="programDeletedLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 13</value>
-  </data>
-  <data name="programDeletedLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>94</value>
-  </data>
-  <data name="programDeletedLabel.Text" xml:space="preserve">
-    <value>Programas deletados:</value>
-  </data>
-  <data name="&gt;&gt;programDeletedLabel.Name" xml:space="preserve">
-    <value>programDeletedLabel</value>
-  </data>
-  <data name="&gt;&gt;programDeletedLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;programDeletedLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;programDeletedLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;addToDestinationList.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="addToOriginList.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="addToOriginList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="addToOriginList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="addToOriginList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 209</value>
+  </data>
+  <data name="addToOriginList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 25</value>
+  </data>
+  <data name="addToOriginList.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="addToOriginList.Text" xml:space="preserve">
+    <value>&lt;&lt;</value>
+  </data>
+  <data name="&gt;&gt;addToOriginList.Name" xml:space="preserve">
+    <value>addToOriginList</value>
+  </data>
+  <data name="&gt;&gt;addToOriginList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addToOriginList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;addToOriginList.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -400,7 +400,7 @@
     <value>520, 576</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>StroopManagment</value>
+    <value>FileManagment</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

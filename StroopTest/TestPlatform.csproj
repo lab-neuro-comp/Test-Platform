@@ -133,12 +133,6 @@
     <Compile Include="Models\StroopTest.cs" />
     <Compile Include="Models\Validations.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Views\ExperimentPages\ExperimentManagment.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ExperimentPages\ExperimentManagment.Designer.cs">
-      <DependentUpon>ExperimentManagment.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\MainForms\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +165,12 @@
     <Compile Include="Views\MainForms\ExportUserControl.Designer.cs">
       <DependentUpon>ExportUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MainForms\FileManagment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MainForms\FileManagment.Designer.cs">
+      <DependentUpon>FileManagment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainForms\FormDefineTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,12 +195,6 @@
     </Compile>
     <Compile Include="Views\ReactionPages\ReactionResultUserControl.Designer.cs">
       <DependentUpon>ReactionResultUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ReactionPages\TRManagment.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ReactionPages\TRManagment.Designer.cs">
-      <DependentUpon>TRManagment.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SidebarUserControls\DefaultUserControl.cs">
       <SubType>UserControl</SubType>
@@ -318,12 +312,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Models\StroopProgram.cs" />
-    <Compile Include="Views\StroopPages\StroopManagment.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\StroopPages\StroopManagment.Designer.cs">
-      <DependentUpon>StroopManagment.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Resources\Localizations\LocalizedResources.en-US.resx" />
     <EmbeddedResource Include="Resources\Localizations\LocalizedResources.pt-BR.resx" />
     <EmbeddedResource Include="Views\ExperimentPages\ExperimentConfig.en-US.resx">
@@ -337,15 +325,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ExperimentPages\ExperimentResultUserControl.pt-BR.resx">
       <DependentUpon>ExperimentResultUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ExperimentPages\ExperimentManagment.en-US.resx">
-      <DependentUpon>ExperimentManagment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ExperimentPages\ExperimentManagment.pt-BR.resx">
-      <DependentUpon>ExperimentManagment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ExperimentPages\ExperimentManagment.resx">
-      <DependentUpon>ExperimentManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormAudioConfig.en-US.resx">
       <DependentUpon>FormAudioConfig.cs</DependentUpon>
@@ -405,6 +384,15 @@
     <EmbeddedResource Include="Views\MainForms\ExportUserControl.resx">
       <DependentUpon>ExportUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FileManagment.en-US.resx">
+      <DependentUpon>FileManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FileManagment.pt-BR.resx">
+      <DependentUpon>FileManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FileManagment.resx">
+      <DependentUpon>FileManagment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormDefine.en-US.resx">
       <DependentUpon>FormDefine.cs</DependentUpon>
     </EmbeddedResource>
@@ -452,15 +440,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\ReactionResultUserControl.resx">
       <DependentUpon>ReactionResultUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ReactionPages\TRManagment.en-US.resx">
-      <DependentUpon>TRManagment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ReactionPages\TRManagment.pt-BR.resx">
-      <DependentUpon>TRManagment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ReactionPages\TRManagment.resx">
-      <DependentUpon>TRManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\DefaultUserControl.resx">
       <DependentUpon>DefaultUserControl.cs</DependentUpon>
@@ -568,15 +547,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\StroopPages\StroopManagment.en-US.resx">
-      <DependentUpon>StroopManagment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\StroopPages\StroopManagment.pt-BR.resx">
-      <DependentUpon>StroopManagment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\StroopPages\StroopManagment.resx">
-      <DependentUpon>StroopManagment.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config">
       <SubType>Designer</SubType>

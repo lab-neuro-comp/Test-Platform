@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Drawing;
 using System.Globalization;
-using System.IO;
 using System.Resources;
 using System.Windows.Forms;
-using TestPlatform.Views.StroopPages;
+using TestPlatform.Views.MainForms;
 
 namespace TestPlatform.Views
 {
@@ -107,8 +105,8 @@ namespace TestPlatform.Views
                     }
                     if (screenTranslationAllowed)
                     {
-                        StroopManagment recoverProgram = new StroopManagment(Global.stroopTestFilesPath + Global.programFolderName, Global.stroopTestFilesBackupPath, 'd');
-                        Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                        FileManagment deleteProgram = new FileManagment(Global.stroopTestFilesPath + Global.programFolderName, Global.stroopTestFilesBackupPath, 'd');
+                        Global.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                         deleteStroopButton.Checked = false; 
                     }
                 }
@@ -129,7 +127,7 @@ namespace TestPlatform.Views
                     }
                     if (screenTranslationAllowed)
                     {
-                        StroopManagment recoverProgram = new StroopManagment(Global.stroopTestFilesBackupPath, Global.stroopTestFilesPath + Global.programFolderName, 'r');
+                        FileManagment recoverProgram = new FileManagment(Global.stroopTestFilesBackupPath, Global.stroopTestFilesPath + Global.programFolderName, 'r');
                         Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverStroopButton.Checked = false; 
                     }

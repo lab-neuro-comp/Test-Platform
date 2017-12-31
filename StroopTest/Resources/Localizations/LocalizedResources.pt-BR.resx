@@ -692,13 +692,13 @@
     <value>Experimentos deletados:</value>
   </data>
   <data name="deletedPrograms" xml:space="preserve">
-    <value>Programas deletados:</value>
+    <value>Arquivos deletados:</value>
   </data>
   <data name="existingExperiments" xml:space="preserve">
     <value>Experimentos existentes:</value>
   </data>
   <data name="existingPrograms" xml:space="preserve">
-    <value>Programas existentes:</value>
+    <value>Arquivos existentes:</value>
   </data>
   <data name="recover" xml:space="preserve">
     <value>recuperar</value>
@@ -707,19 +707,19 @@
     <value>Experimentos que serão deletados:</value>
   </data>
   <data name="toDeletePrograms" xml:space="preserve">
-    <value>Programas que serão deletados:</value>
+    <value>Arquivos que serão deletados:</value>
   </data>
   <data name="toRecoverExperiments" xml:space="preserve">
     <value>Experimentos que serão restaurados:</value>
   </data>
   <data name="toRecoverPrograms" xml:space="preserve">
-    <value>Programas que serão restaurados:</value>
+    <value>Arquivos que serão restaurados:</value>
   </data>
   <data name="warningDelete" xml:space="preserve">
-    <value>Aviso: Itens marcados em vermelho indicam programas com o mesmo nome já existentes na pasta de backup. Deletar esses programas irá sobreescrever os programas já existentes, não sendo possível recupera-los.</value>
+    <value>Aviso: Itens marcados em vermelho indicam arquivos com o mesmo nome já existentes. Deletar esses arquivos irá sobreescrever os já existentes, não sendo possível recupera-los.</value>
   </data>
   <data name="warningRecover" xml:space="preserve">
-    <value>Aviso: Itens marcados em vermelho indicam programas já existentes. Recuperar esses programas irá sobreescrever os programas já existentes, não sendo possível recupera-los.</value>
+    <value>Aviso: Itens marcados em vermelho indicam arquivos com o mesmo nome já existentes. Recuperar esses arquivos irá sobreescrever os já existentes, não sendo possível recupera-los.</value>
   </data>
   <data name="deletedSucessful" xml:space="preserve">
     <value>Todos os programas selecionados foram deletedos com sucesso.</value>

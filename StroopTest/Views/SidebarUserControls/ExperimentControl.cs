@@ -4,6 +4,7 @@ using System.IO;
 using System.Resources;
 using System.Windows.Forms;
 using TestPlatform.Views.ExperimentPages;
+using TestPlatform.Views.MainForms;
 
 namespace TestPlatform.Views.SidebarUserControls
 {
@@ -119,8 +120,8 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     if (deleteExperimentButton.Checked)
                     {
-                        ExperimentManagment recoverProgram = new ExperimentManagment(Global.experimentTestFilesPath + Global.programFolderName, Global.experimentTestFilesBackupPath, 'd');
-                        Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                        FileManagment deleteProgram = new FileManagment(Global.experimentTestFilesPath + Global.programFolderName, Global.experimentTestFilesBackupPath, 'd');
+                        Global.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                         deleteExperimentButton.Checked = false;
                     }
                     else
@@ -146,7 +147,7 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     if (recoverExperimentButton.Checked)
                     {
-                        ExperimentManagment recoverProgram = new ExperimentManagment(Global.experimentTestFilesBackupPath, Global.experimentTestFilesPath + Global.programFolderName, 'r');
+                        FileManagment recoverProgram = new FileManagment(Global.experimentTestFilesBackupPath, Global.experimentTestFilesPath + Global.programFolderName, 'r');
                         Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverExperimentButton.Checked = false;
                     }

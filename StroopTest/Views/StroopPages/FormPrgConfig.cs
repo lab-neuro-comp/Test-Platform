@@ -779,6 +779,19 @@ namespace TestPlatform
             this.Parent.Controls.Remove(this);
         }
 
+        public bool save()
+        {
+            saveButton_Click(this, null);
+            foreach (Control c in this.errorProvider.ContainerControl.Controls)
+            { 
+                if (errorProvider.GetError(c) != "")
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (!this.ValidateChildren(ValidationConstraints.Enabled))
@@ -1052,6 +1065,34 @@ namespace TestPlatform
                 }
             }
         }
-        
+
+        private bool validExpoType(int index, out string errorMessage)
+        {
+            if (index >= 0 && index <= 4)
+            {
+                errorMessage = "";
+                return true;
+            }
+            else
+            {
+                errorMessage = LocRM.GetString("expoTypeError", currentCulture);
+                return false;
+            }
+        }
+
+        private void chooseExpoType_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!validExpoType(chooseExpoType.SelectedIndex, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.chooseExpoType, errorMsg);
+            }
+        }
+
+        private void chooseExpoType_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(chooseExpoType, "");
+        }
     }
 }

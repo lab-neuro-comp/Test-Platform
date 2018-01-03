@@ -426,11 +426,8 @@ namespace TestPlatform
             if (experimentButton.Checked)
             {
                 // removing second side bar from view, if there is one, and removing its context too
-                if (currentPanelContent != null)
-                {
-                    Controls.Remove(currentPanelContent);
-                    contentPanel.Controls.Clear();
-                }
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
 
                 ExperimentControl experimentControl = new ExperimentControl();
                 this.sideBarPanel.Controls.Add(experimentControl);
@@ -443,12 +440,9 @@ namespace TestPlatform
             
             if (buttonStroop.Checked)
             {
-                // removing second side bar from view, if there is one, and removing its context too
-                if (sideBarPanel.Controls.Count > 0)
-                {
-                    sideBarPanel.Controls.Remove(currentPanelContent);
-                    contentPanel.Controls.Clear();
-                }
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
+
                 StroopControl stroopControl = new StroopControl();
                 this.sideBarPanel.Controls.Add(stroopControl);
                 currentPanelContent = stroopControl;
@@ -459,12 +453,9 @@ namespace TestPlatform
         {
             if (buttonReaction.Checked)
             {
-                // removing second side bar from view, if there is one, and removing its context too
-                if (sideBarPanel.Controls.Count > 0)
-                {
-                    sideBarPanel.Controls.Remove(currentPanelContent);
-                    contentPanel.Controls.Clear();
-                }
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
+
                 ReactionControl reactControl = new ReactionControl();
                 this.sideBarPanel.Controls.Add(reactControl);
                 currentPanelContent = reactControl;
@@ -476,16 +467,9 @@ namespace TestPlatform
         {
             if (buttonList.Checked)
             {
-                // removing second side bar from view, if there is one, and removing its context too
-                if (sideBarPanel.Controls.Count > 0)
-                {
-                    sideBarPanel.Controls.Remove(currentPanelContent);
-                    contentPanel.Controls.Clear();
-                }
-                else
-                {
-                    /*do nothing*/
-                }
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
+
                 ListUserControl listControl = new ListUserControl();
                 this.sideBarPanel.Controls.Add(listControl);
                 currentPanelContent = listControl;
@@ -589,6 +573,10 @@ namespace TestPlatform
 
         private void executeButton_Click(object sender, EventArgs e)
         {
+            if (Global.GlobalFormMain.contentPanel.Controls.Count > 0)
+            {
+                checkSave();
+            }
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {             
                 if (executingTypeLabel.Text.Equals(LocRM.GetString("stroopTest", currentCulture)))
@@ -609,12 +597,49 @@ namespace TestPlatform
                     /* do nothing*/
                 }
             }
-            else
+        }
+
+        private void checkSave()
+        {
+            if (Global.GlobalFormMain.contentPanel.Controls[0] is FormTRConfig)
             {
-                MessageBox.Show(LocRM.GetString("notFilledProperlyMessage", currentCulture));
-
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    FormTRConfig toSave = (FormTRConfig)(Global.GlobalFormMain.contentPanel.Controls[0]);
+                    toSave.save();
+                }
+                else
+                {
+                    /*do nothing*/
+                }
             }
-
+            else if (Global.GlobalFormMain.contentPanel.Controls[0] is ExperimentConfig)
+            {
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    ExperimentConfig toSave = (ExperimentConfig)(Global.GlobalFormMain.contentPanel.Controls[0]);
+                    toSave.save();
+                }
+                else
+                {
+                    /*do nothing*/
+                }
+            }
+            else if (Global.GlobalFormMain.contentPanel.Controls[0] is FormPrgConfig)
+            {
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    FormPrgConfig toSave = (FormPrgConfig)(Global.GlobalFormMain.contentPanel.Controls[0]);
+                    toSave.save();
+                }
+                else
+                {
+                    /*do nothing*/
+                }
+            }
         }
 
         private void selectButton_Click(object sender, EventArgs e)
@@ -794,6 +819,8 @@ namespace TestPlatform
         {
             if (exportButton.Checked)
             {
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
                 ExportUserControl exportView = new ExportUserControl();
                 this._contentPanel.Controls.Add(exportView);
             }
@@ -806,6 +833,8 @@ namespace TestPlatform
             {
                 try
                 {
+                    this.sideBarPanel.Controls.Clear();
+                    this._contentPanel.Controls.Clear();
                     OpenFileDialog openFileDialog = new OpenFileDialog();
                     openFileDialog.Filter = "ZIP|*.zip";
 
@@ -859,6 +888,7 @@ namespace TestPlatform
                 File.Copy(file, Path.Combine(targetDirectory, Path.GetFileName(file)), true);
             }
         }
+
     }
     
 }

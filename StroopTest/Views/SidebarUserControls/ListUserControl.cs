@@ -1,11 +1,44 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace TestPlatform.Views.SidebarControls
 {
     public partial class ListUserControl : DefaultUserControl
     {
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+
+        private bool isAllowedToChangeScreen()
+        {
+            if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+            {
+                if(Global.GlobalFormMain._contentPanel.Controls[0] is FormAudioConfig ||
+                    Global.GlobalFormMain._contentPanel.Controls[0] is FormImgConfig ||
+                    Global.GlobalFormMain._contentPanel.Controls[0] is FormWordColorConfig)
+                {
+                    DialogResult dialogResult = MessageBox.Show(LocRM.GetString("unsavedLists", currentCulture), LocRM.GetString("unsavedListsTitle", currentCulture), MessageBoxButtons.YesNo);
+                    if(dialogResult == DialogResult.Yes)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         public ListUserControl()
         {
@@ -17,10 +50,18 @@ namespace TestPlatform.Views.SidebarControls
         {
             if (audioButton.Checked)
             {
-                colorWordButton.Visible = false;
-                imageButton.Visible = false;
-                audioButton.Location = new Point(-3, 3);
-                audioPanel.Visible = true;
+                if (isAllowedToChangeScreen())
+                {
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    colorWordButton.Visible = false;
+                    imageButton.Visible = false;
+                    audioButton.Location = new Point(-3, 3);
+                    audioPanel.Visible = true;
+                }
+                else
+                {
+                    /*do nothing*/
+                }
             }
         }
 
@@ -28,8 +69,17 @@ namespace TestPlatform.Views.SidebarControls
         {
             if (recordAudioButton.Checked)
             {
-                FormShowAudio newAudio = new FormShowAudio();
-                Global.GlobalFormMain._contentPanel.Controls.Add(newAudio);
+                if (isAllowedToChangeScreen())
+                {
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FormShowAudio newAudio = new FormShowAudio();
+                    Global.GlobalFormMain._contentPanel.Controls.Add(newAudio);
+                }
+                else
+                {
+                    /*do nothing*/
+                }
+
             }
         }
 
@@ -37,12 +87,20 @@ namespace TestPlatform.Views.SidebarControls
         {
             if (newAudioListButton.Checked)
             {
-                FormAudioConfig configureAudioList = new FormAudioConfig(false);
-                try
+                if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Add(configureAudioList);
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FormAudioConfig configureAudioList = new FormAudioConfig(false);
+                    try
+                    {
+                        Global.GlobalFormMain._contentPanel.Controls.Add(configureAudioList);
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                else
+                {
+                    /*do nothing*/
+                }
             }
         }
 
@@ -50,12 +108,27 @@ namespace TestPlatform.Views.SidebarControls
         {
             if (editAudioListButton.Checked)
             {
-                FormAudioConfig configureAudioList = new FormAudioConfig(true);
-                try
+                if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Add(configureAudioList);
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FormAudioConfig configureAudioList = new FormAudioConfig(true);
+                    try
+                    {
+                        if (configureAudioList.isValid())
+                        {
+                            Global.GlobalFormMain._contentPanel.Controls.Add(configureAudioList);
+                        }
+                        else
+                        {
+                            editAudioListButton.Checked = false;
+                        }
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                else
+                {
+                    /*do nothing*/
+                }
             }
         }
 
@@ -63,10 +136,18 @@ namespace TestPlatform.Views.SidebarControls
         {
             if (backAudioButton.Checked)
             {
-                audioButton.Location = new Point(-3, 65);
-                audioPanel.Visible = false;
-                colorWordButton.Visible = true;
-                imageButton.Visible = true;
+                if (isAllowedToChangeScreen())
+                {
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    audioButton.Location = new Point(-3, 65);
+                    audioPanel.Visible = false;
+                    colorWordButton.Visible = true;
+                    imageButton.Visible = true;
+                }
+                else
+                {
+                    /*do nothing*/
+                }
             }
         }
 
@@ -83,9 +164,17 @@ namespace TestPlatform.Views.SidebarControls
 
         private void backWordColorButton_CheckedChanged(object sender, EventArgs e)
         {
-            audioButton.Visible = true;
-            imageButton.Visible = true;
-            wordColorPanel.Visible = false;
+            if (isAllowedToChangeScreen())
+            {
+                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                audioButton.Visible = true;
+                imageButton.Visible = true;
+                wordColorPanel.Visible = false;
+            }
+            else
+            {
+                /*do nothing*/
+            }
 
         }
 
@@ -93,12 +182,20 @@ namespace TestPlatform.Views.SidebarControls
         {
             if (newWordColorButton.Checked)
             {
-                FormWordColorConfig configureList = new FormWordColorConfig(false);
-                try
+                if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Add(configureList);
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FormWordColorConfig configureList = new FormWordColorConfig(false);
+                    try
+                    {
+                        Global.GlobalFormMain._contentPanel.Controls.Add(configureList);
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                else
+                {
+                    /*do nothing*/
+                }
             }
         }
 
@@ -106,12 +203,27 @@ namespace TestPlatform.Views.SidebarControls
         {
             if (editWordColorButton.Checked)
             {
-                FormWordColorConfig configureList = new FormWordColorConfig(true);
-                try
+                if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Add(configureList);
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FormWordColorConfig configureList = new FormWordColorConfig(true);
+                    try
+                    {
+                        if (configureList.isValid())
+                        {
+                            Global.GlobalFormMain._contentPanel.Controls.Add(configureList);
+                        }
+                        else
+                        {
+                            editWordColorButton.Checked = false;
+                        }
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                else
+                {
+                    /*do nothing*/
+                }
             }
         }
 
@@ -119,10 +231,18 @@ namespace TestPlatform.Views.SidebarControls
         {
             if (imageButton.Checked)
             {
-                colorWordButton.Visible = false;
-                audioButton.Visible = false;
-                imageButton.Location = new Point(-3, 3);
-                imagePanel.Visible = true;
+                if (isAllowedToChangeScreen())
+                {
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    colorWordButton.Visible = false;
+                    audioButton.Visible = false;
+                    imageButton.Location = new Point(-3, 3);
+                    imagePanel.Visible = true;
+                }
+                else
+                {
+                    /*do nothing*/
+                }
             }
 
         }
@@ -131,12 +251,16 @@ namespace TestPlatform.Views.SidebarControls
         {
             if (newImageListButton.Checked)
             {
-                FormImgConfig configureImagesList = new FormImgConfig("false");
-                try
+                if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Add(configureImagesList);
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FormImgConfig configureImagesList = new FormImgConfig("false");
+                    try
+                    {
+                        Global.GlobalFormMain._contentPanel.Controls.Add(configureImagesList);
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }
 
@@ -144,25 +268,49 @@ namespace TestPlatform.Views.SidebarControls
         {
             if (editImageListButton.Checked)
             {
-                FormImgConfig configureImagesList = new FormImgConfig("");
-                try
+                if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Add(configureImagesList);
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FormImgConfig configureImagesList = new FormImgConfig("");
+                    try
+                    {
+                        if (configureImagesList.isValid())
+                        {
+                            Global.GlobalFormMain._contentPanel.Controls.Add(configureImagesList);
+                        }
+                        else
+                        {
+                            editImageListButton.Checked = false;
+                        }
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                else
+                {
+                    /*do nothing*/
+                }
             }
         }
 
         private void backImageButton_Click(object sender, EventArgs e)
         {
-            if (backImageButton.Checked)
+            if (isAllowedToChangeScreen())
             {
-                imageButton.Location = new Point(-3, 32);
-                imagePanel.Visible = false;
-                colorWordButton.Visible = true;
-                audioButton.Visible = true;
+                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                if (backImageButton.Checked)
+                {
+                    imageButton.Location = new Point(-3, 32);
+                    imagePanel.Visible = false;
+                    colorWordButton.Visible = true;
+                    audioButton.Visible = true;
 
+                }
+            }
+            else
+            {
+                /*do nothing*/
             }
         }
+
     }
 }

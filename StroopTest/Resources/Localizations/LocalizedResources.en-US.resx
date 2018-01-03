@@ -591,4 +591,73 @@
   <data name="programNotDeleted" xml:space="preserve">
     <value>The program will not be deleted!</value>
   </data>
+  <data name="recoveredSucessful" xml:space="preserve">
+    <value>All selected programs were recovered successful.</value>
+  </data>
+  <data name="programRecovered" xml:space="preserve">
+    <value>was recovered sucessful!</value>
+  </data>
+  <data name="programNotRecovered" xml:space="preserve">
+    <value>The program will not be recovered!</value>
+  </data>
+  <data name="conflictsFound" xml:space="preserve">
+    <value>conflict(s) found. Do you want to treat them now?</value>
+  </data>
+  <data name="conflict" xml:space="preserve">
+    <value>Conflict</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>delete</value>
+  </data>
+  <data name="recover" xml:space="preserve">
+    <value>recover</value>
+  </data>
+  <data name="deletedExperiments" xml:space="preserve">
+    <value>Deleted experiments:</value>
+  </data>
+  <data name="deletedPrograms" xml:space="preserve">
+    <value>Deleted files:</value>
+  </data>
+  <data name="existingExperiments" xml:space="preserve">
+    <value>Existing experiments:</value>
+  </data>
+  <data name="existingPrograms" xml:space="preserve">
+    <value>Existing files:</value>
+  </data>
+  <data name="toDeleteExperiments" xml:space="preserve">
+    <value>Experiments that will be deleted:</value>
+  </data>
+  <data name="toDeletePrograms" xml:space="preserve">
+    <value>Files that will be deleted:</value>
+  </data>
+  <data name="toRecoverExperiments" xml:space="preserve">
+    <value>Experiments that will be recovered:</value>
+  </data>
+  <data name="toRecoverPrograms" xml:space="preserve">
+    <value>Files that will be recovered:</value>
+  </data>
+  <data name="warningDelete" xml:space="preserve">
+    <value>Warning: Items marked in red indicate that there's existing files with same name in backup folder. Deleting these files will overwrite the existing ones, and you will not be able to recover them.</value>
+  </data>
+  <data name="warningRecover" xml:space="preserve">
+    <value>Warning: Items marked in red indicate that there's existing files with same name. Recovering these files will overwrite the existing ones, and you will not be able to recover them.</value>
+  </data>
+  <data name="deletedSucessful" xml:space="preserve">
+    <value>All selected programs were deleted successful.</value>
+  </data>
+  <data name="expoTypeError" xml:space="preserve">
+    <value>Exposition type must be selected.</value>
+  </data>
+  <data name="savePending" xml:space="preserve">
+    <value>There might have unsaved changes in the program. Do you wish to save them?</value>
+  </data>
+  <data name="savePendingTitle" xml:space="preserve">
+    <value>Unsaved changes</value>
+  </data>
+  <data name="unsavedLists" xml:space="preserve">
+    <value>You have lists that might have unsaved changes. Any unsaved change will be lost if you continue. Continue?</value>
+  </data>
+  <data name="unsavedListsTitle" xml:space="preserve">
+    <value>Unsaved lists</value>
+  </data>
 </root>

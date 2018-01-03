@@ -637,6 +637,8 @@
             this.chooseExpoType.Name = "chooseExpoType";
             this.chooseExpoType.Tag = "";
             this.chooseExpoType.SelectedIndexChanged += new System.EventHandler(this.chooseExpositionTypeComboBox);
+            this.chooseExpoType.Validating += new System.ComponentModel.CancelEventHandler(this.chooseExpoType_Validating);
+            this.chooseExpoType.Validated += new System.EventHandler(this.chooseExpoType_Validated);
             // 
             // numExpoLabel
             // 

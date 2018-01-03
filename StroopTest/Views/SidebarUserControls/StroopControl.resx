@@ -132,7 +132,7 @@
     <value>0, 80</value>
   </data>
   <data name="deleteStroopButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 33</value>
+    <value>203, 33</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="deleteStroopButton.TabIndex" type="System.Int32, mscorlib">
@@ -154,7 +154,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;deleteStroopButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="editStroopButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -169,7 +169,7 @@
     <value>0, 41</value>
   </data>
   <data name="editStroopButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 33</value>
+    <value>203, 33</value>
   </data>
   <data name="editStroopButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -190,7 +190,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;editStroopButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="newStroopButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -205,7 +205,7 @@
     <value>0, 2</value>
   </data>
   <data name="newStroopButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 33</value>
+    <value>203, 33</value>
   </data>
   <data name="newStroopButton.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -226,7 +226,43 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;newStroopButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="recoverStroopButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="recoverStroopButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="recoverStroopButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="recoverStroopButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 119</value>
+  </data>
+  <data name="recoverStroopButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 33</value>
+  </data>
+  <data name="recoverStroopButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="recoverStroopButton.Text" xml:space="preserve">
+    <value>Recuperar Programa</value>
+  </data>
+  <data name="recoverStroopButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;recoverStroopButton.Name" xml:space="preserve">
+    <value>recoverStroopButton</value>
+  </data>
+  <data name="&gt;&gt;recoverStroopButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recoverStroopButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;recoverStroopButton.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -235,12 +271,12 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 995</value>
+    <value>203, 995</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>StroopControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6565.23560, Culture=neutral, PublicKeyToken=null</value>
+    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6571.30816, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

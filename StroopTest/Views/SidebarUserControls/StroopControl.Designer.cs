@@ -32,6 +32,7 @@
             this.deleteStroopButton = new System.Windows.Forms.RadioButton();
             this.editStroopButton = new System.Windows.Forms.RadioButton();
             this.newStroopButton = new System.Windows.Forms.RadioButton();
+            this.recoverStroopButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // deleteStroopButton
@@ -58,11 +59,20 @@
             this.newStroopButton.UseVisualStyleBackColor = true;
             this.newStroopButton.Click += new System.EventHandler(this.newStroopButton_CheckedChanged);
             // 
+            // recoverStroopButton
+            // 
+            resources.ApplyResources(this.recoverStroopButton, "recoverStroopButton");
+            this.recoverStroopButton.FlatAppearance.BorderSize = 0;
+            this.recoverStroopButton.Name = "recoverStroopButton";
+            this.recoverStroopButton.UseVisualStyleBackColor = true;
+            this.recoverStroopButton.Click += new System.EventHandler(this.recoverStroopButton_Click);
+            // 
             // StroopControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.recoverStroopButton);
             this.Controls.Add(this.deleteStroopButton);
             this.Controls.Add(this.editStroopButton);
             this.Controls.Add(this.newStroopButton);
@@ -76,5 +86,6 @@
         private System.Windows.Forms.RadioButton newStroopButton;
         private System.Windows.Forms.RadioButton editStroopButton;
         private System.Windows.Forms.RadioButton deleteStroopButton;
+        private System.Windows.Forms.RadioButton recoverStroopButton;
     }
 }

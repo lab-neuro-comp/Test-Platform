@@ -126,4 +126,7 @@
   <data name="newStroopButton.Text" xml:space="preserve">
     <value>Novo Programa</value>
   </data>
+  <data name="recoverStroopButton.Text" xml:space="preserve">
+    <value>Recuperar Programa</value>
+  </data>
 </root>

@@ -7,6 +7,7 @@ using TestPlatform.Controllers;
 using System.Drawing;
 using System.Resources;
 using System.Globalization;
+using System.Collections.Generic;
 
 namespace TestPlatform
 {
@@ -15,6 +16,8 @@ namespace TestPlatform
         private SoundPlayer player = new SoundPlayer();
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+        private StrList audioList;
+        private static int AUDIO = 1;
 
         public FormAudioConfig(bool editList)
         {
@@ -29,25 +32,21 @@ namespace TestPlatform
 
         private void openFilesForEdition()
         {
-            try
-            {
-                FormDefine defineFilePath = new FormDefine(LocRM.GetString("audioList", currentCulture), Global.testFilesPath  + Global.listFolderName, "lst", "_audio", true);
+            
+                FormDefine defineFilePath = new FormDefine(LocRM.GetString("audioList", currentCulture), Global.testFilesPath  + Global.listFolderName, "dir", "_audio", true);
                 var result = defineFilePath.ShowDialog();
 
                 if (result == DialogResult.OK)
                 {
                     string choosenList = defineFilePath.ReturnValue;
-                    audioListNameTextBox.Text = choosenList.Remove(choosenList.Length - 6); // removes the _audio identification from file while editing (when its saved it is always added again)
+                    audioListNameTextBox.Text = choosenList;
 
-                    string[] filePaths = StroopProgram.readDirListFile(Global.testFilesPath + Global.listFolderName + "/" + choosenList + ".lst");
+                    audioList = new StrList(choosenList, AUDIO);
+                    string[] filePaths = audioList.ListContent.ToArray();
+
                     DGVManipulation.ReadStringListIntoDGV(filePaths, audioPathDataGridView);
                     numberFiles.Text = audioPathDataGridView.RowCount.ToString();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void openButton_Click(object sender, EventArgs e)
@@ -114,15 +113,29 @@ namespace TestPlatform
         {
             try
             {
-                if (!this.ValidateChildren(ValidationConstraints.Enabled))
+                if (this.ValidateChildren(ValidationConstraints.Enabled))
                 {
-                    MessageBox.Show(LocRM.GetString("fieldNotRight", currentCulture));
+                    List<string> content = new List<string>();
+                    for (int i = 0; i < audioPathDataGridView.RowCount; i++)
+                    {
+                        content.Add(audioPathDataGridView.Rows[i].Cells[1].Value.ToString());
+                    }
+                    
+                    audioList = new StrList(content, this.audioListNameTextBox.Text, "_audio");
+
+                    if (audioList.saveContent())
+                    {
+                        MessageBox.Show(LocRM.GetString("list", currentCulture) + this.audioListNameTextBox.Text + "_audio" + LocRM.GetString("listSaveSuccess", currentCulture));
+                        this.Parent.Controls.Remove(this);
+                    }
+                    else
+                    {
+                        MessageBox.Show(LocRM.GetString("list", currentCulture) + this.audioListNameTextBox.Text + "_audio'" + LocRM.GetString("notCreated", currentCulture));
+                    }
                 }                   
                 else
                 {
-                    DataGridView dgv = this.audioPathDataGridView;
-                    DGVManipulation.SaveColumnToListFile(dgv, 1, Global.testFilesPath + Global.listFolderName, this.audioListNameTextBox.Text + "_audio");
-                    this.Parent.Controls.Remove(this);
+                    MessageBox.Show(LocRM.GetString("fieldNotRight", currentCulture));
                 }
             }
             catch (Exception ex)

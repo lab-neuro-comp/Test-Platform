@@ -16,7 +16,8 @@ namespace TestPlatform
         private ImageList imgsList = new ImageList();
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
-
+        private StrList imageList;
+        private static int IMAGE = 0;
         public FormImgConfig(string imgListEdit)
         {
             this.Dock = DockStyle.Fill;
@@ -40,12 +41,11 @@ namespace TestPlatform
                 
                 if (result == DialogResult.OK)
                 {
-                    string dir = defineFilePath.ReturnValue;
-                    imgListNameTextBox.Text = dir.Remove(dir.Length - 6); // removes the _img identification from file while editing (when its saved it is always added again)
-
-                    string[] filePaths = StroopProgram.readDirListFile(Global.testFilesPath + Global.listFolderName + "/" + dir + ".lst");
-                    readImagesIntoDGV(filePaths, imgPathDataGridView);
-                    
+                    string listName = defineFilePath.ReturnValue;
+                    imgListNameTextBox.Text = listName.Remove(listName.Length - 6); // removes the _img identification from file while editing (when its saved it is always added again)
+                    imageList = new StrList(listName, IMAGE);
+                    string[] filePaths = imageList.ListContent.ToArray();
+                    readImagesIntoDGV(filePaths, imgPathDataGridView);                  
                 }
             }
             catch (Exception ex)
@@ -185,7 +185,7 @@ namespace TestPlatform
                     {
                         content.Add(imgPathDataGridView.Rows[i].Cells[2].Value.ToString());
                     }
-                    StrList imageList = new StrList(content, imgListNameTextBox.Text, "_image");
+                    imageList = new StrList(content, imgListNameTextBox.Text, "_image");
 
                     if (imageList.saveContent())
                     {

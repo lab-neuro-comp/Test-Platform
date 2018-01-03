@@ -34,7 +34,10 @@ namespace TestPlatform
             textBox1.Visible = false;
 
             if (itemType.Contains(itemTypes[0]) || itemType.Contains(itemTypes[1]) || itemType.Contains(itemTypes[2]) || itemType.Contains(itemTypes[3]))
+            {
                 isType = true;
+            }
+
             if (type == "prg" || type == "lst" || type == "txt")
             {
                 comboBox1.Enabled = true;
@@ -57,24 +60,22 @@ namespace TestPlatform
 
                     }
                 }
-                else if (type == "dir")
+            }
+            else if (type == "dir")
+            {
+                comboBox1.Enabled = true;
+                comboBox1.Visible = true;
+                if (Directory.Exists(dataFolderPath))
                 {
-                    if (Directory.Exists(dataFolderPath))
-                    {
-                        filePaths = Directory.GetDirectories(dataFolderPath, ("*." + itemType));
-                        for (int i = 0; i < filePaths.Length; i++)
-                        {
-                            option = Path.GetFileNameWithoutExtension(filePaths[i]).Split('_');
-                            comboBox1.Items.Add(option[0]);
 
-                        }
+                    filePaths = Directory.GetDirectories(dataFolderPath, ("*" + itemType));
+                    for (int i = 0; i < filePaths.Length; i++)
+                    {
+                        option = Path.GetFileName(filePaths[i]).Split('_');
+                        comboBox1.Items.Add(option[0]);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("{0}" + LocRM.GetString("invalidPath", currentCulture), dataFolderPath);
-                }
-            }
+            }            
             else
             {
                 textBox1.Enabled = true;
@@ -96,7 +97,7 @@ namespace TestPlatform
         {
             try
             {
-                if (type == "prg" || type == "lst" || type == "txt" || type == "tr")
+                if (type == "prg" || type == "lst" || type == "txt" || type == "dir")
                 {
                     comboBox1.Items.Add(comboBox1.Text);
                     this.ReturnValue = comboBox1.Items[comboBox1.Items.Count - 1].ToString();

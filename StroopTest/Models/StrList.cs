@@ -35,16 +35,15 @@ namespace TestPlatform.Models
             ListName = listname;
             Type = types[type];
 
-            string file = Global.testFilesPath + Global.listFolderName + "/" + listname + types[type] + ".lst";
-
-
-            if (File.Exists(file))
+            // adding content of word and color lists
+            if (type == 2  || type == 3)
             {
-                TextReader tr = new StreamReader(file, Encoding.Default, true);
-                List<string> list = new List<string>(); // lista de palavras
-                while (tr.Peek() >= 0)
+                string file = Global.testFilesPath + Global.listFolderName + "/" + listname + types[type] + ".lst";
+                if (File.Exists(file))
                 {
-                    if(type > 1)
+                    TextReader tr = new StreamReader(file, Encoding.Default, true);
+                    List<string> list = new List<string>(); // lista de palavras
+                    while (tr.Peek() >= 0)
                     {
                         string[] splitedLine = tr.ReadLine().Split();
                         for (int i = 0; i < splitedLine.Count(); i++) //adding elements to list one by one
@@ -52,20 +51,23 @@ namespace TestPlatform.Models
                             list.Add(splitedLine[i]);
                         }
                     }
-                    else
-                    {
-                        list.Add(tr.ReadLine());
-                    }
-
+                    tr.Close();
+                    ListContent = list; // returning list in array                
                 }
-                tr.Close();
-                ListContent = list; // retorning list in array                
+                else
+                {
+                    throw new FileNotFoundException("Não foi possível abrir a lista: '" + listName +
+                        "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(file));
+                }
             }
-            else
+            // adding content of image and audio list
+            else if (type == 0 || type == 1)
             {
-                throw new FileNotFoundException("Não foi possível abrir a lista: '" + listName +
-                    "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(file));
+                string directoryList = Global.testFilesPath + Global.listFolderName + "/" + listname + types[type];
+                string[] content = Directory.GetFiles(directoryList);
+                ListContent = content.ToList();
             }
+           
         }
 
 
@@ -146,13 +148,11 @@ namespace TestPlatform.Models
                 {
                     try
                     {
-                        Console.WriteLine(content);
                         File.Copy(content, listDestination + Path.GetFileName(content), true);
                         
                     }
-                    catch (Exception e)
+                    catch
                     {
-                        Console.WriteLine(e.Message);
                         ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
                         CultureInfo currentCulture = System.Threading.Thread.CurrentThread.CurrentUICulture;
                         MessageBox.Show(LocRM.GetString("fileNotFound", currentCulture) + "\n" + content);

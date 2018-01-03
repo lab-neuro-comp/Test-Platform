@@ -659,10 +659,10 @@
     <value>barraDeEspaço</value>
   </data>
   <data name="deleteProgram" xml:space="preserve">
-    <value>Deletar programa:</value>
+    <value>Excluir programa:</value>
   </data>
   <data name="programDeleted" xml:space="preserve">
-    <value>foi deletado com sucesso!</value>
+    <value>foi excluído com sucesso!</value>
   </data>
   <data name="programExistsInBackup" xml:space="preserve">
     <value>O programa já existe na pasta de backup, deseja sobrescrevê-lo?</value>
@@ -686,13 +686,13 @@
     <value>Conflito</value>
   </data>
   <data name="delete" xml:space="preserve">
-    <value>deletar</value>
+    <value>excluir</value>
   </data>
   <data name="deletedExperiments" xml:space="preserve">
-    <value>Experimentos deletados:</value>
+    <value>Experimentos excluídos:</value>
   </data>
   <data name="deletedPrograms" xml:space="preserve">
-    <value>Arquivos deletados:</value>
+    <value>Arquivos excluídos:</value>
   </data>
   <data name="existingExperiments" xml:space="preserve">
     <value>Experimentos existentes:</value>
@@ -704,10 +704,10 @@
     <value>recuperar</value>
   </data>
   <data name="toDeleteExperiments" xml:space="preserve">
-    <value>Experimentos que serão deletados:</value>
+    <value>Experimentos que serão excluídos:</value>
   </data>
   <data name="toDeletePrograms" xml:space="preserve">
-    <value>Arquivos que serão deletados:</value>
+    <value>Arquivos que serão excluídos:</value>
   </data>
   <data name="toRecoverExperiments" xml:space="preserve">
     <value>Experimentos que serão restaurados:</value>
@@ -716,7 +716,7 @@
     <value>Arquivos que serão restaurados:</value>
   </data>
   <data name="warningDelete" xml:space="preserve">
-    <value>Aviso: Itens marcados em vermelho indicam arquivos com o mesmo nome já existentes. Deletar esses arquivos irá sobreescrever os já existentes, não sendo possível recupera-los.</value>
+    <value>Aviso: Itens marcados em vermelho indicam arquivos com o mesmo nome já existentes. Excluir esses arquivos irá sobreescrever os já existentes, não sendo possível recupera-los.</value>
   </data>
   <data name="warningRecover" xml:space="preserve">
     <value>Aviso: Itens marcados em vermelho indicam arquivos com o mesmo nome já existentes. Recuperar esses arquivos irá sobreescrever os já existentes, não sendo possível recupera-los.</value>

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Resources;
 using System.Text;
+using System.Windows.Forms;
 using TestPlatform.Views;
 
 namespace TestPlatform.Models
@@ -135,6 +136,35 @@ namespace TestPlatform.Models
             return true;
         }
 
+        public bool saveContent()
+        {
+            if (Type.Equals(types[0]) || Type.Equals(types[1]))
+            {
+                string listDestination = Global.testFilesPath + Global.listFolderName + ListName + Type + "/";
+                Directory.CreateDirectory(listDestination);
+                foreach (string content in listContent)
+                {
+                    try
+                    {
+                        Console.WriteLine(content);
+                        File.Copy(content, listDestination + Path.GetFileName(content), true);
+                        
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                        ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+                        CultureInfo currentCulture = System.Threading.Thread.CurrentThread.CurrentUICulture;
+                        MessageBox.Show(LocRM.GetString("fileNotFound", currentCulture) + "\n" + content);
+                    }
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public bool saveDirectories()
         {
@@ -185,6 +215,29 @@ namespace TestPlatform.Models
             writesDefaultList(filepath, "_color.lst", "defaultColorList");
         }
 
+        // converts image and audio list files *.lst to new implementation that imports files to a folder
+        public static void convertFileLists()
+        {
+            string listFolder = Global.testFilesPath + Global.listFolderName;
+            string[] audioFiles = Directory.GetFiles(listFolder, ("*_audio.lst"), SearchOption.AllDirectories);
+            string[] imageFiles = Directory.GetFiles(listFolder, ("*_image.lst"), SearchOption.AllDirectories);
+
+            convertingList(audioFiles);
+            convertingList(imageFiles);
+        }
+
+        private static void convertingList(string[] lists)
+        {
+            foreach (string list in lists)
+            {
+                string[] name = Path.GetFileNameWithoutExtension(list).Split('_');
+                List<string> content = readListFile(list).ToList();
+                StrList newList = new StrList(content, name[0], "_" + name[1]);
+                newList.saveContent();
+                File.Delete(list);
+            }
+        }
+
         // reads each word in file and returns a vector of them
         static internal string[] readListFile(string filepath)
         {           
@@ -213,7 +266,7 @@ namespace TestPlatform.Models
             }           
         }
 
-
+        
 
     }
 }

@@ -7,6 +7,7 @@ using TestPlatform.Views;
 using TestPlatform.Controllers;
 using System.Globalization;
 using System.Resources;
+using System.Collections.Generic;
 
 namespace TestPlatform
 {
@@ -34,7 +35,7 @@ namespace TestPlatform
         {
             try
             {
-                FormDefine defineFilePath = defineFilePath = new FormDefine(LocRM.GetString("imageList", currentCulture), Global.testFilesPath + Global.listFolderName, "lst","_image",true);
+                FormDefine defineFilePath = defineFilePath = new FormDefine(LocRM.GetString("imageList", currentCulture), Global.testFilesPath + Global.listFolderName, "dir","_image",true);
                 var result = defineFilePath.ShowDialog();
                 
                 if (result == DialogResult.OK)
@@ -172,20 +173,38 @@ namespace TestPlatform
             catch { }
         }
 
-        // saves list into .lst file inside lst directory
+        // saves list into directory copying files inside lst directory
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (!this.ValidateChildren(ValidationConstraints.Enabled))
-                MessageBox.Show(LocRM.GetString("fieldNotRight", currentCulture));
-            else
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 try
                 {
-                    DataGridView dgv = imgPathDataGridView;
-                    DGVManipulation.SaveColumnToListFile(dgv, 2, Global.testFilesPath + Global.listFolderName, imgListNameTextBox.Text + "_image");
-                    this.Parent.Controls.Remove(this);
+                    List<string> content = new List<string>();
+                    for (int i = 0; i < imgPathDataGridView.RowCount; i++)
+                    {
+                        content.Add(imgPathDataGridView.Rows[i].Cells[2].Value.ToString());
+                    }
+                    StrList imageList = new StrList(content, imgListNameTextBox.Text, "_image");
+
+                    if (imageList.saveContent())
+                    {
+                        MessageBox.Show(LocRM.GetString("list", currentCulture) + imgListNameTextBox.Text + "_image" + LocRM.GetString("listSaveSuccess", currentCulture));
+                        this.Parent.Controls.Remove(this);
+                    }
+                    else
+                    {
+                        MessageBox.Show(LocRM.GetString("list", currentCulture) + imgListNameTextBox.Text + "_image'" + LocRM.GetString("notCreated", currentCulture));
+                    }
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }               
+            else
+            {
+                MessageBox.Show(LocRM.GetString("fieldNotRight", currentCulture));
             }
         }
 

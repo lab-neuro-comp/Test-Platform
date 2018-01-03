@@ -133,8 +133,12 @@ namespace TestPlatform
             if (File.Exists(Global.defaultPath + "/StroopTestFiles"))
                 File.Delete(Global.defaultPath + "/StroopTestFiles");
 
+            // converting old implementations of file lists to new version
+            StrList.convertFileLists();
 
-            initializeDefaultPrograms(); // inicializa programa padrão (cria arquivo programa padrão e listas de palavras e cores padrão)
+            // create default stroop and reaction programs, adding default word and color lists
+            initializeDefaultPrograms();
+
             InitializeComponent();
             _contentPanel = contentPanel;
             dirPathSL.Text = Global.testFilesPath;

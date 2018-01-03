@@ -232,22 +232,22 @@ namespace TestPlatform
 
         private void openWordsList_Click(object sender, EventArgs e)
         {
-            openWordListButton.Text = ListController.OpenListFile("_words", openWordListButton.Text);
+            openWordListButton.Text = ListController.OpenListFile("_words", openWordListButton.Text, "lst");
         }
 
         private void openColorsList_Click(object sender, EventArgs e)
         {
-            openColorListButton.Text = ListController.OpenListFile("_color", openColorListButton.Text);
+            openColorListButton.Text = ListController.OpenListFile("_color", openColorListButton.Text, "lst");
         }
 
         private void openImagesList_Click(object sender, EventArgs e)
         {
-            openImgListButton.Text = ListController.OpenListFile("_image", openImgListButton.Text);
+            openImgListButton.Text = ListController.OpenListFile("_image", openImgListButton.Text, "dir");
         }
 
         private void openAudioList_Click(object sender, EventArgs e)
         {
-            openAudioListButton.Text = ListController.OpenListFile("_audio", openAudioListButton.Text);
+            openAudioListButton.Text = ListController.OpenListFile("_audio", openAudioListButton.Text, "dir");
         }
         
         //BOX4
@@ -319,7 +319,7 @@ namespace TestPlatform
 
         private void openSubsList_Click(object sender, EventArgs e)
         {
-            openSubsListButton.Text = ListController.OpenListFile("_words", openSubsListButton.Text);
+            openSubsListButton.Text = ListController.OpenListFile("_words", openSubsListButton.Text, "lst");
         }
 
         private void subLocationDown_Click(object sender, EventArgs e)
@@ -767,16 +767,27 @@ namespace TestPlatform
             if (File.Exists(path + prgNameTextBox.Text + ".prg"))
             {
                 DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExists", currentCulture), "", MessageBoxButtons.OKCancel);
-                if (dialogResult == DialogResult.Cancel)
+                if (dialogResult != DialogResult.Cancel)
                 {
-                    throw new Exception(LocRM.GetString("programNotSave", currentCulture));
+                    if (newProgram.saveProgramFile(path, instructionBoxText))
+                    {
+                        MessageBox.Show(LocRM.GetString("programSave", currentCulture));
+                    }
+                    this.Parent.Controls.Remove(this);
+                }
+                else
+                {
+                    MessageBox.Show(LocRM.GetString("programNotSave", currentCulture));
                 }
             }
-            if (newProgram.saveProgramFile(path, instructionBoxText))
+            else
             {
-                MessageBox.Show(LocRM.GetString("programSave", currentCulture));
-            }
-            this.Parent.Controls.Remove(this);
+                if (newProgram.saveProgramFile(path, instructionBoxText))
+                {
+                    MessageBox.Show(LocRM.GetString("programSave", currentCulture));
+                }
+                this.Parent.Controls.Remove(this);
+            }            
         }
 
         public bool save()

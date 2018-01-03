@@ -292,7 +292,7 @@
     <value>Field mark must be filled.</value>
   </data>
   <data name="markLengthError2" xml:space="preserve">
-    <value>A marca deve ser composta apenas de um caracter</value>
+    <value>Mark must be expressed by one character only</value>
   </data>
   <data name="none" xml:space="preserve">
     <value>None</value>

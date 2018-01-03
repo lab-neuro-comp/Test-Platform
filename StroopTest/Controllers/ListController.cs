@@ -39,14 +39,14 @@
             return hexColor;
         }
 
-        public static string OpenListFile(string itemType, string current)
+        public static string OpenListFile(string itemType, string current, string type)
         {
             ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
             CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
             string progName = LocRM.GetString("open", currentCulture);
 
-            FormDefine defineProgram = new FormDefine("Lista: ", Global.testFilesPath + Global.listFolderName, "lst", itemType, false);
+            FormDefine defineProgram = new FormDefine("Lista: ", Global.testFilesPath + Global.listFolderName, type, itemType, false);
             var result = defineProgram.ShowDialog();
 
             if (result == System.Windows.Forms.DialogResult.OK)

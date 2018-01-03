@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Resources;
 using System.Text;
+using System.Windows.Forms;
 using TestPlatform.Views;
 
 namespace TestPlatform.Models
@@ -34,16 +35,15 @@ namespace TestPlatform.Models
             ListName = listname;
             Type = types[type];
 
-            string file = Global.testFilesPath + Global.listFolderName + "/" + listname + types[type] + ".lst";
-
-
-            if (File.Exists(file))
+            // adding content of word and color lists
+            if (type == 2  || type == 3)
             {
-                TextReader tr = new StreamReader(file, Encoding.Default, true);
-                List<string> list = new List<string>(); // lista de palavras
-                while (tr.Peek() >= 0)
+                string file = Global.testFilesPath + Global.listFolderName + "/" + listname + types[type] + ".lst";
+                if (File.Exists(file))
                 {
-                    if(type > 1)
+                    TextReader tr = new StreamReader(file, Encoding.Default, true);
+                    List<string> list = new List<string>(); // lista de palavras
+                    while (tr.Peek() >= 0)
                     {
                         string[] splitedLine = tr.ReadLine().Split();
                         for (int i = 0; i < splitedLine.Count(); i++) //adding elements to list one by one
@@ -51,20 +51,23 @@ namespace TestPlatform.Models
                             list.Add(splitedLine[i]);
                         }
                     }
-                    else
-                    {
-                        list.Add(tr.ReadLine());
-                    }
-
+                    tr.Close();
+                    ListContent = list; // returning list in array                
                 }
-                tr.Close();
-                ListContent = list; // retorning list in array                
+                else
+                {
+                    throw new FileNotFoundException("Não foi possível abrir a lista: '" + listName +
+                        "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(file));
+                }
             }
-            else
+            // adding content of image and audio list
+            else if (type == 0 || type == 1)
             {
-                throw new FileNotFoundException("Não foi possível abrir a lista: '" + listName +
-                    "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(file));
+                string directoryList = Global.testFilesPath + Global.listFolderName + "/" + listname + types[type];
+                string[] content = Directory.GetFiles(directoryList);
+                ListContent = content.ToList();
             }
+           
         }
 
 
@@ -135,6 +138,33 @@ namespace TestPlatform.Models
             return true;
         }
 
+        public bool saveContent()
+        {
+            if (Type.Equals(types[0]) || Type.Equals(types[1]))
+            {
+                string listDestination = Global.testFilesPath + Global.listFolderName + ListName + Type + "/";
+                Directory.CreateDirectory(listDestination);
+                foreach (string content in listContent)
+                {
+                    try
+                    {
+                        File.Copy(content, listDestination + Path.GetFileName(content), true);
+                        
+                    }
+                    catch
+                    {
+                        ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+                        CultureInfo currentCulture = System.Threading.Thread.CurrentThread.CurrentUICulture;
+                        MessageBox.Show(LocRM.GetString("fileNotFound", currentCulture) + "\n" + content);
+                    }
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public bool saveDirectories()
         {
@@ -185,6 +215,29 @@ namespace TestPlatform.Models
             writesDefaultList(filepath, "_color.lst", "defaultColorList");
         }
 
+        // converts image and audio list files *.lst to new implementation that imports files to a folder
+        public static void convertFileLists()
+        {
+            string listFolder = Global.testFilesPath + Global.listFolderName;
+            string[] audioFiles = Directory.GetFiles(listFolder, ("*_audio.lst"), SearchOption.AllDirectories);
+            string[] imageFiles = Directory.GetFiles(listFolder, ("*_image.lst"), SearchOption.AllDirectories);
+
+            convertingList(audioFiles);
+            convertingList(imageFiles);
+        }
+
+        private static void convertingList(string[] lists)
+        {
+            foreach (string list in lists)
+            {
+                string[] name = Path.GetFileNameWithoutExtension(list).Split('_');
+                List<string> content = readListFile(list).ToList();
+                StrList newList = new StrList(content, name[0], "_" + name[1]);
+                newList.saveContent();
+                File.Delete(list);
+            }
+        }
+
         // reads each word in file and returns a vector of them
         static internal string[] readListFile(string filepath)
         {           
@@ -213,7 +266,7 @@ namespace TestPlatform.Models
             }           
         }
 
-
+        
 
     }
 }

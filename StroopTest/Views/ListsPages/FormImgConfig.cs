@@ -7,6 +7,7 @@ using TestPlatform.Views;
 using TestPlatform.Controllers;
 using System.Globalization;
 using System.Resources;
+using System.Collections.Generic;
 
 namespace TestPlatform
 {
@@ -15,7 +16,10 @@ namespace TestPlatform
         private ImageList imgsList = new ImageList();
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+        private StrList imageList;
+        private static int IMAGE = 0;
         private bool isListNameValid = false;
+
         public bool isValid()
         {
             return isListNameValid;
@@ -39,23 +43,23 @@ namespace TestPlatform
         {
             try
             {
-                FormDefine defineFilePath = defineFilePath = new FormDefine(LocRM.GetString("imageList", currentCulture), Global.testFilesPath + Global.listFolderName, "lst","_image",true);
+                FormDefine defineFilePath = defineFilePath = new FormDefine(LocRM.GetString("imageList", currentCulture), Global.testFilesPath + Global.listFolderName, "dir","_image",true);
                 var result = defineFilePath.ShowDialog();
                 
                 if (result == DialogResult.OK)
                 {
+                    string listName = defineFilePath.ReturnValue;
                     isListNameValid = true;
-                    string dir = defineFilePath.ReturnValue;
-                    if(dir == "")
+                    if (listName == "")
                     {
                         isListNameValid = false;
                         return;
                     }
-                    imgListNameTextBox.Text = dir.Remove(dir.Length - 6); // removes the _img identification from file while editing (when its saved it is always added again)
+                    imgListNameTextBox.Text = listName.Remove(listName.Length - 6); // removes the _img identification from file while editing (when its saved it is always added again)
+                    imageList = new StrList(listName, IMAGE);
+                    string[] filePaths = imageList.ListContent.ToArray();
+                    readImagesIntoDGV(filePaths, imgPathDataGridView);                  
 
-                    string[] filePaths = StroopProgram.readDirListFile(Global.testFilesPath + Global.listFolderName + "/" + dir + ".lst");
-                    readImagesIntoDGV(filePaths, imgPathDataGridView);
-                    
                 }
             }
             catch (Exception ex)
@@ -183,20 +187,38 @@ namespace TestPlatform
             catch { }
         }
 
-        // saves list into .lst file inside lst directory
+        // saves list into directory copying files inside lst directory
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (!this.ValidateChildren(ValidationConstraints.Enabled))
-                MessageBox.Show(LocRM.GetString("fieldNotRight", currentCulture));
-            else
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 try
                 {
-                    DataGridView dgv = imgPathDataGridView;
-                    DGVManipulation.SaveColumnToListFile(dgv, 2, Global.testFilesPath + Global.listFolderName, imgListNameTextBox.Text + "_image");
-                    this.Parent.Controls.Remove(this);
+                    List<string> content = new List<string>();
+                    for (int i = 0; i < imgPathDataGridView.RowCount; i++)
+                    {
+                        content.Add(imgPathDataGridView.Rows[i].Cells[2].Value.ToString());
+                    }
+                    imageList = new StrList(content, imgListNameTextBox.Text, "_image");
+
+                    if (imageList.saveContent())
+                    {
+                        MessageBox.Show(LocRM.GetString("list", currentCulture) + imgListNameTextBox.Text + "_image" + LocRM.GetString("listSaveSuccess", currentCulture));
+                        this.Parent.Controls.Remove(this);
+                    }
+                    else
+                    {
+                        MessageBox.Show(LocRM.GetString("list", currentCulture) + imgListNameTextBox.Text + "_image'" + LocRM.GetString("notCreated", currentCulture));
+                    }
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }               
+            else
+            {
+                MessageBox.Show(LocRM.GetString("fieldNotRight", currentCulture));
             }
         }
 

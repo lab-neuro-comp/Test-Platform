@@ -15,10 +15,17 @@ namespace TestPlatform
 {
     public partial class FormWordColorConfig : UserControl
     {
+        private bool isListNameValid = false;
+
         List<string> wordsList = new List<string>(), colorsList = new List<string>();
         private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+
+        public bool isValid()
+        {
+            return isListNameValid;
+        }
 
         public FormWordColorConfig(bool editFile)
         {
@@ -47,13 +54,24 @@ namespace TestPlatform
 
                 if (result == DialogResult.OK)
                 {
+                    isListNameValid = true;
                     string fileName = defineFilePath.ReturnValue;
+
+                    if(fileName == "")
+                    {
+                        isListNameValid = false;
+                        return;
+                    }
+
                     fileName = fileName.Remove(fileName.Length - 6);
                     listNameTextBox.Text = fileName;
 
                     string wFile = Global.testFilesPath + Global.listFolderName + "/" + fileName + "_words.lst";
                     string cFile = Global.testFilesPath + Global.listFolderName + "/" + fileName + "_color.lst";
-                    
+                    if(!File.Exists(wFile) && !File.Exists(cFile))
+                    {
+                        return;
+                    }
                     if (File.Exists(wFile))
                     {
                         string[] wordsArray = StrList.readListFile(wFile);

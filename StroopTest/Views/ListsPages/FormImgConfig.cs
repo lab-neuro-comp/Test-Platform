@@ -18,6 +18,13 @@ namespace TestPlatform
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private StrList imageList;
         private static int IMAGE = 0;
+        private bool isListNameValid = false;
+
+        public bool isValid()
+        {
+            return isListNameValid;
+        }
+
         public FormImgConfig(string imgListEdit)
         {
             this.Dock = DockStyle.Fill;
@@ -42,10 +49,17 @@ namespace TestPlatform
                 if (result == DialogResult.OK)
                 {
                     string listName = defineFilePath.ReturnValue;
+                    isListNameValid = true;
+                    if (listName == "")
+                    {
+                        isListNameValid = false;
+                        return;
+                    }
                     imgListNameTextBox.Text = listName.Remove(listName.Length - 6); // removes the _img identification from file while editing (when its saved it is always added again)
                     imageList = new StrList(listName, IMAGE);
                     string[] filePaths = imageList.ListContent.ToArray();
                     readImagesIntoDGV(filePaths, imgPathDataGridView);                  
+
                 }
             }
             catch (Exception ex)

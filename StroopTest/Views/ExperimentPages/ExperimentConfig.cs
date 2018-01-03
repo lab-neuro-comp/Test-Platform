@@ -135,6 +135,20 @@ namespace TestPlatform.Views.ExperimentPages
             }
         }
 
+        public bool save()
+        {
+            saveButton_Click(this, null);
+            foreach (Control c in this.errorProvider1.ContainerControl.Controls)
+            {
+                if (errorProvider1.GetError(c) != "")
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (this.ValidateChildren(ValidationConstraints.Enabled))

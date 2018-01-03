@@ -32,9 +32,10 @@
             this.deleteExperimentButton = new System.Windows.Forms.RadioButton();
             this.editExperimentButton = new System.Windows.Forms.RadioButton();
             this.newExperimentButton = new System.Windows.Forms.RadioButton();
+            this.recoverExperimentButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
-            // deleteReactButton
+            // deleteExperimentButton
             // 
             resources.ApplyResources(this.deleteExperimentButton, "deleteExperimentButton");
             this.deleteExperimentButton.FlatAppearance.BorderSize = 0;
@@ -58,10 +59,20 @@
             this.newExperimentButton.UseVisualStyleBackColor = true;
             this.newExperimentButton.Click += new System.EventHandler(this.newExperimentButton_Click);
             // 
+            // recoverExperimentButton
+            // 
+            resources.ApplyResources(this.recoverExperimentButton, "recoverExperimentButton");
+            this.recoverExperimentButton.FlatAppearance.BorderSize = 0;
+            this.recoverExperimentButton.Name = "recoverExperimentButton";
+            this.recoverExperimentButton.TabStop = true;
+            this.recoverExperimentButton.UseVisualStyleBackColor = true;
+            this.recoverExperimentButton.Click += new System.EventHandler(this.recoverExperimentButton_Click);
+            // 
             // ExperimentControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.recoverExperimentButton);
             this.Controls.Add(this.deleteExperimentButton);
             this.Controls.Add(this.editExperimentButton);
             this.Controls.Add(this.newExperimentButton);
@@ -75,5 +86,6 @@
         private System.Windows.Forms.RadioButton deleteExperimentButton;
         private System.Windows.Forms.RadioButton editExperimentButton;
         private System.Windows.Forms.RadioButton newExperimentButton;
+        private System.Windows.Forms.RadioButton recoverExperimentButton;
     }
 }

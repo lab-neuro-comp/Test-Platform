@@ -165,6 +165,12 @@
     <Compile Include="Views\MainForms\ExportUserControl.Designer.cs">
       <DependentUpon>ExportUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MainForms\FileManagment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MainForms\FileManagment.Designer.cs">
+      <DependentUpon>FileManagment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainForms\FormDefineTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -377,6 +383,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\ExportUserControl.resx">
       <DependentUpon>ExportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FileManagment.en-US.resx">
+      <DependentUpon>FileManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FileManagment.pt-BR.resx">
+      <DependentUpon>FileManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\FileManagment.resx">
+      <DependentUpon>FileManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormDefine.en-US.resx">
       <DependentUpon>FormDefine.cs</DependentUpon>

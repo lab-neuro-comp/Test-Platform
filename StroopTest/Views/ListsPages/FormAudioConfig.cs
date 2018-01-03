@@ -13,11 +13,18 @@ namespace TestPlatform
 {
     public partial class FormAudioConfig : UserControl
     {
+        private bool isListNameValid = false;
+
         private SoundPlayer player = new SoundPlayer();
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private StrList audioList;
         private static int AUDIO = 1;
+
+        public bool isValid()
+        {
+            return isListNameValid;
+        }
 
         public FormAudioConfig(bool editList)
         {
@@ -32,21 +39,28 @@ namespace TestPlatform
 
         private void openFilesForEdition()
         {
-            
-                FormDefine defineFilePath = new FormDefine(LocRM.GetString("audioList", currentCulture), Global.testFilesPath  + Global.listFolderName, "dir", "_audio", true);
-                var result = defineFilePath.ShowDialog();
+            FormDefine defineFilePath = new FormDefine(LocRM.GetString("audioList", currentCulture), Global.testFilesPath + Global.listFolderName, "dir", "_audio", true);
+            var result = defineFilePath.ShowDialog();
 
-                if (result == DialogResult.OK)
+            if (result == DialogResult.OK)
+            {
+                isListNameValid = true;
+                string choosenList = defineFilePath.ReturnValue;
+
+                if (choosenList == "")
                 {
-                    string choosenList = defineFilePath.ReturnValue;
-                    audioListNameTextBox.Text = choosenList;
-
-                    audioList = new StrList(choosenList, AUDIO);
-                    string[] filePaths = audioList.ListContent.ToArray();
-
-                    DGVManipulation.ReadStringListIntoDGV(filePaths, audioPathDataGridView);
-                    numberFiles.Text = audioPathDataGridView.RowCount.ToString();
+                    isListNameValid = false;
+                    return;
                 }
+                // removes the _audio identification from file while editing (when its saved it is always added again)
+                audioListNameTextBox.Text = choosenList;
+
+                audioList = new StrList(choosenList, AUDIO);
+
+                string[] filePaths = audioList.ListContent.ToArray();
+                DGVManipulation.ReadStringListIntoDGV(filePaths, audioPathDataGridView);
+                numberFiles.Text = audioPathDataGridView.RowCount.ToString();
+            }
         }
 
         private void openButton_Click(object sender, EventArgs e)

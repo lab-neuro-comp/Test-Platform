@@ -126,4 +126,7 @@
   <data name="newReactButton.Text" xml:space="preserve">
     <value>New Program</value>
   </data>
+  <data name="recoverReactButton.Text" xml:space="preserve">
+    <value>Recover Program</value>
+  </data>
 </root>

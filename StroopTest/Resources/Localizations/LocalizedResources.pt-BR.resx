@@ -659,15 +659,84 @@
     <value>barraDeEspaço</value>
   </data>
   <data name="deleteProgram" xml:space="preserve">
-    <value>Deletar programa:</value>
+    <value>Excluir programa:</value>
   </data>
   <data name="programDeleted" xml:space="preserve">
-    <value>foi deletado com sucesso!</value>
+    <value>foi excluído com sucesso!</value>
   </data>
   <data name="programExistsInBackup" xml:space="preserve">
     <value>O programa já existe na pasta de backup, deseja sobrescrevê-lo?</value>
   </data>
   <data name="programNotDeleted" xml:space="preserve">
     <value>O programa não será excluído!</value>
+  </data>
+  <data name="recoveredSucessful" xml:space="preserve">
+    <value>Todos os programas selecionados foram recuperados com sucesso.</value>
+  </data>
+  <data name="programRecovered" xml:space="preserve">
+    <value>foi recuperado com sucesso!</value>
+  </data>
+  <data name="programNotRecovered" xml:space="preserve">
+    <value>O programa não será recuperado!</value>
+  </data>
+  <data name="conflictsFound" xml:space="preserve">
+    <value>conflito(s) encontrado(s). deseja trata-lo(s) agora?</value>
+  </data>
+  <data name="conflict" xml:space="preserve">
+    <value>Conflito</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>excluir</value>
+  </data>
+  <data name="deletedExperiments" xml:space="preserve">
+    <value>Experimentos excluídos:</value>
+  </data>
+  <data name="deletedPrograms" xml:space="preserve">
+    <value>Arquivos excluídos:</value>
+  </data>
+  <data name="existingExperiments" xml:space="preserve">
+    <value>Experimentos existentes:</value>
+  </data>
+  <data name="existingPrograms" xml:space="preserve">
+    <value>Arquivos existentes:</value>
+  </data>
+  <data name="recover" xml:space="preserve">
+    <value>recuperar</value>
+  </data>
+  <data name="toDeleteExperiments" xml:space="preserve">
+    <value>Experimentos que serão excluídos:</value>
+  </data>
+  <data name="toDeletePrograms" xml:space="preserve">
+    <value>Arquivos que serão excluídos:</value>
+  </data>
+  <data name="toRecoverExperiments" xml:space="preserve">
+    <value>Experimentos que serão restaurados:</value>
+  </data>
+  <data name="toRecoverPrograms" xml:space="preserve">
+    <value>Arquivos que serão restaurados:</value>
+  </data>
+  <data name="warningDelete" xml:space="preserve">
+    <value>Aviso: Itens marcados em vermelho indicam arquivos com o mesmo nome já existentes. Excluir esses arquivos irá sobreescrever os já existentes, não sendo possível recupera-los.</value>
+  </data>
+  <data name="warningRecover" xml:space="preserve">
+    <value>Aviso: Itens marcados em vermelho indicam arquivos com o mesmo nome já existentes. Recuperar esses arquivos irá sobreescrever os já existentes, não sendo possível recupera-los.</value>
+  </data>
+  <data name="deletedSucessful" xml:space="preserve">
+    <value>Todos os programas selecionados foram deletedos com sucesso.</value>
+  </data>
+  <data name="expoTypeError" xml:space="preserve">
+    <value>O tipo de exposição deve ser selecionado.</value>
+  </data>
+  <data name="savePending" xml:space="preserve">
+    <value>Pode haver mudanças não-salvas no programa que está sendo editado. deseja grava-las?</value>
+  </data>
+  <data name="savePendingTitle" xml:space="preserve">
+    <value>Alterações não-salvas</value>
+  </data>
+  <data name="unsavedLists" xml:space="preserve">
+    <value>Você tem listas que podem ter alterações não guardadas. Qualquer alteração não guardada será perdida se você continuar. Deseja continuar?</value>
+  </data>
+  <data name="unsavedListsTitle" xml:space="preserve">
+    <value>Listas não-salvas</value>
   </data>
 </root>

@@ -456,6 +456,19 @@ namespace TestPlatform.Views
             return newProgram;
         }
 
+        public bool save()
+        {
+            saveButton_Click(this, null);
+            foreach (Control c in this.errorProvider1.ContainerControl.Controls)
+            {
+                if (errorProvider1.GetError(c) != "")
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private void saveButton_Click(object sender, EventArgs e)
         {
             bool hasToSave = true;
@@ -962,6 +975,35 @@ namespace TestPlatform.Views
             stimulusColor.Enabled = true;
             openColorListButton.Enabled = false;
             openColorListButton.Text = LocRM.GetString("open", currentCulture);
+        }
+
+        private void chooseExpoType_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(chooseExpoType, "");
+        }
+
+        private bool validExpoType(int index, out string errorMessage)
+        {
+            if (index >= 0 && index <= 5)
+            {
+                errorMessage = "";
+                return true;
+            }
+            else
+            {
+                errorMessage = LocRM.GetString("expoTypeError", currentCulture);
+                return false;
+            }
+        }
+
+        private void chooseExpoType_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!validExpoType(chooseExpoType.SelectedIndex, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.chooseExpoType, errorMsg);
+            }
         }
     }
 }

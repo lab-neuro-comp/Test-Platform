@@ -126,4 +126,10 @@
   <data name="newExperimentButton.Text" xml:space="preserve">
     <value>Novo Experimento</value>
   </data>
+  <data name="recoverExperimentButton.Text" xml:space="preserve">
+    <value>Recuperar Experimento</value>
+  </data>
+  <data name="deleteExperimentButton.Text" xml:space="preserve">
+    <value>Excluir Experimento</value>
+  </data>
 </root>

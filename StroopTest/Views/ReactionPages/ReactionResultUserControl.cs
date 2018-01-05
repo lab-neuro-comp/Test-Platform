@@ -128,5 +128,12 @@ namespace TestPlatform.Views.ReactionPages
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("TRResultsInstructions", currentCulture));
+            try { infoBox.Show(); }
+            catch (Exception ex) { throw new Exception(ex.Message); }
+        }
     }
 }

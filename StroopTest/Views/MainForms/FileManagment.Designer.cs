@@ -39,6 +39,7 @@
             this.sendButton = new System.Windows.Forms.Button();
             this.addToDestinationList = new System.Windows.Forms.Button();
             this.addToOriginList = new System.Windows.Forms.Button();
+            this.helpButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // originFilesList
@@ -108,10 +109,20 @@
             this.addToOriginList.UseVisualStyleBackColor = true;
             this.addToOriginList.Click += new System.EventHandler(this.addToOriginList_Click);
             // 
+            // helpButton
+            // 
+            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
+            resources.ApplyResources(this.helpButton, "helpButton");
+            this.helpButton.Name = "helpButton";
+            this.helpButton.UseVisualStyleBackColor = false;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+            // 
             // FileManagment
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.helpButton);
             this.Controls.Add(this.addToOriginList);
             this.Controls.Add(this.addToDestinationList);
             this.Controls.Add(this.sendButton);
@@ -140,5 +151,6 @@
         private System.Windows.Forms.Button sendButton;
         private System.Windows.Forms.Button addToDestinationList;
         private System.Windows.Forms.Button addToOriginList;
+        private System.Windows.Forms.Button helpButton;
     }
 }

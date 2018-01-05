@@ -468,248 +468,237 @@
   <data name="stroopConfigInstructions" xml:space="preserve">
     <value>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-&lt;head&gt;
-&lt;style&gt;
-table {
-    width:100%;
-}
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-  text-align: justify;  
-}
-table#t01 tr:nth-child(even) {
-    background-color: #eee;
-}
-table#t01 tr:nth-child(odd) {
-   background-color:#fff;
-}
-.subBar {
-    background-color: gray;
-    color: black;
-}
-  
-.mainBar{
-    background-color: black;
-    color: white;
-    text-align: center;
-}
-  
-  li{
-  	padding-bottom:5px;
-  }
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
-    &lt;tr&gt;
-    &lt;th class = "mainBar" colspan = "2"&gt;Geral&lt;/th&gt; 
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
-    &lt;th class = "subBar"&gt;Descrição&lt;/th&gt; 
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Nome do programa&lt;/td&gt;
-    &lt;td&gt;Deve ser preenchido com o nome do programa que será criado. O nome deve conter apenas caracteres alfanuméricos e não deve possuir espaço. Esse mesmo nome será utilizado na hora de escolher o programa que será execultado, na página de resultados e importação/exportação&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
-      &lt;tr&gt;
-    &lt;th class = "mainBar" colspan = "2"&gt;Exposição&lt;/th&gt; 
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
-    &lt;th class = "subBar"&gt;Descrição&lt;/th&gt; 
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Tipo de estimulo&lt;/td&gt;
-    &lt;td&gt;Nesse campo deve ser escolhido um dos tipos de estimulo disponíveis, são eles:&lt;br&gt;
-      &lt;ul&gt;
-        &lt;li&gt;Palavra: Nesse modo deve ser escolhido uma lista de palavras e uma lista de cores para a palavra, e a partir disso o programa realizará a exposição de palavras coloridas&lt;/li&gt;
-        &lt;li&gt;Imagem: Nesse tipo deve ser escolhido uma lista de imagens e a partir disso o programa realizará a exposição das imagens contidas na lista.&lt;/li&gt;
-        &lt;li&gt;Imagem e palavra: Nesse tipo deve ser escolhido uma lista de imagens e uma de palavras. O programa gerado exibirá alternadamente um item de cada lista por vez.&lt;/li&gt;
-        &lt;li&gt;Palavra com áudio: Nesse tipo deve ser selecionado uma lista de palavras e outra de áudio que serão reproduzidos pelo programa na exposição de palavras coloridas com exposição de áudio.&lt;/li&gt;
-        &lt;li&gt;Imagem com áudio: Nesse tipo deve ser selecionado uma lista de imagens e outra de áudio que serão reproduzidos pelo programa. A exposição &lt;/li&gt;
-      &lt;/ul&gt;
-    
-    &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Número de tentativas&lt;/td&gt;
-    &lt;td&gt;Define a quantidade de tentativas do úsuario. O número de tentativas equivale ao número de estimulos que serão mostrados.&lt;br&gt;Quando o número de itens nas listas é menor que o número de tentativas, será utilizada a quantidade de itens das listas repetindo os itens o necessário para atingir o número de tentativas. Da mesma forma, quando o número de itens nas listas é maior que o número de tentativas, será utilizada a quantidade de itens das listas correspondente ao número de tentativas. 
-&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;
-	Ordem aleatória
-  &lt;/td&gt;
-  &lt;td&gt;
-    Indica se a exposição dos estímulos será feita de forma aleatória em relação a ordem da lista.
-  &lt;/td&gt;
-&lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;
-Tamanho da palavra
-    &lt;/td&gt;
-  &lt;td&gt;
-Indica o tamanho da fonte do texto, para exposição do tipo "Palavra", "Palavra com áudio" ou "Imagem e palavra". O tamanho padrão é 160.
-  &lt;/td&gt;
-&lt;/tr&gt;
-    &lt;tr&gt;
-  &lt;td&gt;
-Cor da palavra
-    &lt;/td&gt;
-  &lt;td&gt;
-Indica a cor da palavra, para exposição do tipo "Palavra e Imagem" ou "Imagem e Palavra". A cor padrão é preta.
-  &lt;/td&gt;
-&lt;/tr&gt;   
-&lt;tr&gt;
-  &lt;td&gt;
-    Expandir imagem
-    &lt;/td&gt;
-  &lt;td&gt;
- Define a expansão da imagem no limite proporcional à tela. Não podeocorrer simultaneamente à apresentação de legenda.
-  &lt;/td&gt;
-&lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;
-Girar Imagem
-    &lt;/td&gt;
-  &lt;td&gt;
- Define a rotação da imagem no ângulo e sentido indicados na lista.
-  &lt;/td&gt;
-&lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
-  &lt;/tr&gt;
-
-      &lt;th class = "mainBar" colspan = "2"&gt;Listas &lt;/th&gt; 
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
-    &lt;th class = "subBar"&gt;Descrição&lt;/th&gt; 
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      Palavras
-    &lt;/td&gt;
-    &lt;td&gt;
-      Carrega a lista de palavras que serão apresentadas para os tipos "Palavra" e "Palavra com Áudio". A exposição não aleatória seguirá a ordem das palavras na lista.
-    &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Cores&lt;/td&gt;
-    &lt;td&gt;Carrega a lista de cores das palavras que serão apresentadas para os tipos "Palavra" e "Palavra com Áudio". A exposição não aleatória seguirá a ordem das cores na lista.&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;Imagens&lt;/td&gt;
-  &lt;td&gt;Carrega a lista de imagens que serão apresentadas para os tipos "Imagem", "Imagem com Áudio" e "Imagem e Palavra". A exposição não aleatória seguirá a ordem das imagens na lista.&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;Áudios&lt;/td&gt;
-  &lt;td&gt;Carrega a lista de áudios que serão reproduzidos no teste para os tipos "Palavra com Áudio" e "Imagem com Áudio". A exposição não aleatória seguirá a ordem dos áudios na lista.&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
-  &lt;/tr&gt;
-
-      &lt;th class = "mainBar" colspan = "2"&gt;Tempo &lt;/th&gt; 
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
-    &lt;th class = "subBar"&gt;Descrição&lt;/th&gt; 
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      Exposição(ms)
-    &lt;/td&gt;
-    &lt;td&gt;
-Define a duração em milissegundos da exposição do estímulo escolhido, palavra ou imagem.
-
-    &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Intervalo(ms)&lt;/td&gt;
-    &lt;td&gt;Define o tempo em milissegundos entre as tentativas.&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;Tempo Intervalo Variável &lt;/td&gt;
-  &lt;td&gt;Indica que o intervalo terá a duração variada aleatoriamente a partir de 400ms até o tempo de intervalo informado.&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;Atraso &lt;/td&gt;
-  &lt;td&gt; Define o tempo em milissegundos entre os estímulos pareados para os tipos "palavra", "imagem" ou  "imagem e palavra". Se não informado, será usado o tempo de intervalo.&lt;/td&gt;
- &lt;/tr&gt;
-    &lt;tr&gt;
-    &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
-  &lt;/tr&gt;
-
-      &lt;th class = "mainBar" colspan = "2"&gt;Legenda &lt;/th&gt; 
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
-    &lt;th class = "subBar"&gt;Descrição&lt;/th&gt; 
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Ativar&lt;/td&gt;
-    &lt;td&gt;Indica se a exposição imagem terá legenda. Ao ativar, deve ser selecionada alista de palavras a serem apresentadas como legenda.&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Cor&lt;/td&gt;
-    &lt;td&gt;Indica a cor da legenda. Será utilizada a cor preta, se não informado&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;Posição&lt;/td&gt;
-  &lt;td&gt; Indica o local que será colocada a legenda em relação ao estímulo: ←, àesquerda (imagens); ↑, acima (palavras e imagens); →, à direita(imagens); ↓, abaixo (palavras e imagens); ・, ao centro (imagens); Aleatória, variar aposição, de acordo com o tipo do estímulo&lt;/td&gt;
-  &lt;/tr&gt;
-    &lt;tr&gt;
-    &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
-  &lt;/tr&gt;
- 
-      &lt;th class = "mainBar" colspan = "2"&gt;Ponto de fixação &lt;/th&gt; 
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
-    &lt;th class = "subBar"&gt;Descrição&lt;/th&gt; 
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Tipo&lt;/td&gt;
-    &lt;td&gt;Indica a forma do ponto de fixação: + ou ・&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Cor do ponto&lt;/td&gt;
-    &lt;td&gt;Indica a cor do ponto de fixação.&lt;/td&gt;
-  &lt;/tr&gt;
-    &lt;tr&gt;
-    &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
-  &lt;/tr&gt;
-      &lt;th class = "mainBar" colspan = "2"&gt;Outros  &lt;/th&gt; 
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
-    &lt;th class = "subBar"&gt;Descrição&lt;/th&gt; 
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Capturar Áudio durante Execução &lt;/td&gt;
-    &lt;td&gt;Indica que as respostas do usuário serão gravadas automaticamente durante a execução.Será gerado um arquivo de áudio na pasta de dados. Exige o arquivo NAudio.dll esteja na mesma pasta do teste. O padrão é selecionado.&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Cor de Fundo &lt;/td&gt;
-    &lt;td&gt;Define a cor tela por trás do estímulo durante a apresentação. O padrão é tela cinza.&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Instruções &lt;/td&gt;
-    &lt;td&gt;Descreve as orientaçõespara o participante sobre a execução do teste. Cada linha informada será apresentada em uma tela durante 4 segundos.&lt;/td&gt;
-  &lt;/tr&gt;
-
-  &lt;/table&gt;
-
-&lt;/body&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Geral&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Nome do programa&lt;/td&gt;
+            &lt;td&gt;Deve ser preenchido com o nome do programa que será criado. O nome deve conter apenas caracteres alfanuméricos e não deve possuir espaço. Esse mesmo nome será utilizado na hora de escolher o programa que será execultado, na página de resultados e importação/exportação&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Exposição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Tipo de estimulo&lt;/td&gt;
+            &lt;td&gt;
+               Nesse campo deve ser escolhido um dos tipos de estimulo disponíveis, são eles:&lt;br&gt;
+               &lt;ul&gt;
+                  &lt;li&gt;Palavra: Nesse modo deve ser escolhido uma lista de palavras e uma lista de cores para a palavra, e a partir disso o programa realizará a exposição de palavras coloridas&lt;/li&gt;
+                  &lt;li&gt;Imagem: Nesse tipo deve ser escolhido uma lista de imagens e a partir disso o programa realizará a exposição das imagens contidas na lista.&lt;/li&gt;
+                  &lt;li&gt;Imagem e palavra: Nesse tipo deve ser escolhido uma lista de imagens e uma de palavras. O programa gerado exibirá alternadamente um item de cada lista por vez.&lt;/li&gt;
+                  &lt;li&gt;Palavra com áudio: Nesse tipo deve ser selecionado uma lista de palavras e outra de áudio que serão reproduzidos pelo programa na exposição de palavras coloridas com exposição de áudio.&lt;/li&gt;
+                  &lt;li&gt;Imagem com áudio: Nesse tipo deve ser selecionado uma lista de imagens e outra de áudio que serão reproduzidos pelo programa. A exposição &lt;/li&gt;
+               &lt;/ul&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Número de tentativas&lt;/td&gt;
+            &lt;td&gt;Define a quantidade de tentativas do úsuario. O número de tentativas equivale ao número de estimulos que serão mostrados.&lt;br&gt;Quando o número de itens nas listas é menor que o número de tentativas, será utilizada a quantidade de itens das listas repetindo os itens o necessário para atingir o número de tentativas. Da mesma forma, quando o número de itens nas listas é maior que o número de tentativas, será utilizada a quantidade de itens das listas correspondente ao número de tentativas. &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Ordem aleatória
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indica se a exposição dos estímulos será feita de forma aleatória em relação a ordem da lista.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Tamanho da palavra
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indica o tamanho da fonte do texto, para exposição do tipo "Palavra", "Palavra com áudio" ou "Imagem e palavra". O tamanho padrão é 160.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Cor da palavra
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indica a cor da palavra, para exposição do tipo "Palavra e Imagem" ou "Imagem e Palavra". A cor padrão é preta.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Expandir imagem
+            &lt;/td&gt;
+            &lt;td&gt;
+               Define a expansão da imagem no limite proporcional à tela. Não podeocorrer simultaneamente à apresentação de legenda.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Girar Imagem
+            &lt;/td&gt;
+            &lt;td&gt;
+               Define a rotação da imagem no ângulo e sentido indicados na lista.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Listas &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Palavras
+            &lt;/td&gt;
+            &lt;td&gt;
+               Carrega a lista de palavras que serão apresentadas para os tipos "Palavra" e "Palavra com Áudio". A exposição não aleatória seguirá a ordem das palavras na lista.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Cores&lt;/td&gt;
+            &lt;td&gt;Carrega a lista de cores das palavras que serão apresentadas para os tipos "Palavra" e "Palavra com Áudio". A exposição não aleatória seguirá a ordem das cores na lista.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Imagens&lt;/td&gt;
+            &lt;td&gt;Carrega a lista de imagens que serão apresentadas para os tipos "Imagem", "Imagem com Áudio" e "Imagem e Palavra". A exposição não aleatória seguirá a ordem das imagens na lista.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Áudios&lt;/td&gt;
+            &lt;td&gt;Carrega a lista de áudios que serão reproduzidos no teste para os tipos "Palavra com Áudio" e "Imagem com Áudio". A exposição não aleatória seguirá a ordem dos áudios na lista.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Tempo &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Exposição(ms)
+            &lt;/td&gt;
+            &lt;td&gt;
+               Define a duração em milissegundos da exposição do estímulo escolhido, palavra ou imagem.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Intervalo(ms)&lt;/td&gt;
+            &lt;td&gt;Define o tempo em milissegundos entre as tentativas.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Tempo Intervalo Variável &lt;/td&gt;
+            &lt;td&gt;Indica que o intervalo terá a duração variada aleatoriamente a partir de 400ms até o tempo de intervalo informado.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Atraso &lt;/td&gt;
+            &lt;td&gt; Define o tempo em milissegundos entre os estímulos pareados para os tipos "palavra", "imagem" ou  "imagem e palavra". Se não informado, será usado o tempo de intervalo.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Legenda &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Ativar&lt;/td&gt;
+            &lt;td&gt;Indica se a exposição imagem terá legenda. Ao ativar, deve ser selecionada alista de palavras a serem apresentadas como legenda.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Cor&lt;/td&gt;
+            &lt;td&gt;Indica a cor da legenda. Será utilizada a cor preta, se não informado&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Posição&lt;/td&gt;
+            &lt;td&gt; Indica o local que será colocada a legenda em relação ao estímulo: ←, àesquerda (imagens); ↑, acima (palavras e imagens); →, à direita(imagens); ↓, abaixo (palavras e imagens); ・, ao centro (imagens); Aleatória, variar aposição, de acordo com o tipo do estímulo&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Ponto de fixação &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Tipo&lt;/td&gt;
+            &lt;td&gt;Indica a forma do ponto de fixação: + ou ・&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Cor do ponto&lt;/td&gt;
+            &lt;td&gt;Indica a cor do ponto de fixação.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Outros  &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Capturar Áudio durante Execução &lt;/td&gt;
+            &lt;td&gt;Indica que as respostas do usuário serão gravadas automaticamente durante a execução.Será gerado um arquivo de áudio na pasta de dados. Exige o arquivo NAudio.dll esteja na mesma pasta do teste. O padrão é selecionado.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Cor de Fundo &lt;/td&gt;
+            &lt;td&gt;Define a cor tela por trás do estímulo durante a apresentação. O padrão é tela cinza.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Instruções &lt;/td&gt;
+            &lt;td&gt;Descreve as orientações para o participante sobre a execução do teste. Cada linha informada será apresentada em uma tela durante 4 segundos.&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
 &lt;/html&gt;</value>
   </data>
   <data name="showAudioInstructions" xml:space="preserve">
@@ -782,7 +771,7 @@ Define a duração em milissegundos da exposição do estímulo escolhido, palav
     <value>não foi escrito\n\n</value>
   </data>
   <data name="reactionTestHeader" xml:space="preserve">
-    <value>programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\trespostaUsuario\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep</value>
+    <value>Programa\tParticipante\tData\tHorario inicial\tHorario exposicao\tTR(ms)\tIntervalo(ms)\tIntervalo estimado(ms)\tExposicao tempo(ms)\tExposicao(ms)\tSequencia\tPos\tResposta usuario\tTipo estimulo\tEstimulo\tCor do estimulo\tBeep</value>
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Tipo de resposta selecionado inválido. As opções válidas são: barra de espaço ou setas.</value>
@@ -906,5 +895,572 @@ Define a duração em milissegundos da exposição do estímulo escolhido, palav
   </data>
   <data name="unsavedListsTitle" xml:space="preserve">
     <value>Listas não-salvas</value>
+  </data>
+  <data name="experimentConfigInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Geral&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Nome do experimento&lt;/td&gt;
+            &lt;td&gt;Deve ser preenchido com o nome do experimento que será criado. O nome deve conter apenas caracteres alfanuméricos e não deve possuir espaço. Esse mesmo nome será utilizado na hora de escolher o experimento que será execultado, na página de resultados e importação/exportação&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Exposição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Ordem aleatória
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indica se a exposição dos programas será feita de forma aleatória em relação a ordem que o usuário adicionou. Caso a opção esteja selecionada o usuário pode selecionar um Treino.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Tempo &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Intervalo(ms)&lt;/td&gt;
+            &lt;td&gt;Indica o intervalo entre um programa e outro durante o experimento&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Programas &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Adicionar&lt;/td&gt;
+            &lt;td&gt;Adiciona um programa à lista de programas do experimento.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Treino&lt;/td&gt;
+            &lt;td&gt;Na ordem aleatória o programa de treino sempre será o primeiro teste que será realizado.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Apagar&lt;/td&gt;
+            &lt;td&gt;Remove o programa selecionado programa da lista de programas do experimento.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Outros  &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Instruções &lt;/td&gt;
+            &lt;td&gt;Descreve as orientações para o participante sobre a execução do teste. Cada linha informada será apresentada em uma tela durante 4 segundos.&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="fileManagmentConfigInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Geral&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Arquivos existentes/Arquivos excluídos&lt;/td&gt;
+            &lt;td&gt;Essa lista indica os arquivos que existem e &lt;u&gt;podem&lt;/u&gt; ser excluídos ou os arquivos que foram excluídos e &lt;u&gt;podem&lt;/u&gt; ser recuperados&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Arquivos que serão restaurados/excluídos&lt;/td&gt;
+            &lt;td&gt;Essa lista indica os arquivos que existem e &lt;u&gt;serão&lt;/u&gt; excluídos ou os arquivos que foram excluídos e &lt;u&gt;serão&lt;/u&gt; recuperados&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td style = "color: red"&gt;Arquivos em vermelho&lt;/td&gt;
+            &lt;td&gt;Os arquivos indicados em vermelho pela lista indica que já possuí um programa ou experimento com o mesmo nome na pasta de origem e restaurar/excluir esse arquivo resultará na perca do arquivo com o mesmo nome existente na pasta de destino&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="TRConfigInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Geral&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Nome do programa&lt;/td&gt;
+            &lt;td&gt;Deve ser preenchido com o nome do programa que será criado. O nome deve conter apenas caracteres alfanuméricos e não deve possuir espaço. Esse mesmo nome será utilizado na hora de escolher o programa que será execultado, na página de resultados e importação/exportação&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Exposição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Tipo de estimulo&lt;/td&gt;
+            &lt;td&gt;
+               Nesse campo deve ser escolhido um dos tipos de estimulo disponíveis, são eles:&lt;br&gt;
+               &lt;ul&gt;
+                  &lt;li&gt;Formas: Nesse modo deve ser escolhido uma ou mais forma geometrica presente no campo "Formas", e essas formas serão renderizadas aleatoriamente durante a exposição. Além da(s) forma(s) geométrica(s) deve ser escolhida uma cor/uma lista de cores que definirá a(s) cor(es) da forma geométrica.&lt;/li&gt;
+                  &lt;li&gt;Palavra: Nesse modo deve ser escolhido uma lista de palavras e uma lista de cores ou uma única cor para a palavra, e a partir disso o programa realizará a exposição de palavras coloridas&lt;/li&gt;
+                  &lt;li&gt;Imagem: Nesse tipo deve ser escolhido uma lista de imagens e a partir disso o programa realizará a exposição das imagens contidas na lista.&lt;/li&gt;
+                  &lt;li&gt;Imagem e palavra: Nesse tipo deve ser escolhido uma lista de imagens e uma de palavras. O programa gerado exibirá alternadamente um item de cada lista por vez.&lt;/li&gt;
+                  &lt;li&gt;Palavra com áudio: Nesse tipo deve ser selecionado uma lista de palavras e outra de áudio que serão reproduzidos pelo programa na exposição de palavras coloridas com exposição de áudio.&lt;/li&gt;
+                  &lt;li&gt;Imagem com áudio: Nesse tipo deve ser selecionado uma lista de imagens e outra de áudio que serão reproduzidos pelo programa. A exposição &lt;/li&gt;
+               &lt;/ul&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Tamanho do estimulo
+            &lt;/td&gt;
+            &lt;td&gt;
+               O tamanho do estimulo possuí funções diferentes dependendo do estimulo a que ele se aplica.
+               &lt;ul&gt;
+                  &lt;li&gt;Formas: Nesse tipo de estimulo o tamanho equivale ao tamanho da forma, em pixels, que será renderizado&lt;/li&gt;
+                  &lt;li&gt;Palavra: Nesse tipo de estimulo o tamanho equivale ao tamanho da fonte, em pixels, do texto que será renderizado&lt;/li&gt;
+                  &lt;li&gt;Imagem: Nesse tipo de estimulo o tamanho equivale ao tamanho do lado, em pixels, da imagem que será renderizada.&lt;/li&gt;
+               &lt;/ul&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Distância do estimulo ao centro da tela&lt;/td&gt;
+            &lt;td&gt;Indica, em pixels a distância que o estímulo será renderizado tomando como referencia o centro da tela.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Quantidade de possíveis posições&lt;/td&gt;
+            &lt;td&gt;
+               Indica a quantidade de posições possiveis para o estimulo e são elas:
+               &lt;ul&gt;
+                  &lt;li&gt;1: Nessa opção todos os estímulos aparecerão no centro da tela.&lt;/li&gt;
+                  &lt;li&gt;2: Nessa opção os estímulos podem aparecer na direita da tela ou na esquerda.&lt;/li&gt;
+                  &lt;li&gt;4: Nessa opção os estímulos podem aparecer nas posições: abaixo do centro, acima do centro, à direita do centro ou à esquerda do centro.&lt;/li&gt;
+                  &lt;li&gt;8: Nessa opção os estímulos podem aparecer nas posições: abaixo do centro, acima do centro, à direita do centro, à esquerda do centro ou em qualquer uma das diagonais.&lt;/li&gt;
+               &lt;/ul&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Número de tentativas&lt;/td&gt;
+            &lt;td&gt;Define a quantidade de tentativas do úsuario. O número de tentativas equivale ao número de estimulos que serão mostrados.&lt;br&gt;Quando o número de itens nas listas é menor que o número de tentativas, será utilizada a quantidade de itens das listas repetindo os itens o necessário para atingir o número de tentativas. Da mesma forma, quando o número de itens nas listas é maior que o número de tentativas, será utilizada a quantidade de itens das listas correspondente ao número de tentativas. &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Ordem aleatória
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indica se a exposição dos estímulos será feita de forma aleatória em relação a ordem da lista.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Utilizar beep
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indica se será reproduzido um beep juntamente com a renderização do estimulo.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Beep aleatório
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indica se o beep será aleatório. Caso seja aleatório ele será reproduzido apenas em algumas renderizações, caso não seja aleatório ele será reproduzido em todos os estimulos.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Duração do beep(ms)
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indica por quantos milisegundos o beep será reproduzido
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+		Tipo de cor do estímulo
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indica se o estílo deve ter uma única cor durante todo o programa (Cor única) ou se serão várias cores diferentes. No caso de várias cores diferentes essas cores devem estar dentro de uma lista de cores.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Cor do estimulo
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indica a cor do estimulo.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Listas &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Palavras
+            &lt;/td&gt;
+            &lt;td&gt;
+               Carrega a lista de palavras que serão apresentadas para os tipos "Palavra", "Palavra e Imagem" e "Palavra com Áudio". A exposição não aleatória seguirá a ordem das palavras na lista.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Cores&lt;/td&gt;
+            &lt;td&gt;Carrega a lista de cores das palavras que serão apresentadas para os tipos "Formas", "Palavra", "Palavra e Imagem" e "Palavra com Áudio". A exposição não aleatória seguirá a ordem das cores na lista.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Imagens&lt;/td&gt;
+            &lt;td&gt;Carrega a lista de imagens que serão apresentadas para os tipos "Imagem", "Imagem com Áudio" e "Palavra e Imagem". A exposição não aleatória seguirá a ordem das imagens na lista.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Áudios&lt;/td&gt;
+            &lt;td&gt;Carrega a lista de áudios que serão reproduzidos no teste para os tipos "Palavra com Áudio" e "Imagem com Áudio". A exposição não aleatória seguirá a ordem dos áudios na lista.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Tempo &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Exposição(ms)
+            &lt;/td&gt;
+            &lt;td&gt;
+               Define a duração em milissegundos da exposição do estímulo escolhido, palavra ou imagem.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Intervalo(ms)&lt;/td&gt;
+            &lt;td&gt;Define o tempo em milissegundos entre as tentativas.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Tempo Intervalo Variável &lt;/td&gt;
+            &lt;td&gt;Indica que o intervalo terá a duração variada aleatoriamente a partir de 400ms até o tempo de intervalo informado.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Formas&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Formas&lt;/td&gt;
+            &lt;td&gt;Indica quais formas geométricas serão utilizadas no programa do tipo "formas"&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Ponto de fixação &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Tipo&lt;/td&gt;
+            &lt;td&gt;Indica a forma do ponto de fixação: + ou ・&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Cor do ponto&lt;/td&gt;
+            &lt;td&gt;Indica a cor do ponto de fixação.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Resposta do usuário&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Resposta do usuário&lt;/td&gt;
+            &lt;td&gt;Indica quais serão as teclas que o usuário pressionará para responder aos estimulos.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Outros  &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Cor de Fundo &lt;/td&gt;
+            &lt;td&gt;Define a cor tela por trás do estímulo durante a apresentação. O padrão é tela cinza.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Instruções &lt;/td&gt;
+            &lt;td&gt;Descreve as orientações para o participante sobre a execução do teste. Cada linha informada será apresentada em uma tela durante 4 segundos.&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="TRResultsInstructions" xml:space="preserve">
+    <value>&lt;!--provisory page--&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Geral&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;programa&lt;/td&gt;
+            &lt;td&gt;Indica o nome do programa que estava sendo execultado no momento do estimulo.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Participante&lt;/td&gt;
+            &lt;td&gt;Indica o nome do participante&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+            &lt;td&gt;Indica a data em que o programa foi executado&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Horario inicial&lt;/td&gt;
+            &lt;td&gt;Indica o exato momento em que o usuário iniciou o teste&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Horario Exposição&lt;/td&gt;
+            &lt;td&gt;Indica o exato momento em que a exposição ocorreu&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;TR(ms)&lt;/td&gt;
+            &lt;td&gt;Indica o tempo de reação do usuário ao estimulo mostrado&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Intervalo(ms)&lt;/td&gt;
+            &lt;td&gt;-&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Intervalo estimado(ms)&lt;/td&gt;
+            &lt;td&gt;-&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Exposição tempo(ms)&lt;/td&gt;
+            &lt;td&gt;-&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Exposição(ms)&lt;/td&gt;
+            &lt;td&gt;Indica por quanto tempo a exposição apareceu (caso haja resposta do usuário o tempo total de exposição é equivalente ao tempo de reação)&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Sequência&lt;/td&gt;
+            &lt;td&gt;Indica a ordem em relação a lista que os estímulos apareceram&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Pos&lt;/td&gt;
+            &lt;td&gt;Indica em qual posição o estimulo foi renderizado&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Resposta usuario&lt;/td&gt;
+            &lt;td&gt;Indica qual a tecla que foi pressionada pelo usuário para responder ao estimulo&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Tipo estimulo&lt;/td&gt;
+            &lt;td&gt;Indica qual tipo de estimulo foi exibido ao usuário&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Estimulo&lt;/td&gt;
+            &lt;td&gt;Indica o nome do estimulo que foi exibido ao usuário&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Cor do estimulo&lt;/td&gt;
+            &lt;td&gt;Indica a cor que o estimulo apareceu ao usuário&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Beep&lt;/td&gt;
+            &lt;td&gt;Indica se houve ou não o beep ao renderizar o estimulo&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
 </root>

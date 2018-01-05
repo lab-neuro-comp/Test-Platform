@@ -660,4 +660,13 @@
   <data name="unsavedListsTitle" xml:space="preserve">
     <value>Unsaved lists</value>
   </data>
+  <data name="experimentConfigInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="stroopConfigInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TRConfigInstructions" xml:space="preserve">
+    <value />
+  </data>
 </root>

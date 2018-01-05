@@ -115,5 +115,13 @@ namespace TestPlatform.Views.ExperimentPages
         {
             this.Parent.Controls.Remove(this);
         }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("experimentResultInstructions", currentCulture));
+            try { infoBox.Show(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
+        }
     }
 }

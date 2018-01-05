@@ -160,7 +160,12 @@
     <value>padrao</value>
   </data>
   <data name="description" xml:space="preserve">
-    <value>"O TestPlatform é uma plataforma de testes neuropsicológicos computadorizados para avaliação de funções executivas. O produto tem a proposta oferecer soluções inovando tecnologicamente de forma prática e dinâmica. Destinado a pesquisadores, alunos e usuários comuns. Desenvolvedores: hugohon - Hugo Honda Ferreira e fabiolamfleury - Fabíola Fleury; 2017";</value>
+    <value>O TestPlatform é uma plataforma de testes neuropsicológicos computadorizados para avaliação de funções executivas. O produto tem a proposta oferecer soluções inovando tecnologicamente de forma prática e dinâmica. Destinado a pesquisadores, alunos e usuários comuns. 
+Desenvolvedores: 
+hugohon - Hugo Honda Ferreira
+fabiolamfleury - Fabíola Malta Fleury
+gabrielalbino - Gabriel Batista Albino Silva; 
+2018; Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="down" xml:space="preserve">
     <value>baixo</value>

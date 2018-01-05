@@ -213,6 +213,16 @@ namespace TestPlatform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_export1 {
+            get {
+                object obj = ResourceManager.GetObject("icon_export1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_import {
             get {
                 object obj = ResourceManager.GetObject("icon_import", resourceCulture);
@@ -253,6 +263,16 @@ namespace TestPlatform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_ReactionTest {
+            get {
+                object obj = ResourceManager.GetObject("icon_ReactionTest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_results {
             get {
                 object obj = ResourceManager.GetObject("icon_results", resourceCulture);
@@ -286,16 +306,6 @@ namespace TestPlatform.Properties {
         internal static System.Drawing.Bitmap icon2_ReactionTest {
             get {
                 object obj = ResourceManager.GetObject("icon2_ReactionTest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icon2_ReactionTest1 {
-            get {
-                object obj = ResourceManager.GetObject("icon2_ReactionTest1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,9 +373,9 @@ namespace TestPlatform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap triangle {
+        internal static System.Drawing.Bitmap stopButton1 {
             get {
-                object obj = ResourceManager.GetObject("triangle", resourceCulture);
+                object obj = ResourceManager.GetObject("stopButton1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,9 +383,9 @@ namespace TestPlatform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap triangle1 {
+        internal static System.Drawing.Bitmap triangle {
             get {
-                object obj = ResourceManager.GetObject("triangle1", resourceCulture);
+                object obj = ResourceManager.GetObject("triangle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

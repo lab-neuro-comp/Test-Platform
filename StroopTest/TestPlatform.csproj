@@ -65,7 +65,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\icon3_TestPlatForm.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -132,6 +133,11 @@
     <Compile Include="Models\StrList.cs" />
     <Compile Include="Models\StroopTest.cs" />
     <Compile Include="Models\Validations.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Views\MainForms\AboutBox.cs">
       <SubType>Form</SubType>
@@ -306,11 +312,6 @@
     </Compile>
     <Compile Include="MainClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Models\StroopProgram.cs" />
     <EmbeddedResource Include="Resources\Localizations\LocalizedResources.en-US.resx" />
     <EmbeddedResource Include="Resources\Localizations\LocalizedResources.pt-BR.resx" />
@@ -566,20 +567,30 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icon_png.png" />
-    <None Include="Resources\triangle.png" />
-    <None Include="Resources\square.png" />
-    <None Include="Resources\stopButton.png" />
-    <None Include="Resources\icon_audio.png" />
-    <None Include="Resources\icon_import.png" />
-    <None Include="Resources\icon_export.png" />
-    <None Include="Resources\icon_results.png" />
-    <None Include="Resources\icon_execute.png" />
-    <None Include="Resources\icon_list.png" />
-    <None Include="Resources\icon_experiment.png" />
-    <None Include="Resources\icon_StroopTest.png" />
+    <Content Include="Resources\icons\circle.png" />
+    <Content Include="Resources\icons\cross.png" />
+    <Content Include="Resources\icons\helpButton.png" />
+    <Content Include="Resources\icons\icon2_ReactionTest.png" />
+    <Content Include="Resources\icons\icon_audio.png" />
+    <Content Include="Resources\icons\icon_execute.png" />
+    <Content Include="Resources\icons\icon_experiment.png" />
+    <Content Include="Resources\icons\icon_export.png" />
+    <Content Include="Resources\icons\icon_export1.png" />
+    <Content Include="Resources\icons\icon_import.png" />
+    <Content Include="Resources\icons\icon_list.png" />
+    <Content Include="Resources\icons\icon_png.png" />
+    <Content Include="Resources\icons\icon_ReactionTest.png" />
+    <Content Include="Resources\icons\icon_results.png" />
+    <Content Include="Resources\icons\icon_StroopTest.png" />
+    <Content Include="Resources\icons\save.png" />
+    <Content Include="Resources\icons\stopButton.png" />
+    <Content Include="Resources\shapeImages\circle1.png" />
+    <Content Include="Resources\shapeImages\fullCircle1.png" />
+    <Content Include="Resources\shapeImages\fullSquare.png" />
+    <Content Include="Resources\shapeImages\fullTriangle.png" />
+    <Content Include="Resources\shapeImages\square.png" />
+    <Content Include="Resources\shapeImages\triangle.png" />
     <None Include="Resources\subtitlePosition\random.png" />
-    <None Include="Resources\save.png" />
     <None Include="Resources\subtitlePosition\noDirection.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -600,18 +611,7 @@
     <None Include="bin\Debug\StroopTestFiles\images\img3.png" />
     <None Include="bin\Debug\StroopTestFiles\images\img4.png" />
     <None Include="bin\Debug\StroopTestFiles\images\img5.png" />
-    <Content Include="Resources\icon3_TestPlatForm.ico" />
     <Content Include="README.txt" />
-    <None Include="Resources\helpButton.png" />
-    <None Include="Resources\circle.png" />
-    <None Include="Resources\cross.png" />
-    <None Include="Resources\%24this.Icon.ico" />
-    <None Include="Resources\icon2_ReactionTest.png" />
-    <None Include="Resources\circle1.png" />
-    <None Include="Resources\fullSquare.png" />
-    <None Include="Resources\fullCircle1.png" />
-    <None Include="Resources\fullTriangle.png" />
-    <Content Include="Resources\icon2_StroopTest.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -645,6 +645,7 @@
       <FileType>Satellite</FileType>
     </PublishFile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

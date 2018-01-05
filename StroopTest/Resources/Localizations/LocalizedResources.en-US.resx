@@ -660,4 +660,7 @@
   <data name="unsavedListsTitle" xml:space="preserve">
     <value>Unsaved lists</value>
   </data>
+  <data name="exportSuccess" xml:space="preserve">
+    <value>Files were exported with success!</value>
+  </data>
 </root>

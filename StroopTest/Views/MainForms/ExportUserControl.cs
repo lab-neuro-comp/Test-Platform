@@ -55,7 +55,6 @@ namespace TestPlatform.Views.MainForms
             foreach (string filePath in filePaths)
             {
                 string file = Path.GetFileNameWithoutExtension(filePath);
-                Console.WriteLine("File> " + file + "Type> " + type + "path > " + path);
 
                 originDataGridView.Rows.Add(file, type, filePath);
             }
@@ -162,16 +161,15 @@ namespace TestPlatform.Views.MainForms
         {
             SaveFileDialog  saveFileDialog = new SaveFileDialog();
             saveFileDialog.InitialDirectory = "C:\\";
-            saveFileDialog.Filter = ".zip";
-            saveFileDialog.Title = "Save exporting files";
+            saveFileDialog.Filter = "Zip Files | *.zip";
             saveFileDialog.ShowDialog();
             if (saveFileDialog.FileName != ""  && !File.Exists(saveFileDialog.FileName))
             {
-                Directory.CreateDirectory(saveFileDialog.FileName + "/ExportingFiles");
-                Directory.CreateDirectory(saveFileDialog.FileName + "/ExportingFiles/" + "StroopProgram");
-                Directory.CreateDirectory(saveFileDialog.FileName + "/ExportingFiles/" + "ReactionProgram");
-                Directory.CreateDirectory(saveFileDialog.FileName + "/ExportingFiles/" + "ExperimentProgram");
-                Directory.CreateDirectory(saveFileDialog.FileName + "/ExportingFiles/" + "Lists");
+                Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/");
+                Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "StroopProgram");
+                Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "ReactionProgram");
+                Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "ExperimentProgram");
+                Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "Lists");
 
                 // exporting each row according to type: list, reaction program, stroop program or experiment program
                 foreach (DataGridViewRow row in exportDataGridView.Rows)
@@ -180,32 +178,32 @@ namespace TestPlatform.Views.MainForms
                     {
                         if ((row.Cells[0].Value.ToString().Split('_')[1] == "color") || (row.Cells[0].Value.ToString().Split('_')[1] == "words"))
                         {
-                            exportFile(row.Cells[2].Value.ToString(), saveFileDialog.FileName + "/ExportingFiles/" + "StringLists/" + row.Cells[0].Value.ToString() + ".lst");
+                            exportFile(row.Cells[2].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/Lists/" + row.Cells[0].Value.ToString() + ".lst");
                         }
                         else
                         {
-                            exportListContent(row.Cells[0].Value.ToString(), saveFileDialog.FileName + "/ExportingFiles/" + "FileLists");
-                            exportFile(row.Cells[2].Value.ToString(), saveFileDialog.FileName + "/ExportingFiles/" + "FileLists/" + row.Cells[0].Value.ToString() + "/" + row.Cells[0].Value.ToString() + ".lst");
+                            exportListContent(row.Cells[0].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/Lists");
                         }
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("reactionTest", currentCulture))
                     {
-                        exportFile(row.Cells[2].Value.ToString(), saveFileDialog.FileName + "/ExportingFiles/" + "ReactionProgram/" + row.Cells[0].Value.ToString() + ".prg");
+                        exportFile(row.Cells[2].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "ReactionProgram/" + row.Cells[0].Value.ToString() + ".prg");
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("stroopTest", currentCulture))
                     {
-                        exportFile(row.Cells[2].Value.ToString(), saveFileDialog.FileName + "/ExportingFiles/" + "StroopProgram/" + row.Cells[0].Value.ToString() + ".prg");
+                        exportFile(row.Cells[2].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "StroopProgram/" + row.Cells[0].Value.ToString() + ".prg");
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("experiment", currentCulture))
                     {
-                        exportFile(row.Cells[2].Value.ToString(), saveFileDialog.FileName + "/ExportingFiles/" + "ExperimentProgram/" + row.Cells[0].Value.ToString() + ".prg");
+                        exportFile(row.Cells[2].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "ExperimentProgram/" + row.Cells[0].Value.ToString() + ".prg");
                     }
                     
                 }
-                
-                ZipFile.CreateFromDirectory(saveFileDialog.FileName + "/ExportingFiles/", saveFileDialog.FileName + ".zip");
-                Directory.Delete(saveFileDialog.FileName + "/ExportingFiles/", true);
 
+                ZipFile.CreateFromDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/", @saveFileDialog.FileName);
+                Directory.Delete(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/", true);
+                MessageBox.Show(LocRM.GetString("exportSuccess", currentCulture));
+                Parent.Controls.Remove(this);
             }
             else
             {
@@ -216,32 +214,18 @@ namespace TestPlatform.Views.MainForms
         private void exportListContent(string listName, string path)
         {
             string listDestination = path + "/" + listName + "/";
-            System.IO.Directory.CreateDirectory(listDestination);
-            string[] name = listName.Split('_');
-            StrList newList;
-            if (name[1] == "image")
+            Directory.CreateDirectory(listDestination);
+
+            DirectoryInfo dir = new DirectoryInfo(listPath + "/" + listName);
+
+            // Get the files in the directory and copy them to the new location.
+            FileInfo[] files = dir.GetFiles();
+            foreach (FileInfo file in files)
             {
-               newList = new StrList(name[0], 0);
-            }
-            else
-            {
-                newList = new StrList(name[0], 1);
+                string temppath = Path.Combine(listDestination, file.Name);
+                file.CopyTo(temppath, false);
             }
 
-
-            foreach (string content in newList.ListContent)
-            {
-                string fileName = Path.GetFileName(content);
-                if (File.Exists(content))
-                {
-                    System.IO.File.Copy(Path.GetFullPath(content), listDestination + fileName, true);
-                }
-                else
-                {
-                    MessageBox.Show(LocRM.GetString("fileNotFound",currentCulture) + content);
-                }
-            }
-            
         }
 
         private void exportFile(string sourceFile, string destinationPath)

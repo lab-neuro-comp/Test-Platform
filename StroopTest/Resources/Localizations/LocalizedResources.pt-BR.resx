@@ -739,4 +739,7 @@
   <data name="unsavedListsTitle" xml:space="preserve">
     <value>Listas não-salvas</value>
   </data>
+  <data name="exportSuccess" xml:space="preserve">
+    <value>Arquivos exportados com sucesso</value>
+  </data>
 </root>

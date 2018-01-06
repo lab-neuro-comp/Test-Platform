@@ -601,7 +601,7 @@
          &lt;/tr&gt;
          &lt;tr&gt;
             &lt;td&gt;Mover Item&lt;/td&gt;
-            &lt;td&gt;Exclui da lista o arquivo de imagem selecionado com o botão “Apagar”.&lt;/td&gt;
+            &lt;td&gt;Move o arquivo na lista.&lt;/td&gt;
          &lt;/tr&gt;
       &lt;/table&gt;
    &lt;/body&gt;
@@ -1080,7 +1080,7 @@
          &lt;/tr&gt;
          &lt;tr&gt;
             &lt;td&gt;Nome&lt;/td&gt;
-	    &lt;td&gt;Indica o nome da lista. O nome da lista deve conter apenas caracteres alfanumericos e não deve possuir espaços."
+	    &lt;td&gt;Indica o nome da lista. O nome da lista deve conter apenas caracteres alfanumericos e não deve possuir espaços.&lt;/td&gt;
          &lt;/tr&gt;
          &lt;tr&gt;
             &lt;th class = "mainBar" colspan = "2"&gt;Opções da lista&lt;/th&gt;
@@ -1731,7 +1731,7 @@
          &lt;/tr&gt;
          &lt;tr&gt;
             &lt;td&gt;Cor de Fundo &lt;/td&gt;
-            &lt;td&gt;Define a cor tela por trás do estímulo durante a apresentação. O padrão é tela cinza.&lt;/td&gt;
+            &lt;td&gt;Define a cor tela por trás do estímulo durante a apresentação. O padrão é tela branca.&lt;/td&gt;
          &lt;/tr&gt;
          &lt;tr&gt;
             &lt;td&gt;Instruções &lt;/td&gt;
@@ -1743,7 +1743,7 @@
   </data>
   <data name="TRResultsInstructions" xml:space="preserve">
     <value>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
+&lt;html&gt;a
    &lt;head&gt;
       &lt;style&gt;
          table {
@@ -1790,7 +1790,7 @@
          &lt;/tr&gt;
          &lt;tr&gt;
             &lt;td&gt;Exportar como .cvs&lt;/td&gt;
-            &lt;td&gt;Exporta os resultados para um arquivo com valores separados por vigula, que podem ser abertis por programas editores de planilhas (ex: libre office).&lt;/td&gt;
+            &lt;td&gt;Exporta os resultados para um arquivo com valores separados por vigula, que podem ser abertos por programas editores de planilhas (ex: libre office).&lt;/td&gt;
          &lt;/tr&gt;
          &lt;tr&gt;
             &lt;th class = "mainBar" colspan = "2"&gt;Resultados&lt;/th&gt;

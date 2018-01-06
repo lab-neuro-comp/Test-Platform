@@ -439,7 +439,7 @@
     <value>You must select the word list file.</value>
   </data>
   <data name="experimentHeader" xml:space="preserve">
-    <value>experiment\tprogram\tProgramType\tparticipant\tdate\tinitialTime\ttestTime\tsequence</value>
+    <value>experiment\tprogram\tProgram Type\tparticipant\tdate\tInitial time\tTest time\tSequence</value>
   </data>
   <data name="experimentName" xml:space="preserve">
     <value>The experiment name must be composed only of alphanumerical characters and no spaces; \ nExample: 'MyExperiment'</value>
@@ -457,22 +457,339 @@
     <value>\n should be:</value>
   </data>
   <data name="audioConfigInstructions" xml:space="preserve">
-    <value />
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;General&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;List name&lt;/td&gt;
+	    &lt;td&gt;Sets the name of the list that will be chosen in the program definition. It is recommended that the list name characterize the chosen set of elements and the step comprising, for 
+example, "Victoria1". The order in which the elements are informed will be kept in the respective list.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Audio list creation&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+            &lt;td&gt;Audios&lt;/td&gt;
+            &lt;td&gt;Selects the folder containing the audio files to be placed in the list by the "Open" button.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;/tr&gt;
+            &lt;td&gt;Delete Item&lt;/td&gt;
+            &lt;td&gt;Excludes from the list the selected audio file with the "Delete" button.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;/tr&gt;
+            &lt;td&gt;Move Item&lt;/td&gt;
+            &lt;td&gt;Repositions the selected audio file in the list with the "Up" and "Down" buttons.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;/tr&gt;
+            &lt;td&gt;Play audio&lt;/td&gt;
+            &lt;td&gt;Represents the selected audio file using the computer's active sound devices. The selected File Name is displayed in the list and Location&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
   <data name="imageConfigInstructions" xml:space="preserve">
-    <value />
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;General&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Name&lt;/td&gt;
+	    &lt;td&gt;Sets the name of the list that will be chosen in the program definition. It is recommended that the list name characterize the chosen set of elements and the step comprising, for example, "Victoria1". The order in which the elements are informed will be kept in the respective list."&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;List options&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+            &lt;td&gt;Images&lt;/td&gt;
+            &lt;td&gt;Selects the folder containing the images to be inserted in the list by the "Open" button.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Delete Item&lt;/td&gt;
+            &lt;td&gt;Excludes from the list the image file selected with the "Delete" button.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Move Item&lt;/td&gt;
+            &lt;td&gt;Moves the item on the list.&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
   <data name="newAudioInstructions" xml:space="preserve">
-    <value />
-  </data>
-  <data name="programConfigInstructions" xml:space="preserve">
-    <value />
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Auditions of Tests Display&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;List&lt;/td&gt;
+	    &lt;td&gt;This screen displays the audios recorded in the previously executed tests. The audios of the test execution will be recorded in a file named with the chosen program and the identification of the participant, if this combination has already occurred the new audios will be added to the same file.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Creating audio files in WAV format&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+            &lt;td&gt;Audio Creation&lt;/td&gt;
+            &lt;td&gt;In this screen it is possible to record WAV format audio files to be used as files in audio lists. Recording starts when you click the Record button and is finished and can be saved by the Stop / Save button&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
   <data name="showAudioInstructions" xml:space="preserve">
     <value />
   </data>
   <data name="showDataInstructions" xml:space="preserve">
-    <value />
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;General&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Export as .cvs&lt;/td&gt;
+            &lt;td&gt;It exports the results to a file with values separated by comma, which can be opened by spreadsheet editors programs (ex: libre office).&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+	 &lt;tr&gt;
+	    &lt;td&gt;Play audio&lt;/td&gt;
+	    &lt;td&gt;Option to transmit the recorded audio during the test run, if the program used had this option.&lt;/td&gt;
+         &lt;/tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Results&lt;/th&gt;
+         &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Program&lt;/td&gt;
+            &lt;td&gt;Indicates the name of the program that was running at the time of the stimulus.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Participant&lt;/td&gt;
+            &lt;td&gt;Shows the user name&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Date&lt;/td&gt;
+            &lt;td&gt;Indicates the that date the program was run&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Starting time&lt;/td&gt;
+            &lt;td&gt;Indicates the exact moment the user started the test&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Exposition(ms)&lt;/td&gt;
+            &lt;td&gt;Indicates how long the exposure has appeared (if user responds the total exposure time is equivalent to the reaction time)&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Sequence&lt;/td&gt;
+            &lt;td&gt;Indicates the chronological order in which the stimulu appeared for the user&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Stimulus type&lt;/td&gt;
+            &lt;td&gt;Indicates which type of stimulus was shown to the user&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Subtitle&lt;/td&gt;
+            &lt;td&gt;Indicates the caption displayed to the user&lt;/td&gt;
+         &lt;/tr&gt;	
+         &lt;tr&gt;
+            &lt;td&gt;Subtitle position&lt;/td&gt;
+            &lt;td&gt;Indicates in which position the caption was displayed&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Stimulus&lt;/td&gt;
+            &lt;td&gt;Indicates the name of the stimulus that was displayed to the user&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Stimulus color&lt;/td&gt;
+            &lt;td&gt;Indicates the color that the stimulus appeared to the user&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Audio&lt;/td&gt;
+            &lt;td&gt;Information if there was audio capture during the stimulus&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt; 
+     &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
   <data name="technicalInformation" xml:space="preserve">
     <value />
@@ -481,7 +798,86 @@
     <value />
   </data>
   <data name="wordColorConfigInstructions" xml:space="preserve">
-    <value />
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;General&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Name&lt;/td&gt;
+	    &lt;td&gt;Indicates the name of the list. The list name must contain only alphanumeric characters and must have no spaces.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;List Options&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Word list&lt;/td&gt;
+            &lt;td&gt;When the word list box is checked, the created word list will be saved.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Color list&lt;/td&gt;
+            &lt;td&gt;When the word list box is checked, the created color list is saved. If both boxes have been checked, both lists are saved.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;New Item&lt;/td&gt;
+            &lt;td&gt;Opens a screen to fill in a new word and its color. The default color is black.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Delete Item&lt;/td&gt;
+            &lt;td&gt;Exclude from the list the word and its corresponding color selected with the "Delete" button.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Move Item&lt;/td&gt;
+            &lt;td&gt;Repositions the selected color word in the list with the "Up" and "Down" buttons.&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
   <data name="backgroundColorError" xml:space="preserve">
     <value>Background color of the program should be 'false' or a color hexadecimal code</value>
@@ -532,13 +928,13 @@
     <value>wasn't written\n\n</value>
   </data>
   <data name="reactionTestHeader" xml:space="preserve">
-    <value>program\tparticipant\tdate\tInitialTime\texpositionTime\treactionTime(ms)\tInterval(ms)\testimatedInterval(ms)\texpositionDuration(ms)\texposition(ms)\tsenquency\tpos\tuserResponse\tstimulusType\tstimulus\tstimulusColor\tBeep</value>
+    <value>program\tparticipant\tdate\tInitial Time\tExposition time\tReactionTime(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tsenquency\tpos\tUser response\tStimulus Type\tstimulus\tStimulus Color\tBeep</value>
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Selected response type is invalid. Valid options are: spacebar or key arrows.</value>
   </data>
   <data name="stroopResultHeader" xml:space="preserve">
-    <value>program\tparticipant\tdate\thour\ttime(ms)\tsequency\tstimulusType\tsubtitle\tsubtitlePosition\tstimulus\tcolor\taudio</value>
+    <value>program\tparticipant\tdate\thour\ttime(ms)\tsequency\tStimulus type\tSubtitle\tSubtitle position\tstimulus\tcolor\taudio</value>
   </data>
   <data name="subtitleColorError" xml:space="preserve">
     <value>Subtitle color must be 'false' or a hex color code</value>
@@ -661,12 +1057,912 @@
     <value>Unsaved lists</value>
   </data>
   <data name="experimentConfigInstructions" xml:space="preserve">
-    <value />
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;General&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%"&gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Experiment name&lt;/td&gt;
+            &lt;td&gt;It should be made with the name of the experiment that will be created. The name must contain only alphanumeric characters and should not contain any space. This same name is used 
+when choosing the experiment that is run on the results page and import / export&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Exposition&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%"&gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+		Random order
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indicates whether the exposure of the programs will be made at random in relation to the order that the user added. If the option is selected the user can select a Training.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Time&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%"&gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Interval(ms)&lt;/td&gt;
+            &lt;td&gt;Indicates the interval between one program and another during the experiment&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Program &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%"&gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Add&lt;/td&gt;
+            &lt;td&gt;Adds a program to the list of experiment programs.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Training&lt;/td&gt;
+            &lt;td&gt;In random order the training program will always be the first test to be performed.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Delete&lt;/td&gt;
+            &lt;td&gt;Removes the selected program program from the program list of the experiment.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Others&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%"&gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Instructions&lt;/td&gt;
+            &lt;td&gt;Describes the guidelines for the participant on the test run. Each displayed line will be displayed on a screen for 4 seconds.&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
   <data name="stroopConfigInstructions" xml:space="preserve">
-    <value />
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;General&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Program name&lt;/td&gt;
+            &lt;td&gt;It should be filled in with the name of the program that will be created. The name must contain only alphanumeric characters and should not contain any space. This same name will be used when choosing the program to be executed on the results and import / export page&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Exposition&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Stimulus type&lt;/td&gt;
+            &lt;td&gt;
+	    In this field you must choose one of the types of stimulus available, they are: &lt;br&gt;
+               &lt;ul&gt;
+                  &lt;li&gt; Word: In this mode a list of words and a list of colors for the word must be chosen, and from this the program will display the colored words &lt;/li&gt;
+                  &lt;li&gt; Image: In this type a list of images must be chosen and from there the program will expose the images contained in the list. &lt;/li&gt;
+                  &lt;li&gt; Image and word: In this type should be chosen a list of images and one of words. The generated program will alternately display one item from each list at a time. &lt;/Li&gt;
+                  &lt;li&gt; Word with audio: This type should select a list of words and an audio list that will be played by the program in the display of colored words with audio exposure. &lt;/li&gt;
+                  &lt;li&gt; Image with audio: In this type you should select a list of images and another list of audio that will be played by the program.&lt;/li&gt;
+               &lt;/ul&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Number of attempts&lt;/td&gt;
+            &lt;td&gt;Sets the amount of user attempts. The number of attempts is equal to the number of stimulus that will be shown. &lt;br&gt; When the number of items in the lists is less than the number of attempts, the number of items in the lists will be used, repeating the items necessary to reach the number of attempts. Likewise, when the number of items in the lists is greater than the number of attempts, the number of items in the lists corresponding to the number of attempts will be used.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Random order
+            &lt;/td&gt;
+            &lt;td&gt;
+		Indicates whether the exposure of the stimulus will be made randomly in relation to the order of the list.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+		Word size
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indicates the font size of the text for "Word", "Word with audio" or "Image and word". The default size is 160.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Word color
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indicates the color of the word, for "Word and Image" or "Image and Word". The default color is black.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Expand Image
+            &lt;/td&gt;
+            &lt;td&gt;
+               Sets the image expansion to the limit proportional to the screen. You can not simultaneously play the caption.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Rotate Image
+            &lt;/td&gt;
+            &lt;td&gt;
+               Sets the image rotation at the angle and direction indicated in the list.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Lists &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Words
+            &lt;/td&gt;
+            &lt;td&gt;
+               Loads the list of words that will be displayed for the "Word" and "Word with Audio" types. Non-random display will follow the order of the words in the list.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Colors&lt;/td&gt;
+            &lt;td&gt;Loads the color list of words that will be displayed for the "Word" and "Word with Audio" types. Non-random exposure will follow the order of the colors in the list.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Images&lt;/td&gt;
+            &lt;td&gt;Loads the list of images that will be displayed for the types "Image", "Image with Audio" and "Image and Word". Non-random exposure will follow the order of images in the list.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Audios&lt;/td&gt;
+            &lt;td&gt;Loads the list of audios that will be played in the test for the "Audio Word" and "Audio Picture" types. Non-random exposure will follow the order of the audios in the list.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Time&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Exposition(ms)
+            &lt;/td&gt;
+            &lt;td&gt;
+		Sets the duration in milliseconds of the chosen stimulus exposure, word or image.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Interval(ms)&lt;/td&gt;
+            &lt;td&gt;Sets the time in milliseconds between attempts.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Variable Interval Time&lt;/td&gt;
+            &lt;td&gt;Indicates that the interval will have the duration varied randomly from 400ms to the interval time reported.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Delay&lt;/td&gt;
+            &lt;td&gt;Sets the time in milliseconds between paired stimuli for the word, image, or word and image types. If not informed, interval time will be used.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Subtitle&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Enable&lt;/td&gt;
+            &lt;td&gt;Indicates whether the image display will have caption. When activating, it must be selected list of words to be displayed as caption.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Color&lt;/td&gt;
+            &lt;td&gt;Indicates the color of the caption. The color black will be used, if not informed&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Position&lt;/td&gt;
+            &lt;td&gt;Indicates the location that the legend will be placed in relation to the stimulus: ←, on the left (pictures); ↑, above (words and pictures); → on the right (pictures); ↓, below (words and pictures); ·, To the center (images); Random, change apposition, according to the type of stimulus&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Fix point&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Type&lt;/td&gt;
+            &lt;td&gt;Indicates the shape of the fixing point: + or ·&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Point Color&lt;/td&gt;
+            &lt;td&gt;Indicates the color of the fix point.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Others  &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Capture Audio during Play&lt;/td&gt;
+            &lt;td&gt;Indicates that the user's responses will be recorded automatically during execution. An audio file will be generated in the data folder. Requires the NAudio.dll file to be in the same folder as the test. The default is selected.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Background color&lt;/td&gt;
+            &lt;td&gt;Sets the color screen behind the stimulus during the presentation. The default is gray screen.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Instructions&lt;/td&gt;
+            &lt;td&gt;Describes the guidelines for the participant on the test run. Each displayed line will be displayed on a screen for 4 seconds.&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
   <data name="TRConfigInstructions" xml:space="preserve">
-    <value />
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;General&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Program name&lt;/td&gt;
+            &lt;td&gt;It should be filled in with the name of the program that will be created. The name must contain only alphanumeric characters and should not contain any space. This same name will be used when choosing the program to be executed on the results and import / export page&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Exposition&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Stimulus type&lt;/td&gt;
+            &lt;td&gt;
+	       In this field you must choose one of the types of stimulus available, they are: &lt;br&gt;
+               &lt;ul&gt;
+                  &lt;li&gt; Shapes: In this mode, one or more geometric shapes in the "Shapes" field must be chosen, and these shapes will be rendered randomly during the exposure. In addition to the geometric form (s) a color / color list must be chosen which will define the color (s) of the geometric shape. &lt;/ Li&gt;
+                  &lt;li&gt; Word: In this mode a list of words and a list of colors or a single color for the word must be chosen, and from this the program will display the colored words &lt;/ li&gt;
+                  &lt;li&gt; Image: In this type a list of images must be chosen and from there the program will expose the images contained in the list. &lt;/ li&gt;
+                  &lt;li&gt; Image and word: In this type should be chosen a list of images and one of words. The generated program will alternately display one item from each list at a time. &lt;/ Li&gt;
+                  &lt;li&gt; Word with audio: This type should select a list of words and an audio list that will be played by the program in the display of colored words with audio exposure. &lt;/ li&gt;
+                  &lt;li&gt; Image with audio: In this type you should select a list of images and another list of audio that will be played by the program. The exhibition &lt;/ li&gt;
+               &lt;/ ul&gt;
+
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Stimulus size
+            &lt;/td&gt;
+            &lt;td&gt;
+               The size of the stimulus has different functions depending on the stimulus to which it applies.
+               &lt;ul&gt;
+                   &lt;li&gt; Shapes: In this type of stimulus the size equals the shape size, in pixels, that will be rendered &lt;/ li&gt;
+                   &lt;li&gt; Word: In this type of stimulus, the size equals the font size, in pixels, of the text to be rendered &lt;/ li&gt;
+                   &lt;li&gt; Image: In this type of animation, the size is the size of the pixel side of the image to be rendered. &lt;/ li&gt;
+                &lt;/ ul&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Distance from the stimulus to the center of the screen&lt;/td&gt;
+            &lt;td&gt;It indicates, in pixels, the distance that the stimulus will be rendered taking as reference the center of the screen.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Number of possible positions&lt;/td&gt;
+            &lt;td&gt;
+               It indicates the number of possible positions for the stimulus and they are:
+                &lt;ul&gt;
+                   &lt;li&gt; 1: In this option all the stimuli will appear in the center of the screen. &lt;/ li&gt;
+                   &lt;li&gt; 2: In this option the stimuli can appear on the right of the screen or on the left. &lt;/ li&gt;
+                   &lt;li&gt; 4: In this option the stimuli can appear in the positions: below the center, above the center, to the right of the center or to the left of the center. &lt;/ li&gt;
+                   &lt;li&gt; 8: In this option the stimuli can appear in the positions: below the center, above the center, to the right of the center, to the left of the center or to any of the diagonals. &lt;/ li&gt;
+                &lt;/ ul&gt;
+
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Number of attempts&lt;/td&gt;
+            &lt;td&gt;Sets the amount of user attempts. The number of attempts is equal to the number of stimuli that will be shown. &lt;br&gt; When the number of items in the lists is less than the number of attempts, the number of items in the lists will be used, repeating the items necessary to reach the number of attempts . Likewise, when the number of items in the lists is greater than the number of attempts, the number of items in the lists corresponding to the number of attempts will be used.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Random order
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indicates whether the exposure of the stimuli will be made randomly in relation to the order of the list.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Use beep
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indicates whether a beep will be played together with the rendering of the stimulus.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Random beep
+            &lt;/td&gt;
+            &lt;td&gt;
+               	Indicates whether the beep will be random. If it is random, it will only play in some renderings, if it is not random, it will play in all the stimuli.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Beep duration (ms)
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indicates by how many milliseconds the beep will play
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+		Type of color of the stimulus
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indicates whether the stylus should have a single color throughout the program (Single Color) or whether it will be several different colors. In the case of several different colors these colors must be within a color list.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Stimulus color
+            &lt;/td&gt;
+            &lt;td&gt;
+               Indicates the color of the stimulus.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Lists&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Words
+            &lt;/td&gt;
+            &lt;td&gt;
+               Loads the list of words that will be displayed for the types "Word", "Word and Image" and "Word with Audio". Non-random display will follow the order of the words in the list.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Colors&lt;/td&gt;
+            &lt;td&gt;Loads the color list of the words that will be displayed for the types "Shapes", "Word", "Word and Image" and "Word with Audio". Non-random exposure will follow the order of the colors in the list.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Images&lt;/td&gt;
+            &lt;td&gt;Loads the list of images that will be displayed for the types "Image", "Image with Audio" and "Word and Image". Non-random exposure will follow the order of the images in the list.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Audios&lt;/td&gt;
+            &lt;td&gt;Loads the list of audios that will be played in the test for the "Audio Word" and "Audio Picture" types. Non-random exposure will follow the order of the audios in the list.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Time &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Exposition(ms)
+            &lt;/td&gt;
+            &lt;td&gt;
+               Sets the duration in milliseconds of the chosen stimulus exposure, word or image.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Interval(ms)&lt;/td&gt;
+            &lt;td&gt;Sets the time in milliseconds between attempts.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Variable Interval Time&lt;/td&gt;
+            &lt;td&gt;Indicates that the interval will have the duration varied randomly from 400ms to the interval time reported.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Forms&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Forms&lt;/td&gt;
+            &lt;td&gt;Indicates which geometric shapes will be used in the program of type "shapes"&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;FixPoint &lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Type&lt;/td&gt;
+            &lt;td&gt;Indicates the shape of the fixing point: + or ·&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Fixpoint Color&lt;/td&gt;
+            &lt;td&gt;Indicates the color of the fixation point.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;User answers&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;User response&lt;/td&gt;
+            &lt;td&gt;Indicates which keys the user will press to respond to the stimulus.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Others&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Background color&lt;/td&gt;
+            &lt;td&gt;Sets the color screen behind the stimulus during the presentation. The default is white screen.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Instructions&lt;/td&gt;
+            &lt;td&gt;Describes the guidelines for the participant on the test run. Each displayed line will be displayed on a screen for 4 seconds.&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="experimentResultInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;General&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Export as .cvs&lt;/td&gt;
+            &lt;td&gt;It exports the results to a file with values separated by comma, which can be opened by spreadsheet editors programs (ex: libre office).&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Results&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;experiment&lt;/td&gt;
+            &lt;td&gt;Indicates the name of the experiment that was run.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;program&lt;/td&gt;
+            &lt;td&gt;Indicates the name of the program that was running at the time of the stimulus.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Participant&lt;/td&gt;
+            &lt;td&gt;Shows the user name&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Date&lt;/td&gt;
+            &lt;td&gt;Indicates the that date the program was run&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Starting time&lt;/td&gt;
+            &lt;td&gt;Indicates the exact moment the user started the &lt;u&gt;experiment&lt;/u&gt;&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;test time&lt;/td&gt;
+            &lt;td&gt;Indicates the exact moment the user started the &lt;u&gt;program&lt;/u&gt;&lt;/td&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Sequence&lt;/td&gt;
+            &lt;td&gt;Indicates the chronological order in which the program appeared for the user&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="fileManagmentConfigInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;General&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Existing files / Deleted files&lt;/td&gt;
+            &lt;td&gt;This list indicates the files that exist and &lt;u&gt;can be deleted&lt;/u&gt; or the files that have been deleted and &lt;u&gt;can be recovered&lt;/u&gt;&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Files to be restored / deleted&lt;/td&gt;
+            &lt;td&gt;This list indicates which files exist and &lt;u&gt; will be deleted &lt;/u&gt; or deleted files &lt;u&gt;will be recovered &lt;/u&gt;&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td style = "color: red"&gt;Red files&lt;/td&gt;
+            &lt;td&gt;The files indicated in red by the list indicate that they already have a program or experiment with the same name in the source folder and restoring / deleting this file will result in the loss of the file with the same name in the destination folder&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="TRResultsInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;a
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;General&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Export as .cvs&lt;/td&gt;
+            &lt;td&gt;It exports the results to a file with values separated by comma, which can be opened by spreadsheet editors programs (ex: libre office).&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Results&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;program&lt;/td&gt;
+            &lt;td&gt;Indicates the name of the program that was running at the time of the stimulus.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Participant&lt;/td&gt;
+            &lt;td&gt;Shows the user name&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Date&lt;/td&gt;
+            &lt;td&gt;Indicates the that date the program was run&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Starting time&lt;/td&gt;
+            &lt;td&gt;Indicates the exact moment the user started the test&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Exhibition time&lt;/td&gt;
+            &lt;td&gt;Indicates the exact moment when the exposure occurred&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;TR(ms)&lt;/td&gt;
+            &lt;td&gt;Indicates the reaction time of the user to the stimulus shown, which can be negative in case of anticipation of the response, zero if there was no reaction to the stimulus or 
+positive if there was a reaction in time.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Interva(ms)&lt;/td&gt;
+	    &lt;td&gt;Elapsed time between the stimulus shown and the next, and may be random or not according to the configuration of the program, except in case of anticipation of the response of the 
+user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Estimated Interval(ms)&lt;/td&gt;
+            &lt;td&gt;Elapsed time between the stimulus shown and the next, which may be random or not according to the program configuration&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Exposure time(ms)&lt;/td&gt;
+            &lt;td&gt;Moment in which the stimulus was shown having as reference the beginning of the execution of the program.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Exposition(ms)&lt;/td&gt;
+            &lt;td&gt;Indicates how long the exposure has appeared (if user responds the total exposure time is equivalent to the reaction time)&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Sequence&lt;/td&gt;
+            &lt;td&gt;Indicates the chronological order in which the stimulu appeared for the user&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Position&lt;/td&gt;
+            &lt;td&gt;Indicates in which position the stimulus was rendered&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;User answer&lt;/td&gt;
+            &lt;td&gt;Indicates which key was pressed by the user to respond to the stimulus&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Stimulus type&lt;/td&gt;
+            &lt;td&gt;Indicates which type of stimulus was shown to the user&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Stimulus&lt;/td&gt;
+            &lt;td&gt;Indicates the name of the stimulus that was displayed to the user&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Stimulus color&lt;/td&gt;
+            &lt;td&gt;Indicates the color that the stimulus appeared to the user&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Beep&lt;/td&gt;
+            &lt;td&gt;Indicates whether or not the beep was rendered when rendering the stimulus&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
 </root>

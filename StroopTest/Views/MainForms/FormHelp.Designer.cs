@@ -29,26 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInstructions));
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.helpBrowser = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
-            // webBrowser1
+            // helpBrowser
             // 
-            resources.ApplyResources(this.webBrowser1, "webBrowser1");
-            this.webBrowser1.Name = "webBrowser1";
+            resources.ApplyResources(this.helpBrowser, "helpBrowser");
+            this.helpBrowser.Name = "helpBrowser";
             // 
             // FormInstructions
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.webBrowser1);
+            this.Controls.Add(this.helpBrowser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormInstructions";
+            this.Resize += new System.EventHandler(this.FormInstructions_Resize);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.WebBrowser helpBrowser;
     }
 }

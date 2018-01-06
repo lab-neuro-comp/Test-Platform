@@ -660,4 +660,7 @@
   <data name="unsavedListsTitle" xml:space="preserve">
     <value>Unsaved lists</value>
   </data>
+  <data name="deleteList" xml:space="preserve">
+    <value>Are you sure that you want to delete </value>
+  </data>
 </root>

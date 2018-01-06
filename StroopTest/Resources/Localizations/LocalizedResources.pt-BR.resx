@@ -739,4 +739,7 @@
   <data name="unsavedListsTitle" xml:space="preserve">
     <value>Listas não-salvas</value>
   </data>
+  <data name="deleteList" xml:space="preserve">
+    <value>Você tem certeza que deseja excluir </value>
+  </data>
 </root>

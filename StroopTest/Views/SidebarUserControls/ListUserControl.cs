@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Resources;
 using System.Windows.Forms;
 
@@ -303,6 +304,101 @@ namespace TestPlatform.Views.SidebarControls
                     imagePanel.Visible = false;
                     colorWordButton.Visible = true;
                     audioButton.Visible = true;
+
+                }
+            }
+            else
+            {
+                /*do nothing*/
+            }
+        }
+
+        private void deleteImageListButton_Click(object sender, EventArgs e)
+        {
+            FormDefine defineFilePath = new FormDefine(LocRM.GetString("imageList", currentCulture), Global.testFilesPath + Global.listFolderName, "dir", "_image", true);
+            var result = defineFilePath.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string fileName = defineFilePath.ReturnValue;
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("deleteList", currentCulture) + fileName + "?", LocRM.GetString("imageList", currentCulture), MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        string[] files = Directory.GetFiles(Global.testFilesPath + Global.listFolderName + fileName + "_image");
+                        foreach (string file in files)
+                        {
+                            File.Delete(file);
+                        }
+                        Directory.Delete(Global.testFilesPath + Global.listFolderName + fileName + "_image");
+                        MessageBox.Show(fileName + " " + LocRM.GetString("programDeleted", currentCulture));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                else
+                {
+                    /*do nothing*/
+                }
+            }
+            else
+            {
+                /*do nothing*/
+            }
+        }
+        private void deleteWordColorButton_Click(object sender, EventArgs e)
+        {
+            FormDefine defineFilePath = new FormDefine(LocRM.GetString("wordList", currentCulture), Global.testFilesPath + Global.listFolderName, "lst", "_words_color", true);
+            var result = defineFilePath.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string fileName = defineFilePath.ReturnValue;
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("deleteList", currentCulture) + fileName + "?", LocRM.GetString("wordList", currentCulture), MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    File.Delete(Global.testFilesPath + Global.listFolderName + fileName + ".lst");
+                    MessageBox.Show(fileName + " " + LocRM.GetString("programDeleted", currentCulture));
+                }
+                else
+                {
+                    /*do nothing*/
+                }
+            }
+            else
+            {
+                /*do nothing*/
+            }
+        }
+        private void deleteAudioListButton_Click(object sender, EventArgs e)
+        { 
+            FormDefine defineFilePath = new FormDefine(LocRM.GetString("audioList", currentCulture), Global.testFilesPath + Global.listFolderName, "dir", "_audio", true);
+            var result = defineFilePath.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string fileName = defineFilePath.ReturnValue;
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("deleteList", currentCulture) + fileName + "?", LocRM.GetString("audioList", currentCulture), MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        string[] files = Directory.GetFiles(Global.testFilesPath + Global.listFolderName + fileName + "_audio");
+                        foreach (string file in files)
+                        {
+                            File.Delete(file);
+                        }
+                        Directory.Delete(Global.testFilesPath + Global.listFolderName + fileName + "_audio");
+                        MessageBox.Show(fileName + " " + LocRM.GetString("programDeleted", currentCulture));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                else
+                {
+                    /*do nothing*/
 
                 }
             }

@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Resources;
 using System.Windows.Forms;
+using TestPlatform.Views.ListsPages;
 
 namespace TestPlatform.Views.SidebarControls
 {
@@ -315,98 +316,68 @@ namespace TestPlatform.Views.SidebarControls
 
         private void deleteImageListButton_Click(object sender, EventArgs e)
         {
-            FormDefine defineFilePath = new FormDefine(LocRM.GetString("imageList", currentCulture), Global.testFilesPath + Global.listFolderName, "dir", "_image", true);
-            var result = defineFilePath.ShowDialog();
-            if (result == DialogResult.OK)
+            if (radioButton3.Checked)
             {
-                string fileName = defineFilePath.ReturnValue;
-                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("deleteList", currentCulture) + fileName + "?", LocRM.GetString("imageList", currentCulture), MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                if (isAllowedToChangeScreen())
                 {
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    ListManagment ManageList = new ListManagment("_image");
                     try
                     {
-                        string[] files = Directory.GetFiles(Global.testFilesPath + Global.listFolderName + fileName + "_image");
-                        foreach (string file in files)
-                        {
-                            File.Delete(file);
-                        }
-                        Directory.Delete(Global.testFilesPath + Global.listFolderName + fileName + "_image");
-                        MessageBox.Show(fileName + " " + LocRM.GetString("programDeleted", currentCulture));
+                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        radioButton3.Checked = false;
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
                 else
                 {
                     /*do nothing*/
                 }
-            }
-            else
-            {
-                /*do nothing*/
             }
         }
         private void deleteWordColorButton_Click(object sender, EventArgs e)
         {
-            FormDefine defineFilePath = new FormDefine(LocRM.GetString("wordList", currentCulture), Global.testFilesPath + Global.listFolderName, "lst", "_words_color", true);
-            var result = defineFilePath.ShowDialog();
-            if (result == DialogResult.OK)
+            if (deleteWordColorButton.Checked)
             {
-                string fileName = defineFilePath.ReturnValue;
-                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("deleteList", currentCulture) + fileName + "?", LocRM.GetString("wordList", currentCulture), MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                if (isAllowedToChangeScreen())
                 {
-                    File.Delete(Global.testFilesPath + Global.listFolderName + fileName + ".lst");
-                    MessageBox.Show(fileName + " " + LocRM.GetString("programDeleted", currentCulture));
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    ListManagment ManageList = new ListManagment("_words_color");
+                    try
+                    {
+                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        radioButton3.Checked = false;
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
                 else
                 {
                     /*do nothing*/
                 }
-            }
-            else
-            {
-                /*do nothing*/
             }
         }
         private void deleteAudioListButton_Click(object sender, EventArgs e)
-        { 
-            FormDefine defineFilePath = new FormDefine(LocRM.GetString("audioList", currentCulture), Global.testFilesPath + Global.listFolderName, "dir", "_audio", true);
-            var result = defineFilePath.ShowDialog();
-            if (result == DialogResult.OK)
+        {
+            if (radioButton4.Checked)
             {
-                string fileName = defineFilePath.ReturnValue;
-                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("deleteList", currentCulture) + fileName + "?", LocRM.GetString("audioList", currentCulture), MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                if (isAllowedToChangeScreen())
                 {
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    ListManagment ManageList = new ListManagment("_audio");
                     try
                     {
-                        string[] files = Directory.GetFiles(Global.testFilesPath + Global.listFolderName + fileName + "_audio");
-                        foreach (string file in files)
-                        {
-                            File.Delete(file);
-                        }
-                        Directory.Delete(Global.testFilesPath + Global.listFolderName + fileName + "_audio");
-                        MessageBox.Show(fileName + " " + LocRM.GetString("programDeleted", currentCulture));
+                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        radioButton3.Checked = false;
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
                 else
                 {
                     /*do nothing*/
-
                 }
             }
-            else
-            {
-                /*do nothing*/
-            }
         }
+
 
     }
 }

@@ -663,4 +663,7 @@
   <data name="deleteList" xml:space="preserve">
     <value>Are you sure that you want to delete </value>
   </data>
+  <data name="listsDeleted" xml:space="preserve">
+    <value>All selected lists were deleted sucessful!</value>
+  </data>
 </root>

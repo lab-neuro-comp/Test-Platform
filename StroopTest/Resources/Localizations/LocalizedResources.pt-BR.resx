@@ -742,4 +742,7 @@
   <data name="deleteList" xml:space="preserve">
     <value>Você tem certeza que deseja excluir </value>
   </data>
+  <data name="listsDeleted" xml:space="preserve">
+    <value>Todas as listas selecionadas foram excluídas com sucesso!</value>
+  </data>
 </root>

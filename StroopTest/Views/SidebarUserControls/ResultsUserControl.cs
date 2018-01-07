@@ -25,6 +25,10 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void StroopButton_Click(object sender, EventArgs e)
         {
+            if(Global.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
+            {
+                Global.GlobalFormMain._contentPanel.Controls.Clear(); 
+            }
             FormShowData showData;
             try
             {
@@ -37,6 +41,10 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void reactionButton_Click(object sender, EventArgs e)
         {
+            if (Global.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
+            {
+                Global.GlobalFormMain._contentPanel.Controls.Clear();
+            }
             ReactionResultUserControl showData;
             try
             {
@@ -49,7 +57,10 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void experimentButton_Click(object sender, EventArgs e)
         {
-            
+            if (Global.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
+            {
+                Global.GlobalFormMain._contentPanel.Controls.Clear();
+            }
             try
             {
                 ExperimentResultUserControl showData = new ExperimentResultUserControl();

@@ -4,6 +4,7 @@
  */
 
 using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -14,7 +15,7 @@ namespace TestPlatform
         public FormInstructions(string instructionsText)
         {
             InitializeComponent();
-            webBrowser1.DocumentText = instructionsText;
+            helpBrowser.DocumentText = instructionsText;
         }
 
         public FormInstructions(string instructionsText, string fileInstructionPath)
@@ -29,8 +30,15 @@ namespace TestPlatform
                     instructionsText = instructionsText + "\n" + line;
                 }
             }
-            webBrowser1.DocumentText = instructionsText;
+            helpBrowser.DocumentText = instructionsText;
         }
-        
+
+        private void FormInstructions_Resize(object sender, EventArgs e)
+        {
+            Size newSize = this.Size;
+            newSize.Height -= 46; //making sure that content will not be hidden due over size
+            newSize.Width -= 28; //making sure that content will not be hidden due over size
+            helpBrowser.Size = newSize;
+        }
     }
 }

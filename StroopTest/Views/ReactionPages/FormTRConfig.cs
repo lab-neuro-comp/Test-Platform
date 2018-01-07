@@ -1005,5 +1005,12 @@ namespace TestPlatform.Views
                 this.errorProvider1.SetError(this.chooseExpoType, errorMsg);
             }
         }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("TRConfigInstructions", currentCulture));
+            try { infoBox.Show(); }
+            catch (Exception ex) { throw new Exception(ex.Message); }
+        }
     }
 }

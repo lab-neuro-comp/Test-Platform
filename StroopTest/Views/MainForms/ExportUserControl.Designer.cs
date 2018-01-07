@@ -29,17 +29,37 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportUserControl));
+            this.addToOriginList = new System.Windows.Forms.Button();
+            this.addToDestinationList = new System.Windows.Forms.Button();
             this.exportDataGridView = new System.Windows.Forms.DataGridView();
-            this.fileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.locationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deleteItemLabel = new System.Windows.Forms.Label();
-            this.deleteItemButton = new System.Windows.Forms.Button();
-            this.typeComboBox = new System.Windows.Forms.ComboBox();
-            this.btnChoose = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.originDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.exportButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.warningCheckBox = new System.Windows.Forms.CheckBox();
+            this.warningMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.exportDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.originDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // addToOriginList
+            // 
+            resources.ApplyResources(this.addToOriginList, "addToOriginList");
+            this.addToOriginList.Name = "addToOriginList";
+            this.addToOriginList.UseVisualStyleBackColor = true;
+            this.addToOriginList.Click += new System.EventHandler(this.addToOriginList_Click);
+            // 
+            // addToDestinationList
+            // 
+            resources.ApplyResources(this.addToDestinationList, "addToDestinationList");
+            this.addToDestinationList.Name = "addToDestinationList";
+            this.addToDestinationList.UseVisualStyleBackColor = true;
+            this.addToDestinationList.Click += new System.EventHandler(this.addToDestinationList_Click);
             // 
             // exportDataGridView
             // 
@@ -49,9 +69,9 @@
             this.exportDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.exportDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.exportDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fileNameColumn,
-            this.typeColumn,
-            this.locationColumn});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
             resources.ApplyResources(this.exportDataGridView, "exportDataGridView");
             this.exportDataGridView.MultiSelect = false;
             this.exportDataGridView.Name = "exportDataGridView";
@@ -60,58 +80,67 @@
             this.exportDataGridView.RowHeadersVisible = false;
             this.exportDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
-            // fileNameColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.fileNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fileNameColumn.FillWeight = 187.013F;
-            resources.ApplyResources(this.fileNameColumn, "fileNameColumn");
-            this.fileNameColumn.Name = "fileNameColumn";
-            this.fileNameColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.FillWeight = 187.013F;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // typeColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.typeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.typeColumn, "typeColumn");
-            this.typeColumn.Name = "typeColumn";
-            this.typeColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // locationColumn
+            // dataGridViewTextBoxColumn3
             // 
-            resources.ApplyResources(this.locationColumn, "locationColumn");
-            this.locationColumn.Name = "locationColumn";
-            this.locationColumn.ReadOnly = true;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // deleteItemLabel
+            // originDataGridView
             // 
-            resources.ApplyResources(this.deleteItemLabel, "deleteItemLabel");
-            this.deleteItemLabel.Name = "deleteItemLabel";
+            this.originDataGridView.AllowUserToAddRows = false;
+            this.originDataGridView.AllowUserToDeleteRows = false;
+            this.originDataGridView.AllowUserToOrderColumns = true;
+            this.originDataGridView.AllowUserToResizeRows = false;
+            this.originDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.originDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.originDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            resources.ApplyResources(this.originDataGridView, "originDataGridView");
+            this.originDataGridView.MultiSelect = false;
+            this.originDataGridView.Name = "originDataGridView";
+            this.originDataGridView.ReadOnly = true;
+            this.originDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.originDataGridView.RowHeadersVisible = false;
+            this.originDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
-            // deleteItemButton
+            // dataGridViewTextBoxColumn4
             // 
-            resources.ApplyResources(this.deleteItemButton, "deleteItemButton");
-            this.deleteItemButton.Name = "deleteItemButton";
-            this.deleteItemButton.UseVisualStyleBackColor = true;
-            this.deleteItemButton.Click += new System.EventHandler(this.deleteItemButton_Click);
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.FillWeight = 187.013F;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // typeComboBox
+            // dataGridViewTextBoxColumn5
             // 
-            this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.typeComboBox.FormattingEnabled = true;
-            this.typeComboBox.Items.AddRange(new object[] {
-            resources.GetString("typeComboBox.Items"),
-            resources.GetString("typeComboBox.Items1"),
-            resources.GetString("typeComboBox.Items2"),
-            resources.GetString("typeComboBox.Items3")});
-            resources.ApplyResources(this.typeComboBox, "typeComboBox");
-            this.typeComboBox.Name = "typeComboBox";
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // btnChoose
+            // dataGridViewTextBoxColumn6
             // 
-            resources.ApplyResources(this.btnChoose, "btnChoose");
-            this.btnChoose.CausesValidation = false;
-            this.btnChoose.Name = "btnChoose";
-            this.btnChoose.UseVisualStyleBackColor = true;
-            this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
+            resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // exportButton
             // 
@@ -120,32 +149,59 @@
             this.exportButton.UseVisualStyleBackColor = true;
             this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
+            // cancelButton
+            // 
+            resources.ApplyResources(this.cancelButton, "cancelButton");
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // warningCheckBox
+            // 
+            resources.ApplyResources(this.warningCheckBox, "warningCheckBox");
+            this.warningCheckBox.Name = "warningCheckBox";
+            this.warningCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // warningMessage
+            // 
+            this.warningMessage.ForeColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.warningMessage, "warningMessage");
+            this.warningMessage.Name = "warningMessage";
+            // 
             // ExportUserControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.exportButton);
-            this.Controls.Add(this.btnChoose);
-            this.Controls.Add(this.typeComboBox);
-            this.Controls.Add(this.deleteItemLabel);
-            this.Controls.Add(this.deleteItemButton);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.warningCheckBox);
+            this.Controls.Add(this.warningMessage);
+            this.Controls.Add(this.originDataGridView);
             this.Controls.Add(this.exportDataGridView);
+            this.Controls.Add(this.addToOriginList);
+            this.Controls.Add(this.addToDestinationList);
             this.Name = "ExportUserControl";
             ((System.ComponentModel.ISupportInitialize)(this.exportDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.originDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+        private System.Windows.Forms.Button addToOriginList;
+        private System.Windows.Forms.Button addToDestinationList;
         private System.Windows.Forms.DataGridView exportDataGridView;
-        private System.Windows.Forms.Label deleteItemLabel;
-        private System.Windows.Forms.Button deleteItemButton;
-        private System.Windows.Forms.ComboBox typeComboBox;
-        private System.Windows.Forms.Button btnChoose;
+        private System.Windows.Forms.DataGridView originDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Button exportButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fileNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn locationColumn;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.CheckBox warningCheckBox;
+        private System.Windows.Forms.Label warningMessage;
     }
 }

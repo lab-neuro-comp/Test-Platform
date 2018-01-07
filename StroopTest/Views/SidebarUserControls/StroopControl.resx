@@ -127,6 +127,9 @@
   <data name="deleteStroopButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="deleteStroopButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="deleteStroopButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 80</value>
@@ -165,6 +168,9 @@
   <data name="editStroopButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="editStroopButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="editStroopButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 41</value>
   </data>
@@ -200,6 +206,9 @@
   </data>
   <data name="newStroopButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="newStroopButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="newStroopButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 2</value>
@@ -237,6 +246,9 @@
   <data name="recoverStroopButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="recoverStroopButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="recoverStroopButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 119</value>
   </data>
@@ -268,15 +280,18 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 16</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 995</value>
+    <value>271, 1225</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>StroopControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6571.30816, Culture=neutral, PublicKeyToken=null</value>
+    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6578.21663, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

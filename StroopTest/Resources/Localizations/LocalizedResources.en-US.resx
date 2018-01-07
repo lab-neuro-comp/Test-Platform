@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1971,5 +1971,7 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
    &lt;/body&gt;
 &lt;/html&gt;</value>
   </data>
->>>>>>> a1f957f70461cc8bdb2813b3e5046af13cd1e947
+  <data name="exportSuccess" xml:space="preserve">
+    <value>Files were exported with success!</value>
+  </data>
 </root>

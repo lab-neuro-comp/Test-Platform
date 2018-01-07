@@ -37,6 +37,7 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.existingLabel = new System.Windows.Forms.Label();
             this.deletingLabel = new System.Windows.Forms.Label();
+            this.helpButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // existingList
@@ -93,10 +94,20 @@
             resources.ApplyResources(this.deletingLabel, "deletingLabel");
             this.deletingLabel.Name = "deletingLabel";
             // 
+            // helpButton
+            // 
+            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
+            resources.ApplyResources(this.helpButton, "helpButton");
+            this.helpButton.Name = "helpButton";
+            this.helpButton.UseVisualStyleBackColor = false;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+            // 
             // ListManagment
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.helpButton);
             this.Controls.Add(this.deletingLabel);
             this.Controls.Add(this.existingLabel);
             this.Controls.Add(this.deleteButton);
@@ -121,5 +132,6 @@
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Label existingLabel;
         private System.Windows.Forms.Label deletingLabel;
+        private System.Windows.Forms.Button helpButton;
     }
 }

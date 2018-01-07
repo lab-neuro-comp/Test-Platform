@@ -165,6 +165,13 @@ namespace TestPlatform.Views.ListsPages
             MessageBox.Show(LocRM.GetString("listsDeleted", currentCulture));
         }
 
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("listDeleteInstructions", currentCulture));
+            try { infoBox.Show(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
         private void loadExistingList()
         {
             if (suffix == "_audio" || suffix == "_image")

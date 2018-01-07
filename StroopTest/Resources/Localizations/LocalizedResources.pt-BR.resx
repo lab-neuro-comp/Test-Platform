@@ -1301,7 +1301,7 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="exportSuccess" xml:space="preserve">
     <value>Arquivos exportados com sucesso</value>
-    </data>
+  </data>
   <data name="experimentConfigInstructions" xml:space="preserve">
     <value>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1974,5 +1974,64 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="listsDeleted" xml:space="preserve">
     <value>Todas as listas selecionadas foram excluídas com sucesso!</value>
+  </data>
+  <data name="listDeleteInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;Geral&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Listas existentes&lt;/td&gt;
+	    &lt;td&gt;Indica as listas existentes e os arquivos pertencentes a ela.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Arquivos que serão excluídos&lt;/td&gt;
+            &lt;td&gt;Indica o nome da lista que será excluída e os arquivos pertencentes a ela que também serão excluídos.&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
 </root>

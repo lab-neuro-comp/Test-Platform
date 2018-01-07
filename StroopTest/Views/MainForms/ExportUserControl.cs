@@ -15,6 +15,8 @@ namespace TestPlatform.Views.MainForms
         // properties used to localize strings during runtime
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+
+        // file paths used in methods of this class
         private string listPath = Global.testFilesPath + Global.listFolderName;
         private string reactioPath = Global.reactionTestFilesPath + Global.programFolderName;
         private string stroopPath = Global.stroopTestFilesPath + Global.programFolderName;
@@ -24,20 +26,18 @@ namespace TestPlatform.Views.MainForms
         {
             this.Dock = DockStyle.Fill;
             InitializeComponent();
-            // initializing table with reaction test, stroop test, experiments, color and word lists
+
+            // initializing  origin table with reaction test, stroop test, experiments, color and word lists giving user options from what to export
             InitializeTypeFile(reactioPath, LocRM.GetString("reactionTest", currentCulture), "prg");
             InitializeTypeFile(stroopPath, LocRM.GetString("stroopTest", currentCulture), "prg");
             InitializeTypeFile(experimentPath, LocRM.GetString("experiment", currentCulture), "prg");
             InitializeTypeFile(listPath, LocRM.GetString("lists", currentCulture), "lst");
-
             InitializeTypeLists();
-
             originDataGridView.Refresh();
 
-            
-            
         }
 
+        // fills table with lists such as image and audio lists, that are composed by a directory full of files, instead of just a file
         private void InitializeTypeLists()
         {
             string[] filePaths = Directory.GetDirectories(listPath, ("*_*"));
@@ -49,6 +49,7 @@ namespace TestPlatform.Views.MainForms
             }
         }
 
+        // fills table with files such as programs and lists that are only composed by one file being .prg or .lst
         private void InitializeTypeFile(string path, string type, string termination)
         {
             string[] filePaths = Directory.GetFiles(path, ("*." + termination), SearchOption.AllDirectories);
@@ -60,6 +61,8 @@ namespace TestPlatform.Views.MainForms
             }
         }
 
+
+        // verifies which programs are in an experiment and  add it and its lists to export list in case they aren't already there
         private void addPrograms(string experimentName)
         {
             ExperimentProgram experiment = new ExperimentProgram();
@@ -89,6 +92,7 @@ namespace TestPlatform.Views.MainForms
             exportDataGridView.Refresh();
         }
 
+        // verifies if an item is in the export list
         private bool isAlreadyThere(string name, string type)
         {
             foreach(DataGridViewRow row in exportDataGridView.Rows)
@@ -100,7 +104,8 @@ namespace TestPlatform.Views.MainForms
             }
             return false;
         }
-
+    
+        // add lists from a program to export list, in case they aren't already there
         private void addLists(Program newProgram)
         {
             string path = listPath;
@@ -144,6 +149,7 @@ namespace TestPlatform.Views.MainForms
             exportDataGridView.Refresh();
         }
 
+        // remove item from the origin list, used when item is being transfered to export list
         private void removeItemOrigin(string itemName, string itemType)
         {
             foreach(DataGridViewRow row in originDataGridView.Rows)
@@ -157,6 +163,7 @@ namespace TestPlatform.Views.MainForms
             }            
         }
 
+        // exporting items to directories accordingly to type and zipping them together
         private void exportButton_Click(object sender, EventArgs e)
         {
             SaveFileDialog  saveFileDialog = new SaveFileDialog();
@@ -276,5 +283,9 @@ namespace TestPlatform.Views.MainForms
             
         }
 
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Parent.Controls.Remove(this);
+        }
     }
 }

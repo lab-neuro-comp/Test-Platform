@@ -823,8 +823,12 @@ namespace TestPlatform
         {
             if (exportButton.Checked)
             {
+                // clearing up main page and making sure that export page won't be opened again when closed
                 this.sideBarPanel.Controls.Clear();
                 this._contentPanel.Controls.Clear();
+                exportButton.Checked = false;
+
+                // creating new exporting page instance
                 ExportUserControl exportView = new ExportUserControl();
                 this._contentPanel.Controls.Add(exportView);
             }

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1980,5 +1980,8 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   </data>
   <data name="listsDeleted" xml:space="preserve">
     <value>All selected lists were deleted sucessful!</value>
+  </data>
+  <data name="exportSuccess" xml:space="preserve">
+    <value>Files were exported with success!</value>
   </data>
 </root>

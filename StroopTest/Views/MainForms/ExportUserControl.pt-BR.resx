@@ -117,40 +117,42 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="numberFilesLabel.Text" xml:space="preserve">
-    <value>Arquivos na Lista</value>
-  </data>
-  <data name="fileNameColumn.HeaderText" xml:space="preserve">
-    <value>Nome do Arquivo</value>
-  </data>
-  <data name="typeColumn.HeaderText" xml:space="preserve">
-    <value>Tipo</value>
-  </data>
-  <data name="locationColumn.HeaderText" xml:space="preserve">
-    <value>location</value>
-  </data>
-  <data name="deleteItemLabel.Text" xml:space="preserve">
-    <value>Apagar Item:</value>
-  </data>
-  <data name="deleteItemButton.Text" xml:space="preserve">
-    <value>Apagar</value>
-  </data>
-  <data name="typeComboBox.Items" xml:space="preserve">
-    <value>Lista</value>
-  </data>
-  <data name="typeComboBox.Items1" xml:space="preserve">
-    <value>Stroop</value>
-  </data>
-  <data name="typeComboBox.Items2" xml:space="preserve">
-    <value>Tempo de Reação</value>
-  </data>
-  <data name="typeComboBox.Items3" xml:space="preserve">
-    <value>Experimento</value>
-  </data>
-  <data name="btnChoose.Text" xml:space="preserve">
-    <value>Selecionar</value>
-  </data>
   <data name="exportButton.Text" xml:space="preserve">
     <value>exportar</value>
+  </data>
+  <data name="addToOriginList.Text" xml:space="preserve">
+    <value>&lt;&lt;</value>
+    
+  </data>
+  <data name="addToDestinationList.Text" xml:space="preserve">
+    <value>&gt;&gt;</value>
+    
+  </data>
+  <data name="dataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
+    <value>Nome do Arquivo</value>
+  </data>
+  <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="dataGridViewTextBoxColumn3.HeaderText" xml:space="preserve">
+    <value>location</value>
+  </data>
+  <data name="dataGridViewTextBoxColumn4.HeaderText" xml:space="preserve">
+    <value>Nome do Arquivo</value>
+  </data>
+  <data name="dataGridViewTextBoxColumn5.HeaderText" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="dataGridViewTextBoxColumn6.HeaderText" xml:space="preserve">
+    <value>location</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>cancelar</value>
+  </data>
+  <data name="warningCheckBox.Text" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="warningMessage.Text" xml:space="preserve">
+    <value> </value>
   </data>
 </root>

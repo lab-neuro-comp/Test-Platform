@@ -823,8 +823,12 @@ namespace TestPlatform
         {
             if (exportButton.Checked)
             {
+                // clearing up main page and making sure that export page won't be opened again when closed
                 this.sideBarPanel.Controls.Clear();
                 this._contentPanel.Controls.Clear();
+                exportButton.Checked = false;
+
+                // creating new exporting page instance
                 ExportUserControl exportView = new ExportUserControl();
                 this._contentPanel.Controls.Add(exportView);
             }
@@ -849,47 +853,32 @@ namespace TestPlatform
                         importFiles(importDirectory + "/StroopProgram/", Global.stroopTestFilesPath + Global.programFolderName);
                         importFiles(importDirectory + "/ReactionProgram/", Global.reactionTestFilesPath + Global.programFolderName);
                         importFiles(importDirectory + "/ExperimentProgram/", Global.experimentTestFilesPath + Global.programFolderName);
-                        importFiles(importDirectory + "/StringLists/", Global.testFilesPath + Global.listFolderName);
-                        importListFiles(importDirectory + "/FileLists");
+                        importFiles(importDirectory + "/Lists/", Global.testFilesPath + Global.listFolderName);
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
         }
 
-        private void importListFiles(string directory)
-        {
-            //move to images directory
-            string imageDirectory = Global.testFilesPath + "/list_files/";
-            Directory.Move(directory, imageDirectory);
-            string[] directories = Directory.GetDirectories(imageDirectory);
-            foreach(string listDirectory in directories)
-            {
-                string listName = listDirectory + "/" + Path.GetFileName(listDirectory) + ".lst";
-
-                string[] listContent = StroopProgram.readDirListFile(listName);
-                List<string> newList = new List<string>();
-                foreach(string entry in listContent)
-                {
-                    string fileName = Path.GetFileName(entry);
-                    newList.Add(listDirectory + "/" + fileName);
-                }
-
-                string[] listConfig = Path.GetFileName(listDirectory).Split('_');
-                StrList newlist = new StrList(newList ,listConfig[0], "_" + listConfig[1]);
-                newlist.saveDirectories();
-                MessageBox.Show(LocRM.GetString("import",currentCulture));
-            }
-        }
 
         private void importFiles(string currentDirectory, string targetDirectory)
         {
-            foreach (var file in Directory.GetFiles(currentDirectory))
+            DirectoryInfo dir = new DirectoryInfo(currentDirectory);
+            FileInfo[] files = dir.GetFiles();
+            foreach (FileInfo file in files)
             {
-                File.Copy(file, Path.Combine(targetDirectory, Path.GetFileName(file)), true);
+                string temppath = Path.Combine(targetDirectory, file.Name);
+                file.CopyTo(temppath, false);
+            }
+
+            DirectoryInfo[] dirs = dir.GetDirectories();
+            foreach (DirectoryInfo subdir in dirs)
+            {
+                string temppath = Path.Combine(targetDirectory, subdir.Name);
+                importFiles(subdir.FullName, temppath);
             }
         }
 

@@ -169,6 +169,7 @@
             resources.ApplyResources(this.addToDestinationList, "addToDestinationList");
             this.addToDestinationList.Name = "addToDestinationList";
             this.addToDestinationList.UseVisualStyleBackColor = true;
+            this.addToDestinationList.Click += new System.EventHandler(this.addToDestinationList_Click);
             // 
             // fileLabel
             // 

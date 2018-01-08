@@ -65,8 +65,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>icon3_TestPlatForm.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -582,6 +581,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icon3_TestPlatForm.ico" />
     <Content Include="Resources\icons\circle.png" />
     <Content Include="Resources\icons\cross.png" />
     <Content Include="Resources\icons\helpButton.png" />

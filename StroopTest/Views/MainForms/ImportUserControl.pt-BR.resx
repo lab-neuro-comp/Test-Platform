@@ -159,4 +159,11 @@
   <data name="fileLabel.Text" xml:space="preserve">
     <value>Arquivo</value>
   </data>
+  <data name="warningMessage.Text" xml:space="preserve">
+    <value>Aviso: Itens marcados em vermelho indicam arquivos com o mesmo nome já existentes. Importar esses arquivos irá sobreescrever os já existente, não sendo possível recuperá-los.
+</value>
+  </data>
+  <data name="warningCheckBox.Text" xml:space="preserve">
+    <value>Li e compreendo os riscos.</value>
+  </data>
 </root>

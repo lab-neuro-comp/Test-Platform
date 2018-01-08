@@ -93,11 +93,11 @@ namespace TestPlatform.Views.ExperimentPages
             if (result != null)
             {
                 programDataGridView.Rows.Add(result[1], result[0]);
-                if (result[0] == "StroopTest")
+                if (result[0] == LocRM.GetString("stroopTest", currentCulture))
                 {
                     savingExperiment.AddStroopProgram(result[1]);
                 }
-                else if (result[0] == "ReactionTest")
+                else if (result[0] == LocRM.GetString("reactionTest", currentCulture))
                 {
                     savingExperiment.AddReactionProgram(result[1]);
                 }
@@ -153,7 +153,6 @@ namespace TestPlatform.Views.ExperimentPages
         {
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
-
                 savingExperiment.Name = experimentNameTextBox.Text;
                 savingExperiment.IsOrderRandom = randomOrderCheckbox.Checked;
                 savingExperiment.IntervalTime = Convert.ToInt32(intervalTime.Value);
@@ -170,6 +169,8 @@ namespace TestPlatform.Views.ExperimentPages
                 {
                     savingExperiment.InstructionText = null;
                 }
+
+                // checking if there is a training program
                 if (programDataGridView.Rows[0].Cells[0].Style.BackColor == Color.LightGray)
                 {
                     savingExperiment.TrainingProgram = true;
@@ -178,6 +179,8 @@ namespace TestPlatform.Views.ExperimentPages
                 {
                     savingExperiment.TrainingProgram = false;
                 }
+
+                //saving experiment
                 if (savingExperiment.SaveExperimentFile(Global.experimentTestFilesPath + Global.programFolderName))
                 {
                     MessageBox.Show(LocRM.GetString("programSaved", currentCulture));

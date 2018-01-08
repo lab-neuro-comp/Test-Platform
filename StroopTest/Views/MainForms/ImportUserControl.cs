@@ -19,27 +19,22 @@ namespace TestPlatform.Views.MainForms
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
+        // file paths used in methods of this class
+        private string listPath = Global.testFilesPath + Global.listFolderName;
+        private string reactioPath = Global.reactionTestFilesPath + Global.programFolderName;
+        private string stroopPath = Global.stroopTestFilesPath + Global.programFolderName;
+        private string experimentPath = Global.experimentTestFilesPath + Global.programFolderName;
+
         public ImportUserControl()
         {
             InitializeComponent();
         }
 
-        private void importFiles(string currentDirectory, string targetDirectory)
+        private void importFile(string currentDirectory, string fileName,string targetDirectory)
         {
-            DirectoryInfo dir = new DirectoryInfo(currentDirectory);
-            FileInfo[] files = dir.GetFiles();
-            foreach (FileInfo file in files)
-            {
-                string temppath = Path.Combine(targetDirectory, file.Name);
-                file.CopyTo(temppath, false);
-            }
-
-            DirectoryInfo[] dirs = dir.GetDirectories();
-            foreach (DirectoryInfo subdir in dirs)
-            {
-                string temppath = Path.Combine(targetDirectory, subdir.Name);
-                importFiles(subdir.FullName, temppath);
-            }
+            string destinationPath = Path.Combine(targetDirectory, fileName);
+            string sourcePath = Path.Combine(currentDirectory, fileName);
+            File.Copy(sourcePath, destinationPath);
         }
 
         private void addFilesToOriginGrid(string directory, string type)
@@ -49,13 +44,27 @@ namespace TestPlatform.Views.MainForms
 
             foreach (FileInfo file in files)
             {
-                originDataGridView.Rows.Add(file.Name, type, directory);
+                originDataGridView.Rows.Add(Path.GetFileNameWithoutExtension(file.Name), type, directory);
             }
 
             DirectoryInfo[] dirs = dir.GetDirectories();
             foreach (DirectoryInfo subdir in dirs)
             {
                 originDataGridView.Rows.Add(subdir.Name, type, directory);
+            }
+        }
+
+        private void importListContent(string listName, string listSourcePath)
+        {
+            DirectoryInfo dir = new DirectoryInfo(listSourcePath + "/" + listName);
+            FileInfo[] files = dir.GetFiles();
+
+            // create directory and copy files that are in list to it
+            Directory.CreateDirectory(listPath + "/" + listName);
+            foreach (FileInfo file in files)
+            {
+                string temppath = Path.Combine(listPath + "/" + listName, file.Name);
+                file.CopyTo(temppath, false);
             }
         }
 
@@ -66,7 +75,15 @@ namespace TestPlatform.Views.MainForms
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                Directory.Delete(importDirectory, true);
+                if (Directory.Exists(importDirectory))
+                {
+                    Directory.Delete(importDirectory, true);
+                    Directory.CreateDirectory(importDirectory);
+                }
+                else
+                {
+                    Directory.CreateDirectory(importDirectory);
+                }
                 ZipFile.ExtractToDirectory(openFileDialog.FileName, importDirectory);
                 fileTextBox.Text = openFileDialog.FileName;
 
@@ -76,5 +93,66 @@ namespace TestPlatform.Views.MainForms
                 addFilesToOriginGrid(importDirectory + "/Lists/", LocRM.GetString("lists", currentCulture));
             }
         }
+
+        private void importAllCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (importAllCheckbox.Checked)
+            {
+                for (int i = 0; i < originDataGridView.Rows.Count; i++)
+                {
+                    importDataGridView.Rows.Add();
+                    for (int j = 0; j < originDataGridView.Columns.Count; j++)
+                    {
+                        importDataGridView.Rows[i].Cells[j].Value = originDataGridView.Rows[i].Cells[j].Value;
+
+                    }
+                }
+                originDataGridView.Rows.Clear();
+            }
+            else
+            {
+                /* do nothing */
+            }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Parent.Controls.Remove(this);
+        }
+
+        private void importButton_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in importDataGridView.Rows)
+            {
+                if (row.Cells[1].Value.ToString() == LocRM.GetString("lists", currentCulture))
+                {
+                    if ((row.Cells[0].Value.ToString().Split('_')[1] == "color") || (row.Cells[0].Value.ToString().Split('_')[1] == "words"))
+                    {
+                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".lst", listPath);
+                    }
+                    else
+                    {
+                        importListContent(row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
+                    }
+                }
+                else if (row.Cells[1].Value.ToString() == LocRM.GetString("reactionTest", currentCulture))
+                {
+                    importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", reactioPath);
+                }
+                else if (row.Cells[1].Value.ToString() == LocRM.GetString("stroopTest", currentCulture))
+                {
+                    importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", stroopPath);
+                }
+                else if (row.Cells[1].Value.ToString() == LocRM.GetString("experiment", currentCulture))
+                {
+                    importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", experimentPath);
+                }
+
+            }
+
+            MessageBox.Show(LocRM.GetString("importSuccess", currentCulture));
+            Parent.Controls.Remove(this);
+        }
+        
     }
 }

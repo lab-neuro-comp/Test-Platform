@@ -37,7 +37,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.exportDataGridView = new System.Windows.Forms.DataGridView();
+            this.importDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +48,7 @@
             this.openButton = new System.Windows.Forms.Button();
             this.importAllCheckbox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.originDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exportDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.importDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // importButton
@@ -56,12 +56,14 @@
             resources.ApplyResources(this.importButton, "importButton");
             this.importButton.Name = "importButton";
             this.importButton.UseVisualStyleBackColor = true;
+            this.importButton.Click += new System.EventHandler(this.importButton_Click);
             // 
             // cancelButton
             // 
             resources.ApplyResources(this.cancelButton, "cancelButton");
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // warningCheckBox
             // 
@@ -116,24 +118,24 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
-            // exportDataGridView
+            // importDataGridView
             // 
-            this.exportDataGridView.AllowUserToAddRows = false;
-            this.exportDataGridView.AllowUserToOrderColumns = true;
-            this.exportDataGridView.AllowUserToResizeRows = false;
-            this.exportDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.exportDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.exportDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.importDataGridView.AllowUserToAddRows = false;
+            this.importDataGridView.AllowUserToOrderColumns = true;
+            this.importDataGridView.AllowUserToResizeRows = false;
+            this.importDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.importDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.importDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            resources.ApplyResources(this.exportDataGridView, "exportDataGridView");
-            this.exportDataGridView.MultiSelect = false;
-            this.exportDataGridView.Name = "exportDataGridView";
-            this.exportDataGridView.ReadOnly = true;
-            this.exportDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.exportDataGridView.RowHeadersVisible = false;
-            this.exportDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            resources.ApplyResources(this.importDataGridView, "importDataGridView");
+            this.importDataGridView.MultiSelect = false;
+            this.importDataGridView.Name = "importDataGridView";
+            this.importDataGridView.ReadOnly = true;
+            this.importDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.importDataGridView.RowHeadersVisible = false;
+            this.importDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -191,6 +193,7 @@
             resources.ApplyResources(this.importAllCheckbox, "importAllCheckbox");
             this.importAllCheckbox.Name = "importAllCheckbox";
             this.importAllCheckbox.UseVisualStyleBackColor = true;
+            this.importAllCheckbox.CheckedChanged += new System.EventHandler(this.importAllCheckbox_CheckedChanged);
             // 
             // ImportUserControl
             // 
@@ -205,12 +208,12 @@
             this.Controls.Add(this.warningCheckBox);
             this.Controls.Add(this.warningMessage);
             this.Controls.Add(this.originDataGridView);
-            this.Controls.Add(this.exportDataGridView);
+            this.Controls.Add(this.importDataGridView);
             this.Controls.Add(this.addToOriginList);
             this.Controls.Add(this.addToDestinationList);
             this.Name = "ImportUserControl";
             ((System.ComponentModel.ISupportInitialize)(this.originDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exportDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.importDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,7 +229,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridView exportDataGridView;
+        private System.Windows.Forms.DataGridView importDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

@@ -41,8 +41,6 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.exportButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.warningCheckBox = new System.Windows.Forms.CheckBox();
-            this.warningMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.exportDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.originDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -156,26 +154,12 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // warningCheckBox
-            // 
-            resources.ApplyResources(this.warningCheckBox, "warningCheckBox");
-            this.warningCheckBox.Name = "warningCheckBox";
-            this.warningCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // warningMessage
-            // 
-            this.warningMessage.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.warningMessage, "warningMessage");
-            this.warningMessage.Name = "warningMessage";
-            // 
             // ExportUserControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.exportButton);
             this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.warningCheckBox);
-            this.Controls.Add(this.warningMessage);
             this.Controls.Add(this.originDataGridView);
             this.Controls.Add(this.exportDataGridView);
             this.Controls.Add(this.addToOriginList);
@@ -201,7 +185,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Button exportButton;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.CheckBox warningCheckBox;
-        private System.Windows.Forms.Label warningMessage;
     }
 }

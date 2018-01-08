@@ -184,6 +184,12 @@
       <DependentUpon>FormDefineTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Global.cs" />
+    <Compile Include="Views\MainForms\ImportUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MainForms\ImportUserControl.Designer.cs">
+      <DependentUpon>ImportUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ReactionPages\FormReactExposition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -420,6 +426,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormMain.pt-BR.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\ImportUserControl.en-US.resx">
+      <DependentUpon>ImportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\ImportUserControl.pt-BR.resx">
+      <DependentUpon>ImportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\ImportUserControl.resx">
+      <DependentUpon>ImportUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\FormReactExposition.resx">
       <DependentUpon>FormReactExposition.cs</DependentUpon>

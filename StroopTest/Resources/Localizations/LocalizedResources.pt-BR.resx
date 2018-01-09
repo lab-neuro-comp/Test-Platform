@@ -2034,4 +2034,13 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
    &lt;/body&gt;
 &lt;/html&gt;</value>
   </data>
+  <data name="importSuccess" xml:space="preserve">
+    <value>Os arquivos foram importados com sucesso.</value>
+  </data>
+  <data name="agreeConditions" xml:space="preserve">
+    <value>Você tem que concordar com as condições para continuar.</value>
+  </data>
+  <data name="fieldNotFilled" xml:space="preserve">
+    <value>Este campo não pode ser deixado em branco</value>
+  </data>
 </root>

@@ -843,42 +843,17 @@ namespace TestPlatform
                 {
                     this.sideBarPanel.Controls.Clear();
                     this._contentPanel.Controls.Clear();
-                    OpenFileDialog openFileDialog = new OpenFileDialog();
-                    openFileDialog.Filter = "ZIP|*.zip";
+                    importButton.Checked = false;
 
-                    if (openFileDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        string importDirectory = Global.testFilesPath + "/import";
-                        ZipFile.ExtractToDirectory(openFileDialog.FileName, importDirectory);
-                        importFiles(importDirectory + "/StroopProgram/", Global.stroopTestFilesPath + Global.programFolderName);
-                        importFiles(importDirectory + "/ReactionProgram/", Global.reactionTestFilesPath + Global.programFolderName);
-                        importFiles(importDirectory + "/ExperimentProgram/", Global.experimentTestFilesPath + Global.programFolderName);
-                        importFiles(importDirectory + "/Lists/", Global.testFilesPath + Global.listFolderName);
-                    }
+                    // creating new importing page instance
+                    ImportUserControl importView = new ImportUserControl();
+                    this._contentPanel.Controls.Add(importView);
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
-        }
-
-
-        private void importFiles(string currentDirectory, string targetDirectory)
-        {
-            DirectoryInfo dir = new DirectoryInfo(currentDirectory);
-            FileInfo[] files = dir.GetFiles();
-            foreach (FileInfo file in files)
-            {
-                string temppath = Path.Combine(targetDirectory, file.Name);
-                file.CopyTo(temppath, false);
-            }
-
-            DirectoryInfo[] dirs = dir.GetDirectories();
-            foreach (DirectoryInfo subdir in dirs)
-            {
-                string temppath = Path.Combine(targetDirectory, subdir.Name);
-                importFiles(subdir.FullName, temppath);
             }
         }
 

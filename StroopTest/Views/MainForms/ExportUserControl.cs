@@ -68,6 +68,7 @@ namespace TestPlatform.Views.MainForms
             ExperimentProgram experiment = new ExperimentProgram();
             experiment.ExperimentName = experimentName;
             experiment.ReadProgramFile();
+
             foreach (Program program in experiment.ProgramList)
             {
                 if (program.GetType() == typeof(StroopProgram))
@@ -267,6 +268,10 @@ namespace TestPlatform.Views.MainForms
             else if (selectedRowType == LocRM.GetString("experiment", currentCulture))
             {
                addPrograms(selectedRowName);
+            }
+            else
+            {
+                /* do nothing*/
             }
         }
 

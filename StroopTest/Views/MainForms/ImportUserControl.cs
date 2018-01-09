@@ -95,7 +95,7 @@ namespace TestPlatform.Views.MainForms
         }
 
         // remove item from the origin list, used when item is being transfered to export list
-        private string removeItemOrigin(string itemName, string itemType)
+        private string[] removeItemOrigin(string itemName, string itemType)
         {
             foreach (DataGridViewRow row in originDataGridView.Rows)
             {
@@ -103,8 +103,9 @@ namespace TestPlatform.Views.MainForms
                 {
                     int rowIndex = row.Index;
                     string path = originDataGridView.Rows[rowIndex].Cells[2].Value.ToString();
+                    string color = originDataGridView.Rows[rowIndex].DefaultCellStyle.BackColor.Name.ToString();
                     originDataGridView.Rows.RemoveAt(rowIndex);
-                    return path;
+                    return new string[] { path, color };
                 }
             }
             return null;
@@ -122,8 +123,9 @@ namespace TestPlatform.Views.MainForms
                 {
                     if (!isAlreadyThere(program.ProgramName, LocRM.GetString("stroopTest", currentCulture)))
                     {
-                        string path = removeItemOrigin(program.ProgramName, LocRM.GetString("stroopTest", currentCulture));
-                        importDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("stroopTest", currentCulture), path);
+                        string[] info = removeItemOrigin(program.ProgramName, LocRM.GetString("stroopTest", currentCulture));
+                        int index = importDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("stroopTest", currentCulture), info[0]);
+                        importDataGridView.Rows[index].DefaultCellStyle.BackColor = Color.FromName(info[1]);
                         addLists(program);
                     }
                 }
@@ -131,8 +133,9 @@ namespace TestPlatform.Views.MainForms
                 {
                     if (!isAlreadyThere(program.ProgramName, LocRM.GetString("reactionTest", currentCulture)))
                     {
-                        string path = removeItemOrigin(program.ProgramName, LocRM.GetString("reactionTest", currentCulture));
-                        importDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("reactionTest", currentCulture), path);
+                        string[] info = removeItemOrigin(program.ProgramName, LocRM.GetString("reactionTest", currentCulture));
+                        int index = importDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("reactionTest", currentCulture), info[0]);
+                        importDataGridView.Rows[index].DefaultCellStyle.BackColor = Color.FromName(info[1]);
                         addLists(program);
                     }
                 }
@@ -150,8 +153,9 @@ namespace TestPlatform.Views.MainForms
 
                 if (!isAlreadyThere(fileName, LocRM.GetString("lists", currentCulture)))
                 {
-                    string importPath = removeItemOrigin(fileName, LocRM.GetString("lists", currentCulture));
-                    importDataGridView.Rows.Add(fileName, LocRM.GetString("lists", currentCulture), importPath);
+                    string[] info = removeItemOrigin(fileName, LocRM.GetString("lists", currentCulture));
+                    int index = importDataGridView.Rows.Add(fileName, LocRM.GetString("lists", currentCulture), info[0]);
+                    importDataGridView.Rows[index].DefaultCellStyle.BackColor = Color.FromName(info[1]);
                 }
             }
             if (newProgram.getColorListFile() != null)
@@ -159,8 +163,9 @@ namespace TestPlatform.Views.MainForms
                 string fileName = newProgram.getColorListFile().ListName + "_color";
                 if (!isAlreadyThere(fileName, LocRM.GetString("lists", currentCulture)))
                 {
-                    string importPath = removeItemOrigin(fileName, LocRM.GetString("lists", currentCulture));
-                    importDataGridView.Rows.Add(fileName, LocRM.GetString("lists", currentCulture), importPath);
+                    string[] info = removeItemOrigin(fileName, LocRM.GetString("lists", currentCulture));
+                    int index = importDataGridView.Rows.Add(fileName, LocRM.GetString("lists", currentCulture), info[0]);
+                    importDataGridView.Rows[index].DefaultCellStyle.BackColor = Color.FromName(info[1]);
                 }
             }
             if (newProgram.getImageListFile() != null)
@@ -168,8 +173,9 @@ namespace TestPlatform.Views.MainForms
                 string fileName = newProgram.getImageListFile().ListName + "_image";
                 if (!isAlreadyThere(fileName, LocRM.GetString("lists", currentCulture)))
                 {
-                    string importPath = removeItemOrigin(fileName, LocRM.GetString("lists", currentCulture));
-                    importDataGridView.Rows.Add(fileName, LocRM.GetString("lists", currentCulture), importPath);
+                    string[] info = removeItemOrigin(fileName, LocRM.GetString("lists", currentCulture));
+                    int index = importDataGridView.Rows.Add(fileName, LocRM.GetString("lists", currentCulture), info[0]);
+                    importDataGridView.Rows[index].DefaultCellStyle.BackColor = Color.FromName(info[1]);
                 }
             }
             if (newProgram.getWordListFile() != null)
@@ -177,8 +183,9 @@ namespace TestPlatform.Views.MainForms
                 string fileName = newProgram.getWordListFile().ListName + "_words";
                 if (!isAlreadyThere(fileName, LocRM.GetString("lists", currentCulture)))
                 {
-                    string importPath = removeItemOrigin(fileName, LocRM.GetString("lists", currentCulture));
-                    importDataGridView.Rows.Add(fileName, LocRM.GetString("lists", currentCulture), importPath);
+                    string[] info = removeItemOrigin(fileName, LocRM.GetString("lists", currentCulture));
+                    int index = importDataGridView.Rows.Add(fileName, LocRM.GetString("lists", currentCulture), info[0]);
+                    importDataGridView.Rows[index].DefaultCellStyle.BackColor = Color.FromName(info[1]);
                 }
             }
             importDataGridView.Refresh();
@@ -191,14 +198,17 @@ namespace TestPlatform.Views.MainForms
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                Directory.CreateDirectory(importDirectory);
+                originDataGridView.Rows.Clear();
+                importDataGridView.Rows.Clear();
                 if (Directory.Exists(importDirectory))
                 {
                     Directory.Delete(importDirectory, true);
-                    Directory.CreateDirectory(importDirectory);
+                    
                 }
                 else
                 {
-                    Directory.CreateDirectory(importDirectory);
+                    /* do nothing */
                 }
                 ZipFile.ExtractToDirectory(openFileDialog.FileName, importDirectory);
                 fileTextBox.Text = openFileDialog.FileName;
@@ -207,6 +217,10 @@ namespace TestPlatform.Views.MainForms
                 addFilesToOriginGrid(importDirectory + "/ReactionProgram/", LocRM.GetString("reactionTest", currentCulture), reactionPath);
                 addFilesToOriginGrid(importDirectory + "/ExperimentProgram/", LocRM.GetString("experiment", currentCulture), experimentPath);
                 addFilesToOriginGrid(importDirectory + "/Lists/", LocRM.GetString("lists", currentCulture), listPath);
+            }
+            else
+            {
+                /* do nothing */
             }
         }
 
@@ -240,66 +254,144 @@ namespace TestPlatform.Views.MainForms
 
         private void importButton_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in importDataGridView.Rows)
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
-                if (row.Cells[1].Value.ToString() == LocRM.GetString("lists", currentCulture))
+                foreach (DataGridViewRow row in importDataGridView.Rows)
                 {
-                    if ((row.Cells[0].Value.ToString().Split('_')[1] == "color") || (row.Cells[0].Value.ToString().Split('_')[1] == "words"))
+                    if (row.Cells[1].Value.ToString() == LocRM.GetString("lists", currentCulture))
                     {
-                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".lst", listPath);
+                        if ((row.Cells[0].Value.ToString().Split('_')[1] == "color") || (row.Cells[0].Value.ToString().Split('_')[1] == "words"))
+                        {
+                            importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".lst", listPath);
+                        }
+                        else
+                        {
+                            importListContent(row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
+                        }
                     }
-                    else
+                    else if (row.Cells[1].Value.ToString() == LocRM.GetString("reactionTest", currentCulture))
                     {
-                        importListContent(row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
+                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", reactionPath);
                     }
-                }
-                else if (row.Cells[1].Value.ToString() == LocRM.GetString("reactionTest", currentCulture))
-                {
-                    importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", reactionPath);
-                }
-                else if (row.Cells[1].Value.ToString() == LocRM.GetString("stroopTest", currentCulture))
-                {
-                    importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", stroopPath);
-                }
-                else if (row.Cells[1].Value.ToString() == LocRM.GetString("experiment", currentCulture))
-                {
-                    importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", experimentPath);
+                    else if (row.Cells[1].Value.ToString() == LocRM.GetString("stroopTest", currentCulture))
+                    {
+                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", stroopPath);
+                    }
+                    else if (row.Cells[1].Value.ToString() == LocRM.GetString("experiment", currentCulture))
+                    {
+                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", experimentPath);
+                    }
+
                 }
 
+                MessageBox.Show(LocRM.GetString("importSuccess", currentCulture));
+                Parent.Controls.Remove(this);
             }
-
-            MessageBox.Show(LocRM.GetString("importSuccess", currentCulture));
-            Parent.Controls.Remove(this);
+            else
+            {
+                MessageBox.Show(LocRM.GetString("fieldNotRight", currentCulture));
+            }
         }
 
         private void addToDestinationList_Click(object sender, EventArgs e)
         {
-            string selectedRowType = originDataGridView.SelectedRows[0].Cells[1].Value.ToString();
-            string selectedRowName = originDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            int index = importDataGridView.Rows.Add();
-            importDataGridView.Rows[index].Cells[0].Value = (originDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-            importDataGridView.Rows[index].Cells[1].Value = (originDataGridView.SelectedRows[0].Cells[1].Value.ToString());
-            importDataGridView.Rows[index].Cells[2].Value = (originDataGridView.SelectedRows[0].Cells[2].Value.ToString());
-
-
-            originDataGridView.Rows.Remove(originDataGridView.SelectedRows[0]);
-
-            if (selectedRowType == LocRM.GetString("stroopTest", currentCulture))
+            // if there is any selected row in origin file, transfer it to import list
+            if (originDataGridView.SelectedRows.Count > 0)
             {
-                StroopProgram newProgram = new StroopProgram();
-                newProgram.readProgramFile(stroopPath + selectedRowName + ".prg");
-                addLists(newProgram);
+                string selectedRowType = originDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+                string selectedRowName = originDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                int i = originDataGridView.SelectedRows[0].Index;
+                int index = importDataGridView.Rows.Add();
+                importDataGridView.Rows[index].Cells[0].Value = (originDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+                importDataGridView.Rows[index].Cells[1].Value = (originDataGridView.SelectedRows[0].Cells[1].Value.ToString());
+                importDataGridView.Rows[index].Cells[2].Value = (originDataGridView.SelectedRows[0].Cells[2].Value.ToString());
+                importDataGridView.Rows[index].DefaultCellStyle.BackColor = originDataGridView.Rows[i].DefaultCellStyle.BackColor;
+
+                originDataGridView.Rows.Remove(originDataGridView.SelectedRows[0]);
+
+                if (selectedRowType == LocRM.GetString("stroopTest", currentCulture))
+                {
+                    StroopProgram newProgram = new StroopProgram();
+                    newProgram.readProgramFile(stroopPath + selectedRowName + ".prg");
+                    addLists(newProgram);
+
+                }
+                else if (selectedRowType == LocRM.GetString("reactionTest", currentCulture))
+                {
+                    ReactionProgram newReaction = new ReactionProgram(Global.reactionTestFilesPath + Global.programFolderName + selectedRowName + ".prg");
+                    addLists(newReaction);
+                }
+                else if (selectedRowType == LocRM.GetString("experiment", currentCulture))
+                {
+                    addPrograms(selectedRowName);
+                }
+            }
+            else
+            {
 
             }
-            else if (selectedRowType == LocRM.GetString("reactionTest", currentCulture))
+
+        }
+
+        private void addToOriginList_Click(object sender, EventArgs e)
+        {
+            if (importDataGridView.SelectedRows.Count > 0)
             {
-                ReactionProgram newReaction = new ReactionProgram(Global.reactionTestFilesPath + Global.programFolderName + selectedRowName + ".prg");
-                addLists(newReaction);
+                int index = originDataGridView.Rows.Add();
+                originDataGridView.Rows[index].Cells[0].Value = (importDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+                originDataGridView.Rows[index].Cells[1].Value = (importDataGridView.SelectedRows[0].Cells[1].Value.ToString());
+                originDataGridView.Rows[index].Cells[2].Value = (importDataGridView.SelectedRows[0].Cells[2].Value.ToString());
+                originDataGridView.Rows[index].DefaultCellStyle.BackColor = importDataGridView.SelectedRows[0].DefaultCellStyle.BackColor;
+
+                importDataGridView.Rows.Remove(importDataGridView.SelectedRows[0]);
             }
-            else if (selectedRowType == LocRM.GetString("experiment", currentCulture))
+            else
             {
-                addPrograms(selectedRowName);
+                /* do nothing */
             }
+        }
+
+        private void importDataGridView_Validating(object sender, CancelEventArgs e)
+        {
+            if (importDataGridView.RowCount == 0)
+            {
+                errorProvider1.SetError(importDataGridView, LocRM.GetString("fieldNotFilled", currentCulture));
+                e.Cancel = true;
+            }
+        }
+
+        private void importDataGridView_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(importDataGridView, "");
+        }
+
+        private void fileTextBox_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(fileTextBox, "");
+        }
+
+        private void fileTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (fileTextBox.Text.Length == 0)
+            {
+                errorProvider1.SetError(fileTextBox, LocRM.GetString("fieldNotFilled", currentCulture));
+                e.Cancel = true;
+            }
+        }
+
+        private void warningCheckBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (warningCheckBox.Visible && !warningCheckBox.Checked)
+            {
+                errorProvider1.SetError(warningCheckBox, LocRM.GetString("agreeConditions", currentCulture));
+                e.Cancel = true;
+            }
+
+        }
+
+        private void warningCheckBox_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(warningCheckBox, "");
         }
     }
 }

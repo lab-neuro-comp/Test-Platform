@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportUserControl));
             this.importButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -47,8 +48,10 @@
             this.fileTextBox = new System.Windows.Forms.TextBox();
             this.openButton = new System.Windows.Forms.Button();
             this.importAllCheckbox = new System.Windows.Forms.CheckBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.originDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.importDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // importButton
@@ -70,6 +73,8 @@
             resources.ApplyResources(this.warningCheckBox, "warningCheckBox");
             this.warningCheckBox.Name = "warningCheckBox";
             this.warningCheckBox.UseVisualStyleBackColor = true;
+            this.warningCheckBox.Validating += new System.ComponentModel.CancelEventHandler(this.warningCheckBox_Validating);
+            this.warningCheckBox.Validated += new System.EventHandler(this.warningCheckBox_Validated);
             // 
             // warningMessage
             // 
@@ -136,6 +141,8 @@
             this.importDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.importDataGridView.RowHeadersVisible = false;
             this.importDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.importDataGridView.Validating += new System.ComponentModel.CancelEventHandler(this.importDataGridView_Validating);
+            this.importDataGridView.Validated += new System.EventHandler(this.importDataGridView_Validated);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -163,6 +170,7 @@
             resources.ApplyResources(this.addToOriginList, "addToOriginList");
             this.addToOriginList.Name = "addToOriginList";
             this.addToOriginList.UseVisualStyleBackColor = true;
+            this.addToOriginList.Click += new System.EventHandler(this.addToOriginList_Click);
             // 
             // addToDestinationList
             // 
@@ -181,6 +189,8 @@
             resources.ApplyResources(this.fileTextBox, "fileTextBox");
             this.fileTextBox.Name = "fileTextBox";
             this.fileTextBox.ReadOnly = true;
+            this.fileTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.fileTextBox_Validating);
+            this.fileTextBox.Validated += new System.EventHandler(this.fileTextBox_Validated);
             // 
             // openButton
             // 
@@ -196,10 +206,16 @@
             this.importAllCheckbox.UseVisualStyleBackColor = true;
             this.importAllCheckbox.CheckedChanged += new System.EventHandler(this.importAllCheckbox_CheckedChanged);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ImportUserControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.Controls.Add(this.importAllCheckbox);
             this.Controls.Add(this.openButton);
             this.Controls.Add(this.fileTextBox);
@@ -215,6 +231,7 @@
             this.Name = "ImportUserControl";
             ((System.ComponentModel.ISupportInitialize)(this.originDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.importDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +257,6 @@
         private System.Windows.Forms.TextBox fileTextBox;
         private System.Windows.Forms.Button openButton;
         private System.Windows.Forms.CheckBox importAllCheckbox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

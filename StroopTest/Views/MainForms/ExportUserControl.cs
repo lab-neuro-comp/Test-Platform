@@ -69,8 +69,6 @@ namespace TestPlatform.Views.MainForms
             experiment.ExperimentName = experimentName;
             experiment.ReadProgramFile();
 
-            Console.WriteLine("oi");
-
             foreach (Program program in experiment.ProgramList)
             {
                 if (program.GetType() == typeof(StroopProgram))

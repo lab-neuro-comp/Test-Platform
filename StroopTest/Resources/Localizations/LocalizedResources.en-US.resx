@@ -1974,4 +1974,13 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   <data name="exportSuccess" xml:space="preserve">
     <value>Files were exported with success!</value>
   </data>
+  <data name="importSuccess" xml:space="preserve">
+    <value>Files were imported with success.</value>
+  </data>
+  <data name="agreeConditions" xml:space="preserve">
+    <value>You have to agree with conditions to proceed.</value>
+  </data>
+  <data name="fieldNotFilled" xml:space="preserve">
+    <value>This field can't be left blank.</value>
+  </data>
 </root>

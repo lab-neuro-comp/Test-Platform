@@ -292,5 +292,12 @@ namespace TestPlatform.Views.MainForms
         {
             this.Parent.Controls.Remove(this);
         }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("exportInstructions", currentCulture));
+            try { infoBox.Show(); }
+            catch (Exception ex) { throw new Exception(ex.Message); }
+        }
     }
 }

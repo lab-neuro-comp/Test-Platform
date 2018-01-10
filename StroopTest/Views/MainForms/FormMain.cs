@@ -130,8 +130,8 @@ namespace TestPlatform
             if (!File.Exists(Global.testFilesPath + PGRCONFIGHELPFILENAME))
                 File.Create(Global.testFilesPath + PGRCONFIGHELPFILENAME).Dispose();
 
-            if (File.Exists(Global.defaultPath + "/StroopTestFiles"))
-                File.Delete(Global.defaultPath + "/StroopTestFiles");
+            if (Directory.Exists(Global.defaultPath + "/StroopTestFiles"))
+                Directory.Delete(Global.defaultPath + "/StroopTestFiles", true);
 
             // converting old implementations of file lists to new version
             StrList.convertFileLists();

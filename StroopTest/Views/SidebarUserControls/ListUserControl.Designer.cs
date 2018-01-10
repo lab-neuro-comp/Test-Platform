@@ -117,6 +117,7 @@
             this.radioButton4.FlatAppearance.BorderSize = 0;
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.Click += new System.EventHandler(this.deleteAudioListButton_Click);
             // 
             // backAudioButton
             // 
@@ -157,6 +158,7 @@
             this.deleteWordColorButton.FlatAppearance.BorderSize = 0;
             this.deleteWordColorButton.Name = "deleteWordColorButton";
             this.deleteWordColorButton.UseVisualStyleBackColor = true;
+            this.deleteWordColorButton.Click += new System.EventHandler(this.deleteWordColorButton_Click);
             // 
             // backWordColorButton
             // 
@@ -197,6 +199,7 @@
             this.radioButton3.FlatAppearance.BorderSize = 0;
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.Click += new System.EventHandler(this.deleteImageListButton_Click);
             // 
             // backImageButton
             // 

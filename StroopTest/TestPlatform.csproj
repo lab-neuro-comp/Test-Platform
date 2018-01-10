@@ -138,6 +138,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="Views\ListsPages\ListManagment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ListsPages\ListManagment.Designer.cs">
+      <DependentUpon>ListManagment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainForms\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -361,6 +367,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormWordColorDialog.pt-BR.resx">
       <DependentUpon>FormWordColorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListsPages\ListManagment.en-US.resx">
+      <DependentUpon>ListManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListsPages\ListManagment.pt-BR.resx">
+      <DependentUpon>ListManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListsPages\ListManagment.resx">
+      <DependentUpon>ListManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\AboutBox.en-US.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>

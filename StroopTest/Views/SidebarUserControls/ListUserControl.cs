@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Resources;
 using System.Windows.Forms;
+using TestPlatform.Views.ListsPages;
 
 namespace TestPlatform.Views.SidebarControls
 {
@@ -311,6 +313,71 @@ namespace TestPlatform.Views.SidebarControls
                 /*do nothing*/
             }
         }
+
+        private void deleteImageListButton_Click(object sender, EventArgs e)
+        {
+            if (radioButton3.Checked)
+            {
+                if (isAllowedToChangeScreen())
+                {
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    ListManagment ManageList = new ListManagment("_image");
+                    try
+                    {
+                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        radioButton3.Checked = false;
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                }
+                else
+                {
+                    /*do nothing*/
+                }
+            }
+        }
+        private void deleteWordColorButton_Click(object sender, EventArgs e)
+        {
+            if (deleteWordColorButton.Checked)
+            {
+                if (isAllowedToChangeScreen())
+                {
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    ListManagment ManageList = new ListManagment("_words_color");
+                    try
+                    {
+                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        radioButton3.Checked = false;
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                }
+                else
+                {
+                    /*do nothing*/
+                }
+            }
+        }
+        private void deleteAudioListButton_Click(object sender, EventArgs e)
+        {
+            if (radioButton4.Checked)
+            {
+                if (isAllowedToChangeScreen())
+                {
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    ListManagment ManageList = new ListManagment("_audio");
+                    try
+                    {
+                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        radioButton3.Checked = false;
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                }
+                else
+                {
+                    /*do nothing*/
+                }
+            }
+        }
+
 
     }
 }

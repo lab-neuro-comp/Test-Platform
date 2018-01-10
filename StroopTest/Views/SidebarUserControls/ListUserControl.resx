@@ -370,7 +370,7 @@
     <value>Button</value>
   </data>
   <data name="radioButton4.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>True</value>
   </data>
   <data name="radioButton4.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -748,7 +748,7 @@
     <value>Button</value>
   </data>
   <data name="radioButton3.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>True</value>
   </data>
   <data name="radioButton3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -849,9 +849,9 @@
   <data name="&gt;&gt;imagePanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -862,6 +862,6 @@
     <value>ListUserControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6572.3135, Culture=neutral, PublicKeyToken=null</value>
+    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6580.35749, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

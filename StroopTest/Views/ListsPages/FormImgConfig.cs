@@ -43,7 +43,7 @@ namespace TestPlatform
         {
             try
             {
-                FormDefine defineFilePath = defineFilePath = new FormDefine(LocRM.GetString("imageList", currentCulture), Global.testFilesPath + Global.listFolderName, "dir","_image",true);
+                FormDefine defineFilePath = defineFilePath = new FormDefine(LocRM.GetString("imageList", currentCulture), Global.testFilesPath + Global.listFolderName, "dir","_image",true, false);
                 var result = defineFilePath.ShowDialog();
                 
                 if (result == DialogResult.OK)
@@ -205,6 +205,7 @@ namespace TestPlatform
                     {
                         MessageBox.Show(LocRM.GetString("list", currentCulture) + imgListNameTextBox.Text + "_image" + LocRM.GetString("listSaveSuccess", currentCulture));
                         this.Parent.Controls.Remove(this);
+                        ListController.recoverEditingProgram(imgListNameTextBox.Text);
                     }
                     else
                     {

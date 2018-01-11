@@ -273,7 +273,7 @@ namespace TestPlatform
             try
             {
                 FormDefine defineFilePath = new FormDefine(LocRM.GetString("exclude", currentCulture), originPath, fileType, "_image_words_color_audio", 
-                    true);
+                    true, false);
                 var result = defineFilePath.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -545,7 +545,7 @@ namespace TestPlatform
 
             try
             {
-                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
+                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false, false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -563,7 +563,7 @@ namespace TestPlatform
             DialogResult result;
             string editProgramName = "error";
 
-                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false);
+                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false, false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {

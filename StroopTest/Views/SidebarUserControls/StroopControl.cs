@@ -77,7 +77,7 @@ namespace TestPlatform.Views
                 if (screenTranslationAllowed)
                 {
                     string editProgramName = "error";
-                    FormDefine defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false);
+                    FormDefine defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false, false);
                     DialogResult result = defineProgram.ShowDialog();
                     if (result == DialogResult.OK)
                     {

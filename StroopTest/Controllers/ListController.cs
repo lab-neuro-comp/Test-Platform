@@ -10,6 +10,11 @@
 
     class ListController
     {
+        private static Control controlToRestore = null;
+        private static string listType = "";
+        private static ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private static CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+
         public static StrList CreateList(List<string> list, string listName, string listType)
         {
             StrList wordList = new StrList(list, listName, listType);
@@ -39,6 +44,61 @@
             return hexColor;
         }
 
+        public static void recoverEditingProgram(string newListName)
+        {
+            if(controlToRestore != null)
+            {
+                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                switch (listType)
+                {
+                    case "_color":
+                        controlToRestore.Controls.Find("openColorListButton", true)[0].Text = newListName;
+                        break;
+                    case "_words":
+                        controlToRestore.Controls.Find("openWordListButton", true)[0].Text = newListName;
+                        break;
+                    case "_audio":
+                        controlToRestore.Controls.Find("openAudioListButton", true)[0].Text = newListName;
+                        break;
+                    case "_image":
+                        controlToRestore.Controls.Find("openImgListButton", true)[0].Text = newListName;
+                        break;
+                }
+                Global.GlobalFormMain._contentPanel.Controls.Add(controlToRestore);
+            }
+            controlToRestore = null;
+        }
+
+        public static void createListFile(string listTypeParam, FormDefine formDefine)
+        {
+            listType = listTypeParam;
+            MessageBox.Show(LocRM.GetString("inFormListWarning", currentCulture));
+            if(Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+            {
+                Control listCreationControl = null;
+                controlToRestore = Global.GlobalFormMain._contentPanel.Controls[0];
+                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                switch (listType)
+                {
+                    case "_color":
+                    case "_words":
+                        listCreationControl = new FormWordColorConfig(false);
+                        break;
+                    case "_audio":
+                        listCreationControl = new FormAudioConfig(false);
+                        break;
+                    case "_image":
+                        listCreationControl = new FormImgConfig("false");
+                        break;
+                }
+                Global.GlobalFormMain._contentPanel.Controls.Add(listCreationControl);
+            }
+            else
+            {
+                /*do nothing*/
+            }
+        }
+
         public static string OpenListFile(string itemType, string current, string type)
         {
             ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
@@ -46,7 +106,7 @@
 
             string progName = LocRM.GetString("open", currentCulture);
 
-            FormDefine defineProgram = new FormDefine("Lista: ", Global.testFilesPath + Global.listFolderName, type, itemType, false);
+            FormDefine defineProgram = new FormDefine("Lista: ", Global.testFilesPath + Global.listFolderName, type, itemType, false, true);
             var result = defineProgram.ShowDialog();
 
             if (result == System.Windows.Forms.DialogResult.OK)

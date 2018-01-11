@@ -2182,4 +2182,10 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
    &lt;/body&gt;
 &lt;/html&gt;</value>
   </data>
+  <data name="createNewList" xml:space="preserve">
+    <value>Create new list</value>
+  </data>
+  <data name="String1inFormListWarning" xml:space="preserve">
+    <value>You will be redirected back to program editing after create the list.</value>
+  </data>
 </root>

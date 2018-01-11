@@ -49,7 +49,7 @@ namespace TestPlatform
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine(LocRM.GetString("wordList", currentCulture), Global.testFilesPath + Global.listFolderName, "lst", "_words_color", true);
+                FormDefine defineFilePath = new FormDefine(LocRM.GetString("wordList", currentCulture), Global.testFilesPath + Global.listFolderName, "lst", "_words_color", true, false);
                 var result = defineFilePath.ShowDialog();
 
                 if (result == DialogResult.OK)
@@ -362,7 +362,10 @@ namespace TestPlatform
                 if (colorsListCheckBox.Checked)
                     valid = saveListFile(colorsList, listNameTextBox.Text, "_color", LocRM.GetString("colors", currentCulture));                
                 if (valid)
+                {
                     this.Parent.Controls.Remove(this);
+                    ListController.recoverEditingProgram(listNameTextBox.Text);
+                }
                 else
                     MessageBox.Show(LocRM.GetString("listNotSaved", currentCulture));
             }

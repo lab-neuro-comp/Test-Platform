@@ -39,7 +39,7 @@ namespace TestPlatform
 
         private void openFilesForEdition()
         {
-            FormDefine defineFilePath = new FormDefine(LocRM.GetString("audioList", currentCulture), Global.testFilesPath + Global.listFolderName, "dir", "_audio", true);
+            FormDefine defineFilePath = new FormDefine(LocRM.GetString("audioList", currentCulture), Global.testFilesPath + Global.listFolderName, "dir", "_audio", true, false);
             var result = defineFilePath.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -141,6 +141,7 @@ namespace TestPlatform
                     {
                         MessageBox.Show(LocRM.GetString("list", currentCulture) + this.audioListNameTextBox.Text + "_audio" + LocRM.GetString("listSaveSuccess", currentCulture));
                         this.Parent.Controls.Remove(this);
+                        ListController.recoverEditingProgram(this.audioListNameTextBox.Text);
                     }
                     else
                     {

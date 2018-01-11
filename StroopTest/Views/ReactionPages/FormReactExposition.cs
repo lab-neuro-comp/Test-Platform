@@ -279,7 +279,6 @@ namespace TestPlatform.Views
         {
             if (executingTest.ProgramInUse.ResponseType.Equals("space") && keyCode == Keys.Space)
             {
-                string teste = LocRM.GetString("spaceBar", currentCulture);
                 SendUserResponse(LocRM.GetString("spaceBar", currentCulture));
             }
             else if (executingTest.ProgramInUse.ResponseType.Equals("arrows"))

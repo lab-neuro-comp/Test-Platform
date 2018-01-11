@@ -393,5 +393,12 @@ namespace TestPlatform.Views.MainForms
         {
             errorProvider1.SetError(warningCheckBox, "");
         }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("importInstructions", currentCulture));
+            try { infoBox.Show(); }
+            catch (Exception ex) { throw new Exception(ex.Message); }
+        }
     }
 }

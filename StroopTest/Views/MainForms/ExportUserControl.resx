@@ -130,13 +130,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="addToOriginList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>406, 223</value>
-  </data>
-  <data name="addToOriginList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>304, 211</value>
   </data>
   <data name="addToOriginList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 31</value>
+    <value>31, 25</value>
   </data>
   <data name="addToOriginList.TabIndex" type="System.Int32, mscorlib">
     <value>54</value>
@@ -154,7 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;addToOriginList.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="addToDestinationList.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -166,13 +163,10 @@
     <value>NoControl</value>
   </data>
   <data name="addToDestinationList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>406, 185</value>
-  </data>
-  <data name="addToDestinationList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>304, 180</value>
   </data>
   <data name="addToDestinationList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 31</value>
+    <value>31, 25</value>
   </data>
   <data name="addToDestinationList.TabIndex" type="System.Int32, mscorlib">
     <value>53</value>
@@ -190,7 +184,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;addToDestinationList.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -214,13 +208,10 @@
     <value>False</value>
   </data>
   <data name="exportDataGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>462, 24</value>
-  </data>
-  <data name="exportDataGridView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>345, 47</value>
   </data>
   <data name="exportDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 394</value>
+    <value>272, 320</value>
   </data>
   <data name="exportDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
@@ -235,7 +226,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;exportDataGridView.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="dataGridViewTextBoxColumn4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -259,13 +250,10 @@
     <value>False</value>
   </data>
   <data name="originDataGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 24</value>
-  </data>
-  <data name="originDataGridView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 47</value>
   </data>
   <data name="originDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 394</value>
+    <value>272, 320</value>
   </data>
   <data name="originDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
@@ -280,19 +268,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;originDataGridView.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="exportButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="exportButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>673, 550</value>
-  </data>
-  <data name="exportButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>505, 447</value>
   </data>
   <data name="exportButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 28</value>
+    <value>112, 23</value>
   </data>
   <data name="exportButton.TabIndex" type="System.Int32, mscorlib">
     <value>61</value>
@@ -310,19 +295,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;exportButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cancelButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 550</value>
-  </data>
-  <data name="cancelButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 447</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 28</value>
+    <value>112, 23</value>
   </data>
   <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
@@ -340,16 +322,49 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="helpButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="helpButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>591, 2</value>
+  </data>
+  <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
+    <value>82</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Name" xml:space="preserve">
+    <value>helpButton</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;helpButton.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>833, 617</value>
+    <value>625, 501</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn1</value>

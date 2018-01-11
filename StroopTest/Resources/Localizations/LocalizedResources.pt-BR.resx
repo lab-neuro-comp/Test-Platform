@@ -2173,4 +2173,10 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
    &lt;/body&gt;
 &lt;/html&gt;</value>
   </data>
+  <data name="createNewList" xml:space="preserve">
+    <value>Criar nova lista</value>
+  </data>
+  <data name="inFormListWarning" xml:space="preserve">
+    <value>Você será redirecionado de volta para a edição do programa após a criação da lista.</value>
+  </data>
 </root>

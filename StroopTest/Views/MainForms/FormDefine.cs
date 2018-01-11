@@ -8,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Resources;
 using System.Windows.Forms;
+using TestPlatform.Controllers;
 
 namespace TestPlatform
 {
@@ -15,16 +16,19 @@ namespace TestPlatform
     {
         public string ReturnValue { get; set; }
         public string[] filePaths;
-        private string type;
+        private bool showCreateOption;
+        private string type, itemType;
         private string usrName;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
-        public FormDefine(string formTitle, string dataFolderPath, string fileType, string itemType, bool sufix)
+        public FormDefine(string formTitle, string dataFolderPath, string fileType, string itemType, bool sufix, bool showCreateOption)
         {
             InitializeComponent();
+            this.showCreateOption = showCreateOption;
             this.Text = formTitle;
             string[] option;
+            this.itemType = itemType;
             string[] itemTypes = { "image", "audio", "words", "color" };
             bool isType = false;
             type = fileType;
@@ -81,6 +85,10 @@ namespace TestPlatform
                 textBox1.Enabled = true;
                 textBox1.Visible = true;
             }
+            if (showCreateOption == true)
+            {
+                comboBox1.Items.Add(LocRM.GetString("createNewList", currentCulture));
+            }
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -97,6 +105,11 @@ namespace TestPlatform
         {
             try
             {
+                if (showCreateOption == true && comboBox1.Text == LocRM.GetString("createNewList", currentCulture))
+                {
+                    this.Close();
+                    ListController.createListFile(itemType, this);
+                }
                 if (type == "prg" || type == "lst" || type == "txt" || type == "dir")
                 {
                     comboBox1.Items.Add(comboBox1.Text);

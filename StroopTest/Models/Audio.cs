@@ -31,14 +31,17 @@
 
         public bool SaveRecording()
         {
-            if (this.capture != null)
+            if (this.capture != null && this.capture.RecordingState == RecordingState.Recording)
             {
                 this.capture.Stop();
                 this.capture.Dispose();
                 this.writer.Dispose();
+                return true;
             }
-                        
-            return true;
+            else
+            {
+                return false;
+            }
         }
 
         public void PlayAudio(string file)

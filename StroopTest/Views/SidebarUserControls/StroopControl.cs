@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Resources;
 using System.Windows.Forms;
+using TestPlatform.Models;
 using TestPlatform.Views.MainForms;
 
 namespace TestPlatform.Views
@@ -82,12 +83,15 @@ namespace TestPlatform.Views
                     if (result == DialogResult.OK)
                     {
                         editProgramName = defineProgram.ReturnValue;
-                        FormPrgConfig configureProgram = new FormPrgConfig(editProgramName);
-                        if (!configureProgram.IsDisposed)
+                        if (!Validations.isEmpty(editProgramName))
                         {
-                            Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
+                            FormPrgConfig configureProgram = new FormPrgConfig(editProgramName);
+                            if (!configureProgram.IsDisposed)
+                            {
+                                Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
+                            }
+                            editStroopButton.Checked = false;
                         }
-                        editStroopButton.Checked = false;
                     } 
                 }
             }

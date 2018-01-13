@@ -18,7 +18,8 @@ namespace TestPlatform.Models
 
         public static bool isAlphanumeric(string word)
         {
-            if (!string.IsNullOrEmpty(word) && word.All(char.IsLetterOrDigit))
+            Regex regex = new Regex("^[a-zA-Z0-9]*$");
+            if (!string.IsNullOrEmpty(word) && regex.IsMatch(word))
                 return true;
             return false;
         }

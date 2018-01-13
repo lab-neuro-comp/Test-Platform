@@ -121,14 +121,30 @@ namespace TestPlatform
         {
             if (recording)
             {
-                recording = false;
                 recordingLabel.Visible = false;
                 timer.Stop();
                 timerRunning = false;
                 currentElapsedTime = TimeSpan.Zero;
                 audioRecorder.SaveRecording();
-                MessageBox.Show(LocRM.GetString("audioRecordSuccess", currentCulture));
-                loadingAudioFilesToDataGrid();
+                if (File.Exists(selectedDirectory.Text))
+                {
+                    long fileLength = new FileInfo(selectedDirectory.Text).Length;
+                    if (fileLength != 0)
+                    {
+                        MessageBox.Show(LocRM.GetString("audioRecordSuccess", currentCulture));
+                    }
+                    else
+                    {
+                        MessageBox.Show(LocRM.GetString("audioRecordFailed", currentCulture));
+                    }
+                    loadingAudioFilesToDataGrid();
+                    recording = false;
+                }
+                else
+                {
+                    MessageBox.Show(LocRM.GetString("fileNotFound", currentCulture) + selectedDirectory.Text);
+                }
+
             }            
             
             
@@ -190,29 +206,34 @@ namespace TestPlatform
 
         private void recordButton1_Click(object sender, EventArgs e)
         {
-            if(selectedDirectory.Text != LocRM.GetString("none", currentCulture))
+            try
             {
-                if(recording != true)
+                if (selectedDirectory.Text != LocRM.GetString("none", currentCulture))
                 {
-                    recording = true;
-                    audioRecorder.StartRecording(selectedDirectory.Text);
-                    recordingLabel.Visible = true;
-                    currentElapsedTimeDisplay.Visible = true;
-                    if (!timerRunning)
+                    if (recording != true)
                     {
-                        startTime = DateTime.Now;
+                        audioRecorder.StartRecording(selectedDirectory.Text);
+                        recordingLabel.Visible = true;
+                        currentElapsedTimeDisplay.Visible = true;
+                        if (!timerRunning)
+                        {
+                            startTime = DateTime.Now;
 
-                        timer.Start();
-                        timerRunning = true;
+                            timer.Start();
+                            timerRunning = true;
+                        }
+                        recording = true;
                     }
                 }
-                
+                else
+                {
+                    DialogResult dr = MessageBox.Show(LocRM.GetString("selectPlace", currentCulture), "", MessageBoxButtons.OK);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                DialogResult dr = MessageBox.Show(LocRM.GetString("selectPlace", currentCulture), "", MessageBoxButtons.OK);
+                MessageBox.Show(ex.Message);
             }
-            
         }
     }
 }

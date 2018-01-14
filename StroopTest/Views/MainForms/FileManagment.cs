@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Resources;
 using System.Globalization;
+using TestPlatform.Models;
 
 namespace TestPlatform.Views.MainForms
 {
@@ -17,14 +18,15 @@ namespace TestPlatform.Views.MainForms
     {
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
-
+        private char mode;
         private bool hasConflict = false;
 
         private string originPath, destinationPath;
 
-        public FileManagment(string originPath, string destinationPath, char mode)
+        public FileManagment(string originPath, string destinationPath, char mode, string type)
         {
             InitializeComponent();
+            this.mode = mode;
             this.originPath = originPath;
             this.destinationPath = destinationPath;
             if (mode == 'r') //recover mode
@@ -32,14 +34,14 @@ namespace TestPlatform.Views.MainForms
                 sendButton.Text = LocRM.GetString("recover", currentCulture);
                 originListLabel.Text = LocRM.GetString("deletedPrograms", currentCulture);
                 destinationListLabel.Text = LocRM.GetString("toRecoverPrograms", currentCulture);
-                warningMessage.Text = LocRM.GetString("warningRecover", currentCulture);
+                errorMessage.Text = LocRM.GetString("warningRecover", currentCulture);
             }
             else if (mode == 'd') //delete mode
             {
                 sendButton.Text = LocRM.GetString("delete", currentCulture);
                 originListLabel.Text = LocRM.GetString("existingPrograms", currentCulture);
                 destinationListLabel.Text = LocRM.GetString("toDeletePrograms", currentCulture);
-                warningMessage.Text = LocRM.GetString("warningDelete", currentCulture);
+                errorMessage.Text = LocRM.GetString("warningDelete", currentCulture);
             }
             else
             {
@@ -54,6 +56,7 @@ namespace TestPlatform.Views.MainForms
             SolidBrush blackSolidBrush = new SolidBrush(Color.Black);
             SolidBrush blueSolidBrush = new SolidBrush(Color.FromKnownColor(KnownColor.Highlight));
             SolidBrush redSolidBrush = new SolidBrush(Color.Red);
+            SolidBrush orangeSolidBush = new SolidBrush(Color.Orange);
 
             e.DrawBackground();
             bool selected = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
@@ -76,7 +79,15 @@ namespace TestPlatform.Views.MainForms
                 }
                 else
                 {
-                    backgroundBrush = whiteSolidBrush;
+                    if (mode == 'd' && isProgramUsed(text))
+                    {
+                        backgroundBrush = orangeSolidBush;
+                        warningLabel.Visible = true;
+                    }
+                    else
+                    {
+                        backgroundBrush = whiteSolidBrush;
+                    }
                 }
                 g.FillRectangle(backgroundBrush, e.Bounds);
 
@@ -86,13 +97,14 @@ namespace TestPlatform.Views.MainForms
             }
             e.DrawFocusRectangle();
         }
-
+        
         private void destinationFilesList_DrawItem(object sender, DrawItemEventArgs e)
         {
             SolidBrush whiteSolidBrush = new SolidBrush(Color.White);
             SolidBrush blackSolidBrush = new SolidBrush(Color.Black);
             SolidBrush blueSolidBrush = new SolidBrush(Color.FromKnownColor(KnownColor.Highlight));
             SolidBrush redSolidBrush = new SolidBrush(Color.Red);
+            SolidBrush orangeSolidBush = new SolidBrush(Color.Orange);
 
             e.DrawBackground();
             bool selected = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
@@ -115,7 +127,14 @@ namespace TestPlatform.Views.MainForms
                 }
                 else
                 {
-                    backgroundBrush = whiteSolidBrush;
+                    if (mode == 'd' && isProgramUsed(text))
+                    {
+                        backgroundBrush = orangeSolidBush;
+                    }
+                    else
+                    {
+                        backgroundBrush = whiteSolidBrush;
+                    }
                 }
                 g.FillRectangle(backgroundBrush, e.Bounds);
 
@@ -132,14 +151,40 @@ namespace TestPlatform.Views.MainForms
             this.Parent.Controls.Remove(this);
         }
 
+        private bool isProgramUsed(string programName)
+        {
+            string[] experiments = Directory.GetFiles(Global.experimentTestFilesPath + Global.programFolderName);
+            foreach (string file in experiments)
+            {
+                ExperimentProgram experiment = new ExperimentProgram();
+                experiment.Name = Path.GetFileNameWithoutExtension(file);
+                experiment.ReadProgramFile();
+                foreach (Program program in experiment.ProgramList)
+                {
+                    if (program.ProgramName == programName)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         private void addToDestinationList_Click(object sender, EventArgs e)
         {
             string programName;
             if (originFilesList.SelectedItem != null)
             {
                 programName = originFilesList.SelectedItem.ToString();
-                originFilesList.Items.Remove(programName);
-                destinationFilesList.Items.Add(programName);
+                if (!isProgramUsed(programName))
+                {
+                    originFilesList.Items.Remove(programName);
+                    destinationFilesList.Items.Add(programName);
+                }
+                else
+                {
+                    /*do nothing*/
+                }
             }
             else
             {
@@ -238,12 +283,12 @@ namespace TestPlatform.Views.MainForms
             if (hasConflict)
             {
                 warningCheckBox.Visible = true;
-                warningMessage.Visible = true;
+                errorMessage.Visible = true;
                 sendButton.Enabled = false;
             }
             else
             {
-                warningMessage.Visible = false;
+                errorMessage.Visible = false;
                 warningCheckBox.Visible = false;
                 sendButton.Enabled = true;
             }

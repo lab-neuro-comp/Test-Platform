@@ -130,6 +130,6 @@
     <value>Files that will be deleted:</value>
   </data>
   <data name="warningLabel.Text" xml:space="preserve">
-    <value>Orange lists indicates that that list is used by some program and you can't delete it while the program use it.</value>
+    <value>Orange lists indicates that the list is used by some program and you can't delete it while it is being used.</value>
   </data>
 </root>

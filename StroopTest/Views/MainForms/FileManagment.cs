@@ -21,7 +21,7 @@ namespace TestPlatform.Views.MainForms
         private char mode;
         private bool hasConflict = false;
 
-        private string originPath, destinationPath;
+        private string originPath, destinationPath, type;
 
         public FileManagment(string originPath, string destinationPath, char mode, string type)
         {
@@ -29,6 +29,7 @@ namespace TestPlatform.Views.MainForms
             this.mode = mode;
             this.originPath = originPath;
             this.destinationPath = destinationPath;
+            this.type = type;
             if (mode == 'r') //recover mode
             {
                 sendButton.Text = LocRM.GetString("recover", currentCulture);
@@ -79,7 +80,7 @@ namespace TestPlatform.Views.MainForms
                 }
                 else
                 {
-                    if (mode == 'd' && isProgramUsed(text))
+                    if (type == "program" && mode == 'd' && isProgramUsed(text))
                     {
                         backgroundBrush = orangeSolidBush;
                         warningLabel.Visible = true;
@@ -127,7 +128,7 @@ namespace TestPlatform.Views.MainForms
                 }
                 else
                 {
-                    if (mode == 'd' && isProgramUsed(text))
+                    if (type == "program" && mode == 'd' && isProgramUsed(text))
                     {
                         backgroundBrush = orangeSolidBush;
                     }
@@ -176,7 +177,7 @@ namespace TestPlatform.Views.MainForms
             if (originFilesList.SelectedItem != null)
             {
                 programName = originFilesList.SelectedItem.ToString();
-                if (!isProgramUsed(programName))
+                if (type == "experiment"  || !isProgramUsed(programName))
                 {
                     originFilesList.Items.Remove(programName);
                     destinationFilesList.Items.Add(programName);

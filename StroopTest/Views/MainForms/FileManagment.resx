@@ -424,7 +424,7 @@
     <value>20, 350</value>
   </data>
   <data name="warningLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>447, 62</value>
+    <value>470, 62</value>
   </data>
   <data name="warningLabel.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>

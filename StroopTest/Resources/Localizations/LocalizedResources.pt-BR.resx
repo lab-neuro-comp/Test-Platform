@@ -184,7 +184,7 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>A caixa de texto não pode estar vazia!</value>
   </data>
   <data name="emptyList" xml:space="preserve">
-    <value>A lista está \n vazia!</value>
+    <value>A lista está vazia!</value>
   </data>
   <data name="emptyListName" xml:space="preserve">
     <value>O nome da lista deve ser preenchido.</value>

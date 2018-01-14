@@ -138,9 +138,9 @@ namespace TestPlatform.Models
             return true;
         }
 
-        public bool saveContent()
+        public bool saveContent(bool shouldSave)
         {
-            if (Type.Equals(types[0]) || Type.Equals(types[1]))
+            if (shouldSave && (Type.Equals(types[0]) || Type.Equals(types[1])))
             {
                 string listDestination = Global.testFilesPath + Global.listFolderName + ListName + Type + "/";
                 Directory.CreateDirectory(listDestination);
@@ -233,7 +233,7 @@ namespace TestPlatform.Models
                 string[] name = Path.GetFileNameWithoutExtension(list).Split('_');
                 List<string> content = readListFile(list).ToList();
                 StrList newList = new StrList(content, name[0], "_" + name[1]);
-                newList.saveContent();
+                newList.saveContent(true);
                 File.Delete(list);
             }
         }

@@ -38,23 +38,28 @@
             this.existingLabel = new System.Windows.Forms.Label();
             this.deletingLabel = new System.Windows.Forms.Label();
             this.helpButton = new System.Windows.Forms.Button();
+            this.warningLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // existingList
             // 
+            this.existingList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.existingList.FormattingEnabled = true;
             resources.ApplyResources(this.existingList, "existingList");
             this.existingList.Name = "existingList";
             this.existingList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.existingList.Click += new System.EventHandler(this.existingList_Click);
+            this.existingList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.originFilesList_DrawItem);
             // 
             // deletingList
             // 
+            this.deletingList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.deletingList.FormattingEnabled = true;
             resources.ApplyResources(this.deletingList, "deletingList");
             this.deletingList.Name = "deletingList";
             this.deletingList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.deletingList.Click += new System.EventHandler(this.deletingList_Click);
+            this.deletingList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.destinationFilesList_DrawItem);
             // 
             // toDelete
             // 
@@ -103,10 +108,17 @@
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
+            // warningLabel
+            // 
+            resources.ApplyResources(this.warningLabel, "warningLabel");
+            this.warningLabel.ForeColor = System.Drawing.Color.Orange;
+            this.warningLabel.Name = "warningLabel";
+            // 
             // ListManagment
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.warningLabel);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.deletingLabel);
             this.Controls.Add(this.existingLabel);
@@ -133,5 +145,6 @@
         private System.Windows.Forms.Label existingLabel;
         private System.Windows.Forms.Label deletingLabel;
         private System.Windows.Forms.Button helpButton;
+        private System.Windows.Forms.Label warningLabel;
     }
 }

@@ -11,6 +11,7 @@ using System.IO;
 using static System.Windows.Forms.ListBox;
 using System.Resources;
 using System.Globalization;
+using TestPlatform.Models;
 
 namespace TestPlatform.Views.ListsPages
 {
@@ -20,11 +21,124 @@ namespace TestPlatform.Views.ListsPages
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         string listPath = Global.testFilesPath + Global.listFolderName, suffix;
         string[] filePaths;
+        bool shouldPaintOrange = false;
         public ListManagment(string suffix)
         {
             InitializeComponent();
             this.suffix = suffix;
             loadExistingList();
+        }
+
+        private void originFilesList_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            SolidBrush whiteSolidBrush = new SolidBrush(Color.White);
+            SolidBrush blackSolidBrush = new SolidBrush(Color.Black);
+            SolidBrush blueSolidBrush = new SolidBrush(Color.FromKnownColor(KnownColor.Highlight));
+            SolidBrush orangeSolidBrush = new SolidBrush(Color.Orange);
+
+            e.DrawBackground();
+            bool selected = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
+
+            int index = e.Index;
+            if (index >= 0 && index < existingList.Items.Count)
+            {
+                string text = existingList.Items[index].ToString();
+                Graphics g = e.Graphics;
+
+                //background:
+                SolidBrush backgroundBrush;
+                if (selected)
+                {
+                    backgroundBrush = blueSolidBrush;
+                }
+                else if (text.Contains("   "))
+                {
+                    if (shouldPaintOrange)
+                    {
+                        backgroundBrush = orangeSolidBrush;
+                    }
+                    else
+                    {
+                        backgroundBrush = whiteSolidBrush;
+                    }
+                }
+                else
+                {
+                    if (isListUsed(text, suffix))
+                    {
+                        warningLabel.Visible = true;
+                        backgroundBrush = orangeSolidBrush;
+                        shouldPaintOrange = true;
+                    }
+                    else
+                    {
+                        backgroundBrush = whiteSolidBrush;
+                        shouldPaintOrange = false;
+                    }
+                }
+                g.FillRectangle(backgroundBrush, e.Bounds);
+
+                //text:
+                SolidBrush foregroundBrush = (selected) ? whiteSolidBrush : blackSolidBrush;
+                g.DrawString(text, e.Font, foregroundBrush, existingList.GetItemRectangle(index).Location);
+            }
+            e.DrawFocusRectangle();
+        }
+
+        private void destinationFilesList_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            SolidBrush whiteSolidBrush = new SolidBrush(Color.White);
+            SolidBrush blackSolidBrush = new SolidBrush(Color.Black);
+            SolidBrush blueSolidBrush = new SolidBrush(Color.FromKnownColor(KnownColor.Highlight));
+            SolidBrush orangeSolidBrush = new SolidBrush(Color.Orange);
+
+            e.DrawBackground();
+            bool selected = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
+
+            int index = e.Index;
+            if (index >= 0 && index < deletingList.Items.Count)
+            {
+                string text = deletingList.Items[index].ToString();
+                Graphics g = e.Graphics;
+
+                //background:
+                SolidBrush backgroundBrush;
+                if (selected)
+                {
+                    backgroundBrush = blueSolidBrush;
+                }
+                else if (text.Contains("   "))
+                {
+                    if (shouldPaintOrange)
+                    {
+                        backgroundBrush = orangeSolidBrush;
+                    }
+                    else
+                    {
+                        backgroundBrush = whiteSolidBrush;
+                    }
+                }
+                else
+                {
+                    if (isListUsed(text, suffix))
+                    {
+                        warningLabel.Visible = true;
+                        backgroundBrush = orangeSolidBrush;
+                        shouldPaintOrange = true;
+                    }
+                    else
+                    {
+                        backgroundBrush = whiteSolidBrush;
+                        shouldPaintOrange = false;
+                    }
+                }
+                g.FillRectangle(backgroundBrush, e.Bounds);
+
+                //text:
+                SolidBrush foregroundBrush = (selected) ? whiteSolidBrush : blackSolidBrush;
+                g.DrawString(text, e.Font, foregroundBrush, deletingList.GetItemRectangle(index).Location);
+            }
+            e.DrawFocusRectangle();
         }
 
         private void existingList_Click(object sender, EventArgs e)
@@ -85,12 +199,32 @@ namespace TestPlatform.Views.ListsPages
 
         private void toDelete_Click(object sender, EventArgs e)
         {
+            bool isFirstItem = true;
+            int count = 0, limit ;
             SelectedObjectCollection selected = existingList.SelectedItems;
-            while(selected.Count != 0)
+            limit = selected.Count;
+            while (count != limit)
             {
-                deletingList.Items.Add(selected[0].ToString());
-                existingList.Items.Remove(selected[0]);
+                if (isFirstItem)
+                {
+                    isFirstItem = false;
+                    if (selected[0].ToString().Contains("   "))
+                    {
+                        return;
+                    }
+                }
+                if (isListUsed(selected[0].ToString(), suffix))
+                {
+                    return;
+                }
+                else
+                {
+                    deletingList.Items.Add(selected[0].ToString());
+                    existingList.Items.Remove(selected[0]);
+                }
+                count++;
             }
+            deletingList.ClearSelected();
         }
 
         private void toExisting_Click(object sender, EventArgs e)
@@ -108,10 +242,80 @@ namespace TestPlatform.Views.ListsPages
             this.Parent.Controls.Remove(this);
         }
 
+        private bool isListUsed(string listName, string suffix)
+        {
+            string[] TRPrograms = Directory.GetFiles(Global.reactionTestFilesPath + Global.programFolderName);
+            string[] StroopPrograms = Directory.GetFiles(Global.stroopTestFilesPath + Global.programFolderName);
+            foreach (string file in TRPrograms)
+            {
+                ReactionProgram program = new ReactionProgram();
+                program.readProgramFile(file);
+                if (suffix == "_image" && program.getImageListFile() != null && program.getImageListFile().ListName == listName)
+                {
+                    return true;
+                }
+                else if (suffix == "_audio" && program.getAudioListFile() != null && program.getAudioListFile().ListName == listName)
+                {
+                    return true;
+                }
+                else if (suffix == "_words_color")
+                {
+                    if (program.getWordListFile() != null && ((program.getWordListFile().ListName + "_words") == listName))
+                    {
+                        return true;
+                    } 
+                    else if (program.getColorListFile() != null && ((program.getColorListFile().ListName + "_color") == listName))
+                    {
+                        return true;
+                    }
+                }
+            }
+            foreach (string file in StroopPrograms)
+            { 
+                StroopProgram program = new StroopProgram();
+                program.readProgramFile(file);
+                if (suffix == "_image" && program.getImageListFile() != null && program.getImageListFile().ListName == listName)
+                {
+                    return true;
+                }
+                else if (suffix == "_audio" && program.getAudioListFile() != null && program.getAudioListFile().ListName == listName)
+                {
+                    return true;
+                }
+                else if (suffix == "_words_color")
+                {
+                    if (program.getWordListFile() != null && ((program.getWordListFile().ListName + "_words") == listName))
+                    {
+                        return true;
+                    }
+                    else if (program.getColorListFile() != null && ((program.getColorListFile().ListName + "_color") == listName))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private void DeleteDirectory(string target_dir)
+        {
+            string[] files = Directory.GetFiles(target_dir);
+            string[] dirs = Directory.GetDirectories(target_dir);
+
+            foreach (string file in files)
+            {
+                File.SetAttributes(file, FileAttributes.Normal);
+                File.Delete(file);
+            }
+
+            Directory.Delete(target_dir, false);
+        }
+
         private void deleteButton_Click(object sender, EventArgs e)
         {
             if (suffix == "_audio" || suffix == "_image")
             {
+
                 if (deletingList.Items.Count > 0)
                 {
                     int count = 0;
@@ -120,47 +324,49 @@ namespace TestPlatform.Views.ListsPages
                     {
                         if (!deletingList.Items[count].ToString().Contains("   "))
                         {
-                            currentDirectory = deletingList.Items[count++].ToString() + suffix;
-                        }
-                        else
-                        {
-                            if (File.Exists(listPath + currentDirectory + "\\" + deletingList.Items[count].ToString().Trim()))
+                            if (!isListUsed(deletingList.Items[count].ToString(), suffix))
                             {
-                                File.Delete(listPath + currentDirectory + "\\" + deletingList.Items[count].ToString().Trim());
+                                currentDirectory = listPath + deletingList.Items[count++].ToString() + suffix;
+                                DeleteDirectory(currentDirectory);
                             }
                             else
                             {
                                 /*do nothing*/
                             }
+                        }
+                        else
+                        {
                             count++;
                         }
                     } while (count < deletingList.Items.Count);
                     count = 0;
-                    do
-                    {
-                        if (Directory.Exists(listPath + deletingList.Items[count].ToString() + suffix))
-                        {
-                            Directory.Delete(listPath + deletingList.Items[count].ToString() + suffix);
-                        }
-                        count++;
-                    } while (count < deletingList.Items.Count);
-
                 }
             }
             else
             {
-                for (int count = 0; count < deletingList.Items.Count; count++)
+                if (deletingList.Items.Count > 0)
                 {
-                    try
+                    for (int count = 0; count < deletingList.Items.Count; count++)
                     {
-                        File.Delete(listPath + deletingList.Items[count].ToString() + ".lst");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
+                        try
+                        {
+                            if(!isListUsed(deletingList.Items[count].ToString(), suffix))
+                            {
+                                File.Delete(listPath + deletingList.Items[count].ToString() + ".lst");
+                            }
+                            else
+                            {
+                                /*do nothing*/
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
                     }
                 }
             }
+            loadExistingList();
             deletingList.Items.Clear();
             MessageBox.Show(LocRM.GetString("listsDeleted", currentCulture));
         }
@@ -174,6 +380,7 @@ namespace TestPlatform.Views.ListsPages
 
         private void loadExistingList()
         {
+            existingList.Items.Clear();
             if (suffix == "_audio" || suffix == "_image")
             {
                 if (Directory.Exists(listPath))

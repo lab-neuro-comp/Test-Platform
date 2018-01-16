@@ -226,6 +226,11 @@ namespace TestPlatform
                 errorMessage = LocRM.GetString("emptyListName", currentCulture);
                 return false;
             }
+            if (!Validations.isAlphanumeric(listName))
+            {
+                errorMessage = LocRM.GetString("listNotAlphanumeric", currentCulture);
+                return false;
+            }
             errorMessage = "";
             return true;
         }

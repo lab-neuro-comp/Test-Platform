@@ -1976,7 +1976,7 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
 &lt;/html&gt;</value>
   </data>
   <data name="deleteList" xml:space="preserve">
-    <value>Are you sure that you want to delete </value>
+    <value>Are you sure that you want to delete all the selected lists?</value>
   </data>
   <data name="listsDeleted" xml:space="preserve">
     <value>All selected lists were deleted sucessful!</value>
@@ -2190,5 +2190,14 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   </data>
   <data name="audioRecordFailed" xml:space="preserve">
     <value>The file was generated but no audio was captured.</value>
+  </data>
+  <data name="deleteFiles" xml:space="preserve">
+    <value>Are you sure that you want to move all the selected lists?</value>
+  </data>
+  <data name="filesNotDeleted" xml:space="preserve">
+    <value>No file was moved.</value>
+  </data>
+  <data name="listsNotDeleted" xml:space="preserve">
+    <value>No list was deleted.</value>
   </data>
 </root>

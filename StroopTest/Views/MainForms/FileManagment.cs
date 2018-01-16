@@ -208,7 +208,7 @@ namespace TestPlatform.Views.MainForms
             }
         }
 
-        private void sendButton_Click(object sender, EventArgs e)
+        private void moveFiles()
         {
             string[] programs = new string[destinationFilesList.Items.Count];
             if (destinationFilesList.Items.Count > 0)
@@ -244,6 +244,22 @@ namespace TestPlatform.Views.MainForms
             else
             {
                 /* do nothing*/
+            }
+        }
+
+        private void sendButton_Click(object sender, EventArgs e)
+        {
+            if (destinationFilesList.Items.Count > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("deleteFiles", currentCulture), LocRM.GetString("delete", currentCulture), MessageBoxButtons.YesNoCancel);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    moveFiles();
+                }
+                else
+                {
+                    MessageBox.Show(LocRM.GetString("FilesNotDeleted", currentCulture));
+                }
             }
         }
 

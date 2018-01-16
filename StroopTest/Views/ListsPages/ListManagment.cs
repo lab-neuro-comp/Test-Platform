@@ -311,7 +311,7 @@ namespace TestPlatform.Views.ListsPages
             Directory.Delete(target_dir, false);
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
+        private void deleteLists()
         {
             if (suffix == "_audio" || suffix == "_image")
             {
@@ -350,7 +350,7 @@ namespace TestPlatform.Views.ListsPages
                     {
                         try
                         {
-                            if(!isListUsed(deletingList.Items[count].ToString(), suffix))
+                            if (!isListUsed(deletingList.Items[count].ToString(), suffix))
                             {
                                 File.Delete(listPath + deletingList.Items[count].ToString() + ".lst");
                             }
@@ -369,6 +369,22 @@ namespace TestPlatform.Views.ListsPages
             loadExistingList();
             deletingList.Items.Clear();
             MessageBox.Show(LocRM.GetString("listsDeleted", currentCulture));
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if (deletingList.Items.Count > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("deleteList", currentCulture), LocRM.GetString("delete", currentCulture), MessageBoxButtons.YesNoCancel);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    deleteLists();
+                }
+                else
+                {
+                    MessageBox.Show(LocRM.GetString("listsNotDeleted", currentCulture));
+                }
+            }
         }
 
         private void helpButton_Click(object sender, EventArgs e)

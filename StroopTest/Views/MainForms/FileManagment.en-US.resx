@@ -135,4 +135,7 @@
   <data name="cancelButton.Text" xml:space="preserve">
     <value>cancel</value>
   </data>
+  <data name="warningLabel.Text" xml:space="preserve">
+    <value>Orange programs indicates that the program is used by some experiment and you can't delete it while it is being used.</value>
+  </data>
 </root>

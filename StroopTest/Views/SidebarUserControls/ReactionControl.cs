@@ -127,7 +127,7 @@ namespace TestPlatform.Views.SidebarUserControls
                     }
                     if (screenTranslationAllowed)
                     {
-                        FileManagment deleteProgram = new FileManagment(Global.reactionTestFilesPath + Global.programFolderName, Global.reactionTestFilesBackupPath, 'd');
+                        FileManagment deleteProgram = new FileManagment(Global.reactionTestFilesPath + Global.programFolderName, Global.reactionTestFilesBackupPath, 'd', "program");
                         Global.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                         deleteReactButton.Checked = false; 
                     }
@@ -149,7 +149,7 @@ namespace TestPlatform.Views.SidebarUserControls
                     }
                     if (screenTranslationAllowed)
                     {
-                        FileManagment recoverProgram = new FileManagment(Global.reactionTestFilesBackupPath, Global.reactionTestFilesPath + Global.programFolderName, 'r');
+                        FileManagment recoverProgram = new FileManagment(Global.reactionTestFilesBackupPath, Global.reactionTestFilesPath + Global.programFolderName, 'r', "program");
                         Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverReactButton.Checked = false; 
                     }

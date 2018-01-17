@@ -42,8 +42,6 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.deleteItemLabel = new System.Windows.Forms.Label();
             this.programDataGridView = new System.Windows.Forms.DataGridView();
-            this.programName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typePrograma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.programSelectButton = new System.Windows.Forms.Button();
             this.instructionsBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -55,6 +53,9 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.programName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typePrograma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.experimentConfigPanel.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).BeginInit();
@@ -163,6 +164,7 @@
             this.programDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.programDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.programDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Order,
             this.programName,
             this.typePrograma});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -180,20 +182,6 @@
             this.programDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.programDataGridView.Validating += new System.ComponentModel.CancelEventHandler(this.listLength_Validating);
             this.programDataGridView.Validated += new System.EventHandler(this.listLength_Validated);
-            // 
-            // programName
-            // 
-            this.programName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.programName, "programName");
-            this.programName.Name = "programName";
-            this.programName.ReadOnly = true;
-            // 
-            // typePrograma
-            // 
-            this.typePrograma.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.typePrograma, "typePrograma");
-            this.typePrograma.Name = "typePrograma";
-            this.typePrograma.ReadOnly = true;
             // 
             // programSelectButton
             // 
@@ -271,6 +259,26 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // Order
+            // 
+            resources.ApplyResources(this.Order, "Order");
+            this.Order.Name = "Order";
+            this.Order.ReadOnly = true;
+            // 
+            // programName
+            // 
+            this.programName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.programName, "programName");
+            this.programName.Name = "programName";
+            this.programName.ReadOnly = true;
+            // 
+            // typePrograma
+            // 
+            this.typePrograma.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.typePrograma, "typePrograma");
+            this.typePrograma.Name = "typePrograma";
+            this.typePrograma.ReadOnly = true;
+            // 
             // ExperimentConfig
             // 
             resources.ApplyResources(this, "$this");
@@ -318,10 +326,11 @@
         private System.Windows.Forms.DataGridView programDataGridView;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Label deleteItemLabel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn programName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typePrograma;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label labelEmpty;
         private System.Windows.Forms.Button trainingButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Order;
+        private System.Windows.Forms.DataGridViewTextBoxColumn programName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typePrograma;
     }
 }

@@ -6,7 +6,8 @@
     using System.IO;
     using System.Linq;
     using System.Resources;
-    using TestPlatform.Views;
+    using System.Windows.Forms;
+    using Views;
 
     public class ExperimentProgram
     {
@@ -125,18 +126,34 @@
             }
         }
 
-        public void AddStroopProgram(string programName)
+        public bool AddStroopProgram(string programName)
         {
-            StroopProgram newProgram = new StroopProgram();
-            newProgram.ProgramName = programName;
-            newProgram.readProgramFile(Global.stroopTestFilesPath + Global.programFolderName + newProgram.ProgramName + ".prg");
-            ProgramList.Add(newProgram);
+            try
+            {
+                StroopProgram newProgram = new StroopProgram();
+                newProgram.ProgramName = programName;
+                newProgram.readProgramFile(Global.stroopTestFilesPath + Global.programFolderName + newProgram.ProgramName + ".prg");
+                ProgramList.Add(newProgram);
+            }
+            catch (FileNotFoundException)
+            {
+                return false;
+            }
+            return true;
         }
 
-        public void AddReactionProgram(string programName)
+        public bool AddReactionProgram(string programName)
         {
-            ReactionProgram newProgram = new ReactionProgram(Global.reactionTestFilesPath + Global.programFolderName + programName + ".prg");
-            ProgramList.Add(newProgram);
+            try
+            {
+                ReactionProgram newProgram = new ReactionProgram(Global.reactionTestFilesPath + Global.programFolderName + programName + ".prg");
+                ProgramList.Add(newProgram);
+            }
+            catch (FileNotFoundException)
+            {
+                return false;
+            }
+            return true;
         }
 
         private string Data()
@@ -164,7 +181,8 @@
 
         /* getting information from .prg file and converting to an experiment object */
         public void ReadProgramFile() 
-        {            
+        {
+            bool isProgramValid = true;
             string filePath = Global.experimentTestFilesPath + Global.programFolderName + ExperimentName + ".prg";
             if (File.Exists(filePath))
             {
@@ -197,11 +215,11 @@
                 {
                     if (listConfiguration[i] == "StroopProgram")
                     {
-                       AddStroopProgram(listConfiguration[i - 1]);
+                        isProgramValid = AddStroopProgram(listConfiguration[i - 1]);
                     }
                     else if (listConfiguration[i] == "ReactionProgram")
                     {
-                        AddReactionProgram(listConfiguration[i - 1]);
+                        isProgramValid = AddReactionProgram(listConfiguration[i - 1]);
                     }
                 }
 
@@ -215,6 +233,10 @@
                 else
                 {
                     this.InstructionText = null;
+                }
+                if (!isProgramValid)
+                {
+                    this.SaveExperimentFile(Global.experimentTestFilesPath + Global.programFolderName);
                 }
             }
             else

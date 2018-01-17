@@ -135,4 +135,7 @@
   <data name="cancelButton.Text" xml:space="preserve">
     <value>cancelar</value>
   </data>
+  <data name="warningLabel.Text" xml:space="preserve">
+    <value>Programas em laranja indica que eles estão sendo usados por algum experimento. Não é possível excluí-lo enquanto o experimento utiliza-lo.</value>
+  </data>
 </root>

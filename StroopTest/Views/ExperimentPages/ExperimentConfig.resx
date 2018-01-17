@@ -123,13 +123,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 2</value>
+    <value>651, 2</value>
   </data>
   <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
+    <value>35, 32</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
@@ -151,13 +151,10 @@
     <value>True</value>
   </data>
   <data name="intervalTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 18</value>
-  </data>
-  <data name="intervalTimeLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>15, 22</value>
   </data>
   <data name="intervalTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
+    <value>98, 17</value>
   </data>
   <data name="intervalTimeLabel.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -178,13 +175,13 @@
     <value>0</value>
   </data>
   <data name="intervalTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>106, 18</value>
+    <value>141, 22</value>
   </data>
   <data name="intervalTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="intervalTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 20</value>
+    <value>80, 22</value>
   </data>
   <data name="intervalTime.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -202,16 +199,16 @@
     <value>1</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>303, 32</value>
+    <value>404, 39</value>
   </data>
   <data name="groupBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="groupBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 48</value>
+    <value>269, 59</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -241,13 +238,13 @@
     <value>NoControl</value>
   </data>
   <data name="trainingButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 67</value>
+    <value>9, 82</value>
   </data>
   <data name="trainingButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="trainingButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 23</value>
+    <value>99, 28</value>
   </data>
   <data name="trainingButton.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>
@@ -274,10 +271,13 @@
     <value>True</value>
   </data>
   <data name="labelEmpty.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 144</value>
+    <value>7, 177</value>
+  </data>
+  <data name="labelEmpty.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelEmpty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
+    <value>77, 17</value>
   </data>
   <data name="labelEmpty.TabIndex" type="System.Int32, mscorlib">
     <value>84</value>
@@ -301,13 +301,13 @@
     <value>Microsoft Sans Serif, 7.8pt</value>
   </data>
   <data name="deleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 104</value>
+    <value>9, 128</value>
   </data>
   <data name="deleteButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="deleteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 22</value>
+    <value>99, 27</value>
   </data>
   <data name="deleteButton.TabIndex" type="System.Int32, mscorlib">
     <value>62</value>
@@ -331,10 +331,13 @@
     <value>True</value>
   </data>
   <data name="deleteItemLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 89</value>
+    <value>7, 110</value>
+  </data>
+  <data name="deleteItemLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="deleteItemLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
+    <value>88, 17</value>
   </data>
   <data name="deleteItemLabel.TabIndex" type="System.Int32, mscorlib">
     <value>61</value>
@@ -354,6 +357,15 @@
   <data name="&gt;&gt;deleteItemLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="Order.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Order.HeaderText" xml:space="preserve">
+    <value>Ordem</value>
+  </data>
+  <data name="Order.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
   <metadata name="programName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -370,13 +382,16 @@
     <value>200</value>
   </data>
   <data name="programDataGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 41</value>
+    <value>112, 50</value>
+  </data>
+  <data name="programDataGridView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="programDataGridView.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="programDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>390, 209</value>
+    <value>520, 257</value>
   </data>
   <data name="programDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -397,13 +412,13 @@
     <value>Microsoft Sans Serif, 7.8pt</value>
   </data>
   <data name="programSelectButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 41</value>
+    <value>9, 50</value>
   </data>
   <data name="programSelectButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="programSelectButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 23</value>
+    <value>99, 28</value>
   </data>
   <data name="programSelectButton.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -424,16 +439,16 @@
     <value>5</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 84</value>
+    <value>19, 103</value>
   </data>
   <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>490, 318</value>
+    <value>653, 391</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -454,10 +469,10 @@
     <value>2</value>
   </data>
   <data name="instructionsBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 428</value>
+    <value>16, 527</value>
   </data>
   <data name="instructionsBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="instructionsBox.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -466,7 +481,7 @@
     <value>Vertical</value>
   </data>
   <data name="instructionsBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>494, 111</value>
+    <value>657, 136</value>
   </data>
   <data name="instructionsBox.TabIndex" type="System.Int32, mscorlib">
     <value>70</value>
@@ -487,13 +502,10 @@
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 20</value>
-  </data>
-  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>12, 25</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 13</value>
+    <value>115, 17</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>161</value>
@@ -520,13 +532,13 @@
     <value>True</value>
   </data>
   <data name="randomOrderCheckbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 23</value>
+    <value>135, 28</value>
   </data>
   <data name="randomOrderCheckbox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="randomOrderCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 14</value>
+    <value>18, 17</value>
   </data>
   <data name="randomOrderCheckbox.TabIndex" type="System.Int32, mscorlib">
     <value>160</value>
@@ -544,16 +556,16 @@
     <value>1</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 33</value>
+    <value>19, 41</value>
   </data>
   <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 47</value>
+    <value>367, 58</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -577,13 +589,10 @@
     <value>True</value>
   </data>
   <data name="instructionsLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 410</value>
-  </data>
-  <data name="instructionsLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>16, 505</value>
   </data>
   <data name="instructionsLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
+    <value>77, 17</value>
   </data>
   <data name="instructionsLabel.TabIndex" type="System.Int32, mscorlib">
     <value>59</value>
@@ -604,16 +613,16 @@
     <value>5</value>
   </data>
   <data name="experimentNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 10</value>
+    <value>171, 12</value>
   </data>
   <data name="experimentNameTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="experimentNameTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>300</value>
   </data>
   <data name="experimentNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 20</value>
+    <value>263, 22</value>
   </data>
   <data name="experimentNameTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -634,13 +643,10 @@
     <value>True</value>
   </data>
   <data name="experimentNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="experimentNameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>13, 12</value>
   </data>
   <data name="experimentNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 13</value>
+    <value>151, 17</value>
   </data>
   <data name="experimentNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -661,13 +667,13 @@
     <value>7</value>
   </data>
   <data name="experimentConfigPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 10</value>
+    <value>21, 12</value>
   </data>
   <data name="experimentConfigPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="experimentConfigPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>520, 546</value>
+    <value>693, 672</value>
   </data>
   <data name="experimentConfigPanel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -691,10 +697,13 @@
     <value>Popup</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 570</value>
+    <value>21, 702</value>
+  </data>
+  <data name="cancelButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>100, 28</value>
   </data>
   <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
     <value>87</value>
@@ -721,10 +730,13 @@
     <value>Popup</value>
   </data>
   <data name="saveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>461, 570</value>
+    <value>615, 702</value>
+  </data>
+  <data name="saveButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="saveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>100, 28</value>
   </data>
   <data name="saveButton.TabIndex" type="System.Int32, mscorlib">
     <value>86</value>
@@ -751,16 +763,28 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 16</value>
   </data>
   <data name="$this.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>555, 639</value>
+    <value>740, 786</value>
+  </data>
+  <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
+    <value>errorProvider1</value>
+  </data>
+  <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Order.Name" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="&gt;&gt;Order.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;programName.Name" xml:space="preserve">
     <value>programName</value>
@@ -773,12 +797,6 @@
   </data>
   <data name="&gt;&gt;typePrograma.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
-    <value>errorProvider1</value>
-  </data>
-  <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ExperimentConfig</value>

@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Resources;
 using System.Globalization;
 using System.Collections.Generic;
+using System.IO;
 
 namespace TestPlatform
 {
@@ -125,6 +126,7 @@ namespace TestPlatform
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            bool hasValidFiles = true;
             try
             {
                 if (this.ValidateChildren(ValidationConstraints.Enabled))
@@ -132,12 +134,16 @@ namespace TestPlatform
                     List<string> content = new List<string>();
                     for (int i = 0; i < audioPathDataGridView.RowCount; i++)
                     {
+                        if (!File.Exists(audioPathDataGridView.Rows[i].Cells[1].Value.ToString()))
+                        {
+                            hasValidFiles = false;
+                        }
                         content.Add(audioPathDataGridView.Rows[i].Cells[1].Value.ToString());
                     }
                     
                     audioList = new StrList(content, this.audioListNameTextBox.Text, "_audio");
 
-                    if (audioList.saveContent())
+                    if (audioList.saveContent(hasValidFiles))
                     {
                         MessageBox.Show(LocRM.GetString("list", currentCulture) + this.audioListNameTextBox.Text + "_audio" + LocRM.GetString("listSaveSuccess", currentCulture));
                         this.Parent.Controls.Remove(this);

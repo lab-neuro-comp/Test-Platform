@@ -2179,4 +2179,10 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="inFormListWarning" xml:space="preserve">
     <value>Você será redirecionado de volta para a edição do programa após a criação da lista.</value>
   </data>
+  <data name="audioRecordFailed" xml:space="preserve">
+    <value>O arquivo foi gerado porém nenhum áudio foi capturado.</value>
+  </data>
+  <data name="listNotAlphanumeric" xml:space="preserve">
+    <value>Nome da lista deve ser composto apenas de caracteres alfanuméricos e sem espaços. Exemplo: 'MinhaLista'</value>
+  </data>
 </root>

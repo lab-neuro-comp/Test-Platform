@@ -386,7 +386,11 @@ namespace TestPlatform
                 errorMessage = "O nome da lista deve ser preenchido";
                 return false;
             }
-
+            if (!Validations.isAlphanumeric(name))
+            {
+                errorMessage = LocRM.GetString("listNotAlphanumeric", currentCulture);
+                return false;
+            }
             errorMessage = "";
             return true;
         }

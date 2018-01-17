@@ -135,7 +135,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="imageButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="imageButton.TabIndex" type="System.Int32, mscorlib">
@@ -175,7 +175,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="colorWordButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="colorWordButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -214,7 +214,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="audioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="audioButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -262,7 +262,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="recordAudioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="recordAudioButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -301,7 +301,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="newAudioListButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="newAudioListButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -340,7 +340,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="editAudioListButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="editAudioListButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -382,7 +382,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="radioButton4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="radioButton4.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -421,7 +421,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="backAudioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="backAudioButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -451,7 +451,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="audioPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 195</value>
+    <value>209, 195</value>
   </data>
   <data name="audioPanel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -490,7 +490,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="newWordColorButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="newWordColorButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -529,7 +529,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="editWordColorButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="editWordColorButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -568,7 +568,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="deleteWordColorButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="deleteWordColorButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -607,7 +607,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="backWordColorButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="backWordColorButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -637,7 +637,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="wordColorPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 156</value>
+    <value>209, 156</value>
   </data>
   <data name="wordColorPanel.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -679,7 +679,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="newImageListButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="newImageListButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -718,7 +718,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="editImageListButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="editImageListButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -760,7 +760,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="radioButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="radioButton3.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -799,7 +799,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="backImageButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 33</value>
+    <value>209, 33</value>
   </data>
   <data name="backImageButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -829,7 +829,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="imagePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 156</value>
+    <value>209, 156</value>
   </data>
   <data name="imagePanel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>

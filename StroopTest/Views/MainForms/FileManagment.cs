@@ -74,22 +74,20 @@ namespace TestPlatform.Views.MainForms
                 {
                     backgroundBrush = blueSolidBrush;
                 }
+                else if (type == "program" && mode == 'd' && isProgramUsed(text))
+                {
+                    backgroundBrush = orangeSolidBush;
+                    warningLabel.Visible = true;
+                }
                 else if (File.Exists(destinationPath + text + ".prg") == true)
                 {
                     backgroundBrush = redSolidBrush;
                 }
                 else
                 {
-                    if (type == "program" && mode == 'd' && isProgramUsed(text))
-                    {
-                        backgroundBrush = orangeSolidBush;
-                        warningLabel.Visible = true;
-                    }
-                    else
-                    {
-                        backgroundBrush = whiteSolidBrush;
-                    }
+                    backgroundBrush = whiteSolidBrush;
                 }
+
                 g.FillRectangle(backgroundBrush, e.Bounds);
 
                 //text:

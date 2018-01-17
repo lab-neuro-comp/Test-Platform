@@ -129,4 +129,7 @@
   <data name="deletingLabel.Text" xml:space="preserve">
     <value>Arquivos que serão excluídos:</value>
   </data>
+  <data name="warningLabel.Text" xml:space="preserve">
+    <value>Listas em laranja indica que elas estão sendo usadas por algum programa. Não é possível excluí-la enquanto o programa utiliza-la.</value>
+  </data>
 </root>

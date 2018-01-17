@@ -122,7 +122,7 @@
     <value>20, 56</value>
   </data>
   <data name="originFilesList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 329</value>
+    <value>190, 277</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="originFilesList.TabIndex" type="System.Int32, mscorlib">
@@ -138,13 +138,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;originFilesList.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="destinationFilesList.Location" type="System.Drawing.Point, System.Drawing">
     <value>299, 56</value>
   </data>
   <data name="destinationFilesList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 329</value>
+    <value>190, 277</value>
   </data>
   <data name="destinationFilesList.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -159,7 +159,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;destinationFilesList.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="originListLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -186,7 +186,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;originListLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="destinationListLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -217,31 +217,31 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;destinationListLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
-  <data name="warningMessage.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="errorMessage.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 412</value>
   </data>
-  <data name="warningMessage.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="errorMessage.Size" type="System.Drawing.Size, System.Drawing">
     <value>470, 81</value>
   </data>
-  <data name="warningMessage.TabIndex" type="System.Int32, mscorlib">
+  <data name="errorMessage.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="warningMessage.Text" xml:space="preserve">
+  <data name="errorMessage.Text" xml:space="preserve">
     <value>warningMessage</value>
   </data>
-  <data name="&gt;&gt;warningMessage.Name" xml:space="preserve">
-    <value>warningMessage</value>
+  <data name="&gt;&gt;errorMessage.Name" xml:space="preserve">
+    <value>errorMessage</value>
   </data>
-  <data name="&gt;&gt;warningMessage.Type" xml:space="preserve">
+  <data name="&gt;&gt;errorMessage.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;warningMessage.Parent" xml:space="preserve">
+  <data name="&gt;&gt;errorMessage.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;warningMessage.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;errorMessage.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="warningCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -268,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;warningCheckBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 542</value>
@@ -292,7 +292,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="sendButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -319,7 +319,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;sendButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="addToDestinationList.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -331,7 +331,7 @@
     <value>NoControl</value>
   </data>
   <data name="addToDestinationList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 178</value>
+    <value>239, 160</value>
   </data>
   <data name="addToDestinationList.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 25</value>
@@ -352,7 +352,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;addToDestinationList.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="addToOriginList.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -364,7 +364,7 @@
     <value>NoControl</value>
   </data>
   <data name="addToOriginList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 209</value>
+    <value>239, 191</value>
   </data>
   <data name="addToOriginList.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 25</value>
@@ -385,7 +385,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;addToOriginList.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="helpButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
@@ -412,6 +412,39 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;helpButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="warningLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.5pt</value>
+  </data>
+  <data name="warningLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="warningLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 350</value>
+  </data>
+  <data name="warningLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 62</value>
+  </data>
+  <data name="warningLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="warningLabel.Text" xml:space="preserve">
+    <value>warningLabel</value>
+  </data>
+  <data name="warningLabel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;warningLabel.Name" xml:space="preserve">
+    <value>warningLabel</value>
+  </data>
+  <data name="&gt;&gt;warningLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;warningLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;warningLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -184,7 +184,7 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>A caixa de texto não pode estar vazia!</value>
   </data>
   <data name="emptyList" xml:space="preserve">
-    <value>A lista está \n vazia!</value>
+    <value>A lista está vazia!</value>
   </data>
   <data name="emptyListName" xml:space="preserve">
     <value>O nome da lista deve ser preenchido.</value>
@@ -1970,7 +1970,7 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
 &lt;/html&gt;</value>
   </data>
   <data name="deleteList" xml:space="preserve">
-    <value>Você tem certeza que deseja excluir </value>
+    <value>Você tem certeza que deseja excluir todas as listas selecionadas?</value>
   </data>
   <data name="listsDeleted" xml:space="preserve">
     <value>Todas as listas selecionadas foram excluídas com sucesso!</value>
@@ -2182,6 +2182,15 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="audioRecordFailed" xml:space="preserve">
     <value>O arquivo foi gerado porém nenhum áudio foi capturado.</value>
   </data>
+  <data name="deleteFiles" xml:space="preserve">
+    <value>Você tem certeza que deseja mover todos os arquivos selecionados?</value>
+  </data>
+  <data name="FilesNotDeleted" xml:space="preserve">
+    <value>Nenhuma arquivo foi movido.</value>
+  </data>
+  <data name="listsNotDeleted" xml:space="preserve">
+    <value>Nenhuma lista foi excluída.</value>
+  </data>
   <data name="listNotAlphanumeric" xml:space="preserve">
     <value>Nome da lista deve ser composto apenas de caracteres alfanuméricos e sem espaços. Exemplo: 'MinhaLista'</value>
   </data>
@@ -2190,5 +2199,8 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="training" xml:space="preserve">
     <value>Treino</value>
+  </data>
+  <data name="removeProgramFromExperiment" xml:space="preserve">
+    <value>Deseja remover o programa do experimento?</value>
   </data>
 </root>

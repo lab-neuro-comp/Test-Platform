@@ -251,8 +251,8 @@ namespace TestPlatform.Views.MainForms
         {
             if (destinationFilesList.Items.Count > 0)
             {
-                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("deleteFiles", currentCulture), LocRM.GetString("delete", currentCulture), MessageBoxButtons.YesNoCancel);
-                if (dialogResult == DialogResult.Yes)
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("deleteFiles", currentCulture), LocRM.GetString("delete", currentCulture), MessageBoxButtons.OKCancel);
+                if (dialogResult == DialogResult.OK)
                 {
                     moveFiles();
                 }

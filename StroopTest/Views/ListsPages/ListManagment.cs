@@ -375,8 +375,8 @@ namespace TestPlatform.Views.ListsPages
         {
             if (deletingList.Items.Count > 0)
             {
-                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("deleteList", currentCulture), LocRM.GetString("delete", currentCulture), MessageBoxButtons.YesNoCancel);
-                if (dialogResult == DialogResult.Yes)
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("deleteList", currentCulture), LocRM.GetString("delete", currentCulture), MessageBoxButtons.OKCancel);
+                if (dialogResult == DialogResult.OK)
                 {
                     deleteLists();
                 }

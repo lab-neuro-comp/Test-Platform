@@ -1,14 +1,8 @@
-﻿/*
- * Copyright (c) 2016 All Rights Reserved
- * Hugo Honda
- */
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using TestPlatform.Models;
 
 namespace TestPlatform.Models
 {
@@ -367,9 +361,7 @@ namespace TestPlatform.Models
                 config = line.Split().ToList();
                 List<string> defaultConfig = LocRM.GetString("defaultStroopProgram", currentCulture).Split().ToList();
                 tr.Close();
-
-                Console.WriteLine(config[0]);
-
+                
                 needsEditionFlag = false;
                 if (config.Count() < defaultConfig.Count() && config.Count() > 15)
                 {

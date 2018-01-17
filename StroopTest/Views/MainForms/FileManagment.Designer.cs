@@ -33,13 +33,14 @@
             this.destinationFilesList = new System.Windows.Forms.ListBox();
             this.originListLabel = new System.Windows.Forms.Label();
             this.destinationListLabel = new System.Windows.Forms.Label();
-            this.warningMessage = new System.Windows.Forms.Label();
+            this.errorMessage = new System.Windows.Forms.Label();
             this.warningCheckBox = new System.Windows.Forms.CheckBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.sendButton = new System.Windows.Forms.Button();
             this.addToDestinationList = new System.Windows.Forms.Button();
             this.addToOriginList = new System.Windows.Forms.Button();
             this.helpButton = new System.Windows.Forms.Button();
+            this.warningLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // originFilesList
@@ -68,11 +69,11 @@
             resources.ApplyResources(this.destinationListLabel, "destinationListLabel");
             this.destinationListLabel.Name = "destinationListLabel";
             // 
-            // warningMessage
+            // errorMessage
             // 
-            this.warningMessage.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.warningMessage, "warningMessage");
-            this.warningMessage.Name = "warningMessage";
+            this.errorMessage.ForeColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.errorMessage, "errorMessage");
+            this.errorMessage.Name = "errorMessage";
             // 
             // warningCheckBox
             // 
@@ -118,17 +119,24 @@
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
+            // warningLabel
+            // 
+            resources.ApplyResources(this.warningLabel, "warningLabel");
+            this.warningLabel.ForeColor = System.Drawing.Color.Orange;
+            this.warningLabel.Name = "warningLabel";
+            // 
             // FileManagment
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.warningLabel);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.addToOriginList);
             this.Controls.Add(this.addToDestinationList);
             this.Controls.Add(this.sendButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.warningCheckBox);
-            this.Controls.Add(this.warningMessage);
+            this.Controls.Add(this.errorMessage);
             this.Controls.Add(this.destinationListLabel);
             this.Controls.Add(this.originListLabel);
             this.Controls.Add(this.destinationFilesList);
@@ -145,12 +153,13 @@
         private System.Windows.Forms.ListBox destinationFilesList;
         private System.Windows.Forms.Label originListLabel;
         private System.Windows.Forms.Label destinationListLabel;
-        private System.Windows.Forms.Label warningMessage;
+        private System.Windows.Forms.Label errorMessage;
         private System.Windows.Forms.CheckBox warningCheckBox;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button sendButton;
         private System.Windows.Forms.Button addToDestinationList;
         private System.Windows.Forms.Button addToOriginList;
         private System.Windows.Forms.Button helpButton;
+        private System.Windows.Forms.Label warningLabel;
     }
 }

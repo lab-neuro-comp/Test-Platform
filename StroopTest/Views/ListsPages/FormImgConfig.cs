@@ -190,6 +190,7 @@ namespace TestPlatform
         // saves list into directory copying files inside lst directory
         private void saveButton_Click(object sender, EventArgs e)
         {
+            bool hasValidFiles = true;
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 try
@@ -197,11 +198,15 @@ namespace TestPlatform
                     List<string> content = new List<string>();
                     for (int i = 0; i < imgPathDataGridView.RowCount; i++)
                     {
+                        if (!File.Exists(imgPathDataGridView.Rows[i].Cells[2].Value.ToString()))
+                        {
+                            hasValidFiles = false;
+                        }
                         content.Add(imgPathDataGridView.Rows[i].Cells[2].Value.ToString());
                     }
                     imageList = new StrList(content, imgListNameTextBox.Text, "_image");
 
-                    if (imageList.saveContent())
+                    if (imageList.saveContent(hasValidFiles))
                     {
                         MessageBox.Show(LocRM.GetString("list", currentCulture) + imgListNameTextBox.Text + "_image" + LocRM.GetString("listSaveSuccess", currentCulture));
                         this.Parent.Controls.Remove(this);

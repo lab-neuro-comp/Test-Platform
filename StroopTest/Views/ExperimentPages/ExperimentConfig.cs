@@ -92,7 +92,16 @@ namespace TestPlatform.Views.ExperimentPages
             string[] result = defineTest();
             if (result != null)
             {
-                programDataGridView.Rows.Add(result[1], result[0]);
+                if (!randomOrderCheckbox.Checked)
+                {
+                    int row = programDataGridView.Rows.Add(0, result[1], result[0]);
+                    programDataGridView.Rows[row].SetValues(row + 1, result[1], result[0]);
+                }
+                else
+                {
+                    programDataGridView.Rows.Add(LocRM.GetString("random", currentCulture), result[1], result[0]);
+                }
+
                 if (result[0] == LocRM.GetString("stroopTest", currentCulture))
                 {
                     savingExperiment.AddStroopProgram(result[1]);
@@ -262,29 +271,19 @@ namespace TestPlatform.Views.ExperimentPages
         {
             if (programDataGridView.RowCount > 0 && programDataGridView.SelectedRows[0] != null)
             {
-                if (programDataGridView.SelectedRows[0].Index == 0 && programDataGridView.Rows[0].Cells[0].Style.BackColor != Color.LightGray)
+                if (programDataGridView.SelectedRows[0].Index == 0)
                 {
-                    changingBackColorFirstRow(Color.LightGray);
-                    changingFontStyleFirstRow(FontStyle.Bold);
-                }
-                else if (programDataGridView.SelectedRows[0].Index == 0 && programDataGridView.Rows[0].Cells[0].Style.BackColor == Color.LightGray)
-                {
-                    changingBackColorFirstRow(Color.White);
-                    changingFontStyleFirstRow(FontStyle.Regular);
+                    programDataGridView.Rows[0].Cells[0].Value = LocRM.GetString("training", currentCulture);
                 }
                 else if (programDataGridView.SelectedRows[0].Index != 0)
                 {
-                    if (programDataGridView.Rows[0].Cells[0].Style.BackColor == Color.LightGray)
-                    {
-                        changingBackColorFirstRow(Color.White);
-                        changingFontStyleFirstRow(FontStyle.Regular);
-                    }
+                    programDataGridView.Rows[0].Cells[0].Value = LocRM.GetString("random", currentCulture);
+                    
                     // swapping first row and selected row
                     swappingRows();
 
                     // marking first row as training
-                    changingBackColorFirstRow(Color.LightGray);
-                    changingFontStyleFirstRow(FontStyle.Bold);
+                    programDataGridView.Rows[0].Cells[0].Value = LocRM.GetString("training", currentCulture);
                 }
             }
             else
@@ -308,30 +307,23 @@ namespace TestPlatform.Views.ExperimentPages
             programDataGridView.Rows.Insert(index, currentFirsRow);
         }
 
-        private void changingBackColorFirstRow(Color color)
-        {
-            programDataGridView.Rows[0].Cells[0].Style.BackColor = color;
-            programDataGridView.Rows[0].Cells[1].Style.BackColor = color;
-        }
-
-        private void changingFontStyleFirstRow(FontStyle style)
-        {
-            programDataGridView.Rows[0].Cells[0].Style.Font = new Font(programDataGridView.Font, style);
-            programDataGridView.Rows[0].Cells[1].Style.Font = new Font(programDataGridView.Font, style);
-        }
-
         private void randomOrderCheckbox_CheckedChanged(object sender, EventArgs e)
         {
             if (randomOrderCheckbox.Checked)
             {
                 trainingButton.Enabled = true;
+                foreach (DataGridViewRow row in programDataGridView.Rows)
+                {
+                    row.Cells[0].Value = LocRM.GetString("random", currentCulture);
+                }
             }
             else
             {
-                if (programDataGridView.RowCount != 0 &&  programDataGridView.Rows[0].Cells[0].Style.BackColor == Color.LightGray)
+
+                for (int i = 0; i < programDataGridView.Rows.Count; i++)
                 {
-                    changingBackColorFirstRow(Color.White);
-                    changingFontStyleFirstRow(FontStyle.Regular);
+                    programDataGridView.Rows[i].Cells[0].Value = i+1;
+                    
                 }
                 trainingButton.Enabled = false;
 

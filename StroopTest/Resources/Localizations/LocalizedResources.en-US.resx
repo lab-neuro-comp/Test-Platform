@@ -2194,4 +2194,10 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   <data name="listNotAlphanumeric" xml:space="preserve">
     <value>The list name must be composed only of alphanumerical characters and no spaces. Example: 'MyList'</value>
   </data>
+  <data name="random" xml:space="preserve">
+    <value>random</value>
+  </data>
+  <data name="training" xml:space="preserve">
+    <value>Training</value>
+  </data>
 </root>

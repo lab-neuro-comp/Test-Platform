@@ -2182,6 +2182,7 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="audioRecordFailed" xml:space="preserve">
     <value>O arquivo foi gerado porém nenhum áudio foi capturado.</value>
   </data>
+
   <data name="deleteFiles" xml:space="preserve">
     <value>Você tem certeza que deseja mover todos os arquivos selecionados?</value>
   </data>
@@ -2190,5 +2191,8 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="listsNotDeleted" xml:space="preserve">
     <value>Nenhuma lista foi excluída.</value>
+  </data>
+  <data name="listNotAlphanumeric" xml:space="preserve">
+    <value>Nome da lista deve ser composto apenas de caracteres alfanuméricos e sem espaços. Exemplo: 'MinhaLista'</value>
   </data>
 </root>

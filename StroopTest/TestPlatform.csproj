@@ -641,7 +641,6 @@
     <None Include="bin\Debug\StroopTestFiles\images\img3.png" />
     <None Include="bin\Debug\StroopTestFiles\images\img4.png" />
     <None Include="bin\Debug\StroopTestFiles\images\img5.png" />
-    <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

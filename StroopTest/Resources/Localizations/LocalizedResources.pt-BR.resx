@@ -2194,6 +2194,12 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="listNotAlphanumeric" xml:space="preserve">
     <value>Nome da lista deve ser composto apenas de caracteres alfanuméricos e sem espaços. Exemplo: 'MinhaLista'</value>
   </data>
+  <data name="random" xml:space="preserve">
+    <value>Aleatório</value>
+  </data>
+  <data name="training" xml:space="preserve">
+    <value>Treino</value>
+  </data>
   <data name="removeProgramFromExperiment" xml:space="preserve">
     <value>Deseja remover o programa do experimento?</value>
   </data>

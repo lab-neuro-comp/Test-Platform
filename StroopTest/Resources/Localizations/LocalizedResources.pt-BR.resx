@@ -2203,4 +2203,7 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="removeProgramFromExperiment" xml:space="preserve">
     <value>Deseja remover o programa do experimento?</value>
   </data>
+  <data name="audioDeviceNotAvailable" xml:space="preserve">
+    <value>Não existe nenhum dispositivo disponível para gravação de aúdio.</value>
+  </data>
 </root>

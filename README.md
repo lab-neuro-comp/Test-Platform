@@ -20,11 +20,18 @@ TestPlatform is a platform used in scientific research in Neuroscience and Behav
 
 ### Examples of executing tests
 
-![Stroop Example Portuguese](https://raw.githubusercontent.com/wiki/lab-neuro-comp/Test-Platform/images/stroop_example_pt-BR.gif)
+#### Example of strooptest with portuguese instructions
 
-![Stroop Example English](https://raw.githubusercontent.com/wiki/lab-neuro-comp/Test-Platform/images/stroop_example_en-US.gif)
+![Stroop Example Portuguese](https://github.com/lab-neuro-comp/Test-Platform/blob/master/images/stroop_example_pt-BR.gif?raw=true)
 
-![Stroop Image Example](https://raw.githubusercontent.com/wiki/lab-neuro-comp/Test-Platform/images/stroop_example_image.gif)
+#### Example of strooptest with english instructions
+
+![Stroop Example English](https://github.com/lab-neuro-comp/Test-Platform/blob/master/images/stroop_example_en-US.gif?raw=true)
+
+
+#### Example of strooptest using images
+
+![Stroop Image Example](https://github.com/lab-neuro-comp/Test-Platform/blob/master/images/stroop_example_image.gif?raw=true)
 
 ## Download
 
@@ -38,7 +45,7 @@ You can download latest installable version of TestPlatform for Windows [here](h
 
 After downloading the program you need to install it, just follow the installing wizard and a shortcut will be created in your Desktop area. And you are all set!
 
-![Installing Program](https://raw.githubusercontent.com/wiki/lab-neuro-comp/Test-Platform/images/installing_program.png)
+![Installing Program](https://github.com/lab-neuro-comp/Test-Platform/blob/master/images/installing_program.gif?raw=true)
 
 ## Contributors
 

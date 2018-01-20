@@ -30,7 +30,7 @@ Winform forms and usercontrols can be localizated only when their property "Loca
 
 For dynamic elements, such as error messages displayed during run time, that are global resources located in:
 
-![Localization Resources](https://raw.githubusercontent.com/wiki/lab-neuro-comp/Test-Platform/images/localization_resources.png)
+![Localization Resources](https://github.com/lab-neuro-comp/Test-Platform/blob/master/images/localization_resources.png?raw=true)
 
 To use resources in global files 
 
@@ -49,18 +49,18 @@ LocRM.GetString("reactionTest", currentCulture)
 
 There is no database in this application, instead files are used. Below there is an image of the directory tree created for the program.
 
-![Data structure](https://raw.githubusercontent.com/wiki/lab-neuro-comp/Test-Platform/images/data_structure.png)
+![Data structure](https://github.com/lab-neuro-comp/Test-Platform/blob/master/images/data_structure.png?raw=true)
 
 
 # Testing
 
 Unit tests are kept in their own project inside solution. Until now, that are only tests for model classes.
 
-![Tests project](https://raw.githubusercontent.com/wiki/lab-neuro-comp/Test-Platform/images/test_project.png)
+![Tests project](https://github.com/lab-neuro-comp/Test-Platform/blob/master/images/test_project.png?raw=true)
 
 You can run tests using visual studio default configurations.
 
-![Running tests](https://raw.githubusercontent.com/wiki/lab-neuro-comp/Test-Platform/images/run_tests.png)
+![Running tests](https://github.com/lab-neuro-comp/Test-Platform/blob/master/images/run_tests.png?raw=true)
 
 # Submitting changes
 

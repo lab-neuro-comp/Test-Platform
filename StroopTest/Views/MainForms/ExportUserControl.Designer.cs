@@ -119,6 +119,7 @@
             this.originDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.originDataGridView.RowHeadersVisible = false;
             this.originDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.originDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.originDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn4
             // 

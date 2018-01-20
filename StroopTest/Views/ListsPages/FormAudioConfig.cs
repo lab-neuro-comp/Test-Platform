@@ -269,6 +269,5 @@ namespace TestPlatform
                 labelEmpty.Visible = true;
             }
         }
-
     }
 }

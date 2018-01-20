@@ -50,6 +50,7 @@
             resources.ApplyResources(this.originFilesList, "originFilesList");
             this.originFilesList.Name = "originFilesList";
             this.originFilesList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.originFilesList_DrawItem);
+            this.originFilesList.SelectedIndexChanged += new System.EventHandler(this.originFilesList_SelectedIndexChanged);
             // 
             // destinationFilesList
             // 
@@ -58,6 +59,7 @@
             resources.ApplyResources(this.destinationFilesList, "destinationFilesList");
             this.destinationFilesList.Name = "destinationFilesList";
             this.destinationFilesList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.destinationFilesList_DrawItem);
+            this.destinationFilesList.SelectedIndexChanged += new System.EventHandler(this.destinationFilesList_SelectedIndexChanged);
             // 
             // originListLabel
             // 

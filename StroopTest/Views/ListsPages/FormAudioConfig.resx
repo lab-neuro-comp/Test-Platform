@@ -127,13 +127,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="audioListNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 37</value>
-  </data>
-  <data name="audioListNameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>111, 35</value>
   </data>
   <data name="audioListNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 17</value>
+    <value>78, 13</value>
   </data>
   <data name="audioListNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
@@ -157,13 +154,10 @@
     <value>Top, Bottom, Left</value>
   </data>
   <data name="audioListNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 58</value>
-  </data>
-  <data name="audioListNameTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>187, 32</value>
   </data>
   <data name="audioListNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 22</value>
+    <value>410, 20</value>
   </data>
   <data name="audioListNameTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
@@ -187,13 +181,10 @@
     <value>True</value>
   </data>
   <data name="deleteItemlabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 143</value>
-  </data>
-  <data name="deleteItemlabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>7, 116</value>
   </data>
   <data name="deleteItemlabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 17</value>
+    <value>67, 13</value>
   </data>
   <data name="deleteItemlabel.TabIndex" type="System.Int32, mscorlib">
     <value>54</value>
@@ -220,13 +211,10 @@
     <value>True</value>
   </data>
   <data name="audioLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 91</value>
-  </data>
-  <data name="audioLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>7, 74</value>
   </data>
   <data name="audioLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 17</value>
+    <value>42, 13</value>
   </data>
   <data name="audioLabel.TabIndex" type="System.Int32, mscorlib">
     <value>53</value>
@@ -253,13 +241,10 @@
     <value>True</value>
   </data>
   <data name="moveRowLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 194</value>
-  </data>
-  <data name="moveRowLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>7, 167</value>
   </data>
   <data name="moveRowLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 17</value>
+    <value>62, 13</value>
   </data>
   <data name="moveRowLabel.TabIndex" type="System.Int32, mscorlib">
     <value>52</value>
@@ -292,13 +277,10 @@
     <value>Popup</value>
   </data>
   <data name="moveDownButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 261</value>
-  </data>
-  <data name="moveDownButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>59, 183</value>
   </data>
   <data name="moveDownButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 27</value>
+    <value>49, 23</value>
   </data>
   <data name="moveDownButton.TabIndex" type="System.Int32, mscorlib">
     <value>49</value>
@@ -331,13 +313,10 @@
     <value>Popup</value>
   </data>
   <data name="moveUpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 215</value>
-  </data>
-  <data name="moveUpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>10, 183</value>
   </data>
   <data name="moveUpButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 27</value>
+    <value>46, 23</value>
   </data>
   <data name="moveUpButton.TabIndex" type="System.Int32, mscorlib">
     <value>48</value>
@@ -360,26 +339,14 @@
   <metadata name="fileNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="fileNameColumn.HeaderText" xml:space="preserve">
-    <value>Nome do Arquivo</value>
-  </data>
-  <data name="fileNameColumn.Width" type="System.Int32, mscorlib">
-    <value>120</value>
-  </data>
   <metadata name="filePathColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="filePathColumn.HeaderText" xml:space="preserve">
-    <value>Localização</value>
-  </data>
   <data name="audioPathDataGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 111</value>
-  </data>
-  <data name="audioPathDataGridView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>114, 58</value>
   </data>
   <data name="audioPathDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>551, 500</value>
+    <value>483, 478</value>
   </data>
   <data name="audioPathDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
@@ -396,6 +363,21 @@
   <data name="&gt;&gt;audioPathDataGridView.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <metadata name="fileNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="fileNameColumn.HeaderText" xml:space="preserve">
+    <value>Nome do Arquivo</value>
+  </data>
+  <data name="fileNameColumn.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
+  <metadata name="filePathColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="filePathColumn.HeaderText" xml:space="preserve">
+    <value>Localização</value>
+  </data>
   <data name="cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
@@ -409,13 +391,10 @@
     <value>Popup</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 716</value>
-  </data>
-  <data name="cancelButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>10, 574</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 27</value>
+    <value>58, 23</value>
   </data>
   <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
     <value>51</value>
@@ -438,9 +417,6 @@
   <data name="saveButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
-  <data name="saveButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="saveButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -448,13 +424,10 @@
     <value>Popup</value>
   </data>
   <data name="saveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>657, 716</value>
-  </data>
-  <data name="saveButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>539, 574</value>
   </data>
   <data name="saveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 27</value>
+    <value>58, 23</value>
   </data>
   <data name="saveButton.TabIndex" type="System.Int32, mscorlib">
     <value>50</value>
@@ -477,9 +450,6 @@
   <data name="deleteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
-  <data name="deleteButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="deleteButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -487,13 +457,10 @@
     <value>Popup</value>
   </data>
   <data name="deleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 162</value>
-  </data>
-  <data name="deleteButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>10, 132</value>
   </data>
   <data name="deleteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 27</value>
+    <value>98, 23</value>
   </data>
   <data name="deleteButton.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
@@ -516,23 +483,20 @@
   <data name="openButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
-  <data name="openButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="openButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
   <data name="openButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="openButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 111</value>
+  <data name="openButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="openButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+  <data name="openButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 90</value>
   </data>
   <data name="openButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 27</value>
+    <value>98, 23</value>
   </data>
   <data name="openButton.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
@@ -562,13 +526,10 @@
     <value>Popup</value>
   </data>
   <data name="playAudioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 380</value>
-  </data>
-  <data name="playAudioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>10, 313</value>
   </data>
   <data name="playAudioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 27</value>
+    <value>98, 23</value>
   </data>
   <data name="playAudioButton.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
@@ -595,13 +556,10 @@
     <value>True</value>
   </data>
   <data name="numberFilesLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>506, 677</value>
-  </data>
-  <data name="numberFilesLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>487, 539</value>
   </data>
   <data name="numberFilesLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 17</value>
+    <value>91, 13</value>
   </data>
   <data name="numberFilesLabel.TabIndex" type="System.Int32, mscorlib">
     <value>58</value>
@@ -628,13 +586,10 @@
     <value>True</value>
   </data>
   <data name="numberFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>635, 675</value>
-  </data>
-  <data name="numberFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>584, 539</value>
   </data>
   <data name="numberFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 17</value>
+    <value>13, 13</value>
   </data>
   <data name="numberFiles.TabIndex" type="System.Int32, mscorlib">
     <value>59</value>
@@ -658,13 +613,13 @@
     <value>Zoom</value>
   </data>
   <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>679, 2</value>
+    <value>571, 0</value>
   </data>
   <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 31</value>
+    <value>26, 25</value>
   </data>
   <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
     <value>82</value>
@@ -688,7 +643,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -700,13 +655,10 @@
     <value>True</value>
   </data>
   <data name="labelEmpty.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 306</value>
-  </data>
-  <data name="labelEmpty.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>7, 222</value>
   </data>
   <data name="labelEmpty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 17</value>
+    <value>58, 13</value>
   </data>
   <data name="labelEmpty.TabIndex" type="System.Int32, mscorlib">
     <value>83</value>
@@ -726,11 +678,8 @@
   <data name="&gt;&gt;labelEmpty.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>717, 761</value>
+    <value>600, 600</value>
   </data>
   <data name="&gt;&gt;fileNameColumn.Name" xml:space="preserve">
     <value>fileNameColumn</value>

@@ -130,7 +130,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="addToOriginList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 211</value>
+    <value>283, 211</value>
   </data>
   <data name="addToOriginList.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 25</value>
@@ -163,7 +163,7 @@
     <value>NoControl</value>
   </data>
   <data name="addToDestinationList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 180</value>
+    <value>283, 180</value>
   </data>
   <data name="addToDestinationList.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 25</value>
@@ -208,10 +208,10 @@
     <value>False</value>
   </data>
   <data name="exportDataGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, 47</value>
+    <value>320, 47</value>
   </data>
   <data name="exportDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 320</value>
+    <value>274, 521</value>
   </data>
   <data name="exportDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
@@ -250,10 +250,10 @@
     <value>False</value>
   </data>
   <data name="originDataGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 47</value>
+    <value>3, 47</value>
   </data>
   <data name="originDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 320</value>
+    <value>274, 521</value>
   </data>
   <data name="originDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
@@ -270,11 +270,14 @@
   <data name="&gt;&gt;originDataGridView.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="exportButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
   <data name="exportButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="exportButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>505, 447</value>
+    <value>488, 574</value>
   </data>
   <data name="exportButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 23</value>
@@ -297,11 +300,14 @@
   <data name="&gt;&gt;exportButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="cancelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
   <data name="cancelButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 447</value>
+    <value>3, 574</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 23</value>
@@ -331,7 +337,7 @@
     <value>NoControl</value>
   </data>
   <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>591, 2</value>
+    <value>572, 2</value>
   </data>
   <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -364,7 +370,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>625, 501</value>
+    <value>600, 600</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn1</value>

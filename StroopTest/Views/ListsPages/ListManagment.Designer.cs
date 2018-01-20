@@ -50,6 +50,7 @@
             this.existingList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.existingList.Click += new System.EventHandler(this.existingList_Click);
             this.existingList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.originFilesList_DrawItem);
+            this.existingList.SelectedIndexChanged += new System.EventHandler(this.existingList_SelectedIndexChanged);
             // 
             // deletingList
             // 
@@ -60,6 +61,7 @@
             this.deletingList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.deletingList.Click += new System.EventHandler(this.deletingList_Click);
             this.deletingList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.destinationFilesList_DrawItem);
+            this.deletingList.SelectedIndexChanged += new System.EventHandler(this.deletingList_SelectedIndexChanged);
             // 
             // toDelete
             // 

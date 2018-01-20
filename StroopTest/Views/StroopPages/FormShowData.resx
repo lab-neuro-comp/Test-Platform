@@ -123,10 +123,14 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 76</value>
+    <value>7, 37</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 17</value>
+    <value>95, 13</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -147,14 +151,13 @@
     <value>9</value>
   </data>
   <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>141, 69</value>
+    <value>106, 34</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="comboBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>589, 24</value>
+    <value>351, 21</value>
   </data>
   <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -172,13 +175,13 @@
     <value>8</value>
   </data>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 110</value>
+    <value>10, 59</value>
   </data>
   <data name="dataGridView1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>917, 238</value>
+    <value>587, 223</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -202,13 +205,13 @@
     <value>Popup</value>
   </data>
   <data name="csvExportButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 66</value>
+    <value>461, 32</value>
   </data>
   <data name="csvExportButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="csvExportButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 28</value>
+    <value>136, 23</value>
   </data>
   <data name="csvExportButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -232,13 +235,13 @@
     <value>Zoom</value>
   </data>
   <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>891, 14</value>
+    <value>571, 2</value>
   </data>
   <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 32</value>
+    <value>26, 26</value>
   </data>
   <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
     <value>82</value>
@@ -271,13 +274,10 @@
     <value>Localização</value>
   </data>
   <data name="audioPathDataGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 409</value>
-  </data>
-  <data name="audioPathDataGridView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>8, 332</value>
   </data>
   <data name="audioPathDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>915, 238</value>
+    <value>589, 236</value>
   </data>
   <data name="audioPathDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>84</value>
@@ -298,10 +298,13 @@
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 383</value>
+    <value>6, 311</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 17</value>
+    <value>96, 13</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>
@@ -325,13 +328,10 @@
     <value>Popup</value>
   </data>
   <data name="stopAudio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>745, 373</value>
-  </data>
-  <data name="stopAudio.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>461, 303</value>
   </data>
   <data name="stopAudio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 28</value>
+    <value>136, 23</value>
   </data>
   <data name="stopAudio.TabIndex" type="System.Int32, mscorlib">
     <value>87</value>
@@ -355,13 +355,10 @@
     <value>Popup</value>
   </data>
   <data name="playAudioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>537, 373</value>
-  </data>
-  <data name="playAudioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>321, 303</value>
   </data>
   <data name="playAudioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 28</value>
+    <value>136, 23</value>
   </data>
   <data name="playAudioButton.TabIndex" type="System.Int32, mscorlib">
     <value>86</value>
@@ -385,13 +382,10 @@
     <value>Popup</value>
   </data>
   <data name="closeButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 690</value>
-  </data>
-  <data name="closeButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>9, 574</value>
   </data>
   <data name="closeButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>75, 23</value>
   </data>
   <data name="closeButton.TabIndex" type="System.Int32, mscorlib">
     <value>88</value>
@@ -415,13 +409,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>939, 785</value>
+    <value>600, 600</value>
   </data>
   <data name="&gt;&gt;fileNameColumn.Name" xml:space="preserve">
     <value>fileNameColumn</value>

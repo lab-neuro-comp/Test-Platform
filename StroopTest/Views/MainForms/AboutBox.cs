@@ -23,7 +23,7 @@ namespace TestPlatform.Views
             InitializeComponent();
             this.Text = string.Format("Sobre {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = string.Format(LocRM.GetString("version", currentCulture) + AssemblyVersion);
+            this.labelVersion.Text = string.Format(LocRM.GetString("version", currentCulture) + " " + AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
             description = LocRM.GetString("description", currentCulture);

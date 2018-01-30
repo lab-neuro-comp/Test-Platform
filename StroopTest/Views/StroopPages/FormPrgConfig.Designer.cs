@@ -178,6 +178,7 @@
             // 
             resources.ApplyResources(this.fixPointTypeLabel, "fixPointTypeLabel");
             this.fixPointTypeLabel.Name = "fixPointTypeLabel";
+            this.fixPointTypeLabel.Click += new System.EventHandler(this.fixPointTypeLabel_Click);
             // 
             // fixPointCross
             // 
@@ -282,21 +283,25 @@
             this.subsRndCheckBox.Name = "subsRndCheckBox";
             this.subsRndCheckBox.TabStop = false;
             this.subsRndCheckBox.UseVisualStyleBackColor = true;
+            this.subsRndCheckBox.CheckedChanged += new System.EventHandler(this.subsRndCheckBox_CheckedChanged);
             // 
             // activateSubsLabel
             // 
             resources.ApplyResources(this.activateSubsLabel, "activateSubsLabel");
             this.activateSubsLabel.Name = "activateSubsLabel";
+            this.activateSubsLabel.Click += new System.EventHandler(this.activateSubsLabel_Click);
             // 
             // subColorLabel
             // 
             resources.ApplyResources(this.subColorLabel, "subColorLabel");
             this.subColorLabel.Name = "subColorLabel";
+            this.subColorLabel.Click += new System.EventHandler(this.subColorLabel_Click);
             // 
             // subLocationLabel
             // 
             resources.ApplyResources(this.subLocationLabel, "subLocationLabel");
             this.subLocationLabel.Name = "subLocationLabel";
+            this.subLocationLabel.Click += new System.EventHandler(this.subLocationLabel_Click);
             // 
             // activateSubsCheck
             // 
@@ -385,12 +390,14 @@
             resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // delayTimeLabel
             // 
             resources.ApplyResources(this.delayTimeLabel, "delayTimeLabel");
             this.delayTimeLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.delayTimeLabel.Name = "delayTimeLabel";
+            this.delayTimeLabel.Click += new System.EventHandler(this.delayTimeLabel_Click);
             // 
             // delayTime
             // 
@@ -412,6 +419,7 @@
             // 
             resources.ApplyResources(this.intervalTimeLabel, "intervalTimeLabel");
             this.intervalTimeLabel.Name = "intervalTimeLabel";
+            this.intervalTimeLabel.Click += new System.EventHandler(this.intervalTimeLabel_Click);
             // 
             // intervalTime
             // 
@@ -463,6 +471,7 @@
             // 
             resources.ApplyResources(this.expoTimeLabel, "expoTimeLabel");
             this.expoTimeLabel.Name = "expoTimeLabel";
+            this.expoTimeLabel.Click += new System.EventHandler(this.expoTimeLabel_Click);
             // 
             // groupBox2
             // 

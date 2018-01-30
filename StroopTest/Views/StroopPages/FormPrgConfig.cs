@@ -1105,5 +1105,50 @@ namespace TestPlatform
         {
             errorProvider1.SetError(chooseExpoType, "");
         }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void expoTimeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void intervalTimeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void delayTimeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void activateSubsLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void subLocationLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void subsRndCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void subColorLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fixPointTypeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

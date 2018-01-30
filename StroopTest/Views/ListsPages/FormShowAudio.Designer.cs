@@ -202,7 +202,9 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.currentElapsedTimeDisplay);
             this.panel1.Controls.Add(this.recordButton1);
+            this.panel1.Controls.Add(this.recordButton);
             this.panel1.Controls.Add(this.selectedDirectory);
             this.panel1.Controls.Add(this.directoryLabel);
             this.panel1.Controls.Add(this.label1);
@@ -238,8 +240,6 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.currentElapsedTimeDisplay);
-            this.Controls.Add(this.recordButton);
             this.Controls.Add(this.currenFolderLabel);
             this.Controls.Add(this.directoryButton);
             this.Controls.Add(this.currentFolderLabel);

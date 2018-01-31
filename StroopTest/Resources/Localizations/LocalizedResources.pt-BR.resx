@@ -2215,4 +2215,13 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="dispositionError" xml:space="preserve">
     <value>Disposição A-B deve ser selecionada.</value>
   </data>
+  <data name="audioListError" xml:space="preserve">
+    <value>Selecione uma lista de audios</value>
+  </data>
+  <data name="colorListError" xml:space="preserve">
+    <value>Selecione uma lista de cores</value>
+  </data>
+  <data name="imgListError" xml:space="preserve">
+    <value>Selecione uma lista de imagens</value>
+  </data>
 </root>

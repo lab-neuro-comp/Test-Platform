@@ -68,7 +68,7 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     if (newMatchButton.Checked)
                     {
-                        FormMatchConfig newExperiment = new FormMatchConfig(false);
+                        FormMatchConfig newExperiment = new FormMatchConfig("false");
                         Global.GlobalFormMain._contentPanel.Controls.Add(newExperiment);
                         newMatchButton.Checked = false;
                     }
@@ -87,9 +87,42 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void editMatchButton_Click(object sender, EventArgs e)
         {
-            if (this.editMatchButton.Checked)
+            bool screenTranslationAllowed = true;
+            if (editMatchButton.Checked)
             {
+                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                {
+                    screenTranslationAllowed = checkSave();
+                }
+                if (screenTranslationAllowed)
+                {
+                    FormDefine defineProgram;
+                    DialogResult result;
+                    string editProgramName = "error";
 
+                    try
+                    {
+                        defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.matchingTestFilesPath + Global.programFolderName, "prg", "program", false, false);
+                        result = defineProgram.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            editProgramName = defineProgram.ReturnValue;
+                            FormMatchConfig configureProgram = new FormMatchConfig(editProgramName);
+                            configureProgram.PrgName = editProgramName;
+                            Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
+                            editMatchButton.Checked = false;
+                        }
+                        else
+                        {
+                            /*do nothing, user cancelled selection of program*/
+                        }
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                }
+            }
+            else
+            {
+                /*do nothing*/
             }
         }
 

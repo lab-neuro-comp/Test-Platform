@@ -133,25 +133,25 @@
     <value>Exposição</value>
   </data>
   <data name="ExpoDisposition.Items1" xml:space="preserve">
-    <value>Vertical</value>
+    <value>padrão</value>
   </data>
   <data name="expositionTypeLabel.Text" xml:space="preserve">
     <value>Tipo de exposição:</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Tempo de Intervalo(ms) :</value>
+    <value>Intervalo entre modelo e estimulos (ms):</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Tempo de exposição do estímulos A-B(ms):</value>
+    <value>Tempo de exposição dos estimulos (ms):</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Tempo de exposição do estímulo A(ms):</value>
+    <value>Tempo de exposição do modelo (ms):</value>
   </data>
   <data name="timeGroupBox.Text" xml:space="preserve">
     <value>Tempo</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Tempo de atraso (ms):</value>
+    <value>Intervalo entre tentativas (ms):</value>
   </data>
   <data name="expoSizeLabel.Text" xml:space="preserve">
     <value>Tamanho da exposição:</value>
@@ -181,12 +181,9 @@
     <value>Imagens:</value>
   </data>
   <data name="closeExpoAWithClick.Text" xml:space="preserve">
-    <value>Finalizar exposição do estimulo A com clique</value>
+    <value>Finalizar exposição do modelo com clique</value>
   </data>
   <data name="DMTSBackground.Text" xml:space="preserve">
-    <value>escolher</value>
-  </data>
-  <data name="DMNTSBackground.Text" xml:space="preserve">
     <value>escolher</value>
   </data>
   <data name="expositionType.Items1" xml:space="preserve">
@@ -208,24 +205,39 @@
     <value>Cores</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Cor de fundo do DMTS</value>
+    <value>Cor de fundo do DMTS:</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Cor de fundo do DNMTS</value>
+    <value>Cor de fundo do DNMTS:</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Áudios:</value>
   </data>
-  <data name="imageListButton.Text" xml:space="preserve">
+  <data name="openAudioListButton.Text" xml:space="preserve">
     <value>abrir</value>
   </data>
-  <data name="audioListButton.Text" xml:space="preserve">
+  <data name="openImgListButton.Text" xml:space="preserve">
     <value>abrir</value>
   </data>
-  <data name="colorListButton.Text" xml:space="preserve">
+  <data name="openColorListButton.Text" xml:space="preserve">
     <value>abrir</value>
   </data>
-  <data name="wordListButton.Text" xml:space="preserve">
+  <data name="openWordListButton.Text" xml:space="preserve">
     <value>abrir</value>
+  </data>
+  <data name="DNMTSBackground.Text" xml:space="preserve">
+    <value>escolher</value>
+  </data>
+  <data name="DMTSBackgroundColor.Text" xml:space="preserve">
+    <value>#A0A0A0</value>
+  </data>
+  <data name="DNMTSBackgroundColor.Text" xml:space="preserve">
+    <value>#404040</value>
+  </data>
+  <data name="attemptInterval.Text" xml:space="preserve">
+    <value>tempo</value>
+  </data>
+  <data name="randomAttemptTime.Text" xml:space="preserve">
+    <value>Tempo entre tentativas aleatória</value>
   </data>
 </root>

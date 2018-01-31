@@ -132,18 +132,6 @@
   <data name="expositionGroupBox.Text" xml:space="preserve">
     <value>Exposition</value>
   </data>
-  <data name="audioListButton.Text" xml:space="preserve">
-    <value>open</value>
-  </data>
-  <data name="imageListButton.Text" xml:space="preserve">
-    <value>open</value>
-  </data>
-  <data name="colorListButton.Text" xml:space="preserve">
-    <value>open</value>
-  </data>
-  <data name="wordListButton.Text" xml:space="preserve">
-    <value>open</value>
-  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Audios:</value>
   </data>
@@ -174,11 +162,8 @@
   <data name="DMTSBackground.Text" xml:space="preserve">
     <value>choose</value>
   </data>
-  <data name="DMNTSBackground.Text" xml:space="preserve">
-    <value>choose</value>
-  </data>
   <data name="closeExpoAWithClick.Text" xml:space="preserve">
-    <value>end stimulus A exposition with click</value>
+    <value>end model exposition when clicked</value>
   </data>
   <data name="ExpoDisposition.Items" xml:space="preserve">
     <value>Horizontal</value>
@@ -190,22 +175,22 @@
     <value>Lists</value>
   </data>
   <data name="ExpoDisposition.Items1" xml:space="preserve">
-    <value>Vertical</value>
+    <value>default</value>
   </data>
   <data name="expositionTypeLabel.Text" xml:space="preserve">
     <value>Exposition type:</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Interval time(ms) :</value>
+    <value>Delay between model and stimulus (ms) :</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>A-B stimulus exposition time (ms):</value>
+    <value>Stimulus exposition time (ms):</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>A stimulus exposition time (ms):</value>
+    <value>Model exposition time (ms):</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Delay time:</value>
+    <value>Delay between attempts (ms):</value>
   </data>
   <data name="timeGroupBox.Text" xml:space="preserve">
     <value>Time</value>
@@ -227,5 +212,32 @@
   </data>
   <data name="stimulusNumberLabel.Text" xml:space="preserve">
     <value>Number of stimulus:</value>
+  </data>
+  <data name="openAudioListButton.Text" xml:space="preserve">
+    <value>open</value>
+  </data>
+  <data name="openImgListButton.Text" xml:space="preserve">
+    <value>open</value>
+  </data>
+  <data name="openColorListButton.Text" xml:space="preserve">
+    <value>open</value>
+  </data>
+  <data name="openWordListButton.Text" xml:space="preserve">
+    <value>open</value>
+  </data>
+  <data name="DNMTSBackground.Text" xml:space="preserve">
+    <value>choose</value>
+  </data>
+  <data name="DMTSBackgroundColor.Text" xml:space="preserve">
+    <value>#A0A0A0</value>
+  </data>
+  <data name="DNMTSBackgroundColor.Text" xml:space="preserve">
+    <value>#404040</value>
+  </data>
+  <data name="attemptInterval.Text" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="randomAttemptTime.Text" xml:space="preserve">
+    <value>Random time between attempts</value>
   </data>
 </root>

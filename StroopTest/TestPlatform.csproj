@@ -134,6 +134,7 @@
     <Compile Include="Models\Audio.cs" />
     <Compile Include="Models\ExperimentProgram.cs" />
     <Compile Include="Models\ExperimentTest.cs" />
+    <Compile Include="Models\MatchingProgram.cs" />
     <Compile Include="Models\Program.cs" />
     <Compile Include="Models\ReactionProgram.cs" />
     <Compile Include="Models\ReactionTest.cs" />

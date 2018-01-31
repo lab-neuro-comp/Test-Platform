@@ -394,6 +394,16 @@ namespace TestPlatform.Views.ListsPages
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
+        private void existingList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deletingList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void loadExistingList()
         {
             existingList.Items.Clear();

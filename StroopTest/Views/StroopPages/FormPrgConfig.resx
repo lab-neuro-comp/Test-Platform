@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>479, 9</value>
+    <value>557, 2</value>
   </data>
   <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -147,6 +147,21 @@
   <data name="&gt;&gt;helpButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="panel3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 29</value>
+  </data>
+  <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>155</value>
+  </data>
   <data name="&gt;&gt;panel3.Name" xml:space="preserve">
     <value>panel3</value>
   </data>
@@ -158,6 +173,21 @@
   </data>
   <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="panel2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 31</value>
+  </data>
+  <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>154</value>
   </data>
   <data name="&gt;&gt;panel2.Name" xml:space="preserve">
     <value>panel2</value>
@@ -171,6 +201,24 @@
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="fixPointTypeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fixPointTypeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 28</value>
+  </data>
+  <data name="fixPointTypeLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="fixPointTypeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="fixPointTypeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>64</value>
+  </data>
+  <data name="fixPointTypeLabel.Text" xml:space="preserve">
+    <value>Tipo:</value>
+  </data>
   <data name="&gt;&gt;fixPointTypeLabel.Name" xml:space="preserve">
     <value>fixPointTypeLabel</value>
   </data>
@@ -182,6 +230,21 @@
   </data>
   <data name="&gt;&gt;fixPointTypeLabel.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="fixPointCross.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fixPointCross.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 28</value>
+  </data>
+  <data name="fixPointCross.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="fixPointCross.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="fixPointCross.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
   </data>
   <data name="&gt;&gt;fixPointCross.Name" xml:space="preserve">
     <value>fixPointCross</value>
@@ -195,6 +258,25 @@
   <data name="&gt;&gt;fixPointCross.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="fixPointColorLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fixPointColorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 50</value>
+  </data>
+  <data name="fixPointColorLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="fixPointColorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 26</value>
+  </data>
+  <data name="fixPointColorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>171</value>
+  </data>
+  <data name="fixPointColorLabel.Text" xml:space="preserve">
+    <value>Cor do
+Ponto:</value>
+  </data>
   <data name="&gt;&gt;fixPointColorLabel.Name" xml:space="preserve">
     <value>fixPointColorLabel</value>
   </data>
@@ -206,6 +288,21 @@
   </data>
   <data name="&gt;&gt;fixPointColorLabel.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="fixPointCircle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fixPointCircle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 29</value>
+  </data>
+  <data name="fixPointCircle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="fixPointCircle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="fixPointCircle.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
   </data>
   <data name="&gt;&gt;fixPointCircle.Name" xml:space="preserve">
     <value>fixPointCircle</value>
@@ -219,6 +316,24 @@
   <data name="&gt;&gt;fixPointCircle.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="fixPointColorButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="fixPointColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 54</value>
+  </data>
+  <data name="fixPointColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="fixPointColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 19</value>
+  </data>
+  <data name="fixPointColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="fixPointColorButton.Text" xml:space="preserve">
+    <value>escolher</value>
+  </data>
   <data name="&gt;&gt;fixPointColorButton.Name" xml:space="preserve">
     <value>fixPointColorButton</value>
   </data>
@@ -230,6 +345,18 @@
   </data>
   <data name="&gt;&gt;fixPointColorButton.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="fixPointColorPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 56</value>
+  </data>
+  <data name="fixPointColorPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="fixPointColorPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="fixPointColorPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>153</value>
   </data>
   <data name="&gt;&gt;fixPointColorPanel.Name" xml:space="preserve">
     <value>fixPointColorPanel</value>
@@ -253,7 +380,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 84</value>
+    <value>280, 84</value>
   </data>
   <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
@@ -273,6 +400,31 @@
   <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="audioCaptureLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="audioCaptureLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="audioCaptureLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 15</value>
+  </data>
+  <data name="audioCaptureLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="audioCaptureLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 26</value>
+  </data>
+  <data name="audioCaptureLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="audioCaptureLabel.Text" xml:space="preserve">
+    <value>Capturar áudio
+durante execução:</value>
+  </data>
+  <data name="audioCaptureLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
   <data name="&gt;&gt;audioCaptureLabel.Name" xml:space="preserve">
     <value>audioCaptureLabel</value>
   </data>
@@ -284,6 +436,21 @@
   </data>
   <data name="&gt;&gt;audioCaptureLabel.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="audioCaptureCheck.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="audioCaptureCheck.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 29</value>
+  </data>
+  <data name="audioCaptureCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="audioCaptureCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="audioCaptureCheck.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
   </data>
   <data name="&gt;&gt;audioCaptureCheck.Name" xml:space="preserve">
     <value>audioCaptureCheck</value>
@@ -297,6 +464,18 @@
   <data name="&gt;&gt;audioCaptureCheck.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="bgColorPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 52</value>
+  </data>
+  <data name="bgColorPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="bgColorPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="bgColorPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>151</value>
+  </data>
   <data name="&gt;&gt;bgColorPanel.Name" xml:space="preserve">
     <value>bgColorPanel</value>
   </data>
@@ -309,6 +488,24 @@
   <data name="&gt;&gt;bgColorPanel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="bgColorLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bgColorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 52</value>
+  </data>
+  <data name="bgColorLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="bgColorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="bgColorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="bgColorLabel.Text" xml:space="preserve">
+    <value>Cor de Fundo:</value>
+  </data>
   <data name="&gt;&gt;bgColorLabel.Name" xml:space="preserve">
     <value>bgColorLabel</value>
   </data>
@@ -320,6 +517,24 @@
   </data>
   <data name="&gt;&gt;bgColorLabel.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="bgColorButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="bgColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>123, 49</value>
+  </data>
+  <data name="bgColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="bgColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 19</value>
+  </data>
+  <data name="bgColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="bgColorButton.Text" xml:space="preserve">
+    <value>escolher</value>
   </data>
   <data name="&gt;&gt;bgColorButton.Name" xml:space="preserve">
     <value>bgColorButton</value>
@@ -363,6 +578,24 @@
   <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="subsRndCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="subsRndCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 67</value>
+  </data>
+  <data name="subsRndCheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="subsRndCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 17</value>
+  </data>
+  <data name="subsRndCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>160</value>
+  </data>
+  <data name="subsRndCheckBox.Text" xml:space="preserve">
+    <value>aleatória</value>
+  </data>
   <data name="&gt;&gt;subsRndCheckBox.Name" xml:space="preserve">
     <value>subsRndCheckBox</value>
   </data>
@@ -374,6 +607,24 @@
   </data>
   <data name="&gt;&gt;subsRndCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="activateSubsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="activateSubsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 25</value>
+  </data>
+  <data name="activateSubsLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="activateSubsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="activateSubsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="activateSubsLabel.Text" xml:space="preserve">
+    <value>Ativar:</value>
   </data>
   <data name="&gt;&gt;activateSubsLabel.Name" xml:space="preserve">
     <value>activateSubsLabel</value>
@@ -387,6 +638,24 @@
   <data name="&gt;&gt;activateSubsLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="subColorLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="subColorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 92</value>
+  </data>
+  <data name="subColorLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="subColorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="subColorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="subColorLabel.Text" xml:space="preserve">
+    <value>Cor:</value>
+  </data>
   <data name="&gt;&gt;subColorLabel.Name" xml:space="preserve">
     <value>subColorLabel</value>
   </data>
@@ -398,6 +667,24 @@
   </data>
   <data name="&gt;&gt;subColorLabel.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="subLocationLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="subLocationLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 50</value>
+  </data>
+  <data name="subLocationLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="subLocationLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="subLocationLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="subLocationLabel.Text" xml:space="preserve">
+    <value>Posição:</value>
   </data>
   <data name="&gt;&gt;subLocationLabel.Name" xml:space="preserve">
     <value>subLocationLabel</value>
@@ -411,6 +698,21 @@
   <data name="&gt;&gt;subLocationLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="activateSubsCheck.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="activateSubsCheck.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 25</value>
+  </data>
+  <data name="activateSubsCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="activateSubsCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="activateSubsCheck.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
   <data name="&gt;&gt;activateSubsCheck.Name" xml:space="preserve">
     <value>activateSubsCheck</value>
   </data>
@@ -422,6 +724,27 @@
   </data>
   <data name="&gt;&gt;activateSubsCheck.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="openSubsListButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="openSubsListButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="openSubsListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="openSubsListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="openSubsListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 19</value>
+  </data>
+  <data name="openSubsListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="openSubsListButton.Text" xml:space="preserve">
+    <value>abrir</value>
   </data>
   <data name="&gt;&gt;openSubsListButton.Name" xml:space="preserve">
     <value>openSubsListButton</value>
@@ -435,6 +758,27 @@
   <data name="&gt;&gt;openSubsListButton.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="subColorButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="subColorButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="subColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 89</value>
+  </data>
+  <data name="subColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="subColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 19</value>
+  </data>
+  <data name="subColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="subColorButton.Text" xml:space="preserve">
+    <value>escolher</value>
+  </data>
   <data name="&gt;&gt;subColorButton.Name" xml:space="preserve">
     <value>subColorButton</value>
   </data>
@@ -446,6 +790,21 @@
   </data>
   <data name="&gt;&gt;subColorButton.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="subColorPanel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="subColorPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 91</value>
+  </data>
+  <data name="subColorPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="subColorPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="subColorPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>152</value>
   </data>
   <data name="&gt;&gt;subColorPanel.Name" xml:space="preserve">
     <value>subColorPanel</value>
@@ -459,6 +818,79 @@
   <data name="&gt;&gt;subColorPanel.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="subsCenterButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="subsCenterButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="subsCenterButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="subsCenterButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 49</value>
+  </data>
+  <data name="subsCenterButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="subsCenterButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="subsCenterButton.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
   <data name="&gt;&gt;subsCenterButton.Name" xml:space="preserve">
     <value>subsCenterButton</value>
   </data>
@@ -470,6 +902,34 @@
   </data>
   <data name="&gt;&gt;subsCenterButton.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="subsDownButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
+        iQAACokBkHyqLgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADMSURBVEhL7ZUx
+        DsIwDEXDxlCJqRM0tbKycNPegZGTcISeBpM/RAqWXVtizeCp/v/V31GSmDlFK6+3Jyraj76wOZoz5R01
+        AGZsIyL3RI2IRkRqAm4s/b3z9ylKKZ2I6GxdZh4AWnj0+p8JiK6PTAvX2jTIEQAaaOFhAub7PK20vC2I
+        BWjm0MLDBOBDKeViQTRAbw6tnFxdsgWRAM/88EXTID0gYu4+mRLSAFFzF6Ds5FPNUYw9aZmHdiCbxCRh
+        89AEDQZI/fMXKvLnTfcFDcPhSOxeUJYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="subsDownButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="subsDownButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="subsDownButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 49</value>
+  </data>
+  <data name="subsDownButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="subsDownButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="subsDownButton.TabIndex" type="System.Int32, mscorlib">
+    <value>154</value>
   </data>
   <data name="&gt;&gt;subsDownButton.Name" xml:space="preserve">
     <value>subsDownButton</value>
@@ -483,6 +943,34 @@
   <data name="&gt;&gt;subsDownButton.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="subsLeftButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
+        iQAACokBkHyqLgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC8SURBVEhLxZU9
+        DsIwDEbDxoJYGGvHydILcSgQf3dg5CQcgdMQmkqtYrUs7Wdl8PpenDifXUrJWZYpPB+8rqBtDzsOfHTO
+        bZZe498OYox7L/RmoSQiW6ighLM0p6Xw2TfQcD6vgU8EJZw8XdbClUDBA10R8FFQwn2gGwreCxRc6I6E
+        94JuDF95FLv6svAHWr552gv0WNIDfkUZaCkZo8JKorLIQjIJO7RkNk2RkjpxPYyq6cJB/Ye6OxnRxQ/h
+        xOGaXmpRgQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="subsLeftButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="subsLeftButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="subsLeftButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 49</value>
+  </data>
+  <data name="subsLeftButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="subsLeftButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="subsLeftButton.TabIndex" type="System.Int32, mscorlib">
+    <value>155</value>
+  </data>
   <data name="&gt;&gt;subsLeftButton.Name" xml:space="preserve">
     <value>subsLeftButton</value>
   </data>
@@ -495,6 +983,34 @@
   <data name="&gt;&gt;subsLeftButton.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="subsRightButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
+        iQAACokBkHyqLgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC5SURBVEhLzdU7
+        DsIwDAZgI2YEA2P9aJaeiHPxEhyAe7BzBE5DSLYKNWlU2xJDVn/Ow38gxgiey7V4bvx/AQBYU0+HYdhv
+        ake8eAcisiPByIKvEMK2hCwGcsEEHOcQFdCCqIE5xASoIWZACTEFphAg7h4k9LZd+Mmvi6R7+gPWQZe6
+        Po1nw/QOUvHz7+CZAcR0mZpqEwAZr6XIUAEpUVfc462WRyogJendLezc49r9w2mdH9UdtCDuwBcmUt8E
+        2r6YMwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="subsRightButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="subsRightButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="subsRightButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 49</value>
+  </data>
+  <data name="subsRightButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="subsRightButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="subsRightButton.TabIndex" type="System.Int32, mscorlib">
+    <value>156</value>
+  </data>
   <data name="&gt;&gt;subsRightButton.Name" xml:space="preserve">
     <value>subsRightButton</value>
   </data>
@@ -506,6 +1022,35 @@
   </data>
   <data name="&gt;&gt;subsRightButton.ZOrder" xml:space="preserve">
     <value>11</value>
+  </data>
+  <data name="subsUpButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
+        iQAACokBkHyqLgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADmSURBVEhL7ZVL
+        EsIgDEBx58Zx47KEtJteyEPp+OkdXHoSj+BpRMLIDKWkiXsWmaGFvFdS0hrvvdHEMAx7QPukoLEmh9ao
+        4Q7tK8A9BY21ElFAoAz+CQIKtWRVUMAnQHhTBOFdK2EFJZzqmQQ0dr29aSRVQQ1eCuja9vYqSRYCDl4T
+        RImzlzXJTDCOh132QqfyKOYlyufC/XOSECOfmwmgh+PvKC7g3A4SDLA7xdzAYAXGmA0ibrkm4naQ1lMu
+        MViB1J2SoJYvNlpR69gH0oO0HbQS8T+gdkzFpmslkkvkugeE+Odb9AW7CuGaw8OB3gAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
+  <data name="subsUpButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="subsUpButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="subsUpButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 49</value>
+  </data>
+  <data name="subsUpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="subsUpButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="subsUpButton.TabIndex" type="System.Int32, mscorlib">
+    <value>157</value>
   </data>
   <data name="&gt;&gt;subsUpButton.Name" xml:space="preserve">
     <value>subsUpButton</value>
@@ -529,7 +1074,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 139</value>
+    <value>280, 139</value>
   </data>
   <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
     <value>50</value>
@@ -549,6 +1094,24 @@
   <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="delayTimeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="delayTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 73</value>
+  </data>
+  <data name="delayTimeLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="delayTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 13</value>
+  </data>
+  <data name="delayTimeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="delayTimeLabel.Text" xml:space="preserve">
+    <value>Atraso (ms):</value>
+  </data>
   <data name="&gt;&gt;delayTimeLabel.Name" xml:space="preserve">
     <value>delayTimeLabel</value>
   </data>
@@ -560,6 +1123,18 @@
   </data>
   <data name="&gt;&gt;delayTimeLabel.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="delayTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 74</value>
+  </data>
+  <data name="delayTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="delayTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="delayTime.TabIndex" type="System.Int32, mscorlib">
+    <value>62</value>
   </data>
   <data name="&gt;&gt;delayTime.Name" xml:space="preserve">
     <value>delayTime</value>
@@ -573,6 +1148,24 @@
   <data name="&gt;&gt;delayTime.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="intervalTimeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="intervalTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 47</value>
+  </data>
+  <data name="intervalTimeLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="intervalTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 13</value>
+  </data>
+  <data name="intervalTimeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="intervalTimeLabel.Text" xml:space="preserve">
+    <value>Intervalo (ms):</value>
+  </data>
   <data name="&gt;&gt;intervalTimeLabel.Name" xml:space="preserve">
     <value>intervalTimeLabel</value>
   </data>
@@ -584,6 +1177,18 @@
   </data>
   <data name="&gt;&gt;intervalTimeLabel.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="intervalTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 45</value>
+  </data>
+  <data name="intervalTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="intervalTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="intervalTime.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
   </data>
   <data name="&gt;&gt;intervalTime.Name" xml:space="preserve">
     <value>intervalTime</value>
@@ -597,6 +1202,21 @@
   <data name="&gt;&gt;intervalTime.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="rndIntervalCheck.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rndIntervalCheck.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 99</value>
+  </data>
+  <data name="rndIntervalCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="rndIntervalCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="rndIntervalCheck.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
   <data name="&gt;&gt;rndIntervalCheck.Name" xml:space="preserve">
     <value>rndIntervalCheck</value>
   </data>
@@ -608,6 +1228,27 @@
   </data>
   <data name="&gt;&gt;rndIntervalCheck.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="rndIntervalLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rndIntervalLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 99</value>
+  </data>
+  <data name="rndIntervalLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="rndIntervalLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 13</value>
+  </data>
+  <data name="rndIntervalLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="rndIntervalLabel.Text" xml:space="preserve">
+    <value>Tempo de Intervalo Variável:</value>
+  </data>
+  <data name="rndIntervalLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
   </data>
   <data name="&gt;&gt;rndIntervalLabel.Name" xml:space="preserve">
     <value>rndIntervalLabel</value>
@@ -621,6 +1262,18 @@
   <data name="&gt;&gt;rndIntervalLabel.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="expoTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 17</value>
+  </data>
+  <data name="expoTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="expoTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="expoTime.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
   <data name="&gt;&gt;expoTime.Name" xml:space="preserve">
     <value>expoTime</value>
   </data>
@@ -632,6 +1285,24 @@
   </data>
   <data name="&gt;&gt;expoTime.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="expoTimeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="expoTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 19</value>
+  </data>
+  <data name="expoTimeLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="expoTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="expoTimeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="expoTimeLabel.Text" xml:space="preserve">
+    <value>Exposição (ms):</value>
   </data>
   <data name="&gt;&gt;expoTimeLabel.Name" xml:space="preserve">
     <value>expoTimeLabel</value>
@@ -655,7 +1326,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 123</value>
+    <value>280, 123</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -675,6 +1346,24 @@
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="wordListLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="wordListLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="wordListLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="wordListLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="wordListLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="wordListLabel.Text" xml:space="preserve">
+    <value>Palavras:</value>
+  </data>
   <data name="&gt;&gt;wordListLabel.Name" xml:space="preserve">
     <value>wordListLabel</value>
   </data>
@@ -686,6 +1375,27 @@
   </data>
   <data name="&gt;&gt;wordListLabel.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="audioListLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="audioListLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 101</value>
+  </data>
+  <data name="audioListLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="audioListLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="audioListLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>164</value>
+  </data>
+  <data name="audioListLabel.Text" xml:space="preserve">
+    <value>Áudios:</value>
+  </data>
+  <data name="audioListLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
   </data>
   <data name="&gt;&gt;audioListLabel.Name" xml:space="preserve">
     <value>audioListLabel</value>
@@ -699,6 +1409,27 @@
   <data name="&gt;&gt;audioListLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="openAudioListButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="openAudioListButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="openAudioListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 98</value>
+  </data>
+  <data name="openAudioListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="openAudioListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 19</value>
+  </data>
+  <data name="openAudioListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="openAudioListButton.Text" xml:space="preserve">
+    <value>abrir</value>
+  </data>
   <data name="&gt;&gt;openAudioListButton.Name" xml:space="preserve">
     <value>openAudioListButton</value>
   </data>
@@ -710,6 +1441,24 @@
   </data>
   <data name="&gt;&gt;openAudioListButton.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="colorListLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colorListLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 47</value>
+  </data>
+  <data name="colorListLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="colorListLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="colorListLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="colorListLabel.Text" xml:space="preserve">
+    <value>Cores:</value>
   </data>
   <data name="&gt;&gt;colorListLabel.Name" xml:space="preserve">
     <value>colorListLabel</value>
@@ -723,6 +1472,24 @@
   <data name="&gt;&gt;colorListLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="imgListLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="imgListLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 74</value>
+  </data>
+  <data name="imgListLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="imgListLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="imgListLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="imgListLabel.Text" xml:space="preserve">
+    <value>Imagens:</value>
+  </data>
   <data name="&gt;&gt;imgListLabel.Name" xml:space="preserve">
     <value>imgListLabel</value>
   </data>
@@ -734,6 +1501,24 @@
   </data>
   <data name="&gt;&gt;imgListLabel.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="openWordListButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="openWordListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>99, 17</value>
+  </data>
+  <data name="openWordListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="openWordListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 19</value>
+  </data>
+  <data name="openWordListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="openWordListButton.Text" xml:space="preserve">
+    <value>abrir</value>
   </data>
   <data name="&gt;&gt;openWordListButton.Name" xml:space="preserve">
     <value>openWordListButton</value>
@@ -747,6 +1532,24 @@
   <data name="&gt;&gt;openWordListButton.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="openColorListButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="openColorListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 44</value>
+  </data>
+  <data name="openColorListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="openColorListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 19</value>
+  </data>
+  <data name="openColorListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="openColorListButton.Text" xml:space="preserve">
+    <value>abrir</value>
+  </data>
   <data name="&gt;&gt;openColorListButton.Name" xml:space="preserve">
     <value>openColorListButton</value>
   </data>
@@ -758,6 +1561,27 @@
   </data>
   <data name="&gt;&gt;openColorListButton.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="openImgListButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="openImgListButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="openImgListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 71</value>
+  </data>
+  <data name="openImgListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="openImgListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 19</value>
+  </data>
+  <data name="openImgListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="openImgListButton.Text" xml:space="preserve">
+    <value>abrir</value>
   </data>
   <data name="&gt;&gt;openImgListButton.Name" xml:space="preserve">
     <value>openImgListButton</value>
@@ -814,7 +1638,7 @@
     <value>Vertical</value>
   </data>
   <data name="instructionsBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>495, 111</value>
+    <value>573, 93</value>
   </data>
   <data name="instructionsBox.TabIndex" type="System.Int32, mscorlib">
     <value>70</value>
@@ -1424,7 +2248,7 @@ Imagem:</value>
     <value>2, 2, 2, 2</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>520, 584</value>
+    <value>587, 560</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1441,1331 +2265,6 @@ Imagem:</value>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panel3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 29</value>
-  </data>
-  <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>155</value>
-  </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 31</value>
-  </data>
-  <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>154</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="fixPointTypeLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="fixPointTypeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 28</value>
-  </data>
-  <data name="fixPointTypeLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="fixPointTypeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
-  </data>
-  <data name="fixPointTypeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>64</value>
-  </data>
-  <data name="fixPointTypeLabel.Text" xml:space="preserve">
-    <value>Tipo:</value>
-  </data>
-  <data name="&gt;&gt;fixPointTypeLabel.Name" xml:space="preserve">
-    <value>fixPointTypeLabel</value>
-  </data>
-  <data name="&gt;&gt;fixPointTypeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fixPointTypeLabel.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;fixPointTypeLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="fixPointCross.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="fixPointCross.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 28</value>
-  </data>
-  <data name="fixPointCross.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="fixPointCross.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 14</value>
-  </data>
-  <data name="fixPointCross.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="&gt;&gt;fixPointCross.Name" xml:space="preserve">
-    <value>fixPointCross</value>
-  </data>
-  <data name="&gt;&gt;fixPointCross.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fixPointCross.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;fixPointCross.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="fixPointColorLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="fixPointColorLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 47</value>
-  </data>
-  <data name="fixPointColorLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="fixPointColorLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 26</value>
-  </data>
-  <data name="fixPointColorLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>171</value>
-  </data>
-  <data name="fixPointColorLabel.Text" xml:space="preserve">
-    <value>Cor do
-Ponto:</value>
-  </data>
-  <data name="&gt;&gt;fixPointColorLabel.Name" xml:space="preserve">
-    <value>fixPointColorLabel</value>
-  </data>
-  <data name="&gt;&gt;fixPointColorLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fixPointColorLabel.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;fixPointColorLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="fixPointCircle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="fixPointCircle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 29</value>
-  </data>
-  <data name="fixPointCircle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="fixPointCircle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 14</value>
-  </data>
-  <data name="fixPointCircle.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
-  </data>
-  <data name="&gt;&gt;fixPointCircle.Name" xml:space="preserve">
-    <value>fixPointCircle</value>
-  </data>
-  <data name="&gt;&gt;fixPointCircle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fixPointCircle.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;fixPointCircle.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="fixPointColorButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
-  </data>
-  <data name="fixPointColorButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 51</value>
-  </data>
-  <data name="fixPointColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="fixPointColorButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 19</value>
-  </data>
-  <data name="fixPointColorButton.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="fixPointColorButton.Text" xml:space="preserve">
-    <value>escolher</value>
-  </data>
-  <data name="&gt;&gt;fixPointColorButton.Name" xml:space="preserve">
-    <value>fixPointColorButton</value>
-  </data>
-  <data name="&gt;&gt;fixPointColorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fixPointColorButton.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;fixPointColorButton.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="fixPointColorPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 54</value>
-  </data>
-  <data name="fixPointColorPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="fixPointColorPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 14</value>
-  </data>
-  <data name="fixPointColorPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>153</value>
-  </data>
-  <data name="&gt;&gt;fixPointColorPanel.Name" xml:space="preserve">
-    <value>fixPointColorPanel</value>
-  </data>
-  <data name="&gt;&gt;fixPointColorPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fixPointColorPanel.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;fixPointColorPanel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="audioCaptureLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="audioCaptureLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 15</value>
-  </data>
-  <data name="audioCaptureLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="audioCaptureLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 26</value>
-  </data>
-  <data name="audioCaptureLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>52</value>
-  </data>
-  <data name="audioCaptureLabel.Text" xml:space="preserve">
-    <value>Capturar áudio
-durante execução:</value>
-  </data>
-  <data name="audioCaptureLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;audioCaptureLabel.Name" xml:space="preserve">
-    <value>audioCaptureLabel</value>
-  </data>
-  <data name="&gt;&gt;audioCaptureLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;audioCaptureLabel.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;audioCaptureLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="audioCaptureCheck.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="audioCaptureCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>106, 17</value>
-  </data>
-  <data name="audioCaptureCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="audioCaptureCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 14</value>
-  </data>
-  <data name="audioCaptureCheck.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="&gt;&gt;audioCaptureCheck.Name" xml:space="preserve">
-    <value>audioCaptureCheck</value>
-  </data>
-  <data name="&gt;&gt;audioCaptureCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;audioCaptureCheck.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;audioCaptureCheck.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="bgColorPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 52</value>
-  </data>
-  <data name="bgColorPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="bgColorPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 14</value>
-  </data>
-  <data name="bgColorPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>151</value>
-  </data>
-  <data name="&gt;&gt;bgColorPanel.Name" xml:space="preserve">
-    <value>bgColorPanel</value>
-  </data>
-  <data name="&gt;&gt;bgColorPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bgColorPanel.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;bgColorPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="bgColorLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="bgColorLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 52</value>
-  </data>
-  <data name="bgColorLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="bgColorLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
-  </data>
-  <data name="bgColorLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="bgColorLabel.Text" xml:space="preserve">
-    <value>Cor de Fundo:</value>
-  </data>
-  <data name="&gt;&gt;bgColorLabel.Name" xml:space="preserve">
-    <value>bgColorLabel</value>
-  </data>
-  <data name="&gt;&gt;bgColorLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bgColorLabel.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;bgColorLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="bgColorButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
-  </data>
-  <data name="bgColorButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 49</value>
-  </data>
-  <data name="bgColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="bgColorButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 19</value>
-  </data>
-  <data name="bgColorButton.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="bgColorButton.Text" xml:space="preserve">
-    <value>escolher</value>
-  </data>
-  <data name="&gt;&gt;bgColorButton.Name" xml:space="preserve">
-    <value>bgColorButton</value>
-  </data>
-  <data name="&gt;&gt;bgColorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bgColorButton.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;bgColorButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="subsRndCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="subsRndCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 72</value>
-  </data>
-  <data name="subsRndCheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="subsRndCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 17</value>
-  </data>
-  <data name="subsRndCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>160</value>
-  </data>
-  <data name="subsRndCheckBox.Text" xml:space="preserve">
-    <value>aleatória</value>
-  </data>
-  <data name="&gt;&gt;subsRndCheckBox.Name" xml:space="preserve">
-    <value>subsRndCheckBox</value>
-  </data>
-  <data name="&gt;&gt;subsRndCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;subsRndCheckBox.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;subsRndCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="activateSubsLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="activateSubsLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 25</value>
-  </data>
-  <data name="activateSubsLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="activateSubsLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
-  </data>
-  <data name="activateSubsLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>53</value>
-  </data>
-  <data name="activateSubsLabel.Text" xml:space="preserve">
-    <value>Ativar:</value>
-  </data>
-  <data name="&gt;&gt;activateSubsLabel.Name" xml:space="preserve">
-    <value>activateSubsLabel</value>
-  </data>
-  <data name="&gt;&gt;activateSubsLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;activateSubsLabel.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;activateSubsLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="subColorLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="subColorLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 96</value>
-  </data>
-  <data name="subColorLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="subColorLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 13</value>
-  </data>
-  <data name="subColorLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>55</value>
-  </data>
-  <data name="subColorLabel.Text" xml:space="preserve">
-    <value>Cor:</value>
-  </data>
-  <data name="&gt;&gt;subColorLabel.Name" xml:space="preserve">
-    <value>subColorLabel</value>
-  </data>
-  <data name="&gt;&gt;subColorLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;subColorLabel.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;subColorLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="subLocationLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="subLocationLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 50</value>
-  </data>
-  <data name="subLocationLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="subLocationLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
-  </data>
-  <data name="subLocationLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>54</value>
-  </data>
-  <data name="subLocationLabel.Text" xml:space="preserve">
-    <value>Posição:</value>
-  </data>
-  <data name="&gt;&gt;subLocationLabel.Name" xml:space="preserve">
-    <value>subLocationLabel</value>
-  </data>
-  <data name="&gt;&gt;subLocationLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;subLocationLabel.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;subLocationLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="activateSubsCheck.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="activateSubsCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 25</value>
-  </data>
-  <data name="activateSubsCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="activateSubsCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 14</value>
-  </data>
-  <data name="activateSubsCheck.TabIndex" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
-  <data name="&gt;&gt;activateSubsCheck.Name" xml:space="preserve">
-    <value>activateSubsCheck</value>
-  </data>
-  <data name="&gt;&gt;activateSubsCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;activateSubsCheck.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;activateSubsCheck.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="openSubsListButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="openSubsListButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
-  </data>
-  <data name="openSubsListButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 22</value>
-  </data>
-  <data name="openSubsListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="openSubsListButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 19</value>
-  </data>
-  <data name="openSubsListButton.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="openSubsListButton.Text" xml:space="preserve">
-    <value>abrir</value>
-  </data>
-  <data name="&gt;&gt;openSubsListButton.Name" xml:space="preserve">
-    <value>openSubsListButton</value>
-  </data>
-  <data name="&gt;&gt;openSubsListButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openSubsListButton.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;openSubsListButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="subColorButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="subColorButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
-  </data>
-  <data name="subColorButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 93</value>
-  </data>
-  <data name="subColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="subColorButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 19</value>
-  </data>
-  <data name="subColorButton.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
-  <data name="subColorButton.Text" xml:space="preserve">
-    <value>escolher</value>
-  </data>
-  <data name="&gt;&gt;subColorButton.Name" xml:space="preserve">
-    <value>subColorButton</value>
-  </data>
-  <data name="&gt;&gt;subColorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;subColorButton.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;subColorButton.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="subColorPanel.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="subColorPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 95</value>
-  </data>
-  <data name="subColorPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="subColorPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 14</value>
-  </data>
-  <data name="subColorPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>152</value>
-  </data>
-  <data name="&gt;&gt;subColorPanel.Name" xml:space="preserve">
-    <value>subColorPanel</value>
-  </data>
-  <data name="&gt;&gt;subColorPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;subColorPanel.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;subColorPanel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="subsCenterButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="subsCenterButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="subsCenterButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="subsCenterButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 49</value>
-  </data>
-  <data name="subsCenterButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="subsCenterButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 14</value>
-  </data>
-  <data name="subsCenterButton.TabIndex" type="System.Int32, mscorlib">
-    <value>72</value>
-  </data>
-  <data name="&gt;&gt;subsCenterButton.Name" xml:space="preserve">
-    <value>subsCenterButton</value>
-  </data>
-  <data name="&gt;&gt;subsCenterButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;subsCenterButton.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;subsCenterButton.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="subsDownButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        iQAACokBkHyqLgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADMSURBVEhL7ZUx
-        DsIwDEXDxlCJqRM0tbKycNPegZGTcISeBpM/RAqWXVtizeCp/v/V31GSmDlFK6+3Jyraj76wOZoz5R01
-        AGZsIyL3RI2IRkRqAm4s/b3z9ylKKZ2I6GxdZh4AWnj0+p8JiK6PTAvX2jTIEQAaaOFhAub7PK20vC2I
-        BWjm0MLDBOBDKeViQTRAbw6tnFxdsgWRAM/88EXTID0gYu4+mRLSAFFzF6Ds5FPNUYw9aZmHdiCbxCRh
-        89AEDQZI/fMXKvLnTfcFDcPhSOxeUJYAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="subsDownButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="subsDownButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="subsDownButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 49</value>
-  </data>
-  <data name="subsDownButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="subsDownButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 14</value>
-  </data>
-  <data name="subsDownButton.TabIndex" type="System.Int32, mscorlib">
-    <value>154</value>
-  </data>
-  <data name="&gt;&gt;subsDownButton.Name" xml:space="preserve">
-    <value>subsDownButton</value>
-  </data>
-  <data name="&gt;&gt;subsDownButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;subsDownButton.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;subsDownButton.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="subsLeftButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        iQAACokBkHyqLgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC8SURBVEhLxZU9
-        DsIwDEbDxoJYGGvHydILcSgQf3dg5CQcgdMQmkqtYrUs7Wdl8PpenDifXUrJWZYpPB+8rqBtDzsOfHTO
-        bZZe498OYox7L/RmoSQiW6ighLM0p6Xw2TfQcD6vgU8EJZw8XdbClUDBA10R8FFQwn2gGwreCxRc6I6E
-        94JuDF95FLv6svAHWr552gv0WNIDfkUZaCkZo8JKorLIQjIJO7RkNk2RkjpxPYyq6cJB/Ye6OxnRxQ/h
-        xOGaXmpRgQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="subsLeftButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="subsLeftButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="subsLeftButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 49</value>
-  </data>
-  <data name="subsLeftButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="subsLeftButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 14</value>
-  </data>
-  <data name="subsLeftButton.TabIndex" type="System.Int32, mscorlib">
-    <value>155</value>
-  </data>
-  <data name="&gt;&gt;subsLeftButton.Name" xml:space="preserve">
-    <value>subsLeftButton</value>
-  </data>
-  <data name="&gt;&gt;subsLeftButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;subsLeftButton.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;subsLeftButton.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="subsRightButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        iQAACokBkHyqLgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC5SURBVEhLzdU7
-        DsIwDAZgI2YEA2P9aJaeiHPxEhyAe7BzBE5DSLYKNWlU2xJDVn/Ow38gxgiey7V4bvx/AQBYU0+HYdhv
-        ake8eAcisiPByIKvEMK2hCwGcsEEHOcQFdCCqIE5xASoIWZACTEFphAg7h4k9LZd+Mmvi6R7+gPWQZe6
-        Po1nw/QOUvHz7+CZAcR0mZpqEwAZr6XIUAEpUVfc462WRyogJendLezc49r9w2mdH9UdtCDuwBcmUt8E
-        2r6YMwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="subsRightButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="subsRightButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="subsRightButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 49</value>
-  </data>
-  <data name="subsRightButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="subsRightButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 14</value>
-  </data>
-  <data name="subsRightButton.TabIndex" type="System.Int32, mscorlib">
-    <value>156</value>
-  </data>
-  <data name="&gt;&gt;subsRightButton.Name" xml:space="preserve">
-    <value>subsRightButton</value>
-  </data>
-  <data name="&gt;&gt;subsRightButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;subsRightButton.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;subsRightButton.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="subsUpButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        iQAACokBkHyqLgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADmSURBVEhL7ZVL
-        EsIgDEBx58Zx47KEtJteyEPp+OkdXHoSj+BpRMLIDKWkiXsWmaGFvFdS0hrvvdHEMAx7QPukoLEmh9ao
-        4Q7tK8A9BY21ElFAoAz+CQIKtWRVUMAnQHhTBOFdK2EFJZzqmQQ0dr29aSRVQQ1eCuja9vYqSRYCDl4T
-        RImzlzXJTDCOh132QqfyKOYlyufC/XOSECOfmwmgh+PvKC7g3A4SDLA7xdzAYAXGmA0ibrkm4naQ1lMu
-        MViB1J2SoJYvNlpR69gH0oO0HbQS8T+gdkzFpmslkkvkugeE+Odb9AW7CuGaw8OB3gAAAABJRU5ErkJg
-        gg==
-</value>
-  </data>
-  <data name="subsUpButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="subsUpButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="subsUpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 49</value>
-  </data>
-  <data name="subsUpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="subsUpButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 14</value>
-  </data>
-  <data name="subsUpButton.TabIndex" type="System.Int32, mscorlib">
-    <value>157</value>
-  </data>
-  <data name="&gt;&gt;subsUpButton.Name" xml:space="preserve">
-    <value>subsUpButton</value>
-  </data>
-  <data name="&gt;&gt;subsUpButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;subsUpButton.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;subsUpButton.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="delayTimeLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="delayTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 73</value>
-  </data>
-  <data name="delayTimeLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="delayTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 13</value>
-  </data>
-  <data name="delayTimeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>63</value>
-  </data>
-  <data name="delayTimeLabel.Text" xml:space="preserve">
-    <value>Atraso (ms):</value>
-  </data>
-  <data name="&gt;&gt;delayTimeLabel.Name" xml:space="preserve">
-    <value>delayTimeLabel</value>
-  </data>
-  <data name="&gt;&gt;delayTimeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;delayTimeLabel.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;delayTimeLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="delayTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 71</value>
-  </data>
-  <data name="delayTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="delayTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 20</value>
-  </data>
-  <data name="delayTime.TabIndex" type="System.Int32, mscorlib">
-    <value>62</value>
-  </data>
-  <data name="&gt;&gt;delayTime.Name" xml:space="preserve">
-    <value>delayTime</value>
-  </data>
-  <data name="&gt;&gt;delayTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;delayTime.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;delayTime.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="intervalTimeLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="intervalTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 47</value>
-  </data>
-  <data name="intervalTimeLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="intervalTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
-  </data>
-  <data name="intervalTimeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="intervalTimeLabel.Text" xml:space="preserve">
-    <value>Intervalo (ms):</value>
-  </data>
-  <data name="&gt;&gt;intervalTimeLabel.Name" xml:space="preserve">
-    <value>intervalTimeLabel</value>
-  </data>
-  <data name="&gt;&gt;intervalTimeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;intervalTimeLabel.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;intervalTimeLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="intervalTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 45</value>
-  </data>
-  <data name="intervalTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="intervalTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 20</value>
-  </data>
-  <data name="intervalTime.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;intervalTime.Name" xml:space="preserve">
-    <value>intervalTime</value>
-  </data>
-  <data name="&gt;&gt;intervalTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;intervalTime.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;intervalTime.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="rndIntervalCheck.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rndIntervalCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 99</value>
-  </data>
-  <data name="rndIntervalCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="rndIntervalCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 14</value>
-  </data>
-  <data name="rndIntervalCheck.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="&gt;&gt;rndIntervalCheck.Name" xml:space="preserve">
-    <value>rndIntervalCheck</value>
-  </data>
-  <data name="&gt;&gt;rndIntervalCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rndIntervalCheck.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;rndIntervalCheck.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="rndIntervalLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rndIntervalLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 99</value>
-  </data>
-  <data name="rndIntervalLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="rndIntervalLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 13</value>
-  </data>
-  <data name="rndIntervalLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>61</value>
-  </data>
-  <data name="rndIntervalLabel.Text" xml:space="preserve">
-    <value>Tempo de Intervalo Variável:</value>
-  </data>
-  <data name="rndIntervalLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;rndIntervalLabel.Name" xml:space="preserve">
-    <value>rndIntervalLabel</value>
-  </data>
-  <data name="&gt;&gt;rndIntervalLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rndIntervalLabel.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;rndIntervalLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="expoTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 17</value>
-  </data>
-  <data name="expoTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="expoTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 20</value>
-  </data>
-  <data name="expoTime.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="&gt;&gt;expoTime.Name" xml:space="preserve">
-    <value>expoTime</value>
-  </data>
-  <data name="&gt;&gt;expoTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;expoTime.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;expoTime.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="expoTimeLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="expoTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 19</value>
-  </data>
-  <data name="expoTimeLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="expoTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
-  </data>
-  <data name="expoTimeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <data name="expoTimeLabel.Text" xml:space="preserve">
-    <value>Exposição (ms):</value>
-  </data>
-  <data name="&gt;&gt;expoTimeLabel.Name" xml:space="preserve">
-    <value>expoTimeLabel</value>
-  </data>
-  <data name="&gt;&gt;expoTimeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;expoTimeLabel.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;expoTimeLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="wordListLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="wordListLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="wordListLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="wordListLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 13</value>
-  </data>
-  <data name="wordListLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="wordListLabel.Text" xml:space="preserve">
-    <value>Palavras:</value>
-  </data>
-  <data name="&gt;&gt;wordListLabel.Name" xml:space="preserve">
-    <value>wordListLabel</value>
-  </data>
-  <data name="&gt;&gt;wordListLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wordListLabel.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;wordListLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="audioListLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="audioListLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 101</value>
-  </data>
-  <data name="audioListLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="audioListLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
-  </data>
-  <data name="audioListLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>164</value>
-  </data>
-  <data name="audioListLabel.Text" xml:space="preserve">
-    <value>Áudios:</value>
-  </data>
-  <data name="audioListLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;audioListLabel.Name" xml:space="preserve">
-    <value>audioListLabel</value>
-  </data>
-  <data name="&gt;&gt;audioListLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;audioListLabel.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;audioListLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="openAudioListButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="openAudioListButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
-  </data>
-  <data name="openAudioListButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 98</value>
-  </data>
-  <data name="openAudioListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="openAudioListButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 19</value>
-  </data>
-  <data name="openAudioListButton.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="openAudioListButton.Text" xml:space="preserve">
-    <value>abrir</value>
-  </data>
-  <data name="&gt;&gt;openAudioListButton.Name" xml:space="preserve">
-    <value>openAudioListButton</value>
-  </data>
-  <data name="&gt;&gt;openAudioListButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openAudioListButton.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;openAudioListButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="colorListLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colorListLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 47</value>
-  </data>
-  <data name="colorListLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="colorListLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
-  </data>
-  <data name="colorListLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
-  </data>
-  <data name="colorListLabel.Text" xml:space="preserve">
-    <value>Cores:</value>
-  </data>
-  <data name="&gt;&gt;colorListLabel.Name" xml:space="preserve">
-    <value>colorListLabel</value>
-  </data>
-  <data name="&gt;&gt;colorListLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colorListLabel.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;colorListLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="imgListLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="imgListLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 74</value>
-  </data>
-  <data name="imgListLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="imgListLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 13</value>
-  </data>
-  <data name="imgListLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>57</value>
-  </data>
-  <data name="imgListLabel.Text" xml:space="preserve">
-    <value>Imagens:</value>
-  </data>
-  <data name="&gt;&gt;imgListLabel.Name" xml:space="preserve">
-    <value>imgListLabel</value>
-  </data>
-  <data name="&gt;&gt;imgListLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;imgListLabel.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;imgListLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="openWordListButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
-  </data>
-  <data name="openWordListButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 17</value>
-  </data>
-  <data name="openWordListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="openWordListButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 19</value>
-  </data>
-  <data name="openWordListButton.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="openWordListButton.Text" xml:space="preserve">
-    <value>abrir</value>
-  </data>
-  <data name="&gt;&gt;openWordListButton.Name" xml:space="preserve">
-    <value>openWordListButton</value>
-  </data>
-  <data name="&gt;&gt;openWordListButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openWordListButton.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;openWordListButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="openColorListButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
-  </data>
-  <data name="openColorListButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 44</value>
-  </data>
-  <data name="openColorListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="openColorListButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 19</value>
-  </data>
-  <data name="openColorListButton.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="openColorListButton.Text" xml:space="preserve">
-    <value>abrir</value>
-  </data>
-  <data name="&gt;&gt;openColorListButton.Name" xml:space="preserve">
-    <value>openColorListButton</value>
-  </data>
-  <data name="&gt;&gt;openColorListButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openColorListButton.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;openColorListButton.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="openImgListButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="openImgListButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
-  </data>
-  <data name="openImgListButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 71</value>
-  </data>
-  <data name="openImgListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="openImgListButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 19</value>
-  </data>
-  <data name="openImgListButton.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="openImgListButton.Text" xml:space="preserve">
-    <value>abrir</value>
-  </data>
-  <data name="&gt;&gt;openImgListButton.Name" xml:space="preserve">
-    <value>openImgListButton</value>
-  </data>
-  <data name="&gt;&gt;openImgListButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openImgListButton.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;openImgListButton.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="cancelButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2773,7 +2272,7 @@ durante execução:</value>
     <value>Popup</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 587</value>
+    <value>11, 574</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -2803,7 +2302,7 @@ durante execução:</value>
     <value>Popup</value>
   </data>
   <data name="saveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>456, 587</value>
+    <value>522, 574</value>
   </data>
   <data name="saveButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -2839,7 +2338,7 @@ durante execução:</value>
     <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>544, 638</value>
+    <value>600, 600</value>
   </data>
   <data name="&gt;&gt;errorProvider.Name" xml:space="preserve">
     <value>errorProvider</value>

@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="closeButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 453</value>
+    <value>12, 574</value>
   </data>
   <data name="closeButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -151,7 +151,7 @@
     <value>Popup</value>
   </data>
   <data name="csvExportButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>562, 37</value>
+    <value>650, 40</value>
   </data>
   <data name="csvExportButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -184,7 +184,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>688, 332</value>
+    <value>775, 499</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>92</value>
@@ -208,7 +208,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="fileNameBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>452, 21</value>
+    <value>539, 21</value>
   </data>
   <data name="fileNameBox.TabIndex" type="System.Int32, mscorlib">
     <value>91</value>
@@ -259,7 +259,7 @@
     <value>Zoom</value>
   </data>
   <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>673, 6</value>
+    <value>772, 2</value>
   </data>
   <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -292,7 +292,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>880, 509</value>
+    <value>800, 600</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ExperimentResultUserControl</value>

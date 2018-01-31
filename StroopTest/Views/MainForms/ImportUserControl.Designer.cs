@@ -142,6 +142,7 @@
             this.importDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.importDataGridView.RowHeadersVisible = false;
             this.importDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.importDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.importDataGridView_CellContentClick);
             this.importDataGridView.Validating += new System.ComponentModel.CancelEventHandler(this.importDataGridView_Validating);
             this.importDataGridView.Validated += new System.EventHandler(this.importDataGridView_Validated);
             // 

@@ -273,6 +273,16 @@ namespace TestPlatform.Views.MainForms
             }
         }
 
+        private void originFilesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void destinationFilesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void helpButton_Click(object sender, EventArgs e)
         {
             FormInstructions infoBox = new FormInstructions(LocRM.GetString("fileManagmentConfigInstructions", currentCulture));

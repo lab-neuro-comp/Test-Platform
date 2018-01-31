@@ -1012,5 +1012,30 @@ namespace TestPlatform.Views
             try { infoBox.Show(); }
             catch (Exception ex) { throw new Exception(ex.Message); }
         }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fixPointColorLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fixPointColorPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

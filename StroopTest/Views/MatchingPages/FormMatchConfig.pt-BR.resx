@@ -117,172 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="startTestToolStripMenuItem.Text" xml:space="preserve">
-    <value>Iniciar Teste    Ctrl+R</value>
+  <data name="instructionsLabel.Text" xml:space="preserve">
+    <value>Instruções:</value>
   </data>
-  <data name="newTextColorsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Palavras e Cores</value>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>cancelar</value>
   </data>
-  <data name="newImageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Imagens</value>
+  <data name="saveButton.Text" xml:space="preserve">
+    <value>salvar</value>
   </data>
-  <data name="newAudioToolStripMenuItem.Text" xml:space="preserve">
-    <value>Áudios</value>
+  <data name="programNameLabel.Text" xml:space="preserve">
+    <value>Nome do programa:</value>
   </data>
-  <data name="newStimulusListToolStripMenuItem.Text" xml:space="preserve">
-    <value>Lista de Estímulos</value>
+  <data name="expositionGroupBox.Text" xml:space="preserve">
+    <value>Exposição</value>
   </data>
-  <data name="stroopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Stroop</value>
+  <data name="ExpoDisposition.Items1" xml:space="preserve">
+    <value>Vertical</value>
   </data>
-  <data name="reactionToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tempo de Reação</value>
+  <data name="expositionTypeLabel.Text" xml:space="preserve">
+    <value>Tipo de exposição:</value>
   </data>
-  <data name="newProgramToolStripMenuItem.Text" xml:space="preserve">
-    <value>Programa    Ctrl+N</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Tempo de Intervalo(ms) :</value>
   </data>
-  <data name="newAudioToolStripMenu.Text" xml:space="preserve">
-    <value>Áudio</value>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Tempo de exposição do estímulos A-B(ms):</value>
   </data>
-  <data name="newToolStripMenuItem.Text" xml:space="preserve">
-    <value>Novo</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Tempo de exposição do estímulo A(ms):</value>
   </data>
-  <data name="defineProgramToolStripMenuItem.Text" xml:space="preserve">
-    <value>Programa    Ctrl+D</value>
+  <data name="timeGroupBox.Text" xml:space="preserve">
+    <value>Tempo</value>
   </data>
-  <data name="defineToolStripMenuItem.Text" xml:space="preserve">
-    <value>Definir</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Tempo de atraso (ms):</value>
   </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Sair                  Alt+F4</value>
+  <data name="expoSizeLabel.Text" xml:space="preserve">
+    <value>Tamanho da exposição:</value>
   </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Arquivo</value>
+  <data name="randomPosition.Text" xml:space="preserve">
+    <value>Posição aleatória</value>
   </data>
-  <data name="editTextColorsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Palavras e Cores</value>
+  <data name="randomOrder.Text" xml:space="preserve">
+    <value>Ordem aleatória</value>
   </data>
-  <data name="editImagesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Imagens</value>
+  <data name="wordLabel.Text" xml:space="preserve">
+    <value>Palavras:</value>
   </data>
-  <data name="editAudioToolStripMenuItem.Text" xml:space="preserve">
-    <value>Áudios</value>
+  <data name="numExpoLabel.Text" xml:space="preserve">
+    <value>Número de tentativas:</value>
   </data>
-  <data name="editListsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Lista de Estímulos</value>
+  <data name="stimulusNumberLabel.Text" xml:space="preserve">
+    <value>Número de estimulos:</value>
   </data>
-  <data name="stroopToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Stroop</value>
+  <data name="listGroupBox.Text" xml:space="preserve">
+    <value>Listas</value>
   </data>
-  <data name="reactionToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Tempo de Reação</value>
+  <data name="ExpoDisposition.Items" xml:space="preserve">
+    <value>Horizontal</value>
   </data>
-  <data name="editProgramToolStripMenuItem.Text" xml:space="preserve">
-    <value>Programa</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Imagens:</value>
   </data>
-  <data name="deleteListToolStripMenuItem.Text" xml:space="preserve">
-    <value>Lista</value>
+  <data name="closeExpoAWithClick.Text" xml:space="preserve">
+    <value>Finalizar exposição do estimulo A com clique</value>
   </data>
-  <data name="deleteProgramToolStripMenuItem.Text" xml:space="preserve">
-    <value>Programa</value>
+  <data name="DMTSBackground.Text" xml:space="preserve">
+    <value>escolher</value>
   </data>
-  <data name="deleteDataToolStripMenuItem.Text" xml:space="preserve">
-    <value>Dados</value>
+  <data name="DMNTSBackground.Text" xml:space="preserve">
+    <value>escolher</value>
   </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Excluir</value>
+  <data name="expositionType.Items1" xml:space="preserve">
+    <value>DNMTS</value>
   </data>
-  <data name="editToolStripMenuItem.Text" xml:space="preserve">
-    <value>Editar</value>
+  <data name="expositionType.Items2" xml:space="preserve">
+    <value>DMTS/DNMTS</value>
   </data>
-  <data name="stroopToolStripMenuItem2.Text" xml:space="preserve">
-    <value>Stroop</value>
+  <data name="expositionType.Items" xml:space="preserve">
+    <value>DMTS</value>
   </data>
-  <data name="reactionToolStripMenuItem2.Text" xml:space="preserve">
-    <value>Tempo de Reação</value>
+  <data name="dispositionLabel.Text" xml:space="preserve">
+    <value>Disposição A-B:</value>
   </data>
-  <data name="experimentoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Experimento</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Cores:</value>
   </data>
-  <data name="displayDataToolStripMenuItem.Text" xml:space="preserve">
-    <value>Dados</value>
+  <data name="colorGroupBox.Text" xml:space="preserve">
+    <value>Cores</value>
   </data>
-  <data name="displayAudiosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Áudios</value>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Cor de fundo do DMTS</value>
   </data>
-  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exibir</value>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Cor de fundo do DMNTS</value>
   </data>
-  <data name="instructionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Instruções    Ctrl+H</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Áudios:</value>
   </data>
-  <data name="viewHelpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Visualizar Ajuda</value>
+  <data name="imageListButton.Text" xml:space="preserve">
+    <value>abrir</value>
   </data>
-  <data name="techInfoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Informações Técnicas</value>
+  <data name="audioListButton.Text" xml:space="preserve">
+    <value>abrir</value>
   </data>
-  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>Sobre</value>
+  <data name="colorListButton.Text" xml:space="preserve">
+    <value>abrir</value>
   </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ajuda</value>
-  </data>
-  <data name="idiomaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Idioma</value>
-  </data>
-  <data name="directoryToolStripLabel.Text" xml:space="preserve">
-    <value>Diretório:</value>
-  </data>
-  <data name="executeButton.Text" xml:space="preserve">
-    <value>Executar</value>
-  </data>
-  <data name="markLabel.Text" xml:space="preserve">
-    <value>Marcador</value>
-  </data>
-  <data name="participantTextBox.Text" xml:space="preserve">
-    <value>padrao</value>
-  </data>
-  <data name="participantLabel.Text" xml:space="preserve">
-    <value>Participante</value>
-  </data>
-  <data name="radioButton2.Text" xml:space="preserve">
-    <value> Exportar</value>
-  </data>
-  <data name="radioButton1.Text" xml:space="preserve">
-    <value> Importar</value>
-  </data>
-  <data name="resultButton.Text" xml:space="preserve">
-    <value> Resultados</value>
-  </data>
-  <data name="experimentButton.Text" xml:space="preserve">
-    <value> Experimento</value>
-  </data>
-  <data name="buttonList.Text" xml:space="preserve">
-    <value> Lista</value>
-  </data>
-  <data name="buttonReaction.Text" xml:space="preserve">
-    <value>Tempo de Reação</value>
-  </data>
-  <data name="buttonStroop.Text" xml:space="preserve">
-    <value>Stroop</value>
-  </data>
-  <data name="executingNameLabel.Text" xml:space="preserve">
-    <value>padrao</value>
-  </data>
-  <data name="selectButton.Text" xml:space="preserve">
-    <value>Selecionar</value>
-  </data>
-  <data name="executingTypeLabel.Text" xml:space="preserve">
-    <value>Stroop</value>
-  </data>
-  <data name="exportButton.Text" xml:space="preserve">
-    <value>Exportar</value>
-  </data>
-  <data name="importButton.Text" xml:space="preserve">
-    <value>Importar</value>
-  </data>
-  <data name="buttonMatching.Text" xml:space="preserve">
-    <value>Teste de Escolha</value>
+  <data name="wordListButton.Text" xml:space="preserve">
+    <value>abrir</value>
   </data>
 </root>

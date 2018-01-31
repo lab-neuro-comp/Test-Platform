@@ -323,6 +323,16 @@ namespace TestPlatform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon3_MatchingTest {
+            get {
+                object obj = ResourceManager.GetObject("icon3_MatchingTest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap noDirection {
             get {
                 object obj = ResourceManager.GetObject("noDirection", resourceCulture);

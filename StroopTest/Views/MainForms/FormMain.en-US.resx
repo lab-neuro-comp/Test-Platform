@@ -282,4 +282,7 @@
   <data name="importButton.Text" xml:space="preserve">
     <value>Import</value>
   </data>
+  <data name="buttonMatching.Text" xml:space="preserve">
+    <value>MatchingTest</value>
+  </data>
 </root>

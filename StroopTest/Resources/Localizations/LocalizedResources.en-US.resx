@@ -2215,4 +2215,13 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   <data name="audioDeviceNotAvailable" xml:space="preserve">
     <value>There are no devices available to record audio.</value>
   </data>
+  <data name="MatchConfigInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="posNumberNotImplemented" xml:space="preserve">
+    <value>Position number currently not implemented.</value>
+  </data>
+  <data name="dispositionError" xml:space="preserve">
+    <value>A-B disposition must be selected.</value>
+  </data>
 </root>

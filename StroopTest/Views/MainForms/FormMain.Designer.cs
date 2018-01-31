@@ -84,6 +84,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.buttonMatching = new System.Windows.Forms.RadioButton();
             this.exportButton = new System.Windows.Forms.RadioButton();
             this.importButton = new System.Windows.Forms.RadioButton();
             this.resultButton = new System.Windows.Forms.RadioButton();
@@ -493,6 +494,7 @@
             // 
             // menuPanel
             // 
+            this.menuPanel.Controls.Add(this.buttonMatching);
             this.menuPanel.Controls.Add(this.exportButton);
             this.menuPanel.Controls.Add(this.importButton);
             this.menuPanel.Controls.Add(this.resultButton);
@@ -503,6 +505,15 @@
             resources.ApplyResources(this.menuPanel, "menuPanel");
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Click += new System.EventHandler(this.menuPanel_Click);
+            // 
+            // buttonMatching
+            // 
+            resources.ApplyResources(this.buttonMatching, "buttonMatching");
+            this.buttonMatching.FlatAppearance.BorderSize = 0;
+            this.buttonMatching.Image = global::TestPlatform.Properties.Resources.icon3_MatchingTest;
+            this.buttonMatching.Name = "buttonMatching";
+            this.buttonMatching.UseVisualStyleBackColor = true;
+            this.buttonMatching.Click += new System.EventHandler(this.buttonMatching_Click);
             // 
             // exportButton
             // 
@@ -720,5 +731,6 @@
         private System.Windows.Forms.ToolStripMenuItem idiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem portuguêsBrasilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishUnitedStatesToolStripMenuItem;
+        private System.Windows.Forms.RadioButton buttonMatching;
     }
 }

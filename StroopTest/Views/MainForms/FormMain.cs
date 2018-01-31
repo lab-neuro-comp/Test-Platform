@@ -108,23 +108,37 @@ namespace TestPlatform
             if (!Directory.Exists(Global.experimentTestFilesPath + Global.resultsFolderName))
                 Directory.CreateDirectory(Global.experimentTestFilesPath + Global.resultsFolderName);
 
+            /*creating directiores related to matchingtest in case they don't already exists*/
+            Global.matchingTestFilesPath = Global.testFilesPath + Global.matchingTestFilesPath;
+            if (!Directory.Exists(Global.matchingTestFilesPath))
+                Directory.CreateDirectory(Global.matchingTestFilesPath);
+            if (!Directory.Exists(Global.matchingTestFilesPath + Global.programFolderName))
+                Directory.CreateDirectory(Global.matchingTestFilesPath + Global.programFolderName);
+            if (!Directory.Exists(Global.matchingTestFilesPath + Global.resultsFolderName))
+                Directory.CreateDirectory(Global.matchingTestFilesPath + Global.resultsFolderName);
+
             /* creating Lists folder*/
             if (!Directory.Exists(Global.testFilesPath + Global.listFolderName))
             {
                 Directory.CreateDirectory(Global.testFilesPath + Global.listFolderName);
             }
 
+            /*creating backup folders*/
             if (!Directory.Exists(Global.defaultPath + Global.backupFolderName))
                 Directory.CreateDirectory(Global.defaultPath + Global.backupFolderName);
             Global.stroopTestFilesBackupPath = Global.defaultPath + Global.backupFolderName + Global.stroopTestFilesBackupPath;
             Global.reactionTestFilesBackupPath = Global.defaultPath + Global.backupFolderName + Global.reactionTestFilesBackupPath;
             Global.experimentTestFilesBackupPath = Global.defaultPath + Global.backupFolderName + Global.experimentTestFilesBackupPath;
+            Global.matchingTestFilesBackupPath = Global.defaultPath + Global.backupFolderName + Global.matchingTestFilesBackupPath;
             if (!Directory.Exists(Global.experimentTestFilesBackupPath))
                 Directory.CreateDirectory(Global.experimentTestFilesBackupPath);
             if (!Directory.Exists(Global.stroopTestFilesBackupPath))
                 Directory.CreateDirectory(Global.stroopTestFilesBackupPath);
             if (!Directory.Exists(Global.reactionTestFilesBackupPath))
                 Directory.CreateDirectory(Global.reactionTestFilesBackupPath);
+            if (!Directory.Exists(Global.matchingTestFilesBackupPath))
+                Directory.CreateDirectory(Global.matchingTestFilesBackupPath);
+
             if (!File.Exists(Global.testFilesPath + INSTRUCTIONSFILENAME))
                 File.Create(Global.testFilesPath + "editableInstructions.txt").Dispose();
             if (!File.Exists(Global.testFilesPath + PGRCONFIGHELPFILENAME))
@@ -857,6 +871,19 @@ namespace TestPlatform
             }
         }
 
+        private void buttonMatching_Click(object sender, EventArgs e)
+        {
+            if (buttonMatching.Checked)
+            {
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
+
+                MatchingControl matchingControl = new MatchingControl();
+                this.sideBarPanel.Controls.Add(matchingControl);
+                currentPanelContent = matchingControl;
+            }
+
+        }
     }
     
 }

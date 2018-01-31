@@ -2206,4 +2206,13 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="audioDeviceNotAvailable" xml:space="preserve">
     <value>Não existe nenhum dispositivo disponível para gravação de aúdio.</value>
   </data>
+  <data name="MatchConfigInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="posNumberNotImplemented" xml:space="preserve">
+    <value>Número de posições ainda não disponível.</value>
+  </data>
+  <data name="dispositionError" xml:space="preserve">
+    <value>Disposição A-B deve ser selecionada.</value>
+  </data>
 </root>

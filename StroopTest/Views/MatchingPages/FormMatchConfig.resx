@@ -117,16 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;DMNTSBackground.Name" xml:space="preserve">
-    <value>DMNTSBackground</value>
+  <data name="&gt;&gt;DNMTSBackground.Name" xml:space="preserve">
+    <value>DNMTSBackground</value>
   </data>
-  <data name="&gt;&gt;DMNTSBackground.Type" xml:space="preserve">
+  <data name="&gt;&gt;DNMTSBackground.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DMNTSBackground.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DNMTSBackground.Parent" xml:space="preserve">
     <value>colorGroupBox</value>
   </data>
-  <data name="&gt;&gt;DMNTSBackground.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DNMTSBackground.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;DMTSBackground.Name" xml:space="preserve">
@@ -215,15 +215,6 @@
   <data name="&gt;&gt;colorGroupBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="numericUpDown2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 75</value>
-  </data>
-  <data name="numericUpDown2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
-  </data>
-  <data name="numericUpDown2.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
   <data name="&gt;&gt;numericUpDown2.Name" xml:space="preserve">
     <value>numericUpDown2</value>
   </data>
@@ -235,15 +226,6 @@
   </data>
   <data name="&gt;&gt;numericUpDown2.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="numericUpDown3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 44</value>
-  </data>
-  <data name="numericUpDown3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
-  </data>
-  <data name="numericUpDown3.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
   </data>
   <data name="&gt;&gt;numericUpDown3.Name" xml:space="preserve">
     <value>numericUpDown3</value>
@@ -257,15 +239,6 @@
   <data name="&gt;&gt;numericUpDown3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="numericUpDown4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 106</value>
-  </data>
-  <data name="numericUpDown4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
-  </data>
-  <data name="numericUpDown4.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <data name="&gt;&gt;numericUpDown4.Name" xml:space="preserve">
     <value>numericUpDown4</value>
   </data>
@@ -277,15 +250,6 @@
   </data>
   <data name="&gt;&gt;numericUpDown4.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 13</value>
-  </data>
-  <data name="numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
-  </data>
-  <data name="numericUpDown1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="&gt;&gt;numericUpDown1.Name" xml:space="preserve">
     <value>numericUpDown1</value>
@@ -299,21 +263,6 @@
   <data name="&gt;&gt;numericUpDown1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 77</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 13</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Tempo de Intervalo (ms):</value>
-  </data>
   <data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
   </data>
@@ -325,21 +274,6 @@
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 46</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 13</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Tempo de exposição do estímulos A-B(ms):</value>
   </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
@@ -353,21 +287,6 @@
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 108</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 13</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Tempo de atraso (ms):</value>
-  </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
   </data>
@@ -379,21 +298,6 @@
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 15</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 13</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Tempo de exposição do estímulo A(ms):</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -431,119 +335,119 @@
   <data name="&gt;&gt;timeGroupBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="audioListButton.Enabled" type="System.Boolean, mscorlib">
+  <data name="openAudioListButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="audioListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="openAudioListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="audioListButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="openAudioListButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>132, 118</value>
   </data>
-  <data name="audioListButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="openAudioListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 23</value>
   </data>
-  <data name="audioListButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="openAudioListButton.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="audioListButton.Text" xml:space="preserve">
+  <data name="openAudioListButton.Text" xml:space="preserve">
     <value>abrir</value>
   </data>
-  <data name="&gt;&gt;audioListButton.Name" xml:space="preserve">
-    <value>audioListButton</value>
+  <data name="&gt;&gt;openAudioListButton.Name" xml:space="preserve">
+    <value>openAudioListButton</value>
   </data>
-  <data name="&gt;&gt;audioListButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;openAudioListButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;audioListButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;openAudioListButton.Parent" xml:space="preserve">
     <value>listGroupBox</value>
   </data>
-  <data name="&gt;&gt;audioListButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;openAudioListButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="imageListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="openImgListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="imageListButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="openImgListButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>132, 84</value>
   </data>
-  <data name="imageListButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="openImgListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 23</value>
   </data>
-  <data name="imageListButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="openImgListButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="imageListButton.Text" xml:space="preserve">
+  <data name="openImgListButton.Text" xml:space="preserve">
     <value>abrir</value>
   </data>
-  <data name="&gt;&gt;imageListButton.Name" xml:space="preserve">
-    <value>imageListButton</value>
+  <data name="&gt;&gt;openImgListButton.Name" xml:space="preserve">
+    <value>openImgListButton</value>
   </data>
-  <data name="&gt;&gt;imageListButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;openImgListButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;imageListButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;openImgListButton.Parent" xml:space="preserve">
     <value>listGroupBox</value>
   </data>
-  <data name="&gt;&gt;imageListButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;openImgListButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="colorListButton.Enabled" type="System.Boolean, mscorlib">
+  <data name="openColorListButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="colorListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="openColorListButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="colorListButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="openColorListButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>132, 50</value>
   </data>
-  <data name="colorListButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="openColorListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 23</value>
   </data>
-  <data name="colorListButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="openColorListButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="colorListButton.Text" xml:space="preserve">
+  <data name="openColorListButton.Text" xml:space="preserve">
     <value>abrir</value>
   </data>
-  <data name="&gt;&gt;colorListButton.Name" xml:space="preserve">
-    <value>colorListButton</value>
+  <data name="&gt;&gt;openColorListButton.Name" xml:space="preserve">
+    <value>openColorListButton</value>
   </data>
-  <data name="&gt;&gt;colorListButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;openColorListButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;colorListButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;openColorListButton.Parent" xml:space="preserve">
     <value>listGroupBox</value>
   </data>
-  <data name="&gt;&gt;colorListButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;openColorListButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="wordListButton.Enabled" type="System.Boolean, mscorlib">
+  <data name="openWordListButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="wordListButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="openWordListButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>132, 16</value>
   </data>
-  <data name="wordListButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="openWordListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 23</value>
   </data>
-  <data name="wordListButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="openWordListButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="wordListButton.Text" xml:space="preserve">
+  <data name="openWordListButton.Text" xml:space="preserve">
     <value>abrir</value>
   </data>
-  <data name="&gt;&gt;wordListButton.Name" xml:space="preserve">
-    <value>wordListButton</value>
+  <data name="&gt;&gt;openWordListButton.Name" xml:space="preserve">
+    <value>openWordListButton</value>
   </data>
-  <data name="&gt;&gt;wordListButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;openWordListButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;wordListButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;openWordListButton.Parent" xml:space="preserve">
     <value>listGroupBox</value>
   </data>
-  <data name="&gt;&gt;wordListButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;openWordListButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
@@ -1443,6 +1347,198 @@
   <data name="&gt;&gt;randomOrder.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 15</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Tempo de exposição do estímulo A(ms):</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>timeGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 108</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 13</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Tempo de atraso (ms):</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>timeGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 46</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 13</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Tempo de exposição do estímulos A-B(ms):</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>timeGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 77</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 13</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Tempo de Intervalo (ms):</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>timeGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 13</value>
+  </data>
+  <data name="numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 20</value>
+  </data>
+  <data name="numericUpDown1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown1.Name" xml:space="preserve">
+    <value>numericUpDown1</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown1.Parent" xml:space="preserve">
+    <value>timeGroupBox</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="numericUpDown2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 75</value>
+  </data>
+  <data name="numericUpDown2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 20</value>
+  </data>
+  <data name="numericUpDown2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown2.Name" xml:space="preserve">
+    <value>numericUpDown2</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown2.Parent" xml:space="preserve">
+    <value>timeGroupBox</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="numericUpDown3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 44</value>
+  </data>
+  <data name="numericUpDown3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 20</value>
+  </data>
+  <data name="numericUpDown3.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown3.Name" xml:space="preserve">
+    <value>numericUpDown3</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown3.Parent" xml:space="preserve">
+    <value>timeGroupBox</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="numericUpDown4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 106</value>
+  </data>
+  <data name="numericUpDown4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 20</value>
+  </data>
+  <data name="numericUpDown4.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown4.Name" xml:space="preserve">
+    <value>numericUpDown4</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown4.Parent" xml:space="preserve">
+    <value>timeGroupBox</value>
+  </data>
+  <data name="&gt;&gt;numericUpDown4.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1486,7 +1582,7 @@
     <value>1</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Cor de fundo do DMNTS</value>
+    <value>Cor de fundo do DNMTS</value>
   </data>
   <data name="&gt;&gt;label9.Name" xml:space="preserve">
     <value>label9</value>
@@ -1569,34 +1665,34 @@
   <data name="&gt;&gt;DMTSBackground.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="DMNTSBackground.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="DNMTSBackground.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="DMNTSBackground.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="DNMTSBackground.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="DMNTSBackground.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="DNMTSBackground.Location" type="System.Drawing.Point, System.Drawing">
     <value>197, 42</value>
   </data>
-  <data name="DMNTSBackground.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DNMTSBackground.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="DMNTSBackground.TabIndex" type="System.Int32, mscorlib">
+  <data name="DNMTSBackground.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="DMNTSBackground.Text" xml:space="preserve">
+  <data name="DNMTSBackground.Text" xml:space="preserve">
     <value>escolher</value>
   </data>
-  <data name="&gt;&gt;DMNTSBackground.Name" xml:space="preserve">
-    <value>DMNTSBackground</value>
+  <data name="&gt;&gt;DNMTSBackground.Name" xml:space="preserve">
+    <value>DNMTSBackground</value>
   </data>
-  <data name="&gt;&gt;DMNTSBackground.Type" xml:space="preserve">
+  <data name="&gt;&gt;DNMTSBackground.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DMNTSBackground.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DNMTSBackground.Parent" xml:space="preserve">
     <value>colorGroupBox</value>
   </data>
-  <data name="&gt;&gt;DMNTSBackground.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DNMTSBackground.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
 </root>

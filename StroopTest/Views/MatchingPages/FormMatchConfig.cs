@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Resources;
 using System.Globalization;
 using TestPlatform.Models;
+using TestPlatform.Controllers;
 
 namespace TestPlatform.Views.MatchingPages
 {
@@ -25,6 +26,14 @@ namespace TestPlatform.Views.MatchingPages
 
         public bool save()
         {
+            saveButton_Click(this, null);
+            foreach (Control c in this.errorProvider1.ContainerControl.Controls)
+            {
+                if (errorProvider1.GetError(c) != "")
+                {
+                    return false;
+                }
+            }
             return true;
         }
 
@@ -138,5 +147,43 @@ namespace TestPlatform.Views.MatchingPages
         {
             this.errorProvider1.SetError(this.ExpoDisposition, "");
         }
+
+        private void DMTSBackground_Click(object sender, EventArgs e)
+        {
+            string colorCode = ListController.PickColor(this);
+            DMTSBackground.Text = colorCode;
+            DMTSBackground.BackColor = ColorTranslator.FromHtml(colorCode);
+            DMTSBackgroundPreview.BackColor = ColorTranslator.FromHtml(colorCode);
+        }
+
+        private void DMNTSBackground_Click(object sender, EventArgs e)
+        {
+            string colorCode = ListController.PickColor(this);
+            DNMTSBackground.Text = colorCode;
+            DNMTSBackground.BackColor = ColorTranslator.FromHtml(colorCode);
+            DNMTSBackgroundPreview.BackColor = ColorTranslator.FromHtml(colorCode);
+        }
+
+
+        private void openWordsList_Click(object sender, EventArgs e)
+        {
+            openWordListButton.Text = ListController.OpenListFile("_words", openWordListButton.Text, "lst");
+        }
+
+        private void openColorsList_Click(object sender, EventArgs e)
+        {
+            openColorListButton.Text = ListController.OpenListFile("_color", openColorListButton.Text, "lst");
+        }
+
+        private void openImagesList_Click(object sender, EventArgs e)
+        {
+           openImgListButton.Text = ListController.OpenListFile("_image", openImgListButton.Text, "dir");
+        }
+
+        private void openAudioList_Click(object sender, EventArgs e)
+        {
+            openAudioListButton.Text = ListController.OpenListFile("_audio", openAudioListButton.Text, "dir");
+        }
+
     }
 }

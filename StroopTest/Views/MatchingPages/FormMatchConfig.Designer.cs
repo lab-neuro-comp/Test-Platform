@@ -58,10 +58,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.wordListButton = new System.Windows.Forms.Button();
-            this.colorListButton = new System.Windows.Forms.Button();
-            this.imageListButton = new System.Windows.Forms.Button();
-            this.audioListButton = new System.Windows.Forms.Button();
+            this.openWordListButton = new System.Windows.Forms.Button();
+            this.openColorListButton = new System.Windows.Forms.Button();
+            this.openImgListButton = new System.Windows.Forms.Button();
+            this.openAudioListButton = new System.Windows.Forms.Button();
             this.timeGroupBox = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -77,7 +77,7 @@
             this.DMTSBackgroundPreview = new System.Windows.Forms.Panel();
             this.DNMTSBackgroundPreview = new System.Windows.Forms.Panel();
             this.DMTSBackground = new System.Windows.Forms.Button();
-            this.DMNTSBackground = new System.Windows.Forms.Button();
+            this.DNMTSBackground = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.expositionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -305,10 +305,10 @@
             // 
             // listGroupBox
             // 
-            this.listGroupBox.Controls.Add(this.audioListButton);
-            this.listGroupBox.Controls.Add(this.imageListButton);
-            this.listGroupBox.Controls.Add(this.colorListButton);
-            this.listGroupBox.Controls.Add(this.wordListButton);
+            this.listGroupBox.Controls.Add(this.openAudioListButton);
+            this.listGroupBox.Controls.Add(this.openImgListButton);
+            this.listGroupBox.Controls.Add(this.openColorListButton);
+            this.listGroupBox.Controls.Add(this.openWordListButton);
             this.listGroupBox.Controls.Add(this.label4);
             this.listGroupBox.Controls.Add(this.label3);
             this.listGroupBox.Controls.Add(this.label2);
@@ -337,29 +337,33 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
-            // wordListButton
+            // openWordListButton
             // 
-            resources.ApplyResources(this.wordListButton, "wordListButton");
-            this.wordListButton.Name = "wordListButton";
-            this.wordListButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.openWordListButton, "openWordListButton");
+            this.openWordListButton.Name = "openWordListButton";
+            this.openWordListButton.UseVisualStyleBackColor = true;
+            this.openWordListButton.Click += new System.EventHandler(this.openWordsList_Click);
             // 
-            // colorListButton
+            // openColorListButton
             // 
-            resources.ApplyResources(this.colorListButton, "colorListButton");
-            this.colorListButton.Name = "colorListButton";
-            this.colorListButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.openColorListButton, "openColorListButton");
+            this.openColorListButton.Name = "openColorListButton";
+            this.openColorListButton.UseVisualStyleBackColor = true;
+            this.openColorListButton.Click += new System.EventHandler(this.openColorsList_Click);
             // 
-            // imageListButton
+            // openImgListButton
             // 
-            resources.ApplyResources(this.imageListButton, "imageListButton");
-            this.imageListButton.Name = "imageListButton";
-            this.imageListButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.openImgListButton, "openImgListButton");
+            this.openImgListButton.Name = "openImgListButton";
+            this.openImgListButton.UseVisualStyleBackColor = true;
+            this.openImgListButton.Click += new System.EventHandler(this.openImagesList_Click);
             // 
-            // audioListButton
+            // openAudioListButton
             // 
-            resources.ApplyResources(this.audioListButton, "audioListButton");
-            this.audioListButton.Name = "audioListButton";
-            this.audioListButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.openAudioListButton, "openAudioListButton");
+            this.openAudioListButton.Name = "openAudioListButton";
+            this.openAudioListButton.UseVisualStyleBackColor = true;
+            this.openAudioListButton.Click += new System.EventHandler(this.openAudioList_Click);
             // 
             // timeGroupBox
             // 
@@ -497,7 +501,7 @@
             // 
             // colorGroupBox
             // 
-            this.colorGroupBox.Controls.Add(this.DMNTSBackground);
+            this.colorGroupBox.Controls.Add(this.DNMTSBackground);
             this.colorGroupBox.Controls.Add(this.DMTSBackground);
             this.colorGroupBox.Controls.Add(this.DNMTSBackgroundPreview);
             this.colorGroupBox.Controls.Add(this.DMTSBackgroundPreview);
@@ -535,13 +539,15 @@
             resources.ApplyResources(this.DMTSBackground, "DMTSBackground");
             this.DMTSBackground.Name = "DMTSBackground";
             this.DMTSBackground.UseVisualStyleBackColor = false;
+            this.DMTSBackground.Click += new System.EventHandler(this.DMTSBackground_Click);
             // 
-            // DMNTSBackground
+            // DNMTSBackground
             // 
-            this.DMNTSBackground.BackColor = System.Drawing.Color.Gray;
-            resources.ApplyResources(this.DMNTSBackground, "DMNTSBackground");
-            this.DMNTSBackground.Name = "DMNTSBackground";
-            this.DMNTSBackground.UseVisualStyleBackColor = false;
+            this.DNMTSBackground.BackColor = System.Drawing.Color.Gray;
+            resources.ApplyResources(this.DNMTSBackground, "DNMTSBackground");
+            this.DNMTSBackground.Name = "DNMTSBackground";
+            this.DNMTSBackground.UseVisualStyleBackColor = false;
+            this.DNMTSBackground.Click += new System.EventHandler(this.DMNTSBackground_Click);
             // 
             // FormMatchConfig
             // 
@@ -600,10 +606,10 @@
         private System.Windows.Forms.CheckBox randomPosition;
         private System.Windows.Forms.CheckBox randomOrder;
         private System.Windows.Forms.GroupBox listGroupBox;
-        private System.Windows.Forms.Button audioListButton;
-        private System.Windows.Forms.Button imageListButton;
-        private System.Windows.Forms.Button colorListButton;
-        private System.Windows.Forms.Button wordListButton;
+        private System.Windows.Forms.Button openAudioListButton;
+        private System.Windows.Forms.Button openImgListButton;
+        private System.Windows.Forms.Button openColorListButton;
+        private System.Windows.Forms.Button openWordListButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -620,7 +626,7 @@
         private System.Windows.Forms.GroupBox colorGroupBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button DMNTSBackground;
+        private System.Windows.Forms.Button DNMTSBackground;
         private System.Windows.Forms.Button DMTSBackground;
         private System.Windows.Forms.Panel DNMTSBackgroundPreview;
         private System.Windows.Forms.Panel DMTSBackgroundPreview;

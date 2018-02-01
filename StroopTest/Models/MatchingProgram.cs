@@ -9,14 +9,16 @@ namespace TestPlatform.Models
 {
     class MatchingProgram : Program
     {
-        private String disposition;
-        private Int32 stimuluSize;
-        private Boolean randomPosition;
-        private Boolean endExpositionWithClick;
-        private Int32 modelExpositionTime;
+        private Int32 numberPositions;
+        private Int32 _AttemptsNumber;
+        private String _DNMTSBackground;
         private Int32 attemptsIntervalTime;
-        private String DNMTSBackground;
-        private Int32 AttemptsNumber;
+        private Int32 modelExpositionTime;
+        private Boolean endExpositionWithClick;
+        private Boolean randomPosition;
+        private Int32 stimuluSize;
+        private String disposition;
+        private Int32 stimuluDistance;
 
         public MatchingProgram()
         {
@@ -42,7 +44,7 @@ namespace TestPlatform.Models
             int numExpositions, int AttemptsNumber, int stimuluSize, bool randomPosition,
             bool endExpositionWithClick, string imageList, int intervalTime, 
             bool intervalTimeRandom, int expositionTime, int modelExpositionTime, 
-            int attemptsIntervalTime,  string backgroundColor, string DNMTSBackground, bool randomOrder)
+            int attemptsIntervalTime,  string backgroundColor, string DNMTSBackground, bool randomOrder, int stimuluDistance, int numberPositions)
         {
             // Program properties
             this.programName = programName;
@@ -61,7 +63,7 @@ namespace TestPlatform.Models
             this.attemptsIntervalTime = attemptsIntervalTime;
             this.DNMTSBackground = DNMTSBackground;
             this.AttemptsNumber = AttemptsNumber;
-
+            this.numberPositions = numberPositions;
             //default configurations for Mathing program
             this.setAudioListFile("false");
             this.setColorListFile("false");
@@ -70,6 +72,7 @@ namespace TestPlatform.Models
             this.expositionType = expositionType;
             this.fixPoint = "false";
             this.fixPointColor = "false";
+            this.stimuluDistance = stimuluDistance;
         }
 
         public string data()
@@ -119,7 +122,9 @@ namespace TestPlatform.Models
                 this.modelExpositionTime.ToString() + " " +
                 this.attemptsIntervalTime.ToString() + " " +
                 this.DNMTSBackground.ToUpper() + " " +
-                this.AttemptsNumber.ToString();
+                this.AttemptsNumber.ToString() + " " +
+                this.stimuluDistance.ToString() + " " +
+                this.numberPositions.ToString();
 
             return data;
         }
@@ -129,37 +134,128 @@ namespace TestPlatform.Models
             return expositionType;
         }
 
-        public string getDisposition()
+        public String Disposition
         {
-            return disposition;
+            get
+            {
+                return disposition;
+            }
+
+            set
+            {
+                disposition = value;
+            }
         }
-        public int getStimuluSize()
+        public Int32 StimuluSize
         {
-            return stimuluSize;
+            get
+            {
+                return stimuluSize;
+            }
+
+            set
+            {
+                stimuluSize = value;
+            }
         }
-        public bool getRandomPosition()
+
+        public Int32 StimuluDistance
         {
-            return randomPosition;
+            get
+            {
+                return stimuluDistance;
+            }
+
+            set
+            {
+                stimuluDistance = value;
+            }
         }
-        public bool getEndExpositionWithClick()
+
+        public Boolean RandomPosition
         {
-            return endExpositionWithClick;
+            get
+            {
+                return randomPosition;
+            }
+
+            set
+            {
+                randomPosition = value;
+            }
         }
-        public int getModelExpositionTime()
+        public Boolean EndExpositionWithClick
         {
-            return modelExpositionTime;
+            get
+            {
+                return endExpositionWithClick;
+            }
+
+            set
+            {
+                endExpositionWithClick = value;
+            }
         }
-        public int getAttemptsIntervalTime()
+        public Int32 ModelExpositionTime
         {
-            return attemptsIntervalTime;
+            get
+            {
+                return modelExpositionTime;
+            }
+
+            set
+            {
+                modelExpositionTime = value;
+            }
         }
-        public string getDNMTSBackground()
+        public Int32 AttemptsIntervalTime
         {
-            return DNMTSBackground;
+            get
+            {
+                return attemptsIntervalTime;
+            }
+
+            set
+            {
+                attemptsIntervalTime = value;
+            }
         }
-        public int getAttemptsNumber()
+        public String DNMTSBackground
         {
-            return AttemptsNumber;
+            get
+            {
+                return _DNMTSBackground;
+            }
+
+            set
+            {
+                _DNMTSBackground = value;
+            }
+        }
+        public Int32 AttemptsNumber
+        {
+            get
+            {
+                return _AttemptsNumber;
+            }
+
+            set
+            {
+                _AttemptsNumber = value;
+            }
+        }
+
+        public Int32 NumberPositions
+        {
+            get
+            {
+                return numberPositions;
+            }
+
+            set
+            {
+                numberPositions = value;
+            }
         }
 
         public void readProgramFile(string filepath)
@@ -206,6 +302,8 @@ namespace TestPlatform.Models
             attemptsIntervalTime = int.Parse(config[20]);
             DNMTSBackground = config[21];
             AttemptsNumber = int.Parse(config[22]);
+            stimuluDistance = int.Parse(config[23]);
+            numberPositions = int.Parse(config[24]);
             linesInstruction = File.ReadAllLines(filepath);
             if (linesInstruction.Length > 1) // read instructions if any
             {

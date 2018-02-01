@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -2232,5 +2232,14 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   </data>
   <data name="imgListError" xml:space="preserve">
     <value>choose a image list</value>
+  </data>
+  <data name="matchingTestHeader" xml:space="preserve">
+    <value>Program\tParticipant\tDate\tInitial Time\tExposition Time\tReaction Time(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tSenquency\tPos\tTest Type\tStimulus Type\tStimulus\tMatch</value>
+  </data>
+  <data name="CannotBeEmpty" xml:space="preserve">
+    <value>This field should be filled</value>
+  </data>
+  <data name="matchingTest" xml:space="preserve">
+    <value>Matching Test</value>
   </data>
 </root>

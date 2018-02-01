@@ -6,6 +6,7 @@
     using System.Windows.Forms;
     using TestPlatform.Views;
     using TestPlatform.Views.ExperimentPages;
+    using Views.MatchingPages;
 
     public class ExpositionController
     {
@@ -87,6 +88,22 @@
             try
             {
                 FormReactExposition reactionExposition = new FormReactExposition(programName, participantName, mark);
+                reactionExposition.StartPosition = FormStartPosition.Manual;
+                reactionExposition.Location = Screen.AllScreens[ShowOnMonitor(form)].WorkingArea.Location;
+                SendKeys.SendWait("i");
+                reactionExposition.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void BeginMatchingTest(string programName, string participantName, char mark, Form form)
+        {
+            try
+            {
+                MatchingExposition reactionExposition = new MatchingExposition(programName, participantName, mark);
                 reactionExposition.StartPosition = FormStartPosition.Manual;
                 reactionExposition.Location = Screen.AllScreens[ShowOnMonitor(form)].WorkingArea.Location;
                 SendKeys.SendWait("i");

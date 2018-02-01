@@ -57,23 +57,25 @@ namespace TestPlatform.Views.MatchingPages
 
             programName.Text = editProgram.ProgramName;
             expositionType.Text = editProgram.getExpositionType();
-            ExpoDisposition.Text = editProgram.getDisposition();
+            ExpoDisposition.Text = editProgram.Disposition;
             numExpo.Value = editProgram.NumExpositions;
-            attemptNumber.Value = editProgram.getAttemptsNumber();
-            expositionSize.Value = editProgram.getStimuluSize();
-            randomPosition.Checked = editProgram.getRandomPosition();
-            closeExpoAWithClick.Checked = editProgram.getEndExpositionWithClick();
+            attemptNumber.Value = editProgram.AttemptsNumber;
+            expositionSize.Value = editProgram.StimuluSize;
+            randomPosition.Checked = editProgram.RandomPosition;
+            closeExpoAWithClick.Checked = editProgram.EndExpositionWithClick;
             openImgListButton.Text = editProgram.getImageListFile().ListName;
             stimulusInterval.Value = editProgram.ExpositionTime;
             randomAttemptTime.Checked = editProgram.IntervalTimeRandom;
             stimulusExpoTime.Value = editProgram.ExpositionTime;
-            modelExpoTime.Value = editProgram.getModelExpositionTime();
-            attemptInterval.Value = editProgram.getAttemptsIntervalTime();
+            modelExpoTime.Value = editProgram.ModelExpositionTime;
+            attemptInterval.Value = editProgram.AttemptsIntervalTime;
             DMTSBackgroundColor.Text = editProgram.BackgroundColor;
             randomOrder.Checked = editProgram.ExpositionRandom;
-            DNMTSBackgroundColor.Text = editProgram.getDNMTSBackground();
+            DNMTSBackgroundColor.Text = editProgram.DNMTSBackground;
             DMTSColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.BackgroundColor);
-            DNMTSColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.getDNMTSBackground());
+            DNMTSColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.DNMTSBackground);
+            positionsComboBox.SelectedText = editProgram.NumberPositions.ToString();
+            stimulusDistance.Value = editProgram.StimuluDistance;
             // reads program instructions to instruction box if there are any
             if (editProgram.InstructionText != null)
             {
@@ -86,7 +88,7 @@ namespace TestPlatform.Views.MatchingPages
             }
             else
             {
-                instructionsBox.Text = instructionBoxText;
+                instructionsBox.Text = "";
             }
 
             switch (editProgram.getExpositionType())
@@ -169,7 +171,7 @@ namespace TestPlatform.Views.MatchingPages
                                         Convert.ToInt32(attemptNumber.Value), Convert.ToInt32(expositionSize.Value), randomPosition.Checked,
                                         closeExpoAWithClick.Checked, openImgListButton.Text, Convert.ToInt32(stimulusInterval.Value), 
                                         randomAttemptTime.Checked, Convert.ToInt32(stimulusExpoTime.Value), Convert.ToInt32(modelExpoTime.Value),
-                                        Convert.ToInt32(attemptInterval.Value), DMTSBackgroundColor.Text, DNMTSBackgroundColor.Text, randomOrder.Checked);
+                                        Convert.ToInt32(attemptInterval.Value), DMTSBackgroundColor.Text, DNMTSBackgroundColor.Text, randomOrder.Checked, Convert.ToInt32(stimulusDistance.Value), int.Parse(positionsComboBox.SelectedItem.ToString()));
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -436,6 +438,20 @@ namespace TestPlatform.Views.MatchingPages
                     e.Cancel = true;
                     this.errorProvider1.SetError(this.openAudioListButton, errorMsg);
                 }
+            }
+        }
+
+        private void positionsComboBox_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(this.positionsComboBox, "");
+        }
+
+        private void positionsComboBox_Validating(object sender, CancelEventArgs e)
+        {
+            if(positionsComboBox.SelectedIndex == -1)
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.positionsComboBox, LocRM.GetString("CannotBeEmpty", currentCulture));
             }
         }
     }

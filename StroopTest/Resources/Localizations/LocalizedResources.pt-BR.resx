@@ -2224,4 +2224,13 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="imgListError" xml:space="preserve">
     <value>Selecione uma lista de imagens</value>
   </data>
+  <data name="matchingTestHeader" xml:space="preserve">
+    <value>Programa\tParticipante\tData\tHorario Inicial\tTempo de Exposição\tTempo de Reação(ms)\tIntervalo(ms)\tIntervalo Estimado(ms)\tDuração da Exposição(ms)\tExposição(ms)\tSenquencia\tPos\tTipo de Teste\tTipo de Estimulo\tEstimulo\tIgual</value>
+  </data>
+  <data name="CannotBeEmpty" xml:space="preserve">
+    <value>Esse campo deve ser preenchido</value>
+  </data>
+  <data name="matchingTest" xml:space="preserve">
+    <value>Teste de escolha</value>
+  </data>
 </root>

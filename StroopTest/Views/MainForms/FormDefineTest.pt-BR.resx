@@ -144,4 +144,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Definir Execução</value>
   </data>
+  <data name="matchingButton.Text" xml:space="preserve">
+    <value>Teste de Escolha</value>
+  </data>
 </root>

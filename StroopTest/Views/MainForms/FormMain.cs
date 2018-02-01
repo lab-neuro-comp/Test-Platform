@@ -610,6 +610,10 @@ namespace TestPlatform
                 {
                     ExpositionController.BeginExperimentTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
                 }
+                else if (executingTypeLabel.Text.Equals(LocRM.GetString("matchingTest", currentCulture)))
+                {
+                    ExpositionController.BeginMatchingTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
+                }
                 else
                 {
                     /* do nothing*/

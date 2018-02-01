@@ -135,6 +135,7 @@
     <Compile Include="Models\ExperimentProgram.cs" />
     <Compile Include="Models\ExperimentTest.cs" />
     <Compile Include="Models\MatchingProgram.cs" />
+    <Compile Include="Models\MatchingTest.cs" />
     <Compile Include="Models\Program.cs" />
     <Compile Include="Models\ReactionProgram.cs" />
     <Compile Include="Models\ReactionTest.cs" />
@@ -209,6 +210,12 @@
     </Compile>
     <Compile Include="Views\MatchingPages\FormMatchConfig.Designer.cs">
       <DependentUpon>FormMatchConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MatchingPages\MatchingExposition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MatchingPages\MatchingExposition.Designer.cs">
+      <DependentUpon>MatchingExposition.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ReactionPages\FormReactExposition.cs">
       <SubType>Form</SubType>
@@ -481,6 +488,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MatchingPages\FormMatchConfig.resx">
       <DependentUpon>FormMatchConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MatchingPages\MatchingExposition.resx">
+      <DependentUpon>MatchingExposition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\FormReactExposition.resx">
       <DependentUpon>FormReactExposition.cs</DependentUpon>

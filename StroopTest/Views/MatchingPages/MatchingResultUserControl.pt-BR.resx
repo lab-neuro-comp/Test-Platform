@@ -117,16 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="StroopButton.Text" xml:space="preserve">
-    <value>Stroop</value>
+  <data name="csvExportButton.Text" xml:space="preserve">
+    <value>Exportar como .cvs</value>
   </data>
-  <data name="reactionButton.Text" xml:space="preserve">
-    <value>Tempo de Reação</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Arquivo de Dados:</value>
   </data>
-  <data name="experimentButton.Text" xml:space="preserve">
-    <value>Experimento</value>
-  </data>
-  <data name="matchingButton.Text" xml:space="preserve">
-    <value>Teste de Escolha</value>
+  <data name="closeButton.Text" xml:space="preserve">
+    <value>fechar</value>
   </data>
 </root>

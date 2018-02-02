@@ -133,13 +133,13 @@ namespace TestPlatform.Models
             }
         }
 
-        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, string currentStimulus, string position, string testType, bool match)
+        public void writeLineOutput(string stimulusType, long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, string currentStimulus, string position, string testType, string match, string model)
         {
             /* This variable keeps data from an exposition to only one stimulus, being them:
-             * Program\tParticipant\tDate\tInitial Time\tExposition Time\tReaction Time(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tSenquency\tPos\tTest Type\tStimulus Type\tStimulus\Match
-             * Program\tParticipant\tDate\tInitial Time\tExposition Time\tReaction Time(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tSenquency\tPos\tTest Type\tStimulus Type\tStimulus\tMatch
+             * Program\tParticipant\tDate\tInitial Time\tExposition Time\tReaction Time(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tSenquency\tPos\tTest Type\tStimulus Type\tStimulus\tModel\Match
+             * Programa\tParticipante\tData\tHorario Inicial\tTempo de Exposição\tTempo de Reação(ms)\tIntervalo(ms)\tIntervalo Estimado(ms)\tDuração da Exposição(ms)\tExposição(ms)\tSenquencia\tPos\tTipo de Teste\tTipo de Estimulo\tEstimulo\tModelo\tIgual
              * program name | participant name| date | hour | exposition hour | hit time(ms) | interval(ms) | interval should be(ms) | exposition accumulative time |exposition time(ms) | number of sequency | position on screen | type of test | type of stimulus | stimulus | Match */
-            var text =  ProgramInUse.ProgramName + "\t" + 
+            string text =  ProgramInUse.ProgramName + "\t" + 
                         participantName + "\t" + 
                         initialTime.Day + "/" + initialTime.Month + "/" + initialTime.Year + "\t" + 
                         initialTime.Hour + ":" + initialTime.Minute + ":" + initialTime.Second + ":" + initialTime.Millisecond.ToString() + "\t" + 
@@ -152,9 +152,10 @@ namespace TestPlatform.Models
                         currentExposition + "\t" + 
                         position + "\t" + 
                         testType + "\t" + 
-                        LocRM.GetString("image", currentCulture) + "\t" +
+                        stimulusType + "\t" +
                         currentStimulus + "\t" + 
-                        match.ToString();
+                        match + "\t" +
+                        model;
             Output.Add(text);
 
         }

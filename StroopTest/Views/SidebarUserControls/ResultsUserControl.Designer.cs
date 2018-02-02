@@ -32,6 +32,7 @@
             this.StroopButton = new System.Windows.Forms.RadioButton();
             this.reactionButton = new System.Windows.Forms.RadioButton();
             this.experimentButton = new System.Windows.Forms.RadioButton();
+            this.matchingButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // StroopButton
@@ -58,10 +59,20 @@
             this.experimentButton.UseVisualStyleBackColor = true;
             this.experimentButton.Click += new System.EventHandler(this.experimentButton_Click);
             // 
+            // matchingButton
+            // 
+            resources.ApplyResources(this.matchingButton, "matchingButton");
+            this.matchingButton.FlatAppearance.BorderSize = 0;
+            this.matchingButton.Name = "matchingButton";
+            this.matchingButton.TabStop = true;
+            this.matchingButton.UseVisualStyleBackColor = true;
+            this.matchingButton.Click += new System.EventHandler(this.matchingButton_Click);
+            // 
             // ResultsUserControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.matchingButton);
             this.Controls.Add(this.experimentButton);
             this.Controls.Add(this.reactionButton);
             this.Controls.Add(this.StroopButton);
@@ -75,5 +86,6 @@
         private System.Windows.Forms.RadioButton StroopButton;
         private System.Windows.Forms.RadioButton reactionButton;
         private System.Windows.Forms.RadioButton experimentButton;
+        private System.Windows.Forms.RadioButton matchingButton;
     }
 }

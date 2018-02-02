@@ -32,10 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMatchConfig));
             this.panel1 = new System.Windows.Forms.Panel();
             this.othersGroupBox = new System.Windows.Forms.GroupBox();
-            this.positionsComboBox = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.stimulusDistance = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
             this.colorGroupBox = new System.Windows.Forms.GroupBox();
             this.DNMTSColorPanel = new System.Windows.Forms.Panel();
             this.DMTSColorPanel = new System.Windows.Forms.Panel();
@@ -87,8 +83,6 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
-            this.othersGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).BeginInit();
             this.colorGroupBox.SuspendLayout();
             this.timeGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusInterval)).BeginInit();
@@ -122,56 +116,9 @@
             // 
             // othersGroupBox
             // 
-            this.othersGroupBox.Controls.Add(this.positionsComboBox);
-            this.othersGroupBox.Controls.Add(this.label11);
-            this.othersGroupBox.Controls.Add(this.stimulusDistance);
-            this.othersGroupBox.Controls.Add(this.label10);
             resources.ApplyResources(this.othersGroupBox, "othersGroupBox");
             this.othersGroupBox.Name = "othersGroupBox";
             this.othersGroupBox.TabStop = false;
-            // 
-            // positionsComboBox
-            // 
-            this.positionsComboBox.FormattingEnabled = true;
-            this.positionsComboBox.Items.AddRange(new object[] {
-            resources.GetString("positionsComboBox.Items"),
-            resources.GetString("positionsComboBox.Items1"),
-            resources.GetString("positionsComboBox.Items2"),
-            resources.GetString("positionsComboBox.Items3")});
-            resources.ApplyResources(this.positionsComboBox, "positionsComboBox");
-            this.positionsComboBox.Name = "positionsComboBox";
-            this.positionsComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.positionsComboBox_Validating);
-            this.positionsComboBox.Validated += new System.EventHandler(this.positionsComboBox_Validated);
-            // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
-            // 
-            // stimulusDistance
-            // 
-            resources.ApplyResources(this.stimulusDistance, "stimulusDistance");
-            this.stimulusDistance.Maximum = new decimal(new int[] {
-            490,
-            0,
-            0,
-            0});
-            this.stimulusDistance.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.stimulusDistance.Name = "stimulusDistance";
-            this.stimulusDistance.Value = new decimal(new int[] {
-            250,
-            0,
-            0,
-            0});
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
             // 
             // colorGroupBox
             // 
@@ -271,7 +218,7 @@
             0});
             this.stimulusInterval.Name = "stimulusInterval";
             this.stimulusInterval.Value = new decimal(new int[] {
-            100,
+            500,
             0,
             0,
             0});
@@ -296,7 +243,7 @@
             0});
             this.stimulusExpoTime.Name = "stimulusExpoTime";
             this.stimulusExpoTime.Value = new decimal(new int[] {
-            100,
+            5000,
             0,
             0,
             0});
@@ -321,7 +268,7 @@
             0});
             this.attemptInterval.Name = "attemptInterval";
             this.attemptInterval.Value = new decimal(new int[] {
-            100,
+            1000,
             0,
             0,
             0});
@@ -346,7 +293,7 @@
             0});
             this.modelExpoTime.Name = "modelExpoTime";
             this.modelExpoTime.Value = new decimal(new int[] {
-            100,
+            3000,
             0,
             0,
             0});
@@ -653,9 +600,6 @@
             this.Name = "FormMatchConfig";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.othersGroupBox.ResumeLayout(false);
-            this.othersGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).EndInit();
             this.colorGroupBox.ResumeLayout(false);
             this.colorGroupBox.PerformLayout();
             this.timeGroupBox.ResumeLayout(false);
@@ -730,9 +674,5 @@
         private System.Windows.Forms.Panel DMTSColorPanel;
         private System.Windows.Forms.CheckBox randomAttemptTime;
         private System.Windows.Forms.GroupBox othersGroupBox;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown stimulusDistance;
-        private System.Windows.Forms.ComboBox positionsComboBox;
-        private System.Windows.Forms.Label label11;
     }
 }

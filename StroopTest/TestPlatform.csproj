@@ -217,6 +217,12 @@
     <Compile Include="Views\MatchingPages\MatchingExposition.Designer.cs">
       <DependentUpon>MatchingExposition.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MatchingPages\MatchingResultUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MatchingPages\MatchingResultUserControl.Designer.cs">
+      <DependentUpon>MatchingResultUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ReactionPages\FormReactExposition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -491,6 +497,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MatchingPages\MatchingExposition.resx">
       <DependentUpon>MatchingExposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MatchingPages\MatchingResultUserControl.en-US.resx">
+      <DependentUpon>MatchingResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MatchingPages\MatchingResultUserControl.pt-BR.resx">
+      <DependentUpon>MatchingResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MatchingPages\MatchingResultUserControl.resx">
+      <DependentUpon>MatchingResultUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\FormReactExposition.resx">
       <DependentUpon>FormReactExposition.cs</DependentUpon>

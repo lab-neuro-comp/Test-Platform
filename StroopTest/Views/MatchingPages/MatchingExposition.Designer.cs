@@ -49,17 +49,17 @@
             // 
             // expositionBW
             // 
+            this.expositionBW.WorkerReportsProgress = true;
             this.expositionBW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.expositionBW_DoWork);
             this.expositionBW.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.expositionBW_ProgressChanged);
             this.expositionBW.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.expositionBW_RunWorkerCompleted);
-            this.expositionBW.WorkerReportsProgress = true;
             // 
             // expositionControllerBW
             // 
+            this.expositionControllerBW.WorkerReportsProgress = true;
             this.expositionControllerBW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.expositionControllerBW_DoWork);
             this.expositionControllerBW.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.expositionControllerBW_ProgressChanged);
             this.expositionControllerBW.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.expositionControllerBW_RunWorkerCompleted);
-            this.expositionControllerBW.WorkerReportsProgress = true;
             // 
             // MatchingExposition
             // 

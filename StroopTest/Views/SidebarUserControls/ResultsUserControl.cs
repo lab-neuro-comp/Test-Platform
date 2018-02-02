@@ -11,6 +11,7 @@ using TestPlatform.Views;
 using TestPlatform;
 using TestPlatform.Views.ReactionPages;
 using TestPlatform.Views.ExperimentPages;
+using TestPlatform.Views.MatchingPages;
 
 namespace TestPlatform.Views.SidebarUserControls
 {
@@ -66,6 +67,21 @@ namespace TestPlatform.Views.SidebarUserControls
                 ExperimentResultUserControl showData = new ExperimentResultUserControl();
                 Global.GlobalFormMain._contentPanel.Controls.Add(showData);
                 experimentButton.Checked = false;
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void matchingButton_Click(object sender, EventArgs e)
+        {
+            if (Global.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
+            {
+                Global.GlobalFormMain._contentPanel.Controls.Clear();
+            }
+            try
+            {
+                MatchingResultUserControl showData = new MatchingResultUserControl();
+                Global.GlobalFormMain._contentPanel.Controls.Add(showData);
+                matchingButton.Checked = false;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

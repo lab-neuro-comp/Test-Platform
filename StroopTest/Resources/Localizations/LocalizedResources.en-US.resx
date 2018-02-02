@@ -2234,12 +2234,18 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
     <value>choose a image list</value>
   </data>
   <data name="matchingTestHeader" xml:space="preserve">
-    <value>Program\tParticipant\tDate\tInitial Time\tExposition Time\tReaction Time(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tSenquency\tPos\tTest Type\tStimulus Type\tStimulus\tMatch</value>
+    <value>Program\tParticipant\tDate\tInitial Time\tExposition Time\tReaction Time(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tSenquency\tPos\tTest Type\tStimulus Type\tStimulus\tModel\Match</value>
   </data>
   <data name="CannotBeEmpty" xml:space="preserve">
     <value>This field should be filled</value>
   </data>
   <data name="matchingTest" xml:space="preserve">
     <value>Matching Test</value>
+  </data>
+  <data name="model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="stimulu" xml:space="preserve">
+    <value>Stimulu</value>
   </data>
 </root>

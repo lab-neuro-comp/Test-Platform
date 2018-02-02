@@ -23,10 +23,14 @@ namespace TestPlatform.Views.MatchingPages
         {
             private Image modelImage;
             private Image[] stimulus;
-            public MatchingGroup(Image modelImage, List<Image> stimulus)
+            private string modelImageName;
+            private string[] stimulusImagesName;
+            public MatchingGroup(Image modelImage, string modelName, List<Image> stimulus, List<string>  stimulusName)
             {
                 this.modelImage = modelImage;
+                modelImageName = modelName;
                 this.stimulus = stimulus.ToArray();
+                stimulusImagesName = stimulusName.ToArray();
             }
             public bool match(Image stimulus)
             {
@@ -39,6 +43,22 @@ namespace TestPlatform.Views.MatchingPages
             public List<Image> getStimulusImages()
             {
                 return stimulus.ToList();
+            }
+            public string getModelImageName()
+            {
+                return modelImageName;
+            }
+            public string getStimuluImageName(Image image)
+            {
+                int i;
+                for (i = 0; i < stimulus.Length; i++)
+                {
+                    if (stimulus[i].Equals(image))
+                    {
+                        break;
+                    }
+                }
+                return stimulusImagesName[i];
             }
         }
         MatchingTest executingTest = new MatchingTest();
@@ -69,9 +89,11 @@ namespace TestPlatform.Views.MatchingPages
         private Stopwatch hitStopWatch;
         private bool showModel = true;
         private List<Control> stimuluPictureBox;
-
+        string currentExpositionType;
+        PictureBox imageClicked;
         public MatchingExposition(string prgName, string participantName, char mark)
         {
+            currentExpositionType = "DNTS";
             matchingGroups = new List<MatchingGroup>();
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
@@ -161,7 +183,9 @@ namespace TestPlatform.Views.MatchingPages
             Image nextImg;
             Random rng = new Random(int.Parse(this.seconds));
             List<Image> groupModels = new List<Image>();
+            List<string> groupModelsName = new List<string>();
             List<Image> groupStimulus = new List<Image>();
+            List<string> groupStimulusName = new List<string>();
             for(int count = 0; count < this.executingTest.ProgramInUse.AttemptsNumber; count++)//define the models of the exposition
             {
                 if(count == imageList.Length)
@@ -169,18 +193,21 @@ namespace TestPlatform.Views.MatchingPages
                     count = 0;
                 }
                 groupModels.Add(Image.FromFile(imageList[count]));
+                groupModelsName.Add(Path.GetFileNameWithoutExtension(imageList[count]));
             }
             foreach(Image image in groupModels) //each model has to have an stimulu group.
             {
                 groupStimulus.Clear();
                 groupStimulus.Add(image); //model should aways be part of stimulus
-                for(int count = 0; count < this.executingTest.ProgramInUse.NumExpositions-1; count++)
+                groupStimulusName.Add(groupModelsName.ElementAt(groupModels.IndexOf(image)));
+                for (int count = 0; count < this.executingTest.ProgramInUse.NumExpositions-1; count++)
                 {
                     nextImgIndex = rng.Next(this.imageList.Length);
                     nextImg = Image.FromFile(imageList[nextImgIndex]);
                     if (!groupStimulus.Contains(nextImg)) //if image isnt in the group yet
                     {
                         groupStimulus.Add(nextImg); //adds it to group
+                        groupStimulusName.Add(Path.GetFileNameWithoutExtension(imageList[nextImgIndex]));
                     }
                     else 
                     {
@@ -193,9 +220,10 @@ namespace TestPlatform.Views.MatchingPages
                             }
                         }
                         groupStimulus.Add(nextImg);
+                        groupStimulusName.Add(Path.GetFileNameWithoutExtension(imageList[nextImgIndex]));
                     }
                 }
-                matchingGroups.Add(new MatchingGroup(image, groupStimulus));
+                matchingGroups.Add(new MatchingGroup(image, groupModelsName.ElementAt(groupModels.IndexOf(image)) , groupStimulus, groupStimulusName));
             }
         }
 
@@ -228,6 +256,7 @@ namespace TestPlatform.Views.MatchingPages
             accumulativeStopWatch.Start();
             for(int count = 0; count < this.executingTest.ProgramInUse.AttemptsNumber; count++)
             {
+                changeBackgroundColor();
                 currentExposition = count;
                 startExpositionBW();
                 while (expositionBW.IsBusy)
@@ -356,6 +385,18 @@ namespace TestPlatform.Views.MatchingPages
             }
         }
 
+        private void changeBackgroundColor()
+        {
+            if (currentExpositionType == "DMTS")
+            {
+                this.BackColor = ColorTranslator.FromHtml(executingTest.ProgramInUse.BackgroundColor);
+            }
+            else
+            {
+                this.BackColor = ColorTranslator.FromHtml(executingTest.ProgramInUse.DNMTSBackground);
+            }
+        }
+
         private void drawModelImage()
         {
             List<Control> image = new List<Control>();
@@ -367,6 +408,8 @@ namespace TestPlatform.Views.MatchingPages
             modelPictureBox.Image = matchingGroups.ElementAt(groupCounter).getModelImage();
             currentStimulus = matchingGroups.ElementAt(groupCounter);
             modelPictureBox.Enabled = true;
+            modelPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            modelPictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MatchingExposition_MouseClick);
             image.Add(modelPictureBox);
             expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.AttemptsNumber * 100, image);
         }
@@ -379,12 +422,14 @@ namespace TestPlatform.Views.MatchingPages
             foreach (Image img in matchingGroups.ElementAt(groupCounter).getStimulusImages())
             {
                 newPicBox = new PictureBox();
+                newPicBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 newPicBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
                 int[] screenPosition = randomScreenPosition(newPicBox.Size);
                 newPicBox.Location = new Point(screenPosition[X], screenPosition[Y]);
                 newPicBox.Image = img;
                 currentStimulus = matchingGroups.ElementAt(groupCounter);
                 newPicBox.Enabled = true;
+                newPicBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MatchingExposition_MouseClick);
                 stimuluPictureBox.Add(newPicBox);
             }
             groupCounter++;
@@ -419,10 +464,10 @@ namespace TestPlatform.Views.MatchingPages
 
         private void expositionControllerBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            Console.WriteLine("controls antes: " + this.Controls.Count.ToString());
             List<Control> controls = (List<Control>)e.UserState;
             foreach (Control c in controls)
             {
+
                 if (exposing)
                 {
                     this.Controls.Add(c);
@@ -432,7 +477,6 @@ namespace TestPlatform.Views.MatchingPages
                     this.Controls.Remove(c);
                 }
             }
-            Console.WriteLine("controls depois: " + this.Controls.Count.ToString());
         }
 
         private void expositionControllerBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -460,10 +504,12 @@ namespace TestPlatform.Views.MatchingPages
             }
         }
 
-        private void SendUserResponse(string keyName)
+
+        private void SendUserResponse(PictureBox imageClicked)
         {
             if (expositionBW.WorkerSupportsCancellation == true)
             {
+                this.imageClicked = imageClicked;
                 expositionBW.CancelAsync();
             }
         }
@@ -497,6 +543,11 @@ namespace TestPlatform.Views.MatchingPages
                     Close();
                 }
             }
+        }
+
+        private void MatchingExposition_MouseClick(object sender, MouseEventArgs e)
+        {
+            SendUserResponse((PictureBox)sender);
         }
 
         /* creates a x and y vector on center of the screen */
@@ -538,17 +589,23 @@ namespace TestPlatform.Views.MatchingPages
                 /*do nothing*/
             }
 
-            if ((e.Cancelled == true) && !intervalCancelled)
+            if (showModel && (e.Cancelled == true) && !intervalCancelled)
             {
-                //executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition), currentBeep);
+
+                executingTest.writeLineOutput(LocRM.GetString("stimulu", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image) , imageClicked.Location.ToString(), currentExpositionType, this.matchingGroups.ElementAt(groupCounter-1).getModelImageName(), this.matchingGroups.ElementAt(groupCounter-1).match(imageClicked.Image).ToString());
                 /* user clicked after stimulus is shown*/
             }
 
-            else
+            else if (showModel)
             {
                 /* user missed stimulus */
-                //executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition), currentBeep);
+                executingTest.writeLineOutput(LocRM.GetString("stimulu", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-" , "-", currentExpositionType, this.matchingGroups.ElementAt(groupCounter).getModelImageName(), "-");
                 hitStopWatch.Stop();
+            }
+            else 
+            {
+                /* user clicked model */
+                executingTest.writeLineOutput(LocRM.GetString("model", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-", imageClicked.Location.ToString(), currentExpositionType, this.matchingGroups.ElementAt(groupCounter).getModelImageName(), "-");
             }
             expositionBW.Dispose();
         }

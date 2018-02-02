@@ -612,8 +612,6 @@ namespace TestPlatform.Views
 
         private void expositionBW_DoWork(object sender, DoWorkEventArgs e)
         {
-            /*parameterizing object to backgroundworker*/
-            BackgroundWorker worker = sender as BackgroundWorker;   
 
             intervalElapsedTime = waitIntervalTime(executingTest.ProgramInUse.IntervalTimeRandom, 
                 executingTest.ProgramInUse.IntervalTime);

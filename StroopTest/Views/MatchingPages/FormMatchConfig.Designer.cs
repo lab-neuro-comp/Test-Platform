@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMatchConfig));
             this.panel1 = new System.Windows.Forms.Panel();
             this.othersGroupBox = new System.Windows.Forms.GroupBox();
+            this.positionsComboBox = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.stimulusDistance = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.colorGroupBox = new System.Windows.Forms.GroupBox();
@@ -84,8 +86,6 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label11 = new System.Windows.Forms.Label();
-            this.positionsComboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.othersGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).BeginInit();
@@ -129,6 +129,24 @@
             resources.ApplyResources(this.othersGroupBox, "othersGroupBox");
             this.othersGroupBox.Name = "othersGroupBox";
             this.othersGroupBox.TabStop = false;
+            // 
+            // positionsComboBox
+            // 
+            this.positionsComboBox.FormattingEnabled = true;
+            this.positionsComboBox.Items.AddRange(new object[] {
+            resources.GetString("positionsComboBox.Items"),
+            resources.GetString("positionsComboBox.Items1"),
+            resources.GetString("positionsComboBox.Items2"),
+            resources.GetString("positionsComboBox.Items3")});
+            resources.ApplyResources(this.positionsComboBox, "positionsComboBox");
+            this.positionsComboBox.Name = "positionsComboBox";
+            this.positionsComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.positionsComboBox_Validating);
+            this.positionsComboBox.Validated += new System.EventHandler(this.positionsComboBox_Validated);
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
             // 
             // stimulusDistance
             // 
@@ -623,24 +641,6 @@
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
-            // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
-            // 
-            // positionsComboBox
-            // 
-            this.positionsComboBox.FormattingEnabled = true;
-            this.positionsComboBox.Items.AddRange(new object[] {
-            resources.GetString("positionsComboBox.Items"),
-            resources.GetString("positionsComboBox.Items1"),
-            resources.GetString("positionsComboBox.Items2"),
-            resources.GetString("positionsComboBox.Items3")});
-            resources.ApplyResources(this.positionsComboBox, "positionsComboBox");
-            this.positionsComboBox.Name = "positionsComboBox";
-            this.positionsComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.positionsComboBox_Validating);
-            this.positionsComboBox.Validated += new System.EventHandler(this.positionsComboBox_Validated);
             // 
             // FormMatchConfig
             // 

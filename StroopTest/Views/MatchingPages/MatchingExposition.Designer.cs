@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatchingExposition));
             this.instructionLabel = new System.Windows.Forms.Label();
+            this.expositionBW = new System.ComponentModel.BackgroundWorker();
+            this.expositionControllerBW = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // instructionLabel
@@ -45,6 +47,20 @@
             this.instructionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.instructionLabel.Visible = false;
             // 
+            // expositionBW
+            // 
+            this.expositionBW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.expositionBW_DoWork);
+            this.expositionBW.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.expositionBW_ProgressChanged);
+            this.expositionBW.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.expositionBW_RunWorkerCompleted);
+            this.expositionBW.WorkerReportsProgress = true;
+            // 
+            // expositionControllerBW
+            // 
+            this.expositionControllerBW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.expositionControllerBW_DoWork);
+            this.expositionControllerBW.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.expositionControllerBW_ProgressChanged);
+            this.expositionControllerBW.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.expositionControllerBW_RunWorkerCompleted);
+            this.expositionControllerBW.WorkerReportsProgress = true;
+            // 
             // MatchingExposition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -59,6 +75,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "MatchingExposition";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MatchingExposition_KeyDown);
             this.ResumeLayout(false);
 
         }
@@ -66,7 +83,7 @@
         #endregion
 
         private System.Windows.Forms.Label instructionLabel;
-        private System.ComponentModel.BackgroundWorker intervalBW;
         private System.ComponentModel.BackgroundWorker expositionBW;
+        private System.ComponentModel.BackgroundWorker expositionControllerBW;
     }
 }

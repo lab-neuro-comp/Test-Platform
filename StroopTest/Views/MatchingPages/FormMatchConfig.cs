@@ -56,8 +56,6 @@ namespace TestPlatform.Views.MatchingPages
             editProgram.readProgramFile(path + Global.programFolderName + editPrgName + ".prg");
 
             programName.Text = editProgram.ProgramName;
-            expositionType.Text = editProgram.getExpositionType();
-            ExpoDisposition.Text = editProgram.Disposition;
             numExpo.Value = editProgram.NumExpositions;
             attemptNumber.Value = editProgram.AttemptsNumber;
             expositionSize.Value = editProgram.StimuluSize;
@@ -74,8 +72,41 @@ namespace TestPlatform.Views.MatchingPages
             DNMTSBackgroundColor.Text = editProgram.DNMTSBackground;
             DMTSColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.BackgroundColor);
             DNMTSColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.DNMTSBackground);
-            positionsComboBox.SelectedText = editProgram.NumberPositions.ToString();
             stimulusDistance.Value = editProgram.StimuluDistance;
+            switch (editProgram.NumberPositions)
+            {
+                case 1:
+                    positionsComboBox.SelectedIndex = 0;
+                    break;
+                case 2:
+                    positionsComboBox.SelectedIndex = 1;
+                    break;
+                case 4:
+                    positionsComboBox.SelectedIndex = 2;
+                    break;
+                case 8:
+                    positionsComboBox.SelectedIndex = 3;
+                    break;
+            }
+            switch (editProgram.getExpositionType())
+            {
+                case "DMTS":
+                    this.expositionType.SelectedIndex = 0;
+                    break;
+                case "DNMTS":
+                    this.expositionType.SelectedIndex = 1;
+                    break;
+                case "DMTS / DNMTS":
+                    this.expositionType.SelectedIndex = 2;
+                    break;
+            }
+            switch (editProgram.Disposition){
+                case "padrao":
+                case "default":
+                    ExpoDisposition.SelectedIndex = 0;
+                    break;
+            }
+            
             // reads program instructions to instruction box if there are any
             if (editProgram.InstructionText != null)
             {
@@ -448,7 +479,7 @@ namespace TestPlatform.Views.MatchingPages
 
         private void positionsComboBox_Validating(object sender, CancelEventArgs e)
         {
-            if(positionsComboBox.SelectedIndex == -1)
+            if(positionsComboBox.SelectedItem == null)
             {
                 e.Cancel = true;
                 this.errorProvider1.SetError(this.positionsComboBox, LocRM.GetString("CannotBeEmpty", currentCulture));

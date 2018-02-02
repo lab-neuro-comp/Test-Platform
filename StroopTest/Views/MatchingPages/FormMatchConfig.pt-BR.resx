@@ -133,7 +133,7 @@
     <value>Exposição</value>
   </data>
   <data name="ExpoDisposition.Items1" xml:space="preserve">
-    <value>padrão</value>
+    <value>padrao</value>
   </data>
   <data name="expositionTypeLabel.Text" xml:space="preserve">
     <value>Tipo de exposição:</value>
@@ -175,7 +175,7 @@
     <value>Listas</value>
   </data>
   <data name="ExpoDisposition.Items" xml:space="preserve">
-    <value>padrão</value>
+    <value>padrao</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Imagens:</value>
@@ -235,7 +235,7 @@
     <value>#404040</value>
   </data>
   <data name="attemptInterval.Text" xml:space="preserve">
-    <value>tempo</value>
+    <value>Tempo</value>
   </data>
   <data name="randomAttemptTime.Text" xml:space="preserve">
     <value>Tempo entre tentativas aleatória</value>
@@ -248,5 +248,17 @@
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>Quantidade de possíveis posições:</value>
+  </data>
+  <data name="positionsComboBox.Items" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="positionsComboBox.Items1" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="positionsComboBox.Items2" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="positionsComboBox.Items3" xml:space="preserve">
+    <value>8</value>
   </data>
 </root>

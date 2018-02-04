@@ -19,6 +19,328 @@ namespace TestPlatform.Views.MatchingPages
 {
     public partial class MatchingExposition : Form
     {
+        public class StimuluPosition
+        {
+
+            private int pointCount = 0;
+            private Size clientSize, stimuluSize;
+            private int pointsNumber;
+            private const int X = 0, Y = 1;
+            public StimuluPosition(int pointsNumber, Size clientSize, Size stimuluSize)
+            {
+                if(pointsNumber > 8 || pointsNumber < 1)
+                {
+                    throw new ArgumentException();
+                }
+                this.stimuluSize = stimuluSize;
+                this.pointsNumber = pointsNumber;
+                this.clientSize = clientSize;
+            }
+
+            public Point getPositon()
+            {
+                
+                Point position = new Point();
+                switch (pointsNumber)
+                {
+                    case 1:
+                        position = centerShapePosition();
+                        break;
+                    case 2:
+                        position = twoPointsPosition();
+                        break;
+                    case 3:
+                        position = threePointsPosition();
+                        break;
+                    case 4:
+                        position = fourPointsPosition();
+                        break;
+                    case 5:
+                        position = fivePointsPosition();
+                        break;
+                    case 6:
+                        position = sixPointsPosition();
+                        break;
+                    case 7:
+                        position = sevenPointsPosition();
+                        break;
+                    case 8:
+                        position = eightPointsPosition();
+                        break;
+                }
+                return position;
+            }
+            public void setStumuluSize(Size stimuluSize)
+            {
+                this.stimuluSize = stimuluSize;
+            }
+            private Point centerShapePosition()
+            {
+                if(pointCount < pointsNumber)
+                {
+                    /*middle center*/
+                    pointCount++;
+                    float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
+                    return new Point((int)clientMiddle[X] - (stimuluSize.Width / 2), (int)clientMiddle[Y] - (stimuluSize.Height / 2));
+                }
+                else
+                {
+                    throw new InvalidOperationException();
+                }
+            }
+            private Point twoPointsPosition()
+            {
+                Point position = new Point();
+                float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
+                switch (pointCount){
+                    case 0: /*middle left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X]/2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        pointCount++;
+                        break;
+                    case 1: /*middle right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        pointCount++;
+                        break;
+                    default:
+                        throw new InvalidOperationException();
+                }
+                return position;
+            }
+            private Point threePointsPosition()
+            {
+                Point position = new Point();
+                float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
+                switch (pointCount)
+                {
+                    case 0: /*middle left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        pointCount++;
+                        break;
+                    case 1: /*middle right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        pointCount++;
+                        break;
+                    case 2:/*middle center*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        pointCount++;
+                        break;
+                    default:
+                        throw new InvalidOperationException();
+                }
+                return position;
+            }
+            private Point fourPointsPosition()
+            {
+                Point position = new Point();
+                float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
+                switch (pointCount)
+                {
+                    case 0: /*top left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 1: /*top right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 2: /*bottom left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 3: /*bottom right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    default:
+                        throw new InvalidOperationException();
+                }
+                return position;
+            }
+            private Point fivePointsPosition()
+            {
+                Point position = new Point();
+                float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
+                switch (pointCount)
+                {
+                    case 0: /*top left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 1: /*top right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 2: /*bottom left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 3: /*bottom right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 4: /*middle center*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        pointCount++;
+                        break;
+                    default:
+                        throw new InvalidOperationException();
+                }
+                return position;
+            }
+            private Point sixPointsPosition()
+            {
+                Point position = new Point();
+                float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
+                switch (pointCount)
+                {
+                    case 0: /*top left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 1: /*top right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 2: /*bottom left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 3: /*bottom right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 4: /*top center*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 5: /*bottom center*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    default:
+                        throw new InvalidOperationException();
+                }
+                return position;
+            }
+            private Point sevenPointsPosition()
+            {
+                Point position = new Point();
+                float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
+                switch (pointCount)
+                {
+                    case 0: /*top left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 1: /*top right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 2: /*bottom left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 3: /*bottom right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 4: /*middle left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        pointCount++;
+                        break;
+                    case 5: /*middle right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        pointCount++;
+                        break;
+                    case 6:/*middle center*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        pointCount++;
+                        break;
+                    default:
+                        throw new InvalidOperationException();
+                }
+                return position;
+            }
+            private Point eightPointsPosition()
+            {
+                Point position = new Point();
+                float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
+                switch (pointCount)
+                {
+                    case 0: /*top left left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 1: /*top left right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 2: /*top rigt left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 3: /*top right right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 4: /*bottom left left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 5: /*bottom left right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 6: /*bottom rigt left*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    case 7: /*bottom right right*/
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                        position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        pointCount++;
+                        break;
+                    default:
+                        throw new InvalidOperationException();
+                }
+                return position;
+            }
+        }
+
         public class MatchingGroup
         {
             private Image modelImage;
@@ -36,6 +358,13 @@ namespace TestPlatform.Views.MatchingPages
             {
                 return modelImage.Equals(stimulus);
             }
+
+            public void shuffleStimulus()
+            {
+                Random rnd = new Random(Guid.NewGuid().GetHashCode());
+                stimulus = stimulus.OrderBy(x => rnd.Next()).ToArray();
+            }
+
             public Image getModelImage()
             {
                 return modelImage;
@@ -61,6 +390,7 @@ namespace TestPlatform.Views.MatchingPages
                 return stimulusImagesName[i];
             }
         }
+        StimuluPosition stimuluPosition;
         MatchingTest executingTest = new MatchingTest();
         private const int X = 0, Y = 1;
         private string path = Global.matchingTestFilesPath;
@@ -69,7 +399,6 @@ namespace TestPlatform.Views.MatchingPages
         private string seconds = DateTime.Now.Second.ToString("00");
         private string startTime;
         private bool intervalCancelled;
-        private int[,] positions;
         private bool exposing;
         private int intervalElapsedTime, intervalShouldBe, groupCounter = 0;
         private Object currentStimulus;
@@ -104,26 +433,6 @@ namespace TestPlatform.Views.MatchingPages
             executingTest.setProgramInUse(path + "/prg/", prgName);
             executingTest.Mark = mark;
             stimuluPictureBox = new List<Control>();
-
-            // initializes position propertie so that they become avaible for stimulus
-            positions = new int[9, 2]{      {0, 0 }, //center position
-                                            { (2 * executingTest.ProgramInUse.StimuluDistance - executingTest.ProgramInUse.StimuluSize), 0 }, // on the right side of the screen
-                                            { - (2 * executingTest.ProgramInUse.StimuluDistance - executingTest.ProgramInUse.StimuluSize), 0 }, // on the left side of the screen
-                                             { 0, ( - executingTest.ProgramInUse.StimuluDistance + executingTest.ProgramInUse.StimuluSize)}, // on top of the screen
-                                             { 0, (executingTest.ProgramInUse.StimuluDistance - executingTest.ProgramInUse.StimuluSize) }, // on bottom of the screen
-                                             { - (2 * executingTest.ProgramInUse.StimuluDistance - executingTest.ProgramInUse.StimuluSize),
-                                                ( - executingTest.ProgramInUse.StimuluDistance + executingTest.ProgramInUse.StimuluSize)
-                                             }, // on left top of the screen
-                                             {  (2 * executingTest.ProgramInUse.StimuluDistance - executingTest.ProgramInUse.StimuluSize),
-                                                ( - executingTest.ProgramInUse.StimuluDistance + executingTest.ProgramInUse.StimuluSize)
-                                             }, // on right top of the screen
-                                             { - (2 * executingTest.ProgramInUse.StimuluDistance - executingTest.ProgramInUse.StimuluSize),
-                                                (executingTest.ProgramInUse.StimuluDistance - executingTest.ProgramInUse.StimuluSize)
-                                             }, // on left bottom of the screen
-                                             { (2 * executingTest.ProgramInUse.StimuluDistance - executingTest.ProgramInUse.StimuluSize),
-                                                (executingTest.ProgramInUse.StimuluDistance - executingTest.ProgramInUse.StimuluSize)
-                                             } // on right bottom of the screen                                             
-                                     };
 
             outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.ProgramName + ".txt";
             startExposition();
@@ -224,6 +533,10 @@ namespace TestPlatform.Views.MatchingPages
                     }
                 }
                 matchingGroups.Add(new MatchingGroup(image, groupModelsName.ElementAt(groupModels.IndexOf(image)) , groupStimulus, groupStimulusName));
+            }
+            foreach (MatchingGroup group in matchingGroups)
+            {
+                group.shuffleStimulus();
             }
         }
 
@@ -376,10 +689,15 @@ namespace TestPlatform.Views.MatchingPages
         {
             if (showModel)
             {
+                stimuluPosition = new StimuluPosition(1, ClientSize, new Size(0, 0));
                 drawModelImage();
             }
             else
             {
+                if (!this.executingTest.ProgramInUse.RandomPosition)
+                {
+                    stimuluPosition = new StimuluPosition(this.executingTest.ProgramInUse.NumExpositions, ClientSize, new Size(0, 0));
+                }
                 waitIntervalTime(this.executingTest.ProgramInUse.IntervalTimeRandom, this.executingTest.ProgramInUse.IntervalTime);
                 drawStimuluImage();
             }
@@ -403,8 +721,8 @@ namespace TestPlatform.Views.MatchingPages
             showModel = false;
             modelPictureBox = new PictureBox();
             modelPictureBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
-            int[] screenPosition = ScreenPosition(modelPictureBox.Size, "center");
-            modelPictureBox.Location = new Point(screenPosition[X], screenPosition[Y]);
+            stimuluPosition.setStumuluSize(modelPictureBox.Size);
+            modelPictureBox.Location = stimuluPosition.getPositon();
             modelPictureBox.Image = matchingGroups.ElementAt(groupCounter).getModelImage();
             currentStimulus = matchingGroups.ElementAt(groupCounter);
             modelPictureBox.Enabled = true;
@@ -424,8 +742,17 @@ namespace TestPlatform.Views.MatchingPages
                 newPicBox = new PictureBox();
                 newPicBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 newPicBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
-                int[] screenPosition = randomScreenPosition(newPicBox.Size);
-                newPicBox.Location = new Point(screenPosition[X], screenPosition[Y]);
+                if (this.executingTest.ProgramInUse.RandomPosition)
+                {
+                    int[] screenPosition = randomScreenPosition(newPicBox.Size);
+                    newPicBox.Location = new Point(screenPosition[X], screenPosition[Y]);
+                }
+                else
+                {
+                    stimuluPosition.setStumuluSize(newPicBox.Size);
+                    Point position = stimuluPosition.getPositon();
+                    newPicBox.Location = position;
+                }
                 newPicBox.Image = img;
                 currentStimulus = matchingGroups.ElementAt(groupCounter);
                 newPicBox.Enabled = true;
@@ -599,13 +926,19 @@ namespace TestPlatform.Views.MatchingPages
             else if (showModel)
             {
                 /* user missed stimulus */
-                executingTest.writeLineOutput(LocRM.GetString("stimulu", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-" , "-", currentExpositionType, this.matchingGroups.ElementAt(groupCounter).getModelImageName(), "-");
+                executingTest.writeLineOutput(LocRM.GetString("stimulu", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-" , "-", currentExpositionType, this.matchingGroups.ElementAt(groupCounter-1).getModelImageName(), "-");
                 hitStopWatch.Stop();
             }
-            else 
+            else if(!showModel && (e.Cancelled == true) && !intervalCancelled)
             {
                 /* user clicked model */
                 executingTest.writeLineOutput(LocRM.GetString("model", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-", imageClicked.Location.ToString(), currentExpositionType, this.matchingGroups.ElementAt(groupCounter).getModelImageName(), "-");
+            }
+            else
+            {
+                executingTest.writeLineOutput(LocRM.GetString("model", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-", "-", currentExpositionType, this.matchingGroups.ElementAt(groupCounter).getModelImageName(), "-");
+                hitStopWatch.Stop();
+                /*user missed model*/
             }
             expositionBW.Dispose();
         }

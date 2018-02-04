@@ -66,7 +66,6 @@
             this.ExpoDisposition = new System.Windows.Forms.ComboBox();
             this.expositionType = new System.Windows.Forms.ComboBox();
             this.expositionTypeLabel = new System.Windows.Forms.Label();
-            this.closeExpoAWithClick = new System.Windows.Forms.CheckBox();
             this.numExpoLabel = new System.Windows.Forms.Label();
             this.randomPosition = new System.Windows.Forms.CheckBox();
             this.expoSizeLabel = new System.Windows.Forms.Label();
@@ -82,6 +81,7 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.closeExpoAWithClick = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.colorGroupBox.SuspendLayout();
             this.timeGroupBox.SuspendLayout();
@@ -454,12 +454,6 @@
             resources.ApplyResources(this.expositionTypeLabel, "expositionTypeLabel");
             this.expositionTypeLabel.Name = "expositionTypeLabel";
             // 
-            // closeExpoAWithClick
-            // 
-            resources.ApplyResources(this.closeExpoAWithClick, "closeExpoAWithClick");
-            this.closeExpoAWithClick.Name = "closeExpoAWithClick";
-            this.closeExpoAWithClick.UseVisualStyleBackColor = true;
-            // 
             // numExpoLabel
             // 
             resources.ApplyResources(this.numExpoLabel, "numExpoLabel");
@@ -480,7 +474,7 @@
             // 
             resources.ApplyResources(this.numExpo, "numExpo");
             this.numExpo.Maximum = new decimal(new int[] {
-            2,
+            8,
             0,
             0,
             0});
@@ -491,7 +485,7 @@
             0});
             this.numExpo.Name = "numExpo";
             this.numExpo.Value = new decimal(new int[] {
-            2,
+            8,
             0,
             0,
             0});
@@ -589,6 +583,12 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // closeExpoAWithClick
+            // 
+            resources.ApplyResources(this.closeExpoAWithClick, "closeExpoAWithClick");
+            this.closeExpoAWithClick.Name = "closeExpoAWithClick";
+            this.closeExpoAWithClick.UseVisualStyleBackColor = true;
+            // 
             // FormMatchConfig
             // 
             resources.ApplyResources(this, "$this");
@@ -642,7 +642,6 @@
         private System.Windows.Forms.NumericUpDown attemptNumber;
         private System.Windows.Forms.Label dispositionLabel;
         private System.Windows.Forms.ComboBox ExpoDisposition;
-        private System.Windows.Forms.CheckBox closeExpoAWithClick;
         private System.Windows.Forms.CheckBox randomPosition;
         private System.Windows.Forms.CheckBox randomOrder;
         private System.Windows.Forms.GroupBox listGroupBox;
@@ -674,5 +673,6 @@
         private System.Windows.Forms.Panel DMTSColorPanel;
         private System.Windows.Forms.CheckBox randomAttemptTime;
         private System.Windows.Forms.GroupBox othersGroupBox;
+        private System.Windows.Forms.CheckBox closeExpoAWithClick;
     }
 }

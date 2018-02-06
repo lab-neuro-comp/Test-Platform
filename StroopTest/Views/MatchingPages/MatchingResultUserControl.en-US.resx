@@ -117,34 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>cancelar</value>
-  </data>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>ok</value>
-  </data>
-  <data name="comboBox1.AutoCompleteCustomSource" xml:space="preserve">
-    <value>padrao</value>
-  </data>
-  <data name="experimentRadioButon.Text" xml:space="preserve">
-    <value>Experimento</value>
-  </data>
-  <data name="reactionButton.Text" xml:space="preserve">
-    <value>Tempo de Reação</value>
-  </data>
-  <data name="stroopButton.Text" xml:space="preserve">
-    <value>Stroop</value>
+  <data name="csvExportButton.Text" xml:space="preserve">
+    <value>Export as .cvs</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Tipo</value>
+    <value>Data file:</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Definir Execução</value>
-  </data>
-  <data name="matchingButton.Text" xml:space="preserve">
-    <value>Teste de Escolha</value>
+  <data name="closeButton.Text" xml:space="preserve">
+    <value>close</value>
   </data>
 </root>

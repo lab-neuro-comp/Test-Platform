@@ -134,6 +134,8 @@
     <Compile Include="Models\Audio.cs" />
     <Compile Include="Models\ExperimentProgram.cs" />
     <Compile Include="Models\ExperimentTest.cs" />
+    <Compile Include="Models\MatchingProgram.cs" />
+    <Compile Include="Models\MatchingTest.cs" />
     <Compile Include="Models\Program.cs" />
     <Compile Include="Models\ReactionProgram.cs" />
     <Compile Include="Models\ReactionTest.cs" />
@@ -203,6 +205,24 @@
     <Compile Include="Views\MainForms\ImportUserControl.Designer.cs">
       <DependentUpon>ImportUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MatchingPages\FormMatchConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MatchingPages\FormMatchConfig.Designer.cs">
+      <DependentUpon>FormMatchConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MatchingPages\MatchingExposition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MatchingPages\MatchingExposition.Designer.cs">
+      <DependentUpon>MatchingExposition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MatchingPages\MatchingResultUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MatchingPages\MatchingResultUserControl.Designer.cs">
+      <DependentUpon>MatchingResultUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ReactionPages\FormReactExposition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +258,12 @@
     </Compile>
     <Compile Include="Views\SidebarUserControls\ListUserControl.Designer.cs">
       <DependentUpon>ListUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SidebarUserControls\MatchingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SidebarUserControls\MatchingControl.Designer.cs">
+      <DependentUpon>MatchingControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SidebarUserControls\ReactionControl.cs">
       <SubType>UserControl</SubType>
@@ -334,7 +360,9 @@
     <Compile Include="Models\StroopProgram.cs" />
     <EmbeddedResource Include="Resources\Localizations\LocalizedResources.es-ES.resx" />
     <EmbeddedResource Include="Resources\Localizations\LocalizedResources.en-US.resx" />
-    <EmbeddedResource Include="Resources\Localizations\LocalizedResources.pt-BR.resx" />
+    <EmbeddedResource Include="Resources\Localizations\LocalizedResources.pt-BR.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ExperimentPages\ExperimentConfig.en-US.resx">
       <DependentUpon>ExperimentConfig.cs</DependentUpon>
     </EmbeddedResource>
@@ -498,6 +526,27 @@
     <EmbeddedResource Include="Views\MainForms\ImportUserControl.resx">
       <DependentUpon>ImportUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\MatchingPages\FormMatchConfig.en-US.resx">
+      <DependentUpon>FormMatchConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MatchingPages\FormMatchConfig.pt-BR.resx">
+      <DependentUpon>FormMatchConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MatchingPages\FormMatchConfig.resx">
+      <DependentUpon>FormMatchConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MatchingPages\MatchingExposition.resx">
+      <DependentUpon>MatchingExposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MatchingPages\MatchingResultUserControl.en-US.resx">
+      <DependentUpon>MatchingResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MatchingPages\MatchingResultUserControl.pt-BR.resx">
+      <DependentUpon>MatchingResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MatchingPages\MatchingResultUserControl.resx">
+      <DependentUpon>MatchingResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\FormReactExposition.resx">
       <DependentUpon>FormReactExposition.cs</DependentUpon>
     </EmbeddedResource>
@@ -552,6 +601,15 @@
     <EmbeddedResource Include="Views\SidebarUserControls\ListUserControl.resx">
       <DependentUpon>ListUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\MatchingControl.en-US.resx">
+      <DependentUpon>MatchingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\MatchingControl.pt-BR.resx">
+      <DependentUpon>MatchingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\MatchingControl.resx">
+      <DependentUpon>MatchingControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ReactionControl.en-US.resx">
       <DependentUpon>ReactionControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -587,6 +645,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\StroopControl.resx">
       <DependentUpon>StroopControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormListConfig.resx">
       <DependentUpon>FormListConfig.cs</DependentUpon>
@@ -676,6 +735,7 @@
     <Content Include="Resources\icons\cross.png" />
     <Content Include="Resources\icons\helpButton.png" />
     <Content Include="Resources\icons\icon2_ReactionTest.png" />
+    <None Include="Resources\icons\icon3_MatchingTest.png" />
     <Content Include="Resources\icons\icon_audio.png" />
     <Content Include="Resources\icons\icon_execute.png" />
     <Content Include="Resources\icons\icon_experiment.png" />

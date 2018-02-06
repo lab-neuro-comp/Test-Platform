@@ -2206,4 +2206,40 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="audioDeviceNotAvailable" xml:space="preserve">
     <value>Não existe nenhum dispositivo disponível para gravação de aúdio.</value>
   </data>
+  <data name="MatchConfigInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="posNumberNotImplemented" xml:space="preserve">
+    <value>Número de posições ainda não disponível.</value>
+  </data>
+  <data name="dispositionError" xml:space="preserve">
+    <value>Disposição A-B deve ser selecionada.</value>
+  </data>
+  <data name="audioListError" xml:space="preserve">
+    <value>Selecione uma lista de audios</value>
+  </data>
+  <data name="colorListError" xml:space="preserve">
+    <value>Selecione uma lista de cores</value>
+  </data>
+  <data name="imgListError" xml:space="preserve">
+    <value>Selecione uma lista de imagens</value>
+  </data>
+  <data name="matchingTestHeader" xml:space="preserve">
+    <value>Programa\tParticipante\tData\tHorario Inicial\tTempo de Exposição\tTempo de Reação(ms)\tIntervalo(ms)\tIntervalo Estimado(ms)\tDuração da Exposição(ms)\tExposição(ms)\tSenquencia\tPos\tTipo de Teste\tTipo de Estimulo\tEstimulo\tModelo\tIgual</value>
+  </data>
+  <data name="CannotBeEmpty" xml:space="preserve">
+    <value>Esse campo deve ser preenchido</value>
+  </data>
+  <data name="matchingTest" xml:space="preserve">
+    <value>Teste de escolha</value>
+  </data>
+  <data name="model" xml:space="preserve">
+    <value>Modelo</value>
+  </data>
+  <data name="stimulu" xml:space="preserve">
+    <value>Estimulo</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
 </root>

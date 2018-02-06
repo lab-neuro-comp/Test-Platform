@@ -126,4 +126,7 @@
   <data name="experimentButton.Text" xml:space="preserve">
     <value>Experiment</value>
   </data>
+  <data name="matchingButton.Text" xml:space="preserve">
+    <value>MatchingTest</value>
+  </data>
 </root>

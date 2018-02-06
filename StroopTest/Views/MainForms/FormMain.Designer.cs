@@ -71,6 +71,7 @@
             this.idiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.portuguêsBrasilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishUnitedStatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spanishSpainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStrip = new System.Windows.Forms.ToolStrip();
             this.directoryToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
@@ -84,6 +85,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.buttonMatching = new System.Windows.Forms.RadioButton();
             this.exportButton = new System.Windows.Forms.RadioButton();
             this.importButton = new System.Windows.Forms.RadioButton();
             this.resultButton = new System.Windows.Forms.RadioButton();
@@ -98,7 +100,6 @@
             this.selectButton = new System.Windows.Forms.Button();
             this.executingTypeLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.spanishSpainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.testToolStrip.SuspendLayout();
             this.markPanel.SuspendLayout();
@@ -402,6 +403,12 @@
             resources.ApplyResources(this.englishUnitedStatesToolStripMenuItem, "englishUnitedStatesToolStripMenuItem");
             this.englishUnitedStatesToolStripMenuItem.Click += new System.EventHandler(this.englishUnitedStatesToolStripMenuItem_Click);
             // 
+            // spanishSpainToolStripMenuItem
+            // 
+            this.spanishSpainToolStripMenuItem.Name = "spanishSpainToolStripMenuItem";
+            resources.ApplyResources(this.spanishSpainToolStripMenuItem, "spanishSpainToolStripMenuItem");
+            this.spanishSpainToolStripMenuItem.Click += new System.EventHandler(this.spanishSpainToolStripMenuItem_Click);
+            // 
             // testToolStrip
             // 
             resources.ApplyResources(this.testToolStrip, "testToolStrip");
@@ -495,6 +502,7 @@
             // 
             // menuPanel
             // 
+            this.menuPanel.Controls.Add(this.buttonMatching);
             this.menuPanel.Controls.Add(this.exportButton);
             this.menuPanel.Controls.Add(this.importButton);
             this.menuPanel.Controls.Add(this.resultButton);
@@ -505,6 +513,15 @@
             resources.ApplyResources(this.menuPanel, "menuPanel");
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Click += new System.EventHandler(this.menuPanel_Click);
+            // 
+            // buttonMatching
+            // 
+            resources.ApplyResources(this.buttonMatching, "buttonMatching");
+            this.buttonMatching.FlatAppearance.BorderSize = 0;
+            this.buttonMatching.Image = global::TestPlatform.Properties.Resources.icon3_MatchingTest;
+            this.buttonMatching.Name = "buttonMatching";
+            this.buttonMatching.UseVisualStyleBackColor = true;
+            this.buttonMatching.Click += new System.EventHandler(this.buttonMatching_Click);
             // 
             // exportButton
             // 
@@ -616,12 +633,6 @@
             this.tableLayoutPanel2.Controls.Add(this.markPanel, 1, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
-            // spanishSpainToolStripMenuItem
-            // 
-            this.spanishSpainToolStripMenuItem.Name = "spanishSpainToolStripMenuItem";
-            resources.ApplyResources(this.spanishSpainToolStripMenuItem, "spanishSpainToolStripMenuItem");
-            this.spanishSpainToolStripMenuItem.Click += new System.EventHandler(this.spanishSpainToolStripMenuItem_Click);
-            // 
             // FormMain
             // 
             this.AcceptButton = this.executeButton;
@@ -728,6 +739,7 @@
         private System.Windows.Forms.ToolStripMenuItem idiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem portuguêsBrasilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishUnitedStatesToolStripMenuItem;
+        private System.Windows.Forms.RadioButton buttonMatching;
         private System.Windows.Forms.ToolStripMenuItem spanishSpainToolStripMenuItem;
     }
 }

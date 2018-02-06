@@ -18,7 +18,7 @@ namespace TestPlatform.Models
         private String stimuluShape; // keeps a list of shapes in this program, which one separated by a comma (",")
         private Int32 numberPositions; // [20]
         private String responseType; // [21]
-        private Boolean hasColorList;
+        private Boolean hasColorList; // [23]
 
         private static Int32 ELEMENTS = 24; //quantity of fields used in ReactionProgram 
 
@@ -485,7 +485,7 @@ namespace TestPlatform.Models
                 expositionRandom = bool.Parse(config[22]);
                 hasColorList = bool.Parse(config[23]);
                 linesInstruction = File.ReadAllLines(filepath);
-                if (linesInstruction.Length > 1) // lê instrução se houver
+                if (linesInstruction.Length > 1) // read instructions if any
                 {
                     for (int i = 1; i < linesInstruction.Length; i++)
                     {

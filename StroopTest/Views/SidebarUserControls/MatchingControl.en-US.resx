@@ -117,34 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>cancelar</value>
+  <data name="newMatchButton.Text" xml:space="preserve">
+    <value>New Program</value>
   </data>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>ok</value>
+  <data name="recoverMatchButton.Text" xml:space="preserve">
+    <value>Recover Program</value>
   </data>
-  <data name="comboBox1.AutoCompleteCustomSource" xml:space="preserve">
-    <value>padrao</value>
+  <data name="editMatchButton.Text" xml:space="preserve">
+    <value>Edit Program</value>
   </data>
-  <data name="experimentRadioButon.Text" xml:space="preserve">
-    <value>Experimento</value>
-  </data>
-  <data name="reactionButton.Text" xml:space="preserve">
-    <value>Tempo de Reação</value>
-  </data>
-  <data name="stroopButton.Text" xml:space="preserve">
-    <value>Stroop</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Tipo</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Definir Execução</value>
-  </data>
-  <data name="matchingButton.Text" xml:space="preserve">
-    <value>Teste de Escolha</value>
+  <data name="deleteMatchButton.Text" xml:space="preserve">
+    <value>Delete Program</value>
   </data>
 </root>

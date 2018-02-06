@@ -108,6 +108,10 @@ namespace TestPlatform.Views
                 {
                     returnValues[0] = LocRM.GetString("experiment", currentCulture);
                 }
+                else if (matchingButton.Checked)
+                {
+                    returnValues[0] = LocRM.GetString("matchingTest", currentCulture);
+                }
                 Console.WriteLine(currentCulture.EnglishName);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -141,6 +145,14 @@ namespace TestPlatform.Views
             errorProvider1.SetError(comboBox1, "");
         }
 
-
+        private void matchingButton_Click(object sender, EventArgs e)
+        {
+            if (matchingButton.Checked)
+            {
+                comboBox1.SelectedItem = null;
+                removeOptionsComboBox();
+                addOptionsComboBox(Global.matchingTestFilesPath + Global.programFolderName);
+            }
+        }
     }
 }

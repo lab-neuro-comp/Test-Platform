@@ -118,148 +118,163 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="StroopButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="recoverMatchButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="StroopButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+  <data name="recoverMatchButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
-  <data name="StroopButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="recoverMatchButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="recoverMatchButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="StroopButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 3</value>
+  <data name="recoverMatchButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 120</value>
   </data>
-  <data name="StroopButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 33</value>
+  <data name="recoverMatchButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 33</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="StroopButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="recoverMatchButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="StroopButton.Text" xml:space="preserve">
-    <value>StroopTest</value>
+  <data name="recoverMatchButton.Text" xml:space="preserve">
+    <value>Recuperar Programa</value>
   </data>
-  <data name="StroopButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="recoverMatchButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;StroopButton.Name" xml:space="preserve">
-    <value>StroopButton</value>
+  <data name="&gt;&gt;recoverMatchButton.Name" xml:space="preserve">
+    <value>recoverMatchButton</value>
   </data>
-  <data name="&gt;&gt;StroopButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;recoverMatchButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;StroopButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;recoverMatchButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;StroopButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="reactionButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="reactionButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="reactionButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="reactionButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 42</value>
-  </data>
-  <data name="reactionButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 33</value>
-  </data>
-  <data name="reactionButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="reactionButton.Text" xml:space="preserve">
-    <value>ReactionTest</value>
-  </data>
-  <data name="reactionButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;reactionButton.Name" xml:space="preserve">
-    <value>reactionButton</value>
-  </data>
-  <data name="&gt;&gt;reactionButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;reactionButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;reactionButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="experimentButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="experimentButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="experimentButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="experimentButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 120</value>
-  </data>
-  <data name="experimentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 33</value>
-  </data>
-  <data name="experimentButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="experimentButton.Text" xml:space="preserve">
-    <value>Experimento</value>
-  </data>
-  <data name="experimentButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;experimentButton.Name" xml:space="preserve">
-    <value>experimentButton</value>
-  </data>
-  <data name="&gt;&gt;experimentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;experimentButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;experimentButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="matchingButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="matchingButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="matchingButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 81</value>
-  </data>
-  <data name="matchingButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 33</value>
-  </data>
-  <data name="matchingButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="matchingButton.Text" xml:space="preserve">
-    <value>MatchingTest</value>
-  </data>
-  <data name="matchingButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;matchingButton.Name" xml:space="preserve">
-    <value>matchingButton</value>
-  </data>
-  <data name="&gt;&gt;matchingButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;matchingButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;matchingButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;recoverMatchButton.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="deleteMatchButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="deleteMatchButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="deleteMatchButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="deleteMatchButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="deleteMatchButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 81</value>
+  </data>
+  <data name="deleteMatchButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 33</value>
+  </data>
+  <data name="deleteMatchButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="deleteMatchButton.Text" xml:space="preserve">
+    <value>Excluir Programa</value>
+  </data>
+  <data name="deleteMatchButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;deleteMatchButton.Name" xml:space="preserve">
+    <value>deleteMatchButton</value>
+  </data>
+  <data name="&gt;&gt;deleteMatchButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteMatchButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;deleteMatchButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="editMatchButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="editMatchButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="editMatchButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="editMatchButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="editMatchButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 42</value>
+  </data>
+  <data name="editMatchButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 33</value>
+  </data>
+  <data name="editMatchButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="editMatchButton.Text" xml:space="preserve">
+    <value>Editar Programa</value>
+  </data>
+  <data name="editMatchButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;editMatchButton.Name" xml:space="preserve">
+    <value>editMatchButton</value>
+  </data>
+  <data name="&gt;&gt;editMatchButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editMatchButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;editMatchButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="newMatchButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="newMatchButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="newMatchButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="newMatchButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="newMatchButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 3</value>
+  </data>
+  <data name="newMatchButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 33</value>
+  </data>
+  <data name="newMatchButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="newMatchButton.Text" xml:space="preserve">
+    <value>Novo Programa</value>
+  </data>
+  <data name="newMatchButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;newMatchButton.Name" xml:space="preserve">
+    <value>newMatchButton</value>
+  </data>
+  <data name="&gt;&gt;newMatchButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;newMatchButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;newMatchButton.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -268,12 +283,12 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 1021</value>
+    <value>209, 1064</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ResultsUserControl</value>
+    <value>MatchingControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

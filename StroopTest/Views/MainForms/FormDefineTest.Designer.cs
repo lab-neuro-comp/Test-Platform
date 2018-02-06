@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.matchingButton = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +75,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.matchingButton);
             this.panel1.Controls.Add(this.experimentRadioButon);
             this.panel1.Controls.Add(this.reactionButton);
             this.panel1.Controls.Add(this.stroopButton);
@@ -119,6 +121,14 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // matchingButton
+            // 
+            resources.ApplyResources(this.matchingButton, "matchingButton");
+            this.matchingButton.Name = "matchingButton";
+            this.matchingButton.TabStop = true;
+            this.matchingButton.UseVisualStyleBackColor = true;
+            this.matchingButton.Click += new System.EventHandler(this.matchingButton_Click);
+            // 
             // FormDefineTest
             // 
             resources.ApplyResources(this, "$this");
@@ -151,5 +161,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.RadioButton experimentRadioButon;
+        private System.Windows.Forms.RadioButton matchingButton;
     }
 }

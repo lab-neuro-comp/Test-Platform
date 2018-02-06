@@ -12,10 +12,12 @@
         public static string stroopTestFilesPath = "/StroopTestFiles/";
         public static string reactionTestFilesPath = "/ReactionTestFiles/";
         public static string experimentTestFilesPath = "/ExperimentTestFiles/";
+        public static string matchingTestFilesPath = "/MatchingTestFiles/";
 
         public static string stroopTestFilesBackupPath = "/StroopTestFiles/";
         public static string reactionTestFilesBackupPath = "/ReactionTestFiles/";
         public static string experimentTestFilesBackupPath = "/ExperimentTestFiles/";
+        public static string matchingTestFilesBackupPath = "/MatchingTestFiles/";
 
         public static string listFolderName = "/Lst/";
 

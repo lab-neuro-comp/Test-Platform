@@ -66,6 +66,7 @@
             this.ExpoDisposition = new System.Windows.Forms.ComboBox();
             this.expositionType = new System.Windows.Forms.ComboBox();
             this.expositionTypeLabel = new System.Windows.Forms.Label();
+            this.closeExpoAWithClick = new System.Windows.Forms.CheckBox();
             this.numExpoLabel = new System.Windows.Forms.Label();
             this.randomPosition = new System.Windows.Forms.CheckBox();
             this.expoSizeLabel = new System.Windows.Forms.Label();
@@ -81,7 +82,6 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.closeExpoAWithClick = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.colorGroupBox.SuspendLayout();
             this.timeGroupBox.SuspendLayout();
@@ -160,7 +160,7 @@
             // 
             // DNMTSBackground
             // 
-            this.DNMTSBackground.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DNMTSBackground.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.DNMTSBackground, "DNMTSBackground");
             this.DNMTSBackground.Name = "DNMTSBackground";
             this.DNMTSBackground.UseVisualStyleBackColor = false;
@@ -168,7 +168,7 @@
             // 
             // DMTSBackground
             // 
-            this.DMTSBackground.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DMTSBackground.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.DMTSBackground, "DMTSBackground");
             this.DMTSBackground.Name = "DMTSBackground";
             this.DMTSBackground.UseVisualStyleBackColor = false;
@@ -362,9 +362,10 @@
             // 
             // openWordListButton
             // 
+            this.openWordListButton.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.openWordListButton, "openWordListButton");
             this.openWordListButton.Name = "openWordListButton";
-            this.openWordListButton.UseVisualStyleBackColor = true;
+            this.openWordListButton.UseVisualStyleBackColor = false;
             this.openWordListButton.Click += new System.EventHandler(this.openWordsList_Click);
             this.openWordListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openWordListButton_Validating);
             this.openWordListButton.Validated += new System.EventHandler(this.openWordListButton_Validated);
@@ -428,6 +429,7 @@
             // 
             // ExpoDisposition
             // 
+            this.ExpoDisposition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ExpoDisposition.FormattingEnabled = true;
             this.ExpoDisposition.Items.AddRange(new object[] {
             resources.GetString("ExpoDisposition.Items")});
@@ -438,6 +440,7 @@
             // 
             // expositionType
             // 
+            this.expositionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.expositionType.FormattingEnabled = true;
             this.expositionType.Items.AddRange(new object[] {
             resources.GetString("expositionType.Items"),
@@ -453,6 +456,12 @@
             // 
             resources.ApplyResources(this.expositionTypeLabel, "expositionTypeLabel");
             this.expositionTypeLabel.Name = "expositionTypeLabel";
+            // 
+            // closeExpoAWithClick
+            // 
+            resources.ApplyResources(this.closeExpoAWithClick, "closeExpoAWithClick");
+            this.closeExpoAWithClick.Name = "closeExpoAWithClick";
+            this.closeExpoAWithClick.UseVisualStyleBackColor = true;
             // 
             // numExpoLabel
             // 
@@ -582,12 +591,6 @@
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
-            // 
-            // closeExpoAWithClick
-            // 
-            resources.ApplyResources(this.closeExpoAWithClick, "closeExpoAWithClick");
-            this.closeExpoAWithClick.Name = "closeExpoAWithClick";
-            this.closeExpoAWithClick.UseVisualStyleBackColor = true;
             // 
             // FormMatchConfig
             // 

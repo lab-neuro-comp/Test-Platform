@@ -299,5 +299,10 @@ namespace TestPlatform.Views.MainForms
             try { infoBox.Show(); }
             catch (Exception ex) { throw new Exception(ex.Message); }
         }
+
+        private void originDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -177,11 +177,11 @@
             // shapeRadioPanel
             // 
             this.shapeRadioPanel.Controls.Add(this.fullSquareCheckBox);
+            this.shapeRadioPanel.Controls.Add(this.circleCheckBox);
+            this.shapeRadioPanel.Controls.Add(this.triangleCheckBox);
             this.shapeRadioPanel.Controls.Add(this.squareCheckBox);
             this.shapeRadioPanel.Controls.Add(this.fullCircleCheckBox);
-            this.shapeRadioPanel.Controls.Add(this.circleCheckBox);
             this.shapeRadioPanel.Controls.Add(this.fullTriangleCheckBox);
-            this.shapeRadioPanel.Controls.Add(this.triangleCheckBox);
             resources.ApplyResources(this.shapeRadioPanel, "shapeRadioPanel");
             this.shapeRadioPanel.Name = "shapeRadioPanel";
             // 
@@ -249,6 +249,7 @@
             resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
             // panel3
             // 
@@ -256,6 +257,7 @@
             this.panel3.BackgroundImage = global::TestPlatform.Properties.Resources.cross;
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel2
             // 
@@ -263,6 +265,7 @@
             this.panel2.BackgroundImage = global::TestPlatform.Properties.Resources.circle;
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // fixPointTypeLabel
             // 
@@ -281,6 +284,7 @@
             // 
             resources.ApplyResources(this.fixPointColorLabel, "fixPointColorLabel");
             this.fixPointColorLabel.Name = "fixPointColorLabel";
+            this.fixPointColorLabel.Click += new System.EventHandler(this.fixPointColorLabel_Click);
             // 
             // fixPointCircle
             // 
@@ -303,6 +307,7 @@
             this.fixPointColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.fixPointColorPanel, "fixPointColorPanel");
             this.fixPointColorPanel.Name = "fixPointColorPanel";
+            this.fixPointColorPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.fixPointColorPanel_Paint);
             // 
             // groupBox5
             // 

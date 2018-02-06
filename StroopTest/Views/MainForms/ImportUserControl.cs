@@ -400,5 +400,10 @@ namespace TestPlatform.Views.MainForms
             try { infoBox.Show(); }
             catch (Exception ex) { throw new Exception(ex.Message); }
         }
+
+        private void importDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

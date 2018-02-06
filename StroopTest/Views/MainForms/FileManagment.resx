@@ -119,10 +119,10 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="originFilesList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 56</value>
+    <value>3, 56</value>
   </data>
   <data name="originFilesList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 277</value>
+    <value>275, 277</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="originFilesList.TabIndex" type="System.Int32, mscorlib">
@@ -141,10 +141,10 @@
     <value>11</value>
   </data>
   <data name="destinationFilesList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 56</value>
+    <value>321, 56</value>
   </data>
   <data name="destinationFilesList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 277</value>
+    <value>275, 277</value>
   </data>
   <data name="destinationFilesList.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -165,7 +165,7 @@
     <value>True</value>
   </data>
   <data name="originListLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 33</value>
+    <value>3, 40</value>
   </data>
   <data name="originListLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 13</value>
@@ -196,7 +196,7 @@
     <value>NoControl</value>
   </data>
   <data name="destinationListLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>301, 33</value>
+    <value>318, 40</value>
   </data>
   <data name="destinationListLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -219,11 +219,14 @@
   <data name="&gt;&gt;destinationListLabel.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="errorMessage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="errorMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 412</value>
+    <value>6, 450</value>
   </data>
   <data name="errorMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 81</value>
+    <value>594, 81</value>
   </data>
   <data name="errorMessage.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -247,7 +250,7 @@
     <value>True</value>
   </data>
   <data name="warningCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 496</value>
+    <value>3, 550</value>
   </data>
   <data name="warningCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 17</value>
@@ -270,8 +273,11 @@
   <data name="&gt;&gt;warningCheckBox.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="cancelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 542</value>
+    <value>3, 574</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 23</value>
@@ -294,11 +300,14 @@
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="sendButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
   <data name="sendButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="sendButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>378, 542</value>
+    <value>485, 574</value>
   </data>
   <data name="sendButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 23</value>
@@ -331,7 +340,7 @@
     <value>NoControl</value>
   </data>
   <data name="addToDestinationList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 160</value>
+    <value>284, 160</value>
   </data>
   <data name="addToDestinationList.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 25</value>
@@ -364,7 +373,7 @@
     <value>NoControl</value>
   </data>
   <data name="addToOriginList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 191</value>
+    <value>284, 191</value>
   </data>
   <data name="addToOriginList.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 25</value>
@@ -391,7 +400,7 @@
     <value>Zoom</value>
   </data>
   <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>492, 2</value>
+    <value>572, 2</value>
   </data>
   <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -421,10 +430,10 @@
     <value>NoControl</value>
   </data>
   <data name="warningLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 350</value>
+    <value>9, 350</value>
   </data>
   <data name="warningLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 62</value>
+    <value>588, 81</value>
   </data>
   <data name="warningLabel.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>
@@ -457,7 +466,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>520, 576</value>
+    <value>600, 600</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FileManagment</value>

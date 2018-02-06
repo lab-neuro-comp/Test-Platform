@@ -71,6 +71,7 @@
             this.idiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.portuguêsBrasilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishUnitedStatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spanishSpainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStrip = new System.Windows.Forms.ToolStrip();
             this.directoryToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
@@ -99,7 +100,6 @@
             this.selectButton = new System.Windows.Forms.Button();
             this.executingTypeLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.spanishSpainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.testToolStrip.SuspendLayout();
             this.markPanel.SuspendLayout();
@@ -403,6 +403,12 @@
             resources.ApplyResources(this.englishUnitedStatesToolStripMenuItem, "englishUnitedStatesToolStripMenuItem");
             this.englishUnitedStatesToolStripMenuItem.Click += new System.EventHandler(this.englishUnitedStatesToolStripMenuItem_Click);
             // 
+            // spanishSpainToolStripMenuItem
+            // 
+            this.spanishSpainToolStripMenuItem.Name = "spanishSpainToolStripMenuItem";
+            resources.ApplyResources(this.spanishSpainToolStripMenuItem, "spanishSpainToolStripMenuItem");
+            this.spanishSpainToolStripMenuItem.Click += new System.EventHandler(this.spanishSpainToolStripMenuItem_Click);
+            // 
             // testToolStrip
             // 
             resources.ApplyResources(this.testToolStrip, "testToolStrip");
@@ -626,12 +632,6 @@
             this.tableLayoutPanel2.Controls.Add(this.executeButton, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.markPanel, 1, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            // 
-            // spanishSpainToolStripMenuItem
-            // 
-            this.spanishSpainToolStripMenuItem.Name = "spanishSpainToolStripMenuItem";
-            resources.ApplyResources(this.spanishSpainToolStripMenuItem, "spanishSpainToolStripMenuItem");
-            this.spanishSpainToolStripMenuItem.Click += new System.EventHandler(this.spanishSpainToolStripMenuItem_Click);
             // 
             // FormMain
             // 

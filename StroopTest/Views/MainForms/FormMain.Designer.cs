@@ -98,6 +98,7 @@
             this.selectButton = new System.Windows.Forms.Button();
             this.executingTypeLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.spanishSpainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.testToolStrip.SuspendLayout();
             this.markPanel.SuspendLayout();
@@ -382,7 +383,8 @@
             this.idiomaToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.idiomaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.portuguêsBrasilToolStripMenuItem,
-            this.englishUnitedStatesToolStripMenuItem});
+            this.englishUnitedStatesToolStripMenuItem,
+            this.spanishSpainToolStripMenuItem});
             this.idiomaToolStripMenuItem.Name = "idiomaToolStripMenuItem";
             resources.ApplyResources(this.idiomaToolStripMenuItem, "idiomaToolStripMenuItem");
             // 
@@ -614,6 +616,12 @@
             this.tableLayoutPanel2.Controls.Add(this.markPanel, 1, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
+            // spanishSpainToolStripMenuItem
+            // 
+            this.spanishSpainToolStripMenuItem.Name = "spanishSpainToolStripMenuItem";
+            resources.ApplyResources(this.spanishSpainToolStripMenuItem, "spanishSpainToolStripMenuItem");
+            this.spanishSpainToolStripMenuItem.Click += new System.EventHandler(this.spanishSpainToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AcceptButton = this.executeButton;
@@ -720,5 +728,6 @@
         private System.Windows.Forms.ToolStripMenuItem idiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem portuguêsBrasilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishUnitedStatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spanishSpainToolStripMenuItem;
     }
 }

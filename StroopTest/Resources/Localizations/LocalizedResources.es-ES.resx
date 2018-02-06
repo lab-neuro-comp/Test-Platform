@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="audioRecordSuccess" xml:space="preserve">
+    <value>Audio grabado con éxito.</value>
+  </data>
+  <data name="audioList" xml:space="preserve">
+    <value>Listas de Audio:</value>
+  </data>
+  <data name="colors" xml:space="preserve">
+    <value>de Colores</value>
+  </data>
+  <data name="colorsList" xml:space="preserve">
+    <value>Lista de Colores</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>El TestPlatform es una plataforma de testes neuropsicológico computadorizado para evaluación de funciones ejecutivas. 
+El produto tiene la propuesta ofrecer soluciones innovando tecnologicamente de forma práctica y dinámica. 
+Destinado a pesquisadores, alumnos e usuários comunes. 
+Desenvolvedores: 
+hugohon - Hugo Honda Ferreira
+fabiolamfleury - Fabíola Malta Fleury
+gabrielalbino - Gabriel Batista Albino Silva; 
+2018; </value>
+  </data>
+  <data name="editProgram" xml:space="preserve">
+    <value>Editar el programa:</value>
+  </data>
+  <data name="emptyBox" xml:space="preserve">
+    <value>Caja de texto no puede estar vacía.</value>
+  </data>
+  <data name="emptyList" xml:space="preserve">
+    <value>Lista vacía.</value>
+  </data>
+  <data name="emptyListName" xml:space="preserve">
+    <value>El nombre de la lista debe ser rellenado</value>
+  </data>
+  <data name="exclude" xml:space="preserve">
+    <value>Eliminar:</value>
+  </data>
+  <data name="exclusionSucceeded" xml:space="preserve">
+    <value>eliminado con éxito</value>
+  </data>
+  <data name="experiment" xml:space="preserve">
+    <value>Experimento</value>
+  </data>
+  <data name="experimentFiles" xml:space="preserve">
+    <value>Camino para los archivos de datos inválido</value>
+  </data>
+  <data name="exportedFile" xml:space="preserve">
+    <value>Archivo exportado con éxito</value>
+  </data>
+  <data name="fieldNotRight" xml:space="preserve">
+    <value>Algún campo no fue rellenado correctamente</value>
+  </data>
+  <data name="file" xml:space="preserve">
+    <value>Archivo:</value>
+  </data>
+  <data name="imageFileError" xml:space="preserve">
+    <value>No se puede presentar la imágen. Usted no tiene permiso para leer este archivo o el archivo está corrompido</value>
+  </data>
+  <data name="imageList" xml:space="preserve">
+    <value>Lista de imágenes:</value>
+  </data>
+  <data name="instructionBoxText" xml:space="preserve">
+    <value>El participante debe ser orientado para ejecución de forma clara y uniforme entre los experimentares y el grupo de participantes.&lt;br&gt;&lt;br&gt;Para el Stroop clásico las instruciones básicas practicadas son:&lt;br&gt;'En esta tarea usted debe hablar el nombre de la color en que las palabras estan pintadas.'&lt;br&gt;o&lt;br&gt;'En esta tarea usted debe leer la palabra presentada en la pantalla.'</value>
+  </data>
+  <data name="invalidPath" xml:space="preserve">
+    <value>es un camino inválido</value>
+  </data>
+  <data name="list" xml:space="preserve">
+    <value>La lista '</value>
+  </data>
+  <data name="listExists" xml:space="preserve">
+    <value>Una lista con este nombre ya existe.\nDesea sobrescribirla?</value>
+  </data>
+  <data name="listNotSaved" xml:space="preserve">
+    <value>La lista no será guardada</value>
+  </data>
+  <data name="listSaveSuccess" xml:space="preserve">
+    <value>fue salva com éxito</value>
+  </data>
+  <data name="markLengthError" xml:space="preserve">
+    <value>Campo de la marca debe ser rellenado</value>
+  </data>
+  <data name="markLengthError2" xml:space="preserve">
+    <value>La marca debe ser compuesta solamente de un caracter</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>Nigún</value>
+  </data>
+  <data name="notFilledProperlyMessage" xml:space="preserve">
+    <value>Algún campo no fue rellenado de forma correcta.</value>
+  </data>
+  <data name="notFoundIn" xml:space="preserve">
+    <value>\nno fue encontrado en el local:\n</value>
+  </data>
+  <data name="participantNameAlphanumericError" xml:space="preserve">
+    <value>Nombre del participante debe ser compuesto solamente de caracteres alfanuméricos y sin espacios;\nEjemplo: 'LuisAugusto'"</value>
+  </data>
+  <data name="participantNameLengthError" xml:space="preserve">
+    <value>El nombre del participante debe ser rellenado.</value>
+  </data>
+  <data name="programNotAlphanumeric" xml:space="preserve">
+    <value>Nombre del programa debe ser compuesto solamente de caracteres alfanuméricos y sin espacios;\nEjemplo: 'MeuPrograma'"</value>
+  </data>
+  <data name="programNotFilled" xml:space="preserve">
+    <value>El nombre del programa debe ser rellenado.</value>
+  </data>
+  <data name="programSaved" xml:space="preserve">
+    <value>Programa guardado con éxito</value>
+  </data>
+  <data name="programSave" xml:space="preserve">
+    <value>Programa guardado con éxito</value>
+  </data>
+  <data name="reactionTest" xml:space="preserve">
+    <value>Tiempo de Reacción</value>
+  </data>
+  <data name="reallyExclude" xml:space="preserve">
+    <value>Desea realmente eliminar</value>
+  </data>
+  <data name="selectDataFile" xml:space="preserve">
+    <value>Seleccione un archivo de datos!</value>
+  </data>
+  <data name="selectPlace" xml:space="preserve">
+    <value>Debe elegir el local del archivo antes de grabar</value>
+  </data>
+  <data name="selectTraining" xml:space="preserve">
+    <value>Elija un programa para su entrenamiento!</value>
+  </data>
+  <data name="stroopTest" xml:space="preserve">
+    <value>Stroop</value>
+  </data>
+  <data name="version" xml:space="preserve">
+    <value>Versión</value>
+  </data>
+  <data name="wishToSave" xml:space="preserve">
+    <value>Desea guardar el archivo</value>
+  </data>
+  <data name="wordColorList" xml:space="preserve">
+    <value>Lista de Palabras con Colores</value>
+  </data>
+  <data name="wordList" xml:space="preserve">
+    <value>Lista de Palabras:</value>
+  </data>
+  <data name="words" xml:space="preserve">
+    <value>de Palabras</value>
+  </data>
+  <data name="wordsList" xml:space="preserve">
+    <value>Lista de Palabras</value>
+  </data>
+  <data name="testName" xml:space="preserve">
+    <value>Nombre del esquema de presentación de estímulo</value>
+  </data>
+  <data name="typeStimulus" xml:space="preserve">
+    <value>Categoria de los estímulos del programa</value>
+  </data>
+  <data name="expoRandomize" xml:space="preserve">
+    <value>Exposición de los estímulos en orden aleatoria en relación a la lista</value>
+  </data>
+  <data name="numberExpositions" xml:space="preserve">
+    <value>Número de veces en que los estímulos serán expuesto</value>
+  </data>
+  <data name="fontSize" xml:space="preserve">
+    <value>Tamaño de la fonte del texto, para exposición del tipo Palabra, Palabra con audio, Imagen y palabra</value>
+  </data>
+  <data name="colorWords" xml:space="preserve">
+    <value>Color de la palabra, para exposición del tipo Imagen y Palabra</value>
+  </data>
+  <data name="wordFile" xml:space="preserve">
+    <value>Archivo de Lista de palabras</value>
+  </data>
+  <data name="colorFile" xml:space="preserve">
+    <value>Archivo de Lista de colores</value>
+  </data>
+  <data name="imageFile" xml:space="preserve">
+    <value>Archivo de Lista de imágenes</value>
+  </data>
+  <data name="audioFile" xml:space="preserve">
+    <value>Archivo de Lista de audio</value>
+  </data>
+  <data name="expositionDuration" xml:space="preserve">
+    <value>Duración de la exposición de cada estímulo</value>
+  </data>
+  <data name="intervalsTime" xml:space="preserve">
+    <value>Tiempo entre los intentos</value>
+  </data>
+  <data name="intervalsTimeRandom" xml:space="preserve">
+    <value>Variación del tiempo entre los intentos</value>
+  </data>
+  <data name="fixpointEx" xml:space="preserve">
+    <value>Tipo de punto de fijación: cruz o punto</value>
+  </data>
+  <data name="fixpointColor" xml:space="preserve">
+    <value>Color del punto de fijación</value>
+  </data>
+  <data name="subtitleActive" xml:space="preserve">
+    <value>Activa leyenda para estímulos del tipo imagen</value>
+  </data>
+  <data name="subtitlePosition" xml:space="preserve">
+    <value>Posicionamento de la leyenda en relación a los estímulos</value>
+  </data>
+  <data name="subtitleColor" xml:space="preserve">
+    <value>Color de la leyenda presentada</value>
+  </data>
+  <data name="activeAudio" xml:space="preserve">
+    <value>Activa captura de audio durante la presetación de los estímulos</value>
+  </data>
+  <data name="backgroundColor" xml:space="preserve">
+    <value>Color de hondo durante la presetación de los estímulos</value>
+  </data>
+  <data name="expandImages" xml:space="preserve">
+    <value>Expande la imagen hasta las orilla de la pantalla</value>
+  </data>
+  <data name="instructionsI" xml:space="preserve">
+    <value>Instruciones presentadas al inicio del programa - sera presentada una pantalla para cada  línea escrita abajo</value>
+  </data>
+</root>

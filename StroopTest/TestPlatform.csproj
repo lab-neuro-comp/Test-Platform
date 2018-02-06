@@ -332,13 +332,9 @@
     <Compile Include="MainClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\StroopProgram.cs" />
-    <EmbeddedResource Include="Resources\Localizations\LocalizedResources.es-ES.resx" />
     <EmbeddedResource Include="Resources\Localizations\LocalizedResources.en-US.resx" />
     <EmbeddedResource Include="Resources\Localizations\LocalizedResources.pt-BR.resx" />
     <EmbeddedResource Include="Views\ExperimentPages\ExperimentConfig.en-US.resx">
-      <DependentUpon>ExperimentConfig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ExperimentPages\ExperimentConfig.es-ES.resx">
       <DependentUpon>ExperimentConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ExperimentPages\ExperimentConfig.pt-BR.resx">
@@ -347,16 +343,10 @@
     <EmbeddedResource Include="Views\ExperimentPages\ExperimentResultUserControl.en-US.resx">
       <DependentUpon>ExperimentResultUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ExperimentPages\ExperimentResultUserControl.es-ES.resx">
-      <DependentUpon>ExperimentResultUserControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\ExperimentPages\ExperimentResultUserControl.pt-BR.resx">
       <DependentUpon>ExperimentResultUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormAudioConfig.en-US.resx">
-      <DependentUpon>FormAudioConfig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ListsPages\FormAudioConfig.es-ES.resx">
       <DependentUpon>FormAudioConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormAudioConfig.pt-BR.resx">
@@ -365,16 +355,10 @@
     <EmbeddedResource Include="Views\ListsPages\FormImgConfig.en-US.resx">
       <DependentUpon>FormImgConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ListsPages\FormImgConfig.es-ES.resx">
-      <DependentUpon>FormImgConfig.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormImgConfig.pt-BR.resx">
       <DependentUpon>FormImgConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormShowAudio.en-US.resx">
-      <DependentUpon>FormShowAudio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ListsPages\FormShowAudio.es-ES.resx">
       <DependentUpon>FormShowAudio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormShowAudio.pt-BR.resx">
@@ -383,16 +367,10 @@
     <EmbeddedResource Include="Views\ListsPages\FormWordColorConfig.en-US.resx">
       <DependentUpon>FormWordColorConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ListsPages\FormWordColorConfig.es-ES.resx">
-      <DependentUpon>FormWordColorConfig.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormWordColorConfig.pt-BR.resx">
       <DependentUpon>FormWordColorConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormWordColorDialog.en-US.resx">
-      <DependentUpon>FormWordColorDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ListsPages\FormWordColorDialog.es-ES.resx">
       <DependentUpon>FormWordColorDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormWordColorDialog.pt-BR.resx">
@@ -408,9 +386,6 @@
       <DependentUpon>ListManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\AboutBox.en-US.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\AboutBox.es-ES.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\AboutBox.pt-BR.resx">
@@ -450,16 +425,10 @@
     <EmbeddedResource Include="Views\MainForms\FormDefine.en-US.resx">
       <DependentUpon>FormDefine.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\FormDefine.es-ES.resx">
-      <DependentUpon>FormDefine.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormDefine.pt-BR.resx">
       <DependentUpon>FormDefine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormDefineTest.en-US.resx">
-      <DependentUpon>FormDefineTest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\FormDefineTest.es-ES.resx">
       <DependentUpon>FormDefineTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormDefineTest.pt-BR.resx">
@@ -471,25 +440,16 @@
     <EmbeddedResource Include="Views\MainForms\FormHelp.en-US.resx">
       <DependentUpon>FormHelp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\FormHelp.es-ES.resx">
-      <DependentUpon>FormHelp.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormHelp.pt-BR.resx">
       <DependentUpon>FormHelp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormMain.en-US.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\FormMain.es-ES.resx">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormMain.pt-BR.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\ImportUserControl.en-US.resx">
-      <DependentUpon>ImportUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\ImportUserControl.es-ES.resx">
       <DependentUpon>ImportUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\ImportUserControl.pt-BR.resx">
@@ -504,9 +464,6 @@
     <EmbeddedResource Include="Views\ReactionPages\FormTRConfig.en-US.resx">
       <DependentUpon>FormTRConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ReactionPages\FormTRConfig.es-ES.resx">
-      <DependentUpon>FormTRConfig.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\FormTRConfig.pt-BR.resx">
       <DependentUpon>FormTRConfig.cs</DependentUpon>
     </EmbeddedResource>
@@ -514,9 +471,6 @@
       <DependentUpon>FormTRConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\ReactionResultUserControl.en-US.resx">
-      <DependentUpon>ReactionResultUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ReactionPages\ReactionResultUserControl.es-ES.resx">
       <DependentUpon>ReactionResultUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\ReactionResultUserControl.pt-BR.resx">
@@ -531,9 +485,6 @@
     <EmbeddedResource Include="Views\SidebarUserControls\ExperimentControl.en-US.resx">
       <DependentUpon>ExperimentControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\SidebarUserControls\ExperimentControl.es-ES.resx">
-      <DependentUpon>ExperimentControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ExperimentControl.pt-BR.resx">
       <DependentUpon>ExperimentControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -541,9 +492,6 @@
       <DependentUpon>ExperimentControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ListUserControl.en-US.resx">
-      <DependentUpon>ListUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SidebarUserControls\ListUserControl.es-ES.resx">
       <DependentUpon>ListUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ListUserControl.pt-BR.resx">
@@ -555,9 +503,6 @@
     <EmbeddedResource Include="Views\SidebarUserControls\ReactionControl.en-US.resx">
       <DependentUpon>ReactionControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\SidebarUserControls\ReactionControl.es-ES.resx">
-      <DependentUpon>ReactionControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ReactionControl.pt-BR.resx">
       <DependentUpon>ReactionControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -567,9 +512,6 @@
     <EmbeddedResource Include="Views\SidebarUserControls\ResultsUserControl.en-US.resx">
       <DependentUpon>ResultsUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\SidebarUserControls\ResultsUserControl.es-ES.resx">
-      <DependentUpon>ResultsUserControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ResultsUserControl.pt-BR.resx">
       <DependentUpon>ResultsUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -577,9 +519,6 @@
       <DependentUpon>ResultsUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\StroopControl.en-US.resx">
-      <DependentUpon>StroopControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SidebarUserControls\StroopControl.es-ES.resx">
       <DependentUpon>StroopControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\StroopControl.pt-BR.resx">
@@ -611,9 +550,6 @@
     <EmbeddedResource Include="Views\StroopPages\FormPrgConfig.en-US.resx">
       <DependentUpon>FormPrgConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\StroopPages\FormPrgConfig.es-ES.resx">
-      <DependentUpon>FormPrgConfig.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\StroopPages\FormPrgConfig.pt-BR.resx">
       <DependentUpon>FormPrgConfig.cs</DependentUpon>
     </EmbeddedResource>
@@ -630,9 +566,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StroopPages\FormShowData.en-US.resx">
-      <DependentUpon>FormShowData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\StroopPages\FormShowData.es-ES.resx">
       <DependentUpon>FormShowData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StroopPages\FormShowData.pt-BR.resx">

@@ -757,7 +757,7 @@ namespace TestPlatform
 
         private void portuguêsBrasilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (englishUnitedStatesToolStripMenuItem.Checked || spanishSpainToolStripMenuItem.Checked)
+            if (englishUnitedStatesToolStripMenuItem.Checked)
             {
                 currentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
                 englishUnitedStatesToolStripMenuItem.Checked = false;
@@ -771,7 +771,7 @@ namespace TestPlatform
 
         private void englishUnitedStatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (portuguêsBrasilToolStripMenuItem.Checked || spanishSpainToolStripMenuItem.Checked)
+            if (portuguêsBrasilToolStripMenuItem.Checked)
             {
                 currentCulture = CultureInfo.CreateSpecificCulture("en-US");
                 portuguêsBrasilToolStripMenuItem.Checked = false;
@@ -782,20 +782,6 @@ namespace TestPlatform
                 ApplyToolStripResources(resources, mainMenuStrip.Items);
             }
             englishUnitedStatesToolStripMenuItem.Checked = true;
-        }
-
-        private void spanishSpainToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (portuguêsBrasilToolStripMenuItem.Checked || englishUnitedStatesToolStripMenuItem.Checked)
-            {
-                currentCulture = CultureInfo.CreateSpecificCulture("es-ES");
-                portuguêsBrasilToolStripMenuItem.Checked = false;
-                System.Threading.Thread.CurrentThread.CurrentUICulture = currentCulture;
-                ComponentResourceManager resources = new ComponentResourceManager(typeof(FormMain));
-                resources.ApplyResources(this, "$this");
-                ApplyResources(resources, this.Controls);
-                ApplyToolStripResources(resources, mainMenuStrip.Items);
-            }
         }
 
         private void ApplyResources(ComponentResourceManager resources, Control.ControlCollection ctls)

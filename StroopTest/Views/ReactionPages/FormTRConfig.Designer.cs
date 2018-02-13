@@ -37,11 +37,11 @@
             this.shapesGroupBox = new System.Windows.Forms.GroupBox();
             this.shapeRadioPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.fullSquareCheckBox = new System.Windows.Forms.CheckBox();
+            this.circleCheckBox = new System.Windows.Forms.CheckBox();
+            this.triangleCheckBox = new System.Windows.Forms.CheckBox();
             this.squareCheckBox = new System.Windows.Forms.CheckBox();
             this.fullCircleCheckBox = new System.Windows.Forms.CheckBox();
-            this.circleCheckBox = new System.Windows.Forms.CheckBox();
             this.fullTriangleCheckBox = new System.Windows.Forms.CheckBox();
-            this.triangleCheckBox = new System.Windows.Forms.CheckBox();
             this.helpButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -192,6 +192,20 @@
             this.fullSquareCheckBox.Name = "fullSquareCheckBox";
             this.fullSquareCheckBox.UseVisualStyleBackColor = true;
             // 
+            // circleCheckBox
+            // 
+            resources.ApplyResources(this.circleCheckBox, "circleCheckBox");
+            this.circleCheckBox.Image = global::TestPlatform.Properties.Resources.circle1;
+            this.circleCheckBox.Name = "circleCheckBox";
+            this.circleCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // triangleCheckBox
+            // 
+            resources.ApplyResources(this.triangleCheckBox, "triangleCheckBox");
+            this.triangleCheckBox.Image = global::TestPlatform.Properties.Resources.triangle;
+            this.triangleCheckBox.Name = "triangleCheckBox";
+            this.triangleCheckBox.UseVisualStyleBackColor = true;
+            // 
             // squareCheckBox
             // 
             resources.ApplyResources(this.squareCheckBox, "squareCheckBox");
@@ -206,26 +220,12 @@
             this.fullCircleCheckBox.Name = "fullCircleCheckBox";
             this.fullCircleCheckBox.UseVisualStyleBackColor = true;
             // 
-            // circleCheckBox
-            // 
-            resources.ApplyResources(this.circleCheckBox, "circleCheckBox");
-            this.circleCheckBox.Image = global::TestPlatform.Properties.Resources.circle1;
-            this.circleCheckBox.Name = "circleCheckBox";
-            this.circleCheckBox.UseVisualStyleBackColor = true;
-            // 
             // fullTriangleCheckBox
             // 
             resources.ApplyResources(this.fullTriangleCheckBox, "fullTriangleCheckBox");
             this.fullTriangleCheckBox.Image = global::TestPlatform.Properties.Resources.fullTriangle;
             this.fullTriangleCheckBox.Name = "fullTriangleCheckBox";
             this.fullTriangleCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // triangleCheckBox
-            // 
-            resources.ApplyResources(this.triangleCheckBox, "triangleCheckBox");
-            this.triangleCheckBox.Image = global::TestPlatform.Properties.Resources.triangle;
-            this.triangleCheckBox.Name = "triangleCheckBox";
-            this.triangleCheckBox.UseVisualStyleBackColor = true;
             // 
             // helpButton
             // 
@@ -728,6 +728,11 @@
             0,
             0});
             resources.ApplyResources(this.stimuluSize, "stimuluSize");
+            this.stimuluSize.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.stimuluSize.Minimum = new decimal(new int[] {
             10,
             0,

@@ -444,7 +444,7 @@ namespace TestPlatform.Views
             // configuring label that have word stimulus dimensions, color and position
             wordLabel = new System.Windows.Forms.Label();
             wordLabel.AutoSize = true;
-            wordLabel.Font = new Font("Arial", executingTest.ProgramInUse.StimuluSize, FontStyle.Bold);
+            wordLabel.Font = new Font("Arial", executingTest.ProgramInUse.StimuluSize / 10, FontStyle.Bold);
             wordLabel.Text = wordsList[wordCounter];
             currentStimulus = wordsList[wordCounter];
             wordLabel.Visible = true;

@@ -179,7 +179,6 @@
     <Compile Include="Views\ExperimentPages\FormExperimentExposition.Designer.cs">
       <DependentUpon>FormExperimentExposition.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ExpositionsViews.cs" />
     <Compile Include="Views\MainForms\ExportUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

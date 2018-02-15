@@ -302,7 +302,23 @@ namespace TestPlatform.Views.MatchingPages
 
         private void openImagesList_Click(object sender, EventArgs e)
         {
-           openImgListButton.Text = ListController.OpenListFile("_image", openImgListButton.Text, "dir");
+            openImgListButton.Text = ListController.OpenListFile("_image", openImgListButton.Text, "dir");
+            if (openImgListButton.Text != LocRM.GetString("open", currentCulture))
+            {
+                StrList imagesListFile = new StrList(openImgListButton.Text, 0);
+                if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                {
+                    label10.Visible = true;
+                }
+                else
+                {
+                    label10.Visible = false;
+                }
+            }
+            else
+            {
+                label10.Visible = false;
+            }
         }
 
         private void openAudioList_Click(object sender, EventArgs e)
@@ -456,6 +472,44 @@ namespace TestPlatform.Views.MatchingPages
             }
         }
 
+        private void numExpo_ValueChanged(object sender, EventArgs e)
+        {
+            if (openImgListButton.Text != LocRM.GetString("open", currentCulture))
+            {
+                StrList imagesListFile = new StrList(openImgListButton.Text, 0);
+                if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                {
+                    label10.Visible = true;
+                }
+                else
+                {
+                    label10.Visible = false;
+                }
+            }
+            else
+            {
+                label10.Visible = false;
+            }
+        }
 
+        private void attemptNumber_ValueChanged(object sender, EventArgs e)
+        {
+            if (openImgListButton.Text != LocRM.GetString("open", currentCulture))
+            {
+                StrList imagesListFile = new StrList(openImgListButton.Text, 0);
+                if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                {
+                    label10.Visible = true;
+                }
+                else
+                {
+                    label10.Visible = false;
+                }
+            }
+            else
+            {
+                label10.Visible = false;
+            }
+        }
     }
 }

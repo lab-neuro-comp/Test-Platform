@@ -133,11 +133,16 @@
     <value>El TestPlatform es una plataforma de testes neuropsicológico computadorizado para evaluación de funciones ejecutivas. 
 El produto tiene la propuesta ofrecer soluciones innovando tecnologicamente de forma práctica y dinámica. 
 Destinado a pesquisadores, alumnos e usuários comunes. 
+
+Responsable Técnico:
+anacog@pobox.com - Ana Cog
+
 Desenvolvedores: 
 hugohon - Hugo Honda Ferreira
 fabiolamfleury - Fabíola Malta Fleury
 gabrielalbino - Gabriel Batista Albino Silva; 
-2018; </value>
+https://github.com/lab-neuro-comp/Test-Platform 
+2018;</value>
   </data>
   <data name="editProgram" xml:space="preserve">
     <value>Editar el programa:</value>

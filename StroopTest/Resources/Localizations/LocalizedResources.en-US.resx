@@ -161,12 +161,17 @@
   </data>
   <data name="description" xml:space="preserve">
     <value>The TestPlatform is a platform of computerized neuropsychological tests for the evaluation of executive functions. The product has the proposal to offer solutions innovating technologically in a practical and dynamic way. Intended for researchers, students and ordinary users. 
+
+Technical Manager:
+anacog@pobox.com - Ana Cog
+
 Developers: 
 hugohon - Hugo Honda Ferreira 
 fabiolamfleury - Fabíola Malta Fleury
 gabrielalbino - Gabriel Batista Albino Silva; 
 2018; 
-More information: https://github.com/lab-neuro-comp/Test-Platform </value>
+More information: 
+https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="down" xml:space="preserve">
     <value>down</value>

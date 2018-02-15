@@ -1205,7 +1205,7 @@ namespace TestPlatform.Views.MatchingPages
 
             if (modelAsStimuluPictureBox != null)
             {
-                modelSecondPosition = StimuluPosition.getStimuluPositionMap(imageClicked.Location, ClientSize, modelAsStimuluPictureBox.Size);
+                modelSecondPosition = StimuluPosition.getStimuluPositionMap(modelAsStimuluPictureBox.Location, ClientSize, modelAsStimuluPictureBox.Size);
             }
 
             if (showModel && (e.Cancelled == true) && !intervalCancelled)

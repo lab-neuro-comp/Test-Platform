@@ -21,7 +21,7 @@ namespace TestPlatform.Views.MatchingPages
     {
         public class StimuluPosition
         {
-
+            
             private int pointCount = 0;
             private Size clientSize, stimuluSize;
             private int pointsNumber;
@@ -338,6 +338,141 @@ namespace TestPlatform.Views.MatchingPages
                         throw new InvalidOperationException();
                 }
                 return position;
+            }
+            public static string getStimuluPositionMap(Point position, Size clientSize, Size stimuluSize)
+            {
+                float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
+                Point p = new Point();
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "A1";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "B1";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "C1";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "D1";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "E1";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "F1";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "G1";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "A2";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "B2";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "C2";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "D2";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "E2";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "F2";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "G2";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "A3";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "B3";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "C3";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "D3";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "E3";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "F3";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "G3";
+                }
+                else
+                {
+                    throw new ArgumentException();
+                }
             }
         }
 
@@ -956,7 +1091,7 @@ namespace TestPlatform.Views.MatchingPages
             if (showModel && (e.Cancelled == true) && !intervalCancelled)
             {
 
-                executingTest.writeLineOutput(LocRM.GetString("stimulu", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image) , imageClicked.Location.ToString(), currentExpositionType, this.matchingGroups.ElementAt(groupCounter-1).getModelImageName(), this.matchingGroups.ElementAt(groupCounter-1).match(imageClicked.Image).ToString());
+                executingTest.writeLineOutput(LocRM.GetString("stimulu", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image) , StimuluPosition.getStimuluPositionMap(imageClicked.Location, ClientSize, imageClicked.Size), currentExpositionType, this.matchingGroups.ElementAt(groupCounter-1).getModelImageName(), this.matchingGroups.ElementAt(groupCounter-1).match(imageClicked.Image).ToString());
                 /* user clicked after stimulus is shown*/
             }
 
@@ -969,7 +1104,7 @@ namespace TestPlatform.Views.MatchingPages
             else if(!showModel && (e.Cancelled == true) && !intervalCancelled)
             {
                 /* user clicked model */
-                executingTest.writeLineOutput(LocRM.GetString("model", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-", imageClicked.Location.ToString(), currentExpositionType, this.matchingGroups.ElementAt(groupCounter).getModelImageName(), "-");
+                executingTest.writeLineOutput(LocRM.GetString("model", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-", StimuluPosition.getStimuluPositionMap(imageClicked.Location, ClientSize, imageClicked.Size), currentExpositionType, this.matchingGroups.ElementAt(groupCounter).getModelImageName(), "-");
             }
             else
             {

@@ -795,11 +795,11 @@ namespace TestPlatform.Views.MatchingPages
             foreach (Control c in controls)
             {
 
-                if (exposing)
+                if (exposing && !expositionBW.CancellationPending && !expositionControllerBW.CancellationPending)
                 {
                     this.Controls.Add(c);
                 }
-                else
+                else if (!expositionBW.CancellationPending && !expositionControllerBW.CancellationPending)
                 {
                     this.Controls.Remove(c);
                 }
@@ -915,30 +915,33 @@ namespace TestPlatform.Views.MatchingPages
             {
                 /*do nothing*/
             }
+            if (!expositionBW.CancellationPending && !expositionControllerBW.CancellationPending)
+            {
+                if (showModel && (e.Cancelled == true) && !intervalCancelled)
+                {
 
-            if (showModel && (e.Cancelled == true) && !intervalCancelled)
-            {
+                    executingTest.writeLineOutput(LocRM.GetString("stimulu", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image), imageClicked.Location.ToString(), currentExpositionType, this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName(), this.matchingGroups.ElementAt(groupCounter - 1).match(imageClicked.Image).ToString());
+                    /* user clicked after stimulus is shown*/
+                }
 
-                executingTest.writeLineOutput(LocRM.GetString("stimulu", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image) , imageClicked.Location.ToString(), currentExpositionType, this.matchingGroups.ElementAt(groupCounter-1).getModelImageName(), this.matchingGroups.ElementAt(groupCounter-1).match(imageClicked.Image).ToString());
-                /* user clicked after stimulus is shown*/
-            }
-
-            else if (showModel)
-            {
-                /* user missed stimulus */
-                executingTest.writeLineOutput(LocRM.GetString("stimulu", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-" , "-", currentExpositionType, this.matchingGroups.ElementAt(groupCounter-1).getModelImageName(), "-");
-                hitStopWatch.Stop();
-            }
-            else if(!showModel && (e.Cancelled == true) && !intervalCancelled)
-            {
-                /* user clicked model */
-                executingTest.writeLineOutput(LocRM.GetString("model", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-", imageClicked.Location.ToString(), currentExpositionType, this.matchingGroups.ElementAt(groupCounter).getModelImageName(), "-");
-            }
-            else
-            {
-                executingTest.writeLineOutput(LocRM.GetString("model", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-", "-", currentExpositionType, this.matchingGroups.ElementAt(groupCounter).getModelImageName(), "-");
-                hitStopWatch.Stop();
-                /*user missed model*/
+                else if (showModel)
+                {
+                    /* user missed stimulus */
+                    executingTest.writeLineOutput(LocRM.GetString("stimulu", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-", "-", currentExpositionType, this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName(), "-");
+                    hitStopWatch.Stop();
+                }
+                else if (imageClicked != null && !showModel && (e.Cancelled == true) && !intervalCancelled)
+                {
+                    /* user clicked model */
+                    executingTest.writeLineOutput(LocRM.GetString("model", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-", imageClicked.Location.ToString(), currentExpositionType, this.matchingGroups.ElementAt(groupCounter).getModelImageName(), "-");
+                    imageClicked = null;
+                }
+                else
+                {
+                    executingTest.writeLineOutput(LocRM.GetString("model", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-", "-", currentExpositionType, this.matchingGroups.ElementAt(groupCounter).getModelImageName(), "-");
+                    hitStopWatch.Stop();
+                    /*user missed model*/
+                }
             }
             expositionBW.Dispose();
         }

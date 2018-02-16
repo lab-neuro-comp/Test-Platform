@@ -1202,78 +1202,85 @@ namespace TestPlatform.Views.MatchingPages
             {
                 /*do nothing*/
             }
-            if (modelAsStimuluPictureBox != null)
+            if (!cancelExposition)
             {
-                modelSecondPosition = StimuluPosition.getStimuluPositionMap(modelAsStimuluPictureBox.Location, ClientSize, modelAsStimuluPictureBox.Size);
-            }
-
-            if (showModel && (e.Cancelled == true) && !intervalCancelled)
-            {
-                List<string> stimulus = this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageNames().ToList();
-                stimulus.Remove(this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName());
-                while(stimulus.Count <= 7)
+                if (modelAsStimuluPictureBox != null)
                 {
-                    stimulus.Add("-");
+                    modelSecondPosition = StimuluPosition.getStimuluPositionMap(modelAsStimuluPictureBox.Location, ClientSize, modelAsStimuluPictureBox.Size);
                 }
-                stimulus[7] = this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image);
-                executingTest.writeLineOutput(
-                    attemptIntervalTime,
-                    intervalElapsedTime,
-                    modelReactTime,
-                    hitStopWatch.ElapsedMilliseconds,
-                    currentExposition + 1,
-                    modelExpositionAccumulative,
-                    expositionAccumulative,
-                    modelFirstposition,
-                    modelSecondPosition,
-                    currentExpositionType,
-                    (this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image) == this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName()).ToString(),
-                    this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName(),
-                    stimulus.ToArray(),
-                    StimuluPosition.getStimuluPositionMap(imageClicked.Location, ClientSize, imageClicked.Size)
-                    );
-                /* user clicked after stimulus is shown*/
-            }
 
-            else if (showModel)
-            {
-
-                /* user missed stimulus */
-                List<string> stimulus = this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageNames().ToList();
-                stimulus.Remove(this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName());
-                while (stimulus.Count <= 8)
+                if (showModel && (e.Cancelled == true) && !intervalCancelled)
                 {
-                    stimulus.Add("-");
+                    List<string> stimulus = this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageNames().ToList();
+                    stimulus.Remove(this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName());
+                    while (stimulus.Count <= 7)
+                    {
+                        stimulus.Add("-");
+                    }
+                    stimulus[7] = this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image);
+                    executingTest.writeLineOutput(
+                        attemptIntervalTime,
+                        intervalElapsedTime,
+                        modelReactTime,
+                        hitStopWatch.ElapsedMilliseconds,
+                        currentExposition + 1,
+                        modelExpositionAccumulative,
+                        expositionAccumulative,
+                        modelFirstposition,
+                        modelSecondPosition,
+                        currentExpositionType,
+                        (this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image) == this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName()).ToString(),
+                        this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName(),
+                        stimulus.ToArray(),
+                        StimuluPosition.getStimuluPositionMap(imageClicked.Location, ClientSize, imageClicked.Size)
+                        );
+                    /* user clicked after stimulus is shown*/
                 }
-                executingTest.writeLineOutput(
-                    attemptIntervalTime,
-                    intervalElapsedTime,
-                    modelReactTime,
-                    0,
-                    currentExposition + 1,
-                    modelExpositionAccumulative,
-                    expositionAccumulative,
-                    modelFirstposition,
-                    modelSecondPosition,
-                    currentExpositionType,
-                    "-",
-                    this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName(),
-                    stimulus.ToArray(),
-                    "-");
-                hitStopWatch.Stop();
-            }
-            else if (!showModel && (e.Cancelled == true) && !intervalCancelled)
-            {
-                /* user clicked model */
-                modelReactTime = hitStopWatch.ElapsedMilliseconds;
-                modelFirstposition = StimuluPosition.getStimuluPositionMap(imageClicked.Location, ClientSize, modelPictureBox.Size);
+
+                else if (showModel)
+                {
+
+                    /* user missed stimulus */
+                    List<string> stimulus = this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageNames().ToList();
+                    stimulus.Remove(this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName());
+                    while (stimulus.Count <= 8)
+                    {
+                        stimulus.Add("-");
+                    }
+                    executingTest.writeLineOutput(
+                        attemptIntervalTime,
+                        intervalElapsedTime,
+                        modelReactTime,
+                        0,
+                        currentExposition + 1,
+                        modelExpositionAccumulative,
+                        expositionAccumulative,
+                        modelFirstposition,
+                        modelSecondPosition,
+                        currentExpositionType,
+                        "-",
+                        this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName(),
+                        stimulus.ToArray(),
+                        "-");
+                    hitStopWatch.Stop();
+                }
+                else if (!showModel && (e.Cancelled == true) && !intervalCancelled)
+                {
+                    /* user clicked model */
+                    modelReactTime = hitStopWatch.ElapsedMilliseconds;
+                    modelFirstposition = StimuluPosition.getStimuluPositionMap(imageClicked.Location, ClientSize, modelPictureBox.Size);
+                }
+                else
+                {
+                    /*user missed model*/
+                    modelReactTime = 0;
+                    modelFirstposition = StimuluPosition.getStimuluPositionMap(modelPictureBox.Location, ClientSize, modelPictureBox.Size);
+                    hitStopWatch.Stop();
+                }
             }
             else
             {
-                /*user missed model*/
-                modelReactTime = 0;
-                modelFirstposition = StimuluPosition.getStimuluPositionMap(modelPictureBox.Location, ClientSize, modelPictureBox.Size);
-                hitStopWatch.Stop();
+                /*do nothing, user pressed esc*/
             }
             expositionBW.Dispose();
         }

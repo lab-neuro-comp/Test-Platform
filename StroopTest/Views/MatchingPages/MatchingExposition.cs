@@ -21,7 +21,7 @@ namespace TestPlatform.Views.MatchingPages
     {
         public class StimuluPosition
         {
-
+            
             private int pointCount = 0;
             private Size clientSize, stimuluSize;
             private int pointsNumber;
@@ -339,6 +339,236 @@ namespace TestPlatform.Views.MatchingPages
                 }
                 return position;
             }
+            public static Point getRandomPosition(Size clientSize, Size stimuluSize)
+            {
+                float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
+                Point p = new Point();
+                Random rng = new Random(Guid.NewGuid().GetHashCode());
+                int number = rng.Next(21);
+                    switch (number)
+                    {
+                        case 0:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                            break;
+                        case 1:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                            break;
+                        case 2:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                            break;
+                        case 3:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                            break;
+                        case 4:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                            break;
+                        case 5:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                            break;
+                        case 6:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                            break;
+                        case 7:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                            break;
+                        case 8:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                            break;
+                        case 9:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                            break;
+                        case 10:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                            break;
+                        case 11:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                            break;
+                        case 12:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                            break;
+                        case 13:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                            break;
+                        case 14:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                            break;
+                        case 15:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                            break;
+                        case 16:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                            break;
+                        case 17:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                            break;
+                        case 18:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                            break;
+                        case 19:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                            break;
+                        case 20:
+                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                            break;
+                    }
+                return p;
+            }
+            public static string getStimuluPositionMap(Point position, Size clientSize, Size stimuluSize)
+            {
+                float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
+                Point p = new Point();
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "A1";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "B1";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "C1";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "D1";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "E1";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "F1";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "G1";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "A2";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "B2";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "C2";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "D2";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "E2";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "F2";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "G2";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                if (position == p)
+                {
+                    return "A3";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "B3";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "C3";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "D3";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "E3";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "F3";
+                }
+                p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
+                p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                if (position == p)
+                {
+                    return "G3";
+                }
+                else
+                {
+                    throw new ArgumentException();
+                }
+            }
         }
 
         public class MatchingGroup
@@ -389,8 +619,14 @@ namespace TestPlatform.Views.MatchingPages
                 }
                 return stimulusImagesName[i];
             }
+
+            public string[] getStimuluImageNames()
+            {
+                return stimulusImagesName;
+            }
         }
         StimuluPosition stimuluPosition;
+        string modelFirstposition, modelSecondPosition;
         MatchingTest executingTest = new MatchingTest();
         private const int X = 0, Y = 1;
         private string path = Global.matchingTestFilesPath;
@@ -406,7 +642,8 @@ namespace TestPlatform.Views.MatchingPages
         private string outputDataPath = Global.matchingTestFilesPath + Global.resultsFolderName;
         private string[] imageList;
         private long expositionAccumulative;
-        private PictureBox modelPictureBox;
+        private long modelExpositionAccumulative;
+        private PictureBox modelPictureBox, modelAsStimuluPictureBox;
         private List<MatchingGroup> matchingGroups;
         private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private List<Control> currentControl;
@@ -420,9 +657,11 @@ namespace TestPlatform.Views.MatchingPages
         private List<Control> stimuluPictureBox;
         string currentExpositionType;
         PictureBox imageClicked;
+        private long modelReactTime;
+        private long attemptIntervalTime;
         public MatchingExposition(string prgName, string participantName, char mark)
         {
-            currentExpositionType = "DNTS";
+            currentExpositionType = "DMTS";
             matchingGroups = new List<MatchingGroup>();
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
@@ -488,56 +727,93 @@ namespace TestPlatform.Views.MatchingPages
 
         private void createMatchingGroups()
         {
-            int nextImgIndex;
-            Image nextImg;
+            MatchingGroup nextGroup;
+            bool willHaveRepetition = (imageList.Length < this.executingTest.ProgramInUse.NumExpositions * this.executingTest.ProgramInUse.AttemptsNumber);
+            int nextImgIndex, modelCounter = 0, stimuluCounter = 0;
+            int[] groupStartingindex = new int[this.executingTest.ProgramInUse.AttemptsNumber];
             Random rng = new Random(int.Parse(this.seconds));
-            List<Image> groupModels = new List<Image>();
-            List<string> groupModelsName = new List<string>();
-            List<Image> groupStimulus = new List<Image>();
-            List<string> groupStimulusName = new List<string>();
-            for(int count = 0; count < this.executingTest.ProgramInUse.AttemptsNumber; count++)//define the models of the exposition
+            Image[] groupModels = new Image[this.executingTest.ProgramInUse.AttemptsNumber];
+            string[] groupModelsName = new string[this.executingTest.ProgramInUse.AttemptsNumber];
+            Image[] groupStimulus = new Image[this.executingTest.ProgramInUse.NumExpositions];
+            string[] groupStimulusName = new string[this.executingTest.ProgramInUse.NumExpositions];
+            bool[] imageCanBeUsed = new bool[imageList.Length];
+            for(int i = 0; i < imageList.Length; i++)
             {
-                if(count == imageList.Length)
-                {
-                    count = 0;
-                }
-                groupModels.Add(Image.FromFile(imageList[count]));
-                groupModelsName.Add(Path.GetFileNameWithoutExtension(imageList[count]));
+                imageCanBeUsed[i] = true;
             }
-            foreach(Image image in groupModels) //each model has to have an stimulu group.
+            for(int count = 0; modelCounter < this.executingTest.ProgramInUse.AttemptsNumber; count = count + this.executingTest.ProgramInUse.NumExpositions)//define the models of the exposition
             {
-                groupStimulus.Clear();
-                groupStimulus.Add(image); //model should aways be part of stimulus
-                groupStimulusName.Add(groupModelsName.ElementAt(groupModels.IndexOf(image)));
-                for (int count = 0; count < this.executingTest.ProgramInUse.NumExpositions-1; count++)
+                if(count >= imageList.Length) // prevent out of range exception
                 {
-                    nextImgIndex = rng.Next(this.imageList.Length);
-                    nextImg = Image.FromFile(imageList[nextImgIndex]);
-                    if (!groupStimulus.Contains(nextImg)) //if image isnt in the group yet
+                    count = count - imageList.Length + 1;
+                }
+                imageCanBeUsed[count] = false;
+                groupStartingindex[modelCounter] = count + 1;
+                groupModels[modelCounter] = Image.FromFile(imageList[count]);
+                groupModelsName[modelCounter] = Path.GetFileNameWithoutExtension(imageList[count]);
+                modelCounter++;
+            }
+            for (int group = 0; group < groupModels.Length; group++)
+            {
+                for (int count = 1; count < this.executingTest.ProgramInUse.NumExpositions; count++)
+                {
+                    groupStimulus[count] = null;
+                    groupStimulusName[count] = null;
+                }
+                stimuluCounter = groupStartingindex[group];
+                groupStimulus[0] = groupModels[group];
+                groupStimulusName[0] = groupModelsName[group];
+                for (int count = 1; count < this.executingTest.ProgramInUse.NumExpositions; count++)
+                {
+                    if (this.executingTest.ProgramInUse.ExpositionRandom)
                     {
-                        groupStimulus.Add(nextImg); //adds it to group
-                        groupStimulusName.Add(Path.GetFileNameWithoutExtension(imageList[nextImgIndex]));
-                    }
-                    else 
-                    {
-                        if (imageList.Length >= this.executingTest.ProgramInUse.NumExpositions - 1) //if image list have less elements then the stimulu number to be shown, then it's impossible to don't have duplicated items.
+                        do
                         {
-                            while (groupStimulus.Contains(nextImg)) //else, find an item that don't exist on list.
+                            nextImgIndex = rng.Next(imageList.Length);
+                            if (imageList.Length < this.executingTest.ProgramInUse.NumExpositions)
                             {
-                                nextImgIndex = rng.Next(this.imageList.Length);
-                                nextImg = Image.FromFile(imageList[nextImgIndex]);
+                                break;
                             }
                         }
-                        groupStimulus.Add(nextImg);
-                        groupStimulusName.Add(Path.GetFileNameWithoutExtension(imageList[nextImgIndex]));
+                        while (!imageCanBeUsed[nextImgIndex]);
+                        imageCanBeUsed[nextImgIndex] = false;
+                        groupStimulus[count] = Image.FromFile(imageList[nextImgIndex]);
+                        groupStimulusName[count] = Path.GetFileNameWithoutExtension(imageList[nextImgIndex]);
+                    }
+                    else
+                    {
+                        if (stimuluCounter >= imageList.Length)
+                        {
+                            stimuluCounter = 0;
+                        }
+                        if (imageList.Length >= this.executingTest.ProgramInUse.NumExpositions)
+                        {
+                            if (!willHaveRepetition)
+                            {
+                                while (!imageCanBeUsed[stimuluCounter])
+                                {
+                                    stimuluCounter++;
+                                }
+                            }
+                            else
+                            {
+                                string name = Path.GetFileNameWithoutExtension(imageList[stimuluCounter]);
+                                while (groupStimulusName.Contains(name))
+                                {
+                                    stimuluCounter++;
+                                    name = Path.GetFileNameWithoutExtension(imageList[stimuluCounter]);
+                                }
+                            }
+                        }
+                        groupStimulus[count] = Image.FromFile(imageList[stimuluCounter]);
+                        groupStimulusName[count] = Path.GetFileNameWithoutExtension(imageList[stimuluCounter]);
+                        stimuluCounter++;
                     }
                 }
-                matchingGroups.Add(new MatchingGroup(image, groupModelsName.ElementAt(groupModels.IndexOf(image)) , groupStimulus, groupStimulusName));
+                nextGroup = new MatchingGroup(groupModels[group], groupModelsName[group], groupStimulus.ToList(), groupStimulusName.ToList());
+                matchingGroups.Add(nextGroup);
             }
-            foreach (MatchingGroup group in matchingGroups)
-            {
-                group.shuffleStimulus();
-            }
+
         }
 
         private async Task showInstructions(CancellationToken cancellationToken)
@@ -609,11 +885,19 @@ namespace TestPlatform.Views.MatchingPages
         {
             int time;
             /*wait interval between attempts*/
-            intervalElapsedTime = waitIntervalTime(executingTest.ProgramInUse.IntervalTimeRandom,
+            attemptIntervalTime = waitIntervalTime(executingTest.ProgramInUse.IntervalTimeRandom,
                 executingTest.ProgramInUse.AttemptsIntervalTime);
             /*set exposition accumulative time and test exposition time*/
             executingTest.ExpositionTime = DateTime.Now;
-            expositionAccumulative = accumulativeStopWatch.ElapsedMilliseconds;
+            if (showModel)
+            {
+                expositionAccumulative = accumulativeStopWatch.ElapsedMilliseconds;
+            }
+            else
+            {
+                modelExpositionAccumulative = accumulativeStopWatch.ElapsedMilliseconds;
+            }
+            
             /*start reaction stopwatch*/
             hitStopWatch = new Stopwatch();
             hitStopWatch.Start();
@@ -698,7 +982,7 @@ namespace TestPlatform.Views.MatchingPages
                 {
                     stimuluPosition = new StimuluPosition(this.executingTest.ProgramInUse.NumExpositions, ClientSize, new Size(0, 0));
                 }
-                waitIntervalTime(this.executingTest.ProgramInUse.IntervalTimeRandom, this.executingTest.ProgramInUse.IntervalTime);
+                intervalElapsedTime = waitIntervalTime(this.executingTest.ProgramInUse.IntervalTimeRandom, this.executingTest.ProgramInUse.IntervalTime);
                 drawStimuluImage();
             }
         }
@@ -744,8 +1028,7 @@ namespace TestPlatform.Views.MatchingPages
                 newPicBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
                 if (this.executingTest.ProgramInUse.RandomPosition)
                 {
-                    int[] screenPosition = randomScreenPosition(newPicBox.Size);
-                    newPicBox.Location = new Point(screenPosition[X], screenPosition[Y]);
+                    newPicBox.Location = StimuluPosition.getRandomPosition(ClientSize, newPicBox.Size);
                 }
                 else
                 {
@@ -757,6 +1040,10 @@ namespace TestPlatform.Views.MatchingPages
                 currentStimulus = matchingGroups.ElementAt(groupCounter);
                 newPicBox.Enabled = true;
                 newPicBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MatchingExposition_MouseClick);
+                if (img == matchingGroups.ElementAt(groupCounter).getModelImage())
+                {
+                    modelAsStimuluPictureBox = newPicBox;
+                }
                 stimuluPictureBox.Add(newPicBox);
             }
             groupCounter++;
@@ -915,33 +1202,78 @@ namespace TestPlatform.Views.MatchingPages
             {
                 /*do nothing*/
             }
-            if (!expositionBW.CancellationPending && !expositionControllerBW.CancellationPending)
+            if (modelAsStimuluPictureBox != null)
             {
-                if (showModel && (e.Cancelled == true) && !intervalCancelled)
-                {
+                modelSecondPosition = StimuluPosition.getStimuluPositionMap(modelAsStimuluPictureBox.Location, ClientSize, modelAsStimuluPictureBox.Size);
+            }
 
-                    executingTest.writeLineOutput(LocRM.GetString("stimulu", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image), imageClicked.Location.ToString(), currentExpositionType, this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName(), this.matchingGroups.ElementAt(groupCounter - 1).match(imageClicked.Image).ToString());
-                    /* user clicked after stimulus is shown*/
+            if (showModel && (e.Cancelled == true) && !intervalCancelled)
+            {
+                List<string> stimulus = this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageNames().ToList();
+                stimulus.Remove(this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName());
+                while(stimulus.Count <= 7)
+                {
+                    stimulus.Add("-");
                 }
+                stimulus[7] = this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image);
+                executingTest.writeLineOutput(
+                    attemptIntervalTime,
+                    intervalElapsedTime,
+                    modelReactTime,
+                    hitStopWatch.ElapsedMilliseconds,
+                    currentExposition + 1,
+                    modelExpositionAccumulative,
+                    expositionAccumulative,
+                    modelFirstposition,
+                    modelSecondPosition,
+                    currentExpositionType,
+                    (this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image) == this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName()).ToString(),
+                    this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName(),
+                    stimulus.ToArray(),
+                    StimuluPosition.getStimuluPositionMap(imageClicked.Location, ClientSize, imageClicked.Size)
+                    );
+                /* user clicked after stimulus is shown*/
+            }
 
-                else if (showModel)
+            else if (showModel)
+            {
+
+                /* user missed stimulus */
+                List<string> stimulus = this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageNames().ToList();
+                stimulus.Remove(this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName());
+                while (stimulus.Count <= 8)
                 {
-                    /* user missed stimulus */
-                    executingTest.writeLineOutput(LocRM.GetString("stimulu", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-", "-", currentExpositionType, this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName(), "-");
-                    hitStopWatch.Stop();
+                    stimulus.Add("-");
                 }
-                else if (imageClicked != null && !showModel && (e.Cancelled == true) && !intervalCancelled)
-                {
-                    /* user clicked model */
-                    executingTest.writeLineOutput(LocRM.GetString("model", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-", imageClicked.Location.ToString(), currentExpositionType, this.matchingGroups.ElementAt(groupCounter).getModelImageName(), "-");
-                    imageClicked = null;
-                }
-                else
-                {
-                    executingTest.writeLineOutput(LocRM.GetString("model", currentCulture), intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds, currentExposition + 1, expositionAccumulative, "-", "-", currentExpositionType, this.matchingGroups.ElementAt(groupCounter).getModelImageName(), "-");
-                    hitStopWatch.Stop();
-                    /*user missed model*/
-                }
+                executingTest.writeLineOutput(
+                    attemptIntervalTime,
+                    intervalElapsedTime,
+                    modelReactTime,
+                    0,
+                    currentExposition + 1,
+                    modelExpositionAccumulative,
+                    expositionAccumulative,
+                    modelFirstposition,
+                    modelSecondPosition,
+                    currentExpositionType,
+                    "-",
+                    this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName(),
+                    stimulus.ToArray(),
+                    "-");
+                hitStopWatch.Stop();
+            }
+            else if (!showModel && (e.Cancelled == true) && !intervalCancelled)
+            {
+                /* user clicked model */
+                modelReactTime = hitStopWatch.ElapsedMilliseconds;
+                modelFirstposition = StimuluPosition.getStimuluPositionMap(imageClicked.Location, ClientSize, modelPictureBox.Size);
+            }
+            else
+            {
+                /*user missed model*/
+                modelReactTime = 0;
+                modelFirstposition = StimuluPosition.getStimuluPositionMap(modelPictureBox.Location, ClientSize, modelPictureBox.Size);
+                hitStopWatch.Stop();
             }
             expositionBW.Dispose();
         }

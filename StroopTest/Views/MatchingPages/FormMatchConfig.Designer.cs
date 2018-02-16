@@ -82,6 +82,7 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.colorGroupBox.SuspendLayout();
             this.timeGroupBox.SuspendLayout();
@@ -101,6 +102,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.othersGroupBox);
             this.panel1.Controls.Add(this.colorGroupBox);
             this.panel1.Controls.Add(this.timeGroupBox);
@@ -498,6 +500,7 @@
             0,
             0,
             0});
+            this.numExpo.ValueChanged += new System.EventHandler(this.numExpo_ValueChanged);
             // 
             // expositionSize
             // 
@@ -538,6 +541,7 @@
             0,
             0,
             0});
+            this.attemptNumber.ValueChanged += new System.EventHandler(this.attemptNumber_ValueChanged);
             // 
             // programName
             // 
@@ -591,6 +595,12 @@
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Name = "label10";
             // 
             // FormMatchConfig
             // 
@@ -677,5 +687,6 @@
         private System.Windows.Forms.CheckBox randomAttemptTime;
         private System.Windows.Forms.GroupBox othersGroupBox;
         private System.Windows.Forms.CheckBox closeExpoAWithClick;
+        private System.Windows.Forms.Label label10;
     }
 }

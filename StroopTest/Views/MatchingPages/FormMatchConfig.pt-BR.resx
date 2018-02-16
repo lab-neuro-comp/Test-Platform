@@ -241,7 +241,7 @@
     <value>Tempo entre tentativas aleatória</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>Distância do estímulo ao centro da tela:</value>
+    <value>A lista de imagem é menor do que o necessário. Repetições de imagens pode ocorrer</value>
   </data>
   <data name="othersGroupBox.Text" xml:space="preserve">
     <value>Outros</value>

@@ -14,6 +14,8 @@
 
         private static int brush25 = 25;
         private static int brush4 = 4;
+        private static int X = 0;
+        private static int Y = 1;
 
         public static void makingFixPoint(string fixPoint, string fixPointColor, Form expositionForm)
         {
@@ -165,9 +167,22 @@
             newPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             newPictureBox.Size = new Size(stimuliSize, stimuliSize);
             newPictureBox.Image = image;
+            newPictureBox.Enabled = true;
             return newPictureBox;
         }
-
+        public static Label InitializeWordLabel(int size,string stimulus, string color, int[] position)
+        {
+            // configuring label that have word stimulus dimensions, color and position
+            Label wordLabel = new Label();
+            wordLabel.AutoSize = true;
+            wordLabel.Font = new Font("Arial", size / 10, FontStyle.Bold);
+            wordLabel.Text = stimulus;
+            wordLabel.Visible = true;
+            wordLabel.ForeColor = ColorTranslator.FromHtml(color);
+            wordLabel.Enabled = true;
+            wordLabel.Location = new Point(position[X], position[Y]);
+            return wordLabel;
+        }
         public static void BeginExperimentTest(string programName, string participantName, char mark, Form form)
         {
             try

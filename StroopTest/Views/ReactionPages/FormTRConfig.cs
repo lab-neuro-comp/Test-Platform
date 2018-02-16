@@ -724,6 +724,7 @@ namespace TestPlatform.Views
                     isRandomExposition.Enabled = false;
                     ColorListOption.Enabled = true;
                     UniqueColorOption.Enabled = true;
+                    fontSizeUpDown.Enabled = false;
                     if(ColorListOption.Checked)
                     {
                         stimulusColor.Enabled = false;
@@ -744,6 +745,8 @@ namespace TestPlatform.Views
                 case 1:
                     errorProvider1.Clear();
                     shapesGroupBox.Enabled = false;
+                    fontSizeUpDown.Enabled = true;
+                    stimuluSize.Enabled = false;
                     isRandomExposition.Enabled = true;
                     openWordListButton.Enabled = true;
                     ColorListOption.Enabled = true;
@@ -764,7 +767,8 @@ namespace TestPlatform.Views
                     break;
                 //Images exposition
                 case 2:
-                    
+                    fontSizeUpDown.Enabled = false;
+                    stimuluSize.Enabled = true;
                     isRandomExposition.Enabled = true;
                     errorProvider1.Clear();
                     openImgListButton.Enabled = true;
@@ -780,8 +784,10 @@ namespace TestPlatform.Views
                     stimulusColor.Enabled = false;
                     stimulusColor.Text = LocRM.GetString("choose", currentCulture);
                     break;
+                //Images and word expositions
                 case 3:
                     errorProvider1.Clear();
+                    fontSizeUpDown.Enabled = true;
                     shapesGroupBox.Enabled = false;
                     isRandomExposition.Enabled = true;
                     openWordListButton.Enabled = true;
@@ -897,11 +903,6 @@ namespace TestPlatform.Views
             errorProvider1.SetError(this.openWordListButton, "");
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -943,11 +944,6 @@ namespace TestPlatform.Views
         }
 
         private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

@@ -255,4 +255,7 @@
   <data name="cancelButton.Text" xml:space="preserve">
     <value>cancelar</value>
   </data>
+  <data name="fontSizeLabel.Text" xml:space="preserve">
+    <value>Tamaño de Letra:</value>
+  </data>
 </root>

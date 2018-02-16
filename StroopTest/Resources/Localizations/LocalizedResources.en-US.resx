@@ -1509,6 +1509,14 @@ when choosing the experiment that is run on the results page and import / export
             &lt;/td&gt;
          &lt;/tr&gt;
          &lt;tr&gt;
+            &lt;td&gt;
+               Font size
+            &lt;/td&gt;
+            &lt;td&gt;
+               The font size, in points, that will be used in words.
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
             &lt;td&gt;Distance from the stimulus to the center of the screen&lt;/td&gt;
             &lt;td&gt;It indicates, in pixels, the distance that the stimulus will be rendered taking as reference the center of the screen.&lt;/td&gt;
          &lt;/tr&gt;

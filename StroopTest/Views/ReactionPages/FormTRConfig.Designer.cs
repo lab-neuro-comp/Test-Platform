@@ -105,6 +105,8 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.fontSizeLabel = new System.Windows.Forms.Label();
+            this.fontSizeUpDown = new System.Windows.Forms.NumericUpDown();
             this.reactionConfigPanel.SuspendLayout();
             this.userResponse.SuspendLayout();
             this.shapesGroupBox.SuspendLayout();
@@ -121,6 +123,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fontSizeUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // reactionConfigPanel
@@ -419,7 +422,6 @@
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // wordListLabel
             // 
@@ -483,6 +485,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.fontSizeLabel);
+            this.groupBox1.Controls.Add(this.fontSizeUpDown);
             this.groupBox1.Controls.Add(this.UniqueColorOption);
             this.groupBox1.Controls.Add(this.ColorListOption);
             this.groupBox1.Controls.Add(this.label7);
@@ -510,7 +514,6 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // UniqueColorOption
             // 
@@ -790,6 +793,36 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // fontSizeLabel
+            // 
+            resources.ApplyResources(this.fontSizeLabel, "fontSizeLabel");
+            this.fontSizeLabel.Name = "fontSizeLabel";
+            // 
+            // fontSizeUpDown
+            // 
+            this.fontSizeUpDown.Increment = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            resources.ApplyResources(this.fontSizeUpDown, "fontSizeUpDown");
+            this.fontSizeUpDown.Maximum = new decimal(new int[] {
+            80,
+            0,
+            0,
+            0});
+            this.fontSizeUpDown.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.fontSizeUpDown.Name = "fontSizeUpDown";
+            this.fontSizeUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
             // FormTRConfig
             // 
             resources.ApplyResources(this, "$this");
@@ -823,6 +856,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fontSizeUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -905,5 +939,7 @@
         private System.Windows.Forms.RadioButton UniqueColorOption;
         private System.Windows.Forms.RadioButton ColorListOption;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label fontSizeLabel;
+        private System.Windows.Forms.NumericUpDown fontSizeUpDown;
     }
 }

@@ -175,7 +175,7 @@
             // configuring label that have word stimulus dimensions, color and position
             Label wordLabel = new Label();
             wordLabel.AutoSize = true;
-            wordLabel.Font = new Font("Arial", size / 10, FontStyle.Bold);
+            wordLabel.Font = new Font("Arial", size, FontStyle.Bold);
             wordLabel.Text = stimulus;
             wordLabel.Visible = true;
             wordLabel.ForeColor = ColorTranslator.FromHtml(color);

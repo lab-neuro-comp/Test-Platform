@@ -241,7 +241,7 @@
     <value>Random time between attempts</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>Distance between stimulus and screen center</value>
+    <value>The image list has less elements than the necessary, image repetition may occur</value>
   </data>
   <data name="othersGroupBox.Text" xml:space="preserve">
     <value>Others</value>

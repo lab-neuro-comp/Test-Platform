@@ -133,33 +133,37 @@ namespace TestPlatform.Models
             }
         }
 
-        public void writeLineOutput(string stimulusType, long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, string currentStimulus, string position, string testType, string match, string model)
+        public void writeLineOutput(long attemptIntervalTime, long stimuluIntervalTime, long modelReactTime, long stimuluReactTime, int currentExposition, long modelExpositionAccumulative, long stimuluExpositionAccumulative, string modelFirstposition, string modelSecondPosition, string testType, string match, string model, string[] stimulus, string stimuluPosition)
         {
-            /* This variable keeps data from an exposition to only one stimulus, being them:
-             * Program\tParticipant\tDate\tInitial Time\tExposition Time\tReaction Time(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tSenquency\tPos\tTest Type\tStimulus Type\tStimulus\tModel\Match
-             * Programa\tParticipante\tData\tHorario Inicial\tTempo de Exposição\tTempo de Reação(ms)\tIntervalo(ms)\tIntervalo Estimado(ms)\tDuração da Exposição(ms)\tExposição(ms)\tSenquencia\tPos\tTipo de Teste\tTipo de Estimulo\tEstimulo\tModelo\tIgual
-             * program name | participant name| date | hour | exposition hour | hit time(ms) | interval(ms) | interval should be(ms) | exposition accumulative time |exposition time(ms) | number of sequency | position on screen | type of test | type of stimulus | stimulus | Match */
-            string text =  ProgramInUse.ProgramName + "\t" + 
-                        participantName + "\t" + 
-                        initialTime.Day + "/" + initialTime.Month + "/" + initialTime.Year + "\t" + 
-                        initialTime.Hour + ":" + initialTime.Minute + ":" + initialTime.Second + ":" + initialTime.Millisecond.ToString() + "\t" + 
-                        ExpositionTime.Hour + ":" + ExpositionTime.Minute + ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" + 
-                        reactTime.ToString() + "\t" + 
-                        intervalTime.ToString() + "\t" + 
-                        intervalShouldBe.ToString() + "\t" + 
-                        expositionAccumulative + "\t" +
-                        ProgramInUse.ExpositionTime + "\t" + 
-                        currentExposition + "\t" + 
-                        position + "\t" + 
-                        testType + "\t" + 
-                        stimulusType + "\t" +
-                        currentStimulus + "\t" + 
-                        match + "\t" +
-                        model;
+            string text = ProgramInUse.ProgramName + "\t" +
+                        participantName + "\t" +
+                        initialTime.Day + "/" + initialTime.Month + "/" + initialTime.Year + "\t" +
+                        initialTime.Hour + ":" + initialTime.Minute + ":" + initialTime.Second + ":" + initialTime.Millisecond.ToString() + "\t" +
+                        ExpositionTime.Hour + ":" + ExpositionTime.Minute + ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" +
+                        modelReactTime.ToString() + "\t" +
+                        stimuluReactTime.ToString() + "\t" +
+                        attemptIntervalTime.ToString() + "\t" +
+                        stimuluIntervalTime.ToString() + "\t" +
+                        modelExpositionAccumulative + "\t" +
+                        stimuluExpositionAccumulative + "\t" +
+                        currentExposition + "\t" +
+                        testType + "\t" +
+                        modelFirstposition + "\t" +
+                        model + "\t" +
+                        stimulus[0] + "\t" +
+                        stimulus[1] + "\t" +
+                        stimulus[2] + "\t" +
+                        stimulus[3] + "\t" +
+                        stimulus[4] + "\t" +
+                        stimulus[5] + "\t" +
+                        stimulus[6] + "\t" +
+                        modelSecondPosition + "\t" +
+                        stimulus[7] + "\t" +
+                        stimuluPosition + "\t" +
+                        match;
             Output.Add(text);
 
         }
-
 
 
     }

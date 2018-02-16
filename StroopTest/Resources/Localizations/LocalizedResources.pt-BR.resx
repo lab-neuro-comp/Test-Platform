@@ -2225,7 +2225,7 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>Selecione uma lista de imagens</value>
   </data>
   <data name="matchingTestHeader" xml:space="preserve">
-    <value>Programa\tParticipante\tData\tHorario Inicial\tTempo de Exposição\tTempo de Reação(ms)\tIntervalo(ms)\tIntervalo Estimado(ms)\tDuração da Exposição(ms)\tExposição(ms)\tSenquencia\tPos\tTipo de Teste\tTipo de Estimulo\tEstimulo\tModelo\tIgual</value>
+    <value>Programa\tParticipante\tData\tHorario Inicial\tTempo de Exposição\tReação do modelo(ms)\tReação do estimulo(ms)\tIntervalo das tentativas(ms)\tIntervalo(ms)\tExposição do modelo(ms)\tExposição do estímulo(ms)\tSenquencia\tTipo de Teste\tPrimeira posição do modelo\tModelo\tEstimulo 2\tEstimulo 3\tEstimulo 4\tEstimulo 5\tEstimulo 6\tEstimulo 7\tEstimulo 8\tSegunda posição do modelo\tNome do estimulo clicado\tPosição do estimulo clicado\tIgual</value>
   </data>
   <data name="CannotBeEmpty" xml:space="preserve">
     <value>Esse campo deve ser preenchido</value>

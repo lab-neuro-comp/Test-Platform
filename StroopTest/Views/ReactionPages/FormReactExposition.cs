@@ -445,7 +445,7 @@ namespace TestPlatform.Views
             screenPosition = wordLabelWithinRange(screenPosition[X], screenPosition[Y]);
 
             // configuring label that have word stimulus dimensions, color and position
-            ExpositionController.InitializeWordLabel(executingTest.ProgramInUse.StimuluSize, wordsList[wordCounter], colorsList[colorCounter], screenPosition);
+            ExpositionController.InitializeWordLabel(executingTest.ProgramInUse.FontSize, wordsList[wordCounter], colorsList[colorCounter], screenPosition);
 
             currentStimulus = wordsList[wordCounter];
             wordCounter++;
@@ -499,7 +499,7 @@ namespace TestPlatform.Views
             {
                 int[] screenPosition = ScreenPosition(wordLabel.PreferredSize);
                 screenPosition = wordLabelWithinRange(screenPosition[X], screenPosition[Y]);
-                wordLabel = ExpositionController.InitializeWordLabel(executingTest.ProgramInUse.StimuluSize, imagesAndWordsList[imageAndWordCounter], colorsList[colorCounter], screenPosition);
+                wordLabel = ExpositionController.InitializeWordLabel(executingTest.ProgramInUse.FontSize, imagesAndWordsList[imageAndWordCounter], colorsList[colorCounter], screenPosition);
                
                 currentStimulus = imagesAndWordsList[imageAndWordCounter];
 

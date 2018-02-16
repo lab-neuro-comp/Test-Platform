@@ -898,7 +898,7 @@ example, "Victoria1". The order in which the elements are informed will be kept 
     <value>#F8E000 #007BB7 #7EC845 #D01C1F</value>
   </data>
   <data name="defaultReactionProgram" xml:space="preserve">
-    <value>default 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false false</value>
+    <value>default 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false false 10</value>
   </data>
   <data name="defaultReactionProgramError" xml:space="preserve">
     <value>Couldn't write default Reaction Test program.</value>

@@ -40,7 +40,7 @@ namespace TestPlatform.Views
         {
             ReactionProgram editProgram = new ReactionProgram();
             editProgram.readProgramFile(path + Global.programFolderName + editPrgName + ".prg");
-
+                        
             prgNameTextBox.Text = editProgram.ProgramName;
             numExpo.Value = editProgram.NumExpositions;
             expoTime.Value = editProgram.ExpositionTime;
@@ -49,6 +49,8 @@ namespace TestPlatform.Views
             beepDuration.Value = editProgram.BeepDuration;
             stimulusDistance.Value = editProgram.StimulusDistance;
             stimuluSize.Value = editProgram.StimuluSize;
+            fontSizeUpDown.Value = editProgram.FontSize;
+
             if(editProgram.getHasColorList())
             {
                 UniqueColorOption.Checked = false;
@@ -405,7 +407,7 @@ namespace TestPlatform.Views
                                                 fixPointValue(), bgColorButton.Text, fixPointColor(),
                                                 rndIntervalCheck.Checked, randomBeepCheck.Checked,
                                                 Convert.ToInt32(positionsBox.Text), responseType(), openWordListButton.Text,
-                                                isRandomExposition.Checked, openColorListButton.Text, ColorListOption.Checked);
+                                                isRandomExposition.Checked, openColorListButton.Text, ColorListOption.Checked, Convert.ToInt32(fontSizeUpDown.Value));
                     break;
                 
                 // Program type "images"
@@ -422,7 +424,7 @@ namespace TestPlatform.Views
                                                      Convert.ToInt32(intervalTime.Value), Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
                                                      fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked,
                                                      openImgListButton.Text, openWordListButton.Text, openColorListButton.Text, randomBeepCheck.Checked,
-                                                     Convert.ToInt32(positionsBox.Text), ColorListOption.Checked,  responseType(), isRandomExposition.Checked, stimulusColorCheck());
+                                                     Convert.ToInt32(positionsBox.Text), ColorListOption.Checked,  responseType(), isRandomExposition.Checked, stimulusColorCheck(), Convert.ToInt32(fontSizeUpDown.Value));
                     break;
                 
                 // Program type "wordWithAudio"

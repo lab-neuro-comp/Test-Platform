@@ -1017,15 +1017,14 @@ namespace TestPlatform.Views.MatchingPages
         }
 
         private void drawStimuluImage()
-        {
-            PictureBox newPicBox;
+        {            
             showModel = true;
             stimuluPictureBox.Clear();
+
             foreach (Image img in matchingGroups.ElementAt(groupCounter).getStimulusImages())
             {
-                newPicBox = new PictureBox();
-                newPicBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                newPicBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
+                PictureBox newPicBox = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, img);
+
                 if (this.executingTest.ProgramInUse.RandomPosition)
                 {
                     newPicBox.Location = StimuluPosition.getRandomPosition(ClientSize, newPicBox.Size);
@@ -1036,7 +1035,7 @@ namespace TestPlatform.Views.MatchingPages
                     Point position = stimuluPosition.getPositon();
                     newPicBox.Location = position;
                 }
-                newPicBox.Image = img;
+
                 currentStimulus = matchingGroups.ElementAt(groupCounter);
                 newPicBox.Enabled = true;
                 newPicBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MatchingExposition_MouseClick);

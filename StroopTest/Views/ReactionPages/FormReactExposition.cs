@@ -470,11 +470,10 @@ namespace TestPlatform.Views
 
         private void drawImage()
         {
-            imgPictureBox = new PictureBox();
-            imgPictureBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
+            imgPictureBox = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, Image.FromFile(imagesList[imageCounter]));
             int[] screenPosition = ScreenPosition(imgPictureBox.Size);
             imgPictureBox.Location = new Point(screenPosition[X], screenPosition[Y]);
-            imgPictureBox.Image = Image.FromFile(imagesList[imageCounter]);
+
             currentStimulus = imagesList[imageCounter];
             imgPictureBox.Enabled = true;
             imageCounter++;            
@@ -675,7 +674,7 @@ namespace TestPlatform.Views
                         intervalBW.ReportProgress(50, currentControl);
                     }
                 }
-                ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor, this);
+                ExpositionController.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor, this);
             }
             else
             {
@@ -708,7 +707,7 @@ namespace TestPlatform.Views
 
         private void intervalBW_DoWork(object sender, DoWorkEventArgs e)
         {
-            ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
+            ExpositionController.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
                 this);
 
             executingTest.InitialTime = DateTime.Now;
@@ -953,7 +952,7 @@ namespace TestPlatform.Views
             Graphics g = e.Graphics;
 
 
-            ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
+            ExpositionController.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
                 this);
             Pen myPen = new Pen(ColorTranslator.FromHtml(colorsList[colorCounter]), 1);
             Point[] trianglePoints = createTrianglePoints();
@@ -1050,7 +1049,7 @@ namespace TestPlatform.Views
 
         private void FormReactExposition_Paint(object sender, PaintEventArgs e)
         {
-            ExpositionsViews.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor, this);
+            ExpositionController.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor, this);
         }
     }
 }

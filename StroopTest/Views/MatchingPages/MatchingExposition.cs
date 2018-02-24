@@ -21,7 +21,6 @@ namespace TestPlatform.Views.MatchingPages
     {
         public class StimuluPosition
         {
-            
             private int pointCount = 0;
             private Size clientSize, stimuluSize;
             private int pointsNumber;
@@ -625,6 +624,8 @@ namespace TestPlatform.Views.MatchingPages
                 return stimulusImagesName;
             }
         }
+
+        private bool userClickedStimulu = true;
         StimuluPosition stimuluPosition;
         string modelFirstposition, modelSecondPosition;
         MatchingTest executingTest = new MatchingTest();
@@ -661,7 +662,6 @@ namespace TestPlatform.Views.MatchingPages
         private long attemptIntervalTime;
         public MatchingExposition(string prgName, string participantName, char mark)
         {
-            currentExpositionType = "DMTS";
             matchingGroups = new List<MatchingGroup>();
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
@@ -681,6 +681,7 @@ namespace TestPlatform.Views.MatchingPages
         {
             if (executingTest.ProgramInUse.Ready(path))
             {
+                currentExpositionType = this.executingTest.ProgramInUse.getExpositionType();
                 initializeExposition();
             }
             else
@@ -743,9 +744,13 @@ namespace TestPlatform.Views.MatchingPages
             }
             for(int count = 0; modelCounter < this.executingTest.ProgramInUse.AttemptsNumber; count = count + this.executingTest.ProgramInUse.NumExpositions)//define the models of the exposition
             {
-                if(count >= imageList.Length) // prevent out of range exception
+                while(count >= imageList.Length) // prevent out of range exception
                 {
                     count = count - imageList.Length + 1;
+                    if(imageList.Length == 1)/*if list has just 1 image, this prevents the while to turns into an infinite loop*/
+                    {
+                        count--;
+                    }
                 }
                 imageCanBeUsed[count] = false;
                 groupStartingindex[modelCounter] = count + 1;
@@ -885,7 +890,8 @@ namespace TestPlatform.Views.MatchingPages
         {
             int time;
             /*wait interval between attempts*/
-            attemptIntervalTime = waitIntervalTime(executingTest.ProgramInUse.IntervalTimeRandom,
+            if(!userClickedStimulu)
+                attemptIntervalTime = waitIntervalTime(executingTest.ProgramInUse.IntervalTimeRandom,
                 executingTest.ProgramInUse.AttemptsIntervalTime);
             /*set exposition accumulative time and test exposition time*/
             executingTest.ExpositionTime = DateTime.Now;
@@ -982,7 +988,7 @@ namespace TestPlatform.Views.MatchingPages
                 {
                     stimuluPosition = new StimuluPosition(this.executingTest.ProgramInUse.NumExpositions, ClientSize, new Size(0, 0));
                 }
-                intervalElapsedTime = waitIntervalTime(this.executingTest.ProgramInUse.IntervalTimeRandom, this.executingTest.ProgramInUse.IntervalTime);
+                intervalElapsedTime = waitIntervalTime(this.executingTest.ProgramInUse.RandomIntervalModelStimulus, this.executingTest.ProgramInUse.IntervalTime);
                 drawStimuluImage();
             }
         }
@@ -1107,6 +1113,7 @@ namespace TestPlatform.Views.MatchingPages
             {
                 /* there was an error while doing exposition */
             }
+            CancelExposition();
         }
 
         private void MatchingExposition_KeyDown(object sender, KeyEventArgs e)
@@ -1208,7 +1215,7 @@ namespace TestPlatform.Views.MatchingPages
                     modelSecondPosition = StimuluPosition.getStimuluPositionMap(modelAsStimuluPictureBox.Location, ClientSize, modelAsStimuluPictureBox.Size);
                 }
 
-                if (showModel && (e.Cancelled == true) && !intervalCancelled)
+                if (showModel && (e.Cancelled == true) && !intervalCancelled) /* user clicked after stimulus is shown*/
                 {
                     List<string> stimulus = this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageNames().ToList();
                     stimulus.Remove(this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName());
@@ -1233,13 +1240,10 @@ namespace TestPlatform.Views.MatchingPages
                         stimulus.ToArray(),
                         StimuluPosition.getStimuluPositionMap(imageClicked.Location, ClientSize, imageClicked.Size)
                         );
-                    /* user clicked after stimulus is shown*/
+                    userClickedStimulu = true;
                 }
-
-                else if (showModel)
+                else if (showModel)/* user missed stimulus */
                 {
-
-                    /* user missed stimulus */
                     List<string> stimulus = this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageNames().ToList();
                     stimulus.Remove(this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName());
                     while (stimulus.Count <= 8)
@@ -1262,16 +1266,15 @@ namespace TestPlatform.Views.MatchingPages
                         stimulus.ToArray(),
                         "-");
                     hitStopWatch.Stop();
+                    userClickedStimulu = false;
                 }
-                else if (!showModel && (e.Cancelled == true) && !intervalCancelled)
+                else if (!showModel && (e.Cancelled == true) && !intervalCancelled)  /* user clicked model */
                 {
-                    /* user clicked model */
                     modelReactTime = hitStopWatch.ElapsedMilliseconds;
                     modelFirstposition = StimuluPosition.getStimuluPositionMap(imageClicked.Location, ClientSize, modelPictureBox.Size);
                 }
-                else
+                else  /*user missed model*/
                 {
-                    /*user missed model*/
                     modelReactTime = 0;
                     modelFirstposition = StimuluPosition.getStimuluPositionMap(modelPictureBox.Location, ClientSize, modelPictureBox.Size);
                     hitStopWatch.Stop();

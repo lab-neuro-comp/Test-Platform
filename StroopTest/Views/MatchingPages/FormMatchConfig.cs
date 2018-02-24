@@ -72,6 +72,7 @@ namespace TestPlatform.Views.MatchingPages
             DNMTSBackgroundColor.Text = editProgram.DNMTSBackground;
             DMTSColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.BackgroundColor);
             DNMTSColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.DNMTSBackground);
+            randomModelStimulusTime.Checked = editProgram.RandomIntervalModelStimulus;
             switch (editProgram.getExpositionType())
             {
                 case "DMTS":
@@ -119,6 +120,16 @@ namespace TestPlatform.Views.MatchingPages
                     break;
                 default:
                     throw new Exception(LocRM.GetString("expoType", currentCulture) + editProgram.getExpositionType() + LocRM.GetString("invalid", currentCulture));
+            }
+            StrList imagesListFile = new StrList(openImgListButton.Text, 0);
+            if (imagesListFile.ListContent.Count < numExpo.Value)
+            {
+                label13.Visible = true;
+                saveButton.Enabled = false;
+            }
+            else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+            {
+                label10.Visible = true;
             }
 
         }
@@ -186,37 +197,45 @@ namespace TestPlatform.Views.MatchingPages
                                         Convert.ToInt32(attemptNumber.Value), Convert.ToInt32(expositionSize.Value), randomPosition.Checked,
                                         closeExpoAWithClick.Checked, openImgListButton.Text, Convert.ToInt32(stimulusInterval.Value), 
                                         randomAttemptTime.Checked, Convert.ToInt32(stimulusExpoTime.Value), Convert.ToInt32(modelExpoTime.Value),
-                                        Convert.ToInt32(attemptInterval.Value), DMTSBackgroundColor.Text, DNMTSBackgroundColor.Text, randomOrder.Checked, 0, 0);
+                                        Convert.ToInt32(attemptInterval.Value), DMTSBackgroundColor.Text, DNMTSBackgroundColor.Text, randomOrder.Checked, 0, 0,
+                                        this.randomModelStimulusTime.Checked);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (this.ValidateChildren(ValidationConstraints.Enabled))
+            if (saveButton.Enabled)
             {
-                bool hasToSave = true;
                 if (this.ValidateChildren(ValidationConstraints.Enabled))
                 {
-                    MatchingProgram newProgram = configureNewProgram();
+                    bool hasToSave = true;
+                    if (this.ValidateChildren(ValidationConstraints.Enabled))
+                    {
+                        MatchingProgram newProgram = configureNewProgram();
 
-                    if (File.Exists(path + Global.programFolderName + programName.Text + ".prg"))
-                    {
-                        DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExists", currentCulture), "", MessageBoxButtons.OKCancel);
-                        if (dialogResult == DialogResult.Cancel)
+                        if (File.Exists(path + Global.programFolderName + programName.Text + ".prg"))
                         {
-                            hasToSave = false;
-                            MessageBox.Show(LocRM.GetString("programNotSave", currentCulture));
+                            DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExists", currentCulture), "", MessageBoxButtons.OKCancel);
+                            if (dialogResult == DialogResult.Cancel)
+                            {
+                                hasToSave = false;
+                                MessageBox.Show(LocRM.GetString("programNotSave", currentCulture));
+                            }
                         }
+                        if (hasToSave && newProgram.saveProgramFile(path + Global.programFolderName, instructionsBox.Text))
+                        {
+                            MessageBox.Show(LocRM.GetString("programSave", currentCulture));
+                        }
+                        this.Parent.Controls.Remove(this);
                     }
-                    if (hasToSave && newProgram.saveProgramFile(path + Global.programFolderName, instructionsBox.Text))
-                    {
-                        MessageBox.Show(LocRM.GetString("programSave", currentCulture));
-                    }
-                    this.Parent.Controls.Remove(this);
+                }
+                else
+                {
+                    MessageBox.Show(LocRM.GetString("fieldNotRight", currentCulture));
                 }
             }
             else
             {
-                MessageBox.Show(LocRM.GetString("fieldNotRight", currentCulture));
+                /*do nothing*/
             }
         }
 
@@ -339,17 +358,25 @@ namespace TestPlatform.Views.MatchingPages
             if (openImgListButton.Text != LocRM.GetString("open", currentCulture))
             {
                 StrList imagesListFile = new StrList(openImgListButton.Text, 0);
-                if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                if (imagesListFile.ListContent.Count < numExpo.Value)
+                {
+                    label13.Visible = true;
+                    saveButton.Enabled = false;
+                    label10.Visible = false;
+                }
+                else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
                 {
                     label10.Visible = true;
                 }
                 else
                 {
+                    label13.Visible = false;
                     label10.Visible = false;
                 }
             }
             else
             {
+                label13.Visible = false;
                 label10.Visible = false;
             }
         }
@@ -510,17 +537,25 @@ namespace TestPlatform.Views.MatchingPages
             if (openImgListButton.Text != LocRM.GetString("open", currentCulture))
             {
                 StrList imagesListFile = new StrList(openImgListButton.Text, 0);
-                if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                if (imagesListFile.ListContent.Count < numExpo.Value)
+                {
+                    label13.Visible = true;
+                    saveButton.Enabled = false;
+                    label10.Visible = false;
+                }
+                else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
                 {
                     label10.Visible = true;
                 }
                 else
                 {
+                    label13.Visible = false;
                     label10.Visible = false;
                 }
             }
             else
             {
+                label13.Visible = false;
                 label10.Visible = false;
             }
         }
@@ -530,17 +565,25 @@ namespace TestPlatform.Views.MatchingPages
             if (openImgListButton.Text != LocRM.GetString("open", currentCulture))
             {
                 StrList imagesListFile = new StrList(openImgListButton.Text, 0);
-                if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                if (imagesListFile.ListContent.Count < numExpo.Value)
+                {
+                    label13.Visible = true;
+                    saveButton.Enabled = false;
+                    label10.Visible = false;
+                }
+                else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
                 {
                     label10.Visible = true;
                 }
                 else
                 {
+                    label13.Visible = false;
                     label10.Visible = false;
                 }
             }
             else
             {
+                label13.Visible = false;
                 label10.Visible = false;
             }
         }

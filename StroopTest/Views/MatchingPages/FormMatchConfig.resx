@@ -118,13 +118,107 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 528</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>541, 13</value>
+  </data>
+  <data name="label13.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>A lista de imagens é menor que o número de estimulos. Diminua o numero de estimulos ou escolha uma lista maior</value>
+  </data>
+  <data name="label13.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
+  </data>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 276</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 13</value>
+  </data>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>A lista de imagem é menor do que o necessário para não haver repetições</value>
+  </data>
+  <data name="label12.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 268</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 13</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>A lista de imagem é menor do que o necessário para não haver repetições</value>
+  </data>
+  <data name="label11.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label10.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 528</value>
   </data>
@@ -150,7 +244,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="othersGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>279, 272</value>
@@ -174,7 +268,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;othersGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="DNMTSColorPanel.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -260,7 +354,6 @@
   <data name="DNMTSBackgroundColor.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="DNMTSBackgroundColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -430,7 +523,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;colorGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="stimulusInterval.Location" type="System.Drawing.Point, System.Drawing">
     <value>215, 75</value>
@@ -646,7 +739,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;timeGroupBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="openAudioListButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -895,7 +988,37 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;listGroupBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
+  </data>
+  <data name="randomModelStimulusTime.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="randomModelStimulusTime.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="randomModelStimulusTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 190</value>
+  </data>
+  <data name="randomModelStimulusTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 17</value>
+  </data>
+  <data name="randomModelStimulusTime.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="randomModelStimulusTime.Text" xml:space="preserve">
+    <value>Tempo entre modelo e estímulo aleatório</value>
+  </data>
+  <data name="&gt;&gt;randomModelStimulusTime.Name" xml:space="preserve">
+    <value>randomModelStimulusTime</value>
+  </data>
+  <data name="&gt;&gt;randomModelStimulusTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;randomModelStimulusTime.Parent" xml:space="preserve">
+    <value>expositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;randomModelStimulusTime.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="randomAttemptTime.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -925,7 +1048,7 @@
     <value>expositionGroupBox</value>
   </data>
   <data name="&gt;&gt;randomAttemptTime.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="randomOrder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -934,7 +1057,7 @@
     <value>False</value>
   </data>
   <data name="randomOrder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 190</value>
+    <value>142, 144</value>
   </data>
   <data name="randomOrder.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 17</value>
@@ -955,7 +1078,7 @@
     <value>expositionGroupBox</value>
   </data>
   <data name="&gt;&gt;randomOrder.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="dispositionLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -982,7 +1105,7 @@
     <value>expositionGroupBox</value>
   </data>
   <data name="&gt;&gt;dispositionLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="ExpoDisposition.Items" xml:space="preserve">
     <value>padrao</value>
@@ -1006,7 +1129,7 @@
     <value>expositionGroupBox</value>
   </data>
   <data name="&gt;&gt;ExpoDisposition.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="expositionType.Items" xml:space="preserve">
     <value>DMTS</value>
@@ -1036,7 +1159,7 @@
     <value>expositionGroupBox</value>
   </data>
   <data name="&gt;&gt;expositionType.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="expositionTypeLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1063,7 +1186,7 @@
     <value>expositionGroupBox</value>
   </data>
   <data name="&gt;&gt;expositionTypeLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="closeExpoAWithClick.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1096,7 +1219,7 @@
     <value>expositionGroupBox</value>
   </data>
   <data name="&gt;&gt;closeExpoAWithClick.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="numExpoLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1126,7 +1249,7 @@
     <value>expositionGroupBox</value>
   </data>
   <data name="&gt;&gt;numExpoLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="randomPosition.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1153,7 +1276,7 @@
     <value>expositionGroupBox</value>
   </data>
   <data name="&gt;&gt;randomPosition.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="expoSizeLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1180,7 +1303,7 @@
     <value>expositionGroupBox</value>
   </data>
   <data name="&gt;&gt;expoSizeLabel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="numExpo.Location" type="System.Drawing.Point, System.Drawing">
     <value>209, 67</value>
@@ -1201,7 +1324,7 @@
     <value>expositionGroupBox</value>
   </data>
   <data name="&gt;&gt;numExpo.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="expositionSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>209, 119</value>
@@ -1222,7 +1345,7 @@
     <value>expositionGroupBox</value>
   </data>
   <data name="&gt;&gt;expositionSize.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="stimulusNumberLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1249,7 +1372,7 @@
     <value>expositionGroupBox</value>
   </data>
   <data name="&gt;&gt;stimulusNumberLabel.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="attemptNumber.Location" type="System.Drawing.Point, System.Drawing">
     <value>209, 93</value>
@@ -1270,7 +1393,7 @@
     <value>expositionGroupBox</value>
   </data>
   <data name="&gt;&gt;attemptNumber.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="expositionGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 29</value>
@@ -1294,7 +1417,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;expositionGroupBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="programName.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 3</value>
@@ -1315,7 +1438,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;programName.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="programNameLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1342,7 +1465,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;programNameLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="helpButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
@@ -1372,7 +1495,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;helpButton.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="instructionsBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 427</value>
@@ -1402,7 +1525,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;instructionsBox.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="instructionsLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1435,7 +1558,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;instructionsLabel.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 17</value>
@@ -1538,26 +1661,5 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ExpoDisposition.Items1" xml:space="preserve">
-    <value>padrao</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>padrao</value>
-  </data>
-  <data name="attemptInterval.Text" xml:space="preserve">
-    <value>Tempo</value>
-  </data>
-  <data name="positionsComboBox.Items" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="positionsComboBox.Items1" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="positionsComboBox.Items2" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="positionsComboBox.Items3" xml:space="preserve">
-    <value>8</value>
   </data>
 </root>

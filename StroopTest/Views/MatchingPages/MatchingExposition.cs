@@ -961,7 +961,6 @@ namespace TestPlatform.Views.MatchingPages
                         /* just wait for exposition time to be finished */
                     }
                 }
-                Console.Write(hitStopWatch.ElapsedMilliseconds + "\n");
             }
         }
 

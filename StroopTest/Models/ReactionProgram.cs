@@ -19,8 +19,9 @@ namespace TestPlatform.Models
         private Int32 numberPositions; // [20]
         private String responseType; // [21]
         private Boolean hasColorList; // [23]
+        private int fontSize; // [24]
 
-        private static Int32 ELEMENTS = 24; //quantity of fields used in ReactionProgram 
+        private static Int32 ELEMENTS = 25; //quantity of fields used in ReactionProgram 
 
         public ReactionProgram()
         {
@@ -84,10 +85,8 @@ namespace TestPlatform.Models
             this.setImageListFile("false");
             this.setWordListFile("false");
             this.expositionRandom = false;
+            this.FontSize = 10;
             this.expositionType =  "shapes";
-
-            
-
         }
 
         /// <summary>
@@ -97,7 +96,7 @@ namespace TestPlatform.Models
                                 int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                                 bool beepRandom, int numberPositions, string responseType,
-                                string wordList, bool expositionRandom, string colorList, bool hasColorList)
+                                string wordList, bool expositionRandom, string colorList, bool hasColorList, int fontSize)
         {
             // Program properties
             this.programName = programName;
@@ -115,6 +114,7 @@ namespace TestPlatform.Models
             this.stimulusDistance = stimulusDistance;
             this.isBeeping = isBeeping;
             this.beepDuration = beepDuration;
+            this.FontSize = fontSize;
             this.stimuluShape = "false";
             this.BeepingRandom = beepRandom;
             this.ResponseType = responseType;
@@ -175,6 +175,7 @@ namespace TestPlatform.Models
             this.setAudioListFile("false");
             this.setColorListFile("false");
             this.setWordListFile("false");
+            this.FontSize = 10;
             this.setImageListFile(imageList);
             this.expositionType = "images"; 
 
@@ -187,7 +188,7 @@ namespace TestPlatform.Models
                         int stimulusDistance, bool isBeeping, int beepDuration,
                         string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                         string imageList, string wordList,  string colorList, bool beepRandom, int numberPositions,
-                        bool hasColorList, string responseType, bool isExpositionRandom, string stimulusColor)
+                        bool hasColorList, string responseType, bool isExpositionRandom, string stimulusColor, int fontSize)
         {
             // Program properties
             this.programName = programName;
@@ -210,6 +211,8 @@ namespace TestPlatform.Models
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
             this.hasColorList = hasColorList;
+            this.FontSize = fontSize;
+
             if (!hasColorList)
             {
                 this.stimulusColor = stimulusColor;
@@ -373,6 +376,19 @@ namespace TestPlatform.Models
             }
         }
 
+        public int FontSize
+        {
+            get
+            {
+                return fontSize;
+            }
+
+            set
+            {
+                fontSize = value;
+            }
+        }
+
         public string data()
         {
             string audioList = "false";
@@ -421,7 +437,8 @@ namespace TestPlatform.Models
                  this.NumberPositions + " " +
                  this.ResponseType + " " +
                  this.ExpositionRandom.ToString() + " " +
-                 this.hasColorList.ToString();
+                 this.hasColorList.ToString() + " " +
+                 this.FontSize;
             
             return data;
         }
@@ -431,12 +448,12 @@ namespace TestPlatform.Models
         {
             StreamReader tr;
             string line;
-            string[] linesInstruction;
+            
             List<string> config = new List<string>();
 
             try
             {
-                if (!File.Exists(filepath)) { throw new FileNotFoundException(); } // confere existência do arquivo
+                if (!File.Exists(filepath)) { throw new FileNotFoundException(); } 
                 
                 tr = new StreamReader(filepath, Encoding.Default, true);
                 line = tr.ReadLine();
@@ -445,7 +462,56 @@ namespace TestPlatform.Models
                 tr.Close();
 
                 needsEditionFlag = false;
-                if (config.Count() != ELEMENTS)
+                if (config.Count() == ELEMENTS)
+                {
+                    ProgramName = config[0];
+                    if (Path.GetFileNameWithoutExtension(filepath) == (this.ProgramName))
+                    {
+                        NumExpositions = int.Parse(config[1]);
+                        ExpositionTime = int.Parse(config[2]);
+                        StimuluSize = int.Parse(config[3]);
+                        IntervalTime = int.Parse(config[4]);
+                        StimulusDistance = int.Parse(config[5]);
+                        setWordListFile(config[6]);
+                        setColorListFile(config[7]);
+                        BackgroundColor = config[8];
+                        IsBeeping = bool.Parse(config[9]);
+                        BeepDuration = int.Parse(config[10]);
+                        StimulusColor = config[11];
+                        ExpositionType = config[12];
+                        setImageListFile(config[13]);
+                        setAudioListFile(config[14]);
+                        FixPoint = config[15];
+                        FixPointColor = config[16];
+                        IntervalTimeRandom = bool.Parse(config[17]);
+                        StimuluShape = config[18];
+                        BeepingRandom = bool.Parse(config[19]);
+                        NumberPositions = int.Parse(config[20]);
+                        ResponseType = config[21];
+                        expositionRandom = bool.Parse(config[22]);
+                        hasColorList = bool.Parse(config[23]);
+                        FontSize = int.Parse(config[24]);
+
+                        string[] linesInstruction = File.ReadAllLines(filepath);
+                        if (linesInstruction.Length > 1) // read instructions if any
+                        {
+                            for (int i = 1; i < linesInstruction.Length; i++)
+                            {
+                                this.InstructionText.Add(linesInstruction[i]);
+                            }
+                        }
+                        else
+                        {
+                            this.InstructionText = null;
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName +
+                           "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + "'.prg");
+                    }                   
+                }
+                else
                 {
                     needsEditionFlag = true;
 
@@ -455,48 +521,6 @@ namespace TestPlatform.Models
                         config.Add(defaultConfig[i]);
                     }
                 }
-
-                ProgramName = config[0];
-                if (Path.GetFileNameWithoutExtension(filepath) != (this.ProgramName)) {
-                    throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName + 
-                        "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + "'.prg");
-                }
-                NumExpositions = int.Parse(config[1]);
-                ExpositionTime = int.Parse(config[2]);
-                StimuluSize = int.Parse(config[3]);
-                IntervalTime = int.Parse(config[4]);
-                StimulusDistance = int.Parse(config[5]);
-                setWordListFile(config[6]);
-                setColorListFile(config[7]);
-                BackgroundColor = config[8];
-                IsBeeping = bool.Parse(config[9]);
-                BeepDuration = int.Parse(config[10]);
-                StimulusColor = config[11];
-                ExpositionType = config[12]; 
-                setImageListFile(config[13]);
-                setAudioListFile(config[14]);
-                FixPoint = config[15];
-                FixPointColor = config[16];
-                IntervalTimeRandom = bool.Parse(config[17]);
-                StimuluShape = config[18];
-                BeepingRandom = bool.Parse(config[19]);
-                NumberPositions = int.Parse(config[20]);
-                ResponseType = config[21];
-                expositionRandom = bool.Parse(config[22]);
-                hasColorList = bool.Parse(config[23]);
-                linesInstruction = File.ReadAllLines(filepath);
-                if (linesInstruction.Length > 1) // read instructions if any
-                {
-                    for (int i = 1; i < linesInstruction.Length; i++)
-                    {
-                        this.InstructionText.Add(linesInstruction[i]);
-                    }
-                }
-                else
-                {
-                    this.InstructionText = null;
-                }
-
             }
             catch (FileNotFoundException ex)
             {

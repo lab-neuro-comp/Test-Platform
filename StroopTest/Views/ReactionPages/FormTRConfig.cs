@@ -40,7 +40,7 @@ namespace TestPlatform.Views
         {
             ReactionProgram editProgram = new ReactionProgram();
             editProgram.readProgramFile(path + Global.programFolderName + editPrgName + ".prg");
-
+                        
             prgNameTextBox.Text = editProgram.ProgramName;
             numExpo.Value = editProgram.NumExpositions;
             expoTime.Value = editProgram.ExpositionTime;
@@ -49,6 +49,8 @@ namespace TestPlatform.Views
             beepDuration.Value = editProgram.BeepDuration;
             stimulusDistance.Value = editProgram.StimulusDistance;
             stimuluSize.Value = editProgram.StimuluSize;
+            fontSizeUpDown.Value = editProgram.FontSize;
+
             if(editProgram.getHasColorList())
             {
                 UniqueColorOption.Checked = false;
@@ -405,7 +407,7 @@ namespace TestPlatform.Views
                                                 fixPointValue(), bgColorButton.Text, fixPointColor(),
                                                 rndIntervalCheck.Checked, randomBeepCheck.Checked,
                                                 Convert.ToInt32(positionsBox.Text), responseType(), openWordListButton.Text,
-                                                isRandomExposition.Checked, openColorListButton.Text, ColorListOption.Checked);
+                                                isRandomExposition.Checked, openColorListButton.Text, ColorListOption.Checked, Convert.ToInt32(fontSizeUpDown.Value));
                     break;
                 
                 // Program type "images"
@@ -422,7 +424,7 @@ namespace TestPlatform.Views
                                                      Convert.ToInt32(intervalTime.Value), Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
                                                      fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked,
                                                      openImgListButton.Text, openWordListButton.Text, openColorListButton.Text, randomBeepCheck.Checked,
-                                                     Convert.ToInt32(positionsBox.Text), ColorListOption.Checked,  responseType(), isRandomExposition.Checked, stimulusColorCheck());
+                                                     Convert.ToInt32(positionsBox.Text), ColorListOption.Checked,  responseType(), isRandomExposition.Checked, stimulusColorCheck(), Convert.ToInt32(fontSizeUpDown.Value));
                     break;
                 
                 // Program type "wordWithAudio"
@@ -724,6 +726,7 @@ namespace TestPlatform.Views
                     isRandomExposition.Enabled = false;
                     ColorListOption.Enabled = true;
                     UniqueColorOption.Enabled = true;
+                    fontSizeUpDown.Enabled = false;
                     if(ColorListOption.Checked)
                     {
                         stimulusColor.Enabled = false;
@@ -744,6 +747,8 @@ namespace TestPlatform.Views
                 case 1:
                     errorProvider1.Clear();
                     shapesGroupBox.Enabled = false;
+                    fontSizeUpDown.Enabled = true;
+                    stimuluSize.Enabled = false;
                     isRandomExposition.Enabled = true;
                     openWordListButton.Enabled = true;
                     ColorListOption.Enabled = true;
@@ -764,7 +769,8 @@ namespace TestPlatform.Views
                     break;
                 //Images exposition
                 case 2:
-                    
+                    fontSizeUpDown.Enabled = false;
+                    stimuluSize.Enabled = true;
                     isRandomExposition.Enabled = true;
                     errorProvider1.Clear();
                     openImgListButton.Enabled = true;
@@ -780,8 +786,10 @@ namespace TestPlatform.Views
                     stimulusColor.Enabled = false;
                     stimulusColor.Text = LocRM.GetString("choose", currentCulture);
                     break;
+                //Images and word expositions
                 case 3:
                     errorProvider1.Clear();
+                    fontSizeUpDown.Enabled = true;
                     shapesGroupBox.Enabled = false;
                     isRandomExposition.Enabled = true;
                     openWordListButton.Enabled = true;
@@ -897,11 +905,6 @@ namespace TestPlatform.Views
             errorProvider1.SetError(this.openWordListButton, "");
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -943,11 +946,6 @@ namespace TestPlatform.Views
         }
 
         private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

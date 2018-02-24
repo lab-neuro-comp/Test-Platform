@@ -259,4 +259,7 @@ Color:</value>
   <data name="saveButton.Text" xml:space="preserve">
     <value>save</value>
   </data>
+  <data name="fontSizeLabel.Text" xml:space="preserve">
+    <value>Font Size:</value>
+  </data>
 </root>

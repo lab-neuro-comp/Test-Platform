@@ -259,4 +259,7 @@ Ponto:</value>
   <data name="saveButton.Text" xml:space="preserve">
     <value>salvar</value>
   </data>
+  <data name="fontSizeLabel.Text" xml:space="preserve">
+    <value>Tamanho da Fonte:</value>
+  </data>
 </root>

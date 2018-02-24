@@ -161,12 +161,17 @@
   </data>
   <data name="description" xml:space="preserve">
     <value>O TestPlatform é uma plataforma de testes neuropsicológicos computadorizados para avaliação de funções executivas. O produto tem a proposta oferecer soluções inovando tecnologicamente de forma prática e dinâmica. Destinado a pesquisadores, alunos e usuários comuns. 
+
+Responsável Técnico:
+anacog@pobox.com - Ana Cog
+
 Desenvolvedores: 
 hugohon - Hugo Honda Ferreira
 fabiolamfleury - Fabíola Malta Fleury
 gabrielalbino - Gabriel Batista Albino Silva; 
 2018; 
-Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
+Mais informações: 
+https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="down" xml:space="preserve">
     <value>baixo</value>
@@ -1281,7 +1286,7 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>A tarefa vai começar agora</value>
   </data>
   <data name="defaultReactionProgram" xml:space="preserve">
-    <value>padrao 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false false</value>
+    <value>padrao 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false false 10</value>
   </data>
   <data name="defaultReactionProgramError" xml:space="preserve">
     <value>Erro ao criar o programa padrão do teste de tempo de reação.</value>
@@ -1705,9 +1710,16 @@ Mais informações: https://github.com/lab-neuro-comp/Test-Platform</value>
                O tamanho do estimulo possuí funções diferentes dependendo do estimulo a que ele se aplica.
                &lt;ul&gt;
                   &lt;li&gt;Formas: Nesse tipo de estimulo o tamanho equivale ao tamanho da forma, em pixels, que será renderizado&lt;/li&gt;
-                  &lt;li&gt;Palavra: Nesse tipo de estimulo o tamanho equivale ao tamanho da fonte, em pixels, do texto que será renderizado&lt;/li&gt;
                   &lt;li&gt;Imagem: Nesse tipo de estimulo o tamanho equivale ao tamanho do lado, em pixels, da imagem que será renderizada.&lt;/li&gt;
                &lt;/ul&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Tamanho da fonte
+            &lt;/td&gt;
+            &lt;td&gt;
+               O tamanho, em pontos, da fonte que será utilizada nas palavras.
             &lt;/td&gt;
          &lt;/tr&gt;
          &lt;tr&gt;

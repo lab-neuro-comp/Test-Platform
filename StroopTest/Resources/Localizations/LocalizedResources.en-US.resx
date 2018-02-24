@@ -161,12 +161,17 @@
   </data>
   <data name="description" xml:space="preserve">
     <value>The TestPlatform is a platform of computerized neuropsychological tests for the evaluation of executive functions. The product has the proposal to offer solutions innovating technologically in a practical and dynamic way. Intended for researchers, students and ordinary users. 
+
+Technical Manager:
+anacog@pobox.com - Ana Cog
+
 Developers: 
 hugohon - Hugo Honda Ferreira 
 fabiolamfleury - Fabíola Malta Fleury
 gabrielalbino - Gabriel Batista Albino Silva; 
 2018; 
-More information: https://github.com/lab-neuro-comp/Test-Platform </value>
+More information: 
+https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="down" xml:space="preserve">
     <value>down</value>
@@ -1024,7 +1029,7 @@ To upgrade, the new version installation file must be run in the same folder as 
     <value>#F8E000 #007BB7 #7EC845 #D01C1F</value>
   </data>
   <data name="defaultReactionProgram" xml:space="preserve">
-    <value>default 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false false</value>
+    <value>default 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false false 10</value>
   </data>
   <data name="defaultReactionProgramError" xml:space="preserve">
     <value>Couldn't write default Reaction Test program.</value>
@@ -1632,6 +1637,14 @@ when choosing the experiment that is run on the results page and import / export
                    &lt;li&gt; Word: In this type of stimulus, the size equals the font size, in pixels, of the text to be rendered &lt;/ li&gt;
                    &lt;li&gt; Image: In this type of animation, the size is the size of the pixel side of the image to be rendered. &lt;/ li&gt;
                 &lt;/ ul&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;
+               Font size
+            &lt;/td&gt;
+            &lt;td&gt;
+               The font size, in points, that will be used in words.
             &lt;/td&gt;
          &lt;/tr&gt;
          &lt;tr&gt;

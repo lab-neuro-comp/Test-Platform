@@ -441,21 +441,15 @@ namespace TestPlatform.Views
 
         private void wordExposition()
         {
-            // configuring label that have word stimulus dimensions, color and position
-            wordLabel = new System.Windows.Forms.Label();
-            wordLabel.AutoSize = true;
-            wordLabel.Font = new Font("Arial", executingTest.ProgramInUse.StimuluSize, FontStyle.Bold);
-            wordLabel.Text = wordsList[wordCounter];
-            currentStimulus = wordsList[wordCounter];
-            wordLabel.Visible = true;
-            wordLabel.ForeColor = ColorTranslator.FromHtml(colorsList[colorCounter]);
-            wordLabel.Enabled = true;
-
             int[] screenPosition = ScreenPosition(wordLabel.PreferredSize);
             screenPosition = wordLabelWithinRange(screenPosition[X], screenPosition[Y]);
-            wordLabel.Location = new Point(screenPosition[X], screenPosition[Y]);
 
+            // configuring label that have word stimulus dimensions, color and position
+            ExpositionController.InitializeWordLabel(executingTest.ProgramInUse.FontSize, wordsList[wordCounter], colorsList[colorCounter], screenPosition);
+
+            currentStimulus = wordsList[wordCounter];
             wordCounter++;
+
             if(wordCounter == wordsList.Length)
             {
                 wordCounter = 0;
@@ -475,7 +469,6 @@ namespace TestPlatform.Views
             imgPictureBox.Location = new Point(screenPosition[X], screenPosition[Y]);
 
             currentStimulus = imagesList[imageCounter];
-            imgPictureBox.Enabled = true;
             imageCounter++;            
             if(imageCounter == imagesList.Length)
             {
@@ -488,13 +481,13 @@ namespace TestPlatform.Views
         {
             if (File.Exists(imagesAndWordsList[imageAndWordCounter])) //if it's a valid file, then it is an image
             {
-                imgPictureBox = new PictureBox();
-                imgPictureBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
+                imgPictureBox = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, Image.FromFile(imagesAndWordsList[imageAndWordCounter]));
                 int[] screenPosition = ScreenPosition(imgPictureBox.Size);
+
                 imgPictureBox.Location = new Point(screenPosition[X], screenPosition[Y]);
-                imgPictureBox.Image = Image.FromFile(imagesAndWordsList[imageAndWordCounter]);
+
                 currentStimulus = imagesAndWordsList[imageAndWordCounter];
-                imgPictureBox.Enabled = true;
+                
                 imageAndWordCounter++;
                 if (imageAndWordCounter == imagesAndWordsList.Length)
                 {
@@ -504,18 +497,11 @@ namespace TestPlatform.Views
             }
             else //if it's not a valid file, then it is a word.
             {
-                wordLabel = new System.Windows.Forms.Label();
-                wordLabel.AutoSize = true;
-                wordLabel.Font = new Font("Arial", executingTest.ProgramInUse.StimuluSize, FontStyle.Bold);
-                wordLabel.Text = imagesAndWordsList[imageAndWordCounter];
-                currentStimulus = imagesAndWordsList[imageAndWordCounter];
-                wordLabel.Visible = true;
-                wordLabel.ForeColor = ColorTranslator.FromHtml(colorsList[colorCounter]);
-                wordLabel.Enabled = true;
-
                 int[] screenPosition = ScreenPosition(wordLabel.PreferredSize);
                 screenPosition = wordLabelWithinRange(screenPosition[X], screenPosition[Y]);
-                wordLabel.Location = new Point(screenPosition[X], screenPosition[Y]);
+                wordLabel = ExpositionController.InitializeWordLabel(executingTest.ProgramInUse.FontSize, imagesAndWordsList[imageAndWordCounter], colorsList[colorCounter], screenPosition);
+               
+                currentStimulus = imagesAndWordsList[imageAndWordCounter];
 
                 imageAndWordCounter++;
                 if (imageAndWordCounter == imagesAndWordsList.Length)

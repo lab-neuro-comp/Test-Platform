@@ -37,11 +37,11 @@
             this.shapesGroupBox = new System.Windows.Forms.GroupBox();
             this.shapeRadioPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.fullSquareCheckBox = new System.Windows.Forms.CheckBox();
+            this.circleCheckBox = new System.Windows.Forms.CheckBox();
+            this.triangleCheckBox = new System.Windows.Forms.CheckBox();
             this.squareCheckBox = new System.Windows.Forms.CheckBox();
             this.fullCircleCheckBox = new System.Windows.Forms.CheckBox();
-            this.circleCheckBox = new System.Windows.Forms.CheckBox();
             this.fullTriangleCheckBox = new System.Windows.Forms.CheckBox();
-            this.triangleCheckBox = new System.Windows.Forms.CheckBox();
             this.helpButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -105,6 +105,8 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.fontSizeLabel = new System.Windows.Forms.Label();
+            this.fontSizeUpDown = new System.Windows.Forms.NumericUpDown();
             this.reactionConfigPanel.SuspendLayout();
             this.userResponse.SuspendLayout();
             this.shapesGroupBox.SuspendLayout();
@@ -121,6 +123,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fontSizeUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // reactionConfigPanel
@@ -192,6 +195,20 @@
             this.fullSquareCheckBox.Name = "fullSquareCheckBox";
             this.fullSquareCheckBox.UseVisualStyleBackColor = true;
             // 
+            // circleCheckBox
+            // 
+            resources.ApplyResources(this.circleCheckBox, "circleCheckBox");
+            this.circleCheckBox.Image = global::TestPlatform.Properties.Resources.circle1;
+            this.circleCheckBox.Name = "circleCheckBox";
+            this.circleCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // triangleCheckBox
+            // 
+            resources.ApplyResources(this.triangleCheckBox, "triangleCheckBox");
+            this.triangleCheckBox.Image = global::TestPlatform.Properties.Resources.triangle;
+            this.triangleCheckBox.Name = "triangleCheckBox";
+            this.triangleCheckBox.UseVisualStyleBackColor = true;
+            // 
             // squareCheckBox
             // 
             resources.ApplyResources(this.squareCheckBox, "squareCheckBox");
@@ -206,26 +223,12 @@
             this.fullCircleCheckBox.Name = "fullCircleCheckBox";
             this.fullCircleCheckBox.UseVisualStyleBackColor = true;
             // 
-            // circleCheckBox
-            // 
-            resources.ApplyResources(this.circleCheckBox, "circleCheckBox");
-            this.circleCheckBox.Image = global::TestPlatform.Properties.Resources.circle1;
-            this.circleCheckBox.Name = "circleCheckBox";
-            this.circleCheckBox.UseVisualStyleBackColor = true;
-            // 
             // fullTriangleCheckBox
             // 
             resources.ApplyResources(this.fullTriangleCheckBox, "fullTriangleCheckBox");
             this.fullTriangleCheckBox.Image = global::TestPlatform.Properties.Resources.fullTriangle;
             this.fullTriangleCheckBox.Name = "fullTriangleCheckBox";
             this.fullTriangleCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // triangleCheckBox
-            // 
-            resources.ApplyResources(this.triangleCheckBox, "triangleCheckBox");
-            this.triangleCheckBox.Image = global::TestPlatform.Properties.Resources.triangle;
-            this.triangleCheckBox.Name = "triangleCheckBox";
-            this.triangleCheckBox.UseVisualStyleBackColor = true;
             // 
             // helpButton
             // 
@@ -419,7 +422,6 @@
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // wordListLabel
             // 
@@ -483,6 +485,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.fontSizeLabel);
+            this.groupBox1.Controls.Add(this.fontSizeUpDown);
             this.groupBox1.Controls.Add(this.UniqueColorOption);
             this.groupBox1.Controls.Add(this.ColorListOption);
             this.groupBox1.Controls.Add(this.label7);
@@ -510,7 +514,6 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // UniqueColorOption
             // 
@@ -728,6 +731,11 @@
             0,
             0});
             resources.ApplyResources(this.stimuluSize, "stimuluSize");
+            this.stimuluSize.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.stimuluSize.Minimum = new decimal(new int[] {
             10,
             0,
@@ -785,6 +793,36 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // fontSizeLabel
+            // 
+            resources.ApplyResources(this.fontSizeLabel, "fontSizeLabel");
+            this.fontSizeLabel.Name = "fontSizeLabel";
+            // 
+            // fontSizeUpDown
+            // 
+            this.fontSizeUpDown.Increment = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            resources.ApplyResources(this.fontSizeUpDown, "fontSizeUpDown");
+            this.fontSizeUpDown.Maximum = new decimal(new int[] {
+            80,
+            0,
+            0,
+            0});
+            this.fontSizeUpDown.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.fontSizeUpDown.Name = "fontSizeUpDown";
+            this.fontSizeUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
             // FormTRConfig
             // 
             resources.ApplyResources(this, "$this");
@@ -818,6 +856,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fontSizeUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -900,5 +939,7 @@
         private System.Windows.Forms.RadioButton UniqueColorOption;
         private System.Windows.Forms.RadioButton ColorListOption;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label fontSizeLabel;
+        private System.Windows.Forms.NumericUpDown fontSizeUpDown;
     }
 }

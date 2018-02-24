@@ -898,13 +898,17 @@ namespace TestPlatform.Views.MatchingPages
                 modelExpositionAccumulative = accumulativeStopWatch.ElapsedMilliseconds;
             }
             
+            /*send mark keys*/
+            if (!cancelExposition)
+            {
+                SendKeys.SendWait(executingTest.Mark.ToString());
+            }
+
+            drawExposition();
+
             /*start reaction stopwatch*/
             hitStopWatch = new Stopwatch();
             hitStopWatch.Start();
-            /*send mark keys*/
-            SendKeys.SendWait(executingTest.Mark.ToString());
-
-            drawExposition();
 
             if (intervalCancelled)
             {
@@ -933,6 +937,7 @@ namespace TestPlatform.Views.MatchingPages
                         /* just wait for exposition time to be finished */
                     }
                 }
+                Console.Write(hitStopWatch.ElapsedMilliseconds + "\n");
             }
         }
 

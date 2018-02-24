@@ -22,7 +22,7 @@ namespace TestPlatform.Views.SidebarControls
                     Global.GlobalFormMain._contentPanel.Controls[0] is FormWordColorConfig)
                 {
                     DialogResult dialogResult = MessageBox.Show(LocRM.GetString("unsavedLists", currentCulture), LocRM.GetString("unsavedListsTitle", currentCulture), MessageBoxButtons.YesNo);
-                    if(dialogResult == DialogResult.Yes)
+                    if(dialogResult == DialogResult.No)
                     {
                         return true;
                     }

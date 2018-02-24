@@ -957,7 +957,6 @@ namespace TestPlatform
         {
             if (Validations.isExpoEnabled(openWordListButton) && !Validations.isLengthValid(text))
             {
-                Console.WriteLine(Validations.isExpoEnabled(openWordListButton));
                 errorMessage = LocRM.GetString("selectWord", currentCulture);
                 return false;
             }

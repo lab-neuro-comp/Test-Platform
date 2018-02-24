@@ -63,14 +63,14 @@ namespace TestPlatform
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            
             if (keyData == Keys.Escape)
             {
                 runExposition = false;
+                cts.Cancel();
+
                 this.Close();
                 this.Dispose();
                 this.DialogResult = DialogResult.Cancel;
-                throw new Exception(LocRM.GetString("expoCancel", currentCulture));
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }

@@ -796,6 +796,11 @@ namespace TestPlatform.Views.MatchingPages
                             nextImgIndex = rng.Next(imageList.Length);
                             if (noneImageLeft(imageCanBeUsed))
                             {
+                                for(int i = 0; i < imageCanBeUsed.Length; i++)
+                                {
+                                    if (i == count) continue;
+                                    imageCanBeUsed[i] = true;
+                                }
                                 break;
                             }
                         }

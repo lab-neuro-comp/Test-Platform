@@ -149,11 +149,11 @@
         {
             try
             {
-                MatchingExposition reactionExposition = new MatchingExposition(programName, participantName, mark);
-                reactionExposition.StartPosition = FormStartPosition.Manual;
-                reactionExposition.Location = Screen.AllScreens[ShowOnMonitor(form)].WorkingArea.Location;
+                MatchingExposition matchingExposition = new MatchingExposition(programName, participantName, mark);
+                matchingExposition.StartPosition = FormStartPosition.Manual;
+                matchingExposition.Location = Screen.AllScreens[ShowOnMonitor(form)].WorkingArea.Location;
                 SendKeys.SendWait("i");
-                reactionExposition.ShowDialog();
+                matchingExposition.ShowDialog();
             }
             catch (Exception ex)
             {

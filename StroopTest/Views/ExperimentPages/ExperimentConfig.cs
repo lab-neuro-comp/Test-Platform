@@ -48,6 +48,10 @@ namespace TestPlatform.Views.ExperimentPages
                     {
                         programDataGridView.Rows[row].SetValues(row + 1, program.ProgramName, LocRM.GetString("reactionTest", currentCulture));
                     }
+                    else if (program.GetType() == typeof(MatchingProgram))
+                    {
+                        programDataGridView.Rows[row].SetValues(row + 1, program.ProgramName, LocRM.GetString("matchingTest", currentCulture));
+                    }
                 }
             }
             else
@@ -62,6 +66,10 @@ namespace TestPlatform.Views.ExperimentPages
                     else if (program.GetType() == typeof(ReactionProgram))
                     {
                         programDataGridView.Rows[row].SetValues(LocRM.GetString("random", currentCulture), program.ProgramName, LocRM.GetString("reactionTest", currentCulture));
+                    }
+                    else if (program.GetType() == typeof(MatchingProgram))
+                    {
+                        programDataGridView.Rows[row].SetValues(LocRM.GetString("random", currentCulture), program.ProgramName, LocRM.GetString("matchingTest", currentCulture));
                     }
                 }
                 if (savingExperiment.TrainingProgram)
@@ -128,7 +136,10 @@ namespace TestPlatform.Views.ExperimentPages
                 {
                     savingExperiment.AddReactionProgram(result[1]);
                 }
-
+                else if (result[0] == LocRM.GetString("matchingTest", currentCulture))
+                {
+                    savingExperiment.AddMatchingProgram(result[1]);
+                }
                 else
                 {
                     /*do nothing*/

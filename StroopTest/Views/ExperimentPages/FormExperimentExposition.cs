@@ -82,6 +82,10 @@ namespace TestPlatform.Views.ExperimentPages
                 {
                     ExpositionController.BeginReactionTest(program.ProgramName, executingTest.ParticipantName, executingTest.Mark, this);
                 }
+                else if (program.GetType() == typeof(MatchingProgram))
+                {
+                    ExpositionController.BeginMatchingTest(program.ProgramName, executingTest.ParticipantName, executingTest.Mark, this);
+                }
                 executingTest.writeLineOutput(index, program);                
             }
             Program.writeOutputFile(outputFile, string.Join("\n", executingTest.Output.ToArray()));

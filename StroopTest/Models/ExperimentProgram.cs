@@ -156,6 +156,20 @@
             return true;
         }
 
+        public bool AddMatchingProgram(string programName)
+        {
+            try
+            {
+                MatchingProgram newProgram = new MatchingProgram(Global.matchingTestFilesPath + Global.programFolderName + programName + ".prg");
+                ProgramList.Add(newProgram);
+            }
+            catch (FileNotFoundException)
+            {
+                return false;
+            }
+            return true;
+        }
+
         private string Data()
         {
             string experimentData = this.ExperimentName + " " + this.intervalTime + " " + this.isOrderRandom + " " + this.trainingProgram;
@@ -175,6 +189,11 @@
                 {
                     stringList = stringList + program.ProgramName + " ReactionProgram ";
                 }
+                else if (program.GetType() == typeof(MatchingProgram))
+                {
+                    stringList = stringList + program.ProgramName + " MatchingProgram ";
+                }
+
             }
             return stringList;
         }
@@ -220,6 +239,10 @@
                     else if (listConfiguration[i] == "ReactionProgram")
                     {
                         isProgramValid = AddReactionProgram(listConfiguration[i - 1]);
+                    }
+                    else if (listConfiguration[i] == "MatchingProgram")
+                    {
+                        isProgramValid = AddMatchingProgram(listConfiguration[i - 1]);
                     }
                 }
 

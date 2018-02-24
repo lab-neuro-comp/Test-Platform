@@ -259,6 +259,39 @@ namespace TestPlatform.Views.MatchingPages
             {
                 this.errorProvider1.SetError(this.expositionType, "");
             }
+            if (this.expositionType.SelectedIndex == 0)
+            {
+                label8.Enabled = true;
+                DMTSColorPanel.Enabled = true;
+                DMTSBackgroundColor.Enabled = true;
+                DMTSBackground.Enabled = true;
+                label9.Enabled = false;
+                DNMTSColorPanel.Enabled = false;
+                DNMTSBackgroundColor.Enabled = false;
+                DNMTSBackground.Enabled = false;
+            }
+            else if (this.expositionType.SelectedIndex == 1)
+            {
+                label8.Enabled = false;
+                DMTSColorPanel.Enabled = false;
+                DMTSBackgroundColor.Enabled = false;
+                DMTSBackground.Enabled = false;
+                label9.Enabled = true;
+                DNMTSColorPanel.Enabled = true;
+                DNMTSBackgroundColor.Enabled = true;
+                DNMTSBackground.Enabled = true;
+            }
+            else if (this.expositionType.SelectedIndex == 2)
+            {
+                label8.Enabled = true;
+                DMTSColorPanel.Enabled = true;
+                DMTSBackgroundColor.Enabled = true;
+                DMTSBackground.Enabled = true;
+                label9.Enabled = true;
+                DNMTSColorPanel.Enabled = true;
+                DNMTSBackgroundColor.Enabled = true;
+                DNMTSBackground.Enabled = true;
+            }
         }
 
         private void ExpoDisposition_Validating(object sender, CancelEventArgs e)

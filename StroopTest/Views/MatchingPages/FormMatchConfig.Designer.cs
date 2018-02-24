@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMatchConfig));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.othersGroupBox = new System.Windows.Forms.GroupBox();
             this.colorGroupBox = new System.Windows.Forms.GroupBox();
             this.DNMTSColorPanel = new System.Windows.Forms.Panel();
@@ -82,7 +83,6 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.colorGroupBox.SuspendLayout();
             this.timeGroupBox.SuspendLayout();
@@ -115,6 +115,12 @@
             this.panel1.Controls.Add(this.instructionsLabel);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Name = "label10";
             // 
             // othersGroupBox
             // 
@@ -595,12 +601,6 @@
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Name = "label10";
             // 
             // FormMatchConfig
             // 

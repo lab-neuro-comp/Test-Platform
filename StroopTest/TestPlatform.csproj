@@ -528,6 +528,9 @@
     <EmbeddedResource Include="Views\MatchingPages\FormMatchConfig.en-US.resx">
       <DependentUpon>FormMatchConfig.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\MatchingPages\FormMatchConfig.es-ES.resx">
+      <DependentUpon>FormMatchConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MatchingPages\FormMatchConfig.pt-BR.resx">
       <DependentUpon>FormMatchConfig.cs</DependentUpon>
     </EmbeddedResource>

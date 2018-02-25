@@ -938,7 +938,7 @@ namespace TestPlatform.Views
 
         private void openColorListButton_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (openImgListButton.Enabled)
+            if (openColorListButton.Enabled)
             {
                 listValidating(openColorListButton, sender, e);
             }

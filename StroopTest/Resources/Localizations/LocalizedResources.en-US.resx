@@ -1100,8 +1100,8 @@ To upgrade, the new version installation file must be run in the same folder as 
   <data name="open" xml:space="preserve">
     <value>open</value>
   </data>
-  <data name="wordListError" xml:space="preserve">
-    <value>Choose a word list</value>
+  <data name="listError" xml:space="preserve">
+    <value>Choose a list</value>
   </data>
   <data name="arrowDown" xml:space="preserve">
     <value>arrowDown</value>

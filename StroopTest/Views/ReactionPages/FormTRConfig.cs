@@ -715,6 +715,33 @@ namespace TestPlatform.Views
             }
         }
 
+        private void beepDuration_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidBeepDuration(beepDuration.Value, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.beepDuration, errorMsg);
+            }
+        }
+
+        public bool ValidBeepDuration(decimal duration, out string errorMessage)
+        {
+            if (duration <= 0)
+            {
+                errorMessage = LocRM.GetString("beepDuration", currentCulture);
+                return false;
+            }
+
+            errorMessage = "";
+            return true;
+        }
+
+        private void beepDuration_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(this.beepDuration, "");
+        }
+
         private void chooseExpoType_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (chooseExpoType.SelectedIndex) {
@@ -739,6 +766,8 @@ namespace TestPlatform.Views
                     }
                     //disable unused buttons
                     openImgListButton.Enabled = false;
+                    openAudioListButton.Enabled = false;
+                    openAudioListButton.Text = LocRM.GetString("open", currentCulture);
                     openImgListButton.Text = LocRM.GetString("open", currentCulture);
                     openWordListButton.Enabled = false;
                     openWordListButton.Text = LocRM.GetString("open", currentCulture);
@@ -765,6 +794,8 @@ namespace TestPlatform.Views
                     }
                     //disable unused buttons
                     openImgListButton.Enabled = false;
+                    openAudioListButton.Enabled = false;
+                    LocRM.GetString("open", currentCulture);
                     openImgListButton.Text = LocRM.GetString("open", currentCulture);
                     break;
                 //Images exposition
@@ -785,6 +816,8 @@ namespace TestPlatform.Views
                     openColorListButton.Text = LocRM.GetString("open", currentCulture);
                     stimulusColor.Enabled = false;
                     stimulusColor.Text = LocRM.GetString("choose", currentCulture);
+                    openAudioListButton.Enabled = false;
+                    LocRM.GetString("open", currentCulture);
                     break;
                 //Images and word expositions
                 case 3:
@@ -794,6 +827,7 @@ namespace TestPlatform.Views
                     isRandomExposition.Enabled = true;
                     openWordListButton.Enabled = true;
                     ColorListOption.Enabled = true;
+                    stimuluSize.Enabled = true;
                     UniqueColorOption.Enabled = true;
                     if (ColorListOption.Checked)
                     {
@@ -806,6 +840,31 @@ namespace TestPlatform.Views
                         openColorListButton.Enabled = false;
                     }
                     openImgListButton.Enabled = true;
+                    openAudioListButton.Enabled = false;
+                    LocRM.GetString("open", currentCulture);
+                    break;
+                // word with audio exposition
+                case 4:
+                    errorProvider1.Clear();
+                    fontSizeUpDown.Enabled = true;
+                    shapesGroupBox.Enabled = false;
+                    stimuluSize.Enabled = false;
+                    isRandomExposition.Enabled = true;
+                    openWordListButton.Enabled = true;
+                    ColorListOption.Enabled = true;
+                    UniqueColorOption.Enabled = true;
+                    openAudioListButton.Enabled = true;
+                    if (ColorListOption.Checked)
+                    {
+                        stimulusColor.Enabled = false;
+                        openColorListButton.Enabled = true;
+                    }
+                    else
+                    {
+                        stimulusColor.Enabled = true;
+                        openColorListButton.Enabled = false;
+                    }
+                    openImgListButton.Enabled = false;
                     break;
                 default:
                     errorProvider1.SetError(chooseExpoType, LocRM.GetString("unavailableExpo", currentCulture));
@@ -817,11 +876,9 @@ namespace TestPlatform.Views
         private void openImgListButton_Validating(object sender,
                                      System.ComponentModel.CancelEventArgs e)
         {
-            string errorMsg;
-            if (!ValidopenImgListButton(openImgListButton.Text, out errorMsg))
+            if (openImgListButton.Enabled)
             {
-                e.Cancel = true;
-                this.errorProvider1.SetError(this.openImgListButton, errorMsg);
+                listValidating(openImgListButton, sender, e);
             }
         }
 
@@ -830,73 +887,42 @@ namespace TestPlatform.Views
             errorProvider1.SetError(this.openImgListButton, "");
         }
 
-        public bool ValidopenImgListButton(string text, out string errorMessage)
+        public bool ValidList(string buttonText, out string errorMessage)
         {
-            if (Validations.isExpoEnabled(openImgListButton) && !Validations.isLengthValid(text))
-            {
-                errorMessage = LocRM.GetString("selectImage", currentCulture);
-                return false;
-            }
-
-            errorMessage = "";
-            return true;
-        }
-
-        private void beepDuration_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            string errorMsg;
-            if (!ValidBeepDuration(beepDuration.Value, out errorMsg))
-            {
-                e.Cancel = true;
-                this.errorProvider1.SetError(this.beepDuration, errorMsg);
-            }
-        }
-
-        public bool ValidBeepDuration(decimal duration, out string errorMessage)
-        {
-            if (duration <= 0)
-            {
-                errorMessage = LocRM.GetString("beepDuration",currentCulture);
-                return false;
-            }
-
-            errorMessage = "";
-            return true;
-        }
-
-        private void beepDuration_Validated(object sender, EventArgs e)
-        {
-            errorProvider1.SetError(this.beepDuration, "");
-        }
-
-        private void openWordListButton_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (openWordListButton.Enabled)
-            {
-                string errorMsg;
-                if (ValidWordList(openWordListButton.Text, out errorMsg))
-                {
-                    //do nothing
-                }
-                else
-                {
-                    e.Cancel = true;
-                    this.errorProvider1.SetError(this.openWordListButton, errorMsg);
-                }
-            }
-        }
-
-        public bool ValidWordList(string buttonText, out string errorMessage)
-        {
-            if (buttonText.Length != 0 && buttonText != LocRM.GetString("open", currentCulture))
+            if ( buttonText.Length != 0 && buttonText != LocRM.GetString("open", currentCulture))
             {
                 errorMessage = "";
                 return true;
             }
             else
             {
-                errorMessage = LocRM.GetString("wordListError", currentCulture);
+                errorMessage = LocRM.GetString("listError", currentCulture);
                 return false;
+            }
+        }
+
+        private void openWordListButton_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (openWordListButton.Enabled)
+            {
+                listValidating(openWordListButton, sender, e);
+            }
+        }
+
+        public void listValidating(Button listButton, object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (listButton.Enabled)
+            {
+                string errorMsg;
+                if (ValidList(listButton.Text, out errorMsg))
+                {
+                    //do nothing
+                }
+                else
+                {
+                    e.Cancel = true;
+                    this.errorProvider1.SetError(listButton, errorMsg);
+                }
             }
         }
 
@@ -905,59 +931,30 @@ namespace TestPlatform.Views
             errorProvider1.SetError(this.openWordListButton, "");
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void openColorListButton_Validated(object sender, EventArgs e)
         {
-
+            errorProvider1.SetError(this.openColorListButton, "");
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void openColorListButton_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            if (openImgListButton.Enabled)
+            {
+                listValidating(openColorListButton, sender, e);
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void openAudioListButton_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            if (openAudioListButton.Enabled)
+            {
+                listValidating(openAudioListButton, sender, e);
+            }
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void openAudioListButton_Validated(object sender, EventArgs e)
         {
-
-        }
-
-        private void numExpoLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void positionLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void wordSizeLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void stimulusColorPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void beepDuration_ValueChanged(object sender, EventArgs e)
-        {
-
+            errorProvider1.SetError(this.openAudioListButton, "");
         }
 
         private void ColorListOption_CheckedChanged(object sender, EventArgs e)
@@ -1011,29 +1008,5 @@ namespace TestPlatform.Views
             catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
-        private void groupBox6_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fixPointColorLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fixPointColorPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

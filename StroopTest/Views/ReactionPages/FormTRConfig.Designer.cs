@@ -43,27 +43,27 @@
             this.fullCircleCheckBox = new System.Windows.Forms.CheckBox();
             this.fullTriangleCheckBox = new System.Windows.Forms.CheckBox();
             this.helpButton = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.fixPointGroupBox = new System.Windows.Forms.GroupBox();
+            this.crossPanel = new System.Windows.Forms.Panel();
+            this.circlePanel = new System.Windows.Forms.Panel();
             this.fixPointTypeLabel = new System.Windows.Forms.Label();
             this.fixPointCross = new System.Windows.Forms.CheckBox();
             this.fixPointColorLabel = new System.Windows.Forms.Label();
             this.fixPointCircle = new System.Windows.Forms.CheckBox();
             this.fixPointColorButton = new System.Windows.Forms.Button();
             this.fixPointColorPanel = new System.Windows.Forms.Panel();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.othersGroupBox = new System.Windows.Forms.GroupBox();
             this.bgColorPanel = new System.Windows.Forms.Panel();
             this.bgColorLabel = new System.Windows.Forms.Label();
             this.bgColorButton = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.timeGroupBox = new System.Windows.Forms.GroupBox();
             this.rndIntervalCheck = new System.Windows.Forms.CheckBox();
             this.rndIntervalLabel = new System.Windows.Forms.Label();
             this.intervalTimeLabel = new System.Windows.Forms.Label();
             this.intervalTime = new System.Windows.Forms.NumericUpDown();
             this.expoTime = new System.Windows.Forms.NumericUpDown();
             this.expoTimeLabel = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.S = new System.Windows.Forms.GroupBox();
             this.wordListLabel = new System.Windows.Forms.Label();
             this.audioListLabel = new System.Windows.Forms.Label();
             this.openAudioListButton = new System.Windows.Forms.Button();
@@ -73,11 +73,13 @@
             this.openColorListButton = new System.Windows.Forms.Button();
             this.openImgListButton = new System.Windows.Forms.Button();
             this.instructionsBox = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.expositionGroupBox = new System.Windows.Forms.GroupBox();
+            this.fontSizeLabel = new System.Windows.Forms.Label();
+            this.fontSizeUpDown = new System.Windows.Forms.NumericUpDown();
             this.UniqueColorOption = new System.Windows.Forms.RadioButton();
             this.ColorListOption = new System.Windows.Forms.RadioButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.stimulusColorTypeLabel = new System.Windows.Forms.Label();
+            this.randomOrderLabel = new System.Windows.Forms.Label();
             this.isRandomExposition = new System.Windows.Forms.CheckBox();
             this.positionsBox = new System.Windows.Forms.ComboBox();
             this.positionLabel = new System.Windows.Forms.Label();
@@ -87,43 +89,40 @@
             this.stimulusDistance = new System.Windows.Forms.NumericUpDown();
             this.chooseExpoType = new System.Windows.Forms.ComboBox();
             this.stimulusColorPanel = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.stimulusColorLabel = new System.Windows.Forms.Label();
             this.stimulusColor = new System.Windows.Forms.Button();
             this.beepDuration = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.beepDurationLabel = new System.Windows.Forms.Label();
+            this.useBeepLabel = new System.Windows.Forms.Label();
             this.beepingCheckbox = new System.Windows.Forms.CheckBox();
             this.numExpoLabel = new System.Windows.Forms.Label();
             this.numExpo = new System.Windows.Forms.NumericUpDown();
             this.wordSizeLabel = new System.Windows.Forms.Label();
             this.stimuluSize = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
+            this.screenDistanceLabel = new System.Windows.Forms.Label();
             this.instructionsLabel = new System.Windows.Forms.Label();
             this.prgNameTextBox = new System.Windows.Forms.TextBox();
             this.prgNameLabel = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.fontSizeLabel = new System.Windows.Forms.Label();
-            this.fontSizeUpDown = new System.Windows.Forms.NumericUpDown();
             this.reactionConfigPanel.SuspendLayout();
             this.userResponse.SuspendLayout();
             this.shapesGroupBox.SuspendLayout();
             this.shapeRadioPanel.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.fixPointGroupBox.SuspendLayout();
+            this.othersGroupBox.SuspendLayout();
+            this.timeGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expoTime)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.S.SuspendLayout();
+            this.expositionGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fontSizeUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beepDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fontSizeUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // reactionConfigPanel
@@ -133,12 +132,12 @@
             this.reactionConfigPanel.Controls.Add(this.userResponse);
             this.reactionConfigPanel.Controls.Add(this.shapesGroupBox);
             this.reactionConfigPanel.Controls.Add(this.helpButton);
-            this.reactionConfigPanel.Controls.Add(this.groupBox6);
-            this.reactionConfigPanel.Controls.Add(this.groupBox5);
-            this.reactionConfigPanel.Controls.Add(this.groupBox3);
-            this.reactionConfigPanel.Controls.Add(this.groupBox2);
+            this.reactionConfigPanel.Controls.Add(this.fixPointGroupBox);
+            this.reactionConfigPanel.Controls.Add(this.othersGroupBox);
+            this.reactionConfigPanel.Controls.Add(this.timeGroupBox);
+            this.reactionConfigPanel.Controls.Add(this.S);
             this.reactionConfigPanel.Controls.Add(this.instructionsBox);
-            this.reactionConfigPanel.Controls.Add(this.groupBox1);
+            this.reactionConfigPanel.Controls.Add(this.expositionGroupBox);
             this.reactionConfigPanel.Controls.Add(this.instructionsLabel);
             this.reactionConfigPanel.Controls.Add(this.prgNameTextBox);
             this.reactionConfigPanel.Controls.Add(this.prgNameLabel);
@@ -239,36 +238,33 @@
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
-            // groupBox6
+            // fixPointGroupBox
             // 
-            this.groupBox6.Controls.Add(this.panel3);
-            this.groupBox6.Controls.Add(this.panel2);
-            this.groupBox6.Controls.Add(this.fixPointTypeLabel);
-            this.groupBox6.Controls.Add(this.fixPointCross);
-            this.groupBox6.Controls.Add(this.fixPointColorLabel);
-            this.groupBox6.Controls.Add(this.fixPointCircle);
-            this.groupBox6.Controls.Add(this.fixPointColorButton);
-            this.groupBox6.Controls.Add(this.fixPointColorPanel);
-            resources.ApplyResources(this.groupBox6, "groupBox6");
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
+            this.fixPointGroupBox.Controls.Add(this.crossPanel);
+            this.fixPointGroupBox.Controls.Add(this.circlePanel);
+            this.fixPointGroupBox.Controls.Add(this.fixPointTypeLabel);
+            this.fixPointGroupBox.Controls.Add(this.fixPointCross);
+            this.fixPointGroupBox.Controls.Add(this.fixPointColorLabel);
+            this.fixPointGroupBox.Controls.Add(this.fixPointCircle);
+            this.fixPointGroupBox.Controls.Add(this.fixPointColorButton);
+            this.fixPointGroupBox.Controls.Add(this.fixPointColorPanel);
+            resources.ApplyResources(this.fixPointGroupBox, "fixPointGroupBox");
+            this.fixPointGroupBox.Name = "fixPointGroupBox";
+            this.fixPointGroupBox.TabStop = false;
             // 
-            // panel3
+            // crossPanel
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = global::TestPlatform.Properties.Resources.cross;
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Name = "panel3";
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.crossPanel.BackColor = System.Drawing.Color.Transparent;
+            this.crossPanel.BackgroundImage = global::TestPlatform.Properties.Resources.cross;
+            resources.ApplyResources(this.crossPanel, "crossPanel");
+            this.crossPanel.Name = "crossPanel";
             // 
-            // panel2
+            // circlePanel
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::TestPlatform.Properties.Resources.circle;
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.circlePanel.BackColor = System.Drawing.Color.Transparent;
+            this.circlePanel.BackgroundImage = global::TestPlatform.Properties.Resources.circle;
+            resources.ApplyResources(this.circlePanel, "circlePanel");
+            this.circlePanel.Name = "circlePanel";
             // 
             // fixPointTypeLabel
             // 
@@ -287,7 +283,6 @@
             // 
             resources.ApplyResources(this.fixPointColorLabel, "fixPointColorLabel");
             this.fixPointColorLabel.Name = "fixPointColorLabel";
-            this.fixPointColorLabel.Click += new System.EventHandler(this.fixPointColorLabel_Click);
             // 
             // fixPointCircle
             // 
@@ -302,7 +297,6 @@
             resources.ApplyResources(this.fixPointColorButton, "fixPointColorButton");
             this.fixPointColorButton.Name = "fixPointColorButton";
             this.fixPointColorButton.UseVisualStyleBackColor = true;
-            this.fixPointColorButton.Click += new System.EventHandler(this.fixPointColorButton_Click);
             // 
             // fixPointColorPanel
             // 
@@ -310,16 +304,15 @@
             this.fixPointColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.fixPointColorPanel, "fixPointColorPanel");
             this.fixPointColorPanel.Name = "fixPointColorPanel";
-            this.fixPointColorPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.fixPointColorPanel_Paint);
             // 
-            // groupBox5
+            // othersGroupBox
             // 
-            this.groupBox5.Controls.Add(this.bgColorPanel);
-            this.groupBox5.Controls.Add(this.bgColorLabel);
-            this.groupBox5.Controls.Add(this.bgColorButton);
-            resources.ApplyResources(this.groupBox5, "groupBox5");
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.TabStop = false;
+            this.othersGroupBox.Controls.Add(this.bgColorPanel);
+            this.othersGroupBox.Controls.Add(this.bgColorLabel);
+            this.othersGroupBox.Controls.Add(this.bgColorButton);
+            resources.ApplyResources(this.othersGroupBox, "othersGroupBox");
+            this.othersGroupBox.Name = "othersGroupBox";
+            this.othersGroupBox.TabStop = false;
             // 
             // bgColorPanel
             // 
@@ -339,17 +332,17 @@
             this.bgColorButton.UseVisualStyleBackColor = true;
             this.bgColorButton.Click += new System.EventHandler(this.chooseBGColor);
             // 
-            // groupBox3
+            // timeGroupBox
             // 
-            this.groupBox3.Controls.Add(this.rndIntervalCheck);
-            this.groupBox3.Controls.Add(this.rndIntervalLabel);
-            this.groupBox3.Controls.Add(this.intervalTimeLabel);
-            this.groupBox3.Controls.Add(this.intervalTime);
-            this.groupBox3.Controls.Add(this.expoTime);
-            this.groupBox3.Controls.Add(this.expoTimeLabel);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.TabStop = false;
+            this.timeGroupBox.Controls.Add(this.rndIntervalCheck);
+            this.timeGroupBox.Controls.Add(this.rndIntervalLabel);
+            this.timeGroupBox.Controls.Add(this.intervalTimeLabel);
+            this.timeGroupBox.Controls.Add(this.intervalTime);
+            this.timeGroupBox.Controls.Add(this.expoTime);
+            this.timeGroupBox.Controls.Add(this.expoTimeLabel);
+            resources.ApplyResources(this.timeGroupBox, "timeGroupBox");
+            this.timeGroupBox.Name = "timeGroupBox";
+            this.timeGroupBox.TabStop = false;
             // 
             // rndIntervalCheck
             // 
@@ -409,19 +402,19 @@
             resources.ApplyResources(this.expoTimeLabel, "expoTimeLabel");
             this.expoTimeLabel.Name = "expoTimeLabel";
             // 
-            // groupBox2
+            // S
             // 
-            this.groupBox2.Controls.Add(this.wordListLabel);
-            this.groupBox2.Controls.Add(this.audioListLabel);
-            this.groupBox2.Controls.Add(this.openAudioListButton);
-            this.groupBox2.Controls.Add(this.colorListLabel);
-            this.groupBox2.Controls.Add(this.imgListLabel);
-            this.groupBox2.Controls.Add(this.openWordListButton);
-            this.groupBox2.Controls.Add(this.openColorListButton);
-            this.groupBox2.Controls.Add(this.openImgListButton);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
+            this.S.Controls.Add(this.wordListLabel);
+            this.S.Controls.Add(this.audioListLabel);
+            this.S.Controls.Add(this.openAudioListButton);
+            this.S.Controls.Add(this.colorListLabel);
+            this.S.Controls.Add(this.imgListLabel);
+            this.S.Controls.Add(this.openWordListButton);
+            this.S.Controls.Add(this.openColorListButton);
+            this.S.Controls.Add(this.openImgListButton);
+            resources.ApplyResources(this.S, "S");
+            this.S.Name = "S";
+            this.S.TabStop = false;
             // 
             // wordListLabel
             // 
@@ -439,6 +432,8 @@
             this.openAudioListButton.Name = "openAudioListButton";
             this.openAudioListButton.UseVisualStyleBackColor = true;
             this.openAudioListButton.Click += new System.EventHandler(this.openAudioList_Click);
+            this.openAudioListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openAudioListButton_Validating);
+            this.openAudioListButton.Validated += new System.EventHandler(this.openAudioListButton_Validated);
             // 
             // colorListLabel
             // 
@@ -465,6 +460,8 @@
             this.openColorListButton.Name = "openColorListButton";
             this.openColorListButton.UseVisualStyleBackColor = true;
             this.openColorListButton.Click += new System.EventHandler(this.openColorsList_Click);
+            this.openColorListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openColorListButton_Validating);
+            this.openColorListButton.Validated += new System.EventHandler(this.openColorListButton_Validated);
             // 
             // openImgListButton
             // 
@@ -483,37 +480,67 @@
             this.instructionsBox.Name = "instructionsBox";
             this.instructionsBox.TextChanged += new System.EventHandler(this.instructionsBox_TextChanged);
             // 
-            // groupBox1
+            // expositionGroupBox
             // 
-            this.groupBox1.Controls.Add(this.fontSizeLabel);
-            this.groupBox1.Controls.Add(this.fontSizeUpDown);
-            this.groupBox1.Controls.Add(this.UniqueColorOption);
-            this.groupBox1.Controls.Add(this.ColorListOption);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.isRandomExposition);
-            this.groupBox1.Controls.Add(this.positionsBox);
-            this.groupBox1.Controls.Add(this.positionLabel);
-            this.groupBox1.Controls.Add(this.randomBeepLabel);
-            this.groupBox1.Controls.Add(this.randomBeepCheck);
-            this.groupBox1.Controls.Add(this.expoTypeLabel);
-            this.groupBox1.Controls.Add(this.stimulusDistance);
-            this.groupBox1.Controls.Add(this.chooseExpoType);
-            this.groupBox1.Controls.Add(this.stimulusColorPanel);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.stimulusColor);
-            this.groupBox1.Controls.Add(this.beepDuration);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.beepingCheckbox);
-            this.groupBox1.Controls.Add(this.numExpoLabel);
-            this.groupBox1.Controls.Add(this.numExpo);
-            this.groupBox1.Controls.Add(this.wordSizeLabel);
-            this.groupBox1.Controls.Add(this.stimuluSize);
-            this.groupBox1.Controls.Add(this.label5);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
+            this.expositionGroupBox.Controls.Add(this.fontSizeLabel);
+            this.expositionGroupBox.Controls.Add(this.fontSizeUpDown);
+            this.expositionGroupBox.Controls.Add(this.UniqueColorOption);
+            this.expositionGroupBox.Controls.Add(this.ColorListOption);
+            this.expositionGroupBox.Controls.Add(this.stimulusColorTypeLabel);
+            this.expositionGroupBox.Controls.Add(this.randomOrderLabel);
+            this.expositionGroupBox.Controls.Add(this.isRandomExposition);
+            this.expositionGroupBox.Controls.Add(this.positionsBox);
+            this.expositionGroupBox.Controls.Add(this.positionLabel);
+            this.expositionGroupBox.Controls.Add(this.randomBeepLabel);
+            this.expositionGroupBox.Controls.Add(this.randomBeepCheck);
+            this.expositionGroupBox.Controls.Add(this.expoTypeLabel);
+            this.expositionGroupBox.Controls.Add(this.stimulusDistance);
+            this.expositionGroupBox.Controls.Add(this.chooseExpoType);
+            this.expositionGroupBox.Controls.Add(this.stimulusColorPanel);
+            this.expositionGroupBox.Controls.Add(this.stimulusColorLabel);
+            this.expositionGroupBox.Controls.Add(this.stimulusColor);
+            this.expositionGroupBox.Controls.Add(this.beepDuration);
+            this.expositionGroupBox.Controls.Add(this.beepDurationLabel);
+            this.expositionGroupBox.Controls.Add(this.useBeepLabel);
+            this.expositionGroupBox.Controls.Add(this.beepingCheckbox);
+            this.expositionGroupBox.Controls.Add(this.numExpoLabel);
+            this.expositionGroupBox.Controls.Add(this.numExpo);
+            this.expositionGroupBox.Controls.Add(this.wordSizeLabel);
+            this.expositionGroupBox.Controls.Add(this.stimuluSize);
+            this.expositionGroupBox.Controls.Add(this.screenDistanceLabel);
+            resources.ApplyResources(this.expositionGroupBox, "expositionGroupBox");
+            this.expositionGroupBox.Name = "expositionGroupBox";
+            this.expositionGroupBox.TabStop = false;
+            // 
+            // fontSizeLabel
+            // 
+            resources.ApplyResources(this.fontSizeLabel, "fontSizeLabel");
+            this.fontSizeLabel.Name = "fontSizeLabel";
+            // 
+            // fontSizeUpDown
+            // 
+            this.fontSizeUpDown.Increment = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            resources.ApplyResources(this.fontSizeUpDown, "fontSizeUpDown");
+            this.fontSizeUpDown.Maximum = new decimal(new int[] {
+            80,
+            0,
+            0,
+            0});
+            this.fontSizeUpDown.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.fontSizeUpDown.Name = "fontSizeUpDown";
+            this.fontSizeUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // UniqueColorOption
             // 
@@ -531,17 +558,15 @@
             this.ColorListOption.UseVisualStyleBackColor = true;
             this.ColorListOption.CheckedChanged += new System.EventHandler(this.ColorListOption_CheckedChanged);
             // 
-            // label7
+            // stimulusColorTypeLabel
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            resources.ApplyResources(this.stimulusColorTypeLabel, "stimulusColorTypeLabel");
+            this.stimulusColorTypeLabel.Name = "stimulusColorTypeLabel";
             // 
-            // label6
+            // randomOrderLabel
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            resources.ApplyResources(this.randomOrderLabel, "randomOrderLabel");
+            this.randomOrderLabel.Name = "randomOrderLabel";
             // 
             // isRandomExposition
             // 
@@ -568,7 +593,6 @@
             // 
             resources.ApplyResources(this.positionLabel, "positionLabel");
             this.positionLabel.Name = "positionLabel";
-            this.positionLabel.Click += new System.EventHandler(this.positionLabel_Click);
             // 
             // randomBeepLabel
             // 
@@ -636,13 +660,11 @@
             this.stimulusColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.stimulusColorPanel, "stimulusColorPanel");
             this.stimulusColorPanel.Name = "stimulusColorPanel";
-            this.stimulusColorPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.stimulusColorPanel_Paint);
             // 
-            // label4
+            // stimulusColorLabel
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            resources.ApplyResources(this.stimulusColorLabel, "stimulusColorLabel");
+            this.stimulusColorLabel.Name = "stimulusColorLabel";
             // 
             // stimulusColor
             // 
@@ -665,21 +687,18 @@
             0,
             0});
             this.beepDuration.Name = "beepDuration";
-            this.beepDuration.ValueChanged += new System.EventHandler(this.beepDuration_ValueChanged);
             this.beepDuration.Validating += new System.ComponentModel.CancelEventHandler(this.beepDuration_Validating);
             this.beepDuration.Validated += new System.EventHandler(this.beepDuration_Validated);
             // 
-            // label3
+            // beepDurationLabel
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            resources.ApplyResources(this.beepDurationLabel, "beepDurationLabel");
+            this.beepDurationLabel.Name = "beepDurationLabel";
             // 
-            // label1
+            // useBeepLabel
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            resources.ApplyResources(this.useBeepLabel, "useBeepLabel");
+            this.useBeepLabel.Name = "useBeepLabel";
             // 
             // beepingCheckbox
             // 
@@ -693,7 +712,6 @@
             // 
             resources.ApplyResources(this.numExpoLabel, "numExpoLabel");
             this.numExpoLabel.Name = "numExpoLabel";
-            this.numExpoLabel.Click += new System.EventHandler(this.numExpoLabel_Click);
             // 
             // numExpo
             // 
@@ -721,7 +739,6 @@
             // 
             resources.ApplyResources(this.wordSizeLabel, "wordSizeLabel");
             this.wordSizeLabel.Name = "wordSizeLabel";
-            this.wordSizeLabel.Click += new System.EventHandler(this.wordSizeLabel_Click);
             // 
             // stimuluSize
             // 
@@ -748,11 +765,10 @@
             0,
             0});
             // 
-            // label5
+            // screenDistanceLabel
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            resources.ApplyResources(this.screenDistanceLabel, "screenDistanceLabel");
+            this.screenDistanceLabel.Name = "screenDistanceLabel";
             // 
             // instructionsLabel
             // 
@@ -793,36 +809,6 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
-            // fontSizeLabel
-            // 
-            resources.ApplyResources(this.fontSizeLabel, "fontSizeLabel");
-            this.fontSizeLabel.Name = "fontSizeLabel";
-            // 
-            // fontSizeUpDown
-            // 
-            this.fontSizeUpDown.Increment = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            resources.ApplyResources(this.fontSizeUpDown, "fontSizeUpDown");
-            this.fontSizeUpDown.Maximum = new decimal(new int[] {
-            80,
-            0,
-            0,
-            0});
-            this.fontSizeUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.fontSizeUpDown.Name = "fontSizeUpDown";
-            this.fontSizeUpDown.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
             // FormTRConfig
             // 
             resources.ApplyResources(this, "$this");
@@ -839,24 +825,24 @@
             this.shapesGroupBox.ResumeLayout(false);
             this.shapeRadioPanel.ResumeLayout(false);
             this.shapeRadioPanel.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.fixPointGroupBox.ResumeLayout(false);
+            this.fixPointGroupBox.PerformLayout();
+            this.othersGroupBox.ResumeLayout(false);
+            this.othersGroupBox.PerformLayout();
+            this.timeGroupBox.ResumeLayout(false);
+            this.timeGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervalTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.expoTime)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.S.ResumeLayout(false);
+            this.S.PerformLayout();
+            this.expositionGroupBox.ResumeLayout(false);
+            this.expositionGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fontSizeUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beepDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fontSizeUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -866,25 +852,25 @@
 
         private System.Windows.Forms.Panel reactionConfigPanel;
         private System.Windows.Forms.Button helpButton;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.GroupBox fixPointGroupBox;
+        private System.Windows.Forms.Panel crossPanel;
+        private System.Windows.Forms.Panel circlePanel;
         private System.Windows.Forms.Label fixPointTypeLabel;
         private System.Windows.Forms.CheckBox fixPointCross;
         private System.Windows.Forms.Label fixPointColorLabel;
         private System.Windows.Forms.CheckBox fixPointCircle;
         private System.Windows.Forms.Button fixPointColorButton;
         private System.Windows.Forms.Panel fixPointColorPanel;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox othersGroupBox;
         private System.Windows.Forms.Panel bgColorPanel;
         private System.Windows.Forms.Label bgColorLabel;
         private System.Windows.Forms.Button bgColorButton;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox timeGroupBox;
         private System.Windows.Forms.Label intervalTimeLabel;
         private System.Windows.Forms.NumericUpDown intervalTime;
         private System.Windows.Forms.NumericUpDown expoTime;
         private System.Windows.Forms.Label expoTimeLabel;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox S;
         private System.Windows.Forms.Label wordListLabel;
         private System.Windows.Forms.Label audioListLabel;
         private System.Windows.Forms.Button openAudioListButton;
@@ -894,7 +880,7 @@
         private System.Windows.Forms.Button openColorListButton;
         private System.Windows.Forms.Button openImgListButton;
         private System.Windows.Forms.TextBox instructionsBox;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox expositionGroupBox;
         private System.Windows.Forms.Label numExpoLabel;
         private System.Windows.Forms.NumericUpDown numExpo;
         private System.Windows.Forms.Label wordSizeLabel;
@@ -902,17 +888,17 @@
         private System.Windows.Forms.Label instructionsLabel;
         private System.Windows.Forms.TextBox prgNameTextBox;
         private System.Windows.Forms.Label prgNameLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label useBeepLabel;
         private System.Windows.Forms.CheckBox beepingCheckbox;
         private System.Windows.Forms.NumericUpDown beepDuration;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label beepDurationLabel;
         private System.Windows.Forms.Panel stimulusColorPanel;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label stimulusColorLabel;
         private System.Windows.Forms.Button stimulusColor;
         private System.Windows.Forms.Label expoTypeLabel;
         private System.Windows.Forms.ComboBox chooseExpoType;
         private System.Windows.Forms.NumericUpDown stimulusDistance;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label screenDistanceLabel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
@@ -933,12 +919,11 @@
         private System.Windows.Forms.CheckBox triangleCheckBox;
         private System.Windows.Forms.ComboBox responseTypeBox;
         private System.Windows.Forms.ComboBox positionsBox;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label randomOrderLabel;
         private System.Windows.Forms.CheckBox isRandomExposition;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label stimulusColorTypeLabel;
         private System.Windows.Forms.RadioButton UniqueColorOption;
         private System.Windows.Forms.RadioButton ColorListOption;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label fontSizeLabel;
         private System.Windows.Forms.NumericUpDown fontSizeUpDown;
     }

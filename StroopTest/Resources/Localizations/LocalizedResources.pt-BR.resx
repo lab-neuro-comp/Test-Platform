@@ -1445,7 +1445,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>Alterações não-salvas</value>
   </data>
   <data name="unsavedLists" xml:space="preserve">
-    <value>Você tem listas que podem ter alterações não guardadas. Qualquer alteração não guardada será perdida se você continuar. Deseja continuar?</value>
+    <value>Pode haver mudanças não-salvas na lista que está sendo editada. deseja grava-las?</value>
   </data>
   <data name="unsavedListsTitle" xml:space="preserve">
     <value>Listas não-salvas</value>

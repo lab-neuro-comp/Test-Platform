@@ -193,10 +193,15 @@
                 SendKeys.SendWait("i");
                 experimentExposition.Show();
             }
+            catch (ObjectDisposedException)
+            {
+                /*do nothing*/
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private static int ShowOnMonitor(Form form)

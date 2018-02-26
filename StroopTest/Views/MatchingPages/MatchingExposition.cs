@@ -890,9 +890,15 @@ namespace TestPlatform.Views.MatchingPages
         {
             int time;
             /*wait interval between attempts*/
-            if(!userClickedStimulu)
+            if (!userClickedStimulu)
+            {
                 attemptIntervalTime = waitIntervalTime(executingTest.ProgramInUse.IntervalTimeRandom,
-                executingTest.ProgramInUse.AttemptsIntervalTime);
+                    executingTest.ProgramInUse.AttemptsIntervalTime);
+            }
+            else
+            {
+                attemptIntervalTime = 0;
+            }
             /*set exposition accumulative time and test exposition time*/
             executingTest.ExpositionTime = DateTime.Now;
             if (showModel)

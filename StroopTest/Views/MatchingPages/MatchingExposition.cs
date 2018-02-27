@@ -675,6 +675,7 @@ namespace TestPlatform.Views.MatchingPages
 
             outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.ProgramName + ".txt";
             startExposition();
+            this.ShowDialog();
         }
 
         private void startExposition()

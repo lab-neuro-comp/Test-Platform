@@ -30,6 +30,7 @@ namespace TestPlatform.Views.ExperimentPages
             executingTest.Mark = mark;
             outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.Name + ".txt";
             startExposition();
+            this.ShowDialog();
         }
 
         private async void startExposition()

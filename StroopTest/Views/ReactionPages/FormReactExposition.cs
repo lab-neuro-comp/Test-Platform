@@ -90,6 +90,7 @@ namespace TestPlatform.Views
 
             outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.ProgramName + ".txt";
             startExposition();
+            this.ShowDialog();
         }
 
 

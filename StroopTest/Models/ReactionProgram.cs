@@ -236,9 +236,9 @@ namespace TestPlatform.Models
         /// This constructor is used to create a reaction program of the type word with audio
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int intervalTime,
-                                int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
-                                string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom, bool beepRandom, int numberPositions,
-                                string responseType, string colorList, bool hasColorList, int fontSize, string audioListFile, string wordListFile)
+                                int stimulusDistance, string stimulusColor,
+                                string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom, int numberPositions,
+                                string responseType, string colorList, bool hasColorList, bool isExpositionRandom,int fontSize, string audioListFile, string wordListFile)
         {
 
             // ReactionProgram properties
@@ -248,9 +248,6 @@ namespace TestPlatform.Models
             this.FontSize = fontSize;
 
             this.stimulusDistance = stimulusDistance;
-            this.isBeeping = isBeeping;
-            this.beepDuration = beepDuration;
-            this.BeepingRandom = beepRandom;
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
             this.hasColorList = hasColorList;
@@ -268,8 +265,10 @@ namespace TestPlatform.Models
             //default configurations for word with audio version of ReactionProgram
             this.stimuluSize = 10;
             this.setImageListFile("false");
-            this.expositionRandom = false;
             this.stimuluShape = "false";
+            this.beepDuration = 0;
+            this.BeepingRandom = false;
+            this.IsBeeping = false;
 
             // Program properties
             this.programName = programName;
@@ -280,8 +279,50 @@ namespace TestPlatform.Models
             this.backgroundColor = backgroundColor;
             this.fixPointColor = fixPointColor;
             this.intervalTimeRandom = intervalTimeRandom;
+            this.expositionRandom = isExpositionRandom;
         }
 
+        /// <summary>
+        /// This constructor is used to create a reaction program of the type image with audio
+        /// </summary>
+        public ReactionProgram(string programName, int expositionTime, int numExpositions, int intervalTime,
+                                int stimulusDistance,
+                                string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom, int numberPositions,
+                                string responseType, int stimulusSize, bool isExpositionRandom,string audioListFile, string imageListFile)
+        {
+
+            // ReactionProgram properties
+            this.expositionType = "imageWithAudio";
+            this.setImageListFile(imageListFile);
+            this.setAudioListFile(audioListFile);
+            this.StimuluSize = stimulusSize;
+
+            this.stimulusDistance = stimulusDistance;
+            this.ResponseType = responseType;
+            this.NumberPositions = numberPositions;
+
+            //default configurations for image with audio version of ReactionProgram
+            this.fontSize = 10;
+            this.setColorListFile("false");
+            this.setWordListFile("false");
+            this.stimuluShape = "false";
+            this.BeepingRandom = false;
+            this.isBeeping = false;
+            this.beepDuration = 0;
+            this.hasColorList = false;
+            this.stimulusColor = "false";
+
+            // Program properties
+            this.programName = programName;
+            this.expositionTime = expositionTime;
+            this.numExpositions = numExpositions;
+            this.intervalTime = intervalTime;
+            this.fixPoint = fixPoint;
+            this.backgroundColor = backgroundColor;
+            this.fixPointColor = fixPointColor;
+            this.expositionRandom = isExpositionRandom;
+            this.intervalTimeRandom = intervalTimeRandom;
+        }
 
         public int StimuluSize
         {

@@ -43,7 +43,6 @@ namespace TestPlatform.Views
         private string[] imagesList = null;
         private string[] wordsList = null;
         private string[] audioList = null;
-        private string[] imagesAndWordsList = null;
         private string[] colorsList = null;
         private int imageCounter = 0;
         private int audioCounter = 0;
@@ -183,18 +182,6 @@ namespace TestPlatform.Views
                         wordsList = ExpositionController.ShuffleArray(wordsList, wordsList.Length, 9);
                         imagesList = ExpositionController.ShuffleArray(imagesList, wordsList.Length, 10);
                         colorsList = ExpositionController.ShuffleArray(colorsList, executingTest.ProgramInUse.NumExpositions, 3);
-                        if (rnd.Next() % 2 == 0)
-                        {
-                            imagesAndWordsList = ExpositionController.mergeLists(wordsList, imagesList, executingTest.ProgramInUse.ExpositionRandom);
-                        }
-                        else
-                        {
-                            imagesAndWordsList = ExpositionController.mergeLists(imagesList, wordsList, executingTest.ProgramInUse.ExpositionRandom);
-                        }
-                    }
-                    else
-                    {
-                        imagesAndWordsList = ExpositionController.mergeLists(imagesList, wordsList, executingTest.ProgramInUse.ExpositionRandom);
                     }
                     break;
                 case "wordWithAudio":
@@ -212,6 +199,15 @@ namespace TestPlatform.Views
                     {
                         wordsList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumExpositions, 9);
                         colorsList = ExpositionController.ShuffleArray(colorsList, executingTest.ProgramInUse.NumExpositions, 3);
+                        audioList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumExpositions, 9);
+                    }
+                    break;
+                case "imageWithAudio":
+                    imagesList = executingTest.ProgramInUse.getImageListFile().ListContent.ToArray();
+                    audioList = executingTest.ProgramInUse.getAudioListFile().ListContent.ToArray();
+                    if (executingTest.ProgramInUse.ExpositionRandom)
+                    {
+                        imagesList = ExpositionController.ShuffleArray(imagesList, executingTest.ProgramInUse.NumExpositions, 3);
                         audioList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumExpositions, 9);
                     }
                     break;
@@ -557,7 +553,8 @@ namespace TestPlatform.Views
                     playAudio();
                     break;
                 case "imageWithAudio":
-                    // TODO
+                    drawImage();
+                    playAudio();
                     break;
                 default:
                     throw new Exception(LocRM.GetString("expoType", currentCulture) + executingTest.ProgramInUse.ExpositionType + LocRM.GetString("invalid", currentCulture));

@@ -430,15 +430,18 @@ namespace TestPlatform.Views
                 // Program type "wordWithAudio"
                 case 4:
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(intervalTime.Value),
-                               Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
-                                fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, randomBeepCheck.Checked, Convert.ToInt32(positionsBox.Text),
-                                responseType(), openColorListButton.Text, ColorListOption.Checked, Convert.ToInt32(fontSizeUpDown.Value), openAudioListButton.Text, openWordListButton.Text);
+                               Convert.ToInt32(stimulusDistance.Value), stimulusColorCheck(),
+                                fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, Convert.ToInt32(positionsBox.Text),
+                                responseType(), openColorListButton.Text, ColorListOption.Checked, isRandomExposition.Checked, Convert.ToInt32(fontSizeUpDown.Value), openAudioListButton.Text, openWordListButton.Text);
 
                     break;
                 
                 // Program type "imageWithAudio"
                 case 5:
-                    // TODO: Add ReactionProgram constructor to "imageWithAudio" type here
+                    newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(intervalTime.Value),
+                               Convert.ToInt32(stimulusDistance.Value),
+                                fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, Convert.ToInt32(positionsBox.Text),
+                                responseType(), Convert.ToInt32(stimuluSize.Value), isRandomExposition.Checked, openAudioListButton.Text, openImgListButton.Text);
                     break;
                 
                 // invalid type was choosen
@@ -899,6 +902,26 @@ namespace TestPlatform.Views
                     beepingCheckbox.Checked = false;
                     openImgListButton.Enabled = false;
 
+                    break;
+                // image with audio exposition
+                case 5:
+                    errorProvider1.Clear();
+                    stimuluSize.Enabled = true;
+                    isRandomExposition.Enabled = true;
+                    openAudioListButton.Enabled = true;
+                    openImgListButton.Enabled = true;
+
+                    beepDuration.Enabled = false;
+                    randomBeepCheck.Enabled = false;
+                    randomBeepCheck.Checked = false;
+                    beepingCheckbox.Enabled = false;
+                    openWordListButton.Enabled = false;
+                    ColorListOption.Enabled = false;
+                    UniqueColorOption.Enabled = false;
+                    beepingCheckbox.Checked = false;
+                    fontSizeUpDown.Enabled = false;
+                    shapesGroupBox.Enabled = false;
+                    stimulusColor.Enabled = false;
                     break;
                 default:
                     errorProvider1.SetError(chooseExpoType, LocRM.GetString("unavailableExpo", currentCulture));

@@ -636,6 +636,11 @@ namespace TestPlatform.Views
                     if (expositionBW.CancellationPending)
                     {
                         hitStopWatch.Stop();
+                        if (Player.SoundLocation != null)
+                        {
+                            Player.Stop();
+                            Player = new SoundPlayer();
+                        }
                         e.Cancel = true;
                         break;
                     }
@@ -644,6 +649,12 @@ namespace TestPlatform.Views
                         /* just wait for exposition time to be finished */
                     }
                 }
+            }
+
+            if (Player.SoundLocation != null)
+            {
+                Player.Stop();
+                Player = new SoundPlayer();
             }
         }
 
@@ -662,6 +673,7 @@ namespace TestPlatform.Views
                 if (ActiveForm != null)
                 {
                     this.CreateGraphics().Clear(ActiveForm.BackColor);
+
                 }
                 // if expositions type uses any kind of control to show stimulus such as a word label or image picture box 
                 if (currentControl != null)
@@ -679,12 +691,6 @@ namespace TestPlatform.Views
             else
             {
                 /*do nothing*/
-            }
-
-            if (Player.SoundLocation != null)
-            {
-                Player.Stop();
-                Player = new SoundPlayer();
             }
 
             if ((e.Cancelled == true) && !intervalCancelled)

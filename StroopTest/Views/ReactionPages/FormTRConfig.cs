@@ -711,11 +711,14 @@ namespace TestPlatform.Views
             if (beepingCheckbox.Checked)
             {
                 beepDuration.Enabled = true;
+                randomBeepCheck.Enabled = true;
             }
             else
             {
                 beepDuration.Value = 0;
                 beepDuration.Enabled = false;
+                randomBeepCheck.Checked = false;
+                randomBeepCheck.Enabled = false;
             }
         }
 
@@ -768,6 +771,11 @@ namespace TestPlatform.Views
                         stimulusColor.Enabled = true;
                         openColorListButton.Enabled = false;
                     }
+                    beepDuration.Enabled = false;
+                    randomBeepCheck.Enabled = false;
+                    beepingCheckbox.Enabled = true;
+                    beepingCheckbox.Checked = false;
+
                     //disable unused buttons
                     openImgListButton.Enabled = false;
                     openAudioListButton.Enabled = false;
@@ -796,9 +804,10 @@ namespace TestPlatform.Views
                         stimulusColor.Enabled = true;
                         openColorListButton.Enabled = false;
                     }
-                    beepDuration.Enabled = true;
-                    randomBeepCheck.Enabled = true;
+                    beepDuration.Enabled = false;
+                    randomBeepCheck.Enabled = false;
                     beepingCheckbox.Enabled = true;
+                    beepingCheckbox.Checked = false;
 
                     //disable unused buttons
                     openImgListButton.Enabled = false;
@@ -826,9 +835,12 @@ namespace TestPlatform.Views
                     stimulusColor.Text = LocRM.GetString("choose", currentCulture);
                     openAudioListButton.Enabled = false;
                     LocRM.GetString("open", currentCulture);
-                    beepDuration.Enabled = true;
-                    randomBeepCheck.Enabled = true;
+                    beepDuration.Enabled = false;
+                    randomBeepCheck.Enabled = false;
                     beepingCheckbox.Enabled = true;
+                    beepingCheckbox.Checked = false;
+
+
                     break;
                 //Images and word expositions
                 case 3:
@@ -852,9 +864,11 @@ namespace TestPlatform.Views
                     }
                     openImgListButton.Enabled = true;
                     openAudioListButton.Enabled = false;
-                    beepDuration.Enabled = true;
-                    randomBeepCheck.Enabled = true;
+                    beepDuration.Enabled = false;
+                    randomBeepCheck.Enabled = false;
                     beepingCheckbox.Enabled = true;
+                    beepingCheckbox.Checked = false;
+
                     LocRM.GetString("open", currentCulture);
                     break;
                 // word with audio exposition

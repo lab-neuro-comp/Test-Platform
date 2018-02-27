@@ -58,8 +58,8 @@ namespace TestPlatform.Views
         private int imageAndWordCounter = 0;
         private System.Windows.Forms.Label wordLabel = new System.Windows.Forms.Label();
         private Control currentControl = null;
-        private string currentAudio;
-        SoundPlayer Player = new SoundPlayer();
+        private SoundPlayer Player = new SoundPlayer();
+        private string currentColor = "false";
 
         public FormReactExposition(string prgName, string participantName, char mark)
         {
@@ -443,6 +443,7 @@ namespace TestPlatform.Views
         private void drawShape()
         {
             List<string> shapes = executingTest.ProgramInUse.StimuluShape.Split(',').ToList();
+            currentColor = colorsList[colorCounter];
             if (shapes.Count == 1)
             {
                 singleShapeExposition(shapes[0]);
@@ -460,15 +461,16 @@ namespace TestPlatform.Views
             singleShapeExposition(shapes[index]);
         }
 
-        private void wordExposition()
+        private void drawWord()
         {
             int[] screenPosition = ScreenPosition(wordLabel.PreferredSize);
             screenPosition = wordLabelWithinRange(screenPosition[X], screenPosition[Y]);
 
             // configuring label that have word stimulus dimensions, color and position
-            ExpositionController.InitializeWordLabel(executingTest.ProgramInUse.FontSize, wordsList[wordCounter], colorsList[colorCounter], screenPosition);
+            wordLabel = ExpositionController.InitializeWordLabel(executingTest.ProgramInUse.FontSize, wordsList[wordCounter], colorsList[colorCounter], screenPosition);
 
             currentStimulus = wordsList[wordCounter];
+            currentColor = colorsList[colorCounter];
             wordCounter++;
 
             if(wordCounter == wordsList.Length)
@@ -500,7 +502,8 @@ namespace TestPlatform.Views
 
         private void playAudio()
         {
-            currentStimulus += "    audio: " + audioList[audioCounter];
+            string currentAudio = audioList[audioCounter];
+            currentStimulus += "    audio: " + currentAudio;
             Player.SoundLocation = currentAudio;
             audioCounter++;
             if (audioCounter == audioList.Length)
@@ -563,7 +566,7 @@ namespace TestPlatform.Views
                     drawShape();
                     break;
                 case "words":
-                    wordExposition();
+                    drawWord();
                     break;
                 case "images":
                     drawImage();
@@ -572,7 +575,7 @@ namespace TestPlatform.Views
                     imageWordExposition();
                     break;
                 case "wordWithAudio":
-                    wordExposition();
+                    drawWord();
                     playAudio();
                     break;
                 case "imageWithAudio":
@@ -713,21 +716,21 @@ namespace TestPlatform.Views
             {
                 /* user clicked after stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds,
-                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition), currentBeep);
+                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition), currentBeep, currentColor);
             }
 
             else if ((e.Cancelled == true) && intervalCancelled)
             {
                 /* user clicked before stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, intervalElapsedTime - intervalShouldBe,
-                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition), currentBeep);
+                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition), currentBeep, currentColor);
             }
             else
             {
                 /* user missed stimulus */
                 executingTest.CurrentResponse = "NA";
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition),
-                                                currentBeep);
+                                                currentBeep, currentColor);
                 hitStopWatch.Stop();
             }
             expositionBW.Dispose();

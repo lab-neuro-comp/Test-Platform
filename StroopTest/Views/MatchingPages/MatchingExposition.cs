@@ -673,8 +673,8 @@ namespace TestPlatform.Views.MatchingPages
             executingTest.Mark = mark;
             stimuluPictureBox = new List<Control>();
             outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.ProgramName + ".txt";
-            this.Show();
             startExposition();
+            this.ShowDialog();
         }
 
         private void startExposition()

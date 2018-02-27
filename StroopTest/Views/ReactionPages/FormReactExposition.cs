@@ -88,8 +88,8 @@ namespace TestPlatform.Views
                                              } // on right bottom of the screen                                             
                                      }; 
             outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.ProgramName + ".txt";
-            this.Show();
             startExposition();
+            this.ShowDialog();
         }
 
 

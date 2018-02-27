@@ -147,7 +147,7 @@ namespace TestPlatform.Models
             }
         }
 
-        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, string currentStimulus, string position, bool beeped)
+        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, string currentStimulus, string position, bool beeped, string currentColor)
         {
             /* This variable keeps data from an exposition to only one stimulus, being them:
              * programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\trespostaUsuario\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep
@@ -161,7 +161,7 @@ namespace TestPlatform.Models
                        ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" + reactTime.ToString() +
                         "\t" + intervalTime.ToString() + "\t" + intervalShouldBe.ToString() + "\t" + expositionAccumulative + "\t" +
                         ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + position + "\t" +  CurrentResponse  + "\t"+ ProgramInUse.ExpositionType + "\t" +
-                        currentStimulus + "\t" + ProgramInUse.StimulusColor + "\t" + beeped.ToString();
+                        currentStimulus + "\t" + currentColor + "\t" + beeped.ToString();
              Output.Add(text); 
              
         }

@@ -30,6 +30,8 @@ namespace TestPlatform.Views
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private static int X = 0;
         private static int Y = 1;
+        private static int IMAGE = 0;
+        private static int WORD = 1;
         private int intervalElapsedTime;
         private int intervalShouldBe;
         private long expositionAccumulative;
@@ -40,9 +42,10 @@ namespace TestPlatform.Views
         private bool cancelExposition = false;
         private string[] imagesList = null;
         private string[] wordsList = null;
-        private string[] imagesAndWordsList = null;
+        private string[] audioList = null;
         private string[] colorsList = null;
         private int imageCounter = 0;
+        private int audioCounter = 0;
         private PictureBox imgPictureBox = new PictureBox();
         private bool exposing = false;
         private string currentStimulus = null;
@@ -53,9 +56,11 @@ namespace TestPlatform.Views
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private int wordCounter = 0;
         private int colorCounter = 0;
-        private int imageAndWordCounter = 0;
+        private int lastType = 1;
         private System.Windows.Forms.Label wordLabel = new System.Windows.Forms.Label();
         private Control currentControl = null;
+        private SoundPlayer Player = new SoundPlayer();
+        private string currentColor = "false";
 
         public FormReactExposition(string prgName, string participantName, char mark)
         {
@@ -177,20 +182,34 @@ namespace TestPlatform.Views
                         wordsList = ExpositionController.ShuffleArray(wordsList, wordsList.Length, 9);
                         imagesList = ExpositionController.ShuffleArray(imagesList, wordsList.Length, 10);
                         colorsList = ExpositionController.ShuffleArray(colorsList, executingTest.ProgramInUse.NumExpositions, 3);
-                        if (rnd.Next() % 2 == 0)
-                        {
-                            imagesAndWordsList = ExpositionController.mergeLists(wordsList, imagesList, executingTest.ProgramInUse.ExpositionRandom);
-                        }
-                        else
-                        {
-                            imagesAndWordsList = ExpositionController.mergeLists(imagesList, wordsList, executingTest.ProgramInUse.ExpositionRandom);
-                        }
                     }
-                    else
+                    break;
+                case "wordWithAudio":
+                    wordsList = executingTest.ProgramInUse.getWordListFile().ListContent.ToArray();
+                    audioList = executingTest.ProgramInUse.getAudioListFile().ListContent.ToArray();
+                    if (executingTest.ProgramInUse.StimulusColor == "false") //if stimulusColor is false then there exists a color list
                     {
-                        imagesAndWordsList = ExpositionController.mergeLists(imagesList, wordsList, executingTest.ProgramInUse.ExpositionRandom);
+                        colorsList = executingTest.ProgramInUse.getColorListFile().ListContent.ToArray();
                     }
-
+                    else //if stimulusColor isn't false then there is no color list
+                    {
+                        colorsList = new string[] { executingTest.ProgramInUse.StimulusColor };
+                    }
+                    if (executingTest.ProgramInUse.ExpositionRandom)
+                    {
+                        wordsList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumExpositions, 9);
+                        colorsList = ExpositionController.ShuffleArray(colorsList, executingTest.ProgramInUse.NumExpositions, 3);
+                        audioList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumExpositions, 9);
+                    }
+                    break;
+                case "imageWithAudio":
+                    imagesList = executingTest.ProgramInUse.getImageListFile().ListContent.ToArray();
+                    audioList = executingTest.ProgramInUse.getAudioListFile().ListContent.ToArray();
+                    if (executingTest.ProgramInUse.ExpositionRandom)
+                    {
+                        imagesList = ExpositionController.ShuffleArray(imagesList, executingTest.ProgramInUse.NumExpositions, 3);
+                        audioList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumExpositions, 9);
+                    }
                     break;
             }
         }
@@ -422,6 +441,7 @@ namespace TestPlatform.Views
         private void drawShape()
         {
             List<string> shapes = executingTest.ProgramInUse.StimuluShape.Split(',').ToList();
+            currentColor = colorsList[colorCounter];
             if (shapes.Count == 1)
             {
                 singleShapeExposition(shapes[0]);
@@ -439,15 +459,16 @@ namespace TestPlatform.Views
             singleShapeExposition(shapes[index]);
         }
 
-        private void wordExposition()
+        private void drawWord()
         {
             int[] screenPosition = ScreenPosition(wordLabel.PreferredSize);
             screenPosition = wordLabelWithinRange(screenPosition[X], screenPosition[Y]);
 
             // configuring label that have word stimulus dimensions, color and position
-            ExpositionController.InitializeWordLabel(executingTest.ProgramInUse.FontSize, wordsList[wordCounter], colorsList[colorCounter], screenPosition);
+            wordLabel = ExpositionController.InitializeWordLabel(executingTest.ProgramInUse.FontSize, wordsList[wordCounter], colorsList[colorCounter], screenPosition);
 
             currentStimulus = wordsList[wordCounter];
+            currentColor = colorsList[colorCounter];
             wordCounter++;
 
             if(wordCounter == wordsList.Length)
@@ -477,45 +498,34 @@ namespace TestPlatform.Views
             expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.NumExpositions * 100, imgPictureBox);
         }
 
+        private void playAudio()
+        {
+            string currentAudio = audioList[audioCounter];
+            currentStimulus += "    audio: " + currentAudio;
+            Player.SoundLocation = currentAudio;
+            audioCounter++;
+            if (audioCounter == audioList.Length)
+            {
+                audioCounter = 0;
+            }
+            Player.Play();
+        }
+
+        // image and word expositions take turns accordingly to the last stimulus shown to user
         private void imageWordExposition()
         {
-            if (File.Exists(imagesAndWordsList[imageAndWordCounter])) //if it's a valid file, then it is an image
+            if(lastType == WORD)
             {
-                imgPictureBox = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, Image.FromFile(imagesAndWordsList[imageAndWordCounter]));
-                int[] screenPosition = ScreenPosition(imgPictureBox.Size);
-
-                imgPictureBox.Location = new Point(screenPosition[X], screenPosition[Y]);
-
-                currentStimulus = imagesAndWordsList[imageAndWordCounter];
-                
-                imageAndWordCounter++;
-                if (imageAndWordCounter == imagesAndWordsList.Length)
-                {
-                    imageAndWordCounter = 0;
-                }
-                expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.NumExpositions * 100, imgPictureBox);
+                drawImage();
+                lastType = IMAGE;
+                currentColor = "false";
             }
-            else //if it's not a valid file, then it is a word.
+            else if (lastType == IMAGE)
             {
-                int[] screenPosition = ScreenPosition(wordLabel.PreferredSize);
-                screenPosition = wordLabelWithinRange(screenPosition[X], screenPosition[Y]);
-                wordLabel = ExpositionController.InitializeWordLabel(executingTest.ProgramInUse.FontSize, imagesAndWordsList[imageAndWordCounter], colorsList[colorCounter], screenPosition);
-               
-                currentStimulus = imagesAndWordsList[imageAndWordCounter];
-
-                imageAndWordCounter++;
-                if (imageAndWordCounter == imagesAndWordsList.Length)
-                {
-                    imageAndWordCounter = 0;
-                }
-                colorCounter++;
-                if (colorCounter == colorsList.Length)
-                {
-                    colorCounter = 0;
-                }
-                expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.NumExpositions * 100, wordLabel);
+                drawWord();
+                lastType = WORD;
             }
-       }
+        }
 
         private void showStimulus()
         {
@@ -530,7 +540,7 @@ namespace TestPlatform.Views
                     drawShape();
                     break;
                 case "words":
-                    wordExposition();
+                    drawWord();
                     break;
                 case "images":
                     drawImage();
@@ -539,10 +549,13 @@ namespace TestPlatform.Views
                     imageWordExposition();
                     break;
                 case "wordWithAudio":
-                    // wordAudioExposition();
+                    drawWord();
+                    playAudio();
                     break;
                 case "imageWithAudio":
-                    // imageAudioExposition();
+                    drawImage();
+                    playAudio();
+                    break;
                 default:
                     throw new Exception(LocRM.GetString("expoType", currentCulture) + executingTest.ProgramInUse.ExpositionType + LocRM.GetString("invalid", currentCulture));
 
@@ -623,6 +636,11 @@ namespace TestPlatform.Views
                     if (expositionBW.CancellationPending)
                     {
                         hitStopWatch.Stop();
+                        if (Player.SoundLocation != null)
+                        {
+                            Player.Stop();
+                            Player = new SoundPlayer();
+                        }
                         e.Cancel = true;
                         break;
                     }
@@ -631,6 +649,12 @@ namespace TestPlatform.Views
                         /* just wait for exposition time to be finished */
                     }
                 }
+            }
+
+            if (Player.SoundLocation != null)
+            {
+                Player.Stop();
+                Player = new SoundPlayer();
             }
         }
 
@@ -645,9 +669,11 @@ namespace TestPlatform.Views
         {
             if (!cancelExposition)
             {
-                if(ActiveForm != null)
-                { 
+                // cleaning screen
+                if (ActiveForm != null)
+                {
                     this.CreateGraphics().Clear(ActiveForm.BackColor);
+
                 }
                 // if expositions type uses any kind of control to show stimulus such as a word label or image picture box 
                 if (currentControl != null)
@@ -666,26 +692,26 @@ namespace TestPlatform.Views
             {
                 /*do nothing*/
             }
-            
+
             if ((e.Cancelled == true) && !intervalCancelled)
             {
                 /* user clicked after stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds,
-                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition), currentBeep);
+                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition), currentBeep, currentColor);
             }
 
             else if ((e.Cancelled == true) && intervalCancelled)
             {
                 /* user clicked before stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, intervalElapsedTime - intervalShouldBe,
-                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition), currentBeep);
+                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition), currentBeep, currentColor);
             }
             else
             {
                 /* user missed stimulus */
                 executingTest.CurrentResponse = "NA";
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition),
-                                                currentBeep);
+                                                currentBeep, currentColor);
                 hitStopWatch.Stop();
             }
             expositionBW.Dispose();

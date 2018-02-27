@@ -29,6 +29,7 @@ namespace TestPlatform.Views.ExperimentPages
             executingTest.ProgramInUse.ReadProgramFile();
             executingTest.Mark = mark;
             outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.Name + ".txt";
+            this.Show();
             startExposition();
         }
 
@@ -81,6 +82,10 @@ namespace TestPlatform.Views.ExperimentPages
                 else if (program.GetType() == typeof(ReactionProgram))
                 {
                     ExpositionController.BeginReactionTest(program.ProgramName, executingTest.ParticipantName, executingTest.Mark, this);
+                }
+                else if (program.GetType() == typeof(MatchingProgram))
+                {
+                    ExpositionController.BeginMatchingTest(program.ProgramName, executingTest.ParticipantName, executingTest.Mark, this);
                 }
                 executingTest.writeLineOutput(index, program);                
             }

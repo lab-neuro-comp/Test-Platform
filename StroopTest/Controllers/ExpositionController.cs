@@ -117,11 +117,8 @@
         {
             try
             {
-                FormExposition ormExposition = new FormExposition(programName, participantName, mark);
-                ormExposition.StartPosition = FormStartPosition.Manual;
-                ormExposition.Location = Screen.AllScreens[ShowOnMonitor(form)].WorkingArea.Location;
-                SendKeys.SendWait("i");                
-                var dialogResult = ormExposition.ShowDialog();
+                SendKeys.SendWait("i");
+                FormExposition formExposition = new FormExposition(programName, participantName, mark);
             }
             catch (Exception ex)
             {
@@ -133,11 +130,8 @@
         {
             try
             {
-                FormReactExposition reactionExposition = new FormReactExposition(programName, participantName, mark);
-                reactionExposition.StartPosition = FormStartPosition.Manual;
-                reactionExposition.Location = Screen.AllScreens[ShowOnMonitor(form)].WorkingArea.Location;
                 SendKeys.SendWait("i");
-                reactionExposition.ShowDialog();
+                FormReactExposition reactionExposition = new FormReactExposition(programName, participantName, mark);
             }
             catch (Exception ex)
             {
@@ -149,11 +143,8 @@
         {
             try
             {
-                MatchingExposition reactionExposition = new MatchingExposition(programName, participantName, mark);
-                reactionExposition.StartPosition = FormStartPosition.Manual;
-                reactionExposition.Location = Screen.AllScreens[ShowOnMonitor(form)].WorkingArea.Location;
                 SendKeys.SendWait("i");
-                reactionExposition.ShowDialog();
+                MatchingExposition matchingExposition = new MatchingExposition(programName, participantName, mark);
             }
             catch (Exception ex)
             {
@@ -187,16 +178,14 @@
         {
             try
             {
-                FormExperimentExposition experimentExposition = new FormExperimentExposition(programName, participantName, mark);
-                experimentExposition.StartPosition = FormStartPosition.Manual;
-                experimentExposition.Location = Screen.AllScreens[ShowOnMonitor(form)].WorkingArea.Location;
                 SendKeys.SendWait("i");
-                experimentExposition.Show();
+                FormExperimentExposition experimentExposition = new FormExperimentExposition(programName, participantName, mark);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private static int ShowOnMonitor(Form form)

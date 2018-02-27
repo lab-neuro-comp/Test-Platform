@@ -59,6 +59,7 @@ namespace TestPlatform
             currentTest.Mark = mark;
             currentTest.InitialDate = DateTime.Now;
             startExpo();
+            this.ShowDialog();
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

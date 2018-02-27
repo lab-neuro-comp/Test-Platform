@@ -246,6 +246,7 @@ namespace TestPlatform.Views.ListsPages
         {
             string[] TRPrograms = Directory.GetFiles(Global.reactionTestFilesPath + Global.programFolderName);
             string[] StroopPrograms = Directory.GetFiles(Global.stroopTestFilesPath + Global.programFolderName);
+            string[] MatchingPrograms = Directory.GetFiles(Global.matchingTestFilesPath + Global.programFolderName);
             foreach (string file in TRPrograms)
             {
                 ReactionProgram program = new ReactionProgram();
@@ -271,8 +272,32 @@ namespace TestPlatform.Views.ListsPages
                 }
             }
             foreach (string file in StroopPrograms)
-            { 
+            {
                 StroopProgram program = new StroopProgram();
+                program.readProgramFile(file);
+                if (suffix == "_image" && program.getImageListFile() != null && program.getImageListFile().ListName == listName)
+                {
+                    return true;
+                }
+                else if (suffix == "_audio" && program.getAudioListFile() != null && program.getAudioListFile().ListName == listName)
+                {
+                    return true;
+                }
+                else if (suffix == "_words_color")
+                {
+                    if (program.getWordListFile() != null && ((program.getWordListFile().ListName + "_words") == listName))
+                    {
+                        return true;
+                    }
+                    else if (program.getColorListFile() != null && ((program.getColorListFile().ListName + "_color") == listName))
+                    {
+                        return true;
+                    }
+                }
+            }
+            foreach (string file in MatchingPrograms)
+            {
+                MatchingProgram program = new MatchingProgram();
                 program.readProgramFile(file);
                 if (suffix == "_image" && program.getImageListFile() != null && program.getImageListFile().ListName == listName)
                 {

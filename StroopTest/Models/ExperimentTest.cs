@@ -134,7 +134,11 @@ namespace TestPlatform.Models
             {
                 programType = "ReactionTest";
             }
-            var text = programInUse.Name + "\t" + currentProgram.ProgramName + "\t" + programType + "\t" + participantName + "\t" + initialDate.Day + "/" +
+            else if (currentProgram.GetType() == typeof(MatchingProgram))
+            {
+                programType = "MatchingTest";
+            }
+                var text = programInUse.Name + "\t" + currentProgram.ProgramName + "\t" + programType + "\t" + participantName + "\t" + initialDate.Day + "/" +
                        initialDate.Month + "/" + initialDate.Year + "\t" + initialDate.Hour + ":" + initialDate.Minute +
                        ":" + initialDate.Second + ":" + initialDate.Millisecond.ToString() + "\t" + ExpositionTime.Hour + ":" + ExpositionTime.Minute +
                        ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" + currentExposition;

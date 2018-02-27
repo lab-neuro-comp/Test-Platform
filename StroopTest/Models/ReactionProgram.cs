@@ -237,8 +237,7 @@ namespace TestPlatform.Models
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int intervalTime,
                                 int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
-                                string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
-                                string stimuluShape, bool beepRandom, int numberPositions,
+                                string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom, bool beepRandom, int numberPositions,
                                 string responseType, string colorList, bool hasColorList, int fontSize, string audioListFile, string wordListFile)
         {
 
@@ -251,7 +250,6 @@ namespace TestPlatform.Models
             this.stimulusDistance = stimulusDistance;
             this.isBeeping = isBeeping;
             this.beepDuration = beepDuration;
-            this.stimuluShape = stimuluShape;
             this.BeepingRandom = beepRandom;
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
@@ -271,6 +269,7 @@ namespace TestPlatform.Models
             this.stimuluSize = 10;
             this.setImageListFile("false");
             this.expositionRandom = false;
+            this.stimuluShape = "false";
 
             // Program properties
             this.programName = programName;
@@ -607,7 +606,7 @@ namespace TestPlatform.Models
         {
             StreamWriter writer = new StreamWriter(path + ProgramName + ".prg");
             writer.WriteLine(data());
-            if (InstructionText != null && InstructionText[0] != instructionBoxText)
+            if (InstructionText != null)
             {
                 for (int i = 0; i < InstructionText.Count; i++)
                 {

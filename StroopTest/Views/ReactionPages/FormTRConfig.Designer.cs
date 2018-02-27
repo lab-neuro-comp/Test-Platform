@@ -297,6 +297,7 @@
             resources.ApplyResources(this.fixPointColorButton, "fixPointColorButton");
             this.fixPointColorButton.Name = "fixPointColorButton";
             this.fixPointColorButton.UseVisualStyleBackColor = true;
+            this.fixPointColorButton.Click += new System.EventHandler(this.fixPointColorButton_Click);
             // 
             // fixPointColorPanel
             // 

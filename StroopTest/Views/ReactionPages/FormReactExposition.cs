@@ -40,9 +40,11 @@ namespace TestPlatform.Views
         private bool cancelExposition = false;
         private string[] imagesList = null;
         private string[] wordsList = null;
+        private string[] audioList = null;
         private string[] imagesAndWordsList = null;
         private string[] colorsList = null;
         private int imageCounter = 0;
+        private int audioCounter = 0;
         private PictureBox imgPictureBox = new PictureBox();
         private bool exposing = false;
         private string currentStimulus = null;
@@ -56,6 +58,8 @@ namespace TestPlatform.Views
         private int imageAndWordCounter = 0;
         private System.Windows.Forms.Label wordLabel = new System.Windows.Forms.Label();
         private Control currentControl = null;
+        private string currentAudio;
+        SoundPlayer Player = new SoundPlayer();
 
         public FormReactExposition(string prgName, string participantName, char mark)
         {
@@ -190,7 +194,24 @@ namespace TestPlatform.Views
                     {
                         imagesAndWordsList = ExpositionController.mergeLists(imagesList, wordsList, executingTest.ProgramInUse.ExpositionRandom);
                     }
-
+                    break;
+                case "wordWithAudio":
+                    wordsList = executingTest.ProgramInUse.getWordListFile().ListContent.ToArray();
+                    audioList = executingTest.ProgramInUse.getAudioListFile().ListContent.ToArray();
+                    if (executingTest.ProgramInUse.StimulusColor == "false") //if stimulusColor is false then there exists a color list
+                    {
+                        colorsList = executingTest.ProgramInUse.getColorListFile().ListContent.ToArray();
+                    }
+                    else //if stimulusColor isn't false then there is no color list
+                    {
+                        colorsList = new string[] { executingTest.ProgramInUse.StimulusColor };
+                    }
+                    if (executingTest.ProgramInUse.ExpositionRandom)
+                    {
+                        wordsList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumExpositions, 9);
+                        colorsList = ExpositionController.ShuffleArray(colorsList, executingTest.ProgramInUse.NumExpositions, 3);
+                        audioList = ExpositionController.ShuffleArray(wordsList, executingTest.ProgramInUse.NumExpositions, 9);
+                    }
                     break;
             }
         }
@@ -477,6 +498,18 @@ namespace TestPlatform.Views
             expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.NumExpositions * 100, imgPictureBox);
         }
 
+        private void playAudio()
+        {
+            currentStimulus += "    audio: " + audioList[audioCounter];
+            Player.SoundLocation = currentAudio;
+            audioCounter++;
+            if (audioCounter == audioList.Length)
+            {
+                audioCounter = 0;
+            }
+            Player.Play();
+        }
+
         private void imageWordExposition()
         {
             if (File.Exists(imagesAndWordsList[imageAndWordCounter])) //if it's a valid file, then it is an image
@@ -539,10 +572,12 @@ namespace TestPlatform.Views
                     imageWordExposition();
                     break;
                 case "wordWithAudio":
-                    // wordAudioExposition();
+                    wordExposition();
+                    playAudio();
                     break;
                 case "imageWithAudio":
-                    // imageAudioExposition();
+                    // TODO
+                    break;
                 default:
                     throw new Exception(LocRM.GetString("expoType", currentCulture) + executingTest.ProgramInUse.ExpositionType + LocRM.GetString("invalid", currentCulture));
 
@@ -645,8 +680,9 @@ namespace TestPlatform.Views
         {
             if (!cancelExposition)
             {
-                if(ActiveForm != null)
-                { 
+                // cleaning screen
+                if (ActiveForm != null)
+                {
                     this.CreateGraphics().Clear(ActiveForm.BackColor);
                 }
                 // if expositions type uses any kind of control to show stimulus such as a word label or image picture box 
@@ -666,7 +702,13 @@ namespace TestPlatform.Views
             {
                 /*do nothing*/
             }
-            
+
+            if (Player.SoundLocation != null)
+            {
+                Player.Stop();
+                Player = new SoundPlayer();
+            }
+
             if ((e.Cancelled == true) && !intervalCancelled)
             {
                 /* user clicked after stimulus is shown*/

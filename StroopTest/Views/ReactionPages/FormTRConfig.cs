@@ -429,7 +429,11 @@ namespace TestPlatform.Views
                 
                 // Program type "wordWithAudio"
                 case 4:
-                    // TODO: Add ReactionProgram constructor to "wordWithAudio" type here
+                    newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(intervalTime.Value),
+                               Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
+                                fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, randomBeepCheck.Checked, Convert.ToInt32(positionsBox.Text),
+                                responseType(), openColorListButton.Text, ColorListOption.Checked, Convert.ToInt32(fontSizeUpDown.Value), openAudioListButton.Text, openWordListButton.Text);
+
                     break;
                 
                 // Program type "imageWithAudio"
@@ -443,7 +447,7 @@ namespace TestPlatform.Views
             }
             // read instructions and pass them to the new program created
             string textLines = "";
-            if (instructionsBox.Lines.Length > 0 && instructionsBox.Text != instructionBoxText)
+            if (instructionsBox.Lines.Length > 0)
             {
                 for (int i = 0; i < instructionsBox.Lines.Length; i++)
                 {
@@ -477,7 +481,7 @@ namespace TestPlatform.Views
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 ReactionProgram newProgram = configureNewProgram();
-
+                
                 if (File.Exists(path + Global.programFolderName + prgNameTextBox.Text + ".prg"))
                 {
                     DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExists", currentCulture), "", MessageBoxButtons.OKCancel);
@@ -792,6 +796,10 @@ namespace TestPlatform.Views
                         stimulusColor.Enabled = true;
                         openColorListButton.Enabled = false;
                     }
+                    beepDuration.Enabled = true;
+                    randomBeepCheck.Enabled = true;
+                    beepingCheckbox.Enabled = true;
+
                     //disable unused buttons
                     openImgListButton.Enabled = false;
                     openAudioListButton.Enabled = false;
@@ -818,6 +826,9 @@ namespace TestPlatform.Views
                     stimulusColor.Text = LocRM.GetString("choose", currentCulture);
                     openAudioListButton.Enabled = false;
                     LocRM.GetString("open", currentCulture);
+                    beepDuration.Enabled = true;
+                    randomBeepCheck.Enabled = true;
+                    beepingCheckbox.Enabled = true;
                     break;
                 //Images and word expositions
                 case 3:
@@ -841,6 +852,9 @@ namespace TestPlatform.Views
                     }
                     openImgListButton.Enabled = true;
                     openAudioListButton.Enabled = false;
+                    beepDuration.Enabled = true;
+                    randomBeepCheck.Enabled = true;
+                    beepingCheckbox.Enabled = true;
                     LocRM.GetString("open", currentCulture);
                     break;
                 // word with audio exposition
@@ -864,7 +878,13 @@ namespace TestPlatform.Views
                         stimulusColor.Enabled = true;
                         openColorListButton.Enabled = false;
                     }
+                    beepDuration.Enabled = false;
+                    randomBeepCheck.Enabled = false;
+                    randomBeepCheck.Checked = false;
+                    beepingCheckbox.Enabled = false;
+                    beepingCheckbox.Checked = false;
                     openImgListButton.Enabled = false;
+
                     break;
                 default:
                     errorProvider1.SetError(chooseExpoType, LocRM.GetString("unavailableExpo", currentCulture));
@@ -1007,6 +1027,5 @@ namespace TestPlatform.Views
             try { infoBox.Show(); }
             catch (Exception ex) { throw new Exception(ex.Message); }
         }
-
     }
 }

@@ -19,6 +19,7 @@ namespace TestPlatform.Models
         private Int32 stimuluSize;
         private String disposition;
         private Int32 stimuluDistance;
+        private Boolean randomIntervalModelStimulus;
 
         public MatchingProgram()
         {
@@ -44,7 +45,8 @@ namespace TestPlatform.Models
             int numExpositions, int AttemptsNumber, int stimuluSize, bool randomPosition,
             bool endExpositionWithClick, string imageList, int intervalTime, 
             bool intervalTimeRandom, int expositionTime, int modelExpositionTime, 
-            int attemptsIntervalTime,  string backgroundColor, string DNMTSBackground, bool randomOrder, int stimuluDistance, int numberPositions)
+            int attemptsIntervalTime,  string backgroundColor, string DNMTSBackground, 
+            bool randomOrder, int stimuluDistance, int numberPositions, bool randomIntervalModelStimulus)
         {
             // Program properties
             this.programName = programName;
@@ -64,6 +66,7 @@ namespace TestPlatform.Models
             this.DNMTSBackground = DNMTSBackground;
             this.AttemptsNumber = AttemptsNumber;
             this.numberPositions = numberPositions;
+            this.randomIntervalModelStimulus = randomIntervalModelStimulus;
             //default configurations for Mathing program
             this.setAudioListFile("false");
             this.setColorListFile("false");
@@ -124,8 +127,9 @@ namespace TestPlatform.Models
                 this.DNMTSBackground.ToUpper() + " " +
                 this.AttemptsNumber.ToString() + " " +
                 this.stimuluDistance.ToString() + " " +
-                this.numberPositions.ToString();
-
+                this.numberPositions.ToString() + " " +
+                this.randomIntervalModelStimulus.ToString();
+                
             return data;
         }
 
@@ -146,6 +150,19 @@ namespace TestPlatform.Models
                 disposition = value;
             }
         }
+
+        public Boolean RandomIntervalModelStimulus
+        {
+            get
+            {
+                return randomIntervalModelStimulus;
+            }
+            set
+            {
+                randomIntervalModelStimulus = value;
+            }
+        }
+
         public Int32 StimuluSize
         {
             get
@@ -304,6 +321,7 @@ namespace TestPlatform.Models
             AttemptsNumber = int.Parse(config[22]);
             stimuluDistance = int.Parse(config[23]);
             numberPositions = int.Parse(config[24]);
+            randomIntervalModelStimulus = bool.Parse(config[25]);
             linesInstruction = File.ReadAllLines(filepath);
             if (linesInstruction.Length > 1) // read instructions if any
             {

@@ -276,4 +276,13 @@
   <data name="executingTypeLabel.Text" xml:space="preserve">
     <value>Stroop</value>
   </data>
+  <data name="buttonMatching.Text" xml:space="preserve">
+    <value>Test de selección</value>
+  </data>
+  <data name="radioButton2.Text" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="radioButton1.Text" xml:space="preserve">
+    <value>Importar</value>
+  </data>
 </root>

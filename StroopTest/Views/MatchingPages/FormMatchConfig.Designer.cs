@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMatchConfig));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.othersGroupBox = new System.Windows.Forms.GroupBox();
             this.colorGroupBox = new System.Windows.Forms.GroupBox();
             this.DNMTSColorPanel = new System.Windows.Forms.Panel();
@@ -60,6 +61,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.wordLabel = new System.Windows.Forms.Label();
             this.expositionGroupBox = new System.Windows.Forms.GroupBox();
+            this.randomModelStimulusTime = new System.Windows.Forms.CheckBox();
             this.randomAttemptTime = new System.Windows.Forms.CheckBox();
             this.randomOrder = new System.Windows.Forms.CheckBox();
             this.dispositionLabel = new System.Windows.Forms.Label();
@@ -82,7 +84,9 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.colorGroupBox.SuspendLayout();
             this.timeGroupBox.SuspendLayout();
@@ -102,6 +106,9 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.othersGroupBox);
             this.panel1.Controls.Add(this.colorGroupBox);
@@ -115,6 +122,12 @@
             this.panel1.Controls.Add(this.instructionsLabel);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Name = "label10";
             // 
             // othersGroupBox
             // 
@@ -394,6 +407,7 @@
             // 
             // expositionGroupBox
             // 
+            this.expositionGroupBox.Controls.Add(this.randomModelStimulusTime);
             this.expositionGroupBox.Controls.Add(this.randomAttemptTime);
             this.expositionGroupBox.Controls.Add(this.randomOrder);
             this.expositionGroupBox.Controls.Add(this.dispositionLabel);
@@ -411,6 +425,12 @@
             resources.ApplyResources(this.expositionGroupBox, "expositionGroupBox");
             this.expositionGroupBox.Name = "expositionGroupBox";
             this.expositionGroupBox.TabStop = false;
+            // 
+            // randomModelStimulusTime
+            // 
+            resources.ApplyResources(this.randomModelStimulusTime, "randomModelStimulusTime");
+            this.randomModelStimulusTime.Name = "randomModelStimulusTime";
+            this.randomModelStimulusTime.UseVisualStyleBackColor = true;
             // 
             // randomAttemptTime
             // 
@@ -596,11 +616,23 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
-            // label10
+            // label11
             // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Name = "label10";
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Name = "label11";
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Name = "label12";
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Name = "label13";
             // 
             // FormMatchConfig
             // 
@@ -688,5 +720,9 @@
         private System.Windows.Forms.GroupBox othersGroupBox;
         private System.Windows.Forms.CheckBox closeExpoAWithClick;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox randomModelStimulusTime;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
     }
 }

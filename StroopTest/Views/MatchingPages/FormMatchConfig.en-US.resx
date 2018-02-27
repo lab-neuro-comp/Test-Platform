@@ -184,10 +184,10 @@
     <value>Delay between model and stimulus (ms) :</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Stimulus exposition time (ms):</value>
+    <value>Stimulus exposition (ms):</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Model exposition time (ms):</value>
+    <value>Model exposition(ms):</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Delay between attempts (ms):</value>

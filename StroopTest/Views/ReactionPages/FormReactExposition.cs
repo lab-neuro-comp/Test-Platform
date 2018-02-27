@@ -30,6 +30,8 @@ namespace TestPlatform.Views
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private static int X = 0;
         private static int Y = 1;
+        private static int IMAGE = 0;
+        private static int WORD = 1;
         private int intervalElapsedTime;
         private int intervalShouldBe;
         private long expositionAccumulative;
@@ -55,7 +57,7 @@ namespace TestPlatform.Views
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private int wordCounter = 0;
         private int colorCounter = 0;
-        private int imageAndWordCounter = 0;
+        private int lastType = 1;
         private System.Windows.Forms.Label wordLabel = new System.Windows.Forms.Label();
         private Control currentControl = null;
         private SoundPlayer Player = new SoundPlayer();
@@ -513,45 +515,21 @@ namespace TestPlatform.Views
             Player.Play();
         }
 
+        // image and word expositions take turns accordingly to the last stimulus shown to user
         private void imageWordExposition()
         {
-            if (File.Exists(imagesAndWordsList[imageAndWordCounter])) //if it's a valid file, then it is an image
+            if(lastType == WORD)
             {
-                imgPictureBox = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, Image.FromFile(imagesAndWordsList[imageAndWordCounter]));
-                int[] screenPosition = ScreenPosition(imgPictureBox.Size);
-
-                imgPictureBox.Location = new Point(screenPosition[X], screenPosition[Y]);
-
-                currentStimulus = imagesAndWordsList[imageAndWordCounter];
-                
-                imageAndWordCounter++;
-                if (imageAndWordCounter == imagesAndWordsList.Length)
-                {
-                    imageAndWordCounter = 0;
-                }
-                expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.NumExpositions * 100, imgPictureBox);
+                drawImage();
+                lastType = IMAGE;
+                currentColor = "false";
             }
-            else //if it's not a valid file, then it is a word.
+            else if (lastType == IMAGE)
             {
-                int[] screenPosition = ScreenPosition(wordLabel.PreferredSize);
-                screenPosition = wordLabelWithinRange(screenPosition[X], screenPosition[Y]);
-                wordLabel = ExpositionController.InitializeWordLabel(executingTest.ProgramInUse.FontSize, imagesAndWordsList[imageAndWordCounter], colorsList[colorCounter], screenPosition);
-               
-                currentStimulus = imagesAndWordsList[imageAndWordCounter];
-
-                imageAndWordCounter++;
-                if (imageAndWordCounter == imagesAndWordsList.Length)
-                {
-                    imageAndWordCounter = 0;
-                }
-                colorCounter++;
-                if (colorCounter == colorsList.Length)
-                {
-                    colorCounter = 0;
-                }
-                expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.NumExpositions * 100, wordLabel);
+                drawWord();
+                lastType = WORD;
             }
-       }
+        }
 
         private void showStimulus()
         {

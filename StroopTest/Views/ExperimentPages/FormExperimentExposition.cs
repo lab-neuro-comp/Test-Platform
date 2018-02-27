@@ -29,8 +29,8 @@ namespace TestPlatform.Views.ExperimentPages
             executingTest.ProgramInUse.ReadProgramFile();
             executingTest.Mark = mark;
             outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.Name + ".txt";
+            this.Show();
             startExposition();
-            this.ShowDialog();
         }
 
         private async void startExposition()

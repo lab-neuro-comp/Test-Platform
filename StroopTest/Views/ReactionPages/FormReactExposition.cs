@@ -87,10 +87,9 @@ namespace TestPlatform.Views
                                                 (executingTest.ProgramInUse.StimulusDistance - executingTest.ProgramInUse.StimuluSize)
                                              } // on right bottom of the screen                                             
                                      }; 
-
             outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.ProgramName + ".txt";
+            this.Show();
             startExposition();
-            this.ShowDialog();
         }
 
 

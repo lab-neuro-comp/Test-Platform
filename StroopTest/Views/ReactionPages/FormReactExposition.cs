@@ -489,7 +489,7 @@ namespace TestPlatform.Views
             int[] screenPosition = ScreenPosition(imgPictureBox.Size);
             imgPictureBox.Location = new Point(screenPosition[X], screenPosition[Y]);
 
-            currentStimulus = imagesList[imageCounter];
+            currentStimulus = StrList.outPutItemName(imagesList[imageCounter]);
             imageCounter++;            
             if(imageCounter == imagesList.Length)
             {
@@ -501,7 +501,7 @@ namespace TestPlatform.Views
         private void playAudio()
         {
             string currentAudio = audioList[audioCounter];
-            currentStimulus += "    audio: " + currentAudio;
+            currentStimulus += "    audio: " + StrList.outPutItemName(currentAudio);
             Player.SoundLocation = currentAudio;
             audioCounter++;
             if (audioCounter == audioList.Length)

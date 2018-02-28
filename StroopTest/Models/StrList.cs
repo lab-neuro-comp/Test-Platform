@@ -266,7 +266,13 @@ namespace TestPlatform.Models
             }           
         }
 
-        
+        public static string outPutItemName(string path)
+        {
+            string lastFolderName = Path.GetFileName(Path.GetDirectoryName(path));
+            string fileName = Path.GetFileName(path);
+            string name = lastFolderName + "/" + fileName;
+            return name;
+        }
 
     }
 }

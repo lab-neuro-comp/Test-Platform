@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Una lista de imágenes es menor que lo necesario. Repeticiones de imágenes pode ocorrer</value>
-  </data>
   <data name="colorGroupBox.Text" xml:space="preserve">
     <value>Colores</value>
   </data>
@@ -128,12 +125,6 @@
   </data>
   <data name="randomOrder.Text" xml:space="preserve">
     <value>Orden aleatorio</value>
-  </data>
-  <data name="ExpoDisposition.Items" xml:space="preserve">
-    <value>estándar</value>
-  </data>
-  <data name="ExpoDisposition.Items1" xml:space="preserve">
-    <value>estándar</value>
   </data>
   <data name="othersGroupBox.Text" xml:space="preserve">
     <value>Otro</value>
@@ -147,32 +138,11 @@
   <data name="programNameLabel.Text" xml:space="preserve">
     <value>Nombre del programa:</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Intervalo entre intentos (ms):</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Intervalo entre modelo y estímulos (ms):</value>
-  </data>
   <data name="instructionsLabel.Text" xml:space="preserve">
     <value>Instrucciones:</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Imágenes:</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Fondo del DNMTS:</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Fondo del DMTS:</value>
-  </data>
   <data name="closeExpoAWithClick.Text" xml:space="preserve">
     <value>Finalizar la exposición del modelo con clic</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Exposición de los estimuladores (ms):</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Exposición del modelo (ms):</value>
   </data>
   <data name="expositionGroupBox.Text" xml:space="preserve">
     <value>Exposición</value>
@@ -192,17 +162,8 @@
   <data name="expositionType.Items" xml:space="preserve">
     <value>DMTS</value>
   </data>
-  <data name="dispositionLabel.Text" xml:space="preserve">
-    <value>Disposición A-B:</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Colores</value>
-  </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>cancelar</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Audios:</value>
   </data>
   <data name="openAudioListButton.Text" xml:space="preserve">
     <value>abrir</value>
@@ -216,41 +177,20 @@
   <data name="openWordListButton.Text" xml:space="preserve">
     <value>abrir</value>
   </data>
-  <data name="positionsComboBox.Items3" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="positionsComboBox.Items2" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="positionsComboBox.Items1" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="positionsComboBox.Items" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="DNMTSBackgroundColor.Text" xml:space="preserve">
     <value>#404040</value>
   </data>
   <data name="DMTSBackgroundColor.Text" xml:space="preserve">
     <value>#A0A0A0</value>
   </data>
-  <data name="randomPosition.Text" xml:space="preserve">
-    <value>Posición aleatoria</value>
-  </data>
   <data name="wordLabel.Text" xml:space="preserve">
     <value>Palabras:</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Cantidad de posibles posiciones:</value>
   </data>
   <data name="saveButton.Text" xml:space="preserve">
     <value>guardar</value>
   </data>
   <data name="expoSizeLabel.Text" xml:space="preserve">
     <value>Tamaño de la exposición:</value>
-  </data>
-  <data name="attemptInterval.Text" xml:space="preserve">
-    <value>Tiempo</value>
   </data>
   <data name="timeGroupBox.Text" xml:space="preserve">
     <value>Tiempo</value>
@@ -260,5 +200,50 @@
   </data>
   <data name="expositionTypeLabel.Text" xml:space="preserve">
     <value>Tipo de exposición:</value>
+  </data>
+  <data name="DNMTSBackgroundLabel.Text" xml:space="preserve">
+    <value>Fondo del DNMTS:</value>
+  </data>
+  <data name="DMTSBackgroundLabel.Text" xml:space="preserve">
+    <value>Fondo del DMTS:</value>
+  </data>
+  <data name="modelStimuluIntervalLabel.Text" xml:space="preserve">
+    <value>Intervalo entre modelo y estímulos (ms):</value>
+  </data>
+  <data name="stimuluExpositionLabel.Text" xml:space="preserve">
+    <value>Exposición de los estimuladores (ms):</value>
+  </data>
+  <data name="attemptIntervalLabel.Text" xml:space="preserve">
+    <value>Intervalo entre intentos (ms):</value>
+  </data>
+  <data name="modelExpositionLabel.Text" xml:space="preserve">
+    <value>Exposición del modelo (ms):</value>
+  </data>
+  <data name="audioLabel.Text" xml:space="preserve">
+    <value>Audios:</value>
+  </data>
+  <data name="imageLabel.Text" xml:space="preserve">
+    <value>Imágenes:</value>
+  </data>
+  <data name="smallImageListLabel.Text" xml:space="preserve">
+    <value>La lista de imágenes es menor que lo necesario. Repeticiones de imágenes pode ocorrer</value>
+  </data>
+  <data name="impossibleUseListWarnLabel.Text" xml:space="preserve">
+    <value>La lista de imágenes es menor que el número de estímulos. Reducir el número de estímulos o elegir una lista más grande</value>
+  </data>
+  <data name="randomModelStimulusTime.Text" xml:space="preserve">
+    <value>Tiempo entre modelo y estímulo aleatorio</value>
+  </data>
+  <data name="randomStimuluPosition.Text" xml:space="preserve">
+    <value>Estímulos</value>
+  </data>
+  <data name="randomPositionLabel.Text" xml:space="preserve">
+    <value>Posición aleatoria:</value>
+  </data>
+  <data name="randomModelPosition.Text" xml:space="preserve">
+    <value>Modelo</value>
+  </data>
+  <data name="colorLabel.Text" xml:space="preserve">
+    <value>Colores:</value>
   </data>
 </root>

@@ -31,7 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMatchConfig));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.impossibleUseListWarnLabel = new System.Windows.Forms.Label();
+            this.smallImageListLabel = new System.Windows.Forms.Label();
             this.othersGroupBox = new System.Windows.Forms.GroupBox();
             this.colorGroupBox = new System.Windows.Forms.GroupBox();
             this.DNMTSColorPanel = new System.Windows.Forms.Panel();
@@ -40,37 +41,35 @@
             this.DNMTSBackgroundColor = new System.Windows.Forms.Label();
             this.DNMTSBackground = new System.Windows.Forms.Button();
             this.DMTSBackground = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.DNMTSBackgroundLabel = new System.Windows.Forms.Label();
+            this.DMTSBackgroundLabel = new System.Windows.Forms.Label();
             this.timeGroupBox = new System.Windows.Forms.GroupBox();
             this.stimulusInterval = new System.Windows.Forms.NumericUpDown();
             this.stimulusExpoTime = new System.Windows.Forms.NumericUpDown();
             this.attemptInterval = new System.Windows.Forms.NumericUpDown();
             this.modelExpoTime = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.modelStimuluIntervalLabel = new System.Windows.Forms.Label();
+            this.stimuluExpositionLabel = new System.Windows.Forms.Label();
+            this.attemptIntervalLabel = new System.Windows.Forms.Label();
+            this.modelExpositionLabel = new System.Windows.Forms.Label();
             this.listGroupBox = new System.Windows.Forms.GroupBox();
             this.openAudioListButton = new System.Windows.Forms.Button();
             this.openImgListButton = new System.Windows.Forms.Button();
             this.openColorListButton = new System.Windows.Forms.Button();
             this.openWordListButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.audioLabel = new System.Windows.Forms.Label();
+            this.imageLabel = new System.Windows.Forms.Label();
+            this.colorLabel = new System.Windows.Forms.Label();
             this.wordLabel = new System.Windows.Forms.Label();
             this.expositionGroupBox = new System.Windows.Forms.GroupBox();
             this.randomModelStimulusTime = new System.Windows.Forms.CheckBox();
             this.randomAttemptTime = new System.Windows.Forms.CheckBox();
             this.randomOrder = new System.Windows.Forms.CheckBox();
-            this.dispositionLabel = new System.Windows.Forms.Label();
-            this.ExpoDisposition = new System.Windows.Forms.ComboBox();
             this.expositionType = new System.Windows.Forms.ComboBox();
             this.expositionTypeLabel = new System.Windows.Forms.Label();
             this.closeExpoAWithClick = new System.Windows.Forms.CheckBox();
             this.numExpoLabel = new System.Windows.Forms.Label();
-            this.randomPosition = new System.Windows.Forms.CheckBox();
+            this.randomStimuluPosition = new System.Windows.Forms.CheckBox();
             this.expoSizeLabel = new System.Windows.Forms.Label();
             this.numExpo = new System.Windows.Forms.NumericUpDown();
             this.expositionSize = new System.Windows.Forms.NumericUpDown();
@@ -84,9 +83,8 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.randomPositionLabel = new System.Windows.Forms.Label();
+            this.randomModelPosition = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.colorGroupBox.SuspendLayout();
             this.timeGroupBox.SuspendLayout();
@@ -106,10 +104,8 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.impossibleUseListWarnLabel);
+            this.panel1.Controls.Add(this.smallImageListLabel);
             this.panel1.Controls.Add(this.othersGroupBox);
             this.panel1.Controls.Add(this.colorGroupBox);
             this.panel1.Controls.Add(this.timeGroupBox);
@@ -123,11 +119,17 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // label10
+            // impossibleUseListWarnLabel
             // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Name = "label10";
+            resources.ApplyResources(this.impossibleUseListWarnLabel, "impossibleUseListWarnLabel");
+            this.impossibleUseListWarnLabel.ForeColor = System.Drawing.Color.Red;
+            this.impossibleUseListWarnLabel.Name = "impossibleUseListWarnLabel";
+            // 
+            // smallImageListLabel
+            // 
+            resources.ApplyResources(this.smallImageListLabel, "smallImageListLabel");
+            this.smallImageListLabel.ForeColor = System.Drawing.Color.Red;
+            this.smallImageListLabel.Name = "smallImageListLabel";
             // 
             // othersGroupBox
             // 
@@ -143,8 +145,8 @@
             this.colorGroupBox.Controls.Add(this.DNMTSBackgroundColor);
             this.colorGroupBox.Controls.Add(this.DNMTSBackground);
             this.colorGroupBox.Controls.Add(this.DMTSBackground);
-            this.colorGroupBox.Controls.Add(this.label9);
-            this.colorGroupBox.Controls.Add(this.label8);
+            this.colorGroupBox.Controls.Add(this.DNMTSBackgroundLabel);
+            this.colorGroupBox.Controls.Add(this.DMTSBackgroundLabel);
             resources.ApplyResources(this.colorGroupBox, "colorGroupBox");
             this.colorGroupBox.Name = "colorGroupBox";
             this.colorGroupBox.TabStop = false;
@@ -189,15 +191,15 @@
             this.DMTSBackground.UseVisualStyleBackColor = false;
             this.DMTSBackground.Click += new System.EventHandler(this.DMTSBackground_Click);
             // 
-            // label9
+            // DNMTSBackgroundLabel
             // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
+            resources.ApplyResources(this.DNMTSBackgroundLabel, "DNMTSBackgroundLabel");
+            this.DNMTSBackgroundLabel.Name = "DNMTSBackgroundLabel";
             // 
-            // label8
+            // DMTSBackgroundLabel
             // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
+            resources.ApplyResources(this.DMTSBackgroundLabel, "DMTSBackgroundLabel");
+            this.DMTSBackgroundLabel.Name = "DMTSBackgroundLabel";
             // 
             // timeGroupBox
             // 
@@ -205,10 +207,10 @@
             this.timeGroupBox.Controls.Add(this.stimulusExpoTime);
             this.timeGroupBox.Controls.Add(this.attemptInterval);
             this.timeGroupBox.Controls.Add(this.modelExpoTime);
-            this.timeGroupBox.Controls.Add(this.label7);
-            this.timeGroupBox.Controls.Add(this.label6);
-            this.timeGroupBox.Controls.Add(this.label5);
-            this.timeGroupBox.Controls.Add(this.label1);
+            this.timeGroupBox.Controls.Add(this.modelStimuluIntervalLabel);
+            this.timeGroupBox.Controls.Add(this.stimuluExpositionLabel);
+            this.timeGroupBox.Controls.Add(this.attemptIntervalLabel);
+            this.timeGroupBox.Controls.Add(this.modelExpositionLabel);
             resources.ApplyResources(this.timeGroupBox, "timeGroupBox");
             this.timeGroupBox.Name = "timeGroupBox";
             this.timeGroupBox.TabStop = false;
@@ -313,25 +315,25 @@
             0,
             0});
             // 
-            // label7
+            // modelStimuluIntervalLabel
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
+            resources.ApplyResources(this.modelStimuluIntervalLabel, "modelStimuluIntervalLabel");
+            this.modelStimuluIntervalLabel.Name = "modelStimuluIntervalLabel";
             // 
-            // label6
+            // stimuluExpositionLabel
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
+            resources.ApplyResources(this.stimuluExpositionLabel, "stimuluExpositionLabel");
+            this.stimuluExpositionLabel.Name = "stimuluExpositionLabel";
             // 
-            // label5
+            // attemptIntervalLabel
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.attemptIntervalLabel, "attemptIntervalLabel");
+            this.attemptIntervalLabel.Name = "attemptIntervalLabel";
             // 
-            // label1
+            // modelExpositionLabel
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.modelExpositionLabel, "modelExpositionLabel");
+            this.modelExpositionLabel.Name = "modelExpositionLabel";
             // 
             // listGroupBox
             // 
@@ -339,9 +341,9 @@
             this.listGroupBox.Controls.Add(this.openImgListButton);
             this.listGroupBox.Controls.Add(this.openColorListButton);
             this.listGroupBox.Controls.Add(this.openWordListButton);
-            this.listGroupBox.Controls.Add(this.label4);
-            this.listGroupBox.Controls.Add(this.label3);
-            this.listGroupBox.Controls.Add(this.label2);
+            this.listGroupBox.Controls.Add(this.audioLabel);
+            this.listGroupBox.Controls.Add(this.imageLabel);
+            this.listGroupBox.Controls.Add(this.colorLabel);
             this.listGroupBox.Controls.Add(this.wordLabel);
             resources.ApplyResources(this.listGroupBox, "listGroupBox");
             this.listGroupBox.Name = "listGroupBox";
@@ -385,20 +387,20 @@
             this.openWordListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openWordListButton_Validating);
             this.openWordListButton.Validated += new System.EventHandler(this.openWordListButton_Validated);
             // 
-            // label4
+            // audioLabel
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.audioLabel, "audioLabel");
+            this.audioLabel.Name = "audioLabel";
             // 
-            // label3
+            // imageLabel
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.imageLabel, "imageLabel");
+            this.imageLabel.Name = "imageLabel";
             // 
-            // label2
+            // colorLabel
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.colorLabel, "colorLabel");
+            this.colorLabel.Name = "colorLabel";
             // 
             // wordLabel
             // 
@@ -407,16 +409,16 @@
             // 
             // expositionGroupBox
             // 
+            this.expositionGroupBox.Controls.Add(this.randomModelPosition);
+            this.expositionGroupBox.Controls.Add(this.randomPositionLabel);
             this.expositionGroupBox.Controls.Add(this.randomModelStimulusTime);
             this.expositionGroupBox.Controls.Add(this.randomAttemptTime);
             this.expositionGroupBox.Controls.Add(this.randomOrder);
-            this.expositionGroupBox.Controls.Add(this.dispositionLabel);
-            this.expositionGroupBox.Controls.Add(this.ExpoDisposition);
             this.expositionGroupBox.Controls.Add(this.expositionType);
             this.expositionGroupBox.Controls.Add(this.expositionTypeLabel);
             this.expositionGroupBox.Controls.Add(this.closeExpoAWithClick);
             this.expositionGroupBox.Controls.Add(this.numExpoLabel);
-            this.expositionGroupBox.Controls.Add(this.randomPosition);
+            this.expositionGroupBox.Controls.Add(this.randomStimuluPosition);
             this.expositionGroupBox.Controls.Add(this.expoSizeLabel);
             this.expositionGroupBox.Controls.Add(this.numExpo);
             this.expositionGroupBox.Controls.Add(this.expositionSize);
@@ -443,22 +445,6 @@
             resources.ApplyResources(this.randomOrder, "randomOrder");
             this.randomOrder.Name = "randomOrder";
             this.randomOrder.UseVisualStyleBackColor = true;
-            // 
-            // dispositionLabel
-            // 
-            resources.ApplyResources(this.dispositionLabel, "dispositionLabel");
-            this.dispositionLabel.Name = "dispositionLabel";
-            // 
-            // ExpoDisposition
-            // 
-            this.ExpoDisposition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ExpoDisposition.FormattingEnabled = true;
-            this.ExpoDisposition.Items.AddRange(new object[] {
-            resources.GetString("ExpoDisposition.Items")});
-            resources.ApplyResources(this.ExpoDisposition, "ExpoDisposition");
-            this.ExpoDisposition.Name = "ExpoDisposition";
-            this.ExpoDisposition.Validating += new System.ComponentModel.CancelEventHandler(this.ExpoDisposition_Validating);
-            this.ExpoDisposition.Validated += new System.EventHandler(this.ExpoDisposition_Validated);
             // 
             // expositionType
             // 
@@ -490,11 +476,11 @@
             resources.ApplyResources(this.numExpoLabel, "numExpoLabel");
             this.numExpoLabel.Name = "numExpoLabel";
             // 
-            // randomPosition
+            // randomStimuluPosition
             // 
-            resources.ApplyResources(this.randomPosition, "randomPosition");
-            this.randomPosition.Name = "randomPosition";
-            this.randomPosition.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.randomStimuluPosition, "randomStimuluPosition");
+            this.randomStimuluPosition.Name = "randomStimuluPosition";
+            this.randomStimuluPosition.UseVisualStyleBackColor = true;
             // 
             // expoSizeLabel
             // 
@@ -616,23 +602,16 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
-            // label11
+            // randomPositionLabel
             // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Name = "label11";
+            resources.ApplyResources(this.randomPositionLabel, "randomPositionLabel");
+            this.randomPositionLabel.Name = "randomPositionLabel";
             // 
-            // label12
+            // randomModelPosition
             // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Name = "label12";
-            // 
-            // label13
-            // 
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Name = "label13";
+            resources.ApplyResources(this.randomModelPosition, "randomModelPosition");
+            this.randomModelPosition.Name = "randomModelPosition";
+            this.randomModelPosition.UseVisualStyleBackColor = true;
             // 
             // FormMatchConfig
             // 
@@ -685,31 +664,29 @@
         private System.Windows.Forms.Label expoSizeLabel;
         private System.Windows.Forms.Label numExpoLabel;
         private System.Windows.Forms.NumericUpDown attemptNumber;
-        private System.Windows.Forms.Label dispositionLabel;
-        private System.Windows.Forms.ComboBox ExpoDisposition;
-        private System.Windows.Forms.CheckBox randomPosition;
+        private System.Windows.Forms.CheckBox randomStimuluPosition;
         private System.Windows.Forms.CheckBox randomOrder;
         private System.Windows.Forms.GroupBox listGroupBox;
         private System.Windows.Forms.Button openAudioListButton;
         private System.Windows.Forms.Button openImgListButton;
         private System.Windows.Forms.Button openColorListButton;
         private System.Windows.Forms.Button openWordListButton;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label audioLabel;
+        private System.Windows.Forms.Label imageLabel;
+        private System.Windows.Forms.Label colorLabel;
         private System.Windows.Forms.Label wordLabel;
         private System.Windows.Forms.GroupBox timeGroupBox;
         private System.Windows.Forms.NumericUpDown stimulusInterval;
         private System.Windows.Forms.NumericUpDown stimulusExpoTime;
         private System.Windows.Forms.NumericUpDown attemptInterval;
         private System.Windows.Forms.NumericUpDown modelExpoTime;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label modelStimuluIntervalLabel;
+        private System.Windows.Forms.Label stimuluExpositionLabel;
+        private System.Windows.Forms.Label attemptIntervalLabel;
+        private System.Windows.Forms.Label modelExpositionLabel;
         private System.Windows.Forms.GroupBox colorGroupBox;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label DNMTSBackgroundLabel;
+        private System.Windows.Forms.Label DMTSBackgroundLabel;
         private System.Windows.Forms.Button DNMTSBackground;
         private System.Windows.Forms.Button DMTSBackground;
         private System.Windows.Forms.Label DMTSBackgroundColor;
@@ -719,10 +696,10 @@
         private System.Windows.Forms.CheckBox randomAttemptTime;
         private System.Windows.Forms.GroupBox othersGroupBox;
         private System.Windows.Forms.CheckBox closeExpoAWithClick;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label smallImageListLabel;
         private System.Windows.Forms.CheckBox randomModelStimulusTime;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label impossibleUseListWarnLabel;
+        private System.Windows.Forms.CheckBox randomModelPosition;
+        private System.Windows.Forms.Label randomPositionLabel;
     }
 }

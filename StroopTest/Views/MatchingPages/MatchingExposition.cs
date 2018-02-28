@@ -663,6 +663,7 @@ namespace TestPlatform.Views.MatchingPages
         private Stopwatch hitStopWatch;
         private bool showModel = true;
         private List<Control> stimuluPictureBox;
+        private bool waitingExpositionEnd;
         string currentExpositionType;
         PictureBox imageClicked;
         private long modelReactTime;
@@ -875,7 +876,6 @@ namespace TestPlatform.Views.MatchingPages
             for(int count = 0; count < this.executingTest.ProgramInUse.AttemptsNumber; count++)
             {
                 changeBackgroundColor();
-                currentExposition = count;
                 startExpositionBW();
                 while (expositionBW.IsBusy)
                 {
@@ -887,7 +887,9 @@ namespace TestPlatform.Views.MatchingPages
                     /*do nothing*/
                 }
                 Thread.Sleep(1);
+                currentExposition = count;
             }
+        
         }
 
         private void startExpositionBW()
@@ -1011,6 +1013,7 @@ namespace TestPlatform.Views.MatchingPages
 
         private void drawExposition()
         {
+            waitingExpositionEnd = true;
             if (showModel)
             {
                 stimuluPosition = new StimuluPosition(1, ClientSize, new Size(0, 0));
@@ -1018,7 +1021,7 @@ namespace TestPlatform.Views.MatchingPages
             }
             else
             {
-                if (!this.executingTest.ProgramInUse.RandomPosition)
+                if (!this.executingTest.ProgramInUse.RandomStimulusPosition)
                 {
                     stimuluPosition = new StimuluPosition(this.executingTest.ProgramInUse.NumExpositions, ClientSize, new Size(0, 0));
                 }
@@ -1045,8 +1048,16 @@ namespace TestPlatform.Views.MatchingPages
             showModel = false;
             modelPictureBox = new PictureBox();
             modelPictureBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
-            stimuluPosition.setStumuluSize(modelPictureBox.Size);
-            modelPictureBox.Location = stimuluPosition.getPositon();
+            if (this.executingTest.ProgramInUse.RandomModelPosition)
+            {
+                modelPictureBox.Location = stimuluPosition.getRandomPosition(ClientSize, modelPictureBox.Size);
+            }
+            else
+            {
+                stimuluPosition.setStumuluSize(modelPictureBox.Size);
+                Point position = stimuluPosition.getPositon();
+                modelPictureBox.Location = position;
+            }
             modelPictureBox.Image = matchingGroups.ElementAt(groupCounter).getModelImage();
             currentStimulus = matchingGroups.ElementAt(groupCounter);
             modelPictureBox.Enabled = true;
@@ -1065,7 +1076,7 @@ namespace TestPlatform.Views.MatchingPages
             {
                 PictureBox newPicBox = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, img);
 
-                if (this.executingTest.ProgramInUse.RandomPosition)
+                if (this.executingTest.ProgramInUse.RandomStimulusPosition)
                 {
                     newPicBox.Location = stimuluPosition.getRandomPosition(ClientSize, newPicBox.Size);
                 }
@@ -1134,10 +1145,14 @@ namespace TestPlatform.Views.MatchingPages
 
         private void expositionControllerBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            string result = "";
             if (e.Error == null)
             {
                 /* exposition was a success*/
-                Program.writeOutputFile(outputFile, string.Join("\n", executingTest.Output.ToArray()));
+                do { 
+                    result = string.Join("\n", executingTest.Output.ToArray());
+                }while (result == "");
+                Program.writeOutputFile(outputFile, result);
                 if (Application.OpenForms.OfType<MatchingExposition>().Any())
                 {
                     Close();
@@ -1171,11 +1186,11 @@ namespace TestPlatform.Views.MatchingPages
         private void CancelExposition()
         {
             cancelExposition = true;
-            if (expositionBW.IsBusy)
+            if (expositionBW.IsBusy && !waitingExpositionEnd)
             {
                 expositionBW.CancelAsync();
             }
-            else if (expositionControllerBW.IsBusy)
+            else if (expositionControllerBW.IsBusy && !waitingExpositionEnd)
             {
                 expositionControllerBW.CancelAsync();
             }
@@ -1318,6 +1333,7 @@ namespace TestPlatform.Views.MatchingPages
             {
                 /*do nothing, user pressed esc*/
             }
+            waitingExpositionEnd = false;
             expositionBW.Dispose();
         }
     }

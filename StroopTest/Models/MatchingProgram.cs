@@ -15,9 +15,9 @@ namespace TestPlatform.Models
         private Int32 attemptsIntervalTime;
         private Int32 modelExpositionTime;
         private Boolean endExpositionWithClick;
-        private Boolean randomPosition;
+        private Boolean randomStimuluPosition;
         private Int32 stimuluSize;
-        private String disposition;
+        private Boolean randomModelPosition;
         private Int32 stimuluDistance;
         private Boolean randomIntervalModelStimulus;
 
@@ -41,12 +41,13 @@ namespace TestPlatform.Models
         /// <summary>
         /// This constructor is used to create an matching program
         /// </summary>
-        public MatchingProgram(string programName, string expositionType, string disposition, 
-            int numExpositions, int AttemptsNumber, int stimuluSize, bool randomPosition,
+        public MatchingProgram(string programName, string expositionType, int numExpositions,
+            int AttemptsNumber, int stimuluSize, bool randomPosition,
             bool endExpositionWithClick, string imageList, int intervalTime, 
             bool intervalTimeRandom, int expositionTime, int modelExpositionTime, 
             int attemptsIntervalTime,  string backgroundColor, string DNMTSBackground, 
-            bool randomOrder, int stimuluDistance, int numberPositions, bool randomIntervalModelStimulus)
+            bool randomOrder, int stimuluDistance, int numberPositions, 
+            bool randomIntervalModelStimulus, bool randomStimuluPosition)
         {
             // Program properties
             this.programName = programName;
@@ -58,8 +59,7 @@ namespace TestPlatform.Models
             this.setImageListFile(imageList);
             // Matching properties
             this.stimuluSize = stimuluSize;
-            this.disposition = disposition;
-            this.randomPosition = randomPosition;
+            this.randomModelPosition = randomPosition;
             this.endExpositionWithClick = endExpositionWithClick;
             this.modelExpositionTime = modelExpositionTime;
             this.attemptsIntervalTime = attemptsIntervalTime;
@@ -67,6 +67,7 @@ namespace TestPlatform.Models
             this.AttemptsNumber = AttemptsNumber;
             this.numberPositions = numberPositions;
             this.randomIntervalModelStimulus = randomIntervalModelStimulus;
+            this.randomStimuluPosition = randomStimuluPosition;
             //default configurations for Mathing program
             this.setAudioListFile("false");
             this.setColorListFile("false");
@@ -119,8 +120,7 @@ namespace TestPlatform.Models
                  this.FixPointColor + " " +
                  this.intervalTime.ToString() + " " +
                 this.stimuluSize.ToString() + " " +
-                this.disposition + " " +
-                this.randomPosition.ToString() + " " +
+                this.randomModelPosition.ToString() + " " +
                 this.endExpositionWithClick.ToString() + " " +
                 this.modelExpositionTime.ToString() + " " +
                 this.attemptsIntervalTime.ToString() + " " +
@@ -128,7 +128,8 @@ namespace TestPlatform.Models
                 this.AttemptsNumber.ToString() + " " +
                 this.stimuluDistance.ToString() + " " +
                 this.numberPositions.ToString() + " " +
-                this.randomIntervalModelStimulus.ToString();
+                this.randomIntervalModelStimulus.ToString() + " " +
+                this.randomStimuluPosition.ToString();
                 
             return data;
         }
@@ -136,19 +137,6 @@ namespace TestPlatform.Models
         public string getExpositionType()
         {
             return expositionType;
-        }
-
-        public String Disposition
-        {
-            get
-            {
-                return disposition;
-            }
-
-            set
-            {
-                disposition = value;
-            }
         }
 
         public Boolean RandomIntervalModelStimulus
@@ -160,6 +148,18 @@ namespace TestPlatform.Models
             set
             {
                 randomIntervalModelStimulus = value;
+            }
+        }
+
+        public Boolean RandomStimulusPosition
+        {
+            get
+            {
+                return randomStimuluPosition;
+            }
+            set
+            {
+                randomStimuluPosition = value;
             }
         }
 
@@ -189,16 +189,16 @@ namespace TestPlatform.Models
             }
         }
 
-        public Boolean RandomPosition
+        public Boolean RandomModelPosition
         {
             get
             {
-                return randomPosition;
+                return randomModelPosition;
             }
 
             set
             {
-                randomPosition = value;
+                randomModelPosition = value;
             }
         }
         public Boolean EndExpositionWithClick
@@ -312,16 +312,16 @@ namespace TestPlatform.Models
             FixPointColor = config[13];
             intervalTime = int.Parse(config[14]);
             stimuluSize = int.Parse(config[15]);
-            disposition = config[16];
-            randomPosition = bool.Parse(config[17]);
-            endExpositionWithClick = bool.Parse(config[18]);
-            modelExpositionTime = int.Parse(config[19]);
-            attemptsIntervalTime = int.Parse(config[20]);
-            DNMTSBackground = config[21];
-            AttemptsNumber = int.Parse(config[22]);
-            stimuluDistance = int.Parse(config[23]);
-            numberPositions = int.Parse(config[24]);
-            randomIntervalModelStimulus = bool.Parse(config[25]);
+            randomModelPosition = bool.Parse(config[16]);
+            endExpositionWithClick = bool.Parse(config[17]);
+            modelExpositionTime = int.Parse(config[18]);
+            attemptsIntervalTime = int.Parse(config[19]);
+            DNMTSBackground = config[20];
+            AttemptsNumber = int.Parse(config[21]);
+            stimuluDistance = int.Parse(config[22]);
+            numberPositions = int.Parse(config[23]);
+            randomIntervalModelStimulus = bool.Parse(config[24]);
+            randomStimuluPosition = bool.Parse(config[25]);
             linesInstruction = File.ReadAllLines(filepath);
             if (linesInstruction.Length > 1) // read instructions if any
             {

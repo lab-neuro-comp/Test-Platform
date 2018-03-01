@@ -207,7 +207,7 @@
     <value>False</value>
   </data>
   <data name="DNMTSColorPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 51</value>
+    <value>175, 50</value>
   </data>
   <data name="DNMTSColorPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 16</value>
@@ -231,7 +231,7 @@
     <value>False</value>
   </data>
   <data name="DMTSColorPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 23</value>
+    <value>175, 20</value>
   </data>
   <data name="DMTSColorPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 16</value>
@@ -258,7 +258,7 @@
     <value>False</value>
   </data>
   <data name="DMTSBackgroundColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 24</value>
+    <value>198, 23</value>
   </data>
   <data name="DMTSBackgroundColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -292,7 +292,7 @@
     <value>NoControl</value>
   </data>
   <data name="DNMTSBackgroundColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 53</value>
+    <value>198, 53</value>
   </data>
   <data name="DNMTSBackgroundColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
@@ -322,7 +322,7 @@
     <value>NoControl</value>
   </data>
   <data name="DNMTSBackground.Location" type="System.Drawing.Point, System.Drawing">
-    <value>204, 48</value>
+    <value>101, 48</value>
   </data>
   <data name="DNMTSBackground.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 23</value>
@@ -349,7 +349,7 @@
     <value>False</value>
   </data>
   <data name="DMTSBackground.Location" type="System.Drawing.Point, System.Drawing">
-    <value>204, 19</value>
+    <value>101, 18</value>
   </data>
   <data name="DMTSBackground.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 23</value>
@@ -460,7 +460,7 @@
     <value>3</value>
   </data>
   <data name="stimulusInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 75</value>
+    <value>204, 75</value>
   </data>
   <data name="stimulusInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -481,7 +481,7 @@
     <value>0</value>
   </data>
   <data name="stimulusExpoTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 44</value>
+    <value>159, 44</value>
   </data>
   <data name="stimulusExpoTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -502,7 +502,7 @@
     <value>1</value>
   </data>
   <data name="attemptInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 106</value>
+    <value>161, 106</value>
   </data>
   <data name="attemptInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -523,7 +523,7 @@
     <value>2</value>
   </data>
   <data name="modelExpoTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 13</value>
+    <value>145, 13</value>
   </data>
   <data name="modelExpoTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -685,7 +685,7 @@
     <value>NoControl</value>
   </data>
   <data name="openAudioListButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 106</value>
+    <value>54, 106</value>
   </data>
   <data name="openAudioListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
@@ -712,7 +712,7 @@
     <value>NoControl</value>
   </data>
   <data name="openImgListButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 77</value>
+    <value>60, 77</value>
   </data>
   <data name="openImgListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
@@ -742,7 +742,7 @@
     <value>NoControl</value>
   </data>
   <data name="openColorListButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 48</value>
+    <value>49, 48</value>
   </data>
   <data name="openColorListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
@@ -769,7 +769,7 @@
     <value>False</value>
   </data>
   <data name="openWordListButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 19</value>
+    <value>64, 19</value>
   </data>
   <data name="openWordListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>

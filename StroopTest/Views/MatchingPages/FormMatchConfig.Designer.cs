@@ -62,6 +62,8 @@
             this.colorLabel = new System.Windows.Forms.Label();
             this.wordLabel = new System.Windows.Forms.Label();
             this.expositionGroupBox = new System.Windows.Forms.GroupBox();
+            this.randomModelPosition = new System.Windows.Forms.CheckBox();
+            this.randomPositionLabel = new System.Windows.Forms.Label();
             this.randomModelStimulusTime = new System.Windows.Forms.CheckBox();
             this.randomAttemptTime = new System.Windows.Forms.CheckBox();
             this.randomOrder = new System.Windows.Forms.CheckBox();
@@ -83,8 +85,6 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.randomPositionLabel = new System.Windows.Forms.Label();
-            this.randomModelPosition = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.colorGroupBox.SuspendLayout();
             this.timeGroupBox.SuspendLayout();
@@ -428,6 +428,17 @@
             this.expositionGroupBox.Name = "expositionGroupBox";
             this.expositionGroupBox.TabStop = false;
             // 
+            // randomModelPosition
+            // 
+            resources.ApplyResources(this.randomModelPosition, "randomModelPosition");
+            this.randomModelPosition.Name = "randomModelPosition";
+            this.randomModelPosition.UseVisualStyleBackColor = true;
+            // 
+            // randomPositionLabel
+            // 
+            resources.ApplyResources(this.randomPositionLabel, "randomPositionLabel");
+            this.randomPositionLabel.Name = "randomPositionLabel";
+            // 
             // randomModelStimulusTime
             // 
             resources.ApplyResources(this.randomModelStimulusTime, "randomModelStimulusTime");
@@ -601,17 +612,6 @@
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
-            // 
-            // randomPositionLabel
-            // 
-            resources.ApplyResources(this.randomPositionLabel, "randomPositionLabel");
-            this.randomPositionLabel.Name = "randomPositionLabel";
-            // 
-            // randomModelPosition
-            // 
-            resources.ApplyResources(this.randomModelPosition, "randomModelPosition");
-            this.randomModelPosition.Name = "randomModelPosition";
-            this.randomModelPosition.UseVisualStyleBackColor = true;
             // 
             // FormMatchConfig
             // 

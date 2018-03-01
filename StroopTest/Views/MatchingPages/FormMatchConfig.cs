@@ -59,7 +59,8 @@ namespace TestPlatform.Views.MatchingPages
             numExpo.Value = editProgram.NumExpositions;
             attemptNumber.Value = editProgram.AttemptsNumber;
             expositionSize.Value = editProgram.StimuluSize;
-            randomPosition.Checked = editProgram.RandomPosition;
+            randomStimuluPosition.Checked = editProgram.RandomStimulusPosition;
+            randomModelPosition.Checked = editProgram.RandomModelPosition;
             closeExpoAWithClick.Checked = editProgram.EndExpositionWithClick;
             openImgListButton.Text = editProgram.getImageListFile().ListName;
             stimulusInterval.Value = editProgram.IntervalTime;
@@ -85,13 +86,7 @@ namespace TestPlatform.Views.MatchingPages
                     this.expositionType.SelectedIndex = 2;
                     break;
             }
-            switch (editProgram.Disposition){
-                case "padrao":
-                case "default":
-                    ExpoDisposition.SelectedIndex = 0;
-                    break;
-            }
-            
+
             // reads program instructions to instruction box if there are any
             if (editProgram.InstructionText != null)
             {
@@ -124,14 +119,18 @@ namespace TestPlatform.Views.MatchingPages
             StrList imagesListFile = new StrList(openImgListButton.Text, 0);
             if (imagesListFile.ListContent.Count < numExpo.Value)
             {
-                label13.Visible = true;
+                impossibleUseListWarnLabel.Visible = true;
                 saveButton.Enabled = false;
             }
             else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
             {
-                label10.Visible = true;
+                smallImageListLabel.Visible = true;
+                saveButton.Enabled = true;
             }
-
+            else
+            {
+                saveButton.Enabled = true;
+            }
         }
 
         public bool save()
@@ -193,12 +192,12 @@ namespace TestPlatform.Views.MatchingPages
 
         MatchingProgram configureNewProgram()
         {
-            return new MatchingProgram(programName.Text, expositionType.Text, ExpoDisposition.Text, Convert.ToInt32(numExpo.Value),
-                                        Convert.ToInt32(attemptNumber.Value), Convert.ToInt32(expositionSize.Value), randomPosition.Checked,
+            return new MatchingProgram(programName.Text, expositionType.Text, Convert.ToInt32(numExpo.Value),
+                                        Convert.ToInt32(attemptNumber.Value), Convert.ToInt32(expositionSize.Value), randomModelPosition.Checked,
                                         closeExpoAWithClick.Checked, openImgListButton.Text, Convert.ToInt32(stimulusInterval.Value), 
                                         randomAttemptTime.Checked, Convert.ToInt32(stimulusExpoTime.Value), Convert.ToInt32(modelExpoTime.Value),
                                         Convert.ToInt32(attemptInterval.Value), DMTSBackgroundColor.Text, DNMTSBackgroundColor.Text, randomOrder.Checked, 0, 0,
-                                        this.randomModelStimulusTime.Checked);
+                                        this.randomModelStimulusTime.Checked, randomStimuluPosition.Checked);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -280,51 +279,37 @@ namespace TestPlatform.Views.MatchingPages
             }
             if (this.expositionType.SelectedIndex == 0)
             {
-                label8.Enabled = true;
+                DMTSBackgroundLabel.Enabled = true;
                 DMTSColorPanel.Enabled = true;
                 DMTSBackgroundColor.Enabled = true;
                 DMTSBackground.Enabled = true;
-                label9.Enabled = false;
+                DNMTSBackgroundLabel.Enabled = false;
                 DNMTSColorPanel.Enabled = false;
                 DNMTSBackgroundColor.Enabled = false;
                 DNMTSBackground.Enabled = false;
             }
             else if (this.expositionType.SelectedIndex == 1)
             {
-                label8.Enabled = false;
+                DMTSBackgroundLabel.Enabled = false;
                 DMTSColorPanel.Enabled = false;
                 DMTSBackgroundColor.Enabled = false;
                 DMTSBackground.Enabled = false;
-                label9.Enabled = true;
+                DNMTSBackgroundLabel.Enabled = true;
                 DNMTSColorPanel.Enabled = true;
                 DNMTSBackgroundColor.Enabled = true;
                 DNMTSBackground.Enabled = true;
             }
             else if (this.expositionType.SelectedIndex == 2)
             {
-                label8.Enabled = true;
+                DMTSBackgroundLabel.Enabled = true;
                 DMTSColorPanel.Enabled = true;
                 DMTSBackgroundColor.Enabled = true;
                 DMTSBackground.Enabled = true;
-                label9.Enabled = true;
+                DNMTSBackgroundLabel.Enabled = true;
                 DNMTSColorPanel.Enabled = true;
                 DNMTSBackgroundColor.Enabled = true;
                 DNMTSBackground.Enabled = true;
             }
-        }
-
-        private void ExpoDisposition_Validating(object sender, CancelEventArgs e)
-        {
-            if(this.ExpoDisposition.SelectedIndex == -1)
-            {
-                e.Cancel = true;
-                this.errorProvider1.SetError(this.ExpoDisposition, LocRM.GetString("dispositionError", currentCulture));
-            }
-        }
-
-        private void ExpoDisposition_Validated(object sender, EventArgs e)
-        {
-            this.errorProvider1.SetError(this.ExpoDisposition, "");
         }
 
         private void DMTSBackground_Click(object sender, EventArgs e)
@@ -360,24 +345,26 @@ namespace TestPlatform.Views.MatchingPages
                 StrList imagesListFile = new StrList(openImgListButton.Text, 0);
                 if (imagesListFile.ListContent.Count < numExpo.Value)
                 {
-                    label13.Visible = true;
+                    impossibleUseListWarnLabel.Visible = true;
                     saveButton.Enabled = false;
-                    label10.Visible = false;
+                    smallImageListLabel.Visible = false;
                 }
                 else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
                 {
-                    label10.Visible = true;
+                    smallImageListLabel.Visible = true;
+                    saveButton.Enabled = true;
                 }
                 else
                 {
-                    label13.Visible = false;
-                    label10.Visible = false;
+                    impossibleUseListWarnLabel.Visible = false;
+                    smallImageListLabel.Visible = false;
+                    saveButton.Enabled = true;
                 }
             }
             else
             {
-                label13.Visible = false;
-                label10.Visible = false;
+                impossibleUseListWarnLabel.Visible = false;
+                smallImageListLabel.Visible = false;
             }
         }
 
@@ -539,24 +526,26 @@ namespace TestPlatform.Views.MatchingPages
                 StrList imagesListFile = new StrList(openImgListButton.Text, 0);
                 if (imagesListFile.ListContent.Count < numExpo.Value)
                 {
-                    label13.Visible = true;
+                    impossibleUseListWarnLabel.Visible = true;
                     saveButton.Enabled = false;
-                    label10.Visible = false;
+                    smallImageListLabel.Visible = false;
                 }
                 else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
                 {
-                    label10.Visible = true;
+                    smallImageListLabel.Visible = true;
+                    saveButton.Enabled = true;
                 }
                 else
                 {
-                    label13.Visible = false;
-                    label10.Visible = false;
+                    impossibleUseListWarnLabel.Visible = false;
+                    smallImageListLabel.Visible = false;
+                    saveButton.Enabled = true;
                 }
             }
             else
             {
-                label13.Visible = false;
-                label10.Visible = false;
+                impossibleUseListWarnLabel.Visible = false;
+                smallImageListLabel.Visible = false;
             }
         }
 
@@ -567,24 +556,26 @@ namespace TestPlatform.Views.MatchingPages
                 StrList imagesListFile = new StrList(openImgListButton.Text, 0);
                 if (imagesListFile.ListContent.Count < numExpo.Value)
                 {
-                    label13.Visible = true;
+                    impossibleUseListWarnLabel.Visible = true;
                     saveButton.Enabled = false;
-                    label10.Visible = false;
+                    smallImageListLabel.Visible = false;
                 }
                 else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
                 {
-                    label10.Visible = true;
+                    smallImageListLabel.Visible = true;
+                    saveButton.Enabled = true;
                 }
                 else
                 {
-                    label13.Visible = false;
-                    label10.Visible = false;
+                    impossibleUseListWarnLabel.Visible = false;
+                    smallImageListLabel.Visible = false;
+                    saveButton.Enabled = true;
                 }
             }
             else
             {
-                label13.Visible = false;
-                label10.Visible = false;
+                impossibleUseListWarnLabel.Visible = false;
+                smallImageListLabel.Visible = false;
             }
         }
     }

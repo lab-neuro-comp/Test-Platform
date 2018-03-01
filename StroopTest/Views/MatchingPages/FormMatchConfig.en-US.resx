@@ -132,23 +132,8 @@
   <data name="expositionGroupBox.Text" xml:space="preserve">
     <value>Exposition</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Audios:</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>DNMTS Background:</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>DMTS Background:</value>
-  </data>
   <data name="colorGroupBox.Text" xml:space="preserve">
     <value>Colors</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Colors:</value>
-  </data>
-  <data name="dispositionLabel.Text" xml:space="preserve">
-    <value>A-B Disposition:</value>
   </data>
   <data name="expositionType.Items1" xml:space="preserve">
     <value>DNMTS</value>
@@ -163,43 +148,19 @@
     <value>choose</value>
   </data>
   <data name="closeExpoAWithClick.Text" xml:space="preserve">
-    <value>end model exposition when clicked</value>
-  </data>
-  <data name="ExpoDisposition.Items" xml:space="preserve">
-    <value>default</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Images:</value>
+    <value>End model exposition when clicked</value>
   </data>
   <data name="listGroupBox.Text" xml:space="preserve">
     <value>Lists</value>
   </data>
-  <data name="ExpoDisposition.Items1" xml:space="preserve">
-    <value>default</value>
-  </data>
   <data name="expositionTypeLabel.Text" xml:space="preserve">
     <value>Exposition type:</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Delay between model and stimulus (ms) :</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Stimulus exposition (ms):</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Model exposition(ms):</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Delay between attempts (ms):</value>
   </data>
   <data name="timeGroupBox.Text" xml:space="preserve">
     <value>Time</value>
   </data>
   <data name="expoSizeLabel.Text" xml:space="preserve">
     <value>Exposition size:</value>
-  </data>
-  <data name="randomPosition.Text" xml:space="preserve">
-    <value>Random position</value>
   </data>
   <data name="wordLabel.Text" xml:space="preserve">
     <value>Words:</value>
@@ -234,31 +195,55 @@
   <data name="DNMTSBackgroundColor.Text" xml:space="preserve">
     <value>#404040</value>
   </data>
-  <data name="attemptInterval.Text" xml:space="preserve">
-    <value>Time</value>
-  </data>
   <data name="randomAttemptTime.Text" xml:space="preserve">
     <value>Random time between attempts</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>The image list has less elements than the necessary, image repetition may occur</value>
   </data>
   <data name="othersGroupBox.Text" xml:space="preserve">
     <value>Others</value>
   </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Possible position number:</value>
+  <data name="DMTSBackgroundLabel.Text" xml:space="preserve">
+    <value>DMTS Background:</value>
   </data>
-  <data name="positionsComboBox.Items" xml:space="preserve">
-    <value>1</value>
+  <data name="DNMTSBackgroundLabel.Text" xml:space="preserve">
+    <value>DNMTS Background:</value>
   </data>
-  <data name="positionsComboBox.Items1" xml:space="preserve">
-    <value>2</value>
+  <data name="modelStimuluIntervalLabel.Text" xml:space="preserve">
+    <value>Delay between model and stimulus (ms) :</value>
   </data>
-  <data name="positionsComboBox.Items2" xml:space="preserve">
-    <value>4</value>
+  <data name="stimuluExpositionLabel.Text" xml:space="preserve">
+    <value>Stimulus exposition (ms):</value>
   </data>
-  <data name="positionsComboBox.Items3" xml:space="preserve">
-    <value>8</value>
+  <data name="attemptIntervalLabel.Text" xml:space="preserve">
+    <value>Delay between attempts (ms):</value>
+  </data>
+  <data name="modelExpositionLabel.Text" xml:space="preserve">
+    <value>Model exposition(ms):</value>
+  </data>
+  <data name="audioLabel.Text" xml:space="preserve">
+    <value>Audios:</value>
+  </data>
+  <data name="imageLabel.Text" xml:space="preserve">
+    <value>Images:</value>
+  </data>
+  <data name="smallImageListLabel.Text" xml:space="preserve">
+    <value>The image list has less elements than the necessary, image repetition may occur</value>
+  </data>
+  <data name="impossibleUseListWarnLabel.Text" xml:space="preserve">
+    <value>The list of images is smaller than the number of stimulus. Reduce the number of stimulus or choose a larger list</value>
+  </data>
+  <data name="randomModelStimulusTime.Text" xml:space="preserve">
+    <value>Time between model and stimulus random </value>
+  </data>
+  <data name="randomStimuluPosition.Text" xml:space="preserve">
+    <value>Stimulus</value>
+  </data>
+  <data name="randomPositionLabel.Text" xml:space="preserve">
+    <value>Random position:</value>
+  </data>
+  <data name="randomModelPosition.Text" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="colorLabel.Text" xml:space="preserve">
+    <value>Cores:</value>
   </data>
 </root>

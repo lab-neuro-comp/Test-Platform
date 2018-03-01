@@ -25,6 +25,7 @@ namespace TestPlatform.Views.MatchingPages
             private Size clientSize, stimuluSize;
             private int pointsNumber;
             private const int X = 0, Y = 1;
+            List<int> randomPositionsUsed;
             public StimuluPosition(int pointsNumber, Size clientSize, Size stimuluSize)
             {
                 if(pointsNumber > 8 || pointsNumber < 1)
@@ -34,6 +35,7 @@ namespace TestPlatform.Views.MatchingPages
                 this.stimuluSize = stimuluSize;
                 this.pointsNumber = pointsNumber;
                 this.clientSize = clientSize;
+                randomPositionsUsed = new List<int>();
             }
 
             public Point getPositon()
@@ -338,99 +340,104 @@ namespace TestPlatform.Views.MatchingPages
                 }
                 return position;
             }
-            public static Point getRandomPosition(Size clientSize, Size stimuluSize)
+            public Point getRandomPosition(Size clientSize, Size stimuluSize)
             {
+                int number;
                 float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
                 Point p = new Point();
                 Random rng = new Random(Guid.NewGuid().GetHashCode());
-                int number = rng.Next(21);
-                    switch (number)
-                    {
-                        case 0:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                            break;
-                        case 1:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                            break;
-                        case 2:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                            break;
-                        case 3:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                            break;
-                        case 4:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                            break;
-                        case 5:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                            break;
-                        case 6:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                            break;
-                        case 7:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                            break;
-                        case 8:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                            break;
-                        case 9:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                            break;
-                        case 10:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                            break;
-                        case 11:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                            break;
-                        case 12:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                            break;
-                        case 13:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                            break;
-                        case 14:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                            break;
-                        case 15:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                            break;
-                        case 16:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                            break;
-                        case 17:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                            break;
-                        case 18:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                            break;
-                        case 19:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                            break;
-                        case 20:
-                            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                            break;
-                    }
+                do
+                {
+                    number = rng.Next(21);
+                } while (randomPositionsUsed.Contains(number));
+                randomPositionsUsed.Add(number);
+                switch (number)
+                {
+                    case 0:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        break;
+                    case 1:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        break;
+                    case 2:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        break;
+                    case 3:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        break;
+                    case 4:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        break;
+                    case 5:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        break;
+                    case 6:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        break;
+                    case 7:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        break;
+                    case 8:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        break;
+                    case 9:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        break;
+                    case 10:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        break;
+                    case 11:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
+                        break;
+                    case 12:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        break;
+                    case 13:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        break;
+                    case 14:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        break;
+                    case 15:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        break;
+                    case 16:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        break;
+                    case 17:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        break;
+                    case 18:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        break;
+                    case 19:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
+                        break;
+                    case 20:
+                        p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
+                        p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
+                        break;
+                }
                 return p;
             }
             public static string getStimuluPositionMap(Point position, Size clientSize, Size stimuluSize)
@@ -656,6 +663,7 @@ namespace TestPlatform.Views.MatchingPages
         private Stopwatch hitStopWatch;
         private bool showModel = true;
         private List<Control> stimuluPictureBox;
+        private bool waitingExpositionEnd;
         string currentExpositionType;
         PictureBox imageClicked;
         private long modelReactTime;
@@ -726,6 +734,18 @@ namespace TestPlatform.Views.MatchingPages
             createMatchingGroups();
         }
 
+        private bool noneImageLeft(bool[] imageCanBeUsed)
+        {
+            foreach(bool canBeUsed in imageCanBeUsed)
+            {
+                if (canBeUsed)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private void createMatchingGroups()
         {
             MatchingGroup nextGroup;
@@ -775,8 +795,13 @@ namespace TestPlatform.Views.MatchingPages
                         do
                         {
                             nextImgIndex = rng.Next(imageList.Length);
-                            if (imageList.Length < this.executingTest.ProgramInUse.NumExpositions)
+                            if (noneImageLeft(imageCanBeUsed))
                             {
+                                for(int i = 0; i < imageCanBeUsed.Length; i++)
+                                {
+                                    if (i == count) continue;
+                                    imageCanBeUsed[i] = true;
+                                }
                                 break;
                             }
                         }
@@ -851,7 +876,6 @@ namespace TestPlatform.Views.MatchingPages
             for(int count = 0; count < this.executingTest.ProgramInUse.AttemptsNumber; count++)
             {
                 changeBackgroundColor();
-                currentExposition = count;
                 startExpositionBW();
                 while (expositionBW.IsBusy)
                 {
@@ -863,7 +887,9 @@ namespace TestPlatform.Views.MatchingPages
                     /*do nothing*/
                 }
                 Thread.Sleep(1);
+                currentExposition = count;
             }
+        
         }
 
         private void startExpositionBW()
@@ -949,7 +975,6 @@ namespace TestPlatform.Views.MatchingPages
                         /* just wait for exposition time to be finished */
                     }
                 }
-                Console.Write(hitStopWatch.ElapsedMilliseconds + "\n");
             }
         }
 
@@ -988,6 +1013,7 @@ namespace TestPlatform.Views.MatchingPages
 
         private void drawExposition()
         {
+            waitingExpositionEnd = true;
             if (showModel)
             {
                 stimuluPosition = new StimuluPosition(1, ClientSize, new Size(0, 0));
@@ -995,7 +1021,7 @@ namespace TestPlatform.Views.MatchingPages
             }
             else
             {
-                if (!this.executingTest.ProgramInUse.RandomPosition)
+                if (!this.executingTest.ProgramInUse.RandomStimulusPosition)
                 {
                     stimuluPosition = new StimuluPosition(this.executingTest.ProgramInUse.NumExpositions, ClientSize, new Size(0, 0));
                 }
@@ -1022,8 +1048,16 @@ namespace TestPlatform.Views.MatchingPages
             showModel = false;
             modelPictureBox = new PictureBox();
             modelPictureBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
-            stimuluPosition.setStumuluSize(modelPictureBox.Size);
-            modelPictureBox.Location = stimuluPosition.getPositon();
+            if (this.executingTest.ProgramInUse.RandomModelPosition)
+            {
+                modelPictureBox.Location = stimuluPosition.getRandomPosition(ClientSize, modelPictureBox.Size);
+            }
+            else
+            {
+                stimuluPosition.setStumuluSize(modelPictureBox.Size);
+                Point position = stimuluPosition.getPositon();
+                modelPictureBox.Location = position;
+            }
             modelPictureBox.Image = matchingGroups.ElementAt(groupCounter).getModelImage();
             currentStimulus = matchingGroups.ElementAt(groupCounter);
             modelPictureBox.Enabled = true;
@@ -1042,9 +1076,9 @@ namespace TestPlatform.Views.MatchingPages
             {
                 PictureBox newPicBox = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, img);
 
-                if (this.executingTest.ProgramInUse.RandomPosition)
+                if (this.executingTest.ProgramInUse.RandomStimulusPosition)
                 {
-                    newPicBox.Location = StimuluPosition.getRandomPosition(ClientSize, newPicBox.Size);
+                    newPicBox.Location = stimuluPosition.getRandomPosition(ClientSize, newPicBox.Size);
                 }
                 else
                 {
@@ -1111,10 +1145,14 @@ namespace TestPlatform.Views.MatchingPages
 
         private void expositionControllerBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            string result = "";
             if (e.Error == null)
             {
                 /* exposition was a success*/
-                Program.writeOutputFile(outputFile, string.Join("\n", executingTest.Output.ToArray()));
+                do { 
+                    result = string.Join("\n", executingTest.Output.ToArray());
+                }while (result == "");
+                Program.writeOutputFile(outputFile, result);
                 if (Application.OpenForms.OfType<MatchingExposition>().Any())
                 {
                     Close();
@@ -1148,11 +1186,11 @@ namespace TestPlatform.Views.MatchingPages
         private void CancelExposition()
         {
             cancelExposition = true;
-            if (expositionBW.IsBusy)
+            if (expositionBW.IsBusy && !waitingExpositionEnd)
             {
                 expositionBW.CancelAsync();
             }
-            else if (expositionControllerBW.IsBusy)
+            else if (expositionControllerBW.IsBusy && !waitingExpositionEnd)
             {
                 expositionControllerBW.CancelAsync();
             }
@@ -1295,6 +1333,7 @@ namespace TestPlatform.Views.MatchingPages
             {
                 /*do nothing, user pressed esc*/
             }
+            waitingExpositionEnd = false;
             expositionBW.Dispose();
         }
     }

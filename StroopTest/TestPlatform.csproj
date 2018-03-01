@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ExpositionController.cs" />
+    <Compile Include="Controllers\HelpPagesController.cs" />
     <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Models\Audio.cs" />
     <Compile Include="Models\ExperimentProgram.cs" />
@@ -198,6 +199,12 @@
       <DependentUpon>FormDefineTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Global.cs" />
+    <Compile Include="Views\MainForms\HelpPagesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MainForms\HelpPagesUserControl.Designer.cs">
+      <DependentUpon>HelpPagesUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainForms\ImportUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -251,6 +258,12 @@
     </Compile>
     <Compile Include="Views\SidebarUserControls\ExperimentControl.Designer.cs">
       <DependentUpon>ExperimentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SidebarUserControls\HelpControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SidebarUserControls\HelpControl.Designer.cs">
+      <DependentUpon>HelpControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SidebarUserControls\ListUserControl.cs">
       <SubType>UserControl</SubType>
@@ -513,6 +526,9 @@
     <EmbeddedResource Include="Views\MainForms\FormMain.pt-BR.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForms\HelpPagesUserControl.resx">
+      <DependentUpon>HelpPagesUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\ImportUserControl.en-US.resx">
       <DependentUpon>ImportUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -590,6 +606,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ExperimentControl.resx">
       <DependentUpon>ExperimentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\HelpControl.resx">
+      <DependentUpon>HelpControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ListUserControl.en-US.resx">
       <DependentUpon>ListUserControl.cs</DependentUpon>
@@ -743,6 +762,7 @@
     <Content Include="Resources\icons\icon_experiment.png" />
     <Content Include="Resources\icons\icon_export.png" />
     <Content Include="Resources\icons\icon_export1.png" />
+    <None Include="Resources\icons\icon_help.png" />
     <Content Include="Resources\icons\icon_import.png" />
     <Content Include="Resources\icons\icon_list.png" />
     <Content Include="Resources\icons\icon_png.png" />

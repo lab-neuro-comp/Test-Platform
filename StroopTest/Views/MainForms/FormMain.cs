@@ -174,7 +174,7 @@ namespace TestPlatform
             }
             if (e.Control && e.KeyCode == Keys.H) // Ctrl+H - intruções / ajuda
             {
-                showInstructions();
+                HelpPagesController.showInstructions();
             }
         }
 
@@ -192,14 +192,12 @@ namespace TestPlatform
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutBox aboutWindow = new AboutBox();
-            try { aboutWindow.Show(); }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            HelpPagesController.showAboutBox();
         }
 
         private void instructionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            showInstructions();
+            HelpPagesController.showInstructions();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -348,18 +346,6 @@ namespace TestPlatform
             }
         }
 
-        private void showInstructions()
-        {
-            FormInstructions infoBox = new FormInstructions(LocRM.GetString("instructionBoxText", currentCulture), (Global.testFilesPath + INSTRUCTIONSFILENAME));
-            try {
-                infoBox.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void editImagesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormImgConfig configureImagesList = new FormImgConfig("");
@@ -379,28 +365,12 @@ namespace TestPlatform
 
         private void techInfoButto_ToolStrip_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(LocRM.GetString("technicalInformation", currentCulture));
-            try {
-                infoBox.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            HelpPagesController.showTechInfo();
         }
 
         private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormInstructions infoBox = new FormInstructions(LocRM.GetString("viewHelp", currentCulture));
-            try
-            {
-                infoBox.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            HelpPagesController.showHelp();
         }
         
         private void editAudioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -901,6 +871,19 @@ namespace TestPlatform
                 currentPanelContent = matchingControl;
             }
 
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            if (helpButton.Checked)
+            {
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
+
+                HelpControl helpControl = new HelpControl();
+                this.sideBarPanel.Controls.Add(helpControl);
+                currentPanelContent = helpControl;
+            }
         }
     }
     

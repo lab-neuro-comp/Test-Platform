@@ -85,6 +85,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.helpButton = new System.Windows.Forms.RadioButton();
             this.buttonMatching = new System.Windows.Forms.RadioButton();
             this.exportButton = new System.Windows.Forms.RadioButton();
             this.importButton = new System.Windows.Forms.RadioButton();
@@ -502,6 +503,7 @@
             // 
             // menuPanel
             // 
+            this.menuPanel.Controls.Add(this.helpButton);
             this.menuPanel.Controls.Add(this.buttonMatching);
             this.menuPanel.Controls.Add(this.exportButton);
             this.menuPanel.Controls.Add(this.importButton);
@@ -513,6 +515,15 @@
             resources.ApplyResources(this.menuPanel, "menuPanel");
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Click += new System.EventHandler(this.menuPanel_Click);
+            // 
+            // helpButton
+            // 
+            resources.ApplyResources(this.helpButton, "helpButton");
+            this.helpButton.FlatAppearance.BorderSize = 0;
+            this.helpButton.Image = global::TestPlatform.Properties.Resources.icon_help;
+            this.helpButton.Name = "helpButton";
+            this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // buttonMatching
             // 
@@ -741,5 +752,6 @@
         private System.Windows.Forms.ToolStripMenuItem englishUnitedStatesToolStripMenuItem;
         private System.Windows.Forms.RadioButton buttonMatching;
         private System.Windows.Forms.ToolStripMenuItem spanishSpainToolStripMenuItem;
+        private System.Windows.Forms.RadioButton helpButton;
     }
 }

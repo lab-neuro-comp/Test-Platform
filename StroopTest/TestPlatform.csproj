@@ -607,6 +607,12 @@
     <EmbeddedResource Include="Views\SidebarUserControls\ExperimentControl.resx">
       <DependentUpon>ExperimentControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\HelpControl.en-US.resx">
+      <DependentUpon>HelpControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\HelpControl.pt-BR.resx">
+      <DependentUpon>HelpControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\HelpControl.resx">
       <DependentUpon>HelpControl.cs</DependentUpon>
     </EmbeddedResource>

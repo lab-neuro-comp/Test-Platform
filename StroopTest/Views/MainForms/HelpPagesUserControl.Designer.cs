@@ -28,27 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpPagesUserControl));
             this.helpBrowser = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
             // helpBrowser
             // 
-            this.helpBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.helpBrowser.Location = new System.Drawing.Point(0, 0);
-            this.helpBrowser.Margin = new System.Windows.Forms.Padding(4);
-            this.helpBrowser.MinimumSize = new System.Drawing.Size(27, 25);
+            resources.ApplyResources(this.helpBrowser, "helpBrowser");
             this.helpBrowser.Name = "helpBrowser";
-            this.helpBrowser.Size = new System.Drawing.Size(1067, 738);
-            this.helpBrowser.TabIndex = 3;
             // 
             // HelpPagesUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.Controls.Add(this.helpBrowser);
             this.Name = "HelpPagesUserControl";
-            this.Size = new System.Drawing.Size(1067, 738);
             this.ResumeLayout(false);
 
         }

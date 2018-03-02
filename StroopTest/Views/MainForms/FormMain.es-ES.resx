@@ -285,4 +285,7 @@
   <data name="radioButton1.Text" xml:space="preserve">
     <value>Importar</value>
   </data>
+  <data name="helpButton.Text" xml:space="preserve">
+    <value>Ayuda</value>
+  </data>
 </root>

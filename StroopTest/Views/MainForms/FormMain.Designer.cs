@@ -54,9 +54,6 @@
             this.stroopToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reactionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stroopToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -279,30 +276,8 @@
             // 
             // deleteToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteListToolStripMenuItem,
-            this.deleteProgramToolStripMenuItem,
-            this.deleteDataToolStripMenuItem});
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
-            // 
-            // deleteListToolStripMenuItem
-            // 
-            this.deleteListToolStripMenuItem.Name = "deleteListToolStripMenuItem";
-            resources.ApplyResources(this.deleteListToolStripMenuItem, "deleteListToolStripMenuItem");
-            this.deleteListToolStripMenuItem.Click += new System.EventHandler(this.deleteListFile_ToolStrip_Click);
-            // 
-            // deleteProgramToolStripMenuItem
-            // 
-            this.deleteProgramToolStripMenuItem.Name = "deleteProgramToolStripMenuItem";
-            resources.ApplyResources(this.deleteProgramToolStripMenuItem, "deleteProgramToolStripMenuItem");
-            this.deleteProgramToolStripMenuItem.Click += new System.EventHandler(this.deleteProgramFile_ToolStrip_Click);
-            // 
-            // deleteDataToolStripMenuItem
-            // 
-            this.deleteDataToolStripMenuItem.Name = "deleteDataToolStripMenuItem";
-            resources.ApplyResources(this.deleteDataToolStripMenuItem, "deleteDataToolStripMenuItem");
-            this.deleteDataToolStripMenuItem.Click += new System.EventHandler(this.deleteDataFile_ToolStrip_Click);
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             // 
             // viewToolStripMenuItem
             // 
@@ -704,12 +679,9 @@
         private System.Windows.Forms.ToolStripMenuItem editTextColorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editImagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteProgramToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem displayDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startTestToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newAudioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem techInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewHelpToolStripMenuItem;

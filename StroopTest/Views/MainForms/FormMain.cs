@@ -265,44 +265,6 @@ namespace TestPlatform
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void deleteDataFile_ToolStrip_Click(object sender, EventArgs e)
-        {
-            moveFileToBackup(Global.stroopTestFilesPath + Global.resultsFolderName, Global.defaultPath + Global.backupFolderName, "txt");
-        }
-
-        private void deleteProgramFile_ToolStrip_Click(object sender, EventArgs e)
-        {
-            moveFileToBackup(Global.stroopTestFilesPath + Global.programFolderName, Global.defaultPath + Global.backupFolderName, "prg");
-        }
-
-        private void deleteListFile_ToolStrip_Click(object sender, EventArgs e)
-        {
-            moveFileToBackup(Global.testFilesPath + Global.listFolderName, Global.defaultPath + Global.backupFolderName, "lst");
-        }
-
-        private void moveFileToBackup (string originPath, string backupPath, string fileType)
-        {
-            try
-            {
-                FormDefine defineFilePath = new FormDefine(LocRM.GetString("exclude", currentCulture), originPath, fileType, "_image_words_color_audio", 
-                    true, false);
-                var result = defineFilePath.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    DialogResult dialogResult = MessageBox.Show(LocRM.GetString("reallyExclude", currentCulture) + defineFilePath.ReturnValue 
-                        + "?", "", MessageBoxButtons.YesNo); // pergunta se deseja repetir o programa
-
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        File.Move(originPath + defineFilePath.ReturnValue + "." + fileType, backupPath + "backup_" + 
-                            defineFilePath.ReturnValue + "." + fileType);
-                        MessageBox.Show(defineFilePath.ReturnValue + ".lst " + LocRM.GetString("exclusionSucceeded", currentCulture));
-                    }
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
-
         private void startTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ExpositionController.BeginStroopTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);

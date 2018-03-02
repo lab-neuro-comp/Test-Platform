@@ -31,7 +31,7 @@ namespace TestPlatform.Controllers
             }
         }
 
-        public static void showTechInfo()
+        public static System.Windows.Forms.Control showTechInfo()
         {
             ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
             CultureInfo currentCulture = System.Threading.Thread.CurrentThread.CurrentUICulture;
@@ -45,9 +45,10 @@ namespace TestPlatform.Controllers
             {
                 MessageBox.Show(ex.Message);
             }
+            return infoBox;
         }
 
-        public static void showHelp()
+        public static System.Windows.Forms.Control showHelp()
         {
             ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
             CultureInfo currentCulture = System.Threading.Thread.CurrentThread.CurrentUICulture;
@@ -61,6 +62,8 @@ namespace TestPlatform.Controllers
             {
                 MessageBox.Show(ex.Message);
             }
+
+            return infoBox;
         }
 
         public static void showAboutBox()

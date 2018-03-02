@@ -6,7 +6,7 @@ namespace TestPlatform.Views.SidebarUserControls
 {
     public partial class HelpControl : DefaultUserControl
     {
-        private Control currentControl;
+        private Control currentControl = null;
 
         public HelpControl()
         {
@@ -27,7 +27,12 @@ namespace TestPlatform.Views.SidebarUserControls
         {
             if (helpPageButton.Checked)
             {
-                HelpPagesController.showHelp();
+                if (currentControl != null)
+                {
+                    Global.GlobalFormMain._contentPanel.Controls.Remove(currentControl);
+
+                }
+                currentControl = HelpPagesController.showHelp();
                 helpPageButton.Checked = false;
             }
         }
@@ -36,7 +41,12 @@ namespace TestPlatform.Views.SidebarUserControls
         {
             if (techInfoButton.Checked)
             {
-                HelpPagesController.showTechInfo();
+                if (currentControl != null)
+                {
+                    Global.GlobalFormMain._contentPanel.Controls.Remove(currentControl);
+
+                }                
+                currentControl = HelpPagesController.showTechInfo();
                 techInfoButton.Checked = false;
             }
         }

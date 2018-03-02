@@ -117,149 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="responseTypeBox.Items" xml:space="preserve">
-    <value>Espaço</value>
+  <data name="aboutButton.Text" xml:space="preserve">
+    <value>Sobre</value>
   </data>
-  <data name="responseTypeBox.Items1" xml:space="preserve">
-    <value>Setas</value>
+  <data name="techInfoButton.Text" xml:space="preserve">
+    <value>Informações Técnicas</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Tecla</value>
+  <data name="helpPageButton.Text" xml:space="preserve">
+    <value>Página de Ajuda</value>
   </data>
-  <data name="userResponse.Text" xml:space="preserve">
-    <value>Resposta do Usuário</value>
-  </data>
-  <data name="shapesGroupBox.Text" xml:space="preserve">
-    <value>Formas</value>
-  </data>
-  <data name="fixPointTypeLabel.Text" xml:space="preserve">
-    <value>Tipo:</value>
-  </data>
-  <data name="fixPointColorLabel.Text" xml:space="preserve">
-    <value>Cor do
-Ponto:</value>
-  </data>
-  <data name="fixPointColorButton.Text" xml:space="preserve">
-    <value>escolher</value>
-  </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Ponto de Fixação</value>
-  </data>
-  <data name="bgColorLabel.Text" xml:space="preserve">
-    <value>Cor de Fundo:</value>
-  </data>
-  <data name="bgColorButton.Text" xml:space="preserve">
-    <value>escolher</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Outros</value>
-  </data>
-  <data name="rndIntervalLabel.Text" xml:space="preserve">
-    <value>Tempo de Intervalo Variável:</value>
-  </data>
-  <data name="intervalTimeLabel.Text" xml:space="preserve">
-    <value>Intervalo (ms):</value>
-  </data>
-  <data name="expoTimeLabel.Text" xml:space="preserve">
-    <value>Exposição (ms):</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Tempo</value>
-  </data>
-  <data name="wordListLabel.Text" xml:space="preserve">
-    <value>Palavras:</value>
-  </data>
-  <data name="audioListLabel.Text" xml:space="preserve">
-    <value>Áudios:</value>
-  </data>
-  <data name="openAudioListButton.Text" xml:space="preserve">
-    <value>abrir</value>
-  </data>
-  <data name="colorListLabel.Text" xml:space="preserve">
-    <value>Cores:</value>
-  </data>
-  <data name="imgListLabel.Text" xml:space="preserve">
-    <value>Imagens:</value>
-  </data>
-  <data name="openWordListButton.Text" xml:space="preserve">
-    <value>abrir</value>
-  </data>
-  <data name="openColorListButton.Text" xml:space="preserve">
-    <value>abrir</value>
-  </data>
-  <data name="openImgListButton.Text" xml:space="preserve">
-    <value>abrir</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Listas</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Ordem aleatória:</value>
-  </data>
-  <data name="positionLabel.Text" xml:space="preserve">
-    <value>Quantidade de possíveis posições:</value>
-  </data>
-  <data name="randomBeepLabel.Text" xml:space="preserve">
-    <value>Beep Aleatório:</value>
-  </data>
-  <data name="expoTypeLabel.Text" xml:space="preserve">
-    <value>Tipo de Estímulo:</value>
-  </data>
-  <data name="chooseExpoType.Items" xml:space="preserve">
-    <value>Forma</value>
-  </data>
-  <data name="chooseExpoType.Items1" xml:space="preserve">
-    <value>Palavra</value>
-  </data>
-  <data name="chooseExpoType.Items2" xml:space="preserve">
-    <value>Imagem</value>
-  </data>
-  <data name="chooseExpoType.Items3" xml:space="preserve">
-    <value>Imagem e Palavra</value>
-  </data>
-  <data name="chooseExpoType.Items4" xml:space="preserve">
-    <value>Palavra com Áudio</value>
-  </data>
-  <data name="chooseExpoType.Items5" xml:space="preserve">
-    <value>Imagem com Áudio</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Cor do Estímulo:</value>
-  </data>
-  <data name="stimulusColor.Text" xml:space="preserve">
-    <value>escolher</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Duração do beep (ms):</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Utilizar beep:</value>
-  </data>
-  <data name="numExpoLabel.Text" xml:space="preserve">
-    <value>Número de Tentativas:</value>
-  </data>
-  <data name="wordSizeLabel.Text" xml:space="preserve">
-    <value>Tamanho do Estímulo:</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Distância do estímulo ao centro da tela:</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Exposição</value>
-  </data>
-  <data name="instructionsLabel.Text" xml:space="preserve">
-    <value>Instruções:</value>
-  </data>
-  <data name="prgNameLabel.Text" xml:space="preserve">
-    <value>Nome do Programa:</value>
-  </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>cancelar</value>
-  </data>
-  <data name="saveButton.Text" xml:space="preserve">
-    <value>salvar</value>
-  </data>
-  <data name="fontSizeLabel.Text" xml:space="preserve">
-    <value>Tamanho da Fonte:</value>
+  <data name="instructionsButton.Text" xml:space="preserve">
+    <value>Instruções</value>
   </data>
 </root>

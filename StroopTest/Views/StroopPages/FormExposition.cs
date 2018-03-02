@@ -411,12 +411,12 @@ namespace TestPlatform
                         }
 
                         wordLabel.Visible = false;
-                        actualImagePath = Path.GetFileName(imageDirs[arrayCounter].ToString());
+                        actualImagePath = StrList.outPutItemName(imageDirs[arrayCounter]);
                         arrayCounter++;
 
 
                         currentTest.writeLineOutputResult(currentTest.ProgramInUse, actualImagePath, "false", counter + 1,
-                                                            outputContent, elapsedTime, "img", audioDetail);
+                                                            outputContent, elapsedTime, "img", StrList.outPutItemName(audioDetail));
 
                         await Task.Delay(currentTest.ProgramInUse.ExpositionTime, cts.Token);
 
@@ -448,7 +448,7 @@ namespace TestPlatform
                             j++;
 
                             currentTest.writeLineOutputResult(currentTest.ProgramInUse, actualImagePath, "false", counter + 1,
-                                                                outputContent, elapsedTime, "txt", audioDetail);
+                                                                outputContent, elapsedTime, "txt", StrList.outPutItemName(audioDetail));
 
                             await Task.Delay(currentTest.ProgramInUse.ExpositionTime, cts.Token);
                         }
@@ -496,11 +496,11 @@ namespace TestPlatform
                                 subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
                             }
 
-                            currentTest.writeLineOutputResult(currentTest.ProgramInUse, 
-                                                                Path.GetFileName(imageDirs[arrayCounter].ToString()), "false",
+                            currentTest.writeLineOutputResult(currentTest.ProgramInUse,
+                                                                StrList.outPutItemName(imageDirs[arrayCounter]), "false",
                                                                 counter + 1, outputContent, elapsedTime, 
-                                                                currentTest.ProgramInUse.ExpositionType, 
-                                                                Path.GetFileNameWithoutExtension(audioDetail));
+                                                                currentTest.ProgramInUse.ExpositionType,
+                                                                StrList.outPutItemName(audioDetail));
                             
                             arrayCounter++;
                             await Task.Delay(currentTest.ProgramInUse.ExpositionTime, cts.Token);

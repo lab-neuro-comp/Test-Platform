@@ -147,21 +147,42 @@ namespace TestPlatform.Models
             }
         }
 
-        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, string currentStimulus, string position, bool beeped, string currentColor)
+        private string expositionTypeOutput()
+        {
+            switch (ProgramInUse.ExpositionType)
+            {
+                case "shapes":
+                    return LocRM.GetString("shape", currentCulture);
+                case "words":
+                    return LocRM.GetString("word", currentCulture);
+                case "images":
+                    return LocRM.GetString("image", currentCulture);
+                case "imageAndWord":
+                    return LocRM.GetString("imageAndWord", currentCulture);
+                case "wordWithAudio":
+                    return LocRM.GetString("wordWithAudio", currentCulture);
+                case "imageWithAudio":
+                    return LocRM.GetString("imageWithAudio", currentCulture);
+                default:
+                    return LocRM.GetString("invalidExpoType", currentCulture);
+            }
+        }
+
+        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, string[] currentStimuli, string position, bool beeped, string currentColor)
         {
             /* This variable keeps data from an exposition to only one stimulus, being them:
              * programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\trespostaUsuario\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep
              * program\tparticipant\tdate\tInitialTime\texpositionTime\treactionTime(ms)\tInterval(ms)\testimatedInterval(ms)\texpositionDuration(ms)\texposition(ms)\tsenquency\tpos\tuserResponse\tstimulusType\tstimulus\tstimulusColor\tBeep
              * program  name    participant     name    date    hour    exposition hour    hit time(ms) interval(ms)  interval should be(ms)  
-             * exposition accumulative timeexposition time(ms)  number of sequency  position on screen  user response   type of stimulus    stimulus   
+             * exposition accumulative timeexposition time(ms)  number of sequency  position on screen  user response   type of stimulus    stimulus1 stimulus2   
              * stimulus color */
             var text = ProgramInUse.ProgramName + "\t" + participantName + "\t" + initialTime.Day + "/" +
                        initialTime.Month + "/" + initialTime.Year + "\t" + initialTime.Hour + ":" + initialTime.Minute +
                        ":" + initialTime.Second + ":" + initialTime.Millisecond.ToString() + "\t" + ExpositionTime.Hour + ":" + ExpositionTime.Minute +
                        ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" + reactTime.ToString() +
                         "\t" + intervalTime.ToString() + "\t" + intervalShouldBe.ToString() + "\t" + expositionAccumulative + "\t" +
-                        ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + position + "\t" +  CurrentResponse  + "\t"+ ProgramInUse.ExpositionType + "\t" +
-                        currentStimulus + "\t" + currentColor + "\t" + beeped.ToString();
+                        ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + position + "\t" +  CurrentResponse  + "\t"+ expositionTypeOutput() + "\t" +
+                        currentStimuli[0] + "\t" + currentStimuli[1] + "\t" + currentColor + "\t" + beeped.ToString();
              Output.Add(text); 
              
         }

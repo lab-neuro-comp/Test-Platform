@@ -223,6 +223,16 @@ namespace TestPlatform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_help {
+            get {
+                object obj = ResourceManager.GetObject("icon_help", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_import {
             get {
                 object obj = ResourceManager.GetObject("icon_import", resourceCulture);

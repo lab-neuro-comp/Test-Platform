@@ -54,9 +54,6 @@
             this.stroopToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reactionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stroopToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,6 +82,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.helpButton = new System.Windows.Forms.RadioButton();
             this.buttonMatching = new System.Windows.Forms.RadioButton();
             this.exportButton = new System.Windows.Forms.RadioButton();
             this.importButton = new System.Windows.Forms.RadioButton();
@@ -278,30 +276,8 @@
             // 
             // deleteToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteListToolStripMenuItem,
-            this.deleteProgramToolStripMenuItem,
-            this.deleteDataToolStripMenuItem});
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
-            // 
-            // deleteListToolStripMenuItem
-            // 
-            this.deleteListToolStripMenuItem.Name = "deleteListToolStripMenuItem";
-            resources.ApplyResources(this.deleteListToolStripMenuItem, "deleteListToolStripMenuItem");
-            this.deleteListToolStripMenuItem.Click += new System.EventHandler(this.deleteListFile_ToolStrip_Click);
-            // 
-            // deleteProgramToolStripMenuItem
-            // 
-            this.deleteProgramToolStripMenuItem.Name = "deleteProgramToolStripMenuItem";
-            resources.ApplyResources(this.deleteProgramToolStripMenuItem, "deleteProgramToolStripMenuItem");
-            this.deleteProgramToolStripMenuItem.Click += new System.EventHandler(this.deleteProgramFile_ToolStrip_Click);
-            // 
-            // deleteDataToolStripMenuItem
-            // 
-            this.deleteDataToolStripMenuItem.Name = "deleteDataToolStripMenuItem";
-            resources.ApplyResources(this.deleteDataToolStripMenuItem, "deleteDataToolStripMenuItem");
-            this.deleteDataToolStripMenuItem.Click += new System.EventHandler(this.deleteDataFile_ToolStrip_Click);
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             // 
             // viewToolStripMenuItem
             // 
@@ -502,6 +478,7 @@
             // 
             // menuPanel
             // 
+            this.menuPanel.Controls.Add(this.helpButton);
             this.menuPanel.Controls.Add(this.buttonMatching);
             this.menuPanel.Controls.Add(this.exportButton);
             this.menuPanel.Controls.Add(this.importButton);
@@ -513,6 +490,15 @@
             resources.ApplyResources(this.menuPanel, "menuPanel");
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Click += new System.EventHandler(this.menuPanel_Click);
+            // 
+            // helpButton
+            // 
+            resources.ApplyResources(this.helpButton, "helpButton");
+            this.helpButton.FlatAppearance.BorderSize = 0;
+            this.helpButton.Image = global::TestPlatform.Properties.Resources.icon_help;
+            this.helpButton.Name = "helpButton";
+            this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // buttonMatching
             // 
@@ -693,12 +679,9 @@
         private System.Windows.Forms.ToolStripMenuItem editTextColorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editImagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteProgramToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem displayDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startTestToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newAudioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem techInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewHelpToolStripMenuItem;
@@ -741,5 +724,6 @@
         private System.Windows.Forms.ToolStripMenuItem englishUnitedStatesToolStripMenuItem;
         private System.Windows.Forms.RadioButton buttonMatching;
         private System.Windows.Forms.ToolStripMenuItem spanishSpainToolStripMenuItem;
+        private System.Windows.Forms.RadioButton helpButton;
     }
 }

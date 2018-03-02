@@ -285,4 +285,7 @@
   <data name="buttonMatching.Text" xml:space="preserve">
     <value>Teste de Escolha</value>
   </data>
+  <data name="helpButton.Text" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
 </root>

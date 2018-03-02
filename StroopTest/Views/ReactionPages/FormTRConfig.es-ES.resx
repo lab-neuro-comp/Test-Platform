@@ -205,7 +205,7 @@
     <value>Tipo de Estímulo:</value>
   </data>
   <data name="chooseExpoType.Items" xml:space="preserve">
-    <value>Formas:</value>
+    <value>Forma:</value>
   </data>
   <data name="chooseExpoType.Items1" xml:space="preserve">
     <value>Palabra</value>

@@ -1095,7 +1095,7 @@ To upgrade, the new version installation file must be run in the same folder as 
     <value>wasn't written\n\n</value>
   </data>
   <data name="reactionTestHeader" xml:space="preserve">
-    <value>program\tparticipant\tdate\tInitial Time\tExposition time\tReactionTime(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tsenquency\tpos\tUser response\tStimulus Type\tstimulus\tStimulus Color\tBeep</value>
+    <value>program\tparticipant\tdate\tInitial Time\tExposition time\tReactionTime(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tsenquency\tpos\tUser response\tStimulus1\tStimulus2 Type\tstimulus\tStimulus Color\tBeep</value>
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Selected response type is invalid. Valid options are: spacebar or key arrows.</value>
@@ -2415,5 +2415,23 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   </data>
   <data name="stimulu" xml:space="preserve">
     <value>Stimulu</value>
+  </data>
+  <data name="image" xml:space="preserve">
+    <value>Imagem</value>
+  </data>
+  <data name="imageAndWord" xml:space="preserve">
+    <value>Image and Word</value>
+  </data>
+  <data name="imageWithAudio" xml:space="preserve">
+    <value>Image with Audio</value>
+  </data>
+  <data name="shape" xml:space="preserve">
+    <value>Shape</value>
+  </data>
+  <data name="word" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="wordWithAudio" xml:space="preserve">
+    <value>Word with Audio</value>
   </data>
 </root>

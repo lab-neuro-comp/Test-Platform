@@ -1325,7 +1325,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>não foi escrito\n\n</value>
   </data>
   <data name="reactionTestHeader" xml:space="preserve">
-    <value>Programa\tParticipante\tData\tHorario inicial\tHorario exposicao\tTR(ms)\tIntervalo(ms)\tIntervalo estimado(ms)\tExposicao tempo(ms)\tExposicao(ms)\tSequencia\tPos\tResposta usuario\tTipo estimulo\tEstimulo\tCor do estimulo\tBeep</value>
+    <value>Programa\tParticipante\tData\tHorario inicial\tHorario exposicao\tTR(ms)\tIntervalo(ms)\tIntervalo estimado(ms)\tExposicao tempo(ms)\tExposicao(ms)\tSequencia\tPos\tResposta usuario\tTipo estimulo\tEstimulo1\tEstimulo2\tCor do estimulo\tBeep</value>
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Tipo de resposta selecionado inválido. As opções válidas são: barra de espaço ou setas.</value>
@@ -2399,5 +2399,23 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="String1" xml:space="preserve">
     <value />
+  </data>
+  <data name="image" xml:space="preserve">
+    <value>Imagem</value>
+  </data>
+  <data name="imageAndWord" xml:space="preserve">
+    <value>Imagem e Palavra</value>
+  </data>
+  <data name="imageWithAudio" xml:space="preserve">
+    <value>Imagem com Aúdio</value>
+  </data>
+  <data name="shape" xml:space="preserve">
+    <value>Forma</value>
+  </data>
+  <data name="word" xml:space="preserve">
+    <value>Palavra</value>
+  </data>
+  <data name="wordWithAudio" xml:space="preserve">
+    <value>Palavra com Aúdio</value>
   </data>
 </root>

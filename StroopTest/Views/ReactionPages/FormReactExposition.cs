@@ -48,7 +48,7 @@ namespace TestPlatform.Views
         private int audioCounter = 0;
         private PictureBox imgPictureBox = new PictureBox();
         private bool exposing = false;
-        private string currentStimulus = null;
+        private string[] currentStimuli = {"-", "-" };
         private int currentPosition;
         private bool currentBeep = false;
         private int[,] positions;
@@ -414,7 +414,7 @@ namespace TestPlatform.Views
 
         private void singleShapeExposition(string shape)
         {
-            currentStimulus = shape;
+            currentStimuli[0] = shape;
             switch (shape)
             {
                 case "fullSquare":
@@ -467,7 +467,7 @@ namespace TestPlatform.Views
             // configuring label that have word stimulus dimensions, color and position
             wordLabel = ExpositionController.InitializeWordLabel(executingTest.ProgramInUse.FontSize, wordsList[wordCounter], colorsList[colorCounter], screenPosition);
 
-            currentStimulus = wordsList[wordCounter];
+            currentStimuli[0] = wordsList[wordCounter];
             currentColor = colorsList[colorCounter];
             wordCounter++;
 
@@ -489,7 +489,7 @@ namespace TestPlatform.Views
             int[] screenPosition = ScreenPosition(imgPictureBox.Size);
             imgPictureBox.Location = new Point(screenPosition[X], screenPosition[Y]);
 
-            currentStimulus = StrList.outPutItemName(imagesList[imageCounter]);
+            currentStimuli[0] = StrList.outPutItemName(imagesList[imageCounter]);
             imageCounter++;            
             if(imageCounter == imagesList.Length)
             {
@@ -501,7 +501,7 @@ namespace TestPlatform.Views
         private void playAudio()
         {
             string currentAudio = audioList[audioCounter];
-            currentStimulus += "    audio: " + StrList.outPutItemName(currentAudio);
+            currentStimuli[1] = StrList.outPutItemName(currentAudio);
             Player.SoundLocation = currentAudio;
             audioCounter++;
             if (audioCounter == audioList.Length)
@@ -697,20 +697,20 @@ namespace TestPlatform.Views
             {
                 /* user clicked after stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds,
-                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition), currentBeep, currentColor);
+                                              currentExposition + 1, expositionAccumulative, currentStimuli, position_converter(currentPosition), currentBeep, currentColor);
             }
 
             else if ((e.Cancelled == true) && intervalCancelled)
             {
                 /* user clicked before stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, intervalElapsedTime - intervalShouldBe,
-                                              currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition), currentBeep, currentColor);
+                                              currentExposition + 1, expositionAccumulative, currentStimuli, position_converter(currentPosition), currentBeep, currentColor);
             }
             else
             {
                 /* user missed stimulus */
                 executingTest.CurrentResponse = "NA";
-                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentStimulus, position_converter(currentPosition),
+                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentStimuli, position_converter(currentPosition),
                                                 currentBeep, currentColor);
                 hitStopWatch.Stop();
             }

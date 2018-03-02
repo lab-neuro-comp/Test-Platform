@@ -29,68 +29,43 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormWordColorConfig));
-            this.wordsDataGridView = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listNameTextBox = new System.Windows.Forms.TextBox();
             this.listNameLabel = new System.Windows.Forms.Label();
             this.wordsListCheckBox = new System.Windows.Forms.CheckBox();
             this.colorsListCheckBox = new System.Windows.Forms.CheckBox();
-            this.newItemButton = new System.Windows.Forms.Button();
-            this.deleteItemLabel = new System.Windows.Forms.Label();
-            this.moveRowLabel = new System.Windows.Forms.Label();
-            this.moveDownButton = new System.Windows.Forms.Button();
-            this.moveUpButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.numberItens = new System.Windows.Forms.Label();
-            this.numberItensLabel = new System.Windows.Forms.Label();
+            this.newTextButton = new System.Windows.Forms.Button();
+            this.numberItensWord = new System.Windows.Forms.Label();
+            this.numberItensWordLabel = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.helpButton = new System.Windows.Forms.Button();
             this.labelEmpty = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.wordsDataGridView)).BeginInit();
+            this.colorListView = new System.Windows.Forms.ListView();
+            this.numberItensColor = new System.Windows.Forms.Label();
+            this.numberItensColorLabel = new System.Windows.Forms.Label();
+            this.wordItemTextBox = new System.Windows.Forms.TextBox();
+            this.newColorButton = new System.Windows.Forms.Button();
+            this.colorPanel = new System.Windows.Forms.Panel();
+            this.chooseColorButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.downColorItem = new System.Windows.Forms.Button();
+            this.upColorItem = new System.Windows.Forms.Button();
+            this.deleteColorItem = new System.Windows.Forms.Button();
+            this.colorItemTextBox = new System.Windows.Forms.TextBox();
+            this.wordListView = new System.Windows.Forms.ListView();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.label3 = new System.Windows.Forms.Label();
+            this.downWordItem = new System.Windows.Forms.Button();
+            this.upWordItem = new System.Windows.Forms.Button();
+            this.deleteWordItem = new System.Windows.Forms.Button();
+            this.colorListGroupBox = new System.Windows.Forms.GroupBox();
+            this.wordGroupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.colorListGroupBox.SuspendLayout();
+            this.wordGroupBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // wordsDataGridView
-            // 
-            this.wordsDataGridView.AllowUserToAddRows = false;
-            this.wordsDataGridView.AllowUserToDeleteRows = false;
-            this.wordsDataGridView.AllowUserToResizeColumns = false;
-            this.wordsDataGridView.AllowUserToResizeRows = false;
-            this.wordsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.wordsDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.wordsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.wordsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.wordsDataGridView, "wordsDataGridView");
-            this.wordsDataGridView.Name = "wordsDataGridView";
-            this.wordsDataGridView.ReadOnly = true;
-            this.wordsDataGridView.RowHeadersVisible = false;
-            this.wordsDataGridView.Validating += new System.ComponentModel.CancelEventHandler(this.listLength_Validating);
-            this.wordsDataGridView.Validated += new System.EventHandler(this.listLength_Validated);
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            resources.ApplyResources(this.Column1, "Column1");
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // listNameTextBox
             // 
@@ -118,54 +93,23 @@
             this.colorsListCheckBox.UseVisualStyleBackColor = true;
             this.colorsListCheckBox.CheckedChanged += new System.EventHandler(this.colorsListCheckBox_CheckedChanged);
             // 
-            // newItemButton
+            // newTextButton
             // 
-            resources.ApplyResources(this.newItemButton, "newItemButton");
-            this.newItemButton.CausesValidation = false;
-            this.newItemButton.Name = "newItemButton";
-            this.newItemButton.UseVisualStyleBackColor = true;
-            this.newItemButton.Click += new System.EventHandler(this.newItemButton_Click);
+            resources.ApplyResources(this.newTextButton, "newTextButton");
+            this.newTextButton.CausesValidation = false;
+            this.newTextButton.Name = "newTextButton";
+            this.newTextButton.UseVisualStyleBackColor = true;
+            this.newTextButton.Click += new System.EventHandler(this.newItemButton_Click);
             // 
-            // deleteItemLabel
+            // numberItensWord
             // 
-            resources.ApplyResources(this.deleteItemLabel, "deleteItemLabel");
-            this.deleteItemLabel.Name = "deleteItemLabel";
+            resources.ApplyResources(this.numberItensWord, "numberItensWord");
+            this.numberItensWord.Name = "numberItensWord";
             // 
-            // moveRowLabel
+            // numberItensWordLabel
             // 
-            resources.ApplyResources(this.moveRowLabel, "moveRowLabel");
-            this.moveRowLabel.Name = "moveRowLabel";
-            // 
-            // moveDownButton
-            // 
-            resources.ApplyResources(this.moveDownButton, "moveDownButton");
-            this.moveDownButton.Name = "moveDownButton";
-            this.moveDownButton.UseVisualStyleBackColor = true;
-            this.moveDownButton.Click += new System.EventHandler(this.moveDownButton_Click);
-            // 
-            // moveUpButton
-            // 
-            resources.ApplyResources(this.moveUpButton, "moveUpButton");
-            this.moveUpButton.Name = "moveUpButton";
-            this.moveUpButton.UseVisualStyleBackColor = true;
-            this.moveUpButton.Click += new System.EventHandler(this.moveUpButton_Click);
-            // 
-            // deleteButton
-            // 
-            resources.ApplyResources(this.deleteButton, "deleteButton");
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
-            // numberItens
-            // 
-            resources.ApplyResources(this.numberItens, "numberItens");
-            this.numberItens.Name = "numberItens";
-            // 
-            // numberItensLabel
-            // 
-            resources.ApplyResources(this.numberItensLabel, "numberItensLabel");
-            this.numberItensLabel.Name = "numberItensLabel";
+            resources.ApplyResources(this.numberItensWordLabel, "numberItensWordLabel");
+            this.numberItensWordLabel.Name = "numberItensWordLabel";
             // 
             // cancelButton
             // 
@@ -203,56 +147,208 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // colorListView
+            // 
+            resources.ApplyResources(this.colorListView, "colorListView");
+            this.colorListView.FullRowSelect = true;
+            this.colorListView.LabelEdit = true;
+            this.colorListView.Name = "colorListView";
+            this.colorListView.TabStop = false;
+            this.colorListView.TileSize = new System.Drawing.Size(120, 40);
+            this.colorListView.UseCompatibleStateImageBehavior = false;
+            this.colorListView.View = System.Windows.Forms.View.Tile;
+            // 
+            // numberItensColor
+            // 
+            resources.ApplyResources(this.numberItensColor, "numberItensColor");
+            this.numberItensColor.Name = "numberItensColor";
+            // 
+            // numberItensColorLabel
+            // 
+            resources.ApplyResources(this.numberItensColorLabel, "numberItensColorLabel");
+            this.numberItensColorLabel.Name = "numberItensColorLabel";
+            // 
+            // wordItemTextBox
+            // 
+            resources.ApplyResources(this.wordItemTextBox, "wordItemTextBox");
+            this.wordItemTextBox.Name = "wordItemTextBox";
+            // 
+            // newColorButton
+            // 
+            resources.ApplyResources(this.newColorButton, "newColorButton");
+            this.newColorButton.CausesValidation = false;
+            this.newColorButton.Name = "newColorButton";
+            this.newColorButton.UseVisualStyleBackColor = true;
+            // 
+            // colorPanel
+            // 
+            this.colorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.colorPanel, "colorPanel");
+            this.colorPanel.Name = "colorPanel";
+            // 
+            // chooseColorButton
+            // 
+            resources.ApplyResources(this.chooseColorButton, "chooseColorButton");
+            this.chooseColorButton.CausesValidation = false;
+            this.chooseColorButton.Name = "chooseColorButton";
+            this.chooseColorButton.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // downColorItem
+            // 
+            resources.ApplyResources(this.downColorItem, "downColorItem");
+            this.downColorItem.Image = global::TestPlatform.Properties.Resources.arrowDown;
+            this.downColorItem.Name = "downColorItem";
+            this.downColorItem.UseVisualStyleBackColor = true;
+            // 
+            // upColorItem
+            // 
+            resources.ApplyResources(this.upColorItem, "upColorItem");
+            this.upColorItem.Image = global::TestPlatform.Properties.Resources.arrowUp;
+            this.upColorItem.Name = "upColorItem";
+            this.upColorItem.UseVisualStyleBackColor = true;
+            // 
+            // deleteColorItem
+            // 
+            resources.ApplyResources(this.deleteColorItem, "deleteColorItem");
+            this.deleteColorItem.Name = "deleteColorItem";
+            this.deleteColorItem.UseVisualStyleBackColor = true;
+            // 
+            // colorItemTextBox
+            // 
+            resources.ApplyResources(this.colorItemTextBox, "colorItemTextBox");
+            this.colorItemTextBox.Name = "colorItemTextBox";
+            // 
+            // wordListView
+            // 
+            resources.ApplyResources(this.wordListView, "wordListView");
+            this.wordListView.FullRowSelect = true;
+            this.wordListView.LabelEdit = true;
+            this.wordListView.Name = "wordListView";
+            this.wordListView.TabStop = false;
+            this.wordListView.TileSize = new System.Drawing.Size(120, 40);
+            this.wordListView.UseCompatibleStateImageBehavior = false;
+            this.wordListView.View = System.Windows.Forms.View.Tile;
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // downWordItem
+            // 
+            resources.ApplyResources(this.downWordItem, "downWordItem");
+            this.downWordItem.Image = global::TestPlatform.Properties.Resources.arrowDown;
+            this.downWordItem.Name = "downWordItem";
+            this.downWordItem.UseVisualStyleBackColor = true;
+            // 
+            // upWordItem
+            // 
+            resources.ApplyResources(this.upWordItem, "upWordItem");
+            this.upWordItem.Image = global::TestPlatform.Properties.Resources.arrowUp;
+            this.upWordItem.Name = "upWordItem";
+            this.upWordItem.UseVisualStyleBackColor = true;
+            // 
+            // deleteWordItem
+            // 
+            resources.ApplyResources(this.deleteWordItem, "deleteWordItem");
+            this.deleteWordItem.Name = "deleteWordItem";
+            this.deleteWordItem.UseVisualStyleBackColor = true;
+            // 
+            // colorListGroupBox
+            // 
+            this.colorListGroupBox.Controls.Add(this.colorListView);
+            this.colorListGroupBox.Controls.Add(this.colorsListCheckBox);
+            this.colorListGroupBox.Controls.Add(this.numberItensColorLabel);
+            this.colorListGroupBox.Controls.Add(this.numberItensColor);
+            this.colorListGroupBox.Controls.Add(this.newColorButton);
+            this.colorListGroupBox.Controls.Add(this.colorPanel);
+            this.colorListGroupBox.Controls.Add(this.chooseColorButton);
+            this.colorListGroupBox.Controls.Add(this.colorItemTextBox);
+            this.colorListGroupBox.Controls.Add(this.deleteColorItem);
+            this.colorListGroupBox.Controls.Add(this.label4);
+            this.colorListGroupBox.Controls.Add(this.upColorItem);
+            this.colorListGroupBox.Controls.Add(this.downColorItem);
+            resources.ApplyResources(this.colorListGroupBox, "colorListGroupBox");
+            this.colorListGroupBox.Name = "colorListGroupBox";
+            this.colorListGroupBox.TabStop = false;
+            // 
+            // wordGroupBox
+            // 
+            this.wordGroupBox.Controls.Add(this.wordListView);
+            this.wordGroupBox.Controls.Add(this.label3);
+            this.wordGroupBox.Controls.Add(this.wordsListCheckBox);
+            this.wordGroupBox.Controls.Add(this.downWordItem);
+            this.wordGroupBox.Controls.Add(this.newTextButton);
+            this.wordGroupBox.Controls.Add(this.upWordItem);
+            this.wordGroupBox.Controls.Add(this.numberItensWordLabel);
+            this.wordGroupBox.Controls.Add(this.deleteWordItem);
+            this.wordGroupBox.Controls.Add(this.numberItensWord);
+            this.wordGroupBox.Controls.Add(this.wordItemTextBox);
+            resources.ApplyResources(this.wordGroupBox, "wordGroupBox");
+            this.wordGroupBox.Name = "wordGroupBox";
+            this.wordGroupBox.TabStop = false;
+            // 
             // FormWordColorConfig
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.Controls.Add(this.wordGroupBox);
+            this.Controls.Add(this.colorListGroupBox);
             this.Controls.Add(this.labelEmpty);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.numberItens);
-            this.Controls.Add(this.numberItensLabel);
-            this.Controls.Add(this.deleteItemLabel);
-            this.Controls.Add(this.moveRowLabel);
-            this.Controls.Add(this.moveDownButton);
-            this.Controls.Add(this.moveUpButton);
-            this.Controls.Add(this.deleteButton);
-            this.Controls.Add(this.newItemButton);
-            this.Controls.Add(this.colorsListCheckBox);
-            this.Controls.Add(this.wordsListCheckBox);
             this.Controls.Add(this.listNameLabel);
             this.Controls.Add(this.listNameTextBox);
-            this.Controls.Add(this.wordsDataGridView);
             this.Name = "FormWordColorConfig";
-            ((System.ComponentModel.ISupportInitialize)(this.wordsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.colorListGroupBox.ResumeLayout(false);
+            this.colorListGroupBox.PerformLayout();
+            this.wordGroupBox.ResumeLayout(false);
+            this.wordGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView wordsDataGridView;
         private System.Windows.Forms.TextBox listNameTextBox;
         private System.Windows.Forms.Label listNameLabel;
         private System.Windows.Forms.CheckBox wordsListCheckBox;
         private System.Windows.Forms.CheckBox colorsListCheckBox;
-        private System.Windows.Forms.Button newItemButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.Label deleteItemLabel;
-        private System.Windows.Forms.Label moveRowLabel;
-        private System.Windows.Forms.Button moveDownButton;
-        private System.Windows.Forms.Button moveUpButton;
-        private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.Label numberItens;
-        private System.Windows.Forms.Label numberItensLabel;
+        private System.Windows.Forms.Button newTextButton;
+        private System.Windows.Forms.Label numberItensWord;
+        private System.Windows.Forms.Label numberItensWordLabel;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.Label labelEmpty;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label numberItensColor;
+        private System.Windows.Forms.Label numberItensColorLabel;
+        private System.Windows.Forms.ListView colorListView;
+        private System.Windows.Forms.TextBox wordItemTextBox;
+        private System.Windows.Forms.Button newColorButton;
+        private System.Windows.Forms.Button chooseColorButton;
+        private System.Windows.Forms.Panel colorPanel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button downColorItem;
+        private System.Windows.Forms.Button upColorItem;
+        private System.Windows.Forms.Button deleteColorItem;
+        private System.Windows.Forms.TextBox colorItemTextBox;
+        private System.Windows.Forms.ListView wordListView;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button downWordItem;
+        private System.Windows.Forms.Button upWordItem;
+        private System.Windows.Forms.Button deleteWordItem;
+        private System.Windows.Forms.GroupBox colorListGroupBox;
+        private System.Windows.Forms.GroupBox wordGroupBox;
     }
 }

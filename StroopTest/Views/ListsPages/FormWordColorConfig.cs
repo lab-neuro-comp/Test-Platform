@@ -39,12 +39,16 @@ namespace TestPlatform
             {
                 wordsListCheckBox.Checked = true;
                 colorsListCheckBox.Checked = true;
-                numberItens.Text = wordsDataGridView.RowCount.ToString();
+                updateListsCounters();
                 checkTypeOfList();
             }
         }
         
-
+        private void updateListsCounters()
+        {
+            numberItensWord.Text = wordListView.Items.Count.ToString();
+            numberItensColor.Text = colorListView.Items.Count.ToString();
+        }
         private void openFilesForEdition()
         {
             try
@@ -91,7 +95,7 @@ namespace TestPlatform
                         colorsListCheckBox.Checked = true;
                     }
                     checkTypeOfList();
-                    numberItens.Text = wordsDataGridView.RowCount.ToString();
+                    numberItensWord.Text = wordsDataGridView.RowCount.ToString();
                 }
                 else
                 {
@@ -120,7 +124,7 @@ namespace TestPlatform
                     clearDGV(wordsDataGridView);
                     readColoredWordsIntoDGV(wordsList, colorsList, wordsDataGridView);
                 }
-                numberItens.Text = wordsDataGridView.RowCount.ToString();
+                numberItensWord.Text = wordsDataGridView.RowCount.ToString();
             }
             catch (Exception ex)
             {
@@ -150,23 +154,20 @@ namespace TestPlatform
         {
             try
             {
-                clearDGV(wordsDataGridView);
                 if (wordsListCheckBox.Checked && colorsListCheckBox.Checked)
                 {
-                    wordsDataGridView.Columns[0].HeaderText = LocRM.GetString("wordColorList", currentCulture);
-                    readColoredWordsIntoDGV(wordsList, colorsList, wordsDataGridView);
+                    // TODO: ADD LISTS CONTENTS AND ADD LIST NAME TO GROUP BOX
                 }
-                if (wordsListCheckBox.Checked && !colorsListCheckBox.Checked)
+                else if (wordsListCheckBox.Checked && !colorsListCheckBox.Checked)
                 {
-                    wordsDataGridView.Columns[0].HeaderText = LocRM.GetString("wordsList", currentCulture);
-                    readWordsIntoDGV(wordsList, wordsDataGridView);
+                    // TODO: ADD LISTS CONTENTS AND ADD LIST NAME TO GROUP BOX
                 }
-                if (!wordsListCheckBox.Checked && colorsListCheckBox.Checked)
+                else if (!wordsListCheckBox.Checked && colorsListCheckBox.Checked)
                 {
-                    wordsDataGridView.Columns[0].HeaderText = LocRM.GetString("colorsList", currentCulture);
-                    readColorsIntoDGV(colorsList, wordsDataGridView);
+                    // TODO: ADD LISTS CONTENTS AND ADD LIST NAME TO GROUP BOX
                 }
-                numberItens.Text = wordsDataGridView.RowCount.ToString();
+
+                updateListsCounters();
             }
             catch (Exception ex)
             {

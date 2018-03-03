@@ -18,7 +18,6 @@ namespace TestPlatform
         private bool isListNameValid = false;
 
         List<string> wordsList = new List<string>(), colorsList = new List<string>();
-        private string hexPattern = "^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$";
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
@@ -39,9 +38,9 @@ namespace TestPlatform
             {
                 wordsListCheckBox.Checked = true;
                 colorsListCheckBox.Checked = true;
-                updateListsCounters();
-                checkTypeOfList();
             }
+            updateListsCounters();
+            checkTypeOfList();
         }
         
         private void updateListsCounters()
@@ -49,6 +48,7 @@ namespace TestPlatform
             numberItensWord.Text = wordListView.Items.Count.ToString();
             numberItensColor.Text = colorListView.Items.Count.ToString();
         }
+
         private void openFilesForEdition()
         {
             try
@@ -94,8 +94,7 @@ namespace TestPlatform
                         }
                         colorsListCheckBox.Checked = true;
                     }
-                    checkTypeOfList();
-                    numberItensWord.Text = wordsDataGridView.RowCount.ToString();
+                    addItems();
                 }
                 else
                 {
@@ -110,21 +109,67 @@ namespace TestPlatform
             }
         }
 
-        private void newItemButton_Click(object sender, EventArgs e)
+        private void addItems()
+        {
+            int count = this.colorListView.Items.Count;
+            foreach (string color in colorsList)
+            {
+                if (Validations.isHexPattern(color))
+                {
+                    ListViewItem newItem = colorListView.Items.Add(color);
+                    newItem.ForeColor = ColorTranslator.FromHtml(color);
+                }
+            }
+            foreach(string word in wordsList)
+            {
+                wordListView.Items.Add(word);
+            }
+        }
+
+
+        private void newWordItemButton_Click(object sender, EventArgs e)
         {
             try
             {
-                FormWordColorDialog dialog = new FormWordColorDialog();
-                var result = dialog.ShowDialog();
-                if (result == DialogResult.OK)
+               if (wordItemTextBox.TextLength > 0)
                 {
-                    string[] tokens = dialog.ReturnValue.Split(' ');
-                    wordsList.Add(tokens[0]);
-                    colorsList.Add(tokens[1]);
-                    clearDGV(wordsDataGridView);
-                    readColoredWordsIntoDGV(wordsList, colorsList, wordsDataGridView);
+                    wordsList.Add(wordItemTextBox.Text);
+                    wordListView.Items.Add(wordItemTextBox.Text);
+                    wordItemTextBox.Text = "";
+                    this.errorProvider1.SetError(this.wordItemTextBox, "");
                 }
-                numberItensWord.Text = wordsDataGridView.RowCount.ToString();
+               else
+                {
+                    this.errorProvider1.SetError(this.wordItemTextBox, LocRM.GetString("emptyBox", currentCulture));
+                }
+                
+                updateListsCounters();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void newColorButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string color = colorItemTextBox.Text;
+                if (Validations.isHexPattern(color))
+                {
+                    colorsList.Add(color);
+                    ListViewItem newItem = colorListView.Items.Add(color);
+                    newItem.ForeColor = ColorTranslator.FromHtml(color);
+                    colorItemTextBox.Text = "";
+                    this.errorProvider1.SetError(this.colorItemTextBox, "");
+                }
+                else
+                {
+                    this.errorProvider1.SetError(this.colorItemTextBox, LocRM.GetString("colorMatch", currentCulture));
+                }
+
+                updateListsCounters();
             }
             catch (Exception ex)
             {
@@ -154,17 +199,29 @@ namespace TestPlatform
         {
             try
             {
+                string listName = listNameTextBox.Text;
                 if (wordsListCheckBox.Checked && colorsListCheckBox.Checked)
                 {
-                    // TODO: ADD LISTS CONTENTS AND ADD LIST NAME TO GROUP BOX
+                    wordGroupBox.Name = listName + "_words";
+                    colorListGroupBox.Name = listName + "_color";
+                    wordGroupBox.Enabled = true;
+                    colorListGroupBox.Enabled = true;
                 }
                 else if (wordsListCheckBox.Checked && !colorsListCheckBox.Checked)
                 {
-                    // TODO: ADD LISTS CONTENTS AND ADD LIST NAME TO GROUP BOX
+                    wordGroupBox.Name = listName + "_words";
+                    colorListGroupBox.Name = "-";
+
+                    wordGroupBox.Enabled = true;
+                    colorListGroupBox.Enabled = false;
                 }
                 else if (!wordsListCheckBox.Checked && colorsListCheckBox.Checked)
                 {
-                    // TODO: ADD LISTS CONTENTS AND ADD LIST NAME TO GROUP BOX
+                    wordGroupBox.Name = "-";
+                    colorListGroupBox.Name = listName + "_color";
+
+                    wordGroupBox.Enabled = false;
+                    colorListGroupBox.Enabled = true;
                 }
 
                 updateListsCounters();
@@ -175,110 +232,62 @@ namespace TestPlatform
             }
         }
 
-        private void readWordsIntoDGV(List<string> words, DataGridView dataGridView)
+        private void upWordItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                for (int i = 0; i < words.Count; i++)
-                {
-                    dataGridView.Rows.Add(words[i]);
-                    dataGridView.Rows[i].Cells[0].Style.ForeColor = Color.Black;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            moveUpListView(wordListView, wordsList);           
         }
 
-        private void readColorsIntoDGV(List<string> colors, DataGridView dataGridView)
+        private void upColorItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                for (int i = 0; i < colors.Count; i++)
-                {
-                    dataGridView.Rows.Add(colors[i]);
-                    if (Regex.IsMatch(colors[i], hexPattern))
-                    {
-                        dataGridView.Rows[i].Cells[0].Style.ForeColor = ColorTranslator.FromHtml(colors[i]);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            moveUpListView(colorListView, colorsList);
         }
 
-        private void readColoredWordsIntoDGV(List<string> words, List<string> colors, DataGridView dataGridView)
+        private void downWordItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                for (int i = 0; i < words.Count; i++)
-                {
-                    dataGridView.Rows.Add(words[i]);
-                }
-                for (int i = 0; i < colors.Count; i++)
-                {
-                    if (Regex.IsMatch(colors[i], hexPattern))
-                    {
-                        dataGridView.Rows[i].Cells[0].Style.ForeColor = ColorTranslator.FromHtml(colors[i]);
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
+            moveDownListView(wordListView, wordsList);
         }
 
-        private void clearDGV(DataGridView dataGridView)
+        private void downColorItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                dataGridView.Rows.Clear();
-                dataGridView.Refresh();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            moveDownListView(colorListView, colorsList);
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
+        private void moveUpListView(ListView listView, List<string> list)
         {
-            try
+            if (!(listView.Items.Count == 0))
             {
-                if (wordsDataGridView.RowCount > 0)
+                ListViewItem selectedItem = listView.SelectedItems[0];
+                if (selectedItem.Index > 0)
                 {
-                    int rowIndex = wordsDataGridView.SelectedCells[0].OwningRow.Index;
-                    string item = wordsList[rowIndex];
-                    if (wordsList.Count > 0)
-                    {
-                        wordsList.RemoveAt(rowIndex);
-                    }
-                    if (colorsList.Count > 0)
-                    {
-                        colorsList.RemoveAt(rowIndex);
-                    }
-                    checkTypeOfList();
+                    int index = selectedItem.Index - 1;
+                    moveUpItem(list, selectedItem.Index);
+                    listView.Items.RemoveAt(selectedItem.Index);
+                    listView.Items.Insert(index, selectedItem);
                 }
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-            }
-            
-        }
-
-        private void moveUpButton_Click(object sender, EventArgs e)
-        {
-            if (wordsDataGridView.RowCount == 0)
                 return;
-            DGVManipulation.MoveDGVRowUp(wordsDataGridView);
-            int rowIndex = wordsDataGridView.SelectedCells[0].OwningRow.Index;
-            moveUpItem(wordsList, rowIndex);
-            moveUpItem(colorsList, rowIndex);
+            }
+        }
+
+        private void moveDownListView(ListView listView, List<string> list)
+        {
+            if (!(listView.Items.Count == 0))
+            {
+                ListViewItem selectedItem = listView.SelectedItems[0];
+                if (selectedItem.Index < listView.Items.Count-1)
+                {
+                    int index = selectedItem.Index + 1;
+                    moveDownItem(list, selectedItem.Index);
+                    listView.Items.RemoveAt(selectedItem.Index);
+                    listView.Items.Insert(index, selectedItem);
+                }
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void moveUpItem(List<string> list, int index)
@@ -297,21 +306,11 @@ namespace TestPlatform
             }
         }
 
-        private void moveDownButton_Click(object sender, EventArgs e)
-        {
-            if (wordsDataGridView.RowCount == 0)
-                return;
-            DGVManipulation.MoveDGVRowDown(wordsDataGridView);
-            int rowIndex = wordsDataGridView.SelectedCells[0].OwningRow.Index;
-            moveDownItem(wordsList, rowIndex);
-            moveDownItem(colorsList, rowIndex);
-        }
-
         private void moveDownItem(List<string> list, int index)
         {
             try
             {
-                if (index == list.Count-1)
+                if (index == list.Count - 1)
                     return;
                 string item = list[index];
                 list.RemoveAt(index);
@@ -404,11 +403,6 @@ namespace TestPlatform
             return true;
         }
 
-        private void listLength_Validated(object sender, System.EventArgs e)
-        {
-            labelEmpty.Visible = false;
-        }
-
         public bool ValidListLength(int number, out string errorMessage)
         {
             if (number == 0)
@@ -419,18 +413,6 @@ namespace TestPlatform
 
             errorMessage = "";
             return true;
-        }
-
-        private void listLength_Validating(object sender,
-                             System.ComponentModel.CancelEventArgs e)
-        {
-            string errorMsg;
-            if (!ValidListLength(wordsDataGridView.RowCount, out errorMsg))
-            {
-                e.Cancel = true;
-                labelEmpty.Text = errorMsg;
-                labelEmpty.Visible = true;
-            }
         }
 
         private void helpButton_Click(object sender, EventArgs e)
@@ -445,6 +427,92 @@ namespace TestPlatform
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void chooseColorButton_Click(object sender, EventArgs e)
+        {
+            string colorCode = pickColor();
+            if (colorCode != null)
+            {
+                colorPanel.ForeColor = ColorTranslator.FromHtml(colorCode);
+                colorItemTextBox.Text = colorCode;
+            }
+        }
+
+        private string pickColor()
+        {
+            ColorDialog MyDialog = new ColorDialog();
+            MyDialog.CustomColors = new int[] {
+                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#F8E000")),
+                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#007BB7")),
+                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#7EC845")),
+                                        ColorTranslator.ToOle(ColorTranslator.FromHtml("#D01C1F"))
+                                      };
+            Color colorPicked = this.BackColor;
+            string hexColor = null;
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+            {
+                colorPicked = MyDialog.Color;
+                hexColor = "#" + colorPicked.R.ToString("X2") + colorPicked.G.ToString("X2") + colorPicked.B.ToString("X2");
+            }
+            return hexColor;
+        }
+
+        private void deleteWordItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (wordListView.Items.Count > 0 && wordListView.SelectedItems.Count > 0)
+                {
+                    int rowIndex = wordListView.SelectedItems[0].Index;
+                    wordListView.Items.RemoveAt(rowIndex);
+
+                    if (wordsList.Count > 0)
+                    {
+                        wordsList.RemoveAt(rowIndex);
+                    }
+                    updateListsCounters();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void deleteColorItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (colorListView.Items.Count > 0 && colorListView.SelectedItems.Count > 0)
+                {
+                    int rowIndex = colorListView.SelectedItems[0].Index;
+                    colorListView.Items.RemoveAt(rowIndex);
+                    if (colorsList.Count > 0)
+                    {
+                        colorsList.RemoveAt(rowIndex);
+                    }
+                    updateListsCounters();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void listNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string listName = listNameTextBox.Text;
+            if (wordsListCheckBox.Checked)
+            {
+                wordGroupBox.Name = listName + "_words";
+            }
+            if (colorsListCheckBox.Checked)
+            {
+                colorListGroupBox.Name = listName + "_color";
+            }
+        }
+
 
         private void cancelButton_Click(object sender, EventArgs e)
         {

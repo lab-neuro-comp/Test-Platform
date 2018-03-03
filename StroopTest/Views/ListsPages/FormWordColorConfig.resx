@@ -142,7 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;listNameTextBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="listNameLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -172,13 +172,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;listNameLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="wordsListCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="wordsListCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 28</value>
+    <value>11, 61</value>
   </data>
   <data name="wordsListCheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -199,16 +199,16 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;wordsListCheckBox.Parent" xml:space="preserve">
-    <value>wordGroupBox</value>
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;wordsListCheckBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="colorsListCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="colorsListCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 26</value>
+    <value>400, 61</value>
   </data>
   <data name="colorsListCheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -229,7 +229,7 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;colorsListCheckBox.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;colorsListCheckBox.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -241,7 +241,7 @@
     <value>Flat</value>
   </data>
   <data name="newTextButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>286, 65</value>
+    <value>293, 31</value>
   </data>
   <data name="newTextButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -265,7 +265,7 @@
     <value>wordGroupBox</value>
   </data>
   <data name="&gt;&gt;newTextButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="numberItensWord.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -295,7 +295,7 @@
     <value>wordGroupBox</value>
   </data>
   <data name="&gt;&gt;numberItensWord.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="numberItensWordLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -325,7 +325,7 @@
     <value>wordGroupBox</value>
   </data>
   <data name="&gt;&gt;numberItensWordLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="cancelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -355,7 +355,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="saveButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -388,7 +388,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;saveButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="helpButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -418,7 +418,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;helpButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="labelEmpty.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -445,7 +445,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelEmpty.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -472,13 +472,13 @@
     <value>Microsoft Sans Serif, 15.75pt</value>
   </data>
   <data name="wordListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 133</value>
+    <value>94, 81</value>
   </data>
   <data name="wordListView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="wordListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 463</value>
+    <value>285, 476</value>
   </data>
   <data name="wordListView.TabIndex" type="System.Int32, mscorlib">
     <value>175</value>
@@ -502,7 +502,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 134</value>
+    <value>2, 84</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -540,7 +540,7 @@ Selecionado:
     <value>NoControl</value>
   </data>
   <data name="downWordItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 172</value>
+    <value>43, 122</value>
   </data>
   <data name="downWordItem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -561,7 +561,7 @@ Selecionado:
     <value>wordGroupBox</value>
   </data>
   <data name="&gt;&gt;downWordItem.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="upWordItem.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -573,7 +573,7 @@ Selecionado:
     <value>NoControl</value>
   </data>
   <data name="upWordItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 172</value>
+    <value>2, 122</value>
   </data>
   <data name="upWordItem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -594,7 +594,7 @@ Selecionado:
     <value>wordGroupBox</value>
   </data>
   <data name="&gt;&gt;upWordItem.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="deleteWordItem.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -606,7 +606,7 @@ Selecionado:
     <value>NoControl</value>
   </data>
   <data name="deleteWordItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 210</value>
+    <value>2, 160</value>
   </data>
   <data name="deleteWordItem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -630,16 +630,16 @@ Selecionado:
     <value>wordGroupBox</value>
   </data>
   <data name="&gt;&gt;deleteWordItem.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="wordItemTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 68</value>
+    <value>97, 34</value>
   </data>
   <data name="wordItemTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="wordItemTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="wordItemTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>90</value>
@@ -654,13 +654,13 @@ Selecionado:
     <value>wordGroupBox</value>
   </data>
   <data name="&gt;&gt;wordItemTextBox.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="wordGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 61</value>
+    <value>0, 100</value>
   </data>
   <data name="wordGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>396, 639</value>
+    <value>396, 600</value>
   </data>
   <data name="wordGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>182</value>
@@ -690,7 +690,7 @@ Selecionado:
     <value>Microsoft Sans Serif, 15.75pt</value>
   </data>
   <data name="colorListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 133</value>
+    <value>93, 94</value>
   </data>
   <data name="colorListView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -744,7 +744,7 @@ Selecionado:
     <value>colorListGroupBox</value>
   </data>
   <data name="&gt;&gt;numberItensColorLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="numberItensColor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -777,7 +777,7 @@ Selecionado:
     <value>colorListGroupBox</value>
   </data>
   <data name="&gt;&gt;numberItensColor.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="newColorButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -789,7 +789,7 @@ Selecionado:
     <value>NoControl</value>
   </data>
   <data name="newColorButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>282, 60</value>
+    <value>292, 26</value>
   </data>
   <data name="newColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -813,10 +813,10 @@ Selecionado:
     <value>colorListGroupBox</value>
   </data>
   <data name="&gt;&gt;newColorButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="colorPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 93</value>
+    <value>93, 59</value>
   </data>
   <data name="colorPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -837,7 +837,7 @@ Selecionado:
     <value>colorListGroupBox</value>
   </data>
   <data name="&gt;&gt;colorPanel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="chooseColorButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -849,7 +849,7 @@ Selecionado:
     <value>NoControl</value>
   </data>
   <data name="chooseColorButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 93</value>
+    <value>131, 59</value>
   </data>
   <data name="chooseColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -873,16 +873,16 @@ Selecionado:
     <value>colorListGroupBox</value>
   </data>
   <data name="&gt;&gt;chooseColorButton.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="colorItemTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 63</value>
+    <value>93, 29</value>
   </data>
   <data name="colorItemTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="colorItemTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="colorItemTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>174</value>
@@ -897,7 +897,7 @@ Selecionado:
     <value>colorListGroupBox</value>
   </data>
   <data name="&gt;&gt;colorItemTextBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="deleteColorItem.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -909,7 +909,7 @@ Selecionado:
     <value>NoControl</value>
   </data>
   <data name="deleteColorItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 215</value>
+    <value>7, 173</value>
   </data>
   <data name="deleteColorItem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -933,7 +933,7 @@ Selecionado:
     <value>colorListGroupBox</value>
   </data>
   <data name="&gt;&gt;deleteColorItem.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -942,7 +942,7 @@ Selecionado:
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 139</value>
+    <value>7, 97</value>
   </data>
   <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -968,7 +968,7 @@ Selecionado:
     <value>colorListGroupBox</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="upColorItem.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -980,7 +980,7 @@ Selecionado:
     <value>NoControl</value>
   </data>
   <data name="upColorItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 177</value>
+    <value>7, 135</value>
   </data>
   <data name="upColorItem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -1001,7 +1001,7 @@ Selecionado:
     <value>colorListGroupBox</value>
   </data>
   <data name="&gt;&gt;upColorItem.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="downColorItem.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1013,7 +1013,7 @@ Selecionado:
     <value>NoControl</value>
   </data>
   <data name="downColorItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 177</value>
+    <value>48, 135</value>
   </data>
   <data name="downColorItem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -1034,13 +1034,13 @@ Selecionado:
     <value>colorListGroupBox</value>
   </data>
   <data name="&gt;&gt;downColorItem.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="colorListGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>400, 61</value>
+    <value>400, 100</value>
   </data>
   <data name="colorListGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>396, 639</value>
+    <value>396, 600</value>
   </data>
   <data name="colorListGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>181</value>
@@ -1058,7 +1058,7 @@ Selecionado:
     <value>$this</value>
   </data>
   <data name="&gt;&gt;colorListGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>

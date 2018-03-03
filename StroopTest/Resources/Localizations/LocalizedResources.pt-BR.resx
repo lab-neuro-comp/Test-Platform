@@ -426,7 +426,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>Lista de Palavras</value>
   </data>
   <data name="colorMatch" xml:space="preserve">
-    <value>A cor do ponto de fixação não segue o padrão hexadecimal: #000000</value>
+    <value>A cor não segue o padrão hexadecimal: #000000</value>
   </data>
   <data name="exportDirectory" xml:space="preserve">
     <value>Selecione um diretório válido onde ainda não há nenhuma exportação da plataforma</value>

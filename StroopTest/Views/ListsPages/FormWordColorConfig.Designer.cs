@@ -71,6 +71,7 @@
             // 
             resources.ApplyResources(this.listNameTextBox, "listNameTextBox");
             this.listNameTextBox.Name = "listNameTextBox";
+            this.listNameTextBox.TextChanged += new System.EventHandler(this.listNameTextBox_TextChanged);
             this.listNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.listName_Validating);
             this.listNameTextBox.Validated += new System.EventHandler(this.listName_Validated);
             // 
@@ -99,7 +100,7 @@
             this.newTextButton.CausesValidation = false;
             this.newTextButton.Name = "newTextButton";
             this.newTextButton.UseVisualStyleBackColor = true;
-            this.newTextButton.Click += new System.EventHandler(this.newItemButton_Click);
+            this.newTextButton.Click += new System.EventHandler(this.newWordItemButton_Click);
             // 
             // numberItensWord
             // 
@@ -179,6 +180,7 @@
             this.newColorButton.CausesValidation = false;
             this.newColorButton.Name = "newColorButton";
             this.newColorButton.UseVisualStyleBackColor = true;
+            this.newColorButton.Click += new System.EventHandler(this.newColorButton_Click);
             // 
             // colorPanel
             // 
@@ -192,6 +194,7 @@
             this.chooseColorButton.CausesValidation = false;
             this.chooseColorButton.Name = "chooseColorButton";
             this.chooseColorButton.UseVisualStyleBackColor = true;
+            this.chooseColorButton.Click += new System.EventHandler(this.chooseColorButton_Click);
             // 
             // label4
             // 
@@ -204,6 +207,7 @@
             this.downColorItem.Image = global::TestPlatform.Properties.Resources.arrowDown;
             this.downColorItem.Name = "downColorItem";
             this.downColorItem.UseVisualStyleBackColor = true;
+            this.downColorItem.Click += new System.EventHandler(this.downColorItem_Click);
             // 
             // upColorItem
             // 
@@ -211,12 +215,14 @@
             this.upColorItem.Image = global::TestPlatform.Properties.Resources.arrowUp;
             this.upColorItem.Name = "upColorItem";
             this.upColorItem.UseVisualStyleBackColor = true;
+            this.upColorItem.Click += new System.EventHandler(this.upColorItem_Click);
             // 
             // deleteColorItem
             // 
             resources.ApplyResources(this.deleteColorItem, "deleteColorItem");
             this.deleteColorItem.Name = "deleteColorItem";
             this.deleteColorItem.UseVisualStyleBackColor = true;
+            this.deleteColorItem.Click += new System.EventHandler(this.deleteColorItem_Click);
             // 
             // colorItemTextBox
             // 
@@ -245,6 +251,7 @@
             this.downWordItem.Image = global::TestPlatform.Properties.Resources.arrowDown;
             this.downWordItem.Name = "downWordItem";
             this.downWordItem.UseVisualStyleBackColor = true;
+            this.downWordItem.Click += new System.EventHandler(this.downWordItem_Click);
             // 
             // upWordItem
             // 
@@ -252,17 +259,18 @@
             this.upWordItem.Image = global::TestPlatform.Properties.Resources.arrowUp;
             this.upWordItem.Name = "upWordItem";
             this.upWordItem.UseVisualStyleBackColor = true;
+            this.upWordItem.Click += new System.EventHandler(this.upWordItem_Click);
             // 
             // deleteWordItem
             // 
             resources.ApplyResources(this.deleteWordItem, "deleteWordItem");
             this.deleteWordItem.Name = "deleteWordItem";
             this.deleteWordItem.UseVisualStyleBackColor = true;
+            this.deleteWordItem.Click += new System.EventHandler(this.deleteWordItem_Click);
             // 
             // colorListGroupBox
             // 
             this.colorListGroupBox.Controls.Add(this.colorListView);
-            this.colorListGroupBox.Controls.Add(this.colorsListCheckBox);
             this.colorListGroupBox.Controls.Add(this.numberItensColorLabel);
             this.colorListGroupBox.Controls.Add(this.numberItensColor);
             this.colorListGroupBox.Controls.Add(this.newColorButton);
@@ -281,7 +289,6 @@
             // 
             this.wordGroupBox.Controls.Add(this.wordListView);
             this.wordGroupBox.Controls.Add(this.label3);
-            this.wordGroupBox.Controls.Add(this.wordsListCheckBox);
             this.wordGroupBox.Controls.Add(this.downWordItem);
             this.wordGroupBox.Controls.Add(this.newTextButton);
             this.wordGroupBox.Controls.Add(this.upWordItem);
@@ -299,7 +306,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.Controls.Add(this.wordGroupBox);
+            this.Controls.Add(this.colorsListCheckBox);
             this.Controls.Add(this.colorListGroupBox);
+            this.Controls.Add(this.wordsListCheckBox);
             this.Controls.Add(this.labelEmpty);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.cancelButton);

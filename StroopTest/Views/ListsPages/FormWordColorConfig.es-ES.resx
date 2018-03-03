@@ -153,4 +153,10 @@
   <data name="cancelButton.Text" xml:space="preserve">
     <value>cancelar</value>
   </data>
+  <data name="numberItensWord.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="numberItensColor.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
 </root>

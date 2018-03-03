@@ -295,12 +295,6 @@
     <Compile Include="Views\SidebarUserControls\StroopControl.Designer.cs">
       <DependentUpon>StroopControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ListsPages\FormListConfig.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\ListsPages\FormListConfig.Designer.cs">
-      <DependentUpon>FormListConfig.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\ListsPages\FormShowAudio.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -360,12 +354,6 @@
     </Compile>
     <Compile Include="Views\ListsPages\FormWordColorConfig.Designer.cs">
       <DependentUpon>FormWordColorConfig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ListsPages\FormWordColorDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\ListsPages\FormWordColorDialog.Designer.cs">
-      <DependentUpon>FormWordColorDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="MainClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -428,15 +416,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormWordColorConfig.pt-BR.resx">
       <DependentUpon>FormWordColorConfig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ListsPages\FormWordColorDialog.en-US.resx">
-      <DependentUpon>FormWordColorDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ListsPages\FormWordColorDialog.es-ES.resx">
-      <DependentUpon>FormWordColorDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ListsPages\FormWordColorDialog.pt-BR.resx">
-      <DependentUpon>FormWordColorDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\ListManagment.en-US.resx">
       <DependentUpon>ListManagment.cs</DependentUpon>
@@ -674,9 +653,6 @@
       <DependentUpon>StroopControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ListsPages\FormListConfig.resx">
-      <DependentUpon>FormListConfig.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormShowAudio.resx">
       <DependentUpon>FormShowAudio.cs</DependentUpon>
     </EmbeddedResource>
@@ -730,9 +706,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListsPages\FormWordColorConfig.resx">
       <DependentUpon>FormWordColorConfig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ListsPages\FormWordColorDialog.resx">
-      <DependentUpon>FormWordColorDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

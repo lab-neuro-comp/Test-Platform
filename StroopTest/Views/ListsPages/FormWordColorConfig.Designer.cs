@@ -61,7 +61,9 @@
             this.upWordItem = new System.Windows.Forms.Button();
             this.deleteWordItem = new System.Windows.Forms.Button();
             this.colorListGroupBox = new System.Windows.Forms.GroupBox();
+            this.colorListEmpty = new System.Windows.Forms.Label();
             this.wordGroupBox = new System.Windows.Forms.GroupBox();
+            this.wordListEmpty = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.colorListGroupBox.SuspendLayout();
             this.wordGroupBox.SuspendLayout();
@@ -152,12 +154,13 @@
             // 
             resources.ApplyResources(this.colorListView, "colorListView");
             this.colorListView.FullRowSelect = true;
-            this.colorListView.LabelEdit = true;
             this.colorListView.Name = "colorListView";
             this.colorListView.TabStop = false;
             this.colorListView.TileSize = new System.Drawing.Size(120, 40);
             this.colorListView.UseCompatibleStateImageBehavior = false;
             this.colorListView.View = System.Windows.Forms.View.Tile;
+            this.colorListView.Validating += new System.ComponentModel.CancelEventHandler(this.colorsListLength_Validating);
+            this.colorListView.Validated += new System.EventHandler(this.colorsListLength_Validated);
             // 
             // numberItensColor
             // 
@@ -233,12 +236,13 @@
             // 
             resources.ApplyResources(this.wordListView, "wordListView");
             this.wordListView.FullRowSelect = true;
-            this.wordListView.LabelEdit = true;
             this.wordListView.Name = "wordListView";
             this.wordListView.TabStop = false;
             this.wordListView.TileSize = new System.Drawing.Size(120, 40);
             this.wordListView.UseCompatibleStateImageBehavior = false;
             this.wordListView.View = System.Windows.Forms.View.Tile;
+            this.wordListView.Validating += new System.ComponentModel.CancelEventHandler(this.wordsListLength_Validating);
+            this.wordListView.Validated += new System.EventHandler(this.wordsListLength_Validated);
             // 
             // label3
             // 
@@ -270,6 +274,7 @@
             // 
             // colorListGroupBox
             // 
+            this.colorListGroupBox.Controls.Add(this.colorListEmpty);
             this.colorListGroupBox.Controls.Add(this.colorListView);
             this.colorListGroupBox.Controls.Add(this.numberItensColorLabel);
             this.colorListGroupBox.Controls.Add(this.numberItensColor);
@@ -285,8 +290,15 @@
             this.colorListGroupBox.Name = "colorListGroupBox";
             this.colorListGroupBox.TabStop = false;
             // 
+            // colorListEmpty
+            // 
+            resources.ApplyResources(this.colorListEmpty, "colorListEmpty");
+            this.colorListEmpty.ForeColor = System.Drawing.Color.Red;
+            this.colorListEmpty.Name = "colorListEmpty";
+            // 
             // wordGroupBox
             // 
+            this.wordGroupBox.Controls.Add(this.wordListEmpty);
             this.wordGroupBox.Controls.Add(this.wordListView);
             this.wordGroupBox.Controls.Add(this.label3);
             this.wordGroupBox.Controls.Add(this.downWordItem);
@@ -299,6 +311,12 @@
             resources.ApplyResources(this.wordGroupBox, "wordGroupBox");
             this.wordGroupBox.Name = "wordGroupBox";
             this.wordGroupBox.TabStop = false;
+            // 
+            // wordListEmpty
+            // 
+            resources.ApplyResources(this.wordListEmpty, "wordListEmpty");
+            this.wordListEmpty.ForeColor = System.Drawing.Color.Red;
+            this.wordListEmpty.Name = "wordListEmpty";
             // 
             // FormWordColorConfig
             // 
@@ -359,5 +377,7 @@
         private System.Windows.Forms.Button deleteWordItem;
         private System.Windows.Forms.GroupBox colorListGroupBox;
         private System.Windows.Forms.GroupBox wordGroupBox;
+        private System.Windows.Forms.Label wordListEmpty;
+        private System.Windows.Forms.Label colorListEmpty;
     }
 }

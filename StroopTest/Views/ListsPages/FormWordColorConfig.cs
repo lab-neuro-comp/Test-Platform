@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using TestPlatform.Models;
 using TestPlatform.Views;
@@ -39,6 +37,8 @@ namespace TestPlatform
                 wordsListCheckBox.Checked = true;
                 colorsListCheckBox.Checked = true;
             }
+            colorListEmpty.Visible = false;
+            wordListEmpty.Visible = false;
             updateListsCounters();
             checkTypeOfList();
         }
@@ -202,23 +202,23 @@ namespace TestPlatform
                 string listName = listNameTextBox.Text;
                 if (wordsListCheckBox.Checked && colorsListCheckBox.Checked)
                 {
-                    wordGroupBox.Name = listName + "_words";
-                    colorListGroupBox.Name = listName + "_color";
+                    wordGroupBox.Text = listName + "_words";
+                    colorListGroupBox.Text = listName + "_color";
                     wordGroupBox.Enabled = true;
                     colorListGroupBox.Enabled = true;
                 }
                 else if (wordsListCheckBox.Checked && !colorsListCheckBox.Checked)
                 {
-                    wordGroupBox.Name = listName + "_words";
-                    colorListGroupBox.Name = "-";
+                    wordGroupBox.Text = listName + "_words";
+                    colorListGroupBox.Text = "-";
 
                     wordGroupBox.Enabled = true;
                     colorListGroupBox.Enabled = false;
                 }
                 else if (!wordsListCheckBox.Checked && colorsListCheckBox.Checked)
                 {
-                    wordGroupBox.Name = "-";
-                    colorListGroupBox.Name = listName + "_color";
+                    wordGroupBox.Text = "-";
+                    colorListGroupBox.Text = listName + "_color";
 
                     wordGroupBox.Enabled = false;
                     colorListGroupBox.Enabled = true;
@@ -234,63 +234,54 @@ namespace TestPlatform
 
         private void upWordItem_Click(object sender, EventArgs e)
         {
-            moveUpListView(wordListView, wordsList);           
+            MoveListViewItems(wordListView, MoveDirection.Up, wordsList);
         }
 
         private void upColorItem_Click(object sender, EventArgs e)
         {
-            moveUpListView(colorListView, colorsList);
+            MoveListViewItems(colorListView, MoveDirection.Up, colorsList);
         }
 
         private void downWordItem_Click(object sender, EventArgs e)
         {
-            moveDownListView(wordListView, wordsList);
+            MoveListViewItems(wordListView, MoveDirection.Down, wordsList);
         }
 
         private void downColorItem_Click(object sender, EventArgs e)
         {
-            moveDownListView(colorListView, colorsList);
+            MoveListViewItems(colorListView, MoveDirection.Down, colorsList);
         }
 
-        private void moveUpListView(ListView listView, List<string> list)
+        private enum MoveDirection { Up = -1, Down = 1 };
+
+        private static void MoveListViewItems(ListView sender, MoveDirection direction, List<string> list)
         {
-            if (!(listView.Items.Count == 0))
+
+            bool valid = sender.SelectedItems.Count > 0 &&
+                            ((direction == MoveDirection.Down && (sender.SelectedItems[0].Index < sender.Items.Count - 1))
+                        || (direction == MoveDirection.Up && (sender.SelectedItems[0].Index > 0)));
+
+            if (valid)
             {
-                ListViewItem selectedItem = listView.SelectedItems[0];
-                if (selectedItem.Index > 0)
+                ListViewItem item = sender.SelectedItems[0];
+                if (direction == MoveDirection.Up)
                 {
-                    int index = selectedItem.Index - 1;
-                    moveUpItem(list, selectedItem.Index);
-                    listView.Items.RemoveAt(selectedItem.Index);
-                    listView.Items.Insert(index, selectedItem);
+                    moveUpItem(list, item.Index);
                 }
-            }
-            else
-            {
-                return;
+                else if (direction == MoveDirection.Down)
+                {
+                    moveDownItem(list, item.Index);
+                }
+
+                int dir = (int)direction;
+                int index = item.Index + dir;
+
+                sender.Items.Remove(item);
+                sender.Items.Insert(index, item);
             }
         }
 
-        private void moveDownListView(ListView listView, List<string> list)
-        {
-            if (!(listView.Items.Count == 0))
-            {
-                ListViewItem selectedItem = listView.SelectedItems[0];
-                if (selectedItem.Index < listView.Items.Count-1)
-                {
-                    int index = selectedItem.Index + 1;
-                    moveDownItem(list, selectedItem.Index);
-                    listView.Items.RemoveAt(selectedItem.Index);
-                    listView.Items.Insert(index, selectedItem);
-                }
-            }
-            else
-            {
-                return;
-            }
-        }
-
-        private void moveUpItem(List<string> list, int index)
+        private static void moveUpItem(List<string> list, int index)
         {
             try
             {
@@ -306,7 +297,7 @@ namespace TestPlatform
             }
         }
 
-        private void moveDownItem(List<string> list, int index)
+        private static void moveDownItem(List<string> list, int index)
         {
             try
             {
@@ -324,10 +315,10 @@ namespace TestPlatform
 
         private bool saveListFile(List<string> list, string fileName, string fileType, string type)
         {
-            StrList strlist;
             if ((MessageBox.Show(LocRM.GetString("wishToSave", currentCulture) + type + " '" + fileName + "' ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK))
             {
-                strlist = ListController.CreateList(list, fileName, fileType);
+                StrList strlist = ListController.CreateList(list, fileName, fileType);
+
                 if (strlist.exists())
                 {
                     DialogResult dialogResult = MessageBox.Show(LocRM.GetString("listExists", currentCulture), "", MessageBoxButtons.OKCancel);
@@ -352,15 +343,17 @@ namespace TestPlatform
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            bool valid = true;
-            if (!this.ValidateChildren(ValidationConstraints.Enabled))
-                MessageBox.Show(LocRM.GetString("notFilledProperlyMessage", currentCulture));
-            else
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
+                bool valid = true;
                 if (wordsListCheckBox.Checked)
+                {
                     valid = saveListFile(wordsList, listNameTextBox.Text, "_words", LocRM.GetString("words", currentCulture));
+                }
                 if (colorsListCheckBox.Checked)
-                    valid = saveListFile(colorsList, listNameTextBox.Text, "_color", LocRM.GetString("colors", currentCulture));                
+                {
+                    valid = saveListFile(colorsList, listNameTextBox.Text, "_color", LocRM.GetString("colors", currentCulture));
+                }
                 if (valid)
                 {
                     this.Parent.Controls.Remove(this);
@@ -368,6 +361,10 @@ namespace TestPlatform
                 }
                 else
                     MessageBox.Show(LocRM.GetString("listNotSaved", currentCulture));
+            }
+            else
+            {
+                MessageBox.Show(LocRM.GetString("notFilledProperlyMessage", currentCulture));
             }
         }
 
@@ -433,7 +430,7 @@ namespace TestPlatform
             string colorCode = pickColor();
             if (colorCode != null)
             {
-                colorPanel.ForeColor = ColorTranslator.FromHtml(colorCode);
+                colorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
                 colorItemTextBox.Text = colorCode;
             }
         }
@@ -505,14 +502,45 @@ namespace TestPlatform
             string listName = listNameTextBox.Text;
             if (wordsListCheckBox.Checked)
             {
-                wordGroupBox.Name = listName + "_words";
+                wordGroupBox.Text = listName + "_words";
             }
             if (colorsListCheckBox.Checked)
             {
-                colorListGroupBox.Name = listName + "_color";
+                colorListGroupBox.Text = listName + "_color";
             }
         }
 
+        private void wordsListLength_Validated(object sender, EventArgs e)
+        {
+            wordListEmpty.Visible = false;
+        }
+
+        private void wordsListLength_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidListLength(wordListView.Items.Count, out errorMsg))
+            {
+                e.Cancel = true;
+                wordListEmpty.Text = errorMsg;
+                wordListEmpty.Visible = true;
+            }
+        }
+
+        private void colorsListLength_Validated(object sender, EventArgs e)
+        {
+            colorListEmpty.Visible = false;
+        }
+
+        private void colorsListLength_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidListLength(colorListView.Items.Count, out errorMsg))
+            {
+                e.Cancel = true;
+                colorListEmpty.Text = errorMsg;
+                colorListEmpty.Visible = true;
+            }
+        }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {

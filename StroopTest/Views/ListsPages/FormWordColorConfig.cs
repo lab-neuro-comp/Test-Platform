@@ -254,7 +254,7 @@ namespace TestPlatform
 
         private enum MoveDirection { Up = -1, Down = 1 };
 
-        private static void MoveListViewItems(ListView sender, MoveDirection direction, List<string> list)
+        private void MoveListViewItems(ListView sender, MoveDirection direction, List<string> list)
         {
 
             bool valid = sender.SelectedItems.Count > 0 &&
@@ -278,6 +278,19 @@ namespace TestPlatform
 
                 sender.Items.Remove(item);
                 sender.Items.Insert(index, item);
+                sender.Clear();
+                foreach (string it in list)
+                {
+                    if (Validations.isHexPattern(it))
+                    {
+                        ListViewItem newItem = sender.Items.Add(it);
+                        newItem.ForeColor = ColorTranslator.FromHtml(it);
+                    }
+                    else
+                    {
+                        sender.Items.Add(it);
+                    }
+                }
             }
         }
 

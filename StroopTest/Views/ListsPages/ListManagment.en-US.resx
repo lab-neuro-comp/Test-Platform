@@ -127,9 +127,24 @@
     <value>Existing lists:</value>
   </data>
   <data name="deletingLabel.Text" xml:space="preserve">
-    <value>Files that will be deleted:</value>
+    <value>Lists that will be deleted:</value>
   </data>
   <data name="warningLabel.Text" xml:space="preserve">
     <value>Orange lists indicates that the list is used by some program and you can't delete it while it is being used.</value>
+  </data>
+  <data name="excludedLists.Text" xml:space="preserve">
+    <value>Lists that can be recovered:</value>
+  </data>
+  <data name="recoveringLists.Text" xml:space="preserve">
+    <value>Lists that will be recovered:</value>
+  </data>
+  <data name="existingListWarning.Text" xml:space="preserve">
+    <value>Red lists indicates that the list already exists in destination folder (backup or list folder). Delete or recover will cause the loss of the existing list.</value>
+  </data>
+  <data name="recoverButton.Text" xml:space="preserve">
+    <value>recover</value>
+  </data>
+  <data name="existingListCheckBox.Text" xml:space="preserve">
+    <value>I agree with risks.</value>
   </data>
 </root>

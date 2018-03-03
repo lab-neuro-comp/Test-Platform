@@ -39,6 +39,11 @@
             this.deletingLabel = new System.Windows.Forms.Label();
             this.helpButton = new System.Windows.Forms.Button();
             this.warningLabel = new System.Windows.Forms.Label();
+            this.excludedLists = new System.Windows.Forms.Label();
+            this.recoveringLists = new System.Windows.Forms.Label();
+            this.existingListWarning = new System.Windows.Forms.Label();
+            this.recoverButton = new System.Windows.Forms.Button();
+            this.existingListCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // existingList
@@ -48,9 +53,7 @@
             resources.ApplyResources(this.existingList, "existingList");
             this.existingList.Name = "existingList";
             this.existingList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.existingList.Click += new System.EventHandler(this.existingList_Click);
             this.existingList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.originFilesList_DrawItem);
-            this.existingList.SelectedIndexChanged += new System.EventHandler(this.existingList_SelectedIndexChanged);
             // 
             // deletingList
             // 
@@ -59,9 +62,7 @@
             resources.ApplyResources(this.deletingList, "deletingList");
             this.deletingList.Name = "deletingList";
             this.deletingList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.deletingList.Click += new System.EventHandler(this.deletingList_Click);
             this.deletingList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.destinationFilesList_DrawItem);
-            this.deletingList.SelectedIndexChanged += new System.EventHandler(this.deletingList_SelectedIndexChanged);
             // 
             // toDelete
             // 
@@ -116,10 +117,46 @@
             this.warningLabel.ForeColor = System.Drawing.Color.Orange;
             this.warningLabel.Name = "warningLabel";
             // 
+            // excludedLists
+            // 
+            resources.ApplyResources(this.excludedLists, "excludedLists");
+            this.excludedLists.Name = "excludedLists";
+            // 
+            // recoveringLists
+            // 
+            resources.ApplyResources(this.recoveringLists, "recoveringLists");
+            this.recoveringLists.Name = "recoveringLists";
+            // 
+            // existingListWarning
+            // 
+            resources.ApplyResources(this.existingListWarning, "existingListWarning");
+            this.existingListWarning.ForeColor = System.Drawing.Color.Red;
+            this.existingListWarning.Name = "existingListWarning";
+            // 
+            // recoverButton
+            // 
+            resources.ApplyResources(this.recoverButton, "recoverButton");
+            this.recoverButton.Name = "recoverButton";
+            this.recoverButton.UseVisualStyleBackColor = true;
+            this.recoverButton.Click += new System.EventHandler(this.recoverButton_Click);
+            // 
+            // existingListCheckBox
+            // 
+            resources.ApplyResources(this.existingListCheckBox, "existingListCheckBox");
+            this.existingListCheckBox.ForeColor = System.Drawing.Color.Red;
+            this.existingListCheckBox.Name = "existingListCheckBox";
+            this.existingListCheckBox.UseVisualStyleBackColor = true;
+            this.existingListCheckBox.CheckedChanged += new System.EventHandler(this.existingListCheckBox_CheckedChanged);
+            // 
             // ListManagment
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.existingListCheckBox);
+            this.Controls.Add(this.recoverButton);
+            this.Controls.Add(this.existingListWarning);
+            this.Controls.Add(this.recoveringLists);
+            this.Controls.Add(this.excludedLists);
             this.Controls.Add(this.warningLabel);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.deletingLabel);
@@ -148,5 +185,10 @@
         private System.Windows.Forms.Label deletingLabel;
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.Label warningLabel;
+        private System.Windows.Forms.Label excludedLists;
+        private System.Windows.Forms.Label recoveringLists;
+        private System.Windows.Forms.Label existingListWarning;
+        private System.Windows.Forms.Button recoverButton;
+        private System.Windows.Forms.CheckBox existingListCheckBox;
     }
 }

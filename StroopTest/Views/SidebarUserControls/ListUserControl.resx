@@ -157,7 +157,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;imageButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="colorWordButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -196,7 +196,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;colorWordButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="audioButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -235,7 +235,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;audioButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="audioPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -245,45 +245,6 @@
   </data>
   <data name="audioPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
-  </data>
-  <data name="recordAudioButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="recordAudioButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="recordAudioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="recordAudioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 3</value>
-  </data>
-  <data name="recordAudioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
-  </data>
-  <data name="recordAudioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 33</value>
-  </data>
-  <data name="recordAudioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="recordAudioButton.Text" xml:space="preserve">
-    <value>Gravar Aúdio</value>
-  </data>
-  <data name="recordAudioButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;recordAudioButton.Name" xml:space="preserve">
-    <value>recordAudioButton</value>
-  </data>
-  <data name="&gt;&gt;recordAudioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;recordAudioButton.Parent" xml:space="preserve">
-    <value>audioPanel</value>
-  </data>
-  <data name="&gt;&gt;recordAudioButton.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="newAudioListButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -295,7 +256,7 @@
     <value>Flat</value>
   </data>
   <data name="newAudioListButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 42</value>
+    <value>0, 3</value>
   </data>
   <data name="newAudioListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
@@ -322,6 +283,45 @@
     <value>audioPanel</value>
   </data>
   <data name="&gt;&gt;newAudioListButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="recordAudioButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="recordAudioButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="recordAudioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="recordAudioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 42</value>
+  </data>
+  <data name="recordAudioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="recordAudioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 33</value>
+  </data>
+  <data name="recordAudioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="recordAudioButton.Text" xml:space="preserve">
+    <value>Gravar Aúdio</value>
+  </data>
+  <data name="recordAudioButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;recordAudioButton.Name" xml:space="preserve">
+    <value>recordAudioButton</value>
+  </data>
+  <data name="&gt;&gt;recordAudioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recordAudioButton.Parent" xml:space="preserve">
+    <value>audioPanel</value>
+  </data>
+  <data name="&gt;&gt;recordAudioButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="editAudioListButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -363,47 +363,83 @@
   <data name="&gt;&gt;editAudioListButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="radioButton4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="deleteAudioListButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="radioButton4.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+  <data name="deleteAudioListButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
-  <data name="radioButton4.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radioButton4.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="deleteAudioListButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="radioButton4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="deleteAudioListButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 120</value>
   </data>
-  <data name="radioButton4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="deleteAudioListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
   </data>
-  <data name="radioButton4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="deleteAudioListButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 33</value>
   </data>
-  <data name="radioButton4.TabIndex" type="System.Int32, mscorlib">
+  <data name="deleteAudioListButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="radioButton4.Text" xml:space="preserve">
+  <data name="deleteAudioListButton.Text" xml:space="preserve">
     <value>Excluir Lista</value>
   </data>
-  <data name="radioButton4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="deleteAudioListButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;radioButton4.Name" xml:space="preserve">
-    <value>radioButton4</value>
+  <data name="&gt;&gt;deleteAudioListButton.Name" xml:space="preserve">
+    <value>deleteAudioListButton</value>
   </data>
-  <data name="&gt;&gt;radioButton4.Type" xml:space="preserve">
+  <data name="&gt;&gt;deleteAudioListButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButton4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;deleteAudioListButton.Parent" xml:space="preserve">
     <value>audioPanel</value>
   </data>
-  <data name="&gt;&gt;radioButton4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;deleteAudioListButton.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="recoverAudioListButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="recoverAudioListButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="recoverAudioListButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="recoverAudioListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 159</value>
+  </data>
+  <data name="recoverAudioListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="recoverAudioListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 33</value>
+  </data>
+  <data name="recoverAudioListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="recoverAudioListButton.Text" xml:space="preserve">
+    <value>Recuperar Lista</value>
+  </data>
+  <data name="recoverAudioListButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;recoverAudioListButton.Name" xml:space="preserve">
+    <value>recoverAudioListButton</value>
+  </data>
+  <data name="&gt;&gt;recoverAudioListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recoverAudioListButton.Parent" xml:space="preserve">
+    <value>audioPanel</value>
+  </data>
+  <data name="&gt;&gt;recoverAudioListButton.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="backAudioButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -415,7 +451,7 @@
     <value>Flat</value>
   </data>
   <data name="backAudioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 159</value>
+    <value>0, 198</value>
   </data>
   <data name="backAudioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
@@ -442,7 +478,7 @@
     <value>audioPanel</value>
   </data>
   <data name="&gt;&gt;backAudioButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="audioPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 42</value>
@@ -451,7 +487,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="audioPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 195</value>
+    <value>209, 234</value>
   </data>
   <data name="audioPanel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -469,7 +505,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;audioPanel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>0</value>
   </data>
   <data name="wordColorPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -591,6 +627,42 @@
   <data name="&gt;&gt;deleteWordColorButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="recoverWordColorButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="recoverWordColorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="recoverWordColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 120</value>
+  </data>
+  <data name="recoverWordColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="recoverWordColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 33</value>
+  </data>
+  <data name="recoverWordColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="recoverWordColorButton.Text" xml:space="preserve">
+    <value>Recuperar Lista</value>
+  </data>
+  <data name="recoverWordColorButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;recoverWordColorButton.Name" xml:space="preserve">
+    <value>recoverWordColorButton</value>
+  </data>
+  <data name="&gt;&gt;recoverWordColorButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recoverWordColorButton.Parent" xml:space="preserve">
+    <value>wordColorPanel</value>
+  </data>
+  <data name="&gt;&gt;recoverWordColorButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="backWordColorButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -601,7 +673,7 @@
     <value>Flat</value>
   </data>
   <data name="backWordColorButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 120</value>
+    <value>0, 159</value>
   </data>
   <data name="backWordColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
@@ -628,7 +700,7 @@
     <value>wordColorPanel</value>
   </data>
   <data name="&gt;&gt;backWordColorButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="wordColorPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 42</value>
@@ -637,7 +709,7 @@
     <value>0, 3, 0, 3</value>
   </data>
   <data name="wordColorPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 156</value>
+    <value>209, 195</value>
   </data>
   <data name="wordColorPanel.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -655,52 +727,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;wordColorPanel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="imagePanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
-  </data>
-  <data name="newImageListButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="newImageListButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="newImageListButton.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="newImageListButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="newImageListButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 3</value>
-  </data>
-  <data name="newImageListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
-  </data>
-  <data name="newImageListButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 33</value>
-  </data>
-  <data name="newImageListButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="newImageListButton.Text" xml:space="preserve">
-    <value>Nova Lista</value>
-  </data>
-  <data name="newImageListButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;newImageListButton.Name" xml:space="preserve">
-    <value>newImageListButton</value>
-  </data>
-  <data name="&gt;&gt;newImageListButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;newImageListButton.Parent" xml:space="preserve">
-    <value>imagePanel</value>
-  </data>
-  <data name="&gt;&gt;newImageListButton.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="editImageListButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -712,7 +742,7 @@
     <value>Flat</value>
   </data>
   <data name="editImageListButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 42</value>
+    <value>0, 3</value>
   </data>
   <data name="editImageListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
@@ -739,49 +769,127 @@
     <value>imagePanel</value>
   </data>
   <data name="&gt;&gt;editImageListButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
-  <data name="radioButton3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="newImageListButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="radioButton3.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+  <data name="newImageListButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
-  <data name="radioButton3.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radioButton3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="radioButton3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 81</value>
-  </data>
-  <data name="radioButton3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
-  </data>
-  <data name="radioButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 33</value>
-  </data>
-  <data name="radioButton3.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="radioButton3.Text" xml:space="preserve">
-    <value>Excluir Lista</value>
-  </data>
-  <data name="radioButton3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="newImageListButton.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;radioButton3.Name" xml:space="preserve">
-    <value>radioButton3</value>
+  <data name="newImageListButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="&gt;&gt;radioButton3.Type" xml:space="preserve">
+  <data name="newImageListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 42</value>
+  </data>
+  <data name="newImageListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="newImageListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 33</value>
+  </data>
+  <data name="newImageListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="newImageListButton.Text" xml:space="preserve">
+    <value>Nova Lista</value>
+  </data>
+  <data name="newImageListButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;newImageListButton.Name" xml:space="preserve">
+    <value>newImageListButton</value>
+  </data>
+  <data name="&gt;&gt;newImageListButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButton3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;newImageListButton.Parent" xml:space="preserve">
     <value>imagePanel</value>
   </data>
-  <data name="&gt;&gt;radioButton3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;newImageListButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="deleteImageListButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="deleteImageListButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="deleteImageListButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="deleteImageListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 81</value>
+  </data>
+  <data name="deleteImageListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="deleteImageListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 33</value>
+  </data>
+  <data name="deleteImageListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="deleteImageListButton.Text" xml:space="preserve">
+    <value>Excluir Lista</value>
+  </data>
+  <data name="deleteImageListButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;deleteImageListButton.Name" xml:space="preserve">
+    <value>deleteImageListButton</value>
+  </data>
+  <data name="&gt;&gt;deleteImageListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteImageListButton.Parent" xml:space="preserve">
+    <value>imagePanel</value>
+  </data>
+  <data name="&gt;&gt;deleteImageListButton.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="recoverImageListButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="recoverImageListButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="recoverImageListButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="recoverImageListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 120</value>
+  </data>
+  <data name="recoverImageListButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="recoverImageListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 33</value>
+  </data>
+  <data name="recoverImageListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="recoverImageListButton.Text" xml:space="preserve">
+    <value>Recuperar Lista</value>
+  </data>
+  <data name="recoverImageListButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;recoverImageListButton.Name" xml:space="preserve">
+    <value>recoverImageListButton</value>
+  </data>
+  <data name="&gt;&gt;recoverImageListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recoverImageListButton.Parent" xml:space="preserve">
+    <value>imagePanel</value>
+  </data>
+  <data name="&gt;&gt;recoverImageListButton.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="backImageButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -793,7 +901,7 @@
     <value>Flat</value>
   </data>
   <data name="backImageButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 120</value>
+    <value>0, 159</value>
   </data>
   <data name="backImageButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
@@ -820,16 +928,16 @@
     <value>imagePanel</value>
   </data>
   <data name="&gt;&gt;backImageButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="imagePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 39</value>
+    <value>0, 42</value>
   </data>
   <data name="imagePanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
   </data>
   <data name="imagePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 156</value>
+    <value>209, 195</value>
   </data>
   <data name="imagePanel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -847,11 +955,11 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;imagePanel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -862,6 +970,6 @@
     <value>ListUserControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=1.1.6580.35749, Culture=neutral, PublicKeyToken=null</value>
+    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

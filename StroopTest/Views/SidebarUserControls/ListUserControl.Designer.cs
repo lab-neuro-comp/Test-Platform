@@ -33,20 +33,23 @@
             this.colorWordButton = new System.Windows.Forms.RadioButton();
             this.audioButton = new System.Windows.Forms.RadioButton();
             this.audioPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.recordAudioButton = new System.Windows.Forms.RadioButton();
             this.newAudioListButton = new System.Windows.Forms.RadioButton();
+            this.recordAudioButton = new System.Windows.Forms.RadioButton();
             this.editAudioListButton = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.deleteAudioListButton = new System.Windows.Forms.RadioButton();
+            this.recoverAudioListButton = new System.Windows.Forms.RadioButton();
             this.backAudioButton = new System.Windows.Forms.RadioButton();
             this.wordColorPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.newWordColorButton = new System.Windows.Forms.RadioButton();
             this.editWordColorButton = new System.Windows.Forms.RadioButton();
             this.deleteWordColorButton = new System.Windows.Forms.RadioButton();
+            this.recoverWordColorButton = new System.Windows.Forms.RadioButton();
             this.backWordColorButton = new System.Windows.Forms.RadioButton();
             this.imagePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.newImageListButton = new System.Windows.Forms.RadioButton();
             this.editImageListButton = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.newImageListButton = new System.Windows.Forms.RadioButton();
+            this.deleteImageListButton = new System.Windows.Forms.RadioButton();
+            this.recoverImageListButton = new System.Windows.Forms.RadioButton();
             this.backImageButton = new System.Windows.Forms.RadioButton();
             this.audioPanel.SuspendLayout();
             this.wordColorPanel.SuspendLayout();
@@ -80,20 +83,13 @@
             // audioPanel
             // 
             resources.ApplyResources(this.audioPanel, "audioPanel");
-            this.audioPanel.Controls.Add(this.recordAudioButton);
             this.audioPanel.Controls.Add(this.newAudioListButton);
+            this.audioPanel.Controls.Add(this.recordAudioButton);
             this.audioPanel.Controls.Add(this.editAudioListButton);
-            this.audioPanel.Controls.Add(this.radioButton4);
+            this.audioPanel.Controls.Add(this.deleteAudioListButton);
+            this.audioPanel.Controls.Add(this.recoverAudioListButton);
             this.audioPanel.Controls.Add(this.backAudioButton);
             this.audioPanel.Name = "audioPanel";
-            // 
-            // recordAudioButton
-            // 
-            resources.ApplyResources(this.recordAudioButton, "recordAudioButton");
-            this.recordAudioButton.FlatAppearance.BorderSize = 0;
-            this.recordAudioButton.Name = "recordAudioButton";
-            this.recordAudioButton.UseVisualStyleBackColor = true;
-            this.recordAudioButton.CheckedChanged += new System.EventHandler(this.recordAudioButton_CheckedChanged);
             // 
             // newAudioListButton
             // 
@@ -103,6 +99,14 @@
             this.newAudioListButton.UseVisualStyleBackColor = true;
             this.newAudioListButton.CheckedChanged += new System.EventHandler(this.newAudioListButton_CheckedChanged);
             // 
+            // recordAudioButton
+            // 
+            resources.ApplyResources(this.recordAudioButton, "recordAudioButton");
+            this.recordAudioButton.FlatAppearance.BorderSize = 0;
+            this.recordAudioButton.Name = "recordAudioButton";
+            this.recordAudioButton.UseVisualStyleBackColor = true;
+            this.recordAudioButton.CheckedChanged += new System.EventHandler(this.recordAudioButton_CheckedChanged);
+            // 
             // editAudioListButton
             // 
             resources.ApplyResources(this.editAudioListButton, "editAudioListButton");
@@ -111,13 +115,22 @@
             this.editAudioListButton.UseVisualStyleBackColor = true;
             this.editAudioListButton.CheckedChanged += new System.EventHandler(this.editAudioListButton_CheckedChanged);
             // 
-            // radioButton4
+            // deleteAudioListButton
             // 
-            resources.ApplyResources(this.radioButton4, "radioButton4");
-            this.radioButton4.FlatAppearance.BorderSize = 0;
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.Click += new System.EventHandler(this.deleteAudioListButton_Click);
+            resources.ApplyResources(this.deleteAudioListButton, "deleteAudioListButton");
+            this.deleteAudioListButton.FlatAppearance.BorderSize = 0;
+            this.deleteAudioListButton.Name = "deleteAudioListButton";
+            this.deleteAudioListButton.UseVisualStyleBackColor = true;
+            this.deleteAudioListButton.Click += new System.EventHandler(this.deleteAudioListButton_Click);
+            // 
+            // recoverAudioListButton
+            // 
+            resources.ApplyResources(this.recoverAudioListButton, "recoverAudioListButton");
+            this.recoverAudioListButton.FlatAppearance.BorderSize = 0;
+            this.recoverAudioListButton.Name = "recoverAudioListButton";
+            this.recoverAudioListButton.TabStop = true;
+            this.recoverAudioListButton.UseVisualStyleBackColor = true;
+            this.recoverAudioListButton.CheckedChanged += new System.EventHandler(this.recoverAudioListButton_CheckedChanged);
             // 
             // backAudioButton
             // 
@@ -133,6 +146,7 @@
             this.wordColorPanel.Controls.Add(this.newWordColorButton);
             this.wordColorPanel.Controls.Add(this.editWordColorButton);
             this.wordColorPanel.Controls.Add(this.deleteWordColorButton);
+            this.wordColorPanel.Controls.Add(this.recoverWordColorButton);
             this.wordColorPanel.Controls.Add(this.backWordColorButton);
             this.wordColorPanel.Name = "wordColorPanel";
             // 
@@ -160,6 +174,15 @@
             this.deleteWordColorButton.UseVisualStyleBackColor = true;
             this.deleteWordColorButton.Click += new System.EventHandler(this.deleteWordColorButton_Click);
             // 
+            // recoverWordColorButton
+            // 
+            resources.ApplyResources(this.recoverWordColorButton, "recoverWordColorButton");
+            this.recoverWordColorButton.FlatAppearance.BorderSize = 0;
+            this.recoverWordColorButton.Name = "recoverWordColorButton";
+            this.recoverWordColorButton.TabStop = true;
+            this.recoverWordColorButton.UseVisualStyleBackColor = true;
+            this.recoverWordColorButton.CheckedChanged += new System.EventHandler(this.recoverWordColorButton_CheckedChanged);
+            // 
             // backWordColorButton
             // 
             resources.ApplyResources(this.backWordColorButton, "backWordColorButton");
@@ -171,19 +194,12 @@
             // imagePanel
             // 
             resources.ApplyResources(this.imagePanel, "imagePanel");
-            this.imagePanel.Controls.Add(this.newImageListButton);
             this.imagePanel.Controls.Add(this.editImageListButton);
-            this.imagePanel.Controls.Add(this.radioButton3);
+            this.imagePanel.Controls.Add(this.newImageListButton);
+            this.imagePanel.Controls.Add(this.deleteImageListButton);
+            this.imagePanel.Controls.Add(this.recoverImageListButton);
             this.imagePanel.Controls.Add(this.backImageButton);
             this.imagePanel.Name = "imagePanel";
-            // 
-            // newImageListButton
-            // 
-            resources.ApplyResources(this.newImageListButton, "newImageListButton");
-            this.newImageListButton.FlatAppearance.BorderSize = 0;
-            this.newImageListButton.Name = "newImageListButton";
-            this.newImageListButton.UseVisualStyleBackColor = true;
-            this.newImageListButton.Click += new System.EventHandler(this.newImageListButton_Click);
             // 
             // editImageListButton
             // 
@@ -193,13 +209,30 @@
             this.editImageListButton.UseVisualStyleBackColor = true;
             this.editImageListButton.Click += new System.EventHandler(this.editImageListButton_Click);
             // 
-            // radioButton3
+            // newImageListButton
             // 
-            resources.ApplyResources(this.radioButton3, "radioButton3");
-            this.radioButton3.FlatAppearance.BorderSize = 0;
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.Click += new System.EventHandler(this.deleteImageListButton_Click);
+            resources.ApplyResources(this.newImageListButton, "newImageListButton");
+            this.newImageListButton.FlatAppearance.BorderSize = 0;
+            this.newImageListButton.Name = "newImageListButton";
+            this.newImageListButton.UseVisualStyleBackColor = true;
+            this.newImageListButton.Click += new System.EventHandler(this.newImageListButton_Click);
+            // 
+            // deleteImageListButton
+            // 
+            resources.ApplyResources(this.deleteImageListButton, "deleteImageListButton");
+            this.deleteImageListButton.FlatAppearance.BorderSize = 0;
+            this.deleteImageListButton.Name = "deleteImageListButton";
+            this.deleteImageListButton.UseVisualStyleBackColor = true;
+            this.deleteImageListButton.Click += new System.EventHandler(this.deleteImageListButton_Click);
+            // 
+            // recoverImageListButton
+            // 
+            resources.ApplyResources(this.recoverImageListButton, "recoverImageListButton");
+            this.recoverImageListButton.FlatAppearance.BorderSize = 0;
+            this.recoverImageListButton.Name = "recoverImageListButton";
+            this.recoverImageListButton.TabStop = true;
+            this.recoverImageListButton.UseVisualStyleBackColor = true;
+            this.recoverImageListButton.CheckedChanged += new System.EventHandler(this.recoverImageListButton_CheckedChanged);
             // 
             // backImageButton
             // 
@@ -213,12 +246,12 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.audioPanel);
             this.Controls.Add(this.imagePanel);
             this.Controls.Add(this.audioButton);
             this.Controls.Add(this.imageButton);
             this.Controls.Add(this.colorWordButton);
             this.Controls.Add(this.wordColorPanel);
-            this.Controls.Add(this.audioPanel);
             this.Name = "ListUserControl";
             this.audioPanel.ResumeLayout(false);
             this.wordColorPanel.ResumeLayout(false);
@@ -237,7 +270,7 @@
         private System.Windows.Forms.RadioButton recordAudioButton;
         private System.Windows.Forms.RadioButton newAudioListButton;
         private System.Windows.Forms.RadioButton editAudioListButton;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton deleteAudioListButton;
         private System.Windows.Forms.RadioButton backAudioButton;
         private System.Windows.Forms.FlowLayoutPanel wordColorPanel;
         private System.Windows.Forms.RadioButton newWordColorButton;
@@ -247,7 +280,10 @@
         private System.Windows.Forms.FlowLayoutPanel imagePanel;
         private System.Windows.Forms.RadioButton newImageListButton;
         private System.Windows.Forms.RadioButton editImageListButton;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton deleteImageListButton;
         private System.Windows.Forms.RadioButton backImageButton;
+        private System.Windows.Forms.RadioButton recoverImageListButton;
+        private System.Windows.Forms.RadioButton recoverAudioListButton;
+        private System.Windows.Forms.RadioButton recoverWordColorButton;
     }
 }

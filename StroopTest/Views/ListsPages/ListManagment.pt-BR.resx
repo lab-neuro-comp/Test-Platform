@@ -127,9 +127,24 @@
     <value>Listas existentes:</value>
   </data>
   <data name="deletingLabel.Text" xml:space="preserve">
-    <value>Arquivos que serão excluídos:</value>
+    <value>Listas que serão excluídos:</value>
   </data>
   <data name="warningLabel.Text" xml:space="preserve">
     <value>Listas em laranja indica que elas estão sendo usadas por algum programa. Não é possível excluí-la enquanto o programa utiliza-la.</value>
+  </data>
+  <data name="excludedLists.Text" xml:space="preserve">
+    <value>Listas que podem ser recuperadas:</value>
+  </data>
+  <data name="recoveringLists.Text" xml:space="preserve">
+    <value>Listas que serão recuperadas:</value>
+  </data>
+  <data name="existingListWarning.Text" xml:space="preserve">
+    <value>Listas em vermelho indicam listas já existentes no diretório de destino (backup ou diretorio das listas). Deletar ou recuperar esses itens causará a perca da lista existente.</value>
+  </data>
+  <data name="recoverButton.Text" xml:space="preserve">
+    <value>recuperar</value>
+  </data>
+  <data name="existingListCheckBox.Text" xml:space="preserve">
+    <value>Eu concordo com os riscos.</value>
   </data>
 </root>

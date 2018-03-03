@@ -21,12 +21,37 @@ namespace TestPlatform.Views.ListsPages
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         string listPath = Global.testFilesPath + Global.listFolderName, suffix;
         string[] filePaths;
-        bool shouldPaintOrange = false;
-        public ListManagment(string suffix)
+        char mode;
+        public ListManagment(string suffix, char mode)
         {
+            if(mode != 'r' && mode != 'd') //r = recover, d = delete, none = invalid.
+            {
+                throw new ArgumentException();
+            }
             InitializeComponent();
             this.suffix = suffix;
+            this.mode = mode;
+            setUpMessages();
             loadExistingList();
+        }
+
+        private void setUpMessages()
+        {
+            if(mode == 'r') //recover
+            {
+                excludedLists.Visible = true;
+                recoverButton.Visible = true;
+                deleteButton.Visible = false;
+                recoveringLists.Visible = true;
+            }
+            else //delete
+            {
+                existingLabel.Visible = true;
+                deletingLabel.Visible = true;
+                recoverButton.Visible = false;
+                deleteButton.Visible = true;
+            }
+
         }
 
         private void originFilesList_DrawItem(object sender, DrawItemEventArgs e)
@@ -35,6 +60,7 @@ namespace TestPlatform.Views.ListsPages
             SolidBrush blackSolidBrush = new SolidBrush(Color.Black);
             SolidBrush blueSolidBrush = new SolidBrush(Color.FromKnownColor(KnownColor.Highlight));
             SolidBrush orangeSolidBrush = new SolidBrush(Color.Orange);
+            SolidBrush redSolidBrush = new SolidBrush(Color.Red);
 
             e.DrawBackground();
             bool selected = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
@@ -51,29 +77,24 @@ namespace TestPlatform.Views.ListsPages
                 {
                     backgroundBrush = blueSolidBrush;
                 }
-                else if (text.Contains("   "))
-                {
-                    if (shouldPaintOrange)
-                    {
-                        backgroundBrush = orangeSolidBrush;
-                    }
-                    else
-                    {
-                        backgroundBrush = whiteSolidBrush;
-                    }
-                }
                 else
                 {
-                    if (isListUsed(text, suffix))
+                    if (mode == 'd' && isListUsed(text, suffix))
                     {
                         warningLabel.Visible = true;
                         backgroundBrush = orangeSolidBrush;
-                        shouldPaintOrange = true;
+                    }
+                    else if (listAlreadyExists(text, suffix))
+                    {
+                        backgroundBrush = redSolidBrush;
+                        existingListWarning.Visible = true;
+                        existingListCheckBox.Visible = true;
+                        recoverButton.Enabled = false;
+                        deleteButton.Enabled = false;
                     }
                     else
                     {
                         backgroundBrush = whiteSolidBrush;
-                        shouldPaintOrange = false;
                     }
                 }
                 g.FillRectangle(backgroundBrush, e.Bounds);
@@ -85,12 +106,46 @@ namespace TestPlatform.Views.ListsPages
             e.DrawFocusRectangle();
         }
 
+        bool listAlreadyExists(string text, string suffix)
+        {
+            if (mode == 'd')
+            {
+                if (suffix == "_image" || suffix == "_audio")
+                {
+                    if (Directory.Exists(Global.listFilesBackup + text))
+                    {
+                        return true;
+                    }
+                }
+                else if (File.Exists(Global.listFilesBackup + text + ".lst"))
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                if (suffix == "_image" || suffix == "_audio")
+                {
+                    if (Directory.Exists(listPath + text))
+                    {
+                        return true;
+                    }
+                }
+                else if (File.Exists(listPath + text + ".lst"))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private void destinationFilesList_DrawItem(object sender, DrawItemEventArgs e)
         {
             SolidBrush whiteSolidBrush = new SolidBrush(Color.White);
             SolidBrush blackSolidBrush = new SolidBrush(Color.Black);
             SolidBrush blueSolidBrush = new SolidBrush(Color.FromKnownColor(KnownColor.Highlight));
             SolidBrush orangeSolidBrush = new SolidBrush(Color.Orange);
+            SolidBrush redSolidBrush = new SolidBrush(Color.Red);
 
             e.DrawBackground();
             bool selected = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
@@ -107,29 +162,24 @@ namespace TestPlatform.Views.ListsPages
                 {
                     backgroundBrush = blueSolidBrush;
                 }
-                else if (text.Contains("   "))
-                {
-                    if (shouldPaintOrange)
-                    {
-                        backgroundBrush = orangeSolidBrush;
-                    }
-                    else
-                    {
-                        backgroundBrush = whiteSolidBrush;
-                    }
-                }
                 else
                 {
-                    if (isListUsed(text, suffix))
+                    if (mode == 'd' && isListUsed(text, suffix))
                     {
                         warningLabel.Visible = true;
                         backgroundBrush = orangeSolidBrush;
-                        shouldPaintOrange = true;
+                    }
+                    else if (listAlreadyExists(text, suffix))
+                    {
+                        backgroundBrush = redSolidBrush;
+                        existingListWarning.Visible = true;
+                        existingListCheckBox.Visible = true;
+                        recoverButton.Enabled = false;
+                        deleteButton.Enabled = false;
                     }
                     else
                     {
                         backgroundBrush = whiteSolidBrush;
-                        shouldPaintOrange = false;
                     }
                 }
                 g.FillRectangle(backgroundBrush, e.Bounds);
@@ -141,79 +191,14 @@ namespace TestPlatform.Views.ListsPages
             e.DrawFocusRectangle();
         }
 
-        private void existingList_Click(object sender, EventArgs e)
-        {
-            if (suffix == "_audio" || suffix == "_image")
-            {
-                int index = existingList.SelectedIndex;
-                existingList.ClearSelected();
-                if (index != -1)
-                {
-                    string selected = existingList.Items[index].ToString();
-                    if (selected.Contains("   "))
-                    {
-                        while (existingList.Items[index].ToString().Contains("   "))
-                        {
-                            index--;
-                        }
-                    }
-                    do
-                    {
-                        existingList.SetSelected(index++, true);
-                    } while (index < existingList.Items.Count && existingList.Items[index].ToString().Contains("   "));
-                }
-                else
-                {
-                    /*do nothing*/
-                }
-            }
-        }
-
-        private void deletingList_Click(object sender, EventArgs e)
-        {
-            if (suffix == "_audio" || suffix == "_image")
-            {
-                int index = deletingList.SelectedIndex;
-                deletingList.ClearSelected();
-                if (index != -1)
-                {
-                    string selected = deletingList.Items[index].ToString();
-                    if (selected.Contains("   "))
-                    {
-                        while (deletingList.Items[index].ToString().Contains("   "))
-                        {
-                            index--;
-                        }
-                    }
-                    do
-                    {
-                        deletingList.SetSelected(index++, true);
-                    } while (index < deletingList.Items.Count && deletingList.Items[index].ToString().Contains("   "));
-                }
-                else
-                {
-                    /*do nothing*/
-                }
-            }
-        }
-
         private void toDelete_Click(object sender, EventArgs e)
         {
-            bool isFirstItem = true;
             int count = 0, limit ;
             SelectedObjectCollection selected = existingList.SelectedItems;
             limit = selected.Count;
             while (count != limit)
             {
-                if (isFirstItem)
-                {
-                    isFirstItem = false;
-                    if (selected[0].ToString().Contains("   "))
-                    {
-                        return;
-                    }
-                }
-                if (isListUsed(selected[0].ToString(), suffix))
+                if (mode == 'd' && isListUsed(selected[0].ToString(), suffix))
                 {
                     return;
                 }
@@ -335,6 +320,70 @@ namespace TestPlatform.Views.ListsPages
 
             Directory.Delete(target_dir, false);
         }
+        
+        private void recoverLists()
+        {
+            if (suffix == "_audio" || suffix == "_image")
+            {
+                if (deletingList.Items.Count > 0)
+                {
+                    int count = 0;
+                    string currentDirectory = "";
+                    do
+                    {
+                        if (!isListUsed(deletingList.Items[count].ToString(), suffix))
+                        {
+                            try
+                            {
+                                currentDirectory = Global.testFilesPath + Global.listFolderName + deletingList.Items[count].ToString() + suffix;
+                                Directory.Move(Global.listFilesBackup + deletingList.Items[count].ToString() + suffix, currentDirectory);
+                                count++;
+                            }
+                            catch (IOException)
+                            {
+                                Directory.Delete(Global.testFilesPath + Global.listFolderName + deletingList.Items[count].ToString() + suffix, true);
+                                Directory.Move(Global.listFilesBackup + deletingList.Items[count].ToString() + suffix, listPath + deletingList.Items[count].ToString() + suffix);
+                                count++;
+                            }
+                        }
+                        else
+                        {
+                            /*do nothing*/
+                        }
+
+                    } while (count < deletingList.Items.Count);
+                    count = 0;
+                }
+            }
+            else
+            {
+                if (deletingList.Items.Count > 0)
+                {
+                    for (int count = 0; count < deletingList.Items.Count; count++)
+                    {
+                        if (mode == 'r' || !isListUsed(deletingList.Items[count].ToString(), suffix))
+                        {
+                            try
+                            {
+                                File.Move(Global.listFilesBackup + deletingList.Items[count].ToString() + ".lst", Global.testFilesPath + Global.listFolderName + deletingList.Items[count].ToString() + ".lst");
+                            }
+                            catch (IOException)
+                            {
+                                File.Delete(Global.testFilesPath + Global.listFolderName + deletingList.Items[count].ToString() + ".lst");
+                                File.Move(Global.listFilesBackup + deletingList.Items[count].ToString() + ".lst", Global.testFilesPath + Global.listFolderName + deletingList.Items[count].ToString() + ".lst");
+                            }
+                        }
+                        else
+                        {
+                            /*do nothing*/
+                        }
+                    }
+                }
+            }
+            loadExistingList();
+            deletingList.Items.Clear();
+            MessageBox.Show(LocRM.GetString("listsRecovered", currentCulture));
+        }
 
         private void deleteLists()
         {
@@ -347,22 +396,24 @@ namespace TestPlatform.Views.ListsPages
                     string currentDirectory = "";
                     do
                     {
-                        if (!deletingList.Items[count].ToString().Contains("   "))
+                        if (mode == 'r' || !isListUsed(deletingList.Items[count].ToString(), suffix))
                         {
-                            if (!isListUsed(deletingList.Items[count].ToString(), suffix))
+                            try
                             {
-                                currentDirectory = listPath + deletingList.Items[count++].ToString() + suffix;
-                                DeleteDirectory(currentDirectory);
+                                currentDirectory = Global.testFilesPath + Global.listFolderName + deletingList.Items[count].ToString() + suffix;
+                                Directory.Move(currentDirectory, Global.listFilesBackup + deletingList.Items[count++].ToString() + suffix);
                             }
-                            else
+                            catch (IOException)
                             {
-                                /*do nothing*/
+                                Directory.Delete(Global.listFilesBackup + deletingList.Items[count++].ToString() + suffix, true);
+                                Directory.Move(Global.testFilesPath + Global.listFolderName + deletingList.Items[count].ToString() + suffix, Global.listFilesBackup + deletingList.Items[count++].ToString() + suffix);
                             }
                         }
                         else
                         {
-                            count++;
+                            /*do nothing*/
                         }
+
                     } while (count < deletingList.Items.Count);
                     count = 0;
                 }
@@ -373,20 +424,21 @@ namespace TestPlatform.Views.ListsPages
                 {
                     for (int count = 0; count < deletingList.Items.Count; count++)
                     {
-                        try
+                        if (mode == 'r' || !isListUsed(deletingList.Items[count].ToString(), suffix))
                         {
-                            if (!isListUsed(deletingList.Items[count].ToString(), suffix))
+                            try
                             {
-                                File.Delete(listPath + deletingList.Items[count].ToString() + ".lst");
+                                File.Move(Global.testFilesPath + Global.listFolderName + deletingList.Items[count].ToString() + ".lst", Global.listFilesBackup + deletingList.Items[count].ToString() + ".lst");
                             }
-                            else
+                            catch (IOException)
                             {
-                                /*do nothing*/
+                                File.Delete(Global.listFilesBackup + deletingList.Items[count].ToString() + ".lst");
+                                File.Move(Global.testFilesPath + Global.listFolderName + deletingList.Items[count].ToString() + ".lst", Global.listFilesBackup + deletingList.Items[count].ToString() + ".lst");
                             }
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            MessageBox.Show(ex.ToString());
+                            /*do nothing*/
                         }
                     }
                 }
@@ -424,14 +476,52 @@ namespace TestPlatform.Views.ListsPages
 
         }
 
+        private void recoverButton_Click(object sender, EventArgs e)
+        {
+            if (deletingList.Items.Count > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show(LocRM.GetString("recoverList", currentCulture), LocRM.GetString("recover", currentCulture), MessageBoxButtons.OKCancel);
+                if (dialogResult == DialogResult.OK)
+                {
+                    recoverLists();
+                }
+                else
+                {
+                    MessageBox.Show(LocRM.GetString("listsNotRecovered", currentCulture));
+                }
+            }
+        }
+
         private void deletingList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
+        private void existingListCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (existingListCheckBox.Checked)
+            {
+                recoverButton.Enabled = true;
+                deleteButton.Enabled = true;
+            }
+            else
+            {
+                recoverButton.Enabled = false;
+                deleteButton.Enabled = false;
+            }
+        }
+
         private void loadExistingList()
         {
             existingList.Items.Clear();
+            if(mode == 'd')
+            {
+                listPath = Global.testFilesPath + Global.listFolderName;
+            }
+            else
+            {
+                listPath = Global.listFilesBackup;
+            }
             if (suffix == "_audio" || suffix == "_image")
             {
                 if (Directory.Exists(listPath))
@@ -441,12 +531,6 @@ namespace TestPlatform.Views.ListsPages
                     {
                         var option = Path.GetFileName(filePaths[i]).Split('_');
                         existingList.Items.Add(option[0]);
-                        string[] files = Directory.GetFiles(filePaths[i]);
-                        for (int j = 0; j < files.Length; j++)
-                        {
-                            string fileName = String.Format("   {0}", Path.GetFileName(files[j]));
-                            existingList.Items.Add(fileName);
-                        }
                     }
                 }
             }

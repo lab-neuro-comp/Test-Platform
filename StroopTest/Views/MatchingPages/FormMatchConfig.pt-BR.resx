@@ -196,7 +196,7 @@
     <value>#404040</value>
   </data>
   <data name="randomAttemptTime.Text" xml:space="preserve">
-    <value>Tempo entre tentativas aleatória</value>
+    <value>Atraso entre tentativas variável</value>
   </data>
   <data name="othersGroupBox.Text" xml:space="preserve">
     <value>Outros</value>
@@ -208,13 +208,13 @@
     <value>Fundo do DMTS:</value>
   </data>
   <data name="modelStimuluIntervalLabel.Text" xml:space="preserve">
-    <value>Intervalo entre modelo e estimulos (ms):</value>
+    <value>Atraso entre modelo e estimulos (ms):</value>
   </data>
   <data name="stimuluExpositionLabel.Text" xml:space="preserve">
     <value>Exposição dos estimulos (ms):</value>
   </data>
   <data name="attemptIntervalLabel.Text" xml:space="preserve">
-    <value>Intervalo entre tentativas (ms):</value>
+    <value>Atraso entre tentativas (ms):</value>
   </data>
   <data name="modelExpositionLabel.Text" xml:space="preserve">
     <value>Exposição do modelo (ms):</value>
@@ -226,13 +226,13 @@
     <value>Imagens:</value>
   </data>
   <data name="smallImageListLabel.Text" xml:space="preserve">
-    <value>The image list has less elements than the necessary, image repetition may occur</value>
+    <value>A lista de imagem é menor do que o necessário para não haver repetições</value>
   </data>
   <data name="impossibleUseListWarnLabel.Text" xml:space="preserve">
     <value>A lista de imagens é menor que o número de estimulos. Diminua o numero de estimulos ou escolha uma lista maior</value>
   </data>
   <data name="randomModelStimulusTime.Text" xml:space="preserve">
-    <value>Tempo entre modelo e estímulo aleatório</value>
+    <value>Atraso entre modelo e estímulo variável</value>
   </data>
   <data name="randomStimuluPosition.Text" xml:space="preserve">
     <value>Estímulos</value>

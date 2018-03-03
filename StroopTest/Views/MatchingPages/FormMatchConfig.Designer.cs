@@ -205,6 +205,8 @@
             // 
             this.timeGroupBox.Controls.Add(this.stimulusInterval);
             this.timeGroupBox.Controls.Add(this.stimulusExpoTime);
+            this.timeGroupBox.Controls.Add(this.randomModelStimulusTime);
+            this.timeGroupBox.Controls.Add(this.randomAttemptTime);
             this.timeGroupBox.Controls.Add(this.attemptInterval);
             this.timeGroupBox.Controls.Add(this.modelExpoTime);
             this.timeGroupBox.Controls.Add(this.modelStimuluIntervalLabel);
@@ -411,8 +413,6 @@
             // 
             this.expositionGroupBox.Controls.Add(this.randomModelPosition);
             this.expositionGroupBox.Controls.Add(this.randomPositionLabel);
-            this.expositionGroupBox.Controls.Add(this.randomModelStimulusTime);
-            this.expositionGroupBox.Controls.Add(this.randomAttemptTime);
             this.expositionGroupBox.Controls.Add(this.randomOrder);
             this.expositionGroupBox.Controls.Add(this.expositionType);
             this.expositionGroupBox.Controls.Add(this.expositionTypeLabel);
@@ -444,12 +444,14 @@
             resources.ApplyResources(this.randomModelStimulusTime, "randomModelStimulusTime");
             this.randomModelStimulusTime.Name = "randomModelStimulusTime";
             this.randomModelStimulusTime.UseVisualStyleBackColor = true;
+            this.randomModelStimulusTime.CheckedChanged += new System.EventHandler(this.randomModelStimulusTime_CheckedChanged);
             // 
             // randomAttemptTime
             // 
             resources.ApplyResources(this.randomAttemptTime, "randomAttemptTime");
             this.randomAttemptTime.Name = "randomAttemptTime";
             this.randomAttemptTime.UseVisualStyleBackColor = true;
+            this.randomAttemptTime.CheckedChanged += new System.EventHandler(this.randomAttemptTime_CheckedChanged);
             // 
             // randomOrder
             // 
@@ -513,7 +515,7 @@
             0});
             this.numExpo.Name = "numExpo";
             this.numExpo.Value = new decimal(new int[] {
-            8,
+            2,
             0,
             0,
             0});
@@ -522,6 +524,11 @@
             // expositionSize
             // 
             resources.ApplyResources(this.expositionSize, "expositionSize");
+            this.expositionSize.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.expositionSize.Minimum = new decimal(new int[] {
             10,
             0,
@@ -529,7 +536,7 @@
             0});
             this.expositionSize.Name = "expositionSize";
             this.expositionSize.Value = new decimal(new int[] {
-            50,
+            250,
             0,
             0,
             0});

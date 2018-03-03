@@ -916,15 +916,8 @@ namespace TestPlatform.Views.MatchingPages
         {
             int time;
             /*wait interval between attempts*/
-            if (!userClickedStimulu)
-            {
-                attemptIntervalTime = waitIntervalTime(executingTest.ProgramInUse.IntervalTimeRandom,
-                    executingTest.ProgramInUse.AttemptsIntervalTime);
-            }
-            else
-            {
-                attemptIntervalTime = 0;
-            }
+            attemptIntervalTime = waitIntervalTime(executingTest.ProgramInUse.IntervalTimeRandom,
+                executingTest.ProgramInUse.AttemptsIntervalTime);
             /*set exposition accumulative time and test exposition time*/
             executingTest.ExpositionTime = DateTime.Now;
             if (showModel)
@@ -1268,11 +1261,15 @@ namespace TestPlatform.Views.MatchingPages
                 {
                     List<string> stimulus = this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageNames().ToList();
                     stimulus.Remove(this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName());
+                    for(int count = 0; count < stimulus.Count; count++)
+                    {
+                        stimulus[count] = this.executingTest.ProgramInUse.getImageListFile().ListName + "/" + stimulus[count];
+                    }
                     while (stimulus.Count <= 7)
                     {
                         stimulus.Add("-");
                     }
-                    stimulus[7] = this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image);
+                    stimulus[7] = this.executingTest.ProgramInUse.getImageListFile().ListName + "/" +  this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image);
                     executingTest.writeLineOutput(
                         attemptIntervalTime,
                         intervalElapsedTime,
@@ -1285,7 +1282,7 @@ namespace TestPlatform.Views.MatchingPages
                         modelSecondPosition,
                         currentExpositionType,
                         (this.matchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(imageClicked.Image) == this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName()).ToString(),
-                        this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName(),
+                        this.executingTest.ProgramInUse.getImageListFile().ListName + "/" + this.matchingGroups.ElementAt(groupCounter - 1).getModelImageName(),
                         stimulus.ToArray(),
                         StimuluPosition.getStimuluPositionMap(imageClicked.Location, ClientSize, imageClicked.Size)
                         );

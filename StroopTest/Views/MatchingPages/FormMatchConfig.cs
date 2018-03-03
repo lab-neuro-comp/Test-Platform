@@ -578,5 +578,37 @@ namespace TestPlatform.Views.MatchingPages
                 smallImageListLabel.Visible = false;
             }
         }
+
+        private void randomModelStimulusTime_CheckedChanged(object sender, EventArgs e)
+        {
+            if (randomModelStimulusTime.Checked)
+            {
+                this.stimulusInterval.Minimum = 400;
+                if(this.stimulusInterval.Value < 400)
+                {
+                    this.stimulusInterval.Value = 400;
+                }
+            }
+            else
+            {
+                this.stimulusInterval.Minimum = 100;
+            }
+        }
+
+        private void randomAttemptTime_CheckedChanged(object sender, EventArgs e)
+        {
+            if (randomAttemptTime.Checked)
+            {
+                this.attemptInterval.Minimum = 400;
+                if (this.attemptInterval.Value < 400)
+                {
+                    this.attemptInterval.Value = 400;
+                }
+            }
+            else
+            {
+                this.attemptInterval.Minimum = 100;
+            }
+        }
     }
 }

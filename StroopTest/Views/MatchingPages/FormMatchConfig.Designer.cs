@@ -46,6 +46,8 @@
             this.timeGroupBox = new System.Windows.Forms.GroupBox();
             this.stimulusInterval = new System.Windows.Forms.NumericUpDown();
             this.stimulusExpoTime = new System.Windows.Forms.NumericUpDown();
+            this.randomModelStimulusTime = new System.Windows.Forms.CheckBox();
+            this.randomAttemptTime = new System.Windows.Forms.CheckBox();
             this.attemptInterval = new System.Windows.Forms.NumericUpDown();
             this.modelExpoTime = new System.Windows.Forms.NumericUpDown();
             this.modelStimuluIntervalLabel = new System.Windows.Forms.Label();
@@ -64,8 +66,6 @@
             this.expositionGroupBox = new System.Windows.Forms.GroupBox();
             this.randomModelPosition = new System.Windows.Forms.CheckBox();
             this.randomPositionLabel = new System.Windows.Forms.Label();
-            this.randomModelStimulusTime = new System.Windows.Forms.CheckBox();
-            this.randomAttemptTime = new System.Windows.Forms.CheckBox();
             this.randomOrder = new System.Windows.Forms.CheckBox();
             this.expositionType = new System.Windows.Forms.ComboBox();
             this.expositionTypeLabel = new System.Windows.Forms.Label();
@@ -267,6 +267,20 @@
             0,
             0});
             // 
+            // randomModelStimulusTime
+            // 
+            resources.ApplyResources(this.randomModelStimulusTime, "randomModelStimulusTime");
+            this.randomModelStimulusTime.Name = "randomModelStimulusTime";
+            this.randomModelStimulusTime.UseVisualStyleBackColor = true;
+            this.randomModelStimulusTime.CheckedChanged += new System.EventHandler(this.randomModelStimulusTime_CheckedChanged);
+            // 
+            // randomAttemptTime
+            // 
+            resources.ApplyResources(this.randomAttemptTime, "randomAttemptTime");
+            this.randomAttemptTime.Name = "randomAttemptTime";
+            this.randomAttemptTime.UseVisualStyleBackColor = true;
+            this.randomAttemptTime.CheckedChanged += new System.EventHandler(this.randomAttemptTime_CheckedChanged);
+            // 
             // attemptInterval
             // 
             this.attemptInterval.Increment = new decimal(new int[] {
@@ -438,20 +452,6 @@
             // 
             resources.ApplyResources(this.randomPositionLabel, "randomPositionLabel");
             this.randomPositionLabel.Name = "randomPositionLabel";
-            // 
-            // randomModelStimulusTime
-            // 
-            resources.ApplyResources(this.randomModelStimulusTime, "randomModelStimulusTime");
-            this.randomModelStimulusTime.Name = "randomModelStimulusTime";
-            this.randomModelStimulusTime.UseVisualStyleBackColor = true;
-            this.randomModelStimulusTime.CheckedChanged += new System.EventHandler(this.randomModelStimulusTime_CheckedChanged);
-            // 
-            // randomAttemptTime
-            // 
-            resources.ApplyResources(this.randomAttemptTime, "randomAttemptTime");
-            this.randomAttemptTime.Name = "randomAttemptTime";
-            this.randomAttemptTime.UseVisualStyleBackColor = true;
-            this.randomAttemptTime.CheckedChanged += new System.EventHandler(this.randomAttemptTime_CheckedChanged);
             // 
             // randomOrder
             // 

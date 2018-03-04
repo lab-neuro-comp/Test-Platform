@@ -46,8 +46,7 @@ namespace TestPlatform.Models
             bool endExpositionWithClick, string imageList, int intervalTime, 
             bool intervalTimeRandom, int expositionTime, int modelExpositionTime, 
             int attemptsIntervalTime,  string backgroundColor, string DNMTSBackground, 
-            bool randomOrder, int stimuluDistance, int numberPositions, 
-            bool randomIntervalModelStimulus, bool randomStimuluPosition)
+            bool randomOrder, bool randomIntervalModelStimulus, bool randomStimuluPosition)
         {
             // Program properties
             this.programName = programName;
@@ -65,7 +64,6 @@ namespace TestPlatform.Models
             this.attemptsIntervalTime = attemptsIntervalTime;
             this.DNMTSBackground = DNMTSBackground;
             this.AttemptsNumber = AttemptsNumber;
-            this.numberPositions = numberPositions;
             this.randomIntervalModelStimulus = randomIntervalModelStimulus;
             this.randomStimuluPosition = randomStimuluPosition;
             //default configurations for Mathing program
@@ -76,7 +74,7 @@ namespace TestPlatform.Models
             this.expositionType = expositionType;
             this.fixPoint = "false";
             this.fixPointColor = "false";
-            this.stimuluDistance = stimuluDistance;
+            this.stimuluDistance = 0;
         }
 
         public string data()

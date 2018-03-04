@@ -632,7 +632,6 @@ namespace TestPlatform.Views.MatchingPages
             }
         }
 
-        private bool userClickedStimulu = true;
         StimuluPosition stimuluPosition;
         string modelFirstposition, modelSecondPosition;
         MatchingTest executingTest = new MatchingTest();
@@ -729,7 +728,7 @@ namespace TestPlatform.Views.MatchingPages
             this.imageList = this.executingTest.ProgramInUse.getImageListFile().ListContent.ToArray();
             if (this.executingTest.ProgramInUse.ExpositionRandom)
             {
-                imageList = ExpositionController.ShuffleArray(imageList, executingTest.ProgramInUse.AttemptsNumber, 3);
+                imageList = ExpositionController.ShuffleArray(imageList, imageList.Length, 3);
             }
             createMatchingGroups();
         }
@@ -750,8 +749,7 @@ namespace TestPlatform.Views.MatchingPages
         {
             MatchingGroup nextGroup;
             bool willHaveRepetition = (imageList.Length < this.executingTest.ProgramInUse.NumExpositions * this.executingTest.ProgramInUse.AttemptsNumber);
-            int nextImgIndex, modelCounter = 0, stimuluCounter = 0;
-            int[] groupStartingindex = new int[this.executingTest.ProgramInUse.AttemptsNumber];
+            int modelCounter = 0, stimuluCounter = 0, startingIndex = 0;
             Random rng = new Random(int.Parse(this.seconds));
             Image[] groupModels = new Image[this.executingTest.ProgramInUse.AttemptsNumber];
             string[] groupModelsName = new string[this.executingTest.ProgramInUse.AttemptsNumber];
@@ -762,21 +760,17 @@ namespace TestPlatform.Views.MatchingPages
             {
                 imageCanBeUsed[i] = true;
             }
-            for(int count = 0; modelCounter < this.executingTest.ProgramInUse.AttemptsNumber; count = count + this.executingTest.ProgramInUse.NumExpositions)//define the models of the exposition
+            for(int count = 0; modelCounter < this.executingTest.ProgramInUse.AttemptsNumber; count++)//define the models of the exposition
             {
-                while(count >= imageList.Length) // prevent out of range exception
+                if(count >= imageList.Length) // prevent out of range exception
                 {
-                    count = count - imageList.Length + 1;
-                    if(imageList.Length == 1)/*if list has just 1 image, this prevents the while to turns into an infinite loop*/
-                    {
-                        count--;
-                    }
+                    count = 0;
                 }
                 imageCanBeUsed[count] = false;
-                groupStartingindex[modelCounter] = count + 1;
                 groupModels[modelCounter] = Image.FromFile(imageList[count]);
                 groupModelsName[modelCounter] = Path.GetFileNameWithoutExtension(imageList[count]);
                 modelCounter++;
+                startingIndex = count;
             }
             for (int group = 0; group < groupModels.Length; group++)
             {
@@ -785,60 +779,37 @@ namespace TestPlatform.Views.MatchingPages
                     groupStimulus[count] = null;
                     groupStimulusName[count] = null;
                 }
-                stimuluCounter = groupStartingindex[group];
+                stimuluCounter = startingIndex;
                 groupStimulus[0] = groupModels[group];
                 groupStimulusName[0] = groupModelsName[group];
                 for (int count = 1; count < this.executingTest.ProgramInUse.NumExpositions; count++)
                 {
-                    if (this.executingTest.ProgramInUse.ExpositionRandom)
+                    if (stimuluCounter >= imageList.Length)
                     {
-                        do
-                        {
-                            nextImgIndex = rng.Next(imageList.Length);
-                            if (noneImageLeft(imageCanBeUsed))
-                            {
-                                for(int i = 0; i < imageCanBeUsed.Length; i++)
-                                {
-                                    if (i == count) continue;
-                                    imageCanBeUsed[i] = true;
-                                }
-                                break;
-                            }
-                        }
-                        while (!imageCanBeUsed[nextImgIndex]);
-                        imageCanBeUsed[nextImgIndex] = false;
-                        groupStimulus[count] = Image.FromFile(imageList[nextImgIndex]);
-                        groupStimulusName[count] = Path.GetFileNameWithoutExtension(imageList[nextImgIndex]);
+                        stimuluCounter = 0;
                     }
-                    else
+                    if (imageList.Length >= this.executingTest.ProgramInUse.NumExpositions)
                     {
-                        if (stimuluCounter >= imageList.Length)
+                        if (!willHaveRepetition)
                         {
-                            stimuluCounter = 0;
-                        }
-                        if (imageList.Length >= this.executingTest.ProgramInUse.NumExpositions)
-                        {
-                            if (!willHaveRepetition)
+                            while (!imageCanBeUsed[stimuluCounter])
                             {
-                                while (!imageCanBeUsed[stimuluCounter])
-                                {
-                                    stimuluCounter++;
-                                }
-                            }
-                            else
-                            {
-                                string name = Path.GetFileNameWithoutExtension(imageList[stimuluCounter]);
-                                while (groupStimulusName.Contains(name))
-                                {
-                                    stimuluCounter++;
-                                    name = Path.GetFileNameWithoutExtension(imageList[stimuluCounter]);
-                                }
+                                stimuluCounter++;
                             }
                         }
-                        groupStimulus[count] = Image.FromFile(imageList[stimuluCounter]);
-                        groupStimulusName[count] = Path.GetFileNameWithoutExtension(imageList[stimuluCounter]);
-                        stimuluCounter++;
+                        else
+                        {
+                            string name = Path.GetFileNameWithoutExtension(imageList[stimuluCounter]);
+                            while (groupStimulusName.Contains(name))
+                            {
+                                stimuluCounter++;
+                                name = Path.GetFileNameWithoutExtension(imageList[stimuluCounter]);
+                            }
+                        }
                     }
+                    groupStimulus[count] = Image.FromFile(imageList[stimuluCounter]);
+                    groupStimulusName[count] = Path.GetFileNameWithoutExtension(imageList[stimuluCounter]);
+                    stimuluCounter++;
                 }
                 nextGroup = new MatchingGroup(groupModels[group], groupModelsName[group], groupStimulus.ToList(), groupStimulusName.ToList());
                 matchingGroups.Add(nextGroup);
@@ -1286,7 +1257,6 @@ namespace TestPlatform.Views.MatchingPages
                         stimulus.ToArray(),
                         StimuluPosition.getStimuluPositionMap(imageClicked.Location, ClientSize, imageClicked.Size)
                         );
-                    userClickedStimulu = true;
                 }
                 else if (showModel)/* user missed stimulus */
                 {
@@ -1312,7 +1282,6 @@ namespace TestPlatform.Views.MatchingPages
                         stimulus.ToArray(),
                         "-");
                     hitStopWatch.Stop();
-                    userClickedStimulu = false;
                 }
                 else if (!showModel && (e.Cancelled == true) && !intervalCancelled)  /* user clicked model */
                 {

@@ -316,16 +316,16 @@ namespace TestPlatform.Views.SidebarControls
 
         private void deleteImageListButton_Click(object sender, EventArgs e)
         {
-            if (radioButton3.Checked)
+            if (deleteImageListButton.Checked)
             {
                 if (isAllowedToChangeScreen())
                 {
                     Global.GlobalFormMain._contentPanel.Controls.Clear();
-                    ListManagment ManageList = new ListManagment("_image");
+                    ListManagment ManageList = new ListManagment("_image", 'd');
                     try
                     {
                         Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
-                        radioButton3.Checked = false;
+                        deleteImageListButton.Checked = false;
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
@@ -342,11 +342,11 @@ namespace TestPlatform.Views.SidebarControls
                 if (isAllowedToChangeScreen())
                 {
                     Global.GlobalFormMain._contentPanel.Controls.Clear();
-                    ListManagment ManageList = new ListManagment("_words_color");
+                    ListManagment ManageList = new ListManagment("_words_color", 'd');
                     try
                     {
                         Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
-                        radioButton3.Checked = false;
+                        deleteImageListButton.Checked = false;
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
@@ -358,16 +358,16 @@ namespace TestPlatform.Views.SidebarControls
         }
         private void deleteAudioListButton_Click(object sender, EventArgs e)
         {
-            if (radioButton4.Checked)
+            if (deleteAudioListButton.Checked)
             {
                 if (isAllowedToChangeScreen())
                 {
                     Global.GlobalFormMain._contentPanel.Controls.Clear();
-                    ListManagment ManageList = new ListManagment("_audio");
+                    ListManagment ManageList = new ListManagment("_audio", 'd');
                     try
                     {
                         Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
-                        radioButton3.Checked = false;
+                        deleteImageListButton.Checked = false;
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
@@ -378,6 +378,70 @@ namespace TestPlatform.Views.SidebarControls
             }
         }
 
+        private void recoverImageListButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (recoverImageListButton.Checked)
+            {
+                if (isAllowedToChangeScreen())
+                {
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    ListManagment ManageList = new ListManagment("_image", 'r');
+                    try
+                    {
+                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        deleteImageListButton.Checked = false;
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                }
+                else
+                {
+                    /*do nothing*/
+                }
+            }
+        }
 
+        private void recoverAudioListButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (recoverAudioListButton.Checked)
+            {
+                if (isAllowedToChangeScreen())
+                {
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    ListManagment ManageList = new ListManagment("_audio", 'r');
+                    try
+                    {
+                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        deleteImageListButton.Checked = false;
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                }
+                else
+                {
+                    /*do nothing*/
+                }
+            }
+        }
+
+        private void recoverWordColorButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (recoverWordColorButton.Checked)
+            {
+                if (isAllowedToChangeScreen())
+                {
+                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    ListManagment ManageList = new ListManagment("_words_color", 'r');
+                    try
+                    {
+                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        deleteImageListButton.Checked = false;
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                }
+                else
+                {
+                    /*do nothing*/
+                }
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@
         public static string reactionTestFilesBackupPath = "/ReactionTestFiles/";
         public static string experimentTestFilesBackupPath = "/ExperimentTestFiles/";
         public static string matchingTestFilesBackupPath = "/MatchingTestFiles/";
+        public static string listFilesBackup = "/Lst/";
 
         public static string listFolderName = "/Lst/";
 

@@ -138,7 +138,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;existingList.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>14</value>
   </data>
   <data name="deletingList.Location" type="System.Drawing.Point, System.Drawing">
     <value>321, 43</value>
@@ -159,7 +159,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;deletingList.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>13</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="toDelete.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -190,7 +190,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;toDelete.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>12</value>
   </data>
   <data name="toExisting.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -223,7 +223,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;toExisting.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="cancelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -250,7 +250,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="deleteButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -277,7 +277,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;deleteButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>9</value>
   </data>
   <data name="existingLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -297,6 +297,9 @@
   <data name="existingLabel.Text" xml:space="preserve">
     <value>Listas existentes:</value>
   </data>
+  <data name="existingLabel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;existingLabel.Name" xml:space="preserve">
     <value>existingLabel</value>
   </data>
@@ -307,7 +310,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;existingLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>8</value>
   </data>
   <data name="deletingLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -316,7 +319,7 @@
     <value>NoControl</value>
   </data>
   <data name="deletingLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>400, 27</value>
+    <value>318, 27</value>
   </data>
   <data name="deletingLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 13</value>
@@ -326,6 +329,9 @@
   </data>
   <data name="deletingLabel.Text" xml:space="preserve">
     <value>Arquivos que serão excluídos:</value>
+  </data>
+  <data name="deletingLabel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;deletingLabel.Name" xml:space="preserve">
     <value>deletingLabel</value>
@@ -337,7 +343,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;deletingLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="helpButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
@@ -367,16 +373,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;helpButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="warningLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt</value>
+    <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="warningLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 453</value>
   </data>
   <data name="warningLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>592, 100</value>
+    <value>592, 46</value>
   </data>
   <data name="warningLabel.TabIndex" type="System.Int32, mscorlib">
     <value>84</value>
@@ -397,6 +403,162 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;warningLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="excludedLists.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="excludedLists.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 27</value>
+  </data>
+  <data name="excludedLists.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="excludedLists.TabIndex" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="excludedLists.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="excludedLists.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;excludedLists.Name" xml:space="preserve">
+    <value>excludedLists</value>
+  </data>
+  <data name="&gt;&gt;excludedLists.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;excludedLists.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;excludedLists.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="recoveringLists.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="recoveringLists.Location" type="System.Drawing.Point, System.Drawing">
+    <value>318, 27</value>
+  </data>
+  <data name="recoveringLists.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="recoveringLists.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="recoveringLists.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="recoveringLists.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;recoveringLists.Name" xml:space="preserve">
+    <value>recoveringLists</value>
+  </data>
+  <data name="&gt;&gt;recoveringLists.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recoveringLists.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;recoveringLists.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="existingListWarning.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="existingListWarning.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="existingListWarning.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 499</value>
+  </data>
+  <data name="existingListWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>592, 46</value>
+  </data>
+  <data name="existingListWarning.TabIndex" type="System.Int32, mscorlib">
+    <value>87</value>
+  </data>
+  <data name="existingListWarning.Text" xml:space="preserve">
+    <value>existingListWarning</value>
+  </data>
+  <data name="existingListWarning.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;existingListWarning.Name" xml:space="preserve">
+    <value>existingListWarning</value>
+  </data>
+  <data name="&gt;&gt;existingListWarning.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;existingListWarning.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;existingListWarning.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="recoverButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="recoverButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="recoverButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>522, 574</value>
+  </data>
+  <data name="recoverButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="recoverButton.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="recoverButton.Text" xml:space="preserve">
+    <value>Recuperar</value>
+  </data>
+  <data name="recoverButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;recoverButton.Name" xml:space="preserve">
+    <value>recoverButton</value>
+  </data>
+  <data name="&gt;&gt;recoverButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recoverButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;recoverButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="existingListCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="existingListCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 551</value>
+  </data>
+  <data name="existingListCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 17</value>
+  </data>
+  <data name="existingListCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="existingListCheckBox.Text" xml:space="preserve">
+    <value>existingListCheckBox</value>
+  </data>
+  <data name="existingListCheckBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;existingListCheckBox.Name" xml:space="preserve">
+    <value>existingListCheckBox</value>
+  </data>
+  <data name="&gt;&gt;existingListCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;existingListCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;existingListCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -130,6 +130,7 @@ namespace TestPlatform
             Global.reactionTestFilesBackupPath = Global.defaultPath + Global.backupFolderName + Global.reactionTestFilesBackupPath;
             Global.experimentTestFilesBackupPath = Global.defaultPath + Global.backupFolderName + Global.experimentTestFilesBackupPath;
             Global.matchingTestFilesBackupPath = Global.defaultPath + Global.backupFolderName + Global.matchingTestFilesBackupPath;
+            Global.listFilesBackup = Global.defaultPath + Global.backupFolderName + Global.listFilesBackup;
             if (!Directory.Exists(Global.experimentTestFilesBackupPath))
                 Directory.CreateDirectory(Global.experimentTestFilesBackupPath);
             if (!Directory.Exists(Global.stroopTestFilesBackupPath))
@@ -138,6 +139,8 @@ namespace TestPlatform
                 Directory.CreateDirectory(Global.reactionTestFilesBackupPath);
             if (!Directory.Exists(Global.matchingTestFilesBackupPath))
                 Directory.CreateDirectory(Global.matchingTestFilesBackupPath);
+            if (!Directory.Exists(Global.listFilesBackup))
+                Directory.CreateDirectory(Global.listFilesBackup);
 
             if (!File.Exists(Global.testFilesPath + INSTRUCTIONSFILENAME))
                 File.Create(Global.testFilesPath + "editableInstructions.txt").Dispose();

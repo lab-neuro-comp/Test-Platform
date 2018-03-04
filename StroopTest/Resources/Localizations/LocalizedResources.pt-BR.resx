@@ -2418,4 +2418,13 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="wordWithAudio" xml:space="preserve">
     <value>Palavra com Aúdio</value>
   </data>
+  <data name="recoverList" xml:space="preserve">
+    <value>Você tem certeza que deseja recuperar todas as listas selecionadas?</value>
+  </data>
+  <data name="listsNotRecovered" xml:space="preserve">
+    <value>Nenhuma lista foi recuperada.</value>
+  </data>
+  <data name="listsRecovered" xml:space="preserve">
+    <value>Todas as listas selecionadas foram recuperadas com sucesso!</value>
+  </data>
 </root>

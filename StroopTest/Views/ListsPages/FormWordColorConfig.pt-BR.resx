@@ -156,4 +156,53 @@
   <data name="saveButton.Text" xml:space="preserve">
     <value>salvar</value>
   </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Item
+Selecionado:
+</value>
+  </data>
+  <data name="newTextButton.Text" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="numberItensWord.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="numberItensWordLabel.Text" xml:space="preserve">
+    <value>Itens na Lista:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Item
+Selecionado:
+</value>
+  </data>
+  <data name="deleteWordItem.Text" xml:space="preserve">
+    <value>Apagar</value>
+  </data>
+  <data name="wordGroupBox.Text" xml:space="preserve">
+    <value>nomeListaPalavras</value>
+  </data>
+  <data name="numberItensColorLabel.Text" xml:space="preserve">
+    <value>Itens na Lista:</value>
+  </data>
+  <data name="numberItensColor.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="newColorButton.Text" xml:space="preserve">
+    <value>Adcionar</value>
+  </data>
+  <data name="chooseColorButton.Text" xml:space="preserve">
+    <value>Escolher</value>
+  </data>
+  <data name="deleteColorItem.Text" xml:space="preserve">
+    <value>Apagar</value>
+  </data>
+  <data name="colorListGroupBox.Text" xml:space="preserve">
+    <value>nomeListaCores</value>
+  </data>
+  <data name="wordListEmpty.Text" xml:space="preserve">
+    <value>listaPalavraVazia</value>
+  </data>
+  <data name="colorListEmpty.Text" xml:space="preserve">
+    <value>listaCorVazia</value>
+  </data>
 </root>

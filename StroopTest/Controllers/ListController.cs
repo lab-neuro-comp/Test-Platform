@@ -17,8 +17,8 @@
 
         public static StrList CreateList(List<string> list, string listName, string listType)
         {
-            StrList wordList = new StrList(list, listName, listType);
-            return wordList;
+            StrList strlist = new StrList(list, listName, listType);
+            return strlist;
         }
 
         public static string PickColor(Control control)

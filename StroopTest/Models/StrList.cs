@@ -130,7 +130,7 @@ namespace TestPlatform.Models
         {
             StreamWriter wr = new StreamWriter(getFilePath());
             wr.Write(listContent[0]);
-            foreach (string item in listContent.Skip(0))
+            foreach (string item in listContent.Skip(1))
             {
                 wr.Write("\t" + item);
             }

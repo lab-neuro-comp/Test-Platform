@@ -126,12 +126,12 @@ namespace TestPlatform.Views.ListsPages
             {
                 if (suffix == "_image" || suffix == "_audio")
                 {
-                    if (Directory.Exists(listPath + text))
+                    if (Directory.Exists(Global.testFilesPath + Global.listFolderName + text))
                     {
                         return true;
                     }
                 }
-                else if (File.Exists(listPath + text + ".lst"))
+                else if (File.Exists(Global.testFilesPath + Global.listFolderName + text + ".lst"))
                 {
                     return true;
                 }

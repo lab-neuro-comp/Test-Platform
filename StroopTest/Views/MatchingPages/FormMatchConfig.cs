@@ -55,6 +55,27 @@ namespace TestPlatform.Views.MatchingPages
             MatchingProgram editProgram = new MatchingProgram();
             editProgram.readProgramFile(path + Global.programFolderName + editPrgName + ".prg");
 
+            if (editProgram.getImageListFile() != null)
+            {
+                openImgListButton.Text = editProgram.getImageListFile().ListName;
+                this.stimuluType.SelectedIndex = 0;
+            }
+            else if (editProgram.getColorListFile() != null)
+            {
+                openColorListButton.Text = editProgram.getColorListFile().ListName;
+                openWordListButton.Text = editProgram.getWordListFile().ListName;
+                this.stimuluType.SelectedIndex = 2;
+            }
+            else
+            {
+                openWordListButton.Text = editProgram.getWordListFile().ListName;
+                this.stimuluType.SelectedIndex = 1;
+            }
+            if (editProgram.WordColor != "false")
+            {
+                wordSingleColor.Text = editProgram.WordColor;
+                WordColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.WordColor);
+            }
             programName.Text = editProgram.ProgramName;
             numExpo.Value = editProgram.NumExpositions;
             attemptNumber.Value = editProgram.AttemptsNumber;
@@ -62,17 +83,17 @@ namespace TestPlatform.Views.MatchingPages
             randomStimuluPosition.Checked = editProgram.RandomStimulusPosition;
             randomModelPosition.Checked = editProgram.RandomModelPosition;
             closeExpoAWithClick.Checked = editProgram.EndExpositionWithClick;
-            openImgListButton.Text = editProgram.getImageListFile().ListName;
             stimulusInterval.Value = editProgram.IntervalTime;
             randomAttemptTime.Checked = editProgram.IntervalTimeRandom;
             stimulusExpoTime.Value = editProgram.ExpositionTime;
             modelExpoTime.Value = editProgram.ModelExpositionTime;
             attemptInterval.Value = editProgram.AttemptsIntervalTime;
-            DMTSBackgroundColor.Text = editProgram.BackgroundColor;
             randomOrder.Checked = editProgram.ExpositionRandom;
+            DMTSBackgroundColor.Text = editProgram.BackgroundColor;
             DNMTSBackgroundColor.Text = editProgram.DNMTSBackground;
             DMTSColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.BackgroundColor);
             DNMTSColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.DNMTSBackground);
+            
             randomModelStimulusTime.Checked = editProgram.RandomIntervalModelStimulus;
             switch (editProgram.getExpositionType())
             {
@@ -116,20 +137,41 @@ namespace TestPlatform.Views.MatchingPages
                 default:
                     throw new Exception(LocRM.GetString("expoType", currentCulture) + editProgram.getExpositionType() + LocRM.GetString("invalid", currentCulture));
             }
-            StrList imagesListFile = new StrList(openImgListButton.Text, 0);
-            if (imagesListFile.ListContent.Count < numExpo.Value)
+            if (stimuluType.SelectedIndex == 0)
             {
-                impossibleUseListWarnLabel.Visible = true;
-                saveButton.Enabled = false;
+                StrList imagesListFile = new StrList(openImgListButton.Text, 0);
+                if (imagesListFile.ListContent.Count < numExpo.Value)
+                {
+                    impossibleUseListWarnLabel.Visible = true;
+                    saveButton.Enabled = false;
+                }
+                else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                {
+                    smallImageListLabel.Visible = true;
+                    saveButton.Enabled = true;
+                }
+                else
+                {
+                    saveButton.Enabled = true;
+                }
             }
-            else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+            if (stimuluType.SelectedIndex == 1 || stimuluType.SelectedIndex == 2)
             {
-                smallImageListLabel.Visible = true;
-                saveButton.Enabled = true;
-            }
-            else
-            {
-                saveButton.Enabled = true;
+                StrList wordListFile = new StrList(openWordListButton.Text, 2);
+                if (wordListFile.ListContent.Count < numExpo.Value)
+                {
+                    impossibleUseListWarnLabel.Visible = true;
+                    saveButton.Enabled = false;
+                }
+                else if (wordListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                {
+                    smallImageListLabel.Visible = true;
+                    saveButton.Enabled = true;
+                }
+                else
+                {
+                    saveButton.Enabled = true;
+                }
             }
         }
 
@@ -163,7 +205,7 @@ namespace TestPlatform.Views.MatchingPages
             this.errorProvider1.SetError(programName, "");
         }
 
-        public bool ValidProgramName(string pgrName, out string errorMessage)
+        private bool ValidProgramName(string pgrName, out string errorMessage)
         {
             if (pgrName.Length == 0)
             {
@@ -194,10 +236,11 @@ namespace TestPlatform.Views.MatchingPages
         {
             return new MatchingProgram(programName.Text, expositionType.Text, Convert.ToInt32(numExpo.Value),
                                         Convert.ToInt32(attemptNumber.Value), Convert.ToInt32(expositionSize.Value), randomModelPosition.Checked,
-                                        closeExpoAWithClick.Checked, openImgListButton.Text, Convert.ToInt32(stimulusInterval.Value), 
+                                        closeExpoAWithClick.Checked, openImgListButton.Text, Convert.ToInt32(stimulusInterval.Value),
                                         randomAttemptTime.Checked, Convert.ToInt32(stimulusExpoTime.Value), Convert.ToInt32(modelExpoTime.Value),
                                         Convert.ToInt32(attemptInterval.Value), DMTSBackgroundColor.Text, DNMTSBackgroundColor.Text, randomOrder.Checked,
-                                        this.randomModelStimulusTime.Checked, randomStimuluPosition.Checked);
+                                        this.randomModelStimulusTime.Checked, randomStimuluPosition.Checked, openWordListButton.Text,
+                                        openColorListButton.Text, wordSingleColor.Text);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -395,7 +438,7 @@ namespace TestPlatform.Views.MatchingPages
             }
         }
 
-        public bool ValidWordList(string buttonText, out string errorMessage)
+        private bool ValidWordList(string buttonText, out string errorMessage)
         {
             if (buttonText.Length != 0 && buttonText != LocRM.GetString("open", currentCulture))
             {
@@ -445,7 +488,7 @@ namespace TestPlatform.Views.MatchingPages
                 }
             }
         }
-        public bool ValidColorList(string buttonText, out string errorMessage)
+        private bool ValidColorList(string buttonText, out string errorMessage)
         {
             if (buttonText.Length != 0 && buttonText != LocRM.GetString("open", currentCulture))
             {
@@ -458,7 +501,7 @@ namespace TestPlatform.Views.MatchingPages
                 return false;
             }
         }
-        public bool ValidImgList(string buttonText, out string errorMessage)
+        private bool ValidImgList(string buttonText, out string errorMessage)
         {
             if (buttonText.Length != 0 && buttonText != LocRM.GetString("open", currentCulture))
             {
@@ -471,7 +514,7 @@ namespace TestPlatform.Views.MatchingPages
                 return false;
             }
         }
-        public bool ValidAudioList(string buttonText, out string errorMessage)
+        private bool ValidAudioList(string buttonText, out string errorMessage)
         {
             if (buttonText.Length != 0 && buttonText != LocRM.GetString("open", currentCulture))
             {
@@ -609,6 +652,93 @@ namespace TestPlatform.Views.MatchingPages
             {
                 this.attemptInterval.Minimum = 100;
             }
+        }
+
+        private void stimuluType_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(this.stimuluType, "");
+        }
+
+        private bool validStimuluType(int selectedIndex, out string errorMessage)
+        {
+            if (selectedIndex >= 0 && selectedIndex <= 2)
+            {
+                errorMessage = "";
+                return true;
+            }
+            else
+            {
+                errorMessage = LocRM.GetString("unavailableExpo", currentCulture);
+                return false;
+            }
+        }
+
+        private void stimuluType_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMsg;
+            if (validStimuluType(stimuluType.SelectedIndex, out errorMsg))
+            {
+                //do nothing
+            }
+            else
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.stimuluType, errorMsg);
+            }
+        }
+
+        private void stimuluType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+            if (stimuluType.SelectedIndex == 0) /* image exposition*/
+            {
+                openWordListButton.Enabled = false;
+                openColorListButton.Enabled = false;
+                openImgListButton.Enabled = true;
+                openWordListButton.Text = LocRM.GetString("open", currentCulture);
+                openColorListButton.Text = LocRM.GetString("open", currentCulture);
+                wordSingleColorLabel.Enabled = false;
+                wordSingleColorButton.Enabled = false;
+                WordColorPanel.Enabled = false;
+                wordSingleColor.Enabled = false;
+                expositionSize.Maximum = 500;
+                expositionSize.Value = 250;
+            }
+            else if (stimuluType.SelectedIndex == 1) /* word exposition*/
+            {
+                openWordListButton.Enabled = true;
+                openColorListButton.Enabled = false;
+                openImgListButton.Enabled = false;
+                openColorListButton.Text = LocRM.GetString("open", currentCulture);
+                openImgListButton.Text = LocRM.GetString("open", currentCulture);
+                wordSingleColorLabel.Enabled = true;
+                wordSingleColorButton.Enabled = true;
+                WordColorPanel.Enabled = true;
+                wordSingleColor.Enabled = true;
+                expositionSize.Maximum = 50;
+                expositionSize.Value = 18;
+            }
+            else if (stimuluType.SelectedIndex == 2) /* word and color exposition */
+            {
+                openWordListButton.Enabled = true;
+                openColorListButton.Enabled = true;
+                openImgListButton.Enabled = false;
+                openImgListButton.Text = LocRM.GetString("open", currentCulture);
+                wordSingleColorLabel.Enabled = false;
+                wordSingleColorButton.Enabled = false;
+                WordColorPanel.Enabled = false;
+                wordSingleColor.Enabled = false;
+                expositionSize.Maximum = 50;
+                expositionSize.Value = 18;
+            }
+        }
+
+        private void wordSingleColorButton_Click(object sender, EventArgs e)
+        {
+            string colorCode = ListController.PickColor(this);
+            WordColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
+            wordSingleColor.Text = colorCode;
         }
     }
 }

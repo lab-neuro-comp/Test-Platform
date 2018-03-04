@@ -80,9 +80,10 @@ namespace TestPlatform.Views.MatchingPages
                             dataGridView1.Rows.Add(cellArray);
                             for (int j = 0; j < cellArray.Length; j++)
                             {
-                                if (Validations.isHexPattern(cellArray[j]))
+                                if (cellArray[j].Contains("##"))
                                 {
-                                    dataGridView1.Rows[i].Cells[j].Style.BackColor = ColorTranslator.FromHtml(cellArray[j]);
+                                    dataGridView1.Rows[i].Cells[j].Value = cellArray[j].Substring(0, cellArray[j].IndexOf("#", StringComparison.Ordinal));
+                                    dataGridView1.Rows[i].Cells[j].Style.BackColor = ColorTranslator.FromHtml(cellArray[j].Substring(cellArray[j].LastIndexOf('#')));
                                 }
                             }
                         }

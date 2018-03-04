@@ -232,7 +232,7 @@
     <value>The list of images is smaller than the number of stimulus. Reduce the number of stimulus or choose a larger list</value>
   </data>
   <data name="randomModelStimulusTime.Text" xml:space="preserve">
-    <value>Time between model and stimulus random </value>
+    <value>Delay between model and stimulus variable</value>
   </data>
   <data name="randomStimuluPosition.Text" xml:space="preserve">
     <value>Stimulus</value>

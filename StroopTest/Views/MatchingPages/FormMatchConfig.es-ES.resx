@@ -196,7 +196,7 @@
     <value>Tiempo</value>
   </data>
   <data name="randomAttemptTime.Text" xml:space="preserve">
-    <value>Tiempo entre intentos aleatorio</value>
+    <value>Atraso entre intentos variável</value>
   </data>
   <data name="expositionTypeLabel.Text" xml:space="preserve">
     <value>Tipo de exposición:</value>
@@ -208,13 +208,13 @@
     <value>Fondo del DMTS:</value>
   </data>
   <data name="modelStimuluIntervalLabel.Text" xml:space="preserve">
-    <value>Intervalo entre modelo y estímulos (ms):</value>
+    <value>Atraso entre modelo y estímulos (ms):</value>
   </data>
   <data name="stimuluExpositionLabel.Text" xml:space="preserve">
     <value>Exposición de los estimuladores (ms):</value>
   </data>
   <data name="attemptIntervalLabel.Text" xml:space="preserve">
-    <value>Intervalo entre intentos (ms):</value>
+    <value>Atraso entre intentos (ms):</value>
   </data>
   <data name="modelExpositionLabel.Text" xml:space="preserve">
     <value>Exposición del modelo (ms):</value>
@@ -232,7 +232,7 @@
     <value>La lista de imágenes es menor que el número de estímulos. Reducir el número de estímulos o elegir una lista más grande</value>
   </data>
   <data name="randomModelStimulusTime.Text" xml:space="preserve">
-    <value>Tiempo entre modelo y estímulo aleatorio</value>
+    <value>Atraso entre modelo y estímulo variável</value>
   </data>
   <data name="randomStimuluPosition.Text" xml:space="preserve">
     <value>Estímulos</value>

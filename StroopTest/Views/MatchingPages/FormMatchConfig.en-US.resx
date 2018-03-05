@@ -244,6 +244,27 @@
     <value>Model</value>
   </data>
   <data name="colorLabel.Text" xml:space="preserve">
-    <value>Cores:</value>
+    <value>Colors:</value>
+  </data>
+  <data name="stimuluTypeLabel.Text" xml:space="preserve">
+    <value>Stimulu type:</value>
+  </data>
+  <data name="stimuluType.Items" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="stimuluType.Items1" xml:space="preserve">
+    <value>Words</value>
+  </data>
+  <data name="stimuluType.Items2" xml:space="preserve">
+    <value>Words and color</value>
+  </data>
+  <data name="wordSingleColorButton.Text" xml:space="preserve">
+    <value>choose</value>
+  </data>
+  <data name="wordSingleColorLabel.Text" xml:space="preserve">
+    <value>Words:</value>
+  </data>
+  <data name="wordSingleColor.Text" xml:space="preserve">
+    <value>#000000</value>
   </data>
 </root>

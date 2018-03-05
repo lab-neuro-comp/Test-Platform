@@ -20,6 +20,7 @@ namespace TestPlatform.Models
         private Boolean randomModelPosition;
         private Int32 stimuluDistance;
         private Boolean randomIntervalModelStimulus;
+        private string wordColor;
 
         public MatchingProgram()
         {
@@ -46,8 +47,8 @@ namespace TestPlatform.Models
             bool endExpositionWithClick, string imageList, int intervalTime, 
             bool intervalTimeRandom, int expositionTime, int modelExpositionTime, 
             int attemptsIntervalTime,  string backgroundColor, string DNMTSBackground, 
-            bool randomOrder, int stimuluDistance, int numberPositions, 
-            bool randomIntervalModelStimulus, bool randomStimuluPosition)
+            bool randomOrder, bool randomIntervalModelStimulus, bool randomStimuluPosition,
+            string wordList, string colorList, string wordColor)
         {
             // Program properties
             this.programName = programName;
@@ -56,7 +57,30 @@ namespace TestPlatform.Models
             this.intervalTime = intervalTime;
             this.backgroundColor = backgroundColor;
             this.intervalTimeRandom = intervalTimeRandom;
-            this.setImageListFile(imageList);
+            if (imageList != LocRM.GetString("open", currentCulture))
+            {
+                this.setImageListFile(imageList);
+                this.setWordListFile("false");
+                this.setColorListFile("false");
+                this.wordColor = "false";
+            }
+            else if (wordList != LocRM.GetString("open", currentCulture))
+            {
+                this.setWordListFile(wordList);
+                this.setImageListFile("false");
+                if (colorList != LocRM.GetString("open", currentCulture))
+                {
+                    this.setColorListFile(colorList);
+                    this.wordColor = "false";
+                }
+                else
+                {
+                    this.wordColor = wordColor;
+                    this.setColorListFile("false");
+                }
+            }
+            
+
             // Matching properties
             this.stimuluSize = stimuluSize;
             this.randomModelPosition = randomPosition;
@@ -65,18 +89,15 @@ namespace TestPlatform.Models
             this.attemptsIntervalTime = attemptsIntervalTime;
             this.DNMTSBackground = DNMTSBackground;
             this.AttemptsNumber = AttemptsNumber;
-            this.numberPositions = numberPositions;
             this.randomIntervalModelStimulus = randomIntervalModelStimulus;
             this.randomStimuluPosition = randomStimuluPosition;
             //default configurations for Mathing program
             this.setAudioListFile("false");
-            this.setColorListFile("false");
-            this.setWordListFile("false");
             this.expositionRandom = randomOrder;
             this.expositionType = expositionType;
             this.fixPoint = "false";
             this.fixPointColor = "false";
-            this.stimuluDistance = stimuluDistance;
+            this.stimuluDistance = 0;
         }
 
         public string data()
@@ -129,7 +150,8 @@ namespace TestPlatform.Models
                 this.stimuluDistance.ToString() + " " +
                 this.numberPositions.ToString() + " " +
                 this.randomIntervalModelStimulus.ToString() + " " +
-                this.randomStimuluPosition.ToString();
+                this.randomStimuluPosition.ToString() + " " +
+                this.wordColor;
                 
             return data;
         }
@@ -225,6 +247,19 @@ namespace TestPlatform.Models
                 modelExpositionTime = value;
             }
         }
+
+        public String WordColor
+        {
+            get
+            {
+                return wordColor;
+            }
+            set
+            {
+                wordColor = value;
+            }
+        }
+
         public Int32 AttemptsIntervalTime
         {
             get
@@ -322,6 +357,7 @@ namespace TestPlatform.Models
             numberPositions = int.Parse(config[23]);
             randomIntervalModelStimulus = bool.Parse(config[24]);
             randomStimuluPosition = bool.Parse(config[25]);
+            wordColor = config[26];
             linesInstruction = File.ReadAllLines(filepath);
             if (linesInstruction.Length > 1) // read instructions if any
             {

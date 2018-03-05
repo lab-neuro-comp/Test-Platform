@@ -246,4 +246,25 @@
   <data name="colorLabel.Text" xml:space="preserve">
     <value>Colores:</value>
   </data>
+  <data name="stimuluTypeLabel.Text" xml:space="preserve">
+    <value>Tipo de estímulo:</value>
+  </data>
+  <data name="stimuluType.Items" xml:space="preserve">
+    <value>Imágenes</value>
+  </data>
+  <data name="stimuluType.Items1" xml:space="preserve">
+    <value>Palabras</value>
+  </data>
+  <data name="stimuluType.Items2" xml:space="preserve">
+    <value>Palabras y colores</value>
+  </data>
+  <data name="wordSingleColorButton.Text" xml:space="preserve">
+    <value>elegir</value>
+  </data>
+  <data name="wordSingleColor.Text" xml:space="preserve">
+    <value>#000000</value>
+  </data>
+  <data name="wordSingleColorLabel.Text" xml:space="preserve">
+    <value>Palabras:</value>
+  </data>
 </root>

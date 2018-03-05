@@ -35,6 +35,10 @@
             this.smallImageListLabel = new System.Windows.Forms.Label();
             this.othersGroupBox = new System.Windows.Forms.GroupBox();
             this.colorGroupBox = new System.Windows.Forms.GroupBox();
+            this.wordSingleColor = new System.Windows.Forms.Label();
+            this.WordColorPanel = new System.Windows.Forms.Panel();
+            this.wordSingleColorButton = new System.Windows.Forms.Button();
+            this.wordSingleColorLabel = new System.Windows.Forms.Label();
             this.DNMTSColorPanel = new System.Windows.Forms.Panel();
             this.DMTSColorPanel = new System.Windows.Forms.Panel();
             this.DMTSBackgroundColor = new System.Windows.Forms.Label();
@@ -46,6 +50,8 @@
             this.timeGroupBox = new System.Windows.Forms.GroupBox();
             this.stimulusInterval = new System.Windows.Forms.NumericUpDown();
             this.stimulusExpoTime = new System.Windows.Forms.NumericUpDown();
+            this.randomModelStimulusTime = new System.Windows.Forms.CheckBox();
+            this.randomAttemptTime = new System.Windows.Forms.CheckBox();
             this.attemptInterval = new System.Windows.Forms.NumericUpDown();
             this.modelExpoTime = new System.Windows.Forms.NumericUpDown();
             this.modelStimuluIntervalLabel = new System.Windows.Forms.Label();
@@ -62,10 +68,10 @@
             this.colorLabel = new System.Windows.Forms.Label();
             this.wordLabel = new System.Windows.Forms.Label();
             this.expositionGroupBox = new System.Windows.Forms.GroupBox();
+            this.stimuluType = new System.Windows.Forms.ComboBox();
+            this.stimuluTypeLabel = new System.Windows.Forms.Label();
             this.randomModelPosition = new System.Windows.Forms.CheckBox();
             this.randomPositionLabel = new System.Windows.Forms.Label();
-            this.randomModelStimulusTime = new System.Windows.Forms.CheckBox();
-            this.randomAttemptTime = new System.Windows.Forms.CheckBox();
             this.randomOrder = new System.Windows.Forms.CheckBox();
             this.expositionType = new System.Windows.Forms.ComboBox();
             this.expositionTypeLabel = new System.Windows.Forms.Label();
@@ -139,6 +145,10 @@
             // 
             // colorGroupBox
             // 
+            this.colorGroupBox.Controls.Add(this.wordSingleColor);
+            this.colorGroupBox.Controls.Add(this.WordColorPanel);
+            this.colorGroupBox.Controls.Add(this.wordSingleColorButton);
+            this.colorGroupBox.Controls.Add(this.wordSingleColorLabel);
             this.colorGroupBox.Controls.Add(this.DNMTSColorPanel);
             this.colorGroupBox.Controls.Add(this.DMTSColorPanel);
             this.colorGroupBox.Controls.Add(this.DMTSBackgroundColor);
@@ -150,6 +160,30 @@
             resources.ApplyResources(this.colorGroupBox, "colorGroupBox");
             this.colorGroupBox.Name = "colorGroupBox";
             this.colorGroupBox.TabStop = false;
+            // 
+            // wordSingleColor
+            // 
+            resources.ApplyResources(this.wordSingleColor, "wordSingleColor");
+            this.wordSingleColor.Name = "wordSingleColor";
+            // 
+            // WordColorPanel
+            // 
+            this.WordColorPanel.BackColor = System.Drawing.Color.Black;
+            this.WordColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.WordColorPanel, "WordColorPanel");
+            this.WordColorPanel.Name = "WordColorPanel";
+            // 
+            // wordSingleColorButton
+            // 
+            resources.ApplyResources(this.wordSingleColorButton, "wordSingleColorButton");
+            this.wordSingleColorButton.Name = "wordSingleColorButton";
+            this.wordSingleColorButton.UseVisualStyleBackColor = true;
+            this.wordSingleColorButton.Click += new System.EventHandler(this.wordSingleColorButton_Click);
+            // 
+            // wordSingleColorLabel
+            // 
+            resources.ApplyResources(this.wordSingleColorLabel, "wordSingleColorLabel");
+            this.wordSingleColorLabel.Name = "wordSingleColorLabel";
             // 
             // DNMTSColorPanel
             // 
@@ -266,6 +300,20 @@
             0,
             0,
             0});
+            // 
+            // randomModelStimulusTime
+            // 
+            resources.ApplyResources(this.randomModelStimulusTime, "randomModelStimulusTime");
+            this.randomModelStimulusTime.Name = "randomModelStimulusTime";
+            this.randomModelStimulusTime.UseVisualStyleBackColor = true;
+            this.randomModelStimulusTime.CheckedChanged += new System.EventHandler(this.randomModelStimulusTime_CheckedChanged);
+            // 
+            // randomAttemptTime
+            // 
+            resources.ApplyResources(this.randomAttemptTime, "randomAttemptTime");
+            this.randomAttemptTime.Name = "randomAttemptTime";
+            this.randomAttemptTime.UseVisualStyleBackColor = true;
+            this.randomAttemptTime.CheckedChanged += new System.EventHandler(this.randomAttemptTime_CheckedChanged);
             // 
             // attemptInterval
             // 
@@ -411,6 +459,8 @@
             // 
             // expositionGroupBox
             // 
+            this.expositionGroupBox.Controls.Add(this.stimuluType);
+            this.expositionGroupBox.Controls.Add(this.stimuluTypeLabel);
             this.expositionGroupBox.Controls.Add(this.randomModelPosition);
             this.expositionGroupBox.Controls.Add(this.randomPositionLabel);
             this.expositionGroupBox.Controls.Add(this.randomOrder);
@@ -428,6 +478,25 @@
             this.expositionGroupBox.Name = "expositionGroupBox";
             this.expositionGroupBox.TabStop = false;
             // 
+            // stimuluType
+            // 
+            this.stimuluType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.stimuluType.FormattingEnabled = true;
+            this.stimuluType.Items.AddRange(new object[] {
+            resources.GetString("stimuluType.Items"),
+            resources.GetString("stimuluType.Items1"),
+            resources.GetString("stimuluType.Items2")});
+            resources.ApplyResources(this.stimuluType, "stimuluType");
+            this.stimuluType.Name = "stimuluType";
+            this.stimuluType.SelectedIndexChanged += new System.EventHandler(this.stimuluType_SelectedIndexChanged);
+            this.stimuluType.Validating += new System.ComponentModel.CancelEventHandler(this.stimuluType_Validating);
+            this.stimuluType.Validated += new System.EventHandler(this.stimuluType_Validated);
+            // 
+            // stimuluTypeLabel
+            // 
+            resources.ApplyResources(this.stimuluTypeLabel, "stimuluTypeLabel");
+            this.stimuluTypeLabel.Name = "stimuluTypeLabel";
+            // 
             // randomModelPosition
             // 
             resources.ApplyResources(this.randomModelPosition, "randomModelPosition");
@@ -438,20 +507,6 @@
             // 
             resources.ApplyResources(this.randomPositionLabel, "randomPositionLabel");
             this.randomPositionLabel.Name = "randomPositionLabel";
-            // 
-            // randomModelStimulusTime
-            // 
-            resources.ApplyResources(this.randomModelStimulusTime, "randomModelStimulusTime");
-            this.randomModelStimulusTime.Name = "randomModelStimulusTime";
-            this.randomModelStimulusTime.UseVisualStyleBackColor = true;
-            this.randomModelStimulusTime.CheckedChanged += new System.EventHandler(this.randomModelStimulusTime_CheckedChanged);
-            // 
-            // randomAttemptTime
-            // 
-            resources.ApplyResources(this.randomAttemptTime, "randomAttemptTime");
-            this.randomAttemptTime.Name = "randomAttemptTime";
-            this.randomAttemptTime.UseVisualStyleBackColor = true;
-            this.randomAttemptTime.CheckedChanged += new System.EventHandler(this.randomAttemptTime_CheckedChanged);
             // 
             // randomOrder
             // 
@@ -708,5 +763,11 @@
         private System.Windows.Forms.Label impossibleUseListWarnLabel;
         private System.Windows.Forms.CheckBox randomModelPosition;
         private System.Windows.Forms.Label randomPositionLabel;
+        private System.Windows.Forms.ComboBox stimuluType;
+        private System.Windows.Forms.Label stimuluTypeLabel;
+        private System.Windows.Forms.Label wordSingleColor;
+        private System.Windows.Forms.Panel WordColorPanel;
+        private System.Windows.Forms.Button wordSingleColorButton;
+        private System.Windows.Forms.Label wordSingleColorLabel;
     }
 }

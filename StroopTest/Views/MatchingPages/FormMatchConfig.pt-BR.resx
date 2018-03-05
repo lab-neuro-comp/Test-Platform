@@ -243,7 +243,28 @@
   <data name="randomModelPosition.Text" xml:space="preserve">
     <value>Modelo</value>
   </data>
+  <data name="stimuluTypeLabel.Text" xml:space="preserve">
+    <value>Tipo de estímulo:</value>
+  </data>
+  <data name="stimuluType.Items" xml:space="preserve">
+    <value>Imagens</value>
+  </data>
+  <data name="stimuluType.Items1" xml:space="preserve">
+    <value>Palavras</value>
+  </data>
+  <data name="stimuluType.Items2" xml:space="preserve">
+    <value>Palavras e cores</value>
+  </data>
   <data name="colorLabel.Text" xml:space="preserve">
-    <value>Colors:</value>
+    <value>Cores:</value>
+  </data>
+  <data name="wordSingleColorButton.Text" xml:space="preserve">
+    <value>escolher</value>
+  </data>
+  <data name="wordSingleColorLabel.Text" xml:space="preserve">
+    <value>Palavras:</value>
+  </data>
+  <data name="wordSingleColor.Text" xml:space="preserve">
+    <value>#000000</value>
   </data>
 </root>

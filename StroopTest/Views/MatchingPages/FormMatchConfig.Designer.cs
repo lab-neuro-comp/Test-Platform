@@ -414,6 +414,7 @@
             resources.ApplyResources(this.openImgListButton, "openImgListButton");
             this.openImgListButton.Name = "openImgListButton";
             this.openImgListButton.UseVisualStyleBackColor = true;
+            this.openImgListButton.TextChanged += new System.EventHandler(this.openImgListButton_TextChanged);
             this.openImgListButton.Click += new System.EventHandler(this.openImagesList_Click);
             this.openImgListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openImgListButton_Validating);
             this.openImgListButton.Validated += new System.EventHandler(this.openImgListButton_Validated);
@@ -433,6 +434,7 @@
             resources.ApplyResources(this.openWordListButton, "openWordListButton");
             this.openWordListButton.Name = "openWordListButton";
             this.openWordListButton.UseVisualStyleBackColor = false;
+            this.openWordListButton.TextChanged += new System.EventHandler(this.openWordListButton_TextChanged);
             this.openWordListButton.Click += new System.EventHandler(this.openWordsList_Click);
             this.openWordListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openWordListButton_Validating);
             this.openWordListButton.Validated += new System.EventHandler(this.openWordListButton_Validated);

@@ -383,32 +383,6 @@ namespace TestPlatform.Views.MatchingPages
         private void openImagesList_Click(object sender, EventArgs e)
         {
             openImgListButton.Text = ListController.OpenListFile("_image", openImgListButton.Text, "dir");
-            if (openImgListButton.Text != LocRM.GetString("open", currentCulture))
-            {
-                StrList imagesListFile = new StrList(openImgListButton.Text, 0);
-                if (imagesListFile.ListContent.Count < numExpo.Value)
-                {
-                    impossibleUseListWarnLabel.Visible = true;
-                    saveButton.Enabled = false;
-                    smallImageListLabel.Visible = false;
-                }
-                else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
-                {
-                    smallImageListLabel.Visible = true;
-                    saveButton.Enabled = true;
-                }
-                else
-                {
-                    impossibleUseListWarnLabel.Visible = false;
-                    smallImageListLabel.Visible = false;
-                    saveButton.Enabled = true;
-                }
-            }
-            else
-            {
-                impossibleUseListWarnLabel.Visible = false;
-                smallImageListLabel.Visible = false;
-            }
         }
 
         private void openAudioList_Click(object sender, EventArgs e)
@@ -739,6 +713,54 @@ namespace TestPlatform.Views.MatchingPages
             string colorCode = ListController.PickColor(this);
             WordColorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
             wordSingleColor.Text = colorCode;
+        }
+
+        private void openWordListButton_TextChanged(object sender, EventArgs e)
+        {
+            showWarningMessage(openWordListButton);
+        }
+
+        private void openImgListButton_TextChanged(object sender, EventArgs e)
+        {
+            showWarningMessage(openImgListButton);
+        }
+
+        void showWarningMessage(Button button)
+        {
+            StrList ListFile = null;
+            if (button.Text != LocRM.GetString("open", currentCulture) && button.Text != LocRM.GetString("createNewList", currentCulture))
+            {
+                if (button.Name == "openImgListButton")
+                {
+                    ListFile = new StrList(button.Text, 0);
+                }
+                else if (button.Name == "openWordsList")
+                {
+                    ListFile = new StrList(button.Text, 2);
+                }
+                if (ListFile.ListContent.Count < numExpo.Value)
+                {
+                    impossibleUseListWarnLabel.Visible = true;
+                    saveButton.Enabled = false;
+                    smallImageListLabel.Visible = false;
+                }
+                else if (ListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                {
+                    smallImageListLabel.Visible = true;
+                    saveButton.Enabled = true;
+                }
+                else
+                {
+                    impossibleUseListWarnLabel.Visible = false;
+                    smallImageListLabel.Visible = false;
+                    saveButton.Enabled = true;
+                }
+            }
+            else
+            {
+                impossibleUseListWarnLabel.Visible = false;
+                smallImageListLabel.Visible = false;
+            }
         }
     }
 }

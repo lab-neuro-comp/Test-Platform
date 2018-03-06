@@ -93,7 +93,8 @@ namespace TestPlatform.Views.MatchingPages
             DNMTSBackgroundColor.Text = editProgram.DNMTSBackground;
             DMTSColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.BackgroundColor);
             DNMTSColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.DNMTSBackground);
-            
+            feedbackAudioResponse.Checked = editProgram.FeedbackAudioResponse;
+            expositonAudioResponse.Checked = editProgram.ExpositionAudioResponse;
             randomModelStimulusTime.Checked = editProgram.RandomIntervalModelStimulus;
             switch (editProgram.getExpositionType())
             {
@@ -240,7 +241,7 @@ namespace TestPlatform.Views.MatchingPages
                                         randomAttemptTime.Checked, Convert.ToInt32(stimulusExpoTime.Value), Convert.ToInt32(modelExpoTime.Value),
                                         Convert.ToInt32(attemptInterval.Value), DMTSBackgroundColor.Text, DNMTSBackgroundColor.Text, randomOrder.Checked,
                                         this.randomModelStimulusTime.Checked, randomStimuluPosition.Checked, openWordListButton.Text,
-                                        openColorListButton.Text, wordSingleColor.Text);
+                                        openColorListButton.Text, wordSingleColor.Text, expositonAudioResponse.Checked, feedbackAudioResponse.Checked);
         }
 
         private void saveButton_Click(object sender, EventArgs e)

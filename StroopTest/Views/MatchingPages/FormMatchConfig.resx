@@ -179,6 +179,87 @@
   <data name="&gt;&gt;smallImageListLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="feedbackAudioResponse.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="feedbackAudioResponse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="feedbackAudioResponse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 17</value>
+  </data>
+  <data name="feedbackAudioResponse.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="feedbackAudioResponse.Text" xml:space="preserve">
+    <value>Acerto / Erro</value>
+  </data>
+  <data name="&gt;&gt;feedbackAudioResponse.Name" xml:space="preserve">
+    <value>feedbackAudioResponse</value>
+  </data>
+  <data name="&gt;&gt;feedbackAudioResponse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;feedbackAudioResponse.Parent" xml:space="preserve">
+    <value>othersGroupBox</value>
+  </data>
+  <data name="&gt;&gt;feedbackAudioResponse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="expositonAudioResponse.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="expositonAudioResponse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 22</value>
+  </data>
+  <data name="expositonAudioResponse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 17</value>
+  </data>
+  <data name="expositonAudioResponse.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="expositonAudioResponse.Text" xml:space="preserve">
+    <value>Exposição</value>
+  </data>
+  <data name="&gt;&gt;expositonAudioResponse.Name" xml:space="preserve">
+    <value>expositonAudioResponse</value>
+  </data>
+  <data name="&gt;&gt;expositonAudioResponse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;expositonAudioResponse.Parent" xml:space="preserve">
+    <value>othersGroupBox</value>
+  </data>
+  <data name="&gt;&gt;expositonAudioResponse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="audioResponseLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="audioResponseLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 23</value>
+  </data>
+  <data name="audioResponseLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="audioResponseLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="audioResponseLabel.Text" xml:space="preserve">
+    <value>Resposta auditiva:</value>
+  </data>
+  <data name="&gt;&gt;audioResponseLabel.Name" xml:space="preserve">
+    <value>audioResponseLabel</value>
+  </data>
+  <data name="&gt;&gt;audioResponseLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;audioResponseLabel.Parent" xml:space="preserve">
+    <value>othersGroupBox</value>
+  </data>
+  <data name="&gt;&gt;audioResponseLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="othersGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>279, 332</value>
   </data>

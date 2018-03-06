@@ -267,4 +267,13 @@
   <data name="wordSingleColor.Text" xml:space="preserve">
     <value>#000000</value>
   </data>
+  <data name="expositonAudioResponse.Text" xml:space="preserve">
+    <value>Exposition</value>
+  </data>
+  <data name="feedbackAudioResponse.Text" xml:space="preserve">
+    <value>Match / Not Match</value>
+  </data>
+  <data name="audioResponseLabel.Text" xml:space="preserve">
+    <value>Auditory feedback:</value>
+  </data>
 </root>

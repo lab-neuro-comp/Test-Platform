@@ -101,6 +101,15 @@ namespace TestPlatform.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream bell {
+            get {
+                return ResourceManager.GetStream("bell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap circle {
@@ -127,6 +136,15 @@ namespace TestPlatform.Properties {
             get {
                 object obj = ResourceManager.GetObject("cross", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream error {
+            get {
+                return ResourceManager.GetStream("error", resourceCulture);
             }
         }
         
@@ -167,6 +185,15 @@ namespace TestPlatform.Properties {
             get {
                 object obj = ResourceManager.GetObject("helpButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream hit {
+            get {
+                return ResourceManager.GetStream("hit", resourceCulture);
             }
         }
         

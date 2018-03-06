@@ -2393,7 +2393,7 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
     <value>A-B disposition must be selected.</value>
   </data>
   <data name="audioListError" xml:space="preserve">
-    <value>choose a audio list</value>
+    <value>choose an audio list</value>
   </data>
   <data name="colorListError" xml:space="preserve">
     <value>choose a color list</value>
@@ -2442,5 +2442,8 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   </data>
   <data name="listsRecovered" xml:space="preserve">
     <value>All selected lists were recovered sucessful!</value>
+  </data>
+  <data name="wordListError" xml:space="preserve">
+    <value>choose a word list</value>
   </data>
 </root>

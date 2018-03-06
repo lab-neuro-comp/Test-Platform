@@ -2427,4 +2427,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="listsRecovered" xml:space="preserve">
     <value>Todas as listas selecionadas foram recuperadas com sucesso!</value>
   </data>
+  <data name="wordListError" xml:space="preserve">
+    <value>escolha uma lista de palavras.</value>
+  </data>
 </root>

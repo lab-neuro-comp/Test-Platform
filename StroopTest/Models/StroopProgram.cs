@@ -98,6 +98,29 @@ namespace TestPlatform.Models
 
         }
 
+        // set values for type txtimg
+        public void setTxtImgType(string programName, int expoTime, int numExpo, bool expoRandom, string wordSize, int intervalTime,
+                             string wordList, string imageList, bool intervalRandom)
+        {
+            this.ProgramName = programName;
+            this.ExpositionTime = expoTime;
+            this.NumExpositions = numExpo;
+            this.ExpositionRandom = expoRandom;
+            this.FontWordLabel = wordSize;
+            this.IntervalTime = intervalTime;
+            this.IntervalTimeRandom = intervalRandom;
+            this.setImageListFile(imageList);
+            this.setWordListFile(wordList);
+            this.setAudioListFile("false");
+            this.setColorListFile("false");
+            this.ExpositionType = "txtimg";
+            this.SubtitleColor = "false";
+            this.SubtitlesListFile = "false";
+            this.BackgroundColor = "false";
+            this.FixPoint = "false";
+            this.FixPointColor = "false";
+
+        }
         // set values for type txtaud
         public void setTxtAudType(string programName, int expoTime, int numExpo, bool expoRandom, string wordSize, int intervalTime,
                              bool intervalRandom, string wordList, string colorList, string audioList)

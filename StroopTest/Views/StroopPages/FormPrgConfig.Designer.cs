@@ -641,7 +641,8 @@
             resources.GetString("chooseExpoType.Items1"),
             resources.GetString("chooseExpoType.Items2"),
             resources.GetString("chooseExpoType.Items3"),
-            resources.GetString("chooseExpoType.Items4")});
+            resources.GetString("chooseExpoType.Items4"),
+            resources.GetString("chooseExpoType.Items5")});
             resources.ApplyResources(this.chooseExpoType, "chooseExpoType");
             this.chooseExpoType.Name = "chooseExpoType";
             this.chooseExpoType.Tag = "";

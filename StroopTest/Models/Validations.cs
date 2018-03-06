@@ -97,7 +97,8 @@ namespace TestPlatform.Models
 
         public static bool isExpoTypeValid(string value)
         {
-            if (value.ToLower() == "txt" || value.ToLower() == "img" || value.ToLower() == "imgtxt" || value.ToLower() == "txtaud" || value.ToLower() == "imgaud")
+            if (value.ToLower() == "txt" || value.ToLower() == "img" || value.ToLower() == "imgtxt" || value.ToLower() == "txtaud" || value.ToLower() == "imgaud" 
+                || value.ToLower() == "txtimg")
                 return true;
             return false;
         }

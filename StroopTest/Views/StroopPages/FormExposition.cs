@@ -27,8 +27,8 @@ namespace TestPlatform
         CancellationTokenSource cts;
         StroopTest currentTest = new StroopTest(); // program in current use
         private static float elapsedTime;                // elapsed time during each item exposition
-        private string path = Global.stroopTestFilesPath;                           
-        private List<string> outputContent;            // output file content
+        private string path = Global.stroopTestFilesPath;
+        private List<string> outputContent = new List<string>();            // output file content
         private string outputDataPath = Global.stroopTestFilesPath + Global.resultsFolderName;                // output file Path
         private string hour = DateTime.Now.Hour.ToString("00");
         private string minutes = DateTime.Now.Minute.ToString("00");
@@ -41,7 +41,14 @@ namespace TestPlatform
         private bool runExposition = true;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
-
+        private string[] wordList = null;
+        private string[] colorList = null;
+        private string[] subtitleList = null;
+        private string[] audioList = null;
+        private string currentColor = "false";
+        private string currentStimulus = "false";
+        private string currentAudio = "false";
+        private int wordCounter = 0, colorCounter = 0, audiocounter = 0, subtitlecounter = 0;
         /// <summary>
         /// This is the constructor method for stroop test exposition form.</summary>
         /// <param name="prgName"> Program name is the name of the current StroopProgram that wil be executed.</param>
@@ -95,7 +102,11 @@ namespace TestPlatform
                     currentTest.ProgramInUse.readProgramFile(path + "/prg/" + currentTest.ProgramInUse.ProgramName + ".prg"); // reads new program
                 }
                 configWordLabel();
+                cts = new CancellationTokenSource();
 
+                await showInstructions(currentTest.ProgramInUse, cts.Token);
+                changeBackgroundColor(true); // changes background color, if there is one defined
+                loadLists();
                 switch (currentTest.ProgramInUse.ExpositionType)
                 {
                     case "txt":
@@ -108,7 +119,7 @@ namespace TestPlatform
                         await startImageExposition();
                         break;
                     case "txtaud":
-                        await startWordExposition();
+                        await startWordAudioExposition();
                         break;
                     case "imgaud":
                         await startImageExposition();
@@ -116,12 +127,53 @@ namespace TestPlatform
                     default:
                         throw new Exception(LocRM.GetString("expoType", currentCulture) + currentTest.ProgramInUse.ExpositionType + LocRM.GetString("invalid", currentCulture));
                 }
+                await finishExposition();
             }
             else
             {
                 throw new Exception(LocRM.GetString("file", currentCulture) + currentTest.ProgramInUse.ProgramName + ".prg" +
                                     LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(path + "/prg/"));
             }
+        }
+
+
+        // reads lists to string arrays and shuffle them if the exposition is random
+        private void loadLists()
+        {
+            switch (currentTest.ProgramInUse.ExpositionType)
+            {
+                case "txt":
+                    wordList = currentTest.ProgramInUse.getWordListFile().ListContent.ToArray();
+                    colorList = currentTest.ProgramInUse.getColorListFile().ListContent.ToArray();
+                    subtitleList = configureSubtitle();
+                    if (currentTest.ProgramInUse.ExpositionRandom)
+                    {
+                        wordList = ExpositionController.ShuffleArray(wordList, currentTest.ProgramInUse.NumExpositions, 1);
+                        colorList = ExpositionController.ShuffleArray(colorList, currentTest.ProgramInUse.NumExpositions, 5);
+                    }
+                    break;
+                case "imgtxt":
+                    break;
+                case "img":
+                    break;
+                case "txtaud":
+                    wordList = currentTest.ProgramInUse.getWordListFile().ListContent.ToArray();
+                    colorList = currentTest.ProgramInUse.getColorListFile().ListContent.ToArray();
+                    audioList = currentTest.ProgramInUse.getAudioListFile().ListContent.ToArray();
+                    subtitleList = configureSubtitle();
+                    if (currentTest.ProgramInUse.ExpositionRandom)
+                    {
+                        wordList = ExpositionController.ShuffleArray(wordList, currentTest.ProgramInUse.NumExpositions, 1);
+                        colorList = ExpositionController.ShuffleArray(colorList, currentTest.ProgramInUse.NumExpositions, 5);
+                        audioList = ExpositionController.ShuffleArray(audioList, currentTest.ProgramInUse.NumExpositions, 6);
+                    }
+                    break;
+                case "imgaud":
+                    break;
+                default:
+                    throw new Exception(LocRM.GetString("expoType", currentCulture) + currentTest.ProgramInUse.ExpositionType + LocRM.GetString("invalid", currentCulture));
+            }
+
         }
 
         private void configWordLabel()
@@ -154,141 +206,100 @@ namespace TestPlatform
         private async Task startWordExposition() // starts colored words exposition - classic Stroop
         {
             cts = new CancellationTokenSource();
-            string audioDetail = "false";
-            int textArrayCounter = 0, colorArrayCounter = 0, audioCounter = 0, subtitleCounter = 0;
-            List<string> outputContent = new List<string>();
-
-            
             try
             {
-                // reading list files                
-                // string array receives lists itens from lists file
-                string[] labelText = currentTest.ProgramInUse.getWordListFile().ListContent.ToArray(); 
-                string[] labelColor = currentTest.ProgramInUse.getColorListFile().ListContent.ToArray();
-                 
-                string[] subtitlesArray = configureSubtitle();
-                string[] audioDirs = null;
-
-                // if there is an audioFile to be played, string array receives audioList itens from list file
-                if (currentTest.ProgramInUse.getAudioListFile() != null) 
-                {
-                    audioDirs = currentTest.ProgramInUse.getAudioListFile().ListContent.ToArray();
-                }
-
-                // if the presentation is random, shuffles arrays
-                if (currentTest.ProgramInUse.ExpositionRandom) 
-                {
-                    labelText = ExpositionController.ShuffleArray(labelText, currentTest.ProgramInUse.NumExpositions, 1);
-                    labelColor = ExpositionController.ShuffleArray(labelColor, currentTest.ProgramInUse.NumExpositions, 5);
-                    if (audioDirs != null)
-                    {
-                        audioDirs = ExpositionController.ShuffleArray(audioDirs, currentTest.ProgramInUse.NumExpositions, 6);
-                    }
-                }
-                
-                    
-                if(!Validations.allHexPattern(labelColor))
-                {
-                    throw new Exception(LocRM.GetString("list", currentCulture) + currentTest.ProgramInUse.getColorListFile().ListName + LocRM.GetString("validColor", currentCulture));
-                }
-                
-                // presenting test instructions:
-                await showInstructions(currentTest.ProgramInUse, cts.Token);
-
-                textArrayCounter = 0; // counters to zero
-                colorArrayCounter = 0;
-                elapsedTime = 0; // elapsed time to zero
-                subtitleCounter = 0;
-                changeBackgroundColor(true); // changes background color, if there is one defined
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatch.Start();
                 await Task.Delay(currentTest.ProgramInUse.IntervalTime, cts.Token); // first interval before exposition begins
-                if (currentTest.ProgramInUse.AudioCapture && currentTest.ProgramInUse.ExpositionType != "txtaud") {
+                if (currentTest.ProgramInUse.AudioCapture)
+                {
                     startRecordingAudio();
                 }
-                
+
                 // exposition loop
-                for (int counter = 1; counter <= currentTest.ProgramInUse.NumExpositions && runExposition; counter++) 
+                for (int counter = 1; counter <= currentTest.ProgramInUse.NumExpositions && runExposition; counter++)
                 {
                     subtitleLabel.Visible = false;
                     wordLabel.Visible = false;
                     await intervalOrFixPoint(currentTest.ProgramInUse, cts.Token);
-                    
-                    string textCurrent = labelText[textArrayCounter];
-                    string colorCurrent = labelColor[colorArrayCounter];
-                        
-                    if (textArrayCounter == labelText.Count()-1) {
-                        textArrayCounter = 0;
-                    }
-                    else
-                    {
-                        textArrayCounter++;
-                    }
 
-                    if (colorArrayCounter == labelColor.Count() - 1)
-                    {
-                        colorArrayCounter = 0;
-                    }
-                    else
-                    {
-                        colorArrayCounter++;
-                    }
+                    drawWord();
 
-                    wordLabel.Text = textCurrent;
-                    wordLabel.ForeColor = ColorTranslator.FromHtml(colorCurrent);
-                        
-                    if (currentTest.ProgramInUse.getAudioListFile() != null && 
-                        currentTest.ProgramInUse.ExpositionType == "txtaud") // reproduz audio
-                    {
-                        if (audioCounter == audioDirs.Length)
-                        {
-                            audioCounter = 0;
-                        }
-                        else
-                        {
-                            /* do nothing */
-                        }
-                        audioDetail = audioDirs[audioCounter];
-                        Player.SoundLocation = audioDetail;
-                        audioCounter++;
-                        Player.Play();
-                    }
-                    else
-                    {
-                        /* do nothing */
-                    }
+                    wordLabel.Text = currentStimulus;
+                    wordLabel.ForeColor = ColorTranslator.FromHtml(currentColor);
 
                     elapsedTime = stopwatch.ElapsedMilliseconds; // grava tempo decorrido
                     SendKeys.SendWait(currentTest.Mark.ToString()); //sending event to neuronspectrum
 
-                    if (currentTest.ProgramInUse.SubtitleShow)
-                    {
-                        subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
-                    }
+                    showSubtitle();
+                    
                     wordLabel.Visible = true;
-                   
-                    currentTest.writeLineOutputResult(currentTest.ProgramInUse, textCurrent, colorCurrent, counter, 
-                        outputContent, elapsedTime, currentTest.ProgramInUse.ExpositionType, audioDetail
+
+                    currentTest.writeLineOutputResult( currentStimulus, currentColor, counter,
+                        outputContent, elapsedTime, currentAudio
                         );
-                        
+
                     await Task.Delay(currentTest.ProgramInUse.ExpositionTime, cts.Token);
                 }
-                wordLabel.Visible = false;
-                subtitleLabel.Visible = false;
-                await Task.Delay(currentTest.ProgramInUse.IntervalTime, cts.Token);
+ 
                 // beginAudio
-                if (currentTest.ProgramInUse.AudioCapture && currentTest.ProgramInUse.ExpositionType != "txtaud" && currentTest.ProgramInUse.ExpositionType != "imgaud")
+                if (currentTest.ProgramInUse.AudioCapture)
                 {
                     stopRecordingAudio();
-                } 
-                // endAudio
-                changeBackgroundColor(false); // retorna à cor de fundo padrão
-            
-                StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
-                this.DialogResult = DialogResult.OK;
-                Close(); // finaliza exposição após execução
+                }
             }
-            catch(TaskCanceledException)
+            catch (TaskCanceledException)
+            {
+                StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        // starts colored words exposition  that play audios at the same time
+        private async Task startWordAudioExposition() 
+        {
+            cts = new CancellationTokenSource();
+            try
+            {
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
+                await Task.Delay(currentTest.ProgramInUse.IntervalTime, cts.Token); // first interval before exposition begins
+
+                // exposition loop
+                for (int counter = 1; counter <= currentTest.ProgramInUse.NumExpositions && runExposition; counter++)
+                {
+                    subtitleLabel.Visible = false;
+                    wordLabel.Visible = false;
+                    await intervalOrFixPoint(currentTest.ProgramInUse, cts.Token);
+
+                    drawWord();
+
+                    wordLabel.Text = currentStimulus;
+                    wordLabel.ForeColor = ColorTranslator.FromHtml(currentColor);
+
+                    playAudio();
+
+                    elapsedTime = stopwatch.ElapsedMilliseconds; // grava tempo decorrido
+                    SendKeys.SendWait(currentTest.Mark.ToString()); //sending event to neuronspectrum
+
+                    showSubtitle();
+                    
+                    wordLabel.Visible = true;
+
+                    currentTest.writeLineOutputResult(currentStimulus, currentColor, counter,
+                        outputContent, elapsedTime, currentAudio
+                        );
+                    Player.Stop();
+
+                    await Task.Delay(currentTest.ProgramInUse.ExpositionTime, cts.Token);
+                }                
+
+            }
+            catch (TaskCanceledException)
             {
                 StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
             }
@@ -298,6 +309,54 @@ namespace TestPlatform
             }
             cts = null;
         }
+
+        private async Task finishExposition()
+        {
+            wordLabel.Visible = false;
+            subtitleLabel.Visible = false;
+            await Task.Delay(currentTest.ProgramInUse.IntervalTime);
+
+            changeBackgroundColor(false); // retorna à cor de fundo padrão
+
+            StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
+            this.DialogResult = DialogResult.OK;
+            Close(); // finaliza exposição após execução
+
+        }
+
+        private void drawWord()
+        {
+            currentStimulus = wordList[wordCounter];
+            currentColor = colorList[colorCounter];
+            wordCounter++;
+
+            if (wordCounter == wordList.Length)
+            {
+                wordCounter = 0;
+            }
+            colorCounter++;
+            if (colorCounter == colorList.Length)
+            {
+                colorCounter = 0;
+            }
+        }
+
+        private void playAudio()
+        {
+            if (audiocounter == audioList.Length)
+            {
+                audiocounter = 0;
+            }
+            else
+            {
+                /* do nothing */
+            }
+            currentAudio = audioList[audiocounter];
+            Player.SoundLocation = currentAudio;
+            audiocounter++;
+            Player.Play();
+        }
+        
 
         public static Image RotateImage(string imgPath, float rotationAngle)
         {
@@ -352,9 +411,6 @@ namespace TestPlatform
                 {
                     labelText = currentTest.ProgramInUse.getWordListFile().ListContent.ToArray();
                 }
-                
-                // shows program instructions to participant if there are any
-                await showInstructions(currentTest.ProgramInUse, cts.Token); 
 
                 outputContent = new List<string>();
                 
@@ -405,18 +461,15 @@ namespace TestPlatform
                         SendKeys.SendWait(currentTest.Mark.ToString());
                         imgPictureBox.Visible = true;
 
-                        if (currentTest.ProgramInUse.SubtitleShow)
-                        {
-                            subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
-                        }
+                        showSubtitle();                        
 
                         wordLabel.Visible = false;
                         actualImagePath = StrList.outPutItemName(imageDirs[arrayCounter]);
                         arrayCounter++;
 
 
-                        currentTest.writeLineOutputResult(currentTest.ProgramInUse, actualImagePath, "false", counter + 1,
-                                                            outputContent, elapsedTime, "img", StrList.outPutItemName(audioDetail));
+                        currentTest.writeLineOutputResult(actualImagePath, "false", counter + 1,
+                                                            outputContent, elapsedTime, StrList.outPutItemName(audioDetail));
 
                         await Task.Delay(currentTest.ProgramInUse.ExpositionTime, cts.Token);
 
@@ -440,15 +493,13 @@ namespace TestPlatform
                             subtitleLabel.Visible = false;
                             wordLabel.ForeColor = ColorTranslator.FromHtml(currentTest.ProgramInUse.WordColor);
                             wordLabel.Visible = true;
-                            if (currentTest.ProgramInUse.SubtitleShow)
-                            {
-                                subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
-                            }
+                            showSubtitle();
+
                             actualImagePath = wordLabel.Text;
                             j++;
 
-                            currentTest.writeLineOutputResult(currentTest.ProgramInUse, actualImagePath, "false", counter + 1,
-                                                                outputContent, elapsedTime, "txt", StrList.outPutItemName(audioDetail));
+                            currentTest.writeLineOutputResult(actualImagePath, "false", counter + 1,
+                                                                outputContent, elapsedTime, StrList.outPutItemName(audioDetail));
 
                             await Task.Delay(currentTest.ProgramInUse.ExpositionTime, cts.Token);
                         }
@@ -491,15 +542,11 @@ namespace TestPlatform
 
                             imgPictureBox.Visible = true;
 
-                            if (currentTest.ProgramInUse.SubtitleShow)
-                            {
-                                subtitleCounter = showSubtitle(subtitleCounter, subtitlesArray);
-                            }
+                            showSubtitle();
+                            
 
-                            currentTest.writeLineOutputResult(currentTest.ProgramInUse,
-                                                                StrList.outPutItemName(imageDirs[arrayCounter]), "false",
+                            currentTest.writeLineOutputResult(StrList.outPutItemName(imageDirs[arrayCounter]), "false",
                                                                 counter + 1, outputContent, elapsedTime, 
-                                                                currentTest.ProgramInUse.ExpositionType,
                                                                 StrList.outPutItemName(audioDetail));
                             
                             arrayCounter++;
@@ -617,17 +664,33 @@ namespace TestPlatform
             return subtitlesArray;
         }
 
-        private int showSubtitle(int subtitleCounter, string[] subtitlesArray)
+        private void showSubtitle()
         {
-            Random random = new Random();
-            subtitleLabel.Text = subtitlesArray[subtitleCounter];
-            if (currentTest.ProgramInUse.RndSubtitlePlace)
-                currentTest.ProgramInUse.SubtitlePlace = random.Next(1,4);
-            defineSubPosition(currentTest.ProgramInUse.SubtitlePlace);
-            subtitleLabel.Visible = true;
-            if (subtitleCounter == (subtitlesArray.Count() - 1)) subtitleCounter = 0;
-            else subtitleCounter++;
-            return subtitleCounter;
+            if (currentTest.ProgramInUse.SubtitleShow)
+            {
+                Random random = new Random();
+                subtitleLabel.Text = subtitleList[subtitlecounter];
+
+                if (currentTest.ProgramInUse.RndSubtitlePlace)
+                {
+                    currentTest.ProgramInUse.SubtitlePlace = random.Next(1, 4);
+                }
+
+                defineSubPosition(currentTest.ProgramInUse.SubtitlePlace);
+                subtitleLabel.Visible = true;
+                if (subtitlecounter == (subtitleList.Count() - 1))
+                {
+                    subtitlecounter = 0;
+                }
+                else
+                {
+                    subtitlecounter++;
+                }
+            }
+            else
+            {
+                /* do nothing */
+            }
         }
 
         // beginAudio
@@ -668,37 +731,7 @@ namespace TestPlatform
                 }
                 else // if it uses fixPoint
                 {
-                    SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(program.FixPointColor));
-
-                    switch (program.FixPoint)
-                    {
-                        case "+": // cross fixPoint
-                            Graphics formGraphicsCross1 = this.CreateGraphics();
-                            Graphics formGraphicsCross2 = this.CreateGraphics();
-                            float xCross1 = (float) (ClientSize.Width) / 2 - 25;
-                            float yCross1 = (float) ClientSize.Height / 2 - 4;
-                            float xCross2 = (float) ClientSize.Width / 2 - 4;
-                            float yCross2 = (float) ClientSize.Height / 2 - 25;
-                            float widthCross = 2 * 25;
-                            float heightCross = 2 * 4;
-                            formGraphicsCross1.FillRectangle(myBrush, xCross1, yCross1, widthCross, heightCross);
-                            formGraphicsCross2.FillRectangle(myBrush, xCross2, yCross2, heightCross, widthCross);
-                            await Task.Delay(intervalTime);
-                            formGraphicsCross1.Dispose();
-                            formGraphicsCross2.Dispose();
-                            break;
-                        case "o": // circle fixPoint
-                            Graphics formGraphicsEllipse = this.CreateGraphics();
-                            float xEllipse = (float) ClientSize.Width / 2 - 25;
-                            float yEllipse = (float) ClientSize.Height / 2 - 25;
-                            float widthEllipse = 2 * 25;
-                            float heightEllipse = 2 * 25;
-                            formGraphicsEllipse.FillEllipse(myBrush, xEllipse, yEllipse, widthEllipse, heightEllipse);
-                            await Task.Delay(intervalTime);
-                            formGraphicsEllipse.Dispose();
-                            break;
-                    }
-                    myBrush.Dispose();
+                    ExpositionController.makingFixPoint(program.FixPoint, program.FixPointColor, this);
                 }
             }
 

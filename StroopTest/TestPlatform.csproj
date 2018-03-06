@@ -731,14 +731,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon3_TestPlatForm.ico" />
-    <Content Include="Resources\audios\MatchingTest\bell.wav" />
-    <Content Include="Resources\audios\MatchingTest\error.wav" />
-    <Content Include="Resources\audios\MatchingTest\hit.wav" />
-    <None Include="Resources\errorAudio.bmp" />
-    <None Include="Resources\error.wav" />
-    <None Include="Resources\hit.wav" />
-    <None Include="Resources\error - Copy.wav" />
-    <None Include="Resources\bell.wav" />
+    <None Include="Resources\audios\MatchingTest\error.wav" />
+    <None Include="Resources\audios\MatchingTest\hit.wav" />
+    <None Include="Resources\audios\MatchingTest\bell.wav" />
     <Content Include="Resources\icons\circle.png" />
     <Content Include="Resources\icons\cross.png" />
     <Content Include="Resources\icons\helpButton.png" />

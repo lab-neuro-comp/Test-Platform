@@ -174,7 +174,21 @@ namespace TestPlatform
                     colorListLabel.Enabled = false; openColorListButton.Enabled = false;
                     imgListLabel.Enabled = true; openImgListButton.Enabled = true;
                     audioListLabel.Enabled = true; openAudioListButton.Enabled = true;
-                    
+                    break;
+
+                case 5: // txtimg
+                    errorProvider1.Clear();
+                    //box1
+                    wordSizeLabel.Enabled = true; wordSizeNumeric.Enabled = true;
+                    wordColorLabel.Enabled = true; wordColorPanel.Enabled = true; wordColorButton.Enabled = true;
+                    wordSizeLabel.Enabled = true; wordSizeNumeric.Enabled = true;
+                    expandImgLabel.Enabled = true; expandImgCheck.Enabled = true;
+                    //box2
+                    wordListLabel.Enabled = true; openWordListButton.Enabled = true;
+                    colorListLabel.Enabled = false; openColorListButton.Enabled = false;
+                    imgListLabel.Enabled = true; openImgListButton.Enabled = true;
+                    audioListLabel.Enabled = false; openAudioListButton.Enabled = false;
+
                     break;
             }
 
@@ -402,49 +416,54 @@ namespace TestPlatform
         {
 
             StroopProgram programWrite = new StroopProgram();
-          //  try
-            //{               
+            try
+            {
                 switch (chooseExpoType.SelectedIndex)
                 {
                     case 0: //txt
-                            programWrite.setTxtType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), 
-                                                                      Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked, 
-                                                                      wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
-                                                                      rndIntervalCheck.Checked, openWordListButton.Text, 
-                                                                      openColorListButton.Text);
-                           
+                        programWrite.setTxtType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
+                                                                  Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
+                                                                  wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
+                                                                  rndIntervalCheck.Checked, openWordListButton.Text,
+                                                                  openColorListButton.Text);
+
                         break;
                     case 1: //img
-                            programWrite.setImageType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
-                                                                      Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
-                                                                      wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
-                                                                      rndIntervalCheck.Checked, openImgListButton.Text);
-                        
+                        programWrite.setImageType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
+                                                                  Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
+                                                                  wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
+                                                                  rndIntervalCheck.Checked, openImgListButton.Text);
+
                         break;
-                    case 2: //txtimg
-                            programWrite.setImgTxtType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
-                                                                      Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
-                                                                      wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
-                                                                      openWordListButton.Text , openImgListButton.Text, rndIntervalCheck.Checked);
-                        
+                    case 2: //imgtxt
+                        programWrite.setImgTxtType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
+                                                                  Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
+                                                                  wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
+                                                                  openWordListButton.Text, openImgListButton.Text, rndIntervalCheck.Checked);
+
                         break;
                     case 3: //txtaud
-                            programWrite.setTxtAudType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
-                                                                      Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
-                                                                      wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
-                                                                      rndIntervalCheck.Checked, openWordListButton.Text, 
-                                                                      openColorListButton.Text, openAudioListButton.Text);
-                        
+                        programWrite.setTxtAudType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
+                                                                  Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
+                                                                  wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
+                                                                  rndIntervalCheck.Checked, openWordListButton.Text,
+                                                                  openColorListButton.Text, openAudioListButton.Text);
+
                         break;
                     case 4: //imgaud
-                            programWrite.setImgAudioType(openImgListButton.Text, openAudioListButton.Text, prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
-                                          Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
-                                          wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
-                                          rndIntervalCheck.Checked);
-                        
-                        
+                        programWrite.setImgAudioType(openImgListButton.Text, openAudioListButton.Text, prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
+                                      Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
+                                      wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
+                                      rndIntervalCheck.Checked);
+                        break;
+                    case 5: //txtimg
+                        programWrite.setTxtImgType(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
+                                                                      Convert.ToInt32(numExpo.Value), rndExpoCheck.Checked,
+                                                                      wordSizeNumeric.Value.ToString(), Convert.ToInt32(intervalTime.Value),
+                                                                      openWordListButton.Text, openImgListButton.Text, rndIntervalCheck.Checked);
                         break;
                 }
+
                 if (Validations.isHexPattern(bgColorButton.Text)) { programWrite.BackgroundColor = bgColorButton.Text; }
 
                 programWrite.AudioCapture = audioCaptureCheck.Checked;
@@ -522,11 +541,11 @@ namespace TestPlatform
                 programWrite.ExpandImage = expandImgCheck.Checked;
                 saveProgramFile(programWrite);
 
-          //  }
-         //   catch (Exception ex)
-         //   {
-             //   MessageBox.Show(ex.Message);
-           // }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
@@ -805,13 +824,13 @@ namespace TestPlatform
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (!this.ValidateChildren(ValidationConstraints.Enabled))
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
-                MessageBox.Show(LocRM.GetString("notFilledProperlyMessage", currentCulture));
+                configureNewProgram();
             }
             else
             {
-                configureNewProgram();
+                MessageBox.Show(LocRM.GetString("notFilledProperlyMessage", currentCulture));
             }
         }
 
@@ -1078,7 +1097,7 @@ namespace TestPlatform
 
         private bool validExpoType(int index, out string errorMessage)
         {
-            if (index >= 0 && index <= 4)
+            if (index >= 0 && index <= 5)
             {
                 errorMessage = "";
                 return true;

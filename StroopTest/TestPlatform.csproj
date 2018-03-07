@@ -132,6 +132,7 @@
     <Compile Include="Controllers\ExpositionController.cs" />
     <Compile Include="Controllers\HelpPagesController.cs" />
     <Compile Include="Controllers\ListController.cs" />
+    <Compile Include="Controllers\StimulusPosition.cs" />
     <Compile Include="Models\Audio.cs" />
     <Compile Include="Models\ExperimentProgram.cs" />
     <Compile Include="Models\ExperimentTest.cs" />

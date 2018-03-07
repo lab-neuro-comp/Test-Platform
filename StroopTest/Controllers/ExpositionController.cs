@@ -161,6 +161,7 @@
             newPictureBox.Enabled = true;
             return newPictureBox;
         }
+
         public static Label InitializeWordLabel(int size,string stimulus, string color, int[] position)
         {
             // configuring label that have word stimulus dimensions, color and position
@@ -174,6 +175,7 @@
             wordLabel.Location = new Point(position[X], position[Y]);
             return wordLabel;
         }
+
         public static void BeginExperimentTest(string programName, string participantName, char mark, Form form)
         {
             try
@@ -186,27 +188,6 @@
                 MessageBox.Show(ex.Message);
             }
 
-        }
-
-        private static int ShowOnMonitor(Form form)
-        {
-            Screen[] sc;
-            sc = Screen.AllScreens;
-            int showOnMonitor = 0;
-            if (sc.Length > 1)
-            {
-                if (sc[0].Bounds == Screen.FromControl(form).Bounds)
-                {
-                    showOnMonitor = 1;
-                }
-
-                if (sc[1].Bounds == Screen.FromControl(form).Bounds)
-                {
-                    showOnMonitor = 0;
-                }
-            }
-
-            return showOnMonitor;
         }
     }
 }

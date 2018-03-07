@@ -89,7 +89,11 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.audioResponseLabel = new System.Windows.Forms.Label();
+            this.expositonAudioResponse = new System.Windows.Forms.CheckBox();
+            this.feedbackAudioResponse = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
+            this.othersGroupBox.SuspendLayout();
             this.colorGroupBox.SuspendLayout();
             this.timeGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusInterval)).BeginInit();
@@ -123,6 +127,9 @@
             // 
             // othersGroupBox
             // 
+            this.othersGroupBox.Controls.Add(this.feedbackAudioResponse);
+            this.othersGroupBox.Controls.Add(this.expositonAudioResponse);
+            this.othersGroupBox.Controls.Add(this.audioResponseLabel);
             resources.ApplyResources(this.othersGroupBox, "othersGroupBox");
             this.othersGroupBox.Name = "othersGroupBox";
             this.othersGroupBox.TabStop = false;
@@ -661,6 +668,23 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // audioResponseLabel
+            // 
+            resources.ApplyResources(this.audioResponseLabel, "audioResponseLabel");
+            this.audioResponseLabel.Name = "audioResponseLabel";
+            // 
+            // expositonAudioResponse
+            // 
+            resources.ApplyResources(this.expositonAudioResponse, "expositonAudioResponse");
+            this.expositonAudioResponse.Name = "expositonAudioResponse";
+            this.expositonAudioResponse.UseVisualStyleBackColor = true;
+            // 
+            // feedbackAudioResponse
+            // 
+            resources.ApplyResources(this.feedbackAudioResponse, "feedbackAudioResponse");
+            this.feedbackAudioResponse.Name = "feedbackAudioResponse";
+            this.feedbackAudioResponse.UseVisualStyleBackColor = true;
+            // 
             // FormMatchConfig
             // 
             resources.ApplyResources(this, "$this");
@@ -672,6 +696,8 @@
             this.Name = "FormMatchConfig";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.othersGroupBox.ResumeLayout(false);
+            this.othersGroupBox.PerformLayout();
             this.colorGroupBox.ResumeLayout(false);
             this.colorGroupBox.PerformLayout();
             this.timeGroupBox.ResumeLayout(false);
@@ -753,5 +779,8 @@
         private System.Windows.Forms.Panel WordColorPanel;
         private System.Windows.Forms.Button wordSingleColorButton;
         private System.Windows.Forms.Label wordSingleColorLabel;
+        private System.Windows.Forms.CheckBox feedbackAudioResponse;
+        private System.Windows.Forms.CheckBox expositonAudioResponse;
+        private System.Windows.Forms.Label audioResponseLabel;
     }
 }

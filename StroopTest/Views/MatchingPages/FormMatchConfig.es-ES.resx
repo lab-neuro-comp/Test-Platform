@@ -261,4 +261,13 @@
   <data name="wordSingleColorLabel.Text" xml:space="preserve">
     <value>Palabras:</value>
   </data>
+  <data name="expositonAudioResponse.Text" xml:space="preserve">
+    <value>Exposición</value>
+  </data>
+  <data name="feedbackAudioResponse.Text" xml:space="preserve">
+    <value>Éxito / Error</value>
+  </data>
+  <data name="audioResponseLabel.Text" xml:space="preserve">
+    <value>Respuesta auditiva:</value>
+  </data>
 </root>

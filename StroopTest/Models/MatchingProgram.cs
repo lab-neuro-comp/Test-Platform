@@ -21,7 +21,8 @@ namespace TestPlatform.Models
         private Int32 stimuluDistance;
         private Boolean randomIntervalModelStimulus;
         private string wordColor;
-
+        private Boolean expositionAudioResponse;
+        private Boolean feedbackAudioResponse;
         public MatchingProgram()
         {
 
@@ -48,7 +49,8 @@ namespace TestPlatform.Models
             bool intervalTimeRandom, int expositionTime, int modelExpositionTime, 
             int attemptsIntervalTime,  string backgroundColor, string DNMTSBackground, 
             bool randomOrder, bool randomIntervalModelStimulus, bool randomStimuluPosition,
-            string wordList, string colorList, string wordColor)
+            string wordList, string colorList, string wordColor, bool expositionAudioResponse,
+            bool feedbackAudioResponse)
         {
             // Program properties
             this.programName = programName;
@@ -90,6 +92,8 @@ namespace TestPlatform.Models
             this.DNMTSBackground = DNMTSBackground;
             this.AttemptsNumber = AttemptsNumber;
             this.randomIntervalModelStimulus = randomIntervalModelStimulus;
+            this.feedbackAudioResponse = feedbackAudioResponse;
+            this.expositionAudioResponse = expositionAudioResponse;
             this.randomStimuluPosition = randomStimuluPosition;
             //default configurations for Mathing program
             this.setAudioListFile("false");
@@ -151,7 +155,9 @@ namespace TestPlatform.Models
                 this.numberPositions.ToString() + " " +
                 this.randomIntervalModelStimulus.ToString() + " " +
                 this.randomStimuluPosition.ToString() + " " +
-                this.wordColor;
+                this.wordColor + " " +
+                this.expositionAudioResponse.ToString() + " " +
+                this.feedbackAudioResponse.ToString();
                 
             return data;
         }
@@ -233,6 +239,31 @@ namespace TestPlatform.Models
             set
             {
                 endExpositionWithClick = value;
+            }
+        }
+        public Boolean ExpositionAudioResponse
+        {
+            get
+            {
+                return expositionAudioResponse;
+            }
+
+            set
+            {
+                ExpositionAudioResponse = value;
+            }
+        }
+
+        public Boolean FeedbackAudioResponse
+        {
+            get
+            {
+                return feedbackAudioResponse;
+            }
+
+            set
+            {
+                feedbackAudioResponse = value;
             }
         }
         public Int32 ModelExpositionTime
@@ -358,6 +389,8 @@ namespace TestPlatform.Models
             randomIntervalModelStimulus = bool.Parse(config[24]);
             randomStimuluPosition = bool.Parse(config[25]);
             wordColor = config[26];
+            expositionAudioResponse = Boolean.Parse(config[27]);
+            feedbackAudioResponse = Boolean.Parse(config[28]);
             linesInstruction = File.ReadAllLines(filepath);
             if (linesInstruction.Length > 1) // read instructions if any
             {

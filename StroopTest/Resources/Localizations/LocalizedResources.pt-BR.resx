@@ -2427,4 +2427,10 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="listsRecovered" xml:space="preserve">
     <value>Todas as listas selecionadas foram recuperadas com sucesso!</value>
   </data>
+  <data name="impossibleUseListWarn" xml:space="preserve">
+    <value>A lista é menor que o número de estimulos. Diminua o numero de estimulos ou escolha uma lista maior</value>
+  </data>
+  <data name="smallImageList" xml:space="preserve">
+    <value>A lista é menor do que o necessário para não haver repetições</value>
+  </data>
 </root>

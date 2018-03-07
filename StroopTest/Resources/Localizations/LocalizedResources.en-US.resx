@@ -2443,4 +2443,10 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   <data name="listsRecovered" xml:space="preserve">
     <value>All selected lists were recovered sucessful!</value>
   </data>
+  <data name="impossibleUseListWarn" xml:space="preserve">
+    <value>The list is smaller than the number of stimulus. Reduce the number of stimulus or choose a larger list</value>
+  </data>
+  <data name="smallImageList" xml:space="preserve">
+    <value>The list has less elements than the necessary, image repetition may occur</value>
+  </data>
 </root>

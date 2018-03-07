@@ -123,16 +123,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="impossibleUseListWarnLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 528</value>
+    <value>31, 459</value>
   </data>
   <data name="impossibleUseListWarnLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>484, 13</value>
   </data>
   <data name="impossibleUseListWarnLabel.TabIndex" type="System.Int32, mscorlib">
     <value>90</value>
-  </data>
-  <data name="impossibleUseListWarnLabel.Text" xml:space="preserve">
-    <value>A lista é menor que o número de estimulos. Diminua o numero de estimulos ou escolha uma lista maior</value>
   </data>
   <data name="impossibleUseListWarnLabel.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -153,16 +150,13 @@
     <value>True</value>
   </data>
   <data name="smallImageListLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 528</value>
+    <value>53, 483</value>
   </data>
   <data name="smallImageListLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>302, 13</value>
   </data>
   <data name="smallImageListLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="smallImageListLabel.Text" xml:space="preserve">
-    <value>A lista é menor do que o necessário para não haver repetições</value>
   </data>
   <data name="smallImageListLabel.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -745,7 +739,7 @@
     <value>7</value>
   </data>
   <data name="listGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 271</value>
+    <value>6, 300</value>
   </data>
   <data name="listGroupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>265, 138</value>
@@ -952,7 +946,7 @@
     <value>7, 29</value>
   </data>
   <data name="expositionGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 236</value>
+    <value>265, 265</value>
   </data>
   <data name="expositionGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>
@@ -1051,7 +1045,7 @@
     <value>9</value>
   </data>
   <data name="instructionsBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 427</value>
+    <value>6, 453</value>
   </data>
   <data name="instructionsBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -1087,7 +1081,7 @@
     <value>NoControl</value>
   </data>
   <data name="instructionsLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 412</value>
+    <value>4, 438</value>
   </data>
   <data name="instructionsLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>

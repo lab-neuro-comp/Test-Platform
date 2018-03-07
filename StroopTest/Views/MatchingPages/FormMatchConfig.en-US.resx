@@ -225,12 +225,6 @@
   <data name="imageLabel.Text" xml:space="preserve">
     <value>Images:</value>
   </data>
-  <data name="smallImageListLabel.Text" xml:space="preserve">
-    <value>The list has less elements than the necessary, image repetition may occur</value>
-  </data>
-  <data name="impossibleUseListWarnLabel.Text" xml:space="preserve">
-    <value>The list is smaller than the number of stimulus. Reduce the number of stimulus or choose a larger list</value>
-  </data>
   <data name="randomModelStimulusTime.Text" xml:space="preserve">
     <value>Delay between model and stimulus variable</value>
   </data>

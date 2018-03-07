@@ -142,12 +142,12 @@ namespace TestPlatform.Views.MatchingPages
                 StrList imagesListFile = new StrList(openImgListButton.Text, 0);
                 if (imagesListFile.ListContent.Count < numExpo.Value)
                 {
-                    impossibleUseListWarnLabel.Visible = true;
+                    errorProvider1.SetError(openImgListButton, LocRM.GetString("impossibleUseListWarn", currentCulture));
                     saveButton.Enabled = false;
                 }
                 else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
                 {
-                    smallImageListLabel.Visible = true;
+                    errorProvider1.SetError(openImgListButton, LocRM.GetString("smallImageList", currentCulture));
                     saveButton.Enabled = true;
                 }
                 else
@@ -160,12 +160,12 @@ namespace TestPlatform.Views.MatchingPages
                 StrList wordListFile = new StrList(openWordListButton.Text, 2);
                 if (wordListFile.ListContent.Count < numExpo.Value)
                 {
-                    impossibleUseListWarnLabel.Visible = true;
+                    errorProvider1.SetError(openWordListButton, LocRM.GetString("impossibleUseListWarn", currentCulture));
                     saveButton.Enabled = false;
                 }
                 else if (wordListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
                 {
-                    smallImageListLabel.Visible = true;
+                    errorProvider1.SetError(openWordListButton, LocRM.GetString("smallImageList", currentCulture));
                     saveButton.Enabled = true;
                 }
                 else
@@ -536,63 +536,46 @@ namespace TestPlatform.Views.MatchingPages
             }
         }
 
-        private void numExpo_ValueChanged(object sender, EventArgs e)
+        private void attemptAndNumExpo_ValueChanged(object sender, EventArgs e)
         {
-            if (openImgListButton.Text != LocRM.GetString("open", currentCulture))
-            {
-                StrList imagesListFile = new StrList(openImgListButton.Text, 0);
-                if (imagesListFile.ListContent.Count < numExpo.Value)
-                {
-                    impossibleUseListWarnLabel.Visible = true;
-                    saveButton.Enabled = false;
-                    smallImageListLabel.Visible = false;
-                }
-                else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
-                {
-                    smallImageListLabel.Visible = true;
-                    saveButton.Enabled = true;
-                }
-                else
-                {
-                    impossibleUseListWarnLabel.Visible = false;
-                    smallImageListLabel.Visible = false;
-                    saveButton.Enabled = true;
-                }
-            }
-            else
-            {
-                impossibleUseListWarnLabel.Visible = false;
-                smallImageListLabel.Visible = false;
-            }
+            checkNewValue();
         }
 
-        private void attemptNumber_ValueChanged(object sender, EventArgs e)
+        private void checkNewValue()
         {
-            if (openImgListButton.Text != LocRM.GetString("open", currentCulture))
+            Button button = null;
+            if (openImgListButton.Text != LocRM.GetString("open", currentCulture) || openWordListButton.Text != LocRM.GetString("open", currentCulture))
             {
-                StrList imagesListFile = new StrList(openImgListButton.Text, 0);
+                if (openImgListButton.Text != LocRM.GetString("open", currentCulture))
+                {
+                    button = openImgListButton;
+                }
+                else
+                {
+                    button = openWordListButton;
+                }
+                StrList imagesListFile = new StrList(button.Text, 0);
                 if (imagesListFile.ListContent.Count < numExpo.Value)
                 {
-                    impossibleUseListWarnLabel.Visible = true;
+                    errorProvider1.SetError(button, LocRM.GetString("impossibleUseListWarn", currentCulture));
                     saveButton.Enabled = false;
-                    smallImageListLabel.Visible = false;
                 }
                 else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
                 {
-                    smallImageListLabel.Visible = true;
+                    errorProvider1.SetError(button, LocRM.GetString("smallImageList", currentCulture));
                     saveButton.Enabled = true;
                 }
                 else
                 {
-                    impossibleUseListWarnLabel.Visible = false;
-                    smallImageListLabel.Visible = false;
+                    errorProvider1.SetError(button, "");
                     saveButton.Enabled = true;
                 }
             }
             else
             {
-                impossibleUseListWarnLabel.Visible = false;
-                smallImageListLabel.Visible = false;
+                errorProvider1.SetError(openImgListButton, "");
+                errorProvider1.SetError(openWordListButton, "");
+                saveButton.Enabled = true;
             }
         }
 
@@ -715,11 +698,6 @@ namespace TestPlatform.Views.MatchingPages
             wordSingleColor.Text = colorCode;
         }
 
-        private void openWordListButton_TextChanged(object sender, EventArgs e)
-        {
-            showWarningMessage(openWordListButton);
-        }
-
         private void openImgListButton_TextChanged(object sender, EventArgs e)
         {
             showWarningMessage(openImgListButton);
@@ -738,29 +716,32 @@ namespace TestPlatform.Views.MatchingPages
                 {
                     ListFile = new StrList(button.Text, 2);
                 }
-                if (ListFile.ListContent.Count < numExpo.Value)
+                if (ListFile != null && ListFile.ListContent.Count < numExpo.Value)
                 {
-                    impossibleUseListWarnLabel.Visible = true;
                     saveButton.Enabled = false;
-                    smallImageListLabel.Visible = false;
+                    errorProvider1.SetError(button, LocRM.GetString("impossibleUseListWarn", currentCulture));
                 }
-                else if (ListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                else if (ListFile != null && ListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
                 {
-                    smallImageListLabel.Visible = true;
+                    errorProvider1.SetError(button, LocRM.GetString("smallImageList", currentCulture));
                     saveButton.Enabled = true;
                 }
                 else
                 {
-                    impossibleUseListWarnLabel.Visible = false;
-                    smallImageListLabel.Visible = false;
+                    errorProvider1.SetError(button, "");
                     saveButton.Enabled = true;
                 }
             }
             else
             {
-                impossibleUseListWarnLabel.Visible = false;
-                smallImageListLabel.Visible = false;
+                errorProvider1.SetError(button, "");
+                saveButton.Enabled = true;
             }
+        }
+
+        private void openWordListButton_TextChanged(object sender, EventArgs e)
+        {
+            showWarningMessage(openWordListButton);
         }
     }
 }

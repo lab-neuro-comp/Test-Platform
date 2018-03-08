@@ -10,129 +10,148 @@ namespace TestPlatform.Controllers
     public class StimulusPosition
     {
         private int pointCount = 0;
-        private Size clientSize, stimuluSize;
+        private Size clientSize, stimulusSize;
         private int pointsNumber;
         private const int X = 0, Y = 1;
         private const int A1 = 0, B1 = 1, C1 = 2, D1 = 3, E1 = 4, F1 = 5, G1 = 6, A2 = 7, B2 = 8, C2 = 9, D2 = 10, E2 = 11, F2 = 12, G2 = 13, A3 = 14, B3 = 15, C3 = 16, D3 = 17, E3 = 18, F3 = 19, G3 = 20;
         List<int> randomPositionsUsed;
         private static string[] matrixPositionsNames = new string[21] {"A1", "B1", "C1", "D1", "E1", "F1", "G1", "A2", "B2", "C2", "D2", "E2", "F2", "G2", "A3", "B3", "C3", "D3", "E3", "F3", "G3" };
-        private Point[] matrixPoints = new Point[21];
-        // TODO criar um array de 21 posições, com os a1,a2... e ai criar um array com os points, verificar o iterador de um no outro pra poder responder de forma correta tanto na ida quanto na volta
 
-        public StimulusPosition(int pointsNumber, Size clientSize, Size stimuluSize)
+        public int PointsNumber
         {
-            if (pointsNumber > 8 || pointsNumber < 1)
+            get
             {
-                throw new ArgumentException();
+                return pointsNumber;
             }
-            this.stimuluSize = stimuluSize;
-            this.pointsNumber = pointsNumber;
+
+            set
+            {
+                if (value <= 8 && value > 0)
+                {
+                    pointsNumber = value;
+                }
+                else
+                {
+                    throw new ArgumentException();
+                }
+
+            }
+        }
+        
+        public StimulusPosition(Size clientSize)
+        {
             this.clientSize = clientSize;
             randomPositionsUsed = new List<int>();
-
-            populatePointsArray();
         }
 
         /// <summary>  
         ///  Create all possible points that can be used during exposition, according to the user screen
         /// </summary> 
-        private void populatePointsArray()
+        private Point generatePoint(int point)
         {
             float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
 
-            Point A1 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
-                       (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2));
-            matrixPoints[0] = A1;
+            switch (point)
+            {
+                case A1:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
+                       (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2));
 
-            Point B1 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2),
-                      (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2));
-            matrixPoints[1] = B1;
+                case B1:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2),
+                      (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2));
 
-            Point C1 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
-                  (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2));
-            matrixPoints[2] = C1;
+                case C1:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
+                  (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2));
 
-            Point D1 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2));
-            matrixPoints[3] = D1;
+                case D1:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2),
+                   (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2));
 
-            Point E1 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2));
-            matrixPoints[4] = E1;
+                case E1:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2));
 
-            Point F1 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2));
-            matrixPoints[5] = F1;
+                case F1:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2),
+                   (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2));
 
-            Point G1 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2));
-            matrixPoints[6] = G1;
+                case G1:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2));
 
-            Point A2 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
-            matrixPoints[7] = A2;
+                case A2:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
-            Point B2 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
-            matrixPoints[8] = B2;
+                case B2:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2),
+               (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
-            Point C2 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
-            matrixPoints[9] = C2;
+                case C2:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
-            Point D2 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
-            matrixPoints[10] = D2;
+                case D2:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2),
+               (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
-            Point E2 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
-            matrixPoints[11] = E2;
+                case E2:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
-            Point F2 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
-            matrixPoints[12] = F2;
+                case F2:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2),
+                   (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
-            Point G2 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
-            matrixPoints[13] = G2;
+                case G2:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
-            Point A3 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
-            matrixPoints[14] = A3;
+                case A3:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
-            Point B3 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2));
-            matrixPoints[15] = B3;
+                case B3:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2),
+                   (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2));
 
-            Point C3 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2));
-            matrixPoints[16] = C3;
+                case C3:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2));
 
-            Point D3 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2),
-                   (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2));
-            matrixPoints[17] = D3;
+                case D3:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2),
+                   (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2));
 
-            Point E3 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
-                    (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2));
-            matrixPoints[18] = E3;
+                case E3:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
+                    (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2));
 
-            Point F3 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2),
-                    (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2));
-            matrixPoints[19] = F3;
+                case F3:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2),
+                    (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2));
 
-            Point G3 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
-                    (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2));
-            matrixPoints[20] = G3;
+                case G3:
+                    return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
+                    (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2));
+
+                default:
+                    throw new ArgumentException();
+            }
+
         }
 
-        public Point getPositon()
+        public Point getPositon(Size stimulusSize)
         {
+            this.stimulusSize = stimulusSize;
 
             Point position = new Point();
-            switch (pointsNumber)
+            switch (PointsNumber)
             {
                 case 1:
-                    position = centerPosition(pointsNumber, pointCount);
+                    position = centerPosition(PointsNumber, pointCount);
                     break;
                 case 2:
                     position = twoPointsHorizontalPosition(pointCount);
@@ -172,7 +191,7 @@ namespace TestPlatform.Controllers
             {
                 /*middle center*/
                 float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
-                return matrixPoints[D2]; // D2
+                return generatePoint(D2); // D2
             }
             else
             {
@@ -191,9 +210,9 @@ namespace TestPlatform.Controllers
             switch (pointPosition)
             {
                 case 0: /*middle left */
-                    return matrixPoints[B2];
+                    return generatePoint(B2);
                 case 1: /*middle right */
-                    return matrixPoints[F2];
+                    return generatePoint(F2);
                 default:
                     throw new InvalidOperationException();
             }
@@ -210,11 +229,11 @@ namespace TestPlatform.Controllers
             switch (pointPosition)
             {
                 case 0: /*middle left*/
-                    return matrixPoints[B2];
+                    return generatePoint(B2);
                 case 1: /*middle right*/
-                    return matrixPoints[F2];
+                    return generatePoint(F2);
                 case 2:/*middle center*/
-                    return matrixPoints[D2]; 
+                    return generatePoint(D2); 
                 default:
                     throw new InvalidOperationException();
             }
@@ -231,13 +250,13 @@ namespace TestPlatform.Controllers
             switch (pointPosition)
             {
                 case 0: /*top left*/
-                    return matrixPoints[B1];
+                    return generatePoint(B1);
                 case 1: /*top right*/
-                    return matrixPoints[F1];
+                    return generatePoint(F1);
                 case 2: /*bottom left*/
-                    return matrixPoints[B3];
+                    return generatePoint(B3);
                 case 3: /*bottom right*/
-                    return matrixPoints[F3];
+                    return generatePoint(F3);
                 default:
                     throw new InvalidOperationException();
             }
@@ -254,15 +273,15 @@ namespace TestPlatform.Controllers
             switch (pointPosition)
             {
                 case 0: /*top left*/
-                    return matrixPoints[B1];
+                    return generatePoint(B1);
                 case 1: /*top right*/
-                    return matrixPoints[F1];
+                    return generatePoint(F1);
                 case 2: /*bottom left*/
-                    return matrixPoints[B3];
+                    return generatePoint(B3);
                 case 3: /*bottom right*/
-                    return matrixPoints[F3];
+                    return generatePoint(F3);
                 case 4: /*middle center*/
-                    return matrixPoints[D2];
+                    return generatePoint(D2);
                 default:
                     throw new InvalidOperationException();
             }
@@ -279,17 +298,17 @@ namespace TestPlatform.Controllers
             switch (pointPosition)
             {
                 case 0: /*top left*/
-                    return matrixPoints[B1];
+                    return generatePoint(B1);
                 case 1: /*top right*/
-                    return matrixPoints[F1];
+                    return generatePoint(F1);
                 case 2: /*bottom left*/
-                    return matrixPoints[B3];
+                    return generatePoint(B3);
                 case 3: /*bottom right*/
-                    return matrixPoints[F3];
+                    return generatePoint(F3);
                 case 4: /*top center*/
-                    return matrixPoints[D1];
+                    return generatePoint(D1);
                 case 5: /*bottom center*/
-                    return matrixPoints[D3];
+                    return generatePoint(D3);
                 default:
                     throw new InvalidOperationException();
             }
@@ -306,19 +325,19 @@ namespace TestPlatform.Controllers
             switch (pointPosition)
             {
                 case 0: /*top left*/
-                    return matrixPoints[B1];
+                    return generatePoint(B1);
                 case 1: /*top right*/
-                    return matrixPoints[F1];
+                    return generatePoint(F1);
                 case 2: /*bottom left*/
-                    return matrixPoints[B3];
+                    return generatePoint(B3);
                 case 3: /*bottom right*/
-                    return matrixPoints[F3];
+                    return generatePoint(F3);
                 case 4: /*middle left*/
-                    return matrixPoints[B2];
+                    return generatePoint(B2);
                 case 5: /*middle right*/
-                    return matrixPoints[F2];
+                    return generatePoint(F2);
                 case 6:/*middle center*/
-                    return matrixPoints[D2];
+                    return generatePoint(D2);
                 default:
                     throw new InvalidOperationException();
             }
@@ -335,33 +354,29 @@ namespace TestPlatform.Controllers
             switch (pointPosition)
             {
                 case 0: /*top left left*/
-                    return matrixPoints[A1];
+                    return generatePoint(A1);
                 case 1: /*top left right*/
-                    return matrixPoints[C1];
+                    return generatePoint(C1);
                 case 2: /*top right left*/
-                    return matrixPoints[E1];
+                    return generatePoint(E1);
                 case 3: /*top right right*/
-                    return matrixPoints[G1];
+                    return generatePoint(G1);
                 case 4: /*bottom left left*/
-                    return matrixPoints[A3];
+                    return generatePoint(A3);
                 case 5: /*bottom left right*/
-                    return matrixPoints[C3];
+                    return generatePoint(C3);
                 case 6: /*bottom right left*/
-                    return matrixPoints[E3];
+                    return generatePoint(E3);
                 case 7: /*bottom right right*/
-                    return matrixPoints[G3];
+                    return generatePoint(G3);
                 default:
                     throw new InvalidOperationException();
             }
         }
 
-        public void setStimulusSize(Size stimuluSize)
+        public Point getRandomPosition(Size stimulusSize)
         {
-            this.stimuluSize = stimuluSize;
-        }
-
-        public Point getRandomPosition(Size stimuluSize)
-        {
+            this.stimulusSize = stimulusSize;
             int number;
             float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
             
@@ -374,56 +389,62 @@ namespace TestPlatform.Controllers
             switch (number)
             {
                 case 0: // A1
-                    return matrixPoints[0];
+                    return generatePoint(A1);
                 case 1: // B1
-                    return matrixPoints[1];
+                    return generatePoint(B1);
                 case 2: // C1
-                    return matrixPoints[2];
+                    return generatePoint(C1);
                 case 3: // D1
-                    return matrixPoints[3];
+                    return generatePoint(D1);
                 case 4: // E1
-                    return matrixPoints[4];
+                    return generatePoint(E1);
                 case 5: // F1
-                    return matrixPoints[5];
+                    return generatePoint(F1);
                 case 6: // G1
-                    return matrixPoints[6];
+                    return generatePoint(G1);
                 case 7: // A2
-                    return matrixPoints[7];
+                    return generatePoint(A2);
                 case 8: // B2
-                    return matrixPoints[8];
+                    return generatePoint(B2);
                 case 9: // C2
-                    return matrixPoints[9];
+                    return generatePoint(C2);
                 case 10: // D2
-                    return matrixPoints[10];
+                    return generatePoint(D2);
                 case 11: // E2
-                    return matrixPoints[11];
+                    return generatePoint(E2);
                 case 12: // F2 
-                    return matrixPoints[12];
+                    return generatePoint(F2);
                 case 13: // G2
-                    return matrixPoints[13];
+                    return generatePoint(G2);
                 case 14: // A3
-                    return matrixPoints[14];
+                    return generatePoint(A3);
                 case 15: // B3
-                    return matrixPoints[15];
+                    return generatePoint(B3);
                 case 16: // C3  
-                    return matrixPoints[16];
+                    return generatePoint(C3);
                 case 17: // D3
-                    return matrixPoints[17];
+                    return generatePoint(D3);
                 case 18: // E3
-                    return matrixPoints[18];
+                    return generatePoint(E3);
                 case 19: // F3
-                    return matrixPoints[19];
+                    return generatePoint(F3);
                 case 20: // G3
-                    return matrixPoints[20];
+                    return generatePoint(G3);
                 default:
                     throw new ArgumentException();
             }
         }
 
-        public string getStimulusPositionMap(Point position)
+        public string getStimulusPositionMap(Point position, Size stimulusSize)
         {
-            int index = Array.IndexOf(matrixPoints, position);
-
+            int index = -1;
+            for (int i = 0; i <= G3; i++)
+            {
+                if (position == generatePoint(i))
+                {
+                    index = i;
+                }
+            }
             if (index > -1)
             {
                 return matrixPositionsNames[index];

@@ -38,9 +38,10 @@ namespace TestPlatform.Controllers
             }
         }
         
-        public StimulusPosition(Size clientSize)
+        public StimulusPosition(Size clientSize, int pointNumber)
         {
             this.clientSize = clientSize;
+            PointsNumber = pointNumber;
             randomPositionsUsed = new List<int>();
         }
 
@@ -111,7 +112,7 @@ namespace TestPlatform.Controllers
 
                 case A3:
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
-                   (int)clientMiddle[Y] - (stimulusSize.Height / 2));
+                   (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2));
 
                 case B3:
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2),
@@ -146,7 +147,7 @@ namespace TestPlatform.Controllers
         public Point getPositon(Size stimulusSize)
         {
             this.stimulusSize = stimulusSize;
-
+            Console.WriteLine(pointCount);
             Point position = new Point();
             switch (PointsNumber)
             {

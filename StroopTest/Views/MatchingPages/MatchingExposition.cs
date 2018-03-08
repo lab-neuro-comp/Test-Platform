@@ -173,7 +173,6 @@ namespace TestPlatform.Views.MatchingPages
         {
             if (executingTest.ProgramInUse.Ready(path))
             {
-                stimuluPosition = new StimulusPosition(ClientSize);
                 currentExpositionType = this.executingTest.ProgramInUse.getExpositionType();
                 initializeExposition();
             }
@@ -586,7 +585,8 @@ namespace TestPlatform.Views.MatchingPages
             waitingExpositionEnd = true;
             if (showModel)
             {
-                stimuluPosition.PointsNumber = 1;
+                stimuluPosition = new StimulusPosition(ClientSize, 1);
+
                 if (this.executingTest.ProgramInUse.getImageListFile() != null)
                 {
                     drawModelImage();
@@ -600,7 +600,7 @@ namespace TestPlatform.Views.MatchingPages
             {
                 if (!this.executingTest.ProgramInUse.RandomStimulusPosition)
                 {
-                    stimuluPosition.PointsNumber = this.executingTest.ProgramInUse.NumberPositions;
+                    stimuluPosition = new StimulusPosition(ClientSize, this.executingTest.ProgramInUse.NumExpositions);
                 }
                 intervalElapsedTime = waitIntervalTime(this.executingTest.ProgramInUse.RandomIntervalModelStimulus, this.executingTest.ProgramInUse.IntervalTime);
                 if (this.executingTest.ProgramInUse.getImageListFile() != null)

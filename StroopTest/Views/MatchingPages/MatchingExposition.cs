@@ -637,7 +637,7 @@ namespace TestPlatform.Views.MatchingPages
             modelButton.Text = wordsMatchingGroups.ElementAt(groupCounter).getModel();
             if (this.executingTest.ProgramInUse.RandomModelPosition)
             {
-                modelButton.Location = stimuluPosition.getRandomPosition(ClientSize, modelButton.PreferredSize);
+                modelButton.Location = stimuluPosition.getRandomPosition(modelButton.PreferredSize);
             }
             else
             {
@@ -664,7 +664,7 @@ namespace TestPlatform.Views.MatchingPages
             modelPictureBox.Size = new Size(executingTest.ProgramInUse.StimuluSize, executingTest.ProgramInUse.StimuluSize);
             if (this.executingTest.ProgramInUse.RandomModelPosition)
             {
-                modelPictureBox.Location = stimuluPosition.getRandomPosition(ClientSize, modelPictureBox.PreferredSize);
+                modelPictureBox.Location = stimuluPosition.getRandomPosition(modelPictureBox.PreferredSize);
             }
             else
             {
@@ -699,7 +699,7 @@ namespace TestPlatform.Views.MatchingPages
                 newButton.ForeColor = ColorTranslator.FromHtml(wordsMatchingGroups.ElementAt(groupCounter).getColors().ElementAt(count));
                 if (this.executingTest.ProgramInUse.RandomStimulusPosition)
                 {
-                    newButton.Location = stimuluPosition.getRandomPosition(ClientSize, newButton.PreferredSize);
+                    newButton.Location = stimuluPosition.getRandomPosition(newButton.PreferredSize);
                 }
                 else
                 {
@@ -736,7 +736,7 @@ namespace TestPlatform.Views.MatchingPages
 
                 if (this.executingTest.ProgramInUse.RandomStimulusPosition)
                 {
-                    newPicBox.Location = stimuluPosition.getRandomPosition(ClientSize, newPicBox.Size);
+                    newPicBox.Location = stimuluPosition.getRandomPosition(newPicBox.Size);
                 }
                 else
                 {
@@ -947,7 +947,7 @@ namespace TestPlatform.Views.MatchingPages
                 {
                     if (modelAsStimuluPictureBox != null)
                     {
-                        modelSecondPosition = StimulusPosition.getStimuluPositionMap(modelAsStimuluPictureBox.Location, ClientSize, modelAsStimuluPictureBox.Size);
+                        modelSecondPosition = stimuluPosition.getStimulusPositionMap(modelAsStimuluPictureBox.Location);
                     }
 
                     if (showModel && (e.Cancelled == true) && !intervalCancelled) /* user clicked after stimulus is shown*/
@@ -977,7 +977,7 @@ namespace TestPlatform.Views.MatchingPages
                             (this.imagesMatchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(((PictureBox)modelClicked).Image) == this.imagesMatchingGroups.ElementAt(groupCounter - 1).getModelImageName()).ToString(),
                             this.executingTest.ProgramInUse.getImageListFile().ListName + "/" + this.imagesMatchingGroups.ElementAt(groupCounter - 1).getModelImageName(),
                             stimulus.ToArray(),
-                            StimulusPosition.getStimuluPositionMap(((PictureBox)modelClicked).Location, ClientSize, ((PictureBox)modelClicked).Size)
+                            stimuluPosition.getStimulusPositionMap(((PictureBox)modelClicked).Location)
                             );
                         showAudioFeedbackOnNextClick = false;
                     }
@@ -1010,20 +1010,20 @@ namespace TestPlatform.Views.MatchingPages
                     else if (!showModel && (e.Cancelled == true) && !intervalCancelled)  /* user clicked model */
                     {
                         modelReactTime = hitStopWatch.ElapsedMilliseconds;
-                        modelFirstposition = StimulusPosition.getStimuluPositionMap(((PictureBox)modelClicked).Location, ClientSize, modelPictureBox.Size);
+                        modelFirstposition = stimuluPosition.getStimulusPositionMap(((PictureBox)modelClicked).Location);
                         showAudioFeedbackOnNextClick = true;
                     }
                     else if (!executingTest.ProgramInUse.EndExpositionWithClick) /* model shouldn't be clicked */
                     {
                         modelReactTime = executingTest.ProgramInUse.ModelExpositionTime;
-                        modelFirstposition = StimulusPosition.getStimuluPositionMap(modelPictureBox.Location, ClientSize, modelPictureBox.Size);
+                        modelFirstposition = stimuluPosition.getStimulusPositionMap(modelPictureBox.Location);
                         hitStopWatch.Stop();
                         showAudioFeedbackOnNextClick = true;
                     }
                     else  /*user missed model*/
                     {
                         modelReactTime = 0;
-                        modelFirstposition = StimulusPosition.getStimuluPositionMap(modelPictureBox.Location, ClientSize, modelPictureBox.Size);
+                        modelFirstposition = stimuluPosition.getStimulusPositionMap(modelPictureBox.Location);
                         hitStopWatch.Stop();
                     }
                 }
@@ -1031,7 +1031,7 @@ namespace TestPlatform.Views.MatchingPages
                 {
                     if (modelAsStimuluButton != null)
                     {
-                        modelSecondPosition = StimulusPosition.getStimuluPositionMap(modelAsStimuluButton.Location, ClientSize, modelAsStimuluButton.PreferredSize);
+                        modelSecondPosition = stimuluPosition.getStimulusPositionMap(modelAsStimuluButton.Location);
                     }
 
                     if (showModel && (e.Cancelled == true) && !intervalCancelled) /* user clicked after stimulus is shown*/
@@ -1061,7 +1061,7 @@ namespace TestPlatform.Views.MatchingPages
                             (((Button)modelClicked).Text == this.wordsMatchingGroups.ElementAt(groupCounter - 1).getModel()).ToString(),
                             this.wordsMatchingGroups.ElementAt(groupCounter - 1).getModel() + "#" + this.wordsMatchingGroups.ElementAt(groupCounter - 1).getColors().ElementAt(this.wordsMatchingGroups.ElementAt(groupCounter - 1).getStimulus().IndexOf(this.wordsMatchingGroups.ElementAt(groupCounter - 1).getModel())),
                             stimulus.ToArray(),
-                            StimulusPosition.getStimuluPositionMap(((Button)modelClicked).Location, ClientSize, ((Button)modelClicked).PreferredSize)
+                            stimuluPosition.getStimulusPositionMap(((Button)modelClicked).Location)
                             );
                     }
                     else if (showModel)/* user missed stimulus */
@@ -1092,18 +1092,18 @@ namespace TestPlatform.Views.MatchingPages
                     else if (!showModel && (e.Cancelled == true) && !intervalCancelled)  /* user clicked model */
                     {
                         modelReactTime = hitStopWatch.ElapsedMilliseconds;
-                        modelFirstposition = StimulusPosition.getStimuluPositionMap(((Button)modelClicked).Location, ClientSize, modelButton.PreferredSize);
+                        modelFirstposition = stimuluPosition.getStimulusPositionMap(((Button)modelClicked).Location);
                     }
                     else if (!executingTest.ProgramInUse.EndExpositionWithClick) /* model shouldn't be clicked */
                     {
                         modelReactTime = executingTest.ProgramInUse.ModelExpositionTime;
-                        modelFirstposition = StimulusPosition.getStimuluPositionMap(modelButton.Location, ClientSize, modelButton.PreferredSize);
+                        modelFirstposition = stimuluPosition.getStimulusPositionMap(modelButton.Location);
                         hitStopWatch.Stop();
                     }
                     else  /*user missed model*/
                     {
                         modelReactTime = 0;
-                        modelFirstposition = StimulusPosition.getStimuluPositionMap(modelButton.Location, ClientSize, modelButton.PreferredSize);
+                        modelFirstposition = stimuluPosition.getStimulusPositionMap(modelButton.Location);
                         hitStopWatch.Stop();
                     }
                 }

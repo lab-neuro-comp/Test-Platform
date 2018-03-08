@@ -4,13 +4,20 @@ using System.Drawing;
 
 namespace TestPlatform.Controllers
 {
+    /// <summary>  
+    ///  This class manipulates a eight position matrix to show stimulus arround users screen, and also generates random positions
+    /// </summary> 
     public class StimulusPosition
     {
         private int pointCount = 0;
         private Size clientSize, stimuluSize;
         private int pointsNumber;
         private const int X = 0, Y = 1;
+        private const int A1 = 0, B1 = 1, C1 = 2, D1 = 3, E1 = 4, F1 = 5, G1 = 6, A2 = 7, B2 = 8, C2 = 9, D2 = 10, E2 = 11, F2 = 12, G2 = 13, A3 = 14, B3 = 15, C3 = 16, D3 = 17, E3 = 18, F3 = 19, G3 = 20;
         List<int> randomPositionsUsed;
+        private static string[] matrixPositionsNames = new string[21] {"A1", "B1", "C1", "D1", "E1", "F1", "G1", "A2", "B2", "C2", "D2", "E2", "F2", "G2", "A3", "B3", "C3", "D3", "E3", "F3", "G3" };
+        private Point[] matrixPoints = new Point[21];
+        // TODO criar um array de 21 posições, com os a1,a2... e ai criar um array com os points, verificar o iterador de um no outro pra poder responder de forma correta tanto na ida quanto na volta
 
         public StimulusPosition(int pointsNumber, Size clientSize, Size stimuluSize)
         {
@@ -22,6 +29,100 @@ namespace TestPlatform.Controllers
             this.pointsNumber = pointsNumber;
             this.clientSize = clientSize;
             randomPositionsUsed = new List<int>();
+
+            populatePointsArray();
+        }
+
+        /// <summary>  
+        ///  Create all possible points that can be used during exposition, according to the user screen
+        /// </summary> 
+        private void populatePointsArray()
+        {
+            float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
+
+            Point A1 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
+                       (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2));
+            matrixPoints[0] = A1;
+
+            Point B1 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2),
+                      (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2));
+            matrixPoints[1] = B1;
+
+            Point C1 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
+                  (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2));
+            matrixPoints[2] = C1;
+
+            Point D1 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2));
+            matrixPoints[3] = D1;
+
+            Point E1 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2));
+            matrixPoints[4] = E1;
+
+            Point F1 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2));
+            matrixPoints[5] = F1;
+
+            Point G1 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2));
+            matrixPoints[6] = G1;
+
+            Point A2 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
+            matrixPoints[7] = A2;
+
+            Point B2 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
+            matrixPoints[8] = B2;
+
+            Point C2 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
+            matrixPoints[9] = C2;
+
+            Point D2 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
+            matrixPoints[10] = D2;
+
+            Point E2 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
+            matrixPoints[11] = E2;
+
+            Point F2 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
+            matrixPoints[12] = F2;
+
+            Point G2 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
+            matrixPoints[13] = G2;
+
+            Point A3 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2));
+            matrixPoints[14] = A3;
+
+            Point B3 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2));
+            matrixPoints[15] = B3;
+
+            Point C3 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2));
+            matrixPoints[16] = C3;
+
+            Point D3 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2),
+                   (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2));
+            matrixPoints[17] = D3;
+
+            Point E3 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
+                    (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2));
+            matrixPoints[18] = E3;
+
+            Point F3 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2),
+                    (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2));
+            matrixPoints[19] = F3;
+
+            Point G3 = new Point((int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
+                    (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2));
+            matrixPoints[20] = G3;
         }
 
         public Point getPositon()
@@ -31,28 +132,28 @@ namespace TestPlatform.Controllers
             switch (pointsNumber)
             {
                 case 1:
-                    position = centerPosition(stimuluSize, clientSize, pointsNumber, pointCount);
+                    position = centerPosition(pointsNumber, pointCount);
                     break;
                 case 2:
-                    position = twoPointsHorizontalPosition(stimuluSize, clientSize, pointCount);
+                    position = twoPointsHorizontalPosition(pointCount);
                     break;
                 case 3:
-                    position = threePointsPosition(stimuluSize, clientSize, pointCount);
+                    position = threePointsPosition(pointCount);
                     break;
                 case 4:
-                    position = fourPointsPosition(stimuluSize, clientSize, pointCount);
+                    position = fourPointsPosition(pointCount);
                     break;
                 case 5:
-                    position = fivePointsPosition(stimuluSize, clientSize, pointCount);
+                    position = fivePointsPosition(pointCount);
                     break;
                 case 6:
-                    position = sixPointsPosition(stimuluSize, clientSize, pointCount);
+                    position = sixPointsPosition(pointCount);
                     break;
                 case 7:
-                    position = sevenPointsPosition(stimuluSize, clientSize, pointCount);
+                    position = sevenPointsPosition(pointCount);
                     break;
                 case 8:
-                    position = eightPointsPosition(stimuluSize, clientSize, pointCount);
+                    position = eightPointsPosition(pointCount);
                     break;
             }
             pointCount++;
@@ -65,13 +166,13 @@ namespace TestPlatform.Controllers
         /// <param name="pointsNumber">total number of points, must be greater than pointPosition</param>
         /// <param name="pointPosition">poistion of point that will be generated, must be smaller than pointsNumber</param>
         /// </summary>
-        public static Point centerPosition(Size stimulusSize, Size clientSize, int pointsNumber, int pointPosition)
+        public Point centerPosition(int pointsNumber, int pointPosition)
         {
             if (pointPosition < pointsNumber)
             {
                 /*middle center*/
                 float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
-                return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2), (int)clientMiddle[Y] - (stimulusSize.Height / 2));
+                return matrixPoints[D2]; // D2
             }
             else
             {
@@ -84,24 +185,18 @@ namespace TestPlatform.Controllers
         /// <param name="stimulusSize"> size of the stimulus that will be shown to user</param>
         /// <param name="pointPosition">poistion of point that will be generated, must be 0 or 1</param>
         /// </summary>
-        public static Point twoPointsHorizontalPosition(Size stimulusSize, Size clientSize, int pointPosition)
+        public Point twoPointsHorizontalPosition(int pointPosition)
         {
-            Point position = new Point();
             float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
             switch (pointPosition)
             {
-                case 0: /*middle left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2);
-                    break;
-                case 1: /*middle right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2);
-                    break;
+                case 0: /*middle left */
+                    return matrixPoints[B2];
+                case 1: /*middle right */
+                    return matrixPoints[F2];
                 default:
                     throw new InvalidOperationException();
             }
-            return position;
         }
 
         /// <summary>
@@ -109,28 +204,20 @@ namespace TestPlatform.Controllers
         /// <param name="stimulusSize"> size of the stimulus that will be shown to user</param>
         /// <param name="pointPosition">poistion of point that will be generated, must be 0, 1 or 2</param>
         /// </summary>
-        public static Point threePointsPosition(Size stimulusSize, Size clientSize, int pointPosition)
+        public Point threePointsPosition(int pointPosition)
         {
-            Point position = new Point();
             float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
             switch (pointPosition)
             {
                 case 0: /*middle left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2);
-                    break;
+                    return matrixPoints[B2];
                 case 1: /*middle right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2);
-                    break;
+                    return matrixPoints[F2];
                 case 2:/*middle center*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2);
-                    break;
+                    return matrixPoints[D2]; 
                 default:
                     throw new InvalidOperationException();
             }
-            return position;
         }
 
         /// <summary>
@@ -138,32 +225,22 @@ namespace TestPlatform.Controllers
         /// <param name="stimulusSize"> size of the stimulus that will be shown to user</param>
         /// <param name="pointPosition">poistion of point that will be generated, must be between 0 and 3</param>
         /// </summary>
-        public static Point fourPointsPosition(Size stimulusSize, Size clientSize, int pointPosition)
+        public Point fourPointsPosition(int pointPosition)
         {
-            Point position = new Point();
             float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
             switch (pointPosition)
             {
                 case 0: /*top left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[B1];
                 case 1: /*top right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[F1];
                 case 2: /*bottom left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[B3];
                 case 3: /*bottom right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[F3];
                 default:
                     throw new InvalidOperationException();
             }
-            return position;
         }
 
         /// <summary>
@@ -171,36 +248,24 @@ namespace TestPlatform.Controllers
         /// <param name="stimulusSize"> size of the stimulus that will be shown to user</param>
         /// <param name="pointPosition">poistion of point that will be generated, must be between 0 and 4</param>
         /// </summary>
-        public static Point fivePointsPosition(Size stimulusSize, Size clientSize, int pointPosition)
+        public Point fivePointsPosition(int pointPosition)
         {
-            Point position = new Point();
             float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
             switch (pointPosition)
             {
                 case 0: /*top left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[B1];
                 case 1: /*top right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[F1];
                 case 2: /*bottom left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[B3];
                 case 3: /*bottom right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[F3];
                 case 4: /*middle center*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2);
-                    break;
+                    return matrixPoints[D2];
                 default:
                     throw new InvalidOperationException();
             }
-            return position;
         }
 
         /// <summary>
@@ -208,40 +273,26 @@ namespace TestPlatform.Controllers
         /// <param name="stimulusSize"> size of the stimulus that will be shown to user</param>
         /// <param name="pointPosition">poistion of point that will be generated, must be between 0 and 5</param>
         /// </summary>
-        public static Point sixPointsPosition(Size stimulusSize, Size clientSize, int pointPosition)
+        public Point sixPointsPosition(int pointPosition)
         {
-            Point position = new Point();
             float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
             switch (pointPosition)
             {
                 case 0: /*top left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[B1];
                 case 1: /*top right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[F1];
                 case 2: /*bottom left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[B3];
                 case 3: /*bottom right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[F3];
                 case 4: /*top center*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[D1];
                 case 5: /*bottom center*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[D3];
                 default:
                     throw new InvalidOperationException();
             }
-            return position;
         }
 
         /// <summary>
@@ -249,44 +300,28 @@ namespace TestPlatform.Controllers
         /// <param name="stimulusSize"> size of the stimulus that will be shown to user</param>
         /// <param name="pointPosition">poistion of point that will be generated, must be between 0 and 6</param>
         /// </summary>
-        public static Point sevenPointsPosition(Size stimulusSize, Size clientSize, int pointPosition)
+        public Point sevenPointsPosition(int pointPosition)
         {
-            Point position = new Point();
             float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
             switch (pointPosition)
             {
                 case 0: /*top left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[B1];
                 case 1: /*top right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[F1];
                 case 2: /*bottom left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[B3];
                 case 3: /*bottom right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[F3];
                 case 4: /*middle left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2);
-                    break;
+                    return matrixPoints[B2];
                 case 5: /*middle right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2);
-                    break;
+                    return matrixPoints[F2];
                 case 6:/*middle center*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2);
-                    break;
+                    return matrixPoints[D2];
                 default:
                     throw new InvalidOperationException();
             }
-            return position;
         }
 
         /// <summary>
@@ -294,48 +329,30 @@ namespace TestPlatform.Controllers
         /// <param name="stimulusSize"> size of the stimulus that will be shown to user</param>
         /// <param name="pointPosition">poistion of point that will be generated, must be between 0 and 7</param>
         /// </summary>
-        public static Point eightPointsPosition(Size stimulusSize, Size clientSize, int pointPosition)
+        public Point eightPointsPosition(int pointPosition)
         {
-            Point position = new Point();
             float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
             switch (pointPosition)
             {
                 case 0: /*top left left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[A1];
                 case 1: /*top left right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[C1];
                 case 2: /*top right left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[E1];
                 case 3: /*top right right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[G1];
                 case 4: /*bottom left left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[A3];
                 case 5: /*bottom left right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[C3];
                 case 6: /*bottom right left*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[E3];
                 case 7: /*bottom right right*/
-                    position.X = (int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
-                    position.Y = (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
+                    return matrixPoints[G3];
                 default:
                     throw new InvalidOperationException();
             }
-            return position;
         }
 
         public void setStimulusSize(Size stimuluSize)
@@ -343,11 +360,11 @@ namespace TestPlatform.Controllers
             this.stimuluSize = stimuluSize;
         }
 
-        public Point getRandomPosition(Size clientSize, Size stimuluSize)
+        public Point getRandomPosition(Size stimuluSize)
         {
             int number;
             float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
-            Point p = new Point();
+            
             Random rng = new Random(Guid.NewGuid().GetHashCode());
             do
             {
@@ -356,222 +373,60 @@ namespace TestPlatform.Controllers
             randomPositionsUsed.Add(number);
             switch (number)
             {
-                case 0:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
-                case 1:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
-                case 2:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
-                case 3:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
-                case 4:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
-                case 5:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
-                case 6:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
-                case 7:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
-                case 8:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
-                case 9:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
-                case 10:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
-                case 11:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-                    break;
-                case 12:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                    break;
-                case 13:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                    break;
-                case 14:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                    break;
-                case 15:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                    break;
-                case 16:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                    break;
-                case 17:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                    break;
-                case 18:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                    break;
-                case 19:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-                    break;
-                case 20:
-                    p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
-                    p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-                    break;
+                case 0: // A1
+                    return matrixPoints[0];
+                case 1: // B1
+                    return matrixPoints[1];
+                case 2: // C1
+                    return matrixPoints[2];
+                case 3: // D1
+                    return matrixPoints[3];
+                case 4: // E1
+                    return matrixPoints[4];
+                case 5: // F1
+                    return matrixPoints[5];
+                case 6: // G1
+                    return matrixPoints[6];
+                case 7: // A2
+                    return matrixPoints[7];
+                case 8: // B2
+                    return matrixPoints[8];
+                case 9: // C2
+                    return matrixPoints[9];
+                case 10: // D2
+                    return matrixPoints[10];
+                case 11: // E2
+                    return matrixPoints[11];
+                case 12: // F2 
+                    return matrixPoints[12];
+                case 13: // G2
+                    return matrixPoints[13];
+                case 14: // A3
+                    return matrixPoints[14];
+                case 15: // B3
+                    return matrixPoints[15];
+                case 16: // C3  
+                    return matrixPoints[16];
+                case 17: // D3
+                    return matrixPoints[17];
+                case 18: // E3
+                    return matrixPoints[18];
+                case 19: // F3
+                    return matrixPoints[19];
+                case 20: // G3
+                    return matrixPoints[20];
+                default:
+                    throw new ArgumentException();
             }
-            return p;
         }
-        public static string getStimuluPositionMap(Point position, Size clientSize, Size stimuluSize)
+
+        public string getStimulusPositionMap(Point position)
         {
-            float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
-            Point p = new Point();
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-            if (position == p)
+            int index = Array.IndexOf(matrixPoints, position);
+
+            if (index > -1)
             {
-                return "A1";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-            if (position == p)
-            {
-                return "B1";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-            if (position == p)
-            {
-                return "C1";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-            if (position == p)
-            {
-                return "D1";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-            if (position == p)
-            {
-                return "E1";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-            if (position == p)
-            {
-                return "F1";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) - (int)(clientMiddle[Y] / 2);
-            if (position == p)
-            {
-                return "G1";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-            if (position == p)
-            {
-                return "A2";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-            if (position == p)
-            {
-                return "B2";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-            if (position == p)
-            {
-                return "C2";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-            if (position == p)
-            {
-                return "D2";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-            if (position == p)
-            {
-                return "E2";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-            if (position == p)
-            {
-                return "F2";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-            if (position == p)
-            {
-                return "G2";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
-            if (position == p)
-            {
-                return "A3";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-            if (position == p)
-            {
-                return "B3";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-            if (position == p)
-            {
-                return "C3";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-            if (position == p)
-            {
-                return "D3";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-            if (position == p)
-            {
-                return "E3";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2);
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-            if (position == p)
-            {
-                return "F3";
-            }
-            p.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4); ;
-            p.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2) + (int)(clientMiddle[Y] / 2);
-            if (position == p)
-            {
-                return "G3";
+                return matrixPositionsNames[index];
             }
             else
             {

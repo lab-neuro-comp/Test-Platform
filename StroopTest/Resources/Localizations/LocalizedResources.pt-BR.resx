@@ -2433,4 +2433,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="smallImageList" xml:space="preserve">
     <value>A lista é menor do que o necessário para não haver repetições</value>
   </data>
+  <data name="wordListError" xml:space="preserve">
+    <value>escolha uma lista de palavras.</value>
+  </data>
 </root>

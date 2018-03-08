@@ -28,7 +28,7 @@ namespace TestPlatform.Views.MatchingPages
             List<int> randomPositionsUsed;
             public StimuluPosition(int pointsNumber, Size clientSize, Size stimuluSize)
             {
-                if(pointsNumber > 8 || pointsNumber < 1)
+                if (pointsNumber > 8 || pointsNumber < 1)
                 {
                     throw new ArgumentException();
                 }
@@ -40,7 +40,7 @@ namespace TestPlatform.Views.MatchingPages
 
             public Point getPositon()
             {
-                
+
                 Point position = new Point();
                 switch (pointsNumber)
                 {
@@ -77,7 +77,7 @@ namespace TestPlatform.Views.MatchingPages
             }
             private Point centerShapePosition()
             {
-                if(pointCount < pointsNumber)
+                if (pointCount < pointsNumber)
                 {
                     /*middle center*/
                     pointCount++;
@@ -93,9 +93,10 @@ namespace TestPlatform.Views.MatchingPages
             {
                 Point position = new Point();
                 float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
-                switch (pointCount){
+                switch (pointCount)
+                {
                     case 0: /*middle left*/
-                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X]/2);
+                        position.X = (int)clientMiddle[X] - (stimuluSize.Width / 2) - (int)(clientMiddle[X] / 2);
                         position.Y = (int)clientMiddle[Y] - (stimuluSize.Height / 2);
                         pointCount++;
                         break;
@@ -586,7 +587,7 @@ namespace TestPlatform.Views.MatchingPages
             {
                 this.model = model;
                 this.stimulus = stimulus.ToArray();
-                this.colors = colors.ToArray() ;
+                this.colors = colors.ToArray();
             }
 
             public bool match(string stimulus)
@@ -621,7 +622,7 @@ namespace TestPlatform.Views.MatchingPages
             private Image[] stimulus;
             private string modelImageName;
             private string[] stimulusImagesName;
-            public ImagesMatchingGroup(Image modelImage, string modelName, List<Image> stimulus, List<string>  stimulusName)
+            public ImagesMatchingGroup(Image modelImage, string modelName, List<Image> stimulus, List<string> stimulusName)
             {
                 this.modelImage = modelImage;
                 modelImageName = modelName;
@@ -706,6 +707,7 @@ namespace TestPlatform.Views.MatchingPages
         private bool waitingExpositionEnd;
         string currentExpositionType;
         private object modelClicked;
+        private bool showAudioFeedbackOnNextClick = false;
         private long modelReactTime;
         private long attemptIntervalTime;
         public MatchingExposition(string prgName, string participantName, char mark)
@@ -783,7 +785,7 @@ namespace TestPlatform.Views.MatchingPages
                 {
                     wordList = ExpositionController.ShuffleArray(wordList, wordList.Length, 3);
                 }
-                if(this.executingTest.ProgramInUse.getColorListFile() != null)
+                if (this.executingTest.ProgramInUse.getColorListFile() != null)
                 {
                     this.colorList = this.executingTest.ProgramInUse.getColorListFile().ListContent.ToArray();
                     if (this.executingTest.ProgramInUse.ExpositionRandom)
@@ -803,7 +805,7 @@ namespace TestPlatform.Views.MatchingPages
 
         private bool noneImageLeft(bool[] imageCanBeUsed)
         {
-            foreach(bool canBeUsed in imageCanBeUsed)
+            foreach (bool canBeUsed in imageCanBeUsed)
             {
                 if (canBeUsed)
                 {
@@ -877,7 +879,7 @@ namespace TestPlatform.Views.MatchingPages
                 }
                 for (int count = 0; count < colors.Length; count++)
                 {
-                    if(colorCounter >= colorList.Length)
+                    if (colorCounter >= colorList.Length)
                     {
                         colorCounter = 0;
                     }
@@ -898,7 +900,7 @@ namespace TestPlatform.Views.MatchingPages
                 nextGroup.shuffleStimulus();
                 wordsMatchingGroups.Add(nextGroup);
             }
-            
+
         }
 
         private void createImagesMatchingGroups()
@@ -912,13 +914,13 @@ namespace TestPlatform.Views.MatchingPages
             Image[] groupStimulus = new Image[this.executingTest.ProgramInUse.NumExpositions];
             string[] groupStimulusName = new string[this.executingTest.ProgramInUse.NumExpositions];
             bool[] imageCanBeUsed = new bool[imageList.Length];
-            for(int i = 0; i < imageList.Length; i++)
+            for (int i = 0; i < imageList.Length; i++)
             {
                 imageCanBeUsed[i] = true;
             }
-            for(int count = 0; modelCounter < this.executingTest.ProgramInUse.AttemptsNumber; count++)//define the models of the exposition
+            for (int count = 0; modelCounter < this.executingTest.ProgramInUse.AttemptsNumber; count++)//define the models of the exposition
             {
-                if(count >= imageList.Length) // prevent out of range exception
+                if (count >= imageList.Length) // prevent out of range exception
                 {
                     count = 0;
                 }
@@ -1003,23 +1005,24 @@ namespace TestPlatform.Views.MatchingPages
             /*define test initil time and start accumulative stopwatch*/
             executingTest.InitialTime = DateTime.Now;
             accumulativeStopWatch.Start();
-            for(int count = 0; count < this.executingTest.ProgramInUse.AttemptsNumber; count++)
+            for (int count = 0; count < this.executingTest.ProgramInUse.AttemptsNumber * 2; count++)
             {
                 changeBackgroundColor();
                 startExpositionBW();
+                currentExposition = count++;
                 while (expositionBW.IsBusy)
                 {
                     /*do nothing*/
                 }
                 startExpositionBW();
+                currentExposition = count;
                 while (expositionBW.IsBusy)
                 {
                     /*do nothing*/
                 }
-                Thread.Sleep(1);
-                currentExposition = count;
+                Thread.Sleep(100);
             }
-        
+
         }
 
         private void startExpositionBW()
@@ -1058,7 +1061,7 @@ namespace TestPlatform.Views.MatchingPages
             {
                 modelExpositionAccumulative = accumulativeStopWatch.ElapsedMilliseconds;
             }
-            
+
             /*send mark keys*/
             if (!cancelExposition)
             {
@@ -1156,7 +1159,7 @@ namespace TestPlatform.Views.MatchingPages
                     stimuluPosition = new StimuluPosition(this.executingTest.ProgramInUse.NumExpositions, ClientSize, new Size(0, 0));
                 }
                 intervalElapsedTime = waitIntervalTime(this.executingTest.ProgramInUse.RandomIntervalModelStimulus, this.executingTest.ProgramInUse.IntervalTime);
-                if(this.executingTest.ProgramInUse.getImageListFile() != null)
+                if (this.executingTest.ProgramInUse.getImageListFile() != null)
                 {
                     drawStimuluImage();
                 }
@@ -1200,14 +1203,14 @@ namespace TestPlatform.Views.MatchingPages
                 modelButton.Location = position;
             }
             currentStimulus = wordsMatchingGroups.ElementAt(groupCounter);
-            
+
             if (executingTest.ProgramInUse.EndExpositionWithClick)
             {
                 modelButton.Enabled = true;
                 modelButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MatchingExposition_MouseClick);
             }
             buttons.Add(modelButton);
-            expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.AttemptsNumber * 100, buttons);
+            expositionBW.ReportProgress(currentExposition / (executingTest.ProgramInUse.AttemptsNumber * 2) * 100, buttons);
         }
 
         private void drawModelImage()
@@ -1235,7 +1238,7 @@ namespace TestPlatform.Views.MatchingPages
                 modelPictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MatchingExposition_MouseClick);
             }
             image.Add(modelPictureBox);
-            expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.AttemptsNumber * 100, image);
+            expositionBW.ReportProgress(currentExposition / (executingTest.ProgramInUse.AttemptsNumber * 2) * 100, image);
         }
 
         private void drawStimuluWord()
@@ -1276,11 +1279,11 @@ namespace TestPlatform.Views.MatchingPages
             {
                 groupCounter = 0;
             }
-            expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.AttemptsNumber * 100, stimuluControl);
+            expositionBW.ReportProgress(currentExposition / (executingTest.ProgramInUse.AttemptsNumber * 2) * 100, stimuluControl);
         }
 
         private void drawStimuluImage()
-        {            
+        {
             showModel = true;
             stimuluControl.Clear();
 
@@ -1309,11 +1312,11 @@ namespace TestPlatform.Views.MatchingPages
                 stimuluControl.Add(newPicBox);
             }
             groupCounter++;
-            if(groupCounter > this.executingTest.ProgramInUse.AttemptsNumber)
+            if (groupCounter > this.executingTest.ProgramInUse.AttemptsNumber)
             {
                 groupCounter = 0;
             }
-            expositionBW.ReportProgress(currentExposition / executingTest.ProgramInUse.AttemptsNumber * 100, stimuluControl);
+            expositionBW.ReportProgress(currentExposition / (executingTest.ProgramInUse.AttemptsNumber * 2) * 100, stimuluControl);
         }
 
         private int[] randomScreenPosition(Size item)
@@ -1332,15 +1335,19 @@ namespace TestPlatform.Views.MatchingPages
             List<Control> controls = (List<Control>)e.UserState;
             foreach (Control c in controls)
             {
-
-                if (exposing && !expositionBW.CancellationPending && !expositionControllerBW.CancellationPending)
+                if (exposing)
                 {
                     this.Controls.Add(c);
                 }
-                else if (!expositionBW.CancellationPending && !expositionControllerBW.CancellationPending)
+                else
                 {
                     this.Controls.Remove(c);
                 }
+            }
+            if (exposing && !cancelExposition)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(TestPlatform.Properties.Resources.bell);
+                player.Play();
             }
         }
 
@@ -1350,9 +1357,10 @@ namespace TestPlatform.Views.MatchingPages
             if (e.Error == null)
             {
                 /* exposition was a success*/
-                do { 
+                do
+                {
                     result = string.Join("\n", executingTest.Output.ToArray());
-                }while (result == "");
+                } while (result == "");
                 Program.writeOutputFile(outputFile, result);
                 if (Application.OpenForms.OfType<MatchingExposition>().Any())
                 {
@@ -1368,7 +1376,7 @@ namespace TestPlatform.Views.MatchingPages
 
         private void MatchingExposition_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
             {
                 CancelExposition();
             }
@@ -1417,7 +1425,46 @@ namespace TestPlatform.Views.MatchingPages
 
         private void MatchingExposition_MouseClick(object sender, MouseEventArgs e)
         {
+            if (showAudioFeedbackOnNextClick)
+            {
+                if(this.currentExpositionType == "DMTS")
+                {
+                    playDMTSFeedbackSound(sender);
+                }
+                else
+                {
+                    playDNMTSFeedbackSound(sender);
+                }
+            }
             SendUserResponse(sender);
+        }
+
+        private void playDMTSFeedbackSound(object sender)
+        {
+            if (executingTest.ProgramInUse.FeedbackAudioResponse && this.imagesMatchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(((PictureBox)sender).Image) == this.imagesMatchingGroups.ElementAt(groupCounter - 1).getModelImageName())
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(TestPlatform.Properties.Resources.hit);
+                player.Play();
+            }
+            else if (executingTest.ProgramInUse.FeedbackAudioResponse)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(TestPlatform.Properties.Resources.error);
+                player.Play();
+            }
+        }
+
+        private void playDNMTSFeedbackSound(object sender)
+        {
+            if (executingTest.ProgramInUse.FeedbackAudioResponse && this.imagesMatchingGroups.ElementAt(groupCounter - 1).getStimuluImageName(((PictureBox)sender).Image) != this.imagesMatchingGroups.ElementAt(groupCounter - 1).getModelImageName())
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(TestPlatform.Properties.Resources.hit);
+                player.Play();
+            }
+            else if (executingTest.ProgramInUse.FeedbackAudioResponse)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(TestPlatform.Properties.Resources.error);
+                player.Play();
+            }
         }
 
         private void expositionBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -1489,6 +1536,7 @@ namespace TestPlatform.Views.MatchingPages
                             stimulus.ToArray(),
                             StimuluPosition.getStimuluPositionMap(((PictureBox)modelClicked).Location, ClientSize, ((PictureBox)modelClicked).Size)
                             );
+                        showAudioFeedbackOnNextClick = false;
                     }
                     else if (showModel)/* user missed stimulus */
                     {
@@ -1514,24 +1562,27 @@ namespace TestPlatform.Views.MatchingPages
                             stimulus.ToArray(),
                             "-");
                         hitStopWatch.Stop();
+                        showAudioFeedbackOnNextClick = false;
                     }
                     else if (!showModel && (e.Cancelled == true) && !intervalCancelled)  /* user clicked model */
                     {
                         modelReactTime = hitStopWatch.ElapsedMilliseconds;
                         modelFirstposition = StimuluPosition.getStimuluPositionMap(((PictureBox)modelClicked).Location, ClientSize, modelPictureBox.Size);
+                        showAudioFeedbackOnNextClick = true;
                     }
                     else if (!executingTest.ProgramInUse.EndExpositionWithClick) /* model shouldn't be clicked */
                     {
                         modelReactTime = executingTest.ProgramInUse.ModelExpositionTime;
                         modelFirstposition = StimuluPosition.getStimuluPositionMap(modelPictureBox.Location, ClientSize, modelPictureBox.Size);
                         hitStopWatch.Stop();
+                        showAudioFeedbackOnNextClick = true;
                     }
                     else  /*user missed model*/
                     {
                         modelReactTime = 0;
                         modelFirstposition = StimuluPosition.getStimuluPositionMap(modelPictureBox.Location, ClientSize, modelPictureBox.Size);
                         hitStopWatch.Stop();
-                    } 
+                    }
                 }
                 else if (this.executingTest.ProgramInUse.getWordListFile() != null)
                 {
@@ -1565,7 +1616,7 @@ namespace TestPlatform.Views.MatchingPages
                             modelSecondPosition,
                             currentExpositionType,
                             (((Button)modelClicked).Text == this.wordsMatchingGroups.ElementAt(groupCounter - 1).getModel()).ToString(),
-                            this.wordsMatchingGroups.ElementAt(groupCounter - 1).getModel() + "#" + this.wordsMatchingGroups.ElementAt(groupCounter - 1).getColors().ElementAt(this.wordsMatchingGroups.ElementAt(groupCounter-1).getStimulus().IndexOf(this.wordsMatchingGroups.ElementAt(groupCounter - 1).getModel())),
+                            this.wordsMatchingGroups.ElementAt(groupCounter - 1).getModel() + "#" + this.wordsMatchingGroups.ElementAt(groupCounter - 1).getColors().ElementAt(this.wordsMatchingGroups.ElementAt(groupCounter - 1).getStimulus().IndexOf(this.wordsMatchingGroups.ElementAt(groupCounter - 1).getModel())),
                             stimulus.ToArray(),
                             StimuluPosition.getStimuluPositionMap(((Button)modelClicked).Location, ClientSize, ((Button)modelClicked).PreferredSize)
                             );

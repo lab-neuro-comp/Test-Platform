@@ -50,8 +50,9 @@ namespace TestPlatform.Views
             stimulusDistance.Value = editProgram.StimulusDistance;
             stimuluSize.Value = editProgram.StimuluSize;
             fontSizeUpDown.Value = editProgram.FontSize;
+            positionsBox.SelectedIndex = editProgram.NumberPositions - 1;
 
-            if(editProgram.getHasColorList())
+            if (editProgram.getHasColorList())
             {
                 UniqueColorOption.Checked = false;
                 ColorListOption.Checked = true;
@@ -200,23 +201,7 @@ namespace TestPlatform.Views
                 default:
                     throw new Exception(LocRM.GetString("expoType", currentCulture) + editProgram.ExpositionType + LocRM.GetString("invalid", currentCulture));
             }
-            switch (editProgram.NumberPositions)
-            {
-                case 1:
-                    positionsBox.SelectedIndex = 0;
-                    break;
-                case 2:
-                    positionsBox.SelectedIndex = 1;
-                    break;
-                case 4:
-                    positionsBox.SelectedIndex = 2;
-                    break;
-                case 8:
-                    positionsBox.SelectedIndex = 3;
-                    break;
-                default:
-                    throw new Exception(LocRM.GetString("positionInvalid", currentCulture) + "(" + editProgram.NumberPositions + ")");
-            }       
+
 
         }
         

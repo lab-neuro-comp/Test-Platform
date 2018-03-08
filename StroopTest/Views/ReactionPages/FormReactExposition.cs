@@ -21,45 +21,55 @@ namespace TestPlatform.Views
     {
         ReactionTest executingTest = new ReactionTest();
         private string path = Global.reactionTestFilesPath;                           
-        private string outputDataPath = Global.reactionTestFilesPath + Global.resultsFolderName;                
+        private string outputDataPath = Global.reactionTestFilesPath + Global.resultsFolderName;
+
+        private static int X = 0;
+        private static int Y = 1;
+        private static int IMAGE = 0;
+        private static int WORD = 1;
+
         private string hour = DateTime.Now.Hour.ToString("00");
         private string minutes = DateTime.Now.Minute.ToString("00");
         private string seconds = DateTime.Now.Second.ToString("00");
         private string startTime;
         private string outputFile;
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-        private static int X = 0;
-        private static int Y = 1;
-        private static int IMAGE = 0;
-        private static int WORD = 1;
+        
         private int intervalElapsedTime;
         private int intervalShouldBe;
         private long expositionAccumulative;
         private Stopwatch hitStopWatch = new Stopwatch();
         private Stopwatch accumulativeStopWatch = new Stopwatch();
-        private int currentExposition = 0;
         private bool intervalCancelled;
         private bool cancelExposition = false;
+
         private string[] imagesList = null;
         private string[] wordsList = null;
         private string[] audioList = null;
         private string[] colorsList = null;
+
         private int imageCounter = 0;
+        private int wordCounter = 0;
+        private int colorCounter = 0;
         private int audioCounter = 0;
+
         private PictureBox imgPictureBox = new PictureBox();
+        private System.Windows.Forms.Label wordLabel = new System.Windows.Forms.Label();
+
         private bool exposing = false;
         private string[] currentStimuli = {"-", "-" };
         private int currentPosition;
+        private string currentPositionOutput;
         private bool currentBeep = false;
+        private string currentColor = "false";
+        private int currentExposition = 0;
+
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
-        private int wordCounter = 0;
-        private int colorCounter = 0;
+
         private int lastType = 1;
-        private System.Windows.Forms.Label wordLabel = new System.Windows.Forms.Label();
         private Control currentControl = null;
         private SoundPlayer Player = new SoundPlayer();
-        private string currentColor = "false";
 
         public FormReactExposition(string prgName, string participantName, char mark)
         {
@@ -676,20 +686,20 @@ namespace TestPlatform.Views
             {
                 /* user clicked after stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds,
-                                              currentExposition + 1, expositionAccumulative, currentStimuli, position_converter(currentPosition), currentBeep, currentColor);
+                                              currentExposition + 1, expositionAccumulative, currentStimuli, currentPositionOutput, currentBeep, currentColor);
             }
 
             else if ((e.Cancelled == true) && intervalCancelled)
             {
                 /* user clicked before stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, intervalElapsedTime - intervalShouldBe,
-                                              currentExposition + 1, expositionAccumulative, currentStimuli, position_converter(currentPosition), currentBeep, currentColor);
+                                              currentExposition + 1, expositionAccumulative, currentStimuli, currentPositionOutput, currentBeep, currentColor);
             }
             else
             {
                 /* user missed stimulus */
                 executingTest.CurrentResponse = "NA";
-                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentStimuli, position_converter(currentPosition),
+                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentStimuli, currentPositionOutput,
                                                 currentBeep, currentColor);
                 hitStopWatch.Stop();
             }
@@ -735,17 +745,24 @@ namespace TestPlatform.Views
             }
         }
 
-        /* creates a x and y vector according to program stimulus distance randomly, accordingly to program, that can be 1, 2, 4 or 8 positions */
+        /* creates a x and y vector according to program stimulus distance randomly, accordingly to program, that can be between 1 and 8 positions */
         private Point ScreenPosition (Size size){
-            StimulusPosition stimulusPosition = new StimulusPosition(ClientSize, size);
             switch (executingTest.ProgramInUse.NumberPositions)
             {
                 case 1:
                     return centerShapePosition(size);
                 case 2:
                     return randomScreenTwoPositions(size);
+                case 3:
+                    return randomScreenThreePositions(size);
                 case 4:
                     return randomScreenFourPositions(size);
+                case 5:
+                    return randomScreenFivePositions(size);
+                case 6:
+                    return randomScreenSixtPositions(size);
+                case 7:
+                    return randomScreenSevenPositions(size);
                 case 8:
                     return randomScreenEightPositions(size);
                 default:
@@ -753,13 +770,67 @@ namespace TestPlatform.Views
             }
         }
 
+        private Point randomScreenSevenPositions(Size size)
+        {
+            Random random = new Random();
+            int index = random.Next(0, 7);
+            currentPosition = index;
+
+            StimulusPosition stimulusPosition = new StimulusPosition(ClientSize, size);
+            Point newPoint = stimulusPosition.sevenPointsPosition(currentPosition);
+            currentPositionOutput = stimulusPosition.CurrentPosition;
+
+            return newPoint;
+        }
+
+        private Point randomScreenSixtPositions(Size size)
+        {
+            Random random = new Random();
+            int index = random.Next(0, 6);
+            currentPosition = index;
+
+            StimulusPosition stimulusPosition = new StimulusPosition(ClientSize, size);
+            Point newPoint = stimulusPosition.sixPointsPosition(currentPosition);
+            currentPositionOutput = stimulusPosition.CurrentPosition;
+
+            return newPoint;
+        }
+
+        private Point randomScreenFivePositions(Size size)
+        {
+            Random random = new Random();
+            int index = random.Next(0, 5);
+            currentPosition = index;
+
+            StimulusPosition stimulusPosition = new StimulusPosition(ClientSize, size);
+            Point newPoint = stimulusPosition.fivePointsPosition(currentPosition);
+            currentPositionOutput = stimulusPosition.CurrentPosition;
+
+            return newPoint;
+        }
+
+        private Point randomScreenThreePositions(Size size)
+        {
+            Random random = new Random();
+            int index = random.Next(0, 3);
+            currentPosition = index;
+
+            StimulusPosition stimulusPosition = new StimulusPosition(ClientSize, size);
+            Point newPoint = stimulusPosition.threePointsPosition(currentPosition);
+            currentPositionOutput = stimulusPosition.CurrentPosition;
+
+            return newPoint;
+        }
+
         /* creates a x and y vector on center of the screen */
         private Point centerShapePosition(Size size)
         {
             currentPosition = 0;
             StimulusPosition stimulusPosition = new StimulusPosition(ClientSize, size);
+            Point newPoint = stimulusPosition.threePointsPosition(currentPosition);
+            currentPositionOutput = stimulusPosition.CurrentPosition;
 
-            return stimulusPosition.centerPosition(1, currentPosition);
+            return newPoint;
         }
 
         /* creates a x and y vector according to program stimulus distance randomly, from two different positions */
@@ -770,8 +841,10 @@ namespace TestPlatform.Views
             currentPosition = index;
 
             StimulusPosition stimulusPosition = new StimulusPosition(ClientSize, size);
+            Point newPoint = stimulusPosition.twoPointsHorizontalPosition(currentPosition);
+            currentPositionOutput = stimulusPosition.CurrentPosition;
 
-            return stimulusPosition.twoPointsHorizontalPosition(currentPosition);
+            return newPoint;
         }
 
         /* creates a x and y vector according to program stimulus distance randomly, from four different positions */
@@ -782,8 +855,10 @@ namespace TestPlatform.Views
             currentPosition = index;
 
             StimulusPosition stimulusPosition = new StimulusPosition(ClientSize, size);
+            Point newPoint = stimulusPosition.fourPointsPosition(currentPosition);
+            currentPositionOutput = stimulusPosition.CurrentPosition;
 
-            return stimulusPosition.fourPointsPosition(currentPosition);
+            return newPoint;
         }
 
         /* creates a x and y vector according to program stimulus distance randomly, from eight different positions */
@@ -795,8 +870,10 @@ namespace TestPlatform.Views
             currentPosition = index;
 
             StimulusPosition stimulusPosition = new StimulusPosition(ClientSize, size);
+            Point newPoint = stimulusPosition.eightPointsPosition(currentPosition);
+            currentPositionOutput = stimulusPosition.CurrentPosition;
 
-            return stimulusPosition.eightPointsPosition(currentPosition);
+            return newPoint;
         }
         
         // draw on screen filled square stimulus
@@ -950,34 +1027,6 @@ namespace TestPlatform.Views
             {
                 this.Controls.Remove((Control)e.UserState);
             }
-        }
-
-        private string position_converter(int index)
-        {
-            switch (index)
-            {
-                case 0:
-                    return LocRM.GetString("center",currentCulture);
-                case 1:
-                    return LocRM.GetString("right", currentCulture);
-                case 2:
-                    return LocRM.GetString("left", currentCulture);
-                case 3:
-                    return LocRM.GetString("up", currentCulture);
-                case 4:
-                    return LocRM.GetString("down", currentCulture);
-                case 5:
-                    return LocRM.GetString("up_left", currentCulture);
-                case 6:
-                    return LocRM.GetString("up_right", currentCulture);
-                case 7:
-                    return LocRM.GetString("down_left", currentCulture);
-                case 8:
-                    return LocRM.GetString("down_right", currentCulture);
-                default:
-                    return LocRM.GetString("invalid", currentCulture);
-            }
-                
         }
 
         private void FormReactExposition_Paint(object sender, PaintEventArgs e)

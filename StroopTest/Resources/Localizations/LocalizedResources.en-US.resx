@@ -135,9 +135,6 @@
   <data name="beepDuration" xml:space="preserve">
     <value>Beep should last longer than 0 milliseconds.</value>
   </data>
-  <data name="center" xml:space="preserve">
-    <value>center</value>
-  </data>
   <data name="choose" xml:space="preserve">
     <value>choose</value>
   </data>
@@ -172,15 +169,6 @@ gabrielalbino - Gabriel Batista Albino Silva;
 2018; 
 More information: 
 https://github.com/lab-neuro-comp/Test-Platform</value>
-  </data>
-  <data name="down" xml:space="preserve">
-    <value>down</value>
-  </data>
-  <data name="down_left" xml:space="preserve">
-    <value>down_left</value>
-  </data>
-  <data name="down_right" xml:space="preserve">
-    <value>down_right</value>
   </data>
   <data name="editProgram" xml:space="preserve">
     <value>Edit Program: </value>
@@ -284,9 +272,6 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="invalidPath" xml:space="preserve">
     <value>is an invalid path.</value>
   </data>
-  <data name="left" xml:space="preserve">
-    <value>left</value>
-  </data>
   <data name="list" xml:space="preserve">
     <value>The list '</value>
   </data>
@@ -356,9 +341,6 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="reallyExclude" xml:space="preserve">
     <value>Do you really want to delete</value>
   </data>
-  <data name="right" xml:space="preserve">
-    <value>right</value>
-  </data>
   <data name="selectDataFile" xml:space="preserve">
     <value>Select a data file!</value>
   </data>
@@ -391,15 +373,6 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="unavailableExpo" xml:space="preserve">
     <value>Exposition type currently unavailable.</value>
-  </data>
-  <data name="up" xml:space="preserve">
-    <value>up</value>
-  </data>
-  <data name="up_left" xml:space="preserve">
-    <value>up_left</value>
-  </data>
-  <data name="up_right" xml:space="preserve">
-    <value>up_right</value>
   </data>
   <data name="validColor" xml:space="preserve">
     <value>'contains invalid values! \ n The' color list must contain only hexadecimal values (example: # 000000)</value>

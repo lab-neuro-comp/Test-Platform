@@ -19,6 +19,7 @@ namespace TestPlatform.Controllers
         private const int A1 = 0, B1 = 1, C1 = 2, D1 = 3, E1 = 4, F1 = 5, G1 = 6, A2 = 7, B2 = 8, C2 = 9, D2 = 10, E2 = 11, F2 = 12, G2 = 13, A3 = 14, B3 = 15, C3 = 16, D3 = 17, E3 = 18, F3 = 19, G3 = 20;
         List<int> randomPositionsUsed;
         private static string[] matrixPositionsNames = new string[21] {"A1", "B1", "C1", "D1", "E1", "F1", "G1", "A2", "B2", "C2", "D2", "E2", "F2", "G2", "A3", "B3", "C3", "D3", "E3", "F3", "G3" };
+        private string currentPosition = "-";
 
         public int PointsNumber
         {
@@ -40,7 +41,20 @@ namespace TestPlatform.Controllers
 
             }
         }
-        
+
+        public string CurrentPosition
+        {
+            get
+            {
+                return currentPosition;
+            }
+
+            set
+            {
+                currentPosition = value;
+            }
+        }
+
         public StimulusPosition(Size clientSize, int pointNumber)
         {
             this.clientSize = clientSize;
@@ -64,86 +78,107 @@ namespace TestPlatform.Controllers
             switch (point)
             {
                 case A1:
+                    currentPosition = matrixPositionsNames[A1];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
                        (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2));
 
                 case B1:
+                    currentPosition = matrixPositionsNames[B1];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2),
                       (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2));
 
                 case C1:
+                    currentPosition = matrixPositionsNames[C1];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
                   (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2));
 
                 case D1:
+                    currentPosition = matrixPositionsNames[D1];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2),
                    (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2));
 
                 case E1:
+                    currentPosition = matrixPositionsNames[E1];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
                    (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2));
 
                 case F1:
+                    currentPosition = matrixPositionsNames[F1];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2),
                    (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2));
 
                 case G1:
+                    currentPosition = matrixPositionsNames[G1];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
                    (int)clientMiddle[Y] - (stimulusSize.Height / 2) - (int)(clientMiddle[Y] / 2));
 
                 case A2:
+                    currentPosition = matrixPositionsNames[A2];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
                    (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
                 case B2:
+                    currentPosition = matrixPositionsNames[B2];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2),
                (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
                 case C2:
+                    currentPosition = matrixPositionsNames[C2];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
                    (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
                 case D2:
+                    currentPosition = matrixPositionsNames[D2];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2),
                (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
                 case E2:
+                    currentPosition = matrixPositionsNames[E2];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
                    (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
                 case F2:
+                    currentPosition = matrixPositionsNames[F2];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2),
                    (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
                 case G2:
+                    currentPosition = matrixPositionsNames[G2];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
                    (int)clientMiddle[Y] - (stimulusSize.Height / 2));
 
                 case A3:
+                    currentPosition = matrixPositionsNames[A3];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
                    (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2));
 
                 case B3:
+                    currentPosition = matrixPositionsNames[B3];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2),
                    (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2));
 
                 case C3:
+                    currentPosition = matrixPositionsNames[C3];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) - (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
                    (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2));
 
                 case D3:
+                    currentPosition = matrixPositionsNames[D3];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2),
                    (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2));
 
                 case E3:
+                    currentPosition = matrixPositionsNames[E3];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) - (int)(clientMiddle[X] / 4),
                     (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2));
 
                 case F3:
+                    currentPosition = matrixPositionsNames[F3];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2),
                     (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2));
 
                 case G3:
+                    currentPosition = matrixPositionsNames[G3];
                     return new Point((int)clientMiddle[X] - (stimulusSize.Width / 2) + (int)(clientMiddle[X] / 2) + (int)(clientMiddle[X] / 4),
                     (int)clientMiddle[Y] - (stimulusSize.Height / 2) + (int)(clientMiddle[Y] / 2));
 

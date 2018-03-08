@@ -585,7 +585,11 @@
             resources.GetString("positionsBox.Items"),
             resources.GetString("positionsBox.Items1"),
             resources.GetString("positionsBox.Items2"),
-            resources.GetString("positionsBox.Items3")});
+            resources.GetString("positionsBox.Items3"),
+            resources.GetString("positionsBox.Items4"),
+            resources.GetString("positionsBox.Items5"),
+            resources.GetString("positionsBox.Items6"),
+            resources.GetString("positionsBox.Items7")});
             resources.ApplyResources(this.positionsBox, "positionsBox");
             this.positionsBox.Name = "positionsBox";
             this.positionsBox.Tag = "";

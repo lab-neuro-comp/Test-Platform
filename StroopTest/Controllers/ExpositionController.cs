@@ -162,7 +162,7 @@
             return newPictureBox;
         }
 
-        public static Label InitializeWordLabel(int size,string stimulus, string color, int[] position)
+        public static Label InitializeWordLabel(int size,string stimulus, string color, Point position)
         {
             // configuring label that have word stimulus dimensions, color and position
             Label wordLabel = new Label();
@@ -172,7 +172,7 @@
             wordLabel.Visible = true;
             wordLabel.ForeColor = ColorTranslator.FromHtml(color);
             wordLabel.Enabled = true;
-            wordLabel.Location = new Point(position[X], position[Y]);
+            wordLabel.Location = position;
             return wordLabel;
         }
 

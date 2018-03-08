@@ -6,6 +6,9 @@ namespace TestPlatform.Controllers
 {
     /// <summary>  
     ///  This class manipulates a eight position matrix to show stimulus arround users screen, and also generates random positions
+    ///  In x axis there are 7 possible positions from A to G
+    ///  In y axis there are 3 possible positions from 1 to 3
+    ///  An example of a point is D2 (center of the screen)
     /// </summary> 
     public class StimulusPosition
     {
@@ -43,6 +46,12 @@ namespace TestPlatform.Controllers
             this.clientSize = clientSize;
             PointsNumber = pointNumber;
             randomPositionsUsed = new List<int>();
+        }
+
+        public StimulusPosition(Size clientSize, Size stimulusSize)
+        {
+            this.clientSize = clientSize;
+            this.stimulusSize = stimulusSize;
         }
 
         /// <summary>  

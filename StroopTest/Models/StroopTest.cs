@@ -95,19 +95,19 @@ namespace TestPlatform.Models
             }
         }
 
-        public void writeLineOutputResult(StroopProgram program, string nameStimulus, string color, int counter,
-                                   List<string> output, float elapsedTime, string expoType, string audioName)
+        public void writeLineOutputResult(string nameStimulus, string color, int counter,
+                                   List<string> output, float elapsedTime, string audioName)
         {
             // programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipoEstimulo\tlegenda\tposicaoLegenda\testimulo\tcor
-            var text = program.ProgramName + "\t" +
+            var text = programInUse.ProgramName + "\t" +
                        participantName + "\t" +
                        InitialDate.Day + "/" + InitialDate.Month + "/" + InitialDate.Year + "\t" +
                        DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second + ":" + DateTime.Now.Millisecond + "\t" +
                        elapsedTime.ToString() + "\t" +
                        counter + "\t" +
-                       expoType + "\t" +
-                       program.SubtitleShow.ToString().ToLower() + "\t" +
-                       program.SubtitlePlace + "\t" +
+                       programInUse.ExpositionType + "\t" +
+                       programInUse.SubtitleShow.ToString().ToLower() + "\t" +
+                       programInUse.SubtitlePlace + "\t" +
                        nameStimulus + "\t" +
                        color + "\t" +
                        audioName;

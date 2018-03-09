@@ -135,9 +135,6 @@
   <data name="beepDuration" xml:space="preserve">
     <value>O beep deve durar mais do que 0 milissegundos</value>
   </data>
-  <data name="center" xml:space="preserve">
-    <value>centro</value>
-  </data>
   <data name="choose" xml:space="preserve">
     <value>escolher</value>
   </data>
@@ -172,15 +169,6 @@ gabrielalbino - Gabriel Batista Albino Silva;
 2018; 
 Mais informações: 
 https://github.com/lab-neuro-comp/Test-Platform</value>
-  </data>
-  <data name="down" xml:space="preserve">
-    <value>baixo</value>
-  </data>
-  <data name="down_left" xml:space="preserve">
-    <value>baixo_esquerda</value>
-  </data>
-  <data name="down_right" xml:space="preserve">
-    <value>baixo_direita</value>
   </data>
   <data name="editProgram" xml:space="preserve">
     <value>Editar Programa: </value>
@@ -284,9 +272,6 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="invalidPath" xml:space="preserve">
     <value>é um caminho inválido!</value>
   </data>
-  <data name="left" xml:space="preserve">
-    <value>esquerda</value>
-  </data>
   <data name="list" xml:space="preserve">
     <value>A lista '</value>
   </data>
@@ -356,9 +341,6 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="reallyExclude" xml:space="preserve">
     <value>Deseja realmente excluir </value>
   </data>
-  <data name="right" xml:space="preserve">
-    <value>direita</value>
-  </data>
   <data name="selectDataFile" xml:space="preserve">
     <value>Selecione um arquivo de dados!</value>
   </data>
@@ -391,15 +373,6 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="unavailableExpo" xml:space="preserve">
     <value>Tipo de exposição ainda não está disponível.</value>
-  </data>
-  <data name="up" xml:space="preserve">
-    <value>cima</value>
-  </data>
-  <data name="up_left" xml:space="preserve">
-    <value>cima_esquerda</value>
-  </data>
-  <data name="up_right" xml:space="preserve">
-    <value>cima_direita</value>
   </data>
   <data name="validColor" xml:space="preserve">
     <value>' contém valores inválidos!\n A lista de "cores deve conter apenas valores hexadecimais (ex: #000000)</value>

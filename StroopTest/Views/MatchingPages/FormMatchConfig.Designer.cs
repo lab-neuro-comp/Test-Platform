@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMatchConfig));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.impossibleUseListWarnLabel = new System.Windows.Forms.Label();
-            this.smallImageListLabel = new System.Windows.Forms.Label();
             this.othersGroupBox = new System.Windows.Forms.GroupBox();
             this.colorGroupBox = new System.Windows.Forms.GroupBox();
             this.wordSingleColor = new System.Windows.Forms.Label();
@@ -114,8 +112,6 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.impossibleUseListWarnLabel);
-            this.panel1.Controls.Add(this.smallImageListLabel);
             this.panel1.Controls.Add(this.othersGroupBox);
             this.panel1.Controls.Add(this.colorGroupBox);
             this.panel1.Controls.Add(this.timeGroupBox);
@@ -128,18 +124,6 @@
             this.panel1.Controls.Add(this.instructionsLabel);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            // 
-            // impossibleUseListWarnLabel
-            // 
-            resources.ApplyResources(this.impossibleUseListWarnLabel, "impossibleUseListWarnLabel");
-            this.impossibleUseListWarnLabel.ForeColor = System.Drawing.Color.Red;
-            this.impossibleUseListWarnLabel.Name = "impossibleUseListWarnLabel";
-            // 
-            // smallImageListLabel
-            // 
-            resources.ApplyResources(this.smallImageListLabel, "smallImageListLabel");
-            this.smallImageListLabel.ForeColor = System.Drawing.Color.Red;
-            this.smallImageListLabel.Name = "smallImageListLabel";
             // 
             // othersGroupBox
             // 
@@ -421,6 +405,7 @@
             resources.ApplyResources(this.openImgListButton, "openImgListButton");
             this.openImgListButton.Name = "openImgListButton";
             this.openImgListButton.UseVisualStyleBackColor = true;
+            this.openImgListButton.TextChanged += new System.EventHandler(this.openImgListButton_TextChanged);
             this.openImgListButton.Click += new System.EventHandler(this.openImagesList_Click);
             this.openImgListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openImgListButton_Validating);
             this.openImgListButton.Validated += new System.EventHandler(this.openImgListButton_Validated);
@@ -440,6 +425,7 @@
             resources.ApplyResources(this.openWordListButton, "openWordListButton");
             this.openWordListButton.Name = "openWordListButton";
             this.openWordListButton.UseVisualStyleBackColor = false;
+            this.openWordListButton.TextChanged += new System.EventHandler(this.openWordListButton_TextChanged);
             this.openWordListButton.Click += new System.EventHandler(this.openWordsList_Click);
             this.openWordListButton.Validating += new System.ComponentModel.CancelEventHandler(this.openWordListButton_Validating);
             this.openWordListButton.Validated += new System.EventHandler(this.openWordListButton_Validated);
@@ -581,7 +567,7 @@
             0,
             0,
             0});
-            this.numExpo.ValueChanged += new System.EventHandler(this.numExpo_ValueChanged);
+            this.numExpo.ValueChanged += new System.EventHandler(this.attemptAndNumExpo_ValueChanged);
             // 
             // expositionSize
             // 
@@ -627,7 +613,7 @@
             0,
             0,
             0});
-            this.attemptNumber.ValueChanged += new System.EventHandler(this.attemptNumber_ValueChanged);
+            this.attemptNumber.ValueChanged += new System.EventHandler(this.attemptAndNumExpo_ValueChanged);
             // 
             // programName
             // 
@@ -784,9 +770,7 @@
         private System.Windows.Forms.CheckBox randomAttemptTime;
         private System.Windows.Forms.GroupBox othersGroupBox;
         private System.Windows.Forms.CheckBox closeExpoAWithClick;
-        private System.Windows.Forms.Label smallImageListLabel;
         private System.Windows.Forms.CheckBox randomModelStimulusTime;
-        private System.Windows.Forms.Label impossibleUseListWarnLabel;
         private System.Windows.Forms.CheckBox randomModelPosition;
         private System.Windows.Forms.Label randomPositionLabel;
         private System.Windows.Forms.ComboBox stimuluType;

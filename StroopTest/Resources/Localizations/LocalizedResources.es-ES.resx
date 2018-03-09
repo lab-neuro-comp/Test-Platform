@@ -336,4 +336,10 @@ https://github.com/lab-neuro-comp/Test-Platform
   <data name="instructionsI" xml:space="preserve">
     <value>Instruciones presentadas al inicio del programa - sera presentada una pantalla para cada  línea escrita abajo</value>
   </data>
+  <data name="impossibleUseListWarn" xml:space="preserve">
+    <value>La lista es menor que el número de estímulos. Reducir el número de estímulos o elegir una lista más grande</value>
+  </data>
+  <data name="smallImageList" xml:space="preserve">
+    <value>La lista es menor que lo necesario. Repeticiones de imágenes pode ocorrer</value>
+  </data>
 </root>

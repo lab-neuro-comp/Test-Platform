@@ -559,6 +559,7 @@ namespace TestPlatform
         {
             AutoValidate = AutoValidate.Disable;
             this.Parent.Controls.Remove(this);
+            ListController.recoverEditingProgram(LocRM.GetString("open", currentCulture));
         }
     }
 }

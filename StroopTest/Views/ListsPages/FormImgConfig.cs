@@ -236,6 +236,7 @@ namespace TestPlatform
             {
                 DGVManipulation.CloseFormListNotEmpty(dgv);
                 this.Parent.Controls.Remove(this);
+                ListController.recoverEditingProgram(LocRM.GetString("open", currentCulture));
             }
             catch (Exception ex)
             {

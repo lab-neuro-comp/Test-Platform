@@ -225,12 +225,6 @@
   <data name="imageLabel.Text" xml:space="preserve">
     <value>Imágenes:</value>
   </data>
-  <data name="smallImageListLabel.Text" xml:space="preserve">
-    <value>La lista de imágenes es menor que lo necesario. Repeticiones de imágenes pode ocorrer</value>
-  </data>
-  <data name="impossibleUseListWarnLabel.Text" xml:space="preserve">
-    <value>La lista de imágenes es menor que el número de estímulos. Reducir el número de estímulos o elegir una lista más grande</value>
-  </data>
   <data name="randomModelStimulusTime.Text" xml:space="preserve">
     <value>Atraso entre modelo y estímulo variável</value>
   </data>

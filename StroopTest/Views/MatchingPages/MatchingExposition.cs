@@ -695,6 +695,7 @@ namespace TestPlatform.Views.MatchingPages
                 newButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
                 newButton.AutoSize = true;
                 newButton.Text = word;
+
                 newButton.ForeColor = ColorTranslator.FromHtml(wordsMatchingGroups.ElementAt(groupCounter).getColors().ElementAt(count));
                 if (this.executingTest.ProgramInUse.RandomStimulusPosition)
                 {

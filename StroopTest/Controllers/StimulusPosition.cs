@@ -483,6 +483,8 @@ namespace TestPlatform.Controllers
         public string getStimulusPositionMap(Point position, Size stimulusSize)
         {
             int index = -1;
+            this.stimulusSize = stimulusSize;
+
             for (int i = 0; i <= G3; i++)
             {
                 if (position == generatePoint(i))

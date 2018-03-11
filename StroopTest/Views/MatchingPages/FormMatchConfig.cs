@@ -123,56 +123,43 @@ namespace TestPlatform.Views.MatchingPages
             {
                 instructionsBox.Text = "";
             }
-
-            switch (editProgram.getExpositionType())
+            switch (stimuluType.SelectedIndex)
             {
-                case "DMTS":
-                    expositionType.SelectedIndex = 0;
+                case 1:
+                    StrList imagesListFile = new StrList(openImgListButton.Text, 0);
+                    if (imagesListFile.ListContent.Count < numExpo.Value)
+                    {
+                        errorProvider1.SetError(openImgListButton, LocRM.GetString("impossibleUseListWarn", currentCulture));
+                        saveButton.Enabled = false;
+                    }
+                    else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                    {
+                        errorProvider1.SetError(openImgListButton, LocRM.GetString("smallImageList", currentCulture));
+                        saveButton.Enabled = true;
+                    }
+                    else
+                    {
+                        saveButton.Enabled = true;
+                    }
                     break;
-                case "DNMTS":
-                    expositionType.SelectedIndex = 1;
+                case 2:
+                case 3:
+                    StrList wordListFile = new StrList(openWordListButton.Text, 2);
+                    if (wordListFile.ListContent.Count < numExpo.Value)
+                    {
+                        errorProvider1.SetError(openWordListButton, LocRM.GetString("impossibleUseListWarn", currentCulture));
+                        saveButton.Enabled = false;
+                    }
+                    else if (wordListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                    {
+                        errorProvider1.SetError(openWordListButton, LocRM.GetString("smallImageList", currentCulture));
+                        saveButton.Enabled = true;
+                    }
+                    else
+                    {
+                        saveButton.Enabled = true;
+                    }
                     break;
-                case "DMTS/DNMTS":
-                    expositionType.SelectedIndex = 2;
-                    break;
-                default:
-                    throw new Exception(LocRM.GetString("expoType", currentCulture) + editProgram.getExpositionType() + LocRM.GetString("invalid", currentCulture));
-            }
-            if (stimuluType.SelectedIndex == 0)
-            {
-                StrList imagesListFile = new StrList(openImgListButton.Text, 0);
-                if (imagesListFile.ListContent.Count < numExpo.Value)
-                {
-                    errorProvider1.SetError(openImgListButton, LocRM.GetString("impossibleUseListWarn", currentCulture));
-                    saveButton.Enabled = false;
-                }
-                else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
-                {
-                    errorProvider1.SetError(openImgListButton, LocRM.GetString("smallImageList", currentCulture));
-                    saveButton.Enabled = true;
-                }
-                else
-                {
-                    saveButton.Enabled = true;
-                }
-            }
-            if (stimuluType.SelectedIndex == 1 || stimuluType.SelectedIndex == 2)
-            {
-                StrList wordListFile = new StrList(openWordListButton.Text, 2);
-                if (wordListFile.ListContent.Count < numExpo.Value)
-                {
-                    errorProvider1.SetError(openWordListButton, LocRM.GetString("impossibleUseListWarn", currentCulture));
-                    saveButton.Enabled = false;
-                }
-                else if (wordListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
-                {
-                    errorProvider1.SetError(openWordListButton, LocRM.GetString("smallImageList", currentCulture));
-                    saveButton.Enabled = true;
-                }
-                else
-                {
-                    saveButton.Enabled = true;
-                }
             }
         }
 

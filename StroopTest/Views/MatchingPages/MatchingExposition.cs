@@ -22,12 +22,27 @@ namespace TestPlatform.Views.MatchingPages
 
         public class MatchingGroup
         {
-            private string model;
+            private string model, modelColor;
             private string[] stimulus;
-            public MatchingGroup(string model, List<string> stimulus)
+            private string[] colors;
+            public MatchingGroup(string model, List<string> stimulus, List<string> colors, string modelColor)
             {
+                if(colors.Count > 0)
+                {
+                    this.colors = colors.ToArray();
+                }
+                else
+                {
+                    this.colors = null;
+                }
+                this.modelColor = modelColor;
                 this.model = model;
                 this.stimulus = stimulus.ToArray();
+            }
+
+            public string getModelColor()
+            {
+                return modelColor;
             }
 
             public bool match(string stimulus)
@@ -51,16 +66,21 @@ namespace TestPlatform.Views.MatchingPages
                 return stimulus;
             }
 
+            public string[] getColors()
+            {
+                return colors;
+            }
+
             public string getControlName(Control control, int stimuluType)
             {
                 int count;
                 for (count = 0; count < stimulus.Length; count++)
                 {
-                    if (stimuluType == 0 && Image.FromFile(stimulus[count]).Equals(((PictureBox)control).Image))
+                    if (stimuluType == 0 && stimulus[count].Equals(((PictureBox)control).Tag))
                     {
                         break;
                     }
-                    else if(stimulus[count].Equals(((Button)control).Text))
+                    else if(stimulus[count].Equals(((Control)control).Text))
                     {
                         break;
                     }
@@ -236,11 +256,14 @@ namespace TestPlatform.Views.MatchingPages
             MatchingGroup nextGroup;
             string[] currentList = null;
             currentList = getCurrentList();
-
+            List<string> colors = new List<string>();
             bool willHaveRepetition = (currentList.Length < this.executingTest.ProgramInUse.NumExpositions * this.executingTest.ProgramInUse.AttemptsNumber);
-            int modelCounter = 0, stimuluCounter = 0, startingIndex = 0;
+            int modelCounter = 0, stimuluCounter = 0, colorsCount =0;
+            int[] startingIndex = new int[2];
             Random rng = new Random(int.Parse(this.seconds));
             string[] groupModelsName = new string[this.executingTest.ProgramInUse.AttemptsNumber];
+            string[] groupModelsColors = new string[this.executingTest.ProgramInUse.AttemptsNumber];
+            string[] groupStimulusColors = new string[this.executingTest.ProgramInUse.NumExpositions];
             string[] groupStimulusName = new string[this.executingTest.ProgramInUse.NumExpositions];
             bool[] itemCanBeUsed = new bool[currentList.Length];
             for (int i = 0; i < currentList.Length; i++)
@@ -260,25 +283,32 @@ namespace TestPlatform.Views.MatchingPages
                     groupModelsName[modelCounter] = currentList[count];
 
                 }
-                else if(stimuluType == 1)
+                else if(stimuluType == 1 || stimuluType == 2)
                 {
                     groupModelsName[modelCounter] = currentList[count];
-                }
-                else if (stimuluType == 2)
-                {
-                    /*missing implementation*/
+                    if(colorsCount >= colorList.Length)
+                    {
+                        colorsCount = 0;
+
+                    }
+                    groupModelsColors[modelCounter] = colorList[colorsCount++];
                 }
                 modelCounter++;
-                startingIndex = count;
+                startingIndex[0] = count;
+                startingIndex[1] = colorsCount;
             }
+            
             for (int group = 0; group < groupModelsName.Length; group++)
             {
                 for (int count = 1; count < this.executingTest.ProgramInUse.NumExpositions; count++)
                 {
                     groupStimulusName[count] = null;
+                    groupStimulusColors[count] = null;
                 }
-                stimuluCounter = startingIndex;
+                stimuluCounter = startingIndex[0];
+                colorsCount = startingIndex[1];
                 groupStimulusName[0] = groupModelsName[group];
+                groupStimulusColors[0] = groupModelsColors[group];
                 for (int count = 1; count < this.executingTest.ProgramInUse.NumExpositions; count++)
                 {
                     if (stimuluCounter >= currentList.Length)
@@ -317,17 +347,19 @@ namespace TestPlatform.Views.MatchingPages
                         groupStimulusName[count] = currentList[stimuluCounter];
 
                     }
-                    else if (stimuluType == 1)
+                    else if (stimuluType == 1 || stimuluType == 2)
                     {
                         groupStimulusName[count] = currentList[stimuluCounter];
+                        groupStimulusColors[count] = colorList[colorsCount];
                     }
-                    else if (stimuluType == 2)
-                    {
-                        /*missing implementation*/
-                    }
+                    colorsCount++;
                     stimuluCounter++;
+                    if (colorsCount >= colorList.Length)
+                    {
+                        colorsCount = 0;
+                    }
                 }
-                nextGroup = new MatchingGroup(groupModelsName[group], groupStimulusName.ToList());
+                nextGroup = new MatchingGroup(groupModelsName[group], groupStimulusName.ToList(), groupStimulusColors.ToList(), groupModelsColors[group]);
                 if (this.executingTest.ProgramInUse.ExpositionRandom)
                 {
                     nextGroup.shuffleStimulus();
@@ -528,26 +560,29 @@ namespace TestPlatform.Views.MatchingPages
 
         private void drawModel()
         {
-            List<Control> buttons = new List<Control>();
+            Size size;
+            List<Control> controls = new List<Control>();
             showModel = false;
             if (stimuluType == 1 || stimuluType == 2)
             {
                 modelControl = ExpositionController.InitializeButton(matchingGroups.ElementAt(groupCounter).getModelName(), this.executingTest.ProgramInUse.EndExpositionWithClick);
                 modelControl.Font = new Font("Arial", this.executingTest.ProgramInUse.StimuluSize, FontStyle.Bold);
-                /*define backcolor somehow*/
+                modelControl.ForeColor = ColorTranslator.FromHtml(matchingGroups.ElementAt(groupCounter).getModelColor());
+                size = modelControl.PreferredSize;
             }
             else
             {
                 modelControl = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, Image.FromFile(matchingGroups.ElementAt(groupCounter).getModelName()));
+                size = modelControl.Size;
             }
            
             if (this.executingTest.ProgramInUse.RandomModelPosition)
             {
-                modelControl.Location = stimuluPosition.getRandomPosition(modelControl.PreferredSize);
+                modelControl.Location = stimuluPosition.getRandomPosition(size);
             }
             else
             {
-                Point position = stimuluPosition.getPositon(modelControl.PreferredSize);
+                Point position = stimuluPosition.getPositon(size);
                 modelControl.Location = position;
             }
             currentStimulus = matchingGroups.ElementAt(groupCounter);
@@ -556,14 +591,15 @@ namespace TestPlatform.Views.MatchingPages
             {
                 modelControl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MatchingExposition_MouseClick);
             }
-            buttons.Add(modelControl);
-            expositionBW.ReportProgress(currentExposition / (executingTest.ProgramInUse.AttemptsNumber * 2) * 100, buttons);
+            controls.Add(modelControl);
+            expositionBW.ReportProgress(currentExposition / (executingTest.ProgramInUse.AttemptsNumber * 2) * 100, controls);
         }
 
         private void drawStimulu()
         {
-            showModel = true;
+            int count = 0;
             Size size;
+            showModel = true;
             stimuluControls.Clear();
             foreach (string element in matchingGroups.ElementAt(groupCounter).getStimulusNames())
             {
@@ -571,14 +607,16 @@ namespace TestPlatform.Views.MatchingPages
                 {
                     newStimulu = ExpositionController.InitializeButton(element, this.executingTest.ProgramInUse.EndExpositionWithClick);
                     newStimulu.Font = new Font("Arial", this.executingTest.ProgramInUse.StimuluSize, FontStyle.Bold);
-                    size = newStimulu.PreferredSize;
-                    /*define backcolor somehow*/
+                    newStimulu.ForeColor = ColorTranslator.FromHtml(matchingGroups.ElementAt(groupCounter).getColors().ElementAt(count));
+                    size = modelControl.PreferredSize;
                 }
                 else
                 {
                     newStimulu = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, Image.FromFile(element));
-                    size = new Size(this.executingTest.ProgramInUse.StimuluSize, this.executingTest.ProgramInUse.StimuluSize);
+                    newStimulu.Tag = element;
+                    size = modelControl.Size;
                 }
+
                 if (this.executingTest.ProgramInUse.RandomStimulusPosition)
                 {
                     newStimulu.Location = stimuluPosition.getRandomPosition(size);
@@ -594,6 +632,7 @@ namespace TestPlatform.Views.MatchingPages
                 currentStimulus = matchingGroups.ElementAt(groupCounter);
                 newStimulu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MatchingExposition_MouseClick);
                 stimuluControls.Add(newStimulu);
+                count++;
             }
             groupCounter++;
             if (groupCounter > this.executingTest.ProgramInUse.AttemptsNumber)
@@ -808,19 +847,19 @@ namespace TestPlatform.Views.MatchingPages
                         throw new ArgumentException();
                     }
                 }
-                if (modelAsStimuluControl != null)
-                {
-                    modelSecondPosition = stimuluPosition.getStimulusPositionMap(modelAsStimuluControl.Location, size);
-                }
                 if (showModel) 
                 {
-                    if (stimuluType == 0)
+                    if (modelAsStimuluControl != null)
                     {
-                        size = ((PictureBox)modelAsStimuluControl).Size;
-                    }
-                    else
-                    {
-                        size = ((Button)modelAsStimuluControl).PreferredSize;
+                        if(this.stimuluType == 0)
+                        {
+                            size = modelAsStimuluControl.Size;
+                        }
+                        else
+                        {
+                            size = modelAsStimuluControl.PreferredSize;
+                        }
+                        modelSecondPosition = stimuluPosition.getStimulusPositionMap(modelAsStimuluControl.Location, size);
                     }
                     List<string> stimulus = this.matchingGroups.ElementAt(groupCounter - 1).getStimulusNames().ToList();
                     stimulus.Remove(this.matchingGroups.ElementAt(groupCounter - 1).getModelName());
@@ -849,7 +888,7 @@ namespace TestPlatform.Views.MatchingPages
                             (this.matchingGroups.ElementAt(groupCounter - 1).getControlName((Control)modelClicked, stimuluType) == this.matchingGroups.ElementAt(groupCounter - 1).getModelName()).ToString(),
                             currentList + "/" + this.matchingGroups.ElementAt(groupCounter - 1).getModelName(),
                             stimulus.ToArray(),
-                            stimuluPosition.getStimulusPositionMap(((Control)modelClicked).Location, ((Control)modelClicked).PreferredSize)
+                            stimuluPosition.getStimulusPositionMap(((Control)modelClicked).Location, size)
                             );
                         showAudioFeedbackOnNextClick = false;
                     }
@@ -889,13 +928,29 @@ namespace TestPlatform.Views.MatchingPages
 
                 else if (!showModel && (e.Cancelled == true) && !intervalCancelled)  /* user clicked model */
                 {
+                    if (this.stimuluType == 0)
+                    {
+                        size = modelControl.Size;
+                    }
+                    else
+                    {
+                        size = modelControl.PreferredSize;
+                    }
                     modelReactTime = hitStopWatch.ElapsedMilliseconds;
-                    modelFirstposition = stimuluPosition.getStimulusPositionMap(((Control)modelClicked).Location, modelControl.PreferredSize);
+                    modelFirstposition = stimuluPosition.getStimulusPositionMap(((Control)modelClicked).Location, size);
                     showAudioFeedbackOnNextClick = true;
                 }
                 else  /*user missed model*/
                 {
-                    modelFirstposition = stimuluPosition.getStimulusPositionMap(modelControl.Location, modelControl.PreferredSize);
+                    if (this.stimuluType == 0)
+                    {
+                        size = modelControl.Size;
+                    }
+                    else
+                    {
+                        size = modelControl.PreferredSize;
+                    }
+                    modelFirstposition = stimuluPosition.getStimulusPositionMap(modelControl.Location, size);
                     if (!executingTest.ProgramInUse.EndExpositionWithClick) /* model shouldn't be clicked */
                     {
                         modelReactTime = executingTest.ProgramInUse.ModelExpositionTime;

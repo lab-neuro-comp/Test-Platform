@@ -571,6 +571,7 @@ namespace TestPlatform.Views.MatchingPages
                 modelControl = ExpositionController.InitializeButton(matchingGroups.ElementAt(groupCounter).getModelName(), this.executingTest.ProgramInUse.EndExpositionWithClick);
                 modelControl.Font = new Font("Arial", this.executingTest.ProgramInUse.StimuluSize, FontStyle.Bold);
                 modelControl.ForeColor = ColorTranslator.FromHtml(matchingGroups.ElementAt(groupCounter).getModelColor());
+
                 size = modelControl.PreferredSize;
             }
             else
@@ -608,9 +609,10 @@ namespace TestPlatform.Views.MatchingPages
             {
                 if (stimuluType == 1 || stimuluType == 2)
                 {
-                    newStimulu = ExpositionController.InitializeButton(element, this.executingTest.ProgramInUse.EndExpositionWithClick);
+                    newStimulu = ExpositionController.InitializeButton(element, true);
                     newStimulu.Font = new Font("Arial", this.executingTest.ProgramInUse.StimuluSize, FontStyle.Bold);
                     newStimulu.ForeColor = ColorTranslator.FromHtml(matchingGroups.ElementAt(groupCounter).getColors().ElementAt(count));
+
                     size = modelControl.PreferredSize;
                 }
                 else
@@ -818,7 +820,7 @@ namespace TestPlatform.Views.MatchingPages
                 if (currentControl != null)
                 {
                     // if current control is enabled it means that just showed a stimulus
-                    if (currentControl[0].Enabled)
+                    if (currentControl[0].Enabled || currentControl[0].Visible)
                     {
                         // signaling to interval background worker that exposing must end and control must be removed from screen
                         exposing = false;

@@ -162,6 +162,16 @@
             return newPictureBox;
         }
 
+        public static Button InitializeButton(string text, bool enabled)
+        {
+            Button newButton = new Button();
+            newButton.AutoSize = true;
+            newButton.BackColor = System.Drawing.SystemColors.ControlLightLight; ;
+            newButton.Text = text;
+            newButton.Enabled = enabled;
+            return newButton;
+        }
+
         public static Label InitializeWordLabel(int size,string stimulus, string color, Point position)
         {
             // configuring label that have word stimulus dimensions, color and position

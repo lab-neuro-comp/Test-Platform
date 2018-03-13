@@ -16,6 +16,7 @@ namespace TestPlatform.Models
         private String listName;
         private String type;
         private static String[] types = { "_image", "_audio", "_words", "_color" };
+        public readonly static int IMAGE = 0, AUDIO = 1, WORD = 2, COLOR = 3; 
 
       public StrList(List<string> list, string name, string type)
       {

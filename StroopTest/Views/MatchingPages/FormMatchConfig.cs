@@ -535,23 +535,27 @@ namespace TestPlatform.Views.MatchingPages
         private void checkNewValue()
         {
             Button button = null;
+            int type = -1;
             if (openImgListButton.Text != LocRM.GetString("open", currentCulture) || openWordListButton.Text != LocRM.GetString("open", currentCulture))
             {
                 if (openImgListButton.Text != LocRM.GetString("open", currentCulture))
                 {
                     button = openImgListButton;
+                    type = StrList.IMAGE;
                 }
                 else
                 {
                     button = openWordListButton;
+                    type = StrList.WORD;
                 }
-                StrList imagesListFile = new StrList(button.Text, 0);
-                if (imagesListFile.ListContent.Count < numExpo.Value)
+
+                StrList listFile = new StrList(button.Text, type);
+                if (listFile.ListContent.Count < numExpo.Value)
                 {
                     errorProvider1.SetError(button, LocRM.GetString("impossibleUseListWarn", currentCulture));
                     saveButton.Enabled = false;
                 }
-                else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                else if (listFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
                 {
                     errorProvider1.SetError(button, LocRM.GetString("smallImageList", currentCulture));
                     saveButton.Enabled = true;

@@ -357,7 +357,7 @@ namespace TestPlatform.Views.MatchingPages
                     }
                     colorsCount++;
                     stimuluCounter++;
-                    if (colorsCount >= colorList.Length)
+                    if (colorList != null && colorsCount >= colorList.Length)
                     {
                         colorsCount = 0;
                     }

@@ -518,6 +518,7 @@ namespace TestPlatform.Views
 
         private void showStimulus()
         {
+            this.CreateGraphics().Clear(ActiveForm.BackColor);
             if (executingTest.ProgramInUse.IsBeeping)
             {
                 MakeBeep();
@@ -961,9 +962,6 @@ namespace TestPlatform.Views
         {
             Graphics g = e.Graphics;
 
-
-            ExpositionController.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
-                this);
             Pen myPen = new Pen(ColorTranslator.FromHtml(colorsList[colorCounter]), 1);
             Point[] trianglePoints = createTrianglePoints();
             g.DrawPolygon(myPen, trianglePoints);
@@ -1027,11 +1025,6 @@ namespace TestPlatform.Views
             {
                 this.Controls.Remove((Control)e.UserState);
             }
-        }
-
-        private void FormReactExposition_Paint(object sender, PaintEventArgs e)
-        {
-            ExpositionController.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor, this);
         }
     }
 }

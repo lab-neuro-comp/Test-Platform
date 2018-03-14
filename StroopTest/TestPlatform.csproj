@@ -133,17 +133,17 @@
     <Compile Include="Controllers\HelpPagesController.cs" />
     <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Controllers\StimulusPosition.cs" />
-    <Compile Include="Models\Audio.cs" />
-    <Compile Include="Models\ExperimentProgram.cs" />
-    <Compile Include="Models\ExperimentTest.cs" />
-    <Compile Include="Models\MatchingProgram.cs" />
-    <Compile Include="Models\MatchingTest.cs" />
-    <Compile Include="Models\Program.cs" />
-    <Compile Include="Models\ReactionProgram.cs" />
-    <Compile Include="Models\ReactionTest.cs" />
-    <Compile Include="Models\StrList.cs" />
-    <Compile Include="Models\StroopTest.cs" />
-    <Compile Include="Models\Validations.cs" />
+    <Compile Include="Models\General\Audio.cs" />
+    <Compile Include="Models\Experiment\ExperimentProgram.cs" />
+    <Compile Include="Models\Experiment\ExperimentTest.cs" />
+    <Compile Include="Models\Tests\Matching\MatchingProgram.cs" />
+    <Compile Include="Models\Tests\Matching\MatchingTest.cs" />
+    <Compile Include="Models\Tests\Program.cs" />
+    <Compile Include="Models\Tests\Reaction\ReactionProgram.cs" />
+    <Compile Include="Models\Tests\Reaction\ReactionTest.cs" />
+    <Compile Include="Models\General\StrList.cs" />
+    <Compile Include="Models\Tests\Stroop\StroopTest.cs" />
+    <Compile Include="Models\General\Validations.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -199,7 +199,7 @@
     <Compile Include="Views\MainForms\FormDefineTest.Designer.cs">
       <DependentUpon>FormDefineTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Global.cs" />
+    <Compile Include="Models\General\Global.cs" />
     <Compile Include="Views\MainForms\HelpPagesUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -358,7 +358,7 @@
     </Compile>
     <Compile Include="MainClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Models\StroopProgram.cs" />
+    <Compile Include="Models\Tests\Stroop\StroopProgram.cs" />
     <EmbeddedResource Include="Resources\Localizations\LocalizedResources.es-ES.resx" />
     <EmbeddedResource Include="Resources\Localizations\LocalizedResources.en-US.resx" />
     <EmbeddedResource Include="Resources\Localizations\LocalizedResources.pt-BR.resx">

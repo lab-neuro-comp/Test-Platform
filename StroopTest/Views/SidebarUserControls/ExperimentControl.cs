@@ -120,7 +120,7 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     if (deleteExperimentButton.Checked)
                     {
-                        FileManagment deleteProgram = new FileManagment(Global.experimentTestFilesPath + Global.programFolderName, Global.experimentTestFilesBackupPath, 'd', "experiment");
+                        FileManagment deleteProgram = new FileManagment(Global.experimentTestFilesPath + Global.programFolderName, Global.experimentTestFilesBackupPath, 'd', LocRM.GetString("experiment", currentCulture));
                         Global.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                         deleteExperimentButton.Checked = false;
                     }
@@ -147,7 +147,7 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     if (recoverExperimentButton.Checked)
                     {
-                        FileManagment recoverProgram = new FileManagment(Global.experimentTestFilesBackupPath, Global.experimentTestFilesPath + Global.programFolderName, 'r', "experiment");
+                        FileManagment recoverProgram = new FileManagment(Global.experimentTestFilesBackupPath, Global.experimentTestFilesPath + Global.programFolderName, 'r', LocRM.GetString("experiment", currentCulture));
                         Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverExperimentButton.Checked = false;
                     }

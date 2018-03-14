@@ -74,7 +74,7 @@ namespace TestPlatform.Views.MainForms
                 {
                     backgroundBrush = blueSolidBrush;
                 }
-                else if (type == "program" && mode == 'd' && isProgramUsed(text))
+                else if (type != LocRM.GetString("experiment", currentCulture) && mode == 'd' && isProgramUsed(text))
                 {
                     backgroundBrush = orangeSolidBush;
                     warningLabel.Visible = true;
@@ -126,7 +126,7 @@ namespace TestPlatform.Views.MainForms
                 }
                 else
                 {
-                    if (type == "program" && mode == 'd' && isProgramUsed(text))
+                    if (type != LocRM.GetString("experiment", currentCulture) && mode == 'd' && isProgramUsed(text))
                     {
                         backgroundBrush = orangeSolidBush;
                     }
@@ -175,7 +175,7 @@ namespace TestPlatform.Views.MainForms
             if (originFilesList.SelectedItem != null)
             {
                 programName = originFilesList.SelectedItem.ToString();
-                if (type == "experiment"  || !isProgramUsed(programName))
+                if (type == LocRM.GetString("experiment", currentCulture) || !isProgramUsed(programName))
                 {
                     originFilesList.Items.Remove(programName);
                     destinationFilesList.Items.Add(programName);
@@ -244,10 +244,19 @@ namespace TestPlatform.Views.MainForms
                 /* do nothing*/
             }
         }
+        
+        private bool filesHasNoDepedency()
+        {
+            if(destinationFilesList.Items.Count > 0)
+            {
+            }
+
+            return true;
+        }
 
         private void sendButton_Click(object sender, EventArgs e)
         {
-            if (destinationFilesList.Items.Count > 0)
+            if (destinationFilesList.Items.Count > 0 && filesHasNoDepedency())
             {
                 DialogResult dialogResult = MessageBox.Show(LocRM.GetString("deleteFiles", currentCulture), LocRM.GetString("delete", currentCulture), MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)

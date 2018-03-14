@@ -21,7 +21,8 @@ namespace TestPlatform.Views.MainForms
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         // file paths used in methods of this class
-        private string listPath = Global.testFilesPath + Global.listFolderName;
+
+    private string listPath = Global.testFilesPath + Global.listFolderName;
         private string reactionPath = Global.reactionTestFilesPath + Global.programFolderName;
         private string matchingPath = Global.matchingTestFilesPath + Global.programFolderName;
         private string stroopPath = Global.stroopTestFilesPath + Global.programFolderName;
@@ -328,18 +329,18 @@ namespace TestPlatform.Views.MainForms
                 if (selectedRowType == LocRM.GetString("stroopTest", currentCulture))
                 {
                     StroopProgram newProgram = new StroopProgram();
-                    newProgram.readProgramFile(stroopPath + selectedRowName + ".prg");
+                    newProgram.readProgramFile(importDirectory + "/StroopProgram/" + selectedRowName + ".prg");
                     addLists(newProgram);
 
                 }
                 else if (selectedRowType == LocRM.GetString("reactionTest", currentCulture))
                 {
-                    ReactionProgram newReaction = new ReactionProgram(Global.reactionTestFilesPath + Global.programFolderName + selectedRowName + ".prg");
+                    ReactionProgram newReaction = new ReactionProgram(importDirectory + "/ReactionProgram/" + selectedRowName + ".prg");
                     addLists(newReaction);
                 }
                 else if(selectedRowType == LocRM.GetString("matchingTest", currentCulture))
                 {
-                    MatchingProgram newProgram = new MatchingProgram(Global.matchingTestFilesPath + Global.programFolderName + selectedRowName + ".prg");
+                    MatchingProgram newProgram = new MatchingProgram(importDirectory + "/MatchingProgram/" + selectedRowName + ".prg");
                     addLists(newProgram);
                 }
                 else if (selectedRowType == LocRM.GetString("experiment", currentCulture))

@@ -23,6 +23,7 @@ namespace TestPlatform.Views.MainForms
         // file paths used in methods of this class
         private string listPath = Global.testFilesPath + Global.listFolderName;
         private string reactionPath = Global.reactionTestFilesPath + Global.programFolderName;
+        private string matchingPath = Global.matchingTestFilesPath + Global.programFolderName;
         private string stroopPath = Global.stroopTestFilesPath + Global.programFolderName;
         private string experimentPath = Global.experimentTestFilesPath + Global.programFolderName;
 
@@ -139,6 +140,16 @@ namespace TestPlatform.Views.MainForms
                         addLists(program);
                     }
                 }
+                else if (program.GetType() == typeof(MatchingProgram))
+                {
+                    if (!isAlreadyThere(program.ProgramName, LocRM.GetString("matchingTest", currentCulture)))
+                    {
+                        string[] info = removeItemOrigin(program.ProgramName, LocRM.GetString("matchingTest", currentCulture));
+                        int index = importDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("matchingTest", currentCulture), info[0]);
+                        importDataGridView.Rows[index].DefaultCellStyle.BackColor = Color.FromName(info[1]);
+                        addLists(program);
+                    }
+                }
             }
             importDataGridView.Refresh();
         }
@@ -215,6 +226,7 @@ namespace TestPlatform.Views.MainForms
 
                 addFilesToOriginGrid(importDirectory + "/StroopProgram/", LocRM.GetString("stroopTest", currentCulture), stroopPath);
                 addFilesToOriginGrid(importDirectory + "/ReactionProgram/", LocRM.GetString("reactionTest", currentCulture), reactionPath);
+                addFilesToOriginGrid(importDirectory + "/MatchingProgram/", LocRM.GetString("matchingTest", currentCulture), matchingPath);
                 addFilesToOriginGrid(importDirectory + "/ExperimentProgram/", LocRM.GetString("experiment", currentCulture), experimentPath);
                 addFilesToOriginGrid(importDirectory + "/Lists/", LocRM.GetString("lists", currentCulture), listPath);
             }
@@ -273,6 +285,10 @@ namespace TestPlatform.Views.MainForms
                     {
                         importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", reactionPath);
                     }
+                    else if (row.Cells[1].Value.ToString() == LocRM.GetString("matchingTest", currentCulture))
+                    {
+                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", matchingPath);
+                    }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("stroopTest", currentCulture))
                     {
                         importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", stroopPath);
@@ -320,6 +336,11 @@ namespace TestPlatform.Views.MainForms
                 {
                     ReactionProgram newReaction = new ReactionProgram(Global.reactionTestFilesPath + Global.programFolderName + selectedRowName + ".prg");
                     addLists(newReaction);
+                }
+                else if(selectedRowType == LocRM.GetString("matchingTest", currentCulture))
+                {
+                    MatchingProgram newProgram = new MatchingProgram(Global.matchingTestFilesPath + Global.programFolderName + selectedRowName + ".prg");
+                    addLists(newProgram);
                 }
                 else if (selectedRowType == LocRM.GetString("experiment", currentCulture))
                 {

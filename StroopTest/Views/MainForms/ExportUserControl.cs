@@ -18,7 +18,8 @@ namespace TestPlatform.Views.MainForms
 
         // file paths used in methods of this class
         private string listPath = Global.testFilesPath + Global.listFolderName;
-        private string reactioPath = Global.reactionTestFilesPath + Global.programFolderName;
+        private string reactionPath = Global.reactionTestFilesPath + Global.programFolderName;
+        private string matchingPath = Global.matchingTestFilesPath + Global.programFolderName;
         private string stroopPath = Global.stroopTestFilesPath + Global.programFolderName;
         private string experimentPath = Global.experimentTestFilesPath + Global.programFolderName;
 
@@ -28,8 +29,9 @@ namespace TestPlatform.Views.MainForms
             InitializeComponent();
 
             // initializing  origin table with reaction test, stroop test, experiments, color and word lists giving user options from what to export
-            InitializeTypeFile(reactioPath, LocRM.GetString("reactionTest", currentCulture), "prg");
+            InitializeTypeFile(reactionPath, LocRM.GetString("reactionTest", currentCulture), "prg");
             InitializeTypeFile(stroopPath, LocRM.GetString("stroopTest", currentCulture), "prg");
+            InitializeTypeFile(matchingPath, LocRM.GetString("matchingTest", currentCulture), "prg");
             InitializeTypeFile(experimentPath, LocRM.GetString("experiment", currentCulture), "prg");
             InitializeTypeFile(listPath, LocRM.GetString("lists", currentCulture), "lst");
             InitializeTypeLists();
@@ -80,12 +82,21 @@ namespace TestPlatform.Views.MainForms
                         addLists(program);
                     }
                 }
-                else if(program.GetType() == typeof(ReactionProgram))
+                else if (program.GetType() == typeof(ReactionProgram))
                 {
                     if (!isAlreadyThere(program.ProgramName, LocRM.GetString("reactionTest", currentCulture)))
                     {
                         exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("reactionTest", currentCulture), Global.reactionTestFilesPath + Global.programFolderName + program.ProgramName + ".prg");
                         removeItemOrigin(program.ProgramName, LocRM.GetString("reactionTest", currentCulture));
+                        addLists(program);
+                    }
+                }
+                else if (program.GetType() == typeof(MatchingProgram))
+                {
+                    if (!isAlreadyThere(program.ProgramName, LocRM.GetString("matching", currentCulture)))
+                    {
+                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("matchingTest", currentCulture), Global.matchingTestFilesPath + Global.programFolderName + program.ProgramName + ".prg");
+                        removeItemOrigin(program.ProgramName, LocRM.GetString("matchingTest", currentCulture));
                         addLists(program);
                     }
                 }
@@ -178,6 +189,7 @@ namespace TestPlatform.Views.MainForms
                 Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "ReactionProgram");
                 Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "ExperimentProgram");
                 Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "Lists");
+                Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "MatchingProgram");
 
                 // exporting each row according to type: list, reaction program, stroop program or experiment program
                 foreach (DataGridViewRow row in exportDataGridView.Rows)
@@ -200,6 +212,10 @@ namespace TestPlatform.Views.MainForms
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("stroopTest", currentCulture))
                     {
                         exportFile(row.Cells[2].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "StroopProgram/" + row.Cells[0].Value.ToString() + ".prg");
+                    }
+                    else if (row.Cells[1].Value.ToString() == LocRM.GetString("matchingTest", currentCulture))
+                    {
+                        exportFile(row.Cells[2].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "MatchingProgram/" + row.Cells[0].Value.ToString() + ".prg");
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("experiment", currentCulture))
                     {
@@ -264,6 +280,11 @@ namespace TestPlatform.Views.MainForms
             {
                 ReactionProgram newReaction = new ReactionProgram(Global.reactionTestFilesPath + Global.programFolderName + selectedRowName + ".prg");
                 addLists(newReaction);
+            }
+            else if (selectedRowType == LocRM.GetString("matchingTest", currentCulture))
+            {
+                MatchingProgram newMatching = new MatchingProgram(Global.matchingTestFilesPath + Global.programFolderName + selectedRowName + ".prg");
+                addLists(newMatching);
             }
             else if (selectedRowType == LocRM.GetString("experiment", currentCulture))
             {

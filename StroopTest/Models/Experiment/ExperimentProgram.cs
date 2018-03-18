@@ -199,10 +199,19 @@
         }
 
         /* getting information from .prg file and converting to an experiment object */
-        public void ReadProgramFile() 
+        public void ReadProgramFile(bool recoverFromBackup = false) 
         {
+            string filePath;
             bool isProgramValid = true;
-            string filePath = Global.experimentTestFilesPath + Global.programFolderName + ExperimentName + ".prg";
+            if (recoverFromBackup)
+            {
+                filePath = Global.experimentTestFilesBackupPath + ExperimentName + ".prg";
+
+            }
+            else
+            {
+                filePath = Global.experimentTestFilesPath + Global.programFolderName + ExperimentName + ".prg";
+            }
             if (File.Exists(filePath))
             {
                 string[] fileLines = File.ReadAllLines(filePath);
@@ -243,6 +252,10 @@
                     else if (listConfiguration[i] == "MatchingProgram")
                     {
                         isProgramValid = AddMatchingProgram(listConfiguration[i - 1]);
+                    }
+                    if(!isProgramValid && recoverFromBackup)
+                    {
+                        throw new FileNotFoundException(listConfiguration[i - 1]);
                     }
                 }
 

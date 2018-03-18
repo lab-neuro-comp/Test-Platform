@@ -16,14 +16,14 @@ namespace TestPlatform.Models
         private String listName;
         private String type;
         private static String[] types = { "_image", "_audio", "_words", "_color" };
-        public readonly static int IMAGE = 0, AUDIO = 1, WORD = 2, COLOR = 3; 
+        public readonly static int IMAGE = 0, AUDIO = 1, WORD = 2, COLOR = 3;
 
-      public StrList(List<string> list, string name, string type)
-      {
+        public StrList(List<string> list, string name, string type)
+        {
             ListContent = list;
             ListName = name;
             Type = type;
-      }
+        }
 
         // constructor method for reading an existing list file and transforming it in an object
         public StrList(string name, int type)
@@ -31,13 +31,13 @@ namespace TestPlatform.Models
             string listname = name;
             if (name.Contains("_"))
             {
-               listname = name.Split('_')[0];
+                listname = name.Split('_')[0];
             }
             ListName = listname;
             Type = types[type];
 
             // adding content of word and color lists
-            if (type == 2  || type == 3)
+            if (type == 2 || type == 3)
             {
                 string file = Global.testFilesPath + Global.listFolderName + "/" + listname + types[type] + ".lst";
                 if (File.Exists(file))
@@ -57,18 +57,25 @@ namespace TestPlatform.Models
                 }
                 else
                 {
-                    throw new FileNotFoundException("Não foi possível abrir a lista: '" + listName +
-                        "'\nnão foi encontrado no local:\n" + Path.GetDirectoryName(file));
+                    throw new FileNotFoundException(listName + " (" + types[type] + ")");
                 }
             }
             // adding content of image and audio list
             else if (type == 0 || type == 1)
             {
+                string[] content;
                 string directoryList = Global.testFilesPath + Global.listFolderName + "/" + listname + types[type];
-                string[] content = Directory.GetFiles(directoryList);
+                try
+                {
+                    content = Directory.GetFiles(directoryList);
+                }
+                catch (DirectoryNotFoundException)
+                {
+                    throw new FileNotFoundException(listName + " (" + types[type] + ")");
+                }
                 ListContent = content.ToList();
             }
-           
+
         }
 
 
@@ -97,7 +104,7 @@ namespace TestPlatform.Models
                 {
                     throw new ArgumentException("\nO nome da lista não pode ser nulo.");
                 }
-                
+
             }
         }
 
@@ -116,7 +123,7 @@ namespace TestPlatform.Models
                 }
                 else
                 {
-                    throw new ArgumentException("\nO tipo de lista é inválido, a lista deve ser de aúdio," + 
+                    throw new ArgumentException("\nO tipo de lista é inválido, a lista deve ser de aúdio," +
                         "imagens, palavras ou cores.");
                 }
             }
@@ -150,7 +157,7 @@ namespace TestPlatform.Models
                     try
                     {
                         File.Copy(content, listDestination + Path.GetFileName(content), true);
-                        
+
                     }
                     catch
                     {
@@ -166,7 +173,6 @@ namespace TestPlatform.Models
                 return false;
             }
         }
-
         public bool saveDirectories()
         {
             StreamWriter wr = new StreamWriter(getFilePath());

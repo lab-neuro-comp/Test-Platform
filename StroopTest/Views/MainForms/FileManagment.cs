@@ -244,13 +244,71 @@ namespace TestPlatform.Views.MainForms
                 /* do nothing*/
             }
         }
-        
+
         private bool filesHasNoDepedency()
         {
-            if(destinationFilesList.Items.Count > 0)
+            if (mode == 'r' && destinationFilesList.Items.Count > 0)
             {
+                for (int count = 0; count < destinationFilesList.Items.Count; count++)
+                {
+                    if (this.type == LocRM.GetString("experiment"))
+                    {
+                        ExperimentProgram experiment = new ExperimentProgram();
+                        experiment.ExperimentName = Path.GetFileNameWithoutExtension(destinationFilesList.Items[count].ToString());
+                        try
+                        {
+                            experiment.ReadProgramFile(true);
+                        }
+                        catch(FileNotFoundException e)
+                        {
+                            MessageBox.Show(e.Message + " " + LocRM.GetString("cantBeFoundPleaseRocoverFirst", currentCulture) + destinationFilesList.Items[count].ToString() + ")");
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        if (type == LocRM.GetString("stroopTest", currentCulture))
+                        {
+                            StroopProgram program = new StroopProgram();
+                            try
+                            {
+                                program.readProgramFile(Global.stroopTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
+                            }
+                            catch (FileNotFoundException e)
+                            {
+                                MessageBox.Show(LocRM.GetString("cannotRecoverFilesByMotive", currentCulture) + destinationFilesList.Items[count].ToString() + "\":\n" + e.Message);
+                                return false;
+                            }
+                        }
+                        else if(type == LocRM.GetString("reactionTest",currentCulture))
+                        {
+                            ReactionProgram program = new ReactionProgram();
+                            try
+                            {
+                                program.readProgramFile(Global.reactionTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
+                            }
+                            catch (FileNotFoundException e)
+                            {
+                                MessageBox.Show(LocRM.GetString("cannotRecoverFilesByMotive", currentCulture) + destinationFilesList.Items[count].ToString() + "\":\n" + e.Message);
+                                return false;
+                            }
+                        }
+                        else if(type == LocRM.GetString("matchingTest", currentCulture))
+                        {
+                            MatchingProgram program = new MatchingProgram();
+                            try
+                            {
+                                program.readProgramFile(Global.matchingTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
+                            }
+                            catch (FileNotFoundException e)
+                            {
+                                MessageBox.Show(LocRM.GetString("cannotRecoverFilesByMotive", currentCulture) + destinationFilesList.Items[count].ToString() + "\":\n" + e.Message);
+                                return false;
+                            }
+                        }
+                    }
+                }
             }
-
             return true;
         }
 

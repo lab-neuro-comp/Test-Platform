@@ -2425,4 +2425,10 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   <data name="wordListError" xml:space="preserve">
     <value>choose a word list</value>
   </data>
+  <data name="cantBeFoundPleaseRocoverFirst" xml:space="preserve">
+    <value>is a program of the experiment that doesn't exists in your programs folder. Please recover it first or create a new program with same name. (Experiment:</value>
+  </data>
+  <data name="cannotRecoverFilesByMotive" xml:space="preserve">
+    <value>You should create or recover the following lists before recovering the program "</value>
+  </data>
 </root>

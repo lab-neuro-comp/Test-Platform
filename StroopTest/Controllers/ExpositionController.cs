@@ -14,8 +14,6 @@
 
         private static int brush25 = 25;
         private static int brush4 = 4;
-        private static int X = 0;
-        private static int Y = 1;
 
         public static void makingFixPoint(string fixPoint, string fixPointColor, Form expositionForm)
         {

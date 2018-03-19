@@ -123,7 +123,7 @@ namespace TestPlatform.Views.MatchingPages
         private List<Control> stimuluControls;
         private bool waitingExpositionEnd;
         string currentExpositionType;
-        private object modelClicked;
+        private Control objectClicked;
         private bool showAudioFeedbackOnNextClick = false;
         private long modelReactTime;
         private long attemptIntervalTime;
@@ -188,15 +188,15 @@ namespace TestPlatform.Views.MatchingPages
         {
             if (this.executingTest.ProgramInUse.getImageListFile() != null)
             {
-                this.stimuluType = 0;
+                this.stimuluType = 0; /*Images*/
             }
             else if (this.executingTest.ProgramInUse.getColorListFile() != null)
             {
-                this.stimuluType = 2;
+                this.stimuluType = 2; /*Words*/
             }
             else
             {
-                this.stimuluType = 1;
+                this.stimuluType = 1; /*Words and color*/
             }
         }
 
@@ -257,14 +257,14 @@ namespace TestPlatform.Views.MatchingPages
             string[] currentList = null;
             currentList = getCurrentList();
             List<string> colors = new List<string>();
-            bool willHaveRepetition = (currentList.Length < this.executingTest.ProgramInUse.NumExpositions * this.executingTest.ProgramInUse.AttemptsNumber);
+            bool willHaveRepetition = (currentList.Length < this.executingTest.ProgramInUse.StimuluNumber * this.executingTest.ProgramInUse.AttemptsNumber);
             int modelCounter = 0, stimuluCounter = 0, colorsCount =0;
             int[] startingIndex = new int[2];
             Random rng = new Random(int.Parse(this.seconds));
             string[] groupModelsName = new string[this.executingTest.ProgramInUse.AttemptsNumber];
             string[] groupModelsColors = new string[this.executingTest.ProgramInUse.AttemptsNumber];
-            string[] groupStimulusColors = new string[this.executingTest.ProgramInUse.NumExpositions];
-            string[] groupStimulusName = new string[this.executingTest.ProgramInUse.NumExpositions];
+            string[] groupStimulusColors = new string[this.executingTest.ProgramInUse.StimuluNumber];
+            string[] groupStimulusName = new string[this.executingTest.ProgramInUse.StimuluNumber];
             bool[] itemCanBeUsed = new bool[currentList.Length];
             for (int i = 0; i < currentList.Length; i++)
             {
@@ -300,7 +300,7 @@ namespace TestPlatform.Views.MatchingPages
             
             for (int group = 0; group < groupModelsName.Length; group++)
             {
-                for (int count = 1; count < this.executingTest.ProgramInUse.NumExpositions; count++)
+                for (int count = 1; count < this.executingTest.ProgramInUse.StimuluNumber; count++)
                 {
                     groupStimulusName[count] = null;
                     groupStimulusColors[count] = null;
@@ -309,13 +309,13 @@ namespace TestPlatform.Views.MatchingPages
                 colorsCount = startingIndex[1];
                 groupStimulusName[0] = groupModelsName[group];
                 groupStimulusColors[0] = groupModelsColors[group];
-                for (int count = 1; count < this.executingTest.ProgramInUse.NumExpositions; count++)
+                for (int count = 1; count < this.executingTest.ProgramInUse.StimuluNumber; count++)
                 {
                     if (stimuluCounter >= currentList.Length)
                     {
                         stimuluCounter = 0;
                     }
-                    if (currentList.Length >= this.executingTest.ProgramInUse.NumExpositions)
+                    if (currentList.Length >= this.executingTest.ProgramInUse.StimuluNumber)
                     {
                         if (!willHaveRepetition)
                         {
@@ -542,7 +542,7 @@ namespace TestPlatform.Views.MatchingPages
             {
                 if (!this.executingTest.ProgramInUse.RandomStimulusPosition)
                 {
-                    stimuluPosition = new StimulusPosition(ClientSize, this.executingTest.ProgramInUse.NumExpositions);
+                    stimuluPosition = new StimulusPosition(ClientSize, this.executingTest.ProgramInUse.StimuluNumber);
                 }
                 intervalElapsedTime = waitIntervalTime(this.executingTest.ProgramInUse.RandomIntervalModelStimulus, this.executingTest.ProgramInUse.IntervalTime);
                 drawStimulu();
@@ -711,11 +711,11 @@ namespace TestPlatform.Views.MatchingPages
         }
 
 
-        private void SendUserResponse(object modelClicked)
+        private void SendUserResponse(Control objectClicked)
         {
             if (expositionBW.WorkerSupportsCancellation == true)
             {
-                this.modelClicked = modelClicked;
+                this.objectClicked = objectClicked;
                 expositionBW.CancelAsync();
             }
         }
@@ -764,7 +764,7 @@ namespace TestPlatform.Views.MatchingPages
                     playDNMTSFeedbackSound(sender);
                 }
             }
-            SendUserResponse(sender);
+            SendUserResponse((Control)sender);
         }
 
         private void playDMTSFeedbackSound(object sender)
@@ -800,12 +800,44 @@ namespace TestPlatform.Views.MatchingPages
                 player.Play();
             }
         }
+        
+        private String getForeColor(Control control)
+        {
+            string color = "";
+            if(this.stimuluType == 0)
+            {
+                color = "-";
+            }
+            else if(this.stimuluType == 1 || this.stimuluType == 2)
+            {
+                color = ColorTranslator.ToHtml(control.ForeColor);
+            }
+            return color;
+        }
 
         private void expositionBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             exposing = true;
             currentControl = (List<Control>)e.UserState;
             expositionControllerBW.ReportProgress(20, (List<Control>)e.UserState);
+        }
+
+        private string getStimuluType()
+        {
+            string type = "";
+            if(this.stimuluType == 0)
+            {
+                type = LocRM.GetString("image", currentCulture);
+            }
+            else if (this.stimuluType == 1)
+            {
+                type = LocRM.GetString("word", currentCulture);
+            }
+            else if(this.stimuluType == 2)
+            {
+                type = LocRM.GetString("wordWithColor", currentCulture);
+            }
+            return type;
         }
 
         private void expositionBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -870,7 +902,7 @@ namespace TestPlatform.Views.MatchingPages
                     stimulus.Remove(this.matchingGroups.ElementAt(groupCounter - 1).getModelName());
                     for (int count = 0; count < stimulus.Count; count++)
                     {
-                        stimulus[count] = currentList + "/" + stimulus[count];
+                        stimulus[count] = currentList + "/" + Path.GetFileNameWithoutExtension(stimulus[count]);
                     }
                     while (stimulus.Count <= 7)
                     {
@@ -878,7 +910,7 @@ namespace TestPlatform.Views.MatchingPages
                     }
                     if ((e.Cancelled == true) && !intervalCancelled) /* user clicked after stimulus is shown*/
                     {
-                        stimulus[7] = currentList + "/" + this.matchingGroups.ElementAt(groupCounter - 1).getControlName((Control)modelClicked, stimuluType);
+                        stimulus[7] = currentList + "/" + Path.GetFileNameWithoutExtension(this.matchingGroups.ElementAt(groupCounter - 1).getControlName(objectClicked, stimuluType));
                         executingTest.writeLineOutput(
                             attemptIntervalTime,
                             intervalElapsedTime,
@@ -890,10 +922,13 @@ namespace TestPlatform.Views.MatchingPages
                             modelFirstposition,
                             modelSecondPosition,
                             currentExpositionType,
-                            (this.matchingGroups.ElementAt(groupCounter - 1).getControlName((Control)modelClicked, stimuluType) == this.matchingGroups.ElementAt(groupCounter - 1).getModelName()).ToString(),
-                            currentList + "/" + this.matchingGroups.ElementAt(groupCounter - 1).getModelName(),
+                            (this.matchingGroups.ElementAt(groupCounter - 1).getControlName(objectClicked, stimuluType) == this.matchingGroups.ElementAt(groupCounter - 1).getModelName()).ToString(),
+                            currentList + "/" + Path.GetFileNameWithoutExtension(this.matchingGroups.ElementAt(groupCounter - 1).getModelName()),
                             stimulus.ToArray(),
-                            stimuluPosition.getStimulusPositionMap(((Control)modelClicked).Location, size)
+                            stimuluPosition.getStimulusPositionMap(objectClicked.Location, size),
+                            getStimuluType(),
+                            getForeColor(modelControl),
+                            getForeColor(objectClicked)
                             );
                         showAudioFeedbackOnNextClick = false;
                     }
@@ -925,7 +960,11 @@ namespace TestPlatform.Views.MatchingPages
                             "-",
                             this.matchingGroups.ElementAt(groupCounter - 1).getModelName(),
                             stimulus.ToArray(),
-                            "-");
+                            "-",
+                            getStimuluType(),
+                            getForeColor(modelControl),
+                            "-"
+                            );
                         hitStopWatch.Stop();
                         showAudioFeedbackOnNextClick = false;
                     }
@@ -942,7 +981,7 @@ namespace TestPlatform.Views.MatchingPages
                         size = modelControl.PreferredSize;
                     }
                     modelReactTime = hitStopWatch.ElapsedMilliseconds;
-                    modelFirstposition = stimuluPosition.getStimulusPositionMap(((Control)modelClicked).Location, size);
+                    modelFirstposition = stimuluPosition.getStimulusPositionMap(objectClicked.Location, size);
                     showAudioFeedbackOnNextClick = true;
                 }
                 else  /*user missed model*/

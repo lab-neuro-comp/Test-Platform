@@ -133,7 +133,8 @@ namespace TestPlatform.Models
             }
         }
 
-        public void writeLineOutput(long attemptIntervalTime, long stimuluIntervalTime, long modelReactTime, long stimuluReactTime, int currentExposition, long modelExpositionAccumulative, long stimuluExpositionAccumulative, string modelFirstposition, string modelSecondPosition, string testType, string match, string model, string[] stimulus, string stimuluPosition)
+        public void writeLineOutput(long attemptIntervalTime, long stimuluIntervalTime, long modelReactTime, long stimuluReactTime, int currentExposition, long modelExpositionAccumulative, long stimuluExpositionAccumulative, string modelFirstposition, string modelSecondPosition, string testType, string match, string model, string[] stimulus, string stimuluPosition
+            , string stimuluType, string modelColor, string clickedStimuluColor)
         {
             string text = ProgramInUse.ProgramName + "\t" +
                         participantName + "\t" +
@@ -148,8 +149,10 @@ namespace TestPlatform.Models
                         stimuluExpositionAccumulative + "\t" +
                         currentExposition + "\t" +
                         testType + "\t" +
+                        stimuluType + "\t" +
                         modelFirstposition + "\t" +
                         model + "\t" +
+                        modelColor + "\t" +
                         stimulus[0] + "\t" +
                         stimulus[1] + "\t" +
                         stimulus[2] + "\t" +
@@ -159,6 +162,7 @@ namespace TestPlatform.Models
                         stimulus[6] + "\t" +
                         modelSecondPosition + "\t" +
                         stimulus[7] + "\t" +
+                        clickedStimuluColor + "\t" +
                         stimuluPosition + "\t" +
                         match;
             Output.Add(text);

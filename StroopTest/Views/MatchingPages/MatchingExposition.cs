@@ -53,7 +53,10 @@ namespace TestPlatform.Views.MatchingPages
             public void shuffleStimulus()
             {
                 Random rnd = new Random(Guid.NewGuid().GetHashCode());
-                stimulus = stimulus.OrderBy(x => rnd.Next()).ToArray();
+                var zipped = stimulus.Zip(colors, (a, b) => new { a, b }).ToList();
+                var shuffled = zipped.OrderBy(x => rnd.Next()).ToArray();
+                stimulus = shuffled.Select(pair => pair.a).ToArray();
+                colors = shuffled.Select(pair => pair.b).ToArray();
             }
 
             public string getModelName()
@@ -568,7 +571,7 @@ namespace TestPlatform.Views.MatchingPages
             showModel = false;
             if (stimuluType == 1 || stimuluType == 2)
             {
-                modelControl = ExpositionController.InitializeButton(matchingGroups.ElementAt(groupCounter).getModelName(), this.executingTest.ProgramInUse.EndExpositionWithClick);
+                modelControl = ExpositionController.InitializeButton(matchingGroups.ElementAt(groupCounter).getModelName());
                 modelControl.Font = new Font("Arial", this.executingTest.ProgramInUse.StimuluSize, FontStyle.Bold);
                 modelControl.ForeColor = ColorTranslator.FromHtml(matchingGroups.ElementAt(groupCounter).getModelColor());
 
@@ -609,7 +612,7 @@ namespace TestPlatform.Views.MatchingPages
             {
                 if (stimuluType == 1 || stimuluType == 2)
                 {
-                    newStimulu = ExpositionController.InitializeButton(element, true);
+                    newStimulu = ExpositionController.InitializeButton(element);
                     newStimulu.Font = new Font("Arial", this.executingTest.ProgramInUse.StimuluSize, FontStyle.Bold);
                     newStimulu.ForeColor = ColorTranslator.FromHtml(matchingGroups.ElementAt(groupCounter).getColors().ElementAt(count));
 

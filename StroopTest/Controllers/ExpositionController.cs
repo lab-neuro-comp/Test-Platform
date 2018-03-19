@@ -160,13 +160,13 @@
             return newPictureBox;
         }
 
-        public static Button InitializeButton(string text, bool enabled)
+        public static Button InitializeButton(string text)
         {
             Button newButton = new Button();
             newButton.AutoSize = true;
             newButton.BackColor = System.Drawing.SystemColors.ControlLightLight; ;
             newButton.Text = text;
-            newButton.Enabled = enabled;
+            newButton.Enabled = true;
             return newButton;
         }
 

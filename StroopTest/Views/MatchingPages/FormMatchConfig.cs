@@ -400,7 +400,7 @@ namespace TestPlatform.Views.MatchingPages
                 else
                 {
                     e.Cancel = true;
-                    this.errorProvider2.SetError(this.openWordListButton, errorMsg);
+                    this.errorProvider1.SetError(this.openWordListButton, errorMsg);
                 }
             }
         }
@@ -421,22 +421,22 @@ namespace TestPlatform.Views.MatchingPages
 
         private void openWordListButton_Validated(object sender, EventArgs e)
         {
-            errorProvider2.SetError(this.openWordListButton, "");
+            errorProvider1.SetError(this.openWordListButton, "");
         }
 
         private void openColorListButton_Validated(object sender, EventArgs e)
         {
-            errorProvider2.SetError(this.openColorListButton, "");
+            errorProvider1.SetError(this.openColorListButton, "");
         }
 
         private void openImgListButton_Validated(object sender, EventArgs e)
         {
-            errorProvider2.SetError(this.openImgListButton, "");
+            errorProvider1.SetError(this.openImgListButton, "");
         }
 
         private void openAudioListButton_Validated(object sender, EventArgs e)
         {
-            errorProvider2.SetError(this.openAudioListButton, "");
+            errorProvider1.SetError(this.openAudioListButton, "");
         }
 
         private void openColorListButton_Validating(object sender, CancelEventArgs e)
@@ -451,7 +451,7 @@ namespace TestPlatform.Views.MatchingPages
                 else
                 {
                     e.Cancel = true;
-                    this.errorProvider2.SetError(this.openColorListButton, errorMsg);
+                    this.errorProvider1.SetError(this.openColorListButton, errorMsg);
                 }
             }
         }
@@ -507,7 +507,7 @@ namespace TestPlatform.Views.MatchingPages
                 else
                 {
                     e.Cancel = true;
-                    this.errorProvider2.SetError(this.openImgListButton, errorMsg);
+                    this.errorProvider1.SetError(this.openImgListButton, errorMsg);
                 }
             }
         }
@@ -524,7 +524,7 @@ namespace TestPlatform.Views.MatchingPages
                 else
                 {
                     e.Cancel = true;
-                    this.errorProvider2.SetError(this.openAudioListButton, errorMsg);
+                    this.errorProvider1.SetError(this.openAudioListButton, errorMsg);
                 }
             }
         }

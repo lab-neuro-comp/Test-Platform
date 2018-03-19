@@ -57,7 +57,7 @@ namespace TestPlatform.Models
                 }
                 else
                 {
-                    throw new FileNotFoundException(listName + " (" + types[type] + ")");
+                    throw new FileNotFoundException(listName + " (" + types[type].Substring(1, types[type].Length-1) + ")");
                 }
             }
             // adding content of image and audio list
@@ -71,7 +71,7 @@ namespace TestPlatform.Models
                 }
                 catch (DirectoryNotFoundException)
                 {
-                    throw new FileNotFoundException(listName + " (" + types[type] + ")");
+                    throw new FileNotFoundException(listName + " (" + types[type].Substring(1, types[type].Length - 1) + ")");
                 }
                 ListContent = content.ToList();
             }

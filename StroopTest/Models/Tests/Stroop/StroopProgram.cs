@@ -376,87 +376,81 @@ namespace TestPlatform.Models
             List<string> config = new List<string>();
 
 
-            if (File.Exists(filepath))
+            if (!File.Exists(filepath)) { throw new FileNotFoundException(); }
+
+            tr = new StreamReader(filepath, Encoding.Default, true);
+            line = tr.ReadLine();
+            line = encodeLatinText(line);
+            config = line.Split().ToList();
+            List<string> defaultConfig = LocRM.GetString("defaultStroopProgram", currentCulture).Split().ToList();
+            tr.Close();
+
+            needsEditionFlag = false;
+            if (config.Count() < defaultConfig.Count() && config.Count() > 15)
             {
-                tr = new StreamReader(filepath, Encoding.Default, true);
-                line = tr.ReadLine();
-                line = encodeLatinText(line);
-                config = line.Split().ToList();
-                List<string> defaultConfig = LocRM.GetString("defaultStroopProgram", currentCulture).Split().ToList();
-                tr.Close();
-                
-                needsEditionFlag = false;
-                if (config.Count() < defaultConfig.Count() && config.Count() > 15)
+                needsEditionFlag = true;
+                for (int i = config.Count(); i < defaultConfig.Count(); i++)
                 {
-                    needsEditionFlag = true;
-                    for (int i = config.Count(); i < defaultConfig.Count(); i++)
-                    {
-                        config.Add(defaultConfig[i]);
-                    }
+                    config.Add(defaultConfig[i]);
                 }
+            }
 
-                ProgramName = config[0];
-                if (Path.GetFileNameWithoutExtension(filepath) != (this.ProgramName))
+            ProgramName = config[0];
+            if (Path.GetFileNameWithoutExtension(filepath) != (this.ProgramName))
+            {
+                throw new Exception(LocRM.GetString("fileNameError1", currentCulture) + this.ProgramName + " != " + Path.GetFileNameWithoutExtension(filepath) + "'.prg");
+            }
+
+            NumExpositions = Int32.Parse(config[1]);
+            ExpositionTime = Int32.Parse(config[2]);
+            ExpositionRandom = Boolean.Parse(config[3]);
+            IntervalTime = Int32.Parse(config[4]);
+            IntervalTimeRandom = Boolean.Parse(config[5]);
+            setWordListFile(config[6]);
+            setColorListFile(config[7]);
+            BackgroundColor = config[8];
+            AudioCapture = Boolean.Parse(config[9]);
+
+            // subtitle configurations
+            SubtitleShow = Boolean.Parse(config[10]);
+            if (SubtitleShow)
+            {
+                SubtitlePlace = Int32.Parse(config[11]);
+                SubtitleColor = config[12];
+            }
+            else
+            {
+                SubtitlePlace = 1;
+                SubtitleColor = "false";
+            }
+
+            ExpositionType = config[13];
+            setImageListFile(config[14]);
+            FixPoint = config[15];
+            FontWordLabel = config[16];
+            ExpandImage = Boolean.Parse(config[17]);
+            setAudioListFile(config[18]);
+            SubtitlesListFile = config[19];
+
+            FixPointColor = config[20];
+            DelayTime = Int32.Parse(config[21]);
+            RotateImage = Int32.Parse(config[22]);
+            RndSubtitlePlace = Boolean.Parse(config[23]);
+            WordColor = config[24];
+
+            // reads instructions if there are any
+            linesInstruction = File.ReadAllLines(filepath);
+            if (linesInstruction.Length > 1)
+            {
+                for (int i = 1; i < linesInstruction.Length; i++)
                 {
-                    throw new Exception(LocRM.GetString("fileNameError1", currentCulture) + this.ProgramName + " != " + Path.GetFileNameWithoutExtension(filepath) + "'.prg");
-                }
-
-                NumExpositions = Int32.Parse(config[1]);
-                ExpositionTime = Int32.Parse(config[2]);
-                ExpositionRandom = Boolean.Parse(config[3]);
-                IntervalTime = Int32.Parse(config[4]);
-                IntervalTimeRandom = Boolean.Parse(config[5]);
-                setWordListFile(config[6]);
-                setColorListFile(config[7]);
-                BackgroundColor = config[8];
-                AudioCapture = Boolean.Parse(config[9]);
-
-                // subtitle configurations
-                SubtitleShow = Boolean.Parse(config[10]);
-                if (SubtitleShow)
-                {
-                    SubtitlePlace = Int32.Parse(config[11]);
-                    SubtitleColor = config[12];
-                }
-                else
-                {
-                    SubtitlePlace = 1;
-                    SubtitleColor = "false";
-                }
-
-                ExpositionType = config[13];
-                setImageListFile(config[14]);
-                FixPoint = config[15];
-                FontWordLabel = config[16];
-                ExpandImage = Boolean.Parse(config[17]);
-                setAudioListFile(config[18]);
-                SubtitlesListFile = config[19];
-
-                FixPointColor = config[20];
-                DelayTime = Int32.Parse(config[21]);
-                RotateImage = Int32.Parse(config[22]);
-                RndSubtitlePlace = Boolean.Parse(config[23]);
-                WordColor = config[24];
-
-                // reads instructions if there are any
-                linesInstruction = File.ReadAllLines(filepath);
-                if (linesInstruction.Length > 1) 
-                {
-                    for (int i = 1; i < linesInstruction.Length; i++)
-                    {
-                        this.InstructionText.Add(linesInstruction[i]);
-                    }
-                }
-                else
-                {
-                    this.InstructionText = null;
+                    this.InstructionText.Add(linesInstruction[i]);
                 }
             }
             else
             {
-                throw new FileNotFoundException(LocRM.GetString("file", currentCulture) + Path.GetFileName(filepath) + LocRM.GetString("fileNotFound", currentCulture) + Path.GetDirectoryName(filepath));
+                this.InstructionText = null;
             }
-
         }
 
         public bool saveProgramFile(string path, string instructionBoxText)

@@ -151,7 +151,6 @@ namespace TestPlatform.Models
                 this.attemptsIntervalTime.ToString() + " " +
                 this.DNMTSBackground.ToUpper() + " " +
                 this.AttemptsNumber.ToString() + " " +
-                this.stimuluDistance.ToString() + " " +
                 this.numberPositions.ToString() + " " +
                 this.randomIntervalModelStimulus.ToString() + " " +
                 this.randomStimuluPosition.ToString() + " " +
@@ -384,13 +383,12 @@ namespace TestPlatform.Models
             attemptsIntervalTime = int.Parse(config[19]);
             DNMTSBackground = config[20];
             AttemptsNumber = int.Parse(config[21]);
-            stimuluDistance = int.Parse(config[22]);
-            numberPositions = int.Parse(config[23]);
-            randomIntervalModelStimulus = bool.Parse(config[24]);
-            randomStimuluPosition = bool.Parse(config[25]);
-            wordColor = config[26];
-            expositionAudioResponse = Boolean.Parse(config[27]);
-            feedbackAudioResponse = Boolean.Parse(config[28]);
+            numberPositions = int.Parse(config[22]);
+            randomIntervalModelStimulus = bool.Parse(config[23]);
+            randomStimuluPosition = bool.Parse(config[24]);
+            wordColor = config[25];
+            expositionAudioResponse = Boolean.Parse(config[26]);
+            feedbackAudioResponse = Boolean.Parse(config[27]);
             linesInstruction = File.ReadAllLines(filepath);
             if (linesInstruction.Length > 1) // read instructions if any
             {
@@ -403,9 +401,6 @@ namespace TestPlatform.Models
             {
                 this.InstructionText = null;
             }
-
-
-
         }
 
         public bool saveProgramFile(string path, string instructionBoxText)

@@ -1,4 +1,6 @@
-﻿namespace TestPlatform.Views.MatchingPages
+﻿using System.Drawing;
+
+namespace TestPlatform.Views.MatchingPages
 {
     partial class FormMatchConfig
     {
@@ -32,6 +34,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMatchConfig));
             this.panel1 = new System.Windows.Forms.Panel();
             this.othersGroupBox = new System.Windows.Forms.GroupBox();
+            this.feedbackAudioResponse = new System.Windows.Forms.CheckBox();
+            this.expositonAudioResponse = new System.Windows.Forms.CheckBox();
+            this.audioResponseLabel = new System.Windows.Forms.Label();
             this.colorGroupBox = new System.Windows.Forms.GroupBox();
             this.wordSingleColor = new System.Windows.Forms.Label();
             this.WordColorPanel = new System.Windows.Forms.Panel();
@@ -77,7 +82,7 @@
             this.numExpoLabel = new System.Windows.Forms.Label();
             this.randomStimuluPosition = new System.Windows.Forms.CheckBox();
             this.expoSizeLabel = new System.Windows.Forms.Label();
-            this.numExpo = new System.Windows.Forms.NumericUpDown();
+            this.stimuluNumber = new System.Windows.Forms.NumericUpDown();
             this.expositionSize = new System.Windows.Forms.NumericUpDown();
             this.stimulusNumberLabel = new System.Windows.Forms.Label();
             this.attemptNumber = new System.Windows.Forms.NumericUpDown();
@@ -89,9 +94,7 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.audioResponseLabel = new System.Windows.Forms.Label();
-            this.expositonAudioResponse = new System.Windows.Forms.CheckBox();
-            this.feedbackAudioResponse = new System.Windows.Forms.CheckBox();
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.othersGroupBox.SuspendLayout();
             this.colorGroupBox.SuspendLayout();
@@ -102,10 +105,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.modelExpoTime)).BeginInit();
             this.listGroupBox.SuspendLayout();
             this.expositionGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stimuluNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expositionSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attemptNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -133,6 +137,23 @@
             resources.ApplyResources(this.othersGroupBox, "othersGroupBox");
             this.othersGroupBox.Name = "othersGroupBox";
             this.othersGroupBox.TabStop = false;
+            // 
+            // feedbackAudioResponse
+            // 
+            resources.ApplyResources(this.feedbackAudioResponse, "feedbackAudioResponse");
+            this.feedbackAudioResponse.Name = "feedbackAudioResponse";
+            this.feedbackAudioResponse.UseVisualStyleBackColor = true;
+            // 
+            // expositonAudioResponse
+            // 
+            resources.ApplyResources(this.expositonAudioResponse, "expositonAudioResponse");
+            this.expositonAudioResponse.Name = "expositonAudioResponse";
+            this.expositonAudioResponse.UseVisualStyleBackColor = true;
+            // 
+            // audioResponseLabel
+            // 
+            resources.ApplyResources(this.audioResponseLabel, "audioResponseLabel");
+            this.audioResponseLabel.Name = "audioResponseLabel";
             // 
             // colorGroupBox
             // 
@@ -463,7 +484,7 @@
             this.expositionGroupBox.Controls.Add(this.numExpoLabel);
             this.expositionGroupBox.Controls.Add(this.randomStimuluPosition);
             this.expositionGroupBox.Controls.Add(this.expoSizeLabel);
-            this.expositionGroupBox.Controls.Add(this.numExpo);
+            this.expositionGroupBox.Controls.Add(this.stimuluNumber);
             this.expositionGroupBox.Controls.Add(this.expositionSize);
             this.expositionGroupBox.Controls.Add(this.stimulusNumberLabel);
             this.expositionGroupBox.Controls.Add(this.attemptNumber);
@@ -548,26 +569,26 @@
             resources.ApplyResources(this.expoSizeLabel, "expoSizeLabel");
             this.expoSizeLabel.Name = "expoSizeLabel";
             // 
-            // numExpo
+            // stimuluNumber
             // 
-            resources.ApplyResources(this.numExpo, "numExpo");
-            this.numExpo.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.stimuluNumber, "stimuluNumber");
+            this.stimuluNumber.Maximum = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.numExpo.Minimum = new decimal(new int[] {
+            this.stimuluNumber.Minimum = new decimal(new int[] {
             2,
             0,
             0,
             0});
-            this.numExpo.Name = "numExpo";
-            this.numExpo.Value = new decimal(new int[] {
+            this.stimuluNumber.Name = "stimuluNumber";
+            this.stimuluNumber.Value = new decimal(new int[] {
             2,
             0,
             0,
             0});
-            this.numExpo.ValueChanged += new System.EventHandler(this.attemptAndNumExpo_ValueChanged);
+            this.stimuluNumber.ValueChanged += new System.EventHandler(this.attemptAndNumExpo_ValueChanged);
             // 
             // expositionSize
             // 
@@ -668,22 +689,11 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
-            // audioResponseLabel
+            // errorProvider2
             // 
-            resources.ApplyResources(this.audioResponseLabel, "audioResponseLabel");
-            this.audioResponseLabel.Name = "audioResponseLabel";
-            // 
-            // expositonAudioResponse
-            // 
-            resources.ApplyResources(this.expositonAudioResponse, "expositonAudioResponse");
-            this.expositonAudioResponse.Name = "expositonAudioResponse";
-            this.expositonAudioResponse.UseVisualStyleBackColor = true;
-            // 
-            // feedbackAudioResponse
-            // 
-            resources.ApplyResources(this.feedbackAudioResponse, "feedbackAudioResponse");
-            this.feedbackAudioResponse.Name = "feedbackAudioResponse";
-            this.feedbackAudioResponse.UseVisualStyleBackColor = true;
+            this.errorProvider2.ContainerControl = this;
+            this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider2.Icon = SystemIcons.Warning;
             // 
             // FormMatchConfig
             // 
@@ -710,10 +720,11 @@
             this.listGroupBox.PerformLayout();
             this.expositionGroupBox.ResumeLayout(false);
             this.expositionGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stimuluNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.expositionSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attemptNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -732,7 +743,7 @@
         private System.Windows.Forms.ComboBox expositionType;
         private System.Windows.Forms.Label expositionTypeLabel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.NumericUpDown numExpo;
+        private System.Windows.Forms.NumericUpDown stimuluNumber;
         private System.Windows.Forms.Label stimulusNumberLabel;
         private System.Windows.Forms.NumericUpDown expositionSize;
         private System.Windows.Forms.Label expoSizeLabel;
@@ -782,5 +793,6 @@
         private System.Windows.Forms.CheckBox feedbackAudioResponse;
         private System.Windows.Forms.CheckBox expositonAudioResponse;
         private System.Windows.Forms.Label audioResponseLabel;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

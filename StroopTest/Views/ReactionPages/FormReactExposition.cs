@@ -23,8 +23,6 @@ namespace TestPlatform.Views
         private string path = Global.reactionTestFilesPath;                           
         private string outputDataPath = Global.reactionTestFilesPath + Global.resultsFolderName;
 
-        private static int X = 0;
-        private static int Y = 1;
         private static int IMAGE = 0;
         private static int WORD = 1;
 

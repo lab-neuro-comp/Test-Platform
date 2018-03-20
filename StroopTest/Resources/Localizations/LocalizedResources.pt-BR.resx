@@ -2356,7 +2356,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>Selecione uma lista de imagens</value>
   </data>
   <data name="matchingTestHeader" xml:space="preserve">
-    <value>Programa\tParticipante\tData\tHorario Inicial\tTempo de Exposição\tReação do modelo(ms)\tReação do estimulo(ms)\tIntervalo das tentativas(ms)\tIntervalo(ms)\tExposição do modelo(ms)\tExposição do estímulo(ms)\tSenquencia\tTipo de Teste\tPrimeira posição do modelo\tModelo\tEstimulo 2\tEstimulo 3\tEstimulo 4\tEstimulo 5\tEstimulo 6\tEstimulo 7\tEstimulo 8\tSegunda posição do modelo\tNome do estimulo clicado\tPosição do estimulo clicado\tIgual</value>
+    <value>Programa\tParticipante\tData\tHorario Inicial\tTempo de Exposição\tReação do modelo(ms)\tReação do estimulo(ms)\tIntervalo das tentativas(ms)\tIntervalo(ms)\tExposição do modelo(ms)\tExposição do estímulo(ms)\tSenquencia\tTipo de Teste\tTipo de estimulo\tPrimeira posição do modelo\tModelo\tCor do modelo\tEstimulo 2\tEstimulo 3\tEstimulo 4\tEstimulo 5\tEstimulo 6\tEstimulo 7\tEstimulo 8\tSegunda posição do modelo\tNome do estimulo clicado\tCor do estimulo clicado\tPosição do estimulo clicado\tIgual</value>
   </data>
   <data name="CannotBeEmpty" xml:space="preserve">
     <value>Esse campo deve ser preenchido</value>
@@ -2429,5 +2429,8 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="cantEdìtProgramMissingFiles" xml:space="preserve">
     <value>Não foi possível abrir a edição de programa pois está faltando arquivos. Recupere ou crie essas listas antes de continuar: </value>
+  </data>
+  <data name="wordWithColor" xml:space="preserve">
+    <value>Palavra com Cor</value>
   </data>
 </root>

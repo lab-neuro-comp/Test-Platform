@@ -85,7 +85,7 @@ namespace TestPlatform.Views.MatchingPages
                 WordColorPanel.BackColor = ColorTranslator.FromHtml(editProgram.WordColor);
             }
             programName.Text = editProgram.ProgramName;
-            numExpo.Value = editProgram.NumExpositions;
+            stimuluNumber.Value = editProgram.StimuluNumber;
             attemptNumber.Value = editProgram.AttemptsNumber;
             expositionSize.Value = editProgram.StimuluSize;
             randomStimuluPosition.Checked = editProgram.RandomStimulusPosition;
@@ -137,14 +137,14 @@ namespace TestPlatform.Views.MatchingPages
                     if (openImgListButton.Text != LocRM.GetString("open", currentCulture))
                     {
                         StrList imagesListFile = new StrList(openImgListButton.Text, 0);
-                        if (imagesListFile.ListContent.Count < numExpo.Value)
+                        if (imagesListFile.ListContent.Count < stimuluNumber.Value)
                         {
                             errorProvider1.SetError(openImgListButton, LocRM.GetString("impossibleUseListWarn", currentCulture));
                             saveButton.Enabled = false;
                         }
-                        else if (imagesListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                        else if (imagesListFile.ListContent.Count < attemptNumber.Value * stimuluNumber.Value)
                         {
-                            errorProvider1.SetError(openImgListButton, LocRM.GetString("smallImageList", currentCulture));
+                            errorProvider2.SetError(openImgListButton, LocRM.GetString("smallImageList", currentCulture));
                             saveButton.Enabled = true;
                         }
                         else
@@ -156,14 +156,14 @@ namespace TestPlatform.Views.MatchingPages
                 case 2:
                 case 3:
                     StrList wordListFile = new StrList(openWordListButton.Text, 2);
-                    if (wordListFile.ListContent.Count < numExpo.Value)
+                    if (wordListFile.ListContent.Count < stimuluNumber.Value)
                     {
                         errorProvider1.SetError(openWordListButton, LocRM.GetString("impossibleUseListWarn", currentCulture));
                         saveButton.Enabled = false;
                     }
-                    else if (wordListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                    else if (wordListFile.ListContent.Count < attemptNumber.Value * stimuluNumber.Value)
                     {
-                        errorProvider1.SetError(openWordListButton, LocRM.GetString("smallImageList", currentCulture));
+                        errorProvider2.SetError(openWordListButton, LocRM.GetString("smallImageList", currentCulture));
                         saveButton.Enabled = true;
                     }
                     else
@@ -233,7 +233,7 @@ namespace TestPlatform.Views.MatchingPages
 
         MatchingProgram configureNewProgram()
         {
-            return new MatchingProgram(programName.Text, expositionType.Text, Convert.ToInt32(numExpo.Value),
+            return new MatchingProgram(programName.Text, expositionType.Text, Convert.ToInt32(stimuluNumber.Value),
                                         Convert.ToInt32(attemptNumber.Value), Convert.ToInt32(expositionSize.Value), randomModelPosition.Checked,
                                         closeExpoAWithClick.Checked, openImgListButton.Text, Convert.ToInt32(stimulusInterval.Value),
                                         randomAttemptTime.Checked, Convert.ToInt32(stimulusExpoTime.Value), Convert.ToInt32(modelExpoTime.Value),
@@ -311,6 +311,8 @@ namespace TestPlatform.Views.MatchingPages
 
         private void expositionType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.errorProvider1.Clear();
+            this.errorProvider2.Clear();
             if(this.expositionType.SelectedIndex > 0)
             {
                 this.errorProvider1.SetError(this.expositionType, LocRM.GetString("unavailableExpo", currentCulture));
@@ -558,14 +560,14 @@ namespace TestPlatform.Views.MatchingPages
                 }
 
                 StrList listFile = new StrList(button.Text, type);
-                if (listFile.ListContent.Count < numExpo.Value)
+                if (listFile.ListContent.Count < stimuluNumber.Value)
                 {
                     errorProvider1.SetError(button, LocRM.GetString("impossibleUseListWarn", currentCulture));
                     saveButton.Enabled = false;
                 }
-                else if (listFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                else if (listFile.ListContent.Count < attemptNumber.Value * stimuluNumber.Value)
                 {
-                    errorProvider1.SetError(button, LocRM.GetString("smallImageList", currentCulture));
+                    errorProvider2.SetError(button, LocRM.GetString("smallImageList", currentCulture));
                     saveButton.Enabled = true;
                 }
                 else
@@ -576,8 +578,8 @@ namespace TestPlatform.Views.MatchingPages
             }
             else
             {
-                errorProvider1.SetError(openImgListButton, "");
-                errorProvider1.SetError(openWordListButton, "");
+                errorProvider2.SetError(openImgListButton, "");
+                errorProvider2.SetError(openWordListButton, "");
                 saveButton.Enabled = true;
             }
         }
@@ -719,25 +721,25 @@ namespace TestPlatform.Views.MatchingPages
                 {
                     ListFile = new StrList(button.Text, 2);
                 }
-                if (ListFile != null && ListFile.ListContent.Count < numExpo.Value)
+                if (ListFile != null && ListFile.ListContent.Count < stimuluNumber.Value)
                 {
                     saveButton.Enabled = false;
                     errorProvider1.SetError(button, LocRM.GetString("impossibleUseListWarn", currentCulture));
                 }
-                else if (ListFile != null && ListFile.ListContent.Count < attemptNumber.Value * numExpo.Value)
+                else if (ListFile != null && ListFile.ListContent.Count < attemptNumber.Value * stimuluNumber.Value)
                 {
-                    errorProvider1.SetError(button, LocRM.GetString("smallImageList", currentCulture));
+                    errorProvider2.SetError(button, LocRM.GetString("smallImageList", currentCulture));
                     saveButton.Enabled = true;
                 }
                 else
                 {
-                    errorProvider1.SetError(button, "");
+                    errorProvider2.SetError(button, "");
                     saveButton.Enabled = true;
                 }
             }
             else
             {
-                errorProvider1.SetError(button, "");
+                errorProvider2.SetError(button, "");
                 saveButton.Enabled = true;
             }
         }

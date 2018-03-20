@@ -10,17 +10,17 @@ namespace TestPlatform.Models
     class MatchingProgram : Program
     {
         private Int32 numberPositions;
-        private Int32 _AttemptsNumber;
-        private String _DNMTSBackground;
+        private Int32 attemptsNumber;
+        private String DNMTSbackground;
         private Int32 attemptsIntervalTime;
         private Int32 modelExpositionTime;
         private Boolean endExpositionWithClick;
         private Boolean randomStimuluPosition;
         private Int32 stimuluSize;
         private Boolean randomModelPosition;
-        private Int32 stimuluDistance;
         private Boolean randomIntervalModelStimulus;
         private string wordColor;
+        private Int32 stimuluNumber;
         private Boolean expositionAudioResponse;
         private Boolean feedbackAudioResponse;
         public MatchingProgram()
@@ -36,29 +36,12 @@ namespace TestPlatform.Models
         public override string ToString()
         {
             return String.Concat("Nome do programa: ", programName, " tempo de exposição: ", expositionTime,
-                                 " Numero de exposicoes:", numExpositions, " tamanho do estimulo", stimuluSize
+                                 " Numero de estimulos:", stimuluNumber, " tamanho do estimulo", stimuluSize
                                  );
         }
 
-        /// <summary>
-        /// This constructor is used to create an matching program
-        /// </summary>
-        public MatchingProgram(string programName, string expositionType, int numExpositions,
-            int AttemptsNumber, int stimuluSize, bool randomPosition,
-            bool endExpositionWithClick, string imageList, int intervalTime, 
-            bool intervalTimeRandom, int expositionTime, int modelExpositionTime, 
-            int attemptsIntervalTime,  string backgroundColor, string DNMTSBackground, 
-            bool randomOrder, bool randomIntervalModelStimulus, bool randomStimuluPosition,
-            string wordList, string colorList, string wordColor, bool expositionAudioResponse,
-            bool feedbackAudioResponse)
+        private void setExpositionLists(string imageList, string wordList, string colorList, string wordColor)
         {
-            // Program properties
-            this.programName = programName;
-            this.expositionTime = expositionTime;
-            this.numExpositions = numExpositions;
-            this.intervalTime = intervalTime;
-            this.backgroundColor = backgroundColor;
-            this.intervalTimeRandom = intervalTimeRandom;
             if (imageList != LocRM.GetString("open", currentCulture))
             {
                 this.setImageListFile(imageList);
@@ -81,7 +64,28 @@ namespace TestPlatform.Models
                     this.setColorListFile("false");
                 }
             }
-            
+        }
+
+        /// <summary>
+        /// This constructor is used to create an matching program
+        /// </summary>
+        public MatchingProgram(string programName, string expositionType, int stimuluNumber,
+            int AttemptsNumber, int stimuluSize, bool randomPosition,
+            bool endExpositionWithClick, string imageList, int intervalTime, 
+            bool intervalTimeRandom, int expositionTime, int modelExpositionTime, 
+            int attemptsIntervalTime,  string backgroundColor, string DNMTSBackground, 
+            bool randomOrder, bool randomIntervalModelStimulus, bool randomStimuluPosition,
+            string wordList, string colorList, string wordColor, bool expositionAudioResponse,
+            bool feedbackAudioResponse)
+        {
+            // Program properties
+            this.programName = programName;
+            this.expositionTime = expositionTime;
+            this.stimuluNumber = stimuluNumber;
+            this.intervalTime = intervalTime;
+            this.backgroundColor = backgroundColor;
+            this.intervalTimeRandom = intervalTimeRandom;
+            this.setExpositionLists(imageList, wordList, colorList, wordColor);
 
             // Matching properties
             this.stimuluSize = stimuluSize;
@@ -101,7 +105,6 @@ namespace TestPlatform.Models
             this.expositionType = expositionType;
             this.fixPoint = "false";
             this.fixPointColor = "false";
-            this.stimuluDistance = 0;
         }
 
         public string data()
@@ -130,7 +133,7 @@ namespace TestPlatform.Models
                 imageList = this.getImageListFile().ListName;
             }
             string data = this.ProgramName + " " +
-                 this.NumExpositions.ToString() + " " +
+                 this.stimuluNumber.ToString() + " " +
                  this.ExpositionTime.ToString() + " " +
                  this.expositionRandom.ToString() + " " +
                  this.IntervalTime.ToString() + " " +
@@ -203,19 +206,6 @@ namespace TestPlatform.Models
             }
         }
 
-        public Int32 StimuluDistance
-        {
-            get
-            {
-                return stimuluDistance;
-            }
-
-            set
-            {
-                stimuluDistance = value;
-            }
-        }
-
         public Boolean RandomModelPosition
         {
             get
@@ -265,6 +255,19 @@ namespace TestPlatform.Models
                 feedbackAudioResponse = value;
             }
         }
+
+        public Int32 StimuluNumber
+        {
+            get
+            {
+                return stimuluNumber;
+            }
+            set
+            {
+                stimuluNumber = value;
+            }
+        }
+
         public Int32 ModelExpositionTime
         {
             get
@@ -306,24 +309,24 @@ namespace TestPlatform.Models
         {
             get
             {
-                return _DNMTSBackground;
+                return DNMTSbackground;
             }
 
             set
             {
-                _DNMTSBackground = value;
+                DNMTSbackground = value;
             }
         }
         public Int32 AttemptsNumber
         {
             get
             {
-                return _AttemptsNumber;
+                return attemptsNumber;
             }
 
             set
             {
-                _AttemptsNumber = value;
+                attemptsNumber = value;
             }
         }
 
@@ -362,7 +365,7 @@ namespace TestPlatform.Models
                 throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName +
                     "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + "'.prg");
             }
-            NumExpositions = int.Parse(config[1]);
+            stimuluNumber = int.Parse(config[1]);
             ExpositionTime = int.Parse(config[2]);
             expositionRandom = bool.Parse(config[3]);
             IntervalTime = int.Parse(config[4]);

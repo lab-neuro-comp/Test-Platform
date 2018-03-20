@@ -2415,4 +2415,16 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="cannotRecoverFilesByMotive" xml:space="preserve">
     <value>Você deve criar ou recuperar as seguintes listas antes de recuperar o programa "</value>
   </data>
+  <data name="error" xml:space="preserve">
+    <value>Erro:</value>
+  </data>
+  <data name="hasMissingLists" xml:space="preserve">
+    <value> possui listas que foram excluídas incorretamente: "</value>
+  </data>
+  <data name="missingListSolution" xml:space="preserve">
+    <value>. Você deve criar a lista manualmente ou excluir o programa. Deseja excluir o programa?</value>
+  </data>
+  <data name="wanstPossibleToRecoverLists" xml:space="preserve">
+    <value>Não foi possível exibir as listas pois o programa </value>
+  </data>
 </root>

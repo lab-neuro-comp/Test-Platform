@@ -17,6 +17,7 @@ namespace TestPlatform.Views.ListsPages
 {
     public partial class ListManagment : UserControl
     {
+        bool stopLoading = false;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         string listPath = Global.testFilesPath + Global.listFolderName, suffix;
@@ -66,7 +67,7 @@ namespace TestPlatform.Views.ListsPages
             bool selected = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
 
             int index = e.Index;
-            if (index >= 0 && index < existingList.Items.Count)
+            if (!stopLoading && index >= 0 && index < existingList.Items.Count)
             {
                 string text = existingList.Items[index].ToString();
                 Graphics g = e.Graphics;
@@ -79,7 +80,7 @@ namespace TestPlatform.Views.ListsPages
                 }
                 else
                 {
-                    if (mode == 'd' && isListUsed(text, suffix))
+                    if (mode == 'd' && isListUsed(text, suffix, out stopLoading))
                     {
                         warningLabel.Visible = true;
                         backgroundBrush = orangeSolidBrush;
@@ -151,7 +152,7 @@ namespace TestPlatform.Views.ListsPages
             bool selected = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
 
             int index = e.Index;
-            if (index >= 0 && index < deletingList.Items.Count)
+            if (!stopLoading && index >= 0 && index < deletingList.Items.Count)
             {
                 string text = deletingList.Items[index].ToString();
                 Graphics g = e.Graphics;
@@ -164,7 +165,7 @@ namespace TestPlatform.Views.ListsPages
                 }
                 else
                 {
-                    if (mode == 'd' && isListUsed(text, suffix))
+                    if (mode == 'd' && isListUsed(text, suffix, out stopLoading))
                     {
                         warningLabel.Visible = true;
                         backgroundBrush = orangeSolidBrush;
@@ -198,7 +199,7 @@ namespace TestPlatform.Views.ListsPages
             limit = selected.Count;
             while (count != limit)
             {
-                if (mode == 'd' && isListUsed(selected[0].ToString(), suffix))
+                if (mode == 'd' && isListUsed(selected[0].ToString(), suffix, out stopLoading))
                 {
                     return;
                 }
@@ -227,83 +228,153 @@ namespace TestPlatform.Views.ListsPages
             this.Parent.Controls.Remove(this);
         }
 
-        private bool isListUsed(string listName, string suffix)
+        private bool isListUsed(string listName, string suffix, out bool stopProcess)
         {
+            string currentProgram = "", originPath = "", programName = "", destinationPath = "";
             string[] TRPrograms = Directory.GetFiles(Global.reactionTestFilesPath + Global.programFolderName);
             string[] StroopPrograms = Directory.GetFiles(Global.stroopTestFilesPath + Global.programFolderName);
             string[] MatchingPrograms = Directory.GetFiles(Global.matchingTestFilesPath + Global.programFolderName);
-            foreach (string file in TRPrograms)
+            try
             {
-                ReactionProgram program = new ReactionProgram();
-                program.readProgramFile(file);
-                if (suffix == "_image" && program.getImageListFile() != null && program.getImageListFile().ListName == listName)
+                foreach (string file in TRPrograms)
                 {
-                    return true;
-                }
-                else if (suffix == "_audio" && program.getAudioListFile() != null && program.getAudioListFile().ListName == listName)
-                {
-                    return true;
-                }
-                else if (suffix == "_words_color")
-                {
-                    if (program.getWordListFile() != null && ((program.getWordListFile().ListName + "_words") == listName))
+                    originPath = Global.reactionTestFilesPath + Global.programFolderName;
+                    destinationPath = Global.reactionTestFilesBackupPath;
+                    programName = Path.GetFileNameWithoutExtension(file);
+                    currentProgram = Path.GetFileNameWithoutExtension(file) + " (" + LocRM.GetString("reactionTest", currentCulture) + ")";
+                    ReactionProgram program = new ReactionProgram();
+                    program.readProgramFile(file);
+                    if (suffix == "_image" && program.getImageListFile() != null && program.getImageListFile().ListName == listName)
                     {
+                        stopProcess = false;
                         return true;
-                    } 
-                    else if (program.getColorListFile() != null && ((program.getColorListFile().ListName + "_color") == listName))
+                    }
+                    else if (suffix == "_audio" && program.getAudioListFile() != null && program.getAudioListFile().ListName == listName)
                     {
+                        stopProcess = false;
                         return true;
+                    }
+                    else if (suffix == "_words_color")
+                    {
+                        if (program.getWordListFile() != null && ((program.getWordListFile().ListName + "_words") == listName))
+                        {
+                            stopProcess = false;
+                            return true;
+                        }
+                        else if (program.getColorListFile() != null && ((program.getColorListFile().ListName + "_color") == listName))
+                        {
+                            stopProcess = false;
+                            return true;
+                        }
+                    }
+                }
+                foreach (string file in StroopPrograms)
+                {
+                    originPath = Global.stroopTestFilesPath + Global.programFolderName;
+                    destinationPath = Global.stroopTestFilesBackupPath;
+                    programName = Path.GetFileNameWithoutExtension(file);
+                    StroopProgram program = new StroopProgram();
+                    currentProgram = Path.GetFileNameWithoutExtension(file) + " (" + LocRM.GetString("stroopTest", currentCulture) + ")";
+                    program.readProgramFile(file);
+                    if (suffix == "_image" && program.getImageListFile() != null && program.getImageListFile().ListName == listName)
+                    {
+                        stopProcess = false;
+                        return true;
+                    }
+                    else if (suffix == "_audio" && program.getAudioListFile() != null && program.getAudioListFile().ListName == listName)
+                    {
+                        stopProcess = false;
+                        return true;
+                    }
+                    else if (suffix == "_words_color")
+                    {
+                        if (program.getWordListFile() != null && ((program.getWordListFile().ListName + "_words") == listName))
+                        {
+                            stopProcess = false;
+                            return true;
+                        }
+                        else if (program.getColorListFile() != null && ((program.getColorListFile().ListName + "_color") == listName))
+                        {
+                            stopProcess = false;
+                            return true;
+                        }
+                    }
+                }
+                foreach (string file in MatchingPrograms)
+                {
+                    originPath = Global.matchingTestFilesPath + Global.programFolderName;
+                    destinationPath = Global.matchingTestFilesBackupPath;
+                    programName = Path.GetFileNameWithoutExtension(file);
+                    MatchingProgram program = new MatchingProgram();
+                    currentProgram = Path.GetFileNameWithoutExtension(file) + " (" + LocRM.GetString("matchingTest", currentCulture) + ")";
+                    program.readProgramFile(file);
+                    if (suffix == "_image" && program.getImageListFile() != null && program.getImageListFile().ListName == listName)
+                    {
+                        stopProcess = false;
+                        return true;
+                    }
+                    else if (suffix == "_audio" && program.getAudioListFile() != null && program.getAudioListFile().ListName == listName)
+                    {
+                        stopProcess = false;
+                        return true;
+                    }
+                    else if (suffix == "_words_color")
+                    {
+                        if (program.getWordListFile() != null && ((program.getWordListFile().ListName + "_words") == listName))
+                        {
+                            stopProcess = false;
+                            return true;
+                        }
+                        else if (program.getColorListFile() != null && ((program.getColorListFile().ListName + "_color") == listName))
+                        {
+                            stopProcess = false;
+                            return true;
+                        }
                     }
                 }
             }
-            foreach (string file in StroopPrograms)
+            catch (FileNotFoundException e)
             {
-                StroopProgram program = new StroopProgram();
-                program.readProgramFile(file);
-                if (suffix == "_image" && program.getImageListFile() != null && program.getImageListFile().ListName == listName)
+                DialogResult dialogResult =  MessageBox.Show(LocRM.GetString("wanstPossibleToRecoverLists", currentCulture) + "\"" + currentProgram + "\"" +
+                    LocRM.GetString("hasMissingLists", currentCulture) + e.Message + "\""
+                    + LocRM.GetString("missingListSolution", currentCulture), LocRM.GetString("error", currentCulture), MessageBoxButtons.YesNo);
+                if(dialogResult == DialogResult.Yes)
                 {
-                    return true;
-                }
-                else if (suffix == "_audio" && program.getAudioListFile() != null && program.getAudioListFile().ListName == listName)
-                {
-                    return true;
-                }
-                else if (suffix == "_words_color")
-                {
-                    if (program.getWordListFile() != null && ((program.getWordListFile().ListName + "_words") == listName))
+                    DialogResult shouldDelete = MessageBox.Show(LocRM.GetString("deleteProgram", currentCulture) + currentProgram + "?", LocRM.GetString("delete", currentCulture), MessageBoxButtons.YesNo);
+                    if(shouldDelete == DialogResult.Yes)
                     {
-                        return true;
+                        try
+                        {
+                            File.Move(originPath + programName + ".prg", destinationPath + programName + ".prg");
+                        }
+                        catch (IOException)
+                        {
+                            File.Delete(destinationPath + programName  + ".prg");
+                            File.Move(originPath + programName + ".prg", destinationPath + programName + ".prg");
+                        }
+                        MessageBox.Show(LocRM.GetString("deletedSucessful", currentCulture));
+                        this.Parent.Controls.Remove(this);
+                        ListManagment newListManagment = new ListManagment(suffix, mode);
+                        Global.GlobalFormMain._contentPanel.Controls.Add(newListManagment);
+                        stopProcess = true;
+                        return false;
                     }
-                    else if (program.getColorListFile() != null && ((program.getColorListFile().ListName + "_color") == listName))
+                    else
                     {
-                        return true;
+                        MessageBox.Show(LocRM.GetString("FilesNotDeleted", currentCulture));
+                        this.Parent.Controls.Remove(this);
+                        stopProcess = true;
+                        return false;
                     }
+                }
+                else
+                {
+                    this.Parent.Controls.Remove(this);
+                    stopProcess = true;
+                    return false;
                 }
             }
-            foreach (string file in MatchingPrograms)
-            {
-                MatchingProgram program = new MatchingProgram();
-                program.readProgramFile(file);
-                if (suffix == "_image" && program.getImageListFile() != null && program.getImageListFile().ListName == listName)
-                {
-                    return true;
-                }
-                else if (suffix == "_audio" && program.getAudioListFile() != null && program.getAudioListFile().ListName == listName)
-                {
-                    return true;
-                }
-                else if (suffix == "_words_color")
-                {
-                    if (program.getWordListFile() != null && ((program.getWordListFile().ListName + "_words") == listName))
-                    {
-                        return true;
-                    }
-                    else if (program.getColorListFile() != null && ((program.getColorListFile().ListName + "_color") == listName))
-                    {
-                        return true;
-                    }
-                }
-            }
+            stopProcess = false;
             return false;
         }
 
@@ -331,7 +402,7 @@ namespace TestPlatform.Views.ListsPages
                     string currentDirectory = "";
                     do
                     {
-                        if (!isListUsed(deletingList.Items[count].ToString(), suffix))
+                        if (!isListUsed(deletingList.Items[count].ToString(), suffix, out stopLoading))
                         {
                             try
                             {
@@ -361,7 +432,7 @@ namespace TestPlatform.Views.ListsPages
                 {
                     for (int count = 0; count < deletingList.Items.Count; count++)
                     {
-                        if (mode == 'r' || !isListUsed(deletingList.Items[count].ToString(), suffix))
+                        if (mode == 'r' || !isListUsed(deletingList.Items[count].ToString(), suffix, out stopLoading))
                         {
                             try
                             {
@@ -396,7 +467,7 @@ namespace TestPlatform.Views.ListsPages
                     string currentDirectory = "";
                     do
                     {
-                        if (mode == 'r' || !isListUsed(deletingList.Items[count].ToString(), suffix))
+                        if (mode == 'r' || !isListUsed(deletingList.Items[count].ToString(), suffix, out stopLoading))
                         {
                             try
                             {
@@ -424,7 +495,7 @@ namespace TestPlatform.Views.ListsPages
                 {
                     for (int count = 0; count < deletingList.Items.Count; count++)
                     {
-                        if (mode == 'r' || !isListUsed(deletingList.Items[count].ToString(), suffix))
+                        if (mode == 'r' || !isListUsed(deletingList.Items[count].ToString(), suffix, out stopLoading))
                         {
                             try
                             {

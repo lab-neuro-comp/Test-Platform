@@ -2431,4 +2431,16 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   <data name="cannotRecoverFilesByMotive" xml:space="preserve">
     <value>You should create or recover the following lists before recovering the program "</value>
   </data>
+  <data name="error" xml:space="preserve">
+    <value>Error:</value>
+  </data>
+  <data name="hasMissingLists" xml:space="preserve">
+    <value>has lists that was incorretly deleted: "</value>
+  </data>
+  <data name="missingListSolution" xml:space="preserve">
+    <value>. You must create a list manually or delete the program. Want to delete the program?</value>
+  </data>
+  <data name="wanstPossibleToRecoverLists" xml:space="preserve">
+    <value>Coudn't display lists because the program</value>
+  </data>
 </root>

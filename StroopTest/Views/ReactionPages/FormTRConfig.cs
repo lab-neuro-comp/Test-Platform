@@ -39,7 +39,15 @@ namespace TestPlatform.Views
         private void editProgram()
         {
             ReactionProgram editProgram = new ReactionProgram();
-            editProgram.readProgramFile(path + Global.programFolderName + editPrgName + ".prg");
+            try
+            {
+                editProgram.readProgramFile(path + Global.programFolderName + editPrgName + ".prg");
+            }
+            catch (FileNotFoundException e)
+            {
+                MessageBox.Show(LocRM.GetString("cantEdìtProgramMissingFiles", currentCulture) + e.Message);
+                return;
+            }
                         
             prgNameTextBox.Text = editProgram.ProgramName;
             numExpo.Value = editProgram.NumExpositions;

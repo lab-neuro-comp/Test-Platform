@@ -259,9 +259,14 @@ namespace TestPlatform.Views.MainForms
                         {
                             experiment.ReadProgramFile(true);
                         }
-                        catch(FileNotFoundException e)
+                        catch(MissingMemberException e)
                         {
                             MessageBox.Show(e.Message + " " + LocRM.GetString("cantBeFoundPleaseRocoverFirst", currentCulture) + destinationFilesList.Items[count].ToString() + ")");
+                            return false;
+                        }
+                        catch (FileNotFoundException e)
+                        {
+                            MessageBox.Show(LocRM.GetString("cannotRecoverFilesByMotive", currentCulture) + destinationFilesList.Items[count].ToString() + "\":\n" + e.Message);
                             return false;
                         }
                     }

@@ -2427,4 +2427,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="wanstPossibleToRecoverLists" xml:space="preserve">
     <value>Não foi possível exibir as listas pois o programa </value>
   </data>
+  <data name="cantEdìtProgramMissingFiles" xml:space="preserve">
+    <value>Não foi possível abrir a edição de programa pois está faltando arquivos. Recupere ou crie essas listas antes de continuar: </value>
+  </data>
 </root>

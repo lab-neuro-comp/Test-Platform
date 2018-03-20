@@ -53,7 +53,15 @@ namespace TestPlatform.Views.MatchingPages
         private void editProgram()
         {
             MatchingProgram editProgram = new MatchingProgram();
-            editProgram.readProgramFile(path + Global.programFolderName + editPrgName + ".prg");
+            try
+            {
+                editProgram.readProgramFile(path + Global.programFolderName + editPrgName + ".prg");
+            }
+            catch (FileNotFoundException e)
+            {
+                MessageBox.Show(LocRM.GetString("cantEdìtProgramMissingFiles", currentCulture) + e.Message);
+                return;
+            }
 
             if (editProgram.getImageListFile() != null)
             {

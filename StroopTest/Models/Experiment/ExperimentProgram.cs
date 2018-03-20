@@ -130,6 +130,7 @@
         {
             try
             {
+                if(!File.Exists(Global.stroopTestFilesPath + Global.programFolderName + programName + ".prg")) { throw new MissingMemberException(programName + " (" + LocRM.GetString("stroopTest", currentCulture) + ")"); };
                 StroopProgram newProgram = new StroopProgram();
                 newProgram.ProgramName = programName;
                 newProgram.readProgramFile(Global.stroopTestFilesPath + Global.programFolderName + newProgram.ProgramName + ".prg");
@@ -146,6 +147,7 @@
         {
             try
             {
+                if (!File.Exists(Global.reactionTestFilesPath + Global.programFolderName + programName + ".prg")) { throw new MissingMemberException(programName + " (" + LocRM.GetString("reactionTest", currentCulture) + ")"); };
                 ReactionProgram newProgram = new ReactionProgram(Global.reactionTestFilesPath + Global.programFolderName + programName + ".prg");
                 ProgramList.Add(newProgram);
             }
@@ -160,6 +162,7 @@
         {
             try
             {
+                if (!File.Exists(Global.matchingTestFilesPath + Global.programFolderName + programName + ".prg")) { throw new MissingMemberException(programName + " (" + LocRM.GetString("matchingTest", currentCulture) + ")"); };
                 MatchingProgram newProgram = new MatchingProgram(Global.matchingTestFilesPath + Global.programFolderName + programName + ".prg");
                 ProgramList.Add(newProgram);
             }

@@ -552,8 +552,15 @@ namespace TestPlatform
         private void editProgram()
         {
             StroopProgram program = new StroopProgram();
-            program.readProgramFile(path + editPrgName + ".prg");
-
+            try
+            {
+                program.readProgramFile(path + editPrgName + ".prg");
+            }
+            catch(FileNotFoundException e)
+            {
+                MessageBox.Show(LocRM.GetString("cantEdìtProgramMissingFiles", currentCulture) + e.Message);
+                return;
+            }
             prgNameTextBox.Text = program.ProgramName;
             numExpo.Value = program.NumExpositions;
             expoTime.Value = program.ExpositionTime;

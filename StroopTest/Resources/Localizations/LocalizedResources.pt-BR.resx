@@ -2409,6 +2409,27 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="wordListError" xml:space="preserve">
     <value>escolha uma lista de palavras.</value>
   </data>
+  <data name="cantBeFoundPleaseRocoverFirst" xml:space="preserve">
+    <value>é um programa do experimento que não existe na pasta de seus programas. Recupere-o primeiro ou crie um novo programa com o mesmo nome. (Experimento:</value>
+  </data>
+  <data name="cannotRecoverFilesByMotive" xml:space="preserve">
+    <value>Você deve criar ou recuperar as seguintes listas antes de recuperar o programa "</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Erro:</value>
+  </data>
+  <data name="hasMissingLists" xml:space="preserve">
+    <value> possui listas que foram excluídas incorretamente: "</value>
+  </data>
+  <data name="missingListSolution" xml:space="preserve">
+    <value>. Você deve criar a lista manualmente ou excluir o programa. Deseja excluir o programa?</value>
+  </data>
+  <data name="wanstPossibleToRecoverLists" xml:space="preserve">
+    <value>Não foi possível exibir as listas pois o programa </value>
+  </data>
+  <data name="cantEdìtProgramMissingFiles" xml:space="preserve">
+    <value>Não foi possível abrir a edição de programa pois está faltando arquivos. Recupere ou crie essas listas antes de continuar: </value>
+  </data>
   <data name="wordWithColor" xml:space="preserve">
     <value>Palavra com Cor</value>
   </data>

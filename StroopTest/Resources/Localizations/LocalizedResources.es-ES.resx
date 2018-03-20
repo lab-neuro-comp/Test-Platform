@@ -342,4 +342,10 @@ https://github.com/lab-neuro-comp/Test-Platform
   <data name="smallImageList" xml:space="preserve">
     <value>La lista es menor que lo necesario. Repeticiones de imágenes pode ocorrer</value>
   </data>
+  <data name="cantBeFoundPleaseRocoverFirst" xml:space="preserve">
+    <value>es un programa del experimento que no existe en la carpeta de programas. Recupere primero o cree un nuevo programa con el mismo nombre. (Experimento:</value>
+  </data>
+  <data name="cannotRecoverFilesByMotive" xml:space="preserve">
+    <value>Debe crear o recuperar las siguientes listas antes de recuperar el programa "</value>
+  </data>
 </root>

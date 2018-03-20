@@ -544,82 +544,74 @@ namespace TestPlatform.Models
             
             List<string> config = new List<string>();
 
-            try
+            if (!File.Exists(filepath)) { throw new FileNotFoundException(); }
+
+            tr = new StreamReader(filepath, Encoding.Default, true);
+            line = tr.ReadLine();
+            line = encodeLatinText(line);
+            config = line.Split().ToList();
+            tr.Close();
+
+            needsEditionFlag = false;
+            if (config.Count() == ELEMENTS)
             {
-                if (!File.Exists(filepath)) { throw new FileNotFoundException(); } 
-                
-                tr = new StreamReader(filepath, Encoding.Default, true);
-                line = tr.ReadLine();
-                line = encodeLatinText(line);
-                config = line.Split().ToList();
-                tr.Close();
-
-                needsEditionFlag = false;
-                if (config.Count() == ELEMENTS)
+                ProgramName = config[0];
+                if (Path.GetFileNameWithoutExtension(filepath) == (this.ProgramName))
                 {
-                    ProgramName = config[0];
-                    if (Path.GetFileNameWithoutExtension(filepath) == (this.ProgramName))
-                    {
-                        NumExpositions = int.Parse(config[1]);
-                        ExpositionTime = int.Parse(config[2]);
-                        StimuluSize = int.Parse(config[3]);
-                        IntervalTime = int.Parse(config[4]);
-                        StimulusDistance = int.Parse(config[5]);
-                        setWordListFile(config[6]);
-                        setColorListFile(config[7]);
-                        BackgroundColor = config[8];
-                        IsBeeping = bool.Parse(config[9]);
-                        BeepDuration = int.Parse(config[10]);
-                        StimulusColor = config[11];
-                        ExpositionType = config[12];
-                        setImageListFile(config[13]);
-                        setAudioListFile(config[14]);
-                        FixPoint = config[15];
-                        FixPointColor = config[16];
-                        IntervalTimeRandom = bool.Parse(config[17]);
-                        StimuluShape = config[18];
-                        BeepingRandom = bool.Parse(config[19]);
-                        NumberPositions = int.Parse(config[20]);
-                        ResponseType = config[21];
-                        expositionRandom = bool.Parse(config[22]);
-                        hasColorList = bool.Parse(config[23]);
-                        FontSize = int.Parse(config[24]);
+                    NumExpositions = int.Parse(config[1]);
+                    ExpositionTime = int.Parse(config[2]);
+                    StimuluSize = int.Parse(config[3]);
+                    IntervalTime = int.Parse(config[4]);
+                    StimulusDistance = int.Parse(config[5]);
+                    setWordListFile(config[6]);
+                    setColorListFile(config[7]);
+                    BackgroundColor = config[8];
+                    IsBeeping = bool.Parse(config[9]);
+                    BeepDuration = int.Parse(config[10]);
+                    StimulusColor = config[11];
+                    ExpositionType = config[12];
+                    setImageListFile(config[13]);
+                    setAudioListFile(config[14]);
+                    FixPoint = config[15];
+                    FixPointColor = config[16];
+                    IntervalTimeRandom = bool.Parse(config[17]);
+                    StimuluShape = config[18];
+                    BeepingRandom = bool.Parse(config[19]);
+                    NumberPositions = int.Parse(config[20]);
+                    ResponseType = config[21];
+                    expositionRandom = bool.Parse(config[22]);
+                    hasColorList = bool.Parse(config[23]);
+                    FontSize = int.Parse(config[24]);
 
-                        string[] linesInstruction = File.ReadAllLines(filepath);
-                        if (linesInstruction.Length > 1) // read instructions if any
+                    string[] linesInstruction = File.ReadAllLines(filepath);
+                    if (linesInstruction.Length > 1) // read instructions if any
+                    {
+                        for (int i = 1; i < linesInstruction.Length; i++)
                         {
-                            for (int i = 1; i < linesInstruction.Length; i++)
-                            {
-                                this.InstructionText.Add(linesInstruction[i]);
-                            }
-                        }
-                        else
-                        {
-                            this.InstructionText = null;
+                            this.InstructionText.Add(linesInstruction[i]);
                         }
                     }
                     else
                     {
-                        throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName +
-                           "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + "'.prg");
-                    }                   
+                        this.InstructionText = null;
+                    }
                 }
                 else
                 {
-                    needsEditionFlag = true;
-
-                    List<string> defaultConfig = LocRM.GetString("defaultReactionProgram", currentCulture).Split().ToList();
-                    for (int i = 0; i < ELEMENTS; i++)
-                    {
-                        config.Add(defaultConfig[i]);
-                    }
+                    throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName +
+                       "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + "'.prg");
                 }
             }
-            catch (FileNotFoundException ex)
+            else
             {
-                throw new FileNotFoundException("Arquivo programa: " + Path.GetFileName(filepath) + "\nnão foi encontrado no local:\n" + Path.GetDirectoryName(filepath) + "\n\n( " + ex.Message + " )");
-            }
+                needsEditionFlag = true;
 
+                List<string> defaultConfig = LocRM.GetString("defaultReactionProgram", currentCulture).Split().ToList();
+                for (int i = 0; i < ELEMENTS; i++)
+                {
+                    config.Add(defaultConfig[i]);
+                }
+            }
         }
 
         // saves default reaction program file on disk

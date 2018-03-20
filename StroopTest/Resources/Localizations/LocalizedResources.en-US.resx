@@ -2425,6 +2425,27 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   <data name="wordListError" xml:space="preserve">
     <value>choose a word list</value>
   </data>
+  <data name="cantBeFoundPleaseRocoverFirst" xml:space="preserve">
+    <value>is a program of the experiment that doesn't exists in your programs folder. Please recover it first or create a new program with same name. (Experiment:</value>
+  </data>
+  <data name="cannotRecoverFilesByMotive" xml:space="preserve">
+    <value>You should create or recover the following lists before recovering the program "</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Error:</value>
+  </data>
+  <data name="hasMissingLists" xml:space="preserve">
+    <value>has lists that was incorretly deleted: "</value>
+  </data>
+  <data name="missingListSolution" xml:space="preserve">
+    <value>. You must create a list manually or delete the program. Want to delete the program?</value>
+  </data>
+  <data name="wanstPossibleToRecoverLists" xml:space="preserve">
+    <value>Coudn't display lists because the program</value>
+  </data>
+  <data name="cantEdìtProgramMissingFiles" xml:space="preserve">
+    <value>Wasn't possible to open program edition because there is missing files. Recover or create the following lists before continue:</value>
+  </data>
   <data name="wordWithColor" xml:space="preserve">
     <value>Word with Color</value>
   </data>

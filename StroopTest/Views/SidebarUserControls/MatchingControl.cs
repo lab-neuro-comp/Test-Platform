@@ -141,7 +141,7 @@ namespace TestPlatform.Views.SidebarUserControls
                     {
                         if (deleteMatchButton.Checked)
                         {
-                            FileManagment deleteProgram = new FileManagment(Global.matchingTestFilesPath + Global.programFolderName, Global.matchingTestFilesBackupPath, 'd', "program");
+                            FileManagment deleteProgram = new FileManagment(Global.matchingTestFilesPath + Global.programFolderName, Global.matchingTestFilesBackupPath, 'd', LocRM.GetString("matchingTest", currentCulture));
                             Global.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                             deleteMatchButton.Checked = false;
                         }
@@ -169,7 +169,7 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     if (recoverMatchButton.Checked)
                     {
-                        FileManagment recoverProgram = new FileManagment(Global.matchingTestFilesBackupPath, Global.matchingTestFilesPath + Global.programFolderName, 'r', "program");
+                        FileManagment recoverProgram = new FileManagment(Global.matchingTestFilesBackupPath, Global.matchingTestFilesPath + Global.programFolderName, 'r', LocRM.GetString("matchingTest", currentCulture));
                         Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverMatchButton.Checked = false;
                     }

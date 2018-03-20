@@ -404,9 +404,6 @@ namespace TestPlatform.Models
             {
                 this.InstructionText = null;
             }
-
-
-
         }
 
         public bool saveProgramFile(string path, string instructionBoxText)

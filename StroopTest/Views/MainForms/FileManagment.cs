@@ -74,7 +74,7 @@ namespace TestPlatform.Views.MainForms
                 {
                     backgroundBrush = blueSolidBrush;
                 }
-                else if (type == "program" && mode == 'd' && isProgramUsed(text))
+                else if (type != LocRM.GetString("experiment", currentCulture) && mode == 'd' && isProgramUsed(text))
                 {
                     backgroundBrush = orangeSolidBush;
                     warningLabel.Visible = true;
@@ -126,7 +126,7 @@ namespace TestPlatform.Views.MainForms
                 }
                 else
                 {
-                    if (type == "program" && mode == 'd' && isProgramUsed(text))
+                    if (type != LocRM.GetString("experiment", currentCulture) && mode == 'd' && isProgramUsed(text))
                     {
                         backgroundBrush = orangeSolidBush;
                     }
@@ -175,7 +175,7 @@ namespace TestPlatform.Views.MainForms
             if (originFilesList.SelectedItem != null)
             {
                 programName = originFilesList.SelectedItem.ToString();
-                if (type == "experiment"  || !isProgramUsed(programName))
+                if (type == LocRM.GetString("experiment", currentCulture) || !isProgramUsed(programName))
                 {
                     originFilesList.Items.Remove(programName);
                     destinationFilesList.Items.Add(programName);
@@ -245,9 +245,81 @@ namespace TestPlatform.Views.MainForms
             }
         }
 
+        private bool filesHasNoDepedency()
+        {
+            if (mode == 'r' && destinationFilesList.Items.Count > 0)
+            {
+                for (int count = 0; count < destinationFilesList.Items.Count; count++)
+                {
+                    if (this.type == LocRM.GetString("experiment"))
+                    {
+                        ExperimentProgram experiment = new ExperimentProgram();
+                        experiment.ExperimentName = Path.GetFileNameWithoutExtension(destinationFilesList.Items[count].ToString());
+                        try
+                        {
+                            experiment.ReadProgramFile(true);
+                        }
+                        catch(MissingMemberException e)
+                        {
+                            MessageBox.Show(e.Message + " " + LocRM.GetString("cantBeFoundPleaseRocoverFirst", currentCulture) + destinationFilesList.Items[count].ToString() + ")");
+                            return false;
+                        }
+                        catch (FileNotFoundException e)
+                        {
+                            MessageBox.Show(LocRM.GetString("cannotRecoverFilesByMotive", currentCulture) + destinationFilesList.Items[count].ToString() + "\":\n" + e.Message);
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        if (type == LocRM.GetString("stroopTest", currentCulture))
+                        {
+                            StroopProgram program = new StroopProgram();
+                            try
+                            {
+                                program.readProgramFile(Global.stroopTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
+                            }
+                            catch (FileNotFoundException e)
+                            {
+                                MessageBox.Show(LocRM.GetString("cannotRecoverFilesByMotive", currentCulture) + destinationFilesList.Items[count].ToString() + "\":\n" + e.Message);
+                                return false;
+                            }
+                        }
+                        else if(type == LocRM.GetString("reactionTest",currentCulture))
+                        {
+                            ReactionProgram program = new ReactionProgram();
+                            try
+                            {
+                                program.readProgramFile(Global.reactionTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
+                            }
+                            catch (FileNotFoundException e)
+                            {
+                                MessageBox.Show(LocRM.GetString("cannotRecoverFilesByMotive", currentCulture) + destinationFilesList.Items[count].ToString() + "\":\n" + e.Message);
+                                return false;
+                            }
+                        }
+                        else if(type == LocRM.GetString("matchingTest", currentCulture))
+                        {
+                            MatchingProgram program = new MatchingProgram();
+                            try
+                            {
+                                program.readProgramFile(Global.matchingTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
+                            }
+                            catch (FileNotFoundException e)
+                            {
+                                MessageBox.Show(LocRM.GetString("cannotRecoverFilesByMotive", currentCulture) + destinationFilesList.Items[count].ToString() + "\":\n" + e.Message);
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
         private void sendButton_Click(object sender, EventArgs e)
         {
-            if (destinationFilesList.Items.Count > 0)
+            if (destinationFilesList.Items.Count > 0 && filesHasNoDepedency())
             {
                 DialogResult dialogResult = MessageBox.Show(LocRM.GetString("deleteFiles", currentCulture), LocRM.GetString("delete", currentCulture), MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)

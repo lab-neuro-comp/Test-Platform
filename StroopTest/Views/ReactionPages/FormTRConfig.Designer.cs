@@ -106,6 +106,9 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip_ptBR = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip_enUS = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip_esES = new System.Windows.Forms.ToolTip(this.components);
             this.reactionConfigPanel.SuspendLayout();
             this.userResponse.SuspendLayout();
             this.shapesGroupBox.SuspendLayout();
@@ -656,6 +659,8 @@
             resources.ApplyResources(this.chooseExpoType, "chooseExpoType");
             this.chooseExpoType.Name = "chooseExpoType";
             this.chooseExpoType.Tag = "";
+            this.toolTip_ptBR.SetToolTip(this.chooseExpoType, resources.GetString("chooseExpoType.ToolTip"));
+            this.toolTip_enUS.SetToolTip(this.chooseExpoType, resources.GetString("chooseExpoType.ToolTip1"));
             this.chooseExpoType.SelectedIndexChanged += new System.EventHandler(this.chooseExpoType_SelectedIndexChanged);
             this.chooseExpoType.Validating += new System.ComponentModel.CancelEventHandler(this.chooseExpoType_Validating);
             this.chooseExpoType.Validated += new System.EventHandler(this.chooseExpoType_Validated);
@@ -764,6 +769,8 @@
             0,
             0});
             this.stimuluSize.Name = "stimuluSize";
+            this.toolTip_enUS.SetToolTip(this.stimuluSize, resources.GetString("stimuluSize.ToolTip"));
+            this.toolTip_ptBR.SetToolTip(this.stimuluSize, resources.GetString("stimuluSize.ToolTip1"));
             this.stimuluSize.Value = new decimal(new int[] {
             50,
             0,
@@ -785,6 +792,8 @@
             // 
             resources.ApplyResources(this.prgNameTextBox, "prgNameTextBox");
             this.prgNameTextBox.Name = "prgNameTextBox";
+            this.toolTip_ptBR.SetToolTip(this.prgNameTextBox, resources.GetString("prgNameTextBox.ToolTip"));
+            this.toolTip_enUS.SetToolTip(this.prgNameTextBox, resources.GetString("prgNameTextBox.ToolTip1"));
             this.prgNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.prgNameTextBox_Validating);
             this.prgNameTextBox.Validated += new System.EventHandler(this.prgNameTextBox_Validated);
             // 
@@ -813,6 +822,18 @@
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
+            // 
+            // toolTip_ptBR
+            // 
+            this.toolTip_ptBR.Active = false;
+            // 
+            // toolTip_enUS
+            // 
+            this.toolTip_enUS.Active = false;
+            // 
+            // toolTip_esES
+            // 
+            this.toolTip_esES.Active = false;
             // 
             // FormTRConfig
             // 
@@ -931,5 +952,8 @@
         private System.Windows.Forms.RadioButton ColorListOption;
         private System.Windows.Forms.Label fontSizeLabel;
         private System.Windows.Forms.NumericUpDown fontSizeUpDown;
+        private System.Windows.Forms.ToolTip toolTip_ptBR;
+        private System.Windows.Forms.ToolTip toolTip_enUS;
+        private System.Windows.Forms.ToolTip toolTip_esES;
     }
 }

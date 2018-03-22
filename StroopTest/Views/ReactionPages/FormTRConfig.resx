@@ -1729,6 +1729,19 @@ Ponto:</value>
   <data name="chooseExpoType.TabIndex" type="System.Int32, mscorlib">
     <value>167</value>
   </data>
+  <metadata name="toolTip_ptBR.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>172, 17</value>
+  </metadata>
+  <data name="chooseExpoType.ToolTip" xml:space="preserve">
+    <value>Deve ser escolhido um dos tipos para que as opções corretas sejam disponibilizadas no formulário
+</value>
+  </data>
+  <metadata name="toolTip_enUS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>334, 17</value>
+  </metadata>
+  <data name="chooseExpoType.ToolTip1" xml:space="preserve">
+    <value>One type should be choosen so that the correct options are available on this form</value>
+  </data>
   <data name="&gt;&gt;chooseExpoType.Name" xml:space="preserve">
     <value>chooseExpoType</value>
   </data>
@@ -2026,6 +2039,12 @@ Ponto:</value>
   <data name="stimuluSize.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
+  <data name="stimuluSize.ToolTip" xml:space="preserve">
+    <value>This value is in pixels and it must be between 10 and 500</value>
+  </data>
+  <data name="stimuluSize.ToolTip1" xml:space="preserve">
+    <value>O valor está em pixels e deve estar entre 10 e 500.</value>
+  </data>
   <data name="&gt;&gt;stimuluSize.Name" xml:space="preserve">
     <value>stimuluSize</value>
   </data>
@@ -2136,6 +2155,12 @@ Ponto:</value>
   </data>
   <data name="prgNameTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="prgNameTextBox.ToolTip" xml:space="preserve">
+    <value>Nome do programa que será utilizado como referência na execução do teste e exibição de resultados</value>
+  </data>
+  <data name="prgNameTextBox.ToolTip1" xml:space="preserve">
+    <value>Program name that will be referenced when executing test and viewing results.</value>
   </data>
   <data name="&gt;&gt;prgNameTextBox.Name" xml:space="preserve">
     <value>prgNameTextBox</value>
@@ -2287,10 +2312,31 @@ Ponto:</value>
   <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolTip_ptBR.Name" xml:space="preserve">
+    <value>toolTip_ptBR</value>
+  </data>
+  <data name="&gt;&gt;toolTip_ptBR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip_enUS.Name" xml:space="preserve">
+    <value>toolTip_enUS</value>
+  </data>
+  <data name="&gt;&gt;toolTip_enUS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip_esES.Name" xml:space="preserve">
+    <value>toolTip_esES</value>
+  </data>
+  <data name="&gt;&gt;toolTip_esES.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormTRConfig</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <metadata name="toolTip_esES.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>514, 12</value>
+  </metadata>
 </root>

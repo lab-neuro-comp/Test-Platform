@@ -27,6 +27,8 @@ namespace TestPlatform.Views
             this.prgName = prgName;
             this.Dock = DockStyle.Fill;
             InitializeComponent();
+
+            activeCorrectToopTip();
             positionsBox.SelectedIndex = 2;
             responseTypeBox.SelectedIndex = 0;
             if (PrgName != "false")
@@ -34,6 +36,23 @@ namespace TestPlatform.Views
                 editPrgName = PrgName;
                 editProgram();
             }
+        }
+
+        private void activeCorrectToopTip()
+        {
+            switch (currentCulture.Name)
+            {
+                case "pt-BR":
+                    toolTip_ptBR.Active = true;
+                    break;
+                case "en-US":
+                    toolTip_enUS.Active = true;
+                    break;
+                case "es-ES":
+                    toolTip_esES.Active = true;
+                    break;
+            }
+
         }
 
         private void editProgram()

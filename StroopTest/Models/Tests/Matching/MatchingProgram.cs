@@ -23,6 +23,8 @@ namespace TestPlatform.Models
         private Int32 stimuluNumber;
         private Boolean expositionAudioResponse;
         private Boolean feedbackAudioResponse;
+        private Boolean commissionAudioResponse;
+        private Boolean omissionAudioResponse;
         public MatchingProgram()
         {
 
@@ -76,7 +78,7 @@ namespace TestPlatform.Models
             int attemptsIntervalTime,  string backgroundColor, string DNMTSBackground, 
             bool randomOrder, bool randomIntervalModelStimulus, bool randomStimuluPosition,
             string wordList, string colorList, string wordColor, bool expositionAudioResponse,
-            bool feedbackAudioResponse)
+            bool feedbackAudioResponse, bool omissionAudioResponse, bool commissionAudioResponse)
         {
             // Program properties
             this.programName = programName;
@@ -97,6 +99,8 @@ namespace TestPlatform.Models
             this.AttemptsNumber = AttemptsNumber;
             this.randomIntervalModelStimulus = randomIntervalModelStimulus;
             this.feedbackAudioResponse = feedbackAudioResponse;
+            this.omissionAudioResponse = omissionAudioResponse;
+            this.commissionAudioResponse = commissionAudioResponse;
             this.expositionAudioResponse = expositionAudioResponse;
             this.randomStimuluPosition = randomStimuluPosition;
             //default configurations for Mathing program
@@ -159,7 +163,9 @@ namespace TestPlatform.Models
                 this.randomStimuluPosition.ToString() + " " +
                 this.wordColor + " " +
                 this.expositionAudioResponse.ToString() + " " +
-                this.feedbackAudioResponse.ToString();
+                this.feedbackAudioResponse.ToString() + " " +
+                this.commissionAudioResponse.ToString() + " " +
+                this.omissionAudioResponse.ToString();
                 
             return data;
         }
@@ -241,6 +247,31 @@ namespace TestPlatform.Models
             {
                 ExpositionAudioResponse = value;
             }
+        }
+
+        public Boolean CommissionAudioResponse
+        {
+            get
+            {
+                return commissionAudioResponse;
+            }
+            set
+            {
+                commissionAudioResponse = value;
+            }
+        }
+
+        public Boolean OmissionAudioResponse
+        {
+            get
+            {
+                return omissionAudioResponse;
+            }
+            set
+            {
+                omissionAudioResponse = value;
+            }
+
         }
 
         public Boolean FeedbackAudioResponse
@@ -392,6 +423,8 @@ namespace TestPlatform.Models
             wordColor = config[25];
             expositionAudioResponse = Boolean.Parse(config[26]);
             feedbackAudioResponse = Boolean.Parse(config[27]);
+            commissionAudioResponse = Boolean.Parse(config[28]);
+            omissionAudioResponse = Boolean.Parse(config[29]);
             linesInstruction = File.ReadAllLines(filepath);
             if (linesInstruction.Length > 1) // read instructions if any
             {

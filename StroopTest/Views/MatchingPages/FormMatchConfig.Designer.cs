@@ -33,10 +33,11 @@ namespace TestPlatform.Views.MatchingPages
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMatchConfig));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.othersGroupBox = new System.Windows.Forms.GroupBox();
+            this.auditorySignalingGroupBox = new System.Windows.Forms.GroupBox();
+            this.omissionAudioResponse = new System.Windows.Forms.CheckBox();
+            this.commissionAudioFeedback = new System.Windows.Forms.CheckBox();
             this.feedbackAudioResponse = new System.Windows.Forms.CheckBox();
             this.expositonAudioResponse = new System.Windows.Forms.CheckBox();
-            this.audioResponseLabel = new System.Windows.Forms.Label();
             this.colorGroupBox = new System.Windows.Forms.GroupBox();
             this.wordSingleColor = new System.Windows.Forms.Label();
             this.WordColorPanel = new System.Windows.Forms.Panel();
@@ -96,7 +97,7 @@ namespace TestPlatform.Views.MatchingPages
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
-            this.othersGroupBox.SuspendLayout();
+            this.auditorySignalingGroupBox.SuspendLayout();
             this.colorGroupBox.SuspendLayout();
             this.timeGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusInterval)).BeginInit();
@@ -116,7 +117,7 @@ namespace TestPlatform.Views.MatchingPages
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.othersGroupBox);
+            this.panel1.Controls.Add(this.auditorySignalingGroupBox);
             this.panel1.Controls.Add(this.colorGroupBox);
             this.panel1.Controls.Add(this.timeGroupBox);
             this.panel1.Controls.Add(this.listGroupBox);
@@ -129,14 +130,27 @@ namespace TestPlatform.Views.MatchingPages
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // othersGroupBox
+            // auditorySignalingGroupBox
             // 
-            this.othersGroupBox.Controls.Add(this.feedbackAudioResponse);
-            this.othersGroupBox.Controls.Add(this.expositonAudioResponse);
-            this.othersGroupBox.Controls.Add(this.audioResponseLabel);
-            resources.ApplyResources(this.othersGroupBox, "othersGroupBox");
-            this.othersGroupBox.Name = "othersGroupBox";
-            this.othersGroupBox.TabStop = false;
+            this.auditorySignalingGroupBox.Controls.Add(this.omissionAudioResponse);
+            this.auditorySignalingGroupBox.Controls.Add(this.commissionAudioFeedback);
+            this.auditorySignalingGroupBox.Controls.Add(this.feedbackAudioResponse);
+            this.auditorySignalingGroupBox.Controls.Add(this.expositonAudioResponse);
+            resources.ApplyResources(this.auditorySignalingGroupBox, "auditorySignalingGroupBox");
+            this.auditorySignalingGroupBox.Name = "auditorySignalingGroupBox";
+            this.auditorySignalingGroupBox.TabStop = false;
+            // 
+            // omissionAudioResponse
+            // 
+            resources.ApplyResources(this.omissionAudioResponse, "omissionAudioResponse");
+            this.omissionAudioResponse.Name = "omissionAudioResponse";
+            this.omissionAudioResponse.UseVisualStyleBackColor = true;
+            // 
+            // commissionAudioFeedback
+            // 
+            resources.ApplyResources(this.commissionAudioFeedback, "commissionAudioFeedback");
+            this.commissionAudioFeedback.Name = "commissionAudioFeedback";
+            this.commissionAudioFeedback.UseVisualStyleBackColor = true;
             // 
             // feedbackAudioResponse
             // 
@@ -149,11 +163,6 @@ namespace TestPlatform.Views.MatchingPages
             resources.ApplyResources(this.expositonAudioResponse, "expositonAudioResponse");
             this.expositonAudioResponse.Name = "expositonAudioResponse";
             this.expositonAudioResponse.UseVisualStyleBackColor = true;
-            // 
-            // audioResponseLabel
-            // 
-            resources.ApplyResources(this.audioResponseLabel, "audioResponseLabel");
-            this.audioResponseLabel.Name = "audioResponseLabel";
             // 
             // colorGroupBox
             // 
@@ -552,6 +561,7 @@ namespace TestPlatform.Views.MatchingPages
             resources.ApplyResources(this.closeExpoAWithClick, "closeExpoAWithClick");
             this.closeExpoAWithClick.Name = "closeExpoAWithClick";
             this.closeExpoAWithClick.UseVisualStyleBackColor = true;
+            this.closeExpoAWithClick.CheckedChanged += new System.EventHandler(this.closeExpoAWithClick_CheckedChanged);
             // 
             // numExpoLabel
             // 
@@ -691,9 +701,9 @@ namespace TestPlatform.Views.MatchingPages
             // 
             // errorProvider2
             // 
-            this.errorProvider2.ContainerControl = this;
             this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider2.Icon = SystemIcons.Warning;
+            this.errorProvider2.ContainerControl = this;
+            resources.ApplyResources(this.errorProvider2, "errorProvider2");
             // 
             // FormMatchConfig
             // 
@@ -706,8 +716,8 @@ namespace TestPlatform.Views.MatchingPages
             this.Name = "FormMatchConfig";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.othersGroupBox.ResumeLayout(false);
-            this.othersGroupBox.PerformLayout();
+            this.auditorySignalingGroupBox.ResumeLayout(false);
+            this.auditorySignalingGroupBox.PerformLayout();
             this.colorGroupBox.ResumeLayout(false);
             this.colorGroupBox.PerformLayout();
             this.timeGroupBox.ResumeLayout(false);
@@ -779,7 +789,7 @@ namespace TestPlatform.Views.MatchingPages
         private System.Windows.Forms.Panel DNMTSColorPanel;
         private System.Windows.Forms.Panel DMTSColorPanel;
         private System.Windows.Forms.CheckBox randomAttemptTime;
-        private System.Windows.Forms.GroupBox othersGroupBox;
+        private System.Windows.Forms.GroupBox auditorySignalingGroupBox;
         private System.Windows.Forms.CheckBox closeExpoAWithClick;
         private System.Windows.Forms.CheckBox randomModelStimulusTime;
         private System.Windows.Forms.CheckBox randomModelPosition;
@@ -792,7 +802,8 @@ namespace TestPlatform.Views.MatchingPages
         private System.Windows.Forms.Label wordSingleColorLabel;
         private System.Windows.Forms.CheckBox feedbackAudioResponse;
         private System.Windows.Forms.CheckBox expositonAudioResponse;
-        private System.Windows.Forms.Label audioResponseLabel;
         private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.CheckBox omissionAudioResponse;
+        private System.Windows.Forms.CheckBox commissionAudioFeedback;
     }
 }

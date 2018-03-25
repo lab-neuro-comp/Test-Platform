@@ -95,6 +95,8 @@ namespace TestPlatform.Views.MatchingPages
             randomAttemptTime.Checked = editProgram.IntervalTimeRandom;
             stimulusExpoTime.Value = editProgram.ExpositionTime;
             modelExpoTime.Value = editProgram.ModelExpositionTime;
+            omissionAudioResponse.Checked = editProgram.OmissionAudioResponse;
+            commissionAudioFeedback.Checked = editProgram.CommissionAudioResponse;
             attemptInterval.Value = editProgram.AttemptsIntervalTime;
             randomOrder.Checked = editProgram.ExpositionRandom;
             DMTSBackgroundColor.Text = editProgram.BackgroundColor;
@@ -239,7 +241,8 @@ namespace TestPlatform.Views.MatchingPages
                                         randomAttemptTime.Checked, Convert.ToInt32(stimulusExpoTime.Value), Convert.ToInt32(modelExpoTime.Value),
                                         Convert.ToInt32(attemptInterval.Value), DMTSBackgroundColor.Text, DNMTSBackgroundColor.Text, randomOrder.Checked,
                                         this.randomModelStimulusTime.Checked, randomStimuluPosition.Checked, openWordListButton.Text,
-                                        openColorListButton.Text, wordSingleColor.Text, expositonAudioResponse.Checked, feedbackAudioResponse.Checked);
+                                        openColorListButton.Text, wordSingleColor.Text, expositonAudioResponse.Checked, 
+                                        feedbackAudioResponse.Checked, omissionAudioResponse.Checked, commissionAudioFeedback.Checked);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -747,6 +750,19 @@ namespace TestPlatform.Views.MatchingPages
         private void openWordListButton_TextChanged(object sender, EventArgs e)
         {
             showWarningMessage(openWordListButton);
+        }
+
+        private void closeExpoAWithClick_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.closeExpoAWithClick.Checked)
+            {
+                this.commissionAudioFeedback.Enabled = false;
+                this.commissionAudioFeedback.Checked = false;
+            }
+            else
+            {
+                this.commissionAudioFeedback.Enabled = true;
+            }
         }
     }
 }

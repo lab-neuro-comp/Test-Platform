@@ -444,7 +444,11 @@ namespace TestPlatform
             if (colorCode != null)
             {
                 colorPanel.BackColor = ColorTranslator.FromHtml(colorCode);
-                colorItemTextBox.Text = colorCode;
+                colorsList.Add(colorCode);
+                ListViewItem newItem = colorListView.Items.Add(colorCode);
+                newItem.ForeColor = ColorTranslator.FromHtml(colorCode);
+                colorItemTextBox.Text = "";
+                this.errorProvider1.SetError(this.colorItemTextBox, "");
             }
         }
 

@@ -545,6 +545,17 @@ namespace TestPlatform.Views.MatchingPages
             checkNewValue();
         }
 
+        public static Icon ResizeWarningIcon(Icon icon, Size size)
+        {
+            Bitmap bitmap = new Bitmap(size.Width, size.Height);
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.DrawImage(icon.ToBitmap(), new Rectangle(Point.Empty, size));
+            }
+            return Icon.FromHandle(bitmap.GetHicon());
+        }
+
         private void checkNewValue()
         {
             Button button = null;
@@ -576,13 +587,14 @@ namespace TestPlatform.Views.MatchingPages
                 else
                 {
                     errorProvider1.SetError(button, "");
+                    errorProvider2.SetError(button, "");
                     saveButton.Enabled = true;
                 }
             }
             else
             {
-                errorProvider2.SetError(openImgListButton, "");
-                errorProvider2.SetError(openWordListButton, "");
+                errorProvider1.SetError(button, "");
+                errorProvider2.SetError(button, "");
                 saveButton.Enabled = true;
             }
         }

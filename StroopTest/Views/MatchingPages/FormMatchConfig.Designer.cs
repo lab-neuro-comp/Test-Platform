@@ -693,7 +693,7 @@ namespace TestPlatform.Views.MatchingPages
             // 
             this.errorProvider2.ContainerControl = this;
             this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider2.Icon = SystemIcons.Warning;
+            this.errorProvider2.Icon = ResizeWarningIcon(SystemIcons.Warning, new Size(20,20));
             // 
             // FormMatchConfig
             // 

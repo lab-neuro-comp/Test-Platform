@@ -602,6 +602,10 @@ namespace TestPlatform.Views.MatchingPages
             {
                 modelControl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MatchingExposition_MouseClick);
             }
+            else
+            {
+                modelControl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.wrongClick_mouseClick);
+            }
             controls.Add(modelControl);
             expositionBW.ReportProgress(currentExposition / (executingTest.ProgramInUse.AttemptsNumber * 2) * 100, controls);
         }
@@ -679,7 +683,7 @@ namespace TestPlatform.Views.MatchingPages
                     this.Controls.Remove(c);
                 }
             }
-            if (exposing && !cancelExposition)
+            if (this.executingTest.ProgramInUse.ExpositionAudioResponse && exposing && !cancelExposition)
             {
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(TestPlatform.Properties.Resources.bell);
                 player.Play();
@@ -755,6 +759,14 @@ namespace TestPlatform.Views.MatchingPages
                 {
                     Close();
                 }
+            }
+        }
+
+        private void wrongClick_mouseClick(object sender, MouseEventArgs e)
+        {
+            if (this.executingTest.ProgramInUse.CommissionAudioResponse)
+            {
+                System.Media.SystemSounds.Exclamation.Play();
             }
         }
 
@@ -941,6 +953,10 @@ namespace TestPlatform.Views.MatchingPages
                     }
                     else /* user missed stimulus */
                     {
+                        if (this.executingTest.ProgramInUse.OmissionAudioResponse)
+                        {
+                            System.Media.SystemSounds.Exclamation.Play();
+                        }
                         if (stimuluType == 0)
                         {
                             size = ((PictureBox)modelAsStimuluControl).Size;
@@ -1009,6 +1025,10 @@ namespace TestPlatform.Views.MatchingPages
                         showAudioFeedbackOnNextClick = true;
                     }
                     else { /*Model should be clicked but wasn't*/
+                        if (this.executingTest.ProgramInUse.OmissionAudioResponse)
+                        {
+                            System.Media.SystemSounds.Exclamation.Play();
+                        }
                         modelReactTime = 0;
                         hitStopWatch.Stop();
                     }

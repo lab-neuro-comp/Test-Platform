@@ -654,6 +654,7 @@ namespace TestPlatform.Views.MatchingPages
             this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
             resources.ApplyResources(this.helpButton, "helpButton");
             this.helpButton.Name = "helpButton";
+            this.helpButton.TabStop = false;
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
@@ -691,9 +692,10 @@ namespace TestPlatform.Views.MatchingPages
             // 
             // errorProvider2
             // 
-            this.errorProvider2.ContainerControl = this;
             this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider2.Icon = SystemIcons.Warning;
+            this.errorProvider2.ContainerControl = this;
+            resources.ApplyResources(this.errorProvider2, "errorProvider2");
+            this.errorProvider2.Icon = ResizeWarningIcon(SystemIcons.Warning, new Size(20,20));
             // 
             // FormMatchConfig
             // 

@@ -353,6 +353,10 @@ namespace TestPlatform.Views.MatchingPages
                     else if (stimuluType == 1 || stimuluType == 2)
                     {
                         groupStimulusName[count] = currentList[stimuluCounter];
+                        if (colorsCount >= colorList.Length)
+                        {
+                            colorsCount = 0;
+                        }
                         if(stimuluType == 2 && colorList != null)
                         {
                             groupStimulusColors[count] = colorList[colorsCount];

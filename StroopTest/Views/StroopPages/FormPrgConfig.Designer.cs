@@ -143,6 +143,7 @@
             this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
             resources.ApplyResources(this.helpButton, "helpButton");
             this.helpButton.Name = "helpButton";
+            this.helpButton.TabStop = false;
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
@@ -281,7 +282,6 @@
             // 
             resources.ApplyResources(this.subsRndCheckBox, "subsRndCheckBox");
             this.subsRndCheckBox.Name = "subsRndCheckBox";
-            this.subsRndCheckBox.TabStop = false;
             this.subsRndCheckBox.UseVisualStyleBackColor = true;
             this.subsRndCheckBox.CheckedChanged += new System.EventHandler(this.subsRndCheckBox_CheckedChanged);
             // 
@@ -337,7 +337,6 @@
             this.subsCenterButton.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.subsCenterButton, "subsCenterButton");
             this.subsCenterButton.Name = "subsCenterButton";
-            this.subsCenterButton.TabStop = false;
             this.subsCenterButton.UseVisualStyleBackColor = false;
             this.subsCenterButton.Click += new System.EventHandler(this.subLocationCenter_Click);
             // 
@@ -346,7 +345,6 @@
             this.subsDownButton.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.subsDownButton, "subsDownButton");
             this.subsDownButton.Name = "subsDownButton";
-            this.subsDownButton.TabStop = false;
             this.subsDownButton.UseVisualStyleBackColor = false;
             this.subsDownButton.Click += new System.EventHandler(this.subLocationDown_Click);
             // 
@@ -355,7 +353,6 @@
             this.subsLeftButton.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.subsLeftButton, "subsLeftButton");
             this.subsLeftButton.Name = "subsLeftButton";
-            this.subsLeftButton.TabStop = false;
             this.subsLeftButton.UseVisualStyleBackColor = false;
             this.subsLeftButton.Click += new System.EventHandler(this.subLocationLeft_Click);
             // 
@@ -364,7 +361,6 @@
             this.subsRightButton.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.subsRightButton, "subsRightButton");
             this.subsRightButton.Name = "subsRightButton";
-            this.subsRightButton.TabStop = false;
             this.subsRightButton.UseVisualStyleBackColor = false;
             this.subsRightButton.Click += new System.EventHandler(this.subLocationRight_Click);
             // 
@@ -373,7 +369,6 @@
             this.subsUpButton.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.subsUpButton, "subsUpButton");
             this.subsUpButton.Name = "subsUpButton";
-            this.subsUpButton.TabStop = false;
             this.subsUpButton.UseVisualStyleBackColor = false;
             this.subsUpButton.Click += new System.EventHandler(this.subLocationUp_Click);
             // 

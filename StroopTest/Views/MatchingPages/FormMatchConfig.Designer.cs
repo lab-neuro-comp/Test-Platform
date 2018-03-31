@@ -664,6 +664,7 @@ namespace TestPlatform.Views.MatchingPages
             this.helpButton.BackgroundImage = global::TestPlatform.Properties.Resources.helpButton;
             resources.ApplyResources(this.helpButton, "helpButton");
             this.helpButton.Name = "helpButton";
+            this.helpButton.TabStop = false;
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 

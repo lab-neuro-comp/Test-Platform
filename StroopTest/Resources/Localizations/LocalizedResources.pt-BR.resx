@@ -1298,7 +1298,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>não foi escrito\n\n</value>
   </data>
   <data name="reactionTestHeader" xml:space="preserve">
-    <value>Programa\tParticipante\tData\tHorario inicial\tHorario exposicao\tTR(ms)\tIntervalo(ms)\tIntervalo estimado(ms)\tExposicao tempo(ms)\tExposicao(ms)\tSequencia\tPos\tResposta usuario\tTipo estimulo\tEstimulo1\tEstimulo2\tCor do estimulo\tBeep</value>
+    <value>Programa\tParticipante\tData\tHorário inicial\tHorário exposição\tTR(ms)\tIntervalo(ms)\tIntervalo estimado(ms)\tExposição tempo(ms)\tExposicao(ms)\tSequência\tPosição\tResposta usuário\tTipo estímulo\tLista1\tEstímulo1\tLista2\tEstímulo2\tCor do estímulo\tBeep</value>
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Tipo de resposta selecionado inválido. As opções válidas são: barra de espaço ou setas.</value>
@@ -2356,7 +2356,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>Selecione uma lista de imagens</value>
   </data>
   <data name="matchingTestHeader" xml:space="preserve">
-    <value>Programa\tParticipante\tData\tHorario Inicial\tTempo de Exposição\tReação do modelo(ms)\tReação do estimulo(ms)\tIntervalo das tentativas(ms)\tIntervalo(ms)\tExposição do modelo(ms)\tExposição do estímulo(ms)\tSenquencia\tTipo de Teste\tTipo de estimulo\tPrimeira posição do modelo\tModelo\tCor do modelo\tEstimulo 2\tEstimulo 3\tEstimulo 4\tEstimulo 5\tEstimulo 6\tEstimulo 7\tEstimulo 8\tSegunda posição do modelo\tNome do estimulo clicado\tCor do estimulo clicado\tPosição do estimulo clicado\tIgual</value>
+    <value>Programa\tParticipante\tData\tHorario Inicial\tTempo de Exposição\tReação do modelo(ms)\tReação do estimulo(ms)\tIntervalo das tentativas(ms)\tIntervalo(ms)\tExposição do modelo(ms)\tExposição do estímulo(ms)\tSenquencia\tTipo de Teste\tTipo de estimulo\tLista\tPrimeira posição do modelo\tModelo\tCor do modelo\tEstimulo 2\tEstimulo 3\tEstimulo 4\tEstimulo 5\tEstimulo 6\tEstimulo 7\tEstimulo 8\tSegunda posição do modelo\tNome do estimulo clicado\tCor do estimulo clicado\tPosição do estimulo clicado\tIgual</value>
   </data>
   <data name="CannotBeEmpty" xml:space="preserve">
     <value>Esse campo deve ser preenchido</value>

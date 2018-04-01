@@ -953,7 +953,7 @@
   <data name="feedbackAudioResponse.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
-  <data name="feedbackAudioResponse.Text" xml:space="preserve">
+  <data name="feedbackAudioResponse.Text_Duplicate[1]" xml:space="preserve">
     <value>Acerto / Erro</value>
   </data>
   <data name="&gt;&gt;feedbackAudioResponse.Name" xml:space="preserve">
@@ -980,7 +980,7 @@
   <data name="expositonAudioResponse.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
-  <data name="expositonAudioResponse.Text" xml:space="preserve">
+  <data name="expositonAudioResponse.Text_Duplicate[1]" xml:space="preserve">
     <value>Exposição</value>
   </data>
   <data name="&gt;&gt;expositonAudioResponse.Name" xml:space="preserve">
@@ -1409,7 +1409,7 @@
   <data name="DMTSBackground.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="DMTSBackground.Text" xml:space="preserve">
+  <data name="DMTSBackground.Text_Duplicate[1]" xml:space="preserve">
     <value>escolher</value>
   </data>
   <data name="&gt;&gt;DMTSBackground.Name" xml:space="preserve">
@@ -1439,7 +1439,7 @@
   <data name="DNMTSBackgroundLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="DNMTSBackgroundLabel.Text" xml:space="preserve">
+  <data name="DNMTSBackgroundLabel.Text_Duplicate[1]" xml:space="preserve">
     <value>Fundo do DNMTS:</value>
   </data>
   <data name="&gt;&gt;DNMTSBackgroundLabel.Name" xml:space="preserve">
@@ -1472,7 +1472,7 @@
   <data name="DMTSBackgroundLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="DMTSBackgroundLabel.Text" xml:space="preserve">
+  <data name="DMTSBackgroundLabel.Text_Duplicate[1]" xml:space="preserve">
     <value>Fundo do DMTS:</value>
   </data>
   <data name="&gt;&gt;DMTSBackgroundLabel.Name" xml:space="preserve">
@@ -1751,7 +1751,7 @@
   <data name="timeGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>86</value>
   </data>
-  <data name="timeGroupBox.Text" xml:space="preserve">
+  <data name="timeGroupBox.Text_Duplicate[1]" xml:space="preserve">
     <value>Tempo</value>
   </data>
   <data name="&gt;&gt;timeGroupBox.Name" xml:space="preserve">
@@ -1775,7 +1775,7 @@
   <data name="modelExpositionLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="modelExpositionLabel.Text" xml:space="preserve">
+  <data name="modelExpositionLabel.Text_Duplicate[1]" xml:space="preserve">
     <value>Exposição do modelo (ms):</value>
   </data>
   <data name="&gt;&gt;modelExpositionLabel.Name" xml:space="preserve">
@@ -2027,7 +2027,7 @@
   <data name="listGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="listGroupBox.Text" xml:space="preserve">
+  <data name="listGroupBox.Text_Duplicate[1]" xml:space="preserve">
     <value>Listas</value>
   </data>
   <data name="&gt;&gt;listGroupBox.Name" xml:space="preserve">
@@ -2069,7 +2069,7 @@
   <data name="wordLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="wordLabel.Text" xml:space="preserve">
+  <data name="wordLabel.Text_Duplicate[1]" xml:space="preserve">
     <value>Palavras:</value>
   </data>
   <data name="&gt;&gt;wordLabel.Name" xml:space="preserve">
@@ -2495,7 +2495,7 @@
   <data name="expositionGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>
   </data>
-  <data name="expositionGroupBox.Text" xml:space="preserve">
+  <data name="expositionGroupBox.Text_Duplicate[1]" xml:space="preserve">
     <value>Exposição</value>
   </data>
   <data name="&gt;&gt;expositionGroupBox.Name" xml:space="preserve">
@@ -2543,7 +2543,7 @@
   <data name="programNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>83</value>
   </data>
-  <data name="programNameLabel.Text" xml:space="preserve">
+  <data name="programNameLabel.Text_Duplicate[1]" xml:space="preserve">
     <value>Nome do programa:</value>
   </data>
   <data name="&gt;&gt;programNameLabel.Name" xml:space="preserve">
@@ -2636,7 +2636,7 @@
   <data name="instructionsLabel.TabIndex" type="System.Int32, mscorlib">
     <value>71</value>
   </data>
-  <data name="instructionsLabel.Text" xml:space="preserve">
+  <data name="instructionsLabel.Text_Duplicate[1]" xml:space="preserve">
     <value>Instruções:</value>
   </data>
   <data name="&gt;&gt;instructionsLabel.Name" xml:space="preserve">

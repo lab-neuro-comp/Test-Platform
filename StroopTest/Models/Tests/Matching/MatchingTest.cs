@@ -133,8 +133,9 @@ namespace TestPlatform.Models
             }
         }
 
-        public void writeLineOutput(long attemptIntervalTime, long stimuluIntervalTime, long modelReactTime, long stimuluReactTime, int currentExposition, long modelExpositionAccumulative, long stimuluExpositionAccumulative, string modelFirstposition, string modelSecondPosition, string testType, string match, string model, string[] stimulus, string stimuluPosition
-            , string stimuluType, string modelColor, string clickedStimuluColor)
+        public void writeLineOutput(long attemptIntervalTime, long stimuluIntervalTime, long modelReactTime, long stimuluReactTime, int currentExposition, 
+            long modelExpositionAccumulative, long stimuluExpositionAccumulative, string modelFirstposition, string modelSecondPosition, string testType, string match, 
+            string model, string currentList, string[] stimulus, string stimuluPosition, string stimuluType, string modelColor, string clickedStimuluColor)
         {
             string text = ProgramInUse.ProgramName + "\t" +
                         participantName + "\t" +
@@ -150,6 +151,7 @@ namespace TestPlatform.Models
                         currentExposition + "\t" +
                         testType + "\t" +
                         stimuluType + "\t" +
+                        currentList + "\t" +
                         modelFirstposition + "\t" +
                         model + "\t" +
                         modelColor + "\t" +

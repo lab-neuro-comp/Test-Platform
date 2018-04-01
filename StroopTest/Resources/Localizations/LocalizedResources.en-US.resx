@@ -1068,7 +1068,7 @@ To upgrade, the new version installation file must be run in the same folder as 
     <value>wasn't written\n\n</value>
   </data>
   <data name="reactionTestHeader" xml:space="preserve">
-    <value>program\tparticipant\tdate\tInitial Time\tExposition time\tReactionTime(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tsenquency\tpos\tUser response\tStimulus1\tStimulus2 Type\tstimulus\tStimulus Color\tBeep</value>
+    <value>program\tparticipant\tdate\tInitial Time\tExposition time\tReactionTime(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tsenquency\tpos\tUser response\tList1\tStimulus1\tList2\tStimulus2 Type\tstimulus\tStimulus Color\tBeep</value>
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Selected response type is invalid. Valid options are: spacebar or key arrows.</value>
@@ -2375,7 +2375,7 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
     <value>choose a image list</value>
   </data>
   <data name="matchingTestHeader" xml:space="preserve">
-    <value>Program\tParticipant\tDate\tInitial Time\tExposition Time\tModel Reaction Time(ms)\tStimulu Reaction Time(ms)\tInterval between attempts(ms)\tInterval(ms)\tModel Exposition(ms)\tStimulu Exposition(ms)\tSenquency\tTest Type\tStimulus Type\tModel first position\tModel\tModel color\t2nd Stimulu\t3rd Stimulu\t4th Stimulu\t5th Stumulu\t6th Stimulu\t7th Stimulu\t8th Stimulu\tModel second position\tClicked Stimulu\tClicked Stimulu Color\tClicked Stimulu Position\tMatch</value>
+    <value>Program\tParticipant\tDate\tInitial Time\tExposition Time\tModel Reaction Time(ms)\tStimulu Reaction Time(ms)\tInterval between attempts(ms)\tInterval(ms)\tModel Exposition(ms)\tStimulu Exposition(ms)\tSenquency\tTest Type\tStimulus Type\tList\tModel first position\tModel\tModel color\t2nd Stimulu\t3rd Stimulu\t4th Stimulu\t5th Stumulu\t6th Stimulu\t7th Stimulu\t8th Stimulu\tModel second position\tClicked Stimulu\tClicked Stimulu Color\tClicked Stimulu Position\tMatch</value>
   </data>
   <data name="CannotBeEmpty" xml:space="preserve">
     <value>This field should be filled</value>

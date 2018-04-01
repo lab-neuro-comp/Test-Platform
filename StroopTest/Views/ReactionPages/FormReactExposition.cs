@@ -56,6 +56,7 @@ namespace TestPlatform.Views
 
         private bool exposing = false;
         private string[] currentStimuli = {"-", "-" };
+        private string[] currentLists = { "-", "-" };
         private int currentPosition;
         private string currentPositionOutput;
         private bool currentBeep = false;
@@ -455,6 +456,8 @@ namespace TestPlatform.Views
             wordLabel = ExpositionController.InitializeWordLabel(executingTest.ProgramInUse.FontSize, wordsList[wordCounter], colorsList[colorCounter], screenPosition);
 
             currentStimuli[0] = wordsList[wordCounter];
+            currentLists[0] = executingTest.ProgramInUse.getWordListFile().ListName;
+
             currentColor = colorsList[colorCounter];
             wordCounter++;
 
@@ -477,6 +480,8 @@ namespace TestPlatform.Views
             imgPictureBox.Location = screenPosition;
 
             currentStimuli[0] = StrList.outPutItemName(imagesList[imageCounter]);
+            currentLists[0] = executingTest.ProgramInUse.getImageListFile().ListName;
+
             imageCounter++;            
             if(imageCounter == imagesList.Length)
             {
@@ -489,6 +494,8 @@ namespace TestPlatform.Views
         {
             string currentAudio = audioList[audioCounter];
             currentStimuli[1] = StrList.outPutItemName(currentAudio);
+            currentLists[1] = executingTest.ProgramInUse.getAudioListFile().ListName;
+
             Player.SoundLocation = currentAudio;
             audioCounter++;
             if (audioCounter == audioList.Length)
@@ -685,21 +692,21 @@ namespace TestPlatform.Views
             {
                 /* user clicked after stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds,
-                                              currentExposition + 1, expositionAccumulative, currentStimuli, currentPositionOutput, currentBeep, currentColor);
+                                              currentExposition + 1, expositionAccumulative, currentLists,currentStimuli, currentPositionOutput, currentBeep, currentColor);
             }
 
             else if ((e.Cancelled == true) && intervalCancelled)
             {
                 /* user clicked before stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, intervalElapsedTime - intervalShouldBe,
-                                              currentExposition + 1, expositionAccumulative, currentStimuli, currentPositionOutput, currentBeep, currentColor);
+                                              currentExposition + 1, expositionAccumulative, currentLists, currentStimuli, currentPositionOutput, currentBeep, currentColor);
             }
             else
             {
                 /* user missed stimulus */
                 executingTest.CurrentResponse = "NA";
-                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentStimuli, currentPositionOutput,
-                                                currentBeep, currentColor);
+                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentLists, currentStimuli, 
+                                                currentPositionOutput, currentBeep, currentColor);
                 hitStopWatch.Stop();
             }
             expositionBW.Dispose();

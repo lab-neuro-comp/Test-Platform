@@ -1298,7 +1298,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>não foi escrito\n\n</value>
   </data>
   <data name="reactionTestHeader" xml:space="preserve">
-    <value>Programa\tParticipante\tData\tHorario inicial\tHorario exposicao\tTR(ms)\tIntervalo(ms)\tIntervalo estimado(ms)\tExposicao tempo(ms)\tExposicao(ms)\tSequencia\tPos\tResposta usuario\tTipo estimulo\tEstimulo1\tEstimulo2\tCor do estimulo\tBeep</value>
+    <value>Programa\tParticipante\tData\tHorário inicial\tHorário exposição\tTR(ms)\tIntervalo(ms)\tIntervalo estimado(ms)\tExposição tempo(ms)\tExposicao(ms)\tSequência\tPosição\tResposta usuário\tTipo estímulo\tLista1\tEstímulo1\tLista2\tEstímulo2\tCor do estímulo\tBeep</value>
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Tipo de resposta selecionado inválido. As opções válidas são: barra de espaço ou setas.</value>

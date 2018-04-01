@@ -1068,7 +1068,7 @@ To upgrade, the new version installation file must be run in the same folder as 
     <value>wasn't written\n\n</value>
   </data>
   <data name="reactionTestHeader" xml:space="preserve">
-    <value>program\tparticipant\tdate\tInitial Time\tExposition time\tReactionTime(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tsenquency\tpos\tUser response\tStimulus1\tStimulus2 Type\tstimulus\tStimulus Color\tBeep</value>
+    <value>program\tparticipant\tdate\tInitial Time\tExposition time\tReactionTime(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tsenquency\tpos\tUser response\tList1\tStimulus1\tList2\tStimulus2 Type\tstimulus\tStimulus Color\tBeep</value>
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Selected response type is invalid. Valid options are: spacebar or key arrows.</value>

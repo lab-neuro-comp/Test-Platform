@@ -168,13 +168,15 @@ namespace TestPlatform.Models
             }
         }
 
-        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, string[] currentStimuli, string position, bool beeped, string currentColor)
+        public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, 
+                                    string[] currentLists, string[] currentStimuli, string position, bool beeped, string currentColor)
         {
             /* This variable keeps data from an exposition to only one stimulus, being them:
              * programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\trespostaUsuario\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep
              * program\tparticipant\tdate\tInitialTime\texpositionTime\treactionTime(ms)\tInterval(ms)\testimatedInterval(ms)\texpositionDuration(ms)\texposition(ms)\tsenquency\tpos\tuserResponse\tstimulusType\tstimulus\tstimulusColor\tBeep
              * program  name    participant     name    date    hour    exposition hour    hit time(ms) interval(ms)  interval should be(ms)  
-             * exposition accumulative timeexposition time(ms)  number of sequency  position on screen  user response   type of stimulus    stimulus1 stimulus2   
+             * exposition accumulative timeexposition time(ms)  number of sequency  position on screen  user response   type of stimulus  stimulus1List stimulus1 
+             * stimulus2List stimulus2   
              * stimulus color */
             var text = ProgramInUse.ProgramName + "\t" + participantName + "\t" + initialTime.Day + "/" +
                        initialTime.Month + "/" + initialTime.Year + "\t" + initialTime.Hour + ":" + initialTime.Minute +
@@ -182,7 +184,7 @@ namespace TestPlatform.Models
                        ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" + reactTime.ToString() +
                         "\t" + intervalTime.ToString() + "\t" + intervalShouldBe.ToString() + "\t" + expositionAccumulative + "\t" +
                         ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + position + "\t" +  CurrentResponse  + "\t"+ expositionTypeOutput() + "\t" +
-                        currentStimuli[0] + "\t" + currentStimuli[1] + "\t" + currentColor + "\t" + beeped.ToString();
+                        currentLists[0] + "\t"  + currentStimuli[0] + "\t"+ currentLists[1] + "\t" + currentStimuli[1] + "\t" + currentColor + "\t" + beeped.ToString();
              Output.Add(text); 
              
         }

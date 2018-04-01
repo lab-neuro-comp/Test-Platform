@@ -921,7 +921,7 @@ namespace TestPlatform.Views.MatchingPages
                     stimulus.Remove(this.matchingGroups.ElementAt(groupCounter - 1).getModelName());
                     for (int count = 0; count < stimulus.Count; count++)
                     {
-                        stimulus[count] = currentList + "/" + Path.GetFileNameWithoutExtension(stimulus[count]);
+                        stimulus[count] = Path.GetFileNameWithoutExtension(stimulus[count]);
                     }
                     while (stimulus.Count <= 7)
                     {
@@ -929,7 +929,7 @@ namespace TestPlatform.Views.MatchingPages
                     }
                     if ((e.Cancelled == true) && !intervalCancelled) /* user clicked after stimulus is shown*/
                     {
-                        stimulus[7] = currentList + "/" + Path.GetFileNameWithoutExtension(this.matchingGroups.ElementAt(groupCounter - 1).getControlName(objectClicked, stimuluType));
+                        stimulus[7] = Path.GetFileNameWithoutExtension(this.matchingGroups.ElementAt(groupCounter - 1).getControlName(objectClicked, stimuluType));
                         executingTest.writeLineOutput(
                             attemptIntervalTime,
                             intervalElapsedTime,
@@ -942,7 +942,8 @@ namespace TestPlatform.Views.MatchingPages
                             modelSecondPosition,
                             currentExpositionType,
                             (this.matchingGroups.ElementAt(groupCounter - 1).getControlName(objectClicked, stimuluType) == this.matchingGroups.ElementAt(groupCounter - 1).getModelName()).ToString(),
-                            currentList + "/" + Path.GetFileNameWithoutExtension(this.matchingGroups.ElementAt(groupCounter - 1).getModelName()),
+                            Path.GetFileNameWithoutExtension(this.matchingGroups.ElementAt(groupCounter - 1).getModelName()),
+                            currentList,
                             stimulus.ToArray(),
                             stimuluPosition.getStimulusPositionMap(objectClicked.Location, size),
                             getStimuluType(),
@@ -982,6 +983,7 @@ namespace TestPlatform.Views.MatchingPages
                             currentExpositionType,
                             "-",
                             this.matchingGroups.ElementAt(groupCounter - 1).getModelName(),
+                            currentList,
                             stimulus.ToArray(),
                             "-",
                             getStimuluType(),

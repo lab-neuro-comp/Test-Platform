@@ -295,7 +295,7 @@ namespace TestPlatform.Views.MatchingPages
 
         private bool validExpositionType(out string errorMessage)
         {
-            if(this.expositionType.SelectedIndex >= 0 && this.expositionType.SelectedIndex < 1)
+            if(this.expositionType.SelectedIndex >= 0 && this.expositionType.SelectedIndex < 3)
             {
                 errorMessage = "";
                 return true;
@@ -316,7 +316,7 @@ namespace TestPlatform.Views.MatchingPages
         {
             this.errorProvider1.Clear();
             this.errorProvider2.Clear();
-            if(this.expositionType.SelectedIndex > 0)
+            if(this.expositionType.SelectedIndex > 2)
             {
                 this.errorProvider1.SetError(this.expositionType, LocRM.GetString("unavailableExpo", currentCulture));
             }

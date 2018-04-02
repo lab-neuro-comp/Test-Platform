@@ -59,6 +59,7 @@ namespace TestPlatform.Views
             stimuluSize.Value = editProgram.StimuluSize;
             fontSizeUpDown.Value = editProgram.FontSize;
             positionsBox.SelectedIndex = editProgram.NumberPositions - 1;
+            expandImageCheck.Checked = editProgram.ExpandImage;
 
             if (editProgram.getHasColorList())
             {

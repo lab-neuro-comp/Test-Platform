@@ -150,13 +150,24 @@
             }
         }
 
-        public static PictureBox InitializeImageBox(int stimuliSize, Image image)
+        public static PictureBox InitializeImageBox(int stimuliSize, Image image, bool expandImage)
         {
             PictureBox newPictureBox = new PictureBox();
             newPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             newPictureBox.Size = new Size(stimuliSize, stimuliSize);
+
             newPictureBox.Image = image;
             newPictureBox.Enabled = true;
+
+            if (expandImage)
+            {
+                newPictureBox.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                newPictureBox.Dock = DockStyle.None;
+            }
+
             return newPictureBox;
         }
 

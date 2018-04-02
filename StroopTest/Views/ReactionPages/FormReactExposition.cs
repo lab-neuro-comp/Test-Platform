@@ -475,7 +475,8 @@ namespace TestPlatform.Views
 
         private void drawImage()
         {
-            imgPictureBox = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, Image.FromFile(imagesList[imageCounter]));
+            imgPictureBox = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, Image.FromFile(imagesList[imageCounter]), 
+                                                                     executingTest.ProgramInUse.ExpandImage);
             Point screenPosition = ScreenPosition(imgPictureBox.Size);
             imgPictureBox.Location = screenPosition;
 

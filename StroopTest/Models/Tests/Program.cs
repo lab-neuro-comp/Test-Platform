@@ -31,7 +31,8 @@ namespace TestPlatform.Models
         protected StrList audioListFile;           // [18]  audio list file name (.lst) - if it is and audio exposition type [13]
         protected String fixPointColor;           // [20]  cor do ponto de fixação - vermelho - se ponto de fixação != false definir cor
         protected Boolean intervalTimeRandom;        // [5]*  is interval time random - rnd num between defined intervalTime and minRandomTime (bool)
-        
+        protected Boolean expandImage;               // [17]  expands image adjusting it to the screen - if true, subtitles false
+
 
         public List<string> InstructionText
         {
@@ -290,6 +291,15 @@ namespace TestPlatform.Models
             set
             {
                 intervalTimeRandom = value;
+            }
+        }
+
+        public bool ExpandImage
+        {
+            get { return expandImage; }
+            set
+            {
+                expandImage = value;
             }
         }
 

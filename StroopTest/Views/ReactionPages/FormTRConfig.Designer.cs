@@ -74,6 +74,8 @@
             this.openImgListButton = new System.Windows.Forms.Button();
             this.instructionsBox = new System.Windows.Forms.TextBox();
             this.expositionGroupBox = new System.Windows.Forms.GroupBox();
+            this.expandImgLabel = new System.Windows.Forms.Label();
+            this.expandImageCheck = new System.Windows.Forms.CheckBox();
             this.fontSizeLabel = new System.Windows.Forms.Label();
             this.fontSizeUpDown = new System.Windows.Forms.NumericUpDown();
             this.UniqueColorOption = new System.Windows.Forms.RadioButton();
@@ -86,7 +88,6 @@
             this.randomBeepLabel = new System.Windows.Forms.Label();
             this.randomBeepCheck = new System.Windows.Forms.CheckBox();
             this.expoTypeLabel = new System.Windows.Forms.Label();
-            this.stimulusDistance = new System.Windows.Forms.NumericUpDown();
             this.chooseExpoType = new System.Windows.Forms.ComboBox();
             this.stimulusColorPanel = new System.Windows.Forms.Panel();
             this.stimulusColorLabel = new System.Windows.Forms.Label();
@@ -99,16 +100,15 @@
             this.numExpo = new System.Windows.Forms.NumericUpDown();
             this.wordSizeLabel = new System.Windows.Forms.Label();
             this.stimuluSize = new System.Windows.Forms.NumericUpDown();
-            this.screenDistanceLabel = new System.Windows.Forms.Label();
             this.instructionsLabel = new System.Windows.Forms.Label();
             this.prgNameTextBox = new System.Windows.Forms.TextBox();
             this.prgNameLabel = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.toolTip_ptBR = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTip_enUS = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTip_esES = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.sstCheckBox = new System.Windows.Forms.CheckBox();
+            this.sstLabel = new System.Windows.Forms.Label();
             this.reactionConfigPanel.SuspendLayout();
             this.userResponse.SuspendLayout();
             this.shapesGroupBox.SuspendLayout();
@@ -121,7 +121,6 @@
             this.S.SuspendLayout();
             this.expositionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fontSizeUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beepDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).BeginInit();
@@ -339,6 +338,8 @@
             // 
             // timeGroupBox
             // 
+            this.timeGroupBox.Controls.Add(this.sstCheckBox);
+            this.timeGroupBox.Controls.Add(this.sstLabel);
             this.timeGroupBox.Controls.Add(this.rndIntervalCheck);
             this.timeGroupBox.Controls.Add(this.rndIntervalLabel);
             this.timeGroupBox.Controls.Add(this.intervalTimeLabel);
@@ -356,6 +357,7 @@
             this.rndIntervalCheck.CheckState = System.Windows.Forms.CheckState.Checked;
             this.rndIntervalCheck.Name = "rndIntervalCheck";
             this.rndIntervalCheck.UseVisualStyleBackColor = true;
+            this.rndIntervalCheck.CheckedChanged += new System.EventHandler(this.rndIntervalCheck_CheckedChanged);
             // 
             // rndIntervalLabel
             // 
@@ -487,6 +489,8 @@
             // 
             // expositionGroupBox
             // 
+            this.expositionGroupBox.Controls.Add(this.expandImgLabel);
+            this.expositionGroupBox.Controls.Add(this.expandImageCheck);
             this.expositionGroupBox.Controls.Add(this.fontSizeLabel);
             this.expositionGroupBox.Controls.Add(this.fontSizeUpDown);
             this.expositionGroupBox.Controls.Add(this.UniqueColorOption);
@@ -499,7 +503,6 @@
             this.expositionGroupBox.Controls.Add(this.randomBeepLabel);
             this.expositionGroupBox.Controls.Add(this.randomBeepCheck);
             this.expositionGroupBox.Controls.Add(this.expoTypeLabel);
-            this.expositionGroupBox.Controls.Add(this.stimulusDistance);
             this.expositionGroupBox.Controls.Add(this.chooseExpoType);
             this.expositionGroupBox.Controls.Add(this.stimulusColorPanel);
             this.expositionGroupBox.Controls.Add(this.stimulusColorLabel);
@@ -512,10 +515,22 @@
             this.expositionGroupBox.Controls.Add(this.numExpo);
             this.expositionGroupBox.Controls.Add(this.wordSizeLabel);
             this.expositionGroupBox.Controls.Add(this.stimuluSize);
-            this.expositionGroupBox.Controls.Add(this.screenDistanceLabel);
             resources.ApplyResources(this.expositionGroupBox, "expositionGroupBox");
             this.expositionGroupBox.Name = "expositionGroupBox";
             this.expositionGroupBox.TabStop = false;
+            // 
+            // expandImgLabel
+            // 
+            resources.ApplyResources(this.expandImgLabel, "expandImgLabel");
+            this.expandImgLabel.Name = "expandImgLabel";
+            // 
+            // expandImageCheck
+            // 
+            resources.ApplyResources(this.expandImageCheck, "expandImageCheck");
+            this.expandImageCheck.Name = "expandImageCheck";
+            this.expandImageCheck.TabStop = false;
+            this.expandImageCheck.UseVisualStyleBackColor = true;
+            this.expandImageCheck.CheckedChanged += new System.EventHandler(this.expandImageCheck_CheckedChanged);
             // 
             // fontSizeLabel
             // 
@@ -620,31 +635,6 @@
             resources.ApplyResources(this.expoTypeLabel, "expoTypeLabel");
             this.expoTypeLabel.Name = "expoTypeLabel";
             // 
-            // stimulusDistance
-            // 
-            this.stimulusDistance.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            resources.ApplyResources(this.stimulusDistance, "stimulusDistance");
-            this.stimulusDistance.Maximum = new decimal(new int[] {
-            490,
-            0,
-            0,
-            0});
-            this.stimulusDistance.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.stimulusDistance.Name = "stimulusDistance";
-            this.stimulusDistance.Value = new decimal(new int[] {
-            250,
-            0,
-            0,
-            0});
-            // 
             // chooseExpoType
             // 
             this.chooseExpoType.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -660,8 +650,7 @@
             resources.ApplyResources(this.chooseExpoType, "chooseExpoType");
             this.chooseExpoType.Name = "chooseExpoType";
             this.chooseExpoType.Tag = "";
-            this.toolTip_ptBR.SetToolTip(this.chooseExpoType, resources.GetString("chooseExpoType.ToolTip"));
-            this.toolTip_enUS.SetToolTip(this.chooseExpoType, resources.GetString("chooseExpoType.ToolTip1"));
+            this.toolTip.SetToolTip(this.chooseExpoType, resources.GetString("chooseExpoType.ToolTip"));
             this.chooseExpoType.SelectedIndexChanged += new System.EventHandler(this.chooseExpoType_SelectedIndexChanged);
             this.chooseExpoType.Validating += new System.ComponentModel.CancelEventHandler(this.chooseExpoType_Validating);
             this.chooseExpoType.Validated += new System.EventHandler(this.chooseExpoType_Validated);
@@ -770,18 +759,12 @@
             0,
             0});
             this.stimuluSize.Name = "stimuluSize";
-            this.toolTip_enUS.SetToolTip(this.stimuluSize, resources.GetString("stimuluSize.ToolTip"));
-            this.toolTip_ptBR.SetToolTip(this.stimuluSize, resources.GetString("stimuluSize.ToolTip1"));
+            this.toolTip.SetToolTip(this.stimuluSize, resources.GetString("stimuluSize.ToolTip"));
             this.stimuluSize.Value = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            // 
-            // screenDistanceLabel
-            // 
-            resources.ApplyResources(this.screenDistanceLabel, "screenDistanceLabel");
-            this.screenDistanceLabel.Name = "screenDistanceLabel";
             // 
             // instructionsLabel
             // 
@@ -793,8 +776,7 @@
             // 
             resources.ApplyResources(this.prgNameTextBox, "prgNameTextBox");
             this.prgNameTextBox.Name = "prgNameTextBox";
-            this.toolTip_ptBR.SetToolTip(this.prgNameTextBox, resources.GetString("prgNameTextBox.ToolTip"));
-            this.toolTip_enUS.SetToolTip(this.prgNameTextBox, resources.GetString("prgNameTextBox.ToolTip1"));
+            this.toolTip.SetToolTip(this.prgNameTextBox, resources.GetString("prgNameTextBox.ToolTip"));
             this.prgNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.prgNameTextBox_Validating);
             this.prgNameTextBox.Validated += new System.EventHandler(this.prgNameTextBox_Validated);
             // 
@@ -824,17 +806,17 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
-            // toolTip_ptBR
+            // sstCheckBox
             // 
-            this.toolTip_ptBR.Active = false;
+            resources.ApplyResources(this.sstCheckBox, "sstCheckBox");
+            this.sstCheckBox.Name = "sstCheckBox";
+            this.sstCheckBox.UseVisualStyleBackColor = true;
+            this.sstCheckBox.CheckedChanged += new System.EventHandler(this.sstCheckBox_CheckedChanged);
             // 
-            // toolTip_enUS
+            // sstLabel
             // 
-            this.toolTip_enUS.Active = false;
-            // 
-            // toolTip_esES
-            // 
-            this.toolTip_esES.Active = false;
+            resources.ApplyResources(this.sstLabel, "sstLabel");
+            this.sstLabel.Name = "sstLabel";
             // 
             // FormTRConfig
             // 
@@ -865,7 +847,6 @@
             this.expositionGroupBox.ResumeLayout(false);
             this.expositionGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fontSizeUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stimulusDistance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beepDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).EndInit();
@@ -924,8 +905,6 @@
         private System.Windows.Forms.Button stimulusColor;
         private System.Windows.Forms.Label expoTypeLabel;
         private System.Windows.Forms.ComboBox chooseExpoType;
-        private System.Windows.Forms.NumericUpDown stimulusDistance;
-        private System.Windows.Forms.Label screenDistanceLabel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
@@ -953,8 +932,10 @@
         private System.Windows.Forms.RadioButton ColorListOption;
         private System.Windows.Forms.Label fontSizeLabel;
         private System.Windows.Forms.NumericUpDown fontSizeUpDown;
-        private System.Windows.Forms.ToolTip toolTip_ptBR;
-        private System.Windows.Forms.ToolTip toolTip_enUS;
-        private System.Windows.Forms.ToolTip toolTip_esES;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Label expandImgLabel;
+        private System.Windows.Forms.CheckBox expandImageCheck;
+        private System.Windows.Forms.CheckBox sstCheckBox;
+        private System.Windows.Forms.Label sstLabel;
     }
 }

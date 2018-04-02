@@ -33,9 +33,11 @@
             this.closeButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.fileNameBox = new System.Windows.Forms.ComboBox();
-            this.helpButton = new System.Windows.Forms.Button();
             this.csvExportButton = new System.Windows.Forms.Button();
+            this.helpButton = new System.Windows.Forms.Button();
+            this.toolTipPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolTipPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -52,6 +54,9 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseEnter);
+            this.dataGridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseLeave);
+            this.dataGridView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseMove);
             // 
             // closeButton
             // 
@@ -73,6 +78,13 @@
             this.fileNameBox.Name = "fileNameBox";
             this.fileNameBox.SelectedIndexChanged += new System.EventHandler(this.fileNameBox_SelectedIndexChanged);
             // 
+            // csvExportButton
+            // 
+            resources.ApplyResources(this.csvExportButton, "csvExportButton");
+            this.csvExportButton.Name = "csvExportButton";
+            this.csvExportButton.UseVisualStyleBackColor = true;
+            this.csvExportButton.Click += new System.EventHandler(this.csvExportButton_Click);
+            // 
             // helpButton
             // 
             this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -82,17 +94,17 @@
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
-            // csvExportButton
+            // toolTipPictureBox
             // 
-            resources.ApplyResources(this.csvExportButton, "csvExportButton");
-            this.csvExportButton.Name = "csvExportButton";
-            this.csvExportButton.UseVisualStyleBackColor = true;
-            this.csvExportButton.Click += new System.EventHandler(this.csvExportButton_Click);
+            resources.ApplyResources(this.toolTipPictureBox, "toolTipPictureBox");
+            this.toolTipPictureBox.Name = "toolTipPictureBox";
+            this.toolTipPictureBox.TabStop = false;
             // 
             // MatchingResultUserControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.toolTipPictureBox);
             this.Controls.Add(this.csvExportButton);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.fileNameBox);
@@ -101,6 +113,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "MatchingResultUserControl";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolTipPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,5 +127,6 @@
         private System.Windows.Forms.ComboBox fileNameBox;
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.Button csvExportButton;
+        private System.Windows.Forms.PictureBox toolTipPictureBox;
     }
 }

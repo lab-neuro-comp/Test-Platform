@@ -735,6 +735,8 @@
     <None Include="Resources\bell.wav" />
     <None Include="Resources\error.wav" />
     <None Include="Resources\hit.wav" />
+    <None Include="Resources\helpToolTipMatrixImage.bmp" />
+    <None Include="Resources\helpPagesImages\positionMap.png" />
     <Content Include="Resources\icons\circle.png" />
     <Content Include="Resources\icons\cross.png" />
     <Content Include="Resources\icons\helpButton.png" />

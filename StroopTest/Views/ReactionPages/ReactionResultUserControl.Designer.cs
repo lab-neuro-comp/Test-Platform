@@ -35,7 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.helpButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.toolTipPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolTipPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // csvExportButton
@@ -61,6 +63,9 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseEnter);
+            this.dataGridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseLeave);
+            this.dataGridView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseMove);
             // 
             // fileNameBox
             // 
@@ -91,10 +96,17 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // toolTipPictureBox
+            // 
+            resources.ApplyResources(this.toolTipPictureBox, "toolTipPictureBox");
+            this.toolTipPictureBox.Name = "toolTipPictureBox";
+            this.toolTipPictureBox.TabStop = false;
+            // 
             // ReactionResultUserControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.toolTipPictureBox);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.csvExportButton);
@@ -103,6 +115,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ReactionResultUserControl";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolTipPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,5 +129,6 @@
         private System.Windows.Forms.ComboBox fileNameBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.PictureBox toolTipPictureBox;
     }
 }

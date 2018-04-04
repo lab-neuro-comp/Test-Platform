@@ -15,7 +15,7 @@ namespace TestPlatform.Views.ReactionPages
         private string path = Global.reactionTestFilesPath + Global.resultsFolderName;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
-
+        private Point mousePosition;
         public ReactionResultUserControl()
         {
             InitializeComponent();
@@ -54,6 +54,39 @@ namespace TestPlatform.Views.ReactionPages
         private void closeButton_Click(object sender, EventArgs e)
         {
             this.Parent.Controls.Remove(this);
+        }
+
+        private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv_sender = sender as DataGridView;
+            DataGridViewCell dgv_MouseOverCell = null;
+            if (e.RowIndex > 0 && e.ColumnIndex >= 0 && e.RowIndex < dgv_sender.RowCount && e.ColumnIndex < dgv_sender.ColumnCount)
+            {
+                dgv_MouseOverCell = dgv_sender.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            }
+            if (dgv_MouseOverCell != null)
+                if (e.ColumnIndex == 11)
+                {
+                    if (dgv_MouseOverCell.Value != null)
+                    {
+                        Image img = TestPlatform.Properties.Resources.positionMap;
+                        toolTipPictureBox.Image = img;
+                        toolTipPictureBox.Location = mousePosition;
+                        toolTipPictureBox.Visible = true;
+                    }
+                }
+        }
+
+        private void dataGridView1_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            toolTipPictureBox.Visible = false;
+        }
+
+        private void dataGridView1_MouseMove(object sender, MouseEventArgs e)
+        {
+            mousePosition = e.Location;
+            mousePosition.Y += 50;
+            mousePosition.X += 10;
         }
 
         private void fileNameBox_SelectedIndexChanged(object sender, EventArgs e)

@@ -2436,4 +2436,13 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="expandImageInvalid" xml:space="preserve">
     <value>A expansão da imagem só pode ter uma posição, central.</value>
   </data>
+  <data name="clickedStimuluPosition" xml:space="preserve">
+    <value>Posição do estimulo clicado</value>
+  </data>
+  <data name="modelFirstPosition" xml:space="preserve">
+    <value>Primeira posição do modelo</value>
+  </data>
+  <data name="modelSecondPosition" xml:space="preserve">
+    <value>Segunda posição do modelo</value>
+  </data>
 </root>

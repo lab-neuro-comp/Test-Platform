@@ -142,29 +142,20 @@ Ponto:</value>
   <data name="fixPointColorButton.Text" xml:space="preserve">
     <value>escolher</value>
   </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Ponto de Fixação</value>
-  </data>
   <data name="bgColorLabel.Text" xml:space="preserve">
     <value>Cor de Fundo:</value>
   </data>
   <data name="bgColorButton.Text" xml:space="preserve">
     <value>escolher</value>
   </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Outros</value>
-  </data>
   <data name="rndIntervalLabel.Text" xml:space="preserve">
-    <value>Tempo de Intervalo Variável:</value>
+    <value>Intervalo Variável:</value>
   </data>
   <data name="intervalTimeLabel.Text" xml:space="preserve">
     <value>Intervalo (ms):</value>
   </data>
   <data name="expoTimeLabel.Text" xml:space="preserve">
     <value>Exposição (ms):</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Tempo</value>
   </data>
   <data name="wordListLabel.Text" xml:space="preserve">
     <value>Palavras:</value>
@@ -189,12 +180,6 @@ Ponto:</value>
   </data>
   <data name="openImgListButton.Text" xml:space="preserve">
     <value>abrir</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Listas</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Ordem aleatória:</value>
   </data>
   <data name="positionLabel.Text" xml:space="preserve">
     <value>Quantidade de possíveis posições:</value>
@@ -223,29 +208,14 @@ Ponto:</value>
   <data name="chooseExpoType.Items5" xml:space="preserve">
     <value>Imagem com Áudio</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Cor do Estímulo:</value>
-  </data>
   <data name="stimulusColor.Text" xml:space="preserve">
     <value>escolher</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Duração do beep (ms):</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Utilizar beep:</value>
   </data>
   <data name="numExpoLabel.Text" xml:space="preserve">
     <value>Número de Tentativas:</value>
   </data>
   <data name="wordSizeLabel.Text" xml:space="preserve">
     <value>Tamanho do Estímulo:</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Distância do estímulo ao centro da tela:</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Exposição</value>
   </data>
   <data name="instructionsLabel.Text" xml:space="preserve">
     <value>Instruções:</value>
@@ -261,5 +231,71 @@ Ponto:</value>
   </data>
   <data name="fontSizeLabel.Text" xml:space="preserve">
     <value>Tamanho da Fonte:</value>
+  </data>
+  <data name="fixPointGroupBox.Text" xml:space="preserve">
+    <value>Ponto de Fixação</value>
+  </data>
+  <data name="othersGroupBox.Text" xml:space="preserve">
+    <value>Outros</value>
+  </data>
+  <data name="timeGroupBox.Text" xml:space="preserve">
+    <value>Tempo</value>
+  </data>
+  <data name="UniqueColorOption.Text" xml:space="preserve">
+    <value>Cor Única</value>
+  </data>
+  <data name="ColorListOption.Text" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="stimulusColorTypeLabel.Text" xml:space="preserve">
+    <value>Tipo de cor do estímulo</value>
+  </data>
+  <data name="randomOrderLabel.Text" xml:space="preserve">
+    <value>Ordem aleatória:</value>
+  </data>
+  <data name="positionsBox.Items" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="positionsBox.Items1" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="positionsBox.Items2" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="positionsBox.Items3" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="positionsBox.Items4" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="positionsBox.Items5" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="positionsBox.Items6" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="positionsBox.Items7" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="expandImgLabel.Text" xml:space="preserve">
+    <value>Expandir Imagem:</value>
+  </data>
+  <data name="sstLabel.Text" xml:space="preserve">
+    <value>SST:</value>
+  </data>
+  <data name="S.Text" xml:space="preserve">
+    <value>Listas</value>
+  </data>
+  <data name="beepDurationLabel.Text" xml:space="preserve">
+    <value>Duração do beep (ms):</value>
+  </data>
+  <data name="useBeepLabel.Text" xml:space="preserve">
+    <value>Utilizar beep</value>
+  </data>
+  <data name="stimulusColorLabel.Text" xml:space="preserve">
+    <value>Cor do Estímulo:</value>
+  </data>
+  <data name="expositionGroupBox.Text" xml:space="preserve">
+    <value>Exposição</value>
   </data>
 </root>

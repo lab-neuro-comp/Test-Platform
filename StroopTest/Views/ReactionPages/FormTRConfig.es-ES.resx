@@ -141,17 +141,11 @@
   <data name="fixPointColorButton.Text" xml:space="preserve">
     <value>escoger</value>
   </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Punto de Fijación</value>
-  </data>
   <data name="bgColorLabel.Text" xml:space="preserve">
     <value>Color del hondo:</value>
   </data>
   <data name="bgColorButton.Text" xml:space="preserve">
     <value>escoger</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Otros</value>
   </data>
   <data name="rndIntervalLabel.Text" xml:space="preserve">
     <value>Tiempo de Intervalo Variable:</value>
@@ -161,9 +155,6 @@
   </data>
   <data name="expoTimeLabel.Text" xml:space="preserve">
     <value>Exposición (ms):</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Tiempo</value>
   </data>
   <data name="wordListLabel.Text" xml:space="preserve">
     <value>Palabras:</value>
@@ -188,12 +179,6 @@
   </data>
   <data name="openImgListButton.Text" xml:space="preserve">
     <value>abrir</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Listas</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Orden aleatoria:</value>
   </data>
   <data name="positionLabel.Text" xml:space="preserve">
     <value>Cantidad de posibles posiciones:</value>
@@ -222,29 +207,14 @@
   <data name="chooseExpoType.Items5" xml:space="preserve">
     <value>Imagen con Audio</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Color de Estímulo:</value>
-  </data>
   <data name="stimulusColor.Text" xml:space="preserve">
     <value>escoger</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Duración del beep (ms)</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Utilizar beep:</value>
   </data>
   <data name="numExpoLabel.Text" xml:space="preserve">
     <value>Número de intentos:</value>
   </data>
   <data name="wordSizeLabel.Text" xml:space="preserve">
     <value>Tamaño del Estímulo:</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Distancia del estímulo al centro de la pantalla:</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Exposición</value>
   </data>
   <data name="instructionsLabel.Text" xml:space="preserve">
     <value>Instrucciones:</value>

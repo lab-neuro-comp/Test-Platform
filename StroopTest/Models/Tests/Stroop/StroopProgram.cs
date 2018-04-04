@@ -13,7 +13,6 @@ namespace TestPlatform.Models
         private Int32 subtitlePlace;              // [11]* subtitles place in screen (left, right, up and down the exposition stimulus)
         private String subtitleColor;           // [12]  subtitles color
         private String fontWordLabel;           // [16]  wordLabel size - 160 default
-        private Boolean expandImage;               // [17]  expands image adjusting it to the screen - if true, subtitles false
         private String subtitlesListFile;       // [19]  subtitles list file name (.lst) - if subtitles are activated [10]
 
         private Int32 rotateImage;                // [22]  rotacionar imagem (90, 180, 270, 360)
@@ -291,16 +290,6 @@ namespace TestPlatform.Models
                 if (Validations.isDigit(value)) { fontWordLabel = value; }
             }
         }
-
-        public bool ExpandImage
-        {
-            get { return expandImage; }
-            set
-            {
-                 expandImage = value;
-            }
-        }
-
  
 
         public string SubtitlesListFile

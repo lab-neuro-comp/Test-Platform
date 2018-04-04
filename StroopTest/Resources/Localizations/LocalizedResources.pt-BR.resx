@@ -2433,4 +2433,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="wordWithColor" xml:space="preserve">
     <value>Palavra com Cor</value>
   </data>
+  <data name="expandImageInvalid" xml:space="preserve">
+    <value>A expansão da imagem só pode ter uma posição, central.</value>
+  </data>
 </root>

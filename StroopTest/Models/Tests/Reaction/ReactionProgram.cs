@@ -413,6 +413,26 @@ namespace TestPlatform.Models
             }
         }
 
+        public new bool ExpandImage
+        {
+            get
+            {
+                return expandImage;
+            }
+
+            set
+            {
+                if (!value || value && numberPositions == 0)
+                {
+                    expandImage = value;
+                }
+                else
+                {
+                    throw new ArgumentException();
+                }
+            }
+        }
+
         public bool BeepingRandom
         {
             get

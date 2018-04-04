@@ -1054,6 +1054,23 @@ namespace TestPlatform.Views
             }
         }
 
+        private void positionsBox_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(positionsBox, "");
+            errorProvider1.SetError(expandImageCheck,"");
+        }
+
+        private void positionsBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (expandImageCheck.Checked && positionsBox.SelectedIndex > 0)
+            {
+                this.errorProvider1.SetError(this.positionsBox, LocRM.GetString("expandImageInvalid", currentCulture));
+                this.errorProvider1.SetError(this.expandImageCheck, LocRM.GetString("expandImageInvalid", currentCulture));
+                e.Cancel = true;
+
+            }
+        }
+
         private void helpButton_Click(object sender, EventArgs e)
         {
             FormInstructions infoBox = new FormInstructions(LocRM.GetString("TRConfigInstructions", currentCulture));
@@ -1074,7 +1091,7 @@ namespace TestPlatform.Views
             if (expandImageCheck.Checked)
             {
                 stimuluSize.Enabled = false;
-                positionsBox.SelectedItem = 0;
+                positionsBox.SelectedIndex = 0;
             }
             else
             {
@@ -1089,5 +1106,7 @@ namespace TestPlatform.Views
                 sstCheckBox.Checked = false;
             }
         }
+
+
     }
 }

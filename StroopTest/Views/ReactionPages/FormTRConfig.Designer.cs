@@ -57,6 +57,8 @@
             this.bgColorLabel = new System.Windows.Forms.Label();
             this.bgColorButton = new System.Windows.Forms.Button();
             this.timeGroupBox = new System.Windows.Forms.GroupBox();
+            this.sstCheckBox = new System.Windows.Forms.CheckBox();
+            this.sstLabel = new System.Windows.Forms.Label();
             this.rndIntervalCheck = new System.Windows.Forms.CheckBox();
             this.rndIntervalLabel = new System.Windows.Forms.Label();
             this.intervalTimeLabel = new System.Windows.Forms.Label();
@@ -107,8 +109,6 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.sstCheckBox = new System.Windows.Forms.CheckBox();
-            this.sstLabel = new System.Windows.Forms.Label();
             this.reactionConfigPanel.SuspendLayout();
             this.userResponse.SuspendLayout();
             this.shapesGroupBox.SuspendLayout();
@@ -349,6 +349,18 @@
             resources.ApplyResources(this.timeGroupBox, "timeGroupBox");
             this.timeGroupBox.Name = "timeGroupBox";
             this.timeGroupBox.TabStop = false;
+            // 
+            // sstCheckBox
+            // 
+            resources.ApplyResources(this.sstCheckBox, "sstCheckBox");
+            this.sstCheckBox.Name = "sstCheckBox";
+            this.sstCheckBox.UseVisualStyleBackColor = true;
+            this.sstCheckBox.CheckedChanged += new System.EventHandler(this.sstCheckBox_CheckedChanged);
+            // 
+            // sstLabel
+            // 
+            resources.ApplyResources(this.sstLabel, "sstLabel");
+            this.sstLabel.Name = "sstLabel";
             // 
             // rndIntervalCheck
             // 
@@ -612,6 +624,8 @@
             resources.ApplyResources(this.positionsBox, "positionsBox");
             this.positionsBox.Name = "positionsBox";
             this.positionsBox.Tag = "";
+            this.positionsBox.Validating += new System.ComponentModel.CancelEventHandler(this.positionsBox_Validating);
+            this.positionsBox.Validated += new System.EventHandler(this.positionsBox_Validated);
             // 
             // positionLabel
             // 
@@ -805,18 +819,6 @@
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
-            // 
-            // sstCheckBox
-            // 
-            resources.ApplyResources(this.sstCheckBox, "sstCheckBox");
-            this.sstCheckBox.Name = "sstCheckBox";
-            this.sstCheckBox.UseVisualStyleBackColor = true;
-            this.sstCheckBox.CheckedChanged += new System.EventHandler(this.sstCheckBox_CheckedChanged);
-            // 
-            // sstLabel
-            // 
-            resources.ApplyResources(this.sstLabel, "sstLabel");
-            this.sstLabel.Name = "sstLabel";
             // 
             // FormTRConfig
             // 

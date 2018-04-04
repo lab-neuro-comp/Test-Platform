@@ -114,7 +114,7 @@ namespace TestPlatform.Views.MatchingPages
                 case "DNMTS":
                     this.expositionType.SelectedIndex = 1;
                     break;
-                case "DMTS / DNMTS":
+                case "DMTS/DNMTS":
                     this.expositionType.SelectedIndex = 2;
                     break;
             }
@@ -142,6 +142,7 @@ namespace TestPlatform.Views.MatchingPages
                         if (imagesListFile.ListContent.Count < stimuluNumber.Value)
                         {
                             errorProvider1.SetError(openImgListButton, LocRM.GetString("impossibleUseListWarn", currentCulture));
+                            errorProvider2.Clear();
                             saveButton.Enabled = false;
                         }
                         else if (imagesListFile.ListContent.Count < attemptNumber.Value * stimuluNumber.Value)
@@ -161,6 +162,7 @@ namespace TestPlatform.Views.MatchingPages
                     if (wordListFile.ListContent.Count < stimuluNumber.Value)
                     {
                         errorProvider1.SetError(openWordListButton, LocRM.GetString("impossibleUseListWarn", currentCulture));
+                        errorProvider2.Clear();
                         saveButton.Enabled = false;
                     }
                     else if (wordListFile.ListContent.Count < attemptNumber.Value * stimuluNumber.Value)
@@ -572,11 +574,15 @@ namespace TestPlatform.Views.MatchingPages
                     button = openWordListButton;
                     type = StrList.WORD;
                 }
-
+                if(button == null)
+                {
+                    return;
+                }
                 StrList listFile = new StrList(button.Text, type);
                 if (listFile.ListContent.Count < stimuluNumber.Value)
                 {
                     errorProvider1.SetError(button, LocRM.GetString("impossibleUseListWarn", currentCulture));
+                    errorProvider2.Clear();
                     saveButton.Enabled = false;
                 }
                 else if (listFile.ListContent.Count < attemptNumber.Value * stimuluNumber.Value)
@@ -591,7 +597,7 @@ namespace TestPlatform.Views.MatchingPages
                     saveButton.Enabled = true;
                 }
             }
-            else
+            else if (button != null)
             {
                 errorProvider1.SetError(button, "");
                 errorProvider2.SetError(button, "");
@@ -740,6 +746,7 @@ namespace TestPlatform.Views.MatchingPages
                 {
                     saveButton.Enabled = false;
                     errorProvider1.SetError(button, LocRM.GetString("impossibleUseListWarn", currentCulture));
+                    errorProvider2.Clear();
                 }
                 else if (ListFile != null && ListFile.ListContent.Count < attemptNumber.Value * stimuluNumber.Value)
                 {

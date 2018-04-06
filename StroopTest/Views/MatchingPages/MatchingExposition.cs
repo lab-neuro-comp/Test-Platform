@@ -129,6 +129,7 @@ namespace TestPlatform.Views.MatchingPages
         private Control objectClicked;
         private bool showAudioFeedbackOnNextClick = false;
         private long modelReactTime;
+        bool shouldChangeExpositionType = false;
         private long attemptIntervalTime;
         private int stimuluType;
 
@@ -153,6 +154,11 @@ namespace TestPlatform.Views.MatchingPages
             if (executingTest.ProgramInUse.Ready(path))
             {
                 currentExpositionType = this.executingTest.ProgramInUse.getExpositionType();
+                if(this.currentExpositionType == "DMTS/DNMTS")
+                {
+                    shouldChangeExpositionType = true;
+                    this.currentExpositionType = "DMTS";
+                }
                 initializeExposition();
             }
             else
@@ -420,7 +426,19 @@ namespace TestPlatform.Views.MatchingPages
                 {
                     /*do nothing*/
                 }
-                Thread.Sleep(100);
+                if (shouldChangeExpositionType)
+                {
+                    if(currentExpositionType == "DMTS")
+                    {
+                        currentExpositionType = "DNMTS";
+                    }
+                    else
+                    {
+                        currentExpositionType = "DMTS";
+                    }
+                    changeBackgroundColor();
+                }
+                Thread.Sleep(10);
             }
 
         }

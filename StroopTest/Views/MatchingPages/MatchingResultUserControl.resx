@@ -119,14 +119,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 57</value>
+    <value>13, 70</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>788, 512</value>
+    <value>1051, 597</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
@@ -151,10 +151,13 @@
     <value>NoControl</value>
   </data>
   <data name="closeButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 574</value>
+    <value>13, 691</value>
+  </data>
+  <data name="closeButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="closeButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>100, 28</value>
   </data>
   <data name="closeButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -181,10 +184,13 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 32</value>
+    <value>9, 39</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 13</value>
+    <value>125, 17</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -205,10 +211,13 @@
     <value>4</value>
   </data>
   <data name="fileNameBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>106, 32</value>
+    <value>141, 39</value>
+  </data>
+  <data name="fileNameBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="fileNameBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>555, 21</value>
+    <value>739, 24</value>
   </data>
   <data name="fileNameBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -232,10 +241,13 @@
     <value>NoControl</value>
   </data>
   <data name="csvExportButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>665, 32</value>
+    <value>887, 39</value>
+  </data>
+  <data name="csvExportButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="csvExportButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 21</value>
+    <value>177, 26</value>
   </data>
   <data name="csvExportButton.TabIndex" type="System.Int32, mscorlib">
     <value>89</value>
@@ -262,13 +274,13 @@
     <value>NoControl</value>
   </data>
   <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>772, 2</value>
+    <value>1029, 2</value>
   </data>
   <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
+    <value>35, 32</value>
   </data>
   <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
     <value>88</value>
@@ -286,10 +298,13 @@
     <value>2</value>
   </data>
   <data name="toolTipPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1000, 1000</value>
+    <value>1333, 1231</value>
+  </data>
+  <data name="toolTipPictureBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="toolTipPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 300</value>
+    <value>667, 369</value>
   </data>
   <data name="toolTipPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -316,10 +331,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 16</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 600</value>
+    <value>1067, 738</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MatchingResultUserControl</value>

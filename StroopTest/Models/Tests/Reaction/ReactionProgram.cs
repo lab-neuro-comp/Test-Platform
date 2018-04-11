@@ -10,7 +10,6 @@ namespace TestPlatform.Models
     class ReactionProgram : Program
     {
         private Int32 stimuluSize; // [3]
-        private Int32 stimulusDistance; // [5] distance from the center of the screen to stimulus
         private Boolean isBeeping; // [9]
         private Boolean beepingRandom; // [19]
         private Int32 beepDuration; // [10]
@@ -20,8 +19,9 @@ namespace TestPlatform.Models
         private String responseType; // [21]
         private Boolean hasColorList; // [23]
         private int fontSize; // [24]
+        private bool sstInterval; // interval calculated according to stop signal test
 
-        private static Int32 ELEMENTS = 25; //quantity of fields used in ReactionProgram 
+        private static Int32 ELEMENTS = 26; //quantity of fields used in ReactionProgram 
 
         public ReactionProgram()
         {
@@ -44,15 +44,14 @@ namespace TestPlatform.Models
         /// This constructor is used to create a reaction program with shapes
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
-                                int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
+                                bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                                 string stimuluShape, bool beepRandom, int numberPositions,
-                                string responseType, string colorList, bool hasColorList)
+                                string responseType, string colorList, bool hasColorList, bool sstInterval)
         {
             // ReactionProgram properties
             this.expositionType = "shapes";
             this.stimuluSize = stimuluSize;
-            this.stimulusDistance = stimulusDistance;
             this.isBeeping  = isBeeping;
             this.beepDuration = beepDuration;
             this.stimuluShape = stimuluShape;
@@ -60,6 +59,8 @@ namespace TestPlatform.Models
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
             this.hasColorList = hasColorList;
+            this.SstInterval = sstInterval;
+
             if(!hasColorList)
             {
                 this.stimulusColor = stimulusColor;
@@ -76,6 +77,7 @@ namespace TestPlatform.Models
             this.setImageListFile("false");
             this.setWordListFile("false");
             this.expositionRandom = false;
+            this.ExpandImage = false;
             this.FontSize = 10;
 
             // Program properties
@@ -93,15 +95,14 @@ namespace TestPlatform.Models
         /// This constructor is used to create a reaction program with words
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
-                                int stimulusDistance, bool isBeeping, int beepDuration, string stimulusColor,
+                                bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                                 bool beepRandom, int numberPositions, string responseType,
-                                string wordList, bool expositionRandom, string colorList, bool hasColorList, int fontSize)
+                                string wordList, bool expositionRandom, string colorList, bool hasColorList, int fontSize, bool sstInterval)
         {
             // ReactionProgram properties
             this.expositionType = "words";
             this.stimuluSize = stimuluSize;
-            this.stimulusDistance = stimulusDistance;
             this.isBeeping = isBeeping;
             this.beepDuration = beepDuration;
             this.FontSize = fontSize;
@@ -111,6 +112,8 @@ namespace TestPlatform.Models
             this.NumberPositions = numberPositions;
             this.setWordListFile(wordList);
             this.hasColorList = hasColorList;
+            this.SstInterval = sstInterval;
+
             if (!hasColorList)
             {
                 this.stimulusColor = stimulusColor;
@@ -125,6 +128,7 @@ namespace TestPlatform.Models
             //default configurations for shapes version of ReactionProgram
             this.setAudioListFile("false");
             this.setImageListFile("false");
+            this.ExpandImage = false;
 
             // Program properties
             this.programName = programName;
@@ -143,15 +147,14 @@ namespace TestPlatform.Models
         /// This constructor is used to create a reaction program with image type
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
-                        int stimulusDistance, bool isBeeping, int beepDuration,
+                        bool isBeeping, int beepDuration,
                         string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                         string imageList, bool beepRandom, int numberPositions,
-                        string responseType, bool isExpositionRandom)
+                        string responseType, bool isExpositionRandom, bool expandImage, bool sstInterval)
         {
             // ReactionProgram properties
             this.expositionType = "images";
             this.stimuluSize = stimuluSize;
-            this.stimulusDistance = stimulusDistance;
             this.isBeeping = isBeeping;
             this.beepDuration = beepDuration;
             this.stimulusColor = "false";
@@ -160,6 +163,8 @@ namespace TestPlatform.Models
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
             this.hasColorList = false;
+            this.ExpandImage = expandImage;
+            this.SstInterval = sstInterval;
 
             //default configurations for first version of ReactionProgram
             this.setAudioListFile("false");
@@ -184,16 +189,15 @@ namespace TestPlatform.Models
         /// This constructor is used to create a reaction program with image and words
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
-                        int stimulusDistance, bool isBeeping, int beepDuration,
+                        bool isBeeping, int beepDuration,
                         string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                         string imageList, string wordList,  string colorList, bool beepRandom, int numberPositions,
-                        bool hasColorList, string responseType, bool isExpositionRandom, string stimulusColor, int fontSize)
+                        bool hasColorList, string responseType, bool isExpositionRandom, string stimulusColor, int fontSize, bool expandImage, bool sstInterval)
         {
 
             // ReactionProgram properties
             this.expositionType = "imageAndWord";
             this.stimuluSize = stimuluSize;
-            this.stimulusDistance = stimulusDistance;
             this.isBeeping = isBeeping;
             this.beepDuration = beepDuration;
             this.stimuluShape = "false";
@@ -202,6 +206,8 @@ namespace TestPlatform.Models
             this.NumberPositions = numberPositions;
             this.hasColorList = hasColorList;
             this.FontSize = fontSize;
+            this.ExpandImage = expandImage;
+            this.SstInterval = sstInterval;
 
             if (!hasColorList)
             {
@@ -236,9 +242,10 @@ namespace TestPlatform.Models
         /// This constructor is used to create a reaction program of the type word with audio
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int intervalTime,
-                                int stimulusDistance, string stimulusColor,
+                                string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom, int numberPositions,
-                                string responseType, string colorList, bool hasColorList, bool isExpositionRandom,int fontSize, string audioListFile, string wordListFile)
+                                string responseType, string colorList, bool hasColorList, bool isExpositionRandom,int fontSize, string audioListFile, string wordListFile,
+                                bool sstInterval)
         {
 
             // ReactionProgram properties
@@ -246,8 +253,8 @@ namespace TestPlatform.Models
             this.setWordListFile(wordListFile);
             this.setAudioListFile(audioListFile);
             this.FontSize = fontSize;
+            this.SstInterval = sstInterval;
 
-            this.stimulusDistance = stimulusDistance;
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
             this.hasColorList = hasColorList;
@@ -269,6 +276,7 @@ namespace TestPlatform.Models
             this.beepDuration = 0;
             this.BeepingRandom = false;
             this.IsBeeping = false;
+            this.ExpandImage = false;
 
             // Program properties
             this.programName = programName;
@@ -286,9 +294,8 @@ namespace TestPlatform.Models
         /// This constructor is used to create a reaction program of the type image with audio
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int intervalTime,
-                                int stimulusDistance,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom, int numberPositions,
-                                string responseType, int stimulusSize, bool isExpositionRandom,string audioListFile, string imageListFile)
+                                string responseType, int stimulusSize, bool isExpositionRandom,string audioListFile, string imageListFile, bool expandImage, bool sstInterval)
         {
 
             // ReactionProgram properties
@@ -296,10 +303,10 @@ namespace TestPlatform.Models
             this.setImageListFile(imageListFile);
             this.setAudioListFile(audioListFile);
             this.StimuluSize = stimulusSize;
-
-            this.stimulusDistance = stimulusDistance;
+            this.SstInterval = sstInterval;
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
+            this.ExpandImage = expandImage;
 
             //default configurations for image with audio version of ReactionProgram
             this.fontSize = 10;
@@ -334,19 +341,6 @@ namespace TestPlatform.Models
             set
             {
                 stimuluSize = value;
-            }
-        }
-
-        public int StimulusDistance
-        {
-            get
-            {
-                return stimulusDistance;
-            }
-
-            set
-            {
-                stimulusDistance = value;
             }
         }
 
@@ -419,6 +413,26 @@ namespace TestPlatform.Models
             }
         }
 
+        public new bool ExpandImage
+        {
+            get
+            {
+                return expandImage;
+            }
+
+            set
+            {
+                if (!value || value && numberPositions == 0)
+                {
+                    expandImage = value;
+                }
+                else
+                {
+                    throw new ArgumentException();
+                }
+            }
+        }
+
         public bool BeepingRandom
         {
             get
@@ -482,6 +496,19 @@ namespace TestPlatform.Models
             }
         }
 
+        public bool SstInterval
+        {
+            get
+            {
+                return sstInterval;
+            }
+
+            set
+            {
+                sstInterval = value;
+            }
+        }
+
         public string data()
         {
             string audioList = "false";
@@ -512,7 +539,6 @@ namespace TestPlatform.Models
                  this.ExpositionTime.ToString() + " " +
                  this.StimuluSize.ToString() + " " +
                  this.IntervalTime.ToString() + " " +
-                 this.StimulusDistance.ToString() + " " +
                  wordList + " " +
                  colorList + " " +
                  this.BackgroundColor.ToUpper() + " " +
@@ -531,8 +557,9 @@ namespace TestPlatform.Models
                  this.ResponseType + " " +
                  this.ExpositionRandom.ToString() + " " +
                  this.hasColorList.ToString() + " " +
-                 this.FontSize;
-            
+                 this.FontSize + " "  +
+                 this.ExpandImage + " " +
+                 this.SstInterval;
             return data;
         }
 
@@ -562,26 +589,27 @@ namespace TestPlatform.Models
                     ExpositionTime = int.Parse(config[2]);
                     StimuluSize = int.Parse(config[3]);
                     IntervalTime = int.Parse(config[4]);
-                    StimulusDistance = int.Parse(config[5]);
-                    setWordListFile(config[6]);
-                    setColorListFile(config[7]);
-                    BackgroundColor = config[8];
-                    IsBeeping = bool.Parse(config[9]);
-                    BeepDuration = int.Parse(config[10]);
-                    StimulusColor = config[11];
-                    ExpositionType = config[12];
-                    setImageListFile(config[13]);
-                    setAudioListFile(config[14]);
-                    FixPoint = config[15];
-                    FixPointColor = config[16];
-                    IntervalTimeRandom = bool.Parse(config[17]);
-                    StimuluShape = config[18];
-                    BeepingRandom = bool.Parse(config[19]);
-                    NumberPositions = int.Parse(config[20]);
-                    ResponseType = config[21];
-                    expositionRandom = bool.Parse(config[22]);
-                    hasColorList = bool.Parse(config[23]);
-                    FontSize = int.Parse(config[24]);
+                    setWordListFile(config[5]);
+                    setColorListFile(config[6]);
+                    BackgroundColor = config[7];
+                    IsBeeping = bool.Parse(config[8]);
+                    BeepDuration = int.Parse(config[9]);
+                    StimulusColor = config[10];
+                    ExpositionType = config[11];
+                    setImageListFile(config[12]);
+                    setAudioListFile(config[13]);
+                    FixPoint = config[14];
+                    FixPointColor = config[15];
+                    IntervalTimeRandom = bool.Parse(config[16]);
+                    StimuluShape = config[17];
+                    BeepingRandom = bool.Parse(config[18]);
+                    NumberPositions = int.Parse(config[19]);
+                    ResponseType = config[20];
+                    expositionRandom = bool.Parse(config[21]);
+                    hasColorList = bool.Parse(config[22]);
+                    FontSize = int.Parse(config[23]);
+                    expandImage = bool.Parse(config[24]);
+                    SstInterval = bool.Parse(config[25]);
 
                     string[] linesInstruction = File.ReadAllLines(filepath);
                     if (linesInstruction.Length > 1) // read instructions if any

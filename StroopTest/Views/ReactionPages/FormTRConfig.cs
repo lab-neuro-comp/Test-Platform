@@ -26,9 +26,8 @@ namespace TestPlatform.Views
             instructionBoxText = LocRM.GetString("instructionBox",currentCulture);
             this.prgName = prgName;
             this.Dock = DockStyle.Fill;
-            InitializeComponent();
 
-            activeCorrectToopTip();
+            InitializeComponent();
             positionsBox.SelectedIndex = 2;
             responseTypeBox.SelectedIndex = 0;
             if (PrgName != "false")
@@ -36,23 +35,6 @@ namespace TestPlatform.Views
                 editPrgName = PrgName;
                 editProgram();
             }
-        }
-
-        private void activeCorrectToopTip()
-        {
-            switch (currentCulture.Name)
-            {
-                case "pt-BR":
-                    toolTip_ptBR.Active = true;
-                    break;
-                case "en-US":
-                    toolTip_enUS.Active = true;
-                    break;
-                case "es-ES":
-                    toolTip_esES.Active = true;
-                    break;
-            }
-
         }
 
         private void editProgram()
@@ -74,10 +56,10 @@ namespace TestPlatform.Views
             intervalTime.Value = editProgram.IntervalTime;
             beepingCheckbox.Checked = editProgram.IsBeeping;
             beepDuration.Value = editProgram.BeepDuration;
-            stimulusDistance.Value = editProgram.StimulusDistance;
             stimuluSize.Value = editProgram.StimuluSize;
             fontSizeUpDown.Value = editProgram.FontSize;
             positionsBox.SelectedIndex = editProgram.NumberPositions - 1;
+            expandImageCheck.Checked = editProgram.ExpandImage;
 
             if (editProgram.getHasColorList())
             {
@@ -401,59 +383,62 @@ namespace TestPlatform.Views
                 // Program type "shapes"
                 case 0:
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
-                                                Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
-                                                Convert.ToInt32(intervalTime.Value),
-                                                Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked,
-                                                Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
-                                                fixPointValue(), bgColorButton.Text, fixPointColor(),
-                                                rndIntervalCheck.Checked, shapeValue(), randomBeepCheck.Checked, 
-                                                Convert.ToInt32(positionsBox.Text), responseType(), openColorListButton.Text, ColorListOption.Checked);
+                                                    Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
+                                                    Convert.ToInt32(intervalTime.Value),
+                                                    beepingCheckbox.Checked,
+                                                    Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
+                                                    fixPointValue(), bgColorButton.Text, fixPointColor(),
+                                                    rndIntervalCheck.Checked, shapeValue(), randomBeepCheck.Checked, 
+                                                    Convert.ToInt32(positionsBox.Text), responseType(), openColorListButton.Text, ColorListOption.Checked, sstCheckBox.Checked);
                     break;
                 // Program type "words"
                 case 1:
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
-                                                Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
-                                                Convert.ToInt32(intervalTime.Value),
-                                                Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked,
-                                                Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
-                                                fixPointValue(), bgColorButton.Text, fixPointColor(),
-                                                rndIntervalCheck.Checked, randomBeepCheck.Checked,
-                                                Convert.ToInt32(positionsBox.Text), responseType(), openWordListButton.Text,
-                                                isRandomExposition.Checked, openColorListButton.Text, ColorListOption.Checked, Convert.ToInt32(fontSizeUpDown.Value));
+                                                    Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
+                                                    Convert.ToInt32(intervalTime.Value),
+                                                    beepingCheckbox.Checked,
+                                                    Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
+                                                    fixPointValue(), bgColorButton.Text, fixPointColor(),
+                                                    rndIntervalCheck.Checked, randomBeepCheck.Checked,
+                                                    Convert.ToInt32(positionsBox.Text), responseType(), openWordListButton.Text, isRandomExposition.Checked, 
+                                                    openColorListButton.Text, ColorListOption.Checked, Convert.ToInt32(fontSizeUpDown.Value), sstCheckBox.Checked);
                     break;
                 
                 // Program type "images"
                 case 2:
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value), 
-                                                     Convert.ToInt32(intervalTime.Value), Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
-                                                     fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, openImgListButton.Text, randomBeepCheck.Checked, 
-                                                     Convert.ToInt32(positionsBox.Text), responseType(), isRandomExposition.Checked);
+                                                     Convert.ToInt32(intervalTime.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
+                                                     fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, openImgListButton.Text, 
+                                                     randomBeepCheck.Checked, Convert.ToInt32(positionsBox.Text), responseType(), isRandomExposition.Checked, 
+                                                     expandImageCheck.Checked, sstCheckBox.Checked);
                     break;
                 
                 // Program type "imageAndWord"
                 case 3:
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
-                                                     Convert.ToInt32(intervalTime.Value), Convert.ToInt32(stimulusDistance.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
+                                                     Convert.ToInt32(intervalTime.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
                                                      fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked,
                                                      openImgListButton.Text, openWordListButton.Text, openColorListButton.Text, randomBeepCheck.Checked,
-                                                     Convert.ToInt32(positionsBox.Text), ColorListOption.Checked,  responseType(), isRandomExposition.Checked, stimulusColorCheck(), Convert.ToInt32(fontSizeUpDown.Value));
+                                                     Convert.ToInt32(positionsBox.Text), ColorListOption.Checked,  responseType(), isRandomExposition.Checked, 
+                                                     stimulusColorCheck(), Convert.ToInt32(fontSizeUpDown.Value), expandImageCheck.Checked, sstCheckBox.Checked);
                     break;
                 
                 // Program type "wordWithAudio"
                 case 4:
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(intervalTime.Value),
-                               Convert.ToInt32(stimulusDistance.Value), stimulusColorCheck(),
-                                fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, Convert.ToInt32(positionsBox.Text),
-                                responseType(), openColorListButton.Text, ColorListOption.Checked, isRandomExposition.Checked, Convert.ToInt32(fontSizeUpDown.Value), openAudioListButton.Text, openWordListButton.Text);
+                                                    stimulusColorCheck(), fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, 
+                                                    Convert.ToInt32(positionsBox.Text), responseType(), openColorListButton.Text, ColorListOption.Checked, 
+                                                    isRandomExposition.Checked, Convert.ToInt32(fontSizeUpDown.Value), openAudioListButton.Text, openWordListButton.Text, 
+                                                    sstCheckBox.Checked);
 
                     break;
                 
                 // Program type "imageWithAudio"
                 case 5:
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(intervalTime.Value),
-                               Convert.ToInt32(stimulusDistance.Value),
-                                fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, Convert.ToInt32(positionsBox.Text),
-                                responseType(), Convert.ToInt32(stimuluSize.Value), isRandomExposition.Checked, openAudioListButton.Text, openImgListButton.Text);
+                                                    fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, Convert.ToInt32(positionsBox.Text),
+                                                    responseType(), Convert.ToInt32(stimuluSize.Value), isRandomExposition.Checked, openAudioListButton.Text, 
+                                                    openImgListButton.Text, expandImageCheck.Checked, sstCheckBox.Checked);
                     break;
                 
                 // invalid type was choosen
@@ -772,7 +757,6 @@ namespace TestPlatform.Views
                     errorProvider1.Clear();
                     shapesGroupBox.Enabled = true;
                     openColorListButton.Enabled = true;
-                    isRandomExposition.Enabled = false;
                     ColorListOption.Enabled = true;
                     UniqueColorOption.Enabled = true;
                     fontSizeUpDown.Enabled = false;
@@ -798,6 +782,7 @@ namespace TestPlatform.Views
                     openImgListButton.Text = LocRM.GetString("open", currentCulture);
                     openWordListButton.Enabled = false;
                     openWordListButton.Text = LocRM.GetString("open", currentCulture);
+                    expandImageCheck.Enabled = false;
                     break;
                 //Words exposition
                 case 1:
@@ -805,7 +790,6 @@ namespace TestPlatform.Views
                     shapesGroupBox.Enabled = false;
                     fontSizeUpDown.Enabled = true;
                     stimuluSize.Enabled = false;
-                    isRandomExposition.Enabled = true;
                     openWordListButton.Enabled = true;
                     ColorListOption.Enabled = true;
                     UniqueColorOption.Enabled = true;
@@ -829,12 +813,12 @@ namespace TestPlatform.Views
                     openAudioListButton.Enabled = false;
                     LocRM.GetString("open", currentCulture);
                     openImgListButton.Text = LocRM.GetString("open", currentCulture);
+                    expandImageCheck.Enabled = false;
                     break;
                 //Images exposition
                 case 2:
                     fontSizeUpDown.Enabled = false;
                     stimuluSize.Enabled = true;
-                    isRandomExposition.Enabled = true;
                     errorProvider1.Clear();
                     openImgListButton.Enabled = true;
                     stimulusColorPanel.BackColor = Color.White;
@@ -854,7 +838,7 @@ namespace TestPlatform.Views
                     randomBeepCheck.Enabled = false;
                     beepingCheckbox.Enabled = true;
                     beepingCheckbox.Checked = false;
-
+                    expandImageCheck.Enabled = true;
 
                     break;
                 //Images and word expositions
@@ -862,7 +846,6 @@ namespace TestPlatform.Views
                     errorProvider1.Clear();
                     fontSizeUpDown.Enabled = true;
                     shapesGroupBox.Enabled = false;
-                    isRandomExposition.Enabled = true;
                     openWordListButton.Enabled = true;
                     ColorListOption.Enabled = true;
                     stimuluSize.Enabled = true;
@@ -883,6 +866,7 @@ namespace TestPlatform.Views
                     randomBeepCheck.Enabled = false;
                     beepingCheckbox.Enabled = true;
                     beepingCheckbox.Checked = false;
+                    expandImageCheck.Enabled = true;
 
                     LocRM.GetString("open", currentCulture);
                     break;
@@ -892,7 +876,6 @@ namespace TestPlatform.Views
                     fontSizeUpDown.Enabled = true;
                     shapesGroupBox.Enabled = false;
                     stimuluSize.Enabled = false;
-                    isRandomExposition.Enabled = true;
                     openWordListButton.Enabled = true;
                     ColorListOption.Enabled = true;
                     UniqueColorOption.Enabled = true;
@@ -913,15 +896,16 @@ namespace TestPlatform.Views
                     beepingCheckbox.Enabled = false;
                     beepingCheckbox.Checked = false;
                     openImgListButton.Enabled = false;
+                    expandImageCheck.Enabled = false;
 
                     break;
                 // image with audio exposition
                 case 5:
                     errorProvider1.Clear();
                     stimuluSize.Enabled = true;
-                    isRandomExposition.Enabled = true;
                     openAudioListButton.Enabled = true;
                     openImgListButton.Enabled = true;
+                    expandImageCheck.Enabled = true;
 
                     beepDuration.Enabled = false;
                     randomBeepCheck.Enabled = false;
@@ -1070,11 +1054,59 @@ namespace TestPlatform.Views
             }
         }
 
+        private void positionsBox_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(positionsBox, "");
+            errorProvider1.SetError(expandImageCheck,"");
+        }
+
+        private void positionsBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (expandImageCheck.Checked && positionsBox.SelectedIndex > 0)
+            {
+                this.errorProvider1.SetError(this.positionsBox, LocRM.GetString("expandImageInvalid", currentCulture));
+                this.errorProvider1.SetError(this.expandImageCheck, LocRM.GetString("expandImageInvalid", currentCulture));
+                e.Cancel = true;
+
+            }
+        }
+
         private void helpButton_Click(object sender, EventArgs e)
         {
             FormInstructions infoBox = new FormInstructions(LocRM.GetString("TRConfigInstructions", currentCulture));
             try { infoBox.Show(); }
             catch (Exception ex) { throw new Exception(ex.Message); }
         }
+
+        private void sstCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rndIntervalCheck.Checked && sstCheckBox.Checked)
+            {
+                rndIntervalCheck.Checked = false;
+            }
+        }
+
+        private void expandImageCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (expandImageCheck.Checked)
+            {
+                stimuluSize.Enabled = false;
+                positionsBox.SelectedIndex = 0;
+            }
+            else
+            {
+                stimuluSize.Enabled = true;
+            }
+        }
+
+        private void rndIntervalCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rndIntervalCheck.Checked)
+            {
+                sstCheckBox.Checked = false;
+            }
+        }
+
+
     }
 }

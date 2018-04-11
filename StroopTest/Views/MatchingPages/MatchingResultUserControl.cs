@@ -19,11 +19,12 @@ namespace TestPlatform.Views.MatchingPages
         private string path = Global.matchingTestFilesPath + Global.resultsFolderName;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
-
+        private Point mousePosition = new Point();
         public MatchingResultUserControl()
         {
             InitializeComponent();
             this.Dock = DockStyle.Fill;
+            this.toolTipPictureBox.Size = new Size(300, 300);
             string[] filePaths = null;
 
             // getting names of resulting headers and separating them
@@ -55,9 +56,42 @@ namespace TestPlatform.Views.MatchingPages
 
         }
 
+        private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv_sender = sender as DataGridView;
+            DataGridViewCell dgv_MouseOverCell = null;
+            if (e.RowIndex > 0 && e.ColumnIndex >= 0 && e.RowIndex < dgv_sender.RowCount && e.ColumnIndex < dgv_sender.ColumnCount)
+            {
+                dgv_MouseOverCell = dgv_sender.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            }
+            if (dgv_MouseOverCell != null)
+                if (e.ColumnIndex == 15 || e.ColumnIndex == 25 || e.ColumnIndex == 28)
+                {
+                    if (dgv_MouseOverCell.Value != null)
+                    {
+                        Image img = TestPlatform.Properties.Resources.positionMap;
+                        toolTipPictureBox.Image = img;
+                        toolTipPictureBox.Location = mousePosition;
+                        toolTipPictureBox.Visible = true;
+                    }
+                }
+        }
+
+        private void dataGridView1_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            toolTipPictureBox.Visible = false;
+        }
+
         private void closeButton_Click(object sender, EventArgs e)
         {
             this.Parent.Controls.Remove(this);
+        }
+
+        private void dataGridView1_MouseMove(object sender, MouseEventArgs e)
+        {
+            mousePosition = e.Location;
+            mousePosition.Y += 50;
+            mousePosition.X += 10;
         }
 
         private void fileNameBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,5 +173,6 @@ namespace TestPlatform.Views.MatchingPages
             try { infoBox.Show(); }
             catch (Exception ex) { throw new Exception(ex.Message); }
         }
+
     }
 }

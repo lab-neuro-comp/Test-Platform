@@ -1259,7 +1259,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>A tarefa vai começar agora</value>
   </data>
   <data name="defaultReactionProgram" xml:space="preserve">
-    <value>padrao 12 1000 50 2000 250 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false false 10</value>
+    <value>padrao 12 1000 50 2000 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false false 10 false false</value>
   </data>
   <data name="defaultReactionProgramError" xml:space="preserve">
     <value>Erro ao criar o programa padrão do teste de tempo de reação.</value>
@@ -2788,5 +2788,17 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
       &lt;/table&gt;
    &lt;/body&gt;
 &lt;/html&gt;</value>
+  </data>
+  <data name="expandImageInvalid" xml:space="preserve">
+    <value>A expansão da imagem só pode ter uma posição, central.</value>
+  </data>
+  <data name="clickedStimuluPosition" xml:space="preserve">
+    <value>Posição do estimulo clicado</value>
+  </data>
+  <data name="modelFirstPosition" xml:space="preserve">
+    <value>Primeira posição do modelo</value>
+  </data>
+  <data name="modelSecondPosition" xml:space="preserve">
+    <value>Segunda posição do modelo</value>
   </data>
 </root>

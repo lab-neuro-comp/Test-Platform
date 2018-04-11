@@ -2338,7 +2338,241 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>Não existe nenhum dispositivo disponível para gravação de aúdio.</value>
   </data>
   <data name="MatchConfigInstructions" xml:space="preserve">
-    <value />
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Geral&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Nome do programa&lt;/td&gt;
+            &lt;td&gt;Deve ser preenchido com o nome do programa que será criado. O nome deve conter apenas caracteres alfanuméricos e não deve possuir espaço. Esse mesmo nome será utilizado na hora de escolher o programa que será execultado, na página de resultados e importação/exportação&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Exposição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Tipo de exposição&lt;/td&gt;
+            &lt;td&gt;
+                O teste de escolha funciona do seguinte modo: Será exibido um modelo, e logo em seguida diversos estimulos, o modelo sempre aparecerá como estimulo.&lt;br&gt;
+                O modo em que o participante deverá reagir ao estimulo depende do tipo de exposição, são eles:&lt;br&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;DMTS: O participante deve escolher o estimulo que seja igual ao modelo mostrado.&lt;/li&gt;
+                  &lt;li&gt;DNMTS: O participante NÃO deve escolher o estimlo que seja igual ao modelo mostrado.&lt;/li&gt;
+                  &lt;li&gt;DMTS/DNMTS: O participante será exposto, alternadamente, ao DMTS e ao DNMTS, devendo realizar a escolha adequada ao tipo de exposição que será exibido.&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Tipo de estimulo&lt;/td&gt;
+            &lt;td&gt;Define o tipo de estimulo que será exibido, sendo as alternativas:&lt;br&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Imagem: Deverá ser escolhida uma lista de imagens que serão mostrados como estimulo&lt;/li&gt;
+                &lt;li&gt;Palavra: Deverá ser escolhida uma lista de palavras e uma cor fixa para que elas sejam exibidas&lt;/li&gt;
+                &lt;li&gt;Palavra e Cor: Deverá ser escolhida duas listas, sendo elas uma de palavra e uma de cores para que cada palavra apareça com uma cor da lista&lt;/li&gt;
+            &lt;/ul&gt;
+            Observações:&lt;br&gt; 
+            &lt;ul&gt;
+                &lt;li&gt;O número de elementos da lista de palavras ou de imagens deverá ser sempre maior do que o número de estimulos.&lt;/li&gt;
+                &lt;li&gt;O número de elementos da lista deve ser, preferencialmente, maior do que o numero total de estimulos que será mostrado.&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Número de estimulos&lt;/td&gt;
+            &lt;td&gt;Define quantos estimulos aparecerão após o modelo para que o participante escolha um deles.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Número de tentativas&lt;/td&gt;
+            &lt;td&gt;Define o número de tentativas que o usuário terá.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Tamanho da exposição&lt;/td&gt;
+            &lt;td&gt;Define o tamanho de estimulo e seu significado varia para cada tipo de estimulo principal:&lt;br&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Para lista de imagens: O tamanho do estimulo define, em pixels, o tamanho do quadrado que exibirá a imagem.&lt;/li&gt;
+                &lt;li&gt;Para lista de palavras: O tamanho do estimulo define, em pixels, o tamanho da fonte que a palavra será renderizada. &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Posição aleatória&lt;/td&gt;
+            &lt;td&gt;Define se serão utilizadas as posições pre-definidas ou posições aleatórias.&lt;br&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Estimulos: Os estimulos aparecerão em posições aleatórias, porém nunca irão se sobrepor.&lt;/li&gt;
+                &lt;li&gt;Modelo: O modelo aparecerá em uma posição aleatória.&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Ordem aleatória&lt;/td&gt;
+            &lt;td&gt;Define se a ordem de aparição das exposições seguirá a ordem a lista ou se eles serão reordenados no inicio de cada execução do programa.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Finalizar esposição do modelo com clique&lt;/td&gt;
+            &lt;td&gt;Define se o modelo desaparecerá caso o participante clique nele.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Listas&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;        
+         &lt;tr&gt;
+            &lt;td&gt;Palavras&lt;/td&gt;
+            &lt;td&gt;Define a lista de palavras que será utilizada na exposição de palavras ou palavras e cores.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Cores&lt;/td&gt;
+            &lt;td&gt;Define a lista de cores que será utilizada na exposição de palavras e cores.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Imagens&lt;/td&gt;
+            &lt;td&gt;Define a lista de imagens que será utilizada na exposição de imagens.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Áudios&lt;/td&gt;
+            &lt;td&gt;Ainda não há uso para esse tipo de lista no teste de escolha.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Tempo&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;        
+         &lt;tr&gt;
+             &lt;td&gt;Exposição do modelo(ms)&lt;/td&gt;
+             &lt;td&gt;Define, em ms, o tempo em que o modelo ficará exposto.&lt;/td&gt;
+         &lt;/tr&gt;     
+         &lt;tr&gt;
+             &lt;td&gt;Exposição dos estimulos(ms)&lt;/td&gt;
+             &lt;td&gt;Define, em ms, o tempo em que os estimulos ficarão expostos.&lt;/td&gt;
+         &lt;/tr&gt;     
+         &lt;tr&gt;
+             &lt;td&gt;Atraso entre modelo e estimulo(ms)&lt;/td&gt;
+             &lt;td&gt;Define, em ms, o tempo de intervalo entre o modelo e os estimulos.&lt;/td&gt;
+         &lt;/tr&gt;     
+         &lt;tr&gt;
+             &lt;td&gt;Atraso entre tentativas(ms)&lt;/td&gt;
+             &lt;td&gt;Define, em ms, o tempo de intervalo entre os estimulos e o modelo da próxima exposição.&lt;/td&gt;
+         &lt;/tr&gt;     
+         &lt;tr&gt;
+            &lt;td&gt;Atraso entre modelo e estimulo variável&lt;/td&gt;
+            &lt;td&gt;Define se o intervalo entre o modelo e os estimulos será aleatório.&lt;br&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Caso essa opção esteja marcada, o atraso será aleatório, porém nunca maior do que o atraso entre o modelo e os estimulos.&lt;/li&gt;
+                &lt;li&gt;O atraso entre modelo e estimulos deve ser maior ou igual 400ms.&lt;/li&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;   
+        &lt;tr&gt;
+            &lt;td&gt;Atraso entre tentativas variável&lt;/td&gt;
+            &lt;td&gt;Define se o intervalo entre as tentativas será aleatório.&lt;br&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Caso essa opção esteja marcada, o atraso será aleatório, porém nunca maior do que o atraso entre tentativas.&lt;/li&gt;
+                &lt;li&gt;O atraso entre tentativas deve ser maior ou igual 400ms.&lt;/li&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;   
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Cores&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;   
+         &lt;tr&gt;
+              &lt;td&gt;Fundo do DMTS&lt;/td&gt;
+              &lt;td&gt;Define o fundo da exposição DMTS
+                  &lt;li&gt;Caso o tipo de exposição seja DMTS/DNMTS o que indicará o tipo de exposição atual é a cor de fundo.&lt;/li&gt;
+              &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+              &lt;td&gt;Fundo do DNMTS&lt;/td&gt;
+              &lt;td&gt;Define o fundo da exposição DNMTS
+                &lt;li&gt;Caso o tipo de exposição seja DMTS/DNMTS o que indicará o tipo de exposição atual é a cor de fundo.&lt;/li&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+              &lt;td&gt;Palavras&lt;/td&gt;
+              &lt;td&gt;No tipo de exposição 'palavras', essa será a cor em que todas as palavras da lista serão renderizadas.&lt;/td&gt;
+         &lt;/tr&gt;   
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Sinalização auditiva&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Opção&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Descrição&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+             &lt;td&gt;Exposição&lt;/td&gt;
+             &lt;td&gt;Define se haverá sinalização auditiva indicando quando um estimulo ou modelo é renderizado&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+             &lt;td&gt;Acerto / Erro&lt;/td&gt;
+             &lt;td&gt;Define se haverá sinalização auditiva indicando quando o usuário aceta ou erra a escolha do estimulo de acordo com o tipo de exposição.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+             &lt;td&gt;Comissão&lt;/td&gt;
+             &lt;td&gt;Define se haverá sinalização auditiva de erro quando o usuário clicar no modelo e a opção 'Finalizar exposição do modelo com clique' estiver desativada. &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+             &lt;td&gt;Omissão&lt;/td&gt;
+             &lt;td&gt;Define se haverá sinalização auditiva de erro quando o usuário não realizar uma escolha de estimulo ou clicar no modelo no intervalo definido pelo tempo de exposição do modelo ou tempo de exposição do estimulo&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Instrução&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+             &lt;td colspan = "2"&gt;Define o texto que será exibido no inicio do teste. Cada linha desse campo aparecerá separadamente na execução do programa.&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
   <data name="posNumberNotImplemented" xml:space="preserve">
     <value>Número de posições ainda não disponível.</value>
@@ -2432,5 +2666,127 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="wordWithColor" xml:space="preserve">
     <value>Palavra com Cor</value>
+  </data>
+  <data name="matchingResultsInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;General&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+                &lt;td&gt; Exportar como .cvs &lt;/td&gt;
+                &lt;td&gt; Exporta os resultados para um arquivo com valores separados por vírgula, que podem ser abertos por programas editores de planilhas (ex: libre office). &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Results&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Programa &lt;/td&gt; &lt;td&gt; O nome do programa &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Participante &lt;/td&gt; &lt;td&gt; O nome do participante &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Data &lt;/td&gt; &lt;td&gt; Data em que o programa foi executado &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Hora Inicial &lt;/td&gt; &lt;td&gt; Hora em que o programa foi executado &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;t&gt; &lt;td&gt; Tempo de exposição &lt;/td&gt; &lt;td&gt; Tempo em que a exposição foi processada &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Tempo de Reação do Modelo &lt;/td&gt; &lt;td&gt; Tempo que o participante leva para responder ao modelo &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Tempo de Reação do estimulo (ms) &lt;/td&gt; &lt;td&gt; Tempo que o participante leva para responder ao estimulo &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Intervalo entre as tentativas (ms) &lt;/td&gt; &lt;td&gt; Tempo decorrido desde a última tentativa &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Intervalo (ms) &lt;/td&gt; &lt;td&gt; Intervalo entre o modelo e a exposição de estímulo &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Exposição do modelo (ms) &lt;/td&gt; &lt;td&gt; Tempo em que o modelo ficou na tela &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; estimulo Exposition (ms) &lt;/td&gt; &lt;td&gt; Tempo que o estimulo ficou na tela &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Senecência &lt;/td&gt; &lt;td&gt; Ordem cronológica que o estímulo veio para o participante &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Tipo de teste &lt;/td&gt; &lt;td&gt; Tipo de teste de exposição &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Tipo de estímulo &lt;/td&gt; &lt;td&gt; Tipo de exposição estimulo &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; List &lt;/td&gt; &lt;td&gt; Listas que foram usadas no programa &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Primeira posição do modelo &lt;/td&gt; &lt;td&gt; Onde o modelo apareceu &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Modelo &lt;/td&gt; &lt;td&gt; Nome do modelo &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Cor do modelo &lt;/td&gt; &lt;td&gt; Cor do modelo &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; 2º estimulo &lt;/td&gt; &lt;td&gt; Nome do 2º estimulo &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; 3º estimulo &lt;/td&gt; &lt;td&gt; Nome do 3º estimulo &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; 4º estimulo &lt;/td&gt; &lt;td&gt; Nome do 4º estimulo &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; 5º Stumulu &lt;/td&gt; &lt;td&gt; Nome do 5º estimulo &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; 6º estimulo &lt;/td&gt; &lt;td&gt; Nome do 6º estimulo &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; 7º estimulo &lt;/td&gt; &lt;td&gt; Nome do 7º estimulo &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; 8º estimulo &lt;/td&gt; &lt;td&gt; Nome do 8º estimulo &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Segunda posição do modelo &lt;/td&gt; &lt;td&gt; Onde o modelo apareceu como estimulo &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; estimulo clicado &lt;/td&gt; &lt;td&gt; Nome do estimulo em que o participante clicou &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Cor de estimulo clicado &lt;/td&gt; &lt;td&gt; Cor do estimulo em que o participante clicou &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Posição de estimulo clicado &lt;/td&gt; &lt;td&gt; Posição do estimulo em que o participante clicou &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt; &lt;td&gt; Match &lt;/td&gt; &lt;td&gt; Usuário clicou o estimulo igual ao modelo &lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
 </root>

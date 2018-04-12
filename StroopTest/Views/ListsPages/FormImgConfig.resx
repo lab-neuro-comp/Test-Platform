@@ -297,12 +297,27 @@
   <metadata name="fileNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="fileNameColumn.HeaderText" xml:space="preserve">
+    <value>Nome do Arquivo</value>
+  </data>
+  <data name="fileNameColumn.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
   <metadata name="thumbnailColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="thumbnailColumn.HeaderText" xml:space="preserve">
+    <value>Imagem</value>
+  </data>
+  <data name="thumbnailColumn.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
   <metadata name="filePathColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="filePathColumn.HeaderText" xml:space="preserve">
+    <value>Localização</value>
+  </data>
   <data name="imgPathDataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 357</value>
   </data>
@@ -326,30 +341,6 @@
   </data>
   <data name="&gt;&gt;imgPathDataGridView.ZOrder" xml:space="preserve">
     <value>11</value>
-  </data>
-  <metadata name="fileNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="fileNameColumn.HeaderText" xml:space="preserve">
-    <value>Nome do Arquivo</value>
-  </data>
-  <data name="fileNameColumn.Width" type="System.Int32, mscorlib">
-    <value>120</value>
-  </data>
-  <metadata name="thumbnailColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="thumbnailColumn.HeaderText" xml:space="preserve">
-    <value>Imagem</value>
-  </data>
-  <data name="thumbnailColumn.Width" type="System.Int32, mscorlib">
-    <value>120</value>
-  </data>
-  <metadata name="filePathColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="filePathColumn.HeaderText" xml:space="preserve">
-    <value>Localização</value>
   </data>
   <data name="moveUpButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
@@ -625,7 +616,7 @@
     <value>True</value>
   </data>
   <data name="numberFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 351</value>
+    <value>133, 337</value>
   </data>
   <data name="numberFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>

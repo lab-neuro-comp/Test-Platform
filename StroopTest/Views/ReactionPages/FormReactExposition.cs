@@ -832,7 +832,7 @@ namespace TestPlatform.Views
         /* creates a x and y vector on center of the screen */
         private Point centerShapePosition(Size size)
         {
-            currentPosition = 0;
+            currentPosition = 2;
             StimulusPosition stimulusPosition = new StimulusPosition(ClientSize, size);
             Point newPoint = stimulusPosition.threePointsPosition(currentPosition);
             currentPositionOutput = stimulusPosition.CurrentPosition;

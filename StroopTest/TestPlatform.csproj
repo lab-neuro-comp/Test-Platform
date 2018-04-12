@@ -17,7 +17,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <HockeyAppResourceId>4e4db72659e84ec1ab96ac2196fa1559</HockeyAppResourceId>
-    <PublishUrl>C:\Users\fabio\Desktop\UnB\Iniciação Científica\en-US\</PublishUrl>
+    <PublishUrl>C:\Users\fabio\Desktop\UnB\Iniciação Científica\pt-BR\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -36,7 +36,7 @@
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>3.0.0.0</ApplicationVersion>
+    <ApplicationVersion>3.1.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -532,7 +532,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MatchingPages\FormMatchConfig.resx">
       <DependentUpon>FormMatchConfig.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MatchingPages\MatchingExposition.resx">
       <DependentUpon>MatchingExposition.cs</DependentUpon>
@@ -736,8 +735,6 @@
     <None Include="Resources\bell.wav" />
     <None Include="Resources\error.wav" />
     <None Include="Resources\hit.wav" />
-    <None Include="Resources\helpToolTipMatrixImage.bmp" />
-    <None Include="Resources\helpPagesImages\positionMap.png" />
     <Content Include="Resources\icons\circle.png" />
     <Content Include="Resources\icons\cross.png" />
     <Content Include="Resources\icons\helpButton.png" />
@@ -803,7 +800,7 @@
       <Group>en-US</Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
+      <PublishState>Exclude</PublishState>
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
@@ -812,7 +809,7 @@
       <Group>pt-BR</Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
+      <PublishState>Include</PublishState>
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>

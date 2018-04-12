@@ -41,8 +41,6 @@ namespace TestPlatform
 
         private void openImgList()
         {
-            try
-            {
                 FormDefine defineFilePath = defineFilePath = new FormDefine(LocRM.GetString("imageList", currentCulture), Global.testFilesPath + Global.listFolderName, "dir","_image",true, false);
                 var result = defineFilePath.ShowDialog();
                 
@@ -55,17 +53,13 @@ namespace TestPlatform
                         isListNameValid = false;
                         return;
                     }
-                    imgListNameTextBox.Text = listName.Remove(listName.Length - 6); // removes the _img identification from file while editing (when its saved it is always added again)
+                    imgListNameTextBox.Text = listName; // removes the _img identification from file while editing (when its saved it is always added again)
                     imageList = new StrList(listName, IMAGE);
                     string[] filePaths = imageList.ListContent.ToArray();
                     readImagesIntoDGV(filePaths, imgPathDataGridView);                  
 
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+         
         }
 
         private void btnOpen_Click(object sender, EventArgs e)

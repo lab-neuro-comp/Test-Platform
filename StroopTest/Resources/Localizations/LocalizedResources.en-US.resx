@@ -2357,7 +2357,241 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
     <value>There are no devices available to record audio.</value>
   </data>
   <data name="MatchConfigInstructions" xml:space="preserve">
-    <value />
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;General&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Program name&lt;/td&gt;
+            &lt;td&gt;Should be the name of the program that will be created. Program names should only have alphanumeric characters and have no spaces. This name will be the same name that must be selected when selecting a program to be executed and in the export/import&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Exposition&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Exposition type&lt;/td&gt;
+            &lt;td&gt;
+                The matching test working this way: will be exposed a model and some stimulus for the participant choose, The model will aways appears as stimulu.&lt;br&gt;
+                The way that the participant will react to the stimulus will depends of exposition type, that are:&lt;br&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;DMTS: The participant must choose the stimulus that is equal to the model shown.&lt;/li&gt;
+                  &lt;li&gt;DNMTS: The participant must NOT choose the estimate that is equal to the model shown.&lt;/li&gt;
+                  &lt;li&gt;DMTS/DNMTS: The participant will be exposed, alternately, to DMTS and DNMTS, making the appropriate choice for the type of exhibition that will be displayed.&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Stimulu type&lt;/td&gt;
+            &lt;td&gt;Stimulus Type sets the type of stimulus to be displayed, the alternatives being:&lt;br&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Image: It should be chosen a list of images that will be shown as stimulus&lt;/li&gt;
+                &lt;li&gt;Word: A list of words and a fixed color must be chosen for them to be displayed&lt;/li&gt;
+                &lt;li&gt;Word and Color: Two lists should be chosen, one being a word and one color, so that each word appears with a color from the list&lt;/li&gt;
+            &lt;/ul&gt;
+            Comments:&lt;br&gt; 
+            &lt;ul&gt;
+                &lt;li&gt;The number of elements in the list of words or images must always be greater than the number of stimuli.&lt;/li&gt;
+                &lt;li&gt;The number of elements in the list should preferably be greater than the total number of stimuli that will be shown.&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Stimulus number&lt;/td&gt;
+            &lt;td&gt;Defines how many stimuli will appear after the model so that the participant chooses one of them.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Attempts number&lt;/td&gt;
+            &lt;td&gt; Sets the number of retries the user will have.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Exposition size&lt;/td&gt;
+            &lt;td&gt;Defines the size of the stimulus and its meaning varies for each type of main stimulus:&lt;br&gt;
+            &lt;ul&gt;
+                &lt;li&gt;For image list: The size of the stimulus defines, in pixels, the size of the square that the image will be displayed.&lt;/li&gt;
+                &lt;li&gt;For list of words: The size of the stimulus defines, in pixels, the font size that the word will be rendered.&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Random position&lt;/td&gt;
+            &lt;td&gt;Sets whether to use preset positions or random positions.&lt;br&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Stimuli: The stimuli will appear in random positions, but they will never overlap.&lt;/li&gt;
+                &lt;li&gt;Model: The model will appear in a random position.&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Random order&lt;/td&gt;
+            &lt;td&gt;Defines whether the order of appearance of exposures will follow the order in the list or whether they will be reordered at the beginning of each program run.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Finish model exposition with click&lt;/td&gt;
+            &lt;td&gt;Sets whether the model will disappear if the participant clicks it.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Lists&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;        
+         &lt;tr&gt;
+            &lt;td&gt;Words&lt;/td&gt;
+            &lt;td&gt;Defines the list of words that will be used in the exposition of words or words and colors.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Colors&lt;/td&gt;
+            &lt;td&gt;Sets the color list that will be used in the exposition of words and colors.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Images&lt;/td&gt;
+            &lt;td&gt; Sets the list of images that will be used in the image exposition.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Audios&lt;/td&gt;
+            &lt;td&gt;There is still no use for this type of list in the test of choice.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Time&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;        
+         &lt;tr&gt;
+             &lt;td&gt;Model exposition(ms)&lt;/td&gt;
+             &lt;td&gt;Sets, in ms, the time the model will be exposed.&lt;/td&gt;
+         &lt;/tr&gt;     
+         &lt;tr&gt;
+             &lt;td&gt;Stimulu exposition(ms)&lt;/td&gt;
+             &lt;td&gt;Sets, in ms, the time the stimuli will be exposed.&lt;/td&gt;
+         &lt;/tr&gt;     
+         &lt;tr&gt;
+             &lt;td&gt;Delay between model and stimulus(ms)&lt;/td&gt;
+             &lt;td&gt;Sets, in ms, the interval time between the model and the stimuli.&lt;/td&gt;
+         &lt;/tr&gt;     
+         &lt;tr&gt;
+             &lt;td&gt;Delay between attempts(ms)&lt;/td&gt;
+             &lt;td&gt;Sets, in ms, the interval time between the stimuli and the model of the next exposure.&lt;/td&gt;
+         &lt;/tr&gt;     
+         &lt;tr&gt;
+            &lt;td&gt;Atraso entre modelo e estimulo variável&lt;/td&gt;
+            &lt;td&gt;Sets whether the interval between attempts is random.&lt;br&gt;
+            &lt;ul&gt;
+                &lt;li&gt;If this option is checked, the delay will be random, but never greater than the delay between attempts.&lt;/li&gt;
+                &lt;li&gt;The delay between attempts should be greater than or equal to 400ms.&lt;/li&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;   
+        &lt;tr&gt;
+            &lt;td&gt;Variable delay between model and stimuli&lt;/td&gt;
+            &lt;td&gt;Sets whether the interval between the model and the stimuli is random.&lt;br&gt;
+            &lt;ul&gt;
+                &lt;li&gt;If this option is checked, the delay will be random, but never greater than the delay between the model and the stimuli.&lt;/li&gt;
+                &lt;li&gt;The delay between model and stimuli should be greater than or equal to 400ms.&lt;/li&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;   
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Colors&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;   
+         &lt;tr&gt;
+              &lt;td&gt;DMTS Background &lt;/td&gt;
+              &lt;td&gt; Defines DMTS expostion background
+                  &lt;li&gt;If the type of exposure is DMTS / DNMTS what will indicate the current exposure type is the background color.&lt;/li&gt;
+              &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+              &lt;td&gt;DNMTS Background &lt;/td&gt;
+              &lt;td&gt;Defines DNMTS expostion background
+                &lt;li&gt;If the type of exposure is DMTS / DNMTS what will indicate the current exposure type is the background color.&lt;/li&gt;
+            &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+              &lt;td&gt;Words&lt;/td&gt;
+              &lt;td&gt;Words In the 'words' expostion type, this will be the color in which all the words in the list will be rendered.&lt;/td&gt;
+         &lt;/tr&gt;   
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Auditory signaling&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Options&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+             &lt;td&gt;Exposition&lt;/td&gt;
+             &lt;td&gt;Sets if will be an auditory signaling when an exposition is shown&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+             &lt;td&gt;Match / Error&lt;/td&gt;
+             &lt;td&gt;Sets if will be an auditory signaling when the participant match of do not match the chosen stimulu with the model.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+             &lt;td&gt;Commission&lt;/td&gt;
+             &lt;td&gt;Sets if will be an error auditory signaling when user click on model with the option 'End model exposition with click' disabled. &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+             &lt;td&gt;Omission&lt;/td&gt;
+             &lt;td&gt;Sets if will be an error auditory signaling when the participant do not click on model or the stimulu in time.&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Instructions&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+             &lt;td colspan = "2"&gt;Defines the text that will be displyed at start of the program, each line in this text will be rendered in a blank screen at exposition.&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
   <data name="posNumberNotImplemented" xml:space="preserve">
     <value>Position number currently not implemented.</value>
@@ -2448,6 +2682,129 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   </data>
   <data name="wordWithColor" xml:space="preserve">
     <value>Word with Color</value>
+  </data>
+  <data name="matchingResultsInstructions" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;style&gt;
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: justify;  
+         }
+         table#t01 tr:nth-child(even) {
+         background-color: #eee;
+         }
+         table#t01 tr:nth-child(odd) {
+         background-color:#fff;
+         }
+         .subBar {
+         background-color: gray;
+         color: black;
+         }
+         .mainBar{
+         background-color: black;
+         color: white;
+         text-align: center;
+         }
+         li{
+         padding-bottom:5px;
+         }
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table id="t01" style = "margin: 0 auto; padding: 0"&gt;
+         &lt;tr&gt;
+            &lt;td colspan = "2" style = "background: #fff"&gt; &lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;th class = "mainBar" colspan = "2"&gt;General&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Export as .cvs&lt;/td&gt;
+            &lt;td&gt;It exports the results to a file with values separated by comma, which can be opened by spreadsheet editors programs (ex: libre office).&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "mainBar" colspan = "2"&gt;Results&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;th class = "subBar" style = "width: 30%" &gt;Option&lt;/th&gt;
+            &lt;th class = "subBar"&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Program&lt;/td&gt;&lt;td&gt;The program name&lt;/td&gt;
+         &lt;/tr&gt; 
+         &lt;tr&gt;&lt;td&gt;Participant&lt;/td&gt;&lt;td&gt;The participant name&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Date&lt;/td&gt;&lt;td&gt;Date that the program was executed&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Initial Time&lt;/td&gt;&lt;td&gt;Time when the program was executed&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Exposition Time&lt;/td&gt;&lt;td&gt;Time when the exposition was rendered&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Model Reaction Time&lt;/td&gt;&lt;td&gt;Time that participant take to answer to the model&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Stimulu Reaction Time(ms)&lt;/td&gt;&lt;td&gt;Time that participant take to answer to the stimulu&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Interval between attempts(ms)&lt;/td&gt;&lt;td&gt;Time elapsed since last attempt&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Interval(ms)&lt;/td&gt;&lt;td&gt;Interval between the model and the stimulus exposition&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Model Exposition(ms)&lt;/td&gt;&lt;td&gt;Time that model stayed in screen&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Stimulu Exposition(ms)&lt;/td&gt;&lt;td&gt;Time that stimulu stayed in screen&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Senquency&lt;/td&gt;&lt;td&gt;Cronological order that stimulus appered to participant&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Test Type&lt;/td&gt;&lt;td&gt;Test type of exposition&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Stimulus Type&lt;/td&gt;&lt;td&gt;Stimulu type of exposition&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;List &lt;/td&gt;&lt;td&gt;Lists that was used in program&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Model first position&lt;/td&gt;&lt;td&gt;Where the model appeared&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Model &lt;/td&gt;&lt;td&gt;Name of the model&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Model color&lt;/td&gt;&lt;td&gt;Color of the model&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;2nd Stimulu&lt;/td&gt;&lt;td&gt;Name of 2nd stimulu&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;3rd Stimulu &lt;/td&gt;&lt;td&gt;Name of 3rd stimulu&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;4th Stimulu &lt;/td&gt;&lt;td&gt;Name of 4th stimulu&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;5th Stumulu &lt;/td&gt;&lt;td&gt;Name of 5th stimulu&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;6th Stimulu &lt;/td&gt;&lt;td&gt;Name of 6th stimulu&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;7th Stimulu &lt;/td&gt;&lt;td&gt;Name of 7th stimulu&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;8th Stimulu &lt;/td&gt;&lt;td&gt;Name of 8th stimulu&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Model second position&lt;/td&gt;&lt;td&gt;Where the model appeared as stimulu&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Clicked Stimulu&lt;/td&gt;&lt;td&gt;Name of the stimulu that participant clicked&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Clicked Stimulu Color&lt;/td&gt;&lt;td&gt;Color of the stimulu that participant clicked&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Clicked Stimulu Position&lt;/td&gt;&lt;td&gt;Position of the stimulu that participant clicked&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;&lt;td&gt;Match&lt;/td&gt;&lt;td&gt;User clicked the stimulu equals the model&lt;/td&gt;
+         &lt;/tr&gt;
+         
+      &lt;/table&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
   <data name="expandImageInvalid" xml:space="preserve">
     <value>Expanding image, there is only one position available, center.</value>

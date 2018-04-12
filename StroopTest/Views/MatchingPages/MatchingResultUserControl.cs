@@ -169,7 +169,9 @@ namespace TestPlatform.Views.MatchingPages
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("matchingResultsInstructions", currentCulture));
+            try { infoBox.Show(); }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
     }

@@ -75,6 +75,7 @@ namespace TestPlatform.Views
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
             this.StartPosition = FormStartPosition.Manual;
+            ExpositionController.formSecondScreen(this);
             InitializeComponent();
             startTime = hour + "_" + minutes + "_" + seconds;
             executingTest.ParticipantName = participantName;

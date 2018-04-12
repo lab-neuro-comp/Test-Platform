@@ -74,6 +74,9 @@ namespace TestPlatform
             currentTest.Mark = mark;
             currentTest.InitialDate = DateTime.Now;
 
+
+            ExpositionController.formSecondScreen(this);
+
             configureCurrentTest();
             startExpo();
             this.ShowDialog();

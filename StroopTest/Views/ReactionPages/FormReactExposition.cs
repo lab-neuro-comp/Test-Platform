@@ -1024,11 +1024,11 @@ namespace TestPlatform.Views
         private void intervalBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
 
-            if (exposing)
+            if (exposing && !cancelExposition)
             {
                 this.Controls.Add((Control)e.UserState);
             }
-            else
+            else if (!cancelExposition)
             {
                 this.Controls.Remove((Control)e.UserState);
             }

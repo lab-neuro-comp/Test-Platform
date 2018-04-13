@@ -117,6 +117,10 @@ namespace TestPlatform
             if (!Directory.Exists(Global.matchingTestFilesPath + Global.resultsFolderName))
                 Directory.CreateDirectory(Global.matchingTestFilesPath + Global.resultsFolderName);
 
+            /* creating participant folder*/
+            if (!Directory.Exists(Global.testFilesPath + Global.partcipantDataPath))
+                Directory.CreateDirectory(Global.testFilesPath + Global.partcipantDataPath);
+
             /* creating Lists folder*/
             if (!Directory.Exists(Global.testFilesPath + Global.listFolderName))
             {

@@ -13,6 +13,7 @@
         public static string reactionTestFilesPath = "/ReactionTestFiles/";
         public static string experimentTestFilesPath = "/ExperimentTestFiles/";
         public static string matchingTestFilesPath = "/MatchingTestFiles/";
+        public static string partcipantDataPath = "/ParticipantData/";
 
         public static string stroopTestFilesBackupPath = "/StroopTestFiles/";
         public static string reactionTestFilesBackupPath = "/ReactionTestFiles/";

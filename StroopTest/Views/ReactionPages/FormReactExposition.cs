@@ -716,14 +716,15 @@ namespace TestPlatform.Views
 
         private void intervalBW_DoWork(object sender, DoWorkEventArgs e)
         {
-            ExpositionController.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
-                this);
+            
 
             executingTest.InitialTime = DateTime.Now;
             accumulativeStopWatch.Start();
 
             for (int counter = 0; counter < executingTest.ProgramInUse.NumExpositions && !cancelExposition; counter++)
             {
+                ExpositionController.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
+                this);
                 currentExposition = counter;
                 //preparing execution
                 expositionBackground();

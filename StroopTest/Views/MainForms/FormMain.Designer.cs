@@ -82,6 +82,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.participantButton = new System.Windows.Forms.RadioButton();
             this.helpButton = new System.Windows.Forms.RadioButton();
             this.buttonMatching = new System.Windows.Forms.RadioButton();
             this.exportButton = new System.Windows.Forms.RadioButton();
@@ -478,6 +479,7 @@
             // 
             // menuPanel
             // 
+            this.menuPanel.Controls.Add(this.participantButton);
             this.menuPanel.Controls.Add(this.helpButton);
             this.menuPanel.Controls.Add(this.buttonMatching);
             this.menuPanel.Controls.Add(this.exportButton);
@@ -490,6 +492,16 @@
             resources.ApplyResources(this.menuPanel, "menuPanel");
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Click += new System.EventHandler(this.menuPanel_Click);
+            // 
+            // participantButton
+            // 
+            resources.ApplyResources(this.participantButton, "participantButton");
+            this.participantButton.BackColor = System.Drawing.Color.Transparent;
+            this.participantButton.FlatAppearance.BorderSize = 0;
+            this.participantButton.Image = global::TestPlatform.Properties.Resources.icons8_usuário_de_gênero_neutro_20;
+            this.participantButton.Name = "participantButton";
+            this.participantButton.UseVisualStyleBackColor = false;
+            this.participantButton.Click += new System.EventHandler(this.participantButton_Click);
             // 
             // helpButton
             // 
@@ -725,5 +737,6 @@
         private System.Windows.Forms.RadioButton buttonMatching;
         private System.Windows.Forms.ToolStripMenuItem spanishSpainToolStripMenuItem;
         private System.Windows.Forms.RadioButton helpButton;
+        private System.Windows.Forms.RadioButton participantButton;
     }
 }

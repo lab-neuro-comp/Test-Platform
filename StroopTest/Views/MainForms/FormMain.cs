@@ -854,6 +854,19 @@ namespace TestPlatform
                 currentPanelContent = helpControl;
             }
         }
+
+        private void participantButton_Click(object sender, EventArgs e)
+        {
+            if (participantButton.Checked)
+            {
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
+
+                ParticipantControl participantControl = new ParticipantControl();
+                this.sideBarPanel.Controls.Add(participantControl);
+                currentPanelContent = participantControl;
+            }
+        }
     }
     
 }

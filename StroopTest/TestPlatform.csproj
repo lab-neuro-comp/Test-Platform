@@ -136,6 +136,7 @@
     <Compile Include="Models\General\Audio.cs" />
     <Compile Include="Models\Experiment\ExperimentProgram.cs" />
     <Compile Include="Models\Experiment\ExperimentTest.cs" />
+    <Compile Include="Models\General\Participant.cs" />
     <Compile Include="Models\Tests\Matching\MatchingProgram.cs" />
     <Compile Include="Models\Tests\Matching\MatchingTest.cs" />
     <Compile Include="Models\Tests\Program.cs" />
@@ -230,6 +231,12 @@
     <Compile Include="Views\MatchingPages\MatchingResultUserControl.Designer.cs">
       <DependentUpon>MatchingResultUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ParticipantPages\FormParticipantConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ParticipantPages\FormParticipantConfig.Designer.cs">
+      <DependentUpon>FormParticipantConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ReactionPages\FormReactExposition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +284,12 @@
     </Compile>
     <Compile Include="Views\SidebarUserControls\MatchingControl.Designer.cs">
       <DependentUpon>MatchingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SidebarUserControls\ParticipantControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SidebarUserControls\ParticipantControl.Designer.cs">
+      <DependentUpon>ParticipantControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SidebarUserControls\ReactionControl.cs">
       <SubType>UserControl</SubType>
@@ -546,6 +559,9 @@
     <EmbeddedResource Include="Views\MatchingPages\MatchingResultUserControl.resx">
       <DependentUpon>MatchingResultUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ParticipantPages\FormParticipantConfig.resx">
+      <DependentUpon>FormParticipantConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ReactionPages\FormReactExposition.resx">
       <DependentUpon>FormReactExposition.cs</DependentUpon>
     </EmbeddedResource>
@@ -617,6 +633,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\MatchingControl.resx">
       <DependentUpon>MatchingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\ParticipantControl.resx">
+      <DependentUpon>ParticipantControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ReactionControl.en-US.resx">
       <DependentUpon>ReactionControl.cs</DependentUpon>
@@ -738,6 +757,7 @@
     <None Include="Resources\hit.wav" />
     <None Include="Resources\helpToolTipMatrixImage.bmp" />
     <None Include="Resources\helpPagesImages\positionMap.png" />
+    <None Include="Resources\icons8-usuário-de-gênero-neutro-20.png" />
     <Content Include="Resources\icons\circle.png" />
     <Content Include="Resources\icons\cross.png" />
     <Content Include="Resources\icons\helpButton.png" />

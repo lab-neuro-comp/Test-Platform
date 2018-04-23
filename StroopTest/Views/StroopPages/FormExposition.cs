@@ -55,6 +55,7 @@ namespace TestPlatform
         private string currentStimulus = "false";
         private string currentAudio = "false";
         private int wordCounter = 0, colorCounter = 0, audiocounter = 0, subtitlecounter = 0, imageCounter = 0;
+
         /// <summary>
         /// This is the constructor method for stroop test exposition form.</summary>
         /// <param name="prgName"> Program name is the name of the current StroopProgram that wil be executed.</param>
@@ -73,6 +74,9 @@ namespace TestPlatform
             currentTest.ParticipantName = usrName;
             currentTest.Mark = mark;
             currentTest.InitialDate = DateTime.Now;
+
+
+            ExpositionController.formSecondScreen(this);
 
             configureCurrentTest();
             startExpo();
@@ -102,10 +106,6 @@ namespace TestPlatform
             {
                 runExposition = false;
                 cts.Cancel();
-
-                this.Close();
-                this.Dispose();
-                this.DialogResult = DialogResult.Cancel;
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
@@ -296,7 +296,11 @@ namespace TestPlatform
             }
             catch (TaskCanceledException)
             {
-                StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
+                if (currentTest.ProgramInUse.AudioCapture)
+                {
+                    stopRecordingAudio();
+                }
+                finishExposition();
             }
             catch (Exception ex)
             {
@@ -349,7 +353,7 @@ namespace TestPlatform
             catch (TaskCanceledException)
             {
                 Player.Stop();
-                StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
+                finishExposition();
             }
             catch (Exception ex)
             {
@@ -537,12 +541,11 @@ namespace TestPlatform
             }
             catch (TaskCanceledException)
             {
-                StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
-                // beginAudio
                 if (currentTest.ProgramInUse.AudioCapture)
                 {
                     stopRecordingAudio();
                 }
+                finishExposition();
             }
             catch (Exception ex)
             {
@@ -636,12 +639,11 @@ namespace TestPlatform
             }
             catch (TaskCanceledException)
             {
-                StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
-                // beginAudio
                 if (currentTest.ProgramInUse.AudioCapture)
                 {
                     stopRecordingAudio();
                 }
+                finishExposition();
             }
             catch (Exception ex)
             {
@@ -716,7 +718,7 @@ namespace TestPlatform
                 {
                     stopRecordingAudio();
                 }
-                StroopProgram.writeOutputFile(outputFile, string.Join("\n", outputContent.ToArray()));
+                finishExposition();
             }
             catch (Exception ex)
             {
@@ -757,15 +759,23 @@ namespace TestPlatform
 
         private async Task showInstructions(StroopProgram program, CancellationToken token) 
         {
-            if (program.InstructionText != null)
+            try
             {
-                instructionLabel.Enabled = true; instructionLabel.Visible = true;
-                for (int i = 0; i < program.InstructionText.Count; i++)
+                if (program.InstructionText != null)
                 {
-                    instructionLabel.Text = program.InstructionText[i];
-                    await Task.Delay(Program.instructionAwaitTime);
+                    instructionLabel.Enabled = true; instructionLabel.Visible = true;
+                    for (int i = 0; i < program.InstructionText.Count; i++)
+                    {
+                        instructionLabel.Text = program.InstructionText[i];
+                        await Task.Delay(Program.instructionAwaitTime, token);
+                    }
+                    instructionLabel.Enabled = false; instructionLabel.Visible = false;
                 }
-                instructionLabel.Enabled = false; instructionLabel.Visible = false;
+            }
+            catch (TaskCanceledException)
+            {
+                this.DialogResult = DialogResult.OK;
+                Close();
             }
         }
 

@@ -66,3 +66,39 @@ You can run tests using visual studio default configurations.
 
 Please send a [GitHub Pull Request to TestPlatform](https://github.com/lab-neuro-comp/Test-Platform/pull/new/master) stating what you've done. 
 The Pull Request will only be accepted if the contribution works in all cultures (en-US and pt-BR).
+
+
+# Deployment
+
+
+
+For this project deployment, follow the steps below (You need  WinRAR to be installed in your computer)
+
+
+
+1. Change localization to specific culture that will be released. Don't forget to also change version in AssemblyInfo.cs (Inside Properties)
+
+
+![enter image description here](https://github.com/lab-neuro-comp/Test-Platform/blob/master/images/main_culture.png?raw=true)
+
+
+
+2. Go to project properties and click on the left menu on publish, changing application files accordingly to culture being published. Then, click on the Publish Wizard
+
+
+
+![enter image description here](https://github.com/lab-neuro-comp/Test-Platform/blob/master/images/publish_projects.png?raw=true)
+
+
+
+3. Right click on the folder created after published,  and click to add to file (using WinRAR).
+
+
+4. Use WinRAR advanced SFX options to create an executable of the compressed files
+
+
+![enter image description here](https://github.com/lab-neuro-comp/Test-Platform/blob/master/images/sfx_shortcut.png?raw=true)
+
+
+
+![enter image description here](https://github.com/lab-neuro-comp/Test-Platform/blob/master/images/sfx_text.png?raw=true)

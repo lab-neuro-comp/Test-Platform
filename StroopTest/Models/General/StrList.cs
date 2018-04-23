@@ -152,11 +152,12 @@ namespace TestPlatform.Models
             {
                 string listDestination = Global.testFilesPath + Global.listFolderName + ListName + Type + "/";
                 Directory.CreateDirectory(listDestination);
+                int i = 0;
                 foreach (string content in listContent)
                 {
                     try
                     {
-                        File.Copy(content, listDestination + Path.GetFileName(content), true);
+                        File.Copy(content, listDestination + i + Path.GetFileName(content), true);
 
                     }
                     catch
@@ -165,6 +166,7 @@ namespace TestPlatform.Models
                         CultureInfo currentCulture = System.Threading.Thread.CurrentThread.CurrentUICulture;
                         MessageBox.Show(LocRM.GetString("fileNotFound", currentCulture) + "\n" + content);
                     }
+                    i++;
                 }
                 return true;
             }

@@ -75,6 +75,7 @@ namespace TestPlatform.Views
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
             this.StartPosition = FormStartPosition.Manual;
+            ExpositionController.formSecondScreen(this);
             InitializeComponent();
             startTime = hour + "_" + minutes + "_" + seconds;
             executingTest.ParticipantName = participantName;
@@ -715,14 +716,15 @@ namespace TestPlatform.Views
 
         private void intervalBW_DoWork(object sender, DoWorkEventArgs e)
         {
-            ExpositionController.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
-                this);
+            
 
             executingTest.InitialTime = DateTime.Now;
             accumulativeStopWatch.Start();
 
             for (int counter = 0; counter < executingTest.ProgramInUse.NumExpositions && !cancelExposition; counter++)
             {
+                ExpositionController.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
+                this);
                 currentExposition = counter;
                 //preparing execution
                 expositionBackground();
@@ -832,7 +834,7 @@ namespace TestPlatform.Views
         /* creates a x and y vector on center of the screen */
         private Point centerShapePosition(Size size)
         {
-            currentPosition = 0;
+            currentPosition = 2;
             StimulusPosition stimulusPosition = new StimulusPosition(ClientSize, size);
             Point newPoint = stimulusPosition.threePointsPosition(currentPosition);
             currentPositionOutput = stimulusPosition.CurrentPosition;
@@ -1023,11 +1025,11 @@ namespace TestPlatform.Views
         private void intervalBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
 
-            if (exposing)
+            if (exposing && !cancelExposition)
             {
                 this.Controls.Add((Control)e.UserState);
             }
-            else
+            else if (!cancelExposition)
             {
                 this.Controls.Remove((Control)e.UserState);
             }

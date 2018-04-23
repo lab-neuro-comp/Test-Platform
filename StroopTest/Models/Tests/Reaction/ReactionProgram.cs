@@ -422,7 +422,7 @@ namespace TestPlatform.Models
 
             set
             {
-                if (!value || value && numberPositions == 0)
+                if (!value || value && numberPositions == 1)
                 {
                     expandImage = value;
                 }

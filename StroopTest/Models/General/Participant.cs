@@ -12,7 +12,7 @@ namespace TestPlatform.Models.General
             bool wearGlass, bool usesMedication, bool consumedEnergizers, bool consumedDrugs,
             bool usedRelaxant, bool consumedAlcohol, bool goodLastNightOfSleep, string glassesEspecification,
             string medicationEspecification, string relaxantEspecification, string sleepEspecification,
-            string alcoholEspecification, string drugsEspecification, string energizersEspecification)
+            string alcoholEspecification, string drugsEspecification, string energizersEspecification, List<string> observations)
         {
             this.registrationID = registrationID;
             this.sex = sex;
@@ -36,6 +36,7 @@ namespace TestPlatform.Models.General
             this.alcoholEspecification = alcoholEspecification;
             this.drugsEspecification = drugsEspecification;
             this.energizersEspecification = energizersEspecification;
+            this.observations = observations;
     }
         private int registrationID;
         private string name;

@@ -233,7 +233,7 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(399, 243);
+            this.textBox8.Location = new System.Drawing.Point(399, 241);
             this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.MaxLength = 300;
             this.textBox8.Name = "textBox8";
@@ -242,7 +242,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(399, 280);
+            this.textBox7.Location = new System.Drawing.Point(399, 281);
             this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.MaxLength = 300;
             this.textBox7.Name = "textBox7";
@@ -251,7 +251,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(399, 318);
+            this.textBox6.Location = new System.Drawing.Point(399, 321);
             this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.MaxLength = 300;
             this.textBox6.Name = "textBox6";
@@ -260,7 +260,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(399, 355);
+            this.textBox5.Location = new System.Drawing.Point(399, 361);
             this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.MaxLength = 300;
             this.textBox5.Name = "textBox5";
@@ -269,7 +269,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(399, 391);
+            this.textBox4.Location = new System.Drawing.Point(399, 401);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.MaxLength = 300;
             this.textBox4.Name = "textBox4";
@@ -278,7 +278,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(399, 432);
+            this.textBox3.Location = new System.Drawing.Point(399, 441);
             this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.MaxLength = 300;
             this.textBox3.Name = "textBox3";
@@ -299,7 +299,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(399, 206);
+            this.textBox2.Location = new System.Drawing.Point(399, 201);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.MaxLength = 300;
             this.textBox2.Name = "textBox2";
@@ -309,10 +309,10 @@
             // label7
             // 
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(14, 430);
+            this.label7.Location = new System.Drawing.Point(4, 431);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(266, 33);
+            this.label7.Size = new System.Drawing.Size(260, 40);
             this.label7.TabIndex = 83;
             this.label7.Text = "Nas últimas 2 horas você consumiu café, refrigerante, chocolate ou alguma bebida " +
     "energética?";
@@ -332,7 +332,7 @@
             // 
             this.flowLayoutPanel8.Controls.Add(this.energizersYes);
             this.flowLayoutPanel8.Controls.Add(this.energizersNo);
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(285, 429);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(285, 439);
             this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
             this.flowLayoutPanel8.Size = new System.Drawing.Size(106, 25);
@@ -364,12 +364,11 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(10, 399);
+            this.label6.Location = new System.Drawing.Point(4, 391);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(254, 13);
+            this.label6.Size = new System.Drawing.Size(260, 40);
             this.label6.TabIndex = 81;
             this.label6.Text = "Nas últimas 24 horas você consumiu drogas ilícitas?";
             // 
@@ -377,7 +376,7 @@
             // 
             this.flowLayoutPanel7.Controls.Add(this.drugsYEs);
             this.flowLayoutPanel7.Controls.Add(this.drugsNo);
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(285, 388);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(285, 399);
             this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
             this.flowLayoutPanel7.Size = new System.Drawing.Size(106, 25);
@@ -410,10 +409,10 @@
             // alcoholLabel
             // 
             this.alcoholLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.alcoholLabel.Location = new System.Drawing.Point(7, 355);
+            this.alcoholLabel.Location = new System.Drawing.Point(4, 351);
             this.alcoholLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.alcoholLabel.Name = "alcoholLabel";
-            this.alcoholLabel.Size = new System.Drawing.Size(252, 18);
+            this.alcoholLabel.Size = new System.Drawing.Size(260, 40);
             this.alcoholLabel.TabIndex = 79;
             this.alcoholLabel.Text = "Nas últimas 24 horas você consumiu álcool?";
             // 
@@ -421,7 +420,7 @@
             // 
             this.flowLayoutPanel6.Controls.Add(this.alcoholYes);
             this.flowLayoutPanel6.Controls.Add(this.alcoholNo);
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(276, 354);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(285, 359);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(106, 25);
@@ -454,10 +453,10 @@
             // sleepLabel
             // 
             this.sleepLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.sleepLabel.Location = new System.Drawing.Point(14, 315);
+            this.sleepLabel.Location = new System.Drawing.Point(4, 311);
             this.sleepLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.sleepLabel.Name = "sleepLabel";
-            this.sleepLabel.Size = new System.Drawing.Size(259, 40);
+            this.sleepLabel.Size = new System.Drawing.Size(260, 40);
             this.sleepLabel.TabIndex = 77;
             this.sleepLabel.Text = " Considera ter tido uma boa noite de sono a noite passada?";
             // 
@@ -465,7 +464,7 @@
             // 
             this.flowLayoutPanel5.Controls.Add(this.sleepYes);
             this.flowLayoutPanel5.Controls.Add(this.sleepNo);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(285, 315);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(285, 319);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(106, 25);
@@ -497,12 +496,11 @@
             // 
             // relaxantLabel
             // 
-            this.relaxantLabel.AutoSize = true;
             this.relaxantLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.relaxantLabel.Location = new System.Drawing.Point(19, 284);
+            this.relaxantLabel.Location = new System.Drawing.Point(4, 271);
             this.relaxantLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.relaxantLabel.Name = "relaxantLabel";
-            this.relaxantLabel.Size = new System.Drawing.Size(250, 13);
+            this.relaxantLabel.Size = new System.Drawing.Size(260, 40);
             this.relaxantLabel.TabIndex = 75;
             this.relaxantLabel.Text = "Nas últimas 24 horas você fez o uso de relaxantes?";
             // 
@@ -510,7 +508,7 @@
             // 
             this.flowLayoutPanel4.Controls.Add(this.relaxantYes);
             this.flowLayoutPanel4.Controls.Add(this.relaxantNo);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(287, 272);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(285, 279);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(106, 25);
@@ -543,10 +541,10 @@
             // medicineLabel
             // 
             this.medicineLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.medicineLabel.Location = new System.Drawing.Point(4, 241);
+            this.medicineLabel.Location = new System.Drawing.Point(4, 231);
             this.medicineLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.medicineLabel.Name = "medicineLabel";
-            this.medicineLabel.Size = new System.Drawing.Size(273, 31);
+            this.medicineLabel.Size = new System.Drawing.Size(260, 40);
             this.medicineLabel.TabIndex = 73;
             this.medicineLabel.Text = "Você faz uso de medicação - natural ou medicinal - regularmente?";
             // 
@@ -554,7 +552,7 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.medicineYes);
             this.flowLayoutPanel3.Controls.Add(this.medicineNo);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(285, 241);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(285, 239);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(106, 25);
@@ -586,12 +584,11 @@
             // 
             // glassQuestion
             // 
-            this.glassQuestion.AutoSize = true;
             this.glassQuestion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.glassQuestion.Location = new System.Drawing.Point(101, 206);
+            this.glassQuestion.Location = new System.Drawing.Point(4, 191);
             this.glassQuestion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.glassQuestion.Name = "glassQuestion";
-            this.glassQuestion.Size = new System.Drawing.Size(176, 13);
+            this.glassQuestion.Size = new System.Drawing.Size(260, 40);
             this.glassQuestion.TabIndex = 71;
             this.glassQuestion.Text = "Faz uso de óculos frequentemente?";
             // 
@@ -599,7 +596,7 @@
             // 
             this.glassPanel.Controls.Add(this.yesGlasses);
             this.glassPanel.Controls.Add(this.noGlasses);
-            this.glassPanel.Location = new System.Drawing.Point(285, 198);
+            this.glassPanel.Location = new System.Drawing.Point(285, 199);
             this.glassPanel.Margin = new System.Windows.Forms.Padding(2);
             this.glassPanel.Name = "glassPanel";
             this.glassPanel.Size = new System.Drawing.Size(106, 25);

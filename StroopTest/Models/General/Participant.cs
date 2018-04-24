@@ -7,6 +7,36 @@ namespace TestPlatform.Models.General
 {
     class Participant
     {
+        Participant(int registrationID, int sex, string livingLocation, int degreeOfSchooling, int age,
+            DateTime birthDate, DateTime lastPeriodDate, int reasonForNotMenstruating,
+            bool wearGlass, bool usesMedication, bool consumedEnergizers, bool consumedDrugs,
+            bool usedRelaxant, bool consumedAlcohol, bool goodLastNightOfSleep, string glassesEspecification,
+            string medicationEspecification, string relaxantEspecification, string sleepEspecification,
+            string alcoholEspecification, string drugsEspecification, string energizersEspecification)
+        {
+            this.registrationID = registrationID;
+            this.sex = sex;
+            this.livingLocation = livingLocation;
+            this.degreeOfSchooling = degreeOfSchooling;
+            this.age = age;
+            this.birthDate = birthDate;
+            this.lastPeriodDate = lastPeriodDate;
+            this.reasonForNotMenstruating = reasonForNotMenstruating;
+            this.wearGlasses = wearGlass;
+            this.usesMedication = usesMedication;
+            this.consumedAlcohol = consumedAlcohol;
+            this.consumedDrugs = consumedDrugs;
+            this.consumedEnergizers = consumedEnergizers;
+            this.goodLastNightOfSleep = goodLastNightOfSleep;
+            this.usedRelaxant = usedRelaxant;
+            this.glassesEspecification = glassesEspecification;
+            this.medicationEspecification = medicationEspecification;
+            this.relaxantEspecification = relaxantEspecification;
+            this.sleepEspecification = sleepEspecification;
+            this.alcoholEspecification = alcoholEspecification;
+            this.drugsEspecification = drugsEspecification;
+            this.energizersEspecification = energizersEspecification;
+    }
         private int registrationID;
         private string name;
 

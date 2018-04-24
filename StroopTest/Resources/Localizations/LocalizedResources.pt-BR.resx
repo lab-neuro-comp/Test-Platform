@@ -2445,4 +2445,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="modelSecondPosition" xml:space="preserve">
     <value>Segunda posição do modelo</value>
   </data>
+  <data name="invalidDate" xml:space="preserve">
+    <value>Deve ser selecionada uma data válida.</value>
+  </data>
 </root>

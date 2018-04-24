@@ -2461,4 +2461,7 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   <data name="modelSecondPosition" xml:space="preserve">
     <value>Model second position</value>
   </data>
+  <data name="invalidDate" xml:space="preserve">
+    <value>A valid date must be choosen.</value>
+  </data>
 </root>

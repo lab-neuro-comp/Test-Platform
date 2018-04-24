@@ -316,6 +316,7 @@
             this.label7.TabIndex = 83;
             this.label7.Text = "Nas últimas 2 horas você consumiu café, refrigerante, chocolate ou alguma bebida " +
     "energética?";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // especifications
             // 
@@ -371,6 +372,7 @@
             this.label6.Size = new System.Drawing.Size(260, 40);
             this.label6.TabIndex = 81;
             this.label6.Text = "Nas últimas 24 horas você consumiu drogas ilícitas?";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // flowLayoutPanel7
             // 
@@ -415,6 +417,7 @@
             this.alcoholLabel.Size = new System.Drawing.Size(260, 40);
             this.alcoholLabel.TabIndex = 79;
             this.alcoholLabel.Text = "Nas últimas 24 horas você consumiu álcool?";
+            this.alcoholLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // flowLayoutPanel6
             // 
@@ -458,7 +461,8 @@
             this.sleepLabel.Name = "sleepLabel";
             this.sleepLabel.Size = new System.Drawing.Size(260, 40);
             this.sleepLabel.TabIndex = 77;
-            this.sleepLabel.Text = " Considera ter tido uma boa noite de sono a noite passada?";
+            this.sleepLabel.Text = "Considera ter tido uma boa noite de sono a noite passada?";
+            this.sleepLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // flowLayoutPanel5
             // 
@@ -503,6 +507,7 @@
             this.relaxantLabel.Size = new System.Drawing.Size(260, 40);
             this.relaxantLabel.TabIndex = 75;
             this.relaxantLabel.Text = "Nas últimas 24 horas você fez o uso de relaxantes?";
+            this.relaxantLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // flowLayoutPanel4
             // 
@@ -547,6 +552,7 @@
             this.medicineLabel.Size = new System.Drawing.Size(260, 40);
             this.medicineLabel.TabIndex = 73;
             this.medicineLabel.Text = "Você faz uso de medicação - natural ou medicinal - regularmente?";
+            this.medicineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // flowLayoutPanel3
             // 
@@ -591,6 +597,7 @@
             this.glassQuestion.Size = new System.Drawing.Size(260, 40);
             this.glassQuestion.TabIndex = 71;
             this.glassQuestion.Text = "Faz uso de óculos frequentemente?";
+            this.glassQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // glassPanel
             // 

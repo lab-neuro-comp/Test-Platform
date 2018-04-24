@@ -85,11 +85,6 @@ namespace TestPlatform.Views.ParticipantPages
             this.errorProvider1.SetError((Control)sender, errorMsg);
         }
 
-        private void periodDatePicker_Validated(object sender, EventArgs e)
-        {
-            this.errorProvider1.SetError((Control)sender, "");
-        }
-
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (this.ValidateChildren(ValidationConstraints.Enabled))
@@ -100,6 +95,22 @@ namespace TestPlatform.Views.ParticipantPages
 
         private void birthDatePicker_ValueChanged(object sender, EventArgs e)
         {
+            if (birthDatePicker.ShowCheckBox == true)
+            {
+                if (birthDatePicker.Checked == false)
+                {
+                    birthDatePicker.CustomFormat = " ";
+                    birthDatePicker.Format = DateTimePickerFormat.Custom;
+                }
+                else
+                {
+                    birthDatePicker.Format = DateTimePickerFormat.Short;
+                }
+            }
+            else
+            {
+                birthDatePicker.Format = DateTimePickerFormat.Short;
+            }
             var today = DateTime.Today;
             var age = today.Year - birthDatePicker.Value.Year;
             if (birthDatePicker.Value < today.AddYears(-age)) age--;
@@ -107,11 +118,6 @@ namespace TestPlatform.Views.ParticipantPages
             {
                 this.ageNumeric.Value = age;
             }
-        }
-
-        private void birthDatePicker_Validated(object sender, EventArgs e)
-        {
-            this.errorProvider1.SetError(periodDatePicker, "");
         }
 
         private bool validBirthDate(DateTimePicker birthDatePicker, out string errorMessage)
@@ -139,6 +145,122 @@ namespace TestPlatform.Views.ParticipantPages
                 e.Cancel = true;
             }
             this.errorProvider1.SetError((Control)sender, errorMsg);
+        }
+
+        private bool validSchoolingLevel(FlowLayoutPanel panel, out string errorMsg)
+        {
+            bool returnValue = false;
+            errorMsg = "";
+            foreach(Control child in panel.Controls)
+            {
+                if (((RadioButton)child).Checked)
+                {
+                    returnValue = true;
+                }
+            }
+            if (!returnValue)
+            {
+                errorMsg = LocRM.GetString("invalidSchoolingLevel", currentCulture);
+            }
+            return returnValue;
+        }
+
+        private void schoolingPanel_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!validSchoolingLevel((FlowLayoutPanel)sender, out errorMsg))
+            {
+                e.Cancel = true;
+            }
+            this.errorProvider1.SetError((Control)sender, errorMsg);
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Parent.Controls.Remove(this);
+        }
+
+        private bool validSex(FlowLayoutPanel panel, out string errorMsg)
+        {
+            bool returnValue = false;
+            errorMsg = "";
+            foreach (Control child in panel.Controls)
+            {
+                if (((RadioButton)child).Checked)
+                {
+                    returnValue = true;
+                }
+            }
+            if (!returnValue)
+            {
+                errorMsg = LocRM.GetString("invalidSex", currentCulture);
+            }
+            return returnValue;
+        }
+
+        private void Control_Validated(object sender, EventArgs e)
+        {
+            this.errorProvider1.SetError((Control)sender, "");
+        }
+
+        private void sexPanel_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!validSex((FlowLayoutPanel)sender, out errorMsg))
+            {
+                e.Cancel = true;
+            }
+            this.errorProvider1.SetError((Control)sender, errorMsg);
+        }
+
+        private bool validYesNoPanel(FlowLayoutPanel panel, out string errorMsg)
+        {
+            bool returnValue = false;
+            errorMsg = "";
+            foreach (Control child in panel.Controls)
+            {
+                if (((RadioButton)child).Checked)
+                {
+                    returnValue = true;
+                }
+            }
+            if (!returnValue)
+            {
+                errorMsg = LocRM.GetString("invalidYesNoPanel", currentCulture);
+            }
+            return returnValue;
+        }
+
+        private void yesNoPanel_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!validYesNoPanel((FlowLayoutPanel)sender, out errorMsg))
+            {
+                e.Cancel = true;
+            }
+            this.errorProvider1.SetError((Control)sender, errorMsg);
+        }
+
+        private bool validName(string name, out string errorMsg)
+        {
+            bool returnValue;
+            if(name.Length == 0)
+            {
+                errorMsg = LocRM.GetString("invalidName", currentCulture);
+                returnValue = false;
+            }
+            else
+            {
+                errorMsg = "";
+                returnValue = true;
+            }
+
+            return returnValue;
+        }
+
+        private void prgNameTextBox_Validating(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

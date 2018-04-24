@@ -71,8 +71,8 @@
             this.medicineNo = new System.Windows.Forms.RadioButton();
             this.glassQuestion = new System.Windows.Forms.Label();
             this.glassPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.yesGlasses = new System.Windows.Forms.RadioButton();
-            this.noGlasses = new System.Windows.Forms.RadioButton();
+            this.glassesYes = new System.Windows.Forms.RadioButton();
+            this.glassesNo = new System.Windows.Forms.RadioButton();
             this.ageNumeric = new System.Windows.Forms.NumericUpDown();
             this.ageLabel = new System.Windows.Forms.Label();
             this.scholarLabel = new System.Windows.Forms.Label();
@@ -80,7 +80,7 @@
             this.sexPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.femaleRadioButton = new System.Windows.Forms.RadioButton();
             this.masculineRadioButton = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.schoolingPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.middleSchoolButton = new System.Windows.Forms.RadioButton();
             this.highSchoolradioButton = new System.Windows.Forms.RadioButton();
             this.higherEducationradioButton = new System.Windows.Forms.RadioButton();
@@ -105,7 +105,7 @@
             this.glassPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ageNumeric)).BeginInit();
             this.sexPanel.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.schoolingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,7 +134,8 @@
             this.textBox1.MaxLength = 300;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(54, 20);
-            this.textBox1.TabIndex = 82;
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Validated += new System.EventHandler(this.Control_Validated);
             // 
             // helpButton
             // 
@@ -171,7 +172,7 @@
             this.instructionsBox.Name = "instructionsBox";
             this.instructionsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.instructionsBox.Size = new System.Drawing.Size(573, 40);
-            this.instructionsBox.TabIndex = 31;
+            this.instructionsBox.TabIndex = 34;
             // 
             // participantGroupBox
             // 
@@ -204,7 +205,7 @@
             this.participantGroupBox.Controls.Add(this.scholarLabel);
             this.participantGroupBox.Controls.Add(this.sexoLabel);
             this.participantGroupBox.Controls.Add(this.sexPanel);
-            this.participantGroupBox.Controls.Add(this.flowLayoutPanel1);
+            this.participantGroupBox.Controls.Add(this.schoolingPanel);
             this.participantGroupBox.Controls.Add(this.birthDatePicker);
             this.participantGroupBox.Controls.Add(this.birthDateLabel);
             this.participantGroupBox.Location = new System.Drawing.Point(10, 30);
@@ -224,66 +225,66 @@
             this.periodDatePicker.Margin = new System.Windows.Forms.Padding(2);
             this.periodDatePicker.Name = "periodDatePicker";
             this.periodDatePicker.Size = new System.Drawing.Size(81, 20);
-            this.periodDatePicker.TabIndex = 92;
+            this.periodDatePicker.TabIndex = 6;
             this.periodDatePicker.Value = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.periodDatePicker.Visible = false;
             this.periodDatePicker.ValueChanged += new System.EventHandler(this.periodDatePicker_ValueChanged);
             this.periodDatePicker.Validating += new System.ComponentModel.CancelEventHandler(this.periodDatePicker_Validating);
-            this.periodDatePicker.Validated += new System.EventHandler(this.periodDatePicker_Validated);
+            this.periodDatePicker.Validated += new System.EventHandler(this.Control_Validated);
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(399, 241);
+            this.textBox8.Location = new System.Drawing.Point(411, 233);
             this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.MaxLength = 300;
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(170, 20);
-            this.textBox8.TabIndex = 91;
+            this.textBox8.Size = new System.Drawing.Size(157, 20);
+            this.textBox8.TabIndex = 17;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(399, 281);
+            this.textBox7.Location = new System.Drawing.Point(411, 273);
             this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.MaxLength = 300;
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(170, 20);
-            this.textBox7.TabIndex = 90;
+            this.textBox7.Size = new System.Drawing.Size(157, 20);
+            this.textBox7.TabIndex = 20;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(399, 321);
+            this.textBox6.Location = new System.Drawing.Point(411, 313);
             this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.MaxLength = 300;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(170, 20);
-            this.textBox6.TabIndex = 89;
+            this.textBox6.Size = new System.Drawing.Size(157, 20);
+            this.textBox6.TabIndex = 23;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(399, 361);
+            this.textBox5.Location = new System.Drawing.Point(411, 353);
             this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.MaxLength = 300;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(170, 20);
-            this.textBox5.TabIndex = 88;
+            this.textBox5.Size = new System.Drawing.Size(157, 20);
+            this.textBox5.TabIndex = 26;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(399, 401);
+            this.textBox4.Location = new System.Drawing.Point(411, 393);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.MaxLength = 300;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(170, 20);
-            this.textBox4.TabIndex = 87;
+            this.textBox4.Size = new System.Drawing.Size(157, 20);
+            this.textBox4.TabIndex = 29;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(399, 441);
+            this.textBox3.Location = new System.Drawing.Point(411, 433);
             this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.MaxLength = 300;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(170, 20);
-            this.textBox3.TabIndex = 86;
+            this.textBox3.Size = new System.Drawing.Size(157, 20);
+            this.textBox3.TabIndex = 33;
             // 
             // periodDateLabel
             // 
@@ -299,17 +300,17 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(399, 201);
+            this.textBox2.Location = new System.Drawing.Point(411, 193);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.MaxLength = 300;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(170, 20);
-            this.textBox2.TabIndex = 84;
+            this.textBox2.Size = new System.Drawing.Size(157, 20);
+            this.textBox2.TabIndex = 14;
             // 
             // label7
             // 
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(4, 431);
+            this.label7.Location = new System.Drawing.Point(3, 423);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(260, 40);
@@ -322,7 +323,7 @@
             // 
             this.especifications.AutoSize = true;
             this.especifications.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.especifications.Location = new System.Drawing.Point(454, 166);
+            this.especifications.Location = new System.Drawing.Point(452, 169);
             this.especifications.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.especifications.Name = "especifications";
             this.especifications.Size = new System.Drawing.Size(74, 13);
@@ -333,11 +334,13 @@
             // 
             this.flowLayoutPanel8.Controls.Add(this.energizersYes);
             this.flowLayoutPanel8.Controls.Add(this.energizersNo);
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(285, 439);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(284, 431);
             this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
             this.flowLayoutPanel8.Size = new System.Drawing.Size(106, 25);
             this.flowLayoutPanel8.TabIndex = 82;
+            this.flowLayoutPanel8.Validating += new System.ComponentModel.CancelEventHandler(this.yesNoPanel_Validating);
+            this.flowLayoutPanel8.Validated += new System.EventHandler(this.Control_Validated);
             // 
             // energizersYes
             // 
@@ -346,7 +349,7 @@
             this.energizersYes.Margin = new System.Windows.Forms.Padding(2);
             this.energizersYes.Name = "energizersYes";
             this.energizersYes.Size = new System.Drawing.Size(42, 17);
-            this.energizersYes.TabIndex = 0;
+            this.energizersYes.TabIndex = 30;
             this.energizersYes.TabStop = true;
             this.energizersYes.Text = "Sim";
             this.energizersYes.UseVisualStyleBackColor = true;
@@ -358,7 +361,7 @@
             this.energizersNo.Margin = new System.Windows.Forms.Padding(2);
             this.energizersNo.Name = "energizersNo";
             this.energizersNo.Size = new System.Drawing.Size(45, 17);
-            this.energizersNo.TabIndex = 1;
+            this.energizersNo.TabIndex = 32;
             this.energizersNo.TabStop = true;
             this.energizersNo.Text = "Não";
             this.energizersNo.UseVisualStyleBackColor = true;
@@ -366,7 +369,7 @@
             // label6
             // 
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(4, 391);
+            this.label6.Location = new System.Drawing.Point(3, 383);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(260, 40);
@@ -378,11 +381,13 @@
             // 
             this.flowLayoutPanel7.Controls.Add(this.drugsYEs);
             this.flowLayoutPanel7.Controls.Add(this.drugsNo);
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(285, 399);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(284, 391);
             this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
             this.flowLayoutPanel7.Size = new System.Drawing.Size(106, 25);
             this.flowLayoutPanel7.TabIndex = 80;
+            this.flowLayoutPanel7.Validating += new System.ComponentModel.CancelEventHandler(this.yesNoPanel_Validating);
+            this.flowLayoutPanel7.Validated += new System.EventHandler(this.Control_Validated);
             // 
             // drugsYEs
             // 
@@ -391,7 +396,7 @@
             this.drugsYEs.Margin = new System.Windows.Forms.Padding(2);
             this.drugsYEs.Name = "drugsYEs";
             this.drugsYEs.Size = new System.Drawing.Size(42, 17);
-            this.drugsYEs.TabIndex = 0;
+            this.drugsYEs.TabIndex = 27;
             this.drugsYEs.TabStop = true;
             this.drugsYEs.Text = "Sim";
             this.drugsYEs.UseVisualStyleBackColor = true;
@@ -403,7 +408,7 @@
             this.drugsNo.Margin = new System.Windows.Forms.Padding(2);
             this.drugsNo.Name = "drugsNo";
             this.drugsNo.Size = new System.Drawing.Size(45, 17);
-            this.drugsNo.TabIndex = 1;
+            this.drugsNo.TabIndex = 28;
             this.drugsNo.TabStop = true;
             this.drugsNo.Text = "Não";
             this.drugsNo.UseVisualStyleBackColor = true;
@@ -411,7 +416,7 @@
             // alcoholLabel
             // 
             this.alcoholLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.alcoholLabel.Location = new System.Drawing.Point(4, 351);
+            this.alcoholLabel.Location = new System.Drawing.Point(3, 343);
             this.alcoholLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.alcoholLabel.Name = "alcoholLabel";
             this.alcoholLabel.Size = new System.Drawing.Size(260, 40);
@@ -423,11 +428,13 @@
             // 
             this.flowLayoutPanel6.Controls.Add(this.alcoholYes);
             this.flowLayoutPanel6.Controls.Add(this.alcoholNo);
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(285, 359);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(284, 351);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(106, 25);
             this.flowLayoutPanel6.TabIndex = 78;
+            this.flowLayoutPanel6.Validating += new System.ComponentModel.CancelEventHandler(this.yesNoPanel_Validating);
+            this.flowLayoutPanel6.Validated += new System.EventHandler(this.Control_Validated);
             // 
             // alcoholYes
             // 
@@ -436,7 +443,7 @@
             this.alcoholYes.Margin = new System.Windows.Forms.Padding(2);
             this.alcoholYes.Name = "alcoholYes";
             this.alcoholYes.Size = new System.Drawing.Size(42, 17);
-            this.alcoholYes.TabIndex = 0;
+            this.alcoholYes.TabIndex = 24;
             this.alcoholYes.TabStop = true;
             this.alcoholYes.Text = "Sim";
             this.alcoholYes.UseVisualStyleBackColor = true;
@@ -448,7 +455,7 @@
             this.alcoholNo.Margin = new System.Windows.Forms.Padding(2);
             this.alcoholNo.Name = "alcoholNo";
             this.alcoholNo.Size = new System.Drawing.Size(45, 17);
-            this.alcoholNo.TabIndex = 1;
+            this.alcoholNo.TabIndex = 25;
             this.alcoholNo.TabStop = true;
             this.alcoholNo.Text = "Não";
             this.alcoholNo.UseVisualStyleBackColor = true;
@@ -456,7 +463,7 @@
             // sleepLabel
             // 
             this.sleepLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.sleepLabel.Location = new System.Drawing.Point(4, 311);
+            this.sleepLabel.Location = new System.Drawing.Point(3, 303);
             this.sleepLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.sleepLabel.Name = "sleepLabel";
             this.sleepLabel.Size = new System.Drawing.Size(260, 40);
@@ -468,11 +475,13 @@
             // 
             this.flowLayoutPanel5.Controls.Add(this.sleepYes);
             this.flowLayoutPanel5.Controls.Add(this.sleepNo);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(285, 319);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(284, 311);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(106, 25);
             this.flowLayoutPanel5.TabIndex = 76;
+            this.flowLayoutPanel5.Validating += new System.ComponentModel.CancelEventHandler(this.yesNoPanel_Validating);
+            this.flowLayoutPanel5.Validated += new System.EventHandler(this.Control_Validated);
             // 
             // sleepYes
             // 
@@ -481,7 +490,7 @@
             this.sleepYes.Margin = new System.Windows.Forms.Padding(2);
             this.sleepYes.Name = "sleepYes";
             this.sleepYes.Size = new System.Drawing.Size(42, 17);
-            this.sleepYes.TabIndex = 0;
+            this.sleepYes.TabIndex = 21;
             this.sleepYes.TabStop = true;
             this.sleepYes.Text = "Sim";
             this.sleepYes.UseVisualStyleBackColor = true;
@@ -493,7 +502,7 @@
             this.sleepNo.Margin = new System.Windows.Forms.Padding(2);
             this.sleepNo.Name = "sleepNo";
             this.sleepNo.Size = new System.Drawing.Size(45, 17);
-            this.sleepNo.TabIndex = 1;
+            this.sleepNo.TabIndex = 22;
             this.sleepNo.TabStop = true;
             this.sleepNo.Text = "Não";
             this.sleepNo.UseVisualStyleBackColor = true;
@@ -501,7 +510,7 @@
             // relaxantLabel
             // 
             this.relaxantLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.relaxantLabel.Location = new System.Drawing.Point(4, 271);
+            this.relaxantLabel.Location = new System.Drawing.Point(3, 263);
             this.relaxantLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.relaxantLabel.Name = "relaxantLabel";
             this.relaxantLabel.Size = new System.Drawing.Size(260, 40);
@@ -513,11 +522,13 @@
             // 
             this.flowLayoutPanel4.Controls.Add(this.relaxantYes);
             this.flowLayoutPanel4.Controls.Add(this.relaxantNo);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(285, 279);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(284, 271);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(106, 25);
             this.flowLayoutPanel4.TabIndex = 74;
+            this.flowLayoutPanel4.Validating += new System.ComponentModel.CancelEventHandler(this.yesNoPanel_Validating);
+            this.flowLayoutPanel4.Validated += new System.EventHandler(this.Control_Validated);
             // 
             // relaxantYes
             // 
@@ -526,7 +537,7 @@
             this.relaxantYes.Margin = new System.Windows.Forms.Padding(2);
             this.relaxantYes.Name = "relaxantYes";
             this.relaxantYes.Size = new System.Drawing.Size(42, 17);
-            this.relaxantYes.TabIndex = 0;
+            this.relaxantYes.TabIndex = 18;
             this.relaxantYes.TabStop = true;
             this.relaxantYes.Text = "Sim";
             this.relaxantYes.UseVisualStyleBackColor = true;
@@ -538,7 +549,7 @@
             this.relaxantNo.Margin = new System.Windows.Forms.Padding(2);
             this.relaxantNo.Name = "relaxantNo";
             this.relaxantNo.Size = new System.Drawing.Size(45, 17);
-            this.relaxantNo.TabIndex = 1;
+            this.relaxantNo.TabIndex = 19;
             this.relaxantNo.TabStop = true;
             this.relaxantNo.Text = "Não";
             this.relaxantNo.UseVisualStyleBackColor = true;
@@ -546,7 +557,7 @@
             // medicineLabel
             // 
             this.medicineLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.medicineLabel.Location = new System.Drawing.Point(4, 231);
+            this.medicineLabel.Location = new System.Drawing.Point(3, 223);
             this.medicineLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.medicineLabel.Name = "medicineLabel";
             this.medicineLabel.Size = new System.Drawing.Size(260, 40);
@@ -558,11 +569,13 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.medicineYes);
             this.flowLayoutPanel3.Controls.Add(this.medicineNo);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(285, 239);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(284, 231);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(106, 25);
             this.flowLayoutPanel3.TabIndex = 72;
+            this.flowLayoutPanel3.Validating += new System.ComponentModel.CancelEventHandler(this.yesNoPanel_Validating);
+            this.flowLayoutPanel3.Validated += new System.EventHandler(this.Control_Validated);
             // 
             // medicineYes
             // 
@@ -571,7 +584,7 @@
             this.medicineYes.Margin = new System.Windows.Forms.Padding(2);
             this.medicineYes.Name = "medicineYes";
             this.medicineYes.Size = new System.Drawing.Size(42, 17);
-            this.medicineYes.TabIndex = 0;
+            this.medicineYes.TabIndex = 15;
             this.medicineYes.TabStop = true;
             this.medicineYes.Text = "Sim";
             this.medicineYes.UseVisualStyleBackColor = true;
@@ -583,7 +596,7 @@
             this.medicineNo.Margin = new System.Windows.Forms.Padding(2);
             this.medicineNo.Name = "medicineNo";
             this.medicineNo.Size = new System.Drawing.Size(45, 17);
-            this.medicineNo.TabIndex = 1;
+            this.medicineNo.TabIndex = 16;
             this.medicineNo.TabStop = true;
             this.medicineNo.Text = "Não";
             this.medicineNo.UseVisualStyleBackColor = true;
@@ -591,7 +604,7 @@
             // glassQuestion
             // 
             this.glassQuestion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.glassQuestion.Location = new System.Drawing.Point(4, 191);
+            this.glassQuestion.Location = new System.Drawing.Point(3, 183);
             this.glassQuestion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.glassQuestion.Name = "glassQuestion";
             this.glassQuestion.Size = new System.Drawing.Size(260, 40);
@@ -601,37 +614,39 @@
             // 
             // glassPanel
             // 
-            this.glassPanel.Controls.Add(this.yesGlasses);
-            this.glassPanel.Controls.Add(this.noGlasses);
-            this.glassPanel.Location = new System.Drawing.Point(285, 199);
+            this.glassPanel.Controls.Add(this.glassesYes);
+            this.glassPanel.Controls.Add(this.glassesNo);
+            this.glassPanel.Location = new System.Drawing.Point(284, 191);
             this.glassPanel.Margin = new System.Windows.Forms.Padding(2);
             this.glassPanel.Name = "glassPanel";
             this.glassPanel.Size = new System.Drawing.Size(106, 25);
             this.glassPanel.TabIndex = 70;
+            this.glassPanel.Validating += new System.ComponentModel.CancelEventHandler(this.yesNoPanel_Validating);
+            this.glassPanel.Validated += new System.EventHandler(this.Control_Validated);
             // 
-            // yesGlasses
+            // glassesYes
             // 
-            this.yesGlasses.AutoSize = true;
-            this.yesGlasses.Location = new System.Drawing.Point(2, 2);
-            this.yesGlasses.Margin = new System.Windows.Forms.Padding(2);
-            this.yesGlasses.Name = "yesGlasses";
-            this.yesGlasses.Size = new System.Drawing.Size(42, 17);
-            this.yesGlasses.TabIndex = 0;
-            this.yesGlasses.TabStop = true;
-            this.yesGlasses.Text = "Sim";
-            this.yesGlasses.UseVisualStyleBackColor = true;
+            this.glassesYes.AutoSize = true;
+            this.glassesYes.Location = new System.Drawing.Point(2, 2);
+            this.glassesYes.Margin = new System.Windows.Forms.Padding(2);
+            this.glassesYes.Name = "glassesYes";
+            this.glassesYes.Size = new System.Drawing.Size(42, 17);
+            this.glassesYes.TabIndex = 12;
+            this.glassesYes.TabStop = true;
+            this.glassesYes.Text = "Sim";
+            this.glassesYes.UseVisualStyleBackColor = true;
             // 
-            // noGlasses
+            // glassesNo
             // 
-            this.noGlasses.AutoSize = true;
-            this.noGlasses.Location = new System.Drawing.Point(48, 2);
-            this.noGlasses.Margin = new System.Windows.Forms.Padding(2);
-            this.noGlasses.Name = "noGlasses";
-            this.noGlasses.Size = new System.Drawing.Size(45, 17);
-            this.noGlasses.TabIndex = 1;
-            this.noGlasses.TabStop = true;
-            this.noGlasses.Text = "Não";
-            this.noGlasses.UseVisualStyleBackColor = true;
+            this.glassesNo.AutoSize = true;
+            this.glassesNo.Location = new System.Drawing.Point(48, 2);
+            this.glassesNo.Margin = new System.Windows.Forms.Padding(2);
+            this.glassesNo.Name = "glassesNo";
+            this.glassesNo.Size = new System.Drawing.Size(45, 17);
+            this.glassesNo.TabIndex = 13;
+            this.glassesNo.TabStop = true;
+            this.glassesNo.Text = "Não";
+            this.glassesNo.UseVisualStyleBackColor = true;
             // 
             // ageNumeric
             // 
@@ -685,6 +700,8 @@
             this.sexPanel.Size = new System.Drawing.Size(153, 25);
             this.sexPanel.TabIndex = 65;
             this.sexPanel.WrapContents = false;
+            this.sexPanel.Validating += new System.ComponentModel.CancelEventHandler(this.sexPanel_Validating);
+            this.sexPanel.Validated += new System.EventHandler(this.Control_Validated);
             // 
             // femaleRadioButton
             // 
@@ -694,7 +711,7 @@
             this.femaleRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.femaleRadioButton.Name = "femaleRadioButton";
             this.femaleRadioButton.Size = new System.Drawing.Size(67, 17);
-            this.femaleRadioButton.TabIndex = 0;
+            this.femaleRadioButton.TabIndex = 4;
             this.femaleRadioButton.TabStop = true;
             this.femaleRadioButton.Text = "Feminino";
             this.femaleRadioButton.UseVisualStyleBackColor = true;
@@ -708,23 +725,25 @@
             this.masculineRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.masculineRadioButton.Name = "masculineRadioButton";
             this.masculineRadioButton.Size = new System.Drawing.Size(73, 17);
-            this.masculineRadioButton.TabIndex = 1;
+            this.masculineRadioButton.TabIndex = 5;
             this.masculineRadioButton.TabStop = true;
             this.masculineRadioButton.Text = "Masculino";
             this.masculineRadioButton.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
+            // schoolingPanel
             // 
-            this.flowLayoutPanel1.Controls.Add(this.middleSchoolButton);
-            this.flowLayoutPanel1.Controls.Add(this.highSchoolradioButton);
-            this.flowLayoutPanel1.Controls.Add(this.higherEducationradioButton);
-            this.flowLayoutPanel1.Controls.Add(this.higher1radioButton);
-            this.flowLayoutPanel1.Controls.Add(this.radioButton1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(130, 68);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(196, 111);
-            this.flowLayoutPanel1.TabIndex = 66;
+            this.schoolingPanel.Controls.Add(this.middleSchoolButton);
+            this.schoolingPanel.Controls.Add(this.highSchoolradioButton);
+            this.schoolingPanel.Controls.Add(this.higherEducationradioButton);
+            this.schoolingPanel.Controls.Add(this.higher1radioButton);
+            this.schoolingPanel.Controls.Add(this.radioButton1);
+            this.schoolingPanel.Location = new System.Drawing.Point(130, 68);
+            this.schoolingPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.schoolingPanel.Name = "schoolingPanel";
+            this.schoolingPanel.Size = new System.Drawing.Size(158, 111);
+            this.schoolingPanel.TabIndex = 66;
+            this.schoolingPanel.Validating += new System.ComponentModel.CancelEventHandler(this.schoolingPanel_Validating);
+            this.schoolingPanel.Validated += new System.EventHandler(this.Control_Validated);
             // 
             // middleSchoolButton
             // 
@@ -733,7 +752,7 @@
             this.middleSchoolButton.Margin = new System.Windows.Forms.Padding(2);
             this.middleSchoolButton.Name = "middleSchoolButton";
             this.middleSchoolButton.Size = new System.Drawing.Size(127, 17);
-            this.middleSchoolButton.TabIndex = 0;
+            this.middleSchoolButton.TabIndex = 7;
             this.middleSchoolButton.TabStop = true;
             this.middleSchoolButton.Text = "Fundamental (9 anos)";
             this.middleSchoolButton.UseVisualStyleBackColor = true;
@@ -745,7 +764,7 @@
             this.highSchoolradioButton.Margin = new System.Windows.Forms.Padding(2);
             this.highSchoolradioButton.Name = "highSchoolradioButton";
             this.highSchoolradioButton.Size = new System.Drawing.Size(95, 17);
-            this.highSchoolradioButton.TabIndex = 1;
+            this.highSchoolradioButton.TabIndex = 8;
             this.highSchoolradioButton.TabStop = true;
             this.highSchoolradioButton.Text = "Médio (3 anos)";
             this.highSchoolradioButton.UseVisualStyleBackColor = true;
@@ -757,7 +776,7 @@
             this.higherEducationradioButton.Margin = new System.Windows.Forms.Padding(2);
             this.higherEducationradioButton.Name = "higherEducationradioButton";
             this.higherEducationradioButton.Size = new System.Drawing.Size(137, 17);
-            this.higherEducationradioButton.TabIndex = 2;
+            this.higherEducationradioButton.TabIndex = 9;
             this.higherEducationradioButton.TabStop = true;
             this.higherEducationradioButton.Text = "Superior em andamento";
             this.higherEducationradioButton.UseVisualStyleBackColor = true;
@@ -769,7 +788,7 @@
             this.higher1radioButton.Margin = new System.Windows.Forms.Padding(2);
             this.higher1radioButton.Name = "higher1radioButton";
             this.higher1radioButton.Size = new System.Drawing.Size(110, 17);
-            this.higher1radioButton.TabIndex = 3;
+            this.higher1radioButton.TabIndex = 10;
             this.higher1radioButton.TabStop = true;
             this.higher1radioButton.Text = "Superior completo";
             this.higher1radioButton.UseVisualStyleBackColor = true;
@@ -781,22 +800,23 @@
             this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(97, 17);
-            this.radioButton1.TabIndex = 4;
+            this.radioButton1.TabIndex = 11;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Pós graduação";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // birthDatePicker
             // 
-            this.birthDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.birthDatePicker.CustomFormat = " ";
+            this.birthDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.birthDatePicker.Location = new System.Drawing.Point(121, 12);
             this.birthDatePicker.Margin = new System.Windows.Forms.Padding(2);
             this.birthDatePicker.Name = "birthDatePicker";
             this.birthDatePicker.Size = new System.Drawing.Size(85, 20);
-            this.birthDatePicker.TabIndex = 64;
+            this.birthDatePicker.TabIndex = 3;
             this.birthDatePicker.ValueChanged += new System.EventHandler(this.birthDatePicker_ValueChanged);
             this.birthDatePicker.Validating += new System.ComponentModel.CancelEventHandler(this.birthDatePicker_Validating);
-            this.birthDatePicker.Validated += new System.EventHandler(this.birthDatePicker_Validated);
+            this.birthDatePicker.Validated += new System.EventHandler(this.Control_Validated);
             // 
             // birthDateLabel
             // 
@@ -829,6 +849,8 @@
             this.prgNameTextBox.Name = "prgNameTextBox";
             this.prgNameTextBox.Size = new System.Drawing.Size(170, 20);
             this.prgNameTextBox.TabIndex = 1;
+            this.prgNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.prgNameTextBox_Validating);
+            this.prgNameTextBox.Validated += new System.EventHandler(this.Control_Validated);
             // 
             // participantNameLabel
             // 
@@ -851,9 +873,10 @@
             this.cancelButton.Location = new System.Drawing.Point(7, 577);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 92;
+            this.cancelButton.TabIndex = 36;
             this.cancelButton.Text = "cancelar";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // saveButton
             // 
@@ -863,7 +886,7 @@
             this.saveButton.Location = new System.Drawing.Point(518, 577);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
-            this.saveButton.TabIndex = 93;
+            this.saveButton.TabIndex = 35;
             this.saveButton.Text = "salvar";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -904,8 +927,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ageNumeric)).EndInit();
             this.sexPanel.ResumeLayout(false);
             this.sexPanel.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.schoolingPanel.ResumeLayout(false);
+            this.schoolingPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -932,7 +955,7 @@
         private System.Windows.Forms.Label sexoLabel;
         private System.Windows.Forms.RadioButton femaleRadioButton;
         private System.Windows.Forms.RadioButton masculineRadioButton;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel schoolingPanel;
         private System.Windows.Forms.RadioButton middleSchoolButton;
         private System.Windows.Forms.RadioButton highSchoolradioButton;
         private System.Windows.Forms.RadioButton higherEducationradioButton;
@@ -964,8 +987,8 @@
         private System.Windows.Forms.RadioButton medicineNo;
         private System.Windows.Forms.Label glassQuestion;
         private System.Windows.Forms.FlowLayoutPanel glassPanel;
-        private System.Windows.Forms.RadioButton yesGlasses;
-        private System.Windows.Forms.RadioButton noGlasses;
+        private System.Windows.Forms.RadioButton glassesYes;
+        private System.Windows.Forms.RadioButton glassesNo;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label especifications;
         private System.Windows.Forms.Label periodDateLabel;

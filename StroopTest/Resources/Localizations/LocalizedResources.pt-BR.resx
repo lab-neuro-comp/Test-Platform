@@ -2448,4 +2448,16 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="invalidDate" xml:space="preserve">
     <value>Deve ser selecionada uma data válida.</value>
   </data>
+  <data name="invalidSchoolingLevel" xml:space="preserve">
+    <value>Selecione um nível de escolaridade.</value>
+  </data>
+  <data name="invalidSex" xml:space="preserve">
+    <value>Selecione um sexo.</value>
+  </data>
+  <data name="invalidYesNoPanel" xml:space="preserve">
+    <value>Selecione sim ou não.</value>
+  </data>
+  <data name="invalidName" xml:space="preserve">
+    <value>Digite um nome.</value>
+  </data>
 </root>

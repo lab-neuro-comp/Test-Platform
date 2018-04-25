@@ -30,7 +30,37 @@ namespace TestPlatform.Views.ParticipantPages
 
         private void fillFieldsWithData(string participant)
         {
+            Participant participantToEdit = new Participant(participant);
+            bool isFemale = false;
+            if (participantToEdit.Sex == 1)
+            {
+                isFemale = true;
+            }
 
+            this.participantNameTextBox.Text = participantToEdit.Name;
+            this.registrationIDText.Text = participantToEdit.RegistrationID.ToString();
+            this.birthDatePicker.Value = participantToEdit.BirthDate;
+            this.masculineRadioButton.Checked = !isFemale;
+            this.femaleRadioButton.Checked = isFemale;
+            this.periodDatePicker.Value = participantToEdit.LastPeriodDate;
+            switch (participantToEdit.DegreeOfSchooling)
+            {
+                case 1:
+                    middleSchoolButton.Checked = true;
+                    break;
+                case 2:
+                    highSchoolradioButton.Checked = true;
+                    break;
+                case 3:
+                    higherEducationradioButton.Checked = true;
+                    break;
+                case 4:
+                    higher1radioButton.Checked = true;
+                    break;
+                case 5:
+                    postGraduate.Checked = true;
+                    break;
+            }
         }
 
         private void femaleRadioButton_CheckedChanged(object sender, EventArgs e)

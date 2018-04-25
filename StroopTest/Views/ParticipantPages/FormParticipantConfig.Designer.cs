@@ -51,7 +51,7 @@
             this.energizersNo = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
-            this.drugsYEs = new System.Windows.Forms.RadioButton();
+            this.drugsYes = new System.Windows.Forms.RadioButton();
             this.drugsNo = new System.Windows.Forms.RadioButton();
             this.alcoholLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
@@ -379,7 +379,7 @@
             // 
             // flowLayoutPanel7
             // 
-            this.flowLayoutPanel7.Controls.Add(this.drugsYEs);
+            this.flowLayoutPanel7.Controls.Add(this.drugsYes);
             this.flowLayoutPanel7.Controls.Add(this.drugsNo);
             this.flowLayoutPanel7.Location = new System.Drawing.Point(284, 391);
             this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
@@ -391,15 +391,15 @@
             // 
             // drugsYEs
             // 
-            this.drugsYEs.AutoSize = true;
-            this.drugsYEs.Location = new System.Drawing.Point(2, 2);
-            this.drugsYEs.Margin = new System.Windows.Forms.Padding(2);
-            this.drugsYEs.Name = "drugsYEs";
-            this.drugsYEs.Size = new System.Drawing.Size(42, 17);
-            this.drugsYEs.TabIndex = 27;
-            this.drugsYEs.TabStop = true;
-            this.drugsYEs.Text = "Sim";
-            this.drugsYEs.UseVisualStyleBackColor = true;
+            this.drugsYes.AutoSize = true;
+            this.drugsYes.Location = new System.Drawing.Point(2, 2);
+            this.drugsYes.Margin = new System.Windows.Forms.Padding(2);
+            this.drugsYes.Name = "drugsYEs";
+            this.drugsYes.Size = new System.Drawing.Size(42, 17);
+            this.drugsYes.TabIndex = 27;
+            this.drugsYes.TabStop = true;
+            this.drugsYes.Text = "Sim";
+            this.drugsYes.UseVisualStyleBackColor = true;
             // 
             // drugsNo
             // 
@@ -967,7 +967,7 @@
         private System.Windows.Forms.RadioButton energizersNo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
-        private System.Windows.Forms.RadioButton drugsYEs;
+        private System.Windows.Forms.RadioButton drugsYes;
         private System.Windows.Forms.RadioButton drugsNo;
         private System.Windows.Forms.Label alcoholLabel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;

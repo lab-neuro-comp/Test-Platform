@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 using TestPlatform.Views;
 
 namespace TestPlatform.Models.General
@@ -123,7 +125,12 @@ namespace TestPlatform.Models.General
 
         public string getParticipantPath()
         {
-            return Global.testFilesPath + Global.partcipantDataPath + name + registrationID + ".data";
+            return Global.testFilesPath + Global.partcipantDataPath + name + "-" + registrationID + ".data";
+        }
+
+        public string getParticipantPath(string filename)
+        {
+            return Global.testFilesPath + Global.partcipantDataPath + filename + ".data";
         }
 
         public bool saveParticipantFile()
@@ -140,12 +147,62 @@ namespace TestPlatform.Models.General
             writer.Close();
             return true;
         }
+ 
 
         public bool readParticipantFile(string fileName)
         {
-            if(File.Exists(Global.testFilesPath + Global.partcipantDataPath + fileName + ".data"))
+            if(File.Exists(getParticipantPath(fileName)))
             {
-                /*implement file reading here*/
+                StreamReader tr;
+                string line;
+                string[] linesInstruction;
+                List<string> config = new List<string>();
+
+                tr = new StreamReader(getParticipantPath(fileName), Encoding.Default, true);
+                line = tr.ReadLine();
+                line = Program.encodeLatinText(line);
+                config = line.Split().ToList();
+                tr.Close();
+
+                this.registrationID = int.Parse(config[0]);
+                this.name = config[1];
+                this.age = int.Parse(config[2]);
+                this.sex = int.Parse(config[3]);
+                this.livingLocation = config[4];
+                this.degreeOfSchooling = int.Parse(config[5]);
+                this.birthDate.AddYears(DateTime.Parse(config[6]).Year);
+                this.birthDate.AddMonths(DateTime.Parse(config[6]).Month);
+                this.birthDate.AddDays(DateTime.Parse(config[6]).Day);
+                this.lastPeriodDate.AddYears(DateTime.Parse(config[7]).Year);
+                this.lastPeriodDate.AddMonths(DateTime.Parse(config[7]).Month);
+                this.lastPeriodDate.AddDays(DateTime.Parse(config[7]).Day);
+                this.reasonForNotMenstruating = int.Parse(config[8]);
+                this.wearGlasses = bool.Parse(config[9]);
+                this.usesMedication = bool.Parse(config[10]);
+                this.goodLastNightOfSleep = bool.Parse(config[11]);
+                this.consumedAlcohol = bool.Parse(config[12]);
+                this.usedRelaxant = bool.Parse(config[13]);
+                this.consumedDrugs = bool.Parse(config[14]);
+                this.consumedEnergizers = bool.Parse(config[15]);
+                this.glassesEspecification = config[16];
+                this.medicationEspecification = config[17];
+                this.relaxantEspecification = config[18];
+                this.sleepEspecification = config[19];
+                this.alcoholEspecification = config[20];
+                this.drugsEspecification = config[21];
+                this.energizersEspecification = config[22];
+                linesInstruction = File.ReadAllLines(getParticipantPath(fileName));
+                if (linesInstruction.Length > 1) // read instructions if any
+                {
+                    for (int i = 1; i < linesInstruction.Length; i++)
+                    {
+                        this.observations.Add(linesInstruction[i]);
+                    }
+                }
+                else
+                {
+                    this.observations = null;
+                }
             }
             else
             {

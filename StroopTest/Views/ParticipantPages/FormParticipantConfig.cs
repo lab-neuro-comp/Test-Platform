@@ -19,9 +19,18 @@ namespace TestPlatform.Views.ParticipantPages
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
-        public FormParticipantConfig()
+        public FormParticipantConfig(string participantToEdit)
         {
             InitializeComponent();
+            if(participantToEdit != "false")
+            {
+                fillFieldsWithData(participantToEdit);
+            }
+        }
+
+        private void fillFieldsWithData(string participant)
+        {
+
         }
 
         private void femaleRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -136,7 +145,7 @@ namespace TestPlatform.Views.ParticipantPages
                 glassesYes.Checked,
                 medicineYes.Checked,
                 energizersYes.Checked,
-                drugsYEs.Checked,
+                drugsYes.Checked,
                 relaxantYes.Checked,
                 alcoholYes.Checked,
                 sleepYes.Checked,

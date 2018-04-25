@@ -64,7 +64,7 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 if (newParticipantButton.Checked)
                 {
-                    FormParticipantConfig newParticipant = new FormParticipantConfig();
+                    FormParticipantConfig newParticipant = new FormParticipantConfig("false");
                     Global.GlobalFormMain._contentPanel.Controls.Add(newParticipant);
                     newParticipantButton.Checked = false;
                 }
@@ -76,6 +76,11 @@ namespace TestPlatform.Views.SidebarUserControls
         }
 
         private void editParticipantButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editParticipantButton_CheckedChanged(object sender, EventArgs e)
         {
 
         }

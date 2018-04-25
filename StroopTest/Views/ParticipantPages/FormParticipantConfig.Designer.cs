@@ -30,20 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.registrationIDText = new System.Windows.Forms.TextBox();
             this.helpButton = new System.Windows.Forms.Button();
             this.idLabel = new System.Windows.Forms.Label();
             this.instructionsBox = new System.Windows.Forms.TextBox();
             this.participantGroupBox = new System.Windows.Forms.GroupBox();
             this.periodDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.medicineEspecification = new System.Windows.Forms.TextBox();
+            this.relaxingEspecification = new System.Windows.Forms.TextBox();
+            this.sleepEspecification = new System.Windows.Forms.TextBox();
+            this.alcoholEspecification = new System.Windows.Forms.TextBox();
+            this.drugsEspecification = new System.Windows.Forms.TextBox();
+            this.energeticEspecification = new System.Windows.Forms.TextBox();
             this.periodDateLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.glassesEspecification = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.especifications = new System.Windows.Forms.Label();
             this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
@@ -85,11 +85,11 @@
             this.highSchoolradioButton = new System.Windows.Forms.RadioButton();
             this.higherEducationradioButton = new System.Windows.Forms.RadioButton();
             this.higher1radioButton = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.postGraduate = new System.Windows.Forms.RadioButton();
             this.birthDatePicker = new System.Windows.Forms.DateTimePicker();
             this.birthDateLabel = new System.Windows.Forms.Label();
             this.instructionsLabel = new System.Windows.Forms.Label();
-            this.prgNameTextBox = new System.Windows.Forms.TextBox();
+            this.participantNameTextBox = new System.Windows.Forms.TextBox();
             this.participantNameLabel = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
@@ -113,13 +113,13 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.registrationIDText);
             this.panel1.Controls.Add(this.helpButton);
             this.panel1.Controls.Add(this.idLabel);
             this.panel1.Controls.Add(this.instructionsBox);
             this.panel1.Controls.Add(this.participantGroupBox);
             this.panel1.Controls.Add(this.instructionsLabel);
-            this.panel1.Controls.Add(this.prgNameTextBox);
+            this.panel1.Controls.Add(this.participantNameTextBox);
             this.panel1.Controls.Add(this.participantNameLabel);
             this.panel1.Location = new System.Drawing.Point(7, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
@@ -127,15 +127,15 @@
             this.panel1.Size = new System.Drawing.Size(587, 563);
             this.panel1.TabIndex = 1;
             // 
-            // textBox1
+            // registrationIDText
             // 
-            this.textBox1.Location = new System.Drawing.Point(396, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.MaxLength = 300;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(54, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Validated += new System.EventHandler(this.Control_Validated);
+            this.registrationIDText.Location = new System.Drawing.Point(396, 6);
+            this.registrationIDText.Margin = new System.Windows.Forms.Padding(2);
+            this.registrationIDText.MaxLength = 300;
+            this.registrationIDText.Name = "registrationIDText";
+            this.registrationIDText.Size = new System.Drawing.Size(54, 20);
+            this.registrationIDText.TabIndex = 2;
+            this.registrationIDText.Validated += new System.EventHandler(this.Control_Validated);
             // 
             // helpButton
             // 
@@ -165,7 +165,7 @@
             // instructionsBox
             // 
             this.instructionsBox.AcceptsReturn = true;
-            this.instructionsBox.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.instructionsBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.instructionsBox.Location = new System.Drawing.Point(10, 513);
             this.instructionsBox.Margin = new System.Windows.Forms.Padding(2);
             this.instructionsBox.Multiline = true;
@@ -177,14 +177,14 @@
             // participantGroupBox
             // 
             this.participantGroupBox.Controls.Add(this.periodDatePicker);
-            this.participantGroupBox.Controls.Add(this.textBox8);
-            this.participantGroupBox.Controls.Add(this.textBox7);
-            this.participantGroupBox.Controls.Add(this.textBox6);
-            this.participantGroupBox.Controls.Add(this.textBox5);
-            this.participantGroupBox.Controls.Add(this.textBox4);
-            this.participantGroupBox.Controls.Add(this.textBox3);
+            this.participantGroupBox.Controls.Add(this.medicineEspecification);
+            this.participantGroupBox.Controls.Add(this.relaxingEspecification);
+            this.participantGroupBox.Controls.Add(this.sleepEspecification);
+            this.participantGroupBox.Controls.Add(this.alcoholEspecification);
+            this.participantGroupBox.Controls.Add(this.drugsEspecification);
+            this.participantGroupBox.Controls.Add(this.energeticEspecification);
             this.participantGroupBox.Controls.Add(this.periodDateLabel);
-            this.participantGroupBox.Controls.Add(this.textBox2);
+            this.participantGroupBox.Controls.Add(this.glassesEspecification);
             this.participantGroupBox.Controls.Add(this.label7);
             this.participantGroupBox.Controls.Add(this.especifications);
             this.participantGroupBox.Controls.Add(this.flowLayoutPanel8);
@@ -232,59 +232,59 @@
             this.periodDatePicker.Validating += new System.ComponentModel.CancelEventHandler(this.periodDatePicker_Validating);
             this.periodDatePicker.Validated += new System.EventHandler(this.Control_Validated);
             // 
-            // textBox8
+            // medicineEspecification
             // 
-            this.textBox8.Location = new System.Drawing.Point(411, 233);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.MaxLength = 300;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(157, 20);
-            this.textBox8.TabIndex = 17;
+            this.medicineEspecification.Location = new System.Drawing.Point(411, 233);
+            this.medicineEspecification.Margin = new System.Windows.Forms.Padding(2);
+            this.medicineEspecification.MaxLength = 300;
+            this.medicineEspecification.Name = "medicineEspecification";
+            this.medicineEspecification.Size = new System.Drawing.Size(157, 20);
+            this.medicineEspecification.TabIndex = 17;
             // 
-            // textBox7
+            // relaxingEspecification
             // 
-            this.textBox7.Location = new System.Drawing.Point(411, 273);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.MaxLength = 300;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(157, 20);
-            this.textBox7.TabIndex = 20;
+            this.relaxingEspecification.Location = new System.Drawing.Point(411, 273);
+            this.relaxingEspecification.Margin = new System.Windows.Forms.Padding(2);
+            this.relaxingEspecification.MaxLength = 300;
+            this.relaxingEspecification.Name = "relaxingEspecification";
+            this.relaxingEspecification.Size = new System.Drawing.Size(157, 20);
+            this.relaxingEspecification.TabIndex = 20;
             // 
-            // textBox6
+            // sleepEspecification
             // 
-            this.textBox6.Location = new System.Drawing.Point(411, 313);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.MaxLength = 300;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(157, 20);
-            this.textBox6.TabIndex = 23;
+            this.sleepEspecification.Location = new System.Drawing.Point(411, 313);
+            this.sleepEspecification.Margin = new System.Windows.Forms.Padding(2);
+            this.sleepEspecification.MaxLength = 300;
+            this.sleepEspecification.Name = "sleepEspecification";
+            this.sleepEspecification.Size = new System.Drawing.Size(157, 20);
+            this.sleepEspecification.TabIndex = 23;
             // 
-            // textBox5
+            // alcoholEspecification
             // 
-            this.textBox5.Location = new System.Drawing.Point(411, 353);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.MaxLength = 300;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(157, 20);
-            this.textBox5.TabIndex = 26;
+            this.alcoholEspecification.Location = new System.Drawing.Point(411, 353);
+            this.alcoholEspecification.Margin = new System.Windows.Forms.Padding(2);
+            this.alcoholEspecification.MaxLength = 300;
+            this.alcoholEspecification.Name = "alcoholEspecification";
+            this.alcoholEspecification.Size = new System.Drawing.Size(157, 20);
+            this.alcoholEspecification.TabIndex = 26;
             // 
-            // textBox4
+            // drugsEspecification
             // 
-            this.textBox4.Location = new System.Drawing.Point(411, 393);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.MaxLength = 300;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(157, 20);
-            this.textBox4.TabIndex = 29;
+            this.drugsEspecification.Location = new System.Drawing.Point(411, 393);
+            this.drugsEspecification.Margin = new System.Windows.Forms.Padding(2);
+            this.drugsEspecification.MaxLength = 300;
+            this.drugsEspecification.Name = "drugsEspecification";
+            this.drugsEspecification.Size = new System.Drawing.Size(157, 20);
+            this.drugsEspecification.TabIndex = 29;
             // 
-            // textBox3
+            // energeticEspecification
             // 
-            this.textBox3.Location = new System.Drawing.Point(411, 433);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.MaxLength = 300;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(157, 20);
-            this.textBox3.TabIndex = 33;
+            this.energeticEspecification.Location = new System.Drawing.Point(411, 433);
+            this.energeticEspecification.Margin = new System.Windows.Forms.Padding(2);
+            this.energeticEspecification.MaxLength = 300;
+            this.energeticEspecification.Name = "energeticEspecification";
+            this.energeticEspecification.Size = new System.Drawing.Size(157, 20);
+            this.energeticEspecification.TabIndex = 33;
             // 
             // periodDateLabel
             // 
@@ -298,14 +298,14 @@
             this.periodDateLabel.Text = "Qual o dia da última menstruação";
             this.periodDateLabel.Visible = false;
             // 
-            // textBox2
+            // glassesEspecification
             // 
-            this.textBox2.Location = new System.Drawing.Point(411, 193);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.MaxLength = 300;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(157, 20);
-            this.textBox2.TabIndex = 14;
+            this.glassesEspecification.Location = new System.Drawing.Point(411, 193);
+            this.glassesEspecification.Margin = new System.Windows.Forms.Padding(2);
+            this.glassesEspecification.MaxLength = 300;
+            this.glassesEspecification.Name = "glassesEspecification";
+            this.glassesEspecification.Size = new System.Drawing.Size(157, 20);
+            this.glassesEspecification.TabIndex = 14;
             // 
             // label7
             // 
@@ -736,7 +736,7 @@
             this.schoolingPanel.Controls.Add(this.highSchoolradioButton);
             this.schoolingPanel.Controls.Add(this.higherEducationradioButton);
             this.schoolingPanel.Controls.Add(this.higher1radioButton);
-            this.schoolingPanel.Controls.Add(this.radioButton1);
+            this.schoolingPanel.Controls.Add(this.postGraduate);
             this.schoolingPanel.Location = new System.Drawing.Point(130, 68);
             this.schoolingPanel.Margin = new System.Windows.Forms.Padding(2);
             this.schoolingPanel.Name = "schoolingPanel";
@@ -793,17 +793,17 @@
             this.higher1radioButton.Text = "Superior completo";
             this.higher1radioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // postGraduate
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(2, 86);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(97, 17);
-            this.radioButton1.TabIndex = 11;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Pós graduação";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.postGraduate.AutoSize = true;
+            this.postGraduate.Location = new System.Drawing.Point(2, 86);
+            this.postGraduate.Margin = new System.Windows.Forms.Padding(2);
+            this.postGraduate.Name = "postGraduate";
+            this.postGraduate.Size = new System.Drawing.Size(97, 17);
+            this.postGraduate.TabIndex = 11;
+            this.postGraduate.TabStop = true;
+            this.postGraduate.Text = "Pós graduação";
+            this.postGraduate.UseVisualStyleBackColor = true;
             // 
             // birthDatePicker
             // 
@@ -841,16 +841,16 @@
             this.instructionsLabel.TabIndex = 59;
             this.instructionsLabel.Text = "Observações:";
             // 
-            // prgNameTextBox
+            // participantNameTextBox
             // 
-            this.prgNameTextBox.Location = new System.Drawing.Point(128, 4);
-            this.prgNameTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.prgNameTextBox.MaxLength = 300;
-            this.prgNameTextBox.Name = "prgNameTextBox";
-            this.prgNameTextBox.Size = new System.Drawing.Size(170, 20);
-            this.prgNameTextBox.TabIndex = 1;
-            this.prgNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.prgNameTextBox_Validating);
-            this.prgNameTextBox.Validated += new System.EventHandler(this.Control_Validated);
+            this.participantNameTextBox.Location = new System.Drawing.Point(128, 4);
+            this.participantNameTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.participantNameTextBox.MaxLength = 300;
+            this.participantNameTextBox.Name = "participantNameTextBox";
+            this.participantNameTextBox.Size = new System.Drawing.Size(170, 20);
+            this.participantNameTextBox.TabIndex = 1;
+            this.participantNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.prgNameTextBox_Validating);
+            this.participantNameTextBox.Validated += new System.EventHandler(this.Control_Validated);
             // 
             // participantNameLabel
             // 
@@ -944,10 +944,10 @@
         private System.Windows.Forms.DateTimePicker birthDatePicker;
         private System.Windows.Forms.Label birthDateLabel;
         private System.Windows.Forms.Label instructionsLabel;
-        private System.Windows.Forms.TextBox prgNameTextBox;
+        private System.Windows.Forms.TextBox participantNameTextBox;
         private System.Windows.Forms.Label participantNameLabel;
         private System.Windows.Forms.FlowLayoutPanel sexPanel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox registrationIDText;
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.NumericUpDown ageNumeric;
         private System.Windows.Forms.Label ageLabel;
@@ -960,7 +960,7 @@
         private System.Windows.Forms.RadioButton highSchoolradioButton;
         private System.Windows.Forms.RadioButton higherEducationradioButton;
         private System.Windows.Forms.RadioButton higher1radioButton;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton postGraduate;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
         private System.Windows.Forms.RadioButton energizersYes;
@@ -989,15 +989,15 @@
         private System.Windows.Forms.FlowLayoutPanel glassPanel;
         private System.Windows.Forms.RadioButton glassesYes;
         private System.Windows.Forms.RadioButton glassesNo;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox glassesEspecification;
         private System.Windows.Forms.Label especifications;
         private System.Windows.Forms.Label periodDateLabel;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox medicineEspecification;
+        private System.Windows.Forms.TextBox relaxingEspecification;
+        private System.Windows.Forms.TextBox sleepEspecification;
+        private System.Windows.Forms.TextBox alcoholEspecification;
+        private System.Windows.Forms.TextBox drugsEspecification;
+        private System.Windows.Forms.TextBox energeticEspecification;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.DateTimePicker periodDatePicker;

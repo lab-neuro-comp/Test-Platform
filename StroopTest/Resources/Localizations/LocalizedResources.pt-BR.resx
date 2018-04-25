@@ -2460,4 +2460,13 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="invalidName" xml:space="preserve">
     <value>Digite um nome.</value>
   </data>
+  <data name="participantAlreadyExistsWishOverride" xml:space="preserve">
+    <value>Participante já existe, deseja sobreescrever?</value>
+  </data>
+  <data name="participantNotSaved" xml:space="preserve">
+    <value>Participante não foi salvo.</value>
+  </data>
+  <data name="participantSaveSucessful" xml:space="preserve">
+    <value>Participante salvo com sucesso.</value>
+  </data>
 </root>

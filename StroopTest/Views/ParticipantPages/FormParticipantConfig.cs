@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Resources;
+using TestPlatform.Models.General;
+using System.IO;
 
 namespace TestPlatform.Views.ParticipantPages
 {
@@ -85,11 +87,91 @@ namespace TestPlatform.Views.ParticipantPages
             this.errorProvider1.SetError((Control)sender, errorMsg);
         }
 
+        private Participant createParticipant()
+        {
+            int degreeOfSchool = 0;
+            int sex = 0;
+            if (this.femaleRadioButton.Checked)
+            {
+                sex = 1;
+            }
+            else
+            {
+                sex = 2;
+            }
+            foreach (Control c in schoolingPanel.Controls)
+            {
+                if (((RadioButton)c).Checked)
+                {
+                    switch (c.Name)
+                    {
+                        case "middleSchoolButton":
+                            degreeOfSchool = 1;
+                            break;
+                        case "highSchoolradioButton":
+                            degreeOfSchool = 2;
+                            break;
+                        case "higherEducationradioButton":
+                            degreeOfSchool = 3;
+                            break;
+                        case "higher1radioButton":
+                            degreeOfSchool = 4;
+                            break;
+                        case "postGraduate":
+                            degreeOfSchool = 5;
+                            break;
+                    }
+                }
+            }
+            return new Participant(
+                participantNameTextBox.Text,
+                int.Parse(registrationIDText.Text),
+                sex,
+                "", /*Missing location field on form*/
+                degreeOfSchool,
+                int.Parse(ageNumeric.Value.ToString()),
+                birthDatePicker.Value,
+                periodDatePicker.Value,
+                -1, /*missing late in period field on form*/
+                glassesYes.Checked,
+                medicineYes.Checked,
+                energizersYes.Checked,
+                drugsYEs.Checked,
+                relaxantYes.Checked,
+                alcoholYes.Checked,
+                sleepYes.Checked,
+                glassesEspecification.Text,
+                medicineEspecification.Text,
+                relaxingEspecification.Text,
+                sleepEspecification.Text,
+                alcoholEspecification.Text,
+                drugsEspecification.Text,
+                energeticEspecification.Text,
+                instructionsBox.Lines.ToList()
+                );
+        }
+
         private void saveButton_Click(object sender, EventArgs e)
         {
+            bool hasToSave = true;
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
-
+                Participant participant = createParticipant();
+                if (File.Exists(participant.getParticipantPath()))
+                {
+                    DialogResult dialogResult = MessageBox.Show(
+                        LocRM.GetString("participantAlreadyExistsWishOverride", currentCulture), 
+                        LocRM.GetString("error", currentCulture), MessageBoxButtons.YesNo);
+                    if(dialogResult == DialogResult.No)
+                    {
+                        MessageBox.Show(LocRM.GetString("participantNotSaved", currentCulture));
+                        hasToSave = false;
+                    }
+                }
+                if (hasToSave && participant.saveParticipantFile())
+                {
+                    MessageBox.Show(LocRM.GetString("participantSaveSucessful"));
+                }
             }
         }
 
@@ -113,7 +195,7 @@ namespace TestPlatform.Views.ParticipantPages
             }
             var today = DateTime.Today;
             var age = today.Year - birthDatePicker.Value.Year;
-            if (birthDatePicker.Value < today.AddYears(-age)) age--;
+            if (birthDatePicker.Value >= today.AddYears(-age)) age--;
             if (age > 0)
             {
                 this.ageNumeric.Value = age;

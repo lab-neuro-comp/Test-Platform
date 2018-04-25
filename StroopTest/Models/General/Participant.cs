@@ -7,13 +7,14 @@ namespace TestPlatform.Models.General
 {
     class Participant
     {
-        Participant(int registrationID, int sex, string livingLocation, int degreeOfSchooling, int age,
+        public Participant(string name, int registrationID, int sex, string livingLocation, int degreeOfSchooling, int age,
             DateTime birthDate, DateTime lastPeriodDate, int reasonForNotMenstruating,
             bool wearGlass, bool usesMedication, bool consumedEnergizers, bool consumedDrugs,
             bool usedRelaxant, bool consumedAlcohol, bool goodLastNightOfSleep, string glassesEspecification,
             string medicationEspecification, string relaxantEspecification, string sleepEspecification,
             string alcoholEspecification, string drugsEspecification, string energizersEspecification, List<string> observations)
         {
+            this.name = name;
             this.registrationID = registrationID;
             this.sex = sex;
             this.livingLocation = livingLocation;
@@ -93,8 +94,8 @@ namespace TestPlatform.Models.General
 
         private string Data()
         {
-            string participantData = this.registrationID + " " + 
-                                     this.name + " " + 
+            string participantData = this.registrationID + " " +
+                                     this.name + " " +
                                      this.age + " " +
                                      this.sex + " " +
                                      this.livingLocation + " " +
@@ -102,7 +103,7 @@ namespace TestPlatform.Models.General
                                      this.birthDate.Date + " " +
                                      this.lastPeriodDate.Date + " " +
                                      this.reasonForNotMenstruating + " " +
-                                     this.wearGlasses + " " + 
+                                     this.wearGlasses + " " +
                                      this.usesMedication + " " +
                                      this.goodLastNightOfSleep + " " +
                                      this.consumedAlcohol + " " +
@@ -110,19 +111,24 @@ namespace TestPlatform.Models.General
                                      this.consumedDrugs + " " +
                                      this.consumedEnergizers + "\n" +
                                      this.glassesEspecification + "\n" +
-                                     this.medicationEspecification + "\n"+
+                                     this.medicationEspecification + "\n" +
                                      this.relaxantEspecification + "\n" +
                                      this.sleepEspecification + "\n" +
                                      this.alcoholEspecification + "\n" +
                                      this.drugsEspecification + "\n" +
-                                     this.energizersEspecification;
+                                     this.energizersEspecification + "\n";
             
             return participantData;
         }
 
+        public string getParticipantPath()
+        {
+            return Global.testFilesPath + Global.partcipantDataPath + name + registrationID + ".data";
+        }
+
         public bool saveParticipantFile()
         {
-            StreamWriter writer = new StreamWriter(Global.testFilesPath + Global.partcipantDataPath + name + registrationID + ".data");
+            StreamWriter writer = new StreamWriter(getParticipantPath());
             writer.Write(Data());
             if (observations != null)
             {
@@ -133,6 +139,19 @@ namespace TestPlatform.Models.General
             }
             writer.Close();
             return true;
+        }
+
+        public bool readParticipantFile(string fileName)
+        {
+            if(File.Exists(Global.testFilesPath + Global.partcipantDataPath + fileName + ".data"))
+            {
+                /*implement file reading here*/
+            }
+            else
+            {
+                throw new FileNotFoundException();
+            }
+            return false;
         }
     }
 }

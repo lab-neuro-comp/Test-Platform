@@ -77,7 +77,7 @@
             this.markTextBox = new System.Windows.Forms.TextBox();
             this.markLabel = new System.Windows.Forms.Label();
             this.participantPanel = new System.Windows.Forms.Panel();
-            this.participantTextBox = new System.Windows.Forms.TextBox();
+            this.participantComboBox = new System.Windows.Forms.ComboBox();
             this.participantLabel = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -445,16 +445,16 @@
             // 
             resources.ApplyResources(this.participantPanel, "participantPanel");
             this.participantPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.participantPanel.Controls.Add(this.participantTextBox);
+            this.participantPanel.Controls.Add(this.participantComboBox);
             this.participantPanel.Controls.Add(this.participantLabel);
             this.participantPanel.Name = "participantPanel";
             // 
-            // participantTextBox
+            // participantComboBox
             // 
-            resources.ApplyResources(this.participantTextBox, "participantTextBox");
-            this.participantTextBox.Name = "participantTextBox";
-            this.participantTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.participantTextBox_Validating);
-            this.participantTextBox.Validated += new System.EventHandler(this.participantTextBox_Validated);
+            this.participantComboBox.FormattingEnabled = true;
+            resources.ApplyResources(this.participantComboBox, "participantComboBox");
+            this.participantComboBox.Name = "participantComboBox";
+            this.participantComboBox.SelectedIndexChanged += new System.EventHandler(this.participantComboBox_SelectedIndexChanged);
             // 
             // participantLabel
             // 
@@ -707,7 +707,6 @@
         private System.Windows.Forms.Button executeButton;
         private System.Windows.Forms.Panel participantPanel;
         private System.Windows.Forms.Label participantLabel;
-        private System.Windows.Forms.TextBox participantTextBox;
         private System.Windows.Forms.Panel markPanel;
         private System.Windows.Forms.TextBox markTextBox;
         private System.Windows.Forms.Label markLabel;
@@ -738,5 +737,6 @@
         private System.Windows.Forms.ToolStripMenuItem spanishSpainToolStripMenuItem;
         private System.Windows.Forms.RadioButton helpButton;
         private System.Windows.Forms.RadioButton participantButton;
+        private System.Windows.Forms.ComboBox participantComboBox;
     }
 }

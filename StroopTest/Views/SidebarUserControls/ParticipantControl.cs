@@ -16,8 +16,8 @@ namespace TestPlatform.Views.SidebarUserControls
 {
     public partial class ParticipantControl : DefaultUserControl
     {
-        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+        static private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        static private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         public ParticipantControl()
         {
@@ -25,7 +25,7 @@ namespace TestPlatform.Views.SidebarUserControls
             this.Dock = DockStyle.Fill;
         }
 
-        private bool checkSave()
+        public static bool checkSave()
         {
 
             bool result = false;
@@ -34,8 +34,8 @@ namespace TestPlatform.Views.SidebarUserControls
                 DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-               //     FormParticipantConfig programToSave = (FormParticipantConfig)(Global.GlobalFormMain._contentPanel.Controls[0]);
-                 //   result = programToSave.save();
+                    FormParticipantConfig programToSave = (FormParticipantConfig)(Global.GlobalFormMain._contentPanel.Controls[0]);
+                    result = programToSave.save();
                 }
                 else
                 {
@@ -78,11 +78,6 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void editParticipantButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void editParticipantButton_CheckedChanged(object sender, EventArgs e)
-        {
             bool screenTranslationAllowed = true;
             if (editParticipantButton.Checked)
             {
@@ -119,6 +114,16 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 /*do nothing*/
             }
+        }
+
+        private void editParticipantButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newParticipantButton_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

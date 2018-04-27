@@ -2472,4 +2472,10 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="editParticipant" xml:space="preserve">
     <value>Editar participante:</value>
   </data>
+  <data name="createNewParticipant" xml:space="preserve">
+    <value>Criar novo participante</value>
+  </data>
+  <data name="shouldCloseOpenedForm" xml:space="preserve">
+    <value>Você deve fechar qualquer formulário aberto antes de continuar</value>
+  </data>
 </root>

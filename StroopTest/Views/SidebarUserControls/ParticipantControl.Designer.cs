@@ -67,6 +67,7 @@
             this.newParticipantButton.Text = "Novo Participante";
             this.newParticipantButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.newParticipantButton.UseVisualStyleBackColor = true;
+            this.newParticipantButton.CheckedChanged += new System.EventHandler(this.newParticipantButton_CheckedChanged);
             this.newParticipantButton.Click += new System.EventHandler(this.newParticipantButton_Click);
             // 
             // ParticipantControl

@@ -192,7 +192,6 @@ namespace TestPlatform.Models.General
                 line = tr.ReadLine();
                 line = Program.encodeLatinText(line);
                 config = line.Split().ToList();
-                tr.Close();
 
                 this.registrationID = int.Parse(config[0]);
                 this.name = config[1];
@@ -200,12 +199,8 @@ namespace TestPlatform.Models.General
                 this.sex = int.Parse(config[3]);
                 this.livingLocation = config[4];
                 this.DegreeOfSchooling = int.Parse(config[5]);
-                this.birthDate.AddYears(DateTime.Parse(config[6]).Year);
-                this.birthDate.AddMonths(DateTime.Parse(config[6]).Month);
-                this.birthDate.AddDays(DateTime.Parse(config[6]).Day);
-                this.lastPeriodDate.AddYears(DateTime.Parse(config[7]).Year);
-                this.lastPeriodDate.AddMonths(DateTime.Parse(config[7]).Month);
-                this.lastPeriodDate.AddDays(DateTime.Parse(config[7]).Day);
+                this.birthDate = DateTime.Parse(config[6]);
+                this.lastPeriodDate = DateTime.Parse(config[7]);
                 this.reasonForNotMenstruating = int.Parse(config[8]);
                 this.wearGlasses = bool.Parse(config[9]);
                 this.usesMedication = bool.Parse(config[10]);
@@ -214,17 +209,19 @@ namespace TestPlatform.Models.General
                 this.usedRelaxant = bool.Parse(config[13]);
                 this.consumedDrugs = bool.Parse(config[14]);
                 this.consumedEnergizers = bool.Parse(config[15]);
-                this.glassesEspecification = config[16];
-                this.medicationEspecification = config[17];
-                this.relaxantEspecification = config[18];
-                this.sleepEspecification = config[19];
-                this.alcoholEspecification = config[20];
-                this.drugsEspecification = config[21];
-                this.energizersEspecification = config[22];
+
+                this.glassesEspecification = Program.encodeLatinText(tr.ReadLine());
+                this.medicationEspecification = Program.encodeLatinText(tr.ReadLine());
+                this.relaxantEspecification = Program.encodeLatinText(tr.ReadLine());
+                this.sleepEspecification = Program.encodeLatinText(tr.ReadLine());
+                this.alcoholEspecification = Program.encodeLatinText(tr.ReadLine());
+                this.drugsEspecification = Program.encodeLatinText(tr.ReadLine());
+                this.energizersEspecification = Program.encodeLatinText(tr.ReadLine());
+                tr.Close();
                 linesInstruction = File.ReadAllLines(getParticipantPath(fileName));
-                if (linesInstruction.Length > 1) // read instructions if any
+                if (linesInstruction.Length > 8) // read instructions if any
                 {
-                    for (int i = 1; i < linesInstruction.Length; i++)
+                    for (int i = 8; i < linesInstruction.Length; i++)
                     {
                         this.observations.Add(linesInstruction[i]);
                     }

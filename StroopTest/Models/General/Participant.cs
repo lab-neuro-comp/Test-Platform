@@ -132,8 +132,8 @@ namespace TestPlatform.Models.General
                                      this.sex + " " +
                                      this.livingLocation + " " +
                                      this.DegreeOfSchooling + " " +
-                                     this.birthDate.Date + " " +
-                                     this.lastPeriodDate.Date + " " +
+                                     this.birthDate.Date.ToShortDateString() + " " +
+                                     this.lastPeriodDate.Date.ToShortDateString() + " " +
                                      this.reasonForNotMenstruating + " " +
                                      this.wearGlasses + " " +
                                      this.usesMedication + " " +

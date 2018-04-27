@@ -181,5 +181,10 @@ namespace TestPlatform.Views.SidebarUserControls
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }
+
+        private void editMatchButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

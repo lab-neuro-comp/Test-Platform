@@ -2485,4 +2485,7 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   <data name="participantSaveSucessful" xml:space="preserve">
     <value>The participant was saved sucessful.</value>
   </data>
+  <data name="editParticipant" xml:space="preserve">
+    <value>Edit participant:</value>
+  </data>
 </root>

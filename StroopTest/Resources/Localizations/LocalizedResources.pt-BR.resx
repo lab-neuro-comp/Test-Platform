@@ -2469,4 +2469,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="participantSaveSucessful" xml:space="preserve">
     <value>Participante salvo com sucesso.</value>
   </data>
+  <data name="editParticipant" xml:space="preserve">
+    <value>Editar participante:</value>
+  </data>
 </root>

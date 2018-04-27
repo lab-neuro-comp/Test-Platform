@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TestPlatform.Views.ParticipantPages;
 using System.Resources;
 using System.Globalization;
+using TestPlatform.Views.MainForms;
 
 namespace TestPlatform.Views.SidebarUserControls
 {
@@ -82,7 +83,42 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void editParticipantButton_CheckedChanged(object sender, EventArgs e)
         {
+            bool screenTranslationAllowed = true;
+            if (editParticipantButton.Checked)
+            {
+                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                {
+                    screenTranslationAllowed = checkSave();
+                }
+                if (screenTranslationAllowed)
+                {
+                    FormDefine defineParticipant;
+                    DialogResult result;
+                    string editParticipantName = "error";
 
+                    try
+                    {
+                        defineParticipant = new FormDefine(LocRM.GetString("editParticipant", currentCulture), Global.testFilesPath + Global.partcipantDataPath, "data", "participant", false, false);
+                        result = defineParticipant.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            editParticipantName = defineParticipant.ReturnValue;
+                            FormParticipantConfig configureProgram = new FormParticipantConfig(editParticipantName);
+                            Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
+                            editParticipantButton.Checked = false;
+                        }
+                        else
+                        {
+                            /*do nothing, user cancelled selection of participant*/
+                        }
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                }
+            }
+            else
+            {
+                /*do nothing*/
+            }
         }
     }
 }

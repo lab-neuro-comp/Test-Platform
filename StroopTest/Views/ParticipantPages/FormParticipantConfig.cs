@@ -61,6 +61,39 @@ namespace TestPlatform.Views.ParticipantPages
                     postGraduate.Checked = true;
                     break;
             }
+            setBooleanField(participantToEdit.WearGlasses, glassesYes, glassesNo);
+            setBooleanField(participantToEdit.UsesMedication, medicineYes, medicineNo);
+            setBooleanField(participantToEdit.UsedRelaxant, relaxantYes, relaxantNo);
+            setBooleanField(participantToEdit.GoodLastNightOfSleep, sleepYes, sleepNo);
+            setBooleanField(participantToEdit.ConsumedAlcohol, alcoholYes, alcoholNo);
+            setBooleanField(participantToEdit.ConsumedDrugs, drugsYes, drugsNo);
+            setBooleanField(participantToEdit.ConsumedEnergizers, energizersYes, energizersNo);
+
+            glassesEspecification.Text = participantToEdit.GlassesEspecification;
+            medicineEspecification.Text = participantToEdit.MedicationEspecification;
+            relaxingEspecification.Text = participantToEdit.RelaxantEspecification;
+            sleepEspecification.Text = participantToEdit.SleepEspecification;
+            alcoholEspecification.Text = participantToEdit.AlcoholEspecification;
+            drugsEspecification.Text = participantToEdit.DrugsEspecification;
+            energeticEspecification.Text = participantToEdit.EnergizersEspecification;
+
+            foreach (string line in participantToEdit.Observations)
+            {
+                instructionsBox.Text += line + "\n";
+            }
+            
+        }
+
+        private void setBooleanField(bool value, RadioButton yes, RadioButton no)
+        {
+            if (value)
+            {
+                yes.Checked = true;
+            }
+            else
+            {
+                no.Checked = true;
+            }
         }
 
         private void femaleRadioButton_CheckedChanged(object sender, EventArgs e)

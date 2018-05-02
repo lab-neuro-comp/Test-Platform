@@ -94,6 +94,16 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.localeLabel = new System.Windows.Forms.Label();
+            this.LivingLocationTextBox = new System.Windows.Forms.TextBox();
+            this.femaleGroupBox = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.hasMenstruatingLabel = new System.Windows.Forms.Label();
+            this.notMenstruatingLabel = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.menstruatingYes = new System.Windows.Forms.RadioButton();
+            this.menstruatingNo = new System.Windows.Forms.RadioButton();
+            this.reasonForNotMenstruating = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.participantGroupBox.SuspendLayout();
             this.flowLayoutPanel8.SuspendLayout();
@@ -107,6 +117,8 @@
             this.sexPanel.SuspendLayout();
             this.schoolingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.femaleGroupBox.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -176,14 +188,15 @@
             // 
             // participantGroupBox
             // 
-            this.participantGroupBox.Controls.Add(this.periodDatePicker);
+            this.participantGroupBox.Controls.Add(this.femaleGroupBox);
+            this.participantGroupBox.Controls.Add(this.LivingLocationTextBox);
+            this.participantGroupBox.Controls.Add(this.localeLabel);
             this.participantGroupBox.Controls.Add(this.medicineEspecification);
             this.participantGroupBox.Controls.Add(this.relaxingEspecification);
             this.participantGroupBox.Controls.Add(this.sleepEspecification);
             this.participantGroupBox.Controls.Add(this.alcoholEspecification);
             this.participantGroupBox.Controls.Add(this.drugsEspecification);
             this.participantGroupBox.Controls.Add(this.energeticEspecification);
-            this.participantGroupBox.Controls.Add(this.periodDateLabel);
             this.participantGroupBox.Controls.Add(this.glassesEspecification);
             this.participantGroupBox.Controls.Add(this.label7);
             this.participantGroupBox.Controls.Add(this.especifications);
@@ -219,15 +232,17 @@
             // 
             // periodDatePicker
             // 
+            this.periodDatePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.periodDatePicker.CustomFormat = " ";
             this.periodDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.periodDatePicker.Location = new System.Drawing.Point(376, 37);
+            this.periodDatePicker.Location = new System.Drawing.Point(173, 13);
             this.periodDatePicker.Margin = new System.Windows.Forms.Padding(2);
             this.periodDatePicker.Name = "periodDatePicker";
-            this.periodDatePicker.Size = new System.Drawing.Size(81, 20);
+            this.periodDatePicker.Size = new System.Drawing.Size(74, 20);
             this.periodDatePicker.TabIndex = 6;
-            this.periodDatePicker.Value = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.periodDatePicker.Visible = false;
+            this.periodDatePicker.Value = new System.DateTime(2018, 5, 2, 0, 0, 0, 0);
             this.periodDatePicker.ValueChanged += new System.EventHandler(this.periodDatePicker_ValueChanged);
             this.periodDatePicker.Validating += new System.ComponentModel.CancelEventHandler(this.periodDatePicker_Validating);
             this.periodDatePicker.Validated += new System.EventHandler(this.Control_Validated);
@@ -288,15 +303,18 @@
             // 
             // periodDateLabel
             // 
+            this.periodDateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.periodDateLabel.AutoSize = true;
             this.periodDateLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.periodDateLabel.Location = new System.Drawing.Point(208, 41);
+            this.periodDateLabel.Location = new System.Drawing.Point(5, 16);
             this.periodDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.periodDateLabel.Name = "periodDateLabel";
             this.periodDateLabel.Size = new System.Drawing.Size(164, 13);
             this.periodDateLabel.TabIndex = 85;
             this.periodDateLabel.Text = "Qual o dia da última menstruação";
-            this.periodDateLabel.Visible = false;
+            this.periodDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // glassesEspecification
             // 
@@ -389,12 +407,12 @@
             this.flowLayoutPanel7.Validating += new System.ComponentModel.CancelEventHandler(this.yesNoPanel_Validating);
             this.flowLayoutPanel7.Validated += new System.EventHandler(this.Control_Validated);
             // 
-            // drugsYEs
+            // drugsYes
             // 
             this.drugsYes.AutoSize = true;
             this.drugsYes.Location = new System.Drawing.Point(2, 2);
             this.drugsYes.Margin = new System.Windows.Forms.Padding(2);
-            this.drugsYes.Name = "drugsYEs";
+            this.drugsYes.Name = "drugsYes";
             this.drugsYes.Size = new System.Drawing.Size(42, 17);
             this.drugsYes.TabIndex = 27;
             this.drugsYes.TabStop = true;
@@ -896,6 +914,111 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // localeLabel
+            // 
+            this.localeLabel.AutoSize = true;
+            this.localeLabel.Location = new System.Drawing.Point(312, 13);
+            this.localeLabel.Name = "localeLabel";
+            this.localeLabel.Size = new System.Drawing.Size(89, 13);
+            this.localeLabel.TabIndex = 86;
+            this.localeLabel.Text = "Local onde mora;";
+            // 
+            // LivingLocationTextBox
+            // 
+            this.LivingLocationTextBox.Location = new System.Drawing.Point(407, 11);
+            this.LivingLocationTextBox.Name = "LivingLocationTextBox";
+            this.LivingLocationTextBox.Size = new System.Drawing.Size(139, 20);
+            this.LivingLocationTextBox.TabIndex = 87;
+            this.LivingLocationTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.LivingLocationTextBox_Validating);
+            this.LivingLocationTextBox.Validated += new System.EventHandler(this.Control_Validated);
+            // 
+            // femaleGroupBox
+            // 
+            this.femaleGroupBox.Controls.Add(this.reasonForNotMenstruating);
+            this.femaleGroupBox.Controls.Add(this.flowLayoutPanel1);
+            this.femaleGroupBox.Controls.Add(this.notMenstruatingLabel);
+            this.femaleGroupBox.Controls.Add(this.hasMenstruatingLabel);
+            this.femaleGroupBox.Controls.Add(this.periodDateLabel);
+            this.femaleGroupBox.Controls.Add(this.periodDatePicker);
+            this.femaleGroupBox.Location = new System.Drawing.Point(312, 68);
+            this.femaleGroupBox.Name = "femaleGroupBox";
+            this.femaleGroupBox.Size = new System.Drawing.Size(252, 98);
+            this.femaleGroupBox.TabIndex = 88;
+            this.femaleGroupBox.TabStop = false;
+            this.femaleGroupBox.Text = "Ciclo menstrual";
+            this.femaleGroupBox.Visible = false;
+            // 
+            // hasMenstruatingLabel
+            // 
+            this.hasMenstruatingLabel.AutoSize = true;
+            this.hasMenstruatingLabel.Location = new System.Drawing.Point(5, 42);
+            this.hasMenstruatingLabel.Name = "hasMenstruatingLabel";
+            this.hasMenstruatingLabel.Size = new System.Drawing.Size(120, 13);
+            this.hasMenstruatingLabel.TabIndex = 86;
+            this.hasMenstruatingLabel.Text = "Menstruou normalmente";
+            // 
+            // notMenstruatingLabel
+            // 
+            this.notMenstruatingLabel.AutoSize = true;
+            this.notMenstruatingLabel.Location = new System.Drawing.Point(6, 68);
+            this.notMenstruatingLabel.Name = "notMenstruatingLabel";
+            this.notMenstruatingLabel.Size = new System.Drawing.Size(132, 13);
+            this.notMenstruatingLabel.TabIndex = 87;
+            this.notMenstruatingLabel.Text = "Razão para não menstruar";
+            this.notMenstruatingLabel.Visible = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.menstruatingYes);
+            this.flowLayoutPanel1.Controls.Add(this.menstruatingNo);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(141, 37);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(105, 25);
+            this.flowLayoutPanel1.TabIndex = 90;
+            this.flowLayoutPanel1.Validating += new System.ComponentModel.CancelEventHandler(this.yesNoPanel_Validating);
+            this.flowLayoutPanel1.Validated += new System.EventHandler(this.Control_Validated);
+            // 
+            // menstruatingYes
+            // 
+            this.menstruatingYes.AutoSize = true;
+            this.menstruatingYes.Location = new System.Drawing.Point(2, 2);
+            this.menstruatingYes.Margin = new System.Windows.Forms.Padding(2);
+            this.menstruatingYes.Name = "menstruatingYes";
+            this.menstruatingYes.Size = new System.Drawing.Size(42, 17);
+            this.menstruatingYes.TabIndex = 12;
+            this.menstruatingYes.TabStop = true;
+            this.menstruatingYes.Text = "Sim";
+            this.menstruatingYes.UseVisualStyleBackColor = true;
+            this.menstruatingYes.CheckedChanged += new System.EventHandler(this.menstruatingYes_CheckedChanged);
+            // 
+            // menstruatingNo
+            // 
+            this.menstruatingNo.AutoSize = true;
+            this.menstruatingNo.Location = new System.Drawing.Point(48, 2);
+            this.menstruatingNo.Margin = new System.Windows.Forms.Padding(2);
+            this.menstruatingNo.Name = "menstruatingNo";
+            this.menstruatingNo.Size = new System.Drawing.Size(45, 17);
+            this.menstruatingNo.TabIndex = 13;
+            this.menstruatingNo.TabStop = true;
+            this.menstruatingNo.Text = "Não";
+            this.menstruatingNo.UseVisualStyleBackColor = true;
+            this.menstruatingNo.CheckedChanged += new System.EventHandler(this.menstruatingYes_CheckedChanged);
+            // 
+            // reasonForNotMenstruating
+            // 
+            this.reasonForNotMenstruating.Items.AddRange(new object[] {
+            "Não se aplica",
+            "Uso de anti-concepcional",
+            "Menopausa"});
+            this.reasonForNotMenstruating.Location = new System.Drawing.Point(140, 64);
+            this.reasonForNotMenstruating.Name = "reasonForNotMenstruating";
+            this.reasonForNotMenstruating.Size = new System.Drawing.Size(106, 21);
+            this.reasonForNotMenstruating.TabIndex = 91;
+            this.reasonForNotMenstruating.Visible = false;
+            this.reasonForNotMenstruating.Validating += new System.ComponentModel.CancelEventHandler(this.reasonForNotMenstruating_Validating);
+            this.reasonForNotMenstruating.Validated += new System.EventHandler(this.Control_Validated);
+            // 
             // FormParticipantConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -930,6 +1053,10 @@
             this.schoolingPanel.ResumeLayout(false);
             this.schoolingPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.femaleGroupBox.ResumeLayout(false);
+            this.femaleGroupBox.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1002,5 +1129,15 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.DateTimePicker periodDatePicker;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label localeLabel;
+        private System.Windows.Forms.GroupBox femaleGroupBox;
+        private System.Windows.Forms.Label notMenstruatingLabel;
+        private System.Windows.Forms.Label hasMenstruatingLabel;
+        private System.Windows.Forms.TextBox LivingLocationTextBox;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.RadioButton menstruatingYes;
+        private System.Windows.Forms.RadioButton menstruatingNo;
+        private System.Windows.Forms.ComboBox reasonForNotMenstruating;
     }
 }

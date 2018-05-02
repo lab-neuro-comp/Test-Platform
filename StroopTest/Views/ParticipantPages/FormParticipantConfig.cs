@@ -11,6 +11,7 @@ using System.Globalization;
 using System.Resources;
 using TestPlatform.Models.General;
 using System.IO;
+using TestPlatform.Models;
 
 namespace TestPlatform.Views.ParticipantPages
 {
@@ -61,6 +62,13 @@ namespace TestPlatform.Views.ParticipantPages
                     postGraduate.Checked = true;
                     break;
             }
+            reasonForNotMenstruating.SelectedIndex = participantToEdit.ReasonForNotMenstruating;
+            if(participantToEdit.ReasonForNotMenstruating >= 0)
+            {
+                setBooleanField(false, menstruatingYes, menstruatingNo);
+                reasonForNotMenstruating.Visible = true;
+                notMenstruatingLabel.Visible = true;
+            }
             setBooleanField(participantToEdit.WearGlasses, glassesYes, glassesNo);
             setBooleanField(participantToEdit.UsesMedication, medicineYes, medicineNo);
             setBooleanField(participantToEdit.UsedRelaxant, relaxantYes, relaxantNo);
@@ -68,6 +76,7 @@ namespace TestPlatform.Views.ParticipantPages
             setBooleanField(participantToEdit.ConsumedAlcohol, alcoholYes, alcoholNo);
             setBooleanField(participantToEdit.ConsumedDrugs, drugsYes, drugsNo);
             setBooleanField(participantToEdit.ConsumedEnergizers, energizersYes, energizersNo);
+            
 
             glassesEspecification.Text = participantToEdit.GlassesEspecification;
             medicineEspecification.Text = participantToEdit.MedicationEspecification;
@@ -76,6 +85,7 @@ namespace TestPlatform.Views.ParticipantPages
             alcoholEspecification.Text = participantToEdit.AlcoholEspecification;
             drugsEspecification.Text = participantToEdit.DrugsEspecification;
             energeticEspecification.Text = participantToEdit.EnergizersEspecification;
+            LivingLocationTextBox.Text = participantToEdit.LivingLocation;
 
             foreach (string line in participantToEdit.Observations)
             {
@@ -100,13 +110,11 @@ namespace TestPlatform.Views.ParticipantPages
         {
             if (this.femaleRadioButton.Checked)
             {
-                periodDateLabel.Visible = true;
-                periodDatePicker.Visible = true;
+                femaleGroupBox.Visible = true;
             }
             else
             {
-                periodDatePicker.Visible = false;
-                periodDateLabel.Visible = false;
+                femaleGroupBox.Visible = false;
                 periodDatePicker.CustomFormat = " ";
                 periodDatePicker.Format = DateTimePickerFormat.Custom;
             }
@@ -199,12 +207,12 @@ namespace TestPlatform.Views.ParticipantPages
                 participantNameTextBox.Text,
                 int.Parse(registrationIDText.Text),
                 sex,
-                "", /*Missing location field on form*/
+                LivingLocationTextBox.Text, 
                 degreeOfSchool,
                 int.Parse(ageNumeric.Value.ToString()),
                 birthDatePicker.Value,
                 periodDatePicker.Value,
-                -1, /*missing late in period field on form*/
+                reasonForNotMenstruating.SelectedIndex, 
                 glassesYes.Checked,
                 medicineYes.Checked,
                 energizersYes.Checked,
@@ -286,6 +294,14 @@ namespace TestPlatform.Views.ParticipantPages
             if (age > 0)
             {
                 this.ageNumeric.Value = age;
+            }
+            if(validBirthDate(birthDatePicker, out string errorMsg))
+            {
+                this.errorProvider1.SetError(birthDatePicker, "");   
+            }
+            else
+            {
+                this.errorProvider1.SetError(birthDatePicker, errorMsg);
             }
         }
 
@@ -429,6 +445,67 @@ namespace TestPlatform.Views.ParticipantPages
 
         private void prgNameTextBox_Validating(object sender, CancelEventArgs e)
         {
+
+        }
+
+        private void menstruatingYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!this.menstruatingYes.Checked)
+            {
+                reasonForNotMenstruating.Visible = true;
+                notMenstruatingLabel.Visible = true;
+            }
+            else
+            {
+                reasonForNotMenstruating.Visible = false;
+                notMenstruatingLabel.Visible = false;
+                reasonForNotMenstruating.SelectedIndex = -1;
+            }
+        }
+
+        private bool validReason(ComboBox reasonComboBox, out string errorMsg)
+        {
+            errorMsg = "";
+            bool returnValue = true;
+            if(this.menstruatingNo.Checked && reasonComboBox.SelectedIndex == -1)
+            {
+                errorMsg = LocRM.GetString("shouldSelectReason", currentCulture);
+                returnValue = false;
+            }
+            return returnValue;
+        }
+
+        private void reasonForNotMenstruating_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!validReason((ComboBox)sender, out errorMsg))
+            {
+                e.Cancel = true;
+            }
+            this.errorProvider1.SetError((Control)sender, errorMsg);
+        }
+
+
+        private bool validLivingLocation(TextBox LivingLocation, out string errorMsg)
+        {
+            errorMsg = "";
+            bool returnValue = true;
+            if (!Validations.isAlphanumeric(LivingLocation.Text))
+            {
+                errorMsg = LocRM.GetString("participantNameAlphanumericError", currentCulture);
+                returnValue = false;
+            }
+            return returnValue;
+        }
+
+        private void LivingLocationTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!validLivingLocation((TextBox)sender, out errorMsg))
+            {
+                e.Cancel = true;
+            }
+            this.errorProvider1.SetError((Control)sender, errorMsg);
 
         }
     }

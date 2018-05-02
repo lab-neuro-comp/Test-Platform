@@ -306,7 +306,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>Número de vezes em que os estímulos serão expostos</value>
   </data>
   <data name="participantNameAlphanumericError" xml:space="preserve">
-    <value>Nome do participante deve ser composto apenas de caracteres alfanuméricos e sem espaços;\nExemplo: 'LuisAugusto'"</value>
+    <value>O texto deve ser composto apenas de caracteres alfanuméricos e sem espaços;\nExemplo: 'LuisAugusto'"</value>
   </data>
   <data name="participantNameLengthError" xml:space="preserve">
     <value>O nome do participante deve ser preenchido.</value>
@@ -2477,5 +2477,8 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="shouldCloseOpenedForm" xml:space="preserve">
     <value>Você deve fechar qualquer formulário aberto antes de continuar</value>
+  </data>
+  <data name="shouldSelectReason" xml:space="preserve">
+    <value>Um motivo válido deve ser selecionado.</value>
   </data>
 </root>

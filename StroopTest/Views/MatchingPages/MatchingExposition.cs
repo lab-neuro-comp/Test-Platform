@@ -138,11 +138,14 @@ namespace TestPlatform.Views.MatchingPages
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = true;
             this.StartPosition = FormStartPosition.Manual;
+            ExpositionController.formSecondScreen(this);
+
             InitializeComponent();
             startTime = hour + "_" + minutes + "_" + seconds;
             executingTest.ParticipantName = participantName;
             executingTest.setProgramInUse(path + "/prg/", prgName);
             executingTest.Mark = mark;
+
             stimuluControls = new List<Control>();
             outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.ProgramName + ".txt";
             startExposition();

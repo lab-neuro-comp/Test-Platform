@@ -208,5 +208,27 @@
             }
 
         }
+        
+        public static void formSecondScreen(Form form)
+        {
+            Screen[] sc;
+            sc = Screen.AllScreens;
+            if (sc.Count<Screen>() > 1)
+            {
+                foreach (Screen s in sc)
+                {
+                    if (!s.Primary)
+                    {
+                        form.WindowState = FormWindowState.Maximized;
+                        form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                        form.Bounds = s.Bounds;
+                        form.MaximizeBox = true;
+                    }
+                }
+            }
+
+        }
+
+
     }
 }

@@ -9,43 +9,6 @@ namespace TestPlatform.Models.General
 {
     class Participant
     {
-        public Participant(string fileName)
-        {
-            readParticipantFile(fileName);
-        }
-
-        public Participant(string name, int registrationID, int sex, string livingLocation, int degreeOfSchooling, int age,
-            DateTime birthDate, DateTime lastPeriodDate, int reasonForNotMenstruating,
-            bool wearGlass, bool usesMedication, bool consumedEnergizers, bool consumedDrugs,
-            bool usedRelaxant, bool consumedAlcohol, bool goodLastNightOfSleep, string glassesEspecification,
-            string medicationEspecification, string relaxantEspecification, string sleepEspecification,
-            string alcoholEspecification, string drugsEspecification, string energizersEspecification, List<string> observations)
-        {
-            this.name = name;
-            this.registrationID = registrationID;
-            this.sex = sex;
-            this.livingLocation = livingLocation;
-            this.DegreeOfSchooling = degreeOfSchooling;
-            this.age = age;
-            this.birthDate = birthDate;
-            this.lastPeriodDate = lastPeriodDate;
-            this.reasonForNotMenstruating = reasonForNotMenstruating;
-            this.wearGlasses = wearGlass;
-            this.usesMedication = usesMedication;
-            this.consumedAlcohol = consumedAlcohol;
-            this.consumedDrugs = consumedDrugs;
-            this.consumedEnergizers = consumedEnergizers;
-            this.goodLastNightOfSleep = goodLastNightOfSleep;
-            this.usedRelaxant = usedRelaxant;
-            this.glassesEspecification = glassesEspecification;
-            this.medicationEspecification = medicationEspecification;
-            this.relaxantEspecification = relaxantEspecification;
-            this.sleepEspecification = sleepEspecification;
-            this.alcoholEspecification = alcoholEspecification;
-            this.drugsEspecification = drugsEspecification;
-            this.energizersEspecification = energizersEspecification;
-            this.observations = observations;
-    }
         private int registrationID;
         private string name;
 
@@ -99,30 +62,46 @@ namespace TestPlatform.Models.General
         /// <summary> Any complementar comment goes here </summary>
         private List<string> observations = new List<string>();
 
-        public int DegreeOfSchooling { get => degreeOfSchooling; set => degreeOfSchooling = value; }
-        public int Age { get => age; set => age = value; }
-        public DateTime BirthDate { get => birthDate; set => birthDate = value; }
-        public DateTime LastPeriodDate { get => lastPeriodDate; set => lastPeriodDate = value; }
-        public int ReasonForNotMenstruating { get => reasonForNotMenstruating; set => reasonForNotMenstruating = value; }
-        public bool WearGlasses { get => wearGlasses; set => wearGlasses = value; }
-        public bool UsesMedication { get => usesMedication; set => usesMedication = value; }
-        public bool GoodLastNightOfSleep { get => goodLastNightOfSleep; set => goodLastNightOfSleep = value; }
-        public bool ConsumedAlcohol { get => consumedAlcohol; set => consumedAlcohol = value; }
-        public bool UsedRelaxant { get => usedRelaxant; set => usedRelaxant = value; }
-        public bool ConsumedDrugs { get => consumedDrugs; set => consumedDrugs = value; }
-        public bool ConsumedEnergizers { get => consumedEnergizers; set => consumedEnergizers = value; }
-        public string GlassesEspecification { get => glassesEspecification; set => glassesEspecification = value; }
-        public string MedicationEspecification { get => medicationEspecification; set => medicationEspecification = value; }
-        public string RelaxantEspecification { get => relaxantEspecification; set => relaxantEspecification = value; }
-        public string SleepEspecification { get => sleepEspecification; set => sleepEspecification = value; }
-        public string AlcoholEspecification { get => alcoholEspecification; set => alcoholEspecification = value; }
-        public string DrugsEspecification { get => drugsEspecification; set => drugsEspecification = value; }
-        public string EnergizersEspecification { get => energizersEspecification; set => energizersEspecification = value; }
-        public List<string> Observations { get => observations; set => observations = value; }
-        public string LivingLocation { get => livingLocation; set => livingLocation = value; }
-        public int Sex { get => sex; set => sex = value; }
-        public string Name { get => name; set => name = value; }
-        public int RegistrationID { get => registrationID; set => registrationID = value; }
+        public Participant(string fileName)
+        {
+            readParticipantFile(fileName);
+        }
+
+        public Participant(string name, int registrationID, int sex, string livingLocation, int degreeOfSchooling, int age,
+            DateTime birthDate, DateTime lastPeriodDate, int reasonForNotMenstruating,
+            bool wearGlass, bool usesMedication, bool consumedEnergizers, bool consumedDrugs,
+            bool usedRelaxant, bool consumedAlcohol, bool goodLastNightOfSleep, string glassesEspecification,
+            string medicationEspecification, string relaxantEspecification, string sleepEspecification,
+            string alcoholEspecification, string drugsEspecification, string energizersEspecification, List<string> observations)
+        {
+            this.name = name;
+            this.registrationID = registrationID;
+            this.sex = sex;
+            this.livingLocation = livingLocation;
+            this.DegreeOfSchooling = degreeOfSchooling;
+            this.age = age;
+            this.birthDate = birthDate;
+            this.lastPeriodDate = lastPeriodDate;
+            this.reasonForNotMenstruating = reasonForNotMenstruating;
+            this.wearGlasses = wearGlass;
+            this.usesMedication = usesMedication;
+            this.consumedAlcohol = consumedAlcohol;
+            this.consumedDrugs = consumedDrugs;
+            this.consumedEnergizers = consumedEnergizers;
+            this.goodLastNightOfSleep = goodLastNightOfSleep;
+            this.usedRelaxant = usedRelaxant;
+            this.glassesEspecification = glassesEspecification;
+            this.medicationEspecification = medicationEspecification;
+            this.relaxantEspecification = relaxantEspecification;
+            this.sleepEspecification = sleepEspecification;
+            this.alcoholEspecification = alcoholEspecification;
+            this.drugsEspecification = drugsEspecification;
+            this.energizersEspecification = energizersEspecification;
+            this.observations = observations;
+    }
+
+
+
 
         private string Data()
         {
@@ -236,5 +215,59 @@ namespace TestPlatform.Models.General
                 throw new FileNotFoundException();
             }
         }
+
+
+
+        /// <summary>
+        ///  getters and setters below
+        /// </summary>
+       
+        public int DegreeOfSchooling { get => degreeOfSchooling; set => degreeOfSchooling = value; }
+
+        public int Age { get => age; set => age = value; }
+
+        public DateTime BirthDate { get => birthDate; set => birthDate = value; }
+
+        public DateTime LastPeriodDate { get => lastPeriodDate; set => lastPeriodDate = value; }
+
+        public int ReasonForNotMenstruating { get => reasonForNotMenstruating; set => reasonForNotMenstruating = value; }
+
+        public bool WearGlasses { get => wearGlasses; set => wearGlasses = value; }
+
+        public bool UsesMedication { get => usesMedication; set => usesMedication = value; }
+
+        public bool GoodLastNightOfSleep { get => goodLastNightOfSleep; set => goodLastNightOfSleep = value; }
+
+        public bool ConsumedAlcohol { get => consumedAlcohol; set => consumedAlcohol = value; }
+
+        public bool UsedRelaxant { get => usedRelaxant; set => usedRelaxant = value; }
+
+        public bool ConsumedDrugs { get => consumedDrugs; set => consumedDrugs = value; }
+
+        public bool ConsumedEnergizers { get => consumedEnergizers; set => consumedEnergizers = value; }
+
+        public string GlassesEspecification { get => glassesEspecification; set => glassesEspecification = value; }
+
+        public string MedicationEspecification { get => medicationEspecification; set => medicationEspecification = value; }
+
+        public string RelaxantEspecification { get => relaxantEspecification; set => relaxantEspecification = value; }
+
+        public string SleepEspecification { get => sleepEspecification; set => sleepEspecification = value; }
+
+        public string AlcoholEspecification { get => alcoholEspecification; set => alcoholEspecification = value; }
+
+        public string DrugsEspecification { get => drugsEspecification; set => drugsEspecification = value; }
+
+        public string EnergizersEspecification { get => energizersEspecification; set => energizersEspecification = value; }
+
+        public List<string> Observations { get => observations; set => observations = value; }
+
+        public string LivingLocation { get => livingLocation; set => livingLocation = value; }
+
+        public int Sex { get => sex; set => sex = value; }
+
+        public string Name { get => name; set => name = value; }
+
+        public int RegistrationID { get => registrationID; set => registrationID = value; }
     }
 }

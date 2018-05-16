@@ -40,15 +40,14 @@
             this.editParticipantButton.FlatAppearance.BorderSize = 0;
             this.editParticipantButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editParticipantButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.editParticipantButton.Location = new System.Drawing.Point(2, 34);
-            this.editParticipantButton.Margin = new System.Windows.Forms.Padding(2);
+            this.editParticipantButton.Location = new System.Drawing.Point(3, 42);
+            this.editParticipantButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editParticipantButton.Name = "editParticipantButton";
-            this.editParticipantButton.Size = new System.Drawing.Size(193, 27);
+            this.editParticipantButton.Size = new System.Drawing.Size(257, 33);
             this.editParticipantButton.TabIndex = 6;
             this.editParticipantButton.Text = "Editar Participante";
             this.editParticipantButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.editParticipantButton.UseVisualStyleBackColor = true;
-            this.editParticipantButton.CheckedChanged += new System.EventHandler(this.editParticipantButton_CheckedChanged);
             this.editParticipantButton.Click += new System.EventHandler(this.editParticipantButton_Click);
             // 
             // newParticipantButton
@@ -59,23 +58,23 @@
             this.newParticipantButton.FlatAppearance.BorderSize = 0;
             this.newParticipantButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newParticipantButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.newParticipantButton.Location = new System.Drawing.Point(2, 2);
-            this.newParticipantButton.Margin = new System.Windows.Forms.Padding(2);
+            this.newParticipantButton.Location = new System.Drawing.Point(3, 2);
+            this.newParticipantButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.newParticipantButton.Name = "newParticipantButton";
-            this.newParticipantButton.Size = new System.Drawing.Size(193, 27);
+            this.newParticipantButton.Size = new System.Drawing.Size(257, 33);
             this.newParticipantButton.TabIndex = 5;
             this.newParticipantButton.Text = "Novo Participante";
             this.newParticipantButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.newParticipantButton.UseVisualStyleBackColor = true;
-            this.newParticipantButton.CheckedChanged += new System.EventHandler(this.newParticipantButton_CheckedChanged);
             this.newParticipantButton.Click += new System.EventHandler(this.newParticipantButton_Click);
             // 
             // ParticipantControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.editParticipantButton);
             this.Controls.Add(this.newParticipantButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ParticipantControl";
             this.ResumeLayout(false);
 

@@ -63,6 +63,7 @@ namespace TestPlatform.Views.ParticipantPages
                     postGraduate.Checked = true;
                     break;
             }
+
             reasonForNotMenstruating.SelectedIndex = participantToEdit.ReasonForNotMenstruating;
             if(participantToEdit.ReasonForNotMenstruating >= 0)
             {
@@ -70,6 +71,7 @@ namespace TestPlatform.Views.ParticipantPages
                 reasonForNotMenstruating.Visible = true;
                 notMenstruatingLabel.Visible = true;
             }
+
             setBooleanField(participantToEdit.WearGlasses, glassesYes, glassesNo);
             setBooleanField(participantToEdit.UsesMedication, medicineYes, medicineNo);
             setBooleanField(participantToEdit.UsedRelaxant, relaxantYes, relaxantNo);
@@ -88,9 +90,14 @@ namespace TestPlatform.Views.ParticipantPages
             energeticEspecification.Text = participantToEdit.EnergizersEspecification;
             LivingLocationTextBox.Text = participantToEdit.LivingLocation;
 
-            foreach (string line in participantToEdit.Observations)
+
+            /* only fills observations box if there are any within participant registration*/
+            if (participantToEdit.Observations != null)
             {
-                instructionsBox.Text += line + "\n";
+                foreach (string line in participantToEdit.Observations)
+                {
+                    instructionsBox.Text += line + "\n";
+                }
             }
             
         }

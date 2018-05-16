@@ -115,15 +115,5 @@ namespace TestPlatform.Views.SidebarUserControls
                 /*do nothing*/
             }
         }
-
-        private void editParticipantButton_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void newParticipantButton_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

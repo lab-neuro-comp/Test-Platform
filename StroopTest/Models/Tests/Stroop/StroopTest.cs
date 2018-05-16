@@ -54,7 +54,7 @@ namespace TestPlatform.Models
             set
             {
                 // user name can have only alphanumeric elements, without spaces
-                if (!Validations.isEmpty(value) && Validations.isAlphanumeric(value))
+                if (!Validations.isEmpty(value))
                 {
                     participantName = value;
                 }
@@ -64,7 +64,7 @@ namespace TestPlatform.Models
                     ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
                     CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
-                    throw new ArgumentException(LocRM.GetString("participantNameAlphanumericError", currentCulture));
+                    throw new ArgumentException(LocRM.GetString("participantNameLengthError", currentCulture));
                 }
             }   
         }

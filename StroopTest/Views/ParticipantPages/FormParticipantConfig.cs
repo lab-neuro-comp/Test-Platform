@@ -44,6 +44,7 @@ namespace TestPlatform.Views.ParticipantPages
             this.masculineRadioButton.Checked = !isFemale;
             this.femaleRadioButton.Checked = isFemale;
             this.periodDatePicker.Value = participantToEdit.LastPeriodDate;
+
             switch (participantToEdit.DegreeOfSchooling)
             {
                 case 1:

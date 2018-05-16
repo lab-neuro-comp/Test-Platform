@@ -238,11 +238,11 @@
             this.femaleGroupBox.Controls.Add(this.periodDateLabel);
             this.femaleGroupBox.Controls.Add(this.periodDatePicker);
             this.femaleGroupBox.Enabled = false;
-            this.femaleGroupBox.Location = new System.Drawing.Point(397, 84);
+            this.femaleGroupBox.Location = new System.Drawing.Point(404, 84);
             this.femaleGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.femaleGroupBox.Name = "femaleGroupBox";
             this.femaleGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.femaleGroupBox.Size = new System.Drawing.Size(359, 121);
+            this.femaleGroupBox.Size = new System.Drawing.Size(352, 121);
             this.femaleGroupBox.TabIndex = 88;
             this.femaleGroupBox.TabStop = false;
             this.femaleGroupBox.Text = "Ciclo menstrual";
@@ -346,7 +346,7 @@
             this.periodDatePicker.Location = new System.Drawing.Point(231, 16);
             this.periodDatePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.periodDatePicker.Name = "periodDatePicker";
-            this.periodDatePicker.Size = new System.Drawing.Size(96, 22);
+            this.periodDatePicker.Size = new System.Drawing.Size(89, 22);
             this.periodDatePicker.TabIndex = 6;
             this.periodDatePicker.Value = new System.DateTime(2018, 5, 2, 0, 0, 0, 0);
             this.periodDatePicker.ValueChanged += new System.EventHandler(this.periodDatePicker_ValueChanged);
@@ -855,7 +855,7 @@
             this.schoolingPanel.Controls.Add(this.higherEducationradioButton);
             this.schoolingPanel.Controls.Add(this.higher1radioButton);
             this.schoolingPanel.Controls.Add(this.postGraduate);
-            this.schoolingPanel.Location = new System.Drawing.Point(173, 84);
+            this.schoolingPanel.Location = new System.Drawing.Point(169, 84);
             this.schoolingPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.schoolingPanel.Name = "schoolingPanel";
             this.schoolingPanel.Size = new System.Drawing.Size(211, 137);

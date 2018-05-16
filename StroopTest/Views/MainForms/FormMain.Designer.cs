@@ -455,6 +455,8 @@
             resources.ApplyResources(this.participantComboBox, "participantComboBox");
             this.participantComboBox.Name = "participantComboBox";
             this.participantComboBox.SelectedIndexChanged += new System.EventHandler(this.participantComboBox_SelectedIndexChanged);
+            this.participantComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.participantTextBox_Validating);
+            this.participantComboBox.Validated += new System.EventHandler(this.participantTextBox_Validated);
             // 
             // participantLabel
             // 

@@ -635,11 +635,6 @@ namespace TestPlatform
                 errorMessage = LocRM.GetString("participantNameLengthError", currentCulture);
                 return false;
             }
-            if (!Validations.isAlphanumeric(participantName))
-            {
-                errorMessage = LocRM.GetString("participantNameAlphanumericError", currentCulture);
-                return false;
-            }
 
             errorMessage = "";
             return true;

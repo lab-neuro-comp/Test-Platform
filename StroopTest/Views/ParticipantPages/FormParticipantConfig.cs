@@ -110,10 +110,12 @@ namespace TestPlatform.Views.ParticipantPages
         {
             if (this.femaleRadioButton.Checked)
             {
+                femaleGroupBox.Enabled = true;
                 femaleGroupBox.Visible = true;
             }
             else
             {
+                femaleGroupBox.Enabled = false;
                 femaleGroupBox.Visible = false;
                 periodDatePicker.CustomFormat = " ";
                 periodDatePicker.Format = DateTimePickerFormat.Custom;
@@ -160,11 +162,11 @@ namespace TestPlatform.Views.ParticipantPages
         private void periodDatePicker_Validating(object sender, CancelEventArgs e)
         {
             string errorMsg;
-            if (!validPeriodDate((DateTimePicker)sender, out errorMsg))
+            if (periodDatePicker.Visible && !validPeriodDate((DateTimePicker)sender, out errorMsg))
             {
                 e.Cancel = true;
+                this.errorProvider1.SetError((Control)sender, errorMsg);
             }
-            this.errorProvider1.SetError((Control)sender, errorMsg);
         }
 
         private Participant createParticipant()
@@ -413,7 +415,7 @@ namespace TestPlatform.Views.ParticipantPages
                     returnValue = true;
                 }
             }
-            if (!returnValue)
+            if (!returnValue && panel.Visible)
             {
                 errorMsg = LocRM.GetString("invalidYesNoPanel", currentCulture);
             }

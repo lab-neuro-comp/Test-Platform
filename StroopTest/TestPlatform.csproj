@@ -145,6 +145,7 @@
     <Compile Include="Models\General\StrList.cs" />
     <Compile Include="Models\Tests\Stroop\StroopTest.cs" />
     <Compile Include="Models\General\Validations.cs" />
+    <Compile Include="Models\Tests\Test.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

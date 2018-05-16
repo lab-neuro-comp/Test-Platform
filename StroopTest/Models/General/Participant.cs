@@ -134,7 +134,7 @@ namespace TestPlatform.Models.General
 
         public string getParticipantPath()
         {
-            return Global.testFilesPath + Global.partcipantDataPath + name + "-" + registrationID + ".data";
+            return Global.testFilesPath + Global.partcipantDataPath + registrationID + "-" + name + ".data";
         }
 
         public string getParticipantPath(string filename)

@@ -268,6 +268,10 @@ namespace TestPlatform.Views.ParticipantPages
                     this.Parent.Controls.Remove(this);
                 }
             }
+            else
+            {
+                MessageBox.Show(LocRM.GetString("notFilledProperlyMessage", currentCulture));
+            }
         }
 
         private void birthDatePicker_ValueChanged(object sender, EventArgs e)

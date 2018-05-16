@@ -606,17 +606,47 @@
   <data name="participantPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="&gt;&gt;participantTextBox.Name" xml:space="preserve">
-    <value>participantTextBox</value>
+  <data name="participantComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 4</value>
   </data>
-  <data name="&gt;&gt;participantTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="participantComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 24</value>
   </data>
-  <data name="&gt;&gt;participantTextBox.Parent" xml:space="preserve">
+  <data name="participantComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;participantComboBox.Name" xml:space="preserve">
+    <value>participantComboBox</value>
+  </data>
+  <data name="&gt;&gt;participantComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;participantComboBox.Parent" xml:space="preserve">
     <value>participantPanel</value>
   </data>
-  <data name="&gt;&gt;participantTextBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;participantComboBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="participantLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="participantLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="participantLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="participantLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 7</value>
+  </data>
+  <data name="participantLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 18</value>
+  </data>
+  <data name="participantLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="participantLabel.Text" xml:space="preserve">
+    <value>Participante</value>
   </data>
   <data name="&gt;&gt;participantLabel.Name" xml:space="preserve">
     <value>participantLabel</value>
@@ -657,69 +687,6 @@
   <data name="&gt;&gt;participantPanel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="participantTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="participantTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 7</value>
-  </data>
-  <data name="participantTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="participantTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 22</value>
-  </data>
-  <data name="participantTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="participantTextBox.Text" xml:space="preserve">
-    <value>padrao</value>
-  </data>
-  <data name="&gt;&gt;participantTextBox.Name" xml:space="preserve">
-    <value>participantTextBox</value>
-  </data>
-  <data name="&gt;&gt;participantTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;participantTextBox.Parent" xml:space="preserve">
-    <value>participantPanel</value>
-  </data>
-  <data name="&gt;&gt;participantTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="participantLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="participantLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="participantLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="participantLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 7</value>
-  </data>
-  <data name="participantLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 18</value>
-  </data>
-  <data name="participantLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="participantLabel.Text" xml:space="preserve">
-    <value>Participante</value>
-  </data>
-  <data name="&gt;&gt;participantLabel.Name" xml:space="preserve">
-    <value>participantLabel</value>
-  </data>
-  <data name="&gt;&gt;participantLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;participantLabel.Parent" xml:space="preserve">
-    <value>participantPanel</value>
-  </data>
-  <data name="&gt;&gt;participantLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>499, 17</value>
   </metadata>
@@ -741,39 +708,6 @@
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="participantButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="participantButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="participantButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="participantButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="participantButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="participantButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 207</value>
-  </data>
-  <data name="participantButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="participantButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="participantButton.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="participantButton.Text" xml:space="preserve">
-    <value>Participante</value>
-  </data>
-  <data name="participantButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
   <data name="&gt;&gt;participantButton.Name" xml:space="preserve">
     <value>participantButton</value>
   </data>
@@ -785,39 +719,6 @@
   </data>
   <data name="&gt;&gt;participantButton.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="helpButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="helpButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="helpButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="helpButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="helpButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 364</value>
-  </data>
-  <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="helpButton.Text" xml:space="preserve">
-    <value> Ajuda</value>
-  </data>
-  <data name="helpButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
   </data>
   <data name="&gt;&gt;helpButton.Name" xml:space="preserve">
     <value>helpButton</value>
@@ -831,36 +732,6 @@
   <data name="&gt;&gt;helpButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="buttonMatching.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="buttonMatching.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="buttonMatching.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="buttonMatching.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="buttonMatching.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 131</value>
-  </data>
-  <data name="buttonMatching.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="buttonMatching.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="buttonMatching.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="buttonMatching.Text" xml:space="preserve">
-    <value>MatchingTest</value>
-  </data>
-  <data name="buttonMatching.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
   <data name="&gt;&gt;buttonMatching.Name" xml:space="preserve">
     <value>buttonMatching</value>
   </data>
@@ -872,36 +743,6 @@
   </data>
   <data name="&gt;&gt;buttonMatching.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="exportButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="exportButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="exportButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="exportButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="exportButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 321</value>
-  </data>
-  <data name="exportButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="exportButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="exportButton.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="exportButton.Text" xml:space="preserve">
-    <value> Exportar</value>
-  </data>
-  <data name="exportButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
   </data>
   <data name="&gt;&gt;exportButton.Name" xml:space="preserve">
     <value>exportButton</value>
@@ -915,36 +756,6 @@
   <data name="&gt;&gt;exportButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="importButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="importButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="importButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="importButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="importButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 283</value>
-  </data>
-  <data name="importButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="importButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="importButton.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="importButton.Text" xml:space="preserve">
-    <value> Importar</value>
-  </data>
-  <data name="importButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
   <data name="&gt;&gt;importButton.Name" xml:space="preserve">
     <value>importButton</value>
   </data>
@@ -956,36 +767,6 @@
   </data>
   <data name="&gt;&gt;importButton.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="resultButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="resultButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="resultButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="resultButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="resultButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 245</value>
-  </data>
-  <data name="resultButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="resultButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="resultButton.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="resultButton.Text" xml:space="preserve">
-    <value> Resultados</value>
-  </data>
-  <data name="resultButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
   </data>
   <data name="&gt;&gt;resultButton.Name" xml:space="preserve">
     <value>resultButton</value>
@@ -999,36 +780,6 @@
   <data name="&gt;&gt;resultButton.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="experimentButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="experimentButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="experimentButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="experimentButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="experimentButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 169</value>
-  </data>
-  <data name="experimentButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="experimentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="experimentButton.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="experimentButton.Text" xml:space="preserve">
-    <value> Experimento</value>
-  </data>
-  <data name="experimentButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
   <data name="&gt;&gt;experimentButton.Name" xml:space="preserve">
     <value>experimentButton</value>
   </data>
@@ -1040,36 +791,6 @@
   </data>
   <data name="&gt;&gt;experimentButton.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="buttonList.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="buttonList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="buttonList.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="buttonList.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="buttonList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 17</value>
-  </data>
-  <data name="buttonList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="buttonList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="buttonList.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="buttonList.Text" xml:space="preserve">
-    <value> Lista</value>
-  </data>
-  <data name="buttonList.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
   </data>
   <data name="&gt;&gt;buttonList.Name" xml:space="preserve">
     <value>buttonList</value>
@@ -1083,36 +804,6 @@
   <data name="&gt;&gt;buttonList.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="buttonReaction.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="buttonReaction.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="buttonReaction.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="buttonReaction.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="buttonReaction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 93</value>
-  </data>
-  <data name="buttonReaction.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="buttonReaction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="buttonReaction.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="buttonReaction.Text" xml:space="preserve">
-    <value> ReactionTest</value>
-  </data>
-  <data name="buttonReaction.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
   <data name="&gt;&gt;buttonReaction.Name" xml:space="preserve">
     <value>buttonReaction</value>
   </data>
@@ -1124,36 +815,6 @@
   </data>
   <data name="&gt;&gt;buttonReaction.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="buttonStroop.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="buttonStroop.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="buttonStroop.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="buttonStroop.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="buttonStroop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 55</value>
-  </data>
-  <data name="buttonStroop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="buttonStroop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="buttonStroop.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="buttonStroop.Text" xml:space="preserve">
-    <value> StroopTest</value>
-  </data>
-  <data name="buttonStroop.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
   </data>
   <data name="&gt;&gt;buttonStroop.Name" xml:space="preserve">
     <value>buttonStroop</value>
@@ -6040,6 +5701,432 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="participantButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="participantButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="participantButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="participantButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="participantButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="participantButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 207</value>
+  </data>
+  <data name="participantButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="participantButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="participantButton.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="participantButton.Text" xml:space="preserve">
+    <value>Participante</value>
+  </data>
+  <data name="participantButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;participantButton.Name" xml:space="preserve">
+    <value>participantButton</value>
+  </data>
+  <data name="&gt;&gt;participantButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;participantButton.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;participantButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="helpButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="helpButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="helpButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="helpButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="helpButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 364</value>
+  </data>
+  <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="helpButton.Text" xml:space="preserve">
+    <value> Ajuda</value>
+  </data>
+  <data name="helpButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Name" xml:space="preserve">
+    <value>helpButton</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;helpButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonMatching.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="buttonMatching.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonMatching.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="buttonMatching.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="buttonMatching.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 131</value>
+  </data>
+  <data name="buttonMatching.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="buttonMatching.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="buttonMatching.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="buttonMatching.Text" xml:space="preserve">
+    <value>MatchingTest</value>
+  </data>
+  <data name="buttonMatching.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;buttonMatching.Name" xml:space="preserve">
+    <value>buttonMatching</value>
+  </data>
+  <data name="&gt;&gt;buttonMatching.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonMatching.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonMatching.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="exportButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="exportButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="exportButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="exportButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="exportButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 321</value>
+  </data>
+  <data name="exportButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="exportButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="exportButton.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="exportButton.Text" xml:space="preserve">
+    <value> Exportar</value>
+  </data>
+  <data name="exportButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;exportButton.Name" xml:space="preserve">
+    <value>exportButton</value>
+  </data>
+  <data name="&gt;&gt;exportButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exportButton.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;exportButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="importButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="importButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="importButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="importButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="importButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 283</value>
+  </data>
+  <data name="importButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="importButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="importButton.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="importButton.Text" xml:space="preserve">
+    <value> Importar</value>
+  </data>
+  <data name="importButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;importButton.Name" xml:space="preserve">
+    <value>importButton</value>
+  </data>
+  <data name="&gt;&gt;importButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;importButton.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;importButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="resultButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="resultButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="resultButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="resultButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="resultButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 245</value>
+  </data>
+  <data name="resultButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="resultButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="resultButton.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="resultButton.Text" xml:space="preserve">
+    <value> Resultados</value>
+  </data>
+  <data name="resultButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;resultButton.Name" xml:space="preserve">
+    <value>resultButton</value>
+  </data>
+  <data name="&gt;&gt;resultButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;resultButton.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;resultButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="experimentButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="experimentButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="experimentButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="experimentButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="experimentButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 169</value>
+  </data>
+  <data name="experimentButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="experimentButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="experimentButton.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="experimentButton.Text" xml:space="preserve">
+    <value> Experimento</value>
+  </data>
+  <data name="experimentButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;experimentButton.Name" xml:space="preserve">
+    <value>experimentButton</value>
+  </data>
+  <data name="&gt;&gt;experimentButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;experimentButton.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;experimentButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="buttonList.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="buttonList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonList.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="buttonList.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="buttonList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="buttonList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="buttonList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="buttonList.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="buttonList.Text" xml:space="preserve">
+    <value> Lista</value>
+  </data>
+  <data name="buttonList.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;buttonList.Name" xml:space="preserve">
+    <value>buttonList</value>
+  </data>
+  <data name="&gt;&gt;buttonList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonList.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonList.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="buttonReaction.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="buttonReaction.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonReaction.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="buttonReaction.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="buttonReaction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 93</value>
+  </data>
+  <data name="buttonReaction.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="buttonReaction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="buttonReaction.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="buttonReaction.Text" xml:space="preserve">
+    <value> ReactionTest</value>
+  </data>
+  <data name="buttonReaction.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;buttonReaction.Name" xml:space="preserve">
+    <value>buttonReaction</value>
+  </data>
+  <data name="&gt;&gt;buttonReaction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonReaction.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonReaction.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="buttonStroop.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="buttonStroop.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonStroop.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="buttonStroop.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="buttonStroop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 55</value>
+  </data>
+  <data name="buttonStroop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="buttonStroop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="buttonStroop.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="buttonStroop.Text" xml:space="preserve">
+    <value> StroopTest</value>
+  </data>
+  <data name="buttonStroop.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;buttonStroop.Name" xml:space="preserve">
+    <value>buttonStroop</value>
+  </data>
+  <data name="&gt;&gt;buttonStroop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonStroop.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonStroop.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="executingNameLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>

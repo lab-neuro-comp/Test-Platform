@@ -9,7 +9,6 @@ namespace TestPlatform
     using System.ComponentModel;
     using System.Globalization;
     using System.IO;
-    using System.IO.Compression;
     using System.Resources;
     using System.Windows.Forms;
     using TestPlatform.Controllers;
@@ -172,6 +171,7 @@ namespace TestPlatform
         public void initializeParticipants()
         {
             string[] filePaths = Directory.GetFiles(Global.testFilesPath + Global.partcipantDataPath, ("*.data"), SearchOption.AllDirectories);
+            participantComboBox.Items.Clear();
             foreach (string file in filePaths)
             {
                 string fileName = Path.GetFileNameWithoutExtension(file);
@@ -904,7 +904,6 @@ namespace TestPlatform
                     MessageBox.Show(LocRM.GetString("shouldCloseOpenedForm", currentCulture));
                 }
             }
-            this.participantComboBox.SelectedIndex = -1;
         }
 
     }

@@ -141,7 +141,7 @@
             // 
             // registrationIDText
             // 
-            this.registrationIDText.Location = new System.Drawing.Point(528, 7);
+            this.registrationIDText.Location = new System.Drawing.Point(386, 7);
             this.registrationIDText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.registrationIDText.MaxLength = 300;
             this.registrationIDText.Name = "registrationIDText";
@@ -167,11 +167,11 @@
             // 
             this.idLabel.AutoSize = true;
             this.idLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.idLabel.Location = new System.Drawing.Point(425, 7);
+            this.idLabel.Location = new System.Drawing.Point(245, 7);
             this.idLabel.Name = "idLabel";
-            this.idLabel.Size = new System.Drawing.Size(97, 17);
+            this.idLabel.Size = new System.Drawing.Size(139, 17);
             this.idLabel.TabIndex = 83;
-            this.idLabel.Text = "# de Registro:";
+            this.idLabel.Text = "Número de Registro:";
             // 
             // instructionsBox
             // 
@@ -239,9 +239,9 @@
             this.femaleGroupBox.Controls.Add(this.periodDatePicker);
             this.femaleGroupBox.Enabled = false;
             this.femaleGroupBox.Location = new System.Drawing.Point(404, 84);
-            this.femaleGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.femaleGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.femaleGroupBox.Name = "femaleGroupBox";
-            this.femaleGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.femaleGroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.femaleGroupBox.Size = new System.Drawing.Size(352, 121);
             this.femaleGroupBox.TabIndex = 88;
             this.femaleGroupBox.TabStop = false;
@@ -255,7 +255,7 @@
             "Uso de anti-concepcional",
             "Menopausa"});
             this.reasonForNotMenstruating.Location = new System.Drawing.Point(187, 79);
-            this.reasonForNotMenstruating.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reasonForNotMenstruating.Margin = new System.Windows.Forms.Padding(4);
             this.reasonForNotMenstruating.Name = "reasonForNotMenstruating";
             this.reasonForNotMenstruating.Size = new System.Drawing.Size(140, 24);
             this.reasonForNotMenstruating.TabIndex = 91;
@@ -356,7 +356,7 @@
             // LivingLocationTextBox
             // 
             this.LivingLocationTextBox.Location = new System.Drawing.Point(543, 14);
-            this.LivingLocationTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LivingLocationTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.LivingLocationTextBox.Name = "LivingLocationTextBox";
             this.LivingLocationTextBox.Size = new System.Drawing.Size(184, 22);
             this.LivingLocationTextBox.TabIndex = 87;
@@ -459,8 +459,8 @@
             // 
             // flowLayoutPanel8
             // 
-            this.flowLayoutPanel8.Controls.Add(this.energizersYes);
             this.flowLayoutPanel8.Controls.Add(this.energizersNo);
+            this.flowLayoutPanel8.Controls.Add(this.energizersYes);
             this.flowLayoutPanel8.Location = new System.Drawing.Point(379, 530);
             this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
@@ -472,7 +472,7 @@
             // energizersYes
             // 
             this.energizersYes.AutoSize = true;
-            this.energizersYes.Location = new System.Drawing.Point(3, 2);
+            this.energizersYes.Location = new System.Drawing.Point(64, 2);
             this.energizersYes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.energizersYes.Name = "energizersYes";
             this.energizersYes.Size = new System.Drawing.Size(52, 21);
@@ -484,7 +484,7 @@
             // energizersNo
             // 
             this.energizersNo.AutoSize = true;
-            this.energizersNo.Location = new System.Drawing.Point(61, 2);
+            this.energizersNo.Location = new System.Drawing.Point(3, 2);
             this.energizersNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.energizersNo.Name = "energizersNo";
             this.energizersNo.Size = new System.Drawing.Size(55, 21);
@@ -505,8 +505,8 @@
             // 
             // flowLayoutPanel7
             // 
-            this.flowLayoutPanel7.Controls.Add(this.drugsYes);
             this.flowLayoutPanel7.Controls.Add(this.drugsNo);
+            this.flowLayoutPanel7.Controls.Add(this.drugsYes);
             this.flowLayoutPanel7.Location = new System.Drawing.Point(379, 481);
             this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
@@ -518,7 +518,7 @@
             // drugsYes
             // 
             this.drugsYes.AutoSize = true;
-            this.drugsYes.Location = new System.Drawing.Point(3, 2);
+            this.drugsYes.Location = new System.Drawing.Point(64, 2);
             this.drugsYes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drugsYes.Name = "drugsYes";
             this.drugsYes.Size = new System.Drawing.Size(52, 21);
@@ -530,7 +530,7 @@
             // drugsNo
             // 
             this.drugsNo.AutoSize = true;
-            this.drugsNo.Location = new System.Drawing.Point(61, 2);
+            this.drugsNo.Location = new System.Drawing.Point(3, 2);
             this.drugsNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drugsNo.Name = "drugsNo";
             this.drugsNo.Size = new System.Drawing.Size(55, 21);
@@ -551,8 +551,8 @@
             // 
             // flowLayoutPanel6
             // 
-            this.flowLayoutPanel6.Controls.Add(this.alcoholYes);
             this.flowLayoutPanel6.Controls.Add(this.alcoholNo);
+            this.flowLayoutPanel6.Controls.Add(this.alcoholYes);
             this.flowLayoutPanel6.Location = new System.Drawing.Point(379, 432);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
@@ -564,7 +564,7 @@
             // alcoholYes
             // 
             this.alcoholYes.AutoSize = true;
-            this.alcoholYes.Location = new System.Drawing.Point(3, 2);
+            this.alcoholYes.Location = new System.Drawing.Point(64, 2);
             this.alcoholYes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.alcoholYes.Name = "alcoholYes";
             this.alcoholYes.Size = new System.Drawing.Size(52, 21);
@@ -576,7 +576,7 @@
             // alcoholNo
             // 
             this.alcoholNo.AutoSize = true;
-            this.alcoholNo.Location = new System.Drawing.Point(61, 2);
+            this.alcoholNo.Location = new System.Drawing.Point(3, 2);
             this.alcoholNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.alcoholNo.Name = "alcoholNo";
             this.alcoholNo.Size = new System.Drawing.Size(55, 21);
@@ -597,8 +597,8 @@
             // 
             // flowLayoutPanel5
             // 
-            this.flowLayoutPanel5.Controls.Add(this.sleepYes);
             this.flowLayoutPanel5.Controls.Add(this.sleepNo);
+            this.flowLayoutPanel5.Controls.Add(this.sleepYes);
             this.flowLayoutPanel5.Location = new System.Drawing.Point(379, 383);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
@@ -610,7 +610,7 @@
             // sleepYes
             // 
             this.sleepYes.AutoSize = true;
-            this.sleepYes.Location = new System.Drawing.Point(3, 2);
+            this.sleepYes.Location = new System.Drawing.Point(64, 2);
             this.sleepYes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sleepYes.Name = "sleepYes";
             this.sleepYes.Size = new System.Drawing.Size(52, 21);
@@ -622,7 +622,7 @@
             // sleepNo
             // 
             this.sleepNo.AutoSize = true;
-            this.sleepNo.Location = new System.Drawing.Point(61, 2);
+            this.sleepNo.Location = new System.Drawing.Point(3, 2);
             this.sleepNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sleepNo.Name = "sleepNo";
             this.sleepNo.Size = new System.Drawing.Size(55, 21);
@@ -643,8 +643,8 @@
             // 
             // flowLayoutPanel4
             // 
-            this.flowLayoutPanel4.Controls.Add(this.relaxantYes);
             this.flowLayoutPanel4.Controls.Add(this.relaxantNo);
+            this.flowLayoutPanel4.Controls.Add(this.relaxantYes);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(379, 334);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
@@ -656,7 +656,7 @@
             // relaxantYes
             // 
             this.relaxantYes.AutoSize = true;
-            this.relaxantYes.Location = new System.Drawing.Point(3, 2);
+            this.relaxantYes.Location = new System.Drawing.Point(64, 2);
             this.relaxantYes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.relaxantYes.Name = "relaxantYes";
             this.relaxantYes.Size = new System.Drawing.Size(52, 21);
@@ -668,7 +668,7 @@
             // relaxantNo
             // 
             this.relaxantNo.AutoSize = true;
-            this.relaxantNo.Location = new System.Drawing.Point(61, 2);
+            this.relaxantNo.Location = new System.Drawing.Point(3, 2);
             this.relaxantNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.relaxantNo.Name = "relaxantNo";
             this.relaxantNo.Size = new System.Drawing.Size(55, 21);
@@ -689,8 +689,8 @@
             // 
             // flowLayoutPanel3
             // 
-            this.flowLayoutPanel3.Controls.Add(this.medicineYes);
             this.flowLayoutPanel3.Controls.Add(this.medicineNo);
+            this.flowLayoutPanel3.Controls.Add(this.medicineYes);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(379, 284);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
@@ -702,7 +702,7 @@
             // medicineYes
             // 
             this.medicineYes.AutoSize = true;
-            this.medicineYes.Location = new System.Drawing.Point(3, 2);
+            this.medicineYes.Location = new System.Drawing.Point(64, 2);
             this.medicineYes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.medicineYes.Name = "medicineYes";
             this.medicineYes.Size = new System.Drawing.Size(52, 21);
@@ -714,7 +714,7 @@
             // medicineNo
             // 
             this.medicineNo.AutoSize = true;
-            this.medicineNo.Location = new System.Drawing.Point(61, 2);
+            this.medicineNo.Location = new System.Drawing.Point(3, 2);
             this.medicineNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.medicineNo.Name = "medicineNo";
             this.medicineNo.Size = new System.Drawing.Size(55, 21);
@@ -735,8 +735,8 @@
             // 
             // glassPanel
             // 
-            this.glassPanel.Controls.Add(this.glassesYes);
             this.glassPanel.Controls.Add(this.glassesNo);
+            this.glassPanel.Controls.Add(this.glassesYes);
             this.glassPanel.Location = new System.Drawing.Point(379, 235);
             this.glassPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.glassPanel.Name = "glassPanel";
@@ -748,7 +748,7 @@
             // glassesYes
             // 
             this.glassesYes.AutoSize = true;
-            this.glassesYes.Location = new System.Drawing.Point(3, 2);
+            this.glassesYes.Location = new System.Drawing.Point(64, 2);
             this.glassesYes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.glassesYes.Name = "glassesYes";
             this.glassesYes.Size = new System.Drawing.Size(52, 21);
@@ -760,7 +760,7 @@
             // glassesNo
             // 
             this.glassesNo.AutoSize = true;
-            this.glassesNo.Location = new System.Drawing.Point(61, 2);
+            this.glassesNo.Location = new System.Drawing.Point(3, 2);
             this.glassesNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.glassesNo.Name = "glassesNo";
             this.glassesNo.Size = new System.Drawing.Size(55, 21);
@@ -959,11 +959,11 @@
             // 
             // participantNameTextBox
             // 
-            this.participantNameTextBox.Location = new System.Drawing.Point(171, 5);
+            this.participantNameTextBox.Location = new System.Drawing.Point(132, 5);
             this.participantNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.participantNameTextBox.MaxLength = 300;
             this.participantNameTextBox.Name = "participantNameTextBox";
-            this.participantNameTextBox.Size = new System.Drawing.Size(225, 22);
+            this.participantNameTextBox.Size = new System.Drawing.Size(96, 22);
             this.participantNameTextBox.TabIndex = 1;
             this.participantNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.prgNameTextBox_Validating);
             this.participantNameTextBox.Validated += new System.EventHandler(this.Control_Validated);
@@ -974,9 +974,9 @@
             this.participantNameLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.participantNameLabel.Location = new System.Drawing.Point(13, 7);
             this.participantNameLabel.Name = "participantNameLabel";
-            this.participantNameLabel.Size = new System.Drawing.Size(148, 17);
+            this.participantNameLabel.Size = new System.Drawing.Size(113, 17);
             this.participantNameLabel.TabIndex = 34;
-            this.participantNameLabel.Text = "Nome do Participante:";
+            this.participantNameLabel.Text = "Iniciais do nome:";
             // 
             // cancelButton
             // 
@@ -986,7 +986,7 @@
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cancelButton.Location = new System.Drawing.Point(9, 710);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 36;
@@ -1000,7 +1000,7 @@
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.saveButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.saveButton.Location = new System.Drawing.Point(691, 710);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 28);
             this.saveButton.TabIndex = 35;

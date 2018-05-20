@@ -57,6 +57,7 @@
             this.editMatchButton.FlatAppearance.BorderSize = 0;
             this.editMatchButton.Name = "editMatchButton";
             this.editMatchButton.UseVisualStyleBackColor = true;
+            this.editMatchButton.CheckedChanged += new System.EventHandler(this.editMatchButton_CheckedChanged);
             this.editMatchButton.Click += new System.EventHandler(this.editMatchButton_Click);
             // 
             // newMatchButton

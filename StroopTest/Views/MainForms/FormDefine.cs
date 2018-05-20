@@ -42,7 +42,7 @@ namespace TestPlatform
                 isType = true;
             }
 
-            if (type == "prg" || type == "lst" || type == "txt")
+            if (type == "prg" || type == "lst" || type == "txt" || type == "data")
             {
                 comboBox1.Enabled = true;
                 comboBox1.Visible = true;
@@ -110,7 +110,7 @@ namespace TestPlatform
                     this.Close();
                     ListController.createListFile(itemType, this);
                 }
-                if (type == "prg" || type == "lst" || type == "txt" || type == "dir")
+                if (type == "prg" || type == "lst" || type == "txt" || type == "dir" || type == "data")
                 {
                     comboBox1.Items.Add(comboBox1.Text);
                     this.ReturnValue = comboBox1.Items[comboBox1.Items.Count - 1].ToString();

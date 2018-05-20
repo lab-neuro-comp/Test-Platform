@@ -73,8 +73,26 @@ namespace TestPlatform
                         string[] cellArray = line[i].Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
                         if (cellArray.Length == dataGridView1.Columns.Count) {
                             dataGridView1.Rows.Add(cellArray);
-                            for (int j = 0; j < cellArray.Length; j++)
+                            for (int j = 5; j < cellArray.Length; j++)
                             {
+                                if (Validations.isHexPattern(cellArray[j]))
+                                {
+                                    dataGridView1.Rows[i].Cells[j].Style.BackColor = ColorTranslator.FromHtml(cellArray[j]);
+                                }
+                            }
+                        }
+                        else if (cellArray.Length == (dataGridView1.ColumnCount - 1))
+                        {
+                            var index = line[i].IndexOf("\t");
+                            if (index >= 0)
+                            {
+                                line[i] = line[i].Insert(index + "\t".Length, "-\t");
+                            }
+                            cellArray = line[i].Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                            dataGridView1.Rows.Add(cellArray);
+                            for (int j = 5; j < cellArray.Length; j++)
+                            {
+
                                 if (Validations.isHexPattern(cellArray[j]))
                                 {
                                     dataGridView1.Rows[i].Cells[j].Style.BackColor = ColorTranslator.FromHtml(cellArray[j]);

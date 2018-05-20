@@ -121,11 +121,58 @@
     <value>221, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="mainMenuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="mainMenuStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 2, 0, 2</value>
+  </data>
+  <data name="mainMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1472, 28</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="mainMenuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="mainMenuStrip.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;mainMenuStrip.Name" xml:space="preserve">
+    <value>mainMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;mainMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mainMenuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mainMenuStrip.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 24</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
   <data name="startTestToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 26</value>
   </data>
   <data name="startTestToolStripMenuItem.Text" xml:space="preserve">
     <value>Iniciar Teste    Ctrl+R</value>
+  </data>
+  <data name="newToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 26</value>
+  </data>
+  <data name="newToolStripMenuItem.Text" xml:space="preserve">
+    <value>Novo</value>
+  </data>
+  <data name="newStimulusListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 26</value>
+  </data>
+  <data name="newStimulusListToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lista de Estímulos</value>
   </data>
   <data name="newTextColorsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 26</value>
@@ -145,11 +192,11 @@
   <data name="newAudioToolStripMenuItem.Text" xml:space="preserve">
     <value>Áudios</value>
   </data>
-  <data name="newStimulusListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="newProgramToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 26</value>
   </data>
-  <data name="newStimulusListToolStripMenuItem.Text" xml:space="preserve">
-    <value>Lista de Estímulos</value>
+  <data name="newProgramToolStripMenuItem.Text" xml:space="preserve">
+    <value>Programa    Ctrl+N</value>
   </data>
   <data name="stroopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 26</value>
@@ -163,13 +210,6 @@
   <data name="reactionToolStripMenuItem.Text" xml:space="preserve">
     <value>Reaction</value>
   </data>
-  <data name="newProgramToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 26</value>
-  </data>
-  <data name="newProgramToolStripMenuItem.Text" xml:space="preserve">
-    <value>Programa    Ctrl+N</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="newAudioToolStripMenu.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+A</value>
   </data>
@@ -179,11 +219,11 @@
   <data name="newAudioToolStripMenu.Text" xml:space="preserve">
     <value>Áudio</value>
   </data>
-  <data name="newToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="defineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 26</value>
   </data>
-  <data name="newToolStripMenuItem.Text" xml:space="preserve">
-    <value>Novo</value>
+  <data name="defineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Definir</value>
   </data>
   <data name="defineProgramToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 26</value>
@@ -191,23 +231,23 @@
   <data name="defineProgramToolStripMenuItem.Text" xml:space="preserve">
     <value>Programa    Ctrl+D</value>
   </data>
-  <data name="defineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 26</value>
-  </data>
-  <data name="defineToolStripMenuItem.Text" xml:space="preserve">
-    <value>Definir</value>
-  </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 26</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Sair                  Alt+F4</value>
   </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 24</value>
+  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 24</value>
   </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Arquivo</value>
+  <data name="editToolStripMenuItem.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="editListsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 26</value>
+  </data>
+  <data name="editListsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lista de Estímulos</value>
   </data>
   <data name="editTextColorsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 26</value>
@@ -227,11 +267,11 @@
   <data name="editAudioToolStripMenuItem.Text" xml:space="preserve">
     <value>Aúdios</value>
   </data>
-  <data name="editListsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="editProgramToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 26</value>
   </data>
-  <data name="editListsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Lista de Estímulos</value>
+  <data name="editProgramToolStripMenuItem.Text" xml:space="preserve">
+    <value>Programa</value>
   </data>
   <data name="stroopToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 26</value>
@@ -245,13 +285,6 @@
   <data name="reactionToolStripMenuItem1.Text" xml:space="preserve">
     <value>Reaction</value>
   </data>
-  <data name="editProgramToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 26</value>
-  </data>
-  <data name="editProgramToolStripMenuItem.Text" xml:space="preserve">
-    <value>Programa</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="deleteToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -261,11 +294,17 @@
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>Excluir</value>
   </data>
-  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 24</value>
+  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 24</value>
   </data>
-  <data name="editToolStripMenuItem.Text" xml:space="preserve">
-    <value>Editar</value>
+  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exibir</value>
+  </data>
+  <data name="displayDataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 26</value>
+  </data>
+  <data name="displayDataToolStripMenuItem.Text" xml:space="preserve">
+    <value>Dados</value>
   </data>
   <data name="stroopToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 26</value>
@@ -285,23 +324,17 @@
   <data name="experimentoToolStripMenuItem.Text" xml:space="preserve">
     <value>Experimento</value>
   </data>
-  <data name="displayDataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 26</value>
-  </data>
-  <data name="displayDataToolStripMenuItem.Text" xml:space="preserve">
-    <value>Dados</value>
-  </data>
   <data name="displayAudiosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 26</value>
   </data>
   <data name="displayAudiosToolStripMenuItem.Text" xml:space="preserve">
     <value>Áudios</value>
   </data>
-  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 24</value>
+  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 24</value>
   </data>
-  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exibir</value>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ajuda</value>
   </data>
   <data name="instructionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 26</value>
@@ -327,11 +360,11 @@
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>Sobre</value>
   </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 24</value>
+  <data name="idiomaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 24</value>
   </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ajuda</value>
+  <data name="idiomaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Idioma</value>
   </data>
   <data name="portuguêsBrasilToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 26</value>
@@ -351,65 +384,11 @@
   <data name="spanishSpainToolStripMenuItem.Text" xml:space="preserve">
     <value>Español (España)</value>
   </data>
-  <data name="idiomaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 24</value>
-  </data>
-  <data name="idiomaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Idioma</value>
-  </data>
-  <data name="mainMenuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="mainMenuStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 2, 0, 2</value>
-  </data>
-  <data name="mainMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1472, 28</value>
-  </data>
-  <data name="mainMenuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="mainMenuStrip.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;mainMenuStrip.Name" xml:space="preserve">
-    <value>mainMenuStrip</value>
-  </data>
-  <data name="&gt;&gt;mainMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mainMenuStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mainMenuStrip.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="testToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>356, 17</value>
   </metadata>
   <data name="testToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
-  </data>
-  <data name="directoryToolStripLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 39</value>
-  </data>
-  <data name="directoryToolStripLabel.Text" xml:space="preserve">
-    <value>Diretório:</value>
-  </data>
-  <data name="directoryToolStripLabel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="dirPathSL.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="dirPathSL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 39</value>
-  </data>
-  <data name="dirPathSL.Text" xml:space="preserve">
-    <value>directoryPath</value>
-  </data>
-  <data name="dirPathSL.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="testToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>494, 0</value>
@@ -437,6 +416,27 @@
   </data>
   <data name="&gt;&gt;testToolStrip.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="directoryToolStripLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 39</value>
+  </data>
+  <data name="directoryToolStripLabel.Text" xml:space="preserve">
+    <value>Diretório:</value>
+  </data>
+  <data name="directoryToolStripLabel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="dirPathSL.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="dirPathSL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 39</value>
+  </data>
+  <data name="dirPathSL.Text" xml:space="preserve">
+    <value>directoryPath</value>
+  </data>
+  <data name="dirPathSL.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="executeButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -485,6 +485,57 @@
   </data>
   <data name="markPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;markTextBox.Name" xml:space="preserve">
+    <value>markTextBox</value>
+  </data>
+  <data name="&gt;&gt;markTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;markTextBox.Parent" xml:space="preserve">
+    <value>markPanel</value>
+  </data>
+  <data name="&gt;&gt;markTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;markLabel.Name" xml:space="preserve">
+    <value>markLabel</value>
+  </data>
+  <data name="&gt;&gt;markLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;markLabel.Parent" xml:space="preserve">
+    <value>markPanel</value>
+  </data>
+  <data name="&gt;&gt;markLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="markPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="markPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 2</value>
+  </data>
+  <data name="markPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="markPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 38</value>
+  </data>
+  <data name="markPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;markPanel.Name" xml:space="preserve">
+    <value>markPanel</value>
+  </data>
+  <data name="&gt;&gt;markPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;markPanel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;markPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="markTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Right</value>
@@ -549,67 +600,31 @@
   <data name="&gt;&gt;markLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="markPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="markPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 2</value>
-  </data>
-  <data name="markPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="markPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 38</value>
-  </data>
-  <data name="markPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;markPanel.Name" xml:space="preserve">
-    <value>markPanel</value>
-  </data>
-  <data name="&gt;&gt;markPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;markPanel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;markPanel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="participantPanel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="participantPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="participantTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="participantComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 4</value>
   </data>
-  <data name="participantTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 7</value>
+  <data name="participantComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 24</value>
   </data>
-  <data name="participantTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+  <data name="participantComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="participantTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 22</value>
+  <data name="&gt;&gt;participantComboBox.Name" xml:space="preserve">
+    <value>participantComboBox</value>
   </data>
-  <data name="participantTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;participantComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="participantTextBox.Text" xml:space="preserve">
-    <value>padrao</value>
-  </data>
-  <data name="&gt;&gt;participantTextBox.Name" xml:space="preserve">
-    <value>participantTextBox</value>
-  </data>
-  <data name="&gt;&gt;participantTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;participantTextBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;participantComboBox.Parent" xml:space="preserve">
     <value>participantPanel</value>
   </data>
-  <data name="&gt;&gt;participantTextBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;participantComboBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="participantLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -693,38 +708,17 @@
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="helpButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
+  <data name="&gt;&gt;participantButton.Name" xml:space="preserve">
+    <value>participantButton</value>
   </data>
-  <data name="helpButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="&gt;&gt;participantButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="helpButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
+  <data name="&gt;&gt;participantButton.Parent" xml:space="preserve">
+    <value>menuPanel</value>
   </data>
-  <data name="helpButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="helpButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 329</value>
-  </data>
-  <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="helpButton.Text" xml:space="preserve">
-    <value> Ajuda</value>
-  </data>
-  <data name="helpButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
+  <data name="&gt;&gt;participantButton.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;helpButton.Name" xml:space="preserve">
     <value>helpButton</value>
@@ -736,37 +730,7 @@
     <value>menuPanel</value>
   </data>
   <data name="&gt;&gt;helpButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="buttonMatching.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="buttonMatching.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="buttonMatching.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="buttonMatching.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="buttonMatching.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 134</value>
-  </data>
-  <data name="buttonMatching.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="buttonMatching.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="buttonMatching.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="buttonMatching.Text" xml:space="preserve">
-    <value>MatchingTest</value>
-  </data>
-  <data name="buttonMatching.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;buttonMatching.Name" xml:space="preserve">
     <value>buttonMatching</value>
@@ -778,37 +742,7 @@
     <value>menuPanel</value>
   </data>
   <data name="&gt;&gt;buttonMatching.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="exportButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="exportButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="exportButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="exportButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="exportButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 290</value>
-  </data>
-  <data name="exportButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="exportButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="exportButton.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="exportButton.Text" xml:space="preserve">
-    <value> Exportar</value>
-  </data>
-  <data name="exportButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;exportButton.Name" xml:space="preserve">
     <value>exportButton</value>
@@ -820,37 +754,7 @@
     <value>menuPanel</value>
   </data>
   <data name="&gt;&gt;exportButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="importButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="importButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="importButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="importButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="importButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 251</value>
-  </data>
-  <data name="importButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="importButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="importButton.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="importButton.Text" xml:space="preserve">
-    <value> Importar</value>
-  </data>
-  <data name="importButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;importButton.Name" xml:space="preserve">
     <value>importButton</value>
@@ -862,37 +766,7 @@
     <value>menuPanel</value>
   </data>
   <data name="&gt;&gt;importButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="resultButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="resultButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="resultButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="resultButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="resultButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 212</value>
-  </data>
-  <data name="resultButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="resultButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="resultButton.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="resultButton.Text" xml:space="preserve">
-    <value> Resultados</value>
-  </data>
-  <data name="resultButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;resultButton.Name" xml:space="preserve">
     <value>resultButton</value>
@@ -904,37 +778,7 @@
     <value>menuPanel</value>
   </data>
   <data name="&gt;&gt;resultButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="experimentButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="experimentButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="experimentButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="experimentButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="experimentButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 174</value>
-  </data>
-  <data name="experimentButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="experimentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="experimentButton.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="experimentButton.Text" xml:space="preserve">
-    <value> Experimento</value>
-  </data>
-  <data name="experimentButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;experimentButton.Name" xml:space="preserve">
     <value>experimentButton</value>
@@ -946,37 +790,7 @@
     <value>menuPanel</value>
   </data>
   <data name="&gt;&gt;experimentButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="buttonList.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="buttonList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="buttonList.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="buttonList.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="buttonList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 17</value>
-  </data>
-  <data name="buttonList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="buttonList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="buttonList.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="buttonList.Text" xml:space="preserve">
-    <value> Lista</value>
-  </data>
-  <data name="buttonList.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;buttonList.Name" xml:space="preserve">
     <value>buttonList</value>
@@ -988,37 +802,7 @@
     <value>menuPanel</value>
   </data>
   <data name="&gt;&gt;buttonList.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="buttonReaction.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="buttonReaction.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="buttonReaction.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="buttonReaction.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="buttonReaction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 95</value>
-  </data>
-  <data name="buttonReaction.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="buttonReaction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="buttonReaction.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="buttonReaction.Text" xml:space="preserve">
-    <value> ReactionTest</value>
-  </data>
-  <data name="buttonReaction.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;buttonReaction.Name" xml:space="preserve">
     <value>buttonReaction</value>
@@ -1030,37 +814,7 @@
     <value>menuPanel</value>
   </data>
   <data name="&gt;&gt;buttonReaction.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="buttonStroop.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="buttonStroop.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="buttonStroop.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="buttonStroop.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="buttonStroop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 57</value>
-  </data>
-  <data name="buttonStroop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="buttonStroop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 32</value>
-  </data>
-  <data name="buttonStroop.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="buttonStroop.Text" xml:space="preserve">
-    <value> StroopTest</value>
-  </data>
-  <data name="buttonStroop.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;buttonStroop.Name" xml:space="preserve">
     <value>buttonStroop</value>
@@ -1072,7 +826,7 @@
     <value>menuPanel</value>
   </data>
   <data name="&gt;&gt;buttonStroop.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="menuPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1155,30 +909,6 @@
   <data name="&gt;&gt;contentPanel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="executingNameLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="executingNameLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="executingNameLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="executingNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 7</value>
-  </data>
-  <data name="executingNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 18</value>
-  </data>
-  <data name="executingNameLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="executingNameLabel.Text" xml:space="preserve">
-    <value>padrao</value>
-  </data>
-  <data name="executingNameLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
   <data name="&gt;&gt;executingNameLabel.Name" xml:space="preserve">
     <value>executingNameLabel</value>
   </data>
@@ -1190,36 +920,6 @@
   </data>
   <data name="&gt;&gt;executingNameLabel.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="selectButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Right</value>
-  </data>
-  <data name="selectButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="selectButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="selectButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
-  </data>
-  <data name="selectButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 4</value>
-  </data>
-  <data name="selectButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="selectButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 28</value>
-  </data>
-  <data name="selectButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="selectButton.Text" xml:space="preserve">
-    <value>Selecionar</value>
-  </data>
-  <data name="selectButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
   </data>
   <data name="&gt;&gt;selectButton.Name" xml:space="preserve">
     <value>selectButton</value>
@@ -6001,5 +5701,509 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="participantButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="participantButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="participantButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="participantButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="participantButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="participantButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 207</value>
+  </data>
+  <data name="participantButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="participantButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="participantButton.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="participantButton.Text" xml:space="preserve">
+    <value>Participante</value>
+  </data>
+  <data name="participantButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;participantButton.Name" xml:space="preserve">
+    <value>participantButton</value>
+  </data>
+  <data name="&gt;&gt;participantButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;participantButton.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;participantButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="helpButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="helpButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="helpButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="helpButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="helpButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 364</value>
+  </data>
+  <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="helpButton.Text" xml:space="preserve">
+    <value> Ajuda</value>
+  </data>
+  <data name="helpButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Name" xml:space="preserve">
+    <value>helpButton</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;helpButton.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;helpButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonMatching.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="buttonMatching.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonMatching.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="buttonMatching.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="buttonMatching.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 131</value>
+  </data>
+  <data name="buttonMatching.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="buttonMatching.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="buttonMatching.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="buttonMatching.Text" xml:space="preserve">
+    <value>MatchingTest</value>
+  </data>
+  <data name="buttonMatching.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;buttonMatching.Name" xml:space="preserve">
+    <value>buttonMatching</value>
+  </data>
+  <data name="&gt;&gt;buttonMatching.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonMatching.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonMatching.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="exportButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="exportButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="exportButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="exportButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="exportButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 321</value>
+  </data>
+  <data name="exportButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="exportButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="exportButton.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="exportButton.Text" xml:space="preserve">
+    <value> Exportar</value>
+  </data>
+  <data name="exportButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;exportButton.Name" xml:space="preserve">
+    <value>exportButton</value>
+  </data>
+  <data name="&gt;&gt;exportButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exportButton.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;exportButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="importButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="importButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="importButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="importButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="importButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 283</value>
+  </data>
+  <data name="importButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="importButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="importButton.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="importButton.Text" xml:space="preserve">
+    <value> Importar</value>
+  </data>
+  <data name="importButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;importButton.Name" xml:space="preserve">
+    <value>importButton</value>
+  </data>
+  <data name="&gt;&gt;importButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;importButton.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;importButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="resultButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="resultButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="resultButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="resultButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="resultButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 245</value>
+  </data>
+  <data name="resultButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="resultButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="resultButton.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="resultButton.Text" xml:space="preserve">
+    <value> Resultados</value>
+  </data>
+  <data name="resultButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;resultButton.Name" xml:space="preserve">
+    <value>resultButton</value>
+  </data>
+  <data name="&gt;&gt;resultButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;resultButton.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;resultButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="experimentButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="experimentButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="experimentButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="experimentButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="experimentButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 169</value>
+  </data>
+  <data name="experimentButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="experimentButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="experimentButton.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="experimentButton.Text" xml:space="preserve">
+    <value> Experimento</value>
+  </data>
+  <data name="experimentButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;experimentButton.Name" xml:space="preserve">
+    <value>experimentButton</value>
+  </data>
+  <data name="&gt;&gt;experimentButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;experimentButton.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;experimentButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="buttonList.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="buttonList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonList.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="buttonList.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="buttonList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="buttonList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="buttonList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="buttonList.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="buttonList.Text" xml:space="preserve">
+    <value> Lista</value>
+  </data>
+  <data name="buttonList.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;buttonList.Name" xml:space="preserve">
+    <value>buttonList</value>
+  </data>
+  <data name="&gt;&gt;buttonList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonList.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonList.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="buttonReaction.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="buttonReaction.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonReaction.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="buttonReaction.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="buttonReaction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 93</value>
+  </data>
+  <data name="buttonReaction.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="buttonReaction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="buttonReaction.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="buttonReaction.Text" xml:space="preserve">
+    <value> ReactionTest</value>
+  </data>
+  <data name="buttonReaction.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;buttonReaction.Name" xml:space="preserve">
+    <value>buttonReaction</value>
+  </data>
+  <data name="&gt;&gt;buttonReaction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonReaction.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonReaction.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="buttonStroop.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="buttonStroop.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonStroop.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="buttonStroop.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="buttonStroop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 55</value>
+  </data>
+  <data name="buttonStroop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="buttonStroop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 32</value>
+  </data>
+  <data name="buttonStroop.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="buttonStroop.Text" xml:space="preserve">
+    <value> StroopTest</value>
+  </data>
+  <data name="buttonStroop.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;buttonStroop.Name" xml:space="preserve">
+    <value>buttonStroop</value>
+  </data>
+  <data name="&gt;&gt;buttonStroop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonStroop.Parent" xml:space="preserve">
+    <value>menuPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonStroop.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="executingNameLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="executingNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="executingNameLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="executingNameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 7</value>
+  </data>
+  <data name="executingNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 18</value>
+  </data>
+  <data name="executingNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="executingNameLabel.Text" xml:space="preserve">
+    <value>padrao</value>
+  </data>
+  <data name="executingNameLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;executingNameLabel.Name" xml:space="preserve">
+    <value>executingNameLabel</value>
+  </data>
+  <data name="&gt;&gt;executingNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;executingNameLabel.Parent" xml:space="preserve">
+    <value>programPanel</value>
+  </data>
+  <data name="&gt;&gt;executingNameLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="selectButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <data name="selectButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="selectButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="selectButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="selectButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 4</value>
+  </data>
+  <data name="selectButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="selectButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 28</value>
+  </data>
+  <data name="selectButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="selectButton.Text" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="selectButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;selectButton.Name" xml:space="preserve">
+    <value>selectButton</value>
+  </data>
+  <data name="&gt;&gt;selectButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;selectButton.Parent" xml:space="preserve">
+    <value>programPanel</value>
+  </data>
+  <data name="&gt;&gt;selectButton.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
 </root>

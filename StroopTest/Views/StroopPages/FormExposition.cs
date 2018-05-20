@@ -25,7 +25,7 @@ namespace TestPlatform
     public partial class FormExposition : Form
     {
         CancellationTokenSource cts;
-        StroopTest currentTest = new StroopTest(); // program in current use
+        StroopTest currentTest; // program in current use
         private static float elapsedTime;                // elapsed time during each item exposition
         private string path = Global.stroopTestFilesPath;
 
@@ -69,8 +69,7 @@ namespace TestPlatform
             InitializeComponent();
 
             // use parameters to create basic information of current program being used
-            currentTest.ProgramInUse = new StroopProgram();
-            currentTest.ProgramInUse.ProgramName = prgName;
+            currentTest = new StroopTest(prgName);
             currentTest.ParticipantName = usrName;
             currentTest.Mark = mark;
             currentTest.InitialDate = DateTime.Now;

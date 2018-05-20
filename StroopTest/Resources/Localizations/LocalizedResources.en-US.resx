@@ -423,7 +423,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>You must select the word list file.</value>
   </data>
   <data name="experimentHeader" xml:space="preserve">
-    <value>experiment\tprogram\tProgram Type\tparticipant\tdate\tInitial time\tTest time\tSequence</value>
+    <value>experiment\tprogram\tProgram Type\t#\tParticipant\tdate\tInitial time\tTest time\tSequence</value>
   </data>
   <data name="experimentName" xml:space="preserve">
     <value>The experiment name must be composed only of alphanumerical characters and no spaces; \ nExample: 'MyExperiment'</value>
@@ -1068,13 +1068,13 @@ To upgrade, the new version installation file must be run in the same folder as 
     <value>wasn't written\n\n</value>
   </data>
   <data name="reactionTestHeader" xml:space="preserve">
-    <value>program\tparticipant\tdate\tInitial Time\tExposition time\tReactionTime(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tsenquency\tpos\tUser response\tList1\tStimulus1\tList2\tStimulus2 Type\tstimulus\tStimulus Color\tBeep</value>
+    <value>program\t#\tparticipant\tdate\tInitial Time\tExposition time\tReactionTime(ms)\tInterval(ms)\tEstimated Interval(ms)\tExposition Duration(ms)\tExposition(ms)\tsenquency\tpos\tUser response\tList1\tStimulus1\tList2\tStimulus2 Type\tstimulus\tStimulus Color\tBeep</value>
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Selected response type is invalid. Valid options are: spacebar or key arrows.</value>
   </data>
   <data name="stroopResultHeader" xml:space="preserve">
-    <value>program\tparticipant\tdate\thour\ttime(ms)\tsequency\tStimulus type\tSubtitle\tSubtitle position\tstimulus\tcolor\taudio</value>
+    <value>program\t#\tparticipant\tdate\thour\ttime(ms)\tsequency\tStimulus type\tSubtitle\tSubtitle position\tstimulus\tcolor\taudio</value>
   </data>
   <data name="subtitleColorError" xml:space="preserve">
     <value>Subtitle color must be 'false' or a hex color code</value>
@@ -2609,7 +2609,7 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
     <value>choose a image list</value>
   </data>
   <data name="matchingTestHeader" xml:space="preserve">
-    <value>Program\tParticipant\tDate\tInitial Time\tExposition Time\tModel Reaction Time(ms)\tStimulu Reaction Time(ms)\tInterval between attempts(ms)\tInterval(ms)\tModel Exposition(ms)\tStimulu Exposition(ms)\tSenquency\tTest Type\tStimulus Type\tList\tModel first position\tModel\tModel color\t2nd Stimulu\t3rd Stimulu\t4th Stimulu\t5th Stumulu\t6th Stimulu\t7th Stimulu\t8th Stimulu\tModel second position\tClicked Stimulu\tClicked Stimulu Color\tClicked Stimulu Position\tMatch</value>
+    <value>Program\t#\tParticipant\tDate\tInitial Time\tExposition Time\tModel Reaction Time(ms)\tStimulu Reaction Time(ms)\tInterval between attempts(ms)\tInterval(ms)\tModel Exposition(ms)\tStimulu Exposition(ms)\tSenquency\tTest Type\tStimulus Type\tList\tModel first position\tModel\tModel color\t2nd Stimulu\t3rd Stimulu\t4th Stimulu\t5th Stumulu\t6th Stimulu\t7th Stimulu\t8th Stimulu\tModel second position\tClicked Stimulu\tClicked Stimulu Color\tClicked Stimulu Position\tMatch</value>
   </data>
   <data name="CannotBeEmpty" xml:space="preserve">
     <value>This field should be filled</value>
@@ -2817,5 +2817,41 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   </data>
   <data name="modelSecondPosition" xml:space="preserve">
     <value>Model second position</value>
+  </data>
+  <data name="invalidDate" xml:space="preserve">
+    <value>A valid date must be choosen.</value>
+  </data>
+  <data name="invalidSchoolingLevel" xml:space="preserve">
+    <value>Select a level of schooling.</value>
+  </data>
+  <data name="invalidSex" xml:space="preserve">
+    <value>Select a sex.</value>
+  </data>
+  <data name="invalidYesNoPanel" xml:space="preserve">
+    <value>Select yes or no.</value>
+  </data>
+  <data name="invalidName" xml:space="preserve">
+    <value>You must type a name.</value>
+  </data>
+  <data name="participantAlreadyExistsWishOverride" xml:space="preserve">
+    <value>Participant with same identifier already exists. Wish to override?</value>
+  </data>
+  <data name="participantNotSaved" xml:space="preserve">
+    <value>Participant not saved.</value>
+  </data>
+  <data name="participantSaveSucessful" xml:space="preserve">
+    <value>The participant was saved sucessful.</value>
+  </data>
+  <data name="editParticipant" xml:space="preserve">
+    <value>Edit participant:</value>
+  </data>
+  <data name="createNewParticipant" xml:space="preserve">
+    <value>Create new participant</value>
+  </data>
+  <data name="shouldCloseOpenedForm" xml:space="preserve">
+    <value>You should close any opened form before continue.</value>
+  </data>
+  <data name="shouldSelectReason" xml:space="preserve">
+    <value>You should select a valid reason.</value>
   </data>
 </root>

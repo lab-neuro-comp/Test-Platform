@@ -6,51 +6,19 @@ using System.Linq;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using TestPlatform.Models.Tests;
 
 namespace TestPlatform.Models
 {
-    class MatchingTest
+    class MatchingTest : Test
     {
-        private static String headerOutputFileText;
-        private Char mark;
         private MatchingProgram programInUse = new MatchingProgram();
-        private string participantName;
-        private DateTime initialTime;
         private DateTime expositionTime;
         private List<string> output = new List<string>();
-        // properties used to localize strings during runtime
-        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         
         public MatchingTest()
         {
             headerOutputFileText = LocRM.GetString("matchingTestHeader", currentCulture);
-        }
-
-        public string ParticipantName
-        {
-            get
-            {
-                return participantName;
-            }
-
-            set
-            {
-                participantName = value;
-            }
-        }
-
-        public DateTime InitialTime
-        {
-            get
-            {
-                return initialTime;
-            }
-
-            set
-            {
-                initialTime = value;
-            }
         }
 
         public List<string> Output
@@ -92,19 +60,6 @@ namespace TestPlatform.Models
             }
         }
 
-        public char Mark
-        {
-            get
-            {
-                return mark;
-            }
-
-            set
-            {
-                mark = value;
-            }
-        }
-
 
         public DateTime ExpositionTime
         {
@@ -133,14 +88,16 @@ namespace TestPlatform.Models
             }
         }
 
-        public void writeLineOutput(long attemptIntervalTime, long stimuluIntervalTime, long modelReactTime, long stimuluReactTime, int currentExposition, 
+        public void WriteLineOutput(long attemptIntervalTime, long stimuluIntervalTime, long modelReactTime, long stimuluReactTime, int currentExposition, 
             long modelExpositionAccumulative, long stimuluExpositionAccumulative, string modelFirstposition, string modelSecondPosition, string testType, string match, 
             string model, string currentList, string[] stimulus, string stimuluPosition, string stimuluType, string modelColor, string clickedStimuluColor)
         {
+            string[] currentParticipant = participant();
             string text = ProgramInUse.ProgramName + "\t" +
-                        participantName + "\t" +
-                        initialTime.Day + "/" + initialTime.Month + "/" + initialTime.Year + "\t" +
-                        initialTime.Hour + ":" + initialTime.Minute + ":" + initialTime.Second + ":" + initialTime.Millisecond.ToString() + "\t" +
+                        currentParticipant[0] + "\t" +
+                        currentParticipant[1] + "\t" +
+                        initialDate.Day + "/" + initialDate.Month + "/" + initialDate.Year + "\t" +
+                        initialDate.Hour + ":" + initialDate.Minute + ":" + initialDate.Second + ":" + initialDate.Millisecond.ToString() + "\t" +
                         ExpositionTime.Hour + ":" + ExpositionTime.Minute + ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" +
                         modelReactTime.ToString() + "\t" +
                         stimuluReactTime.ToString() + "\t" +

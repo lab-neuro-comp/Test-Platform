@@ -605,7 +605,7 @@ namespace TestPlatform.Views.MatchingPages
             else
             {
                 modelControl = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, 
-                                                                        Image.FromFile(matchingGroups.ElementAt(groupCounter).getModelName()), false);
+                                                                        Image.FromFile(matchingGroups.ElementAt(groupCounter).getModelName()), false, this);
                 size = modelControl.Size;
             }
            
@@ -650,7 +650,7 @@ namespace TestPlatform.Views.MatchingPages
                 }
                 else
                 {
-                    newStimulu = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, Image.FromFile(element), false);
+                    newStimulu = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, Image.FromFile(element), false, this);
                     newStimulu.Tag = element;
                     size = modelControl.Size;
                 }

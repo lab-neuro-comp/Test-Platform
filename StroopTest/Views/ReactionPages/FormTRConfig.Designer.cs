@@ -100,7 +100,7 @@
             this.beepingCheckbox = new System.Windows.Forms.CheckBox();
             this.numExpoLabel = new System.Windows.Forms.Label();
             this.numExpo = new System.Windows.Forms.NumericUpDown();
-            this.wordSizeLabel = new System.Windows.Forms.Label();
+            this.stimulusSizeLabel = new System.Windows.Forms.Label();
             this.stimuluSize = new System.Windows.Forms.NumericUpDown();
             this.instructionsLabel = new System.Windows.Forms.Label();
             this.prgNameTextBox = new System.Windows.Forms.TextBox();
@@ -525,7 +525,7 @@
             this.expositionGroupBox.Controls.Add(this.beepingCheckbox);
             this.expositionGroupBox.Controls.Add(this.numExpoLabel);
             this.expositionGroupBox.Controls.Add(this.numExpo);
-            this.expositionGroupBox.Controls.Add(this.wordSizeLabel);
+            this.expositionGroupBox.Controls.Add(this.stimulusSizeLabel);
             this.expositionGroupBox.Controls.Add(this.stimuluSize);
             resources.ApplyResources(this.expositionGroupBox, "expositionGroupBox");
             this.expositionGroupBox.Name = "expositionGroupBox";
@@ -749,33 +749,29 @@
             this.numExpo.Validating += new System.ComponentModel.CancelEventHandler(this.numExpo_Validating);
             this.numExpo.Validated += new System.EventHandler(this.numExpo_Validated);
             // 
-            // wordSizeLabel
+            // stimulusSizeLabel
             // 
-            resources.ApplyResources(this.wordSizeLabel, "wordSizeLabel");
-            this.wordSizeLabel.Name = "wordSizeLabel";
+            resources.ApplyResources(this.stimulusSizeLabel, "stimulusSizeLabel");
+            this.stimulusSizeLabel.Name = "stimulusSizeLabel";
             // 
             // stimuluSize
             // 
+            this.stimuluSize.DecimalPlaces = 2;
             this.stimuluSize.Increment = new decimal(new int[] {
             2,
             0,
             0,
-            0});
+            65536});
             resources.ApplyResources(this.stimuluSize, "stimuluSize");
             this.stimuluSize.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.stimuluSize.Minimum = new decimal(new int[] {
-            10,
+            50,
             0,
             0,
             0});
             this.stimuluSize.Name = "stimuluSize";
             this.toolTip.SetToolTip(this.stimuluSize, resources.GetString("stimuluSize.ToolTip"));
             this.stimuluSize.Value = new decimal(new int[] {
-            50,
+            1,
             0,
             0,
             0});
@@ -893,7 +889,7 @@
         private System.Windows.Forms.GroupBox expositionGroupBox;
         private System.Windows.Forms.Label numExpoLabel;
         private System.Windows.Forms.NumericUpDown numExpo;
-        private System.Windows.Forms.Label wordSizeLabel;
+        private System.Windows.Forms.Label stimulusSizeLabel;
         private System.Windows.Forms.NumericUpDown stimuluSize;
         private System.Windows.Forms.Label instructionsLabel;
         private System.Windows.Forms.TextBox prgNameTextBox;

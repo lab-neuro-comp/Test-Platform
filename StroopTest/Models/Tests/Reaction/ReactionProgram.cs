@@ -9,7 +9,7 @@ namespace TestPlatform.Models
 {
     class ReactionProgram : Program
     {
-        private Int32 stimuluSize; // [3]
+        private double stimuluSize; // [3]
         private Boolean isBeeping; // [9]
         private Boolean beepingRandom; // [19]
         private Int32 beepDuration; // [10]
@@ -43,7 +43,7 @@ namespace TestPlatform.Models
         /// <summary>
         /// This constructor is used to create a reaction program with shapes
         /// </summary>
-        public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
+        public ReactionProgram(string programName, int expositionTime, int numExpositions, double stimuluSize, int intervalTime,
                                 bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                                 string stimuluShape, bool beepRandom, int numberPositions,
@@ -102,7 +102,7 @@ namespace TestPlatform.Models
         {
             // ReactionProgram properties
             this.expositionType = "words";
-            this.stimuluSize = stimuluSize;
+            this.fontSize = stimuluSize;
             this.isBeeping = isBeeping;
             this.beepDuration = beepDuration;
             this.FontSize = fontSize;
@@ -125,10 +125,11 @@ namespace TestPlatform.Models
                 this.setColorListFile(colorList);
             }
 
-            //default configurations for shapes version of ReactionProgram
+            //default configurations for words version of ReactionProgram
             this.setAudioListFile("false");
             this.setImageListFile("false");
             this.ExpandImage = false;
+            this.stimuluSize = 10;
 
             // Program properties
             this.programName = programName;
@@ -146,7 +147,7 @@ namespace TestPlatform.Models
         /// <summary>
         /// This constructor is used to create a reaction program with image type
         /// </summary>
-        public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
+        public ReactionProgram(string programName, int expositionTime, int numExpositions, double stimuluSize, int intervalTime,
                         bool isBeeping, int beepDuration,
                         string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                         string imageList, bool beepRandom, int numberPositions,
@@ -188,7 +189,7 @@ namespace TestPlatform.Models
         /// <summary>
         /// This constructor is used to create a reaction program with image and words
         /// </summary>
-        public ReactionProgram(string programName, int expositionTime, int numExpositions, int stimuluSize, int intervalTime,
+        public ReactionProgram(string programName, int expositionTime, int numExpositions, double stimuluSize, int intervalTime,
                         bool isBeeping, int beepDuration,
                         string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                         string imageList, string wordList,  string colorList, bool beepRandom, int numberPositions,
@@ -295,7 +296,7 @@ namespace TestPlatform.Models
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int intervalTime,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom, int numberPositions,
-                                string responseType, int stimulusSize, bool isExpositionRandom,string audioListFile, string imageListFile, bool expandImage, bool sstInterval)
+                                string responseType, double stimulusSize, bool isExpositionRandom,string audioListFile, string imageListFile, bool expandImage, bool sstInterval)
         {
 
             // ReactionProgram properties
@@ -331,7 +332,7 @@ namespace TestPlatform.Models
             this.intervalTimeRandom = intervalTimeRandom;
         }
 
-        public int StimuluSize
+        public double StimuluSize
         {
             get
             {
@@ -587,7 +588,7 @@ namespace TestPlatform.Models
                 {
                     NumExpositions = int.Parse(config[1]);
                     ExpositionTime = int.Parse(config[2]);
-                    StimuluSize = int.Parse(config[3]);
+                    StimuluSize = double.Parse(config[3]);
                     IntervalTime = int.Parse(config[4]);
                     setWordListFile(config[5]);
                     setColorListFile(config[6]);

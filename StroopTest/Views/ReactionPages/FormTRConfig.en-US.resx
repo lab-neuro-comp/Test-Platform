@@ -214,8 +214,8 @@ Color:</value>
   <data name="numExpoLabel.Text" xml:space="preserve">
     <value>Number of Attempts:</value>
   </data>
-  <data name="wordSizeLabel.Text" xml:space="preserve">
-    <value>Stimulus size:</value>
+  <data name="stimulusSizeLabel.Text" xml:space="preserve">
+    <value>Stimulus size (cm):</value>
   </data>
   <data name="instructionsLabel.Text" xml:space="preserve">
     <value>Instructions:</value>
@@ -230,7 +230,7 @@ Color:</value>
     <value>save</value>
   </data>
   <data name="fontSizeLabel.Text" xml:space="preserve">
-    <value>Font Size:</value>
+    <value>Font Size (pt):</value>
   </data>
   <data name="fixPointGroupBox.Text" xml:space="preserve">
     <value>Fix Point</value>

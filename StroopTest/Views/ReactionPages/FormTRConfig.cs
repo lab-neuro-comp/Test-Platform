@@ -56,7 +56,7 @@ namespace TestPlatform.Views
             intervalTime.Value = editProgram.IntervalTime;
             beepingCheckbox.Checked = editProgram.IsBeeping;
             beepDuration.Value = editProgram.BeepDuration;
-            stimuluSize.Value = editProgram.StimuluSize;
+            stimuluSize.Value = (decimal) editProgram.StimuluSize;
             fontSizeUpDown.Value = editProgram.FontSize;
             positionsBox.SelectedIndex = editProgram.NumberPositions - 1;
             expandImageCheck.Checked = editProgram.ExpandImage;
@@ -383,7 +383,7 @@ namespace TestPlatform.Views
                 // Program type "shapes"
                 case 0:
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
-                                                    Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
+                                                    Convert.ToInt32(numExpo.Value), Convert.ToDouble(stimuluSize.Value),
                                                     Convert.ToInt32(intervalTime.Value),
                                                     beepingCheckbox.Checked,
                                                     Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
@@ -394,7 +394,7 @@ namespace TestPlatform.Views
                 // Program type "words"
                 case 1:
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value),
-                                                    Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
+                                                    Convert.ToInt32(numExpo.Value), Convert.ToInt32(fontSizeUpDown.Value),
                                                     Convert.ToInt32(intervalTime.Value),
                                                     beepingCheckbox.Checked,
                                                     Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
@@ -406,7 +406,7 @@ namespace TestPlatform.Views
                 
                 // Program type "images"
                 case 2:
-                    newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value), 
+                    newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToDouble(stimuluSize.Value), 
                                                      Convert.ToInt32(intervalTime.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
                                                      fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, openImgListButton.Text, 
                                                      randomBeepCheck.Checked, Convert.ToInt32(positionsBox.Text), responseType(), isRandomExposition.Checked, 
@@ -415,7 +415,7 @@ namespace TestPlatform.Views
                 
                 // Program type "imageAndWord"
                 case 3:
-                    newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(stimuluSize.Value),
+                    newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToDouble(stimuluSize.Value),
                                                      Convert.ToInt32(intervalTime.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
                                                      fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked,
                                                      openImgListButton.Text, openWordListButton.Text, openColorListButton.Text, randomBeepCheck.Checked,
@@ -437,7 +437,7 @@ namespace TestPlatform.Views
                 case 5:
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(intervalTime.Value),
                                                     fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, Convert.ToInt32(positionsBox.Text),
-                                                    responseType(), Convert.ToInt32(stimuluSize.Value), isRandomExposition.Checked, openAudioListButton.Text, 
+                                                    responseType(), Convert.ToDouble(stimuluSize.Value), isRandomExposition.Checked, openAudioListButton.Text, 
                                                     openImgListButton.Text, expandImageCheck.Checked, sstCheckBox.Checked);
                     break;
                 

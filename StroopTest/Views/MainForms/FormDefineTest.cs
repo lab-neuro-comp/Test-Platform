@@ -19,7 +19,7 @@ namespace TestPlatform.Views
             this.currentCulture = currentCulture;
             InitializeComponent();
             AutoValidate = AutoValidate.Disable;
-            addOptionsComboBox(Global.stroopTestFilesPath + Global.programFolderName);
+            addOptionsComboBox(FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName);
         }
 
 
@@ -53,7 +53,7 @@ namespace TestPlatform.Views
             {
                 comboBox1.SelectedItem = null;
                 removeOptionsComboBox();
-                addOptionsComboBox(Global.stroopTestFilesPath + Global.programFolderName);
+                addOptionsComboBox(FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName);
             }
         }
 
@@ -63,7 +63,7 @@ namespace TestPlatform.Views
             {
                 comboBox1.SelectedItem = null;
                 removeOptionsComboBox();
-                addOptionsComboBox(Global.reactionTestFilesPath + Global.programFolderName);
+                addOptionsComboBox(FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName);
             }
         }
 
@@ -73,7 +73,7 @@ namespace TestPlatform.Views
             {
                 comboBox1.SelectedItem = null;
                 removeOptionsComboBox();
-                addOptionsComboBox(Global.experimentTestFilesPath + Global.programFolderName);
+                addOptionsComboBox(FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName);
             }
         }
 
@@ -151,7 +151,7 @@ namespace TestPlatform.Views
             {
                 comboBox1.SelectedItem = null;
                 removeOptionsComboBox();
-                addOptionsComboBox(Global.matchingTestFilesPath + Global.programFolderName);
+                addOptionsComboBox(FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName);
             }
         }
     }

@@ -650,7 +650,7 @@ namespace TestPlatform.Models
             {
                 string[] defaultInstructionText = { LocRM.GetString("defaultReactionInstructions1", currentCulture),
                                                     LocRM.GetString("defaultReactionInstructions2", currentCulture)};
-                TextWriter tw = new StreamWriter(Global.reactionTestFilesPath + Global.programFolderName + LocRM.GetString("default", currentCulture) + ".prg");
+                TextWriter tw = new StreamWriter(FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName + LocRM.GetString("default", currentCulture) + ".prg");
                 tw.WriteLine(LocRM.GetString("defaultReactionProgram", currentCulture));
                 for (int i = 0; i < defaultInstructionText.Length; i++)
                 {

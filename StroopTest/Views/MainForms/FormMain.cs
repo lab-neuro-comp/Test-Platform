@@ -8,8 +8,6 @@ namespace TestPlatform
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Globalization;
-    using System.IO;
-    using System.IO.Compression;
     using System.Resources;
     using System.Windows.Forms;
     using TestPlatform.Controllers;
@@ -25,8 +23,6 @@ namespace TestPlatform
     {
         private FolderBrowserDialog folderBrowserDialog1;
 
-        private static string INSTRUCTIONSFILENAME = "editableInstructions.txt";
-        private static string PGRCONFIGHELPFILENAME = "prgConfigHelp.txt";
         public Panel _contentPanel;
         /* Variables
          */
@@ -40,125 +36,9 @@ namespace TestPlatform
          * */
         public FormMain()
         {
-            /* Creating main folder for application*/
-            Global.defaultPath = (Path.GetDirectoryName(Application.ExecutablePath)); //saving on variable current executing path
-            Global.testFilesPath = Global.defaultPath + Global.testFilesPath;
-            if (!Directory.Exists(Global.testFilesPath))
-            {
-                Directory.CreateDirectory(Global.testFilesPath);
-            }
-            else
-            {
-                /*do nothing*/
-            }
-            Global.stroopTestFilesPath = Global.testFilesPath + Global.stroopTestFilesPath;
-            // updating local directory of new version of platform, excluding old stroop one
-            if (File.Exists(Global.defaultPath + "/StroopTest.exe")) 
-            {               
-
-                DirectoryInfo directoryOldLst = new DirectoryInfo(Global.defaultPath + "/StroopTestFiles/lst");
-                directoryOldLst.MoveTo(Global.testFilesPath + Global.listFolderName);
-                
-                DirectoryInfo directoryOldStroop = new DirectoryInfo(Global.defaultPath + "/StroopTestFiles/");
-                directoryOldStroop.MoveTo(Global.stroopTestFilesPath);                
-
-                DirectoryInfo directoryOldData = new DirectoryInfo(Global.defaultPath + "/data");
-                directoryOldData.MoveTo(Global.stroopTestFilesPath + Global.resultsFolderName);
-
-
-                try
-                {
-                    File.Delete(Global.defaultPath + "/StroopTest.exe");
-                }
-                catch (IOException e)
-                {
-                    Console.WriteLine(e.Message);
-                    return;
-                }
-
-            }
-            else
-            {
-                /*do nothing*/
-            }
-            
-            /* creating directories related to StroopTest in case they don't already exists*/
-            if (!Directory.Exists(Global.stroopTestFilesPath))
-                Directory.CreateDirectory(Global.stroopTestFilesPath);
-            if (!Directory.Exists(Global.stroopTestFilesPath + Global.programFolderName))
-                Directory.CreateDirectory(Global.stroopTestFilesPath + Global.programFolderName);
-            if (!Directory.Exists(Global.stroopTestFilesPath + Global.resultsFolderName))
-                Directory.CreateDirectory(Global.stroopTestFilesPath + Global.resultsFolderName);
-
-            /* creating directories related to ReactionTest in case they don't already exists*/
-            Global.reactionTestFilesPath = Global.testFilesPath + Global.reactionTestFilesPath;
-            if (!Directory.Exists(Global.reactionTestFilesPath))
-                Directory.CreateDirectory(Global.reactionTestFilesPath);
-            if (!Directory.Exists(Global.reactionTestFilesPath + Global.programFolderName))
-                Directory.CreateDirectory(Global.reactionTestFilesPath + Global.programFolderName);
-            if (!Directory.Exists(Global.reactionTestFilesPath + Global.resultsFolderName))
-                Directory.CreateDirectory(Global.reactionTestFilesPath + Global.resultsFolderName);
-
-            /* creating directories related to Experiment in case they don't already exists*/
-            Global.experimentTestFilesPath = Global.testFilesPath + Global.experimentTestFilesPath;
-            if (!Directory.Exists(Global.experimentTestFilesPath))
-                Directory.CreateDirectory(Global.experimentTestFilesPath);
-            if (!Directory.Exists(Global.experimentTestFilesPath + Global.programFolderName))
-                Directory.CreateDirectory(Global.experimentTestFilesPath + Global.programFolderName);
-            if (!Directory.Exists(Global.experimentTestFilesPath + Global.resultsFolderName))
-                Directory.CreateDirectory(Global.experimentTestFilesPath + Global.resultsFolderName);
-
-            /*creating directiores related to matchingtest in case they don't already exists*/
-            Global.matchingTestFilesPath = Global.testFilesPath + Global.matchingTestFilesPath;
-            if (!Directory.Exists(Global.matchingTestFilesPath))
-                Directory.CreateDirectory(Global.matchingTestFilesPath);
-            if (!Directory.Exists(Global.matchingTestFilesPath + Global.programFolderName))
-                Directory.CreateDirectory(Global.matchingTestFilesPath + Global.programFolderName);
-            if (!Directory.Exists(Global.matchingTestFilesPath + Global.resultsFolderName))
-                Directory.CreateDirectory(Global.matchingTestFilesPath + Global.resultsFolderName);
-
-            /* creating Lists folder*/
-            if (!Directory.Exists(Global.testFilesPath + Global.listFolderName))
-            {
-                Directory.CreateDirectory(Global.testFilesPath + Global.listFolderName);
-            }
-
-            /*creating backup folders*/
-            if (!Directory.Exists(Global.defaultPath + Global.backupFolderName))
-                Directory.CreateDirectory(Global.defaultPath + Global.backupFolderName);
-            Global.stroopTestFilesBackupPath = Global.defaultPath + Global.backupFolderName + Global.stroopTestFilesBackupPath;
-            Global.reactionTestFilesBackupPath = Global.defaultPath + Global.backupFolderName + Global.reactionTestFilesBackupPath;
-            Global.experimentTestFilesBackupPath = Global.defaultPath + Global.backupFolderName + Global.experimentTestFilesBackupPath;
-            Global.matchingTestFilesBackupPath = Global.defaultPath + Global.backupFolderName + Global.matchingTestFilesBackupPath;
-            Global.listFilesBackup = Global.defaultPath + Global.backupFolderName + Global.listFilesBackup;
-            if (!Directory.Exists(Global.experimentTestFilesBackupPath))
-                Directory.CreateDirectory(Global.experimentTestFilesBackupPath);
-            if (!Directory.Exists(Global.stroopTestFilesBackupPath))
-                Directory.CreateDirectory(Global.stroopTestFilesBackupPath);
-            if (!Directory.Exists(Global.reactionTestFilesBackupPath))
-                Directory.CreateDirectory(Global.reactionTestFilesBackupPath);
-            if (!Directory.Exists(Global.matchingTestFilesBackupPath))
-                Directory.CreateDirectory(Global.matchingTestFilesBackupPath);
-            if (!Directory.Exists(Global.listFilesBackup))
-                Directory.CreateDirectory(Global.listFilesBackup);
-
-            if (!File.Exists(Global.testFilesPath + INSTRUCTIONSFILENAME))
-                File.Create(Global.testFilesPath + "editableInstructions.txt").Dispose();
-            if (!File.Exists(Global.testFilesPath + PGRCONFIGHELPFILENAME))
-                File.Create(Global.testFilesPath + PGRCONFIGHELPFILENAME).Dispose();
-
-            if (Directory.Exists(Global.defaultPath + "/StroopTestFiles"))
-                Directory.Delete(Global.defaultPath + "/StroopTestFiles", true);
-
-            // converting old implementations of file lists to new version
-            StrList.convertFileLists();
-
-            // create default stroop and reaction programs, adding default word and color lists
-            initializeDefaultPrograms();
-
             InitializeComponent();
             _contentPanel = contentPanel;
-            dirPathSL.Text = Global.testFilesPath;
+            dirPathSL.Text = FileManipulation._testFilesPath;
         }
 
         private void FormMain_KeyDown(object sender, KeyEventArgs e)
@@ -220,7 +100,7 @@ namespace TestPlatform
             {
                 dirPathSL.Text = folderBrowserDialog1.SelectedPath;
             }
-            Global.testFilesPath = dirPathSL.Text;
+            FileManipulation._testFilesPath = dirPathSL.Text;
         }
 
         private void newImageToolStripMenuItem_Click(object sender, EventArgs e)
@@ -231,26 +111,6 @@ namespace TestPlatform
                 this.contentPanel.Controls.Add(configureImagesList);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
-
-        private void initializeDefaultPrograms() // inicializa programDefault padrão
-        {
-            StroopProgram programDefault = new StroopProgram();
-            programDefault.ProgramName = LocRM.GetString("default", currentCulture);
-            try
-            {
-                // writing default program and lists on to disk
-                programDefault.writeDefaultProgramFile(Global.stroopTestFilesPath + Global.programFolderName + programDefault.ProgramName + ".prg");
-                ReactionProgram defaultProgram = new ReactionProgram();
-                defaultProgram.writeDefaultProgramFile();
-                StrList.writeDefaultWordsList(Global.testFilesPath + Global.listFolderName); 
-                StrList.writeDefaultColorsList(Global.testFilesPath + Global.listFolderName); 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                Close();
-            }
         }
 
         private void editProgramToolStripMenuItem_Click(object sender, EventArgs e)
@@ -494,7 +354,7 @@ namespace TestPlatform
 
             try
             {
-                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.stroopTestFilesPath + Global.programFolderName, "prg", "program", false, false);
+                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName, "prg", "program", false, false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -512,7 +372,7 @@ namespace TestPlatform
             DialogResult result;
             string editProgramName = "error";
 
-                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false, false);
+                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName, "prg", "program", false, false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -526,7 +386,7 @@ namespace TestPlatform
 
         private void executeButton_Click(object sender, EventArgs e)
         {
-            if (Global.GlobalFormMain.contentPanel.Controls.Count > 0)
+            if (FileManipulation.GlobalFormMain.contentPanel.Controls.Count > 0)
             {
                 checkSave();
             }
@@ -558,12 +418,12 @@ namespace TestPlatform
 
         private void checkSave()
         {
-            if (Global.GlobalFormMain.contentPanel.Controls[0] is FormTRConfig)
+            if (FileManipulation.GlobalFormMain.contentPanel.Controls[0] is FormTRConfig)
             {
                 DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    FormTRConfig toSave = (FormTRConfig)(Global.GlobalFormMain.contentPanel.Controls[0]);
+                    FormTRConfig toSave = (FormTRConfig)(FileManipulation.GlobalFormMain.contentPanel.Controls[0]);
                     toSave.save();
                 }
                 else
@@ -571,12 +431,12 @@ namespace TestPlatform
                     /*do nothing*/
                 }
             }
-            else if (Global.GlobalFormMain.contentPanel.Controls[0] is ExperimentConfig)
+            else if (FileManipulation.GlobalFormMain.contentPanel.Controls[0] is ExperimentConfig)
             {
                 DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    ExperimentConfig toSave = (ExperimentConfig)(Global.GlobalFormMain.contentPanel.Controls[0]);
+                    ExperimentConfig toSave = (ExperimentConfig)(FileManipulation.GlobalFormMain.contentPanel.Controls[0]);
                     toSave.save();
                 }
                 else
@@ -584,12 +444,12 @@ namespace TestPlatform
                     /*do nothing*/
                 }
             }
-            else if (Global.GlobalFormMain.contentPanel.Controls[0] is FormPrgConfig)
+            else if (FileManipulation.GlobalFormMain.contentPanel.Controls[0] is FormPrgConfig)
             {
                 DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    FormPrgConfig toSave = (FormPrgConfig)(Global.GlobalFormMain.contentPanel.Controls[0]);
+                    FormPrgConfig toSave = (FormPrgConfig)(FileManipulation.GlobalFormMain.contentPanel.Controls[0]);
                     toSave.save();
                 }
                 else
@@ -693,7 +553,7 @@ namespace TestPlatform
             try
             {
                 showData = new ReactionResultUserControl();
-                Global.GlobalFormMain._contentPanel.Controls.Add(showData);
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Add(showData);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -703,7 +563,7 @@ namespace TestPlatform
             try
             {
                 ExperimentResultUserControl showData = new ExperimentResultUserControl();
-                Global.GlobalFormMain._contentPanel.Controls.Add(showData);
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Add(showData);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

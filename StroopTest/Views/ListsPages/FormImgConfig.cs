@@ -41,7 +41,7 @@ namespace TestPlatform
 
         private void openImgList()
         {
-                FormDefine defineFilePath = defineFilePath = new FormDefine(LocRM.GetString("imageList", currentCulture), Global.testFilesPath + Global.listFolderName, "dir","_image",true, false);
+                FormDefine defineFilePath = defineFilePath = new FormDefine(LocRM.GetString("imageList", currentCulture), FileManipulation._testFilesPath + FileManipulation._listFolderName, "dir","_image",true, false);
                 var result = defineFilePath.ShowDialog();
                 
                 if (result == DialogResult.OK)

@@ -463,6 +463,7 @@ namespace TestPlatform.Models
             string[] defaultInstructionText = { LocRM.GetString("defaultStroopInstruction1", currentCulture),
                                                 LocRM.GetString("defaultStroopInstruction2", currentCulture),
                                                 LocRM.GetString("defaultStroopInstruction3", currentCulture)};
+            this.ProgramName = LocRM.GetString("default", currentCulture);
             try
             {
                 TextWriter tw = new StreamWriter(filepath);

@@ -40,7 +40,7 @@ namespace TestPlatform
 
         private void openFilesForEdition()
         {
-            FormDefine defineFilePath = new FormDefine(LocRM.GetString("audioList", currentCulture), Global.testFilesPath + Global.listFolderName, "dir", "_audio", true, false);
+            FormDefine defineFilePath = new FormDefine(LocRM.GetString("audioList", currentCulture), FileManipulation._testFilesPath + FileManipulation._listFolderName, "dir", "_audio", true, false);
             var result = defineFilePath.ShowDialog();
 
             if (result == DialogResult.OK)

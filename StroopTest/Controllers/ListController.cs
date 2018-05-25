@@ -48,7 +48,7 @@
         {
             if(controlToRestore != null)
             {
-                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                 switch (listType)
                 {
                     case "_color":
@@ -64,7 +64,7 @@
                         controlToRestore.Controls.Find("openImgListButton", true)[0].Text = newListName;
                         break;
                 }
-                Global.GlobalFormMain._contentPanel.Controls.Add(controlToRestore);
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Add(controlToRestore);
             }
             controlToRestore = null;
         }
@@ -73,11 +73,11 @@
         {
             listType = listTypeParam;
             MessageBox.Show(LocRM.GetString("inFormListWarning", currentCulture));
-            if(Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+            if(FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
             {
                 Control listCreationControl = null;
-                controlToRestore = Global.GlobalFormMain._contentPanel.Controls[0];
-                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                controlToRestore = FileManipulation.GlobalFormMain._contentPanel.Controls[0];
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                 switch (listType)
                 {
                     case "_color":
@@ -91,7 +91,7 @@
                         listCreationControl = new FormImgConfig("false");
                         break;
                 }
-                Global.GlobalFormMain._contentPanel.Controls.Add(listCreationControl);
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Add(listCreationControl);
             }
             else
             {
@@ -106,7 +106,7 @@
 
             string progName = LocRM.GetString("open", currentCulture);
 
-            FormDefine defineProgram = new FormDefine("Lista: ", Global.testFilesPath + Global.listFolderName, type, itemType, false, true);
+            FormDefine defineProgram = new FormDefine("Lista: ", FileManipulation._testFilesPath + FileManipulation._listFolderName, type, itemType, false, true);
             var result = defineProgram.ShowDialog();
 
             if (result == System.Windows.Forms.DialogResult.OK)

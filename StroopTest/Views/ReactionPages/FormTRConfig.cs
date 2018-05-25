@@ -13,7 +13,7 @@ namespace TestPlatform.Views
 {
     public partial class FormTRConfig : UserControl
     {
-        private String path = Global.reactionTestFilesPath;
+        private String path = FileManipulation._reactionTestFilesPath;
         private String instructionBoxText;
         private String editPrgName = "false";
         private String prgName = "false";
@@ -42,7 +42,7 @@ namespace TestPlatform.Views
             ReactionProgram editProgram = new ReactionProgram();
             try
             {
-                editProgram.readProgramFile(path + Global.programFolderName + editPrgName + ".prg");
+                editProgram.readProgramFile(path + FileManipulation._programFolderName + editPrgName + ".prg");
             }
             catch (FileNotFoundException e)
             {
@@ -482,7 +482,7 @@ namespace TestPlatform.Views
             {
                 ReactionProgram newProgram = configureNewProgram();
                 
-                if (File.Exists(path + Global.programFolderName + prgNameTextBox.Text + ".prg"))
+                if (File.Exists(path + FileManipulation._programFolderName + prgNameTextBox.Text + ".prg"))
                 {
                     DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExists", currentCulture), "", MessageBoxButtons.OKCancel);
                     if (dialogResult == DialogResult.Cancel)
@@ -491,7 +491,7 @@ namespace TestPlatform.Views
                         MessageBox.Show(LocRM.GetString("programNotSave", currentCulture));
                     }
                 }
-                if (hasToSave && newProgram.saveProgramFile(path + Global.programFolderName, instructionsBox.Text))
+                if (hasToSave && newProgram.saveProgramFile(path + FileManipulation._programFolderName, instructionsBox.Text))
                 {
                     MessageBox.Show(LocRM.GetString("programSave", currentCulture));
                 }

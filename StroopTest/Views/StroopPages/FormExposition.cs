@@ -27,10 +27,10 @@ namespace TestPlatform
         CancellationTokenSource cts;
         StroopTest currentTest = new StroopTest(); // program in current use
         private static float elapsedTime;                // elapsed time during each item exposition
-        private string path = Global.stroopTestFilesPath;
+        private string path = FileManipulation._stroopTestFilesPath;
 
         private List<string> outputContent = new List<string>();            // output file content
-        private string outputDataPath = Global.stroopTestFilesPath + Global.resultsFolderName;                // output file Path
+        private string outputDataPath = FileManipulation._stroopTestFilesPath + FileManipulation._resultsFolderName;                // output file Path
 
         private string hour = DateTime.Now.Hour.ToString("00");
         private string minutes = DateTime.Now.Minute.ToString("00");
@@ -40,7 +40,7 @@ namespace TestPlatform
         private string outputFile;
         private Audio audioControl = new Audio();
         private SoundPlayer Player = new SoundPlayer();
-        private string defaultFolderPath = Global.testFilesPath;
+        private string defaultFolderPath = FileManipulation._testFilesPath;
         private bool runExposition = true;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;

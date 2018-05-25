@@ -152,7 +152,7 @@ namespace TestPlatform.Views.MainForms
 
         private bool isProgramUsed(string programName)
         {
-            string[] experiments = Directory.GetFiles(Global.experimentTestFilesPath + Global.programFolderName);
+            string[] experiments = Directory.GetFiles(FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName);
             foreach (string file in experiments)
             {
                 ExperimentProgram experiment = new ExperimentProgram();
@@ -277,7 +277,7 @@ namespace TestPlatform.Views.MainForms
                             StroopProgram program = new StroopProgram();
                             try
                             {
-                                program.readProgramFile(Global.stroopTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
+                                program.readProgramFile(FileManipulation._stroopTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
                             }
                             catch (FileNotFoundException e)
                             {
@@ -290,7 +290,7 @@ namespace TestPlatform.Views.MainForms
                             ReactionProgram program = new ReactionProgram();
                             try
                             {
-                                program.readProgramFile(Global.reactionTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
+                                program.readProgramFile(FileManipulation._reactionTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
                             }
                             catch (FileNotFoundException e)
                             {
@@ -303,7 +303,7 @@ namespace TestPlatform.Views.MainForms
                             MatchingProgram program = new MatchingProgram();
                             try
                             {
-                                program.readProgramFile(Global.matchingTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
+                                program.readProgramFile(FileManipulation._matchingTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
                             }
                             catch (FileNotFoundException e)
                             {

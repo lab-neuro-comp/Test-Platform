@@ -16,7 +16,7 @@ namespace TestPlatform.Views.MatchingPages
 {
     public partial class MatchingResultUserControl : UserControl
     {
-        private string path = Global.matchingTestFilesPath + Global.resultsFolderName;
+        private string path = FileManipulation._matchingTestFilesPath + FileManipulation._resultsFolderName;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private Point mousePosition = new Point();

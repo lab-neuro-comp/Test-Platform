@@ -29,7 +29,7 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 if (currentControl != null)
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Remove(currentControl);
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Remove(currentControl);
 
                 }
                 currentControl = HelpPagesController.showHelp();
@@ -43,7 +43,7 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 if (currentControl != null)
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Remove(currentControl);
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Remove(currentControl);
 
                 }                
                 currentControl = HelpPagesController.showTechInfo();

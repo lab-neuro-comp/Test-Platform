@@ -97,7 +97,7 @@ namespace TestPlatform.Views.MatchingPages
         string modelFirstposition, modelSecondPosition;
         MatchingTest executingTest = new MatchingTest();
         private const int X = 0, Y = 1;
-        private string path = Global.matchingTestFilesPath;
+        private string path = FileManipulation._matchingTestFilesPath;
         private string hour = DateTime.Now.Hour.ToString("00");
         private string minutes = DateTime.Now.Minute.ToString("00");
         private string seconds = DateTime.Now.Second.ToString("00");
@@ -107,7 +107,7 @@ namespace TestPlatform.Views.MatchingPages
         private int intervalElapsedTime, intervalShouldBe, groupCounter = 0;
         private Object currentStimulus;
         private string outputFile;
-        private string outputDataPath = Global.matchingTestFilesPath + Global.resultsFolderName;
+        private string outputDataPath = FileManipulation._matchingTestFilesPath + FileManipulation._resultsFolderName;
         private string[] imageList, wordList, colorList;
         private long expositionAccumulative;
         private long modelExpositionAccumulative;

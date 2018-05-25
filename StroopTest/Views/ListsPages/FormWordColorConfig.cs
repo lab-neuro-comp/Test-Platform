@@ -53,7 +53,7 @@ namespace TestPlatform
         {
             try
             {
-                FormDefine defineFilePath = new FormDefine(LocRM.GetString("wordList", currentCulture), Global.testFilesPath + Global.listFolderName, "lst", "_words_color", true, false);
+                FormDefine defineFilePath = new FormDefine(LocRM.GetString("wordList", currentCulture), FileManipulation._testFilesPath + FileManipulation._listFolderName, "lst", "_words_color", true, false);
                 var result = defineFilePath.ShowDialog();
 
                 if (result == DialogResult.OK)
@@ -70,8 +70,8 @@ namespace TestPlatform
                     fileName = fileName.Remove(fileName.Length - 6);
                     listNameTextBox.Text = fileName;
 
-                    string wFile = Global.testFilesPath + Global.listFolderName + "/" + fileName + "_words.lst";
-                    string cFile = Global.testFilesPath + Global.listFolderName + "/" + fileName + "_color.lst";
+                    string wFile = FileManipulation._testFilesPath + FileManipulation._listFolderName + "/" + fileName + "_words.lst";
+                    string cFile = FileManipulation._testFilesPath + FileManipulation._listFolderName + "/" + fileName + "_color.lst";
                     if(!File.Exists(wFile) && !File.Exists(cFile))
                     {
                         return;

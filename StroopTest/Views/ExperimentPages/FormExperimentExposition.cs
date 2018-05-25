@@ -9,8 +9,8 @@ namespace TestPlatform.Views.ExperimentPages
     public partial class FormExperimentExposition : Form
     {
         private ExperimentTest executingTest = new ExperimentTest();
-        private string path = Global.experimentTestFilesPath;
-        private string outputDataPath = Global.experimentTestFilesPath + Global.resultsFolderName;
+        private string path = FileManipulation._experimentTestFilesPath;
+        private string outputDataPath = FileManipulation._experimentTestFilesPath + FileManipulation._resultsFolderName;
         private string hour = DateTime.Now.Hour.ToString("00");
         private string minutes = DateTime.Now.Minute.ToString("00");
         private string seconds = DateTime.Now.Second.ToString("00");

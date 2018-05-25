@@ -30,23 +30,23 @@ namespace TestPlatform.Views.SidebarUserControls
         {
 
             bool result = false;
-            if (Global.GlobalFormMain._contentPanel.Controls[0] is FormMatchConfig)
+            if (FileManipulation.GlobalFormMain._contentPanel.Controls[0] is FormMatchConfig)
             {
                 DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    FormMatchConfig programToSave = (FormMatchConfig)(Global.GlobalFormMain._contentPanel.Controls[0]);
+                    FormMatchConfig programToSave = (FormMatchConfig)(FileManipulation.GlobalFormMain._contentPanel.Controls[0]);
                     result = programToSave.save();
                 }
                 else
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     return true;
                 }
             }
             if (result == false)
             {
-                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                 return true;
             }
             else
@@ -60,7 +60,7 @@ namespace TestPlatform.Views.SidebarUserControls
             bool screenTranslationAllowed = true;
             try
             {
-                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
                 {
                     screenTranslationAllowed = checkSave();
                 }
@@ -69,7 +69,7 @@ namespace TestPlatform.Views.SidebarUserControls
                     if (newMatchButton.Checked)
                     {
                         FormMatchConfig newExperiment = new FormMatchConfig("false");
-                        Global.GlobalFormMain._contentPanel.Controls.Add(newExperiment);
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(newExperiment);
                         newMatchButton.Checked = false;
                     }
                     else
@@ -90,7 +90,7 @@ namespace TestPlatform.Views.SidebarUserControls
             bool screenTranslationAllowed = true;
             if (editMatchButton.Checked)
             {
-                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
                 {
                     screenTranslationAllowed = checkSave();
                 }
@@ -102,14 +102,14 @@ namespace TestPlatform.Views.SidebarUserControls
 
                     try
                     {
-                        defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.matchingTestFilesPath + Global.programFolderName, "prg", "program", false, false);
+                        defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName, "prg", "program", false, false);
                         result = defineProgram.ShowDialog();
                         if (result == DialogResult.OK)
                         {
                             editProgramName = defineProgram.ReturnValue;
                             FormMatchConfig configureProgram = new FormMatchConfig(editProgramName);
                             configureProgram.PrgName = editProgramName;
-                            Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
+                            FileManipulation.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
                             editMatchButton.Checked = false;
                         }
                         else
@@ -131,7 +131,7 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 bool screenTranslationAllowed = true;
 
-                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
                 {
                     screenTranslationAllowed = checkSave();
                 }
@@ -141,8 +141,8 @@ namespace TestPlatform.Views.SidebarUserControls
                     {
                         if (deleteMatchButton.Checked)
                         {
-                            FileManagment deleteProgram = new FileManagment(Global.matchingTestFilesPath + Global.programFolderName, Global.matchingTestFilesBackupPath, 'd', LocRM.GetString("matchingTest", currentCulture));
-                            Global.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
+                            FileManagment deleteProgram = new FileManagment(FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName, FileManipulation._matchingTestFilesBackupPath, 'd', LocRM.GetString("matchingTest", currentCulture));
+                            FileManipulation.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                             deleteMatchButton.Checked = false;
                         }
                         else
@@ -159,7 +159,7 @@ namespace TestPlatform.Views.SidebarUserControls
         {
             bool screenTranslationAllowed = true;
 
-            if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+            if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
             {
                 screenTranslationAllowed = checkSave();
             }
@@ -169,8 +169,8 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     if (recoverMatchButton.Checked)
                     {
-                        FileManagment recoverProgram = new FileManagment(Global.matchingTestFilesBackupPath, Global.matchingTestFilesPath + Global.programFolderName, 'r', LocRM.GetString("matchingTest", currentCulture));
-                        Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                        FileManagment recoverProgram = new FileManagment(FileManipulation._matchingTestFilesBackupPath, FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName, 'r', LocRM.GetString("matchingTest", currentCulture));
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverMatchButton.Checked = false;
                     }
                     else

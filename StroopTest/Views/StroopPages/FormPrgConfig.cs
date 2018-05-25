@@ -20,7 +20,7 @@ namespace TestPlatform
     {
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
-        private String path = Global.stroopTestFilesPath + Global.programFolderName;
+        private String path = FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName;
         private String instructionBoxText;
         private List<Button> subDirectionList = new List<Button>();
         private Int32 subDirectionNumber = 1;

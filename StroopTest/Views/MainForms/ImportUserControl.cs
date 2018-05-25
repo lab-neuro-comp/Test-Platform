@@ -14,7 +14,7 @@ namespace TestPlatform.Views.MainForms
 {
     public partial class ImportUserControl : UserControl
     {
-        private string importDirectory = Global.testFilesPath + "/import";
+        private string importDirectory = FileManipulation._testFilesPath + "/import";
 
         // properties used to localize strings during runtime
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
@@ -22,11 +22,11 @@ namespace TestPlatform.Views.MainForms
 
         // file paths used in methods of this class
 
-    private string listPath = Global.testFilesPath + Global.listFolderName;
-        private string reactionPath = Global.reactionTestFilesPath + Global.programFolderName;
-        private string matchingPath = Global.matchingTestFilesPath + Global.programFolderName;
-        private string stroopPath = Global.stroopTestFilesPath + Global.programFolderName;
-        private string experimentPath = Global.experimentTestFilesPath + Global.programFolderName;
+    private string listPath = FileManipulation._testFilesPath + FileManipulation._listFolderName;
+        private string reactionPath = FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName;
+        private string matchingPath = FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName;
+        private string stroopPath = FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName;
+        private string experimentPath = FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName;
 
         public ImportUserControl()
         {

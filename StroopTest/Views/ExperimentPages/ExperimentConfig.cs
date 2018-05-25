@@ -219,7 +219,7 @@ namespace TestPlatform.Views.ExperimentPages
                 }
 
                 //saving experiment
-                if (savingExperiment.SaveExperimentFile(Global.experimentTestFilesPath + Global.programFolderName))
+                if (savingExperiment.SaveExperimentFile(FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName))
                 {
                     MessageBox.Show(LocRM.GetString("programSaved", currentCulture));
                     this.Parent.Controls.Remove(this);

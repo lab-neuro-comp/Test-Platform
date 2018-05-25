@@ -22,23 +22,23 @@ namespace TestPlatform.Views.SidebarUserControls
         private bool checkSave()
         {
             bool result = false;
-            if (Global.GlobalFormMain._contentPanel.Controls[0] is ExperimentConfig)
+            if (FileManipulation.GlobalFormMain._contentPanel.Controls[0] is ExperimentConfig)
             {
                 DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    ExperimentConfig programToSave = (ExperimentConfig)(Global.GlobalFormMain._contentPanel.Controls[0]);
+                    ExperimentConfig programToSave = (ExperimentConfig)(FileManipulation.GlobalFormMain._contentPanel.Controls[0]);
                     result = programToSave.save();
                 }
                 else
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     return true;
                 }
             }
             if (result == false)
             {
-                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                 return true;
             }
             else
@@ -52,7 +52,7 @@ namespace TestPlatform.Views.SidebarUserControls
             bool screenTranslationAllowed = true;
             try
             {
-                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
                 {
                     screenTranslationAllowed = checkSave();
                 }
@@ -61,7 +61,7 @@ namespace TestPlatform.Views.SidebarUserControls
                     if (newExperimentButton.Checked)
                     {
                         ExperimentConfig newExperiment = new ExperimentConfig("false");
-                        Global.GlobalFormMain._contentPanel.Controls.Add(newExperiment);
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(newExperiment);
                         newExperimentButton.Checked = false;
                     }
                     else
@@ -81,7 +81,7 @@ namespace TestPlatform.Views.SidebarUserControls
         {
             bool screenTranslationAllowed = true;
 
-            if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+            if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
             {
                 screenTranslationAllowed = checkSave();
             }
@@ -92,13 +92,13 @@ namespace TestPlatform.Views.SidebarUserControls
                 string editProgramName = "error";
 
 
-                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.experimentTestFilesPath + Global.programFolderName, "prg", "program", false, false);
+                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName, "prg", "program", false, false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
                     editProgramName = defineProgram.ReturnValue;
                     ExperimentConfig editExperiment = new ExperimentConfig(editProgramName);
-                    Global.GlobalFormMain._contentPanel.Controls.Add(editExperiment);
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Add(editExperiment);
                     editExperimentButton.Checked = false;
                 }
                 else
@@ -112,7 +112,7 @@ namespace TestPlatform.Views.SidebarUserControls
             try {
                 bool screenTranslationAllowed = true;
 
-                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
                 {
                     screenTranslationAllowed = checkSave();
                 }
@@ -120,8 +120,8 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     if (deleteExperimentButton.Checked)
                     {
-                        FileManagment deleteProgram = new FileManagment(Global.experimentTestFilesPath + Global.programFolderName, Global.experimentTestFilesBackupPath, 'd', LocRM.GetString("experiment", currentCulture));
-                        Global.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
+                        FileManagment deleteProgram = new FileManagment(FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName, FileManipulation._experimentTestFilesBackupPath, 'd', LocRM.GetString("experiment", currentCulture));
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                         deleteExperimentButton.Checked = false;
                     }
                     else
@@ -137,7 +137,7 @@ namespace TestPlatform.Views.SidebarUserControls
         {
             bool screenTranslationAllowed = true;
 
-            if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+            if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
             {
                 screenTranslationAllowed = checkSave();
             }
@@ -147,8 +147,8 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     if (recoverExperimentButton.Checked)
                     {
-                        FileManagment recoverProgram = new FileManagment(Global.experimentTestFilesBackupPath, Global.experimentTestFilesPath + Global.programFolderName, 'r', LocRM.GetString("experiment", currentCulture));
-                        Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                        FileManagment recoverProgram = new FileManagment(FileManipulation._experimentTestFilesBackupPath, FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName, 'r', LocRM.GetString("experiment", currentCulture));
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverExperimentButton.Checked = false;
                     }
                     else

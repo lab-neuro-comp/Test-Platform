@@ -12,7 +12,7 @@ namespace TestPlatform.Views.ReactionPages
 {
     public partial class ReactionResultUserControl : UserControl
     {
-        private string path = Global.reactionTestFilesPath + Global.resultsFolderName;
+        private string path = FileManipulation._reactionTestFilesPath + FileManipulation._resultsFolderName;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private Point mousePosition;

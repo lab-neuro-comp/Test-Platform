@@ -130,10 +130,13 @@
         {
             try
             {
-                if(!File.Exists(FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName + programName + ".prg")) { throw new MissingMemberException(programName + " (" + LocRM.GetString("stroopTest", currentCulture) + ")"); };
+                if(!FileManipulation.StroopProgramExists(programName))
+                {
+                    throw new MissingMemberException(programName + " (" + LocRM.GetString("stroopTest", currentCulture) + ")");
+                }
                 StroopProgram newProgram = new StroopProgram();
                 newProgram.ProgramName = programName;
-                newProgram.readProgramFile(FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName + newProgram.ProgramName + ".prg");
+                newProgram.readProgramFile(newProgram.ProgramName);
                 ProgramList.Add(newProgram);
             }
             catch (FileNotFoundException)

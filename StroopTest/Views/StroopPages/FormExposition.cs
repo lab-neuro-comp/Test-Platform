@@ -86,7 +86,7 @@ namespace TestPlatform
         private void configureCurrentTest()
         {
             // makes sure that program file exists before starting exposition
-            currentTest.ProgramInUse.readProgramFile(path + "/prg/" + currentTest.ProgramInUse.ProgramName + ".prg");
+            currentTest.ProgramInUse.readProgramFile(currentTest.ProgramInUse.ProgramName);
             now = currentTest.InitialDate.Day + "." + currentTest.InitialDate.Month + "_" +
                     hour + "h" + minutes + "." + seconds;
             outputFile = outputDataPath + currentTest.ParticipantName + "_" + currentTest.ProgramInUse.ProgramName + ".txt";
@@ -96,7 +96,7 @@ namespace TestPlatform
             {
                 MessageBox.Show(LocRM.GetString("programEdit", currentCulture));
                 repairProgram(); // opens prgConfig for program edition
-                currentTest.ProgramInUse.readProgramFile(path + "/prg/" + currentTest.ProgramInUse.ProgramName + ".prg"); // reads new program
+                currentTest.ProgramInUse.readProgramFile(currentTest.ProgramInUse.ProgramName); // reads new program
             }
         }
 

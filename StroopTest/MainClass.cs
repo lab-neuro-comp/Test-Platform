@@ -24,7 +24,7 @@ namespace TestPlatform
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             FormMain application = new FormMain();
-            FileManipulation.GlobalFormMain = application;
+
             Application.Run(application);
         }
     }

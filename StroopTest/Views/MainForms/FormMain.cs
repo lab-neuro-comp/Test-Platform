@@ -37,8 +37,9 @@ namespace TestPlatform
         public FormMain()
         {
             InitializeComponent();
+            FileManipulation.Instance(this);
+
             _contentPanel = contentPanel;
-            dirPathSL.Text = FileManipulation._testFilesPath;
         }
 
         private void FormMain_KeyDown(object sender, KeyEventArgs e)
@@ -93,16 +94,6 @@ namespace TestPlatform
             defineTest();
         }
         
-        private void dirPathSL_Click(object sender, EventArgs e)
-        {
-            folderBrowserDialog1 = new FolderBrowserDialog();
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
-            {
-                dirPathSL.Text = folderBrowserDialog1.SelectedPath;
-            }
-            FileManipulation._testFilesPath = dirPathSL.Text;
-        }
-
         private void newImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormImgConfig configureImagesList = new FormImgConfig("false");
@@ -354,7 +345,8 @@ namespace TestPlatform
 
             try
             {
-                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName, "prg", "program", false, false);
+                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), 
+                    FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName, "prg", "program", false, false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {

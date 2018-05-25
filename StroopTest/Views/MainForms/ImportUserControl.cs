@@ -14,7 +14,7 @@ namespace TestPlatform.Views.MainForms
 {
     public partial class ImportUserControl : UserControl
     {
-        private string importDirectory = FileManipulation._testFilesPath + "/import";
+        
 
         // properties used to localize strings during runtime
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
@@ -22,7 +22,7 @@ namespace TestPlatform.Views.MainForms
 
         // file paths used in methods of this class
 
-    private string listPath = FileManipulation._testFilesPath + FileManipulation._listFolderName;
+        private string listPath = FileManipulation._testFilesPath + FileManipulation._listFolderName;
         private string reactionPath = FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName;
         private string matchingPath = FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName;
         private string stroopPath = FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName;
@@ -210,26 +210,17 @@ namespace TestPlatform.Views.MainForms
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                Directory.CreateDirectory(importDirectory);
                 originDataGridView.Rows.Clear();
                 importDataGridView.Rows.Clear();
-                if (Directory.Exists(importDirectory))
-                {
-                    Directory.Delete(importDirectory, true);
-                    
-                }
-                else
-                {
-                    /* do nothing */
-                }
-                ZipFile.ExtractToDirectory(openFileDialog.FileName, importDirectory);
+                FileManipulation.CreatImportFolder();
+                FileManipulation.ExtractImportFile(openFileDialog.FileName);
                 fileTextBox.Text = openFileDialog.FileName;
 
-                addFilesToOriginGrid(importDirectory + "/StroopProgram/", LocRM.GetString("stroopTest", currentCulture), stroopPath);
-                addFilesToOriginGrid(importDirectory + "/ReactionProgram/", LocRM.GetString("reactionTest", currentCulture), reactionPath);
-                addFilesToOriginGrid(importDirectory + "/MatchingProgram/", LocRM.GetString("matchingTest", currentCulture), matchingPath);
-                addFilesToOriginGrid(importDirectory + "/ExperimentProgram/", LocRM.GetString("experiment", currentCulture), experimentPath);
-                addFilesToOriginGrid(importDirectory + "/Lists/", LocRM.GetString("lists", currentCulture), listPath);
+                addFilesToOriginGrid(FileManipulation._importPath + "/StroopProgram/", LocRM.GetString("stroopTest", currentCulture), stroopPath);
+                addFilesToOriginGrid(FileManipulation._importPath + "/ReactionProgram/", LocRM.GetString("reactionTest", currentCulture), reactionPath);
+                addFilesToOriginGrid(FileManipulation._importPath + "/MatchingProgram/", LocRM.GetString("matchingTest", currentCulture), matchingPath);
+                addFilesToOriginGrid(FileManipulation._importPath + "/ExperimentProgram/", LocRM.GetString("experiment", currentCulture), experimentPath);
+                addFilesToOriginGrid(FileManipulation._importPath + "/Lists/", LocRM.GetString("lists", currentCulture), listPath);
             }
             else
             {
@@ -329,18 +320,18 @@ namespace TestPlatform.Views.MainForms
                 if (selectedRowType == LocRM.GetString("stroopTest", currentCulture))
                 {
                     StroopProgram newProgram = new StroopProgram();
-                    newProgram.readProgramFile(importDirectory + "/StroopProgram/" + selectedRowName + ".prg");
+                    newProgram.readProgramFromPath(selectedRowName, FileManipulation._importPath);
                     addLists(newProgram);
 
                 }
                 else if (selectedRowType == LocRM.GetString("reactionTest", currentCulture))
                 {
-                    ReactionProgram newReaction = new ReactionProgram(importDirectory + "/ReactionProgram/" + selectedRowName + ".prg");
+                    ReactionProgram newReaction = new ReactionProgram(FileManipulation._importPath + "/ReactionProgram/" + selectedRowName + ".prg");
                     addLists(newReaction);
                 }
                 else if(selectedRowType == LocRM.GetString("matchingTest", currentCulture))
                 {
-                    MatchingProgram newProgram = new MatchingProgram(importDirectory + "/MatchingProgram/" + selectedRowName + ".prg");
+                    MatchingProgram newProgram = new MatchingProgram(FileManipulation._importPath + "/MatchingProgram/" + selectedRowName + ".prg");
                     addLists(newProgram);
                 }
                 else if (selectedRowType == LocRM.GetString("experiment", currentCulture))

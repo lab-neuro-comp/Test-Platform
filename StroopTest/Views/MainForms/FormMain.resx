@@ -390,27 +390,6 @@
   <data name="testToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="directoryToolStripLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 39</value>
-  </data>
-  <data name="directoryToolStripLabel.Text" xml:space="preserve">
-    <value>Diretório:</value>
-  </data>
-  <data name="directoryToolStripLabel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="dirPathSL.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="dirPathSL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 39</value>
-  </data>
-  <data name="dirPathSL.Text" xml:space="preserve">
-    <value>directoryPath</value>
-  </data>
-  <data name="dirPathSL.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="testToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>494, 0</value>
   </data>
@@ -5977,18 +5956,6 @@
   </data>
   <data name="&gt;&gt;spanishSpainToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;directoryToolStripLabel.Name" xml:space="preserve">
-    <value>directoryToolStripLabel</value>
-  </data>
-  <data name="&gt;&gt;directoryToolStripLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dirPathSL.Name" xml:space="preserve">
-    <value>dirPathSL</value>
-  </data>
-  <data name="&gt;&gt;dirPathSL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
     <value>errorProvider1</value>

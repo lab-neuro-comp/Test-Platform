@@ -231,9 +231,9 @@ namespace TestPlatform.Views.ListsPages
         private bool isListUsed(string listName, string suffix, out bool stopProcess)
         {
             string currentProgram = "", originPath = "", programName = "", destinationPath = "";
-            string[] TRPrograms = Directory.GetFiles(FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName);
-            string[] StroopPrograms = Directory.GetFiles(FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName);
-            string[] MatchingPrograms = Directory.GetFiles(FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName);
+            string[] TRPrograms = FileManipulation.GetAllFilesInFolder(FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName, ".prg");
+            string[] StroopPrograms = FileManipulation.GetAllFilesInFolder(FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName, ".prg");
+            string[] MatchingPrograms = FileManipulation.GetAllFilesInFolder(FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName, ".prg");
             try
             {
                 foreach (string file in TRPrograms)
@@ -275,7 +275,7 @@ namespace TestPlatform.Views.ListsPages
                     programName = Path.GetFileNameWithoutExtension(file);
                     StroopProgram program = new StroopProgram();
                     currentProgram = Path.GetFileNameWithoutExtension(file) + " (" + LocRM.GetString("stroopTest", currentCulture) + ")";
-                    program.readProgramFile(file);
+                    program.readProgramFile(programName);
                     if (suffix == "_image" && program.getImageListFile() != null && program.getImageListFile().ListName == listName)
                     {
                         stopProcess = false;

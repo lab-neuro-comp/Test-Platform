@@ -70,8 +70,6 @@
             this.englishUnitedStatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spanishSpainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStrip = new System.Windows.Forms.ToolStrip();
-            this.directoryToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.dirPathSL = new System.Windows.Forms.ToolStripLabel();
             this.executeButton = new System.Windows.Forms.Button();
             this.markPanel = new System.Windows.Forms.Panel();
             this.markTextBox = new System.Windows.Forms.TextBox();
@@ -99,7 +97,6 @@
             this.executingTypeLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.mainMenuStrip.SuspendLayout();
-            this.testToolStrip.SuspendLayout();
             this.markPanel.SuspendLayout();
             this.participantPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -390,26 +387,8 @@
             resources.ApplyResources(this.testToolStrip, "testToolStrip");
             this.testToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.testToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.testToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.directoryToolStripLabel,
-            this.dirPathSL});
             this.testToolStrip.Name = "testToolStrip";
             this.testToolStrip.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
-            // 
-            // directoryToolStripLabel
-            // 
-            this.directoryToolStripLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.directoryToolStripLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.directoryToolStripLabel.Name = "directoryToolStripLabel";
-            resources.ApplyResources(this.directoryToolStripLabel, "directoryToolStripLabel");
-            // 
-            // dirPathSL
-            // 
-            this.dirPathSL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            resources.ApplyResources(this.dirPathSL, "dirPathSL");
-            this.dirPathSL.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.dirPathSL.Name = "dirPathSL";
-            this.dirPathSL.Click += new System.EventHandler(this.dirPathSL_Click);
             // 
             // executeButton
             // 
@@ -636,8 +615,6 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
-            this.testToolStrip.ResumeLayout(false);
-            this.testToolStrip.PerformLayout();
             this.markPanel.ResumeLayout(false);
             this.markPanel.PerformLayout();
             this.participantPanel.ResumeLayout(false);
@@ -674,8 +651,6 @@
         private System.Windows.Forms.ToolStripMenuItem newTextColorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editListsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripLabel directoryToolStripLabel;
-        private System.Windows.Forms.ToolStripLabel dirPathSL;
         private System.Windows.Forms.ToolStripMenuItem editTextColorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editImagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;

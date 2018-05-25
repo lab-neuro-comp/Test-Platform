@@ -19,6 +19,12 @@ namespace TestPlatform.Models
         private Boolean rndSubtitlePlace;          // [23]  localizacão da legenda aleatória
         private String wordColor;               // [24]  cor da palavra apresentada em palavraimg
         private Int32 delayTime;
+        private static int ELEMENTS = 25;
+
+        public StroopProgram(string programName)
+        {
+            readProgramFile(programName);
+        }
 
         public StroopProgram()
         {
@@ -357,27 +363,32 @@ namespace TestPlatform.Models
         }
 
         // converts .prg file into a stroopprogram object
-        public void readProgramFile(string filepath)
+        public void readProgramFile(string programName)
         {
-            StreamReader tr;
-            string line;
-            string[] linesInstruction;
-            List<string> config = new List<string>();
+            List<string> config = FileManipulation.ReadStroopProgram(programName);
+            configureReadProgram(config);
+        }
 
+        // converts .prg file into a stroopprogram object
+        public void readProgramBackUpFile(string programName)
+        {
+            List<string> config = FileManipulation.ReadStroopProgramFromBackup(programName);
+            configureReadProgram(config);
+        }
 
-            if (!File.Exists(filepath)) { throw new FileNotFoundException(); }
+        public void readProgramFromPath(string programName, string path)
+        {
+            List<string> config = FileManipulation.ReadFileFirstLine(path + programName + ".prg");
+            configureReadProgram(config);
+        }
 
-            tr = new StreamReader(filepath, Encoding.Default, true);
-            line = tr.ReadLine();
-            line = encodeLatinText(line);
-            config = line.Split().ToList();
-            List<string> defaultConfig = LocRM.GetString("defaultStroopProgram", currentCulture).Split().ToList();
-            tr.Close();
-
+        private void configureReadProgram(List<string> config)
+        {
             needsEditionFlag = false;
-            if (config.Count() < defaultConfig.Count() && config.Count() > 15)
+            if (config.Count() < ELEMENTS && config.Count() > 15)
             {
                 needsEditionFlag = true;
+                List<string> defaultConfig = LocRM.GetString("defaultStroopProgram", currentCulture).Split().ToList();
                 for (int i = config.Count(); i < defaultConfig.Count(); i++)
                 {
                     config.Add(defaultConfig[i]);
@@ -385,11 +396,6 @@ namespace TestPlatform.Models
             }
 
             ProgramName = config[0];
-            if (Path.GetFileNameWithoutExtension(filepath) != (this.ProgramName))
-            {
-                throw new Exception(LocRM.GetString("fileNameError1", currentCulture) + this.ProgramName + " != " + Path.GetFileNameWithoutExtension(filepath) + "'.prg");
-            }
-
             NumExpositions = Int32.Parse(config[1]);
             ExpositionTime = Int32.Parse(config[2]);
             ExpositionRandom = Boolean.Parse(config[3]);
@@ -427,33 +433,12 @@ namespace TestPlatform.Models
             RndSubtitlePlace = Boolean.Parse(config[23]);
             WordColor = config[24];
 
-            // reads instructions if there are any
-            linesInstruction = File.ReadAllLines(filepath);
-            if (linesInstruction.Length > 1)
-            {
-                for (int i = 1; i < linesInstruction.Length; i++)
-                {
-                    this.InstructionText.Add(linesInstruction[i]);
-                }
-            }
-            else
-            {
-                this.InstructionText = null;
-            }
+            this.instructionText = FileManipulation.ReadStroopProgramInstructions(programName);
         }
 
-        public bool saveProgramFile(string path, string instructionBoxText)
+        public bool saveProgramFile()
         {
-            StreamWriter writer = new StreamWriter(path + ProgramName + ".prg");
-            writer.WriteLine(data());
-            if (InstructionText != null && InstructionText[0] != instructionBoxText)
-            {
-                for (int i = 0; i < InstructionText.Count; i++)
-                {
-                    writer.WriteLine(InstructionText[i]);
-                }
-            }
-            writer.Close();
+            FileManipulation.SaveProgramFile(FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName + ProgramName, data(), InstructionText);
             return true;
         }
         

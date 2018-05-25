@@ -1,9 +1,11 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
-using TestPlatform.Models;
 
-namespace TestPlatform.Views
+namespace TestPlatform.Models
 {
     /*
     * This class is a pure fabrication that handles file paths, and all file manipulations in the application
@@ -34,13 +36,14 @@ namespace TestPlatform.Views
         private static string _listFilesBackup = "/Lst/";
 
         private static string _listFolderName = "/Lst/";
+        private static string _importPath = "/import";
 
         private static string _programFolderName = "/prg/";
         private static string _resultsFolderName = "/data/";
 
         private static string _backupFolderName = "/backup/";
-        private static string INSTRUCTIONSFILENAME = "editableInstructions.txt";
-        private static string PGRCONFIGHELPFILENAME = "prgConfigHelp.txt";
+
+        private static string PROGRAM_EXTENSION = ".prg";
 
         private static FormMain GlobalFormMain
         {
@@ -68,13 +71,6 @@ namespace TestPlatform.Views
 
             CreateBackupFolders();
 
-
-            // DEPRECATED
-            if (!File.Exists(_testFilesPath + INSTRUCTIONSFILENAME))
-                File.Create(_testFilesPath + "editableInstructions.txt").Dispose();
-            if (!File.Exists(_testFilesPath + PGRCONFIGHELPFILENAME))
-                File.Create(_testFilesPath + PGRCONFIGHELPFILENAME).Dispose();
-
             if (Directory.Exists(_defaultPath + "/StroopTestFiles"))
                 Directory.Delete(_defaultPath + "/StroopTestFiles", true);
 
@@ -85,6 +81,138 @@ namespace TestPlatform.Views
             InitializeDefaultPrograms();
 
         }
+
+        public static FileManipulation Instance(FormMain globalFormMain)
+        {
+            if (instance == null)
+            {
+                instance = new FileManipulation(globalFormMain);
+            }
+            return instance;
+        }
+
+        public static FileManipulation Instance()
+        {
+            return instance;
+        }
+
+        public static string[] GetAllFilesInFolder(string dataFolderPath, string fileType)
+        {
+            if (Directory.Exists(dataFolderPath))
+            {
+                string[] filePaths = Directory.GetFiles(dataFolderPath, ("*." + fileType), SearchOption.AllDirectories);
+                return filePaths;
+            }
+            else
+            {
+                throw new DirectoryNotFoundException();
+            }
+        }
+
+        public static List<string> ReadStroopProgram(string programName)
+        {
+            string filePath = _stroopTestFilesPath + _programFolderName + programName + PROGRAM_EXTENSION;
+            return ReadFileFirstLine(filePath);
+        }
+
+        public static List<string> ReadStroopProgramFromBackup(string programName)
+        {
+            string filePath = _stroopTestFilesBackupPath + programName + PROGRAM_EXTENSION;
+            return ReadFileFirstLine(filePath);
+        }
+
+        public static List<string> ReadStroopProgramInstructions(string programName)
+        {
+            string filePath = _stroopTestFilesPath + _programFolderName + programName + PROGRAM_EXTENSION;
+            return ReadProgramInstructions(filePath);
+        }
+
+        private static List<string> ReadProgramInstructions(string filePath)
+        {
+
+            // reads instructions if there are any
+            string[] linesInstruction = File.ReadAllLines(filePath);
+            List<string> instructions = new List<string>();
+            if (linesInstruction.Length > 1)
+            {
+                for (int i = 1; i < linesInstruction.Length; i++)
+                {
+                    instructions.Add(linesInstruction[i]);
+                }
+            }
+            else
+            {
+                instructions = null;
+            }
+            return instructions;
+        }
+
+        public bool SaveProgramFile(string path, string data, List<string> instructionText)
+        {
+            StreamWriter writer = new StreamWriter(path + PROGRAM_EXTENSION);
+            writer.WriteLine(data);
+            if (instructionText != null)
+            {
+                for (int i = 0; i < instructionText.Count; i++)
+                {
+                    writer.WriteLine(instructionText[i]);
+                }
+            }
+            writer.Close();
+            return true;
+        }
+
+        public static List<string> ReadFileFirstLine(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                StreamReader streamReader = new StreamReader(filePath, Encoding.Default, true);
+               
+                string line = streamReader.ReadLine();
+                line = encodeLatinText(line);
+
+                List<string> config = new List<string>();
+                config = line.Split().ToList();
+                streamReader.Close();
+
+                return config;
+            }
+            else
+            {
+                throw new FileNotFoundException();
+            }
+
+        }
+
+        public static bool StroopProgramExists(string programName)
+        {
+            return FileExists(_stroopTestFilesPath + _programFolderName + programName + PROGRAM_EXTENSION);
+        }
+
+        private static bool FileExists(string file)
+        {
+            if (File.Exists(file))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private static string encodeLatinText(string text)
+        {
+            Encoding iso = Encoding.GetEncoding("ISO-8859-1");
+            Encoding utf8 = Encoding.UTF8;
+
+            byte[] utfBytes = utf8.GetBytes(text);
+            byte[] isoBytes = Encoding.Convert(utf8, iso, utfBytes);
+            string encodedStr = iso.GetString(isoBytes);
+
+            return encodedStr;
+        }
+
 
         private void CreateBackupFolders()
         {
@@ -124,6 +252,24 @@ namespace TestPlatform.Views
                 Directory.CreateDirectory(testFile + _resultsFolderName);
         }
 
+        public static void CreatImportFolder()
+        {
+            Directory.CreateDirectory(_importPath);
+
+            if (Directory.Exists(_importPath))
+            {
+                Directory.Delete(_importPath, true);
+            }
+            else
+            {
+                /* do nothing */
+            }
+        }
+
+        public static void ExtractImportFile(string fileName)
+        {
+            ZipFile.ExtractToDirectory(fileName, _importPath);
+        }
 
         /// <summary>
         /// Create default programs of tests, examples of tests configurations that can be run without needing any modification
@@ -177,6 +323,7 @@ namespace TestPlatform.Views
             _reactionTestFilesPath = _testFilesPath + _reactionTestFilesPath;
             _experimentTestFilesPath = _testFilesPath + _experimentTestFilesPath;
             _matchingTestFilesPath = _testFilesPath + _matchingTestFilesPath;
+            _importPath = _testFilesPath + _importPath;
 
             if (!Directory.Exists(_testFilesPath))
             {
@@ -188,18 +335,5 @@ namespace TestPlatform.Views
             }
         }
 
-        public static FileManipulation Instance (FormMain globalFormMain)
-        {
-                if (instance == null)
-                {
-                    instance = new FileManipulation(globalFormMain);
-                }
-                return instance;
-        }
-
-        public static FileManipulation Instance()
-        {
-            return instance;
-        }
     }
 }

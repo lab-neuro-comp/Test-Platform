@@ -311,18 +311,6 @@ namespace TestPlatform.Models
             }
         }
 
-        public static string encodeLatinText(string text)
-        {
-            Encoding iso = Encoding.GetEncoding("ISO-8859-1");
-            Encoding utf8 = Encoding.UTF8;
-
-            byte[] utfBytes = utf8.GetBytes(text);
-            byte[] isoBytes = Encoding.Convert(utf8, iso, utfBytes);
-            string encodedStr = iso.GetString(isoBytes);
-
-            return encodedStr;
-        }
-
         public static string[] readDirListFile(string filepath)
         {
             if (File.Exists(filepath))

@@ -277,7 +277,7 @@ namespace TestPlatform.Views.MainForms
                             StroopProgram program = new StroopProgram();
                             try
                             {
-                                program.readProgramFile(FileManipulation._stroopTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
+                                program.readProgramBackUpFile(destinationFilesList.Items[count].ToString());
                             }
                             catch (FileNotFoundException e)
                             {

@@ -715,10 +715,8 @@ namespace TestPlatform.Views
         }
 
         private void intervalBW_DoWork(object sender, DoWorkEventArgs e)
-        {
-            
-
-            executingTest.InitialTime = DateTime.Now;
+        {        
+            executingTest.InitialDate = DateTime.Now;
             accumulativeStopWatch.Start();
 
             for (int counter = 0; counter < executingTest.ProgramInUse.NumExpositions && !cancelExposition; counter++)

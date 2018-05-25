@@ -75,11 +75,12 @@
             this.markTextBox = new System.Windows.Forms.TextBox();
             this.markLabel = new System.Windows.Forms.Label();
             this.participantPanel = new System.Windows.Forms.Panel();
-            this.participantTextBox = new System.Windows.Forms.TextBox();
+            this.participantComboBox = new System.Windows.Forms.ComboBox();
             this.participantLabel = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.participantButton = new System.Windows.Forms.RadioButton();
             this.helpButton = new System.Windows.Forms.RadioButton();
             this.buttonMatching = new System.Windows.Forms.RadioButton();
             this.exportButton = new System.Windows.Forms.RadioButton();
@@ -423,16 +424,18 @@
             // 
             resources.ApplyResources(this.participantPanel, "participantPanel");
             this.participantPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.participantPanel.Controls.Add(this.participantTextBox);
+            this.participantPanel.Controls.Add(this.participantComboBox);
             this.participantPanel.Controls.Add(this.participantLabel);
             this.participantPanel.Name = "participantPanel";
             // 
-            // participantTextBox
+            // participantComboBox
             // 
-            resources.ApplyResources(this.participantTextBox, "participantTextBox");
-            this.participantTextBox.Name = "participantTextBox";
-            this.participantTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.participantTextBox_Validating);
-            this.participantTextBox.Validated += new System.EventHandler(this.participantTextBox_Validated);
+            this.participantComboBox.FormattingEnabled = true;
+            resources.ApplyResources(this.participantComboBox, "participantComboBox");
+            this.participantComboBox.Name = "participantComboBox";
+            this.participantComboBox.SelectedIndexChanged += new System.EventHandler(this.participantComboBox_SelectedIndexChanged);
+            this.participantComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.participantTextBox_Validating);
+            this.participantComboBox.Validated += new System.EventHandler(this.participantTextBox_Validated);
             // 
             // participantLabel
             // 
@@ -457,6 +460,7 @@
             // 
             // menuPanel
             // 
+            this.menuPanel.Controls.Add(this.participantButton);
             this.menuPanel.Controls.Add(this.helpButton);
             this.menuPanel.Controls.Add(this.buttonMatching);
             this.menuPanel.Controls.Add(this.exportButton);
@@ -469,6 +473,16 @@
             resources.ApplyResources(this.menuPanel, "menuPanel");
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Click += new System.EventHandler(this.menuPanel_Click);
+            // 
+            // participantButton
+            // 
+            resources.ApplyResources(this.participantButton, "participantButton");
+            this.participantButton.BackColor = System.Drawing.Color.Transparent;
+            this.participantButton.FlatAppearance.BorderSize = 0;
+            this.participantButton.Image = global::TestPlatform.Properties.Resources.icons8_usuário_de_gênero_neutro_20;
+            this.participantButton.Name = "participantButton";
+            this.participantButton.UseVisualStyleBackColor = false;
+            this.participantButton.Click += new System.EventHandler(this.participantButton_Click);
             // 
             // helpButton
             // 
@@ -670,7 +684,6 @@
         private System.Windows.Forms.Button executeButton;
         private System.Windows.Forms.Panel participantPanel;
         private System.Windows.Forms.Label participantLabel;
-        private System.Windows.Forms.TextBox participantTextBox;
         private System.Windows.Forms.Panel markPanel;
         private System.Windows.Forms.TextBox markTextBox;
         private System.Windows.Forms.Label markLabel;
@@ -700,5 +713,7 @@
         private System.Windows.Forms.RadioButton buttonMatching;
         private System.Windows.Forms.ToolStripMenuItem spanishSpainToolStripMenuItem;
         private System.Windows.Forms.RadioButton helpButton;
+        private System.Windows.Forms.RadioButton participantButton;
+        private System.Windows.Forms.ComboBox participantComboBox;
     }
 }

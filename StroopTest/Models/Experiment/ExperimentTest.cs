@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Resources;
+using TestPlatform.Models.Tests;
 
 namespace TestPlatform.Models
 {
@@ -9,15 +10,8 @@ namespace TestPlatform.Models
     * Class that represents results found while executing a test program (ExperimentProgram) and stores data from a partincipant test
     *
     */
-    class ExperimentTest
+    class ExperimentTest : Test
     {
-        // properties used to localize strings during runtime
-        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
-        private static String headerOutputFileText;
-        private DateTime initialDate = DateTime.Now;           // test execution date
-        private String participantName;                // tested person name
-        private Char mark; // char mark made into neurospectrum program
         private ExperimentProgram programInUse = new ExperimentProgram();
         private List<string> output = new List<string>();
         private DateTime expositionTime;
@@ -25,46 +19,6 @@ namespace TestPlatform.Models
         public ExperimentTest()
         {
             headerOutputFileText = LocRM.GetString("experimentHeader", currentCulture);
-        }
-
-
-        public DateTime InitialDate
-        {
-            get
-            {
-                return initialDate;
-            }
-
-            set
-            {
-                initialDate = value;
-            }
-        }
-
-        public string ParticipantName
-        {
-            get
-            {
-                return participantName;
-            }
-
-            set
-            {
-                participantName = value;
-            }
-        }
-
-        public char Mark
-        {
-            get
-            {
-                return mark;
-            }
-
-            set
-            {
-                mark = value;
-            }
         }
 
         internal ExperimentProgram ProgramInUse
@@ -138,7 +92,9 @@ namespace TestPlatform.Models
             {
                 programType = "MatchingTest";
             }
-                var text = programInUse.Name + "\t" + currentProgram.ProgramName + "\t" + programType + "\t" + participantName + "\t" + initialDate.Day + "/" +
+            string[] currentParticipant = participant();
+            var text = programInUse.Name + "\t" + currentProgram.ProgramName + "\t" + programType + "\t" + currentParticipant[0] + "\t" +
+                       currentParticipant[1] + "\t" + initialDate.Day + "/" +
                        initialDate.Month + "/" + initialDate.Year + "\t" + initialDate.Hour + ":" + initialDate.Minute +
                        ":" + initialDate.Second + ":" + initialDate.Millisecond.ToString() + "\t" + ExpositionTime.Hour + ":" + ExpositionTime.Minute +
                        ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" + currentExposition;

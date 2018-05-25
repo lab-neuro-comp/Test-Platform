@@ -14,6 +14,7 @@ namespace TestPlatform
     using TestPlatform.Models;
     using TestPlatform.Views;
     using TestPlatform.Views.ExperimentPages;
+    using TestPlatform.Views.ParticipantPages;
     using TestPlatform.Views.ReactionPages;
     using TestPlatform.Views.SidebarControls;
     using TestPlatform.Views.SidebarUserControls;
@@ -27,7 +28,7 @@ namespace TestPlatform
         /* Variables
          */
         //holds current panel in exact execution time
-        private Control currentPanelContent; 
+        private Control currentPanelContent;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = System.Threading.Thread.CurrentThread.CurrentUICulture;
 
@@ -42,11 +43,23 @@ namespace TestPlatform
             _contentPanel = contentPanel;
         }
 
+        public void initializeParticipants()
+        {
+            string[] filePaths = Directory.GetFiles(Global.testFilesPath + Global.partcipantDataPath, ("*.data"), SearchOption.AllDirectories);
+            participantComboBox.Items.Clear();
+            foreach (string file in filePaths)
+            {
+                string fileName = Path.GetFileNameWithoutExtension(file);
+                participantComboBox.Items.Add(fileName);
+            }
+            participantComboBox.Items.Add(LocRM.GetString("createNewParticipant", currentCulture));
+        }
+
         private void FormMain_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.R) // Ctrl+R - roda teste
             {
-                ExpositionController.BeginStroopTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
+                ExpositionController.BeginStroopTest(executingNameLabel.Text, participantComboBox.Text, markTextBox.Text[0], this);
             }
             if (e.Control && e.KeyCode == Keys.D) // Ctrl+D - define programa
             {
@@ -63,7 +76,7 @@ namespace TestPlatform
         }
 
 
-        
+
         private void newTextColorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormWordColorConfig configureList = new FormWordColorConfig(false);
@@ -93,7 +106,6 @@ namespace TestPlatform
         {
             defineTest();
         }
-        
         private void newImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormImgConfig configureImagesList = new FormImgConfig("false");
@@ -103,6 +115,7 @@ namespace TestPlatform
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+
 
         private void editProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -121,7 +134,7 @@ namespace TestPlatform
 
         private void startTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ExpositionController.BeginStroopTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
+            ExpositionController.BeginStroopTest(executingNameLabel.Text, participantComboBox.Text, markTextBox.Text[0], this);
         }
 
 
@@ -188,7 +201,7 @@ namespace TestPlatform
         {
             HelpPagesController.showHelp();
         }
-        
+
         private void editAudioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAudioConfig configureAudioList = new FormAudioConfig(true);
@@ -241,7 +254,7 @@ namespace TestPlatform
 
         private void buttonStroop_Click(object sender, EventArgs e)
         {
-            
+
             if (buttonStroop.Checked)
             {
                 this.sideBarPanel.Controls.Clear();
@@ -363,7 +376,7 @@ namespace TestPlatform
             FormDefine defineProgram;
             DialogResult result;
             string editProgramName = "error";
-
+            
                 defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName, "prg", "program", false, false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
@@ -374,6 +387,7 @@ namespace TestPlatform
                     this.Controls.Add(configureProgram);
                 }
 
+
         }
 
         private void executeButton_Click(object sender, EventArgs e)
@@ -383,23 +397,23 @@ namespace TestPlatform
                 checkSave();
             }
             if (this.ValidateChildren(ValidationConstraints.Enabled))
-            {             
+            {
                 if (executingTypeLabel.Text.Equals(LocRM.GetString("stroopTest", currentCulture)))
                 {
-                    ExpositionController.BeginStroopTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
+                    ExpositionController.BeginStroopTest(executingNameLabel.Text, participantComboBox.Text, markTextBox.Text[0], this);
                 }
 
                 else if (executingTypeLabel.Text.Equals(LocRM.GetString("reactionTest", currentCulture)))
                 {
-                    ExpositionController.BeginReactionTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
+                    ExpositionController.BeginReactionTest(executingNameLabel.Text, participantComboBox.Text, markTextBox.Text[0], this);
                 }
                 else if (executingTypeLabel.Text.Equals(LocRM.GetString("experiment", currentCulture)))
                 {
-                    ExpositionController.BeginExperimentTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
+                    ExpositionController.BeginExperimentTest(executingNameLabel.Text, participantComboBox.Text, markTextBox.Text[0], this);
                 }
                 else if (executingTypeLabel.Text.Equals(LocRM.GetString("matchingTest", currentCulture)))
                 {
-                    ExpositionController.BeginMatchingTest(executingNameLabel.Text, participantTextBox.Text, markTextBox.Text[0], this);
+                    ExpositionController.BeginMatchingTest(executingNameLabel.Text, participantComboBox.Text, markTextBox.Text[0], this);
                 }
                 else
                 {
@@ -453,12 +467,12 @@ namespace TestPlatform
 
         private void selectButton_Click(object sender, EventArgs e)
         {
-                defineTest();            
+            defineTest();
         }
 
         private void participantTextBox_Validated(object sender, EventArgs e)
         {
-            errorProvider1.SetError(participantTextBox, "");
+            errorProvider1.SetError(participantComboBox, "");
         }
 
         public bool ValidParticipantName(string participantName, out string errorMessage)
@@ -466,11 +480,6 @@ namespace TestPlatform
             if (participantName.Length == 0)
             {
                 errorMessage = LocRM.GetString("participantNameLengthError", currentCulture);
-                return false;
-            }
-            if (!Validations.isAlphanumeric(participantName))
-            {
-                errorMessage = LocRM.GetString("participantNameAlphanumericError", currentCulture);
                 return false;
             }
 
@@ -481,14 +490,14 @@ namespace TestPlatform
         private void participantTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             string errorMsg;
-            if (ValidParticipantName(participantTextBox.Text, out errorMsg))
+            if (ValidParticipantName(participantComboBox.Text, out errorMsg))
             {
                 /* field is valid */
             }
             else
             {
                 e.Cancel = true;
-                this.errorProvider1.SetError(participantTextBox, errorMsg);
+                this.errorProvider1.SetError(participantComboBox, errorMsg);
             }
         }
 
@@ -609,7 +618,7 @@ namespace TestPlatform
             {
                 resources.ApplyResources(ctl, ctl.Name);
                 ApplyResources(resources, ctl.Controls);
-            }            
+            }
         }
 
         private void ApplyToolStripResources(ComponentResourceManager resources, ToolStripItemCollection toolStrip)
@@ -626,11 +635,11 @@ namespace TestPlatform
                 {
                     resources.ApplyResources(item, item.Name);
                     // if subMenu has children call recursive method
-                    if (subMenu.HasDropDownItems) 
+                    if (subMenu.HasDropDownItems)
                     {
-                        ApplyToolStripResources(resources, subMenu.DropDownItems); 
+                        ApplyToolStripResources(resources, subMenu.DropDownItems);
                     }
-                    else 
+                    else
                     {
                         // do nothing
                     }
@@ -651,7 +660,7 @@ namespace TestPlatform
                 ExportUserControl exportView = new ExportUserControl();
                 this._contentPanel.Controls.Add(exportView);
             }
-            
+
         }
 
         private void importButton_Click(object sender, EventArgs e)
@@ -702,6 +711,42 @@ namespace TestPlatform
                 currentPanelContent = helpControl;
             }
         }
+
+        private void participantButton_Click(object sender, EventArgs e)
+        {
+            if (participantButton.Checked)
+            {
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
+
+                ParticipantControl participantControl = new ParticipantControl();
+                this.sideBarPanel.Controls.Add(participantControl);
+                currentPanelContent = participantControl;
+            }
+        }
+
+
+
+        private void participantComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (participantComboBox.SelectedIndex == participantComboBox.Items.Count - 1)
+            {
+                bool screenTranslationAllowed = true;
+                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                {
+                    screenTranslationAllowed = false;
+                }
+                if (screenTranslationAllowed)
+                {
+                    FormParticipantConfig newParticipant = new FormParticipantConfig("false");
+                    Global.GlobalFormMain._contentPanel.Controls.Add(newParticipant);
+                }
+                else
+                {
+                    MessageBox.Show(LocRM.GetString("shouldCloseOpenedForm", currentCulture));
+                }
+            }
+        }
+
     }
-    
 }

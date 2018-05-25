@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Resources;
+using TestPlatform.Models.Tests;
 
 namespace TestPlatform.Models
 {
@@ -10,18 +11,11 @@ namespace TestPlatform.Models
      * Class that represents results found while executing a test program (ReactionProgram) and stores data from a partincipant test
      *
      */
-    class ReactionTest
+    class ReactionTest : Test
     {
-        private static String headerOutputFileText;
-        private Char mark;
         private ReactionProgram programInUse = new ReactionProgram();
-        private string participantName;
-        private DateTime initialTime;
         private DateTime expositionTime;
         private List<string> output = new List<string>();
-        // properties used to localize strings during runtime
-        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private string currentResponse;
 
         public ReactionTest()
@@ -29,31 +23,6 @@ namespace TestPlatform.Models
             headerOutputFileText = LocRM.GetString("reactionTestHeader", currentCulture);
         }
 
-        public string ParticipantName
-        {
-            get
-            {
-                return participantName;
-            }
-
-            set
-            {
-                participantName = value;
-            }
-        }
-
-        public DateTime InitialTime
-        {
-            get
-            {
-                return initialTime;
-            }
-
-            set
-            {
-                initialTime = value;
-            }
-        }
 
         public List<string> Output
         {
@@ -91,19 +60,6 @@ namespace TestPlatform.Models
             set
             {
                 programInUse = value;
-            }
-        }
-
-        public char Mark
-        {
-            get
-            {
-                return mark;
-            }
-
-            set
-            {
-                mark = value;
             }
         }
 
@@ -173,14 +129,16 @@ namespace TestPlatform.Models
         {
             /* This variable keeps data from an exposition to only one stimulus, being them:
              * programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\trespostaUsuario\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep
-             * program\tparticipant\tdate\tInitialTime\texpositionTime\treactionTime(ms)\tInterval(ms)\testimatedInterval(ms)\texpositionDuration(ms)\texposition(ms)\tsenquency\tpos\tuserResponse\tstimulusType\tstimulus\tstimulusColor\tBeep
+             * program\tparticipant\tdate\tInitialDate\texpositionTime\treactionTime(ms)\tInterval(ms)\testimatedInterval(ms)\texpositionDuration(ms)\texposition(ms)\tsenquency\tpos\tuserResponse\tstimulusType\tstimulus\tstimulusColor\tBeep
              * program  name    participant     name    date    hour    exposition hour    hit time(ms) interval(ms)  interval should be(ms)  
              * exposition accumulative timeexposition time(ms)  number of sequency  position on screen  user response   type of stimulus  stimulus1List stimulus1 
              * stimulus2List stimulus2   
              * stimulus color */
-            var text = ProgramInUse.ProgramName + "\t" + participantName + "\t" + initialTime.Day + "/" +
-                       initialTime.Month + "/" + initialTime.Year + "\t" + initialTime.Hour + ":" + initialTime.Minute +
-                       ":" + initialTime.Second + ":" + initialTime.Millisecond.ToString() + "\t" + ExpositionTime.Hour + ":" + ExpositionTime.Minute +
+            string[] currentParticipant = participant();
+            var text = ProgramInUse.ProgramName + "\t" + currentParticipant[0] + "\t" +
+                       currentParticipant[1] + "\t" + initialDate.Day + "/" +
+                       initialDate.Month + "/" + initialDate.Year + "\t" + initialDate.Hour + ":" + initialDate.Minute +
+                       ":" + initialDate.Second + ":" + initialDate.Millisecond.ToString() + "\t" + ExpositionTime.Hour + ":" + ExpositionTime.Minute +
                        ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" + reactTime.ToString() +
                         "\t" + intervalTime.ToString() + "\t" + intervalShouldBe.ToString() + "\t" + expositionAccumulative + "\t" +
                         ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + position + "\t" +  CurrentResponse  + "\t"+ expositionTypeOutput() + "\t" +

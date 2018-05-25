@@ -306,7 +306,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>Número de vezes em que os estímulos serão expostos</value>
   </data>
   <data name="participantNameAlphanumericError" xml:space="preserve">
-    <value>Nome do participante deve ser composto apenas de caracteres alfanuméricos e sem espaços;\nExemplo: 'LuisAugusto'"</value>
+    <value>O texto deve ser composto apenas de caracteres alfanuméricos e sem espaços;\nExemplo: 'LuisAugusto'"</value>
   </data>
   <data name="participantNameLengthError" xml:space="preserve">
     <value>O nome do participante deve ser preenchido.</value>
@@ -423,7 +423,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>Selecione o arquivo de lista de palavras.</value>
   </data>
   <data name="experimentHeader" xml:space="preserve">
-    <value>experimento\tprograma\ttipo Programa\tusuario\tdata\thorario Inicial\thorario Teste\tsequencia</value>
+    <value>experimento\tprograma\ttipo Programa\t#\tParticipante\tdata\thorario Inicial\thorario Teste\tsequencia</value>
   </data>
   <data name="experimentName" xml:space="preserve">
     <value>Nome do experimento deve ser composto apenas de caracteres alfanuméricos. \nExemplo: 'MeuExprimento'.</value>
@@ -1298,13 +1298,13 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>não foi escrito\n\n</value>
   </data>
   <data name="reactionTestHeader" xml:space="preserve">
-    <value>Programa\tParticipante\tData\tHorário inicial\tHorário exposição\tTR(ms)\tIntervalo(ms)\tIntervalo estimado(ms)\tExposição tempo(ms)\tExposicao(ms)\tSequência\tPosição\tResposta usuário\tTipo estímulo\tLista1\tEstímulo1\tLista2\tEstímulo2\tCor do estímulo\tBeep</value>
+    <value>Programa\t#\tParticipante\tData\tHorário inicial\tHorário exposição\tTR(ms)\tIntervalo(ms)\tIntervalo estimado(ms)\tExposição tempo(ms)\tExposicao(ms)\tSequência\tPosição\tResposta usuário\tTipo estímulo\tLista1\tEstímulo1\tLista2\tEstímulo2\tCor do estímulo\tBeep</value>
   </data>
   <data name="responseTypeError" xml:space="preserve">
     <value>Tipo de resposta selecionado inválido. As opções válidas são: barra de espaço ou setas.</value>
   </data>
   <data name="stroopResultHeader" xml:space="preserve">
-    <value>programa\tusuario\tdata\thorario\ttempo(ms)\tsequencia\ttipo estimulo\tlegenda\tposicao legenda\testimulo\tcor\taudio</value>
+    <value>programa\t#\tParticipante\tdata\thorario\ttempo(ms)\tsequencia\ttipo estimulo\tlegenda\tposicao legenda\testimulo\tcor\taudio</value>
   </data>
   <data name="subtitleColorError" xml:space="preserve">
     <value>Cor da Legenda deve ser 'false' ou um código hexadecimal de cor</value>
@@ -2590,7 +2590,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>Selecione uma lista de imagens</value>
   </data>
   <data name="matchingTestHeader" xml:space="preserve">
-    <value>Programa\tParticipante\tData\tHorario Inicial\tTempo de Exposição\tReação do modelo(ms)\tReação do estimulo(ms)\tIntervalo das tentativas(ms)\tIntervalo(ms)\tExposição do modelo(ms)\tExposição do estímulo(ms)\tSenquencia\tTipo de Teste\tTipo de estimulo\tLista\tPrimeira posição do modelo\tModelo\tCor do modelo\tEstimulo 2\tEstimulo 3\tEstimulo 4\tEstimulo 5\tEstimulo 6\tEstimulo 7\tEstimulo 8\tSegunda posição do modelo\tNome do estimulo clicado\tCor do estimulo clicado\tPosição do estimulo clicado\tIgual</value>
+    <value>Programa\t#\tParticipante\tData\tHorario Inicial\tTempo de Exposição\tReação do modelo(ms)\tReação do estimulo(ms)\tIntervalo das tentativas(ms)\tIntervalo(ms)\tExposição do modelo(ms)\tExposição do estímulo(ms)\tSenquencia\tTipo de Teste\tTipo de estimulo\tLista\tPrimeira posição do modelo\tModelo\tCor do modelo\tEstimulo 2\tEstimulo 3\tEstimulo 4\tEstimulo 5\tEstimulo 6\tEstimulo 7\tEstimulo 8\tSegunda posição do modelo\tNome do estimulo clicado\tCor do estimulo clicado\tPosição do estimulo clicado\tIgual</value>
   </data>
   <data name="CannotBeEmpty" xml:space="preserve">
     <value>Esse campo deve ser preenchido</value>
@@ -2800,5 +2800,41 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="modelSecondPosition" xml:space="preserve">
     <value>Segunda posição do modelo</value>
+  </data>
+  <data name="invalidDate" xml:space="preserve">
+    <value>Deve ser selecionada uma data válida.</value>
+  </data>
+  <data name="invalidSchoolingLevel" xml:space="preserve">
+    <value>Selecione um nível de escolaridade.</value>
+  </data>
+  <data name="invalidSex" xml:space="preserve">
+    <value>Selecione um sexo.</value>
+  </data>
+  <data name="invalidYesNoPanel" xml:space="preserve">
+    <value>Selecione sim ou não.</value>
+  </data>
+  <data name="invalidName" xml:space="preserve">
+    <value>Digite um nome.</value>
+  </data>
+  <data name="participantAlreadyExistsWishOverride" xml:space="preserve">
+    <value>Participante já existe, deseja sobreescrever?</value>
+  </data>
+  <data name="participantNotSaved" xml:space="preserve">
+    <value>Participante não foi salvo.</value>
+  </data>
+  <data name="participantSaveSucessful" xml:space="preserve">
+    <value>Participante salvo com sucesso.</value>
+  </data>
+  <data name="editParticipant" xml:space="preserve">
+    <value>Editar participante:</value>
+  </data>
+  <data name="createNewParticipant" xml:space="preserve">
+    <value>Criar novo participante</value>
+  </data>
+  <data name="shouldCloseOpenedForm" xml:space="preserve">
+    <value>Você deve fechar qualquer formulário aberto antes de continuar</value>
+  </data>
+  <data name="shouldSelectReason" xml:space="preserve">
+    <value>Um motivo válido deve ser selecionado.</value>
   </data>
 </root>

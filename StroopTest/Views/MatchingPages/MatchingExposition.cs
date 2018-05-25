@@ -412,7 +412,7 @@ namespace TestPlatform.Views.MatchingPages
         private void expositionControllerBW_DoWork(object sender, DoWorkEventArgs e)
         {
             /*define test initil time and start accumulative stopwatch*/
-            executingTest.InitialTime = DateTime.Now;
+            executingTest.InitialDate = DateTime.Now;
             accumulativeStopWatch.Start();
             for (int count = 0; count < this.executingTest.ProgramInUse.AttemptsNumber * 2; count++)
             {
@@ -952,7 +952,7 @@ namespace TestPlatform.Views.MatchingPages
                     if ((e.Cancelled == true) && !intervalCancelled) /* user clicked after stimulus is shown*/
                     {
                         stimulus[7] = Path.GetFileNameWithoutExtension(this.matchingGroups.ElementAt(groupCounter - 1).getControlName(objectClicked, stimuluType));
-                        executingTest.writeLineOutput(
+                        executingTest.WriteLineOutput(
                             attemptIntervalTime,
                             intervalElapsedTime,
                             modelReactTime,
@@ -992,7 +992,7 @@ namespace TestPlatform.Views.MatchingPages
                         {
                             stimulus.Add("-");
                         }
-                        executingTest.writeLineOutput(
+                        executingTest.WriteLineOutput(
                             attemptIntervalTime,
                             intervalElapsedTime,
                             modelReactTime,

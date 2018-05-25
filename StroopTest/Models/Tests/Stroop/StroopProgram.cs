@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using TestPlatform.Views;
 
 namespace TestPlatform.Models
 {
@@ -29,6 +30,12 @@ namespace TestPlatform.Models
         public StroopProgram()
         {
             new Program();
+        }
+
+        public StroopProgram(string programName)
+        {
+            new Program();
+            readProgramFile(Global.stroopTestFilesPath + "/prg/" + programName + ".prg");
         }
 
         // set values for type txt

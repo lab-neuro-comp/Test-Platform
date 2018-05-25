@@ -106,7 +106,7 @@
 
             string progName = LocRM.GetString("open", currentCulture);
 
-            FormDefine defineProgram = new FormDefine("Lista: ", FileManipulation._testFilesPath + FileManipulation._listFolderName, type, itemType, false, true);
+            FormDefine defineProgram = new FormDefine("Lista: ", FileManipulation._listFolderName, type, itemType, false, true);
             var result = defineProgram.ShowDialog();
 
             if (result == System.Windows.Forms.DialogResult.OK)

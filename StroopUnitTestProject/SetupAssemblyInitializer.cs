@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
-using TestPlatform.Views;
+using TestPlatform.Models;
 
 namespace StroopUnitTestProject
 {
@@ -12,46 +12,46 @@ namespace StroopUnitTestProject
         public static void AssemblyInit(TestContext context)
         {
             string path = AppDomain.CurrentDomain.BaseDirectory;
-            Global.defaultPath = (Path.GetDirectoryName(path));
-            Global.testFilesPath = Global.defaultPath + Global.testFilesPath;
-            if (!Directory.Exists(Global.testFilesPath))
+            FileManipulation._defaultPath = (Path.GetDirectoryName(path));
+            FileManipulation._testFilesPath = FileManipulation._defaultPath + FileManipulation._testFilesPath;
+            if (!Directory.Exists(FileManipulation._testFilesPath))
             {
-                Directory.CreateDirectory(Global.testFilesPath);
+                Directory.CreateDirectory(FileManipulation._testFilesPath);
             }
 
-            Global.stroopTestFilesPath = Global.testFilesPath + Global.stroopTestFilesPath;
-            if (!Directory.Exists(Global.stroopTestFilesPath))
-                Directory.CreateDirectory(Global.stroopTestFilesPath);
-            if (!Directory.Exists(Global.stroopTestFilesPath + Global.programFolderName))
-                Directory.CreateDirectory(Global.stroopTestFilesPath + Global.programFolderName);
-            if (!Directory.Exists(Global.stroopTestFilesPath + Global.resultsFolderName))
-                Directory.CreateDirectory(Global.stroopTestFilesPath + Global.resultsFolderName);
+            FileManipulation._stroopTestFilesPath = FileManipulation._testFilesPath + FileManipulation._stroopTestFilesPath;
+            if (!Directory.Exists(FileManipulation._stroopTestFilesPath))
+                Directory.CreateDirectory(FileManipulation._stroopTestFilesPath);
+            if (!Directory.Exists(FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName))
+                Directory.CreateDirectory(FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName);
+            if (!Directory.Exists(FileManipulation._stroopTestFilesPath + FileManipulation._resultsFolderName))
+                Directory.CreateDirectory(FileManipulation._stroopTestFilesPath + FileManipulation._resultsFolderName);
 
-            Global.reactionTestFilesPath = Global.testFilesPath + Global.reactionTestFilesPath;
-            if (!Directory.Exists(Global.reactionTestFilesPath))
-                Directory.CreateDirectory(Global.reactionTestFilesPath);
-            if (!Directory.Exists(Global.reactionTestFilesPath + Global.programFolderName))
-                Directory.CreateDirectory(Global.reactionTestFilesPath + Global.programFolderName);
-            if (!Directory.Exists(Global.reactionTestFilesPath + Global.resultsFolderName))
-                Directory.CreateDirectory(Global.reactionTestFilesPath + Global.resultsFolderName);
+            FileManipulation._reactionTestFilesPath = FileManipulation._testFilesPath + FileManipulation._reactionTestFilesPath;
+            if (!Directory.Exists(FileManipulation._reactionTestFilesPath))
+                Directory.CreateDirectory(FileManipulation._reactionTestFilesPath);
+            if (!Directory.Exists(FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName))
+                Directory.CreateDirectory(FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName);
+            if (!Directory.Exists(FileManipulation._reactionTestFilesPath + FileManipulation._resultsFolderName))
+                Directory.CreateDirectory(FileManipulation._reactionTestFilesPath + FileManipulation._resultsFolderName);
 
             /* creating directories related to Experiment in case they don't already exists*/
-            Global.experimentTestFilesPath = Global.testFilesPath + Global.experimentTestFilesPath;
-            if (!Directory.Exists(Global.experimentTestFilesPath))
-                Directory.CreateDirectory(Global.experimentTestFilesPath);
-            if (!Directory.Exists(Global.experimentTestFilesPath + Global.programFolderName))
-                Directory.CreateDirectory(Global.experimentTestFilesPath + Global.programFolderName);
-            if (!Directory.Exists(Global.experimentTestFilesPath + Global.resultsFolderName))
-                Directory.CreateDirectory(Global.experimentTestFilesPath + Global.resultsFolderName);
+            FileManipulation._experimentTestFilesPath = FileManipulation._testFilesPath + FileManipulation._experimentTestFilesPath;
+            if (!Directory.Exists(FileManipulation._experimentTestFilesPath))
+                Directory.CreateDirectory(FileManipulation._experimentTestFilesPath);
+            if (!Directory.Exists(FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName))
+                Directory.CreateDirectory(FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName);
+            if (!Directory.Exists(FileManipulation._experimentTestFilesPath + FileManipulation._resultsFolderName))
+                Directory.CreateDirectory(FileManipulation._experimentTestFilesPath + FileManipulation._resultsFolderName);
 
             /* creating Lists folder*/
-            if (!Directory.Exists(Global.testFilesPath + Global.listFolderName))
+            if (!Directory.Exists(FileManipulation._listFolderName))
             {
-                Directory.CreateDirectory(Global.testFilesPath + Global.listFolderName);
+                Directory.CreateDirectory(FileManipulation._listFolderName);
             }
 
-            if (!Directory.Exists(Global.defaultPath + Global.backupFolderName))
-                Directory.CreateDirectory(Global.defaultPath + Global.backupFolderName);
+            if (!Directory.Exists(FileManipulation._defaultPath + FileManipulation._backupFolderName))
+                Directory.CreateDirectory(FileManipulation._defaultPath + FileManipulation._backupFolderName);
         }
     }
 }

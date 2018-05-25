@@ -576,7 +576,7 @@ namespace TestPlatform.Models
 
             tr = new StreamReader(filepath, Encoding.Default, true);
             line = tr.ReadLine();
-            line = encodeLatinText(line);
+            line = FileManipulation.encodeLatinText(line);
             config = line.Split().ToList();
             tr.Close();
 

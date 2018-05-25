@@ -274,7 +274,7 @@ namespace TestPlatform.Views.ParticipantPages
                 if (hasToSave && participant.saveParticipantFile())
                 {
                     MessageBox.Show(LocRM.GetString("participantSaveSucessful"));
-                    Global.GlobalFormMain.initializeParticipants();
+                    FileManipulation.GlobalFormMain.initializeParticipants();
                     this.Parent.Controls.Remove(this);
                 }
             }

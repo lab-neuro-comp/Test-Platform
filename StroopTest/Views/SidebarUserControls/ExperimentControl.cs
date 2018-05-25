@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Globalization;
-using System.IO;
 using System.Resources;
 using System.Windows.Forms;
 using TestPlatform.Views.ExperimentPages;
 using TestPlatform.Views.MainForms;
+using TestPlatform.Models;
 
 namespace TestPlatform.Views.SidebarUserControls
 {

@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using TestPlatform.Views;
 using TestPlatform.Views.MainForms;
+using TestPlatform.Models;
 
 namespace TestPlatform.Controllers
 {

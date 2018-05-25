@@ -32,12 +32,6 @@ namespace TestPlatform.Models
             new Program();
         }
 
-        public StroopProgram(string programName)
-        {
-            new Program();
-            readProgramFile(Global.stroopTestFilesPath + "/prg/" + programName + ".prg");
-        }
-
         // set values for type txt
         public void setTxtType(string programName, int expoTime, int numExpo, bool expoRandom, string wordSize, int intervalTime,
                              bool intervalRandom, string wordList, string colorList)
@@ -458,7 +452,7 @@ namespace TestPlatform.Models
             this.ProgramName = LocRM.GetString("default", currentCulture);
             try
             {
-                TextWriter tw = new StreamWriter(filepath);
+                TextWriter tw = new StreamWriter(filepath + ProgramName + ".prg");
                 tw.WriteLine(LocRM.GetString("defaultStroopProgram", currentCulture));
                 for(int i = 0; i < defaultInstructionText.Length; i++)
                 {

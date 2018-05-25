@@ -12,6 +12,7 @@ using System.Resources;
 using System.Globalization;
 using TestPlatform.Views.MainForms;
 using TestPlatform.Views.MatchingPages;
+using TestPlatform.Models;
 
 namespace TestPlatform.Views.SidebarUserControls
 {

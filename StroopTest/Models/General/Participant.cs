@@ -134,12 +134,12 @@ namespace TestPlatform.Models.General
 
         public string getParticipantPath()
         {
-            return Global.testFilesPath + Global.partcipantDataPath + registrationID + "-" + name + ".data";
+            return FileManipulation._testFilesPath + FileManipulation._partcipantDataPath + registrationID + "-" + name + ".data";
         }
 
         public string getParticipantPath(string filename)
         {
-            return Global.testFilesPath + Global.partcipantDataPath + filename + ".data";
+            return FileManipulation._testFilesPath + FileManipulation._partcipantDataPath + filename + ".data";
         }
 
         public bool saveParticipantFile()
@@ -169,7 +169,7 @@ namespace TestPlatform.Models.General
 
                 tr = new StreamReader(getParticipantPath(fileName), Encoding.Default, true);
                 line = tr.ReadLine();
-                line = Program.encodeLatinText(line);
+                line = FileManipulation.encodeLatinText(line);
                 config = line.Split().ToList();
 
                 this.registrationID = int.Parse(config[0]);
@@ -189,13 +189,13 @@ namespace TestPlatform.Models.General
                 this.consumedDrugs = bool.Parse(config[14]);
                 this.consumedEnergizers = bool.Parse(config[15]);
 
-                this.glassesEspecification = Program.encodeLatinText(tr.ReadLine());
-                this.medicationEspecification = Program.encodeLatinText(tr.ReadLine());
-                this.relaxantEspecification = Program.encodeLatinText(tr.ReadLine());
-                this.sleepEspecification = Program.encodeLatinText(tr.ReadLine());
-                this.alcoholEspecification = Program.encodeLatinText(tr.ReadLine());
-                this.drugsEspecification = Program.encodeLatinText(tr.ReadLine());
-                this.energizersEspecification = Program.encodeLatinText(tr.ReadLine());
+                this.glassesEspecification = FileManipulation.encodeLatinText(tr.ReadLine());
+                this.medicationEspecification = FileManipulation.encodeLatinText(tr.ReadLine());
+                this.relaxantEspecification = FileManipulation.encodeLatinText(tr.ReadLine());
+                this.sleepEspecification = FileManipulation.encodeLatinText(tr.ReadLine());
+                this.alcoholEspecification = FileManipulation.encodeLatinText(tr.ReadLine());
+                this.drugsEspecification = FileManipulation.encodeLatinText(tr.ReadLine());
+                this.energizersEspecification = FileManipulation.encodeLatinText(tr.ReadLine());
                 tr.Close();
                 linesInstruction = File.ReadAllLines(getParticipantPath(fileName));
                 if (linesInstruction.Length > 8) // read instructions if any

@@ -17,7 +17,7 @@ namespace TestPlatform.Views.MainForms
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
         // file paths used in methods of this class
-        private string listPath = FileManipulation._testFilesPath + FileManipulation._listFolderName;
+        private string listPath = FileManipulation._listFolderName;
         private string reactionPath = FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName;
         private string matchingPath = FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName;
         private string stroopPath = FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName;

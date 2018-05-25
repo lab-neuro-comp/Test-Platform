@@ -222,7 +222,7 @@
             {
                 string[] fileLines = File.ReadAllLines(filePath);
                 string line = fileLines[0];
-                line = Program.encodeLatinText(line);
+                line = FileManipulation.encodeLatinText(line);
                 List<string> configurationFile = line.Split().ToList();
 
                 ExperimentName = configurationFile[0];
@@ -243,7 +243,7 @@
                 }
 
                 string listLine = fileLines[1];
-                line = Program.encodeLatinText(line);
+                line = FileManipulation.encodeLatinText(line);
                 List<string> listConfiguration = listLine.Split().ToList();
                 for (int i = 1; i <= listConfiguration.Count() - 2; i = i + 2)
                 {

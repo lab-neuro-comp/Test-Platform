@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using TestPlatform.Views;
-using TestPlatform;
+using TestPlatform.Models;
 using TestPlatform.Views.ReactionPages;
 using TestPlatform.Views.ExperimentPages;
 using TestPlatform.Views.MatchingPages;

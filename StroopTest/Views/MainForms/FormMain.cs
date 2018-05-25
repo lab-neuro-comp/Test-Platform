@@ -8,6 +8,7 @@ namespace TestPlatform
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Globalization;
+    using System.IO;
     using System.Resources;
     using System.Windows.Forms;
     using TestPlatform.Controllers;
@@ -45,7 +46,7 @@ namespace TestPlatform
 
         public void initializeParticipants()
         {
-            string[] filePaths = Directory.GetFiles(Global.testFilesPath + Global.partcipantDataPath, ("*.data"), SearchOption.AllDirectories);
+            string[] filePaths = Directory.GetFiles(FileManipulation._testFilesPath + FileManipulation._partcipantDataPath, ("*.data"), SearchOption.AllDirectories);
             participantComboBox.Items.Clear();
             foreach (string file in filePaths)
             {
@@ -732,14 +733,14 @@ namespace TestPlatform
             if (participantComboBox.SelectedIndex == participantComboBox.Items.Count - 1)
             {
                 bool screenTranslationAllowed = true;
-                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
                 {
                     screenTranslationAllowed = false;
                 }
                 if (screenTranslationAllowed)
                 {
                     FormParticipantConfig newParticipant = new FormParticipantConfig("false");
-                    Global.GlobalFormMain._contentPanel.Controls.Add(newParticipant);
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Add(newParticipant);
                 }
                 else
                 {

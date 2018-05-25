@@ -39,7 +39,7 @@ namespace TestPlatform.Models
             // adding content of word and color lists
             if (type == 2 || type == 3)
             {
-                string file = FileManipulation._testFilesPath + FileManipulation._listFolderName + "/" + listname + types[type] + ".lst";
+                string file = FileManipulation._listFolderName + "/" + listname + types[type] + ".lst";
                 if (File.Exists(file))
                 {
                     TextReader tr = new StreamReader(file, Encoding.Default, true);
@@ -64,7 +64,7 @@ namespace TestPlatform.Models
             else if (type == 0 || type == 1)
             {
                 string[] content;
-                string directoryList = FileManipulation._testFilesPath + FileManipulation._listFolderName + "/" + listname + types[type];
+                string directoryList = FileManipulation._listFolderName + "/" + listname + types[type];
                 try
                 {
                     content = Directory.GetFiles(directoryList);
@@ -131,7 +131,7 @@ namespace TestPlatform.Models
 
         private string getFilePath()
         {
-            return FileManipulation._testFilesPath + FileManipulation._listFolderName + ListName + Type + ".lst";
+            return  FileManipulation._listFolderName + ListName + Type + ".lst";
         }
 
         public bool save()
@@ -150,7 +150,7 @@ namespace TestPlatform.Models
         {
             if (shouldSave && (Type.Equals(types[0]) || Type.Equals(types[1])))
             {
-                string listDestination = FileManipulation._testFilesPath + FileManipulation._listFolderName + ListName + Type + "/";
+                string listDestination = FileManipulation._listFolderName + ListName + Type + "/";
                 Directory.CreateDirectory(listDestination);
                 int i = 0;
                 foreach (string content in listContent)
@@ -227,7 +227,7 @@ namespace TestPlatform.Models
         // converts image and audio list files *.lst to new implementation that imports files to a folder
         public static void convertFileLists()
         {
-            string listFolder = FileManipulation._testFilesPath + FileManipulation._listFolderName;
+            string listFolder = FileManipulation._listFolderName;
             string[] audioFiles = Directory.GetFiles(listFolder, ("*_audio.lst"), SearchOption.AllDirectories);
             string[] imageFiles = Directory.GetFiles(listFolder, ("*_image.lst"), SearchOption.AllDirectories);
 

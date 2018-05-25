@@ -21,38 +21,38 @@ namespace TestPlatform.Models
         private static FileManipulation instance;
 
         private static FormMain _globalFormMain;
-        private static string _defaultPath; // path of execution program
+        public static string _defaultPath; // path of execution program
 
-        private static string _testFilesPath = "/TestFiles/";
-        private static string _stroopTestFilesPath = "/StroopTestFiles/";
-        private static string _reactionTestFilesPath = "/ReactionTestFiles/";
-        private static string _experimentTestFilesPath = "/ExperimentTestFiles/";
-        private static string _matchingTestFilesPath = "/MatchingTestFiles/";
+        public static string _testFilesPath = "/TestFiles/";
+        public static string _stroopTestFilesPath = "/StroopTestFiles/";
+        public static string _reactionTestFilesPath = "/ReactionTestFiles/";
+        public static string _experimentTestFilesPath = "/ExperimentTestFiles/";
+        public static string _matchingTestFilesPath = "/MatchingTestFiles/";
 
-        private static string _stroopTestFilesBackupPath = "/StroopTestFiles/";
-        private static string _reactionTestFilesBackupPath = "/ReactionTestFiles/";
-        private static string _experimentTestFilesBackupPath = "/ExperimentTestFiles/";
-        private static string _matchingTestFilesBackupPath = "/MatchingTestFiles/";
-        private static string _listFilesBackup = "/Lst/";
+        public static string _stroopTestFilesBackupPath = "/StroopTestFiles/";
+        public static string _reactionTestFilesBackupPath = "/ReactionTestFiles/";
+        public static string _experimentTestFilesBackupPath = "/ExperimentTestFiles/";
+        public static string _matchingTestFilesBackupPath = "/MatchingTestFiles/";
+        public static string _listFilesBackup = "/Lst/";
+        public static string _partcipantDataPath = "/ParticipantData/";
+        public static string _listFolderName = "/Lst/";
+        public static string _importPath = "/import";
 
-        private static string _listFolderName = "/Lst/";
-        private static string _importPath = "/import";
+        public static string _programFolderName = "/prg/";
+        public static string _resultsFolderName = "/data/";
 
-        private static string _programFolderName = "/prg/";
-        private static string _resultsFolderName = "/data/";
-
-        private static string _backupFolderName = "/backup/";
+        public static string _backupFolderName = "/backup/";
 
         private static string PROGRAM_EXTENSION = ".prg";
 
-        private static FormMain GlobalFormMain
+        public static FormMain GlobalFormMain
         {
             get { return _globalFormMain; }
             set { _globalFormMain = value; }
         }
 
         private FileManipulation(FormMain globalFormMain) {
-            GlobalFormMain = globalFormMain;
+            _globalFormMain = globalFormMain;
 
             CreateMainFolderAndPaths();
 
@@ -147,7 +147,7 @@ namespace TestPlatform.Models
             return instructions;
         }
 
-        public bool SaveProgramFile(string path, string data, List<string> instructionText)
+        public static bool SaveProgramFile(string path, string data, List<string> instructionText)
         {
             StreamWriter writer = new StreamWriter(path + PROGRAM_EXTENSION);
             writer.WriteLine(data);
@@ -201,7 +201,7 @@ namespace TestPlatform.Models
             }
         }
 
-        private static string encodeLatinText(string text)
+        public static string encodeLatinText(string text)
         {
             Encoding iso = Encoding.GetEncoding("ISO-8859-1");
             Encoding utf8 = Encoding.UTF8;
@@ -278,13 +278,13 @@ namespace TestPlatform.Models
         private void InitializeDefaultPrograms()
         {
             StroopProgram programDefault = new StroopProgram();
-            programDefault.writeDefaultProgramFile(_stroopTestFilesPath + _programFolderName + programDefault.ProgramName + ".prg");
+            programDefault.writeDefaultProgramFile(_stroopTestFilesPath + _programFolderName);
 
             ReactionProgram defaultProgram = new ReactionProgram();
             defaultProgram.writeDefaultProgramFile();
 
-            StrList.writeDefaultWordsList(_testFilesPath + _listFolderName);
-            StrList.writeDefaultColorsList(_testFilesPath + _listFolderName);
+            StrList.writeDefaultWordsList(_listFolderName);
+            StrList.writeDefaultColorsList(_listFolderName);
         }
 
         /// <summary>

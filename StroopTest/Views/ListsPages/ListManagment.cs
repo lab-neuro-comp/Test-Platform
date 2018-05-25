@@ -20,7 +20,7 @@ namespace TestPlatform.Views.ListsPages
         bool stopLoading = false;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
-        string listPath = FileManipulation._testFilesPath + FileManipulation._listFolderName, suffix;
+        string listPath = FileManipulation._listFolderName, suffix;
         string[] filePaths;
         char mode;
         public ListManagment(string suffix, char mode)
@@ -127,12 +127,12 @@ namespace TestPlatform.Views.ListsPages
             {
                 if (suffix == "_image" || suffix == "_audio")
                 {
-                    if (Directory.Exists(FileManipulation._testFilesPath + FileManipulation._listFolderName + text))
+                    if (Directory.Exists(FileManipulation._listFolderName + text))
                     {
                         return true;
                     }
                 }
-                else if (File.Exists(FileManipulation._testFilesPath + FileManipulation._listFolderName + text + ".lst"))
+                else if (File.Exists(FileManipulation._listFolderName + text + ".lst"))
                 {
                     return true;
                 }
@@ -406,13 +406,13 @@ namespace TestPlatform.Views.ListsPages
                         {
                             try
                             {
-                                currentDirectory = FileManipulation._testFilesPath + FileManipulation._listFolderName + deletingList.Items[count].ToString() + suffix;
+                                currentDirectory = FileManipulation._listFolderName + deletingList.Items[count].ToString() + suffix;
                                 Directory.Move(FileManipulation._listFilesBackup + deletingList.Items[count].ToString() + suffix, currentDirectory);
                                 count++;
                             }
                             catch (IOException)
                             {
-                                Directory.Delete(FileManipulation._testFilesPath + FileManipulation._listFolderName + deletingList.Items[count].ToString() + suffix, true);
+                                Directory.Delete(FileManipulation._listFolderName + deletingList.Items[count].ToString() + suffix, true);
                                 Directory.Move(FileManipulation._listFilesBackup + deletingList.Items[count].ToString() + suffix, listPath + deletingList.Items[count].ToString() + suffix);
                                 count++;
                             }
@@ -436,12 +436,12 @@ namespace TestPlatform.Views.ListsPages
                         {
                             try
                             {
-                                File.Move(FileManipulation._listFilesBackup + deletingList.Items[count].ToString() + ".lst", FileManipulation._testFilesPath + FileManipulation._listFolderName + deletingList.Items[count].ToString() + ".lst");
+                                File.Move(FileManipulation._listFilesBackup + deletingList.Items[count].ToString() + ".lst", FileManipulation._listFolderName + deletingList.Items[count].ToString() + ".lst");
                             }
                             catch (IOException)
                             {
-                                File.Delete(FileManipulation._testFilesPath + FileManipulation._listFolderName + deletingList.Items[count].ToString() + ".lst");
-                                File.Move(FileManipulation._listFilesBackup + deletingList.Items[count].ToString() + ".lst", FileManipulation._testFilesPath + FileManipulation._listFolderName + deletingList.Items[count].ToString() + ".lst");
+                                File.Delete(FileManipulation._listFolderName + deletingList.Items[count].ToString() + ".lst");
+                                File.Move(FileManipulation._listFilesBackup + deletingList.Items[count].ToString() + ".lst",  FileManipulation._listFolderName + deletingList.Items[count].ToString() + ".lst");
                             }
                         }
                         else
@@ -471,13 +471,13 @@ namespace TestPlatform.Views.ListsPages
                         {
                             try
                             {
-                                currentDirectory = FileManipulation._testFilesPath + FileManipulation._listFolderName + deletingList.Items[count].ToString() + suffix;
+                                currentDirectory = FileManipulation._listFolderName + deletingList.Items[count].ToString() + suffix;
                                 Directory.Move(currentDirectory, FileManipulation._listFilesBackup + deletingList.Items[count++].ToString() + suffix);
                             }
                             catch (IOException)
                             {
                                 Directory.Delete(FileManipulation._listFilesBackup + deletingList.Items[count++].ToString() + suffix, true);
-                                Directory.Move(FileManipulation._testFilesPath + FileManipulation._listFolderName + deletingList.Items[count].ToString() + suffix, FileManipulation._listFilesBackup + deletingList.Items[count++].ToString() + suffix);
+                                Directory.Move(FileManipulation._listFolderName + deletingList.Items[count].ToString() + suffix, FileManipulation._listFilesBackup + deletingList.Items[count++].ToString() + suffix);
                             }
                         }
                         else
@@ -499,12 +499,12 @@ namespace TestPlatform.Views.ListsPages
                         {
                             try
                             {
-                                File.Move(FileManipulation._testFilesPath + FileManipulation._listFolderName + deletingList.Items[count].ToString() + ".lst", FileManipulation._listFilesBackup + deletingList.Items[count].ToString() + ".lst");
+                                File.Move(FileManipulation._listFolderName + deletingList.Items[count].ToString() + ".lst", FileManipulation._listFilesBackup + deletingList.Items[count].ToString() + ".lst");
                             }
                             catch (IOException)
                             {
                                 File.Delete(FileManipulation._listFilesBackup + deletingList.Items[count].ToString() + ".lst");
-                                File.Move(FileManipulation._testFilesPath + FileManipulation._listFolderName + deletingList.Items[count].ToString() + ".lst", FileManipulation._listFilesBackup + deletingList.Items[count].ToString() + ".lst");
+                                File.Move(FileManipulation._listFolderName + deletingList.Items[count].ToString() + ".lst", FileManipulation._listFilesBackup + deletingList.Items[count].ToString() + ".lst");
                             }
                         }
                         else
@@ -587,7 +587,7 @@ namespace TestPlatform.Views.ListsPages
             existingList.Items.Clear();
             if(mode == 'd')
             {
-                listPath = FileManipulation._testFilesPath + FileManipulation._listFolderName;
+                listPath = FileManipulation._listFolderName;
             }
             else
             {

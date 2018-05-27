@@ -477,7 +477,7 @@ namespace TestPlatform.Views
         private void drawImage()
         {
             imgPictureBox = ExpositionController.InitializeImageBox(executingTest.ProgramInUse.StimuluSize, Image.FromFile(imagesList[imageCounter]), 
-                                                                     executingTest.ProgramInUse.ExpandImage);
+                                                                     executingTest.ProgramInUse.ExpandImage, this);
             Point screenPosition = ScreenPosition(imgPictureBox.Size);
             imgPictureBox.Location = screenPosition;
 
@@ -886,8 +886,9 @@ namespace TestPlatform.Views
         // draw on screen filled square stimulus
         private void drawFullSquareShape()
         {
-            float widthSquare = executingTest.ProgramInUse.StimuluSize;
-            float heightSquare = executingTest.ProgramInUse.StimuluSize;
+            int size = ExpositionController.CentimeterToPixel(executingTest.ProgramInUse.StimuluSize, this);
+            float widthSquare = size;
+            float heightSquare = size;
 
             SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(colorsList[colorCounter]));
             Graphics formGraphicsSquare = CreateGraphics();
@@ -906,8 +907,9 @@ namespace TestPlatform.Views
 
         private void drawSquareShape()
         {
-            float widthSquare = executingTest.ProgramInUse.StimuluSize;
-            float heightSquare = executingTest.ProgramInUse.StimuluSize;
+            int size = ExpositionController.CentimeterToPixel(executingTest.ProgramInUse.StimuluSize, this);
+            float widthSquare = size;
+            float heightSquare = size;
 
             Pen myPen = new Pen(ColorTranslator.FromHtml(colorsList[colorCounter]));
             Graphics formGraphicsSquare = CreateGraphics();
@@ -926,8 +928,9 @@ namespace TestPlatform.Views
 
         private void drawFullCircleShape()
         {
-            float widthEllipse = executingTest.ProgramInUse.StimuluSize;
-            float heightEllipse = executingTest.ProgramInUse.StimuluSize;
+            int size = ExpositionController.CentimeterToPixel(executingTest.ProgramInUse.StimuluSize, this);
+            float widthEllipse = size;
+            float heightEllipse = size;
 
             SolidBrush myBrush = new SolidBrush(ColorTranslator.FromHtml(colorsList[colorCounter]));
             Graphics formGraphicsEllipse = CreateGraphics();
@@ -946,8 +949,9 @@ namespace TestPlatform.Views
 
         private void drawCircleShape()
         {
-            float widthEllipse = executingTest.ProgramInUse.StimuluSize;
-            float heightEllipse = executingTest.ProgramInUse.StimuluSize;
+            int size = ExpositionController.CentimeterToPixel(executingTest.ProgramInUse.StimuluSize, this);
+            float widthEllipse = size;
+            float heightEllipse = size;
 
             Pen myPen = new Pen(ColorTranslator.FromHtml(colorsList[colorCounter]));
             Graphics formGraphicsEllipse = CreateGraphics();
@@ -1006,7 +1010,8 @@ namespace TestPlatform.Views
         private Point[] createTrianglePoints()
         {
             int[] clientMiddle = { (ClientSize.Width / 2), (ClientSize.Height / 2) };
-            int heightTriangle = executingTest.ProgramInUse.StimuluSize;
+            int size = ExpositionController.CentimeterToPixel(executingTest.ProgramInUse.StimuluSize, this);
+            int heightTriangle = size;
             Point screenPosition = this.ScreenPosition(new Size(heightTriangle, heightTriangle));
             screenPosition.X -= heightTriangle / 3;
             screenPosition.Y += heightTriangle / 2;

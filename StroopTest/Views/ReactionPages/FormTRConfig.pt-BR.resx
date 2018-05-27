@@ -214,8 +214,8 @@ Ponto:</value>
   <data name="numExpoLabel.Text" xml:space="preserve">
     <value>Número de Tentativas:</value>
   </data>
-  <data name="wordSizeLabel.Text" xml:space="preserve">
-    <value>Tamanho do Estímulo:</value>
+  <data name="stimulusSizeLabel.Text" xml:space="preserve">
+    <value>Tamanho do Estímulo (cm):</value>
   </data>
   <data name="instructionsLabel.Text" xml:space="preserve">
     <value>Instruções:</value>
@@ -230,7 +230,7 @@ Ponto:</value>
     <value>salvar</value>
   </data>
   <data name="fontSizeLabel.Text" xml:space="preserve">
-    <value>Tamanho da Fonte:</value>
+    <value>Tamanho da Fonte (pt):</value>
   </data>
   <data name="fixPointGroupBox.Text" xml:space="preserve">
     <value>Ponto de Fixação</value>

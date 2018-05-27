@@ -150,11 +150,12 @@
             }
         }
 
-        public static PictureBox InitializeImageBox(int stimuliSize, Image image, bool expandImage)
+        public static PictureBox InitializeImageBox(double stimuliSize, Image image, bool expandImage, Form form)
         {
             PictureBox newPictureBox = new PictureBox();
+            int size = CentimeterToPixel(stimuliSize, form);
             newPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            newPictureBox.Size = new Size(stimuliSize, stimuliSize);
+            newPictureBox.Size = new Size(size, size);
 
             newPictureBox.Image = image;
             newPictureBox.Enabled = true;
@@ -227,6 +228,16 @@
                 }
             }
 
+        }
+
+        public static int CentimeterToPixel(double Centimeter, Form form)
+        {
+            double pixel = -1;
+            using (Graphics g = form.CreateGraphics())
+            {
+                pixel = Centimeter * g.DpiY / 2.54d;
+            }
+            return (int)pixel;
         }
 
 

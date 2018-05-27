@@ -213,8 +213,8 @@
   <data name="numExpoLabel.Text" xml:space="preserve">
     <value>Número de intentos:</value>
   </data>
-  <data name="wordSizeLabel.Text" xml:space="preserve">
-    <value>Tamaño del Estímulo:</value>
+  <data name="stimulusSizeLabel.Text" xml:space="preserve">
+    <value>Tamaño del Estímulo (cm):</value>
   </data>
   <data name="instructionsLabel.Text" xml:space="preserve">
     <value>Instrucciones:</value>
@@ -226,6 +226,6 @@
     <value>cancelar</value>
   </data>
   <data name="fontSizeLabel.Text" xml:space="preserve">
-    <value>Tamaño de Letra:</value>
+    <value>Tamaño de Letra (pt):</value>
   </data>
 </root>

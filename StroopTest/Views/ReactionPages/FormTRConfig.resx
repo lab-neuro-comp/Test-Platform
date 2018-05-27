@@ -1460,7 +1460,7 @@ Ponto:</value>
     <value>2</value>
   </data>
   <data name="fontSizeUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 81</value>
+    <value>197, 81</value>
   </data>
   <data name="fontSizeUpDown.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -2096,38 +2096,38 @@ Ponto:</value>
   <data name="&gt;&gt;numExpo.ZOrder" xml:space="preserve">
     <value>23</value>
   </data>
-  <data name="wordSizeLabel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="stimulusSizeLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="wordSizeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="stimulusSizeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="wordSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="stimulusSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 55</value>
   </data>
-  <data name="wordSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="stimulusSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 17</value>
   </data>
-  <data name="wordSizeLabel.TabIndex" type="System.Int32, mscorlib">
+  <data name="stimulusSizeLabel.TabIndex" type="System.Int32, mscorlib">
     <value>159</value>
   </data>
-  <data name="wordSizeLabel.Text" xml:space="preserve">
+  <data name="stimulusSizeLabel.Text" xml:space="preserve">
     <value>Tamanho do Estímulo:</value>
   </data>
-  <data name="&gt;&gt;wordSizeLabel.Name" xml:space="preserve">
-    <value>wordSizeLabel</value>
+  <data name="&gt;&gt;stimulusSizeLabel.Name" xml:space="preserve">
+    <value>stimulusSizeLabel</value>
   </data>
-  <data name="&gt;&gt;wordSizeLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;stimulusSizeLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;wordSizeLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;stimulusSizeLabel.Parent" xml:space="preserve">
     <value>expositionGroupBox</value>
   </data>
-  <data name="&gt;&gt;wordSizeLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;stimulusSizeLabel.ZOrder" xml:space="preserve">
     <value>24</value>
   </data>
   <data name="stimuluSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 52</value>
+    <value>199, 52</value>
   </data>
   <data name="stimuluSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -2139,7 +2139,7 @@ Ponto:</value>
     <value>3</value>
   </data>
   <data name="stimuluSize.ToolTip" xml:space="preserve">
-    <value>O valor está em pixels e deve estar entre 10 e 500.</value>
+    <value>O valor está em centímetros e deve estar entre 0,1 e 50</value>
   </data>
   <data name="&gt;&gt;stimuluSize.Name" xml:space="preserve">
     <value>stimuluSize</value>

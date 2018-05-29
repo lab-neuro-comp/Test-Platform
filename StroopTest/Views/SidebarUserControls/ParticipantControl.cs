@@ -86,7 +86,7 @@ namespace TestPlatform.Views.SidebarUserControls
 
                     try
                     {
-                        defineParticipant = new FormDefine(LocRM.GetString("editParticipant", currentCulture), FileManipulation._testFilesPath + FileManipulation._partcipantDataPath, "data", "participant", false, false);
+                        defineParticipant = new FormDefine(LocRM.GetString("editParticipant", currentCulture), FileManipulation._participantDataPath, "data", "participant", false, false);
                         result = defineParticipant.ShowDialog();
                         if (result == DialogResult.OK)
                         {

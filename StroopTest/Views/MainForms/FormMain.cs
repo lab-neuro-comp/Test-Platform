@@ -23,7 +23,6 @@ namespace TestPlatform
 
     public partial class FormMain : Form
     {
-        private FolderBrowserDialog folderBrowserDialog1;
 
         public Panel _contentPanel;
         /* Variables
@@ -46,7 +45,7 @@ namespace TestPlatform
 
         public void initializeParticipants()
         {
-            string[] filePaths = Directory.GetFiles(FileManipulation._testFilesPath + FileManipulation._partcipantDataPath, ("*.data"), SearchOption.AllDirectories);
+            string[] filePaths = Directory.GetFiles(FileManipulation._participantDataPath, ("*.data"), SearchOption.AllDirectories);
             participantComboBox.Items.Clear();
             foreach (string file in filePaths)
             {

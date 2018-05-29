@@ -20,10 +20,13 @@ namespace TestPlatform.Models
         /// </summary>
         private static FileManipulation instance;
 
-        private static FormMain _globalFormMain;
-        public static string _defaultPath; // path of execution program
+        private static string PROGRAM_EXTENSION = ".prg";
+        private static string _instructionsFilePath = "editableInstructions.txt";
 
-        public static string _testFilesPath = "/TestFiles/";
+        private static FormMain _globalFormMain;
+        private static string _defaultPath; // path of execution program
+
+        private static string _testFilesPath = "/TestFiles/";
         public static string _stroopTestFilesPath = "/StroopTestFiles/";
         public static string _reactionTestFilesPath = "/ReactionTestFiles/";
         public static string _experimentTestFilesPath = "/ExperimentTestFiles/";
@@ -34,7 +37,7 @@ namespace TestPlatform.Models
         public static string _experimentTestFilesBackupPath = "/ExperimentTestFiles/";
         public static string _matchingTestFilesBackupPath = "/MatchingTestFiles/";
         public static string _listFilesBackup = "/Lst/";
-        public static string _partcipantDataPath = "/ParticipantData/";
+        public static string _participantDataPath = "/ParticipantData/";
         public static string _listFolderName = "/Lst/";
         public static string _importPath = "/import";
 
@@ -43,13 +46,12 @@ namespace TestPlatform.Models
 
         public static string _backupFolderName = "/backup/";
 
-        private static string PROGRAM_EXTENSION = ".prg";
-
         public static FormMain GlobalFormMain
         {
             get { return _globalFormMain; }
             set { _globalFormMain = value; }
         }
+
 
         private FileManipulation(FormMain globalFormMain) {
             _globalFormMain = globalFormMain;
@@ -145,6 +147,16 @@ namespace TestPlatform.Models
                 instructions = null;
             }
             return instructions;
+        }
+
+        public static string[] ReadAllLines(string filepath)
+        {
+            return File.ReadAllLines(filepath);
+        }
+
+        public static string[] ReadInstructionFile()
+        {
+            return ReadAllLines(InstructionsFilePath);
         }
 
         public static bool SaveProgramFile(string path, string data, List<string> instructionText)
@@ -324,6 +336,8 @@ namespace TestPlatform.Models
             _experimentTestFilesPath = _testFilesPath + _experimentTestFilesPath;
             _matchingTestFilesPath = _testFilesPath + _matchingTestFilesPath;
             _importPath = _testFilesPath + _importPath;
+            _participantDataPath = _testFilesPath + _participantDataPath;
+            _instructionsFilePath = _instructionsFilePath + _defaultPath;
 
             if (!Directory.Exists(_testFilesPath))
             {
@@ -334,6 +348,9 @@ namespace TestPlatform.Models
                 /*do nothing*/
             }
         }
+
+        public static string InstructionsFilePath { get => _instructionsFilePath; }
+
 
     }
 }

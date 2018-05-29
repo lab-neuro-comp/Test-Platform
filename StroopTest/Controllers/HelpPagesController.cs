@@ -15,13 +15,13 @@ namespace TestPlatform.Controllers
 {
     class HelpPagesController
     {
-        private static string INSTRUCTIONSFILENAME = "editableInstructions.txt";
+        
 
         public static void showInstructions()
         {
             ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
             CultureInfo currentCulture = System.Threading.Thread.CurrentThread.CurrentUICulture;
-            FormInstructions infoBox = new FormInstructions(LocRM.GetString("instructionBoxText", currentCulture), (FileManipulation._testFilesPath + INSTRUCTIONSFILENAME));
+            FormInstructions infoBox = new FormInstructions(LocRM.GetString("instructionBoxText", currentCulture), FileManipulation.ReadInstructionFile());
             try
             {
                 infoBox.Show();

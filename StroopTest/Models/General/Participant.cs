@@ -134,12 +134,12 @@ namespace TestPlatform.Models.General
 
         public string getParticipantPath()
         {
-            return FileManipulation._testFilesPath + FileManipulation._partcipantDataPath + registrationID + "-" + name + ".data";
+            return FileManipulation._participantDataPath + registrationID + "-" + name + ".data";
         }
 
         public string getParticipantPath(string filename)
         {
-            return FileManipulation._testFilesPath + FileManipulation._partcipantDataPath + filename + ".data";
+            return FileManipulation._participantDataPath + filename + ".data";
         }
 
         public bool saveParticipantFile()

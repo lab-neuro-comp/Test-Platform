@@ -7,6 +7,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using TestPlatform.Models;
 
 namespace TestPlatform
 {
@@ -18,12 +19,11 @@ namespace TestPlatform
             helpBrowser.DocumentText = instructionsText;
         }
 
-        public FormInstructions(string instructionsText, string fileInstructionPath)
+        public FormInstructions(string instructionsText, string[] lines)
         {
             InitializeComponent();
-            if (new FileInfo(fileInstructionPath).Length != 0)
+            if (lines.Length != 0)
             {
-                string[] lines = File.ReadAllLines(fileInstructionPath);
                 instructionsText = "";
                 foreach (string line in lines)
                 {

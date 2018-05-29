@@ -40,7 +40,6 @@ namespace TestPlatform
         private string outputFile;
         private Audio audioControl = new Audio();
         private SoundPlayer Player = new SoundPlayer();
-        private string defaultFolderPath = FileManipulation._testFilesPath;
         private bool runExposition = true;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
@@ -795,7 +794,7 @@ namespace TestPlatform
             string[] subtitlesArray = null;
             if (currentTest.ProgramInUse.SubtitleShow)
             {
-                subtitlesArray = StrList.readListFile(defaultFolderPath + "/Lst/" + currentTest.ProgramInUse.SubtitlesListFile);
+                subtitlesArray = StrList.readListFile(FileManipulation._listFolderName + "/Lst/" + currentTest.ProgramInUse.SubtitlesListFile);
                 if (currentTest.ProgramInUse.SubtitleColor.ToLower() != "false")
                 {
                     subtitleLabel.ForeColor = ColorTranslator.FromHtml(currentTest.ProgramInUse.SubtitleColor);

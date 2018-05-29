@@ -56,7 +56,7 @@ namespace TestPlatform.Models
         private FileManipulation(FormMain globalFormMain) {
             _globalFormMain = globalFormMain;
 
-            CreateMainFolderAndPaths();
+            CreateMainFolderAndPathsExeLocation();
 
             MoveOldStroopVersion();
 
@@ -84,11 +84,47 @@ namespace TestPlatform.Models
 
         }
 
+        private FileManipulation(string path)
+        {
+            _globalFormMain = null;
+
+            CreateMainFolderAndPaths(path);
+
+            MoveOldStroopVersion();
+
+            CreateSubFolders(_reactionTestFilesPath);
+            CreateSubFolders(_stroopTestFilesPath);
+            CreateSubFolders(_experimentTestFilesPath);
+            CreateSubFolders(_matchingTestFilesPath);
+
+            /* creating Lists folder*/
+            if (!Directory.Exists(_listFolderName))
+            {
+                Directory.CreateDirectory(_listFolderName);
+            }
+
+            // converting old implementations of file lists to new version
+            StrList.convertFileLists();
+
+            // create default stroop and reaction programs, adding default word and color lists
+            InitializeDefaultPrograms();
+
+        }
+
         public static FileManipulation Instance(FormMain globalFormMain)
         {
             if (instance == null)
             {
                 instance = new FileManipulation(globalFormMain);
+            }
+            return instance;
+        }
+
+        public static FileManipulation Instance(string path)
+        {
+            if (instance == null)
+            {
+                instance = new FileManipulation(path);
             }
             return instance;
         }
@@ -325,9 +361,13 @@ namespace TestPlatform.Models
         /// <summary>
         /// Create main folder for application and update paths according to executable path
         /// </summary>
-        private void CreateMainFolderAndPaths(){
-            //saving on variable current executing path
-            _defaultPath = (Path.GetDirectoryName(Application.ExecutablePath)); 
+        private void CreateMainFolderAndPathsExeLocation(){
+            CreateMainFolderAndPaths(Path.GetDirectoryName(Application.ExecutablePath));
+        }
+
+        private void CreateMainFolderAndPaths(string path)
+        {
+            _defaultPath = path;
 
             _testFilesPath = _defaultPath + _testFilesPath;
             _stroopTestFilesPath = _testFilesPath + _stroopTestFilesPath;

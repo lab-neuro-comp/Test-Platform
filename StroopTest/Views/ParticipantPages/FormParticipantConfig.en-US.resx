@@ -117,106 +117,157 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="editParticipantButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="idLabel.Text" xml:space="preserve">
+    <value>Registration Number:</value>
   </data>
-  <data name="editParticipantButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
+  <data name="reasonForNotMenstruating.Items" xml:space="preserve">
+    <value>Do not apply</value>
   </data>
-  <data name="editParticipantButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="reasonForNotMenstruating.Items1" xml:space="preserve">
+    <value>Use of anti-conceptional</value>
   </data>
-  <data name="editParticipantButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="reasonForNotMenstruating.Items2" xml:space="preserve">
+    <value>Menopause</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="editParticipantButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 34</value>
+  <data name="menstruatingYes.Text" xml:space="preserve">
+    <value>Yes</value>
   </data>
-  <data name="editParticipantButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="menstruatingNo.Text" xml:space="preserve">
+    <value>No</value>
   </data>
-  <data name="editParticipantButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 27</value>
+  <data name="notMenstruatingLabel.Text" xml:space="preserve">
+    <value>Reason for not menstruating</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="editParticipantButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="hasMenstruatingLabel.Text" xml:space="preserve">
+    <value>Normally menstruated</value>
   </data>
-  <data name="editParticipantButton.Text" xml:space="preserve">
-    <value>Editar Participante</value>
+  <data name="periodDateLabel.Text" xml:space="preserve">
+    <value>Day of last menstruation</value>
   </data>
-  <data name="editParticipantButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="femaleGroupBox.Text" xml:space="preserve">
+    <value>Menstrual cycle</value>
   </data>
-  <data name="&gt;&gt;editParticipantButton.Name" xml:space="preserve">
-    <value>editParticipantButton</value>
+  <data name="localeLabel.Text" xml:space="preserve">
+    <value>Living Location</value>
   </data>
-  <data name="&gt;&gt;editParticipantButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>In the last 2 hours have you consumed coffee, soda, chocolate, or some energy drink?</value>
   </data>
-  <data name="&gt;&gt;editParticipantButton.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="especifications.Text" xml:space="preserve">
+    <value>Specification</value>
   </data>
-  <data name="&gt;&gt;editParticipantButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="energizersNo.Text" xml:space="preserve">
+    <value>No</value>
   </data>
-  <data name="newParticipantButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="energizersYes.Text" xml:space="preserve">
+    <value>Yes</value>
   </data>
-  <data name="newParticipantButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
+  <data name="drugsNo.Text" xml:space="preserve">
+    <value>No</value>
   </data>
-  <data name="newParticipantButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="drugsYes.Text" xml:space="preserve">
+    <value>Yes</value>
   </data>
-  <data name="newParticipantButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="alcoholNo.Text" xml:space="preserve">
+    <value>No</value>
   </data>
-  <data name="newParticipantButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
+  <data name="alcoholYes.Text" xml:space="preserve">
+    <value>Yes</value>
   </data>
-  <data name="newParticipantButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="sleepNo.Text" xml:space="preserve">
+    <value>No</value>
   </data>
-  <data name="newParticipantButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 27</value>
+  <data name="sleepYes.Text" xml:space="preserve">
+    <value>Yes</value>
   </data>
-  <data name="newParticipantButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="relaxantNo.Text" xml:space="preserve">
+    <value>No</value>
   </data>
-  <data name="newParticipantButton.Text" xml:space="preserve">
-    <value>Novo Participante</value>
+  <data name="relaxantYes.Text" xml:space="preserve">
+    <value>Yes</value>
   </data>
-  <data name="newParticipantButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="medicineNo.Text" xml:space="preserve">
+    <value>No</value>
   </data>
-  <data name="&gt;&gt;newParticipantButton.Name" xml:space="preserve">
-    <value>newParticipantButton</value>
+  <data name="medicineYes.Text" xml:space="preserve">
+    <value>Yes</value>
   </data>
-  <data name="&gt;&gt;newParticipantButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="glassesNo.Text" xml:space="preserve">
+    <value>No</value>
   </data>
-  <data name="&gt;&gt;newParticipantButton.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="glassesYes.Text" xml:space="preserve">
+    <value>Yes</value>
   </data>
-  <data name="&gt;&gt;newParticipantButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="ageLabel.Text" xml:space="preserve">
+    <value>Age:</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="scholarLabel.Text" xml:space="preserve">
+    <value>Degree of education:</value>
   </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="sexoLabel.Text" xml:space="preserve">
+    <value>Sex:</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ParticipantControl</value>
+  <data name="femaleRadioButton.Text" xml:space="preserve">
+    <value>Female</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="masculineRadioButton.Text" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="middleSchoolButton.Text" xml:space="preserve">
+    <value>Middle School</value>
+  </data>
+  <data name="highSchoolradioButton.Text" xml:space="preserve">
+    <value>High School</value>
+  </data>
+  <data name="higherEducationradioButton.Text" xml:space="preserve">
+    <value>Coursing Higher Education</value>
+  </data>
+  <data name="higher1radioButton.Text" xml:space="preserve">
+    <value>Complete Higher Education</value>
+  </data>
+  <data name="postGraduate.Text" xml:space="preserve">
+    <value>Post Graduate</value>
+  </data>
+  <data name="birthDateLabel.Text" xml:space="preserve">
+    <value>BirthDate</value>
+  </data>
+  <data name="participantGroupBox.Text" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="instructionsLabel.Text" xml:space="preserve">
+    <value>Comments:</value>
+  </data>
+  <data name="participantNameLabel.Text" xml:space="preserve">
+    <value>Name Initials:</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="saveButton.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="glassQuestion.Text" xml:space="preserve">
+    <value>Do you wear glasses frequently?</value>
+  </data>
+  <data name="medicineLabel.Text" xml:space="preserve">
+    <value>Do you use medication - natural or medicinal - regularly?</value>
+  </data>
+  <data name="relaxantLabel.Text" xml:space="preserve">
+    <value>In the last 24 hours have you made use of relaxants?</value>
+  </data>
+  <data name="sleepLabel.Text" xml:space="preserve">
+    <value>You think you had a good night's sleep last night?</value>
+  </data>
+  <data name="alcoholLabel.Text" xml:space="preserve">
+    <value>In the last 24 hours have you consumed alcohol?</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>In the last 24 hours have you used illegal drugs?</value>
+  </data>
+  <data name="periodDatePicker.CustomFormat" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="birthDatePicker.CustomFormat" xml:space="preserve">
+    <value> </value>
   </data>
 </root>

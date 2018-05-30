@@ -546,6 +546,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MatchingPages\FormMatchConfig.resx">
       <DependentUpon>FormMatchConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MatchingPages\MatchingExposition.resx">
       <DependentUpon>MatchingExposition.cs</DependentUpon>
@@ -558,6 +559,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MatchingPages\MatchingResultUserControl.resx">
       <DependentUpon>MatchingResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ParticipantPages\FormParticipantConfig.en-US.resx">
+      <DependentUpon>FormParticipantConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ParticipantPages\FormParticipantConfig.resx">
       <DependentUpon>FormParticipantConfig.cs</DependentUpon>
@@ -633,6 +637,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\MatchingControl.resx">
       <DependentUpon>MatchingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\ParticipantControl.en-US.resx">
+      <DependentUpon>ParticipantControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\ParticipantControl.es-ES.resx">
+      <DependentUpon>ParticipantControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\ParticipantControl.pt-BR.resx">
+      <DependentUpon>ParticipantControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\ParticipantControl.resx">
       <DependentUpon>ParticipantControl.cs</DependentUpon>

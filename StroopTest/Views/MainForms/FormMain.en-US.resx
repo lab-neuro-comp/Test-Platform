@@ -288,4 +288,7 @@
   <data name="helpButton.Text" xml:space="preserve">
     <value>Help</value>
   </data>
+  <data name="participantButton.Text" xml:space="preserve">
+    <value>Participant</value>
+  </data>
 </root>

@@ -544,7 +544,8 @@ namespace TestPlatform.Views.MatchingPages
             this.expositionType.Items.AddRange(new object[] {
             resources.GetString("expositionType.Items"),
             resources.GetString("expositionType.Items1"),
-            resources.GetString("expositionType.Items2")});
+            resources.GetString("expositionType.Items2"),
+            resources.GetString("expositionType.Items3")});
             resources.ApplyResources(this.expositionType, "expositionType");
             this.expositionType.Name = "expositionType";
             this.expositionType.SelectedIndexChanged += new System.EventHandler(this.expositionType_SelectedIndexChanged);

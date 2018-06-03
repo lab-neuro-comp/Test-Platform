@@ -1300,7 +1300,10 @@
     <value>DNMTS</value>
   </data>
   <data name="expositionType.Items2" xml:space="preserve">
-    <value>DMTS/DNMTS</value>
+    <value>DMTS/DNMTS(Alternado)</value>
+  </data>
+  <data name="expositionType.Items3" xml:space="preserve">
+    <value>DMTS/DNMTS(Aleatorio)</value>
   </data>
   <data name="expositionType.Location" type="System.Drawing.Point, System.Drawing">
     <value>102, 13</value>

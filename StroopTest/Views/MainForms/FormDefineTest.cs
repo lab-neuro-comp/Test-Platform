@@ -20,7 +20,7 @@ namespace TestPlatform.Views
             this.currentCulture = currentCulture;
             InitializeComponent();
             AutoValidate = AutoValidate.Disable;
-            addOptionsComboBox(FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName);
+            addOptionsComboBox(StroopProgram.GetProgramsPath());
         }
 
 
@@ -54,7 +54,7 @@ namespace TestPlatform.Views
             {
                 comboBox1.SelectedItem = null;
                 removeOptionsComboBox();
-                addOptionsComboBox(FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName);
+                addOptionsComboBox(StroopProgram.GetProgramsPath());
             }
         }
 
@@ -64,7 +64,17 @@ namespace TestPlatform.Views
             {
                 comboBox1.SelectedItem = null;
                 removeOptionsComboBox();
-                addOptionsComboBox(FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName);
+                addOptionsComboBox(ReactionProgram.GetProgramsPath());
+            }
+        }
+
+        private void matchingButton_Click(object sender, EventArgs e)
+        {
+            if (matchingButton.Checked)
+            {
+                comboBox1.SelectedItem = null;
+                removeOptionsComboBox();
+                addOptionsComboBox(MatchingProgram.GetProgramsPath());
             }
         }
 
@@ -74,7 +84,7 @@ namespace TestPlatform.Views
             {
                 comboBox1.SelectedItem = null;
                 removeOptionsComboBox();
-                addOptionsComboBox(FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName);
+                addOptionsComboBox(ExperimentProgram.GetProgramsPath());
             }
         }
 
@@ -144,16 +154,6 @@ namespace TestPlatform.Views
         private void comboBox1_Validated(object sender, EventArgs e)
         {
             errorProvider1.SetError(comboBox1, "");
-        }
-
-        private void matchingButton_Click(object sender, EventArgs e)
-        {
-            if (matchingButton.Checked)
-            {
-                comboBox1.SelectedItem = null;
-                removeOptionsComboBox();
-                addOptionsComboBox(FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName);
-            }
         }
     }
 }

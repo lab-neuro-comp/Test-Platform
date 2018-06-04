@@ -1,11 +1,9 @@
-﻿using Microsoft.WindowsAPICodePack.Dialogs;
-using System;
+﻿using System;
 using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using System.Resources;
 using System.Windows.Forms;
-using TestPlatform.Controllers;
 using TestPlatform.Models;
 
 namespace TestPlatform.Views.MainForms
@@ -18,9 +16,9 @@ namespace TestPlatform.Views.MainForms
 
         // file paths used in methods of this class
         private string listPath = FileManipulation._listFolderName;
-        private string reactionPath = FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName;
-        private string matchingPath = FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName;
-        private string stroopPath = FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName;
+        private string reactionPath = ReactionProgram.GetProgramsPath();
+        private string matchingPath = MatchingProgram.GetProgramsPath();
+        private string stroopPath = StroopProgram.GetProgramsPath();
         private string experimentPath = FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName;
 
         public ExportUserControl()
@@ -77,7 +75,7 @@ namespace TestPlatform.Views.MainForms
                 {
                     if (!isAlreadyThere(program.ProgramName, LocRM.GetString("stroopTest", currentCulture)))
                     {
-                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("stroopTest", currentCulture), FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName + program.ProgramName + ".prg");
+                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("stroopTest", currentCulture), stroopPath + program.ProgramName + ".prg");
                         removeItemOrigin(program.ProgramName, LocRM.GetString("stroopTest", currentCulture));
                         addLists(program);
                     }
@@ -86,7 +84,7 @@ namespace TestPlatform.Views.MainForms
                 {
                     if (!isAlreadyThere(program.ProgramName, LocRM.GetString("reactionTest", currentCulture)))
                     {
-                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("reactionTest", currentCulture), FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName + program.ProgramName + ".prg");
+                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("reactionTest", currentCulture), reactionPath + program.ProgramName + ".prg");
                         removeItemOrigin(program.ProgramName, LocRM.GetString("reactionTest", currentCulture));
                         addLists(program);
                     }
@@ -95,7 +93,7 @@ namespace TestPlatform.Views.MainForms
                 {
                     if (!isAlreadyThere(program.ProgramName, LocRM.GetString("matching", currentCulture)))
                     {
-                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("matchingTest", currentCulture), FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName + program.ProgramName + ".prg");
+                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("matchingTest", currentCulture), matchingPath + program.ProgramName + ".prg");
                         removeItemOrigin(program.ProgramName, LocRM.GetString("matchingTest", currentCulture));
                         addLists(program);
                     }
@@ -278,12 +276,12 @@ namespace TestPlatform.Views.MainForms
             }
             else if (selectedRowType == LocRM.GetString("reactionTest", currentCulture))
             {
-                ReactionProgram newReaction = new ReactionProgram(FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName + selectedRowName + ".prg");
+                ReactionProgram newReaction = new ReactionProgram(reactionPath + selectedRowName + ".prg");
                 addLists(newReaction);
             }
             else if (selectedRowType == LocRM.GetString("matchingTest", currentCulture))
             {
-                MatchingProgram newMatching = new MatchingProgram(FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName + selectedRowName + ".prg");
+                MatchingProgram newMatching = new MatchingProgram(matchingPath + selectedRowName + ".prg");
                 addLists(newMatching);
             }
             else if (selectedRowType == LocRM.GetString("experiment", currentCulture))

@@ -27,7 +27,7 @@ namespace TestPlatform.Models
         private static string _defaultPath; // path of execution program
 
         private static string _testFilesPath = "/TestFiles/";
-        public static string _stroopTestFilesPath = "/StroopTestFiles/";
+        private static string _stroopTestFilesPath = "/StroopTestFiles/";
         public static string _reactionTestFilesPath = "/ReactionTestFiles/";
         public static string _experimentTestFilesPath = "/ExperimentTestFiles/";
         public static string _matchingTestFilesPath = "/MatchingTestFiles/";
@@ -217,7 +217,7 @@ namespace TestPlatform.Models
                 StreamReader streamReader = new StreamReader(filePath, Encoding.Default, true);
                
                 string line = streamReader.ReadLine();
-                line = encodeLatinText(line);
+                line = EncodeLatinText(line);
 
                 List<string> config = new List<string>();
                 config = line.Split().ToList();
@@ -249,7 +249,7 @@ namespace TestPlatform.Models
             }
         }
 
-        public static string encodeLatinText(string text)
+        public static string EncodeLatinText(string text)
         {
             Encoding iso = Encoding.GetEncoding("ISO-8859-1");
             Encoding utf8 = Encoding.UTF8;
@@ -390,7 +390,6 @@ namespace TestPlatform.Models
         }
 
         public static string InstructionsFilePath { get => _instructionsFilePath; }
-
-
+        public static string StroopTestFilesPath { get => _stroopTestFilesPath;}
     }
 }

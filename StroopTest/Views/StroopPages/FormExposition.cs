@@ -25,12 +25,13 @@ namespace TestPlatform
     public partial class FormExposition : Form
     {
         CancellationTokenSource cts;
-        StroopTest currentTest; // program in current use
-        private static float elapsedTime;                // elapsed time during each item exposition
-        private string path = FileManipulation._stroopTestFilesPath;
+        StroopTest currentTest; 
 
-        private List<string> outputContent = new List<string>();            // output file content
-        private string outputDataPath = FileManipulation._stroopTestFilesPath + FileManipulation._resultsFolderName;                // output file Path
+        // elapsed time during each item exposition
+        private static float elapsedTime;               
+
+        private List<string> outputContent = new List<string>();
+        private string resultsPath = StroopProgram.GetResultsPath();
 
         private string hour = DateTime.Now.Hour.ToString("00");
         private string minutes = DateTime.Now.Minute.ToString("00");
@@ -87,7 +88,7 @@ namespace TestPlatform
             currentTest.ProgramInUse.readProgramFile(currentTest.ProgramInUse.ProgramName);
             now = currentTest.InitialDate.Day + "." + currentTest.InitialDate.Month + "_" +
                     hour + "h" + minutes + "." + seconds;
-            outputFile = outputDataPath + currentTest.ParticipantName + "_" + currentTest.ProgramInUse.ProgramName + ".txt";
+            outputFile = resultsPath + currentTest.ParticipantName + "_" + currentTest.ProgramInUse.ProgramName + ".txt";
 
             // if program is incomplete
             if (currentTest.ProgramInUse.NeedsEdition)
@@ -111,7 +112,7 @@ namespace TestPlatform
 
         private async void startExpo() // starts Exposition
         {
-            if (currentTest.ProgramInUse.Exists(path))
+            if (currentTest.ProgramInUse.Exists(StroopProgram.GetStroopPath()))
             {
                
                 configWordLabel();
@@ -128,7 +129,7 @@ namespace TestPlatform
             else
             {
                 throw new Exception(LocRM.GetString("file", currentCulture) + currentTest.ProgramInUse.ProgramName + ".prg" +
-                                    LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(path + "/prg/"));
+                                    LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(StroopProgram.GetStroopPath() + "/prg/"));
             }
         }
 
@@ -842,7 +843,7 @@ namespace TestPlatform
         // beginAudio
         private void startRecordingAudio()
         {
-            audioControl.StartRecording(outputDataPath + "/audio_" + currentTest.ParticipantName + "_" + currentTest.ProgramInUse.ProgramName + "_" + now + ".wav");
+            audioControl.StartRecording(resultsPath + "/audio_" + currentTest.ParticipantName + "_" + currentTest.ProgramInUse.ProgramName + "_" + now + ".wav");
             
         } 
 

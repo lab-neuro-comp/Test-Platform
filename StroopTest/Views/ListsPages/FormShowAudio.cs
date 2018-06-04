@@ -13,7 +13,7 @@ namespace TestPlatform
 {
     public partial class FormShowAudio : UserControl, IDisposable 
     {
-        private string path = FileManipulation._stroopTestFilesPath + FileManipulation._resultsFolderName;
+        private string path = StroopProgram.GetResultsPath();
         private SoundPlayer player = new SoundPlayer();
         Audio audioRecorder = new Audio();
         private Timer timer;

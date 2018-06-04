@@ -374,6 +374,21 @@ namespace TestPlatform.Models
             }
         }
 
+        public static string GetResultsPath()
+        {
+            return FileManipulation._matchingTestFilesPath + FileManipulation._resultsFolderName;
+        }
+
+        public static string GetProgramsPath()
+        {
+            return FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName;
+        }
+
+        public static string[] GetAllPrograms()
+        {
+            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), ".prg");
+        }
+
         public void readProgramFile(string filepath)
         {
             StreamReader tr;
@@ -386,7 +401,7 @@ namespace TestPlatform.Models
 
             tr = new StreamReader(filepath, Encoding.Default, true);
             line = tr.ReadLine();
-            line = FileManipulation.encodeLatinText(line);
+            line = FileManipulation.EncodeLatinText(line);
             config = line.Split().ToList();
             tr.Close();
 

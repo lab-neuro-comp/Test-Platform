@@ -260,7 +260,7 @@ namespace TestPlatform.Views.ParticipantPages
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 Participant participant = createParticipant();
-                if (File.Exists(participant.getParticipantPath()))
+                if (File.Exists(participant.GetParticipantPath()))
                 {
                     DialogResult dialogResult = MessageBox.Show(
                         LocRM.GetString("participantAlreadyExistsWishOverride", currentCulture), 

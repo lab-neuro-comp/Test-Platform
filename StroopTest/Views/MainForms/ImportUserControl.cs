@@ -23,10 +23,10 @@ namespace TestPlatform.Views.MainForms
         // file paths used in methods of this class
 
         private string listPath = FileManipulation._listFolderName;
-        private string reactionPath = FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName;
-        private string matchingPath = FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName;
-        private string stroopPath = FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName;
-        private string experimentPath = FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName;
+        private string reactionPath = ReactionProgram.GetProgramsPath();
+        private string matchingPath = MatchingProgram.GetProgramsPath();
+        private string stroopPath = StroopProgram.GetProgramsPath();
+        private string experimentPath = ExperimentProgram.GetProgramsPath();
 
         public ImportUserControl()
         {

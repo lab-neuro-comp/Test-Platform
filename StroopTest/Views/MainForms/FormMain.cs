@@ -13,6 +13,7 @@ namespace TestPlatform
     using System.Windows.Forms;
     using TestPlatform.Controllers;
     using TestPlatform.Models;
+    using TestPlatform.Models.General;
     using TestPlatform.Views;
     using TestPlatform.Views.ExperimentPages;
     using TestPlatform.Views.ParticipantPages;
@@ -45,7 +46,7 @@ namespace TestPlatform
 
         public void initializeParticipants()
         {
-            string[] filePaths = Directory.GetFiles(FileManipulation._participantDataPath, ("*.data"), SearchOption.AllDirectories);
+            string[] filePaths = Participant.GetAllParticipants();
             participantComboBox.Items.Clear();
             foreach (string file in filePaths)
             {
@@ -359,7 +360,7 @@ namespace TestPlatform
             try
             {
                 defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), 
-                    FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName, "prg", "program", false, false);
+                    StroopProgram.GetProgramsPath(), "prg", "program", false, false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -377,7 +378,7 @@ namespace TestPlatform
             DialogResult result;
             string editProgramName = "error";
             
-                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName, "prg", "program", false, false);
+                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), ReactionProgram.GetProgramsPath(), "prg", "program", false, false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {

@@ -231,14 +231,14 @@ namespace TestPlatform.Views.ListsPages
         private bool isListUsed(string listName, string suffix, out bool stopProcess)
         {
             string currentProgram = "", originPath = "", programName = "", destinationPath = "";
-            string[] TRPrograms = FileManipulation.GetAllFilesInFolder(FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName, ".prg");
-            string[] StroopPrograms = FileManipulation.GetAllFilesInFolder(FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName, ".prg");
-            string[] MatchingPrograms = FileManipulation.GetAllFilesInFolder(FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName, ".prg");
+            string[] TRPrograms = ReactionProgram.GetAllPrograms();
+            string[] StroopPrograms = StroopProgram.GetAllPrograms();
+            string[] MatchingPrograms = MatchingProgram.GetAllPrograms();
             try
             {
                 foreach (string file in TRPrograms)
                 {
-                    originPath = FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName;
+                    originPath = ReactionProgram.GetProgramsPath();
                     destinationPath = FileManipulation._reactionTestFilesBackupPath;
                     programName = Path.GetFileNameWithoutExtension(file);
                     currentProgram = Path.GetFileNameWithoutExtension(file) + " (" + LocRM.GetString("reactionTest", currentCulture) + ")";
@@ -270,7 +270,7 @@ namespace TestPlatform.Views.ListsPages
                 }
                 foreach (string file in StroopPrograms)
                 {
-                    originPath = FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName;
+                    originPath = StroopProgram.GetProgramsPath();
                     destinationPath = FileManipulation._stroopTestFilesBackupPath;
                     programName = Path.GetFileNameWithoutExtension(file);
                     StroopProgram program = new StroopProgram();
@@ -302,7 +302,7 @@ namespace TestPlatform.Views.ListsPages
                 }
                 foreach (string file in MatchingPrograms)
                 {
-                    originPath = FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName;
+                    originPath = MatchingProgram.GetProgramsPath();
                     destinationPath = FileManipulation._matchingTestFilesBackupPath;
                     programName = Path.GetFileNameWithoutExtension(file);
                     MatchingProgram program = new MatchingProgram();

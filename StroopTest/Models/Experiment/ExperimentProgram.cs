@@ -126,6 +126,21 @@
             }
         }
 
+        public static string GetResultsPath()
+        {
+            return FileManipulation._experimentTestFilesPath + FileManipulation._resultsFolderName;
+        }
+
+        public static string GetProgramsPath()
+        {
+            return FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName;
+        }
+
+        public static string[] GetAllPrograms()
+        {
+            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), ".prg");
+        }
+
         public bool AddStroopProgram(string programName)
         {
             try
@@ -222,7 +237,7 @@
             {
                 string[] fileLines = File.ReadAllLines(filePath);
                 string line = fileLines[0];
-                line = FileManipulation.encodeLatinText(line);
+                line = FileManipulation.EncodeLatinText(line);
                 List<string> configurationFile = line.Split().ToList();
 
                 ExperimentName = configurationFile[0];
@@ -243,7 +258,7 @@
                 }
 
                 string listLine = fileLines[1];
-                line = FileManipulation.encodeLatinText(line);
+                line = FileManipulation.EncodeLatinText(line);
                 List<string> listConfiguration = listLine.Split().ToList();
                 for (int i = 1; i <= listConfiguration.Count() - 2; i = i + 2)
                 {

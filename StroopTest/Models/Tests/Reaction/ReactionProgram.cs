@@ -510,6 +510,21 @@ namespace TestPlatform.Models
             }
         }
 
+        public static string GetResultsPath()
+        {
+            return FileManipulation._reactionTestFilesPath + FileManipulation._resultsFolderName;
+        }
+
+        public static string GetProgramsPath()
+        {
+            return FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName;
+        }
+
+        public static string[] GetAllPrograms()
+        {
+            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), ".prg");
+        }
+
         public string data()
         {
             string audioList = "false";
@@ -576,7 +591,7 @@ namespace TestPlatform.Models
 
             tr = new StreamReader(filepath, Encoding.Default, true);
             line = tr.ReadLine();
-            line = FileManipulation.encodeLatinText(line);
+            line = FileManipulation.EncodeLatinText(line);
             config = line.Split().ToList();
             tr.Close();
 

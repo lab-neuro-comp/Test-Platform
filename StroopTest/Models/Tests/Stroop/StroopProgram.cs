@@ -439,10 +439,30 @@ namespace TestPlatform.Models
 
         public bool saveProgramFile()
         {
-            FileManipulation.SaveProgramFile(FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName + ProgramName, data(), InstructionText);
+            FileManipulation.SaveProgramFile(FileManipulation.StroopTestFilesPath + FileManipulation._programFolderName + ProgramName, data(), InstructionText);
             return true;
         }
         
+        public static string GetResultsPath()
+        {
+            return FileManipulation.StroopTestFilesPath + FileManipulation._resultsFolderName;
+        }
+
+        public static string GetStroopPath()
+        {
+            return FileManipulation.StroopTestFilesPath;
+        }
+
+        public static string GetProgramsPath()
+        {
+            return FileManipulation.StroopTestFilesPath + FileManipulation._programFolderName;
+        }
+
+        public static string[] GetAllPrograms()
+        {
+            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), ".prg");
+        }
+
         // writes default file
         public void writeDefaultProgramFile(string filepath) // escreve 
         {

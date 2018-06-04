@@ -78,7 +78,7 @@ namespace TestPlatform.Views
                 if (screenTranslationAllowed)
                 {
                     string editProgramName = "error";
-                    FormDefine defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName, "prg", "program", false, false);
+                    FormDefine defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), StroopProgram.GetProgramsPath(), "prg", "program", false, false);
                     DialogResult result = defineProgram.ShowDialog();
                     if (result == DialogResult.OK)
                     {
@@ -109,7 +109,7 @@ namespace TestPlatform.Views
                     }
                     if (screenTranslationAllowed)
                     {
-                        FileManagment deleteProgram = new FileManagment(FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName, FileManipulation._stroopTestFilesBackupPath, 'd', LocRM.GetString("stroopTest", currentCulture));
+                        FileManagment deleteProgram = new FileManagment(StroopProgram.GetProgramsPath(), FileManipulation._stroopTestFilesBackupPath, 'd', LocRM.GetString("stroopTest", currentCulture));
                         FileManipulation.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                         deleteStroopButton.Checked = false; 
                     }
@@ -131,7 +131,7 @@ namespace TestPlatform.Views
                     }
                     if (screenTranslationAllowed)
                     {
-                        FileManagment recoverProgram = new FileManagment(FileManipulation._stroopTestFilesBackupPath, FileManipulation._stroopTestFilesPath + FileManipulation._programFolderName, 'r', LocRM.GetString("stroopTest", currentCulture));
+                        FileManagment recoverProgram = new FileManagment(FileManipulation._stroopTestFilesBackupPath, StroopProgram.GetProgramsPath(), 'r', LocRM.GetString("stroopTest", currentCulture));
                         FileManipulation.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverStroopButton.Checked = false; 
                     }

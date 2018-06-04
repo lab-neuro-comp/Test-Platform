@@ -510,14 +510,18 @@ namespace TestPlatform.Models
             }
         }
 
+        public static string GetReactionPath()
+        {
+            return FileManipulation.ReactionTestFilesPath;
+        }
         public static string GetResultsPath()
         {
-            return FileManipulation._reactionTestFilesPath + FileManipulation._resultsFolderName;
+            return FileManipulation.ReactionTestFilesPath + FileManipulation._resultsFolderName;
         }
 
         public static string GetProgramsPath()
         {
-            return FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName;
+            return FileManipulation.ReactionTestFilesPath + FileManipulation._programFolderName;
         }
 
         public static string[] GetAllPrograms()
@@ -665,7 +669,7 @@ namespace TestPlatform.Models
             {
                 string[] defaultInstructionText = { LocRM.GetString("defaultReactionInstructions1", currentCulture),
                                                     LocRM.GetString("defaultReactionInstructions2", currentCulture)};
-                TextWriter tw = new StreamWriter(FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName + LocRM.GetString("default", currentCulture) + ".prg");
+                TextWriter tw = new StreamWriter(GetProgramsPath() + LocRM.GetString("default", currentCulture) + ".prg");
                 tw.WriteLine(LocRM.GetString("defaultReactionProgram", currentCulture));
                 for (int i = 0; i < defaultInstructionText.Length; i++)
                 {

@@ -16,7 +16,7 @@ namespace TestPlatform.Views.ExperimentPages
 {
     public partial class ExperimentResultUserControl : UserControl
     {
-        private string path = FileManipulation._experimentTestFilesPath + FileManipulation._resultsFolderName;
+        private string path = ExperimentProgram.GetResultsPath();
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 

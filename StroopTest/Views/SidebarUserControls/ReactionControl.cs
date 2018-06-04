@@ -88,7 +88,7 @@ namespace TestPlatform.Views.SidebarUserControls
 
                     try
                     {
-                        defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName, "prg", "program", false, false);
+                        defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), ReactionProgram.GetProgramsPath(), "prg", "program", false, false);
                         result = defineProgram.ShowDialog();
                         if (result == DialogResult.OK)
                         {
@@ -126,7 +126,7 @@ namespace TestPlatform.Views.SidebarUserControls
                     }
                     if (screenTranslationAllowed)
                     {
-                        FileManagment deleteProgram = new FileManagment(FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName, FileManipulation._reactionTestFilesBackupPath, 'd', LocRM.GetString("reactionTest", currentCulture));
+                        FileManagment deleteProgram = new FileManagment(ReactionProgram.GetProgramsPath(), FileManipulation._reactionTestFilesBackupPath, 'd', LocRM.GetString("reactionTest", currentCulture));
                         FileManipulation.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                         deleteReactButton.Checked = false; 
                     }
@@ -148,7 +148,7 @@ namespace TestPlatform.Views.SidebarUserControls
                     }
                     if (screenTranslationAllowed)
                     {
-                        FileManagment recoverProgram = new FileManagment(FileManipulation._reactionTestFilesBackupPath, FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName, 'r', LocRM.GetString("reactionTest", currentCulture));
+                        FileManagment recoverProgram = new FileManagment(FileManipulation._reactionTestFilesBackupPath, ReactionProgram.GetProgramsPath(), 'r', LocRM.GetString("reactionTest", currentCulture));
                         FileManipulation.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverReactButton.Checked = false; 
                     }

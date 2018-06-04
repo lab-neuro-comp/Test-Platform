@@ -20,8 +20,8 @@ namespace TestPlatform.Views
     public partial class FormReactExposition : Form
     {
         ReactionTest executingTest = new ReactionTest();
-        private string path = FileManipulation._reactionTestFilesPath;                           
-        private string outputDataPath = FileManipulation._reactionTestFilesPath + FileManipulation._resultsFolderName;
+        private string path = ReactionProgram.GetReactionPath();                           
+        private string outputDataPath = ReactionProgram.GetResultsPath();
 
         private static int IMAGE = 0;
         private static int WORD = 1;

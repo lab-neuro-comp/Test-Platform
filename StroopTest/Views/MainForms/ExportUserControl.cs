@@ -19,7 +19,7 @@ namespace TestPlatform.Views.MainForms
         private string reactionPath = ReactionProgram.GetProgramsPath();
         private string matchingPath = MatchingProgram.GetProgramsPath();
         private string stroopPath = StroopProgram.GetProgramsPath();
-        private string experimentPath = FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName;
+        private string experimentPath = ExperimentProgram.GetProgramsPath();
 
         public ExportUserControl()
         {

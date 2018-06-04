@@ -152,7 +152,7 @@ namespace TestPlatform.Views.MainForms
 
         private bool isProgramUsed(string programName)
         {
-            string[] experiments = Directory.GetFiles(FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName);
+            string[] experiments = ExperimentProgram.GetAllPrograms();
             foreach (string file in experiments)
             {
                 ExperimentProgram experiment = new ExperimentProgram();

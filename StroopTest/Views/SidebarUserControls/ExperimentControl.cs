@@ -92,7 +92,7 @@ namespace TestPlatform.Views.SidebarUserControls
                 string editProgramName = "error";
 
 
-                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName, "prg", "program", false, false);
+                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), ExperimentProgram.GetProgramsPath(), "prg", "program", false, false);
                 result = defineProgram.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -120,7 +120,7 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     if (deleteExperimentButton.Checked)
                     {
-                        FileManagment deleteProgram = new FileManagment(FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName, FileManipulation._experimentTestFilesBackupPath, 'd', LocRM.GetString("experiment", currentCulture));
+                        FileManagment deleteProgram = new FileManagment(ExperimentProgram.GetProgramsPath(), FileManipulation._experimentTestFilesBackupPath, 'd', LocRM.GetString("experiment", currentCulture));
                         FileManipulation.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                         deleteExperimentButton.Checked = false;
                     }
@@ -147,7 +147,7 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     if (recoverExperimentButton.Checked)
                     {
-                        FileManagment recoverProgram = new FileManagment(FileManipulation._experimentTestFilesBackupPath, FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName, 'r', LocRM.GetString("experiment", currentCulture));
+                        FileManagment recoverProgram = new FileManagment(FileManipulation._experimentTestFilesBackupPath, ExperimentProgram.GetProgramsPath(), 'r', LocRM.GetString("experiment", currentCulture));
                         FileManipulation.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverExperimentButton.Checked = false;
                     }

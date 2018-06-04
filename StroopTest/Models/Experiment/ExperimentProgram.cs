@@ -128,12 +128,12 @@
 
         public static string GetResultsPath()
         {
-            return FileManipulation._experimentTestFilesPath + FileManipulation._resultsFolderName;
+            return FileManipulation.ExperimentTestFilesPath + FileManipulation._resultsFolderName;
         }
 
         public static string GetProgramsPath()
         {
-            return FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName;
+            return FileManipulation.ExperimentTestFilesPath + FileManipulation._programFolderName;
         }
 
         public static string[] GetAllPrograms()
@@ -165,9 +165,16 @@
         {
             try
             {
-                if (!File.Exists(FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName + programName + ".prg")) { throw new MissingMemberException(programName + " (" + LocRM.GetString("reactionTest", currentCulture) + ")"); };
-                ReactionProgram newProgram = new ReactionProgram(FileManipulation._reactionTestFilesPath + FileManipulation._programFolderName + programName + ".prg");
-                ProgramList.Add(newProgram);
+                if (File.Exists(ReactionProgram.GetProgramsPath() + programName + ".prg"))
+                {
+                    ReactionProgram newProgram = new ReactionProgram(ReactionProgram.GetProgramsPath() + programName + ".prg");
+                    ProgramList.Add(newProgram);
+                }
+                else
+                {
+                    throw new MissingMemberException(programName + " (" + LocRM.GetString("reactionTest", currentCulture) + ")");
+                }
+                
             }
             catch (FileNotFoundException)
             {
@@ -231,7 +238,7 @@
             }
             else
             {
-                filePath = FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName + ExperimentName + ".prg";
+                filePath = GetProgramsPath() + ExperimentName + ".prg";
             }
             if (File.Exists(filePath))
             {
@@ -293,7 +300,7 @@
                 }
                 if (!isProgramValid)
                 {
-                    this.SaveExperimentFile(FileManipulation._experimentTestFilesPath + FileManipulation._programFolderName);
+                    this.SaveExperimentFile(GetProgramsPath());
                 }
             }
             else

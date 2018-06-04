@@ -348,4 +348,10 @@ https://github.com/lab-neuro-comp/Test-Platform
   <data name="cannotRecoverFilesByMotive" xml:space="preserve">
     <value>Debe crear o recuperar las siguientes listas antes de recuperar el programa "</value>
   </data>
+  <data name="alternatingDMTS_DNMTS" xml:space="preserve">
+    <value>DMTS/DNMTS(Alterno)</value>
+  </data>
+  <data name="randomDMTS_DNMTS" xml:space="preserve">
+    <value>DMTS/DNMTS(Aleatorio)</value>
+  </data>
 </root>

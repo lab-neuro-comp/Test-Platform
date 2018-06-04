@@ -2837,4 +2837,10 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="shouldSelectReason" xml:space="preserve">
     <value>Um motivo válido deve ser selecionado.</value>
   </data>
+  <data name="alternatingDMTS_DNMTS" xml:space="preserve">
+    <value>DMTS/DNMTS(Alternado)</value>
+  </data>
+  <data name="randomDMTS_DNMTS" xml:space="preserve">
+    <value>DMTS/DNMTS(Aleatorio)</value>
+  </data>
 </root>

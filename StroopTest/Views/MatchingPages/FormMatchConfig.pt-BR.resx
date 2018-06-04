@@ -139,7 +139,7 @@
     <value>Tempo</value>
   </data>
   <data name="expoSizeLabel.Text" xml:space="preserve">
-    <value>Tamanho da exposição:</value>
+    <value>Tamanho da exposição (cm):</value>
   </data>
   <data name="randomOrder.Text" xml:space="preserve">
     <value>Ordem aleatória</value>

@@ -605,18 +605,18 @@ namespace TestPlatform.Views.MatchingPages
             // 
             resources.ApplyResources(this.expositionSize, "expositionSize");
             this.expositionSize.Maximum = new decimal(new int[] {
-            500,
+            50,
             0,
             0,
             0});
             this.expositionSize.Minimum = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
-            0});
+            65536});
             this.expositionSize.Name = "expositionSize";
             this.expositionSize.Value = new decimal(new int[] {
-            250,
+            10,
             0,
             0,
             0});

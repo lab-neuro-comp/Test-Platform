@@ -160,7 +160,7 @@
     <value>Time</value>
   </data>
   <data name="expoSizeLabel.Text" xml:space="preserve">
-    <value>Exposition size:</value>
+    <value>Exposition size (cm):</value>
   </data>
   <data name="wordLabel.Text" xml:space="preserve">
     <value>Words:</value>

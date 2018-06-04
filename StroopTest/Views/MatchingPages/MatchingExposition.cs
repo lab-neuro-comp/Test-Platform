@@ -130,8 +130,10 @@ namespace TestPlatform.Views.MatchingPages
         private bool showAudioFeedbackOnNextClick = false;
         private long modelReactTime;
         bool shouldChangeExpositionType = false;
+        bool shouldRandomizeExpositionType = false;
         private long attemptIntervalTime;
         private int stimuluType;
+        Random randGen = new Random(Guid.NewGuid().GetHashCode());
 
         public MatchingExposition(string prgName, string participantName, char mark)
         {
@@ -157,10 +159,23 @@ namespace TestPlatform.Views.MatchingPages
             if (executingTest.ProgramInUse.Ready(path))
             {
                 currentExpositionType = this.executingTest.ProgramInUse.getExpositionType();
-                if(this.currentExpositionType == "DMTS/DNMTS")
+                if(this.currentExpositionType == LocRM.GetString("alternatingDMTS_DNMTS", currentCulture))
                 {
                     shouldChangeExpositionType = true;
                     this.currentExpositionType = "DMTS";
+                }
+                if (this.currentExpositionType == LocRM.GetString("randomDMTS_DNMTS", currentCulture))
+                {
+                    int rand = randGen.Next(2);
+                    shouldRandomizeExpositionType = true;
+                    if (rand == 0)
+                    {
+                        this.currentExpositionType = "DMTS";
+                    }
+                    else
+                    {
+                        this.currentExpositionType = "DNMTS";
+                    }
                 }
                 initializeExposition();
             }
@@ -431,7 +446,8 @@ namespace TestPlatform.Views.MatchingPages
                 }
                 if (shouldChangeExpositionType)
                 {
-                    if(currentExpositionType == "DMTS")
+
+                    if (currentExpositionType == "DMTS")
                     {
                         currentExpositionType = "DNMTS";
                     }
@@ -440,6 +456,18 @@ namespace TestPlatform.Views.MatchingPages
                         currentExpositionType = "DMTS";
                     }
                     changeBackgroundColor();
+                }
+                if (shouldRandomizeExpositionType)
+                {
+                    int rand = randGen.Next(2);
+                    if (rand == 0)
+                    {
+                        this.currentExpositionType = "DMTS";
+                    }
+                    else
+                    {
+                        this.currentExpositionType = "DNMTS";
+                    }
                 }
                 Thread.Sleep(10);
             }
@@ -693,22 +721,29 @@ namespace TestPlatform.Views.MatchingPages
 
         private void expositionControllerBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            List<Control> controls = (List<Control>)e.UserState;
-            foreach (Control c in controls)
+            try
             {
-                if (exposing)
+                List<Control> controls = (List<Control>)e.UserState;
+                foreach (Control c in controls)
                 {
-                    this.Controls.Add(c);
+                    if (exposing)
+                    {
+                        this.Controls.Add(c);
+                    }
+                    else
+                    {
+                        this.Controls.Remove(c);
+                    }
                 }
-                else
+                if (this.executingTest.ProgramInUse.ExpositionAudioResponse && exposing && !cancelExposition)
                 {
-                    this.Controls.Remove(c);
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(TestPlatform.Properties.Resources.bell);
+                    player.Play();
                 }
             }
-            if (this.executingTest.ProgramInUse.ExpositionAudioResponse && exposing && !cancelExposition)
+            catch(Exception)
             {
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(TestPlatform.Properties.Resources.bell);
-                player.Play();
+                /*do nothing*/
             }
         }
 

@@ -139,7 +139,7 @@
     <value>Tempo</value>
   </data>
   <data name="expoSizeLabel.Text" xml:space="preserve">
-    <value>Tamanho da exposição:</value>
+    <value>Tamanho da exposição (cm):</value>
   </data>
   <data name="randomOrder.Text" xml:space="preserve">
     <value>Ordem aleatória</value>
@@ -166,7 +166,7 @@
     <value>DNMTS</value>
   </data>
   <data name="expositionType.Items2" xml:space="preserve">
-    <value>DMTS/DNMTS</value>
+    <value>DMTS/DNMTS(Alternado)</value>
   </data>
   <data name="expositionType.Items" xml:space="preserve">
     <value>DMTS</value>
@@ -269,5 +269,8 @@
   </data>
   <data name="audioResponseLabel.Text" xml:space="preserve">
     <value>Resposta auditiva:</value>
+  </data>
+  <data name="expositionType.Items3" xml:space="preserve">
+    <value>DMTS/DNMTS(Aleatorio)</value>
   </data>
 </root>

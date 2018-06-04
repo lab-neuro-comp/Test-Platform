@@ -2854,4 +2854,10 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   <data name="shouldSelectReason" xml:space="preserve">
     <value>You should select a valid reason.</value>
   </data>
+  <data name="alternatingDMTS_DNMTS" xml:space="preserve">
+    <value>DMTS/DNMTS(Alternating)</value>
+  </data>
+  <data name="randomDMTS_DNMTS" xml:space="preserve">
+    <value>DMTS/DNMTS(Random)</value>
+  </data>
 </root>

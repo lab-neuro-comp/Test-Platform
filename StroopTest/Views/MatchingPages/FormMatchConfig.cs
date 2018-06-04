@@ -106,17 +106,21 @@ namespace TestPlatform.Views.MatchingPages
             feedbackAudioResponse.Checked = editProgram.FeedbackAudioResponse;
             expositonAudioResponse.Checked = editProgram.ExpositionAudioResponse;
             randomModelStimulusTime.Checked = editProgram.RandomIntervalModelStimulus;
-            switch (editProgram.getExpositionType())
+            if (editProgram.getExpositionType() == "DMTS")
             {
-                case "DMTS":
-                    this.expositionType.SelectedIndex = 0;
-                    break;
-                case "DNMTS":
-                    this.expositionType.SelectedIndex = 1;
-                    break;
-                case "DMTS/DNMTS":
-                    this.expositionType.SelectedIndex = 2;
-                    break;
+                this.expositionType.SelectedIndex = 0;
+            }
+            else if (editProgram.getExpositionType() == "DNMTS")
+            {
+                this.expositionType.SelectedIndex = 1;
+            }
+            else if (editProgram.getExpositionType() == LocRM.GetString("alternatingDMTS_DNMTS", currentCulture))
+            {
+                this.expositionType.SelectedIndex = 2;
+            }
+            else
+            {
+                this.expositionType.SelectedIndex = 3;
             }
 
             // reads program instructions to instruction box if there are any
@@ -297,7 +301,7 @@ namespace TestPlatform.Views.MatchingPages
 
         private bool validExpositionType(out string errorMessage)
         {
-            if(this.expositionType.SelectedIndex >= 0 && this.expositionType.SelectedIndex < 3)
+            if(this.expositionType.SelectedIndex >= 0 && this.expositionType.SelectedIndex < 4)
             {
                 errorMessage = "";
                 return true;
@@ -318,7 +322,7 @@ namespace TestPlatform.Views.MatchingPages
         {
             this.errorProvider1.Clear();
             this.errorProvider2.Clear();
-            if(this.expositionType.SelectedIndex > 2)
+            if(this.expositionType.SelectedIndex > 3)
             {
                 this.errorProvider1.SetError(this.expositionType, LocRM.GetString("unavailableExpo", currentCulture));
             }
@@ -348,7 +352,7 @@ namespace TestPlatform.Views.MatchingPages
                 DNMTSBackgroundColor.Enabled = true;
                 DNMTSBackground.Enabled = true;
             }
-            else if (this.expositionType.SelectedIndex == 2)
+            else if (this.expositionType.SelectedIndex == 2 || this.expositionType.SelectedIndex == 3)
             {
                 DMTSBackgroundLabel.Enabled = true;
                 DMTSColorPanel.Enabled = true;

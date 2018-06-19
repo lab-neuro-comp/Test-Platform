@@ -30,7 +30,7 @@ namespace TestPlatform.Models
         private static string _stroopTestFilesPath = "/StroopTestFiles/";
         private static string _reactionTestFilesPath = "/ReactionTestFiles/";
         private static string _experimentTestFilesPath = "/ExperimentTestFiles/";
-        public static string _matchingTestFilesPath = "/MatchingTestFiles/";
+        private static string _matchingTestFilesPath = "/MatchingTestFiles/";
 
         public static string _stroopTestFilesBackupPath = "/StroopTestFiles/";
         public static string _reactionTestFilesBackupPath = "/ReactionTestFiles/";

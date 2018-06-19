@@ -303,7 +303,7 @@ namespace TestPlatform.Views.MainForms
                             MatchingProgram program = new MatchingProgram();
                             try
                             {
-                                program.readProgramFile(FileManipulation._matchingTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
+                                program.configureReadProgram(FileManipulation._matchingTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
                             }
                             catch (FileNotFoundException e)
                             {

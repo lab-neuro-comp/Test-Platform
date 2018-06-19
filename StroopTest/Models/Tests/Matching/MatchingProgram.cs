@@ -32,7 +32,7 @@ namespace TestPlatform.Models
 
         public MatchingProgram(string programPath)
         {
-            this.readProgramFile(programPath);
+            this.configureReadProgram(programPath);
         }
 
         public override string ToString()
@@ -389,7 +389,7 @@ namespace TestPlatform.Models
             return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), ".prg");
         }
 
-        public void readProgramFile(string filepath)
+        public void configureReadProgram(string filepath)
         {
             StreamReader tr;
             string line;

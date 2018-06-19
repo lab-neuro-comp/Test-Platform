@@ -307,7 +307,7 @@ namespace TestPlatform.Views.ListsPages
                     programName = Path.GetFileNameWithoutExtension(file);
                     MatchingProgram program = new MatchingProgram();
                     currentProgram = Path.GetFileNameWithoutExtension(file) + " (" + LocRM.GetString("matchingTest", currentCulture) + ")";
-                    program.readProgramFile(file);
+                    program.configureReadProgram(file);
                     if (suffix == "_image" && program.getImageListFile() != null && program.getImageListFile().ListName == listName)
                     {
                         stopProcess = false;

@@ -55,7 +55,7 @@ namespace TestPlatform.Views.MatchingPages
             MatchingProgram editProgram = new MatchingProgram();
             try
             {
-                editProgram.readProgramFile(path + FileManipulation._programFolderName + editPrgName + ".prg");
+                editProgram.configureReadProgram(path + FileManipulation._programFolderName + editPrgName + ".prg");
             }
             catch (FileNotFoundException e)
             {

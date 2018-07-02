@@ -109,7 +109,7 @@ namespace TestPlatform.Views
                     }
                     if (screenTranslationAllowed)
                     {
-                        FileManagment deleteProgram = new FileManagment(StroopProgram.GetProgramsPath(), FileManipulation._stroopTestFilesBackupPath, 'd', LocRM.GetString("stroopTest", currentCulture));
+                        FileManagment deleteProgram = new FileManagment(StroopProgram.GetProgramsPath(), FileManipulation.StroopTestFilesBackupPath, 'd', LocRM.GetString("stroopTest", currentCulture));
                         FileManipulation.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                         deleteStroopButton.Checked = false; 
                     }
@@ -131,7 +131,7 @@ namespace TestPlatform.Views
                     }
                     if (screenTranslationAllowed)
                     {
-                        FileManagment recoverProgram = new FileManagment(FileManipulation._stroopTestFilesBackupPath, StroopProgram.GetProgramsPath(), 'r', LocRM.GetString("stroopTest", currentCulture));
+                        FileManagment recoverProgram = new FileManagment(FileManipulation.StroopTestFilesBackupPath, StroopProgram.GetProgramsPath(), 'r', LocRM.GetString("stroopTest", currentCulture));
                         FileManipulation.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverStroopButton.Checked = false; 
                     }

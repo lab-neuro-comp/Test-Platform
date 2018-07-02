@@ -31,9 +31,9 @@ namespace TestPlatform.Models
         private static string _reactionTestFilesPath = "/ReactionTestFiles/";
         private static string _experimentTestFilesPath = "/ExperimentTestFiles/";
         private static string _matchingTestFilesPath = "/MatchingTestFiles/";
+        private static string _stroopTestFilesBackupPath = "/StroopTestFiles/";
+        private static string _reactionTestFilesBackupPath = "/ReactionTestFiles/";
 
-        public static string _stroopTestFilesBackupPath = "/StroopTestFiles/";
-        public static string _reactionTestFilesBackupPath = "/ReactionTestFiles/";
         public static string _experimentTestFilesBackupPath = "/ExperimentTestFiles/";
         public static string _matchingTestFilesBackupPath = "/MatchingTestFiles/";
         public static string _listFilesBackup = "/Lst/";
@@ -270,7 +270,7 @@ namespace TestPlatform.Models
                 Directory.CreateDirectory(_defaultPath + _backupFolderName);
 
             _stroopTestFilesBackupPath = _defaultPath + _backupFolderName + _stroopTestFilesBackupPath;
-            _reactionTestFilesBackupPath = _defaultPath + _backupFolderName + _reactionTestFilesBackupPath;
+            _reactionTestFilesBackupPath = _defaultPath + _backupFolderName + ReactionTestFilesBackupPath;
             _experimentTestFilesBackupPath = _defaultPath + _backupFolderName + _experimentTestFilesBackupPath;
             _matchingTestFilesBackupPath = _defaultPath + _backupFolderName + _matchingTestFilesBackupPath;
             _listFilesBackup = _defaultPath + _backupFolderName + _listFilesBackup;
@@ -279,8 +279,8 @@ namespace TestPlatform.Models
                 Directory.CreateDirectory(_experimentTestFilesBackupPath);
             if (!Directory.Exists(_stroopTestFilesBackupPath))
                 Directory.CreateDirectory(_stroopTestFilesBackupPath);
-            if (!Directory.Exists(_reactionTestFilesBackupPath))
-                Directory.CreateDirectory(_reactionTestFilesBackupPath);
+            if (!Directory.Exists(ReactionTestFilesBackupPath))
+                Directory.CreateDirectory(ReactionTestFilesBackupPath);
             if (!Directory.Exists(_matchingTestFilesBackupPath))
                 Directory.CreateDirectory(_matchingTestFilesBackupPath);
             if (!Directory.Exists(_listFilesBackup))
@@ -397,5 +397,7 @@ namespace TestPlatform.Models
         public static string ExperimentTestFilesPath { get => _experimentTestFilesPath;}
         public static string ProgramExtension { get => PROGRAM_EXTENSION; }
         public static string MatchingTestFilesPath { get => _matchingTestFilesPath; }
+        public static string StroopTestFilesBackupPath { get => _stroopTestFilesBackupPath; }
+        public static string ReactionTestFilesBackupPath { get => _reactionTestFilesBackupPath; }
     }
 }

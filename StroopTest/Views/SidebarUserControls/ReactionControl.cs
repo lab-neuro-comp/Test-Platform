@@ -126,7 +126,7 @@ namespace TestPlatform.Views.SidebarUserControls
                     }
                     if (screenTranslationAllowed)
                     {
-                        FileManagment deleteProgram = new FileManagment(ReactionProgram.GetProgramsPath(), FileManipulation._reactionTestFilesBackupPath, 'd', LocRM.GetString("reactionTest", currentCulture));
+                        FileManagment deleteProgram = new FileManagment(ReactionProgram.GetProgramsPath(), FileManipulation.ReactionTestFilesBackupPath, 'd', LocRM.GetString("reactionTest", currentCulture));
                         FileManipulation.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                         deleteReactButton.Checked = false; 
                     }
@@ -148,7 +148,7 @@ namespace TestPlatform.Views.SidebarUserControls
                     }
                     if (screenTranslationAllowed)
                     {
-                        FileManagment recoverProgram = new FileManagment(FileManipulation._reactionTestFilesBackupPath, ReactionProgram.GetProgramsPath(), 'r', LocRM.GetString("reactionTest", currentCulture));
+                        FileManagment recoverProgram = new FileManagment(FileManipulation.ReactionTestFilesBackupPath, ReactionProgram.GetProgramsPath(), 'r', LocRM.GetString("reactionTest", currentCulture));
                         FileManipulation.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverReactButton.Checked = false; 
                     }

@@ -290,7 +290,7 @@ namespace TestPlatform.Views.MainForms
                             ReactionProgram program = new ReactionProgram();
                             try
                             {
-                                program.readProgramFile(FileManipulation._reactionTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
+                                program.readImportProgramFile(destinationFilesList.Items[count].ToString());
                             }
                             catch (FileNotFoundException e)
                             {

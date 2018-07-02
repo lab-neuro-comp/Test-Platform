@@ -239,7 +239,7 @@ namespace TestPlatform.Views.ListsPages
                 foreach (string file in TRPrograms)
                 {
                     originPath = ReactionProgram.GetProgramsPath();
-                    destinationPath = FileManipulation._reactionTestFilesBackupPath;
+                    destinationPath = FileManipulation.ReactionTestFilesBackupPath;
                     programName = Path.GetFileNameWithoutExtension(file);
                     currentProgram = Path.GetFileNameWithoutExtension(file) + " (" + LocRM.GetString("reactionTest", currentCulture) + ")";
                     ReactionProgram program = new ReactionProgram();
@@ -271,7 +271,7 @@ namespace TestPlatform.Views.ListsPages
                 foreach (string file in StroopPrograms)
                 {
                     originPath = StroopProgram.GetProgramsPath();
-                    destinationPath = FileManipulation._stroopTestFilesBackupPath;
+                    destinationPath = FileManipulation.StroopTestFilesBackupPath;
                     programName = Path.GetFileNameWithoutExtension(file);
                     StroopProgram program = new StroopProgram();
                     currentProgram = Path.GetFileNameWithoutExtension(file) + " (" + LocRM.GetString("stroopTest", currentCulture) + ")";

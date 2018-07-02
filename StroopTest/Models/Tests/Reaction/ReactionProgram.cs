@@ -583,6 +583,11 @@ namespace TestPlatform.Models
             return data;
         }
 
+        public void readImportProgramFile(string programName)
+        {
+            readProgramFile(FileManipulation.ReactionTestFilesBackupPath + programName + FileManipulation.ProgramExtension);
+        }
+ 
         // lê arquivo com programa e retorna true para sucesso
         public void readProgramFile(string filepath)
         {

@@ -74,17 +74,16 @@ namespace TestPlatform.Models
             }
         }
 
-        public void setProgramInUse(string path, string prgName)
+        public void setProgramInUse(string prgName)
         {
-            string programFile = path + prgName + ".prg";
-            if (File.Exists(programFile))
+            if (MatchingProgram.ProgramExists(prgName))
             {
-                ProgramInUse = new MatchingProgram(programFile);
+                ProgramInUse = new MatchingProgram(prgName);
             }
             else
             {
                 throw new Exception(LocRM.GetString("file", currentCulture) + ProgramInUse.ProgramName + ".prg" +
-                                    LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(path + "/prg/"));
+                                    LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(MatchingProgram.GetProgramsPath()));
             }
         }
 

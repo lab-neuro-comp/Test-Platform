@@ -187,9 +187,16 @@
         {
             try
             {
-                if (!File.Exists(FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName + programName + ".prg")) { throw new MissingMemberException(programName + " (" + LocRM.GetString("matchingTest", currentCulture) + ")"); };
-                MatchingProgram newProgram = new MatchingProgram(FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName + programName + ".prg");
-                ProgramList.Add(newProgram);
+                if (MatchingProgram.ProgramExists(programName))
+                {
+                    MatchingProgram newProgram = new MatchingProgram(programName);
+                    ProgramList.Add(newProgram);
+                }
+                else
+                {
+                    throw new MissingMemberException(programName + " (" + LocRM.GetString("matchingTest", currentCulture) + ")");
+                }
+               
             }
             catch (FileNotFoundException)
             {

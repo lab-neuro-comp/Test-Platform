@@ -103,7 +103,7 @@ namespace TestPlatform.Views.SidebarUserControls
 
                     try
                     {
-                        defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName, "prg", "program", false, false);
+                        defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), MatchingProgram.GetProgramsPath(), "prg", "program", false, false);
                         result = defineProgram.ShowDialog();
                         if (result == DialogResult.OK)
                         {
@@ -142,7 +142,7 @@ namespace TestPlatform.Views.SidebarUserControls
                     {
                         if (deleteMatchButton.Checked)
                         {
-                            FileManagment deleteProgram = new FileManagment(FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName, FileManipulation._matchingTestFilesBackupPath, 'd', LocRM.GetString("matchingTest", currentCulture));
+                            FileManagment deleteProgram = new FileManagment(MatchingProgram.GetProgramsPath(), FileManipulation._matchingTestFilesBackupPath, 'd', LocRM.GetString("matchingTest", currentCulture));
                             FileManipulation.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                             deleteMatchButton.Checked = false;
                         }
@@ -170,7 +170,7 @@ namespace TestPlatform.Views.SidebarUserControls
                 {
                     if (recoverMatchButton.Checked)
                     {
-                        FileManagment recoverProgram = new FileManagment(FileManipulation._matchingTestFilesBackupPath, FileManipulation._matchingTestFilesPath + FileManipulation._programFolderName, 'r', LocRM.GetString("matchingTest", currentCulture));
+                        FileManagment recoverProgram = new FileManagment(FileManipulation._matchingTestFilesBackupPath, MatchingProgram.GetProgramsPath(), 'r', LocRM.GetString("matchingTest", currentCulture));
                         FileManipulation.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverMatchButton.Checked = false;
                     }

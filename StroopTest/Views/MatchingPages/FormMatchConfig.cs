@@ -19,7 +19,6 @@ namespace TestPlatform.Views.MatchingPages
     {
         private String instructionBoxText;
 
-        private String path = FileManipulation._matchingTestFilesPath;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private String editPrgName = "false";
@@ -52,16 +51,7 @@ namespace TestPlatform.Views.MatchingPages
 
         private void editProgram()
         {
-            MatchingProgram editProgram = new MatchingProgram();
-            try
-            {
-                editProgram.configureReadProgram(path + FileManipulation._programFolderName + editPrgName + ".prg");
-            }
-            catch (FileNotFoundException e)
-            {
-                MessageBox.Show(LocRM.GetString("cantEdìtProgramMissingFiles", currentCulture) + e.Message);
-                return;
-            }
+            MatchingProgram editProgram = new MatchingProgram(editPrgName);
 
             if (editProgram.getImageListFile() != null)
             {
@@ -262,7 +252,7 @@ namespace TestPlatform.Views.MatchingPages
                     {
                         MatchingProgram newProgram = configureNewProgram();
 
-                        if (File.Exists(path + FileManipulation._programFolderName + programName.Text + ".prg"))
+                        if (MatchingProgram.ProgramExists(programName.Text))
                         {
                             DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExists", currentCulture), "", MessageBoxButtons.OKCancel);
                             if (dialogResult == DialogResult.Cancel)
@@ -271,7 +261,7 @@ namespace TestPlatform.Views.MatchingPages
                                 MessageBox.Show(LocRM.GetString("programNotSave", currentCulture));
                             }
                         }
-                        if (hasToSave && newProgram.saveProgramFile(path + FileManipulation._programFolderName, instructionsBox.Text))
+                        if (hasToSave && newProgram.saveProgramFile(instructionsBox.Text))
                         {
                             MessageBox.Show(LocRM.GetString("programSave", currentCulture));
                         }

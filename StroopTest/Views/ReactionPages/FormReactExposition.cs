@@ -90,7 +90,7 @@ namespace TestPlatform.Views
 
         private void startExposition()
         {
-            if (executingTest.ProgramInUse.Ready(path))
+            if (executingTest.ProgramInUse.Ready())
             {
                 initializeExposition();
             }

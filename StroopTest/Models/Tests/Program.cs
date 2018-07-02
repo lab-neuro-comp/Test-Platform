@@ -353,9 +353,9 @@ namespace TestPlatform.Models
             }
         }
 
-        public bool Ready(string path)
+        public bool Ready()
         {
-            if (!needsEditionFlag && Exists(path))
+            if (!needsEditionFlag)
             {
                 return true;
             }

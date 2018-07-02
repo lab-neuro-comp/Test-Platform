@@ -331,7 +331,7 @@ namespace TestPlatform.Views.MainForms
                 }
                 else if(selectedRowType == LocRM.GetString("matchingTest", currentCulture))
                 {
-                    MatchingProgram newProgram = new MatchingProgram(FileManipulation._importPath + "/MatchingProgram/" + selectedRowName + ".prg");
+                    MatchingProgram newProgram = new MatchingProgram(selectedRowName, true);
                     addLists(newProgram);
                 }
                 else if (selectedRowType == LocRM.GetString("experiment", currentCulture))

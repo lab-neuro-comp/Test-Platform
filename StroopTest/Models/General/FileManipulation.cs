@@ -237,7 +237,9 @@ namespace TestPlatform.Models
             return FileExists(_stroopTestFilesPath + _programFolderName + programName + PROGRAM_EXTENSION);
         }
 
-        private static bool FileExists(string file)
+
+
+        public static bool FileExists(string file)
         {
             if (File.Exists(file))
             {
@@ -393,5 +395,7 @@ namespace TestPlatform.Models
         public static string StroopTestFilesPath { get => _stroopTestFilesPath;}
         public static string ReactionTestFilesPath { get => _reactionTestFilesPath; }
         public static string ExperimentTestFilesPath { get => _experimentTestFilesPath;}
+        public static string ProgramExtension { get => PROGRAM_EXTENSION; }
+        public static string MatchingTestFilesPath { get => _matchingTestFilesPath; }
     }
 }

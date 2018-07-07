@@ -232,10 +232,10 @@ Imagem:</value>
     <value>Imagem e Palavra</value>
   </data>
   <data name="chooseExpoType.Items3" xml:space="preserve">
-    <value>Palavra com Áudio</value>
+    <value>Palavra e Imagem</value>
   </data>
   <data name="chooseExpoType.Items4" xml:space="preserve">
-    <value>Imagem com Áudio</value>
+    <value>Palavra com Áudio</value>
   </data>
   <data name="numExpoLabel.Text" xml:space="preserve">
     <value>Número de Tentativas:</value>
@@ -260,5 +260,8 @@ Imagem:</value>
   </data>
   <data name="saveButton.Text" xml:space="preserve">
     <value>salvar</value>
+  </data>
+  <data name="chooseExpoType.Items5" xml:space="preserve">
+    <value>Imagem com Áudio</value>
   </data>
 </root>

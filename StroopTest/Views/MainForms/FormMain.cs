@@ -40,7 +40,8 @@ namespace TestPlatform
         {
             InitializeComponent();
             FileManipulation.Instance(this);
-
+            initializeParticipants();
+ 
             _contentPanel = contentPanel;
         }
 

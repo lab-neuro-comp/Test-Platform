@@ -237,479 +237,20 @@
   <data name="&gt;&gt;instructionsBox.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;reasonForNotMenstruating.Name" xml:space="preserve">
-    <value>reasonForNotMenstruating</value>
-  </data>
-  <data name="&gt;&gt;reasonForNotMenstruating.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;reasonForNotMenstruating.Parent" xml:space="preserve">
-    <value>femaleGroupBox</value>
-  </data>
-  <data name="&gt;&gt;reasonForNotMenstruating.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
-    <value>femaleGroupBox</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;notMenstruatingLabel.Name" xml:space="preserve">
-    <value>notMenstruatingLabel</value>
-  </data>
-  <data name="&gt;&gt;notMenstruatingLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;notMenstruatingLabel.Parent" xml:space="preserve">
-    <value>femaleGroupBox</value>
-  </data>
-  <data name="&gt;&gt;notMenstruatingLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;hasMenstruatingLabel.Name" xml:space="preserve">
-    <value>hasMenstruatingLabel</value>
-  </data>
-  <data name="&gt;&gt;hasMenstruatingLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hasMenstruatingLabel.Parent" xml:space="preserve">
-    <value>femaleGroupBox</value>
-  </data>
-  <data name="&gt;&gt;hasMenstruatingLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;periodDateLabel.Name" xml:space="preserve">
-    <value>periodDateLabel</value>
-  </data>
-  <data name="&gt;&gt;periodDateLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;periodDateLabel.Parent" xml:space="preserve">
-    <value>femaleGroupBox</value>
-  </data>
-  <data name="&gt;&gt;periodDateLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;periodDatePicker.Name" xml:space="preserve">
-    <value>periodDatePicker</value>
-  </data>
-  <data name="&gt;&gt;periodDatePicker.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;periodDatePicker.Parent" xml:space="preserve">
-    <value>femaleGroupBox</value>
-  </data>
-  <data name="&gt;&gt;periodDatePicker.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="femaleGroupBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="femaleGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>404, 84</value>
-  </data>
-  <data name="femaleGroupBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="femaleGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="femaleGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 121</value>
-  </data>
-  <data name="femaleGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>88</value>
-  </data>
-  <data name="femaleGroupBox.Text" xml:space="preserve">
-    <value>Ciclo menstrual</value>
-  </data>
-  <data name="femaleGroupBox.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;femaleGroupBox.Name" xml:space="preserve">
-    <value>femaleGroupBox</value>
-  </data>
-  <data name="&gt;&gt;femaleGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;femaleGroupBox.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;femaleGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="LivingLocationTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>543, 14</value>
-  </data>
-  <data name="LivingLocationTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="LivingLocationTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="LivingLocationTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>87</value>
-  </data>
-  <data name="&gt;&gt;LivingLocationTextBox.Name" xml:space="preserve">
-    <value>LivingLocationTextBox</value>
-  </data>
-  <data name="&gt;&gt;LivingLocationTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LivingLocationTextBox.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;LivingLocationTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="localeLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="localeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>416, 16</value>
-  </data>
-  <data name="localeLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
-  </data>
-  <data name="localeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 17</value>
-  </data>
-  <data name="localeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>86</value>
-  </data>
-  <data name="localeLabel.Text" xml:space="preserve">
-    <value>Local onde mora;</value>
-  </data>
-  <data name="&gt;&gt;localeLabel.Name" xml:space="preserve">
-    <value>localeLabel</value>
-  </data>
-  <data name="&gt;&gt;localeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;localeLabel.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;localeLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="medicineEspecification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 287</value>
-  </data>
-  <data name="medicineEspecification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="medicineEspecification.MaxLength" type="System.Int32, mscorlib">
-    <value>300</value>
-  </data>
-  <data name="medicineEspecification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 22</value>
-  </data>
-  <data name="medicineEspecification.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;medicineEspecification.Name" xml:space="preserve">
-    <value>medicineEspecification</value>
-  </data>
-  <data name="&gt;&gt;medicineEspecification.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;medicineEspecification.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;medicineEspecification.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="relaxingEspecification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 336</value>
-  </data>
-  <data name="relaxingEspecification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="relaxingEspecification.MaxLength" type="System.Int32, mscorlib">
-    <value>300</value>
-  </data>
-  <data name="relaxingEspecification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 22</value>
-  </data>
-  <data name="relaxingEspecification.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;relaxingEspecification.Name" xml:space="preserve">
-    <value>relaxingEspecification</value>
-  </data>
-  <data name="&gt;&gt;relaxingEspecification.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;relaxingEspecification.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;relaxingEspecification.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="sleepEspecification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 385</value>
-  </data>
-  <data name="sleepEspecification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="sleepEspecification.MaxLength" type="System.Int32, mscorlib">
-    <value>300</value>
-  </data>
-  <data name="sleepEspecification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 22</value>
-  </data>
-  <data name="sleepEspecification.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;sleepEspecification.Name" xml:space="preserve">
-    <value>sleepEspecification</value>
-  </data>
-  <data name="&gt;&gt;sleepEspecification.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sleepEspecification.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;sleepEspecification.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="alcoholEspecification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 434</value>
-  </data>
-  <data name="alcoholEspecification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="alcoholEspecification.MaxLength" type="System.Int32, mscorlib">
-    <value>300</value>
-  </data>
-  <data name="alcoholEspecification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 22</value>
-  </data>
-  <data name="alcoholEspecification.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="&gt;&gt;alcoholEspecification.Name" xml:space="preserve">
-    <value>alcoholEspecification</value>
-  </data>
-  <data name="&gt;&gt;alcoholEspecification.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;alcoholEspecification.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;alcoholEspecification.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="drugsEspecification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 484</value>
-  </data>
-  <data name="drugsEspecification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="drugsEspecification.MaxLength" type="System.Int32, mscorlib">
-    <value>300</value>
-  </data>
-  <data name="drugsEspecification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 22</value>
-  </data>
-  <data name="drugsEspecification.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;drugsEspecification.Name" xml:space="preserve">
-    <value>drugsEspecification</value>
-  </data>
-  <data name="&gt;&gt;drugsEspecification.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;drugsEspecification.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;drugsEspecification.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="energeticEspecification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 533</value>
-  </data>
-  <data name="energeticEspecification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="energeticEspecification.MaxLength" type="System.Int32, mscorlib">
-    <value>300</value>
-  </data>
-  <data name="energeticEspecification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 22</value>
-  </data>
-  <data name="energeticEspecification.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="&gt;&gt;energeticEspecification.Name" xml:space="preserve">
-    <value>energeticEspecification</value>
-  </data>
-  <data name="&gt;&gt;energeticEspecification.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;energeticEspecification.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;energeticEspecification.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="glassesEspecification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 238</value>
-  </data>
-  <data name="glassesEspecification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="glassesEspecification.MaxLength" type="System.Int32, mscorlib">
-    <value>300</value>
-  </data>
-  <data name="glassesEspecification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 22</value>
-  </data>
-  <data name="glassesEspecification.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;glassesEspecification.Name" xml:space="preserve">
-    <value>glassesEspecification</value>
-  </data>
-  <data name="&gt;&gt;glassesEspecification.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;glassesEspecification.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;glassesEspecification.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 521</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>347, 49</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>83</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Nas últimas 2 horas você consumiu café, refrigerante, chocolate ou alguma bebida energética?</value>
-  </data>
-  <data name="label7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="especifications.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="especifications.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="especifications.Location" type="System.Drawing.Point, System.Drawing">
-    <value>603, 208</value>
-  </data>
-  <data name="especifications.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 17</value>
-  </data>
-  <data name="especifications.TabIndex" type="System.Int32, mscorlib">
-    <value>84</value>
-  </data>
-  <data name="especifications.Text" xml:space="preserve">
-    <value>Especificação</value>
-  </data>
-  <data name="&gt;&gt;especifications.Name" xml:space="preserve">
-    <value>especifications</value>
-  </data>
-  <data name="&gt;&gt;especifications.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;especifications.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;especifications.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;energizersNo.Name" xml:space="preserve">
-    <value>energizersNo</value>
-  </data>
-  <data name="&gt;&gt;energizersNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;energizersNo.Parent" xml:space="preserve">
-    <value>flowLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;energizersNo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;energizersYes.Name" xml:space="preserve">
-    <value>energizersYes</value>
-  </data>
-  <data name="&gt;&gt;energizersYes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;energizersYes.Parent" xml:space="preserve">
-    <value>flowLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;energizersYes.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="flowLayoutPanel8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>379, 530</value>
-  </data>
-  <data name="flowLayoutPanel8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="flowLayoutPanel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 31</value>
-  </data>
-  <data name="flowLayoutPanel8.TabIndex" type="System.Int32, mscorlib">
-    <value>82</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel8.Name" xml:space="preserve">
-    <value>flowLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel8.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel8.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
   <data name="brainSubstanceLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="brainSubstanceLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 471</value>
+    <value>4, 470</value>
   </data>
   <data name="brainSubstanceLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>347, 49</value>
   </data>
   <data name="brainSubstanceLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>81</value>
+    <value>90</value>
   </data>
   <data name="brainSubstanceLabel.Text" xml:space="preserve">
-    <value>Nas últimas 24 horas você consumiu  substâncias que alteram funcionamento cerebral?</value>
+    <value>Nas últimas 24 horas você consumiu alguma substância que altera o funcionamento do cérebro?</value>
   </data>
   <data name="brainSubstanceLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -724,895 +265,7 @@
     <value>participantGroupBox</value>
   </data>
   <data name="&gt;&gt;brainSubstanceLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;drugsNo.Name" xml:space="preserve">
-    <value>drugsNo</value>
-  </data>
-  <data name="&gt;&gt;drugsNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;drugsNo.Parent" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;drugsNo.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;drugsYes.Name" xml:space="preserve">
-    <value>drugsYes</value>
-  </data>
-  <data name="&gt;&gt;drugsYes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;drugsYes.Parent" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;drugsYes.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="flowLayoutPanel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>379, 481</value>
-  </data>
-  <data name="flowLayoutPanel7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="flowLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 31</value>
-  </data>
-  <data name="flowLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Name" xml:space="preserve">
-    <value>flowLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel7.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="alcoholLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="alcoholLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 422</value>
-  </data>
-  <data name="alcoholLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>347, 49</value>
-  </data>
-  <data name="alcoholLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>79</value>
-  </data>
-  <data name="alcoholLabel.Text" xml:space="preserve">
-    <value>Nas últimas 24 horas você consumiu álcool?</value>
-  </data>
-  <data name="alcoholLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;alcoholLabel.Name" xml:space="preserve">
-    <value>alcoholLabel</value>
-  </data>
-  <data name="&gt;&gt;alcoholLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;alcoholLabel.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;alcoholLabel.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;alcoholNo.Name" xml:space="preserve">
-    <value>alcoholNo</value>
-  </data>
-  <data name="&gt;&gt;alcoholNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;alcoholNo.Parent" xml:space="preserve">
-    <value>flowLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;alcoholNo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;alcoholYes.Name" xml:space="preserve">
-    <value>alcoholYes</value>
-  </data>
-  <data name="&gt;&gt;alcoholYes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;alcoholYes.Parent" xml:space="preserve">
-    <value>flowLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;alcoholYes.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="flowLayoutPanel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>379, 432</value>
-  </data>
-  <data name="flowLayoutPanel6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="flowLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 31</value>
-  </data>
-  <data name="flowLayoutPanel6.TabIndex" type="System.Int32, mscorlib">
-    <value>78</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel6.Name" xml:space="preserve">
-    <value>flowLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel6.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel6.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="sleepLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="sleepLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 373</value>
-  </data>
-  <data name="sleepLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>347, 49</value>
-  </data>
-  <data name="sleepLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>77</value>
-  </data>
-  <data name="sleepLabel.Text" xml:space="preserve">
-    <value>Considera ter tido uma boa noite de sono a noite passada?</value>
-  </data>
-  <data name="sleepLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;sleepLabel.Name" xml:space="preserve">
-    <value>sleepLabel</value>
-  </data>
-  <data name="&gt;&gt;sleepLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sleepLabel.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;sleepLabel.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;sleepNo.Name" xml:space="preserve">
-    <value>sleepNo</value>
-  </data>
-  <data name="&gt;&gt;sleepNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sleepNo.Parent" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;sleepNo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;sleepYes.Name" xml:space="preserve">
-    <value>sleepYes</value>
-  </data>
-  <data name="&gt;&gt;sleepYes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sleepYes.Parent" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;sleepYes.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="flowLayoutPanel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>379, 383</value>
-  </data>
-  <data name="flowLayoutPanel5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="flowLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 31</value>
-  </data>
-  <data name="flowLayoutPanel5.TabIndex" type="System.Int32, mscorlib">
-    <value>76</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel5.Name" xml:space="preserve">
-    <value>flowLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel5.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel5.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="relaxantLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="relaxantLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 324</value>
-  </data>
-  <data name="relaxantLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>347, 49</value>
-  </data>
-  <data name="relaxantLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>75</value>
-  </data>
-  <data name="relaxantLabel.Text" xml:space="preserve">
-    <value>Nas últimas 24 horas você fez o uso de relaxantes?</value>
-  </data>
-  <data name="relaxantLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;relaxantLabel.Name" xml:space="preserve">
-    <value>relaxantLabel</value>
-  </data>
-  <data name="&gt;&gt;relaxantLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;relaxantLabel.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;relaxantLabel.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;relaxantNo.Name" xml:space="preserve">
-    <value>relaxantNo</value>
-  </data>
-  <data name="&gt;&gt;relaxantNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;relaxantNo.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;relaxantNo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;relaxantYes.Name" xml:space="preserve">
-    <value>relaxantYes</value>
-  </data>
-  <data name="&gt;&gt;relaxantYes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;relaxantYes.Parent" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;relaxantYes.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>379, 334</value>
-  </data>
-  <data name="flowLayoutPanel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 31</value>
-  </data>
-  <data name="flowLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
-    <value>74</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Name" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="medicineLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="medicineLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 274</value>
-  </data>
-  <data name="medicineLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>347, 49</value>
-  </data>
-  <data name="medicineLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>73</value>
-  </data>
-  <data name="medicineLabel.Text" xml:space="preserve">
-    <value>Você faz uso de medicação - natural ou medicinal - regularmente?</value>
-  </data>
-  <data name="medicineLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;medicineLabel.Name" xml:space="preserve">
-    <value>medicineLabel</value>
-  </data>
-  <data name="&gt;&gt;medicineLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;medicineLabel.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;medicineLabel.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;medicineNo.Name" xml:space="preserve">
-    <value>medicineNo</value>
-  </data>
-  <data name="&gt;&gt;medicineNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;medicineNo.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;medicineNo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;medicineYes.Name" xml:space="preserve">
-    <value>medicineYes</value>
-  </data>
-  <data name="&gt;&gt;medicineYes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;medicineYes.Parent" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;medicineYes.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>379, 284</value>
-  </data>
-  <data name="flowLayoutPanel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 31</value>
-  </data>
-  <data name="flowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
-    <value>72</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Name" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="glassQuestion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="glassQuestion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 225</value>
-  </data>
-  <data name="glassQuestion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>347, 49</value>
-  </data>
-  <data name="glassQuestion.TabIndex" type="System.Int32, mscorlib">
-    <value>71</value>
-  </data>
-  <data name="glassQuestion.Text" xml:space="preserve">
-    <value>Faz uso de óculos frequentemente?</value>
-  </data>
-  <data name="glassQuestion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;glassQuestion.Name" xml:space="preserve">
-    <value>glassQuestion</value>
-  </data>
-  <data name="&gt;&gt;glassQuestion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;glassQuestion.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;glassQuestion.ZOrder" xml:space="preserve">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;glassesNo.Name" xml:space="preserve">
-    <value>glassesNo</value>
-  </data>
-  <data name="&gt;&gt;glassesNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;glassesNo.Parent" xml:space="preserve">
-    <value>glassPanel</value>
-  </data>
-  <data name="&gt;&gt;glassesNo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;glassesYes.Name" xml:space="preserve">
-    <value>glassesYes</value>
-  </data>
-  <data name="&gt;&gt;glassesYes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;glassesYes.Parent" xml:space="preserve">
-    <value>glassPanel</value>
-  </data>
-  <data name="&gt;&gt;glassesYes.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="glassPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>379, 235</value>
-  </data>
-  <data name="glassPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="glassPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 31</value>
-  </data>
-  <data name="glassPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
-  <data name="&gt;&gt;glassPanel.Name" xml:space="preserve">
-    <value>glassPanel</value>
-  </data>
-  <data name="&gt;&gt;glassPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;glassPanel.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;glassPanel.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
-  <data name="ageNumeric.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ageNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>351, 15</value>
-  </data>
-  <data name="ageNumeric.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="ageNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 22</value>
-  </data>
-  <data name="ageNumeric.TabIndex" type="System.Int32, mscorlib">
-    <value>69</value>
-  </data>
-  <data name="&gt;&gt;ageNumeric.Name" xml:space="preserve">
-    <value>ageNumeric</value>
-  </data>
-  <data name="&gt;&gt;ageNumeric.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ageNumeric.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ageNumeric.ZOrder" xml:space="preserve">
-    <value>25</value>
-  </data>
-  <data name="ageLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ageLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ageLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 17</value>
-  </data>
-  <data name="ageLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 17</value>
-  </data>
-  <data name="ageLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>68</value>
-  </data>
-  <data name="ageLabel.Text" xml:space="preserve">
-    <value>Idade:</value>
-  </data>
-  <data name="&gt;&gt;ageLabel.Name" xml:space="preserve">
-    <value>ageLabel</value>
-  </data>
-  <data name="&gt;&gt;ageLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ageLabel.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ageLabel.ZOrder" xml:space="preserve">
-    <value>26</value>
-  </data>
-  <data name="scholarLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="scholarLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="scholarLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 84</value>
-  </data>
-  <data name="scholarLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 17</value>
-  </data>
-  <data name="scholarLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>67</value>
-  </data>
-  <data name="scholarLabel.Text" xml:space="preserve">
-    <value>Grau de escolaridade:</value>
-  </data>
-  <data name="&gt;&gt;scholarLabel.Name" xml:space="preserve">
-    <value>scholarLabel</value>
-  </data>
-  <data name="&gt;&gt;scholarLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;scholarLabel.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;scholarLabel.ZOrder" xml:space="preserve">
-    <value>27</value>
-  </data>
-  <data name="sexoLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="sexoLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="sexoLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 50</value>
-  </data>
-  <data name="sexoLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 17</value>
-  </data>
-  <data name="sexoLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>66</value>
-  </data>
-  <data name="sexoLabel.Text" xml:space="preserve">
-    <value>Sexo:</value>
-  </data>
-  <data name="&gt;&gt;sexoLabel.Name" xml:space="preserve">
-    <value>sexoLabel</value>
-  </data>
-  <data name="&gt;&gt;sexoLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sexoLabel.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;sexoLabel.ZOrder" xml:space="preserve">
-    <value>28</value>
-  </data>
-  <data name="&gt;&gt;femaleRadioButton.Name" xml:space="preserve">
-    <value>femaleRadioButton</value>
-  </data>
-  <data name="&gt;&gt;femaleRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;femaleRadioButton.Parent" xml:space="preserve">
-    <value>sexPanel</value>
-  </data>
-  <data name="&gt;&gt;femaleRadioButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;masculineRadioButton.Name" xml:space="preserve">
-    <value>masculineRadioButton</value>
-  </data>
-  <data name="&gt;&gt;masculineRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;masculineRadioButton.Parent" xml:space="preserve">
-    <value>sexPanel</value>
-  </data>
-  <data name="&gt;&gt;masculineRadioButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="sexPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 43</value>
-  </data>
-  <data name="sexPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="sexPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 31</value>
-  </data>
-  <data name="sexPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>65</value>
-  </data>
-  <data name="sexPanel.WrapContents" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;sexPanel.Name" xml:space="preserve">
-    <value>sexPanel</value>
-  </data>
-  <data name="&gt;&gt;sexPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sexPanel.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;sexPanel.ZOrder" xml:space="preserve">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;middleSchoolButton.Name" xml:space="preserve">
-    <value>middleSchoolButton</value>
-  </data>
-  <data name="&gt;&gt;middleSchoolButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;middleSchoolButton.Parent" xml:space="preserve">
-    <value>schoolingPanel</value>
-  </data>
-  <data name="&gt;&gt;middleSchoolButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;highSchoolradioButton.Name" xml:space="preserve">
-    <value>highSchoolradioButton</value>
-  </data>
-  <data name="&gt;&gt;highSchoolradioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;highSchoolradioButton.Parent" xml:space="preserve">
-    <value>schoolingPanel</value>
-  </data>
-  <data name="&gt;&gt;highSchoolradioButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;higherEducationradioButton.Name" xml:space="preserve">
-    <value>higherEducationradioButton</value>
-  </data>
-  <data name="&gt;&gt;higherEducationradioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;higherEducationradioButton.Parent" xml:space="preserve">
-    <value>schoolingPanel</value>
-  </data>
-  <data name="&gt;&gt;higherEducationradioButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;higher1radioButton.Name" xml:space="preserve">
-    <value>higher1radioButton</value>
-  </data>
-  <data name="&gt;&gt;higher1radioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;higher1radioButton.Parent" xml:space="preserve">
-    <value>schoolingPanel</value>
-  </data>
-  <data name="&gt;&gt;higher1radioButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;postGraduate.Name" xml:space="preserve">
-    <value>postGraduate</value>
-  </data>
-  <data name="&gt;&gt;postGraduate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;postGraduate.Parent" xml:space="preserve">
-    <value>schoolingPanel</value>
-  </data>
-  <data name="&gt;&gt;postGraduate.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="schoolingPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>169, 84</value>
-  </data>
-  <data name="schoolingPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="schoolingPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 137</value>
-  </data>
-  <data name="schoolingPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>66</value>
-  </data>
-  <data name="&gt;&gt;schoolingPanel.Name" xml:space="preserve">
-    <value>schoolingPanel</value>
-  </data>
-  <data name="&gt;&gt;schoolingPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;schoolingPanel.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;schoolingPanel.ZOrder" xml:space="preserve">
-    <value>30</value>
-  </data>
-  <data name="birthDatePicker.CustomFormat" xml:space="preserve">
-    <value> </value>
-  </data>
-  <data name="birthDatePicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 15</value>
-  </data>
-  <data name="birthDatePicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="birthDatePicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 22</value>
-  </data>
-  <data name="birthDatePicker.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;birthDatePicker.Name" xml:space="preserve">
-    <value>birthDatePicker</value>
-  </data>
-  <data name="&gt;&gt;birthDatePicker.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;birthDatePicker.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;birthDatePicker.ZOrder" xml:space="preserve">
-    <value>31</value>
-  </data>
-  <data name="birthDateLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="birthDateLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="birthDateLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 17</value>
-  </data>
-  <data name="birthDateLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 17</value>
-  </data>
-  <data name="birthDateLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
-  </data>
-  <data name="birthDateLabel.Text" xml:space="preserve">
-    <value>Data de nascimento:</value>
-  </data>
-  <data name="&gt;&gt;birthDateLabel.Name" xml:space="preserve">
-    <value>birthDateLabel</value>
-  </data>
-  <data name="&gt;&gt;birthDateLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;birthDateLabel.Parent" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;birthDateLabel.ZOrder" xml:space="preserve">
-    <value>32</value>
-  </data>
-  <data name="participantGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 37</value>
-  </data>
-  <data name="participantGroupBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="participantGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="participantGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>763, 572</value>
-  </data>
-  <data name="participantGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="participantGroupBox.Text" xml:space="preserve">
-    <value>Dados</value>
-  </data>
-  <data name="&gt;&gt;participantGroupBox.Name" xml:space="preserve">
-    <value>participantGroupBox</value>
-  </data>
-  <data name="&gt;&gt;participantGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;participantGroupBox.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;participantGroupBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="instructionsLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="instructionsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="instructionsLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 610</value>
-  </data>
-  <data name="instructionsLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 17</value>
-  </data>
-  <data name="instructionsLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>59</value>
-  </data>
-  <data name="instructionsLabel.Text" xml:space="preserve">
-    <value>Observações:</value>
-  </data>
-  <data name="&gt;&gt;instructionsLabel.Name" xml:space="preserve">
-    <value>instructionsLabel</value>
-  </data>
-  <data name="&gt;&gt;instructionsLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;instructionsLabel.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;instructionsLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="participantNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 5</value>
-  </data>
-  <data name="participantNameTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="participantNameTextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>300</value>
-  </data>
-  <data name="participantNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 22</value>
-  </data>
-  <data name="participantNameTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;participantNameTextBox.Name" xml:space="preserve">
-    <value>participantNameTextBox</value>
-  </data>
-  <data name="&gt;&gt;participantNameTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;participantNameTextBox.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;participantNameTextBox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="participantNameLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="participantNameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="participantNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 7</value>
-  </data>
-  <data name="participantNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 17</value>
-  </data>
-  <data name="participantNameLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="participantNameLabel.Text" xml:space="preserve">
-    <value>Iniciais do nome:</value>
-  </data>
-  <data name="&gt;&gt;participantNameLabel.Name" xml:space="preserve">
-    <value>participantNameLabel</value>
-  </data>
-  <data name="&gt;&gt;participantNameLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;participantNameLabel.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;participantNameLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 12</value>
-  </data>
-  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>782, 692</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="reasonForNotMenstruating.Items" xml:space="preserve">
     <value>Não se aplica</value>
@@ -1649,54 +302,6 @@
   </data>
   <data name="&gt;&gt;reasonForNotMenstruating.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;menstruatingYes.Name" xml:space="preserve">
-    <value>menstruatingYes</value>
-  </data>
-  <data name="&gt;&gt;menstruatingYes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menstruatingYes.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;menstruatingYes.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;menstruatingNo.Name" xml:space="preserve">
-    <value>menstruatingNo</value>
-  </data>
-  <data name="&gt;&gt;menstruatingNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menstruatingNo.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;menstruatingNo.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 46</value>
-  </data>
-  <data name="flowLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 31</value>
-  </data>
-  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>90</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
-    <value>femaleGroupBox</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="menstruatingYes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1756,6 +361,30 @@
     <value>flowLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;menstruatingNo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 46</value>
+  </data>
+  <data name="flowLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 31</value>
+  </data>
+  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
+    <value>femaleGroupBox</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="notMenstruatingLabel.AutoSize" type="System.Boolean, mscorlib">
@@ -1887,6 +516,345 @@
   <data name="&gt;&gt;periodDatePicker.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="femaleGroupBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="femaleGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>404, 84</value>
+  </data>
+  <data name="femaleGroupBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="femaleGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="femaleGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 121</value>
+  </data>
+  <data name="femaleGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="femaleGroupBox.Text" xml:space="preserve">
+    <value>Ciclo menstrual</value>
+  </data>
+  <data name="femaleGroupBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;femaleGroupBox.Name" xml:space="preserve">
+    <value>femaleGroupBox</value>
+  </data>
+  <data name="&gt;&gt;femaleGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;femaleGroupBox.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;femaleGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LivingLocationTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>543, 14</value>
+  </data>
+  <data name="LivingLocationTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="LivingLocationTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="LivingLocationTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>87</value>
+  </data>
+  <data name="&gt;&gt;LivingLocationTextBox.Name" xml:space="preserve">
+    <value>LivingLocationTextBox</value>
+  </data>
+  <data name="&gt;&gt;LivingLocationTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LivingLocationTextBox.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;LivingLocationTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="localeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="localeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>416, 16</value>
+  </data>
+  <data name="localeLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="localeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="localeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="localeLabel.Text" xml:space="preserve">
+    <value>Local onde mora;</value>
+  </data>
+  <data name="&gt;&gt;localeLabel.Name" xml:space="preserve">
+    <value>localeLabel</value>
+  </data>
+  <data name="&gt;&gt;localeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;localeLabel.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;localeLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="medicineEspecification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>548, 287</value>
+  </data>
+  <data name="medicineEspecification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="medicineEspecification.MaxLength" type="System.Int32, mscorlib">
+    <value>300</value>
+  </data>
+  <data name="medicineEspecification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 22</value>
+  </data>
+  <data name="medicineEspecification.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;medicineEspecification.Name" xml:space="preserve">
+    <value>medicineEspecification</value>
+  </data>
+  <data name="&gt;&gt;medicineEspecification.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;medicineEspecification.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;medicineEspecification.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="relaxingEspecification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>548, 336</value>
+  </data>
+  <data name="relaxingEspecification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="relaxingEspecification.MaxLength" type="System.Int32, mscorlib">
+    <value>300</value>
+  </data>
+  <data name="relaxingEspecification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 22</value>
+  </data>
+  <data name="relaxingEspecification.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;relaxingEspecification.Name" xml:space="preserve">
+    <value>relaxingEspecification</value>
+  </data>
+  <data name="&gt;&gt;relaxingEspecification.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;relaxingEspecification.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;relaxingEspecification.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="sleepEspecification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>548, 385</value>
+  </data>
+  <data name="sleepEspecification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="sleepEspecification.MaxLength" type="System.Int32, mscorlib">
+    <value>300</value>
+  </data>
+  <data name="sleepEspecification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 22</value>
+  </data>
+  <data name="sleepEspecification.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;sleepEspecification.Name" xml:space="preserve">
+    <value>sleepEspecification</value>
+  </data>
+  <data name="&gt;&gt;sleepEspecification.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sleepEspecification.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;sleepEspecification.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="alcoholEspecification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>548, 434</value>
+  </data>
+  <data name="alcoholEspecification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="alcoholEspecification.MaxLength" type="System.Int32, mscorlib">
+    <value>300</value>
+  </data>
+  <data name="alcoholEspecification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 22</value>
+  </data>
+  <data name="alcoholEspecification.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;alcoholEspecification.Name" xml:space="preserve">
+    <value>alcoholEspecification</value>
+  </data>
+  <data name="&gt;&gt;alcoholEspecification.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;alcoholEspecification.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;alcoholEspecification.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="drugsEspecification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>548, 484</value>
+  </data>
+  <data name="drugsEspecification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="drugsEspecification.MaxLength" type="System.Int32, mscorlib">
+    <value>300</value>
+  </data>
+  <data name="drugsEspecification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 22</value>
+  </data>
+  <data name="drugsEspecification.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;drugsEspecification.Name" xml:space="preserve">
+    <value>drugsEspecification</value>
+  </data>
+  <data name="&gt;&gt;drugsEspecification.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;drugsEspecification.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;drugsEspecification.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="energeticEspecification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>548, 533</value>
+  </data>
+  <data name="energeticEspecification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="energeticEspecification.MaxLength" type="System.Int32, mscorlib">
+    <value>300</value>
+  </data>
+  <data name="energeticEspecification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 22</value>
+  </data>
+  <data name="energeticEspecification.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;energeticEspecification.Name" xml:space="preserve">
+    <value>energeticEspecification</value>
+  </data>
+  <data name="&gt;&gt;energeticEspecification.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;energeticEspecification.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;energeticEspecification.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="glassesEspecification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>548, 238</value>
+  </data>
+  <data name="glassesEspecification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="glassesEspecification.MaxLength" type="System.Int32, mscorlib">
+    <value>300</value>
+  </data>
+  <data name="glassesEspecification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 22</value>
+  </data>
+  <data name="glassesEspecification.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;glassesEspecification.Name" xml:space="preserve">
+    <value>glassesEspecification</value>
+  </data>
+  <data name="&gt;&gt;glassesEspecification.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;glassesEspecification.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;glassesEspecification.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 519</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>347, 49</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Nas últimas 2 horas você consumiu café, refrigerante, chocolate ou alguma bebida energética?</value>
+  </data>
+  <data name="label7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="especifications.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="especifications.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="especifications.Location" type="System.Drawing.Point, System.Drawing">
+    <value>603, 208</value>
+  </data>
+  <data name="especifications.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 17</value>
+  </data>
+  <data name="especifications.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="especifications.Text" xml:space="preserve">
+    <value>Especificação</value>
+  </data>
+  <data name="&gt;&gt;especifications.Name" xml:space="preserve">
+    <value>especifications</value>
+  </data>
+  <data name="&gt;&gt;especifications.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;especifications.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;especifications.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
   <data name="energizersNo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1946,6 +914,51 @@
   </data>
   <data name="&gt;&gt;energizersYes.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="flowLayoutPanel8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>379, 530</value>
+  </data>
+  <data name="flowLayoutPanel8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="flowLayoutPanel8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 31</value>
+  </data>
+  <data name="flowLayoutPanel8.TabIndex" type="System.Int32, mscorlib">
+    <value>82</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel8.Name" xml:space="preserve">
+    <value>flowLayoutPanel8</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel8.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel8.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <data name="drugsNo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2007,6 +1020,60 @@
   <data name="&gt;&gt;drugsYes.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="flowLayoutPanel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>379, 481</value>
+  </data>
+  <data name="flowLayoutPanel7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="flowLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 31</value>
+  </data>
+  <data name="flowLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel7.Name" xml:space="preserve">
+    <value>flowLayoutPanel7</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel7.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel7.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="alcoholLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="alcoholLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 421</value>
+  </data>
+  <data name="alcoholLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>347, 49</value>
+  </data>
+  <data name="alcoholLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>79</value>
+  </data>
+  <data name="alcoholLabel.Text" xml:space="preserve">
+    <value>Nas últimas 24 horas você consumiu álcool?</value>
+  </data>
+  <data name="alcoholLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;alcoholLabel.Name" xml:space="preserve">
+    <value>alcoholLabel</value>
+  </data>
+  <data name="&gt;&gt;alcoholLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;alcoholLabel.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;alcoholLabel.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
   <data name="alcoholNo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2066,6 +1133,60 @@
   </data>
   <data name="&gt;&gt;alcoholYes.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="flowLayoutPanel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>379, 432</value>
+  </data>
+  <data name="flowLayoutPanel6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="flowLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 31</value>
+  </data>
+  <data name="flowLayoutPanel6.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel6.Name" xml:space="preserve">
+    <value>flowLayoutPanel6</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel6.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel6.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="sleepLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="sleepLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 372</value>
+  </data>
+  <data name="sleepLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>347, 49</value>
+  </data>
+  <data name="sleepLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>77</value>
+  </data>
+  <data name="sleepLabel.Text" xml:space="preserve">
+    <value>Considera ter tido uma boa noite de sono a noite passada?</value>
+  </data>
+  <data name="sleepLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;sleepLabel.Name" xml:space="preserve">
+    <value>sleepLabel</value>
+  </data>
+  <data name="&gt;&gt;sleepLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sleepLabel.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;sleepLabel.ZOrder" xml:space="preserve">
+    <value>18</value>
   </data>
   <data name="sleepNo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2127,6 +1248,60 @@
   <data name="&gt;&gt;sleepYes.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="flowLayoutPanel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>379, 383</value>
+  </data>
+  <data name="flowLayoutPanel5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="flowLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 31</value>
+  </data>
+  <data name="flowLayoutPanel5.TabIndex" type="System.Int32, mscorlib">
+    <value>76</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel5.Name" xml:space="preserve">
+    <value>flowLayoutPanel5</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel5.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel5.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="relaxantLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="relaxantLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 323</value>
+  </data>
+  <data name="relaxantLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>347, 49</value>
+  </data>
+  <data name="relaxantLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="relaxantLabel.Text" xml:space="preserve">
+    <value>Nas últimas 24 horas você fez o uso de relaxantes?</value>
+  </data>
+  <data name="relaxantLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;relaxantLabel.Name" xml:space="preserve">
+    <value>relaxantLabel</value>
+  </data>
+  <data name="&gt;&gt;relaxantLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;relaxantLabel.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;relaxantLabel.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
   <data name="relaxantNo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2186,6 +1361,60 @@
   </data>
   <data name="&gt;&gt;relaxantYes.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>379, 334</value>
+  </data>
+  <data name="flowLayoutPanel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 31</value>
+  </data>
+  <data name="flowLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
+    <value>74</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel4.Name" xml:space="preserve">
+    <value>flowLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel4.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel4.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="medicineLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="medicineLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 274</value>
+  </data>
+  <data name="medicineLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>347, 49</value>
+  </data>
+  <data name="medicineLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+  <data name="medicineLabel.Text" xml:space="preserve">
+    <value>Você faz uso de medicação - natural ou medicinal - regularmente?</value>
+  </data>
+  <data name="medicineLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;medicineLabel.Name" xml:space="preserve">
+    <value>medicineLabel</value>
+  </data>
+  <data name="&gt;&gt;medicineLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;medicineLabel.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;medicineLabel.ZOrder" xml:space="preserve">
+    <value>22</value>
   </data>
   <data name="medicineNo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2247,6 +1476,60 @@
   <data name="&gt;&gt;medicineYes.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>379, 284</value>
+  </data>
+  <data name="flowLayoutPanel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 31</value>
+  </data>
+  <data name="flowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel3.Name" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel3.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel3.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="glassQuestion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="glassQuestion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 225</value>
+  </data>
+  <data name="glassQuestion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>347, 49</value>
+  </data>
+  <data name="glassQuestion.TabIndex" type="System.Int32, mscorlib">
+    <value>71</value>
+  </data>
+  <data name="glassQuestion.Text" xml:space="preserve">
+    <value>Faz uso de óculos frequentemente?</value>
+  </data>
+  <data name="glassQuestion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;glassQuestion.Name" xml:space="preserve">
+    <value>glassQuestion</value>
+  </data>
+  <data name="&gt;&gt;glassQuestion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;glassQuestion.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;glassQuestion.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
   <data name="glassesNo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2306,6 +1589,147 @@
   </data>
   <data name="&gt;&gt;glassesYes.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="glassPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>379, 235</value>
+  </data>
+  <data name="glassPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="glassPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 31</value>
+  </data>
+  <data name="glassPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="&gt;&gt;glassPanel.Name" xml:space="preserve">
+    <value>glassPanel</value>
+  </data>
+  <data name="&gt;&gt;glassPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;glassPanel.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;glassPanel.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="ageNumeric.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ageNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>351, 15</value>
+  </data>
+  <data name="ageNumeric.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="ageNumeric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 22</value>
+  </data>
+  <data name="ageNumeric.TabIndex" type="System.Int32, mscorlib">
+    <value>69</value>
+  </data>
+  <data name="&gt;&gt;ageNumeric.Name" xml:space="preserve">
+    <value>ageNumeric</value>
+  </data>
+  <data name="&gt;&gt;ageNumeric.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ageNumeric.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ageNumeric.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="ageLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ageLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ageLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 17</value>
+  </data>
+  <data name="ageLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 17</value>
+  </data>
+  <data name="ageLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>68</value>
+  </data>
+  <data name="ageLabel.Text" xml:space="preserve">
+    <value>Idade:</value>
+  </data>
+  <data name="&gt;&gt;ageLabel.Name" xml:space="preserve">
+    <value>ageLabel</value>
+  </data>
+  <data name="&gt;&gt;ageLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ageLabel.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ageLabel.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="scholarLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="scholarLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="scholarLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 84</value>
+  </data>
+  <data name="scholarLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 17</value>
+  </data>
+  <data name="scholarLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="scholarLabel.Text" xml:space="preserve">
+    <value>Grau de escolaridade:</value>
+  </data>
+  <data name="&gt;&gt;scholarLabel.Name" xml:space="preserve">
+    <value>scholarLabel</value>
+  </data>
+  <data name="&gt;&gt;scholarLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scholarLabel.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;scholarLabel.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="sexoLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="sexoLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="sexoLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 50</value>
+  </data>
+  <data name="sexoLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 17</value>
+  </data>
+  <data name="sexoLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
+  </data>
+  <data name="sexoLabel.Text" xml:space="preserve">
+    <value>Sexo:</value>
+  </data>
+  <data name="&gt;&gt;sexoLabel.Name" xml:space="preserve">
+    <value>sexoLabel</value>
+  </data>
+  <data name="&gt;&gt;sexoLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sexoLabel.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;sexoLabel.ZOrder" xml:space="preserve">
+    <value>29</value>
   </data>
   <data name="femaleRadioButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2372,6 +1796,33 @@
   </data>
   <data name="&gt;&gt;masculineRadioButton.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="sexPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 43</value>
+  </data>
+  <data name="sexPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="sexPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 31</value>
+  </data>
+  <data name="sexPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>65</value>
+  </data>
+  <data name="sexPanel.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;sexPanel.Name" xml:space="preserve">
+    <value>sexPanel</value>
+  </data>
+  <data name="&gt;&gt;sexPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sexPanel.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;sexPanel.ZOrder" xml:space="preserve">
+    <value>30</value>
   </data>
   <data name="middleSchoolButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2522,6 +1973,228 @@
   </data>
   <data name="&gt;&gt;postGraduate.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="schoolingPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>169, 84</value>
+  </data>
+  <data name="schoolingPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="schoolingPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 137</value>
+  </data>
+  <data name="schoolingPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
+  </data>
+  <data name="&gt;&gt;schoolingPanel.Name" xml:space="preserve">
+    <value>schoolingPanel</value>
+  </data>
+  <data name="&gt;&gt;schoolingPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;schoolingPanel.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;schoolingPanel.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="birthDatePicker.CustomFormat" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="birthDatePicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 15</value>
+  </data>
+  <data name="birthDatePicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="birthDatePicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 22</value>
+  </data>
+  <data name="birthDatePicker.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;birthDatePicker.Name" xml:space="preserve">
+    <value>birthDatePicker</value>
+  </data>
+  <data name="&gt;&gt;birthDatePicker.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;birthDatePicker.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;birthDatePicker.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="birthDateLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="birthDateLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="birthDateLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 17</value>
+  </data>
+  <data name="birthDateLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 17</value>
+  </data>
+  <data name="birthDateLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="birthDateLabel.Text" xml:space="preserve">
+    <value>Data de nascimento:</value>
+  </data>
+  <data name="&gt;&gt;birthDateLabel.Name" xml:space="preserve">
+    <value>birthDateLabel</value>
+  </data>
+  <data name="&gt;&gt;birthDateLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;birthDateLabel.Parent" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;birthDateLabel.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="participantGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 37</value>
+  </data>
+  <data name="participantGroupBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="participantGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="participantGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>763, 572</value>
+  </data>
+  <data name="participantGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="participantGroupBox.Text" xml:space="preserve">
+    <value>Dados</value>
+  </data>
+  <data name="&gt;&gt;participantGroupBox.Name" xml:space="preserve">
+    <value>participantGroupBox</value>
+  </data>
+  <data name="&gt;&gt;participantGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;participantGroupBox.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;participantGroupBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="instructionsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="instructionsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="instructionsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 610</value>
+  </data>
+  <data name="instructionsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 17</value>
+  </data>
+  <data name="instructionsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="instructionsLabel.Text" xml:space="preserve">
+    <value>Observações:</value>
+  </data>
+  <data name="&gt;&gt;instructionsLabel.Name" xml:space="preserve">
+    <value>instructionsLabel</value>
+  </data>
+  <data name="&gt;&gt;instructionsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;instructionsLabel.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;instructionsLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="participantNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 5</value>
+  </data>
+  <data name="participantNameTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="participantNameTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>300</value>
+  </data>
+  <data name="participantNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 22</value>
+  </data>
+  <data name="participantNameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;participantNameTextBox.Name" xml:space="preserve">
+    <value>participantNameTextBox</value>
+  </data>
+  <data name="&gt;&gt;participantNameTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;participantNameTextBox.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;participantNameTextBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="participantNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="participantNameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="participantNameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 7</value>
+  </data>
+  <data name="participantNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 17</value>
+  </data>
+  <data name="participantNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="participantNameLabel.Text" xml:space="preserve">
+    <value>Iniciais do nome:</value>
+  </data>
+  <data name="&gt;&gt;participantNameLabel.Name" xml:space="preserve">
+    <value>participantNameLabel</value>
+  </data>
+  <data name="&gt;&gt;participantNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;participantNameLabel.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;participantNameLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 12</value>
+  </data>
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>782, 692</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="cancelButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

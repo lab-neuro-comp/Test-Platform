@@ -563,6 +563,9 @@
     <EmbeddedResource Include="Views\ParticipantPages\FormParticipantConfig.en-US.resx">
       <DependentUpon>FormParticipantConfig.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ParticipantPages\FormParticipantConfig.pt-BR.resx">
+      <DependentUpon>FormParticipantConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ParticipantPages\FormParticipantConfig.resx">
       <DependentUpon>FormParticipantConfig.cs</DependentUpon>
     </EmbeddedResource>

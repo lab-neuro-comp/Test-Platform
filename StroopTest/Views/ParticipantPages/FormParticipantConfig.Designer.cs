@@ -105,6 +105,7 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.brainSubstanceLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.participantGroupBox.SuspendLayout();
             this.femaleGroupBox.SuspendLayout();
@@ -166,6 +167,7 @@
             // 
             // participantGroupBox
             // 
+            this.participantGroupBox.Controls.Add(this.brainSubstanceLabel);
             this.participantGroupBox.Controls.Add(this.femaleGroupBox);
             this.participantGroupBox.Controls.Add(this.LivingLocationTextBox);
             this.participantGroupBox.Controls.Add(this.localeLabel);
@@ -668,6 +670,11 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // brainSubstanceLabel
+            // 
+            resources.ApplyResources(this.brainSubstanceLabel, "brainSubstanceLabel");
+            this.brainSubstanceLabel.Name = "brainSubstanceLabel";
+            // 
             // FormParticipantConfig
             // 
             resources.ApplyResources(this, "$this");
@@ -786,5 +793,6 @@
         private System.Windows.Forms.RadioButton menstruatingYes;
         private System.Windows.Forms.RadioButton menstruatingNo;
         private System.Windows.Forms.ComboBox reasonForNotMenstruating;
+        private System.Windows.Forms.Label brainSubstanceLabel;
     }
 }

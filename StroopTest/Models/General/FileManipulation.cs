@@ -65,11 +65,8 @@ namespace TestPlatform.Models
             CreateSubFolders(_experimentTestFilesPath);
             CreateSubFolders(_matchingTestFilesPath);
 
-            /* creating Lists folder*/
-            if (!Directory.Exists(_listFolderName))
-            {
-                Directory.CreateDirectory(_listFolderName);
-            }
+            CreateFolder(_listFolderName);
+            CreateFolder(_participantDataPath);
 
             CreateBackupFolders();
 
@@ -98,17 +95,27 @@ namespace TestPlatform.Models
             CreateSubFolders(_matchingTestFilesPath);
 
             /* creating Lists folder*/
-            if (!Directory.Exists(_listFolderName))
-            {
-                Directory.CreateDirectory(_listFolderName);
-            }
 
+            CreateFolder(_listFolderName);
+            CreateFolder(_participantDataPath);
             // converting old implementations of file lists to new version
             StrList.convertFileLists();
 
             // create default stroop and reaction programs, adding default word and color lists
             InitializeDefaultPrograms();
 
+        }
+
+        public static void CreateFolder(string path)
+        {
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            else
+            {
+                /* do nothing */
+            }
         }
 
         public static FileManipulation Instance(FormMain globalFormMain)

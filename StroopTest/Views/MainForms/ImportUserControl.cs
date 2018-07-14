@@ -320,7 +320,7 @@ namespace TestPlatform.Views.MainForms
                 if (selectedRowType == LocRM.GetString("stroopTest", currentCulture))
                 {
                     StroopProgram newProgram = new StroopProgram();
-                    newProgram.readProgramFromPath(selectedRowName, FileManipulation._importPath);
+                    newProgram.ReadProgramFromImport(selectedRowName, FileManipulation._importPath + "/StroopProgram/");
                     addLists(newProgram);
 
                 }

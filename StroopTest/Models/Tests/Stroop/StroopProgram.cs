@@ -367,23 +367,26 @@ namespace TestPlatform.Models
         public void readProgramFile(string programName)
         {
             List<string> config = FileManipulation.ReadStroopProgram(programName);
-            configureReadProgram(config);
+            ConfigureReadProgram(config);
+            this.instructionText = FileManipulation.ReadStroopProgramInstructions(programName);
         }
 
         // converts .prg file into a stroopprogram object
         public void readProgramBackUpFile(string programName)
         {
             List<string> config = FileManipulation.ReadStroopProgramFromBackup(programName);
-            configureReadProgram(config);
+            ConfigureReadProgram(config);
+            this.instructionText = FileManipulation.ReadStroopProgramInstructionsFromBackup(programName);
         }
 
-        public void readProgramFromPath(string programName, string path)
+        public void ReadProgramFromImport(string programName, string path)
         {
             List<string> config = FileManipulation.ReadFileFirstLine(path + programName + ".prg");
-            configureReadProgram(config);
+            ConfigureReadProgram(config);
+            this.instructionText = FileManipulation.ReadStroopProgramInstructionsFromImport(programName);
         }
 
-        private void configureReadProgram(List<string> config)
+        private void ConfigureReadProgram(List<string> config)
         {
             needsEditionFlag = false;
             if (config.Count() < ELEMENTS && config.Count() > 15)
@@ -433,8 +436,6 @@ namespace TestPlatform.Models
             RotateImage = Int32.Parse(config[22]);
             RndSubtitlePlace = Boolean.Parse(config[23]);
             WordColor = config[24];
-
-            this.instructionText = FileManipulation.ReadStroopProgramInstructions(programName);
         }
 
         public bool saveProgramFile()

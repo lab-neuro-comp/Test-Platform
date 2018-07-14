@@ -166,12 +166,24 @@ namespace TestPlatform.Models
             return ReadFileFirstLine(filePath);
         }
 
+        public static List<string> ReadStroopProgramInstructionsFromBackup(string programName)
+        {
+            string filePath = _stroopTestFilesBackupPath + programName + PROGRAM_EXTENSION;
+            return ReadProgramInstructions(filePath);
+        }
+ 
         public static List<string> ReadStroopProgramInstructions(string programName)
         {
             string filePath = _stroopTestFilesPath + _programFolderName + programName + PROGRAM_EXTENSION;
             return ReadProgramInstructions(filePath);
         }
 
+        public static List<string> ReadStroopProgramInstructionsFromImport(string programName)
+        {
+            string filePath = FileManipulation._importPath + "/StroopProgram/" + programName + PROGRAM_EXTENSION;
+            return ReadProgramInstructions(filePath);
+        }
+ 
         private static List<string> ReadProgramInstructions(string filePath)
         {
 

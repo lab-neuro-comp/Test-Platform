@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -104,6 +105,51 @@ namespace TestPlatform.Models
             // create default stroop and reaction programs, adding default word and color lists
             InitializeDefaultPrograms();
 
+        }
+
+        public static void CreateZip(string sourceFolder, string destinationFile)
+        {
+            try
+            {
+                ZipFile.CreateFromDirectory(sourceFolder, destinationFile);
+            }
+            catch (Exception)
+            {
+                File.Delete(destinationFile);
+                ZipFile.CreateFromDirectory(sourceFolder, destinationFile);
+            }
+        }
+
+        public static void DeleteFolder(string path)
+        {
+            if (Directory.Exists(path))
+                Directory.Delete(path, true);
+        }
+
+        public static void CopyFile(string source, string destination, bool force)
+        {
+            if (File.Exists(source))
+            {
+                try
+                {
+                    File.Copy(source, destination, force);
+                }
+                catch(System.Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
+
+        public static void CreateExportationFolders(string fileName)
+        {
+            string directory = Path.GetDirectoryName(fileName);
+            CreateFolder(directory + "/ExportingFiles/");
+            CreateFolder(directory + "/ExportingFiles/" + "StroopProgram");
+            CreateFolder(directory + "/ExportingFiles/" + "ReactionProgram");
+            CreateFolder(directory + "/ExportingFiles/" + "ExperimentProgram");
+            CreateFolder(directory + "/ExportingFiles/" + "Lists");
+            CreateFolder(directory + "/ExportingFiles/" + "MatchingProgram");
         }
 
         public static void CreateFolder(string path)

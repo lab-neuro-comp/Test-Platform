@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormShowData));
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.resultComboBox = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.csvExportButton = new System.Windows.Forms.Button();
             this.helpButton = new System.Windows.Forms.Button();
@@ -41,6 +41,8 @@
             this.stopAudio = new System.Windows.Forms.Button();
             this.playAudioButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.exportAudioButton = new System.Windows.Forms.Button();
+            this.exportAllAudiosButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.audioPathDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -50,12 +52,12 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // comboBox1
+            // resultComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.resultComboBox.FormattingEnabled = true;
+            resources.ApplyResources(this.resultComboBox, "resultComboBox");
+            this.resultComboBox.Name = "resultComboBox";
+            this.resultComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -151,10 +153,26 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // exportAudioButton
+            // 
+            resources.ApplyResources(this.exportAudioButton, "exportAudioButton");
+            this.exportAudioButton.Name = "exportAudioButton";
+            this.exportAudioButton.UseVisualStyleBackColor = true;
+            this.exportAudioButton.Click += new System.EventHandler(this.exportAudioButton_Click);
+            // 
+            // exportAllAudiosButton
+            // 
+            resources.ApplyResources(this.exportAllAudiosButton, "exportAllAudiosButton");
+            this.exportAllAudiosButton.Name = "exportAllAudiosButton";
+            this.exportAllAudiosButton.UseVisualStyleBackColor = true;
+            this.exportAllAudiosButton.Click += new System.EventHandler(this.exportAllAudiosButton_Click);
+            // 
             // FormShowData
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.exportAllAudiosButton);
+            this.Controls.Add(this.exportAudioButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.stopAudio);
             this.Controls.Add(this.playAudioButton);
@@ -163,7 +181,7 @@
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.csvExportButton);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.resultComboBox);
             this.Controls.Add(this.label1);
             this.Name = "FormShowData";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -175,7 +193,7 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox resultComboBox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button csvExportButton;
         private System.Windows.Forms.Button helpButton;
@@ -186,5 +204,7 @@
         private System.Windows.Forms.Button stopAudio;
         private System.Windows.Forms.Button playAudioButton;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button exportAudioButton;
+        private System.Windows.Forms.Button exportAllAudiosButton;
     }
 }

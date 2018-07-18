@@ -183,16 +183,16 @@
     <Compile Include="Views\ExperimentPages\FormExperimentExposition.Designer.cs">
       <DependentUpon>FormExperimentExposition.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainForms\ExportUserControl.cs">
+    <Compile Include="Views\FileManipulationPages\ExportUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\MainForms\ExportUserControl.Designer.cs">
+    <Compile Include="Views\FileManipulationPages\ExportUserControl.Designer.cs">
       <DependentUpon>ExportUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainForms\FileManagment.cs">
+    <Compile Include="Views\FileManipulationPages\FileManagment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\MainForms\FileManagment.Designer.cs">
+    <Compile Include="Views\FileManipulationPages\FileManagment.Designer.cs">
       <DependentUpon>FileManagment.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\MainForms\FormDefineTest.cs">
@@ -208,10 +208,10 @@
     <Compile Include="Views\MainForms\HelpPagesUserControl.Designer.cs">
       <DependentUpon>HelpPagesUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainForms\ImportUserControl.cs">
+    <Compile Include="Views\FileManipulationPages\ImportUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\MainForms\ImportUserControl.Designer.cs">
+    <Compile Include="Views\FileManipulationPages\ImportUserControl.Designer.cs">
       <DependentUpon>ImportUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\MatchingPages\FormMatchConfig.cs">
@@ -463,22 +463,22 @@
     <EmbeddedResource Include="Views\ExperimentPages\FormExperimentExposition.resx">
       <DependentUpon>FormExperimentExposition.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\ExportUserControl.en-US.resx">
+    <EmbeddedResource Include="Views\FileManipulationPages\ExportUserControl.en-US.resx">
       <DependentUpon>ExportUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\ExportUserControl.pt-BR.resx">
+    <EmbeddedResource Include="Views\FileManipulationPages\ExportUserControl.pt-BR.resx">
       <DependentUpon>ExportUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\ExportUserControl.resx">
+    <EmbeddedResource Include="Views\FileManipulationPages\ExportUserControl.resx">
       <DependentUpon>ExportUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\FileManagment.en-US.resx">
+    <EmbeddedResource Include="Views\FileManipulationPages\FileManagment.en-US.resx">
       <DependentUpon>FileManagment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\FileManagment.pt-BR.resx">
+    <EmbeddedResource Include="Views\FileManipulationPages\FileManagment.pt-BR.resx">
       <DependentUpon>FileManagment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\FileManagment.resx">
+    <EmbeddedResource Include="Views\FileManipulationPages\FileManagment.resx">
       <DependentUpon>FileManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormDefine.en-US.resx">
@@ -523,16 +523,16 @@
     <EmbeddedResource Include="Views\MainForms\HelpPagesUserControl.resx">
       <DependentUpon>HelpPagesUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\ImportUserControl.en-US.resx">
+    <EmbeddedResource Include="Views\FileManipulationPages\ImportUserControl.en-US.resx">
       <DependentUpon>ImportUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\ImportUserControl.es-ES.resx">
+    <EmbeddedResource Include="Views\FileManipulationPages\ImportUserControl.es-ES.resx">
       <DependentUpon>ImportUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\ImportUserControl.pt-BR.resx">
+    <EmbeddedResource Include="Views\FileManipulationPages\ImportUserControl.pt-BR.resx">
       <DependentUpon>ImportUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainForms\ImportUserControl.resx">
+    <EmbeddedResource Include="Views\FileManipulationPages\ImportUserControl.resx">
       <DependentUpon>ImportUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MatchingPages\FormMatchConfig.en-US.resx">

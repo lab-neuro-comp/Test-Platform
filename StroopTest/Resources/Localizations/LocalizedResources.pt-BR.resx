@@ -2843,4 +2843,7 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="randomDMTS_DNMTS" xml:space="preserve">
     <value>DMTS/DNMTS(Aleatorio)</value>
   </data>
+  <data name="selectAudioFile" xml:space="preserve">
+    <value>Selecione um arquivo de áudio.</value>
+  </data>
 </root>

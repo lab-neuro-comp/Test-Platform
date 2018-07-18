@@ -182,12 +182,7 @@ namespace TestPlatform.Views.MainForms
             saveFileDialog.ShowDialog();
             if (saveFileDialog.FileName != ""  && !File.Exists(saveFileDialog.FileName))
             {
-                Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/");
-                Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "StroopProgram");
-                Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "ReactionProgram");
-                Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "ExperimentProgram");
-                Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "Lists");
-                Directory.CreateDirectory(Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "MatchingProgram");
+                FileManipulation.CreateExportationFolders(saveFileDialog.FileName);
 
                 // exporting each row according to type: list, reaction program, stroop program or experiment program
                 foreach (DataGridViewRow row in exportDataGridView.Rows)
@@ -252,7 +247,7 @@ namespace TestPlatform.Views.MainForms
 
         private void exportFile(string sourceFile, string destinationPath)
         {
-            System.IO.File.Copy(sourceFile, destinationPath, true);
+            FileManipulation.CopyFile(sourceFile, destinationPath, true);
         }
 
         private void addToDestinationList_Click(object sender, EventArgs e)

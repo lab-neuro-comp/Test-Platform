@@ -14,6 +14,7 @@ using TestPlatform.Views;
 using TestPlatform.Controllers;
 using System.Resources;
 using System.Globalization;
+using System.IO.Compression;
 
 namespace TestPlatform
 {
@@ -46,7 +47,7 @@ namespace TestPlatform
                 filePaths = Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
                 for (int i = 0; i < filePaths.Length; i++)
                 {
-                    comboBox1.Items.Add(Path.GetFileNameWithoutExtension(filePaths[i]));
+                    resultComboBox.Items.Add(Path.GetFileNameWithoutExtension(filePaths[i]));
                 }
             }
             else
@@ -65,7 +66,7 @@ namespace TestPlatform
             {
                 dataGridView1.Rows.Clear();
                 dataGridView1.Refresh();
-                line = StroopProgram.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
+                line = StroopProgram.readDataFile(path + "/" + resultComboBox.SelectedItem.ToString() + ".txt");
                 if (line.Count() > 0)
                 {
                     for(int i = 0; i < line.Count(); i++)
@@ -110,7 +111,7 @@ namespace TestPlatform
                         audioPathDataGridView.Refresh();
                     }
                     
-                    filePaths = Directory.GetFiles(path, "audio_" + comboBox1.SelectedItem.ToString()+"*", SearchOption.AllDirectories);
+                    filePaths = Directory.GetFiles(path, "audio_" + resultComboBox.SelectedItem.ToString()+"*", SearchOption.AllDirectories);
                     DGVManipulation.ReadStringListIntoDGV(filePaths, audioPathDataGridView);
                 }
             }
@@ -125,12 +126,12 @@ namespace TestPlatform
             // salva file on .csv format
             saveFileDialog1.Filter = "Excel CSV (.csv)|*.csv"; 
             saveFileDialog1.RestoreDirectory = true;
-            saveFileDialog1.FileName = comboBox1.Text;
+            saveFileDialog1.FileName = resultComboBox.Text;
 
             // only saves if there is one selected result to save
-            if (!(comboBox1.SelectedIndex == -1))
+            if (resultComboBox.SelectedIndex != -1)
             {
-                lines = StroopProgram.readDataFile(path + "/" + comboBox1.SelectedItem.ToString() + ".txt");
+                lines = StroopProgram.readDataFile(path + "/" + resultComboBox.SelectedItem.ToString() + ".txt");
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
                 {
                     using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))
@@ -185,6 +186,59 @@ namespace TestPlatform
         {
             player.Stop();
             this.Parent.Controls.Remove(this);
+        }
+
+        private void exportAudioButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            // save file on .WAV format
+            saveFileDialog1.Filter = "WAVEform (.wav)|*.wav";
+            saveFileDialog1.RestoreDirectory = true;
+            // only saves if there is one selected result to save
+            if (audioPathDataGridView.CurrentRow != null)
+            {
+                saveFileDialog1.FileName = audioPathDataGridView.CurrentRow.Cells[0].Value.ToString();
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
+                {
+                    FileManipulation.CopyFile(audioPathDataGridView.CurrentRow.Cells[1].Value.ToString(), saveFileDialog1.FileName, true);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show(LocRM.GetString("selectAudioFile", currentCulture));
+            }
+        }
+
+        private void exportAllAudiosButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            // save file on .WAV format
+            saveFileDialog1.Filter = "Pasta Compactada (.zip)|*.zip";
+            saveFileDialog1.RestoreDirectory = true;
+            saveFileDialog1.FileName = resultComboBox.Text + "_audios";
+
+            // only saves if there is one selected result to save
+            if (audioPathDataGridView.Rows.Count != 0)
+            {
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
+                {
+                    string directory = Path.GetDirectoryName(saveFileDialog1.FileName) + "\\" + Path.GetFileNameWithoutExtension(saveFileDialog1.FileName);
+                    FileManipulation.CreateFolder(directory);
+                    for(int i = 0; i < audioPathDataGridView.Rows.Count; i++)
+                    {
+                        string audioPath = audioPathDataGridView.Rows[i].Cells[1].Value.ToString();
+                        FileManipulation.CopyFile(audioPath, directory + "\\" +Path.GetFileName(audioPath), true);
+                    }
+                    FileManipulation.CreateZip(directory, saveFileDialog1.FileName);
+                    FileManipulation.DeleteFolder(directory);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show(LocRM.GetString("selectDataFile", currentCulture));
+            }
         }
     }
 }

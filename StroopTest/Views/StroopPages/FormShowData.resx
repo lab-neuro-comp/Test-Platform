@@ -123,10 +123,14 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 46</value>
+    <value>7, 37</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 17</value>
+    <value>95, 13</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -144,41 +148,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
-  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>141, 42</value>
+  <data name="resultComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 34</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="comboBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+  <data name="resultComboBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
-  <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>735, 24</value>
+  <data name="resultComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 21</value>
   </data>
-  <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="resultComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
-    <value>comboBox1</value>
+  <data name="&gt;&gt;resultComboBox.Name" xml:space="preserve">
+    <value>resultComboBox</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;resultComboBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;resultComboBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;resultComboBox.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 73</value>
+    <value>10, 59</value>
   </data>
   <data name="dataGridView1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1051, 274</value>
+    <value>788, 223</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -193,7 +196,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="csvExportButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -202,13 +205,13 @@
     <value>Popup</value>
   </data>
   <data name="csvExportButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>883, 39</value>
+    <value>662, 32</value>
   </data>
   <data name="csvExportButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="csvExportButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 28</value>
+    <value>136, 23</value>
   </data>
   <data name="csvExportButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -226,19 +229,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;csvExportButton.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="helpButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
   <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1029, 2</value>
+    <value>772, 2</value>
   </data>
   <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 32</value>
+    <value>26, 26</value>
   </data>
   <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
     <value>82</value>
@@ -253,7 +256,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;helpButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <metadata name="fileNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -271,13 +274,10 @@
     <value>Localização</value>
   </data>
   <data name="audioPathDataGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 395</value>
-  </data>
-  <data name="audioPathDataGridView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>8, 321</value>
   </data>
   <data name="audioPathDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1052, 290</value>
+    <value>789, 236</value>
   </data>
   <data name="audioPathDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>84</value>
@@ -292,16 +292,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;audioPathDataGridView.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 369</value>
+    <value>6, 300</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 17</value>
+    <value>96, 13</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>
@@ -319,19 +322,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="stopAudio.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
   <data name="stopAudio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>881, 359</value>
-  </data>
-  <data name="stopAudio.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>661, 292</value>
   </data>
   <data name="stopAudio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 28</value>
+    <value>136, 23</value>
   </data>
   <data name="stopAudio.TabIndex" type="System.Int32, mscorlib">
     <value>87</value>
@@ -349,19 +349,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;stopAudio.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="playAudioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
   <data name="playAudioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>692, 359</value>
-  </data>
-  <data name="playAudioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>519, 292</value>
   </data>
   <data name="playAudioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 28</value>
+    <value>136, 23</value>
   </data>
   <data name="playAudioButton.TabIndex" type="System.Int32, mscorlib">
     <value>86</value>
@@ -379,19 +376,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;playAudioButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="closeButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
   <data name="closeButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 692</value>
-  </data>
-  <data name="closeButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>9, 562</value>
   </data>
   <data name="closeButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>75, 23</value>
   </data>
   <data name="closeButton.TabIndex" type="System.Int32, mscorlib">
     <value>88</value>
@@ -409,19 +403,76 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;closeButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="exportAudioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="exportAudioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 292</value>
+  </data>
+  <data name="exportAudioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 23</value>
+  </data>
+  <data name="exportAudioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="exportAudioButton.Text" xml:space="preserve">
+    <value>Exportar Áudio Selecionado</value>
+  </data>
+  <data name="&gt;&gt;exportAudioButton.Name" xml:space="preserve">
+    <value>exportAudioButton</value>
+  </data>
+  <data name="&gt;&gt;exportAudioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exportAudioButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;exportAudioButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="exportAllAudiosButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="exportAllAudiosButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="exportAllAudiosButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 292</value>
+  </data>
+  <data name="exportAllAudiosButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 23</value>
+  </data>
+  <data name="exportAllAudiosButton.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="exportAllAudiosButton.Text" xml:space="preserve">
+    <value>Exportar Todos os Áudios</value>
+  </data>
+  <data name="&gt;&gt;exportAllAudiosButton.Name" xml:space="preserve">
+    <value>exportAllAudiosButton</value>
+  </data>
+  <data name="&gt;&gt;exportAllAudiosButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exportAllAudiosButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;exportAllAudiosButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1067, 738</value>
+    <value>800, 600</value>
   </data>
   <data name="&gt;&gt;fileNameColumn.Name" xml:space="preserve">
     <value>fileNameColumn</value>

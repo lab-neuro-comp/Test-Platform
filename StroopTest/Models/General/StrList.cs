@@ -152,27 +152,34 @@ namespace TestPlatform.Models
             {
                 string listDestination = FileManipulation._listFolderName + ListName + Type + "/";
                 Directory.CreateDirectory(listDestination);
-                int i = 0;
-                foreach (string content in listContent)
+                for(int i=0; i < listContent.Count; i++)
                 {
-                    try
-                    {
-                        File.Copy(content, listDestination + i + Path.GetFileName(content), true);
-
-                    }
-                    catch
-                    {
-                        ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-                        CultureInfo currentCulture = System.Threading.Thread.CurrentThread.CurrentUICulture;
-                        MessageBox.Show(LocRM.GetString("fileNotFound", currentCulture) + "\n" + content);
-                    }
+                        string newName = listDestination + i + Path.GetFileName(listContent[i]);
+                        File.Copy(listContent[i], newName, true);
+                        listContent[i] = newName;
+              
                     i++;
                 }
+                deleteUnexistent();
                 return true;
             }
             else
             {
                 return false;
+            }
+        }
+
+        private void deleteUnexistent()
+        {
+            string[] allFiles = FileManipulation.GetAllFilesInFolder(FileManipulation._listFolderName + ListName, "*");
+
+            foreach(string file in allFiles)
+            {
+                int index = listContent.IndexOf(file);
+                if (index < 0)
+                {
+                    File.Delete(file);
+                }
             }
         }
         public bool saveDirectories()

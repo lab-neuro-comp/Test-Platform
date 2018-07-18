@@ -23,7 +23,7 @@ namespace StroopUnitTestProject
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
             System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("pt-BR");
-            listsPath = Global.testFilesPath + Global.listFolderName;
+            listsPath = FileManipulation._listFolderName;
             StrList.writeDefaultColorsList(listsPath);
             StrList.writeDefaultWordsList(listsPath);
             List<string> list = new List<string>(new string[] { "element1", "element2", "element3" });

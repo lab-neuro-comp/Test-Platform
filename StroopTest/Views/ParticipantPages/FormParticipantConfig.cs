@@ -260,7 +260,7 @@ namespace TestPlatform.Views.ParticipantPages
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 Participant participant = createParticipant();
-                if (File.Exists(participant.getParticipantPath()))
+                if (File.Exists(participant.GetParticipantPath()))
                 {
                     DialogResult dialogResult = MessageBox.Show(
                         LocRM.GetString("participantAlreadyExistsWishOverride", currentCulture), 
@@ -274,7 +274,7 @@ namespace TestPlatform.Views.ParticipantPages
                 if (hasToSave && participant.saveParticipantFile())
                 {
                     MessageBox.Show(LocRM.GetString("participantSaveSucessful"));
-                    Global.GlobalFormMain.initializeParticipants();
+                    FileManipulation.GlobalFormMain.initializeParticipants();
                     this.Parent.Controls.Remove(this);
                 }
             }

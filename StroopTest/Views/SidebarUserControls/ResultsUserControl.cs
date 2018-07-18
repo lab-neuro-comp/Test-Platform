@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using TestPlatform.Views;
-using TestPlatform;
+using TestPlatform.Models;
 using TestPlatform.Views.ReactionPages;
 using TestPlatform.Views.ExperimentPages;
 using TestPlatform.Views.MatchingPages;
@@ -26,15 +18,15 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void StroopButton_Click(object sender, EventArgs e)
         {
-            if(Global.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
+            if(FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
             {
-                Global.GlobalFormMain._contentPanel.Controls.Clear(); 
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Clear(); 
             }
             FormShowData showData;
             try
             {
                 showData = new FormShowData();
-                Global.GlobalFormMain._contentPanel.Controls.Add(showData);
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Add(showData);
                 StroopButton.Checked = false;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -42,15 +34,15 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void reactionButton_Click(object sender, EventArgs e)
         {
-            if (Global.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
+            if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
             {
-                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
             }
             ReactionResultUserControl showData;
             try
             {
                 showData = new ReactionResultUserControl();
-                Global.GlobalFormMain._contentPanel.Controls.Add(showData);
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Add(showData);
                 reactionButton.Checked = false;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -58,14 +50,14 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void experimentButton_Click(object sender, EventArgs e)
         {
-            if (Global.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
+            if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
             {
-                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
             }
             try
             {
                 ExperimentResultUserControl showData = new ExperimentResultUserControl();
-                Global.GlobalFormMain._contentPanel.Controls.Add(showData);
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Add(showData);
                 experimentButton.Checked = false;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -73,14 +65,14 @@ namespace TestPlatform.Views.SidebarUserControls
 
         private void matchingButton_Click(object sender, EventArgs e)
         {
-            if (Global.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
+            if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
             {
-                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
             }
             try
             {
                 MatchingResultUserControl showData = new MatchingResultUserControl();
-                Global.GlobalFormMain._contentPanel.Controls.Add(showData);
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Add(showData);
                 matchingButton.Checked = false;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

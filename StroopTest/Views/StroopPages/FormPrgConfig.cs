@@ -12,7 +12,6 @@ using System.Resources;
 using System.Windows.Forms;
 using TestPlatform.Controllers;
 using TestPlatform.Models;
-using TestPlatform.Views;
 
 namespace TestPlatform
 {
@@ -20,7 +19,6 @@ namespace TestPlatform
     {
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
-        private String path = Global.stroopTestFilesPath + Global.programFolderName;
         private String instructionBoxText;
         private List<Button> subDirectionList = new List<Button>();
         private Int32 subDirectionNumber = 1;
@@ -551,251 +549,252 @@ namespace TestPlatform
 
         private void editProgram()
         {
-            StroopProgram program = new StroopProgram();
             try
             {
-                program.readProgramFile(path + editPrgName + ".prg");
+                StroopProgram program = new StroopProgram(editPrgName);
+
+                prgNameTextBox.Text = program.ProgramName;
+                numExpo.Value = program.NumExpositions;
+                expoTime.Value = program.ExpositionTime;
+                rndExpoCheck.Checked = program.ExpositionRandom;
+                intervalTime.Value = program.IntervalTime;
+                rndIntervalCheck.Checked = program.IntervalTimeRandom;
+                audioCaptureCheck.Checked = program.AudioCapture;
+                wordSizeNumeric.Value = Convert.ToInt32(program.FontWordLabel);
+                expandImgCheck.Checked = program.ExpandImage;
+                subsRndCheckBox.Checked = program.RndSubtitlePlace;
+
+                if (program.getWordListFile() != null)
+                {
+                    openWordListButton.Enabled = true;
+                    openWordListButton.Text = program.getWordListFile().ListName;
+
+                }
+                else
+                {
+                    openWordListButton.Enabled = false;
+                }
+
+                if (program.getColorListFile() != null)
+                {
+                    openColorListButton.Enabled = true;
+                    openColorListButton.Text = program.getColorListFile().ListName;
+                }
+                else
+                {
+                    openColorListButton.Enabled = false;
+                }
+
+                if (program.getImageListFile() != null)
+                {
+                    openImgListButton.Enabled = true;
+                    openImgListButton.Text = program.getImageListFile().ListName;
+                }
+                else
+                {
+                    openImgListButton.Enabled = false;
+                }
+
+                if (program.getAudioListFile() != null)
+                {
+                    openAudioListButton.Enabled = true;
+                    openAudioListButton.Text = program.getAudioListFile().ListName;
+                }
+                else
+                {
+                    openAudioListButton.Enabled = false;
+
+                }
+
+                if (program.BackgroundColor.ToLower() == "false")
+                {
+                    bgColorPanel.BackColor = Color.White;
+                    bgColorButton.Text = "escolher";
+                }
+                else
+                {
+                    if ((Validations.isHexPattern(program.BackgroundColor)))
+                    {
+                        bgColorButton.Text = program.BackgroundColor;
+                        bgColorPanel.BackColor = ColorTranslator.FromHtml(program.BackgroundColor);
+                    }
+                }
+
+                if (program.FixPointColor.ToLower() == "false")
+                {
+                    fixPointColorPanel.BackColor = ColorTranslator.FromHtml("#D01C1F");
+                    fixPointColorButton.Text = "#D01C1F";
+                }
+                else
+                {
+                    if ((Validations.isHexPattern(program.FixPointColor)))
+                    {
+                        fixPointColorButton.Text = program.FixPointColor;
+                        fixPointColorPanel.BackColor = ColorTranslator.FromHtml(program.FixPointColor);
+                    }
+                    else
+                    {
+                        throw new Exception(LocRM.GetString("colorMatch", currentCulture));
+                    }
+                }
+
+
+                delayTime.Value = program.DelayTime;
+
+                switch (program.RotateImage)
+                {
+                    case 45:
+                        rotateImgComboBox.SelectedIndex = 1;
+                        break;
+                    case 90:
+                        rotateImgComboBox.SelectedIndex = 2;
+                        break;
+                    case 135:
+                        rotateImgComboBox.SelectedIndex = 3;
+                        break;
+                    case 180:
+                        rotateImgComboBox.SelectedIndex = 4;
+                        break;
+                    case 225:
+                        rotateImgComboBox.SelectedIndex = 5;
+                        break;
+                    case 270:
+                        rotateImgComboBox.SelectedIndex = 6;
+                        break;
+                    case 315:
+                        rotateImgComboBox.SelectedIndex = 7;
+                        break;
+                    default:
+                        rotateImgComboBox.SelectedIndex = 0;
+                        break;
+                }
+
+                if (program.FixPoint == "+")
+                {
+                    fixPointCross.Checked = true;
+                    fixPointCircle.Checked = false;
+                }
+                else
+                {
+                    if (program.FixPoint == "o")
+                    {
+                        fixPointCross.Checked = false;
+                        fixPointCircle.Checked = true;
+                    }
+                    else
+                    {
+                        fixPointCross.Checked = false;
+                        fixPointCircle.Checked = false;
+                    }
+                }
+                chooseFixPointType();
+
+                // reads instructions if there are any to instruction box text
+                if (program.InstructionText != null)
+                {
+                    instructionsBox.ForeColor = Color.Black;
+                    instructionsBox.Text = program.InstructionText[0];
+                    for (int i = 1; i < program.InstructionText.Count; i++)
+                    {
+                        instructionsBox.AppendText(Environment.NewLine + program.InstructionText[i]);
+                    }
+                }
+                else
+                {
+                    instructionsBox.Text = instructionBoxText;
+                }
+
+                switch (program.ExpositionType)
+                {
+                    case "txt":
+                        chooseExpoType.SelectedIndex = 0;
+                        openWordListButton.Enabled = true;
+                        openColorListButton.Enabled = true;
+                        openImgListButton.Enabled = false;
+                        openAudioListButton.Enabled = false;
+                        break;
+                    case "img":
+                        chooseExpoType.SelectedIndex = 1;
+                        openWordListButton.Enabled = false;
+                        openColorListButton.Enabled = false;
+                        openImgListButton.Enabled = true;
+                        openAudioListButton.Enabled = false;
+                        break;
+                    case "imgtxt":
+                        chooseExpoType.SelectedIndex = 2;
+                        openWordListButton.Enabled = true;
+                        openColorListButton.Enabled = false;
+                        openImgListButton.Enabled = true;
+                        openAudioListButton.Enabled = false;
+                        break;
+                    case "txtaud":
+                        chooseExpoType.SelectedIndex = 3;
+                        openWordListButton.Enabled = true;
+                        openColorListButton.Enabled = true;
+                        openImgListButton.Enabled = false;
+                        openAudioListButton.Enabled = true;
+                        break;
+                    case "imgaud":
+                        chooseExpoType.SelectedIndex = 4;
+                        openWordListButton.Enabled = false;
+                        openColorListButton.Enabled = false;
+                        openImgListButton.Enabled = true;
+                        openAudioListButton.Enabled = true;
+                        break;
+                }
+
+                if (program.SubtitleShow)
+                {
+                    activateSubsCheck.Checked = true;
+                    enableSubsItens(true);
+                    selectSubDirectionNumber(program.SubtitlePlace);
+
+                    if (program.SubtitlesListFile.ToLower() != "false")
+                    {
+                        openSubsListButton.Text = program.SubtitlesListFile;
+                    }
+                    else
+                    {
+                        openSubsListButton.Text = LocRM.GetString("choose", currentCulture);
+                    }
+
+                    if (Validations.isHexPattern(program.SubtitleColor))
+                    {
+                        subColorButton.Text = program.SubtitleColor;
+                        subColorPanel.BackColor = ColorTranslator.FromHtml(program.SubtitleColor);
+                    }
+                    else
+                    {
+                        subColorButton.Text = LocRM.GetString("choose", currentCulture);
+                        subColorPanel.BackColor = Color.White;
+                    }
+                }
+                else
+                {
+                    activateSubsCheck.Checked = false;
+                    enableSubsItens(false);
+                }
+
+                wordColorButton.Text = program.WordColor;
+                wordColorPanel.BackColor = ColorTranslator.FromHtml(program.WordColor);
             }
             catch(FileNotFoundException e)
             {
                 MessageBox.Show(LocRM.GetString("cantEdìtProgramMissingFiles", currentCulture) + e.Message);
                 return;
             }
-            prgNameTextBox.Text = program.ProgramName;
-            numExpo.Value = program.NumExpositions;
-            expoTime.Value = program.ExpositionTime;
-            rndExpoCheck.Checked = program.ExpositionRandom;
-            intervalTime.Value = program.IntervalTime;
-            rndIntervalCheck.Checked = program.IntervalTimeRandom;
-            audioCaptureCheck.Checked = program.AudioCapture;
-            wordSizeNumeric.Value = Convert.ToInt32(program.FontWordLabel);
-            expandImgCheck.Checked = program.ExpandImage;
-            subsRndCheckBox.Checked = program.RndSubtitlePlace;
-
-            if (program.getWordListFile() != null)
-            {
-                openWordListButton.Enabled = true;
-                openWordListButton.Text = program.getWordListFile().ListName;
-
-            }
-            else
-            {
-                openWordListButton.Enabled = false;
-            }
-
-            if (program.getColorListFile() != null)
-            {
-                openColorListButton.Enabled = true;
-                openColorListButton.Text = program.getColorListFile().ListName;
-            }
-            else
-            {
-                openColorListButton.Enabled = false;
-            }
-
-            if (program.getImageListFile() != null)
-            {
-                openImgListButton.Enabled = true;
-                openImgListButton.Text = program.getImageListFile().ListName;
-            }
-            else
-            {
-                openImgListButton.Enabled = false;
-            }
-
-            if (program.getAudioListFile() != null)
-            {
-                openAudioListButton.Enabled = true;
-                openAudioListButton.Text = program.getAudioListFile().ListName;
-            }
-            else
-            {
-                openAudioListButton.Enabled = false;
-
-            }
-
-            if (program.BackgroundColor.ToLower() == "false")
-            {
-                bgColorPanel.BackColor = Color.White;
-                bgColorButton.Text = "escolher";
-            }
-            else
-            {
-                if ((Validations.isHexPattern(program.BackgroundColor)))
-                {
-                    bgColorButton.Text = program.BackgroundColor;
-                    bgColorPanel.BackColor = ColorTranslator.FromHtml(program.BackgroundColor);
-                }
-            }
-
-            if (program.FixPointColor.ToLower() == "false")
-            {
-                fixPointColorPanel.BackColor = ColorTranslator.FromHtml("#D01C1F");
-                fixPointColorButton.Text = "#D01C1F";
-            }
-            else
-            {
-                if ((Validations.isHexPattern(program.FixPointColor)))
-                {
-                    fixPointColorButton.Text = program.FixPointColor;
-                    fixPointColorPanel.BackColor = ColorTranslator.FromHtml(program.FixPointColor);
-                }
-                else
-                {
-                    throw new Exception(LocRM.GetString("colorMatch", currentCulture));
-                }
-            }
-
-
-            delayTime.Value = program.DelayTime;
-
-            switch (program.RotateImage)
-            {
-                case 45:
-                    rotateImgComboBox.SelectedIndex = 1;
-                    break;
-                case 90:
-                    rotateImgComboBox.SelectedIndex = 2;
-                    break;
-                case 135:
-                    rotateImgComboBox.SelectedIndex = 3;
-                    break;
-                case 180:
-                    rotateImgComboBox.SelectedIndex = 4;
-                    break;
-                case 225:
-                    rotateImgComboBox.SelectedIndex = 5;
-                    break;
-                case 270:
-                    rotateImgComboBox.SelectedIndex = 6;
-                    break;
-                case 315:
-                    rotateImgComboBox.SelectedIndex = 7;
-                    break;
-                default:
-                    rotateImgComboBox.SelectedIndex = 0;
-                    break;
-            }
-
-            if (program.FixPoint == "+")
-            {
-                fixPointCross.Checked = true;
-                fixPointCircle.Checked = false;
-            }
-            else
-            {
-                if (program.FixPoint == "o")
-                {
-                    fixPointCross.Checked = false;
-                    fixPointCircle.Checked = true;
-                }
-                else
-                {
-                    fixPointCross.Checked = false;
-                    fixPointCircle.Checked = false;
-                }
-            }
-            chooseFixPointType();
-
-            // reads instructions if there are any to instruction box text
-            if (program.InstructionText != null)
-            {
-                instructionsBox.ForeColor = Color.Black;
-                instructionsBox.Text = program.InstructionText[0];
-                for (int i = 1; i < program.InstructionText.Count; i++)
-                {
-                    instructionsBox.AppendText(Environment.NewLine + program.InstructionText[i]);
-                }
-            }
-            else
-            {
-                instructionsBox.Text = instructionBoxText;
-            }
-
-            switch (program.ExpositionType)
-            {
-                case "txt":
-                    chooseExpoType.SelectedIndex = 0;
-                    openWordListButton.Enabled = true;
-                    openColorListButton.Enabled = true;
-                    openImgListButton.Enabled = false;
-                    openAudioListButton.Enabled = false;
-                    break;
-                case "img":
-                    chooseExpoType.SelectedIndex = 1;
-                    openWordListButton.Enabled = false;
-                    openColorListButton.Enabled = false;
-                    openImgListButton.Enabled = true;
-                    openAudioListButton.Enabled = false;
-                    break;
-                case "imgtxt":
-                    chooseExpoType.SelectedIndex = 2;
-                    openWordListButton.Enabled = true;
-                    openColorListButton.Enabled = false;
-                    openImgListButton.Enabled = true;
-                    openAudioListButton.Enabled = false;
-                    break;
-                case "txtaud":
-                    chooseExpoType.SelectedIndex = 3;
-                    openWordListButton.Enabled = true;
-                    openColorListButton.Enabled = true;
-                    openImgListButton.Enabled = false;
-                    openAudioListButton.Enabled = true;
-                    break;
-                case "imgaud":
-                    chooseExpoType.SelectedIndex = 4;
-                    openWordListButton.Enabled = false;
-                    openColorListButton.Enabled = false;
-                    openImgListButton.Enabled = true;
-                    openAudioListButton.Enabled = true;
-                    break;
-            }
-
-            if (program.SubtitleShow)
-            {
-                activateSubsCheck.Checked = true;
-                enableSubsItens(true);
-                selectSubDirectionNumber(program.SubtitlePlace);
-
-                if (program.SubtitlesListFile.ToLower() != "false")
-                {
-                    openSubsListButton.Text = program.SubtitlesListFile;
-                }
-                else
-                {
-                    openSubsListButton.Text = LocRM.GetString("choose", currentCulture);
-                }
-
-                if (Validations.isHexPattern(program.SubtitleColor))
-                {
-                    subColorButton.Text = program.SubtitleColor;
-                    subColorPanel.BackColor = ColorTranslator.FromHtml(program.SubtitleColor);
-                }
-                else
-                {
-                    subColorButton.Text = LocRM.GetString("choose", currentCulture);
-                    subColorPanel.BackColor = Color.White;
-                }
-            }
-            else
-            {
-                activateSubsCheck.Checked = false;
-                enableSubsItens(false);
-            }
-
-            wordColorButton.Text = program.WordColor;
-            wordColorPanel.BackColor = ColorTranslator.FromHtml(program.WordColor);
+            
 
         }
 
         private void saveProgramFile(StroopProgram newProgram)
         {
-            if (File.Exists(path + prgNameTextBox.Text + ".prg"))
+            if (FileManipulation.StroopProgramExists(prgNameTextBox.Text))
             {
                 DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExists", currentCulture), "", MessageBoxButtons.OKCancel);
                 if (dialogResult != DialogResult.Cancel)
                 {
-                    if (newProgram.saveProgramFile(path, instructionBoxText))
+                    if (newProgram.saveProgramFile())
                     {
                         MessageBox.Show(LocRM.GetString("programSave", currentCulture));
                     }
@@ -808,7 +807,7 @@ namespace TestPlatform
             }
             else
             {
-                if (newProgram.saveProgramFile(path, instructionBoxText))
+                if (newProgram.saveProgramFile())
                 {
                     MessageBox.Show(LocRM.GetString("programSave", currentCulture));
                 }

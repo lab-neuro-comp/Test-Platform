@@ -126,14 +126,32 @@
             }
         }
 
+        public static string GetResultsPath()
+        {
+            return FileManipulation.ExperimentTestFilesPath + FileManipulation._resultsFolderName;
+        }
+
+        public static string GetProgramsPath()
+        {
+            return FileManipulation.ExperimentTestFilesPath + FileManipulation._programFolderName;
+        }
+
+        public static string[] GetAllPrograms()
+        {
+            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), ".prg");
+        }
+
         public bool AddStroopProgram(string programName)
         {
             try
             {
-                if(!File.Exists(Global.stroopTestFilesPath + Global.programFolderName + programName + ".prg")) { throw new MissingMemberException(programName + " (" + LocRM.GetString("stroopTest", currentCulture) + ")"); };
+                if(!FileManipulation.StroopProgramExists(programName))
+                {
+                    throw new MissingMemberException(programName + " (" + LocRM.GetString("stroopTest", currentCulture) + ")");
+                }
                 StroopProgram newProgram = new StroopProgram();
                 newProgram.ProgramName = programName;
-                newProgram.readProgramFile(Global.stroopTestFilesPath + Global.programFolderName + newProgram.ProgramName + ".prg");
+                newProgram.readProgramFile(newProgram.ProgramName);
                 ProgramList.Add(newProgram);
             }
             catch (FileNotFoundException)
@@ -147,9 +165,16 @@
         {
             try
             {
-                if (!File.Exists(Global.reactionTestFilesPath + Global.programFolderName + programName + ".prg")) { throw new MissingMemberException(programName + " (" + LocRM.GetString("reactionTest", currentCulture) + ")"); };
-                ReactionProgram newProgram = new ReactionProgram(Global.reactionTestFilesPath + Global.programFolderName + programName + ".prg");
-                ProgramList.Add(newProgram);
+                if (File.Exists(ReactionProgram.GetProgramsPath() + programName + ".prg"))
+                {
+                    ReactionProgram newProgram = new ReactionProgram(ReactionProgram.GetProgramsPath() + programName + ".prg");
+                    ProgramList.Add(newProgram);
+                }
+                else
+                {
+                    throw new MissingMemberException(programName + " (" + LocRM.GetString("reactionTest", currentCulture) + ")");
+                }
+                
             }
             catch (FileNotFoundException)
             {
@@ -162,9 +187,16 @@
         {
             try
             {
-                if (!File.Exists(Global.matchingTestFilesPath + Global.programFolderName + programName + ".prg")) { throw new MissingMemberException(programName + " (" + LocRM.GetString("matchingTest", currentCulture) + ")"); };
-                MatchingProgram newProgram = new MatchingProgram(Global.matchingTestFilesPath + Global.programFolderName + programName + ".prg");
-                ProgramList.Add(newProgram);
+                if (MatchingProgram.ProgramExists(programName))
+                {
+                    MatchingProgram newProgram = new MatchingProgram(programName);
+                    ProgramList.Add(newProgram);
+                }
+                else
+                {
+                    throw new MissingMemberException(programName + " (" + LocRM.GetString("matchingTest", currentCulture) + ")");
+                }
+               
             }
             catch (FileNotFoundException)
             {
@@ -208,18 +240,18 @@
             bool isProgramValid = true;
             if (recoverFromBackup)
             {
-                filePath = Global.experimentTestFilesBackupPath + ExperimentName + ".prg";
+                filePath = FileManipulation._experimentTestFilesBackupPath + ExperimentName + ".prg";
 
             }
             else
             {
-                filePath = Global.experimentTestFilesPath + Global.programFolderName + ExperimentName + ".prg";
+                filePath = GetProgramsPath() + ExperimentName + ".prg";
             }
             if (File.Exists(filePath))
             {
                 string[] fileLines = File.ReadAllLines(filePath);
                 string line = fileLines[0];
-                line = Program.encodeLatinText(line);
+                line = FileManipulation.EncodeLatinText(line);
                 List<string> configurationFile = line.Split().ToList();
 
                 ExperimentName = configurationFile[0];
@@ -240,7 +272,7 @@
                 }
 
                 string listLine = fileLines[1];
-                line = Program.encodeLatinText(line);
+                line = FileManipulation.EncodeLatinText(line);
                 List<string> listConfiguration = listLine.Split().ToList();
                 for (int i = 1; i <= listConfiguration.Count() - 2; i = i + 2)
                 {
@@ -275,7 +307,7 @@
                 }
                 if (!isProgramValid)
                 {
-                    this.SaveExperimentFile(Global.experimentTestFilesPath + Global.programFolderName);
+                    this.SaveExperimentFile(GetProgramsPath());
                 }
             }
             else

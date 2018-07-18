@@ -13,7 +13,7 @@ namespace TestPlatform
 {
     public partial class FormShowAudio : UserControl, IDisposable 
     {
-        private string path = Global.stroopTestFilesPath + Global.resultsFolderName;
+        private string path = StroopProgram.GetResultsPath();
         private SoundPlayer player = new SoundPlayer();
         Audio audioRecorder = new Audio();
         private Timer timer;
@@ -39,15 +39,15 @@ namespace TestPlatform
 
         private void loadingAudioFilesToDataGrid()
         {
+            string[] audioFiles = FileManipulation.GetAllFilesInFolder(path, "WAV");
             // Fills data grid view with .wav files from data directory
-            if (Directory.Exists(path)) 
+            if (audioFiles.Length != 0) 
             {
                 audioPathDataGridView.Rows.Clear();
                 audioPathDataGridView.Refresh();
                 currenFolderLabel.Text = path;
-                string[] filePaths = null;
-                filePaths = Directory.GetFiles(path, "*.WAV", SearchOption.AllDirectories);
-                DGVManipulation.ReadStringListIntoDGV(filePaths, audioPathDataGridView);
+
+                DGVManipulation.ReadStringListIntoDGV(audioFiles, audioPathDataGridView);
                 numberFiles.Text = audioPathDataGridView.RowCount.ToString();
             }
             else

@@ -3,6 +3,7 @@ using System.Globalization;
 using System.IO;
 using System.Resources;
 using System.Windows.Forms;
+using TestPlatform.Models;
 
 namespace TestPlatform.Views
 {
@@ -19,7 +20,7 @@ namespace TestPlatform.Views
             this.currentCulture = currentCulture;
             InitializeComponent();
             AutoValidate = AutoValidate.Disable;
-            addOptionsComboBox(Global.stroopTestFilesPath + Global.programFolderName);
+            addOptionsComboBox(StroopProgram.GetProgramsPath());
         }
 
 
@@ -53,7 +54,7 @@ namespace TestPlatform.Views
             {
                 comboBox1.SelectedItem = null;
                 removeOptionsComboBox();
-                addOptionsComboBox(Global.stroopTestFilesPath + Global.programFolderName);
+                addOptionsComboBox(StroopProgram.GetProgramsPath());
             }
         }
 
@@ -63,7 +64,17 @@ namespace TestPlatform.Views
             {
                 comboBox1.SelectedItem = null;
                 removeOptionsComboBox();
-                addOptionsComboBox(Global.reactionTestFilesPath + Global.programFolderName);
+                addOptionsComboBox(ReactionProgram.GetProgramsPath());
+            }
+        }
+
+        private void matchingButton_Click(object sender, EventArgs e)
+        {
+            if (matchingButton.Checked)
+            {
+                comboBox1.SelectedItem = null;
+                removeOptionsComboBox();
+                addOptionsComboBox(MatchingProgram.GetProgramsPath());
             }
         }
 
@@ -73,7 +84,7 @@ namespace TestPlatform.Views
             {
                 comboBox1.SelectedItem = null;
                 removeOptionsComboBox();
-                addOptionsComboBox(Global.experimentTestFilesPath + Global.programFolderName);
+                addOptionsComboBox(ExperimentProgram.GetProgramsPath());
             }
         }
 
@@ -143,16 +154,6 @@ namespace TestPlatform.Views
         private void comboBox1_Validated(object sender, EventArgs e)
         {
             errorProvider1.SetError(comboBox1, "");
-        }
-
-        private void matchingButton_Click(object sender, EventArgs e)
-        {
-            if (matchingButton.Checked)
-            {
-                comboBox1.SelectedItem = null;
-                removeOptionsComboBox();
-                addOptionsComboBox(Global.matchingTestFilesPath + Global.programFolderName);
-            }
         }
     }
 }

@@ -19,6 +19,45 @@ namespace TestPlatform.Views.MatchingPages
 {
     public partial class MatchingExposition : Form
     {
+        StimulusPosition stimuluPosition;
+        string modelFirstposition, modelSecondPosition;
+        MatchingTest executingTest = new MatchingTest();
+        private const int X = 0, Y = 1;
+        private string hour = DateTime.Now.Hour.ToString("00");
+        private string minutes = DateTime.Now.Minute.ToString("00");
+        private string seconds = DateTime.Now.Second.ToString("00");
+        private string startTime;
+        private bool intervalCancelled;
+        private bool exposing;
+        private int intervalElapsedTime, intervalShouldBe, groupCounter = 0;
+        private Object currentStimulus;
+        private string outputFile;
+        private string[] imageList, wordList, colorList;
+        private long expositionAccumulative;
+        private long modelExpositionAccumulative;
+        private Control modelAsStimuluControl;
+        private Control modelControl, newStimulu;
+        private List<MatchingGroup> matchingGroups;
+        private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+        private List<Control> currentControl;
+        int currentExposition;
+        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
+        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
+        private bool cancelExposition;
+        private Stopwatch accumulativeStopWatch = new Stopwatch();
+        private Stopwatch hitStopWatch;
+        private bool showModel = true;
+        private List<Control> stimuluControls;
+        private bool waitingExpositionEnd;
+        string currentExpositionType;
+        private Control objectClicked;
+        private bool showAudioFeedbackOnNextClick = false;
+        private long modelReactTime;
+        bool shouldChangeExpositionType = false;
+        bool shouldRandomizeExpositionType = false;
+        private long attemptIntervalTime;
+        private int stimuluType;
+        Random randGen = new Random(Guid.NewGuid().GetHashCode());
 
         public class MatchingGroup
         {
@@ -93,47 +132,7 @@ namespace TestPlatform.Views.MatchingPages
 
         }
 
-        StimulusPosition stimuluPosition;
-        string modelFirstposition, modelSecondPosition;
-        MatchingTest executingTest = new MatchingTest();
-        private const int X = 0, Y = 1;
-        private string path = Global.matchingTestFilesPath;
-        private string hour = DateTime.Now.Hour.ToString("00");
-        private string minutes = DateTime.Now.Minute.ToString("00");
-        private string seconds = DateTime.Now.Second.ToString("00");
-        private string startTime;
-        private bool intervalCancelled;
-        private bool exposing;
-        private int intervalElapsedTime, intervalShouldBe, groupCounter = 0;
-        private Object currentStimulus;
-        private string outputFile;
-        private string outputDataPath = Global.matchingTestFilesPath + Global.resultsFolderName;
-        private string[] imageList, wordList, colorList;
-        private long expositionAccumulative;
-        private long modelExpositionAccumulative;
-        private Control modelAsStimuluControl;
-        private Control modelControl, newStimulu;
-        private List<MatchingGroup> matchingGroups;
-        private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-        private List<Control> currentControl;
-        int currentExposition;
-        private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
-        private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
-        private bool cancelExposition;
-        private Stopwatch accumulativeStopWatch = new Stopwatch();
-        private Stopwatch hitStopWatch;
-        private bool showModel = true;
-        private List<Control> stimuluControls;
-        private bool waitingExpositionEnd;
-        string currentExpositionType;
-        private Control objectClicked;
-        private bool showAudioFeedbackOnNextClick = false;
-        private long modelReactTime;
-        bool shouldChangeExpositionType = false;
-        bool shouldRandomizeExpositionType = false;
-        private long attemptIntervalTime;
-        private int stimuluType;
-        Random randGen = new Random(Guid.NewGuid().GetHashCode());
+
 
         public MatchingExposition(string prgName, string participantName, char mark)
         {
@@ -145,18 +144,18 @@ namespace TestPlatform.Views.MatchingPages
             InitializeComponent();
             startTime = hour + "_" + minutes + "_" + seconds;
             executingTest.ParticipantName = participantName;
-            executingTest.setProgramInUse(path + "/prg/", prgName);
+            executingTest.setProgramInUse(prgName);
             executingTest.Mark = mark;
 
             stimuluControls = new List<Control>();
-            outputFile = outputDataPath + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.ProgramName + ".txt";
+            outputFile = MatchingProgram.GetResultsPath() + executingTest.ParticipantName + "_" + executingTest.ProgramInUse.ProgramName + ".txt";
             startExposition();
             this.ShowDialog();
         }
 
         private void startExposition()
         {
-            if (executingTest.ProgramInUse.Ready(path))
+            if (executingTest.ProgramInUse.Ready())
             {
                 currentExpositionType = this.executingTest.ProgramInUse.getExpositionType();
                 if(this.currentExpositionType == LocRM.GetString("alternatingDMTS_DNMTS", currentCulture))
@@ -181,17 +180,8 @@ namespace TestPlatform.Views.MatchingPages
             }
             else
             {
-                if (!executingTest.ProgramInUse.Exists(path))
-                {
-                    throw new Exception(LocRM.GetString("file", currentCulture) + executingTest.ProgramInUse.ProgramName + ".prg" +
-                                    LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(path + "/prg/"));
-                }
-
-                else
-                {
-                    // do nothing
-                }
-
+                throw new Exception(LocRM.GetString("file", currentCulture) + executingTest.ProgramInUse.ProgramName + ".prg" +
+                                LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(MatchingProgram.GetProgramsPath() + "/prg/"));
             }
         }
 

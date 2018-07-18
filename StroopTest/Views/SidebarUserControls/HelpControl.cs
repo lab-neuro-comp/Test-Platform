@@ -1,6 +1,7 @@
 ﻿using System;
 using TestPlatform.Controllers;
 using System.Windows.Forms;
+using TestPlatform.Models;
 
 namespace TestPlatform.Views.SidebarUserControls
 {
@@ -29,7 +30,7 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 if (currentControl != null)
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Remove(currentControl);
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Remove(currentControl);
 
                 }
                 currentControl = HelpPagesController.showHelp();
@@ -43,7 +44,7 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 if (currentControl != null)
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Remove(currentControl);
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Remove(currentControl);
 
                 }                
                 currentControl = HelpPagesController.showTechInfo();

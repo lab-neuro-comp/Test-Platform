@@ -20,8 +20,8 @@ namespace TestPlatform.Views
     public partial class FormReactExposition : Form
     {
         ReactionTest executingTest = new ReactionTest();
-        private string path = Global.reactionTestFilesPath;                           
-        private string outputDataPath = Global.reactionTestFilesPath + Global.resultsFolderName;
+        private string path = ReactionProgram.GetReactionPath();                           
+        private string outputDataPath = ReactionProgram.GetResultsPath();
 
         private static int IMAGE = 0;
         private static int WORD = 1;
@@ -90,7 +90,7 @@ namespace TestPlatform.Views
 
         private void startExposition()
         {
-            if (executingTest.ProgramInUse.Ready(path))
+            if (executingTest.ProgramInUse.Ready())
             {
                 initializeExposition();
             }

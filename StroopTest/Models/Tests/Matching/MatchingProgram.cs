@@ -25,14 +25,23 @@ namespace TestPlatform.Models
         private Boolean feedbackAudioResponse;
         private Boolean commissionAudioResponse;
         private Boolean omissionAudioResponse;
+  
         public MatchingProgram()
         {
 
         }
 
-        public MatchingProgram(string programPath)
+        public MatchingProgram(string programName)
         {
-            this.readProgramFile(programPath);
+            this.configureReadProgram(GetProgramsPath() + programName + FileManipulation.ProgramExtension);
+        }
+
+        public MatchingProgram(string programName, bool import)
+        {
+            if (import)
+            {
+                this.configureReadProgram(GetImportProgramsPath() + programName + FileManipulation.ProgramExtension);
+            }
         }
 
         public override string ToString()
@@ -374,7 +383,32 @@ namespace TestPlatform.Models
             }
         }
 
-        public void readProgramFile(string filepath)
+        public static bool ProgramExists(string programName)
+        {
+            return FileManipulation.FileExists(GetProgramsPath() + programName + FileManipulation.ProgramExtension);
+        }
+
+        public static string GetResultsPath()
+        {
+            return FileManipulation.MatchingTestFilesPath + FileManipulation._resultsFolderName;
+        }
+
+        public static string GetProgramsPath()
+        {
+            return FileManipulation.MatchingTestFilesPath + FileManipulation._programFolderName;
+        }
+
+        public static string GetImportProgramsPath()
+        {
+            return FileManipulation._importPath + "/MatchingProgram/";
+        }
+
+        public static string[] GetAllPrograms()
+        {
+            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), FileManipulation.ProgramExtension);
+        }
+
+        public void configureReadProgram(string filepath)
         {
             StreamReader tr;
             string line;
@@ -386,7 +420,7 @@ namespace TestPlatform.Models
 
             tr = new StreamReader(filepath, Encoding.Default, true);
             line = tr.ReadLine();
-            line = encodeLatinText(line);
+            line = FileManipulation.EncodeLatinText(line);
             config = line.Split().ToList();
             tr.Close();
 
@@ -439,9 +473,9 @@ namespace TestPlatform.Models
             }
         }
 
-        public bool saveProgramFile(string path, string instructionBoxText)
+        public bool saveProgramFile(string instructionBoxText)
         {
-            StreamWriter writer = new StreamWriter(path + ProgramName + ".prg");
+            StreamWriter writer = new StreamWriter(GetProgramsPath() + ProgramName + ".prg");
             writer.WriteLine(data());
             if (instructionBoxText.Length > 0)
             {

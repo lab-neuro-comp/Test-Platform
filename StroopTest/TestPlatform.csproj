@@ -201,7 +201,7 @@
     <Compile Include="Views\MainForms\FormDefineTest.Designer.cs">
       <DependentUpon>FormDefineTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\General\Global.cs" />
+    <Compile Include="Models\General\FileManipulation.cs" />
     <Compile Include="Views\MainForms\HelpPagesUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

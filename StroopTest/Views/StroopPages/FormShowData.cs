@@ -20,7 +20,7 @@ namespace TestPlatform
     public partial class FormShowData : UserControl
     {
         private StroopProgram program = new StroopProgram();
-        private string path = Global.stroopTestFilesPath + Global.resultsFolderName;
+        private string path = StroopProgram.GetResultsPath();
         private SoundPlayer player = new SoundPlayer();
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;

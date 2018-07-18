@@ -132,19 +132,24 @@ namespace TestPlatform.Models.General
             return participantData;
         }
 
-        public string getParticipantPath()
+        public string GetParticipantPath()
         {
-            return Global.testFilesPath + Global.partcipantDataPath + registrationID + "-" + name + ".data";
+            return FileManipulation._participantDataPath + registrationID + "-" + name + ".data";
         }
 
-        public string getParticipantPath(string filename)
+        public string GetParticipantPath(string filename)
         {
-            return Global.testFilesPath + Global.partcipantDataPath + filename + ".data";
+            return FileManipulation._participantDataPath + filename + ".data";
+        }
+
+        public static string[] GetAllParticipants()
+        {
+            return FileManipulation.GetAllFilesInFolder(FileManipulation._participantDataPath, ".data");
         }
 
         public bool saveParticipantFile()
         {
-            StreamWriter writer = new StreamWriter(getParticipantPath());
+            StreamWriter writer = new StreamWriter(GetParticipantPath());
             writer.Write(Data());
             if (observations != null)
             {
@@ -160,16 +165,16 @@ namespace TestPlatform.Models.General
 
         private void readParticipantFile(string fileName)
         {
-            if(File.Exists(getParticipantPath(fileName)))
+            if(File.Exists(GetParticipantPath(fileName)))
             {
                 StreamReader tr;
                 string line;
                 string[] linesInstruction;
                 List<string> config = new List<string>();
 
-                tr = new StreamReader(getParticipantPath(fileName), Encoding.Default, true);
+                tr = new StreamReader(GetParticipantPath(fileName), Encoding.Default, true);
                 line = tr.ReadLine();
-                line = Program.encodeLatinText(line);
+                line = FileManipulation.EncodeLatinText(line);
                 config = line.Split().ToList();
 
                 this.registrationID = int.Parse(config[0]);
@@ -189,15 +194,15 @@ namespace TestPlatform.Models.General
                 this.consumedDrugs = bool.Parse(config[14]);
                 this.consumedEnergizers = bool.Parse(config[15]);
 
-                this.glassesEspecification = Program.encodeLatinText(tr.ReadLine());
-                this.medicationEspecification = Program.encodeLatinText(tr.ReadLine());
-                this.relaxantEspecification = Program.encodeLatinText(tr.ReadLine());
-                this.sleepEspecification = Program.encodeLatinText(tr.ReadLine());
-                this.alcoholEspecification = Program.encodeLatinText(tr.ReadLine());
-                this.drugsEspecification = Program.encodeLatinText(tr.ReadLine());
-                this.energizersEspecification = Program.encodeLatinText(tr.ReadLine());
+                this.glassesEspecification = FileManipulation.EncodeLatinText(tr.ReadLine());
+                this.medicationEspecification = FileManipulation.EncodeLatinText(tr.ReadLine());
+                this.relaxantEspecification = FileManipulation.EncodeLatinText(tr.ReadLine());
+                this.sleepEspecification = FileManipulation.EncodeLatinText(tr.ReadLine());
+                this.alcoholEspecification = FileManipulation.EncodeLatinText(tr.ReadLine());
+                this.drugsEspecification = FileManipulation.EncodeLatinText(tr.ReadLine());
+                this.energizersEspecification = FileManipulation.EncodeLatinText(tr.ReadLine());
                 tr.Close();
-                linesInstruction = File.ReadAllLines(getParticipantPath(fileName));
+                linesInstruction = File.ReadAllLines(GetParticipantPath(fileName));
                 if (linesInstruction.Length > 8) // read instructions if any
                 {
                     for (int i = 8; i < linesInstruction.Length; i++)

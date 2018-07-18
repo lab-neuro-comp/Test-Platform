@@ -1,11 +1,10 @@
 ﻿
 using System;
 using System.Globalization;
-using System.IO;
 using System.Resources;
 using System.Windows.Forms;
 using TestPlatform.Views.MainForms;
-using TestPlatform.Views.ReactionPages;
+using TestPlatform.Models;
 
 namespace TestPlatform.Views.SidebarUserControls
 {
@@ -24,23 +23,23 @@ namespace TestPlatform.Views.SidebarUserControls
         private bool checkSave()
         {
             bool result = false;
-            if (Global.GlobalFormMain._contentPanel.Controls[0] is FormTRConfig)
+            if (FileManipulation.GlobalFormMain._contentPanel.Controls[0] is FormTRConfig)
             {
                 DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    FormTRConfig programToSave = (FormTRConfig)(Global.GlobalFormMain._contentPanel.Controls[0]);
+                    FormTRConfig programToSave = (FormTRConfig)(FileManipulation.GlobalFormMain._contentPanel.Controls[0]);
                     result = programToSave.save();
                 }
                 else
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     return true;
                 }
             }
             if(result == false)
             { 
-                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                 return true;
             }
             else
@@ -57,14 +56,14 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 if (newReactButton.Checked)
                 {
-                    if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                    if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
                     {
                         screenTranslationAllowed = checkSave();
                     }
                     if (screenTranslationAllowed)
                     {
                         FormTRConfig configureProgram = new FormTRConfig("false");
-                        Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
                         newReactButton.Checked = false;
                     }
                 }
@@ -77,7 +76,7 @@ namespace TestPlatform.Views.SidebarUserControls
             bool screenTranslationAllowed = true;
             if (editReactButton.Checked)
             {
-                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
                 {
                     screenTranslationAllowed = checkSave();
                 }
@@ -89,14 +88,14 @@ namespace TestPlatform.Views.SidebarUserControls
 
                     try
                     {
-                        defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), Global.reactionTestFilesPath + Global.programFolderName, "prg", "program", false, false);
+                        defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), ReactionProgram.GetProgramsPath(), "prg", "program", false, false);
                         result = defineProgram.ShowDialog();
                         if (result == DialogResult.OK)
                         {
                             editProgramName = defineProgram.ReturnValue;
                             FormTRConfig configureProgram = new FormTRConfig(editProgramName);
                             configureProgram.PrgName = editProgramName;
-                            Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
+                            FileManipulation.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
                             editReactButton.Checked = false;
                         }
                         else
@@ -121,14 +120,14 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 if (deleteReactButton.Checked)
                 {
-                    if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                    if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
                     {
                         screenTranslationAllowed = checkSave();
                     }
                     if (screenTranslationAllowed)
                     {
-                        FileManagment deleteProgram = new FileManagment(Global.reactionTestFilesPath + Global.programFolderName, Global.reactionTestFilesBackupPath, 'd', LocRM.GetString("reactionTest", currentCulture));
-                        Global.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
+                        FileManagment deleteProgram = new FileManagment(ReactionProgram.GetProgramsPath(), FileManipulation.ReactionTestFilesBackupPath, 'd', LocRM.GetString("reactionTest", currentCulture));
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
                         deleteReactButton.Checked = false; 
                     }
                 }
@@ -143,14 +142,14 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 if (recoverReactButton.Checked)
                 {
-                    if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                    if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
                     {
                         screenTranslationAllowed = checkSave();
                     }
                     if (screenTranslationAllowed)
                     {
-                        FileManagment recoverProgram = new FileManagment(Global.reactionTestFilesBackupPath, Global.reactionTestFilesPath + Global.programFolderName, 'r', LocRM.GetString("reactionTest", currentCulture));
-                        Global.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                        FileManagment recoverProgram = new FileManagment(FileManipulation.ReactionTestFilesBackupPath, ReactionProgram.GetProgramsPath(), 'r', LocRM.GetString("reactionTest", currentCulture));
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
                         recoverReactButton.Checked = false; 
                     }
                 }

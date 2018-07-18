@@ -12,7 +12,7 @@ namespace TestPlatform.Views.ReactionPages
 {
     public partial class ReactionResultUserControl : UserControl
     {
-        private string path = Global.reactionTestFilesPath + Global.resultsFolderName;
+        private string resultsPath = ReactionProgram.GetResultsPath();
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
         private Point mousePosition;
@@ -36,9 +36,9 @@ namespace TestPlatform.Views.ReactionPages
             }
 
             // filling result combobox with result in pattern participant_programname in the directory
-            if (Directory.Exists(path)) 
+            if (Directory.Exists(resultsPath)) 
             {
-                filePaths = Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
+                filePaths = Directory.GetFiles(resultsPath, "*.txt", SearchOption.AllDirectories);
                 for (int i = 0; i < filePaths.Length; i++)
                 {
                     fileNameBox.Items.Add(Path.GetFileNameWithoutExtension(filePaths[i]));
@@ -46,7 +46,7 @@ namespace TestPlatform.Views.ReactionPages
             }
             else
             {
-                MessageBox.Show("{0}" + LocRM.GetString("invalidPath", currentCulture), path);
+                MessageBox.Show("{0}" + LocRM.GetString("invalidPath", currentCulture), resultsPath);
             }
 
         }
@@ -98,7 +98,7 @@ namespace TestPlatform.Views.ReactionPages
             {
                 dataGridView1.Rows.Clear();
                 dataGridView1.Refresh();
-                line = Program.readDataFile(path + "/" + fileNameBox.SelectedItem.ToString() + ".txt");
+                line = Program.readDataFile(resultsPath + "/" + fileNameBox.SelectedItem.ToString() + ".txt");
                 if (line.Count() > 0)
                 {
                     for (int i = 0; i < line.Count(); i++)
@@ -157,7 +157,7 @@ namespace TestPlatform.Views.ReactionPages
                 // checks if there are any results selected
                 if (!(fileNameBox.SelectedIndex == -1))
                 {
-                    lines = ReactionProgram.readDataFile(path + "/" + fileNameBox.SelectedItem.ToString() + ".txt");
+                    lines = ReactionProgram.readDataFile(resultsPath + "/" + fileNameBox.SelectedItem.ToString() + ".txt");
                     if (saveFileDialog1.ShowDialog() == DialogResult.OK) // abre caixa para salvar
                     {
                         using (TextWriter tw = new StreamWriter(saveFileDialog1.FileName))

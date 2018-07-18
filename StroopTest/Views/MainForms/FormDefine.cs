@@ -9,6 +9,7 @@ using System.IO;
 using System.Resources;
 using System.Windows.Forms;
 using TestPlatform.Controllers;
+using TestPlatform.Models;
 
 namespace TestPlatform
 {
@@ -46,23 +47,22 @@ namespace TestPlatform
             {
                 comboBox1.Enabled = true;
                 comboBox1.Visible = true;
-                if (Directory.Exists(dataFolderPath))
-                {
-                    filePaths = Directory.GetFiles(dataFolderPath, ("*." + fileType), SearchOption.AllDirectories);
-                    for (int i = 0; i < filePaths.Length; i++)
-                    {
-                        option = Path.GetFileNameWithoutExtension(filePaths[i]).Split('_');
-                        if (isType)
-                        {
-                            if (itemType.Contains(option[1]) && !sufix)
-                                comboBox1.Items.Add(option[0]);
-                            else if (itemType.Contains(option[1]) && sufix)
-                                comboBox1.Items.Add(option[0] + '_' + option[1]);
-                        }
-                        else
-                            comboBox1.Items.Add(option[0]);
 
+                filePaths = FileManipulation.GetAllFilesInFolder(dataFolderPath, fileType);
+                for (int i = 0; i < filePaths.Length; i++)
+                {
+                    option = Path.GetFileNameWithoutExtension(filePaths[i]).Split('_');
+                    if (isType)
+                    {
+                        if (itemType.Contains(option[1]) && !sufix)
+                            comboBox1.Items.Add(option[0]);
+                        else if (itemType.Contains(option[1]) && sufix)
+                            comboBox1.Items.Add(option[0] + '_' + option[1]);
                     }
+                    else
+                        comboBox1.Items.Add(option[0]);
+
+
                 }
             }
             else if (type == "dir")

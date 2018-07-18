@@ -510,6 +510,25 @@ namespace TestPlatform.Models
             }
         }
 
+        public static string GetReactionPath()
+        {
+            return FileManipulation.ReactionTestFilesPath;
+        }
+        public static string GetResultsPath()
+        {
+            return FileManipulation.ReactionTestFilesPath + FileManipulation._resultsFolderName;
+        }
+
+        public static string GetProgramsPath()
+        {
+            return FileManipulation.ReactionTestFilesPath + FileManipulation._programFolderName;
+        }
+
+        public static string[] GetAllPrograms()
+        {
+            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), ".prg");
+        }
+
         public string data()
         {
             string audioList = "false";
@@ -564,6 +583,11 @@ namespace TestPlatform.Models
             return data;
         }
 
+        public void readImportProgramFile(string programName)
+        {
+            readProgramFile(FileManipulation.ReactionTestFilesBackupPath + programName + FileManipulation.ProgramExtension);
+        }
+ 
         // lê arquivo com programa e retorna true para sucesso
         public void readProgramFile(string filepath)
         {
@@ -576,7 +600,7 @@ namespace TestPlatform.Models
 
             tr = new StreamReader(filepath, Encoding.Default, true);
             line = tr.ReadLine();
-            line = encodeLatinText(line);
+            line = FileManipulation.EncodeLatinText(line);
             config = line.Split().ToList();
             tr.Close();
 
@@ -650,7 +674,7 @@ namespace TestPlatform.Models
             {
                 string[] defaultInstructionText = { LocRM.GetString("defaultReactionInstructions1", currentCulture),
                                                     LocRM.GetString("defaultReactionInstructions2", currentCulture)};
-                TextWriter tw = new StreamWriter(Global.reactionTestFilesPath + Global.programFolderName + LocRM.GetString("default", currentCulture) + ".prg");
+                TextWriter tw = new StreamWriter(GetProgramsPath() + LocRM.GetString("default", currentCulture) + ".prg");
                 tw.WriteLine(LocRM.GetString("defaultReactionProgram", currentCulture));
                 for (int i = 0; i < defaultInstructionText.Length; i++)
                 {

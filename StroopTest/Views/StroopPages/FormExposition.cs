@@ -25,12 +25,13 @@ namespace TestPlatform
     public partial class FormExposition : Form
     {
         CancellationTokenSource cts;
-        StroopTest currentTest; // program in current use
-        private static float elapsedTime;                // elapsed time during each item exposition
-        private string path = Global.stroopTestFilesPath;
+        StroopTest currentTest; 
 
-        private List<string> outputContent = new List<string>();            // output file content
-        private string outputDataPath = Global.stroopTestFilesPath + Global.resultsFolderName;                // output file Path
+        // elapsed time during each item exposition
+        private static float elapsedTime;               
+
+        private List<string> outputContent = new List<string>();
+        private string resultsPath = StroopProgram.GetResultsPath();
 
         private string hour = DateTime.Now.Hour.ToString("00");
         private string minutes = DateTime.Now.Minute.ToString("00");
@@ -40,7 +41,6 @@ namespace TestPlatform
         private string outputFile;
         private Audio audioControl = new Audio();
         private SoundPlayer Player = new SoundPlayer();
-        private string defaultFolderPath = Global.testFilesPath;
         private bool runExposition = true;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
@@ -85,17 +85,17 @@ namespace TestPlatform
         private void configureCurrentTest()
         {
             // makes sure that program file exists before starting exposition
-            currentTest.ProgramInUse.readProgramFile(path + "/prg/" + currentTest.ProgramInUse.ProgramName + ".prg");
+            currentTest.ProgramInUse.readProgramFile(currentTest.ProgramInUse.ProgramName);
             now = currentTest.InitialDate.Day + "." + currentTest.InitialDate.Month + "_" +
                     hour + "h" + minutes + "." + seconds;
-            outputFile = outputDataPath + currentTest.ParticipantName + "_" + currentTest.ProgramInUse.ProgramName + ".txt";
+            outputFile = resultsPath + currentTest.ParticipantName + "_" + currentTest.ProgramInUse.ProgramName + ".txt";
 
             // if program is incomplete
             if (currentTest.ProgramInUse.NeedsEdition)
             {
                 MessageBox.Show(LocRM.GetString("programEdit", currentCulture));
                 repairProgram(); // opens prgConfig for program edition
-                currentTest.ProgramInUse.readProgramFile(path + "/prg/" + currentTest.ProgramInUse.ProgramName + ".prg"); // reads new program
+                currentTest.ProgramInUse.readProgramFile(currentTest.ProgramInUse.ProgramName); // reads new program
             }
         }
 
@@ -112,7 +112,7 @@ namespace TestPlatform
 
         private async void startExpo() // starts Exposition
         {
-            if (currentTest.ProgramInUse.Exists(path))
+            if (currentTest.ProgramInUse.Exists(StroopProgram.GetStroopPath()))
             {
                
                 configWordLabel();
@@ -129,7 +129,7 @@ namespace TestPlatform
             else
             {
                 throw new Exception(LocRM.GetString("file", currentCulture) + currentTest.ProgramInUse.ProgramName + ".prg" +
-                                    LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(path + "/prg/"));
+                                    LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(StroopProgram.GetStroopPath() + "/prg/"));
             }
         }
 
@@ -795,7 +795,7 @@ namespace TestPlatform
             string[] subtitlesArray = null;
             if (currentTest.ProgramInUse.SubtitleShow)
             {
-                subtitlesArray = StrList.readListFile(defaultFolderPath + "/Lst/" + currentTest.ProgramInUse.SubtitlesListFile);
+                subtitlesArray = StrList.readListFile(FileManipulation._listFolderName + "/Lst/" + currentTest.ProgramInUse.SubtitlesListFile);
                 if (currentTest.ProgramInUse.SubtitleColor.ToLower() != "false")
                 {
                     subtitleLabel.ForeColor = ColorTranslator.FromHtml(currentTest.ProgramInUse.SubtitleColor);
@@ -843,7 +843,7 @@ namespace TestPlatform
         // beginAudio
         private void startRecordingAudio()
         {
-            audioControl.StartRecording(outputDataPath + "/audio_" + currentTest.ParticipantName + "_" + currentTest.ProgramInUse.ProgramName + "_" + now + ".wav");
+            audioControl.StartRecording(resultsPath + "/audio_" + currentTest.ParticipantName + "_" + currentTest.ProgramInUse.ProgramName + "_" + now + ".wav");
             
         } 
 

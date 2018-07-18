@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestPlatform.Views.ParticipantPages;
 using System.Resources;
 using System.Globalization;
-using TestPlatform.Views.MainForms;
+using TestPlatform.Models;
 
 namespace TestPlatform.Views.SidebarUserControls
 {
@@ -29,23 +22,23 @@ namespace TestPlatform.Views.SidebarUserControls
         {
 
             bool result = false;
-            if (Global.GlobalFormMain._contentPanel.Controls[0] is FormParticipantConfig)
+            if (FileManipulation.GlobalFormMain._contentPanel.Controls[0] is FormParticipantConfig)
             {
                 DialogResult dialogResult = MessageBox.Show(LocRM.GetString("savePending", currentCulture), LocRM.GetString("savePendingTitle", currentCulture), MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    FormParticipantConfig programToSave = (FormParticipantConfig)(Global.GlobalFormMain._contentPanel.Controls[0]);
+                    FormParticipantConfig programToSave = (FormParticipantConfig)(FileManipulation.GlobalFormMain._contentPanel.Controls[0]);
                     result = programToSave.save();
                 }
                 else
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     return true;
                 }
             }
             if (result == false)
             {
-                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                 return true;
             }
             else
@@ -57,7 +50,7 @@ namespace TestPlatform.Views.SidebarUserControls
         private void newParticipantButton_Click(object sender, EventArgs e)
         {
             bool screenTranslationAllowed = true;
-            if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+            if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
             {
                 screenTranslationAllowed = checkSave();
             }
@@ -66,7 +59,7 @@ namespace TestPlatform.Views.SidebarUserControls
                 if (newParticipantButton.Checked)
                 {
                     FormParticipantConfig newParticipant = new FormParticipantConfig("false");
-                    Global.GlobalFormMain._contentPanel.Controls.Add(newParticipant);
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Add(newParticipant);
                     newParticipantButton.Checked = false;
                 }
                 else
@@ -81,7 +74,7 @@ namespace TestPlatform.Views.SidebarUserControls
             bool screenTranslationAllowed = true;
             if (editParticipantButton.Checked)
             {
-                if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+                if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
                 {
                     screenTranslationAllowed = checkSave();
                 }
@@ -93,13 +86,13 @@ namespace TestPlatform.Views.SidebarUserControls
 
                     try
                     {
-                        defineParticipant = new FormDefine(LocRM.GetString("editParticipant", currentCulture), Global.testFilesPath + Global.partcipantDataPath, "data", "participant", false, false);
+                        defineParticipant = new FormDefine(LocRM.GetString("editParticipant", currentCulture), FileManipulation._participantDataPath, "data", "participant", false, false);
                         result = defineParticipant.ShowDialog();
                         if (result == DialogResult.OK)
                         {
                             editParticipantName = defineParticipant.ReturnValue;
                             FormParticipantConfig configureProgram = new FormParticipantConfig(editParticipantName);
-                            Global.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
+                            FileManipulation.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
                             editParticipantButton.Checked = false;
                         }
                         else

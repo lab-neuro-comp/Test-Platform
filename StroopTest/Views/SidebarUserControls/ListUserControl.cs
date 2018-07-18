@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Globalization;
-using System.IO;
 using System.Resources;
 using System.Windows.Forms;
 using TestPlatform.Views.ListsPages;
+using TestPlatform.Models;
 
 namespace TestPlatform.Views.SidebarControls
 {
@@ -15,11 +15,11 @@ namespace TestPlatform.Views.SidebarControls
 
         private bool isAllowedToChangeScreen()
         {
-            if (Global.GlobalFormMain._contentPanel.Controls.Count > 0)
+            if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
             {
-                if(Global.GlobalFormMain._contentPanel.Controls[0] is FormAudioConfig ||
-                    Global.GlobalFormMain._contentPanel.Controls[0] is FormImgConfig ||
-                    Global.GlobalFormMain._contentPanel.Controls[0] is FormWordColorConfig)
+                if(FileManipulation.GlobalFormMain._contentPanel.Controls[0] is FormAudioConfig ||
+                    FileManipulation.GlobalFormMain._contentPanel.Controls[0] is FormImgConfig ||
+                    FileManipulation.GlobalFormMain._contentPanel.Controls[0] is FormWordColorConfig)
                 {
                     DialogResult dialogResult = MessageBox.Show(LocRM.GetString("unsavedLists", currentCulture), LocRM.GetString("unsavedListsTitle", currentCulture), MessageBoxButtons.YesNo);
                     if(dialogResult == DialogResult.No)
@@ -54,7 +54,7 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     colorWordButton.Visible = false;
                     imageButton.Visible = false;
                     audioButton.Location = new Point(-3, 3);
@@ -73,9 +73,9 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     FormShowAudio newAudio = new FormShowAudio();
-                    Global.GlobalFormMain._contentPanel.Controls.Add(newAudio);
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Add(newAudio);
                 }
                 else
                 {
@@ -91,11 +91,11 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     FormAudioConfig configureAudioList = new FormAudioConfig(false);
                     try
                     {
-                        Global.GlobalFormMain._contentPanel.Controls.Add(configureAudioList);
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(configureAudioList);
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
@@ -112,13 +112,13 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     FormAudioConfig configureAudioList = new FormAudioConfig(true);
                     try
                     {
                         if (configureAudioList.isValid())
                         {
-                            Global.GlobalFormMain._contentPanel.Controls.Add(configureAudioList);
+                            FileManipulation.GlobalFormMain._contentPanel.Controls.Add(configureAudioList);
                         }
                         else
                         {
@@ -140,7 +140,7 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     audioButton.Location = new Point(-3, 65);
                     audioPanel.Visible = false;
                     colorWordButton.Visible = true;
@@ -168,7 +168,7 @@ namespace TestPlatform.Views.SidebarControls
         {
             if (isAllowedToChangeScreen())
             {
-                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                 audioButton.Visible = true;
                 imageButton.Visible = true;
                 wordColorPanel.Visible = false;
@@ -186,11 +186,11 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     FormWordColorConfig configureList = new FormWordColorConfig(false);
                     try
                     {
-                        Global.GlobalFormMain._contentPanel.Controls.Add(configureList);
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(configureList);
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
@@ -207,13 +207,13 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     FormWordColorConfig configureList = new FormWordColorConfig(true);
                     try
                     {
                         if (configureList.isValid())
                         {
-                            Global.GlobalFormMain._contentPanel.Controls.Add(configureList);
+                            FileManipulation.GlobalFormMain._contentPanel.Controls.Add(configureList);
                         }
                         else
                         {
@@ -235,7 +235,7 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     colorWordButton.Visible = false;
                     audioButton.Visible = false;
                     imageButton.Location = new Point(-3, 3);
@@ -255,11 +255,11 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     FormImgConfig configureImagesList = new FormImgConfig("false");
                     try
                     {
-                        Global.GlobalFormMain._contentPanel.Controls.Add(configureImagesList);
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(configureImagesList);
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
@@ -272,13 +272,13 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     FormImgConfig configureImagesList = new FormImgConfig("");
                     try
                     {
                         if (configureImagesList.isValid())
                         {
-                            Global.GlobalFormMain._contentPanel.Controls.Add(configureImagesList);
+                            FileManipulation.GlobalFormMain._contentPanel.Controls.Add(configureImagesList);
                         }
                         else
                         {
@@ -298,7 +298,7 @@ namespace TestPlatform.Views.SidebarControls
         {
             if (isAllowedToChangeScreen())
             {
-                Global.GlobalFormMain._contentPanel.Controls.Clear();
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                 if (backImageButton.Checked)
                 {
                     imageButton.Location = new Point(-3, 32);
@@ -320,11 +320,11 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     ListManagment ManageList = new ListManagment("_image", 'd');
                     try
                     {
-                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(ManageList);
                         deleteImageListButton.Checked = false;
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -341,11 +341,11 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     ListManagment ManageList = new ListManagment("_words_color", 'd');
                     try
                     {
-                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(ManageList);
                         deleteImageListButton.Checked = false;
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -362,11 +362,11 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     ListManagment ManageList = new ListManagment("_audio", 'd');
                     try
                     {
-                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(ManageList);
                         deleteImageListButton.Checked = false;
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -384,11 +384,11 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     ListManagment ManageList = new ListManagment("_image", 'r');
                     try
                     {
-                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(ManageList);
                         deleteImageListButton.Checked = false;
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -406,11 +406,11 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     ListManagment ManageList = new ListManagment("_audio", 'r');
                     try
                     {
-                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(ManageList);
                         deleteImageListButton.Checked = false;
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -428,11 +428,11 @@ namespace TestPlatform.Views.SidebarControls
             {
                 if (isAllowedToChangeScreen())
                 {
-                    Global.GlobalFormMain._contentPanel.Controls.Clear();
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
                     ListManagment ManageList = new ListManagment("_words_color", 'r');
                     try
                     {
-                        Global.GlobalFormMain._contentPanel.Controls.Add(ManageList);
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(ManageList);
                         deleteImageListButton.Checked = false;
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }

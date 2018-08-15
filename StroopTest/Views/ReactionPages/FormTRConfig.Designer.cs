@@ -109,6 +109,8 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.intervalBetweenAttemptsLabel = new System.Windows.Forms.Label();
+            this.intervalBetweenAttempts = new System.Windows.Forms.NumericUpDown();
             this.reactionConfigPanel.SuspendLayout();
             this.userResponse.SuspendLayout();
             this.shapesGroupBox.SuspendLayout();
@@ -125,6 +127,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.intervalBetweenAttempts)).BeginInit();
             this.SuspendLayout();
             // 
             // reactionConfigPanel
@@ -338,6 +341,8 @@
             // 
             // timeGroupBox
             // 
+            this.timeGroupBox.Controls.Add(this.intervalBetweenAttemptsLabel);
+            this.timeGroupBox.Controls.Add(this.intervalBetweenAttempts);
             this.timeGroupBox.Controls.Add(this.sstCheckBox);
             this.timeGroupBox.Controls.Add(this.sstLabel);
             this.timeGroupBox.Controls.Add(this.rndIntervalCheck);
@@ -816,6 +821,29 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // intervalBetweenAttemptsLabel
+            // 
+            resources.ApplyResources(this.intervalBetweenAttemptsLabel, "intervalBetweenAttemptsLabel");
+            this.intervalBetweenAttemptsLabel.Name = "intervalBetweenAttemptsLabel";
+            // 
+            // intervalBetweenAttempts
+            // 
+            this.intervalBetweenAttempts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.intervalBetweenAttempts.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            resources.ApplyResources(this.intervalBetweenAttempts, "intervalBetweenAttempts");
+            this.intervalBetweenAttempts.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.intervalBetweenAttempts.Name = "intervalBetweenAttempts";
+            this.intervalBetweenAttempts.Validating += new System.ComponentModel.CancelEventHandler(this.intervalBetweenAttemptsTime_Validating);
+            this.intervalBetweenAttempts.Validated += new System.EventHandler(this.intervalBetweenAttemptsTime_Validated);
+            // 
             // FormTRConfig
             // 
             resources.ApplyResources(this, "$this");
@@ -849,6 +877,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numExpo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.intervalBetweenAttempts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -935,5 +964,7 @@
         private System.Windows.Forms.CheckBox expandImageCheck;
         private System.Windows.Forms.CheckBox sstCheckBox;
         private System.Windows.Forms.Label sstLabel;
+        private System.Windows.Forms.Label intervalBetweenAttemptsLabel;
+        private System.Windows.Forms.NumericUpDown intervalBetweenAttempts;
     }
 }

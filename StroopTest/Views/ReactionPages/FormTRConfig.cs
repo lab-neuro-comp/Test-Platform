@@ -388,7 +388,7 @@ namespace TestPlatform.Views
                                                     Convert.ToInt32(beepDuration.Value), stimulusColorCheck(),
                                                     fixPointValue(), bgColorButton.Text, fixPointColor(),
                                                     rndIntervalCheck.Checked, shapeValue(), randomBeepCheck.Checked, 
-                                                    Convert.ToInt32(positionsBox.Text), responseType(), openColorListButton.Text, ColorListOption.Checked, sstCheckBox.Checked);
+                                                    Convert.ToInt32(positionsBox.Text), responseType(), openColorListButton.Text, ColorListOption.Checked, sstCheckBox.Checked, Convert.ToInt32(intervalBetweenAttempts.Value));
                     break;
                 // Program type "words"
                 case 1:
@@ -400,7 +400,7 @@ namespace TestPlatform.Views
                                                     fixPointValue(), bgColorButton.Text, fixPointColor(),
                                                     rndIntervalCheck.Checked, randomBeepCheck.Checked,
                                                     Convert.ToInt32(positionsBox.Text), responseType(), openWordListButton.Text, isRandomExposition.Checked, 
-                                                    openColorListButton.Text, ColorListOption.Checked, Convert.ToInt32(fontSizeUpDown.Value), sstCheckBox.Checked);
+                                                    openColorListButton.Text, ColorListOption.Checked, Convert.ToInt32(fontSizeUpDown.Value), sstCheckBox.Checked, Convert.ToInt32(intervalBetweenAttempts.Value));
                     break;
                 
                 // Program type "images"
@@ -409,7 +409,7 @@ namespace TestPlatform.Views
                                                      Convert.ToInt32(intervalTime.Value), beepingCheckbox.Checked, Convert.ToInt32(beepDuration.Value),
                                                      fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, openImgListButton.Text, 
                                                      randomBeepCheck.Checked, Convert.ToInt32(positionsBox.Text), responseType(), isRandomExposition.Checked, 
-                                                     expandImageCheck.Checked, sstCheckBox.Checked);
+                                                     expandImageCheck.Checked, sstCheckBox.Checked, Convert.ToInt32(intervalBetweenAttempts.Value));
                     break;
                 
                 // Program type "imageAndWord"
@@ -419,7 +419,7 @@ namespace TestPlatform.Views
                                                      fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked,
                                                      openImgListButton.Text, openWordListButton.Text, openColorListButton.Text, randomBeepCheck.Checked,
                                                      Convert.ToInt32(positionsBox.Text), ColorListOption.Checked,  responseType(), isRandomExposition.Checked, 
-                                                     stimulusColorCheck(), Convert.ToInt32(fontSizeUpDown.Value), expandImageCheck.Checked, sstCheckBox.Checked);
+                                                     stimulusColorCheck(), Convert.ToInt32(fontSizeUpDown.Value), expandImageCheck.Checked, sstCheckBox.Checked, Convert.ToInt32(intervalBetweenAttempts.Value));
                     break;
                 
                 // Program type "wordWithAudio"
@@ -428,7 +428,7 @@ namespace TestPlatform.Views
                                                     stimulusColorCheck(), fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, 
                                                     Convert.ToInt32(positionsBox.Text), responseType(), openColorListButton.Text, ColorListOption.Checked, 
                                                     isRandomExposition.Checked, Convert.ToInt32(fontSizeUpDown.Value), openAudioListButton.Text, openWordListButton.Text, 
-                                                    sstCheckBox.Checked);
+                                                    sstCheckBox.Checked, Convert.ToInt32(intervalBetweenAttempts.Value));
 
                     break;
                 
@@ -437,7 +437,7 @@ namespace TestPlatform.Views
                     newProgram = new ReactionProgram(prgNameTextBox.Text, Convert.ToInt32(expoTime.Value), Convert.ToInt32(numExpo.Value), Convert.ToInt32(intervalTime.Value),
                                                     fixPointValue(), bgColorButton.Text, fixPointColor(), rndIntervalCheck.Checked, Convert.ToInt32(positionsBox.Text),
                                                     responseType(), Convert.ToDouble(stimuluSize.Value), isRandomExposition.Checked, openAudioListButton.Text, 
-                                                    openImgListButton.Text, expandImageCheck.Checked, sstCheckBox.Checked);
+                                                    openImgListButton.Text, expandImageCheck.Checked, sstCheckBox.Checked, Convert.ToInt32(intervalBetweenAttempts.Value));
                     break;
                 
                 // invalid type was choosen
@@ -668,6 +668,23 @@ namespace TestPlatform.Views
         {
             // If all conditions have been met, clear the ErrorProvider of errors.
             errorProvider1.SetError(intervalTime, "");
+        }
+
+        private void intervalBetweenAttemptsTime_Validating(object sender,
+                                              System.ComponentModel.CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidIntervalTime(Convert.ToInt32(this.intervalBetweenAttempts.Value), out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(this.intervalBetweenAttempts, errorMsg);
+            }
+        }
+
+        private void intervalBetweenAttemptsTime_Validated(object sender, System.EventArgs e)
+        {
+            // If all conditions have been met, clear the ErrorProvider of errors.
+            errorProvider1.SetError(intervalBetweenAttempts, "");
         }
 
         public bool ValidIntervalTime(int intervalTime, out string errorMessage)

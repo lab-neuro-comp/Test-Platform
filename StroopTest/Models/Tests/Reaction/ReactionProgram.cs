@@ -20,8 +20,8 @@ namespace TestPlatform.Models
         private Boolean hasColorList; // [23]
         private int fontSize; // [24]
         private bool sstInterval; // interval calculated according to stop signal test
-
-        private static Int32 ELEMENTS = 26; //quantity of fields used in ReactionProgram 
+        private int intervalBetweenAttempts;
+        private static Int32 ELEMENTS = 27; //quantity of fields used in ReactionProgram 
 
         public ReactionProgram()
         {
@@ -47,7 +47,7 @@ namespace TestPlatform.Models
                                 bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                                 string stimuluShape, bool beepRandom, int numberPositions,
-                                string responseType, string colorList, bool hasColorList, bool sstInterval)
+                                string responseType, string colorList, bool hasColorList, bool sstInterval, int intervalBetweenAttempts)
         {
             // ReactionProgram properties
             this.expositionType = "shapes";
@@ -60,7 +60,8 @@ namespace TestPlatform.Models
             this.NumberPositions = numberPositions;
             this.hasColorList = hasColorList;
             this.SstInterval = sstInterval;
-
+            this.intervalBetweenAttempts = intervalBetweenAttempts;
+ 
             if(!hasColorList)
             {
                 this.stimulusColor = stimulusColor;
@@ -98,7 +99,7 @@ namespace TestPlatform.Models
                                 bool isBeeping, int beepDuration, string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                                 bool beepRandom, int numberPositions, string responseType,
-                                string wordList, bool expositionRandom, string colorList, bool hasColorList, int fontSize, bool sstInterval)
+                                string wordList, bool expositionRandom, string colorList, bool hasColorList, int fontSize, bool sstInterval, int intervalBetweenAttempts)
         {
             // ReactionProgram properties
             this.expositionType = "words";
@@ -113,6 +114,7 @@ namespace TestPlatform.Models
             this.setWordListFile(wordList);
             this.hasColorList = hasColorList;
             this.SstInterval = sstInterval;
+            this.intervalBetweenAttempts = intervalBetweenAttempts;
 
             if (!hasColorList)
             {
@@ -151,7 +153,7 @@ namespace TestPlatform.Models
                         bool isBeeping, int beepDuration,
                         string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                         string imageList, bool beepRandom, int numberPositions,
-                        string responseType, bool isExpositionRandom, bool expandImage, bool sstInterval)
+                        string responseType, bool isExpositionRandom, bool expandImage, bool sstInterval, int intervalBetweenAttempts)
         {
             // ReactionProgram properties
             this.expositionType = "images";
@@ -166,6 +168,7 @@ namespace TestPlatform.Models
             this.hasColorList = false;
             this.ExpandImage = expandImage;
             this.SstInterval = sstInterval;
+            this.intervalBetweenAttempts = intervalBetweenAttempts;
 
             //default configurations for first version of ReactionProgram
             this.setAudioListFile("false");
@@ -193,7 +196,8 @@ namespace TestPlatform.Models
                         bool isBeeping, int beepDuration,
                         string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom,
                         string imageList, string wordList,  string colorList, bool beepRandom, int numberPositions,
-                        bool hasColorList, string responseType, bool isExpositionRandom, string stimulusColor, int fontSize, bool expandImage, bool sstInterval)
+                        bool hasColorList, string responseType, bool isExpositionRandom, string stimulusColor, int fontSize, bool expandImage, bool sstInterval,
+                        int intervalBetweenAttempts)
         {
 
             // ReactionProgram properties
@@ -209,6 +213,7 @@ namespace TestPlatform.Models
             this.FontSize = fontSize;
             this.ExpandImage = expandImage;
             this.SstInterval = sstInterval;
+            this.intervalBetweenAttempts = intervalBetweenAttempts;
 
             if (!hasColorList)
             {
@@ -246,7 +251,7 @@ namespace TestPlatform.Models
                                 string stimulusColor,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom, int numberPositions,
                                 string responseType, string colorList, bool hasColorList, bool isExpositionRandom,int fontSize, string audioListFile, string wordListFile,
-                                bool sstInterval)
+                                bool sstInterval, int intervalBetweenAttempts)
         {
 
             // ReactionProgram properties
@@ -258,6 +263,7 @@ namespace TestPlatform.Models
 
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
+            this.intervalBetweenAttempts = intervalBetweenAttempts;
             this.hasColorList = hasColorList;
             if (!hasColorList)
             {
@@ -296,7 +302,8 @@ namespace TestPlatform.Models
         /// </summary>
         public ReactionProgram(string programName, int expositionTime, int numExpositions, int intervalTime,
                                 string fixPoint, string backgroundColor, string fixPointColor, bool intervalTimeRandom, int numberPositions,
-                                string responseType, double stimulusSize, bool isExpositionRandom,string audioListFile, string imageListFile, bool expandImage, bool sstInterval)
+                                string responseType, double stimulusSize, bool isExpositionRandom,string audioListFile, string imageListFile, bool expandImage, bool sstInterval,
+                                int intervalBetweenAttempts)
         {
 
             // ReactionProgram properties
@@ -308,7 +315,7 @@ namespace TestPlatform.Models
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
             this.ExpandImage = expandImage;
-
+            this.intervalBetweenAttempts = intervalBetweenAttempts;
             //default configurations for image with audio version of ReactionProgram
             this.fontSize = 10;
             this.setColorListFile("false");
@@ -577,9 +584,10 @@ namespace TestPlatform.Models
                  this.ResponseType + " " +
                  this.ExpositionRandom.ToString() + " " +
                  this.hasColorList.ToString() + " " +
-                 this.FontSize + " "  +
+                 this.FontSize + " " +
                  this.ExpandImage + " " +
-                 this.SstInterval;
+                 this.SstInterval + " " +
+                 this.intervalBetweenAttempts.ToString();
             return data;
         }
 
@@ -635,6 +643,7 @@ namespace TestPlatform.Models
                     FontSize = int.Parse(config[23]);
                     expandImage = bool.Parse(config[24]);
                     SstInterval = bool.Parse(config[25]);
+                    intervalBetweenAttempts = int.Parse(config[26]);
 
                     string[] linesInstruction = File.ReadAllLines(filepath);
                     if (linesInstruction.Length > 1) // read instructions if any

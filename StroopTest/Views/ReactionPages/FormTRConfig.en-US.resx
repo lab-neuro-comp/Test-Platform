@@ -298,4 +298,7 @@ Color:</value>
   <data name="expositionGroupBox.Text" xml:space="preserve">
     <value>Exposition</value>
   </data>
+  <data name="intervalBetweenAttemptsLabel.Text" xml:space="preserve">
+    <value>Interval between attempts (ms):</value>
+  </data>
 </root>

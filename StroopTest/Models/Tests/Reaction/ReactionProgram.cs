@@ -22,6 +22,11 @@ namespace TestPlatform.Models
         private bool sstInterval; // interval calculated according to stop signal test
         private int intervalBetweenAttempts;
         private static Int32 ELEMENTS = 27; //quantity of fields used in ReactionProgram 
+        public static string[] responseTimeType = { "Antecipação", "Durante exposição", "Após exposição", "Sem resposta"};
+        public static int ANTECIPATION = 0;
+        public static int DURING_EXPOSITION = 1;
+        public static int AFTER_EXPOSITION = 2;
+        public static int NO_RESPONSE = 3;
 
         public ReactionProgram()
         {
@@ -60,7 +65,7 @@ namespace TestPlatform.Models
             this.NumberPositions = numberPositions;
             this.hasColorList = hasColorList;
             this.SstInterval = sstInterval;
-            this.intervalBetweenAttempts = intervalBetweenAttempts;
+            this.IntervalBetweenAttempts = intervalBetweenAttempts;
  
             if(!hasColorList)
             {
@@ -114,7 +119,7 @@ namespace TestPlatform.Models
             this.setWordListFile(wordList);
             this.hasColorList = hasColorList;
             this.SstInterval = sstInterval;
-            this.intervalBetweenAttempts = intervalBetweenAttempts;
+            this.IntervalBetweenAttempts = intervalBetweenAttempts;
 
             if (!hasColorList)
             {
@@ -168,7 +173,7 @@ namespace TestPlatform.Models
             this.hasColorList = false;
             this.ExpandImage = expandImage;
             this.SstInterval = sstInterval;
-            this.intervalBetweenAttempts = intervalBetweenAttempts;
+            this.IntervalBetweenAttempts = intervalBetweenAttempts;
 
             //default configurations for first version of ReactionProgram
             this.setAudioListFile("false");
@@ -213,7 +218,7 @@ namespace TestPlatform.Models
             this.FontSize = fontSize;
             this.ExpandImage = expandImage;
             this.SstInterval = sstInterval;
-            this.intervalBetweenAttempts = intervalBetweenAttempts;
+            this.IntervalBetweenAttempts = intervalBetweenAttempts;
 
             if (!hasColorList)
             {
@@ -263,7 +268,7 @@ namespace TestPlatform.Models
 
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
-            this.intervalBetweenAttempts = intervalBetweenAttempts;
+            this.IntervalBetweenAttempts = intervalBetweenAttempts;
             this.hasColorList = hasColorList;
             if (!hasColorList)
             {
@@ -315,7 +320,7 @@ namespace TestPlatform.Models
             this.ResponseType = responseType;
             this.NumberPositions = numberPositions;
             this.ExpandImage = expandImage;
-            this.intervalBetweenAttempts = intervalBetweenAttempts;
+            this.IntervalBetweenAttempts = intervalBetweenAttempts;
             //default configurations for image with audio version of ReactionProgram
             this.fontSize = 10;
             this.setColorListFile("false");
@@ -517,6 +522,8 @@ namespace TestPlatform.Models
             }
         }
 
+        public int IntervalBetweenAttempts { get => intervalBetweenAttempts; set => intervalBetweenAttempts = value; }
+
         public static string GetReactionPath()
         {
             return FileManipulation.ReactionTestFilesPath;
@@ -587,7 +594,7 @@ namespace TestPlatform.Models
                  this.FontSize + " " +
                  this.ExpandImage + " " +
                  this.SstInterval + " " +
-                 this.intervalBetweenAttempts.ToString();
+                 this.IntervalBetweenAttempts.ToString();
             return data;
         }
 
@@ -643,7 +650,7 @@ namespace TestPlatform.Models
                     FontSize = int.Parse(config[23]);
                     expandImage = bool.Parse(config[24]);
                     SstInterval = bool.Parse(config[25]);
-                    intervalBetweenAttempts = int.Parse(config[26]);
+                    IntervalBetweenAttempts = int.Parse(config[26]);
 
                     string[] linesInstruction = File.ReadAllLines(filepath);
                     if (linesInstruction.Length > 1) // read instructions if any

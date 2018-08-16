@@ -390,7 +390,17 @@ namespace TestPlatform.Models
             }
         }
 
-
+        public static bool hasFixPoint(string fixpoint)
+        {
+            if(fixpoint.Equals("+") || fixpoint.Equals("o"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
     }
 }

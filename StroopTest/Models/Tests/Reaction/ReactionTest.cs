@@ -125,12 +125,12 @@ namespace TestPlatform.Models
         }
 
         public void writeLineOutput(long intervalTime, long intervalShouldBe, long reactTime, int currentExposition, long expositionAccumulative, 
-                                    string[] currentLists, string[] currentStimuli, string position, bool beeped, string currentColor)
+                                    string[] currentLists, string[] currentStimuli, string position, bool beeped, string currentColor, string currentResponseTimeType)
         {
             /* This variable keeps data from an exposition to only one stimulus, being them:
-             * programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\ttr(ms)\tintervalo(ms)\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\trespostaUsuario\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep
-             * program\tparticipant\tdate\tInitialDate\texpositionTime\treactionTime(ms)\tInterval(ms)\testimatedInterval(ms)\texpositionDuration(ms)\texposition(ms)\tsenquency\tpos\tuserResponse\tstimulusType\tstimulus\tstimulusColor\tBeep
-             * program  name    participant     name    date    hour    exposition hour    hit time(ms) interval(ms)  interval should be(ms)  
+             * programa\tparticipante\tdata\thorarioInicial\thorarioExposicao\tTipodeResposta\ttr(ms)\tintervalo(ms)\tintervaloestimado(ms)\texposicaoTempo(ms)\texposicao(ms)\tsequencia\tpos\trespostaUsuario\ttipoEstimulo\tEstimulo\tCordoEstimulo\tBeep
+             * program\tparticipant\tdate\tInitialDate\texpositionTime\tResponseType\treactionTime(ms)\tInterval(ms)\testimatedInterval(ms)\texpositionDuration(ms)\texposition(ms)\tsenquency\tpos\tuserResponse\tstimulusType\tstimulus\tstimulusColor\tBeep
+             * program  name    participant     name    date    hour    exposition hour  response time type  hit time(ms) interval(ms)  interval should be(ms)  
              * exposition accumulative timeexposition time(ms)  number of sequency  position on screen  user response   type of stimulus  stimulus1List stimulus1 
              * stimulus2List stimulus2   
              * stimulus color */
@@ -139,7 +139,7 @@ namespace TestPlatform.Models
                        currentParticipant[1] + "\t" + initialDate.Day + "/" +
                        initialDate.Month + "/" + initialDate.Year + "\t" + initialDate.Hour + ":" + initialDate.Minute +
                        ":" + initialDate.Second + ":" + initialDate.Millisecond.ToString() + "\t" + ExpositionTime.Hour + ":" + ExpositionTime.Minute +
-                       ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" + reactTime.ToString() +
+                       ":" + ExpositionTime.Second + ":" + ExpositionTime.Millisecond.ToString() + "\t" + currentResponseTimeType + "\t" + reactTime.ToString() +
                         "\t" + intervalTime.ToString() + "\t" + intervalShouldBe.ToString() + "\t" + expositionAccumulative + "\t" +
                         ProgramInUse.ExpositionTime +  "\t" + currentExposition + "\t" + position + "\t" +  CurrentResponse  + "\t"+ expositionTypeOutput() + "\t" +
                         currentLists[0] + "\t"  + currentStimuli[0] + "\t"+ currentLists[1] + "\t" + currentStimuli[1] + "\t" + currentColor + "\t" + beeped.ToString();

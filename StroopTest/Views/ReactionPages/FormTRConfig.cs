@@ -53,6 +53,7 @@ namespace TestPlatform.Views
             numExpo.Value = editProgram.NumExpositions;
             expoTime.Value = editProgram.ExpositionTime;
             intervalTime.Value = editProgram.IntervalTime;
+            intervalBetweenAttempts.Value = editProgram.IntervalBetweenAttempts;
             beepingCheckbox.Checked = editProgram.IsBeeping;
             beepDuration.Value = editProgram.BeepDuration;
             stimuluSize.Value = (decimal) editProgram.StimuluSize;

@@ -38,6 +38,7 @@ namespace TestPlatform.Views
         private long expositionAccumulative;
         private Stopwatch hitStopWatch = new Stopwatch();
         private Stopwatch accumulativeStopWatch = new Stopwatch();
+        private Stopwatch betweenAttemptsStopWatch = new Stopwatch();
         private bool intervalCancelled;
         private bool cancelExposition = false;
 
@@ -55,6 +56,7 @@ namespace TestPlatform.Views
         private System.Windows.Forms.Label wordLabel = new System.Windows.Forms.Label();
 
         private bool exposing = false;
+        private bool between = false;
         private string[] currentStimuli = {"-", "-" };
         private string[] currentLists = { "-", "-" };
         private int currentPosition;
@@ -62,7 +64,7 @@ namespace TestPlatform.Views
         private bool currentBeep = false;
         private string currentColor = "false";
         private int currentExposition = 0;
-
+        private long fixPointTime = 100;
         private ResourceManager LocRM = new ResourceManager("TestPlatform.Resources.Localizations.LocalizedResources", typeof(FormMain).Assembly);
         private CultureInfo currentCulture = CultureInfo.CurrentUICulture;
 
@@ -368,7 +370,12 @@ namespace TestPlatform.Views
 
             Stopwatch intervalStopWatch = new Stopwatch();
             intervalStopWatch.Start();
-            while (intervalStopWatch.ElapsedMilliseconds < intervalTimeRandom)
+            long interval = intervalTimeRandom;
+            if (Program.hasFixPoint(executingTest.ProgramInUse.FixPoint))
+            {
+                interval = intervalTimeRandom - fixPointTime;
+            }
+            while (intervalStopWatch.ElapsedMilliseconds < interval)
             {
                 if (expositionBW.CancellationPending)
                 {
@@ -376,6 +383,20 @@ namespace TestPlatform.Views
                     break;
                 }
                 /* just wait for interval time to be finished */
+            }
+            ExpositionController.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
+            this);
+            if (Program.hasFixPoint(executingTest.ProgramInUse.FixPoint))
+            {
+                while (intervalStopWatch.ElapsedMilliseconds < intervalTimeRandom)
+                {
+                    if (expositionBW.CancellationPending)
+                    {
+                        intervalCancelled = true;
+                        break;
+                    }
+                    /* just wait for interval time to be finished */
+                }
             }
             intervalShouldBe = intervalTimeRandom;
             intervalStopWatch.Stop();
@@ -615,13 +636,20 @@ namespace TestPlatform.Views
             expositionAccumulative = accumulativeStopWatch.ElapsedMilliseconds;
             hitStopWatch = new Stopwatch();
             hitStopWatch.Start();
-
+            between = false;
             // Sending mark to neuronspectrum to sinalize that exposition of stimulus started
             SendKeys.SendWait(executingTest.Mark.ToString());
             executingTest.ExpositionTime = DateTime.Now;
+            try
+            {
+                showStimulus();
+            }
+            catch (Exception)
+            {
 
-            showStimulus();
-            
+            }
+
+
             if (intervalCancelled)
             {
                 e.Cancel = true;
@@ -644,6 +672,34 @@ namespace TestPlatform.Views
                     else
                     {
                         /* just wait for exposition time to be finished */
+                    }
+                }
+                between = true;
+                if (Player.SoundLocation != null)
+                {
+                    Player.Stop();
+                    Player = new SoundPlayer();
+                }
+                // cleaning screen
+                if (ActiveForm != null)
+                {
+                    this.CreateGraphics().Clear(ActiveForm.BackColor);
+
+                }
+                betweenAttemptsStopWatch = new Stopwatch();
+                betweenAttemptsStopWatch.Start();
+
+                while (betweenAttemptsStopWatch.ElapsedMilliseconds < executingTest.ProgramInUse.IntervalBetweenAttempts)
+                {
+                    if (expositionBW.CancellationPending)
+                    {
+                        betweenAttemptsStopWatch.Stop();
+                        e.Cancel = true;
+                        break;
+                    }
+                    else
+                    {
+                        /* just wait for between expositions time to be finished */
                     }
                 }
             }
@@ -683,32 +739,41 @@ namespace TestPlatform.Views
                         intervalBW.ReportProgress(50, currentControl);
                     }
                 }
-                ExpositionController.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor, this);
             }
             else
             {
                 /*do nothing*/
             }
 
+            if((e.Cancelled) == true && between)
+            {
+                /* user clicked after stimulus disappeared */
+                between = false;
+                executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, betweenAttemptsStopWatch.ElapsedMilliseconds,
+                                              currentExposition + 1, expositionAccumulative, currentLists, currentStimuli, currentPositionOutput, currentBeep, currentColor,
+                                              ReactionProgram.responseTimeType[ReactionProgram.AFTER_EXPOSITION]);
+            }
             if ((e.Cancelled == true) && !intervalCancelled)
             {
                 /* user clicked after stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds,
-                                              currentExposition + 1, expositionAccumulative, currentLists,currentStimuli, currentPositionOutput, currentBeep, currentColor);
+                                              currentExposition + 1, expositionAccumulative, currentLists,currentStimuli, currentPositionOutput, currentBeep, currentColor,
+                                              ReactionProgram.responseTimeType[ReactionProgram.DURING_EXPOSITION]);
             }
-
             else if ((e.Cancelled == true) && intervalCancelled)
             {
                 /* user clicked before stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, intervalElapsedTime - intervalShouldBe,
-                                              currentExposition + 1, expositionAccumulative, currentLists, currentStimuli, currentPositionOutput, currentBeep, currentColor);
+                                              currentExposition + 1, expositionAccumulative, currentLists, currentStimuli, currentPositionOutput, currentBeep, currentColor,
+                                              ReactionProgram.responseTimeType[ReactionProgram.ANTECIPATION]);
             }
             else
             {
                 /* user missed stimulus */
                 executingTest.CurrentResponse = "NA";
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, 0, currentExposition + 1, expositionAccumulative, currentLists, currentStimuli, 
-                                                currentPositionOutput, currentBeep, currentColor);
+                                                currentPositionOutput, currentBeep, currentColor,
+                                                ReactionProgram.responseTimeType[ReactionProgram.NO_RESPONSE]);
                 hitStopWatch.Stop();
             }
             expositionBW.Dispose();
@@ -721,8 +786,6 @@ namespace TestPlatform.Views
 
             for (int counter = 0; counter < executingTest.ProgramInUse.NumExpositions && !cancelExposition; counter++)
             {
-                ExpositionController.makingFixPoint(executingTest.ProgramInUse.FixPoint, executingTest.ProgramInUse.FixPointColor,
-                this);
                 currentExposition = counter;
                 //preparing execution
                 expositionBackground();

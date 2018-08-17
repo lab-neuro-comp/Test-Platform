@@ -17,7 +17,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <HockeyAppResourceId>4e4db72659e84ec1ab96ac2196fa1559</HockeyAppResourceId>
-    <PublishUrl>C:\Users\fabio\Desktop\UnB\Iniciação Científica\pt-BR\</PublishUrl>
+    <PublishUrl>C:\Users\Fabíola\Desktop\UnB\Iniciação Científica\pt-BR\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -36,7 +36,7 @@
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>3.1.0.0</ApplicationVersion>
+    <ApplicationVersion>3.2.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>

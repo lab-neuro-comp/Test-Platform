@@ -235,8 +235,6 @@
             // audioCaptureCheck
             // 
             resources.ApplyResources(this.audioCaptureCheck, "audioCaptureCheck");
-            this.audioCaptureCheck.Checked = true;
-            this.audioCaptureCheck.CheckState = System.Windows.Forms.CheckState.Checked;
             this.audioCaptureCheck.Name = "audioCaptureCheck";
             this.audioCaptureCheck.TabStop = false;
             this.audioCaptureCheck.UseVisualStyleBackColor = true;

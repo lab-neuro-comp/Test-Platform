@@ -101,6 +101,7 @@ namespace TestPlatform
         {
             numExpo.Enabled = true; numExpoLabel.Enabled = true;
             rndExpoLabel.Enabled = true; rndExpoCheck.Enabled = true;
+            bool audioCaptureBool = !openAudioListButton.Enabled;
 
             switch (expoType)
             {
@@ -158,7 +159,9 @@ namespace TestPlatform
                     colorListLabel.Enabled = true; openColorListButton.Enabled = true;
                     imgListLabel.Enabled = false; openImgListButton.Enabled = false;
                     audioListLabel.Enabled = true; openAudioListButton.Enabled = true;
-                    
+                    //box6
+                    bgColorLabel.Enabled = true; bgColorPanel.Enabled = true; bgColorButton.Enabled = true;
+                    audioCaptureLabel.Enabled = audioCaptureBool; audioCaptureCheck.Enabled = audioCaptureBool; audioCaptureCheck.Checked = audioCaptureBool;
                     break;
                 case 4: // imgaud
                     errorProvider1.Clear();
@@ -172,6 +175,9 @@ namespace TestPlatform
                     colorListLabel.Enabled = false; openColorListButton.Enabled = false;
                     imgListLabel.Enabled = true; openImgListButton.Enabled = true;
                     audioListLabel.Enabled = true; openAudioListButton.Enabled = true;
+                    //box6
+                    bgColorLabel.Enabled = true; bgColorPanel.Enabled = true; bgColorButton.Enabled = true;
+                    audioCaptureLabel.Enabled = audioCaptureBool; audioCaptureCheck.Enabled = audioCaptureBool; audioCaptureCheck.Checked = audioCaptureBool;
                     break;
 
                 case 5: // txtimg
@@ -203,11 +209,6 @@ namespace TestPlatform
             //box5
             activateSubsLabel.Enabled = true; activateSubsCheck.Enabled = true;
             enableSubsItens(activateSubsCheck.Checked);
-           
-            //box6
-            bgColorLabel.Enabled = true; bgColorPanel.Enabled = true; bgColorButton.Enabled = true;
-            bool audioCaptureBool = !openAudioListButton.Enabled;
-            audioCaptureLabel.Enabled = audioCaptureBool; audioCaptureCheck.Enabled = audioCaptureBool; audioCaptureCheck.Checked = audioCaptureBool;
             
             //instructionsBox
             instructionsLabel.Enabled = true; instructionsBox.Enabled = true;

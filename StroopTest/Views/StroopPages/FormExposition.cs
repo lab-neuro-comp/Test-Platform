@@ -795,7 +795,7 @@ namespace TestPlatform
             string[] subtitlesArray = null;
             if (currentTest.ProgramInUse.SubtitleShow)
             {
-                subtitlesArray = StrList.readListFile(FileManipulation._listFolderName + "/Lst/" + currentTest.ProgramInUse.SubtitlesListFile);
+                subtitlesArray = StrList.readListFile(FileManipulation._listFolderName + currentTest.ProgramInUse.SubtitlesListFile + "_words.lst");
                 if (currentTest.ProgramInUse.SubtitleColor.ToLower() != "false")
                 {
                     subtitleLabel.ForeColor = ColorTranslator.FromHtml(currentTest.ProgramInUse.SubtitleColor);

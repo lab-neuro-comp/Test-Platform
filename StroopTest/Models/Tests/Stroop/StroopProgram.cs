@@ -304,14 +304,7 @@ namespace TestPlatform.Models
             get { return subtitlesListFile; }
             set
             {
-                if (Validations.isListValid(value))
-                {
-                    subtitlesListFile = value;
-                }
-                else
-                {
-                    throw new ArgumentException(LocRM.GetString("fileName", currentCulture) + value + LocRM.GetString("fileNameError", currentCulture));
-                }
+                subtitlesListFile = value;
             }
         }
 

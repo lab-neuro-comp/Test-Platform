@@ -640,15 +640,7 @@ namespace TestPlatform.Views
             // Sending mark to neuronspectrum to sinalize that exposition of stimulus started
             SendKeys.SendWait(executingTest.Mark.ToString());
             executingTest.ExpositionTime = DateTime.Now;
-            try
-            {
-                showStimulus();
-            }
-            catch (Exception)
-            {
-
-            }
-
+            showStimulus();
 
             if (intervalCancelled)
             {
@@ -674,7 +666,21 @@ namespace TestPlatform.Views
                         /* just wait for exposition time to be finished */
                     }
                 }
-                between = true;
+                // if current control is enabled it means that just showed a stimulus
+                if (currentControl.Enabled)
+                {
+                    // signaling to interval background worker that exposing must end and control must be removed from screen
+                    exposing = false;
+                    intervalBW.ReportProgress(50, currentControl);
+                }
+                if (e.Cancel)
+                {
+                    between = false;
+                }
+                else
+                {
+                    between = true;
+                }
                 if (Player.SoundLocation != null)
                 {
                     Player.Stop();
@@ -689,7 +695,7 @@ namespace TestPlatform.Views
                 betweenAttemptsStopWatch = new Stopwatch();
                 betweenAttemptsStopWatch.Start();
 
-                while (betweenAttemptsStopWatch.ElapsedMilliseconds < executingTest.ProgramInUse.IntervalBetweenAttempts)
+                while (betweenAttemptsStopWatch.ElapsedMilliseconds < executingTest.ProgramInUse.IntervalBetweenAttempts && !(e.Cancel))
                 {
                     if (expositionBW.CancellationPending)
                     {
@@ -720,6 +726,7 @@ namespace TestPlatform.Views
 
         private void expositionBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            Console.WriteLine(cancelExposition);
             if (!cancelExposition)
             {
                 // cleaning screen
@@ -753,7 +760,7 @@ namespace TestPlatform.Views
                                               currentExposition + 1, expositionAccumulative, currentLists, currentStimuli, currentPositionOutput, currentBeep, currentColor,
                                               ReactionProgram.responseTimeType[ReactionProgram.AFTER_EXPOSITION]);
             }
-            if ((e.Cancelled == true) && !intervalCancelled)
+            else if ((e.Cancelled == true) && !intervalCancelled)
             {
                 /* user clicked after stimulus is shown*/
                 executingTest.writeLineOutput(intervalElapsedTime, intervalShouldBe, hitStopWatch.ElapsedMilliseconds,
@@ -796,6 +803,7 @@ namespace TestPlatform.Views
                 Thread.Sleep(1);
 
             }
+            Thread.Sleep(50);
         }
 
         private void intervalBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

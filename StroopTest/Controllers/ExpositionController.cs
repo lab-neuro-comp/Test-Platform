@@ -126,15 +126,8 @@
 
         public static void BeginReactionTest(string programName, string participantName, char mark, Form form)
         {
-            try
-            {
                 SendKeys.SendWait("i");
                 FormReactExposition reactionExposition = new FormReactExposition(programName, participantName, mark);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         public static void BeginMatchingTest(string programName, string participantName, char mark, Form form)

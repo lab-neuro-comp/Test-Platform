@@ -144,7 +144,7 @@ namespace TestPlatform.Models.General
 
         public static string[] GetAllParticipants()
         {
-            return FileManipulation.GetAllFilesInFolder(FileManipulation._participantDataPath, ".data");
+            return FileManipulation.GetAllFilesInFolder(FileManipulation._participantDataPath, "data");
         }
 
         public bool saveParticipantFile()

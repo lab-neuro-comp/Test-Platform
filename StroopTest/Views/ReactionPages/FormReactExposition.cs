@@ -726,7 +726,6 @@ namespace TestPlatform.Views
 
         private void expositionBW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Console.WriteLine(cancelExposition);
             if (!cancelExposition)
             {
                 // cleaning screen

@@ -667,7 +667,7 @@ namespace TestPlatform.Views
                     }
                 }
                 // if current control is enabled it means that just showed a stimulus
-                if (currentControl.Enabled)
+                if (currentControl != null && currentControl.Enabled)
                 {
                     // signaling to interval background worker that exposing must end and control must be removed from screen
                     exposing = false;

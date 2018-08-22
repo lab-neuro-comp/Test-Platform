@@ -55,6 +55,7 @@ After downloading the program you need to install it, just follow the installing
 
 * **Gabriel Batista Albino Silva** - *Continued Platform*
 
+This project was development in scientific research program financed by Cnpq and FAP-DF
 
 ## License
 

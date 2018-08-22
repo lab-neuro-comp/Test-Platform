@@ -2,7 +2,7 @@
 # How to contribute
 
 This project is development as result of a university program for Neuroscience and Behaviour Laboratory in Biology Department of Universidade de Brasília (UnB),
-students are responsible for this code, but is built so that anyone willing to contribute can modify and help with development using github. In this file, that are some instructions and suggestions upon how to make your contribution, please read it before sending your changes.
+students are responsible for this code, but is built so that anyone willing to contribute can modify and help with development using github. This project was possible thanks to scientific research programs, financed by CNPQ and FAP-DF. In this file, that are some instructions and suggestions upon how to make your contribution, please read it before sending your changes.
  
 
 # Prerequisites

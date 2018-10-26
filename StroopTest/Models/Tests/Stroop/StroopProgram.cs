@@ -379,7 +379,7 @@ namespace TestPlatform.Models
             this.instructionText = FileManipulation.ReadStroopProgramInstructionsFromImport(programName);
         }
 
-        private void ConfigureReadProgram(List<string> config)
+        private void ConfigureReadProgramDeprecated(List<string> config)
         {
             needsEditionFlag = false;
             if (config.Count() < ELEMENTS && config.Count() > 15)

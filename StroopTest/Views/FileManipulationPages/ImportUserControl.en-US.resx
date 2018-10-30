@@ -124,7 +124,7 @@
     <value>cancel</value>
   </data>
   <data name="dataGridViewTextBoxColumn4.HeaderText" xml:space="preserve">
-    <value>FileName</value>
+    <value>Program/List name</value>
   </data>
   <data name="dataGridViewTextBoxColumn5.HeaderText" xml:space="preserve">
     <value>Type</value>
@@ -133,7 +133,7 @@
     <value>location</value>
   </data>
   <data name="dataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
-    <value>FileName</value>
+    <value>Program/List name</value>
   </data>
   <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
     <value>Type</value>
@@ -160,7 +160,7 @@
     <value>File</value>
   </data>
   <data name="warningMessage.Text" xml:space="preserve">
-    <value>Warning: Items marked in red indicate that there's existing files with same name. Importing these files will overwrite existing data, and you will not ble able to recover them.
+    <value>Warning: Items marked in red indicate that there's existing programs or lists with same name, but their content can be different. Importing these files will overwrite existing data, and you will not ble able to recover them.
 </value>
   </data>
   <data name="warningCheckBox.Text" xml:space="preserve">

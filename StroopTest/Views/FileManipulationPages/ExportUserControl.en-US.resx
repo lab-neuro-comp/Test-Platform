@@ -122,14 +122,12 @@
   </data>
   <data name="addToOriginList.Text" xml:space="preserve">
     <value>&lt;&lt;</value>
-    
   </data>
   <data name="addToDestinationList.Text" xml:space="preserve">
     <value>&gt;&gt;</value>
-    
   </data>
   <data name="dataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
-    <value>File Name</value>
+    <value>Program/List Name</value>
   </data>
   <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
     <value>Type</value>
@@ -138,7 +136,7 @@
     <value>location</value>
   </data>
   <data name="dataGridViewTextBoxColumn4.HeaderText" xml:space="preserve">
-    <value>File name</value>
+    <value>Program/List Name</value>
   </data>
   <data name="dataGridViewTextBoxColumn5.HeaderText" xml:space="preserve">
     <value>Type</value>

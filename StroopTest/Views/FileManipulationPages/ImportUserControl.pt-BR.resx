@@ -124,7 +124,7 @@
     <value>cancelar</value>
   </data>
   <data name="dataGridViewTextBoxColumn4.HeaderText" xml:space="preserve">
-    <value>Nome do Arquivo</value>
+    <value>Nome do Programa/Lista</value>
   </data>
   <data name="dataGridViewTextBoxColumn5.HeaderText" xml:space="preserve">
     <value>Tipo</value>
@@ -133,7 +133,7 @@
     <value>location</value>
   </data>
   <data name="dataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
-    <value>Nome do Arquivo</value>
+    <value>Nome do Programa/Lista</value>
   </data>
   <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
     <value>Tipo</value>
@@ -154,13 +154,13 @@
     <value>abrir</value>
   </data>
   <data name="importAllCheckbox.Text" xml:space="preserve">
-    <value>Importar todos arquivos</value>
+    <value>Importar todos programas/listas</value>
   </data>
   <data name="fileLabel.Text" xml:space="preserve">
     <value>Arquivo</value>
   </data>
   <data name="warningMessage.Text" xml:space="preserve">
-    <value>Aviso: Itens marcados em vermelho indicam arquivos com o mesmo nome já existentes. Importar esses arquivos irá sobreescrever os já existente, não sendo possível recuperá-los.
+    <value>Aviso: Itens marcados em vermelho indicam listas ou programas com o mesmo nome já existentes, porém o conteúdo deles podem divergir . Importar esses arquivos irá sobreescrever os já existente, não sendo possível recuperá-los.
 </value>
   </data>
   <data name="warningCheckBox.Text" xml:space="preserve">

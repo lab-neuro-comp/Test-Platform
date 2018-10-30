@@ -37,19 +37,6 @@ namespace TestPlatform.Models
             }
         }
 
-        public static string HeaderOutputFileText
-        {
-            get
-            {
-                return headerOutputFileText;
-            }
-
-            set
-            {
-                headerOutputFileText = value;
-            }
-        }
-
         internal ReactionProgram ProgramInUse
         {
             get

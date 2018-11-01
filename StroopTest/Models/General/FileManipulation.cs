@@ -21,7 +21,7 @@ namespace TestPlatform.Models
         /// </summary>
         private static FileManipulation instance;
 
-        private static string PROGRAM_EXTENSION = ".prg";
+        private static string PROGRAM_EXTENSION_DEPRECATED = ".prg";
         private static string _instructionsFilePath = "editableInstructions.txt";
 
         private static FormMain _globalFormMain;

@@ -24,19 +24,6 @@ namespace TestPlatform.Models
             headerOutputFileText = LocRM.GetString("stroopResultHeader", currentCulture);
         }
 
-        public static string HeaderOutputFileText
-        {
-            get
-            {
-                return headerOutputFileText;
-            }
-
-            set
-            {
-                headerOutputFileText = value;
-            }
-        }
-
         public void writeLineOutputResult(string nameStimulus, string color, int counter,
                                    List<string> output, float elapsedTime, string audioName)
         {

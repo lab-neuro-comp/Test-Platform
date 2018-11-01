@@ -76,5 +76,18 @@ namespace TestPlatform.Models.Tests
                 }
             }
         }
+
+        public static string HeaderOutputFileText
+        {
+            get
+            {
+                return headerOutputFileText;
+            }
+
+            set
+            {
+                headerOutputFileText = value;
+            }
+        }
     }
 }

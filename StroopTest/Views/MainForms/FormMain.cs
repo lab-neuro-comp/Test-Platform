@@ -45,6 +45,11 @@ namespace TestPlatform
             _contentPanel = contentPanel;
         }
 
+        public void resetParticipants()
+        {
+            participantComboBox.SelectedIndex = -1;
+        }
+
         public void initializeParticipants()
         {
             string[] filePaths = Participant.GetAllParticipants();

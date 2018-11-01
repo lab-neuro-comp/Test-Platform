@@ -82,7 +82,7 @@ namespace TestPlatform.Models
             }
             else
             {
-                throw new Exception(LocRM.GetString("file", currentCulture) + ProgramInUse.ProgramName + ".prg" +
+                throw new Exception(LocRM.GetString("file", currentCulture) + ProgramInUse.ProgramName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED +
                                     LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(MatchingProgram.GetProgramsPath()));
             }
         }

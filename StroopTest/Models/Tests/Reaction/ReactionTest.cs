@@ -91,14 +91,14 @@ namespace TestPlatform.Models
 
         public void setProgramInUse(string path, string prgName)
         {
-            string programFile = path + prgName + ".prg";
+            string programFile = path + prgName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED;
             if (File.Exists(programFile))
             {
                 ProgramInUse = new ReactionProgram(programFile);
             }
             else
             {
-                throw new Exception(LocRM.GetString("file", currentCulture) + ProgramInUse.ProgramName + ".prg" +
+                throw new Exception(LocRM.GetString("file", currentCulture) + ProgramInUse.ProgramName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED +
                                     LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(path + "/prg/"));
             }
         }

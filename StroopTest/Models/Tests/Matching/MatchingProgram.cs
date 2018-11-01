@@ -428,7 +428,7 @@ namespace TestPlatform.Models
             if (Path.GetFileNameWithoutExtension(filepath) != (this.ProgramName))
             {
                 throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName +
-                    "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + "'.prg");
+                    "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
             }
             stimuluNumber = int.Parse(config[1]);
             ExpositionTime = int.Parse(config[2]);
@@ -475,7 +475,7 @@ namespace TestPlatform.Models
 
         public bool saveProgramFile(string instructionBoxText)
         {
-            StreamWriter writer = new StreamWriter(GetProgramsPath() + ProgramName + ".prg");
+            StreamWriter writer = new StreamWriter(GetProgramsPath() + ProgramName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
             writer.WriteLine(data());
             if (instructionBoxText.Length > 0)
             {

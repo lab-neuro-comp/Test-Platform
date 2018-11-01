@@ -41,7 +41,7 @@ namespace TestPlatform.Views
             ReactionProgram editProgram = new ReactionProgram();
             try
             {
-                editProgram.readProgramFile(ReactionProgram.GetProgramsPath() + editPrgName + ".prg");
+                editProgram.readProgramFile(ReactionProgram.GetProgramsPath() + editPrgName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
             }
             catch (FileNotFoundException e)
             {
@@ -482,7 +482,7 @@ namespace TestPlatform.Views
             {
                 ReactionProgram newProgram = configureNewProgram();
                 
-                if (File.Exists(ReactionProgram.GetProgramsPath() + prgNameTextBox.Text + ".prg"))
+                if (File.Exists(ReactionProgram.GetProgramsPath() + prgNameTextBox.Text + FileManipulation.PROGRAM_EXTENSION_DEPRECATED))
                 {
                     DialogResult dialogResult = MessageBox.Show(LocRM.GetString("programExists", currentCulture), "", MessageBoxButtons.OKCancel);
                     if (dialogResult == DialogResult.Cancel)

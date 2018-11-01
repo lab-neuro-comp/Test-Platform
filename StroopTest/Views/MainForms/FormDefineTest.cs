@@ -30,7 +30,7 @@ namespace TestPlatform.Views
             { 
                 string[] filePaths;
 
-                filePaths = Directory.GetFiles(testFilePath, ("*.prg"), SearchOption.AllDirectories);
+                filePaths = Directory.GetFiles(testFilePath, ("*" + FileManipulation.ProgramExtensionDeprecated), SearchOption.AllDirectories);
                 for (int i = 0; i < filePaths.Length; i++)
                 {
                     comboBox1.Items.Add(Path.GetFileNameWithoutExtension(filePaths[i]));

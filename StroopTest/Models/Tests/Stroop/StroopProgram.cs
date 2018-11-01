@@ -374,7 +374,7 @@ namespace TestPlatform.Models
 
         public void ReadProgramFromImport(string programName, string path)
         {
-            List<string> config = FileManipulation.ReadFileFirstLine(path + programName + ".prg");
+            List<string> config = FileManipulation.ReadFileFirstLine(path + programName + FileManipulation.ProgramExtensionDeprecated);
             ConfigureReadProgram(config);
             this.instructionText = FileManipulation.ReadStroopProgramInstructionsFromImport(programName);
         }
@@ -454,7 +454,7 @@ namespace TestPlatform.Models
 
         public static string[] GetAllPrograms()
         {
-            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), ".prg");
+            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), FileManipulation.ProgramExtensionDeprecated);
         }
 
         // writes default file
@@ -466,7 +466,7 @@ namespace TestPlatform.Models
             this.ProgramName = LocRM.GetString("default", currentCulture);
             try
             {
-                TextWriter tw = new StreamWriter(filepath + ProgramName + ".prg");
+                TextWriter tw = new StreamWriter(filepath + ProgramName + FileManipulation.ProgramExtensionDeprecated);
                 tw.WriteLine(LocRM.GetString("defaultStroopProgram", currentCulture));
                 for(int i = 0; i < defaultInstructionText.Length; i++)
                 {

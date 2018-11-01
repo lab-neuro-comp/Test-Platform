@@ -79,7 +79,7 @@ namespace TestPlatform.Views.MainForms
                     backgroundBrush = orangeSolidBush;
                     warningLabel.Visible = true;
                 }
-                else if (File.Exists(destinationPath + text + ".prg") == true)
+                else if (File.Exists(destinationPath + text + FileManipulation.ProgramExtensionDeprecated) == true)
                 {
                     backgroundBrush = redSolidBrush;
                 }
@@ -120,7 +120,7 @@ namespace TestPlatform.Views.MainForms
                 {
                     backgroundBrush = blueSolidBrush;
                 }
-                else if (File.Exists(destinationPath + text + ".prg") == true)
+                else if (File.Exists(destinationPath + text + FileManipulation.ProgramExtensionDeprecated) == true)
                 {
                     backgroundBrush = redSolidBrush;
                 }
@@ -219,13 +219,13 @@ namespace TestPlatform.Views.MainForms
                 {
                     try
                     {
-                        File.Move(originPath + programs[count] + ".prg", destinationPath + programs[count] + ".prg");
+                        File.Move(originPath + programs[count] + FileManipulation.ProgramExtensionDeprecated, destinationPath + programs[count] + FileManipulation.ProgramExtensionDeprecated);
                         destinationFilesList.Items.Remove(programs[count]);
                     }
                     catch (IOException)
                     {
-                        File.Delete(destinationPath + programs[count] + ".prg");
-                        File.Move(originPath + programs[count] + ".prg", destinationPath + programs[count] + ".prg");
+                        File.Delete(destinationPath + programs[count] + FileManipulation.ProgramExtensionDeprecated);
+                        File.Move(originPath + programs[count] + FileManipulation.ProgramExtensionDeprecated, destinationPath + programs[count] + FileManipulation.ProgramExtensionDeprecated);
                         destinationFilesList.Items.Remove(programs[count]);
                     }
                 }
@@ -303,7 +303,7 @@ namespace TestPlatform.Views.MainForms
                             MatchingProgram program = new MatchingProgram();
                             try
                             {
-                                program.configureReadProgram(FileManipulation._matchingTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
+                                program.configureReadProgram(FileManipulation._matchingTestFilesBackupPath + destinationFilesList.Items[count].ToString() + FileManipulation.ProgramExtensionDeprecated);
                             }
                             catch (FileNotFoundException e)
                             {
@@ -367,12 +367,12 @@ namespace TestPlatform.Views.MainForms
             string[] filePaths;
             string programName;
             originFilesList.Items.Clear();
-            filePaths = Directory.GetFiles(originPath, ("*.prg"), SearchOption.AllDirectories);
+            filePaths = Directory.GetFiles(originPath, ("*" + FileManipulation.ProgramExtensionDeprecated), SearchOption.AllDirectories);
             foreach (string file in filePaths)
             {
                 programName = Path.GetFileNameWithoutExtension(file);
                 originFilesList.Items.Add(programName);
-                if (File.Exists(destinationPath + programName + ".prg"))
+                if (File.Exists(destinationPath + programName + FileManipulation.ProgramExtensionDeprecated))
                 {
                     hasConflict = true;
                 }

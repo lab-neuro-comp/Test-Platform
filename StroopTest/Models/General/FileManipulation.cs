@@ -22,6 +22,8 @@ namespace TestPlatform.Models
         private static FileManipulation instance;
 
         private static string PROGRAM_EXTENSION_DEPRECATED = ".prg";
+        private static string LIST_EXTENSION_DEPRECATED = ".lst";
+        private static string JSON_EXTENSION = ".json";
         private static string _instructionsFilePath = "editableInstructions.txt";
 
         private static FormMain _globalFormMain;
@@ -202,31 +204,31 @@ namespace TestPlatform.Models
 
         public static List<string> ReadStroopProgram(string programName)
         {
-            string filePath = _stroopTestFilesPath + _programFolderName + programName + PROGRAM_EXTENSION;
+            string filePath = _stroopTestFilesPath + _programFolderName + programName + PROGRAM_EXTENSION_DEPRECATED;
             return ReadFileFirstLine(filePath);
         }
 
         public static List<string> ReadStroopProgramFromBackup(string programName)
         {
-            string filePath = _stroopTestFilesBackupPath + programName + PROGRAM_EXTENSION;
+            string filePath = _stroopTestFilesBackupPath + programName + PROGRAM_EXTENSION_DEPRECATED;
             return ReadFileFirstLine(filePath);
         }
 
         public static List<string> ReadStroopProgramInstructionsFromBackup(string programName)
         {
-            string filePath = _stroopTestFilesBackupPath + programName + PROGRAM_EXTENSION;
+            string filePath = _stroopTestFilesBackupPath + programName + PROGRAM_EXTENSION_DEPRECATED;
             return ReadProgramInstructions(filePath);
         }
  
         public static List<string> ReadStroopProgramInstructions(string programName)
         {
-            string filePath = _stroopTestFilesPath + _programFolderName + programName + PROGRAM_EXTENSION;
+            string filePath = _stroopTestFilesPath + _programFolderName + programName + PROGRAM_EXTENSION_DEPRECATED;
             return ReadProgramInstructions(filePath);
         }
 
         public static List<string> ReadStroopProgramInstructionsFromImport(string programName)
         {
-            string filePath = FileManipulation._importPath + "/StroopProgram/" + programName + PROGRAM_EXTENSION;
+            string filePath = FileManipulation._importPath + "/StroopProgram/" + programName + PROGRAM_EXTENSION_DEPRECATED;
             return ReadProgramInstructions(filePath);
         }
  
@@ -262,7 +264,7 @@ namespace TestPlatform.Models
 
         public static bool SaveProgramFile(string path, string data, List<string> instructionText)
         {
-            StreamWriter writer = new StreamWriter(path + PROGRAM_EXTENSION);
+            StreamWriter writer = new StreamWriter(path + PROGRAM_EXTENSION_DEPRECATED);
             writer.WriteLine(data);
             if (instructionText != null)
             {
@@ -299,7 +301,7 @@ namespace TestPlatform.Models
 
         public static bool StroopProgramExists(string programName)
         {
-            return FileExists(_stroopTestFilesPath + _programFolderName + programName + PROGRAM_EXTENSION);
+            return FileExists(_stroopTestFilesPath + _programFolderName + programName + PROGRAM_EXTENSION_DEPRECATED);
         }
 
 
@@ -460,9 +462,11 @@ namespace TestPlatform.Models
         public static string StroopTestFilesPath { get => _stroopTestFilesPath;}
         public static string ReactionTestFilesPath { get => _reactionTestFilesPath; }
         public static string ExperimentTestFilesPath { get => _experimentTestFilesPath;}
-        public static string ProgramExtension { get => PROGRAM_EXTENSION; }
+        public static string ProgramExtensionDeprecated { get => PROGRAM_EXTENSION_DEPRECATED; }
         public static string MatchingTestFilesPath { get => _matchingTestFilesPath; }
         public static string StroopTestFilesBackupPath { get => _stroopTestFilesBackupPath; }
         public static string ReactionTestFilesBackupPath { get => _reactionTestFilesBackupPath; }
+        public static string ListExtensionDeprecated { get => LIST_EXTENSION_DEPRECATED; set => LIST_EXTENSION_DEPRECATED = value; }
+        public static string JsonExtension { get => JSON_EXTENSION; set => JSON_EXTENSION = value; }
     }
 }

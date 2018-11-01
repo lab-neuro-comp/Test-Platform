@@ -75,7 +75,7 @@ namespace TestPlatform.Views.MainForms
                 {
                     if (!isAlreadyThere(program.ProgramName, LocRM.GetString("stroopTest", currentCulture)))
                     {
-                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("stroopTest", currentCulture), stroopPath + program.ProgramName + ".prg");
+                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("stroopTest", currentCulture), stroopPath + program.ProgramName + FileManipulation.ProgramExtensionDeprecated);
                         removeItemOrigin(program.ProgramName, LocRM.GetString("stroopTest", currentCulture));
                         addLists(program);
                     }
@@ -84,7 +84,7 @@ namespace TestPlatform.Views.MainForms
                 {
                     if (!isAlreadyThere(program.ProgramName, LocRM.GetString("reactionTest", currentCulture)))
                     {
-                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("reactionTest", currentCulture), reactionPath + program.ProgramName + ".prg");
+                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("reactionTest", currentCulture), reactionPath + program.ProgramName + FileManipulation.ProgramExtensionDeprecated);
                         removeItemOrigin(program.ProgramName, LocRM.GetString("reactionTest", currentCulture));
                         addLists(program);
                     }
@@ -93,7 +93,7 @@ namespace TestPlatform.Views.MainForms
                 {
                     if (!isAlreadyThere(program.ProgramName, LocRM.GetString("matching", currentCulture)))
                     {
-                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("matchingTest", currentCulture), matchingPath + program.ProgramName + ".prg");
+                        exportDataGridView.Rows.Add(program.ProgramName, LocRM.GetString("matchingTest", currentCulture), matchingPath + program.ProgramName + FileManipulation.ProgramExtensionDeprecated);
                         removeItemOrigin(program.ProgramName, LocRM.GetString("matchingTest", currentCulture));
                         addLists(program);
                     }
@@ -200,19 +200,19 @@ namespace TestPlatform.Views.MainForms
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("reactionTest", currentCulture))
                     {
-                        exportFile(row.Cells[2].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "ReactionProgram/" + row.Cells[0].Value.ToString() + ".prg");
+                        exportFile(row.Cells[2].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "ReactionProgram/" + row.Cells[0].Value.ToString() + FileManipulation.ProgramExtensionDeprecated);
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("stroopTest", currentCulture))
                     {
-                        exportFile(row.Cells[2].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "StroopProgram/" + row.Cells[0].Value.ToString() + ".prg");
+                        exportFile(row.Cells[2].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "StroopProgram/" + row.Cells[0].Value.ToString() + FileManipulation.ProgramExtensionDeprecated);
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("matchingTest", currentCulture))
                     {
-                        exportFile(row.Cells[2].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "MatchingProgram/" + row.Cells[0].Value.ToString() + ".prg");
+                        exportFile(row.Cells[2].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "MatchingProgram/" + row.Cells[0].Value.ToString() + FileManipulation.ProgramExtensionDeprecated);
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("experiment", currentCulture))
                     {
-                        exportFile(row.Cells[2].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "ExperimentProgram/" + row.Cells[0].Value.ToString() + ".prg");
+                        exportFile(row.Cells[2].Value.ToString(), Path.GetDirectoryName(saveFileDialog.FileName) + "/ExportingFiles/" + "ExperimentProgram/" + row.Cells[0].Value.ToString() + FileManipulation.ProgramExtensionDeprecated);
                     }
                     
                 }
@@ -271,7 +271,7 @@ namespace TestPlatform.Views.MainForms
             }
             else if (selectedRowType == LocRM.GetString("reactionTest", currentCulture))
             {
-                ReactionProgram newReaction = new ReactionProgram(reactionPath + selectedRowName + ".prg");
+                ReactionProgram newReaction = new ReactionProgram(reactionPath + selectedRowName + FileManipulation.ProgramExtensionDeprecated);
                 addLists(newReaction);
             }
             else if (selectedRowType == LocRM.GetString("matchingTest", currentCulture))

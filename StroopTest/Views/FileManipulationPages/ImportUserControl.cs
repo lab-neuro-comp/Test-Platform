@@ -275,19 +275,19 @@ namespace TestPlatform.Views.MainForms
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("reactionTest", currentCulture))
                     {
-                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", reactionPath);
+                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + FileManipulation.PROGRAM_EXTENSION_DEPRECATED, reactionPath);
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("matchingTest", currentCulture))
                     {
-                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", matchingPath);
+                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + FileManipulation.PROGRAM_EXTENSION_DEPRECATED, matchingPath);
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("stroopTest", currentCulture))
                     {
-                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", stroopPath);
+                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + FileManipulation.PROGRAM_EXTENSION_DEPRECATED, stroopPath);
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("experiment", currentCulture))
                     {
-                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + ".prg", experimentPath);
+                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + FileManipulation.PROGRAM_EXTENSION_DEPRECATED, experimentPath);
                     }
 
                 }
@@ -326,7 +326,7 @@ namespace TestPlatform.Views.MainForms
                 }
                 else if (selectedRowType == LocRM.GetString("reactionTest", currentCulture))
                 {
-                    ReactionProgram newReaction = new ReactionProgram(FileManipulation._importPath + "/ReactionProgram/" + selectedRowName + ".prg");
+                    ReactionProgram newReaction = new ReactionProgram(FileManipulation._importPath + "/ReactionProgram/" + selectedRowName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
                     addLists(newReaction);
                 }
                 else if(selectedRowType == LocRM.GetString("matchingTest", currentCulture))

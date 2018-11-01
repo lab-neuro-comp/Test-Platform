@@ -540,7 +540,7 @@ namespace TestPlatform.Models
 
         public static string[] GetAllPrograms()
         {
-            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), ".prg");
+            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
         }
 
         public string data()
@@ -668,7 +668,7 @@ namespace TestPlatform.Models
                 else
                 {
                     throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName +
-                       "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + "'.prg");
+                       "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
                 }
             }
             else
@@ -690,7 +690,7 @@ namespace TestPlatform.Models
             {
                 string[] defaultInstructionText = { LocRM.GetString("defaultReactionInstructions1", currentCulture),
                                                     LocRM.GetString("defaultReactionInstructions2", currentCulture)};
-                TextWriter tw = new StreamWriter(GetProgramsPath() + LocRM.GetString("default", currentCulture) + ".prg");
+                TextWriter tw = new StreamWriter(GetProgramsPath() + LocRM.GetString("default", currentCulture) + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
                 tw.WriteLine(LocRM.GetString("defaultReactionProgram", currentCulture));
                 for (int i = 0; i < defaultInstructionText.Length; i++)
                 {
@@ -706,7 +706,7 @@ namespace TestPlatform.Models
 
         public bool saveProgramFile(string path, string instructionBoxText)
         {
-            StreamWriter writer = new StreamWriter(path + ProgramName + ".prg");
+            StreamWriter writer = new StreamWriter(path + ProgramName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
             writer.WriteLine(data());
             if (InstructionText != null)
             {

@@ -34,19 +34,6 @@ namespace TestPlatform.Models
             }
         }
 
-        public static string HeaderOutputFileText
-        {
-            get
-            {
-                return headerOutputFileText;
-            }
-
-            set
-            {
-                headerOutputFileText = value;
-            }
-        }
-
         internal MatchingProgram ProgramInUse
         {
             get
@@ -82,7 +69,7 @@ namespace TestPlatform.Models
             }
             else
             {
-                throw new Exception(LocRM.GetString("file", currentCulture) + ProgramInUse.ProgramName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED +
+                throw new Exception(LocRM.GetString("file", currentCulture) + ProgramInUse.ProgramName + FileManipulation.ProgramExtensionDeprecated +
                                     LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(MatchingProgram.GetProgramsPath()));
             }
         }

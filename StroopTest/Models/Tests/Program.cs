@@ -343,7 +343,7 @@ namespace TestPlatform.Models
 
         public bool Exists(string path)
         {
-            if (File.Exists(path + "/prg/" + ProgramName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED))
+            if (File.Exists(path + "/prg/" + ProgramName + FileManipulation.ProgramExtensionDeprecated))
             {
                 return true;
             }

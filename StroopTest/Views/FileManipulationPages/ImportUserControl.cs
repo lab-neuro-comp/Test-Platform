@@ -275,19 +275,19 @@ namespace TestPlatform.Views.MainForms
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("reactionTest", currentCulture))
                     {
-                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + FileManipulation.PROGRAM_EXTENSION_DEPRECATED, reactionPath);
+                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + FileManipulation.ProgramExtensionDeprecated, reactionPath);
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("matchingTest", currentCulture))
                     {
-                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + FileManipulation.PROGRAM_EXTENSION_DEPRECATED, matchingPath);
+                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + FileManipulation.ProgramExtensionDeprecated, matchingPath);
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("stroopTest", currentCulture))
                     {
-                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + FileManipulation.PROGRAM_EXTENSION_DEPRECATED, stroopPath);
+                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + FileManipulation.ProgramExtensionDeprecated, stroopPath);
                     }
                     else if (row.Cells[1].Value.ToString() == LocRM.GetString("experiment", currentCulture))
                     {
-                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + FileManipulation.PROGRAM_EXTENSION_DEPRECATED, experimentPath);
+                        importFile(row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString() + FileManipulation.ProgramExtensionDeprecated, experimentPath);
                     }
 
                 }
@@ -326,7 +326,7 @@ namespace TestPlatform.Views.MainForms
                 }
                 else if (selectedRowType == LocRM.GetString("reactionTest", currentCulture))
                 {
-                    ReactionProgram newReaction = new ReactionProgram(FileManipulation._importPath + "/ReactionProgram/" + selectedRowName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
+                    ReactionProgram newReaction = new ReactionProgram(FileManipulation._importPath + "/ReactionProgram/" + selectedRowName + FileManipulation.ProgramExtensionDeprecated);
                     addLists(newReaction);
                 }
                 else if(selectedRowType == LocRM.GetString("matchingTest", currentCulture))

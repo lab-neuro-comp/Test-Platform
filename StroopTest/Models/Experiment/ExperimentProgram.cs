@@ -138,7 +138,7 @@
 
         public static string[] GetAllPrograms()
         {
-            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
+            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), FileManipulation.ProgramExtensionDeprecated);
         }
 
         public bool AddStroopProgram(string programName)
@@ -165,9 +165,9 @@
         {
             try
             {
-                if (File.Exists(ReactionProgram.GetProgramsPath() + programName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED))
+                if (File.Exists(ReactionProgram.GetProgramsPath() + programName + FileManipulation.ProgramExtensionDeprecated))
                 {
-                    ReactionProgram newProgram = new ReactionProgram(ReactionProgram.GetProgramsPath() + programName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
+                    ReactionProgram newProgram = new ReactionProgram(ReactionProgram.GetProgramsPath() + programName + FileManipulation.ProgramExtensionDeprecated);
                     ProgramList.Add(newProgram);
                 }
                 else
@@ -240,12 +240,12 @@
             bool isProgramValid = true;
             if (recoverFromBackup)
             {
-                filePath = FileManipulation._experimentTestFilesBackupPath + ExperimentName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED;
+                filePath = FileManipulation._experimentTestFilesBackupPath + ExperimentName + FileManipulation.ProgramExtensionDeprecated;
 
             }
             else
             {
-                filePath = GetProgramsPath() + ExperimentName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED;
+                filePath = GetProgramsPath() + ExperimentName + FileManipulation.ProgramExtensionDeprecated;
             }
             if (File.Exists(filePath))
             {
@@ -258,7 +258,7 @@
                 if (Path.GetFileNameWithoutExtension(filePath) != (this.ExperimentName))
                 {
                     throw new Exception(LocRM.GetString("parameter", currentCulture) + this.ExperimentName +
-                       LocRM.GetString("parameterShould", currentCulture) + Path.GetFileNameWithoutExtension(filePath) + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
+                       LocRM.GetString("parameterShould", currentCulture) + Path.GetFileNameWithoutExtension(filePath) + FileManipulation.ProgramExtensionDeprecated);
                 }
                 IntervalTime = int.Parse(configurationFile[1]);
                 IsOrderRandom = bool.Parse(configurationFile[2]);
@@ -319,7 +319,7 @@
 
         public bool SaveExperimentFile(string path)
         {
-            StreamWriter writer = new StreamWriter(path + ExperimentName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
+            StreamWriter writer = new StreamWriter(path + ExperimentName + FileManipulation.ProgramExtensionDeprecated);
             writer.WriteLine(Data());
             writer.WriteLine(WriteProgramList());
             if (InstructionText != null)

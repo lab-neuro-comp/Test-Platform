@@ -376,9 +376,10 @@ namespace TestPlatform.Views.ParticipantPages
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            FileManipulation.GlobalFormMain.resetParticipants();
             this.Parent.Controls.Remove(this);
         }
-
+        
         private bool validSex(FlowLayoutPanel panel, out string errorMsg)
         {
             bool returnValue = false;

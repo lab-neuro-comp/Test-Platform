@@ -37,19 +37,6 @@ namespace TestPlatform.Models
             }
         }
 
-        public static string HeaderOutputFileText
-        {
-            get
-            {
-                return headerOutputFileText;
-            }
-
-            set
-            {
-                headerOutputFileText = value;
-            }
-        }
-
         internal ReactionProgram ProgramInUse
         {
             get
@@ -91,14 +78,14 @@ namespace TestPlatform.Models
 
         public void setProgramInUse(string path, string prgName)
         {
-            string programFile = path + prgName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED;
+            string programFile = path + prgName + FileManipulation.ProgramExtensionDeprecated;
             if (File.Exists(programFile))
             {
                 ProgramInUse = new ReactionProgram(programFile);
             }
             else
             {
-                throw new Exception(LocRM.GetString("file", currentCulture) + ProgramInUse.ProgramName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED +
+                throw new Exception(LocRM.GetString("file", currentCulture) + ProgramInUse.ProgramName + FileManipulation.ProgramExtensionDeprecated +
                                     LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(path + "/prg/"));
             }
         }

@@ -33,14 +33,14 @@ namespace TestPlatform.Models
 
         public MatchingProgram(string programName)
         {
-            this.configureReadProgram(GetProgramsPath() + programName + FileManipulation.ProgramExtension);
+            this.configureReadProgram(GetProgramsPath() + programName + FileManipulation.ProgramExtensionDeprecated);
         }
 
         public MatchingProgram(string programName, bool import)
         {
             if (import)
             {
-                this.configureReadProgram(GetImportProgramsPath() + programName + FileManipulation.ProgramExtension);
+                this.configureReadProgram(GetImportProgramsPath() + programName + FileManipulation.ProgramExtensionDeprecated);
             }
         }
 
@@ -385,7 +385,7 @@ namespace TestPlatform.Models
 
         public static bool ProgramExists(string programName)
         {
-            return FileManipulation.FileExists(GetProgramsPath() + programName + FileManipulation.ProgramExtension);
+            return FileManipulation.FileExists(GetProgramsPath() + programName + FileManipulation.ProgramExtensionDeprecated);
         }
 
         public static string GetResultsPath()
@@ -405,7 +405,7 @@ namespace TestPlatform.Models
 
         public static string[] GetAllPrograms()
         {
-            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), FileManipulation.ProgramExtension);
+            return FileManipulation.GetAllFilesInFolder(GetProgramsPath(), FileManipulation.ProgramExtensionDeprecated);
         }
 
         public void configureReadProgram(string filepath)
@@ -428,7 +428,7 @@ namespace TestPlatform.Models
             if (Path.GetFileNameWithoutExtension(filepath) != (this.ProgramName))
             {
                 throw new Exception("Parâmetro escrito no arquivo como: '" + this.ProgramName +
-                    "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
+                    "'\ndeveria ser igual ao nome no arquivo: '" + Path.GetFileNameWithoutExtension(filepath) + FileManipulation.ProgramExtensionDeprecated);
             }
             stimuluNumber = int.Parse(config[1]);
             ExpositionTime = int.Parse(config[2]);
@@ -475,7 +475,7 @@ namespace TestPlatform.Models
 
         public bool saveProgramFile(string instructionBoxText)
         {
-            StreamWriter writer = new StreamWriter(GetProgramsPath() + ProgramName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
+            StreamWriter writer = new StreamWriter(GetProgramsPath() + ProgramName + FileManipulation.ProgramExtensionDeprecated);
             writer.WriteLine(data());
             if (instructionBoxText.Length > 0)
             {

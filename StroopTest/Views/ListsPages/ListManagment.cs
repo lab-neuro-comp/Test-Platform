@@ -345,12 +345,12 @@ namespace TestPlatform.Views.ListsPages
                     {
                         try
                         {
-                            File.Move(originPath + programName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED, destinationPath + programName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
+                            File.Move(originPath + programName + FileManipulation.ProgramExtensionDeprecated, destinationPath + programName + FileManipulation.ProgramExtensionDeprecated);
                         }
                         catch (IOException)
                         {
-                            File.Delete(destinationPath + programName  + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
-                            File.Move(originPath + programName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED, destinationPath + programName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED);
+                            File.Delete(destinationPath + programName  + FileManipulation.ProgramExtensionDeprecated);
+                            File.Move(originPath + programName + FileManipulation.ProgramExtensionDeprecated, destinationPath + programName + FileManipulation.ProgramExtensionDeprecated);
                         }
                         MessageBox.Show(LocRM.GetString("deletedSucessful", currentCulture));
                         this.Parent.Controls.Remove(this);

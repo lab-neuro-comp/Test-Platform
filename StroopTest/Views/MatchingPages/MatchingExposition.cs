@@ -180,7 +180,7 @@ namespace TestPlatform.Views.MatchingPages
             }
             else
             {
-                throw new Exception(LocRM.GetString("file", currentCulture) + executingTest.ProgramInUse.ProgramName + FileManipulation.PROGRAM_EXTENSION_DEPRECATED +
+                throw new Exception(LocRM.GetString("file", currentCulture) + executingTest.ProgramInUse.ProgramName + FileManipulation.ProgramExtensionDeprecated +
                                 LocRM.GetString("notFoundIn", currentCulture) + Path.GetDirectoryName(MatchingProgram.GetProgramsPath() + "/prg/"));
             }
         }

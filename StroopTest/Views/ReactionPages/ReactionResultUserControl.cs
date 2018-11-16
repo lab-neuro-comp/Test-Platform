@@ -65,7 +65,7 @@ namespace TestPlatform.Views.ReactionPages
                 dgv_MouseOverCell = dgv_sender.Rows[e.RowIndex].Cells[e.ColumnIndex];
             }
             if (dgv_MouseOverCell != null)
-                if (e.ColumnIndex == 11)
+                if (e.ColumnIndex == 13)
                 {
                     if (dgv_MouseOverCell.Value != null)
                     {

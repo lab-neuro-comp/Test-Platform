@@ -65,7 +65,7 @@ namespace TestPlatform.Views.MatchingPages
                 dgv_MouseOverCell = dgv_sender.Rows[e.RowIndex].Cells[e.ColumnIndex];
             }
             if (dgv_MouseOverCell != null)
-                if (e.ColumnIndex == 15 || e.ColumnIndex == 25 || e.ColumnIndex == 28)
+                if (e.ColumnIndex == 16 || e.ColumnIndex == 26 || e.ColumnIndex == 29)
                 {
                     if (dgv_MouseOverCell.Value != null)
                     {

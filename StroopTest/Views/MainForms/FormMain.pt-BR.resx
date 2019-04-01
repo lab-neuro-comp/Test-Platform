@@ -291,4 +291,7 @@
   <data name="participantButton.Text" xml:space="preserve">
     <value>Participante</value>
   </data>
+  <data name="buttonSpacialRegonition.Text" xml:space="preserve">
+    <value>Reconhecimento Espacial</value>
+  </data>
 </root>

@@ -33,6 +33,7 @@
             this.reactionButton = new System.Windows.Forms.RadioButton();
             this.experimentButton = new System.Windows.Forms.RadioButton();
             this.matchingButton = new System.Windows.Forms.RadioButton();
+            this.SRResultButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // StroopButton
@@ -68,10 +69,19 @@
             this.matchingButton.UseVisualStyleBackColor = true;
             this.matchingButton.Click += new System.EventHandler(this.matchingButton_Click);
             // 
+            // SRResultButton
+            // 
+            resources.ApplyResources(this.SRResultButton, "SRResultButton");
+            this.SRResultButton.FlatAppearance.BorderSize = 0;
+            this.SRResultButton.Name = "SRResultButton";
+            this.SRResultButton.UseVisualStyleBackColor = true;
+            this.SRResultButton.Click += new System.EventHandler(this.SRResultButton_Click);
+            // 
             // ResultsUserControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.SRResultButton);
             this.Controls.Add(this.matchingButton);
             this.Controls.Add(this.experimentButton);
             this.Controls.Add(this.reactionButton);
@@ -87,5 +97,6 @@
         private System.Windows.Forms.RadioButton reactionButton;
         private System.Windows.Forms.RadioButton experimentButton;
         private System.Windows.Forms.RadioButton matchingButton;
+        private System.Windows.Forms.RadioButton SRResultButton;
     }
 }

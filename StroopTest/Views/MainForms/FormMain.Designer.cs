@@ -80,6 +80,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.buttonSpacialRegonition = new System.Windows.Forms.RadioButton();
             this.participantButton = new System.Windows.Forms.RadioButton();
             this.helpButton = new System.Windows.Forms.RadioButton();
             this.buttonMatching = new System.Windows.Forms.RadioButton();
@@ -460,6 +461,7 @@
             // 
             // menuPanel
             // 
+            this.menuPanel.Controls.Add(this.buttonSpacialRegonition);
             this.menuPanel.Controls.Add(this.participantButton);
             this.menuPanel.Controls.Add(this.helpButton);
             this.menuPanel.Controls.Add(this.buttonMatching);
@@ -473,6 +475,15 @@
             resources.ApplyResources(this.menuPanel, "menuPanel");
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Click += new System.EventHandler(this.menuPanel_Click);
+            // 
+            // buttonSpacialRegonition
+            // 
+            resources.ApplyResources(this.buttonSpacialRegonition, "buttonSpacialRegonition");
+            this.buttonSpacialRegonition.FlatAppearance.BorderSize = 0;
+            this.buttonSpacialRegonition.Image = global::TestPlatform.Properties.Resources.icon_SpacialRecognition;
+            this.buttonSpacialRegonition.Name = "buttonSpacialRegonition";
+            this.buttonSpacialRegonition.UseVisualStyleBackColor = true;
+            this.buttonSpacialRegonition.Click += new System.EventHandler(this.buttonSpacialRegonition_Click);
             // 
             // participantButton
             // 
@@ -637,6 +648,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.menuPanel.ResumeLayout(false);
+            this.menuPanel.PerformLayout();
             this.programPanel.ResumeLayout(false);
             this.programPanel.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -715,5 +727,6 @@
         private System.Windows.Forms.RadioButton helpButton;
         private System.Windows.Forms.RadioButton participantButton;
         private System.Windows.Forms.ComboBox participantComboBox;
+        private System.Windows.Forms.RadioButton buttonSpacialRegonition;
     }
 }

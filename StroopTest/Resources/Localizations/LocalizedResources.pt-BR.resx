@@ -2846,4 +2846,10 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="selectAudioFile" xml:space="preserve">
     <value>Selecione um arquivo de áudio.</value>
   </data>
+  <data name="spacialRecognitionTest" xml:space="preserve">
+    <value>Teste de Reconhecimento Espacial</value>
+  </data>
+  <data name="spacialRecognitionTestHeader" xml:space="preserve">
+    <value>nome do programa\t#\tParticipante\tdata\thorario\ttempo\ttempo de reação(ms)\tIntervalo das tentativas\tIntervalo\tSequencia\tSequencia na tentativa\tTipo de estimulo\tLista\tModelo\tCor do modelo\tPosição do ultimo estimulo\tPosição do estimulo clicado\tAcerto</value>
+  </data>
 </root>

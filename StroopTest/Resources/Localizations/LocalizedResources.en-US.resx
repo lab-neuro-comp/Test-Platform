@@ -2863,4 +2863,7 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   <data name="selectAudioFile" xml:space="preserve">
     <value>Select an audio file.</value>
   </data>
+  <data name="spacialRecognitionTest" xml:space="preserve">
+    <value>Spacial Recognition Test</value>
+  </data>
 </root>

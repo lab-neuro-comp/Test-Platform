@@ -70,7 +70,7 @@ namespace TestPlatform
             }
             if (e.Control && e.KeyCode == Keys.D) // Ctrl+D - define programa
             {
-                defineTest();
+                defineTest(executingTypeLabel.Text);
             }
             if (e.Control && e.KeyCode == Keys.N) // Ctrl+N - novo programa
             {
@@ -111,7 +111,7 @@ namespace TestPlatform
 
         private void defineProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            defineTest();
+            defineTest(executingTypeLabel.Text);
         }
         private void newImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -145,9 +145,9 @@ namespace TestPlatform
         }
 
 
-        private void defineTest()
+        private void defineTest(string testName)
         {
-            FormDefineTest defineTest = new FormDefineTest(CultureInfo.CurrentUICulture);
+            FormDefineTest defineTest = new FormDefineTest(CultureInfo.CurrentUICulture, testName);
             try
             {
                 var result = defineTest.ShowDialog();
@@ -422,6 +422,10 @@ namespace TestPlatform
                 {
                     ExpositionController.BeginMatchingTest(executingNameLabel.Text, participantComboBox.Text, markTextBox.Text[0], this);
                 }
+                else if (executingTypeLabel.Text.Equals(LocRM.GetString("spacialRecognitionTest", currentCulture)))
+                {
+                    ExpositionController.BeginSpacialRecognitionTest(executingNameLabel.Text, participantComboBox.Text, markTextBox.Text[0], this);
+                }
                 else
                 {
                     /* do nothing*/
@@ -474,7 +478,7 @@ namespace TestPlatform
 
         private void selectButton_Click(object sender, EventArgs e)
         {
-            defineTest();
+            defineTest(executingTypeLabel.Text);
         }
 
         private void participantTextBox_Validated(object sender, EventArgs e)
@@ -755,5 +759,18 @@ namespace TestPlatform
             }
         }
 
+        private void buttonSpacialRegonition_Click(object sender, EventArgs e)
+        {
+            if (buttonSpacialRegonition.Checked)
+            {
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
+
+                SpacialRecognitionControl SpecialRecognitionControl = new SpacialRecognitionControl();
+                this.sideBarPanel.Controls.Add(SpecialRecognitionControl);
+                currentPanelContent = SpecialRecognitionControl;
+            }
+
+        }
     }
 }

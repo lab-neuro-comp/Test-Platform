@@ -132,7 +132,7 @@
     <value>0, 3</value>
   </data>
   <data name="StroopButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 33</value>
+    <value>228, 33</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="StroopButton.TabIndex" type="System.Int32, mscorlib">
@@ -154,7 +154,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;StroopButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="reactionButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -169,7 +169,7 @@
     <value>2, 42</value>
   </data>
   <data name="reactionButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 33</value>
+    <value>228, 33</value>
   </data>
   <data name="reactionButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -190,7 +190,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;reactionButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="experimentButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -202,10 +202,10 @@
     <value>Flat</value>
   </data>
   <data name="experimentButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 120</value>
+    <value>0, 159</value>
   </data>
   <data name="experimentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 33</value>
+    <value>228, 33</value>
   </data>
   <data name="experimentButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -226,7 +226,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;experimentButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="matchingButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
@@ -238,7 +238,7 @@
     <value>2, 81</value>
   </data>
   <data name="matchingButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 33</value>
+    <value>220, 33</value>
   </data>
   <data name="matchingButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -259,6 +259,39 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;matchingButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SRResultButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="SRResultButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="SRResultButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 120</value>
+  </data>
+  <data name="SRResultButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 33</value>
+  </data>
+  <data name="SRResultButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="SRResultButton.Text" xml:space="preserve">
+    <value>Spacial Recognition Test</value>
+  </data>
+  <data name="SRResultButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;SRResultButton.Name" xml:space="preserve">
+    <value>SRResultButton</value>
+  </data>
+  <data name="&gt;&gt;SRResultButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SRResultButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SRResultButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -268,12 +301,12 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 1021</value>
+    <value>228, 1021</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ResultsUserControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TestPlatform.Views.DefaultUserControl, TestPlatform, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

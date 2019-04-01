@@ -421,7 +421,7 @@ namespace TestPlatform.Views.MatchingPages
             }
             else
             {
-                errorMessage = LocRM.GetString("wordListError", currentCulture);
+                errorMessage = LocRM.GetString("listError", currentCulture);
                 return false;
             }
         }

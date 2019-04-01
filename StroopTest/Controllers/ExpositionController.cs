@@ -7,6 +7,7 @@
     using System.Windows.Forms;
     using TestPlatform.Views;
     using TestPlatform.Views.ExperimentPages;
+    using TestPlatform.Views.SpacialRecognitionPages;
     using Views.MatchingPages;
 
     public class ExpositionController
@@ -141,6 +142,12 @@
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public static void BeginSpacialRecognitionTest(string programName, string participantName, char mark, Form form)
+        {
+            SendKeys.SendWait("i");
+            SpacialRecognitionExposition spacialRecognitionExposition = new SpacialRecognitionExposition(programName, participantName, mark);
         }
 
         public static PictureBox InitializeImageBox(double stimuliSize, Image image, bool expandImage, Form form)

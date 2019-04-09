@@ -11,6 +11,7 @@ using System.IO;
 using System.Resources;
 using System.Globalization;
 using TestPlatform.Models;
+using TestPlatform.Models.Tests.SpacialRecognition;
 
 namespace TestPlatform.Views.MainForms
 {
@@ -304,6 +305,19 @@ namespace TestPlatform.Views.MainForms
                             try
                             {
                                 program.configureReadProgram(FileManipulation._matchingTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
+                            }
+                            catch (FileNotFoundException e)
+                            {
+                                MessageBox.Show(LocRM.GetString("cannotRecoverFilesByMotive", currentCulture) + destinationFilesList.Items[count].ToString() + "\":\n" + e.Message);
+                                return false;
+                            }
+                        }
+                        else if(type == LocRM.GetString("spacialRecognition", currentCulture))
+                        {
+                            SpacialRecognitionProgram program = new SpacialRecognitionProgram();
+                            try
+                            {
+                                program.configureReadProgram(FileManipulation._spacialRecognitionTestFilesBackupPath + destinationFilesList.Items[count].ToString() + ".prg");
                             }
                             catch (FileNotFoundException e)
                             {

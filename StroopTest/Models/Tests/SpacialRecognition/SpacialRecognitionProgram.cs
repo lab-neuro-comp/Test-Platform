@@ -168,6 +168,10 @@ namespace TestPlatform.Models.Tests.SpacialRecognition
             this.setExpositionLists(imagesListFile, wordsListFile, colorsListFile, stimuluSingleColor);
         }
 
+        public SpacialRecognitionProgram()
+        {
+        }
+
         private void setExpositionLists(string imageList, string wordList, string colorList, string wordColor)
         {
             if (imageList != LocRM.GetString("open", currentCulture))

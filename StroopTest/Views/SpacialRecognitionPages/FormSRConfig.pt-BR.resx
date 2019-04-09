@@ -130,10 +130,10 @@
     <value>Imagem</value>
   </data>
   <data name="chooseExpoType.Items2" xml:space="preserve">
-    <value>Imagem</value>
+    <value>Palavra e Cor</value>
   </data>
   <data name="stimulusSizeLabel.Text" xml:space="preserve">
-    <value>Imagem</value>
+    <value>Tamanho do Estimulo</value>
   </data>
   <data name="openImgListButton.Text" xml:space="preserve">
     <value>abrir</value>
@@ -166,7 +166,7 @@
     <value>Instruções</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
-    <value>Instruções</value>
+    <value>Cancelar</value>
   </data>
   <data name="saveButton.Text" xml:space="preserve">
     <value>salvar</value>

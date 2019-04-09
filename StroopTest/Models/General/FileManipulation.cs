@@ -35,6 +35,7 @@ namespace TestPlatform.Models
         private static string _spacialRecoginitionTestFilesPath = "/SpacialRecognitionTestFiles/";
         private static string _stroopTestFilesBackupPath = "/StroopTestFiles/";
         private static string _reactionTestFilesBackupPath = "/ReactionTestFiles/";
+        public static string _spacialRecognitionTestFilesBackupPath = "/SpacialRecognitionTestFiles/";
 
         public static string _experimentTestFilesBackupPath = "/ExperimentTestFiles/";
         public static string _matchingTestFilesBackupPath = "/MatchingTestFiles/";
@@ -343,6 +344,7 @@ namespace TestPlatform.Models
             _reactionTestFilesBackupPath = _defaultPath + _backupFolderName + ReactionTestFilesBackupPath;
             _experimentTestFilesBackupPath = _defaultPath + _backupFolderName + _experimentTestFilesBackupPath;
             _matchingTestFilesBackupPath = _defaultPath + _backupFolderName + _matchingTestFilesBackupPath;
+            _spacialRecognitionTestFilesBackupPath = _defaultPath + _backupFolderName + _spacialRecognitionTestFilesBackupPath;
             _listFilesBackup = _defaultPath + _backupFolderName + _listFilesBackup;
             _spacialRecoginitionFilesBackup = _defaultPath + _backupFolderName + _spacialRecoginitionFilesBackup;
 
@@ -354,6 +356,8 @@ namespace TestPlatform.Models
                 Directory.CreateDirectory(ReactionTestFilesBackupPath);
             if (!Directory.Exists(_matchingTestFilesBackupPath))
                 Directory.CreateDirectory(_matchingTestFilesBackupPath);
+            if (!Directory.Exists(_spacialRecognitionTestFilesBackupPath))
+                Directory.CreateDirectory(_spacialRecognitionTestFilesBackupPath);
             if (!Directory.Exists(_listFilesBackup))
                 Directory.CreateDirectory(_listFilesBackup);
             if (!Directory.Exists(_spacialRecoginitionFilesBackup))
@@ -474,5 +478,6 @@ namespace TestPlatform.Models
         public static string SpacialRecognitionTestFilesPath { get => _spacialRecoginitionTestFilesPath; }
         public static string StroopTestFilesBackupPath { get => _stroopTestFilesBackupPath; }
         public static string ReactionTestFilesBackupPath { get => _reactionTestFilesBackupPath; }
+        public static string SpacialReconitionTestFilesBackupPath { get => _spacialRecognitionTestFilesBackupPath; }
     }
 }

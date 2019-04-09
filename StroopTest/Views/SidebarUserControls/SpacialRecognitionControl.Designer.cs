@@ -57,6 +57,7 @@
             this.deleteSpacialRecognitionButton.FlatAppearance.BorderSize = 0;
             this.deleteSpacialRecognitionButton.Name = "deleteSpacialRecognitionButton";
             this.deleteSpacialRecognitionButton.UseVisualStyleBackColor = true;
+            this.deleteSpacialRecognitionButton.Click += new System.EventHandler(this.DeleteSpacialRecognitionButton_Click);
             // 
             // recoverSpacialRecognitionButton
             // 
@@ -64,6 +65,7 @@
             this.recoverSpacialRecognitionButton.FlatAppearance.BorderSize = 0;
             this.recoverSpacialRecognitionButton.Name = "recoverSpacialRecognitionButton";
             this.recoverSpacialRecognitionButton.UseVisualStyleBackColor = true;
+            this.recoverSpacialRecognitionButton.Click += new System.EventHandler(this.RecoverSpacialRecognitionButton_Click);
             // 
             // SpacialRecognitionControl
             // 

@@ -264,9 +264,6 @@
   <data name="stimulusInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
   </data>
-  <data name="wordSingleColorButton.Error" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;instructionsLabel.Name" xml:space="preserve">
     <value>instructionsLabel</value>
   </data>
@@ -275,9 +272,6 @@
   </data>
   <data name="auditorySignalingGroupBox.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="omissionAudioResponse.Error" xml:space="preserve">
-    <value />
   </data>
   <data name="omissionAudioResponse.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -309,9 +303,6 @@
   <data name="wordSingleColorButton.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="groupBox1.Error" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;stimulusInterval.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -329,9 +320,6 @@
   </data>
   <data name="imageLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="timeGroupBox.Error1" xml:space="preserve">
-    <value />
   </data>
   <data name="attemptIntervalLabel.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -402,9 +390,6 @@
   <data name="timeGroupBox.Text" xml:space="preserve">
     <value>Tempo</value>
   </data>
-  <data name="auditorySignalingGroupBox.Error1" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;instructionsBox.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
@@ -413,9 +398,6 @@
   </data>
   <data name="&gt;&gt;wordLabel.Parent" xml:space="preserve">
     <value>listGroupBox</value>
-  </data>
-  <data name="instructionsLabel.Error1" xml:space="preserve">
-    <value />
   </data>
   <data name="attemptIntervalLabel.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -492,29 +474,14 @@
   <data name="prgNameTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="attemptInterval.Error1" xml:space="preserve">
-    <value />
-  </data>
   <data name="instructionsLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>-135, -10</value>
-  </data>
-  <data name="randomOrderLabel.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="prgNameLabel.Error" xml:space="preserve">
-    <value />
   </data>
   <data name="wordSingleColorButton.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="randomOrderLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
-  </data>
-  <data name="colorLabel.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblNroEstimulos.Error" xml:space="preserve">
-    <value />
   </data>
   <data name="expoTypeLabel.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -527,9 +494,6 @@
   </data>
   <data name="chooseExpoType.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="expoTypeLabel.Error" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;numExpoLabel.ZOrder" xml:space="preserve">
     <value>12</value>
@@ -546,9 +510,6 @@
   <data name="cancelButton.Text" xml:space="preserve">
     <value>cancelar</value>
   </data>
-  <data name="clickAudioResponse.Error1" xml:space="preserve">
-    <value />
-  </data>
   <data name="numExpo.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -560,9 +521,6 @@
   </data>
   <data name="&gt;&gt;openImgListButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="fontSizeLabel.Error1" xml:space="preserve">
-    <value />
   </data>
   <data name="colorLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>29, 53</value>
@@ -602,9 +560,6 @@
   </data>
   <data name="&gt;&gt;stimulusSizeLabel.Parent" xml:space="preserve">
     <value>expositionGroupBox</value>
-  </data>
-  <data name="stimuluExpositionLabel.Error" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;isRandomExposition.ZOrder" xml:space="preserve">
     <value>9</value>

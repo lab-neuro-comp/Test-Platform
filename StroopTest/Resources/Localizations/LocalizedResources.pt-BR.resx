@@ -2316,9 +2316,6 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="deleteFiles" xml:space="preserve">
     <value>Você tem certeza que deseja mover todos os arquivos selecionados?</value>
   </data>
-  <data name="FilesNotDeleted" xml:space="preserve">
-    <value>Nenhuma arquivo foi movido.</value>
-  </data>
   <data name="listsNotDeleted" xml:space="preserve">
     <value>Nenhuma lista foi excluída.</value>
   </data>
@@ -2857,5 +2854,8 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="String1inFormListWarning" xml:space="preserve">
     <value>Você será redirecionado de volta para a edição do programa após a criação da lista.</value>
+  </data>
+  <data name="spacialRecognition" xml:space="preserve">
+    <value>Reconhecimento Espacial</value>
   </data>
 </root>

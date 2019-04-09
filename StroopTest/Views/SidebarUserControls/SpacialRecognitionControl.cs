@@ -12,6 +12,7 @@ using System.Resources;
 using System.Globalization;
 using TestPlatform.Views.SpecialRecognitionPages;
 using TestPlatform.Models.Tests.SpacialRecognition;
+using TestPlatform.Views.MainForms;
 
 namespace TestPlatform.Views.SidebarUserControls
 {
@@ -114,6 +115,50 @@ namespace TestPlatform.Views.SidebarUserControls
             {
                 /*do nothing*/
             }
+        }
+
+        private void DeleteSpacialRecognitionButton_Click(object sender, EventArgs e)
+        {
+            bool screenTranslationAllowed = true;
+            try
+            {
+                if (deleteSpacialRecognitionButton.Checked)
+                {
+                    if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
+                    {
+                        screenTranslationAllowed = checkSave();
+                    }
+                    if (screenTranslationAllowed)
+                    {
+                        FileManagment deleteProgram = new FileManagment(SpacialRecognitionProgram.GetProgramsPath(), FileManipulation.SpacialReconitionTestFilesBackupPath, 'd', LocRM.GetString("spacialRecognition", currentCulture));
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(deleteProgram);
+                        deleteSpacialRecognitionButton.Checked = false;
+                    }
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void RecoverSpacialRecognitionButton_Click(object sender, EventArgs e)
+        {
+            bool screenTranslationAllowed = true;
+            try
+            {
+                if (recoverSpacialRecognitionButton.Checked)
+                {
+                    if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0)
+                    {
+                        screenTranslationAllowed = checkSave();
+                    }
+                    if (screenTranslationAllowed)
+                    {
+                        FileManagment recoverProgram = new FileManagment(FileManipulation.SpacialReconitionTestFilesBackupPath, SpacialRecognitionProgram.GetProgramsPath(), 'r', LocRM.GetString("spacialRecognition", currentCulture));
+                        FileManipulation.GlobalFormMain._contentPanel.Controls.Add(recoverProgram);
+                        recoverSpacialRecognitionButton.Checked = false;
+                    }
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }

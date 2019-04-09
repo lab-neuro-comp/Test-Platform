@@ -2869,10 +2869,10 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   <data name="defaulStroopProgram" xml:space="preserve">
     <value>padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false</value>
   </data>
-  <data name="FilesNotDeleted" xml:space="preserve">
-    <value>No files were moved</value>
-  </data>
   <data name="inFormListWarning" xml:space="preserve">
     <value>You will be redirected back to program editing after create the list.</value>
+  </data>
+  <data name="spacialRecognition" xml:space="preserve">
+    <value>Spacial Recognition</value>
   </data>
 </root>

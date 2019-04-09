@@ -98,6 +98,7 @@
             this.selectButton = new System.Windows.Forms.Button();
             this.executingTypeLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.mainMenuStrip.SuspendLayout();
             this.markPanel.SuspendLayout();
             this.participantPanel.SuspendLayout();
@@ -482,6 +483,7 @@
             this.buttonSpacialRegonition.FlatAppearance.BorderSize = 0;
             this.buttonSpacialRegonition.Image = global::TestPlatform.Properties.Resources.icon_SpacialRecognition;
             this.buttonSpacialRegonition.Name = "buttonSpacialRegonition";
+            this.toolTip.SetToolTip(this.buttonSpacialRegonition, resources.GetString("buttonSpacialRegonition.ToolTip"));
             this.buttonSpacialRegonition.UseVisualStyleBackColor = true;
             this.buttonSpacialRegonition.Click += new System.EventHandler(this.buttonSpacialRegonition_Click);
             // 
@@ -510,6 +512,7 @@
             this.buttonMatching.FlatAppearance.BorderSize = 0;
             this.buttonMatching.Image = global::TestPlatform.Properties.Resources.icon3_MatchingTest;
             this.buttonMatching.Name = "buttonMatching";
+            this.toolTip.SetToolTip(this.buttonMatching, resources.GetString("buttonMatching.ToolTip"));
             this.buttonMatching.UseVisualStyleBackColor = true;
             this.buttonMatching.Click += new System.EventHandler(this.buttonMatching_Click);
             // 
@@ -565,6 +568,7 @@
             this.buttonReaction.FlatAppearance.BorderSize = 0;
             this.buttonReaction.Image = global::TestPlatform.Properties.Resources.icon2_ReactionTest;
             this.buttonReaction.Name = "buttonReaction";
+            this.toolTip.SetToolTip(this.buttonReaction, resources.GetString("buttonReaction.ToolTip"));
             this.buttonReaction.UseVisualStyleBackColor = true;
             this.buttonReaction.Click += new System.EventHandler(this.buttonReaction_Click);
             // 
@@ -648,7 +652,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.menuPanel.ResumeLayout(false);
-            this.menuPanel.PerformLayout();
             this.programPanel.ResumeLayout(false);
             this.programPanel.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -728,5 +731,6 @@
         private System.Windows.Forms.RadioButton participantButton;
         private System.Windows.Forms.ComboBox participantComboBox;
         private System.Windows.Forms.RadioButton buttonSpacialRegonition;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

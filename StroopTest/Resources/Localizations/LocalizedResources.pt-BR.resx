@@ -2852,4 +2852,10 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="spacialRecognitionTestHeader" xml:space="preserve">
     <value>nome do programa\t#\tParticipante\tdata\thorario\ttempo\ttempo de reação(ms)\tIntervalo das tentativas\tIntervalo\tSequencia\tSequencia na tentativa\tTipo de estimulo\tLista\tModelo\tCor do modelo\tPosição do ultimo estimulo\tPosição do estimulo clicado\tAcerto</value>
   </data>
+  <data name="filesNotDeleted" xml:space="preserve">
+    <value>Nenhum arquivo foi movido.</value>
+  </data>
+  <data name="String1inFormListWarning" xml:space="preserve">
+    <value>Você será redirecionado de volta para a edição do programa após a criação da lista.</value>
+  </data>
 </root>

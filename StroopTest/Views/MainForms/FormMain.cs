@@ -7,6 +7,7 @@ namespace TestPlatform
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.Drawing;
     using System.Globalization;
     using System.IO;
     using System.Resources;
@@ -43,6 +44,7 @@ namespace TestPlatform
             initializeParticipants();
  
             _contentPanel = contentPanel;
+            buttonSpacialRegonition.Size = new Size(157, 26);
         }
 
         public void resetParticipants()

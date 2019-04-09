@@ -539,12 +539,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormMain.en-US.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormMain.es-ES.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormMain.pt-BR.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\HelpPagesUserControl.resx">
       <DependentUpon>HelpPagesUserControl.cs</DependentUpon>
@@ -703,6 +705,12 @@
     <EmbeddedResource Include="Views\SidebarUserControls\ResultsUserControl.resx">
       <DependentUpon>ResultsUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\SpacialRecognitionControl.en-US.resx">
+      <DependentUpon>SpacialRecognitionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\SpacialRecognitionControl.pt-BR.resx">
+      <DependentUpon>SpacialRecognitionControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\SpacialRecognitionControl.resx">
       <DependentUpon>SpacialRecognitionControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -735,6 +743,18 @@
     <EmbeddedResource Include="Views\MainForms\FormDefine.resx">
       <DependentUpon>FormDefine.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\FormSRConfig.aa.resx">
+      <DependentUpon>FormSRConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\FormSRConfig.en-US.resx">
+      <DependentUpon>FormSRConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\FormSRConfig.es-ES.resx">
+      <DependentUpon>FormSRConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\FormSRConfig.pt-BR.resx">
+      <DependentUpon>FormSRConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SpacialRecognitionPages\FormSRConfig.resx">
       <DependentUpon>FormSRConfig.cs</DependentUpon>

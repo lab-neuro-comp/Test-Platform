@@ -117,4 +117,178 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="recoverSpacialRecognitionButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="newSpacialRecognitionButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="deleteSpacialRecognitionButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;recoverSpacialRecognitionButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="recoverSpacialRecognitionButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="deleteSpacialRecognitionButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;recoverSpacialRecognitionButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="editSpacialRecognitionButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;editSpacialRecognitionButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="newSpacialRecognitionButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 3</value>
+  </data>
+  <data name="editSpacialRecognitionButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="&gt;&gt;recoverSpacialRecognitionButton.Name" xml:space="preserve">
+    <value>recoverSpacialRecognitionButton</value>
+  </data>
+  <data name="deleteSpacialRecognitionButton.Text" xml:space="preserve">
+    <value>Excluir Programa</value>
+  </data>
+  <data name="editSpacialRecognitionButton.Text" xml:space="preserve">
+    <value>Editar Programa</value>
+  </data>
+  <data name="newSpacialRecognitionButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="recoverSpacialRecognitionButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="recoverSpacialRecognitionButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;newSpacialRecognitionButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="deleteSpacialRecognitionButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;editSpacialRecognitionButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="recoverSpacialRecognitionButton.Text" xml:space="preserve">
+    <value>Recuperar Programa</value>
+  </data>
+  <data name="&gt;&gt;newSpacialRecognitionButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;deleteSpacialRecognitionButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteSpacialRecognitionButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;newSpacialRecognitionButton.Name" xml:space="preserve">
+    <value>newSpacialRecognitionButton</value>
+  </data>
+  <data name="&gt;&gt;editSpacialRecognitionButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="editSpacialRecognitionButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;newSpacialRecognitionButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="editSpacialRecognitionButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="newSpacialRecognitionButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="deleteSpacialRecognitionButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 81</value>
+  </data>
+  <data name="editSpacialRecognitionButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 42</value>
+  </data>
+  <data name="deleteSpacialRecognitionButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 33</value>
+  </data>
+  <data name="editSpacialRecognitionButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 33</value>
+  </data>
+  <data name="&gt;&gt;deleteSpacialRecognitionButton.Name" xml:space="preserve">
+    <value>deleteSpacialRecognitionButton</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;recoverSpacialRecognitionButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="deleteSpacialRecognitionButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="&gt;&gt;deleteSpacialRecognitionButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="recoverSpacialRecognitionButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="recoverSpacialRecognitionButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 120</value>
+  </data>
+  <data name="newSpacialRecognitionButton.Text" xml:space="preserve">
+    <value>Novo Programa</value>
+  </data>
+  <data name="deleteSpacialRecognitionButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="newSpacialRecognitionButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="newSpacialRecognitionButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 33</value>
+  </data>
+  <data name="recoverSpacialRecognitionButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 33</value>
+  </data>
+  <data name="editSpacialRecognitionButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="deleteSpacialRecognitionButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="newSpacialRecognitionButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="&gt;&gt;editSpacialRecognitionButton.Name" xml:space="preserve">
+    <value>editSpacialRecognitionButton</value>
+  </data>
+  <data name="recoverSpacialRecognitionButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="newSpacialRecognitionButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 1017</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SpacialRecognitionControl</value>
+  </data>
+  <data name="editSpacialRecognitionButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

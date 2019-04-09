@@ -168,4 +168,7 @@
   <data name="directoryLabel.Text" xml:space="preserve">
     <value>Directorio Seleccionado</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Nuevo Audio</value>
+  </data>
 </root>

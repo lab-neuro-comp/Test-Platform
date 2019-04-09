@@ -117,52 +117,109 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="intervalTimeLabel.Text" xml:space="preserve">
-    <value>Interval (ms):</value>
+  <data name="wordSingleColorButton.Text" xml:space="preserve">
+    <value>escolher</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Time</value>
+  <data name="lblNroEstimulos.Text" xml:space="preserve">
+    <value>Número de Estimulos</value>
   </data>
-  <data name="deleteButton.Text" xml:space="preserve">
-    <value>Delete</value>
+  <data name="randomOrderLabel.Text" xml:space="preserve">
+    <value>Ordem aleatória:</value>
   </data>
-  <data name="deleteItemLabel.Text" xml:space="preserve">
-    <value>Delete Item:</value>
+  <data name="chooseExpoType.Items" xml:space="preserve">
+    <value>Imagem</value>
   </data>
-  <data name="programName.HeaderText" xml:space="preserve">
-    <value>Program Name</value>
+  <data name="chooseExpoType.Items2" xml:space="preserve">
+    <value>Imagem</value>
   </data>
-  <data name="typePrograma.HeaderText" xml:space="preserve">
-    <value>Program Type</value>
+  <data name="stimulusSizeLabel.Text" xml:space="preserve">
+    <value>Imagem</value>
   </data>
-  <data name="programSelectButton.Text" xml:space="preserve">
-    <value>Add</value>
+  <data name="openImgListButton.Text" xml:space="preserve">
+    <value>abrir</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Programs</value>
+  <data name="openWordListButton.Text" xml:space="preserve">
+    <value>abrir</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Random Order:</value>
+  <data name="colorLabel.Text" xml:space="preserve">
+    <value>Cores:</value>
+  </data>
+  <data name="listGroupBox.Text" xml:space="preserve">
+    <value>Listas</value>
+  </data>
+  <data name="randomAttemptTime.Text" xml:space="preserve">
+    <value>Atraso entre tentativas variável</value>
+  </data>
+  <data name="stimuluExpositionLabel.Text" xml:space="preserve">
+    <value>Exposição dos estimulos (ms):</value>
+  </data>
+  <data name="timeGroupBox.Text" xml:space="preserve">
+    <value>Tempo</value>
+  </data>
+  <data name="omissionAudioResponse.Text" xml:space="preserve">
+    <value>Omissão</value>
+  </data>
+  <data name="auditorySignalingGroupBox.Text" xml:space="preserve">
+    <value>Sinalização auditiva</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Exposition</value>
-  </data>
-  <data name="instructionsLabel.Text" xml:space="preserve">
-    <value>Instructions:</value>
-  </data>
-  <data name="experimentNameLabel.Text" xml:space="preserve">
-    <value>Experiment Name:</value>
+    <value>Instruções</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
-    <value>cancel</value>
+    <value>Instruções</value>
   </data>
   <data name="saveButton.Text" xml:space="preserve">
-    <value>save</value>
+    <value>salvar</value>
   </data>
-  <data name="trainingButton.Text" xml:space="preserve">
-    <value>Training</value>
+  <data name="instructionsLabel.Text" xml:space="preserve">
+    <value>Instruções:</value>
   </data>
-  <data name="Order.HeaderText" xml:space="preserve">
-    <value>Order</value>
+  <data name="expositonAudioResponse.Text" xml:space="preserve">
+    <value>Exposição</value>
+  </data>
+  <data name="clickAudioResponse.Text" xml:space="preserve">
+    <value>Acerto/Erro</value>
+  </data>
+  <data name="attemptIntervalLabel.Text" xml:space="preserve">
+    <value>Atraso entre tentativas (ms):</value>
+  </data>
+  <data name="modelStimuluIntervalLabel.Text" xml:space="preserve">
+    <value>Atraso entre estimulos (ms):</value>
+  </data>
+  <data name="randomStimulusTime.Text" xml:space="preserve">
+    <value>Atraso entre estímulos variável</value>
+  </data>
+  <data name="wordLabel.Text" xml:space="preserve">
+    <value>Palavras:</value>
+  </data>
+  <data name="imageLabel.Text" xml:space="preserve">
+    <value>Imagens:</value>
+  </data>
+  <data name="openColorListButton.Text" xml:space="preserve">
+    <value>abrir</value>
+  </data>
+  <data name="expositionGroupBox.Text" xml:space="preserve">
+    <value>Exposição</value>
+  </data>
+  <data name="numExpoLabel.Text" xml:space="preserve">
+    <value>Número de Tentativas:</value>
+  </data>
+  <data name="chooseExpoType.Items1" xml:space="preserve">
+    <value>Palavra</value>
+  </data>
+  <data name="expoTypeLabel.Text" xml:space="preserve">
+    <value>Tipo de Estímulo:</value>
+  </data>
+  <data name="fontSizeLabel.Text" xml:space="preserve">
+    <value>Tamanho da Fonte:</value>
+  </data>
+  <data name="wordSingleColorLabel.Text" xml:space="preserve">
+    <value>Cor das palavras:</value>
+  </data>
+  <data name="wordSingleColor.Text" xml:space="preserve">
+    <value>#000000</value>
+  </data>
+  <data name="prgNameLabel.Text" xml:space="preserve">
+    <value>Nome do Programa:</value>
   </data>
 </root>

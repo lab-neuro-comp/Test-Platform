@@ -148,7 +148,7 @@
     <value>List</value>
   </data>
   <data name="buttonReaction.Text" xml:space="preserve">
-    <value>ReactionTest</value>
+    <value>Reaction Test</value>
   </data>
   <data name="buttonStroop.Text" xml:space="preserve">
     <value>StroopTest</value>
@@ -283,12 +283,18 @@
     <value>Import</value>
   </data>
   <data name="buttonMatching.Text" xml:space="preserve">
-    <value>MatchingTest</value>
+    <value>Matching Test</value>
   </data>
   <data name="helpButton.Text" xml:space="preserve">
     <value>Help</value>
   </data>
   <data name="participantButton.Text" xml:space="preserve">
     <value>Participant</value>
+  </data>
+  <data name="buttonSpacialRegonition.Text" xml:space="preserve">
+    <value>Spacial Recognition</value>
+  </data>
+  <data name="buttonSpacialRegonition.ToolTip" xml:space="preserve">
+    <value>Delayed Spacial Recognition test</value>
   </data>
 </root>

@@ -723,11 +723,11 @@
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>629, 17</value>
+  </metadata>
   <data name="buttonSpacialRegonition.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
-  </data>
-  <data name="buttonSpacialRegonition.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="buttonSpacialRegonition.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -748,16 +748,19 @@
     <value>0, 26</value>
   </data>
   <data name="buttonSpacialRegonition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 26</value>
+    <value>157, 26</value>
   </data>
   <data name="buttonSpacialRegonition.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
   <data name="buttonSpacialRegonition.Text" xml:space="preserve">
-    <value>Spacial Recognition</value>
+    <value>TREA</value>
   </data>
   <data name="buttonSpacialRegonition.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
+  </data>
+  <data name="buttonSpacialRegonition.ToolTip" xml:space="preserve">
+    <value>Teste de reconhecimento espacial com atraso</value>
   </data>
   <data name="&gt;&gt;buttonSpacialRegonition.Name" xml:space="preserve">
     <value>buttonSpacialRegonition</value>
@@ -890,6 +893,9 @@
   </data>
   <data name="buttonMatching.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
+  </data>
+  <data name="buttonMatching.ToolTip" xml:space="preserve">
+    <value>Teste de Escolha</value>
   </data>
   <data name="&gt;&gt;buttonMatching.Name" xml:space="preserve">
     <value>buttonMatching</value>
@@ -1142,6 +1148,9 @@
   </data>
   <data name="buttonReaction.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
+  </data>
+  <data name="buttonReaction.ToolTip" xml:space="preserve">
+    <value>Teste de tempo de reação</value>
   </data>
   <data name="&gt;&gt;buttonReaction.Name" xml:space="preserve">
     <value>buttonReaction</value>
@@ -1402,7 +1411,7 @@
     <value>5</value>
   </data>
   <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="testToolStrip" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="participantPanel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="executeButton" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="markPanel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,24.48347,Percent,15.70248,Percent,11.15702,Percent,48.86364" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="testToolStrip" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="participantPanel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="executeButton" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="markPanel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,24,48347,Percent,15,70248,Percent,11,15702,Percent,48,86364" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -6053,6 +6062,12 @@
   <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
+    <value>toolTip</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormMain</value>
   </data>
@@ -6140,4 +6155,7 @@
   <data name="&gt;&gt;selectButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>629, 17</value>
+  </metadata>
 </root>

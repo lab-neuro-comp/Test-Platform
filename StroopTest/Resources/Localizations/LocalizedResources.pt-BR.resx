@@ -2601,8 +2601,8 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="stimulu" xml:space="preserve">
     <value>Estimulo</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
+  <data name="notAvaliable" xml:space="preserve">
+    <value>Não está disponível ainda.</value>
   </data>
   <data name="image" xml:space="preserve">
     <value>Imagem</value>
@@ -2857,5 +2857,24 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="spacialRecognition" xml:space="preserve">
     <value>Reconhecimento Espacial</value>
+  </data>
+  <data name="defaultSRInstruction1" xml:space="preserve">
+    <value>Diversos estímulos irão aparecer na sua tela sequencialmente</value>
+  </data>
+  <data name="defaultSRInstruction2" xml:space="preserve">
+    <value>Escolha apenas o ultimo que apareceu.</value>
+  </data>
+  <data name="defaultSRProgram" xml:space="preserve">
+    <value>padrao 3 True padrao false false 2000 1500 False 1 1 12 4 #000000 1000 False True True True 0
+</value>
+  </data>
+  <data name="defaultMatchingInstruction1" xml:space="preserve">
+    <value>Irá aparecer um único modelo seguido por dois estímulos.</value>
+  </data>
+  <data name="defaultMatchingInstruction2" xml:space="preserve">
+    <value>Selecione o estímulo correspondente ao modelo</value>
+  </data>
+  <data name="defaultMatchingProgram" xml:space="preserve">
+    <value>padrao 2 1500 True 1000 False padrao false #FFFFFF DMTS false false false false 1000 18 False True 1500 1500 #404040 4 0 False False #000000 True True False True</value>
   </data>
 </root>

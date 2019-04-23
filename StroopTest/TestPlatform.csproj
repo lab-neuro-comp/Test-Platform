@@ -762,6 +762,12 @@
     <EmbeddedResource Include="Views\SpacialRecognitionPages\SpacialRecognitionExposition.resx">
       <DependentUpon>SpacialRecognitionExposition.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\SRResultUserControl.en-US.resx">
+      <DependentUpon>SRResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\SRResultUserControl.pt-BR.resx">
+      <DependentUpon>SRResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SpacialRecognitionPages\SRResultUserControl.resx">
       <DependentUpon>SRResultUserControl.cs</DependentUpon>
     </EmbeddedResource>

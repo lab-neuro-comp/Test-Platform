@@ -68,6 +68,7 @@ namespace TestPlatform.Views.SpecialRecognitionPages
             expositonAudioResponse.Checked = editProgram.PlayExpositionSound;
             omissionAudioResponse.Checked = editProgram.PlayOmissionSound;
             clickAudioResponse.Checked = editProgram.PlayClickSound;
+            testTypeComboBox.SelectedIndex = editProgram.ProgramType;
             if (editProgram.InstructionText != null)
             {
                 instructionsBox.ForeColor = Color.Black;
@@ -184,7 +185,7 @@ namespace TestPlatform.Views.SpecialRecognitionPages
                     this.chooseExpoType.SelectedIndex, (float)this.stimuluSize.Value, (int)this.fontSizeUpDown.Value,
                     (int)this.stimuluQuantity.Value, this.wordSingleColor.Text, (int)this.stimulusInterval.Value,
                     this.randomStimulusTime.Checked, this.expositonAudioResponse.Checked,
-                    this.omissionAudioResponse.Checked, this.clickAudioResponse.Checked);
+                    this.omissionAudioResponse.Checked, this.clickAudioResponse.Checked, testTypeComboBox.SelectedIndex);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -353,6 +354,36 @@ namespace TestPlatform.Views.SpecialRecognitionPages
         {
             showWarningMessage(openWordListButton);
             showWarningMessage(openImgListButton);
+        }
+
+        private void TestTypeComboBox_Validated(object sender, EventArgs e)
+        {
+            this.errorProvider1.SetError(testTypeComboBox, "");
+
+        }
+
+        private bool ValidProgramType(int selectedIndex, out string errorMessage)
+        {
+            if (selectedIndex >= 0 && selectedIndex <= 1)
+            {
+                errorMessage = "";
+                return true;
+            }
+            else
+            {
+                errorMessage = LocRM.GetString("notAvaliable", currentCulture);
+                return false;
+            }
+        }
+        private void TestTypeComboBox_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!ValidProgramType(testTypeComboBox.SelectedIndex, out errorMsg))
+            {
+                e.Cancel = true;
+                this.errorProvider1.SetError(prgNameTextBox, errorMsg);
+            }
+
         }
     }
 }

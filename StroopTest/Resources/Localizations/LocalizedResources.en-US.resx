@@ -2875,4 +2875,26 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   <data name="spacialRecognition" xml:space="preserve">
     <value>Spacial Recognition</value>
   </data>
+  <data name="notAvaliable" xml:space="preserve">
+    <value>Not avaliable yet.</value>
+  </data>
+  <data name="defaultSRInstruction1" xml:space="preserve">
+    <value>Many stimulus will show up in your screen sequentially</value>
+  </data>
+  <data name="defaultSRInstruction2" xml:space="preserve">
+    <value>Choose only the last one that has appeared</value>
+  </data>
+  <data name="defaultSRProgram" xml:space="preserve">
+    <value>default 3 True default false false 2000 1500 False 1 1 12 4 #000000 1000 False True True True 0
+</value>
+  </data>
+  <data name="defaultMatchingInstruction1" xml:space="preserve">
+    <value>A model will appear followed by two stimuli.</value>
+  </data>
+  <data name="defaultMatchingInstruction2" xml:space="preserve">
+    <value>Select the stimulus corresponding to the model</value>
+  </data>
+  <data name="defaultMatchingProgram" xml:space="preserve">
+    <value>default 2 1500 True 1000 False padrao false #FFFFFF DMTS false false false false 1000 18 False True 1500 1500 #404040 4 0 False False #000000 True True False True</value>
+  </data>
 </root>

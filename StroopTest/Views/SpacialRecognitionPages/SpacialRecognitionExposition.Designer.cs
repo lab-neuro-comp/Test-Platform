@@ -52,13 +52,14 @@
             // 
             this.instructionLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.instructionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.instructionLabel.Location = new System.Drawing.Point(337, 228);
             this.instructionLabel.Name = "instructionLabel";
             this.instructionLabel.Size = new System.Drawing.Size(695, 524);
             this.instructionLabel.TabIndex = 12;
             this.instructionLabel.Text = "instruction";
             this.instructionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.instructionLabel.Visible = false;
+            this.instructionLabel.Left = (1194 - 695) / 2;
+            this.instructionLabel.Top = (741 - 524) / 2;
             // 
             // SpacialRecognitionExposition
             // 

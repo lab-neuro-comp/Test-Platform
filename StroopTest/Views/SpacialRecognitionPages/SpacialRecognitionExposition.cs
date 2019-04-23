@@ -54,7 +54,7 @@ namespace TestPlatform.Views.SpacialRecognitionPages
 
         private bool intervalCancelled;
         private bool waitingExpositionEnd;
-
+        private bool isRetry = false;
         StimulusPosition stimuluPosition;
         
 
@@ -213,14 +213,21 @@ namespace TestPlatform.Views.SpacialRecognitionPages
             {
                 SendKeys.SendWait(executingTest.Mark.ToString());
             }
-            while (!cancelAttempt && attempt < executingTest.ProgramInUse.StimuluCount)
+            while (!cancelAttempt && !cancelExposition && attempt < executingTest.ProgramInUse.StimuluCount)
             {
                 waitingExpositionEnd = true;
                 attempt++;
                 stimulusToShow = attempt;
                 expositionBW.ReportProgress(attempt / (executingTest.ProgramInUse.StimuluCount) * 100, stimuluControls);
-                hitStopWatch = new Stopwatch();
-                hitStopWatch.Start();
+                if (!isRetry)
+                {
+                    hitStopWatch = new Stopwatch();
+                    hitStopWatch.Start();
+                }
+                else
+                {
+                    isRetry = false;
+                }
 
                 if (intervalCancelled)
                 {
@@ -265,13 +272,24 @@ namespace TestPlatform.Views.SpacialRecognitionPages
                 }
                 else
                 {
-                    System.Media.SystemSounds.Exclamation.Play();
                     stimuluIntervalTime = waitIntervalTime(executingTest.ProgramInUse.IntervalTimeRandom,
                     executingTest.ProgramInUse.IntervalTime/2);
-                    attempt--;
-                    stimulusToShow = attempt;
-                    writeMissResults(LastControlRendered);
-                    continue;
+                    if (!userClicked)
+                    {
+                        if(executingTest.ProgramInUse.PlayOmissionSound)
+                            System.Media.SystemSounds.Exclamation.Play();
+                        attempt--;
+                        stimulusToShow = attempt;
+                        isRetry = true;
+                        continue;
+                    }
+                    else
+                    {
+                        if(executingTest.ProgramInUse.PlayClickSound)
+                            (new System.Media.SoundPlayer(TestPlatform.Properties.Resources.error)).Play();
+                        writeErrorResult(LastControlRendered);
+                        break;
+                    }
                 }
             }
         }
@@ -416,7 +434,6 @@ namespace TestPlatform.Views.SpacialRecognitionPages
 
         private void generateStimulus()
         {
-            Console.WriteLine("GenerateStimulus");
             stimuluPosition = new StimulusPosition(ClientSize, 1);
             Size size;
             stimuluControls.Clear();
@@ -439,18 +456,36 @@ namespace TestPlatform.Views.SpacialRecognitionPages
                 newStimulu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SpacialRecognitionExposition_MouseClick);
                 newStimulu.Location = stimuluPosition.getRandomPosition(size);
                 stimuluControls.Add(newStimulu);
+                if(executingTest.ProgramInUse.ProgramType == 1)
+                {
+                    if (colorsList != null && ++colorListPosition >= colorsList.Length)
+                    {
+                        colorListPosition = 0;
+                    }
+                    if (imagesList != null && ++imageListPosition >= imagesList.Length)
+                    {
+                        imageListPosition = 0;
+                    }
+                    if (wordsList != null && ++wordListPosition >= wordsList.Length)
+                    {
+                        wordListPosition = 0;
+                    }
+                }
             }
-            if (colorsList != null && ++colorListPosition >= colorsList.Length)
+            if(executingTest.ProgramInUse.ProgramType == 0)
             {
-                colorListPosition = 0;
-            }
-            if (imagesList != null && ++imageListPosition >= imagesList.Length)
-            {
-                imageListPosition = 0;
-            }
-            if (wordsList != null && ++wordListPosition >= wordsList.Length)
-            {
-                wordListPosition = 0;
+                if (colorsList != null && ++colorListPosition >= colorsList.Length)
+                {
+                    colorListPosition = 0;
+                }
+                if (imagesList != null && ++imageListPosition >= imagesList.Length)
+                {
+                    imageListPosition = 0;
+                }
+                if (wordsList != null && ++wordListPosition >= wordsList.Length)
+                {
+                    wordListPosition = 0;
+                }
             }
         }
 

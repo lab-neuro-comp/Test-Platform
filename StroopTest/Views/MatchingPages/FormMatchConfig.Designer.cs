@@ -117,7 +117,9 @@ namespace TestPlatform.Views.MatchingPages
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.saveButton);
             this.panel1.Controls.Add(this.auditorySignalingGroupBox);
+            this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.colorGroupBox);
             this.panel1.Controls.Add(this.timeGroupBox);
             this.panel1.Controls.Add(this.listGroupBox);
@@ -712,8 +714,6 @@ namespace TestPlatform.Views.MatchingPages
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.panel1);
             this.Name = "FormMatchConfig";
             this.panel1.ResumeLayout(false);

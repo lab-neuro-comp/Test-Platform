@@ -5,6 +5,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TestPlatform.Models.Tests.SpacialRecognition;
 
 namespace TestPlatform.Models
 {
@@ -404,11 +405,17 @@ namespace TestPlatform.Models
         /// </summary>
         private void InitializeDefaultPrograms()
         {
-            StroopProgram programDefault = new StroopProgram();
-            programDefault.writeDefaultProgramFile(_stroopTestFilesPath + _programFolderName);
+            StroopProgram defaultStroop = new StroopProgram();
+            defaultStroop.writeDefaultProgramFile(_stroopTestFilesPath + _programFolderName);
 
-            ReactionProgram defaultProgram = new ReactionProgram();
-            defaultProgram.writeDefaultProgramFile();
+            ReactionProgram defaultReaction = new ReactionProgram();
+            defaultReaction.writeDefaultProgramFile();
+
+            SpacialRecognitionProgram defaultSR = new SpacialRecognitionProgram();
+            defaultSR.writeDefaultProgramFile(_spacialRecoginitionTestFilesPath + _programFolderName);
+
+            MatchingProgram defaultMatching = new MatchingProgram();
+            defaultMatching.writeDefaultProgramFile(_matchingTestFilesPath + _programFolderName);
 
             StrList.writeDefaultWordsList(_listFolderName);
             StrList.writeDefaultColorsList(_listFolderName);

@@ -19,6 +19,7 @@ namespace TestPlatform.Models.Tests.SpacialRecognition
         private bool playExpositionSound;
         private bool playOmissionSound;
         private bool playClickSound;
+        private int programType;
         public const int IMAGE_TEST = 0;
         public const int WORD_TEST = 1;
         public const int WORD_COLOR_TEST = 2;
@@ -32,6 +33,18 @@ namespace TestPlatform.Models.Tests.SpacialRecognition
             set
             {
                 playOmissionSound = value;
+            }
+        }
+
+        public int ProgramType
+        {
+            get
+            {
+                return programType;
+            }
+            set
+            {
+                programType = value;
             }
         }
 
@@ -125,7 +138,7 @@ namespace TestPlatform.Models.Tests.SpacialRecognition
             this.playExpositionSound = Boolean.Parse(config[16]);
             this.playOmissionSound = Boolean.Parse(config[17]);
             this.playClickSound = Boolean.Parse(config[18]);
-
+            this.programType = Int32.Parse(config[19]);
             linesInstruction = File.ReadAllLines(filepath);
             if (linesInstruction.Length > 1) // read instructions if any
             {
@@ -141,12 +154,13 @@ namespace TestPlatform.Models.Tests.SpacialRecognition
         }
 
         public SpacialRecognitionProgram(
-            String programName, int numExpositions, bool expositionRandom, 
+            String programName, int numExpositions, bool expositionRandom,
             String wordsListFile, String colorsListFile, String imagesListFile,
             int expositionTime, int intervalTime, bool intervalTimeRandom,
             int stimuluType, float stimuluSize, int fontSize,
             int stimuluCount, String stimuluSingleColor, int stimuluDelay,
-            bool stimuluDelayRandom, bool playExpositionSound, bool playOmissionSound, bool playClickSound
+            bool stimuluDelayRandom, bool playExpositionSound, bool playOmissionSound, bool playClickSound,
+            int programType
         )
         {
             this.programName = programName;
@@ -164,7 +178,7 @@ namespace TestPlatform.Models.Tests.SpacialRecognition
             this.playExpositionSound = playExpositionSound;
             this.playOmissionSound = playOmissionSound;
             this.playClickSound = playClickSound;
-
+            this.programType = programType;
             this.setExpositionLists(imagesListFile, wordsListFile, colorsListFile, stimuluSingleColor);
         }
 
@@ -225,6 +239,29 @@ namespace TestPlatform.Models.Tests.SpacialRecognition
             return true;
         }
 
+        // writes default file
+        public void writeDefaultProgramFile(string filepath) // escreve 
+        {
+            string[] defaultInstructionText = { LocRM.GetString("defaultSRInstruction1", currentCulture),
+                                                LocRM.GetString("defaultSRInstruction2", currentCulture)};
+            this.ProgramName = LocRM.GetString("default", currentCulture);
+            try
+            {
+                TextWriter tw = new StreamWriter(filepath + ProgramName + ".prg");
+                tw.WriteLine(LocRM.GetString("defaultSRProgram", currentCulture));
+                for (int i = 0; i < defaultInstructionText.Length; i++)
+                {
+                    tw.WriteLine(defaultInstructionText[i]);
+                }
+                tw.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be written:");
+                Console.WriteLine(e.Message);
+            }
+        }
+
         public string data()
         {
             string wordList = "false";
@@ -267,7 +304,8 @@ namespace TestPlatform.Models.Tests.SpacialRecognition
             this.stimuluDelayRandom.ToString() + " " +
             this.playExpositionSound.ToString() + " " +
             this.playOmissionSound.ToString() + " " +
-            this.playClickSound.ToString();
+            this.playClickSound.ToString() + " " +
+            this.programType.ToString();
 
             return data;
         }

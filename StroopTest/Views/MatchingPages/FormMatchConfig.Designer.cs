@@ -33,11 +33,13 @@ namespace TestPlatform.Views.MatchingPages
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMatchConfig));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.saveButton = new System.Windows.Forms.Button();
             this.auditorySignalingGroupBox = new System.Windows.Forms.GroupBox();
             this.omissionAudioResponse = new System.Windows.Forms.CheckBox();
             this.commissionAudioFeedback = new System.Windows.Forms.CheckBox();
             this.feedbackAudioResponse = new System.Windows.Forms.CheckBox();
             this.expositonAudioResponse = new System.Windows.Forms.CheckBox();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.colorGroupBox = new System.Windows.Forms.GroupBox();
             this.wordSingleColor = new System.Windows.Forms.Label();
             this.WordColorPanel = new System.Windows.Forms.Panel();
@@ -92,8 +94,6 @@ namespace TestPlatform.Views.MatchingPages
             this.helpButton = new System.Windows.Forms.Button();
             this.instructionsBox = new System.Windows.Forms.TextBox();
             this.instructionsLabel = new System.Windows.Forms.Label();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
@@ -132,6 +132,13 @@ namespace TestPlatform.Views.MatchingPages
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
+            // saveButton
+            // 
+            resources.ApplyResources(this.saveButton, "saveButton");
+            this.saveButton.Name = "saveButton";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
             // auditorySignalingGroupBox
             // 
             this.auditorySignalingGroupBox.Controls.Add(this.omissionAudioResponse);
@@ -165,6 +172,13 @@ namespace TestPlatform.Views.MatchingPages
             resources.ApplyResources(this.expositonAudioResponse, "expositonAudioResponse");
             this.expositonAudioResponse.Name = "expositonAudioResponse";
             this.expositonAudioResponse.UseVisualStyleBackColor = true;
+            // 
+            // cancelButton
+            // 
+            resources.ApplyResources(this.cancelButton, "cancelButton");
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // colorGroupBox
             // 
@@ -547,7 +561,9 @@ namespace TestPlatform.Views.MatchingPages
             resources.GetString("expositionType.Items"),
             resources.GetString("expositionType.Items1"),
             resources.GetString("expositionType.Items2"),
-            resources.GetString("expositionType.Items3")});
+            resources.GetString("expositionType.Items3"),
+            resources.GetString("expositionType.Items4"),
+            resources.GetString("expositionType.Items5")});
             resources.ApplyResources(this.expositionType, "expositionType");
             this.expositionType.Name = "expositionType";
             this.expositionType.SelectedIndexChanged += new System.EventHandler(this.expositionType_SelectedIndexChanged);
@@ -683,20 +699,6 @@ namespace TestPlatform.Views.MatchingPages
             resources.ApplyResources(this.instructionsLabel, "instructionsLabel");
             this.instructionsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.instructionsLabel.Name = "instructionsLabel";
-            // 
-            // cancelButton
-            // 
-            resources.ApplyResources(this.cancelButton, "cancelButton");
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
-            // saveButton
-            // 
-            resources.ApplyResources(this.saveButton, "saveButton");
-            this.saveButton.Name = "saveButton";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // errorProvider1
             // 

@@ -273,4 +273,13 @@
   <data name="expositionType.Items3" xml:space="preserve">
     <value>DMTS/DNMTS(Random)</value>
   </data>
+  <data name="omissionAudioResponse.Text" xml:space="preserve">
+    <value>Omission</value>
+  </data>
+  <data name="expositionType.Items4" xml:space="preserve">
+    <value>Preference(Horizontal)</value>
+  </data>
+  <data name="expositionType.Items5" xml:space="preserve">
+    <value>Preference(Vertical)</value>
+  </data>
 </root>

@@ -133,10 +133,10 @@
     <value>Lista de Estímulos</value>
   </data>
   <data name="stroopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Stroop</value>
+    <value>Stroop                                    Ctrl + S</value>
   </data>
   <data name="reactionToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tempo de Reação</value>
+    <value>Tempo de Reação                 Ctrl + T</value>
   </data>
   <data name="newProgramToolStripMenuItem.Text" xml:space="preserve">
     <value>Programa    Ctrl+N</value>
@@ -296,5 +296,29 @@
   </data>
   <data name="buttonSpacialRegonition.ToolTip" xml:space="preserve">
     <value>Teste de reconhecimento espacial com atraso</value>
+  </data>
+  <data name="matchingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Teste de Escolha                    Ctrl + M</value>
+  </data>
+  <data name="spacialRecognitionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reconhecimento Espacial    Ctrl + E</value>
+  </data>
+  <data name="matchingToolStripMenuItem2.Text" xml:space="preserve">
+    <value>Teste de Escolha</value>
+  </data>
+  <data name="spacialRecognitionToolStripMenuItem2.Text" xml:space="preserve">
+    <value>Reconhecimento Espacial</value>
+  </data>
+  <data name="matchingToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Teste de Escolha</value>
+  </data>
+  <data name="spacialRecognitionToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Reconhecimento Espacial</value>
+  </data>
+  <data name="buttonMatching.ToolTip" xml:space="preserve">
+    <value>Teste de Escolha</value>
+  </data>
+  <data name="buttonReaction.ToolTip" xml:space="preserve">
+    <value>Teste de tempo de reação</value>
   </data>
 </root>

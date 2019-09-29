@@ -117,7 +117,8 @@ namespace TestPlatform
                     colorListLabel.Enabled = true; openColorListButton.Enabled = true;
                     imgListLabel.Enabled = false; openImgListButton.Enabled = false;
                     audioListLabel.Enabled = false; openAudioListButton.Enabled = false;
-                    
+                    rotateImgComboBox.Enabled = false; delayTime.Enabled = false;
+
                     break;
                 case 1: // img
                     errorProvider1.Clear();
@@ -131,7 +132,8 @@ namespace TestPlatform
                     colorListLabel.Enabled = false; openColorListButton.Enabled = false;
                     imgListLabel.Enabled = true; openImgListButton.Enabled = true;
                     audioListLabel.Enabled = false; openAudioListButton.Enabled = false;
-                    
+                    rotateImgComboBox.Enabled = true; delayTime.Enabled = false;
+
                     break;
                 case 2: // imgtxt
                     errorProvider1.Clear();
@@ -145,42 +147,10 @@ namespace TestPlatform
                     colorListLabel.Enabled = false; openColorListButton.Enabled = false;
                     imgListLabel.Enabled = true; openImgListButton.Enabled = true;
                     audioListLabel.Enabled = false; openAudioListButton.Enabled = false;
-                    
-                    break;
-                case 3: // txtaud
-                    errorProvider1.Clear();
-                    //box1
-                    wordSizeLabel.Enabled = true; wordSizeNumeric.Enabled = true;
-                    wordColorLabel.Enabled = false; wordColorPanel.Enabled = false; wordColorButton.Enabled = false;
-                    wordSizeLabel.Enabled = true; wordSizeNumeric.Enabled = true;
-                    expandImgLabel.Enabled = false; expandImgCheck.Enabled = false;
-                    //box2
-                    wordListLabel.Enabled = true; openWordListButton.Enabled = true;
-                    colorListLabel.Enabled = true; openColorListButton.Enabled = true;
-                    imgListLabel.Enabled = false; openImgListButton.Enabled = false;
-                    audioListLabel.Enabled = true; openAudioListButton.Enabled = true;
-                    //box6
-                    bgColorLabel.Enabled = true; bgColorPanel.Enabled = true; bgColorButton.Enabled = true;
-                    audioCaptureLabel.Enabled = audioCaptureBool; audioCaptureCheck.Enabled = audioCaptureBool; audioCaptureCheck.Checked = audioCaptureBool;
-                    break;
-                case 4: // imgaud
-                    errorProvider1.Clear();
-                    //box1
-                    wordSizeLabel.Enabled = false; wordSizeNumeric.Enabled = false;
-                    wordColorLabel.Enabled = false; wordColorPanel.Enabled = false; wordColorButton.Enabled = false;
-                    wordSizeLabel.Enabled = false; wordSizeNumeric.Enabled = false;
-                    expandImgLabel.Enabled = true; expandImgCheck.Enabled = true;
-                    //box2
-                    wordListLabel.Enabled = false; openWordListButton.Enabled = false; 
-                    colorListLabel.Enabled = false; openColorListButton.Enabled = false;
-                    imgListLabel.Enabled = true; openImgListButton.Enabled = true;
-                    audioListLabel.Enabled = true; openAudioListButton.Enabled = true;
-                    //box6
-                    bgColorLabel.Enabled = true; bgColorPanel.Enabled = true; bgColorButton.Enabled = true;
-                    audioCaptureLabel.Enabled = audioCaptureBool; audioCaptureCheck.Enabled = audioCaptureBool; audioCaptureCheck.Checked = audioCaptureBool;
-                    break;
+                    rotateImgComboBox.Enabled = true; delayTime.Enabled = true;
 
-                case 5: // txtimg
+                    break;
+                case 3: // txtimg
                     errorProvider1.Clear();
                     //box1
                     wordSizeLabel.Enabled = true; wordSizeNumeric.Enabled = true;
@@ -192,8 +162,44 @@ namespace TestPlatform
                     colorListLabel.Enabled = false; openColorListButton.Enabled = false;
                     imgListLabel.Enabled = true; openImgListButton.Enabled = true;
                     audioListLabel.Enabled = false; openAudioListButton.Enabled = false;
+                    rotateImgComboBox.Enabled = true; delayTime.Enabled = true;
 
                     break;
+                case 4: // txtaud
+                    errorProvider1.Clear();
+                    //box1
+                    wordSizeLabel.Enabled = true; wordSizeNumeric.Enabled = true;
+                    wordColorLabel.Enabled = false; wordColorPanel.Enabled = false; wordColorButton.Enabled = false;
+                    wordSizeLabel.Enabled = true; wordSizeNumeric.Enabled = true;
+                    expandImgLabel.Enabled = false; expandImgCheck.Enabled = false;
+                    //box2
+                    wordListLabel.Enabled = true; openWordListButton.Enabled = true;
+                    colorListLabel.Enabled = true; openColorListButton.Enabled = true;
+                    imgListLabel.Enabled = false; openImgListButton.Enabled = false;
+                    audioListLabel.Enabled = true; openAudioListButton.Enabled = true;
+                    rotateImgComboBox.Enabled = false; delayTime.Enabled = true;
+                    //box6
+                    bgColorLabel.Enabled = true; bgColorPanel.Enabled = true; bgColorButton.Enabled = true;
+                    audioCaptureLabel.Enabled = audioCaptureBool; audioCaptureCheck.Enabled = audioCaptureBool; audioCaptureCheck.Checked = audioCaptureBool;
+                    break;
+                case 5: // imgaud
+                    errorProvider1.Clear();
+                    //box1
+                    wordSizeLabel.Enabled = false; wordSizeNumeric.Enabled = false;
+                    wordColorLabel.Enabled = false; wordColorPanel.Enabled = false; wordColorButton.Enabled = false;
+                    wordSizeLabel.Enabled = false; wordSizeNumeric.Enabled = false;
+                    expandImgLabel.Enabled = true; expandImgCheck.Enabled = true;
+                    //box2
+                    wordListLabel.Enabled = false; openWordListButton.Enabled = false; 
+                    colorListLabel.Enabled = false; openColorListButton.Enabled = false;
+                    imgListLabel.Enabled = true; openImgListButton.Enabled = true;
+                    audioListLabel.Enabled = true; openAudioListButton.Enabled = true;
+                    rotateImgComboBox.Enabled = true; delayTime.Enabled = true;
+                    //box6
+                    bgColorLabel.Enabled = true; bgColorPanel.Enabled = true; bgColorButton.Enabled = true;
+                    audioCaptureLabel.Enabled = audioCaptureBool; audioCaptureCheck.Enabled = audioCaptureBool; audioCaptureCheck.Checked = audioCaptureBool;
+                    break;
+
             }
 
             //box3
@@ -1172,6 +1178,11 @@ namespace TestPlatform
         }
 
         private void fixPointTypeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RndIntervalLabel_Click(object sender, EventArgs e)
         {
 
         }

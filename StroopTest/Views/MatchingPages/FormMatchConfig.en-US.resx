@@ -214,7 +214,7 @@
     <value>Stimulus exposition (ms):</value>
   </data>
   <data name="attemptIntervalLabel.Text" xml:space="preserve">
-    <value>Delay between attempts (ms):</value>
+    <value>Interval between attempts (ms):</value>
   </data>
   <data name="modelExpositionLabel.Text" xml:space="preserve">
     <value>Model exposition(ms):</value>

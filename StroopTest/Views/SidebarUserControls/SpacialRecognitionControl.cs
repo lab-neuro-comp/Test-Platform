@@ -54,6 +54,11 @@ namespace TestPlatform.Views.SidebarUserControls
             }
         }
 
+        public void newSpacialRecognitionProgram()
+        {
+            newSpacialRecognitionButton.Checked = true;
+            newSpacialRecognitionButton_Click(null, null);
+        }
         private void newSpacialRecognitionButton_Click(object sender, EventArgs e)
         {
             bool screenTranslationAllowed = true;

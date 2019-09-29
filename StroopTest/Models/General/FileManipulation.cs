@@ -23,7 +23,7 @@ namespace TestPlatform.Models
         private static FileManipulation instance;
 
         private static string PROGRAM_EXTENSION = ".prg";
-        private static string _instructionsFilePath = "editableInstructions.txt";
+        private static string _instructionsFilePath = "/editableInstructions.txt";
 
         private static FormMain _globalFormMain;
         private static string _defaultPath; // path of execution program
@@ -464,7 +464,7 @@ namespace TestPlatform.Models
             _spacialRecoginitionTestFilesPath = _testFilesPath + _spacialRecoginitionTestFilesPath;
             _importPath = _testFilesPath + _importPath;
             _participantDataPath = _testFilesPath + _participantDataPath;
-            _instructionsFilePath = _instructionsFilePath + _defaultPath;
+            _instructionsFilePath = _defaultPath + _instructionsFilePath;
 
             if (!Directory.Exists(_testFilesPath))
             {

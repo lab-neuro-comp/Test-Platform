@@ -128,53 +128,65 @@
     <value>Iniciar Teste    Ctrl+R</value>
   </data>
   <data name="newTextColorsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>206, 22</value>
   </data>
   <data name="newTextColorsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Palavras e Cores</value>
+    <value>Palavras e Cores  Ctrl + P</value>
   </data>
   <data name="newImageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>206, 22</value>
   </data>
   <data name="newImageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Imagens</value>
+    <value>Imagens               Ctrl + I</value>
   </data>
   <data name="newAudioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>206, 22</value>
   </data>
   <data name="newAudioToolStripMenuItem.Text" xml:space="preserve">
-    <value>Áudios</value>
+    <value>Áudios                  Ctrl + A</value>
   </data>
   <data name="newStimulusListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 22</value>
+    <value>168, 22</value>
   </data>
   <data name="newStimulusListToolStripMenuItem.Text" xml:space="preserve">
     <value>Lista de Estímulos</value>
   </data>
   <data name="stroopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
+    <value>238, 22</value>
   </data>
   <data name="stroopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Stroop</value>
+    <value>Stroop                            Ctrl + S</value>
   </data>
   <data name="reactionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
+    <value>238, 22</value>
   </data>
   <data name="reactionToolStripMenuItem.Text" xml:space="preserve">
-    <value>Reaction</value>
+    <value>Reaction                         Ctrl + T</value>
+  </data>
+  <data name="matchingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 22</value>
+  </data>
+  <data name="matchingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Matching                       Ctrl + M</value>
+  </data>
+  <data name="spacialRecognitionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 22</value>
+  </data>
+  <data name="spacialRecognitionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Spacial Recognition     Ctrl + E</value>
   </data>
   <data name="newProgramToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 22</value>
+    <value>168, 22</value>
   </data>
   <data name="newProgramToolStripMenuItem.Text" xml:space="preserve">
-    <value>Programa    Ctrl+N</value>
+    <value>Programa</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="newAudioToolStripMenu.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+A</value>
   </data>
   <data name="newAudioToolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 22</value>
+    <value>168, 22</value>
   </data>
   <data name="newAudioToolStripMenu.Text" xml:space="preserve">
     <value>Áudio</value>
@@ -234,16 +246,28 @@
     <value>Lista de Estímulos</value>
   </data>
   <data name="stroopToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
+    <value>178, 22</value>
   </data>
   <data name="stroopToolStripMenuItem1.Text" xml:space="preserve">
     <value>Stroop</value>
   </data>
   <data name="reactionToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
+    <value>178, 22</value>
   </data>
   <data name="reactionToolStripMenuItem1.Text" xml:space="preserve">
     <value>Reaction</value>
+  </data>
+  <data name="matchingToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="matchingToolStripMenuItem2.Text" xml:space="preserve">
+    <value>Matching</value>
+  </data>
+  <data name="spacialRecognitionToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="spacialRecognitionToolStripMenuItem2.Text" xml:space="preserve">
+    <value>Spacial Recognition</value>
   </data>
   <data name="editProgramToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>
@@ -268,19 +292,31 @@
     <value>Editar</value>
   </data>
   <data name="stroopToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>178, 22</value>
   </data>
   <data name="stroopToolStripMenuItem2.Text" xml:space="preserve">
     <value>Stroop</value>
   </data>
   <data name="reactionToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>178, 22</value>
   </data>
   <data name="reactionToolStripMenuItem2.Text" xml:space="preserve">
     <value>Reaction</value>
   </data>
+  <data name="matchingToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="matchingToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Matching</value>
+  </data>
+  <data name="spacialRecognitionToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="spacialRecognitionToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Spacial Recognition</value>
+  </data>
   <data name="experimentoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>178, 22</value>
   </data>
   <data name="experimentoToolStripMenuItem.Text" xml:space="preserve">
     <value>Experimento</value>
@@ -302,12 +338,6 @@
   </data>
   <data name="viewToolStripMenuItem.Text" xml:space="preserve">
     <value>Exibir</value>
-  </data>
-  <data name="instructionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
-  </data>
-  <data name="instructionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Instruções    Ctrl+H</value>
   </data>
   <data name="viewHelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 22</value>
@@ -418,7 +448,7 @@
     <value>0</value>
   </data>
   <data name="executeButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>Top, Left, Right</value>
   </data>
   <data name="executeButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -466,7 +496,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="markTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Right</value>
+    <value>Top, Left, Right</value>
   </data>
   <data name="markTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>83, 5</value>
@@ -497,6 +527,9 @@
   </data>
   <data name="&gt;&gt;markTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="markLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="markLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -574,10 +607,13 @@
     <value>50</value>
   </data>
   <data name="participantComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 21</value>
+    <value>112, 21</value>
   </data>
   <data name="participantComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="participantComboBox.Text" xml:space="preserve">
+    <value>padrao</value>
   </data>
   <data name="&gt;&gt;participantComboBox.Name" xml:space="preserve">
     <value>participantComboBox</value>
@@ -829,7 +865,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="buttonMatching.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 106</value>
+    <value>2, 106</value>
   </data>
   <data name="buttonMatching.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -5897,6 +5933,18 @@
   <data name="&gt;&gt;reactionToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;matchingToolStripMenuItem.Name" xml:space="preserve">
+    <value>matchingToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;matchingToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spacialRecognitionToolStripMenuItem.Name" xml:space="preserve">
+    <value>spacialRecognitionToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;spacialRecognitionToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;newAudioToolStripMenu.Name" xml:space="preserve">
     <value>newAudioToolStripMenu</value>
   </data>
@@ -5969,6 +6017,18 @@
   <data name="&gt;&gt;reactionToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;matchingToolStripMenuItem2.Name" xml:space="preserve">
+    <value>matchingToolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;matchingToolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spacialRecognitionToolStripMenuItem2.Name" xml:space="preserve">
+    <value>spacialRecognitionToolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;spacialRecognitionToolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;deleteToolStripMenuItem.Name" xml:space="preserve">
     <value>deleteToolStripMenuItem</value>
   </data>
@@ -5999,6 +6059,18 @@
   <data name="&gt;&gt;reactionToolStripMenuItem2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;matchingToolStripMenuItem1.Name" xml:space="preserve">
+    <value>matchingToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;matchingToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spacialRecognitionToolStripMenuItem1.Name" xml:space="preserve">
+    <value>spacialRecognitionToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;spacialRecognitionToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;experimentoToolStripMenuItem.Name" xml:space="preserve">
     <value>experimentoToolStripMenuItem</value>
   </data>
@@ -6015,12 +6087,6 @@
     <value>helpToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;helpToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;instructionsToolStripMenuItem.Name" xml:space="preserve">
-    <value>instructionsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;instructionsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;viewHelpToolStripMenuItem.Name" xml:space="preserve">

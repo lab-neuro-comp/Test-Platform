@@ -1253,13 +1253,13 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>#F8E000 #007BB7 #7EC845 #D01C1F</value>
   </data>
   <data name="defaultReactionInstructions1" xml:space="preserve">
-    <value>Serão apresentados quadrados de forma aleatória. Aperte a barra de espaço quando ver o quadrado.</value>
+    <value>Serão apresentados quadrados de forma aleatória. Aperte a barra de espaço o mais rápido possível, quando vir o quadrado.</value>
   </data>
   <data name="defaultReactionInstructions2" xml:space="preserve">
     <value>A tarefa vai começar agora</value>
   </data>
   <data name="defaultReactionProgram" xml:space="preserve">
-    <value>padrao 12 1000 1 2000 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false false 10 false false 500</value>
+    <value>padrao 12 1000 1 2000 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false false 10 false false 1000</value>
   </data>
   <data name="defaultReactionProgramError" xml:space="preserve">
     <value>Erro ao criar o programa padrão do teste de tempo de reação.</value>

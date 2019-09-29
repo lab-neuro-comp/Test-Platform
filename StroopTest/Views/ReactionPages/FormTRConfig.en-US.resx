@@ -149,10 +149,10 @@ Color:</value>
     <value>choose</value>
   </data>
   <data name="rndIntervalLabel.Text" xml:space="preserve">
-    <value>Variable Interval Time:</value>
+    <value>Variable Delay Time:</value>
   </data>
   <data name="intervalTimeLabel.Text" xml:space="preserve">
-    <value>Interval (ms):</value>
+    <value>Delay (ms):</value>
   </data>
   <data name="expoTimeLabel.Text" xml:space="preserve">
     <value>Exposition (ms):</value>

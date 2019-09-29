@@ -48,6 +48,11 @@ namespace TestPlatform.Views
             }
         }
 
+        public void newStroopProgram()
+        {
+            newStroopButton.Checked = true;
+            newStroopButton_CheckedChanged(null, null);
+        }
         private void newStroopButton_CheckedChanged(object sender, EventArgs e)
         {
             bool screenTranslationAllowed = true;

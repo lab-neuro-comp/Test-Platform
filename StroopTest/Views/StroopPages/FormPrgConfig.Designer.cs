@@ -211,7 +211,7 @@
             // 
             // fixPointColorPanel
             // 
-            this.fixPointColorPanel.BackColor = System.Drawing.Color.White;
+            this.fixPointColorPanel.BackColor = System.Drawing.SystemColors.Control;
             this.fixPointColorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.fixPointColorPanel, "fixPointColorPanel");
             this.fixPointColorPanel.Name = "fixPointColorPanel";
@@ -442,6 +442,7 @@
             // 
             resources.ApplyResources(this.rndIntervalLabel, "rndIntervalLabel");
             this.rndIntervalLabel.Name = "rndIntervalLabel";
+            this.rndIntervalLabel.Click += new System.EventHandler(this.RndIntervalLabel_Click);
             // 
             // expoTime
             // 

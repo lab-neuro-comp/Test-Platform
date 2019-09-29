@@ -178,9 +178,6 @@ Selecionado:
   <data name="deleteWordItem.Text" xml:space="preserve">
     <value>Apagar</value>
   </data>
-  <data name="wordGroupBox.Text" xml:space="preserve">
-    <value>nomeListaPalavras</value>
-  </data>
   <data name="numberItensColorLabel.Text" xml:space="preserve">
     <value>Itens na Lista:</value>
   </data>
@@ -195,9 +192,6 @@ Selecionado:
   </data>
   <data name="deleteColorItem.Text" xml:space="preserve">
     <value>Apagar</value>
-  </data>
-  <data name="colorListGroupBox.Text" xml:space="preserve">
-    <value>nomeListaCores</value>
   </data>
   <data name="wordListEmpty.Text" xml:space="preserve">
     <value>listaPalavraVazia</value>

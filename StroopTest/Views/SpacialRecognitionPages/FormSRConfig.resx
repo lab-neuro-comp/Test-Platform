@@ -753,102 +753,6 @@
   <data name="&gt;&gt;expositionGroupBox.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;openImgListButton.Name" xml:space="preserve">
-    <value>openImgListButton</value>
-  </data>
-  <data name="&gt;&gt;openImgListButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openImgListButton.Parent" xml:space="preserve">
-    <value>listGroupBox</value>
-  </data>
-  <data name="&gt;&gt;openImgListButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;openColorListButton.Name" xml:space="preserve">
-    <value>openColorListButton</value>
-  </data>
-  <data name="&gt;&gt;openColorListButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openColorListButton.Parent" xml:space="preserve">
-    <value>listGroupBox</value>
-  </data>
-  <data name="&gt;&gt;openColorListButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;openWordListButton.Name" xml:space="preserve">
-    <value>openWordListButton</value>
-  </data>
-  <data name="&gt;&gt;openWordListButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openWordListButton.Parent" xml:space="preserve">
-    <value>listGroupBox</value>
-  </data>
-  <data name="&gt;&gt;openWordListButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;imageLabel.Name" xml:space="preserve">
-    <value>imageLabel</value>
-  </data>
-  <data name="&gt;&gt;imageLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;imageLabel.Parent" xml:space="preserve">
-    <value>listGroupBox</value>
-  </data>
-  <data name="&gt;&gt;imageLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;colorLabel.Name" xml:space="preserve">
-    <value>colorLabel</value>
-  </data>
-  <data name="&gt;&gt;colorLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colorLabel.Parent" xml:space="preserve">
-    <value>listGroupBox</value>
-  </data>
-  <data name="&gt;&gt;colorLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;wordLabel.Name" xml:space="preserve">
-    <value>wordLabel</value>
-  </data>
-  <data name="&gt;&gt;wordLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wordLabel.Parent" xml:space="preserve">
-    <value>listGroupBox</value>
-  </data>
-  <data name="&gt;&gt;wordLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="listGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 245</value>
-  </data>
-  <data name="listGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 113</value>
-  </data>
-  <data name="listGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="listGroupBox.Text" xml:space="preserve">
-    <value>Listas</value>
-  </data>
-  <data name="&gt;&gt;listGroupBox.Name" xml:space="preserve">
-    <value>listGroupBox</value>
-  </data>
-  <data name="&gt;&gt;listGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listGroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;listGroupBox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="openImgListButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1029,125 +933,29 @@
   <data name="&gt;&gt;wordLabel.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;stimulusInterval.Name" xml:space="preserve">
-    <value>stimulusInterval</value>
+  <data name="listGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 245</value>
   </data>
-  <data name="&gt;&gt;stimulusInterval.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="listGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 113</value>
   </data>
-  <data name="&gt;&gt;stimulusInterval.Parent" xml:space="preserve">
-    <value>timeGroupBox</value>
+  <data name="listGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
   </data>
-  <data name="&gt;&gt;stimulusInterval.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="listGroupBox.Text" xml:space="preserve">
+    <value>Listas</value>
   </data>
-  <data name="&gt;&gt;stimulusExpoTime.Name" xml:space="preserve">
-    <value>stimulusExpoTime</value>
+  <data name="&gt;&gt;listGroupBox.Name" xml:space="preserve">
+    <value>listGroupBox</value>
   </data>
-  <data name="&gt;&gt;stimulusExpoTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;stimulusExpoTime.Parent" xml:space="preserve">
-    <value>timeGroupBox</value>
-  </data>
-  <data name="&gt;&gt;stimulusExpoTime.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;randomStimulusTime.Name" xml:space="preserve">
-    <value>randomStimulusTime</value>
-  </data>
-  <data name="&gt;&gt;randomStimulusTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;randomStimulusTime.Parent" xml:space="preserve">
-    <value>timeGroupBox</value>
-  </data>
-  <data name="&gt;&gt;randomStimulusTime.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;randomAttemptTime.Name" xml:space="preserve">
-    <value>randomAttemptTime</value>
-  </data>
-  <data name="&gt;&gt;randomAttemptTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;randomAttemptTime.Parent" xml:space="preserve">
-    <value>timeGroupBox</value>
-  </data>
-  <data name="&gt;&gt;randomAttemptTime.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;attemptInterval.Name" xml:space="preserve">
-    <value>attemptInterval</value>
-  </data>
-  <data name="&gt;&gt;attemptInterval.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;attemptInterval.Parent" xml:space="preserve">
-    <value>timeGroupBox</value>
-  </data>
-  <data name="&gt;&gt;attemptInterval.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;modelStimuluIntervalLabel.Name" xml:space="preserve">
-    <value>modelStimuluIntervalLabel</value>
-  </data>
-  <data name="&gt;&gt;modelStimuluIntervalLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;modelStimuluIntervalLabel.Parent" xml:space="preserve">
-    <value>timeGroupBox</value>
-  </data>
-  <data name="&gt;&gt;modelStimuluIntervalLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;stimuluExpositionLabel.Name" xml:space="preserve">
-    <value>stimuluExpositionLabel</value>
-  </data>
-  <data name="&gt;&gt;stimuluExpositionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;stimuluExpositionLabel.Parent" xml:space="preserve">
-    <value>timeGroupBox</value>
-  </data>
-  <data name="&gt;&gt;stimuluExpositionLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;attemptIntervalLabel.Name" xml:space="preserve">
-    <value>attemptIntervalLabel</value>
-  </data>
-  <data name="&gt;&gt;attemptIntervalLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;attemptIntervalLabel.Parent" xml:space="preserve">
-    <value>timeGroupBox</value>
-  </data>
-  <data name="&gt;&gt;attemptIntervalLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="timeGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 32</value>
-  </data>
-  <data name="timeGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 139</value>
-  </data>
-  <data name="timeGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>87</value>
-  </data>
-  <data name="timeGroupBox.Text" xml:space="preserve">
-    <value>Tempo</value>
-  </data>
-  <data name="&gt;&gt;timeGroupBox.Name" xml:space="preserve">
-    <value>timeGroupBox</value>
-  </data>
-  <data name="&gt;&gt;timeGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;listGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;timeGroupBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;listGroupBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;timeGroupBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;listGroupBox.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="stimulusInterval.Location" type="System.Drawing.Point, System.Drawing">
     <value>148, 42</value>
@@ -1342,13 +1150,13 @@
     <value>7, 68</value>
   </data>
   <data name="attemptIntervalLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 13</value>
+    <value>149, 13</value>
   </data>
   <data name="attemptIntervalLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="attemptIntervalLabel.Text" xml:space="preserve">
-    <value>Atraso entre tentativas (ms):</value>
+    <value>Intervalo entre tentativas (ms):</value>
   </data>
   <data name="&gt;&gt;attemptIntervalLabel.Name" xml:space="preserve">
     <value>attemptIntervalLabel</value>
@@ -1362,65 +1170,29 @@
   <data name="&gt;&gt;attemptIntervalLabel.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;clickAudioResponse.Name" xml:space="preserve">
-    <value>clickAudioResponse</value>
+  <data name="timeGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>306, 32</value>
   </data>
-  <data name="&gt;&gt;clickAudioResponse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="timeGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 139</value>
   </data>
-  <data name="&gt;&gt;clickAudioResponse.Parent" xml:space="preserve">
-    <value>auditorySignalingGroupBox</value>
+  <data name="timeGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>87</value>
   </data>
-  <data name="&gt;&gt;clickAudioResponse.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="timeGroupBox.Text" xml:space="preserve">
+    <value>Tempo</value>
   </data>
-  <data name="&gt;&gt;omissionAudioResponse.Name" xml:space="preserve">
-    <value>omissionAudioResponse</value>
+  <data name="&gt;&gt;timeGroupBox.Name" xml:space="preserve">
+    <value>timeGroupBox</value>
   </data>
-  <data name="&gt;&gt;omissionAudioResponse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;omissionAudioResponse.Parent" xml:space="preserve">
-    <value>auditorySignalingGroupBox</value>
-  </data>
-  <data name="&gt;&gt;omissionAudioResponse.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;expositonAudioResponse.Name" xml:space="preserve">
-    <value>expositonAudioResponse</value>
-  </data>
-  <data name="&gt;&gt;expositonAudioResponse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;expositonAudioResponse.Parent" xml:space="preserve">
-    <value>auditorySignalingGroupBox</value>
-  </data>
-  <data name="&gt;&gt;expositonAudioResponse.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="auditorySignalingGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 177</value>
-  </data>
-  <data name="auditorySignalingGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>281, 59</value>
-  </data>
-  <data name="auditorySignalingGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>88</value>
-  </data>
-  <data name="auditorySignalingGroupBox.Text" xml:space="preserve">
-    <value>Sinalização auditiva</value>
-  </data>
-  <data name="&gt;&gt;auditorySignalingGroupBox.Name" xml:space="preserve">
-    <value>auditorySignalingGroupBox</value>
-  </data>
-  <data name="&gt;&gt;auditorySignalingGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;timeGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;auditorySignalingGroupBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;timeGroupBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;auditorySignalingGroupBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;timeGroupBox.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="clickAudioResponse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1512,53 +1284,29 @@
   <data name="&gt;&gt;expositonAudioResponse.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;instructionsBox.Name" xml:space="preserve">
-    <value>instructionsBox</value>
+  <data name="auditorySignalingGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>306, 177</value>
   </data>
-  <data name="&gt;&gt;instructionsBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="auditorySignalingGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 59</value>
   </data>
-  <data name="&gt;&gt;instructionsBox.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="auditorySignalingGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
   </data>
-  <data name="&gt;&gt;instructionsBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="auditorySignalingGroupBox.Text" xml:space="preserve">
+    <value>Sinalização auditiva</value>
   </data>
-  <data name="&gt;&gt;instructionsLabel.Name" xml:space="preserve">
-    <value>instructionsLabel</value>
+  <data name="&gt;&gt;auditorySignalingGroupBox.Name" xml:space="preserve">
+    <value>auditorySignalingGroupBox</value>
   </data>
-  <data name="&gt;&gt;instructionsLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;instructionsLabel.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;instructionsLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 245</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>281, 118</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>89</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Instruções</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;auditorySignalingGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;auditorySignalingGroupBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;auditorySignalingGroupBox.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="instructionsBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 18</value>
@@ -1622,6 +1370,30 @@
   </data>
   <data name="&gt;&gt;instructionsLabel.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>306, 245</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 118</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Instruções</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="saveButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -1729,7 +1501,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>592, 395</value>
+    <value>590, 393</value>
   </data>
   <data name="&gt;&gt;errorProvider2.Name" xml:space="preserve">
     <value>errorProvider2</value>

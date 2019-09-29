@@ -181,7 +181,7 @@
     <value>Acerto/Erro</value>
   </data>
   <data name="attemptIntervalLabel.Text" xml:space="preserve">
-    <value>Atraso entre tentativas (ms):</value>
+    <value>Intervalo entre tentativas (ms):</value>
   </data>
   <data name="modelStimuluIntervalLabel.Text" xml:space="preserve">
     <value>Atraso entre estimulos (ms):</value>

@@ -119,14 +119,10 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="existingList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 39</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="existingList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 32</value>
   </data>
   <data name="existingList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 498</value>
+    <value>274, 394</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="existingList.TabIndex" type="System.Int32, mscorlib">
@@ -145,13 +141,10 @@
     <value>14</value>
   </data>
   <data name="deletingList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>428, 39</value>
-  </data>
-  <data name="deletingList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>321, 32</value>
   </data>
   <data name="deletingList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 498</value>
+    <value>274, 394</value>
   </data>
   <data name="deletingList.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -168,17 +161,18 @@
   <data name="&gt;&gt;deletingList.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="toDelete.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="toDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 212</value>
+    <value>282, 172</value>
   </data>
   <data name="toDelete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="toDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 37</value>
+    <value>34, 30</value>
   </data>
   <data name="toDelete.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -205,13 +199,13 @@
     <value>NoControl</value>
   </data>
   <data name="toExisting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 279</value>
+    <value>282, 227</value>
   </data>
   <data name="toExisting.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="toExisting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 37</value>
+    <value>34, 30</value>
   </data>
   <data name="toExisting.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -235,13 +229,10 @@
     <value>Popup</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 688</value>
-  </data>
-  <data name="cancelButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 559</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>75, 23</value>
   </data>
   <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -265,13 +256,10 @@
     <value>Popup</value>
   </data>
   <data name="deleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>696, 687</value>
-  </data>
-  <data name="deleteButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>522, 558</value>
   </data>
   <data name="deleteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>75, 23</value>
   </data>
   <data name="deleteButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -298,13 +286,10 @@
     <value>NoControl</value>
   </data>
   <data name="existingLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 19</value>
-  </data>
-  <data name="existingLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>0, 15</value>
   </data>
   <data name="existingLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 17</value>
+    <value>87, 13</value>
   </data>
   <data name="existingLabel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -334,13 +319,10 @@
     <value>NoControl</value>
   </data>
   <data name="deletingLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>424, 19</value>
-  </data>
-  <data name="deletingLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>318, 15</value>
   </data>
   <data name="deletingLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 17</value>
+    <value>150, 13</value>
   </data>
   <data name="deletingLabel.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -370,13 +352,13 @@
     <value>NoControl</value>
   </data>
   <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>759, 2</value>
+    <value>569, 2</value>
   </data>
   <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 31</value>
+    <value>26, 25</value>
   </data>
   <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
     <value>83</value>
@@ -397,13 +379,10 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="warningLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 540</value>
-  </data>
-  <data name="warningLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>3, 439</value>
   </data>
   <data name="warningLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>789, 57</value>
+    <value>592, 46</value>
   </data>
   <data name="warningLabel.TabIndex" type="System.Int32, mscorlib">
     <value>84</value>
@@ -430,13 +409,10 @@
     <value>True</value>
   </data>
   <data name="excludedLists.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 19</value>
-  </data>
-  <data name="excludedLists.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>3, 15</value>
   </data>
   <data name="excludedLists.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 17</value>
+    <value>35, 13</value>
   </data>
   <data name="excludedLists.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>
@@ -463,13 +439,10 @@
     <value>True</value>
   </data>
   <data name="recoveringLists.Location" type="System.Drawing.Point, System.Drawing">
-    <value>424, 19</value>
-  </data>
-  <data name="recoveringLists.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>318, 15</value>
   </data>
   <data name="recoveringLists.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 17</value>
+    <value>35, 13</value>
   </data>
   <data name="recoveringLists.TabIndex" type="System.Int32, mscorlib">
     <value>86</value>
@@ -499,13 +472,10 @@
     <value>NoControl</value>
   </data>
   <data name="existingListWarning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 596</value>
-  </data>
-  <data name="existingListWarning.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>3, 484</value>
   </data>
   <data name="existingListWarning.Size" type="System.Drawing.Size, System.Drawing">
-    <value>789, 57</value>
+    <value>592, 46</value>
   </data>
   <data name="existingListWarning.TabIndex" type="System.Int32, mscorlib">
     <value>87</value>
@@ -535,13 +505,10 @@
     <value>NoControl</value>
   </data>
   <data name="recoverButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>696, 688</value>
-  </data>
-  <data name="recoverButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>522, 559</value>
   </data>
   <data name="recoverButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>75, 23</value>
   </data>
   <data name="recoverButton.TabIndex" type="System.Int32, mscorlib">
     <value>88</value>
@@ -568,13 +535,10 @@
     <value>True</value>
   </data>
   <data name="existingListCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 660</value>
-  </data>
-  <data name="existingListCheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 536</value>
   </data>
   <data name="existingListCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 21</value>
+    <value>126, 17</value>
   </data>
   <data name="existingListCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>89</value>
@@ -601,13 +565,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 738</value>
+    <value>600, 600</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ListManagment</value>

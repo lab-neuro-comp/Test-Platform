@@ -33,6 +33,8 @@
             this.prgNameTextBox = new System.Windows.Forms.TextBox();
             this.prgNameLabel = new System.Windows.Forms.Label();
             this.expositionGroupBox = new System.Windows.Forms.GroupBox();
+            this.testTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.wordSingleColor = new System.Windows.Forms.Label();
             this.WordColorPanel = new System.Windows.Forms.Panel();
             this.wordSingleColorButton = new System.Windows.Forms.Button();
@@ -77,8 +79,6 @@
             this.helpButton = new System.Windows.Forms.Button();
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.testTypeComboBox = new System.Windows.Forms.ComboBox();
             this.expositionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stimuluQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fontSizeUpDown)).BeginInit();
@@ -130,6 +130,25 @@
             resources.ApplyResources(this.expositionGroupBox, "expositionGroupBox");
             this.expositionGroupBox.Name = "expositionGroupBox";
             this.expositionGroupBox.TabStop = false;
+            // 
+            // testTypeComboBox
+            // 
+            this.testTypeComboBox.BackColor = System.Drawing.SystemColors.Control;
+            this.testTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.testTypeComboBox.FormattingEnabled = true;
+            this.testTypeComboBox.Items.AddRange(new object[] {
+            resources.GetString("testTypeComboBox.Items"),
+            resources.GetString("testTypeComboBox.Items1"),
+            resources.GetString("testTypeComboBox.Items2")});
+            resources.ApplyResources(this.testTypeComboBox, "testTypeComboBox");
+            this.testTypeComboBox.Name = "testTypeComboBox";
+            this.testTypeComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.TestTypeComboBox_Validating);
+            this.testTypeComboBox.Validated += new System.EventHandler(this.TestTypeComboBox_Validated);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
             // wordSingleColor
             // 
@@ -551,25 +570,6 @@
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // testTypeComboBox
-            // 
-            this.testTypeComboBox.BackColor = System.Drawing.SystemColors.Control;
-            this.testTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.testTypeComboBox.FormattingEnabled = true;
-            this.testTypeComboBox.Items.AddRange(new object[] {
-            resources.GetString("testTypeComboBox.Items"),
-            resources.GetString("testTypeComboBox.Items1"),
-            resources.GetString("testTypeComboBox.Items2")});
-            resources.ApplyResources(this.testTypeComboBox, "testTypeComboBox");
-            this.testTypeComboBox.Name = "testTypeComboBox";
-            this.testTypeComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.TestTypeComboBox_Validating);
-            this.testTypeComboBox.Validated += new System.EventHandler(this.TestTypeComboBox_Validated);
             // 
             // FormSRConfig
             // 

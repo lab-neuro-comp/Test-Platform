@@ -17,6 +17,11 @@ namespace TestPlatform.Views.SidebarUserControls
             InitializeComponent();
         }
 
+        public void showStroopResults()
+        {
+            StroopButton_Click(null, null);
+        }
+
         private void StroopButton_Click(object sender, EventArgs e)
         {
             if(FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
@@ -33,6 +38,10 @@ namespace TestPlatform.Views.SidebarUserControls
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
+        public void showReactionResults()
+        {
+            reactionButton_Click(null, null);
+        }
         private void reactionButton_Click(object sender, EventArgs e)
         {
             if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
@@ -49,6 +58,10 @@ namespace TestPlatform.Views.SidebarUserControls
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
+        public void showExperimentResults()
+        {
+            experimentButton_Click(null, null);
+        }
         private void experimentButton_Click(object sender, EventArgs e)
         {
             if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
@@ -64,6 +77,10 @@ namespace TestPlatform.Views.SidebarUserControls
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
+        public void showMatchingResults()
+        {
+            matchingButton_Click(null, null);
+        }
         private void matchingButton_Click(object sender, EventArgs e)
         {
             if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it
@@ -79,6 +96,10 @@ namespace TestPlatform.Views.SidebarUserControls
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
+        public void showSpacialRecoginitionResults()
+        {
+            SRResultButton_Click(null, null);
+        }
         private void SRResultButton_Click(object sender, EventArgs e)
         {
             if (FileManipulation.GlobalFormMain._contentPanel.Controls.Count > 0) //if another result tab is open then close it

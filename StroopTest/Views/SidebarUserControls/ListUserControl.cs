@@ -85,6 +85,11 @@ namespace TestPlatform.Views.SidebarControls
             }
         }
 
+        public void newAudioList()
+        {
+            newAudioListButton.Checked = true;
+            newAudioListButton_CheckedChanged(null, null);
+        }
         private void newAudioListButton_CheckedChanged(object sender, EventArgs e)
         {
             if (newAudioListButton.Checked)
@@ -180,6 +185,11 @@ namespace TestPlatform.Views.SidebarControls
 
         }
 
+        public void newWordColorList()
+        {
+            newWordColorButton.Checked = true;
+            newWordColorButton_Click(null, null);
+        }
         private void newWordColorButton_Click(object sender, EventArgs e)
         {
             if (newWordColorButton.Checked)
@@ -247,6 +257,12 @@ namespace TestPlatform.Views.SidebarControls
                 }
             }
 
+        }
+
+        public void newImageList()
+        {
+            newImageListButton.Checked = true;
+            newImageListButton_Click(null, null);
         }
 
         private void newImageListButton_Click(object sender, EventArgs e)

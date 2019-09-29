@@ -56,6 +56,12 @@ namespace TestPlatform.Views.SidebarUserControls
             }
         }
 
+        public void newMatchingProgram()
+        {
+            newMatchButton.Checked = true;
+            newMatchButton_Click(null, null);
+        }
+
         private void newMatchButton_Click(object sender, EventArgs e)
         {
             bool screenTranslationAllowed = true;

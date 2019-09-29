@@ -149,10 +149,10 @@ Ponto:</value>
     <value>escolher</value>
   </data>
   <data name="rndIntervalLabel.Text" xml:space="preserve">
-    <value>Intervalo Variável:</value>
+    <value>Atraso Variável:</value>
   </data>
   <data name="intervalTimeLabel.Text" xml:space="preserve">
-    <value>Intervalo (ms):</value>
+    <value>Atraso (ms):</value>
   </data>
   <data name="expoTimeLabel.Text" xml:space="preserve">
     <value>Exposição (ms):</value>
@@ -297,5 +297,8 @@ Ponto:</value>
   </data>
   <data name="expositionGroupBox.Text" xml:space="preserve">
     <value>Exposição</value>
+  </data>
+  <data name="intervalBetweenAttemptsLabel.Text" xml:space="preserve">
+    <value>Intervalo entre tentativas (ms):</value>
   </data>
 </root>

@@ -58,8 +58,6 @@
             this.instructionLabel.Text = "instruction";
             this.instructionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.instructionLabel.Visible = false;
-            this.instructionLabel.Left = (1194 - 695) / 2;
-            this.instructionLabel.Top = (741 - 524) / 2;
             // 
             // SpacialRecognitionExposition
             // 

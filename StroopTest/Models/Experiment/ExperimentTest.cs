@@ -60,18 +60,6 @@ namespace TestPlatform.Models
             }
         }
 
-        public string HeaderOutputFileText
-        {
-            get
-            {
-                return headerOutputFileText;
-            }
-
-            set
-            {
-                headerOutputFileText = value;
-            }
-        }
 
         public void writeLineOutput(int currentExposition, Program currentProgram)
         {

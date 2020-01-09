@@ -66,6 +66,8 @@ namespace TestPlatform.Views.SpacialRecognitionPages
             ExpositionController.formSecondScreen(this);
 
             InitializeComponent();
+            this.instructionLabel.Left = (1194 - 695) / 2;
+            this.instructionLabel.Top = (741 - 524) / 2;
 
             startTime = hour + "_" + minutes + "_" + seconds;
             executingTest.ParticipantName = participantName;

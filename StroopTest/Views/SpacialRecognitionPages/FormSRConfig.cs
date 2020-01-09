@@ -364,7 +364,7 @@ namespace TestPlatform.Views.SpecialRecognitionPages
 
         private bool ValidProgramType(int selectedIndex, out string errorMessage)
         {
-            if (selectedIndex >= 0 && selectedIndex <= 1)
+            if (selectedIndex >= 0 && selectedIndex <= 2)
             {
                 errorMessage = "";
                 return true;
@@ -381,7 +381,7 @@ namespace TestPlatform.Views.SpecialRecognitionPages
             if (!ValidProgramType(testTypeComboBox.SelectedIndex, out errorMsg))
             {
                 e.Cancel = true;
-                this.errorProvider1.SetError(prgNameTextBox, errorMsg);
+                this.errorProvider1.SetError(testTypeComboBox, errorMsg);
             }
 
         }

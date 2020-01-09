@@ -473,6 +473,30 @@ namespace TestPlatform.Models
             }
         }
 
+
+        // writes default file
+        public void writeDefaultProgramFile(string filepath) // escreve 
+        {
+            string[] defaultInstructionText = { LocRM.GetString("defaultMatchingInstruction1", currentCulture),
+                                                LocRM.GetString("defaultMatchingInstruction2", currentCulture)};
+            this.ProgramName = LocRM.GetString("default", currentCulture);
+            try
+            {
+                TextWriter tw = new StreamWriter(filepath + ProgramName + ".prg");
+                tw.WriteLine(LocRM.GetString("defaultMatchingProgram", currentCulture));
+                for (int i = 0; i < defaultInstructionText.Length; i++)
+                {
+                    tw.WriteLine(defaultInstructionText[i]);
+                }
+                tw.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be written:");
+                Console.WriteLine(e.Message);
+            }
+        }
+
         public bool saveProgramFile(string instructionBoxText)
         {
             StreamWriter writer = new StreamWriter(GetProgramsPath() + ProgramName + ".prg");

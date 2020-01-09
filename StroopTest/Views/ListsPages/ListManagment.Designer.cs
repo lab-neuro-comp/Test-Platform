@@ -52,7 +52,7 @@
             this.existingList.FormattingEnabled = true;
             resources.ApplyResources(this.existingList, "existingList");
             this.existingList.Name = "existingList";
-            this.existingList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.existingList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.existingList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.originFilesList_DrawItem);
             // 
             // deletingList

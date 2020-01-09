@@ -1026,7 +1026,7 @@ To upgrade, the new version installation file must be run in the same folder as 
     <value>#F8E000 #007BB7 #7EC845 #D01C1F</value>
   </data>
   <data name="defaultReactionProgram" xml:space="preserve">
-    <value>default 12 1000 1 2000 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false false 10 false false 500</value>
+    <value>default 12 1000 1 2000 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false false 10 false false 1000</value>
   </data>
   <data name="defaultReactionProgramError" xml:space="preserve">
     <value>Couldn't write default Reaction Test program.</value>
@@ -1089,7 +1089,7 @@ To upgrade, the new version installation file must be run in the same folder as 
     <value>Word point color must be 'false' or a hexadecimal color code</value>
   </data>
   <data name="defaultReactionInstructions1" xml:space="preserve">
-    <value>Random squares will be displayed. Press the space bar when you see the square.</value>
+    <value>Random squares will be displayed. Press the space bar as fast as you can when you see the square.</value>
   </data>
   <data name="defaultReactionInstructions2" xml:space="preserve">
     <value>The task will start now</value>
@@ -2862,5 +2862,45 @@ user to the stimulus or if there is no reaction to the stimulus(ms)&lt;/td&gt;
   </data>
   <data name="selectAudioFile" xml:space="preserve">
     <value>Select an audio file.</value>
+  </data>
+  <data name="spacialRecognitionTest" xml:space="preserve">
+    <value>Spacial Recognition Test</value>
+  </data>
+  <data name="defaulStroopProgram" xml:space="preserve">
+    <value>padrao 16 1000 true 1000 False padrao_words.lst padrao_color.lst false true false 1 false txt false false 160 false false false false 0 0 false false</value>
+  </data>
+  <data name="inFormListWarning" xml:space="preserve">
+    <value>You will be redirected back to program editing after create the list.</value>
+  </data>
+  <data name="spacialRecognition" xml:space="preserve">
+    <value>Spacial Recognition</value>
+  </data>
+  <data name="notAvaliable" xml:space="preserve">
+    <value>Not avaliable yet.</value>
+  </data>
+  <data name="defaultSRInstruction1" xml:space="preserve">
+    <value>Many stimulus will show up in your screen sequentially</value>
+  </data>
+  <data name="defaultSRInstruction2" xml:space="preserve">
+    <value>Choose only the last one that has appeared</value>
+  </data>
+  <data name="defaultSRProgram" xml:space="preserve">
+    <value>default 3 True default false false 2000 1500 False 1 1 12 4 #000000 1000 False True True True 0
+</value>
+  </data>
+  <data name="defaultMatchingInstruction1" xml:space="preserve">
+    <value>A model will appear followed by two stimuli.</value>
+  </data>
+  <data name="defaultMatchingInstruction2" xml:space="preserve">
+    <value>Select the stimulus corresponding to the model</value>
+  </data>
+  <data name="defaultMatchingProgram" xml:space="preserve">
+    <value>default 2 1500 True 1000 False padrao false #FFFFFF DMTS false false false false 1000 18 False True 1500 1500 #404040 4 0 False False #000000 True True False True</value>
+  </data>
+  <data name="preference_horizontal" xml:space="preserve">
+    <value>Preference(Horizontal)</value>
+  </data>
+  <data name="preference_vertical" xml:space="preserve">
+    <value>Preference(Vertical)</value>
   </data>
 </root>

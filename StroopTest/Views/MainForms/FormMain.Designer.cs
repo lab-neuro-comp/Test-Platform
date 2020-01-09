@@ -41,6 +41,8 @@
             this.newProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stroopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matchingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spacialRecognitionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newAudioToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.defineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.defineProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,15 +55,18 @@
             this.editProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stroopToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reactionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.matchingToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.spacialRecognitionToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stroopToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.reactionToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.matchingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.spacialRecognitionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.experimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayAudiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.techInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,6 +85,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.buttonSpacialRegonition = new System.Windows.Forms.RadioButton();
             this.participantButton = new System.Windows.Forms.RadioButton();
             this.helpButton = new System.Windows.Forms.RadioButton();
             this.buttonMatching = new System.Windows.Forms.RadioButton();
@@ -97,6 +103,7 @@
             this.selectButton = new System.Windows.Forms.Button();
             this.executingTypeLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.mainMenuStrip.SuspendLayout();
             this.markPanel.SuspendLayout();
             this.participantPanel.SuspendLayout();
@@ -175,7 +182,9 @@
             // 
             this.newProgramToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stroopToolStripMenuItem,
-            this.reactionToolStripMenuItem});
+            this.reactionToolStripMenuItem,
+            this.matchingToolStripMenuItem,
+            this.spacialRecognitionToolStripMenuItem});
             this.newProgramToolStripMenuItem.Name = "newProgramToolStripMenuItem";
             resources.ApplyResources(this.newProgramToolStripMenuItem, "newProgramToolStripMenuItem");
             // 
@@ -190,6 +199,18 @@
             this.reactionToolStripMenuItem.Name = "reactionToolStripMenuItem";
             resources.ApplyResources(this.reactionToolStripMenuItem, "reactionToolStripMenuItem");
             this.reactionToolStripMenuItem.Click += new System.EventHandler(this.reactionToolStripMenuItem_Click);
+            // 
+            // matchingToolStripMenuItem
+            // 
+            this.matchingToolStripMenuItem.Name = "matchingToolStripMenuItem";
+            resources.ApplyResources(this.matchingToolStripMenuItem, "matchingToolStripMenuItem");
+            this.matchingToolStripMenuItem.Click += new System.EventHandler(this.MatchingToolStripMenuItem_Click);
+            // 
+            // spacialRecognitionToolStripMenuItem
+            // 
+            this.spacialRecognitionToolStripMenuItem.Name = "spacialRecognitionToolStripMenuItem";
+            resources.ApplyResources(this.spacialRecognitionToolStripMenuItem, "spacialRecognitionToolStripMenuItem");
+            this.spacialRecognitionToolStripMenuItem.Click += new System.EventHandler(this.SpacialRecognitionToolStripMenuItem_Click);
             // 
             // newAudioToolStripMenu
             // 
@@ -256,7 +277,9 @@
             // 
             this.editProgramToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stroopToolStripMenuItem1,
-            this.reactionToolStripMenuItem1});
+            this.reactionToolStripMenuItem1,
+            this.matchingToolStripMenuItem2,
+            this.spacialRecognitionToolStripMenuItem2});
             this.editProgramToolStripMenuItem.Name = "editProgramToolStripMenuItem";
             resources.ApplyResources(this.editProgramToolStripMenuItem, "editProgramToolStripMenuItem");
             // 
@@ -271,6 +294,18 @@
             this.reactionToolStripMenuItem1.Name = "reactionToolStripMenuItem1";
             resources.ApplyResources(this.reactionToolStripMenuItem1, "reactionToolStripMenuItem1");
             this.reactionToolStripMenuItem1.Click += new System.EventHandler(this.reactionToolStripMenuItem1_Click);
+            // 
+            // matchingToolStripMenuItem2
+            // 
+            this.matchingToolStripMenuItem2.Name = "matchingToolStripMenuItem2";
+            resources.ApplyResources(this.matchingToolStripMenuItem2, "matchingToolStripMenuItem2");
+            this.matchingToolStripMenuItem2.Click += new System.EventHandler(this.MatchingToolStripMenuItem2_Click);
+            // 
+            // spacialRecognitionToolStripMenuItem2
+            // 
+            this.spacialRecognitionToolStripMenuItem2.Name = "spacialRecognitionToolStripMenuItem2";
+            resources.ApplyResources(this.spacialRecognitionToolStripMenuItem2, "spacialRecognitionToolStripMenuItem2");
+            this.spacialRecognitionToolStripMenuItem2.Click += new System.EventHandler(this.SpacialRecognitionToolStripMenuItem2_Click);
             // 
             // deleteToolStripMenuItem
             // 
@@ -290,6 +325,8 @@
             this.displayDataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stroopToolStripMenuItem2,
             this.reactionToolStripMenuItem2,
+            this.matchingToolStripMenuItem1,
+            this.spacialRecognitionToolStripMenuItem1,
             this.experimentoToolStripMenuItem});
             this.displayDataToolStripMenuItem.Name = "displayDataToolStripMenuItem";
             resources.ApplyResources(this.displayDataToolStripMenuItem, "displayDataToolStripMenuItem");
@@ -306,6 +343,18 @@
             resources.ApplyResources(this.reactionToolStripMenuItem2, "reactionToolStripMenuItem2");
             this.reactionToolStripMenuItem2.Click += new System.EventHandler(this.reactionToolStripMenuItem2_Click);
             // 
+            // matchingToolStripMenuItem1
+            // 
+            this.matchingToolStripMenuItem1.Name = "matchingToolStripMenuItem1";
+            resources.ApplyResources(this.matchingToolStripMenuItem1, "matchingToolStripMenuItem1");
+            this.matchingToolStripMenuItem1.Click += new System.EventHandler(this.MatchingToolStripMenuItem1_Click);
+            // 
+            // spacialRecognitionToolStripMenuItem1
+            // 
+            this.spacialRecognitionToolStripMenuItem1.Name = "spacialRecognitionToolStripMenuItem1";
+            resources.ApplyResources(this.spacialRecognitionToolStripMenuItem1, "spacialRecognitionToolStripMenuItem1");
+            this.spacialRecognitionToolStripMenuItem1.Click += new System.EventHandler(this.SpacialRecognitionToolStripMenuItem1_Click);
+            // 
             // experimentoToolStripMenuItem
             // 
             this.experimentoToolStripMenuItem.Name = "experimentoToolStripMenuItem";
@@ -321,18 +370,11 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.instructionsToolStripMenuItem,
             this.viewHelpToolStripMenuItem,
             this.techInfoToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
-            // 
-            // instructionsToolStripMenuItem
-            // 
-            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            resources.ApplyResources(this.instructionsToolStripMenuItem, "instructionsToolStripMenuItem");
-            this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
             // 
             // viewHelpToolStripMenuItem
             // 
@@ -389,7 +431,6 @@
             this.testToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.testToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.testToolStrip.Name = "testToolStrip";
-            this.testToolStrip.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
             // 
             // executeButton
             // 
@@ -460,6 +501,7 @@
             // 
             // menuPanel
             // 
+            this.menuPanel.Controls.Add(this.buttonSpacialRegonition);
             this.menuPanel.Controls.Add(this.participantButton);
             this.menuPanel.Controls.Add(this.helpButton);
             this.menuPanel.Controls.Add(this.buttonMatching);
@@ -473,6 +515,16 @@
             resources.ApplyResources(this.menuPanel, "menuPanel");
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Click += new System.EventHandler(this.menuPanel_Click);
+            // 
+            // buttonSpacialRegonition
+            // 
+            resources.ApplyResources(this.buttonSpacialRegonition, "buttonSpacialRegonition");
+            this.buttonSpacialRegonition.FlatAppearance.BorderSize = 0;
+            this.buttonSpacialRegonition.Image = global::TestPlatform.Properties.Resources.icon_SpacialRecognition;
+            this.buttonSpacialRegonition.Name = "buttonSpacialRegonition";
+            this.toolTip.SetToolTip(this.buttonSpacialRegonition, resources.GetString("buttonSpacialRegonition.ToolTip"));
+            this.buttonSpacialRegonition.UseVisualStyleBackColor = true;
+            this.buttonSpacialRegonition.Click += new System.EventHandler(this.buttonSpacialRegonition_Click);
             // 
             // participantButton
             // 
@@ -499,6 +551,7 @@
             this.buttonMatching.FlatAppearance.BorderSize = 0;
             this.buttonMatching.Image = global::TestPlatform.Properties.Resources.icon3_MatchingTest;
             this.buttonMatching.Name = "buttonMatching";
+            this.toolTip.SetToolTip(this.buttonMatching, resources.GetString("buttonMatching.ToolTip"));
             this.buttonMatching.UseVisualStyleBackColor = true;
             this.buttonMatching.Click += new System.EventHandler(this.buttonMatching_Click);
             // 
@@ -554,6 +607,7 @@
             this.buttonReaction.FlatAppearance.BorderSize = 0;
             this.buttonReaction.Image = global::TestPlatform.Properties.Resources.icon2_ReactionTest;
             this.buttonReaction.Name = "buttonReaction";
+            this.toolTip.SetToolTip(this.buttonReaction, resources.GetString("buttonReaction.ToolTip"));
             this.buttonReaction.UseVisualStyleBackColor = true;
             this.buttonReaction.Click += new System.EventHandler(this.buttonReaction_Click);
             // 
@@ -626,7 +680,6 @@
             this.Name = "FormMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormMain_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
             this.markPanel.ResumeLayout(false);
@@ -652,7 +705,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newProgramToolStripMenuItem;
@@ -715,5 +767,13 @@
         private System.Windows.Forms.RadioButton helpButton;
         private System.Windows.Forms.RadioButton participantButton;
         private System.Windows.Forms.ComboBox participantComboBox;
+        private System.Windows.Forms.RadioButton buttonSpacialRegonition;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ToolStripMenuItem matchingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spacialRecognitionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem matchingToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem spacialRecognitionToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem matchingToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem spacialRecognitionToolStripMenuItem2;
     }
 }

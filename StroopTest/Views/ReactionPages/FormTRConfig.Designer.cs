@@ -185,11 +185,11 @@
             // shapeRadioPanel
             // 
             this.shapeRadioPanel.Controls.Add(this.fullSquareCheckBox);
-            this.shapeRadioPanel.Controls.Add(this.circleCheckBox);
-            this.shapeRadioPanel.Controls.Add(this.triangleCheckBox);
-            this.shapeRadioPanel.Controls.Add(this.squareCheckBox);
-            this.shapeRadioPanel.Controls.Add(this.fullCircleCheckBox);
             this.shapeRadioPanel.Controls.Add(this.fullTriangleCheckBox);
+            this.shapeRadioPanel.Controls.Add(this.fullCircleCheckBox);
+            this.shapeRadioPanel.Controls.Add(this.squareCheckBox);
+            this.shapeRadioPanel.Controls.Add(this.triangleCheckBox);
+            this.shapeRadioPanel.Controls.Add(this.circleCheckBox);
             resources.ApplyResources(this.shapeRadioPanel, "shapeRadioPanel");
             this.shapeRadioPanel.Name = "shapeRadioPanel";
             // 

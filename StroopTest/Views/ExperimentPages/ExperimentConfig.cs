@@ -93,7 +93,7 @@ namespace TestPlatform.Views.ExperimentPages
 
         private string[] defineTest()
         {
-            FormDefineTest defineTest = new FormDefineTest(CultureInfo.CurrentUICulture);
+            FormDefineTest defineTest = new FormDefineTest(CultureInfo.CurrentUICulture, LocRM.GetString("stroopTest", currentCulture));
             try
             {
                 var result = defineTest.ShowDialog();

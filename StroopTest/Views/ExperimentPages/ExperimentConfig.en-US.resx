@@ -162,4 +162,7 @@
   <data name="trainingButton.Text" xml:space="preserve">
     <value>Training</value>
   </data>
+  <data name="Order.HeaderText" xml:space="preserve">
+    <value>Order</value>
+  </data>
 </root>

@@ -48,7 +48,11 @@ namespace TestPlatform.Views.SidebarUserControls
             }
         }
 
-
+        public void newReactProgram()
+        {
+            newReactButton.Checked = true;
+            newReactButton_Click(null, null);
+        }
         private void newReactButton_Click(object sender, EventArgs e)
         {
             bool screenTranslationAllowed = true;

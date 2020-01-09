@@ -214,7 +214,7 @@
     <value>Stimulus exposition (ms):</value>
   </data>
   <data name="attemptIntervalLabel.Text" xml:space="preserve">
-    <value>Delay between attempts (ms):</value>
+    <value>Interval between attempts (ms):</value>
   </data>
   <data name="modelExpositionLabel.Text" xml:space="preserve">
     <value>Model exposition(ms):</value>
@@ -272,5 +272,14 @@
   </data>
   <data name="expositionType.Items3" xml:space="preserve">
     <value>DMTS/DNMTS(Random)</value>
+  </data>
+  <data name="omissionAudioResponse.Text" xml:space="preserve">
+    <value>Omission</value>
+  </data>
+  <data name="expositionType.Items4" xml:space="preserve">
+    <value>Preference(Horizontal)</value>
+  </data>
+  <data name="expositionType.Items5" xml:space="preserve">
+    <value>Preference(Vertical)</value>
   </data>
 </root>

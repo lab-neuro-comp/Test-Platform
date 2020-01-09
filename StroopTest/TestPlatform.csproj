@@ -143,6 +143,8 @@
     <Compile Include="Models\Tests\Reaction\ReactionProgram.cs" />
     <Compile Include="Models\Tests\Reaction\ReactionTest.cs" />
     <Compile Include="Models\General\StrList.cs" />
+    <Compile Include="Models\Tests\SpacialRecognition\SpacialRecognitionProgram.cs" />
+    <Compile Include="Models\Tests\SpacialRecognition\SpacialRecognitionTest.cs" />
     <Compile Include="Models\Tests\Stroop\StroopTest.cs" />
     <Compile Include="Models\General\Validations.cs" />
     <Compile Include="Models\Tests\Test.cs" />
@@ -304,6 +306,12 @@
     <Compile Include="Views\SidebarUserControls\ResultsUserControl.Designer.cs">
       <DependentUpon>ResultsUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SidebarUserControls\SpacialRecognitionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SidebarUserControls\SpacialRecognitionControl.Designer.cs">
+      <DependentUpon>SpacialRecognitionControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SidebarUserControls\StroopControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -339,6 +347,24 @@
     </Compile>
     <Compile Include="Views\MainForms\FormDefine.Designer.cs">
       <DependentUpon>FormDefine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpacialRecognitionPages\FormSRConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SpacialRecognitionPages\FormSRConfig.Designer.cs">
+      <DependentUpon>FormSRConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpacialRecognitionPages\SpacialRecognitionExposition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SpacialRecognitionPages\SpacialRecognitionExposition.Designer.cs">
+      <DependentUpon>SpacialRecognitionExposition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpacialRecognitionPages\SRResultUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SpacialRecognitionPages\SRResultUserControl.Designer.cs">
+      <DependentUpon>SRResultUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\StroopPages\FormPrgConfig.cs">
       <SubType>UserControl</SubType>
@@ -513,12 +539,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormMain.en-US.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormMain.es-ES.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\FormMain.pt-BR.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForms\HelpPagesUserControl.resx">
       <DependentUpon>HelpPagesUserControl.cs</DependentUpon>
@@ -677,6 +705,15 @@
     <EmbeddedResource Include="Views\SidebarUserControls\ResultsUserControl.resx">
       <DependentUpon>ResultsUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\SpacialRecognitionControl.en-US.resx">
+      <DependentUpon>SpacialRecognitionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\SpacialRecognitionControl.pt-BR.resx">
+      <DependentUpon>SpacialRecognitionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SidebarUserControls\SpacialRecognitionControl.resx">
+      <DependentUpon>SpacialRecognitionControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SidebarUserControls\StroopControl.en-US.resx">
       <DependentUpon>StroopControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -706,6 +743,33 @@
     <EmbeddedResource Include="Views\MainForms\FormDefine.resx">
       <DependentUpon>FormDefine.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\FormSRConfig.aa.resx">
+      <DependentUpon>FormSRConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\FormSRConfig.en-US.resx">
+      <DependentUpon>FormSRConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\FormSRConfig.es-ES.resx">
+      <DependentUpon>FormSRConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\FormSRConfig.pt-BR.resx">
+      <DependentUpon>FormSRConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\FormSRConfig.resx">
+      <DependentUpon>FormSRConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\SpacialRecognitionExposition.resx">
+      <DependentUpon>SpacialRecognitionExposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\SRResultUserControl.en-US.resx">
+      <DependentUpon>SRResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\SRResultUserControl.pt-BR.resx">
+      <DependentUpon>SRResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SpacialRecognitionPages\SRResultUserControl.resx">
+      <DependentUpon>SRResultUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StroopPages\FormPrgConfig.en-US.resx">
       <DependentUpon>FormPrgConfig.cs</DependentUpon>
@@ -791,6 +855,7 @@
     <Content Include="Resources\icons\icon_ReactionTest.png" />
     <Content Include="Resources\icons\icon_results.png" />
     <Content Include="Resources\icons\icon_StroopTest.png" />
+    <Content Include="Resources\icons\icon_SpacialRecognition.png" />
     <Content Include="Resources\icons\save.png" />
     <Content Include="Resources\icons\stopButton.png" />
     <Content Include="Resources\shapeImages\circle1.png" />

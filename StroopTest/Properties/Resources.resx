@@ -151,9 +151,6 @@
   <data name="fullCircle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\shapeimages\fullcircle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon1_StroopTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon2_StroopTest.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icon_png1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\icon_png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,6 +199,9 @@
   <data name="arrowDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\subtitlePosition\arrowDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-usuário-de-gênero-neutro-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-usuário-de-gênero-neutro-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_experiment" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\icons\icon_experiment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -217,11 +217,14 @@
   <data name="arrowUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\subtitlePosition\arrowUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="stopButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stopButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\icons\icon_list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stopButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stopButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon1_StroopTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon2_StroopTest.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_help" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\icon_help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,7 +238,7 @@
   <data name="icon_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\icons\icon_png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-usuário-de-gênero-neutro-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-usuário-de-gênero-neutro-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_SpacialRecognition" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\icon_SpacialRecognition.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

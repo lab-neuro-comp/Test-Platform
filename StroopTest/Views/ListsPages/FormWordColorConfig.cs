@@ -202,24 +202,16 @@ namespace TestPlatform
                 string listName = listNameTextBox.Text;
                 if (wordsListCheckBox.Checked && colorsListCheckBox.Checked)
                 {
-                    wordGroupBox.Text = listName + "_words";
-                    colorListGroupBox.Text = listName + "_color";
                     wordGroupBox.Enabled = true;
                     colorListGroupBox.Enabled = true;
                 }
                 else if (wordsListCheckBox.Checked && !colorsListCheckBox.Checked)
                 {
-                    wordGroupBox.Text = listName + "_words";
-                    colorListGroupBox.Text = "-";
-
                     wordGroupBox.Enabled = true;
                     colorListGroupBox.Enabled = false;
                 }
                 else if (!wordsListCheckBox.Checked && colorsListCheckBox.Checked)
                 {
-                    wordGroupBox.Text = "-";
-                    colorListGroupBox.Text = listName + "_color";
-
                     wordGroupBox.Enabled = false;
                     colorListGroupBox.Enabled = true;
                 }
@@ -516,15 +508,6 @@ namespace TestPlatform
 
         private void listNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            string listName = listNameTextBox.Text;
-            if (wordsListCheckBox.Checked)
-            {
-                wordGroupBox.Text = listName + "_words";
-            }
-            if (colorsListCheckBox.Checked)
-            {
-                colorListGroupBox.Text = listName + "_color";
-            }
         }
 
         private void wordsListLength_Validated(object sender, EventArgs e)

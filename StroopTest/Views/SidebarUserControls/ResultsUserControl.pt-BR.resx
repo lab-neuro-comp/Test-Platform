@@ -129,4 +129,7 @@
   <data name="matchingButton.Text" xml:space="preserve">
     <value>Teste de Escolha</value>
   </data>
+  <data name="SRResultButton.Text" xml:space="preserve">
+    <value>Teste de Reconhecimento Espacial</value>
+  </data>
 </root>

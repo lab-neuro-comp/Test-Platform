@@ -7,6 +7,7 @@ namespace TestPlatform
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.Drawing;
     using System.Globalization;
     using System.IO;
     using System.Resources;
@@ -14,12 +15,15 @@ namespace TestPlatform
     using TestPlatform.Controllers;
     using TestPlatform.Models;
     using TestPlatform.Models.General;
+    using TestPlatform.Models.Tests.SpacialRecognition;
     using TestPlatform.Views;
     using TestPlatform.Views.ExperimentPages;
+    using TestPlatform.Views.MatchingPages;
     using TestPlatform.Views.ParticipantPages;
     using TestPlatform.Views.ReactionPages;
     using TestPlatform.Views.SidebarControls;
     using TestPlatform.Views.SidebarUserControls;
+    using TestPlatform.Views.SpecialRecognitionPages;
     using Views.MainForms;
 
     public partial class FormMain : Form
@@ -43,6 +47,7 @@ namespace TestPlatform
             initializeParticipants();
  
             _contentPanel = contentPanel;
+            buttonSpacialRegonition.Size = new Size(157, 26);
         }
 
         public void resetParticipants()
@@ -62,36 +67,116 @@ namespace TestPlatform
             participantComboBox.Items.Add(LocRM.GetString("createNewParticipant", currentCulture));
         }
 
-        private void FormMain_KeyDown(object sender, KeyEventArgs e)
+        private void newStroopProgram()
         {
-            if (e.Control && e.KeyCode == Keys.R) // Ctrl+R - roda teste
-            {
-                ExpositionController.BeginStroopTest(executingNameLabel.Text, participantComboBox.Text, markTextBox.Text[0], this);
-            }
-            if (e.Control && e.KeyCode == Keys.D) // Ctrl+D - define programa
-            {
-                defineTest();
-            }
-            if (e.Control && e.KeyCode == Keys.N) // Ctrl+N - novo programa
-            {
-                newProgram();
-            }
-            if (e.Control && e.KeyCode == Keys.H) // Ctrl+H - intruções / ajuda
-            {
-                HelpPagesController.showInstructions();
-            }
+            buttonStroop.Checked = true;
+            buttonStroop_Click(null, null);
+            new StroopControl().newStroopProgram();
         }
 
+        private void newMatchingProgram()
+        {
+            buttonMatching.Checked = true;
+            buttonMatching_Click(null, null);
+            new MatchingControl().newMatchingProgram();
+        }
+
+        private void newReactionProgram()
+        {
+            buttonReaction.Checked = true;
+            buttonReaction_Click(null, null);
+            new ReactionControl().newReactProgram();
+        }
+
+        private void newSpacialRecognitionProgram()
+        {
+            buttonSpacialRegonition.Checked = true;
+            buttonSpacialRegonition_Click(null, null);
+            new SpacialRecognitionControl().newSpacialRecognitionProgram();
+        }
+
+        private void checkListMenu()
+        {
+            buttonList.Checked = true;
+            buttonList_CheckedChanged(null, null);
+        }
+        private void newWordAndColorsList()
+        {
+            checkListMenu();
+            new ListUserControl().newWordColorList();
+        }
+
+        private void newImageList()
+        {
+            checkListMenu();
+            new ListUserControl().newImageList();
+        }
+
+        private void newAudioList()
+        {
+            checkListMenu();
+            new ListUserControl().newAudioList();
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.R))
+            {
+                executeButton_Click(null, null);
+                return true;
+            }
+            if(keyData == (Keys.Control | Keys.D))
+            {
+                defineTest(executingTypeLabel.Text);
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.S))
+            {
+                newStroopProgram();
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.T))
+            {
+                newReactionProgram();
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.M))
+            {
+                newMatchingProgram();
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.E))
+            {
+                newSpacialRecognitionProgram();
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.H))
+            {
+                HelpPagesController.showInstructions();
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.P))
+            {
+                newWordAndColorsList();
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.I))
+            {
+                newImageList();
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.A))
+            {
+                newAudioList();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
 
 
         private void newTextColorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormWordColorConfig configureList = new FormWordColorConfig(false);
-            try
-            {
-                this.contentPanel.Controls.Add(configureList);
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            newWordAndColorsList();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -111,16 +196,11 @@ namespace TestPlatform
 
         private void defineProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            defineTest();
+            defineTest(executingTypeLabel.Text);
         }
         private void newImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormImgConfig configureImagesList = new FormImgConfig("false");
-            try
-            {
-                this.contentPanel.Controls.Add(configureImagesList);
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            newImageList();
         }
 
 
@@ -145,9 +225,9 @@ namespace TestPlatform
         }
 
 
-        private void defineTest()
+        private void defineTest(string testName)
         {
-            FormDefineTest defineTest = new FormDefineTest(CultureInfo.CurrentUICulture);
+            FormDefineTest defineTest = new FormDefineTest(CultureInfo.CurrentUICulture, testName);
             try
             {
                 var result = defineTest.ShowDialog();
@@ -170,16 +250,9 @@ namespace TestPlatform
 
         private void dataToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormShowData showData;
-            try
-            {
-                showData = new FormShowData();
-                this.contentPanel.Controls.Add(showData);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            resultButton.Checked = true;
+            resultButton_CheckedChanged(null, null);
+            new ResultsUserControl().showStroopResults();
         }
 
         private void editImagesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -191,12 +264,7 @@ namespace TestPlatform
 
         private void audioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormAudioConfig configureAudioList = new FormAudioConfig(false);
-            try
-            {
-                this.contentPanel.Controls.Add(configureAudioList);
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            newAudioList();
         }
 
         private void techInfoButto_ToolStrip_Click(object sender, EventArgs e)
@@ -223,11 +291,11 @@ namespace TestPlatform
         }
         private void openShowAudioForm()
         {
-            FormShowAudio showAudio;
             try
             {
-                showAudio = new FormShowAudio();
-                this.Controls.Add(showAudio);
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Clear();
+                FormShowAudio newAudio = new FormShowAudio();
+                FileManipulation.GlobalFormMain._contentPanel.Controls.Add(newAudio);
             }
             catch (Exception ex)
             {
@@ -237,11 +305,13 @@ namespace TestPlatform
 
         private void displayAudiosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            checkListMenu();
             openShowAudioForm();
         }
 
         private void newAudioToolStripMenu_Click(object sender, EventArgs e)
         {
+            checkListMenu();
             openShowAudioForm();
         }
 
@@ -347,14 +417,12 @@ namespace TestPlatform
 
         private void stroopToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPrgConfig configureProgram = new FormPrgConfig("false");
-            this.contentPanel.Controls.Add(configureProgram);
+            newStroopProgram();
         }
 
         private void reactionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormTRConfig configureProgram = new FormTRConfig("false");
-            this.contentPanel.Controls.Add(configureProgram);
+            newReactionProgram();
         }
 
         private void stroopToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -422,6 +490,10 @@ namespace TestPlatform
                 {
                     ExpositionController.BeginMatchingTest(executingNameLabel.Text, participantComboBox.Text, markTextBox.Text[0], this);
                 }
+                else if (executingTypeLabel.Text.Equals(LocRM.GetString("spacialRecognitionTest", currentCulture)))
+                {
+                    ExpositionController.BeginSpacialRecognitionTest(executingNameLabel.Text, participantComboBox.Text, markTextBox.Text[0], this);
+                }
                 else
                 {
                     /* do nothing*/
@@ -474,7 +546,7 @@ namespace TestPlatform
 
         private void selectButton_Click(object sender, EventArgs e)
         {
-            defineTest();
+            defineTest(executingTypeLabel.Text);
         }
 
         private void participantTextBox_Validated(object sender, EventArgs e)
@@ -557,23 +629,16 @@ namespace TestPlatform
 
         private void reactionToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            ReactionResultUserControl showData;
-            try
-            {
-                showData = new ReactionResultUserControl();
-                FileManipulation.GlobalFormMain._contentPanel.Controls.Add(showData);
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            resultButton.Checked = true;
+            resultButton_CheckedChanged(null, null);
+            new ResultsUserControl().showReactionResults();
         }
 
         private void experimentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ExperimentResultUserControl showData = new ExperimentResultUserControl();
-                FileManipulation.GlobalFormMain._contentPanel.Controls.Add(showData);
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            resultButton.Checked = true;
+            resultButton_CheckedChanged(null, null);
+            new ResultsUserControl().showExperimentResults();
         }
 
         private void portuguêsBrasilToolStripMenuItem_Click(object sender, EventArgs e)
@@ -755,5 +820,92 @@ namespace TestPlatform
             }
         }
 
+        private void buttonSpacialRegonition_Click(object sender, EventArgs e)
+        {
+            if (buttonSpacialRegonition.Checked)
+            {
+                this.sideBarPanel.Controls.Clear();
+                this._contentPanel.Controls.Clear();
+
+                SpacialRecognitionControl SpecialRecognitionControl = new SpacialRecognitionControl();
+                this.sideBarPanel.Controls.Add(SpecialRecognitionControl);
+                currentPanelContent = SpecialRecognitionControl;
+            }
+
+        }
+
+        private void MatchingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            newMatchingProgram();
+        }
+
+        private void SpacialRecognitionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            newSpacialRecognitionProgram();
+        }
+
+        private void MatchingToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            resultButton.Checked = true;
+            resultButton_CheckedChanged(null, null);
+            new ResultsUserControl().showMatchingResults();
+        }
+
+        private void SpacialRecognitionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            resultButton.Checked = true;
+            resultButton_CheckedChanged(null, null);
+            new ResultsUserControl().showSpacialRecoginitionResults();
+        }
+
+        private void SpacialRecognitionToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FormDefine defineProgram;
+            DialogResult result;
+            string editProgramName = "error";
+
+            try
+            {
+                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), SpacialRecognitionProgram.GetProgramsPath(), "prg", "program", false, false);
+                result = defineProgram.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    editProgramName = defineProgram.ReturnValue;
+                    FormSRConfig configureProgram = new FormSRConfig(editProgramName);
+                    configureProgram.PrgName = editProgramName;
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
+                }
+                else
+                {
+                    /*do nothing, user cancelled selection of program*/
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void MatchingToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FormDefine defineProgram;
+            DialogResult result;
+            string editProgramName = "error";
+
+            try
+            {
+                defineProgram = new FormDefine(LocRM.GetString("editProgram", currentCulture), MatchingProgram.GetProgramsPath(), "prg", "program", false, false);
+                result = defineProgram.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    editProgramName = defineProgram.ReturnValue;
+                    FormMatchConfig configureProgram = new FormMatchConfig(editProgramName);
+                    configureProgram.PrgName = editProgramName;
+                    FileManipulation.GlobalFormMain._contentPanel.Controls.Add(configureProgram);
+                }
+                else
+                {
+                    /*do nothing, user cancelled selection of program*/
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
     }
 }

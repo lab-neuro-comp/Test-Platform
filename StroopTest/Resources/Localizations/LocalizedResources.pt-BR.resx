@@ -1253,13 +1253,13 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
     <value>#F8E000 #007BB7 #7EC845 #D01C1F</value>
   </data>
   <data name="defaultReactionInstructions1" xml:space="preserve">
-    <value>Serão apresentados quadrados de forma aleatória. Aperte a barra de espaço quando ver o quadrado.</value>
+    <value>Serão apresentados quadrados de forma aleatória. Aperte a barra de espaço o mais rápido possível, quando vir o quadrado.</value>
   </data>
   <data name="defaultReactionInstructions2" xml:space="preserve">
     <value>A tarefa vai começar agora</value>
   </data>
   <data name="defaultReactionProgram" xml:space="preserve">
-    <value>padrao 12 1000 1 2000 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false false 10 false false 500</value>
+    <value>padrao 12 1000 1 2000 false false #000000 False 0 #FFFF00 shapes false false + #FF0000 True square, False 4 space false false 10 false false 1000</value>
   </data>
   <data name="defaultReactionProgramError" xml:space="preserve">
     <value>Erro ao criar o programa padrão do teste de tempo de reação.</value>
@@ -2316,9 +2316,6 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="deleteFiles" xml:space="preserve">
     <value>Você tem certeza que deseja mover todos os arquivos selecionados?</value>
   </data>
-  <data name="FilesNotDeleted" xml:space="preserve">
-    <value>Nenhuma arquivo foi movido.</value>
-  </data>
   <data name="listsNotDeleted" xml:space="preserve">
     <value>Nenhuma lista foi excluída.</value>
   </data>
@@ -2604,8 +2601,8 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   <data name="stimulu" xml:space="preserve">
     <value>Estimulo</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
+  <data name="notAvaliable" xml:space="preserve">
+    <value>Não está disponível ainda.</value>
   </data>
   <data name="image" xml:space="preserve">
     <value>Imagem</value>
@@ -2845,5 +2842,45 @@ https://github.com/lab-neuro-comp/Test-Platform</value>
   </data>
   <data name="selectAudioFile" xml:space="preserve">
     <value>Selecione um arquivo de áudio.</value>
+  </data>
+  <data name="spacialRecognitionTest" xml:space="preserve">
+    <value>Teste de Reconhecimento Espacial</value>
+  </data>
+  <data name="spacialRecognitionTestHeader" xml:space="preserve">
+    <value>nome do programa\t#\tParticipante\tdata\thorario\ttempo\ttempo de reação(ms)\tIntervalo das tentativas\tIntervalo\tSequencia\tSequencia na tentativa\tTipo de estimulo\tLista\tModelo\tCor do modelo\tPosição do ultimo estimulo\tPosição do estimulo clicado\tAcerto</value>
+  </data>
+  <data name="filesNotDeleted" xml:space="preserve">
+    <value>Nenhum arquivo foi movido.</value>
+  </data>
+  <data name="String1inFormListWarning" xml:space="preserve">
+    <value>Você será redirecionado de volta para a edição do programa após a criação da lista.</value>
+  </data>
+  <data name="spacialRecognition" xml:space="preserve">
+    <value>Reconhecimento Espacial</value>
+  </data>
+  <data name="defaultSRInstruction1" xml:space="preserve">
+    <value>Diversos estímulos irão aparecer na sua tela sequencialmente</value>
+  </data>
+  <data name="defaultSRInstruction2" xml:space="preserve">
+    <value>Escolha apenas o ultimo que apareceu.</value>
+  </data>
+  <data name="defaultSRProgram" xml:space="preserve">
+    <value>padrao 3 True padrao false false 2000 1500 False 1 1 12 4 #000000 1000 False True True True 0
+</value>
+  </data>
+  <data name="defaultMatchingInstruction1" xml:space="preserve">
+    <value>Irá aparecer um único modelo seguido por dois estímulos.</value>
+  </data>
+  <data name="defaultMatchingInstruction2" xml:space="preserve">
+    <value>Selecione o estímulo correspondente ao modelo</value>
+  </data>
+  <data name="defaultMatchingProgram" xml:space="preserve">
+    <value>padrao 2 1500 True 1000 False padrao false #FFFFFF DMTS false false false false 1000 18 False True 1500 1500 #404040 4 0 False False #000000 True True False True</value>
+  </data>
+  <data name="preference_horizontal" xml:space="preserve">
+    <value>Preferencia(Horizontal)</value>
+  </data>
+  <data name="preference_vertical" xml:space="preserve">
+    <value>Preferencia(Vertical)</value>
   </data>
 </root>

@@ -188,37 +188,70 @@ namespace TestPlatform.Controllers
 
         }
 
-        public Point getPositon(Size stimulusSize)
+        public Point getPositon(Size stimulusSize, char direction = 'h')
         {
             this.stimulusSize = stimulusSize;
             Console.WriteLine(pointCount);
             Point position = new Point();
-            switch (PointsNumber)
+            if(direction == 'h')
             {
-                case 1:
-                    position = centerPosition(PointsNumber, pointCount);
-                    break;
-                case 2:
-                    position = twoPointsHorizontalPosition(pointCount);
-                    break;
-                case 3:
-                    position = threePointsPosition(pointCount);
-                    break;
-                case 4:
-                    position = fourPointsPosition(pointCount);
-                    break;
-                case 5:
-                    position = fivePointsPosition(pointCount);
-                    break;
-                case 6:
-                    position = sixPointsPosition(pointCount);
-                    break;
-                case 7:
-                    position = sevenPointsPosition(pointCount);
-                    break;
-                case 8:
-                    position = eightPointsPosition(pointCount);
-                    break;
+                switch (PointsNumber)
+                {
+                    case 1:
+                        position = centerPosition(PointsNumber, pointCount);
+                        break;
+                    case 2:
+                        position = twoPointsHorizontalPosition(pointCount);
+                        break;
+                    case 3:
+                        position = threePointsPosition(pointCount);
+                        break;
+                    case 4:
+                        position = fourPointsPosition(pointCount);
+                        break;
+                    case 5:
+                        position = fivePointsPosition(pointCount);
+                        break;
+                    case 6:
+                        position = sixPointsPosition(pointCount);
+                        break;
+                    case 7:
+                        position = sevenPointsPosition(pointCount);
+                        break;
+                    case 8:
+                        position = eightPointsPosition(pointCount);
+                        break;
+                }
+            }
+            else
+            {
+                switch (PointsNumber)
+                {
+                    case 1:
+                        position = centerPosition(PointsNumber, pointCount);
+                        break;
+                    case 2:
+                        position = twoPointsVerticalPosition(pointCount);
+                        break;
+                    case 3:
+                        position = threePointsPosition(pointCount);
+                        break;
+                    case 4:
+                        position = fourPointsPosition(pointCount);
+                        break;
+                    case 5:
+                        position = fivePointsPosition(pointCount);
+                        break;
+                    case 6:
+                        position = sixPointsPosition(pointCount);
+                        break;
+                    case 7:
+                        position = sevenPointsPosition(pointCount);
+                        break;
+                    case 8:
+                        position = eightPointsPosition(pointCount);
+                        break;
+                }
             }
             pointCount++;
             return position;
@@ -235,7 +268,6 @@ namespace TestPlatform.Controllers
             if (pointPosition < pointsNumber)
             {
                 /*middle center*/
-                float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
                 return generatePoint(D2); // D2
             }
             else
@@ -251,13 +283,32 @@ namespace TestPlatform.Controllers
         /// </summary>
         public Point twoPointsHorizontalPosition(int pointPosition)
         {
-            float[] clientMiddle = { (clientSize.Width / 2), (clientSize.Height / 2) };
             switch (pointPosition)
             {
                 case 0: /*middle left */
                     return generatePoint(B2);
                 case 1: /*middle right */
                     return generatePoint(F2);
+                default:
+                    throw new InvalidOperationException();
+            }
+        }
+
+
+
+        /// <summary>
+        /// Generate point in middle left or middle right of user screen
+        /// <param name="stimulusSize"> size of the stimulus that will be shown to user</param>
+        /// <param name="pointPosition">poistion of point that will be generated, must be 0 or 1</param>
+        /// </summary>
+        public Point twoPointsVerticalPosition(int pointPosition)
+        {
+            switch (pointPosition)
+            {
+                case 0: /*middle top */
+                    return generatePoint(D1);
+                case 1: /*middle bottom */
+                    return generatePoint(D3);
                 default:
                     throw new InvalidOperationException();
             }

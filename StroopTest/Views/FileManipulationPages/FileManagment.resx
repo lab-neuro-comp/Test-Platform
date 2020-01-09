@@ -119,14 +119,10 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="originFilesList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 69</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="originFilesList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 56</value>
   </data>
   <data name="originFilesList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 329</value>
+    <value>275, 264</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="originFilesList.TabIndex" type="System.Int32, mscorlib">
@@ -145,13 +141,10 @@
     <value>11</value>
   </data>
   <data name="destinationFilesList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>428, 69</value>
-  </data>
-  <data name="destinationFilesList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>321, 56</value>
   </data>
   <data name="destinationFilesList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 329</value>
+    <value>275, 264</value>
   </data>
   <data name="destinationFilesList.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -172,13 +165,10 @@
     <value>True</value>
   </data>
   <data name="originListLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 49</value>
-  </data>
-  <data name="originListLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>3, 40</value>
   </data>
   <data name="originListLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 17</value>
+    <value>74, 13</value>
   </data>
   <data name="originListLabel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -201,17 +191,15 @@
   <data name="destinationListLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="destinationListLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="destinationListLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>424, 49</value>
-  </data>
-  <data name="destinationListLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>318, 40</value>
   </data>
   <data name="destinationListLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 17</value>
+    <value>100, 13</value>
   </data>
   <data name="destinationListLabel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -235,13 +223,10 @@
     <value>NoControl</value>
   </data>
   <data name="errorMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 554</value>
-  </data>
-  <data name="errorMessage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>6, 404</value>
   </data>
   <data name="errorMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 100</value>
+    <value>594, 81</value>
   </data>
   <data name="errorMessage.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -265,13 +250,10 @@
     <value>True</value>
   </data>
   <data name="warningCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 662</value>
-  </data>
-  <data name="warningCheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 477</value>
   </data>
   <data name="warningCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 21</value>
+    <value>112, 17</value>
   </data>
   <data name="warningCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -295,13 +277,10 @@
     <value>Popup</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 691</value>
-  </data>
-  <data name="cancelButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 500</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 28</value>
+    <value>112, 23</value>
   </data>
   <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -328,13 +307,10 @@
     <value>NoControl</value>
   </data>
   <data name="sendButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>647, 691</value>
-  </data>
-  <data name="sendButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>485, 500</value>
   </data>
   <data name="sendButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 28</value>
+    <value>112, 23</value>
   </data>
   <data name="sendButton.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -364,13 +340,10 @@
     <value>NoControl</value>
   </data>
   <data name="addToDestinationList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>379, 197</value>
-  </data>
-  <data name="addToDestinationList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>284, 160</value>
   </data>
   <data name="addToDestinationList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 31</value>
+    <value>31, 25</value>
   </data>
   <data name="addToDestinationList.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -400,13 +373,10 @@
     <value>NoControl</value>
   </data>
   <data name="addToOriginList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>379, 235</value>
-  </data>
-  <data name="addToOriginList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>284, 191</value>
   </data>
   <data name="addToOriginList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 31</value>
+    <value>31, 25</value>
   </data>
   <data name="addToOriginList.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -430,13 +400,13 @@
     <value>Zoom</value>
   </data>
   <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>763, 2</value>
+    <value>572, 2</value>
   </data>
   <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 32</value>
+    <value>26, 26</value>
   </data>
   <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -460,13 +430,10 @@
     <value>NoControl</value>
   </data>
   <data name="warningLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 431</value>
-  </data>
-  <data name="warningLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>9, 323</value>
   </data>
   <data name="warningLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 100</value>
+    <value>588, 81</value>
   </data>
   <data name="warningLabel.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>
@@ -493,13 +460,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 738</value>
+    <value>600, 525</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FileManagment</value>

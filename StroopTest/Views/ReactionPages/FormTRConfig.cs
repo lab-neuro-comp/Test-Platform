@@ -1123,7 +1123,5 @@ namespace TestPlatform.Views
                 sstCheckBox.Checked = false;
             }
         }
-
-
     }
 }

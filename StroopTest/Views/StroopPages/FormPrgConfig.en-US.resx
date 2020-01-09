@@ -125,7 +125,7 @@
 Color:</value>
   </data>
   <data name="fixPointColorButton.Text" xml:space="preserve">
-    <value>choose</value>
+    <value>#F0F0F0</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
     <value>Fix Point</value>

@@ -133,10 +133,10 @@
     <value>Lista de Estímulos</value>
   </data>
   <data name="stroopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Stroop</value>
+    <value>Stroop                            Ctrl + S</value>
   </data>
   <data name="reactionToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tiempo de Reación</value>
+    <value>Tiempo de Reación     Ctrl + T</value>
   </data>
   <data name="newProgramToolStripMenuItem.Text" xml:space="preserve">
     <value>Programa Ctrl+N</value>

@@ -108,11 +108,18 @@ namespace TestPlatform.Views.MatchingPages
             {
                 this.expositionType.SelectedIndex = 2;
             }
-            else
+            else if(editProgram.getExpositionType() == LocRM.GetString("randomDMTS_DNMTS", currentCulture))
             {
                 this.expositionType.SelectedIndex = 3;
             }
-
+            else if(editProgram.getExpositionType()  == LocRM.GetString("preference_horizontal", currentCulture))
+            {
+                this.expositionType.SelectedIndex = 4;
+            }
+            else
+            {
+                this.expositionType.SelectedIndex = 5;
+            }
             // reads program instructions to instruction box if there are any
             if (editProgram.InstructionText != null)
             {
@@ -291,7 +298,7 @@ namespace TestPlatform.Views.MatchingPages
 
         private bool validExpositionType(out string errorMessage)
         {
-            if(this.expositionType.SelectedIndex >= 0 && this.expositionType.SelectedIndex < 4)
+            if(this.expositionType.SelectedIndex >= 0 && this.expositionType.SelectedIndex < 6)
             {
                 errorMessage = "";
                 return true;
@@ -312,7 +319,7 @@ namespace TestPlatform.Views.MatchingPages
         {
             this.errorProvider1.Clear();
             this.errorProvider2.Clear();
-            if(this.expositionType.SelectedIndex > 3)
+            if(this.expositionType.SelectedIndex > 5)
             {
                 this.errorProvider1.SetError(this.expositionType, LocRM.GetString("unavailableExpo", currentCulture));
             }
@@ -421,7 +428,7 @@ namespace TestPlatform.Views.MatchingPages
             }
             else
             {
-                errorMessage = LocRM.GetString("wordListError", currentCulture);
+                errorMessage = LocRM.GetString("listError", currentCulture);
                 return false;
             }
         }

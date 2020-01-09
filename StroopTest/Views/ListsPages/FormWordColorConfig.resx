@@ -119,21 +119,17 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="listNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 15</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="listNameTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>90, 12</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="listNameTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
   <data name="listNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>136, 20</value>
   </data>
   <data name="listNameTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;listNameTextBox.Name" xml:space="preserve">
     <value>listNameTextBox</value>
@@ -151,13 +147,10 @@
     <value>True</value>
   </data>
   <data name="listNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 18</value>
-  </data>
-  <data name="listNameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>6, 15</value>
   </data>
   <data name="listNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 17</value>
+    <value>78, 13</value>
   </data>
   <data name="listNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -181,16 +174,13 @@
     <value>True</value>
   </data>
   <data name="wordsListCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 46</value>
-  </data>
-  <data name="wordsListCheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>8, 37</value>
   </data>
   <data name="wordsListCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 21</value>
+    <value>107, 17</value>
   </data>
   <data name="wordsListCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>2</value>
   </data>
   <data name="wordsListCheckBox.Text" xml:space="preserve">
     <value>Lista de Palavras</value>
@@ -211,16 +201,13 @@
     <value>True</value>
   </data>
   <data name="colorsListCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>400, 46</value>
-  </data>
-  <data name="colorsListCheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>300, 37</value>
   </data>
   <data name="colorsListCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
+    <value>93, 17</value>
   </data>
   <data name="colorsListCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>3</value>
   </data>
   <data name="colorsListCheckBox.Text" xml:space="preserve">
     <value>Lista de Cores</value>
@@ -240,20 +227,18 @@
   <data name="newTextButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="newTextButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="newTextButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>293, 31</value>
-  </data>
-  <data name="newTextButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>220, 9</value>
   </data>
   <data name="newTextButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 29</value>
+    <value>72, 25</value>
   </data>
   <data name="newTextButton.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>5</value>
   </data>
   <data name="newTextButton.Text" xml:space="preserve">
     <value>Adicionar</value>
@@ -274,13 +259,10 @@
     <value>True</value>
   </data>
   <data name="numberItensWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 615</value>
-  </data>
-  <data name="numberItensWord.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>160, 500</value>
   </data>
   <data name="numberItensWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 17</value>
+    <value>13, 13</value>
   </data>
   <data name="numberItensWord.TabIndex" type="System.Int32, mscorlib">
     <value>61</value>
@@ -304,13 +286,10 @@
     <value>True</value>
   </data>
   <data name="numberItensWordLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 615</value>
-  </data>
-  <data name="numberItensWordLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>70, 500</value>
   </data>
   <data name="numberItensWordLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 17</value>
+    <value>73, 13</value>
   </data>
   <data name="numberItensWordLabel.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
@@ -334,16 +313,13 @@
     <value>Popup</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 693</value>
-  </data>
-  <data name="cancelButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 563</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>75, 23</value>
   </data>
   <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>63</value>
+    <value>17</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>cancelar</value>
@@ -367,16 +343,13 @@
     <value>NoControl</value>
   </data>
   <data name="saveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>696, 693</value>
-  </data>
-  <data name="saveButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>522, 563</value>
   </data>
   <data name="saveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>75, 23</value>
   </data>
   <data name="saveButton.TabIndex" type="System.Int32, mscorlib">
-    <value>62</value>
+    <value>18</value>
   </data>
   <data name="saveButton.Text" xml:space="preserve">
     <value>salvar</value>
@@ -400,13 +373,13 @@
     <value>Zoom</value>
   </data>
   <data name="helpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>761, 2</value>
+    <value>571, 2</value>
   </data>
   <data name="helpButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="helpButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 32</value>
+    <value>26, 26</value>
   </data>
   <data name="helpButton.TabIndex" type="System.Int32, mscorlib">
     <value>82</value>
@@ -427,13 +400,10 @@
     <value>True</value>
   </data>
   <data name="labelEmpty.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 267</value>
-  </data>
-  <data name="labelEmpty.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>4, 217</value>
   </data>
   <data name="labelEmpty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
+    <value>0, 13</value>
   </data>
   <data name="labelEmpty.TabIndex" type="System.Int32, mscorlib">
     <value>83</value>
@@ -460,10 +430,28 @@
     <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="wordListEmpty.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="wordListEmpty.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 435</value>
+  </data>
+  <data name="wordListEmpty.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="wordListEmpty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="wordListEmpty.TabIndex" type="System.Int32, mscorlib">
+    <value>180</value>
+  </data>
+  <data name="wordListEmpty.Text" xml:space="preserve">
+    <value>wordListEmpty</value>
   </data>
   <data name="&gt;&gt;wordListEmpty.Name" xml:space="preserve">
     <value>wordListEmpty</value>
@@ -477,674 +465,6 @@
   <data name="&gt;&gt;wordListEmpty.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;wordListView.Name" xml:space="preserve">
-    <value>wordListView</value>
-  </data>
-  <data name="&gt;&gt;wordListView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wordListView.Parent" xml:space="preserve">
-    <value>wordGroupBox</value>
-  </data>
-  <data name="&gt;&gt;wordListView.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>wordGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;downWordItem.Name" xml:space="preserve">
-    <value>downWordItem</value>
-  </data>
-  <data name="&gt;&gt;downWordItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downWordItem.Parent" xml:space="preserve">
-    <value>wordGroupBox</value>
-  </data>
-  <data name="&gt;&gt;downWordItem.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;upWordItem.Name" xml:space="preserve">
-    <value>upWordItem</value>
-  </data>
-  <data name="&gt;&gt;upWordItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;upWordItem.Parent" xml:space="preserve">
-    <value>wordGroupBox</value>
-  </data>
-  <data name="&gt;&gt;upWordItem.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;deleteWordItem.Name" xml:space="preserve">
-    <value>deleteWordItem</value>
-  </data>
-  <data name="&gt;&gt;deleteWordItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;deleteWordItem.Parent" xml:space="preserve">
-    <value>wordGroupBox</value>
-  </data>
-  <data name="&gt;&gt;deleteWordItem.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;wordItemTextBox.Name" xml:space="preserve">
-    <value>wordItemTextBox</value>
-  </data>
-  <data name="&gt;&gt;wordItemTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wordItemTextBox.Parent" xml:space="preserve">
-    <value>wordGroupBox</value>
-  </data>
-  <data name="&gt;&gt;wordItemTextBox.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="wordGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 85</value>
-  </data>
-  <data name="wordGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>396, 600</value>
-  </data>
-  <data name="wordGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>182</value>
-  </data>
-  <data name="wordGroupBox.Text" xml:space="preserve">
-    <value>nomeListaPalavras</value>
-  </data>
-  <data name="&gt;&gt;wordGroupBox.Name" xml:space="preserve">
-    <value>wordGroupBox</value>
-  </data>
-  <data name="&gt;&gt;wordGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wordGroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;wordGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;colorListEmpty.Name" xml:space="preserve">
-    <value>colorListEmpty</value>
-  </data>
-  <data name="&gt;&gt;colorListEmpty.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colorListEmpty.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;colorListEmpty.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;colorListView.Name" xml:space="preserve">
-    <value>colorListView</value>
-  </data>
-  <data name="&gt;&gt;colorListView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colorListView.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;colorListView.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;numberItensColorLabel.Name" xml:space="preserve">
-    <value>numberItensColorLabel</value>
-  </data>
-  <data name="&gt;&gt;numberItensColorLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numberItensColorLabel.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;numberItensColorLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;numberItensColor.Name" xml:space="preserve">
-    <value>numberItensColor</value>
-  </data>
-  <data name="&gt;&gt;numberItensColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numberItensColor.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;numberItensColor.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;newColorButton.Name" xml:space="preserve">
-    <value>newColorButton</value>
-  </data>
-  <data name="&gt;&gt;newColorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;newColorButton.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;newColorButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;colorPanel.Name" xml:space="preserve">
-    <value>colorPanel</value>
-  </data>
-  <data name="&gt;&gt;colorPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colorPanel.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;colorPanel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;chooseColorButton.Name" xml:space="preserve">
-    <value>chooseColorButton</value>
-  </data>
-  <data name="&gt;&gt;chooseColorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chooseColorButton.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;chooseColorButton.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;colorItemTextBox.Name" xml:space="preserve">
-    <value>colorItemTextBox</value>
-  </data>
-  <data name="&gt;&gt;colorItemTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colorItemTextBox.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;colorItemTextBox.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;deleteColorItem.Name" xml:space="preserve">
-    <value>deleteColorItem</value>
-  </data>
-  <data name="&gt;&gt;deleteColorItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;deleteColorItem.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;deleteColorItem.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;upColorItem.Name" xml:space="preserve">
-    <value>upColorItem</value>
-  </data>
-  <data name="&gt;&gt;upColorItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;upColorItem.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;upColorItem.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;downColorItem.Name" xml:space="preserve">
-    <value>downColorItem</value>
-  </data>
-  <data name="&gt;&gt;downColorItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downColorItem.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;downColorItem.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="colorListGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>400, 85</value>
-  </data>
-  <data name="colorListGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>396, 600</value>
-  </data>
-  <data name="colorListGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>181</value>
-  </data>
-  <data name="colorListGroupBox.Text" xml:space="preserve">
-    <value>nomeListaCores</value>
-  </data>
-  <data name="&gt;&gt;colorListGroupBox.Name" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;colorListGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colorListGroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;colorListGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 743</value>
-  </data>
-  <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
-    <value>errorProvider1</value>
-  </data>
-  <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colorDialog1.Name" xml:space="preserve">
-    <value>colorDialog1</value>
-  </data>
-  <data name="&gt;&gt;colorDialog1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColorDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FormWordColorConfig</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="colorListView.Alignment" type="System.Windows.Forms.ListViewAlignment, System.Windows.Forms">
-    <value>SnapToGrid</value>
-  </data>
-  <data name="colorListView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="colorListView.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 15.75pt</value>
-  </data>
-  <data name="colorListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 94</value>
-  </data>
-  <data name="colorListView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="colorListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 473</value>
-  </data>
-  <data name="colorListView.TabIndex" type="System.Int32, mscorlib">
-    <value>87</value>
-  </data>
-  <data name="&gt;&gt;colorListView.Name" xml:space="preserve">
-    <value>colorListView</value>
-  </data>
-  <data name="&gt;&gt;colorListView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colorListView.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;colorListView.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="numberItensColor.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="numberItensColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="numberItensColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>209, 615</value>
-  </data>
-  <data name="numberItensColor.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
-  </data>
-  <data name="numberItensColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 17</value>
-  </data>
-  <data name="numberItensColor.TabIndex" type="System.Int32, mscorlib">
-    <value>89</value>
-  </data>
-  <data name="numberItensColor.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;numberItensColor.Name" xml:space="preserve">
-    <value>numberItensColor</value>
-  </data>
-  <data name="&gt;&gt;numberItensColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numberItensColor.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;numberItensColor.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="numberItensColorLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="numberItensColorLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="numberItensColorLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 615</value>
-  </data>
-  <data name="numberItensColorLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
-  </data>
-  <data name="numberItensColorLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 17</value>
-  </data>
-  <data name="numberItensColorLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>88</value>
-  </data>
-  <data name="numberItensColorLabel.Text" xml:space="preserve">
-    <value>Itens na Lista:</value>
-  </data>
-  <data name="&gt;&gt;numberItensColorLabel.Name" xml:space="preserve">
-    <value>numberItensColorLabel</value>
-  </data>
-  <data name="&gt;&gt;numberItensColorLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numberItensColorLabel.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;numberItensColorLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="wordItemTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 34</value>
-  </data>
-  <data name="wordItemTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="wordItemTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
-  </data>
-  <data name="wordItemTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>90</value>
-  </data>
-  <data name="&gt;&gt;wordItemTextBox.Name" xml:space="preserve">
-    <value>wordItemTextBox</value>
-  </data>
-  <data name="&gt;&gt;wordItemTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wordItemTextBox.Parent" xml:space="preserve">
-    <value>wordGroupBox</value>
-  </data>
-  <data name="&gt;&gt;wordItemTextBox.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="newColorButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="newColorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="newColorButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="newColorButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 26</value>
-  </data>
-  <data name="newColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="newColorButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 29</value>
-  </data>
-  <data name="newColorButton.TabIndex" type="System.Int32, mscorlib">
-    <value>91</value>
-  </data>
-  <data name="newColorButton.Text" xml:space="preserve">
-    <value>Adicionar</value>
-  </data>
-  <data name="&gt;&gt;newColorButton.Name" xml:space="preserve">
-    <value>newColorButton</value>
-  </data>
-  <data name="&gt;&gt;newColorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;newColorButton.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;newColorButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="colorPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 59</value>
-  </data>
-  <data name="colorPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="colorPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 29</value>
-  </data>
-  <data name="colorPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>168</value>
-  </data>
-  <data name="&gt;&gt;colorPanel.Name" xml:space="preserve">
-    <value>colorPanel</value>
-  </data>
-  <data name="&gt;&gt;colorPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colorPanel.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;colorPanel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="chooseColorButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chooseColorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="chooseColorButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chooseColorButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 59</value>
-  </data>
-  <data name="chooseColorButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="chooseColorButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 29</value>
-  </data>
-  <data name="chooseColorButton.TabIndex" type="System.Int32, mscorlib">
-    <value>169</value>
-  </data>
-  <data name="chooseColorButton.Text" xml:space="preserve">
-    <value>Escolher</value>
-  </data>
-  <data name="&gt;&gt;chooseColorButton.Name" xml:space="preserve">
-    <value>chooseColorButton</value>
-  </data>
-  <data name="&gt;&gt;chooseColorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chooseColorButton.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;chooseColorButton.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 97</value>
-  </data>
-  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 34</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>173</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Item
-Selecionado:
-</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="downColorItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="downColorItem.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="downColorItem.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="downColorItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 135</value>
-  </data>
-  <data name="downColorItem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="downColorItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="downColorItem.TabIndex" type="System.Int32, mscorlib">
-    <value>172</value>
-  </data>
-  <data name="&gt;&gt;downColorItem.Name" xml:space="preserve">
-    <value>downColorItem</value>
-  </data>
-  <data name="&gt;&gt;downColorItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downColorItem.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;downColorItem.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="upColorItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="upColorItem.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="upColorItem.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="upColorItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 135</value>
-  </data>
-  <data name="upColorItem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="upColorItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="upColorItem.TabIndex" type="System.Int32, mscorlib">
-    <value>171</value>
-  </data>
-  <data name="&gt;&gt;upColorItem.Name" xml:space="preserve">
-    <value>upColorItem</value>
-  </data>
-  <data name="&gt;&gt;upColorItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;upColorItem.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;upColorItem.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="deleteColorItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="deleteColorItem.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="deleteColorItem.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="deleteColorItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 173</value>
-  </data>
-  <data name="deleteColorItem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="deleteColorItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 29</value>
-  </data>
-  <data name="deleteColorItem.TabIndex" type="System.Int32, mscorlib">
-    <value>170</value>
-  </data>
-  <data name="deleteColorItem.Text" xml:space="preserve">
-    <value>Apagar</value>
-  </data>
-  <data name="&gt;&gt;deleteColorItem.Name" xml:space="preserve">
-    <value>deleteColorItem</value>
-  </data>
-  <data name="&gt;&gt;deleteColorItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;deleteColorItem.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;deleteColorItem.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="colorItemTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 29</value>
-  </data>
-  <data name="colorItemTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="colorItemTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
-  </data>
-  <data name="colorItemTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>174</value>
-  </data>
-  <data name="&gt;&gt;colorItemTextBox.Name" xml:space="preserve">
-    <value>colorItemTextBox</value>
-  </data>
-  <data name="&gt;&gt;colorItemTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colorItemTextBox.Parent" xml:space="preserve">
-    <value>colorListGroupBox</value>
-  </data>
-  <data name="&gt;&gt;colorItemTextBox.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="wordListView.Alignment" type="System.Windows.Forms.ListViewAlignment, System.Windows.Forms">
     <value>SnapToGrid</value>
   </data>
@@ -1155,16 +475,16 @@ Selecionado:
     <value>Microsoft Sans Serif, 15.75pt</value>
   </data>
   <data name="wordListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 81</value>
+    <value>73, 37</value>
   </data>
   <data name="wordListView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="wordListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 486</value>
+    <value>219, 396</value>
   </data>
   <data name="wordListView.TabIndex" type="System.Int32, mscorlib">
-    <value>175</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;wordListView.Name" xml:space="preserve">
     <value>wordListView</value>
@@ -1178,9 +498,6 @@ Selecionado:
   <data name="&gt;&gt;wordListView.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="colorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>172, 17</value>
-  </metadata>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1188,13 +505,10 @@ Selecionado:
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 84</value>
-  </data>
-  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>5, 39</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 34</value>
+    <value>69, 26</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>179</value>
@@ -1226,16 +540,13 @@ Selecionado:
     <value>NoControl</value>
   </data>
   <data name="downWordItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 122</value>
-  </data>
-  <data name="downWordItem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>35, 70</value>
   </data>
   <data name="downWordItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 30</value>
   </data>
   <data name="downWordItem.TabIndex" type="System.Int32, mscorlib">
-    <value>178</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;downWordItem.Name" xml:space="preserve">
     <value>downWordItem</value>
@@ -1259,16 +570,13 @@ Selecionado:
     <value>NoControl</value>
   </data>
   <data name="upWordItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 122</value>
-  </data>
-  <data name="upWordItem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>5, 70</value>
   </data>
   <data name="upWordItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 30</value>
   </data>
   <data name="upWordItem.TabIndex" type="System.Int32, mscorlib">
-    <value>177</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;upWordItem.Name" xml:space="preserve">
     <value>upWordItem</value>
@@ -1292,16 +600,13 @@ Selecionado:
     <value>NoControl</value>
   </data>
   <data name="deleteWordItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 160</value>
-  </data>
-  <data name="deleteWordItem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>5, 101</value>
   </data>
   <data name="deleteWordItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 29</value>
+    <value>61, 24</value>
   </data>
   <data name="deleteWordItem.TabIndex" type="System.Int32, mscorlib">
-    <value>176</value>
+    <value>9</value>
   </data>
   <data name="deleteWordItem.Text" xml:space="preserve">
     <value>Apagar</value>
@@ -1318,14 +623,65 @@ Selecionado:
   <data name="&gt;&gt;deleteWordItem.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="wordItemTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 12</value>
+  </data>
+  <data name="wordItemTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 20</value>
+  </data>
+  <data name="wordItemTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;wordItemTextBox.Name" xml:space="preserve">
+    <value>wordItemTextBox</value>
+  </data>
+  <data name="&gt;&gt;wordItemTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wordItemTextBox.Parent" xml:space="preserve">
+    <value>wordGroupBox</value>
+  </data>
+  <data name="&gt;&gt;wordItemTextBox.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="wordGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 69</value>
+  </data>
+  <data name="wordGroupBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="wordGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="wordGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 488</value>
+  </data>
+  <data name="wordGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>182</value>
+  </data>
+  <data name="&gt;&gt;wordGroupBox.Name" xml:space="preserve">
+    <value>wordGroupBox</value>
+  </data>
+  <data name="&gt;&gt;wordGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wordGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;wordGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="colorListEmpty.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="colorListEmpty.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 574</value>
+    <value>69, 435</value>
+  </data>
+  <data name="colorListEmpty.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="colorListEmpty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 17</value>
+    <value>75, 13</value>
   </data>
   <data name="colorListEmpty.TabIndex" type="System.Int32, mscorlib">
     <value>175</value>
@@ -1345,31 +701,384 @@ Selecionado:
   <data name="&gt;&gt;colorListEmpty.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="wordListEmpty.AutoSize" type="System.Boolean, mscorlib">
+  <data name="colorListView.Alignment" type="System.Windows.Forms.ListViewAlignment, System.Windows.Forms">
+    <value>SnapToGrid</value>
+  </data>
+  <data name="colorListView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="colorListView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 15.75pt</value>
+  </data>
+  <data name="colorListView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 73</value>
+  </data>
+  <data name="colorListView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="colorListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 360</value>
+  </data>
+  <data name="colorListView.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;colorListView.Name" xml:space="preserve">
+    <value>colorListView</value>
+  </data>
+  <data name="&gt;&gt;colorListView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colorListView.Parent" xml:space="preserve">
+    <value>colorListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;colorListView.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="numberItensColorLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="wordListEmpty.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 574</value>
+  <data name="numberItensColorLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="wordListEmpty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 17</value>
+  <data name="numberItensColorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 500</value>
   </data>
-  <data name="wordListEmpty.TabIndex" type="System.Int32, mscorlib">
-    <value>180</value>
+  <data name="numberItensColorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 13</value>
   </data>
-  <data name="wordListEmpty.Text" xml:space="preserve">
-    <value>wordListEmpty</value>
+  <data name="numberItensColorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
   </data>
-  <data name="&gt;&gt;wordListEmpty.Name" xml:space="preserve">
-    <value>wordListEmpty</value>
+  <data name="numberItensColorLabel.Text" xml:space="preserve">
+    <value>Itens na Lista:</value>
   </data>
-  <data name="&gt;&gt;wordListEmpty.Type" xml:space="preserve">
+  <data name="&gt;&gt;numberItensColorLabel.Name" xml:space="preserve">
+    <value>numberItensColorLabel</value>
+  </data>
+  <data name="&gt;&gt;numberItensColorLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;wordListEmpty.Parent" xml:space="preserve">
-    <value>wordGroupBox</value>
+  <data name="&gt;&gt;numberItensColorLabel.Parent" xml:space="preserve">
+    <value>colorListGroupBox</value>
   </data>
-  <data name="&gt;&gt;wordListEmpty.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;numberItensColorLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="numberItensColor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="numberItensColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="numberItensColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 500</value>
+  </data>
+  <data name="numberItensColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="numberItensColor.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="numberItensColor.Text" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;numberItensColor.Name" xml:space="preserve">
+    <value>numberItensColor</value>
+  </data>
+  <data name="&gt;&gt;numberItensColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numberItensColor.Parent" xml:space="preserve">
+    <value>colorListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;numberItensColor.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="newColorButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="newColorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="newColorButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="newColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 12</value>
+  </data>
+  <data name="newColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 25</value>
+  </data>
+  <data name="newColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="newColorButton.Text" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="&gt;&gt;newColorButton.Name" xml:space="preserve">
+    <value>newColorButton</value>
+  </data>
+  <data name="&gt;&gt;newColorButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;newColorButton.Parent" xml:space="preserve">
+    <value>colorListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;newColorButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="colorPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 42</value>
+  </data>
+  <data name="colorPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="colorPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 24</value>
+  </data>
+  <data name="colorPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>168</value>
+  </data>
+  <data name="&gt;&gt;colorPanel.Name" xml:space="preserve">
+    <value>colorPanel</value>
+  </data>
+  <data name="&gt;&gt;colorPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colorPanel.Parent" xml:space="preserve">
+    <value>colorListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;colorPanel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="chooseColorButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chooseColorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="chooseColorButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chooseColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>99, 42</value>
+  </data>
+  <data name="chooseColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 25</value>
+  </data>
+  <data name="chooseColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="chooseColorButton.Text" xml:space="preserve">
+    <value>Escolher</value>
+  </data>
+  <data name="&gt;&gt;chooseColorButton.Name" xml:space="preserve">
+    <value>chooseColorButton</value>
+  </data>
+  <data name="&gt;&gt;chooseColorButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chooseColorButton.Parent" xml:space="preserve">
+    <value>colorListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;chooseColorButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="colorItemTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 12</value>
+  </data>
+  <data name="colorItemTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 20</value>
+  </data>
+  <data name="colorItemTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;colorItemTextBox.Name" xml:space="preserve">
+    <value>colorItemTextBox</value>
+  </data>
+  <data name="&gt;&gt;colorItemTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colorItemTextBox.Parent" xml:space="preserve">
+    <value>colorListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;colorItemTextBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="deleteColorItem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="deleteColorItem.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="deleteColorItem.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="deleteColorItem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 146</value>
+  </data>
+  <data name="deleteColorItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 24</value>
+  </data>
+  <data name="deleteColorItem.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="deleteColorItem.Text" xml:space="preserve">
+    <value>Apagar</value>
+  </data>
+  <data name="&gt;&gt;deleteColorItem.Name" xml:space="preserve">
+    <value>deleteColorItem</value>
+  </data>
+  <data name="&gt;&gt;deleteColorItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteColorItem.Parent" xml:space="preserve">
+    <value>colorListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;deleteColorItem.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 73</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 26</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>173</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Item
+Selecionado:
+</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>colorListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="upColorItem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="upColorItem.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="upColorItem.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="upColorItem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 110</value>
+  </data>
+  <data name="upColorItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="upColorItem.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;upColorItem.Name" xml:space="preserve">
+    <value>upColorItem</value>
+  </data>
+  <data name="&gt;&gt;upColorItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;upColorItem.Parent" xml:space="preserve">
+    <value>colorListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;upColorItem.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="downColorItem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="downColorItem.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="downColorItem.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="downColorItem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 110</value>
+  </data>
+  <data name="downColorItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="downColorItem.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;downColorItem.Name" xml:space="preserve">
+    <value>downColorItem</value>
+  </data>
+  <data name="&gt;&gt;downColorItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;downColorItem.Parent" xml:space="preserve">
+    <value>colorListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;downColorItem.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="colorListGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 69</value>
+  </data>
+  <data name="colorListGroupBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="colorListGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="colorListGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 488</value>
+  </data>
+  <data name="colorListGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>181</value>
+  </data>
+  <data name="&gt;&gt;colorListGroupBox.Name" xml:space="preserve">
+    <value>colorListGroupBox</value>
+  </data>
+  <data name="&gt;&gt;colorListGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colorListGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;colorListGroupBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>600, 604</value>
+  </data>
+  <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
+    <value>errorProvider1</value>
+  </data>
+  <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colorDialog1.Name" xml:space="preserve">
+    <value>colorDialog1</value>
+  </data>
+  <data name="&gt;&gt;colorDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColorDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormWordColorConfig</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="colorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>172, 17</value>
+  </metadata>
 </root>

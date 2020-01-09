@@ -176,9 +176,6 @@ Item:</value>
   <data name="deleteWordItem.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="wordGroupBox.Text" xml:space="preserve">
-    <value>wordListName</value>
-  </data>
   <data name="numberItensColorLabel.Text" xml:space="preserve">
     <value>List Items</value>
   </data>
@@ -193,9 +190,6 @@ Item:</value>
   </data>
   <data name="deleteColorItem.Text" xml:space="preserve">
     <value>Delete</value>
-  </data>
-  <data name="colorListGroupBox.Text" xml:space="preserve">
-    <value>colorListName</value>
   </data>
   <data name="wordListEmpty.Text" xml:space="preserve">
     <value>wordListEmpty</value>

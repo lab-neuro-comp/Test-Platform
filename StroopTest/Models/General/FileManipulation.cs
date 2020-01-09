@@ -5,6 +5,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TestPlatform.Models.Tests.SpacialRecognition;
 
 namespace TestPlatform.Models
 {
@@ -22,7 +23,7 @@ namespace TestPlatform.Models
         private static FileManipulation instance;
 
         private static string PROGRAM_EXTENSION = ".prg";
-        private static string _instructionsFilePath = "editableInstructions.txt";
+        private static string _instructionsFilePath = "/editableInstructions.txt";
 
         private static FormMain _globalFormMain;
         private static string _defaultPath; // path of execution program
@@ -32,11 +33,14 @@ namespace TestPlatform.Models
         private static string _reactionTestFilesPath = "/ReactionTestFiles/";
         private static string _experimentTestFilesPath = "/ExperimentTestFiles/";
         private static string _matchingTestFilesPath = "/MatchingTestFiles/";
+        private static string _spacialRecoginitionTestFilesPath = "/SpacialRecognitionTestFiles/";
         private static string _stroopTestFilesBackupPath = "/StroopTestFiles/";
         private static string _reactionTestFilesBackupPath = "/ReactionTestFiles/";
+        public static string _spacialRecognitionTestFilesBackupPath = "/SpacialRecognitionTestFiles/";
 
         public static string _experimentTestFilesBackupPath = "/ExperimentTestFiles/";
         public static string _matchingTestFilesBackupPath = "/MatchingTestFiles/";
+        public static string _spacialRecoginitionFilesBackup = "/SpacialRecognitionTestFiles/";
         public static string _listFilesBackup = "/Lst/";
         public static string _participantDataPath = "/ParticipantData/";
         public static string _listFolderName = "/Lst/";
@@ -65,6 +69,7 @@ namespace TestPlatform.Models
             CreateSubFolders(_stroopTestFilesPath);
             CreateSubFolders(_experimentTestFilesPath);
             CreateSubFolders(_matchingTestFilesPath);
+            CreateSubFolders(_spacialRecoginitionTestFilesPath);
 
             CreateFolder(_listFolderName);
             CreateFolder(_participantDataPath);
@@ -94,6 +99,7 @@ namespace TestPlatform.Models
             CreateSubFolders(_stroopTestFilesPath);
             CreateSubFolders(_experimentTestFilesPath);
             CreateSubFolders(_matchingTestFilesPath);
+            CreateSubFolders(_spacialRecoginitionTestFilesPath);
 
             /* creating Lists folder*/
 
@@ -150,6 +156,7 @@ namespace TestPlatform.Models
             CreateFolder(directory + "/ExportingFiles/" + "ExperimentProgram");
             CreateFolder(directory + "/ExportingFiles/" + "Lists");
             CreateFolder(directory + "/ExportingFiles/" + "MatchingProgram");
+            CreateFolder(directory + "/ExportingFiles/" + "SpacialRecognitionProgram");
         }
 
         public static void CreateFolder(string path)
@@ -338,7 +345,9 @@ namespace TestPlatform.Models
             _reactionTestFilesBackupPath = _defaultPath + _backupFolderName + ReactionTestFilesBackupPath;
             _experimentTestFilesBackupPath = _defaultPath + _backupFolderName + _experimentTestFilesBackupPath;
             _matchingTestFilesBackupPath = _defaultPath + _backupFolderName + _matchingTestFilesBackupPath;
+            _spacialRecognitionTestFilesBackupPath = _defaultPath + _backupFolderName + _spacialRecognitionTestFilesBackupPath;
             _listFilesBackup = _defaultPath + _backupFolderName + _listFilesBackup;
+            _spacialRecoginitionFilesBackup = _defaultPath + _backupFolderName + _spacialRecoginitionFilesBackup;
 
             if (!Directory.Exists(_experimentTestFilesBackupPath))
                 Directory.CreateDirectory(_experimentTestFilesBackupPath);
@@ -348,8 +357,12 @@ namespace TestPlatform.Models
                 Directory.CreateDirectory(ReactionTestFilesBackupPath);
             if (!Directory.Exists(_matchingTestFilesBackupPath))
                 Directory.CreateDirectory(_matchingTestFilesBackupPath);
+            if (!Directory.Exists(_spacialRecognitionTestFilesBackupPath))
+                Directory.CreateDirectory(_spacialRecognitionTestFilesBackupPath);
             if (!Directory.Exists(_listFilesBackup))
                 Directory.CreateDirectory(_listFilesBackup);
+            if (!Directory.Exists(_spacialRecoginitionFilesBackup))
+                Directory.CreateDirectory(_spacialRecoginitionFilesBackup);
         }
 
         /// <summary>
@@ -392,11 +405,17 @@ namespace TestPlatform.Models
         /// </summary>
         private void InitializeDefaultPrograms()
         {
-            StroopProgram programDefault = new StroopProgram();
-            programDefault.writeDefaultProgramFile(_stroopTestFilesPath + _programFolderName);
+            StroopProgram defaultStroop = new StroopProgram();
+            defaultStroop.writeDefaultProgramFile(_stroopTestFilesPath + _programFolderName);
 
-            ReactionProgram defaultProgram = new ReactionProgram();
-            defaultProgram.writeDefaultProgramFile();
+            ReactionProgram defaultReaction = new ReactionProgram();
+            defaultReaction.writeDefaultProgramFile();
+
+            SpacialRecognitionProgram defaultSR = new SpacialRecognitionProgram();
+            defaultSR.writeDefaultProgramFile(_spacialRecoginitionTestFilesPath + _programFolderName);
+
+            MatchingProgram defaultMatching = new MatchingProgram();
+            defaultMatching.writeDefaultProgramFile(_matchingTestFilesPath + _programFolderName);
 
             StrList.writeDefaultWordsList(_listFolderName);
             StrList.writeDefaultColorsList(_listFolderName);
@@ -442,9 +461,10 @@ namespace TestPlatform.Models
             _reactionTestFilesPath = _testFilesPath + _reactionTestFilesPath;
             _experimentTestFilesPath = _testFilesPath + _experimentTestFilesPath;
             _matchingTestFilesPath = _testFilesPath + _matchingTestFilesPath;
+            _spacialRecoginitionTestFilesPath = _testFilesPath + _spacialRecoginitionTestFilesPath;
             _importPath = _testFilesPath + _importPath;
             _participantDataPath = _testFilesPath + _participantDataPath;
-            _instructionsFilePath = _instructionsFilePath + _defaultPath;
+            _instructionsFilePath = _defaultPath + _instructionsFilePath;
 
             if (!Directory.Exists(_testFilesPath))
             {
@@ -462,7 +482,9 @@ namespace TestPlatform.Models
         public static string ExperimentTestFilesPath { get => _experimentTestFilesPath;}
         public static string ProgramExtension { get => PROGRAM_EXTENSION; }
         public static string MatchingTestFilesPath { get => _matchingTestFilesPath; }
+        public static string SpacialRecognitionTestFilesPath { get => _spacialRecoginitionTestFilesPath; }
         public static string StroopTestFilesBackupPath { get => _stroopTestFilesBackupPath; }
         public static string ReactionTestFilesBackupPath { get => _reactionTestFilesBackupPath; }
+        public static string SpacialReconitionTestFilesBackupPath { get => _spacialRecognitionTestFilesBackupPath; }
     }
 }

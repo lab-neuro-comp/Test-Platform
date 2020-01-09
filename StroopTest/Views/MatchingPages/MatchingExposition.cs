@@ -58,7 +58,7 @@ namespace TestPlatform.Views.MatchingPages
         private long attemptIntervalTime;
         private int stimuluType;
         Random randGen = new Random(Guid.NewGuid().GetHashCode());
-
+        private char direction;
         public class MatchingGroup
         {
             private string model, modelColor;
@@ -252,6 +252,14 @@ namespace TestPlatform.Views.MatchingPages
                 }
             }
             else throw new InvalidOperationException();
+            if(this.currentExpositionType == LocRM.GetString("preference_horizontal", currentCulture))
+            {
+                direction = 'h';
+            }
+            else if (this.currentExpositionType == LocRM.GetString("preference_vertical", currentCulture))
+            {
+                direction = 'v';
+            }
             createMatchingGroups();
         }
 
@@ -422,6 +430,7 @@ namespace TestPlatform.Views.MatchingPages
             for (int count = 0; count < this.executingTest.ProgramInUse.AttemptsNumber * 2; count++)
             {
                 changeBackgroundColor();
+                
                 startExpositionBW();
                 currentExposition = count++;
                 while (expositionBW.IsBusy)
@@ -488,8 +497,13 @@ namespace TestPlatform.Views.MatchingPages
         {
             int time;
             /*wait interval between attempts*/
-            attemptIntervalTime = waitIntervalTime(executingTest.ProgramInUse.IntervalTimeRandom,
+
+            if (this.currentExpositionType != LocRM.GetString("preference_horizontal", currentCulture) &&
+            this.currentExpositionType != LocRM.GetString("preference_vertical", currentCulture))
+            {
+                attemptIntervalTime = waitIntervalTime(executingTest.ProgramInUse.IntervalTimeRandom,
                 executingTest.ProgramInUse.AttemptsIntervalTime);
+            }
             /*set exposition accumulative time and test exposition time*/
             executingTest.ExpositionTime = DateTime.Now;
             if (showModel)
@@ -561,14 +575,19 @@ namespace TestPlatform.Views.MatchingPages
 
             Stopwatch intervalStopWatch = new Stopwatch();
             intervalStopWatch.Start();
-            while (intervalStopWatch.ElapsedMilliseconds < intervalTimeRandom)
+
+            if (this.currentExpositionType != LocRM.GetString("preference_horizontal", currentCulture) &&
+            this.currentExpositionType != LocRM.GetString("preference_vertical", currentCulture))
             {
-                if (expositionBW.CancellationPending)
+                while (intervalStopWatch.ElapsedMilliseconds < intervalTimeRandom)
                 {
-                    intervalCancelled = true;
-                    break;
+                    if (expositionBW.CancellationPending)
+                    {
+                        intervalCancelled = true;
+                        break;
+                    }
+                    /* just wait for interval time to be finished */
                 }
-                /* just wait for interval time to be finished */
             }
             intervalShouldBe = intervalTimeRandom;
             intervalStopWatch.Stop();
@@ -590,7 +609,12 @@ namespace TestPlatform.Views.MatchingPages
                 {
                     stimuluPosition = new StimulusPosition(ClientSize, this.executingTest.ProgramInUse.StimuluNumber);
                 }
-                intervalElapsedTime = waitIntervalTime(this.executingTest.ProgramInUse.RandomIntervalModelStimulus, this.executingTest.ProgramInUse.IntervalTime);
+
+                if (this.currentExpositionType != LocRM.GetString("preference_horizontal", currentCulture) &&
+                this.currentExpositionType != LocRM.GetString("preference_vertical", currentCulture))
+                {
+                    intervalElapsedTime = waitIntervalTime(this.executingTest.ProgramInUse.RandomIntervalModelStimulus, this.executingTest.ProgramInUse.IntervalTime);
+                }
                 drawStimulu();
             }
         }
@@ -633,7 +657,7 @@ namespace TestPlatform.Views.MatchingPages
             }
             else
             {
-                Point position = stimuluPosition.getPositon(size);
+                Point position = stimuluPosition.getPositon(size, direction);
                 modelControl.Location = position;
             }
             currentStimulus = matchingGroups.ElementAt(groupCounter);
@@ -647,7 +671,11 @@ namespace TestPlatform.Views.MatchingPages
                 modelControl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.wrongClick_mouseClick);
             }
             controls.Add(modelControl);
-            expositionBW.ReportProgress(currentExposition / (executingTest.ProgramInUse.AttemptsNumber * 2) * 100, controls);
+            if (this.currentExpositionType != LocRM.GetString("preference_horizontal", currentCulture) &&
+            this.currentExpositionType != LocRM.GetString("preference_vertical", currentCulture)){
+                expositionBW.ReportProgress(currentExposition / (executingTest.ProgramInUse.AttemptsNumber * 2) * 100, controls);
+
+            }
         }
 
         private void drawStimulu()
@@ -679,7 +707,7 @@ namespace TestPlatform.Views.MatchingPages
                 }
                 else
                 {
-                    newStimulu.Location = stimuluPosition.getPositon(size);
+                    newStimulu.Location = stimuluPosition.getPositon(size, direction);
                 }
                 if (matchingGroups.ElementAt(groupCounter).getModelName().Equals(element))
                 {
@@ -964,7 +992,8 @@ namespace TestPlatform.Views.MatchingPages
                         }
                         modelSecondPosition = stimuluPosition.getStimulusPositionMap(modelAsStimuluControl.Location, size);
                     }
-                    List<string> stimulus = this.matchingGroups.ElementAt(groupCounter - 1).getStimulusNames().ToList();
+                    List<string> stimulus;
+                    stimulus = this.matchingGroups.ElementAt(groupCounter - 1).getStimulusNames().ToList();
                     stimulus.Remove(this.matchingGroups.ElementAt(groupCounter - 1).getModelName());
                     for (int count = 0; count < stimulus.Count; count++)
                     {
@@ -1074,7 +1103,8 @@ namespace TestPlatform.Views.MatchingPages
                         showAudioFeedbackOnNextClick = true;
                     }
                     else { /*Model should be clicked but wasn't*/
-                        if (this.executingTest.ProgramInUse.OmissionAudioResponse)
+                        if (this.executingTest.ProgramInUse.OmissionAudioResponse && this.currentExpositionType != LocRM.GetString("preference_horizontal", currentCulture) &&
+                            this.currentExpositionType != LocRM.GetString("preference_vertical", currentCulture))
                         {
                             System.Media.SystemSounds.Exclamation.Play();
                         }

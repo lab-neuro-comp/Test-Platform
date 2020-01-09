@@ -147,4 +147,10 @@
   <data name="matchingButton.Text" xml:space="preserve">
     <value>Teste de Escolha</value>
   </data>
+  <data name="experimentButton.Text" xml:space="preserve">
+    <value>Experimento</value>
+  </data>
+  <data name="spacialRecognitionButton.Text" xml:space="preserve">
+    <value>Reconhecimento Espacial</value>
+  </data>
 </root>
